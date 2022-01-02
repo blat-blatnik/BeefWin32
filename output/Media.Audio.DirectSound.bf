@@ -604,14 +604,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSound self, ref DSBUFFERDESC pcDSBufferDesc, out IDirectSoundBuffer* ppDSBuffer, ref IUnknown pUnkOuter) CreateSoundBuffer;
-				public new function HRESULT(ref IDirectSound self, out DSCAPS pDSCaps) GetCaps;
-				public new function HRESULT(ref IDirectSound self, ref IDirectSoundBuffer pDSBufferOriginal, out IDirectSoundBuffer* ppDSBufferDuplicate) DuplicateSoundBuffer;
-				public new function HRESULT(ref IDirectSound self, HWND hwnd, uint32 dwLevel) SetCooperativeLevel;
-				public new function HRESULT(ref IDirectSound self) Compact;
-				public new function HRESULT(ref IDirectSound self, out uint32 pdwSpeakerConfig) GetSpeakerConfig;
-				public new function HRESULT(ref IDirectSound self, uint32 dwSpeakerConfig) SetSpeakerConfig;
-				public new function HRESULT(ref IDirectSound self, Guid* pcGuidDevice) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, ref DSBUFFERDESC pcDSBufferDesc, out IDirectSoundBuffer* ppDSBuffer, ref IUnknown pUnkOuter) CreateSoundBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, out DSCAPS pDSCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, ref IDirectSoundBuffer pDSBufferOriginal, out IDirectSoundBuffer* ppDSBufferDuplicate) DuplicateSoundBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, HWND hwnd, uint32 dwLevel) SetCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, out uint32 pdwSpeakerConfig) GetSpeakerConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, uint32 dwSpeakerConfig) SetSpeakerConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound self, Guid* pcGuidDevice) Initialize;
 			}
 		}
 		[CRepr]
@@ -626,7 +626,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirectSound.VTable
 			{
-				public new function HRESULT(ref IDirectSound8 self, out uint32 pdwCertified) VerifyCertification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound8 self, out uint32 pdwCertified) VerifyCertification;
 			}
 		}
 		[CRepr]
@@ -658,24 +658,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundBuffer self, out DSBCAPS pDSBufferCaps) GetCaps;
-				public new function HRESULT(ref IDirectSoundBuffer self, uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) GetCurrentPosition;
-				public new function HRESULT(ref IDirectSoundBuffer self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
-				public new function HRESULT(ref IDirectSoundBuffer self, out int32 plVolume) GetVolume;
-				public new function HRESULT(ref IDirectSoundBuffer self, out int32 plPan) GetPan;
-				public new function HRESULT(ref IDirectSoundBuffer self, out uint32 pdwFrequency) GetFrequency;
-				public new function HRESULT(ref IDirectSoundBuffer self, out uint32 pdwStatus) GetStatus;
-				public new function HRESULT(ref IDirectSoundBuffer self, ref IDirectSound pDirectSound, ref DSBUFFERDESC pcDSBufferDesc) Initialize;
-				public new function HRESULT(ref IDirectSoundBuffer self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
-				public new function HRESULT(ref IDirectSoundBuffer self, uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) Play;
-				public new function HRESULT(ref IDirectSoundBuffer self, uint32 dwNewPosition) SetCurrentPosition;
-				public new function HRESULT(ref IDirectSoundBuffer self, ref WAVEFORMATEX pcfxFormat) SetFormat;
-				public new function HRESULT(ref IDirectSoundBuffer self, int32 lVolume) SetVolume;
-				public new function HRESULT(ref IDirectSoundBuffer self, int32 lPan) SetPan;
-				public new function HRESULT(ref IDirectSoundBuffer self, uint32 dwFrequency) SetFrequency;
-				public new function HRESULT(ref IDirectSoundBuffer self) Stop;
-				public new function HRESULT(ref IDirectSoundBuffer self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
-				public new function HRESULT(ref IDirectSoundBuffer self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, out DSBCAPS pDSBufferCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) GetCurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, out int32 plVolume) GetVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, out int32 plPan) GetPan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, out uint32 pdwFrequency) GetFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, out uint32 pdwStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, ref IDirectSound pDirectSound, ref DSBUFFERDESC pcDSBufferDesc) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) Play;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, uint32 dwNewPosition) SetCurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, ref WAVEFORMATEX pcfxFormat) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, int32 lVolume) SetVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, int32 lPan) SetPan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, uint32 dwFrequency) SetFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer self) Restore;
 			}
 		}
 		[CRepr]
@@ -692,9 +692,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirectSoundBuffer.VTable
 			{
-				public new function HRESULT(ref IDirectSoundBuffer8 self, uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) SetFX;
-				public new function HRESULT(ref IDirectSoundBuffer8 self, uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) AcquireResources;
-				public new function HRESULT(ref IDirectSoundBuffer8 self, in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) GetObjectInPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer8 self, uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) SetFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer8 self, uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) AcquireResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundBuffer8 self, in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) GetObjectInPath;
 			}
 		}
 		[CRepr]
@@ -723,21 +723,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSound3DListener self, out DS3DLISTENER pListener) GetAllParameters;
-				public new function HRESULT(ref IDirectSound3DListener self, out float pflDistanceFactor) GetDistanceFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, out float pflDopplerFactor) GetDopplerFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvOrientFront, out D3DVECTOR pvOrientTop) GetOrientation;
-				public new function HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvPosition) GetPosition;
-				public new function HRESULT(ref IDirectSound3DListener self, out float pflRolloffFactor) GetRolloffFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvVelocity) GetVelocity;
-				public new function HRESULT(ref IDirectSound3DListener self, ref DS3DLISTENER pcListener, uint32 dwApply) SetAllParameters;
-				public new function HRESULT(ref IDirectSound3DListener self, float flDistanceFactor, uint32 dwApply) SetDistanceFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, float flDopplerFactor, uint32 dwApply) SetDopplerFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) SetOrientation;
-				public new function HRESULT(ref IDirectSound3DListener self, float x, float y, float z, uint32 dwApply) SetPosition;
-				public new function HRESULT(ref IDirectSound3DListener self, float flRolloffFactor, uint32 dwApply) SetRolloffFactor;
-				public new function HRESULT(ref IDirectSound3DListener self, float x, float y, float z, uint32 dwApply) SetVelocity;
-				public new function HRESULT(ref IDirectSound3DListener self) CommitDeferredSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out DS3DLISTENER pListener) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out float pflDistanceFactor) GetDistanceFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out float pflDopplerFactor) GetDopplerFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvOrientFront, out D3DVECTOR pvOrientTop) GetOrientation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvPosition) GetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out float pflRolloffFactor) GetRolloffFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, out D3DVECTOR pvVelocity) GetVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, ref DS3DLISTENER pcListener, uint32 dwApply) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float flDistanceFactor, uint32 dwApply) SetDistanceFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float flDopplerFactor, uint32 dwApply) SetDopplerFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) SetOrientation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float x, float y, float z, uint32 dwApply) SetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float flRolloffFactor, uint32 dwApply) SetRolloffFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self, float x, float y, float z, uint32 dwApply) SetVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DListener self) CommitDeferredSettings;
 			}
 		}
 		[CRepr]
@@ -769,24 +769,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSound3DBuffer self, out DS3DBUFFER pDs3dBuffer) GetAllParameters;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out uint32 pdwInsideConeAngle, out uint32 pdwOutsideConeAngle) GetConeAngles;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvOrientation) GetConeOrientation;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out int32 plConeOutsideVolume) GetConeOutsideVolume;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out float pflMaxDistance) GetMaxDistance;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out float pflMinDistance) GetMinDistance;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out uint32 pdwMode) GetMode;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvPosition) GetPosition;
-				public new function HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvVelocity) GetVelocity;
-				public new function HRESULT(ref IDirectSound3DBuffer self, ref DS3DBUFFER pcDs3dBuffer, uint32 dwApply) SetAllParameters;
-				public new function HRESULT(ref IDirectSound3DBuffer self, uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) SetConeAngles;
-				public new function HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetConeOrientation;
-				public new function HRESULT(ref IDirectSound3DBuffer self, int32 lConeOutsideVolume, uint32 dwApply) SetConeOutsideVolume;
-				public new function HRESULT(ref IDirectSound3DBuffer self, float flMaxDistance, uint32 dwApply) SetMaxDistance;
-				public new function HRESULT(ref IDirectSound3DBuffer self, float flMinDistance, uint32 dwApply) SetMinDistance;
-				public new function HRESULT(ref IDirectSound3DBuffer self, uint32 dwMode, uint32 dwApply) SetMode;
-				public new function HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetPosition;
-				public new function HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out DS3DBUFFER pDs3dBuffer) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out uint32 pdwInsideConeAngle, out uint32 pdwOutsideConeAngle) GetConeAngles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvOrientation) GetConeOrientation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out int32 plConeOutsideVolume) GetConeOutsideVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out float pflMaxDistance) GetMaxDistance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out float pflMinDistance) GetMinDistance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out uint32 pdwMode) GetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvPosition) GetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, out D3DVECTOR pvVelocity) GetVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, ref DS3DBUFFER pcDs3dBuffer, uint32 dwApply) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) SetConeAngles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetConeOrientation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, int32 lConeOutsideVolume, uint32 dwApply) SetConeOutsideVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, float flMaxDistance, uint32 dwApply) SetMaxDistance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, float flMinDistance, uint32 dwApply) SetMinDistance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, uint32 dwMode, uint32 dwApply) SetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSound3DBuffer self, float x, float y, float z, uint32 dwApply) SetVelocity;
 			}
 		}
 		[CRepr]
@@ -803,9 +803,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundCapture self, ref DSCBUFFERDESC pcDSCBufferDesc, out IDirectSoundCaptureBuffer* ppDSCBuffer, ref IUnknown pUnkOuter) CreateCaptureBuffer;
-				public new function HRESULT(ref IDirectSoundCapture self, out DSCCAPS pDSCCaps) GetCaps;
-				public new function HRESULT(ref IDirectSoundCapture self, Guid* pcGuidDevice) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCapture self, ref DSCBUFFERDESC pcDSCBufferDesc, out IDirectSoundCaptureBuffer* ppDSCBuffer, ref IUnknown pUnkOuter) CreateCaptureBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCapture self, out DSCCAPS pDSCCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCapture self, Guid* pcGuidDevice) Initialize;
 			}
 		}
 		[CRepr]
@@ -828,15 +828,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, out DSCBCAPS pDSCBCaps) GetCaps;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, uint32* pdwCapturePosition, uint32* pdwReadPosition) GetCurrentPosition;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, out uint32 pdwStatus) GetStatus;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, ref IDirectSoundCapture pDirectSoundCapture, ref DSCBUFFERDESC pcDSCBufferDesc) Initialize;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, uint32 dwFlags) Start;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self) Stop;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, out DSCBCAPS pDSCBCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, uint32* pdwCapturePosition, uint32* pdwReadPosition) GetCurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, out uint32 pdwStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, ref IDirectSoundCapture pDirectSoundCapture, ref DSCBUFFERDESC pcDSCBufferDesc) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, out uint32 pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, uint32 dwFlags) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
 			}
 		}
 		[CRepr]
@@ -852,8 +852,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirectSoundCaptureBuffer.VTable
 			{
-				public new function HRESULT(ref IDirectSoundCaptureBuffer8 self, in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) GetObjectInPath;
-				public new function HRESULT(ref IDirectSoundCaptureBuffer8 self, uint32 dwEffectsCount, uint32* pdwFXStatus) GetFXStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer8 self, in Guid rguidObject, uint32 dwIndex, in Guid rguidInterface, void** ppObject) GetObjectInPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureBuffer8 self, uint32 dwEffectsCount, uint32* pdwFXStatus) GetFXStatus;
 			}
 		}
 		[CRepr]
@@ -868,7 +868,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundNotify self, uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) SetNotificationPositions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundNotify self, uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) SetNotificationPositions;
 			}
 		}
 		[CRepr]
@@ -884,8 +884,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXGargle self, ref DSFXGargle pcDsFxGargle) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXGargle self, out DSFXGargle pDsFxGargle) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXGargle self, ref DSFXGargle pcDsFxGargle) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXGargle self, out DSFXGargle pDsFxGargle) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -901,8 +901,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXChorus self, ref DSFXChorus pcDsFxChorus) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXChorus self, out DSFXChorus pDsFxChorus) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXChorus self, ref DSFXChorus pcDsFxChorus) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXChorus self, out DSFXChorus pDsFxChorus) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -918,8 +918,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXFlanger self, ref DSFXFlanger pcDsFxFlanger) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXFlanger self, out DSFXFlanger pDsFxFlanger) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXFlanger self, ref DSFXFlanger pcDsFxFlanger) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXFlanger self, out DSFXFlanger pDsFxFlanger) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -935,8 +935,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXEcho self, ref DSFXEcho pcDsFxEcho) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXEcho self, out DSFXEcho pDsFxEcho) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXEcho self, ref DSFXEcho pcDsFxEcho) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXEcho self, out DSFXEcho pDsFxEcho) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -952,8 +952,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXDistortion self, ref DSFXDistortion pcDsFxDistortion) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXDistortion self, out DSFXDistortion pDsFxDistortion) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXDistortion self, ref DSFXDistortion pcDsFxDistortion) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXDistortion self, out DSFXDistortion pDsFxDistortion) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -969,8 +969,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXCompressor self, ref DSFXCompressor pcDsFxCompressor) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXCompressor self, out DSFXCompressor pDsFxCompressor) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXCompressor self, ref DSFXCompressor pcDsFxCompressor) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXCompressor self, out DSFXCompressor pDsFxCompressor) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -986,8 +986,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXParamEq self, ref DSFXParamEq pcDsFxParamEq) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXParamEq self, out DSFXParamEq pDsFxParamEq) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXParamEq self, ref DSFXParamEq pcDsFxParamEq) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXParamEq self, out DSFXParamEq pDsFxParamEq) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -1007,12 +1007,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, ref DSFXI3DL2Reverb pcDsFxI3DL2Reverb) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, out DSFXI3DL2Reverb pDsFxI3DL2Reverb) GetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, uint32 dwPreset) SetPreset;
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, out uint32 pdwPreset) GetPreset;
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, int32 lQuality) SetQuality;
-				public new function HRESULT(ref IDirectSoundFXI3DL2Reverb self, out int32 plQuality) GetQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, ref DSFXI3DL2Reverb pcDsFxI3DL2Reverb) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, out DSFXI3DL2Reverb pDsFxI3DL2Reverb) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, uint32 dwPreset) SetPreset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, out uint32 pdwPreset) GetPreset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, int32 lQuality) SetQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXI3DL2Reverb self, out int32 plQuality) GetQuality;
 			}
 		}
 		[CRepr]
@@ -1028,8 +1028,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFXWavesReverb self, ref DSFXWavesReverb pcDsFxWavesReverb) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundFXWavesReverb self, out DSFXWavesReverb pDsFxWavesReverb) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXWavesReverb self, ref DSFXWavesReverb pcDsFxWavesReverb) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFXWavesReverb self, out DSFXWavesReverb pDsFxWavesReverb) GetAllParameters;
 			}
 		}
 		[CRepr]
@@ -1047,10 +1047,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundCaptureFXAec self, ref DSCFXAec pDscFxAec) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundCaptureFXAec self, out DSCFXAec pDscFxAec) GetAllParameters;
-				public new function HRESULT(ref IDirectSoundCaptureFXAec self, out uint32 pdwStatus) GetStatus;
-				public new function HRESULT(ref IDirectSoundCaptureFXAec self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXAec self, ref DSCFXAec pDscFxAec) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXAec self, out DSCFXAec pDscFxAec) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXAec self, out uint32 pdwStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXAec self) Reset;
 			}
 		}
 		[CRepr]
@@ -1067,9 +1067,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self, ref DSCFXNoiseSuppress pcDscFxNoiseSuppress) SetAllParameters;
-				public new function HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self, out DSCFXNoiseSuppress pDscFxNoiseSuppress) GetAllParameters;
-				public new function HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self, ref DSCFXNoiseSuppress pcDscFxNoiseSuppress) SetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self, out DSCFXNoiseSuppress pDscFxNoiseSuppress) GetAllParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundCaptureFXNoiseSuppress self) Reset;
 			}
 		}
 		[CRepr]
@@ -1084,7 +1084,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectSoundFullDuplex self, in Guid pCaptureGuid, in Guid pRenderGuid, ref DSCBUFFERDESC lpDscBufferDesc, ref DSBUFFERDESC lpDsBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundCaptureBuffer8* lplpDirectSoundCaptureBuffer8, out IDirectSoundBuffer8* lplpDirectSoundBuffer8) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFullDuplex self, in Guid pCaptureGuid, in Guid pRenderGuid, ref DSCBUFFERDESC lpDscBufferDesc, ref DSBUFFERDESC lpDsBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundCaptureBuffer8* lplpDirectSoundCaptureBuffer8, out IDirectSoundBuffer8* lplpDirectSoundBuffer8) Initialize;
 			}
 		}
 		

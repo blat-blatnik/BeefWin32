@@ -2093,9 +2093,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IQueryForm self, HKEY hkForm) Initialize;
-				public new function HRESULT(ref IQueryForm self, LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) AddForms;
-				public new function HRESULT(ref IQueryForm self, LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) AddPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryForm self, HKEY hkForm) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryForm self, LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) AddForms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryForm self, LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) AddPages;
 			}
 		}
 		[CRepr]
@@ -2116,13 +2116,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pValue) WriteString;
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) ReadString;
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, int32 value) WriteInt;
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, out int32 pValue) ReadInt;
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) WriteStruct;
-				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) ReadStruct;
-				public new function HRESULT(ref IPersistQuery self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pValue) WriteString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) ReadString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, int32 value) WriteInt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, out int32 pValue) ReadInt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) WriteStruct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) ReadStruct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistQuery self) Clear;
 			}
 		}
 		[CRepr]
@@ -2137,7 +2137,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICommonQuery self, HWND hwndParent, out OPENQUERYWINDOW pQueryWnd, out IDataObject* ppDataObject) OpenQueryWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICommonQuery self, HWND hwndParent, out OPENQUERYWINDOW pQueryWnd, out IDataObject* ppDataObject) OpenQueryWindow;
 			}
 		}
 		[CRepr]
@@ -2164,19 +2164,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADs self, BSTR* retval) get_Name;
-				public new function HRESULT(ref IADs self, BSTR* retval) get_Class;
-				public new function HRESULT(ref IADs self, BSTR* retval) get_GUID;
-				public new function HRESULT(ref IADs self, BSTR* retval) get_ADsPath;
-				public new function HRESULT(ref IADs self, BSTR* retval) get_Parent;
-				public new function HRESULT(ref IADs self, BSTR* retval) get_Schema;
-				public new function HRESULT(ref IADs self) GetInfo;
-				public new function HRESULT(ref IADs self) SetInfo;
-				public new function HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) Get;
-				public new function HRESULT(ref IADs self, BSTR bstrName, VARIANT vProp) Put;
-				public new function HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) GetEx;
-				public new function HRESULT(ref IADs self, int32 lnControlCode, BSTR bstrName, VARIANT vProp) PutEx;
-				public new function HRESULT(ref IADs self, VARIANT vProperties, int32 lnReserved) GetInfoEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_Class;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_GUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_ADsPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_Parent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR* retval) get_Schema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self) SetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR bstrName, VARIANT vProp) Put;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) GetEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, int32 lnControlCode, BSTR bstrName, VARIANT vProp) PutEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADs self, VARIANT vProperties, int32 lnReserved) GetInfoEx;
 			}
 		}
 		[CRepr]
@@ -2201,17 +2201,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsContainer self, out int32 retval) get_Count;
-				public new function HRESULT(ref IADsContainer self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(ref IADsContainer self, out VARIANT pVar) get_Filter;
-				public new function HRESULT(ref IADsContainer self, VARIANT Var) put_Filter;
-				public new function HRESULT(ref IADsContainer self, out VARIANT pvFilter) get_Hints;
-				public new function HRESULT(ref IADsContainer self, VARIANT vHints) put_Hints;
-				public new function HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) GetObject;
-				public new function HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) Create;
-				public new function HRESULT(ref IADsContainer self, BSTR bstrClassName, BSTR bstrRelativeName) Delete;
-				public new function HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) CopyHere;
-				public new function HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) MoveHere;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, IUnknown** retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, out VARIANT pVar) get_Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, VARIANT Var) put_Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, out VARIANT pvFilter) get_Hints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, VARIANT vHints) put_Hints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, BSTR bstrClassName, BSTR bstrRelativeName) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) CopyHere;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) MoveHere;
 			}
 		}
 		[CRepr]
@@ -2229,10 +2229,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsCollection self, IUnknown** ppEnumerator) get__NewEnum;
-				public new function HRESULT(ref IADsCollection self, BSTR bstrName, VARIANT vItem) Add;
-				public new function HRESULT(ref IADsCollection self, BSTR bstrItemToBeRemoved) Remove;
-				public new function HRESULT(ref IADsCollection self, BSTR bstrName, out VARIANT pvItem) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCollection self, IUnknown** ppEnumerator) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCollection self, BSTR bstrName, VARIANT vItem) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCollection self, BSTR bstrItemToBeRemoved) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCollection self, BSTR bstrName, out VARIANT pvItem) GetObject;
 			}
 		}
 		[CRepr]
@@ -2250,10 +2250,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsMembers self, out int32 plCount) get_Count;
-				public new function HRESULT(ref IADsMembers self, IUnknown** ppEnumerator) get__NewEnum;
-				public new function HRESULT(ref IADsMembers self, out VARIANT pvFilter) get_Filter;
-				public new function HRESULT(ref IADsMembers self, VARIANT pvFilter) put_Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsMembers self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsMembers self, IUnknown** ppEnumerator) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsMembers self, out VARIANT pvFilter) get_Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsMembers self, VARIANT pvFilter) put_Filter;
 			}
 		}
 		[CRepr]
@@ -2276,15 +2276,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPropertyList self, out int32 plCount) get_PropertyCount;
-				public new function HRESULT(ref IADsPropertyList self, out VARIANT pVariant) Next;
-				public new function HRESULT(ref IADsPropertyList self, int32 cElements) Skip;
-				public new function HRESULT(ref IADsPropertyList self) Reset;
-				public new function HRESULT(ref IADsPropertyList self, VARIANT varIndex, out VARIANT pVariant) Item;
-				public new function HRESULT(ref IADsPropertyList self, BSTR bstrName, int32 lnADsType, out VARIANT pVariant) GetPropertyItem;
-				public new function HRESULT(ref IADsPropertyList self, VARIANT varData) PutPropertyItem;
-				public new function HRESULT(ref IADsPropertyList self, VARIANT varEntry) ResetPropertyItem;
-				public new function HRESULT(ref IADsPropertyList self) PurgePropertyList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, out int32 plCount) get_PropertyCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, out VARIANT pVariant) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, int32 cElements) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, VARIANT varIndex, out VARIANT pVariant) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, BSTR bstrName, int32 lnADsType, out VARIANT pVariant) GetPropertyItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, VARIANT varData) PutPropertyItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self, VARIANT varEntry) ResetPropertyItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyList self) PurgePropertyList;
 			}
 		}
 		[CRepr]
@@ -2307,15 +2307,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPropertyEntry self) Clear;
-				public new function HRESULT(ref IADsPropertyEntry self, BSTR* retval) get_Name;
-				public new function HRESULT(ref IADsPropertyEntry self, BSTR bstrName) put_Name;
-				public new function HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ADsType;
-				public new function HRESULT(ref IADsPropertyEntry self, int32 lnADsType) put_ADsType;
-				public new function HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ControlCode;
-				public new function HRESULT(ref IADsPropertyEntry self, int32 lnControlCode) put_ControlCode;
-				public new function HRESULT(ref IADsPropertyEntry self, out VARIANT retval) get_Values;
-				public new function HRESULT(ref IADsPropertyEntry self, VARIANT vValues) put_Values;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, BSTR* retval) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, BSTR bstrName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ADsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, int32 lnADsType) put_ADsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ControlCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, int32 lnControlCode) put_ControlCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, out VARIANT retval) get_Values;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyEntry self, VARIANT vValues) put_Values;
 			}
 		}
 		[CRepr]
@@ -2354,31 +2354,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPropertyValue self) Clear;
-				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_ADsType;
-				public new function HRESULT(ref IADsPropertyValue self, int32 lnADsType) put_ADsType;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_DNString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrDNString) put_DNString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseExactString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrCaseExactString) put_CaseExactString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseIgnoreString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrCaseIgnoreString) put_CaseIgnoreString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_PrintableString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrPrintableString) put_PrintableString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_NumericString;
-				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrNumericString) put_NumericString;
-				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_Boolean;
-				public new function HRESULT(ref IADsPropertyValue self, int32 lnBoolean) put_Boolean;
-				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_Integer;
-				public new function HRESULT(ref IADsPropertyValue self, int32 lnInteger) put_Integer;
-				public new function HRESULT(ref IADsPropertyValue self, out VARIANT retval) get_OctetString;
-				public new function HRESULT(ref IADsPropertyValue self, VARIANT vOctetString) put_OctetString;
-				public new function HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_SecurityDescriptor;
-				public new function HRESULT(ref IADsPropertyValue self, IDispatch* pSecurityDescriptor) put_SecurityDescriptor;
-				public new function HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_LargeInteger;
-				public new function HRESULT(ref IADsPropertyValue self, IDispatch* pLargeInteger) put_LargeInteger;
-				public new function HRESULT(ref IADsPropertyValue self, out double retval) get_UTCTime;
-				public new function HRESULT(ref IADsPropertyValue self, double daUTCTime) put_UTCTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, out int32 retval) get_ADsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, int32 lnADsType) put_ADsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR* retval) get_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR bstrDNString) put_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseExactString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR bstrCaseExactString) put_CaseExactString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseIgnoreString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR bstrCaseIgnoreString) put_CaseIgnoreString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR* retval) get_PrintableString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR bstrPrintableString) put_PrintableString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR* retval) get_NumericString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, BSTR bstrNumericString) put_NumericString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, out int32 retval) get_Boolean;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, int32 lnBoolean) put_Boolean;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, out int32 retval) get_Integer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, int32 lnInteger) put_Integer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, out VARIANT retval) get_OctetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, VARIANT vOctetString) put_OctetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, IDispatch* pSecurityDescriptor) put_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_LargeInteger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, IDispatch* pLargeInteger) put_LargeInteger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, out double retval) get_UTCTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue self, double daUTCTime) put_UTCTime;
 			}
 		}
 		[CRepr]
@@ -2394,8 +2394,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPropertyValue2 self, out int32 lnADsType, out VARIANT pvProp) GetObjectProperty;
-				public new function HRESULT(ref IADsPropertyValue2 self, int32 lnADsType, VARIANT vProp) PutObjectProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue2 self, out int32 lnADsType, out VARIANT pvProp) GetObjectProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPropertyValue2 self, int32 lnADsType, VARIANT vProp) PutObjectProperty;
 			}
 		}
 		[CRepr]
@@ -2414,11 +2414,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrivateDispatch self, int32 dwExtensionId) ADSIInitializeDispatchManager;
-				public new function HRESULT(ref IPrivateDispatch self, out uint32 pctinfo) ADSIGetTypeInfoCount;
-				public new function HRESULT(ref IPrivateDispatch self, uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) ADSIGetTypeInfo;
-				public new function HRESULT(ref IPrivateDispatch self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgdispid) ADSIGetIDsOfNames;
-				public new function HRESULT(ref IPrivateDispatch self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) ADSIInvoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateDispatch self, int32 dwExtensionId) ADSIInitializeDispatchManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateDispatch self, out uint32 pctinfo) ADSIGetTypeInfoCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateDispatch self, uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) ADSIGetTypeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateDispatch self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgdispid) ADSIGetIDsOfNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateDispatch self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) ADSIInvoke;
 			}
 		}
 		[CRepr]
@@ -2434,8 +2434,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrivateUnknown self, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) ADSIInitializeObject;
-				public new function HRESULT(ref IPrivateUnknown self) ADSIReleaseObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateUnknown self, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) ADSIInitializeObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrivateUnknown self) ADSIReleaseObject;
 			}
 		}
 		[CRepr]
@@ -2452,9 +2452,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IADsExtension self, uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) Operate;
-				public new function HRESULT(ref IADsExtension self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgDispid) PrivateGetIDsOfNames;
-				public new function HRESULT(ref IADsExtension self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) PrivateInvoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsExtension self, uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) Operate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsExtension self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgDispid) PrivateGetIDsOfNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsExtension self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) PrivateInvoke;
 			}
 		}
 		[CRepr]
@@ -2469,7 +2469,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsDeleteOps self, int32 lnFlags) DeleteObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDeleteOps self, int32 lnFlags) DeleteObject;
 			}
 		}
 		[CRepr]
@@ -2485,8 +2485,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsNamespaces self, BSTR* retval) get_DefaultContainer;
-				public new function HRESULT(ref IADsNamespaces self, BSTR bstrDefaultContainer) put_DefaultContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNamespaces self, BSTR* retval) get_DefaultContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNamespaces self, BSTR bstrDefaultContainer) put_DefaultContainer;
 			}
 		}
 		[CRepr]
@@ -2530,36 +2530,36 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsClass self, BSTR* retval) get_PrimaryInterface;
-				public new function HRESULT(ref IADsClass self, BSTR* retval) get_CLSID;
-				public new function HRESULT(ref IADsClass self, BSTR bstrCLSID) put_CLSID;
-				public new function HRESULT(ref IADsClass self, BSTR* retval) get_OID;
-				public new function HRESULT(ref IADsClass self, BSTR bstrOID) put_OID;
-				public new function HRESULT(ref IADsClass self, out int16 retval) get_Abstract;
-				public new function HRESULT(ref IADsClass self, int16 fAbstract) put_Abstract;
-				public new function HRESULT(ref IADsClass self, out int16 retval) get_Auxiliary;
-				public new function HRESULT(ref IADsClass self, int16 fAuxiliary) put_Auxiliary;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_MandatoryProperties;
-				public new function HRESULT(ref IADsClass self, VARIANT vMandatoryProperties) put_MandatoryProperties;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_OptionalProperties;
-				public new function HRESULT(ref IADsClass self, VARIANT vOptionalProperties) put_OptionalProperties;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_NamingProperties;
-				public new function HRESULT(ref IADsClass self, VARIANT vNamingProperties) put_NamingProperties;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_DerivedFrom;
-				public new function HRESULT(ref IADsClass self, VARIANT vDerivedFrom) put_DerivedFrom;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_AuxDerivedFrom;
-				public new function HRESULT(ref IADsClass self, VARIANT vAuxDerivedFrom) put_AuxDerivedFrom;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_PossibleSuperiors;
-				public new function HRESULT(ref IADsClass self, VARIANT vPossibleSuperiors) put_PossibleSuperiors;
-				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_Containment;
-				public new function HRESULT(ref IADsClass self, VARIANT vContainment) put_Containment;
-				public new function HRESULT(ref IADsClass self, out int16 retval) get_Container;
-				public new function HRESULT(ref IADsClass self, int16 fContainer) put_Container;
-				public new function HRESULT(ref IADsClass self, BSTR* retval) get_HelpFileName;
-				public new function HRESULT(ref IADsClass self, BSTR bstrHelpFileName) put_HelpFileName;
-				public new function HRESULT(ref IADsClass self, out int32 retval) get_HelpFileContext;
-				public new function HRESULT(ref IADsClass self, int32 lnHelpFileContext) put_HelpFileContext;
-				public new function HRESULT(ref IADsClass self, IADsCollection** ppQualifiers) Qualifiers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR* retval) get_PrimaryInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR* retval) get_CLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR bstrCLSID) put_CLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR* retval) get_OID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR bstrOID) put_OID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out int16 retval) get_Abstract;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, int16 fAbstract) put_Abstract;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out int16 retval) get_Auxiliary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, int16 fAuxiliary) put_Auxiliary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_MandatoryProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vMandatoryProperties) put_MandatoryProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_OptionalProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vOptionalProperties) put_OptionalProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_NamingProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vNamingProperties) put_NamingProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_DerivedFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vDerivedFrom) put_DerivedFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_AuxDerivedFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vAuxDerivedFrom) put_AuxDerivedFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_PossibleSuperiors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vPossibleSuperiors) put_PossibleSuperiors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out VARIANT retval) get_Containment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, VARIANT vContainment) put_Containment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out int16 retval) get_Container;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, int16 fContainer) put_Container;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR* retval) get_HelpFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, BSTR bstrHelpFileName) put_HelpFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, out int32 retval) get_HelpFileContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, int32 lnHelpFileContext) put_HelpFileContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsClass self, IADsCollection** ppQualifiers) Qualifiers;
 			}
 		}
 		[CRepr]
@@ -2584,17 +2584,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsProperty self, BSTR* retval) get_OID;
-				public new function HRESULT(ref IADsProperty self, BSTR bstrOID) put_OID;
-				public new function HRESULT(ref IADsProperty self, BSTR* retval) get_Syntax;
-				public new function HRESULT(ref IADsProperty self, BSTR bstrSyntax) put_Syntax;
-				public new function HRESULT(ref IADsProperty self, out int32 retval) get_MaxRange;
-				public new function HRESULT(ref IADsProperty self, int32 lnMaxRange) put_MaxRange;
-				public new function HRESULT(ref IADsProperty self, out int32 retval) get_MinRange;
-				public new function HRESULT(ref IADsProperty self, int32 lnMinRange) put_MinRange;
-				public new function HRESULT(ref IADsProperty self, out int16 retval) get_MultiValued;
-				public new function HRESULT(ref IADsProperty self, int16 fMultiValued) put_MultiValued;
-				public new function HRESULT(ref IADsProperty self, IADsCollection** ppQualifiers) Qualifiers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, BSTR* retval) get_OID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, BSTR bstrOID) put_OID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, BSTR* retval) get_Syntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, BSTR bstrSyntax) put_Syntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, out int32 retval) get_MaxRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, int32 lnMaxRange) put_MaxRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, out int32 retval) get_MinRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, int32 lnMinRange) put_MinRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, out int16 retval) get_MultiValued;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, int16 fMultiValued) put_MultiValued;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsProperty self, IADsCollection** ppQualifiers) Qualifiers;
 			}
 		}
 		[CRepr]
@@ -2610,8 +2610,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsSyntax self, out int32 retval) get_OleAutoDataType;
-				public new function HRESULT(ref IADsSyntax self, int32 lnOleAutoDataType) put_OleAutoDataType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSyntax self, out int32 retval) get_OleAutoDataType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSyntax self, int32 lnOleAutoDataType) put_OleAutoDataType;
 			}
 		}
 		[CRepr]
@@ -2633,14 +2633,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsLocality self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(ref IADsLocality self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(ref IADsLocality self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(ref IADsLocality self, out VARIANT retval) get_SeeAlso;
-				public new function HRESULT(ref IADsLocality self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR* retval) get_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR bstrLocalityName) put_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR* retval) get_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, out VARIANT retval) get_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLocality self, VARIANT vSeeAlso) put_SeeAlso;
 			}
 		}
 		[CRepr]
@@ -2666,18 +2666,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsO self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsO self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsO self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(ref IADsO self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(ref IADsO self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(ref IADsO self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(ref IADsO self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(ref IADsO self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(ref IADsO self, BSTR* retval) get_FaxNumber;
-				public new function HRESULT(ref IADsO self, BSTR bstrFaxNumber) put_FaxNumber;
-				public new function HRESULT(ref IADsO self, out VARIANT retval) get_SeeAlso;
-				public new function HRESULT(ref IADsO self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR* retval) get_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR bstrLocalityName) put_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR* retval) get_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR* retval) get_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR* retval) get_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, out VARIANT retval) get_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsO self, VARIANT vSeeAlso) put_SeeAlso;
 			}
 		}
 		[CRepr]
@@ -2705,20 +2705,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsOU self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(ref IADsOU self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(ref IADsOU self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(ref IADsOU self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_FaxNumber;
-				public new function HRESULT(ref IADsOU self, BSTR bstrFaxNumber) put_FaxNumber;
-				public new function HRESULT(ref IADsOU self, out VARIANT retval) get_SeeAlso;
-				public new function HRESULT(ref IADsOU self, VARIANT vSeeAlso) put_SeeAlso;
-				public new function HRESULT(ref IADsOU self, BSTR* retval) get_BusinessCategory;
-				public new function HRESULT(ref IADsOU self, BSTR bstrBusinessCategory) put_BusinessCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrLocalityName) put_LocalityName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, out VARIANT retval) get_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR* retval) get_BusinessCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOU self, BSTR bstrBusinessCategory) put_BusinessCategory;
 			}
 		}
 		[CRepr]
@@ -2749,23 +2749,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsDomain self, out int16 retval) get_IsWorkgroup;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordLength;
-				public new function HRESULT(ref IADsDomain self, int32 lnMinPasswordLength) put_MinPasswordLength;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordAge;
-				public new function HRESULT(ref IADsDomain self, int32 lnMinPasswordAge) put_MinPasswordAge;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MaxPasswordAge;
-				public new function HRESULT(ref IADsDomain self, int32 lnMaxPasswordAge) put_MaxPasswordAge;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MaxBadPasswordsAllowed;
-				public new function HRESULT(ref IADsDomain self, int32 lnMaxBadPasswordsAllowed) put_MaxBadPasswordsAllowed;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_PasswordHistoryLength;
-				public new function HRESULT(ref IADsDomain self, int32 lnPasswordHistoryLength) put_PasswordHistoryLength;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_PasswordAttributes;
-				public new function HRESULT(ref IADsDomain self, int32 lnPasswordAttributes) put_PasswordAttributes;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_AutoUnlockInterval;
-				public new function HRESULT(ref IADsDomain self, int32 lnAutoUnlockInterval) put_AutoUnlockInterval;
-				public new function HRESULT(ref IADsDomain self, out int32 retval) get_LockoutObservationInterval;
-				public new function HRESULT(ref IADsDomain self, int32 lnLockoutObservationInterval) put_LockoutObservationInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int16 retval) get_IsWorkgroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnMinPasswordLength) put_MinPasswordLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnMinPasswordAge) put_MinPasswordAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_MaxPasswordAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnMaxPasswordAge) put_MaxPasswordAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_MaxBadPasswordsAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnMaxBadPasswordsAllowed) put_MaxBadPasswordsAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_PasswordHistoryLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnPasswordHistoryLength) put_PasswordHistoryLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_PasswordAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnPasswordAttributes) put_PasswordAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_AutoUnlockInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnAutoUnlockInterval) put_AutoUnlockInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, out int32 retval) get_LockoutObservationInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDomain self, int32 lnLockoutObservationInterval) put_LockoutObservationInterval;
 			}
 		}
 		[CRepr]
@@ -2811,38 +2811,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_ComputerID;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Site;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Location;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrLocation) put_Location;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_PrimaryUser;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrPrimaryUser) put_PrimaryUser;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Owner;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrOwner) put_Owner;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Division;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrDivision) put_Division;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Department;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrDepartment) put_Department;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Role;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrRole) put_Role;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystem;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrOperatingSystem) put_OperatingSystem;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystemVersion;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrOperatingSystemVersion) put_OperatingSystemVersion;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Model;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrModel) put_Model;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Processor;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrProcessor) put_Processor;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_ProcessorCount;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrProcessorCount) put_ProcessorCount;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_MemorySize;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrMemorySize) put_MemorySize;
-				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_StorageCapacity;
-				public new function HRESULT(ref IADsComputer self, BSTR bstrStorageCapacity) put_StorageCapacity;
-				public new function HRESULT(ref IADsComputer self, out VARIANT retval) get_NetAddresses;
-				public new function HRESULT(ref IADsComputer self, VARIANT vNetAddresses) put_NetAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_ComputerID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Site;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Location;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrLocation) put_Location;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_PrimaryUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrPrimaryUser) put_PrimaryUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrOwner) put_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Division;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrDivision) put_Division;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Department;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrDepartment) put_Department;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Role;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrRole) put_Role;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrOperatingSystem) put_OperatingSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrOperatingSystemVersion) put_OperatingSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Model;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrModel) put_Model;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_Processor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrProcessor) put_Processor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_ProcessorCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrProcessorCount) put_ProcessorCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_MemorySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrMemorySize) put_MemorySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR* retval) get_StorageCapacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, BSTR bstrStorageCapacity) put_StorageCapacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, out VARIANT retval) get_NetAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputer self, VARIANT vNetAddresses) put_NetAddresses;
 			}
 		}
 		[CRepr]
@@ -2858,8 +2858,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsComputerOperations self, IDispatch** ppObject) Status;
-				public new function HRESULT(ref IADsComputerOperations self, int16 bReboot) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputerOperations self, IDispatch** ppObject) Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsComputerOperations self, int16 bReboot) Shutdown;
 			}
 		}
 		[CRepr]
@@ -2879,12 +2879,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsGroup self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsGroup self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsGroup self, IADsMembers** ppMembers) Members;
-				public new function HRESULT(ref IADsGroup self, BSTR bstrMember, out int16 bMember) IsMember;
-				public new function HRESULT(ref IADsGroup self, BSTR bstrNewItem) Add;
-				public new function HRESULT(ref IADsGroup self, BSTR bstrItemToBeRemoved) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, IADsMembers** ppMembers) Members;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, BSTR bstrMember, out int16 bMember) IsMember;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, BSTR bstrNewItem) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsGroup self, BSTR bstrItemToBeRemoved) Remove;
 			}
 		}
 		[CRepr]
@@ -2989,97 +2989,97 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_BadLoginAddress;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_BadLoginCount;
-				public new function HRESULT(ref IADsUser self, out double retval) get_LastLogin;
-				public new function HRESULT(ref IADsUser self, out double retval) get_LastLogoff;
-				public new function HRESULT(ref IADsUser self, out double retval) get_LastFailedLogin;
-				public new function HRESULT(ref IADsUser self, out double retval) get_PasswordLastChanged;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsUser self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Division;
-				public new function HRESULT(ref IADsUser self, BSTR bstrDivision) put_Division;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Department;
-				public new function HRESULT(ref IADsUser self, BSTR bstrDepartment) put_Department;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_EmployeeID;
-				public new function HRESULT(ref IADsUser self, BSTR bstrEmployeeID) put_EmployeeID;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_FullName;
-				public new function HRESULT(ref IADsUser self, BSTR bstrFullName) put_FullName;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_FirstName;
-				public new function HRESULT(ref IADsUser self, BSTR bstrFirstName) put_FirstName;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_LastName;
-				public new function HRESULT(ref IADsUser self, BSTR bstrLastName) put_LastName;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_OtherName;
-				public new function HRESULT(ref IADsUser self, BSTR bstrOtherName) put_OtherName;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_NamePrefix;
-				public new function HRESULT(ref IADsUser self, BSTR bstrNamePrefix) put_NamePrefix;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_NameSuffix;
-				public new function HRESULT(ref IADsUser self, BSTR bstrNameSuffix) put_NameSuffix;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Title;
-				public new function HRESULT(ref IADsUser self, BSTR bstrTitle) put_Title;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Manager;
-				public new function HRESULT(ref IADsUser self, BSTR bstrManager) put_Manager;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneHome;
-				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneHome) put_TelephoneHome;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneMobile;
-				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneMobile) put_TelephoneMobile;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneNumber;
-				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephonePager;
-				public new function HRESULT(ref IADsUser self, VARIANT vTelephonePager) put_TelephonePager;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_FaxNumber;
-				public new function HRESULT(ref IADsUser self, VARIANT vFaxNumber) put_FaxNumber;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_OfficeLocations;
-				public new function HRESULT(ref IADsUser self, VARIANT vOfficeLocations) put_OfficeLocations;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_PostalAddresses;
-				public new function HRESULT(ref IADsUser self, VARIANT vPostalAddresses) put_PostalAddresses;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_PostalCodes;
-				public new function HRESULT(ref IADsUser self, VARIANT vPostalCodes) put_PostalCodes;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_SeeAlso;
-				public new function HRESULT(ref IADsUser self, VARIANT vSeeAlso) put_SeeAlso;
-				public new function HRESULT(ref IADsUser self, out int16 retval) get_AccountDisabled;
-				public new function HRESULT(ref IADsUser self, int16 fAccountDisabled) put_AccountDisabled;
-				public new function HRESULT(ref IADsUser self, out double retval) get_AccountExpirationDate;
-				public new function HRESULT(ref IADsUser self, double daAccountExpirationDate) put_AccountExpirationDate;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsAllowed;
-				public new function HRESULT(ref IADsUser self, int32 lnGraceLoginsAllowed) put_GraceLoginsAllowed;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsRemaining;
-				public new function HRESULT(ref IADsUser self, int32 lnGraceLoginsRemaining) put_GraceLoginsRemaining;
-				public new function HRESULT(ref IADsUser self, out int16 retval) get_IsAccountLocked;
-				public new function HRESULT(ref IADsUser self, int16 fIsAccountLocked) put_IsAccountLocked;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_LoginHours;
-				public new function HRESULT(ref IADsUser self, VARIANT vLoginHours) put_LoginHours;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_LoginWorkstations;
-				public new function HRESULT(ref IADsUser self, VARIANT vLoginWorkstations) put_LoginWorkstations;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_MaxLogins;
-				public new function HRESULT(ref IADsUser self, int32 lnMaxLogins) put_MaxLogins;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_MaxStorage;
-				public new function HRESULT(ref IADsUser self, int32 lnMaxStorage) put_MaxStorage;
-				public new function HRESULT(ref IADsUser self, out double retval) get_PasswordExpirationDate;
-				public new function HRESULT(ref IADsUser self, double daPasswordExpirationDate) put_PasswordExpirationDate;
-				public new function HRESULT(ref IADsUser self, out int32 retval) get_PasswordMinimumLength;
-				public new function HRESULT(ref IADsUser self, int32 lnPasswordMinimumLength) put_PasswordMinimumLength;
-				public new function HRESULT(ref IADsUser self, out int16 retval) get_PasswordRequired;
-				public new function HRESULT(ref IADsUser self, int16 fPasswordRequired) put_PasswordRequired;
-				public new function HRESULT(ref IADsUser self, out int16 retval) get_RequireUniquePassword;
-				public new function HRESULT(ref IADsUser self, int16 fRequireUniquePassword) put_RequireUniquePassword;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_EmailAddress;
-				public new function HRESULT(ref IADsUser self, BSTR bstrEmailAddress) put_EmailAddress;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_HomeDirectory;
-				public new function HRESULT(ref IADsUser self, BSTR bstrHomeDirectory) put_HomeDirectory;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_Languages;
-				public new function HRESULT(ref IADsUser self, VARIANT vLanguages) put_Languages;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Profile;
-				public new function HRESULT(ref IADsUser self, BSTR bstrProfile) put_Profile;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_LoginScript;
-				public new function HRESULT(ref IADsUser self, BSTR bstrLoginScript) put_LoginScript;
-				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_Picture;
-				public new function HRESULT(ref IADsUser self, VARIANT vPicture) put_Picture;
-				public new function HRESULT(ref IADsUser self, BSTR* retval) get_HomePage;
-				public new function HRESULT(ref IADsUser self, BSTR bstrHomePage) put_HomePage;
-				public new function HRESULT(ref IADsUser self, IADsMembers** ppGroups) Groups;
-				public new function HRESULT(ref IADsUser self, BSTR NewPassword) SetPassword;
-				public new function HRESULT(ref IADsUser self, BSTR bstrOldPassword, BSTR bstrNewPassword) ChangePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_BadLoginAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_BadLoginCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_LastLogin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_LastLogoff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_LastFailedLogin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_PasswordLastChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Division;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrDivision) put_Division;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Department;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrDepartment) put_Department;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_EmployeeID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrEmployeeID) put_EmployeeID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_FullName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrFullName) put_FullName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_FirstName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrFirstName) put_FirstName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_LastName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrLastName) put_LastName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_OtherName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrOtherName) put_OtherName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_NamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrNamePrefix) put_NamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_NameSuffix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrNameSuffix) put_NameSuffix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrTitle) put_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Manager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrManager) put_Manager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneHome;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vTelephoneHome) put_TelephoneHome;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneMobile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vTelephoneMobile) put_TelephoneMobile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vTelephoneNumber) put_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_TelephonePager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vTelephonePager) put_TelephonePager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vFaxNumber) put_FaxNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_OfficeLocations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vOfficeLocations) put_OfficeLocations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_PostalAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vPostalAddresses) put_PostalAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_PostalCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vPostalCodes) put_PostalCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int16 retval) get_AccountDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int16 fAccountDisabled) put_AccountDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_AccountExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, double daAccountExpirationDate) put_AccountExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int32 lnGraceLoginsAllowed) put_GraceLoginsAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsRemaining;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int32 lnGraceLoginsRemaining) put_GraceLoginsRemaining;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int16 retval) get_IsAccountLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int16 fIsAccountLocked) put_IsAccountLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_LoginHours;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vLoginHours) put_LoginHours;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_LoginWorkstations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vLoginWorkstations) put_LoginWorkstations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_MaxLogins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int32 lnMaxLogins) put_MaxLogins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_MaxStorage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int32 lnMaxStorage) put_MaxStorage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out double retval) get_PasswordExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, double daPasswordExpirationDate) put_PasswordExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int32 retval) get_PasswordMinimumLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int32 lnPasswordMinimumLength) put_PasswordMinimumLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int16 retval) get_PasswordRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int16 fPasswordRequired) put_PasswordRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out int16 retval) get_RequireUniquePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, int16 fRequireUniquePassword) put_RequireUniquePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_EmailAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrEmailAddress) put_EmailAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_HomeDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrHomeDirectory) put_HomeDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_Languages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vLanguages) put_Languages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrProfile) put_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_LoginScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrLoginScript) put_LoginScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, out VARIANT retval) get_Picture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, VARIANT vPicture) put_Picture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR* retval) get_HomePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrHomePage) put_HomePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, IADsMembers** ppGroups) Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR NewPassword) SetPassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsUser self, BSTR bstrOldPassword, BSTR bstrNewPassword) ChangePassword;
 			}
 		}
 		[CRepr]
@@ -3119,32 +3119,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrinterPath;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrPrinterPath) put_PrinterPath;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Model;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrModel) put_Model;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Datatype;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrDatatype) put_Datatype;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrintProcessor;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrPrintProcessor) put_PrintProcessor;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Location;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrLocation) put_Location;
-				public new function HRESULT(ref IADsPrintQueue self, out double retval) get_StartTime;
-				public new function HRESULT(ref IADsPrintQueue self, double daStartTime) put_StartTime;
-				public new function HRESULT(ref IADsPrintQueue self, out double retval) get_UntilTime;
-				public new function HRESULT(ref IADsPrintQueue self, double daUntilTime) put_UntilTime;
-				public new function HRESULT(ref IADsPrintQueue self, out int32 retval) get_DefaultJobPriority;
-				public new function HRESULT(ref IADsPrintQueue self, int32 lnDefaultJobPriority) put_DefaultJobPriority;
-				public new function HRESULT(ref IADsPrintQueue self, out int32 retval) get_Priority;
-				public new function HRESULT(ref IADsPrintQueue self, int32 lnPriority) put_Priority;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_BannerPage;
-				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrBannerPage) put_BannerPage;
-				public new function HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_PrintDevices;
-				public new function HRESULT(ref IADsPrintQueue self, VARIANT vPrintDevices) put_PrintDevices;
-				public new function HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_NetAddresses;
-				public new function HRESULT(ref IADsPrintQueue self, VARIANT vNetAddresses) put_NetAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrinterPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrPrinterPath) put_PrinterPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Model;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrModel) put_Model;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Datatype;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrDatatype) put_Datatype;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrintProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrPrintProcessor) put_PrintProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Location;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrLocation) put_Location;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out double retval) get_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, double daStartTime) put_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out double retval) get_UntilTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, double daUntilTime) put_UntilTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out int32 retval) get_DefaultJobPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, int32 lnDefaultJobPriority) put_DefaultJobPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out int32 retval) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, int32 lnPriority) put_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR* retval) get_BannerPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, BSTR bstrBannerPage) put_BannerPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_PrintDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, VARIANT vPrintDevices) put_PrintDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_NetAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueue self, VARIANT vNetAddresses) put_NetAddresses;
 			}
 		}
 		[CRepr]
@@ -3163,11 +3163,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsPrintQueueOperations self, out int32 retval) get_Status;
-				public new function HRESULT(ref IADsPrintQueueOperations self, IADsCollection** pObject) PrintJobs;
-				public new function HRESULT(ref IADsPrintQueueOperations self) Pause;
-				public new function HRESULT(ref IADsPrintQueueOperations self) Resume;
-				public new function HRESULT(ref IADsPrintQueueOperations self) Purge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueueOperations self, out int32 retval) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueueOperations self, IADsCollection** pObject) PrintJobs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueueOperations self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueueOperations self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintQueueOperations self) Purge;
 			}
 		}
 		[CRepr]
@@ -3199,24 +3199,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_HostPrintQueue;
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_User;
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_UserPath;
-				public new function HRESULT(ref IADsPrintJob self, out double retval) get_TimeSubmitted;
-				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_TotalPages;
-				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_Size;
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsPrintJob self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_Priority;
-				public new function HRESULT(ref IADsPrintJob self, int32 lnPriority) put_Priority;
-				public new function HRESULT(ref IADsPrintJob self, out double retval) get_StartTime;
-				public new function HRESULT(ref IADsPrintJob self, double daStartTime) put_StartTime;
-				public new function HRESULT(ref IADsPrintJob self, out double retval) get_UntilTime;
-				public new function HRESULT(ref IADsPrintJob self, double daUntilTime) put_UntilTime;
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_Notify;
-				public new function HRESULT(ref IADsPrintJob self, BSTR bstrNotify) put_Notify;
-				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_NotifyPath;
-				public new function HRESULT(ref IADsPrintJob self, BSTR bstrNotifyPath) put_NotifyPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_HostPrintQueue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_User;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_UserPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out double retval) get_TimeSubmitted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out int32 retval) get_TotalPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out int32 retval) get_Size;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out int32 retval) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, int32 lnPriority) put_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out double retval) get_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, double daStartTime) put_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, out double retval) get_UntilTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, double daUntilTime) put_UntilTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR bstrNotify) put_Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR* retval) get_NotifyPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJob self, BSTR bstrNotifyPath) put_NotifyPath;
 			}
 		}
 		[CRepr]
@@ -3237,13 +3237,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Status;
-				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_TimeElapsed;
-				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_PagesPrinted;
-				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Position;
-				public new function HRESULT(ref IADsPrintJobOperations self, int32 lnPosition) put_Position;
-				public new function HRESULT(ref IADsPrintJobOperations self) Pause;
-				public new function HRESULT(ref IADsPrintJobOperations self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_TimeElapsed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_PagesPrinted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Position;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self, int32 lnPosition) put_Position;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPrintJobOperations self) Resume;
 			}
 		}
 		[CRepr]
@@ -3281,30 +3281,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_HostComputer;
-				public new function HRESULT(ref IADsService self, BSTR bstrHostComputer) put_HostComputer;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_DisplayName;
-				public new function HRESULT(ref IADsService self, BSTR bstrDisplayName) put_DisplayName;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_Version;
-				public new function HRESULT(ref IADsService self, BSTR bstrVersion) put_Version;
-				public new function HRESULT(ref IADsService self, out int32 retval) get_ServiceType;
-				public new function HRESULT(ref IADsService self, int32 lnServiceType) put_ServiceType;
-				public new function HRESULT(ref IADsService self, out int32 retval) get_StartType;
-				public new function HRESULT(ref IADsService self, int32 lnStartType) put_StartType;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_Path;
-				public new function HRESULT(ref IADsService self, BSTR bstrPath) put_Path;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_StartupParameters;
-				public new function HRESULT(ref IADsService self, BSTR bstrStartupParameters) put_StartupParameters;
-				public new function HRESULT(ref IADsService self, out int32 retval) get_ErrorControl;
-				public new function HRESULT(ref IADsService self, int32 lnErrorControl) put_ErrorControl;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_LoadOrderGroup;
-				public new function HRESULT(ref IADsService self, BSTR bstrLoadOrderGroup) put_LoadOrderGroup;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountName;
-				public new function HRESULT(ref IADsService self, BSTR bstrServiceAccountName) put_ServiceAccountName;
-				public new function HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountPath;
-				public new function HRESULT(ref IADsService self, BSTR bstrServiceAccountPath) put_ServiceAccountPath;
-				public new function HRESULT(ref IADsService self, out VARIANT retval) get_Dependencies;
-				public new function HRESULT(ref IADsService self, VARIANT vDependencies) put_Dependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_HostComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrHostComputer) put_HostComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrDisplayName) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrVersion) put_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, out int32 retval) get_ServiceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, int32 lnServiceType) put_ServiceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, out int32 retval) get_StartType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, int32 lnStartType) put_StartType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrPath) put_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_StartupParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrStartupParameters) put_StartupParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, out int32 retval) get_ErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, int32 lnErrorControl) put_ErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_LoadOrderGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrLoadOrderGroup) put_LoadOrderGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrServiceAccountName) put_ServiceAccountName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, BSTR bstrServiceAccountPath) put_ServiceAccountPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, out VARIANT retval) get_Dependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsService self, VARIANT vDependencies) put_Dependencies;
 			}
 		}
 		[CRepr]
@@ -3324,12 +3324,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsServiceOperations self, out int32 retval) get_Status;
-				public new function HRESULT(ref IADsServiceOperations self) Start;
-				public new function HRESULT(ref IADsServiceOperations self) Stop;
-				public new function HRESULT(ref IADsServiceOperations self) Pause;
-				public new function HRESULT(ref IADsServiceOperations self) Continue;
-				public new function HRESULT(ref IADsServiceOperations self, BSTR bstrNewPassword) SetPassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self, out int32 retval) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self) Continue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsServiceOperations self, BSTR bstrNewPassword) SetPassword;
 			}
 		}
 		[CRepr]
@@ -3347,10 +3347,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADsService.VTable
 			{
-				public new function HRESULT(ref IADsFileService self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsFileService self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsFileService self, out int32 retval) get_MaxUserCount;
-				public new function HRESULT(ref IADsFileService self, int32 lnMaxUserCount) put_MaxUserCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileService self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileService self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileService self, out int32 retval) get_MaxUserCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileService self, int32 lnMaxUserCount) put_MaxUserCount;
 			}
 		}
 		[CRepr]
@@ -3366,8 +3366,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADsServiceOperations.VTable
 			{
-				public new function HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppSessions) Sessions;
-				public new function HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppResources) Resources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppSessions) Sessions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppResources) Resources;
 			}
 		}
 		[CRepr]
@@ -3390,15 +3390,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsFileShare self, out int32 retval) get_CurrentUserCount;
-				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_Description;
-				public new function HRESULT(ref IADsFileShare self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_HostComputer;
-				public new function HRESULT(ref IADsFileShare self, BSTR bstrHostComputer) put_HostComputer;
-				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_Path;
-				public new function HRESULT(ref IADsFileShare self, BSTR bstrPath) put_Path;
-				public new function HRESULT(ref IADsFileShare self, out int32 retval) get_MaxUserCount;
-				public new function HRESULT(ref IADsFileShare self, int32 lnMaxUserCount) put_MaxUserCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, out int32 retval) get_CurrentUserCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR* retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR* retval) get_HostComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR bstrHostComputer) put_HostComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR* retval) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, BSTR bstrPath) put_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, out int32 retval) get_MaxUserCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFileShare self, int32 lnMaxUserCount) put_MaxUserCount;
 			}
 		}
 		[CRepr]
@@ -3418,12 +3418,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsSession self, BSTR* retval) get_User;
-				public new function HRESULT(ref IADsSession self, BSTR* retval) get_UserPath;
-				public new function HRESULT(ref IADsSession self, BSTR* retval) get_Computer;
-				public new function HRESULT(ref IADsSession self, BSTR* retval) get_ComputerPath;
-				public new function HRESULT(ref IADsSession self, out int32 retval) get_ConnectTime;
-				public new function HRESULT(ref IADsSession self, out int32 retval) get_IdleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, BSTR* retval) get_User;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, BSTR* retval) get_UserPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, BSTR* retval) get_Computer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, BSTR* retval) get_ComputerPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, out int32 retval) get_ConnectTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSession self, out int32 retval) get_IdleTime;
 			}
 		}
 		[CRepr]
@@ -3441,10 +3441,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(ref IADsResource self, BSTR* retval) get_User;
-				public new function HRESULT(ref IADsResource self, BSTR* retval) get_UserPath;
-				public new function HRESULT(ref IADsResource self, BSTR* retval) get_Path;
-				public new function HRESULT(ref IADsResource self, out int32 retval) get_LockCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsResource self, BSTR* retval) get_User;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsResource self, BSTR* retval) get_UserPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsResource self, BSTR* retval) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsResource self, out int32 retval) get_LockCount;
 			}
 		}
 		[CRepr]
@@ -3459,7 +3459,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsOpenDSObject self, BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) OpenDSObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOpenDSObject self, BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) OpenDSObject;
 			}
 		}
 		[CRepr]
@@ -3478,11 +3478,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectoryObject self, ADS_OBJECT_INFO** ppObjInfo) GetObjectInformation;
-				public new function HRESULT(ref IDirectoryObject self, PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, out uint32 pdwNumAttributesReturned) GetObjectAttributes;
-				public new function HRESULT(ref IDirectoryObject self, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, out uint32 pdwNumAttributesModified) SetObjectAttributes;
-				public new function HRESULT(ref IDirectoryObject self, PWSTR pszRDNName, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) CreateDSObject;
-				public new function HRESULT(ref IDirectoryObject self, PWSTR pszRDNName) DeleteDSObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectoryObject self, ADS_OBJECT_INFO** ppObjInfo) GetObjectInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectoryObject self, PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, out uint32 pdwNumAttributesReturned) GetObjectAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectoryObject self, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, out uint32 pdwNumAttributesModified) SetObjectAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectoryObject self, PWSTR pszRDNName, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) CreateDSObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectoryObject self, PWSTR pszRDNName) DeleteDSObject;
 			}
 		}
 		[CRepr]
@@ -3506,16 +3506,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectorySearch self, ref ads_searchpref_info pSearchPrefs, uint32 dwNumPrefs) SetSearchPreference;
-				public new function HRESULT(ref IDirectorySearch self, PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) ExecuteSearch;
-				public new function HRESULT(ref IDirectorySearch self, int phSearchResult) AbandonSearch;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetFirstRow;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetNextRow;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetPreviousRow;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchHandle, PWSTR* ppszColumnName) GetNextColumnName;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchResult, PWSTR szColumnName, out ads_search_column pSearchColumn) GetColumn;
-				public new function HRESULT(ref IDirectorySearch self, ref ads_search_column pSearchColumn) FreeColumn;
-				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) CloseSearchHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, ref ads_searchpref_info pSearchPrefs, uint32 dwNumPrefs) SetSearchPreference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) ExecuteSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int phSearchResult) AbandonSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchResult) GetFirstRow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchResult) GetNextRow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchResult) GetPreviousRow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchHandle, PWSTR* ppszColumnName) GetNextColumnName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchResult, PWSTR szColumnName, out ads_search_column pSearchColumn) GetColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, ref ads_search_column pSearchColumn) FreeColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySearch self, int hSearchResult) CloseSearchHandle;
 			}
 		}
 		[CRepr]
@@ -3537,14 +3537,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, ref uint32 pdwNumAttributes) EnumAttributes;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) CreateAttributeDefinition;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) WriteAttributeDefinition;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName) DeleteAttributeDefinition;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, ref uint32 pdwNumClasses) EnumClasses;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) WriteClassDefinition;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) CreateClassDefinition;
-				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName) DeleteClassDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, ref uint32 pdwNumAttributes) EnumAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) CreateAttributeDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) WriteAttributeDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName) DeleteAttributeDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, ref uint32 pdwNumClasses) EnumClasses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) WriteClassDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) CreateClassDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName) DeleteClassDefinition;
 			}
 		}
 		[CRepr]
@@ -3562,10 +3562,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IADsAggregatee self, IUnknown* pOuterUnknown) ConnectAsAggregatee;
-				public new function HRESULT(ref IADsAggregatee self) DisconnectAsAggregatee;
-				public new function HRESULT(ref IADsAggregatee self, in Guid riid) RelinquishInterface;
-				public new function HRESULT(ref IADsAggregatee self, in Guid riid) RestoreInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregatee self, IUnknown* pOuterUnknown) ConnectAsAggregatee;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregatee self) DisconnectAsAggregatee;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregatee self, in Guid riid) RelinquishInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregatee self, in Guid riid) RestoreInterface;
 			}
 		}
 		[CRepr]
@@ -3581,8 +3581,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IADsAggregator self, IUnknown* pAggregatee) ConnectAsAggregator;
-				public new function HRESULT(ref IADsAggregator self) DisconnectAsAggregator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregator self, IUnknown* pAggregatee) ConnectAsAggregator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAggregator self) DisconnectAsAggregator;
 			}
 		}
 		[CRepr]
@@ -3610,20 +3610,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AccessMask;
-				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAccessMask) put_AccessMask;
-				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceType;
-				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAceType) put_AceType;
-				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceFlags;
-				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAceFlags) put_AceFlags;
-				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_Flags;
-				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnFlags) put_Flags;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_ObjectType;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrObjectType) put_ObjectType;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_InheritedObjectType;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrInheritedObjectType) put_InheritedObjectType;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_Trustee;
-				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrTrustee) put_Trustee;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AccessMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, int32 lnAccessMask) put_AccessMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, int32 lnAceType) put_AceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, int32 lnAceFlags) put_AceFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, int32 lnFlags) put_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_ObjectType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR bstrObjectType) put_ObjectType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_InheritedObjectType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR bstrInheritedObjectType) put_InheritedObjectType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_Trustee;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlEntry self, BSTR bstrTrustee) put_Trustee;
 			}
 		}
 		[CRepr]
@@ -3645,14 +3645,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsAccessControlList self, out int32 retval) get_AclRevision;
-				public new function HRESULT(ref IADsAccessControlList self, int32 lnAclRevision) put_AclRevision;
-				public new function HRESULT(ref IADsAccessControlList self, out int32 retval) get_AceCount;
-				public new function HRESULT(ref IADsAccessControlList self, int32 lnAceCount) put_AceCount;
-				public new function HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) AddAce;
-				public new function HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) RemoveAce;
-				public new function HRESULT(ref IADsAccessControlList self, IDispatch** ppAccessControlList) CopyAccessList;
-				public new function HRESULT(ref IADsAccessControlList self, IUnknown** retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, out int32 retval) get_AclRevision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, int32 lnAclRevision) put_AclRevision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, out int32 retval) get_AceCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, int32 lnAceCount) put_AceCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) AddAce;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) RemoveAce;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, IDispatch** ppAccessControlList) CopyAccessList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAccessControlList self, IUnknown** retval) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -3687,27 +3687,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Revision;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int32 lnRevision) put_Revision;
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Control;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int32 lnControl) put_Control;
-				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Owner;
-				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR bstrOwner) put_Owner;
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_OwnerDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fOwnerDefaulted) put_OwnerDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Group;
-				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR bstrGroup) put_Group;
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_GroupDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fGroupDefaulted) put_GroupDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_DiscretionaryAcl;
-				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch* pDiscretionaryAcl) put_DiscretionaryAcl;
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_DaclDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fDaclDefaulted) put_DaclDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_SystemAcl;
-				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch* pSystemAcl) put_SystemAcl;
-				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_SaclDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fSaclDefaulted) put_SaclDefaulted;
-				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** ppSecurityDescriptor) CopySecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Revision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int32 lnRevision) put_Revision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Control;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int32 lnControl) put_Control;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, BSTR bstrOwner) put_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_OwnerDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int16 fOwnerDefaulted) put_OwnerDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Group;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, BSTR bstrGroup) put_Group;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_GroupDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int16 fGroupDefaulted) put_GroupDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_DiscretionaryAcl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, IDispatch* pDiscretionaryAcl) put_DiscretionaryAcl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_DaclDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int16 fDaclDefaulted) put_DaclDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_SystemAcl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, IDispatch* pSystemAcl) put_SystemAcl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_SaclDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, int16 fSaclDefaulted) put_SaclDefaulted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityDescriptor self, IDispatch** ppSecurityDescriptor) CopySecurityDescriptor;
 			}
 		}
 		[CRepr]
@@ -3725,10 +3725,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsLargeInteger self, out int32 retval) get_HighPart;
-				public new function HRESULT(ref IADsLargeInteger self, int32 lnHighPart) put_HighPart;
-				public new function HRESULT(ref IADsLargeInteger self, out int32 retval) get_LowPart;
-				public new function HRESULT(ref IADsLargeInteger self, int32 lnLowPart) put_LowPart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLargeInteger self, out int32 retval) get_HighPart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLargeInteger self, int32 lnHighPart) put_HighPart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLargeInteger self, out int32 retval) get_LowPart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsLargeInteger self, int32 lnLowPart) put_LowPart;
 			}
 		}
 		[CRepr]
@@ -3749,13 +3749,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnChaseReferral) put_ChaseReferral;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Init;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) InitEx;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Set;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, BSTR* pbstrADsPath) Get;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, VARIANT pvar) SetEx;
-				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, out VARIANT pvar) GetEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnChaseReferral) put_ChaseReferral;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) InitEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnFormatType, BSTR* pbstrADsPath) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnFormatType, VARIANT pvar) SetEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNameTranslate self, int32 lnFormatType, out VARIANT pvar) GetEx;
 			}
 		}
 		[CRepr]
@@ -3771,8 +3771,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsCaseIgnoreList self, out VARIANT retval) get_CaseIgnoreList;
-				public new function HRESULT(ref IADsCaseIgnoreList self, VARIANT vCaseIgnoreList) put_CaseIgnoreList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCaseIgnoreList self, out VARIANT retval) get_CaseIgnoreList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsCaseIgnoreList self, VARIANT vCaseIgnoreList) put_CaseIgnoreList;
 			}
 		}
 		[CRepr]
@@ -3790,10 +3790,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsFaxNumber self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(ref IADsFaxNumber self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(ref IADsFaxNumber self, out VARIANT retval) get_Parameters;
-				public new function HRESULT(ref IADsFaxNumber self, VARIANT vParameters) put_Parameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFaxNumber self, BSTR* retval) get_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFaxNumber self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFaxNumber self, out VARIANT retval) get_Parameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsFaxNumber self, VARIANT vParameters) put_Parameters;
 			}
 		}
 		[CRepr]
@@ -3811,10 +3811,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsNetAddress self, out int32 retval) get_AddressType;
-				public new function HRESULT(ref IADsNetAddress self, int32 lnAddressType) put_AddressType;
-				public new function HRESULT(ref IADsNetAddress self, out VARIANT retval) get_Address;
-				public new function HRESULT(ref IADsNetAddress self, VARIANT vAddress) put_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNetAddress self, out int32 retval) get_AddressType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNetAddress self, int32 lnAddressType) put_AddressType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNetAddress self, out VARIANT retval) get_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsNetAddress self, VARIANT vAddress) put_Address;
 			}
 		}
 		[CRepr]
@@ -3830,8 +3830,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsOctetList self, out VARIANT retval) get_OctetList;
-				public new function HRESULT(ref IADsOctetList self, VARIANT vOctetList) put_OctetList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOctetList self, out VARIANT retval) get_OctetList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsOctetList self, VARIANT vOctetList) put_OctetList;
 			}
 		}
 		[CRepr]
@@ -3849,10 +3849,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsEmail self, out int32 retval) get_Type;
-				public new function HRESULT(ref IADsEmail self, int32 lnType) put_Type;
-				public new function HRESULT(ref IADsEmail self, BSTR* retval) get_Address;
-				public new function HRESULT(ref IADsEmail self, BSTR bstrAddress) put_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsEmail self, out int32 retval) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsEmail self, int32 lnType) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsEmail self, BSTR* retval) get_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsEmail self, BSTR bstrAddress) put_Address;
 			}
 		}
 		[CRepr]
@@ -3872,12 +3872,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPath self, out int32 retval) get_Type;
-				public new function HRESULT(ref IADsPath self, int32 lnType) put_Type;
-				public new function HRESULT(ref IADsPath self, BSTR* retval) get_VolumeName;
-				public new function HRESULT(ref IADsPath self, BSTR bstrVolumeName) put_VolumeName;
-				public new function HRESULT(ref IADsPath self, BSTR* retval) get_Path;
-				public new function HRESULT(ref IADsPath self, BSTR bstrPath) put_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, out int32 retval) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, int32 lnType) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, BSTR* retval) get_VolumeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, BSTR bstrVolumeName) put_VolumeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, BSTR* retval) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPath self, BSTR bstrPath) put_Path;
 			}
 		}
 		[CRepr]
@@ -3901,16 +3901,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsReplicaPointer self, BSTR* retval) get_ServerName;
-				public new function HRESULT(ref IADsReplicaPointer self, BSTR bstrServerName) put_ServerName;
-				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaType;
-				public new function HRESULT(ref IADsReplicaPointer self, int32 lnReplicaType) put_ReplicaType;
-				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaNumber;
-				public new function HRESULT(ref IADsReplicaPointer self, int32 lnReplicaNumber) put_ReplicaNumber;
-				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_Count;
-				public new function HRESULT(ref IADsReplicaPointer self, int32 lnCount) put_Count;
-				public new function HRESULT(ref IADsReplicaPointer self, out VARIANT retval) get_ReplicaAddressHints;
-				public new function HRESULT(ref IADsReplicaPointer self, VARIANT vReplicaAddressHints) put_ReplicaAddressHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, BSTR* retval) get_ServerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, BSTR bstrServerName) put_ServerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, int32 lnReplicaType) put_ReplicaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, int32 lnReplicaNumber) put_ReplicaNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, int32 lnCount) put_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, out VARIANT retval) get_ReplicaAddressHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsReplicaPointer self, VARIANT vReplicaAddressHints) put_ReplicaAddressHints;
 			}
 		}
 		[CRepr]
@@ -3931,13 +3931,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsAcl self, BSTR* retval) get_ProtectedAttrName;
-				public new function HRESULT(ref IADsAcl self, BSTR bstrProtectedAttrName) put_ProtectedAttrName;
-				public new function HRESULT(ref IADsAcl self, BSTR* retval) get_SubjectName;
-				public new function HRESULT(ref IADsAcl self, BSTR bstrSubjectName) put_SubjectName;
-				public new function HRESULT(ref IADsAcl self, out int32 retval) get_Privileges;
-				public new function HRESULT(ref IADsAcl self, int32 lnPrivileges) put_Privileges;
-				public new function HRESULT(ref IADsAcl self, IDispatch** ppAcl) CopyAcl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, BSTR* retval) get_ProtectedAttrName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, BSTR bstrProtectedAttrName) put_ProtectedAttrName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, BSTR* retval) get_SubjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, BSTR bstrSubjectName) put_SubjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, out int32 retval) get_Privileges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, int32 lnPrivileges) put_Privileges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsAcl self, IDispatch** ppAcl) CopyAcl;
 			}
 		}
 		[CRepr]
@@ -3955,10 +3955,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsTimestamp self, out int32 retval) get_WholeSeconds;
-				public new function HRESULT(ref IADsTimestamp self, int32 lnWholeSeconds) put_WholeSeconds;
-				public new function HRESULT(ref IADsTimestamp self, out int32 retval) get_EventID;
-				public new function HRESULT(ref IADsTimestamp self, int32 lnEventID) put_EventID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTimestamp self, out int32 retval) get_WholeSeconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTimestamp self, int32 lnWholeSeconds) put_WholeSeconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTimestamp self, out int32 retval) get_EventID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTimestamp self, int32 lnEventID) put_EventID;
 			}
 		}
 		[CRepr]
@@ -3974,8 +3974,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPostalAddress self, out VARIANT retval) get_PostalAddress;
-				public new function HRESULT(ref IADsPostalAddress self, VARIANT vPostalAddress) put_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPostalAddress self, out VARIANT retval) get_PostalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPostalAddress self, VARIANT vPostalAddress) put_PostalAddress;
 			}
 		}
 		[CRepr]
@@ -3993,10 +3993,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsBackLink self, out int32 retval) get_RemoteID;
-				public new function HRESULT(ref IADsBackLink self, int32 lnRemoteID) put_RemoteID;
-				public new function HRESULT(ref IADsBackLink self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(ref IADsBackLink self, BSTR bstrObjectName) put_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsBackLink self, out int32 retval) get_RemoteID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsBackLink self, int32 lnRemoteID) put_RemoteID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsBackLink self, BSTR* retval) get_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsBackLink self, BSTR bstrObjectName) put_ObjectName;
 			}
 		}
 		[CRepr]
@@ -4016,12 +4016,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsTypedName self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(ref IADsTypedName self, BSTR bstrObjectName) put_ObjectName;
-				public new function HRESULT(ref IADsTypedName self, out int32 retval) get_Level;
-				public new function HRESULT(ref IADsTypedName self, int32 lnLevel) put_Level;
-				public new function HRESULT(ref IADsTypedName self, out int32 retval) get_Interval;
-				public new function HRESULT(ref IADsTypedName self, int32 lnInterval) put_Interval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, BSTR* retval) get_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, BSTR bstrObjectName) put_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, out int32 retval) get_Level;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, int32 lnLevel) put_Level;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, out int32 retval) get_Interval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsTypedName self, int32 lnInterval) put_Interval;
 			}
 		}
 		[CRepr]
@@ -4039,10 +4039,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsHold self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(ref IADsHold self, BSTR bstrObjectName) put_ObjectName;
-				public new function HRESULT(ref IADsHold self, out int32 retval) get_Amount;
-				public new function HRESULT(ref IADsHold self, int32 lnAmount) put_Amount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsHold self, BSTR* retval) get_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsHold self, BSTR bstrObjectName) put_ObjectName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsHold self, out int32 retval) get_Amount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsHold self, int32 lnAmount) put_Amount;
 			}
 		}
 		[CRepr]
@@ -4058,8 +4058,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsObjectOptions self, int32 lnOption, out VARIANT pvValue) GetOption;
-				public new function HRESULT(ref IADsObjectOptions self, int32 lnOption, VARIANT vValue) SetOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsObjectOptions self, int32 lnOption, out VARIANT pvValue) GetOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsObjectOptions self, int32 lnOption, VARIANT vValue) SetOption;
 			}
 		}
 		[CRepr]
@@ -4084,17 +4084,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsPathname self, BSTR bstrADsPath, int32 lnSetType) Set;
-				public new function HRESULT(ref IADsPathname self, int32 lnDisplayType) SetDisplayType;
-				public new function HRESULT(ref IADsPathname self, int32 lnFormatType, BSTR* pbstrADsPath) Retrieve;
-				public new function HRESULT(ref IADsPathname self, out int32 plnNumPathElements) GetNumElements;
-				public new function HRESULT(ref IADsPathname self, int32 lnElementIndex, BSTR* pbstrElement) GetElement;
-				public new function HRESULT(ref IADsPathname self, BSTR bstrLeafElement) AddLeafElement;
-				public new function HRESULT(ref IADsPathname self) RemoveLeafElement;
-				public new function HRESULT(ref IADsPathname self, IDispatch** ppAdsPath) CopyPath;
-				public new function HRESULT(ref IADsPathname self, int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) GetEscapedElement;
-				public new function HRESULT(ref IADsPathname self, out int32 retval) get_EscapedMode;
-				public new function HRESULT(ref IADsPathname self, int32 lnEscapedMode) put_EscapedMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, BSTR bstrADsPath, int32 lnSetType) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, int32 lnDisplayType) SetDisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, int32 lnFormatType, BSTR* pbstrADsPath) Retrieve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, out int32 plnNumPathElements) GetNumElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, int32 lnElementIndex, BSTR* pbstrElement) GetElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, BSTR bstrLeafElement) AddLeafElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self) RemoveLeafElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, IDispatch** ppAdsPath) CopyPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) GetEscapedElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, out int32 retval) get_EscapedMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsPathname self, int32 lnEscapedMode) put_EscapedMode;
 			}
 		}
 		[CRepr]
@@ -4121,19 +4121,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_UserName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ComputerName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SiteName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainShortName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainDNSName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ForestDNSName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_PDCRoleOwner;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SchemaRoleOwner;
-				public new function HRESULT(ref IADsADSystemInfo self, out int16 retval) get_IsNativeMode;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR* pszDCName) GetAnyDCName;
-				public new function HRESULT(ref IADsADSystemInfo self, BSTR szServer, BSTR* pszSiteName) GetDCSiteName;
-				public new function HRESULT(ref IADsADSystemInfo self) RefreshSchemaCache;
-				public new function HRESULT(ref IADsADSystemInfo self, out VARIANT pvTrees) GetTrees;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_UserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ComputerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SiteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainShortName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainDNSName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ForestDNSName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_PDCRoleOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SchemaRoleOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, out int16 retval) get_IsNativeMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR* pszDCName) GetAnyDCName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, BSTR szServer, BSTR* pszSiteName) GetDCSiteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self) RefreshSchemaCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsADSystemInfo self, out VARIANT pvTrees) GetTrees;
 			}
 		}
 		[CRepr]
@@ -4151,10 +4151,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_UserName;
-				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_ComputerName;
-				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_DomainName;
-				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_PDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_UserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_ComputerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_DomainName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_PDC;
 			}
 		}
 		[CRepr]
@@ -4172,10 +4172,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsDNWithBinary self, out VARIANT retval) get_BinaryValue;
-				public new function HRESULT(ref IADsDNWithBinary self, VARIANT vBinaryValue) put_BinaryValue;
-				public new function HRESULT(ref IADsDNWithBinary self, BSTR* retval) get_DNString;
-				public new function HRESULT(ref IADsDNWithBinary self, BSTR bstrDNString) put_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithBinary self, out VARIANT retval) get_BinaryValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithBinary self, VARIANT vBinaryValue) put_BinaryValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithBinary self, BSTR* retval) get_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithBinary self, BSTR bstrDNString) put_DNString;
 			}
 		}
 		[CRepr]
@@ -4193,10 +4193,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsDNWithString self, BSTR* retval) get_StringValue;
-				public new function HRESULT(ref IADsDNWithString self, BSTR bstrStringValue) put_StringValue;
-				public new function HRESULT(ref IADsDNWithString self, BSTR* retval) get_DNString;
-				public new function HRESULT(ref IADsDNWithString self, BSTR bstrDNString) put_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithString self, BSTR* retval) get_StringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithString self, BSTR bstrStringValue) put_StringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithString self, BSTR* retval) get_DNString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsDNWithString self, BSTR bstrDNString) put_DNString;
 			}
 		}
 		[CRepr]
@@ -4215,11 +4215,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, int32 lFormat, out VARIANT pVariant) GetSecurityDescriptor;
-				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) SetSecurityDescriptor;
-				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varSD, int32 lDataFormat, int32 lOutFormat, out VARIANT pResult) ConvertSecurityDescriptor;
-				public new function HRESULT(ref IADsSecurityUtility self, out int32 retval) get_SecurityMask;
-				public new function HRESULT(ref IADsSecurityUtility self, int32 lnSecurityMask) put_SecurityMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, int32 lFormat, out VARIANT pVariant) GetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) SetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityUtility self, VARIANT varSD, int32 lDataFormat, int32 lOutFormat, out VARIANT pResult) ConvertSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityUtility self, out int32 retval) get_SecurityMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADsSecurityUtility self, int32 lnSecurityMask) put_SecurityMask;
 			}
 		}
 		[CRepr]
@@ -4238,11 +4238,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsBrowseDomainTree self, HWND hwndParent, out PWSTR ppszTargetPath, uint32 dwFlags) BrowseTo;
-				public new function HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree, uint32 dwFlags) GetDomains;
-				public new function HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree) FreeDomains;
-				public new function HRESULT(ref IDsBrowseDomainTree self) FlushCachedDomains;
-				public new function HRESULT(ref IDsBrowseDomainTree self, PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) SetComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsBrowseDomainTree self, HWND hwndParent, out PWSTR ppszTargetPath, uint32 dwFlags) BrowseTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree, uint32 dwFlags) GetDomains;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree) FreeDomains;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsBrowseDomainTree self) FlushCachedDomains;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsBrowseDomainTree self, PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) SetComputer;
 			}
 		}
 		[CRepr]
@@ -4267,17 +4267,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) SetServer;
-				public new function HRESULT(ref IDsDisplaySpecifier self, uint16 langid) SetLanguageID;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, in Guid riid, void** ppv) GetDisplaySpecifier;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, out int32 presid) GetIconLocation;
-				public new function HICON(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) GetIcon;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) GetFriendlyClassName;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) GetFriendlyAttributeName;
-				public new function BOOL(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) GetClassCreationInfo;
-				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
-				public new function ADSTYPEENUM(ref IDsDisplaySpecifier self, PWSTR pszAttributeName) GetAttributeADsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) SetServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, uint16 langid) SetLanguageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, in Guid riid, void** ppv) GetDisplaySpecifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, out int32 presid) GetIconLocation;
+				public new function [CallingConvention(.Stdcall)] HICON(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) GetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) GetFriendlyClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) GetFriendlyAttributeName;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) GetClassCreationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
+				public new function [CallingConvention(.Stdcall)] ADSTYPEENUM(ref IDsDisplaySpecifier self, PWSTR pszAttributeName) GetAttributeADsType;
 			}
 		}
 		[CRepr]
@@ -4293,8 +4293,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsObjectPicker self, out DSOP_INIT_INFO pInitInfo) Initialize;
-				public new function HRESULT(ref IDsObjectPicker self, HWND hwndParent, out IDataObject* ppdoSelections) InvokeDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsObjectPicker self, out DSOP_INIT_INFO pInitInfo) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsObjectPicker self, HWND hwndParent, out IDataObject* ppdoSelections) InvokeDialog;
 			}
 		}
 		[CRepr]
@@ -4309,7 +4309,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDsObjectPicker.VTable
 			{
-				public new function HRESULT(ref IDsObjectPickerCredentials self, PWSTR szUserName, PWSTR szPassword) SetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsObjectPickerCredentials self, PWSTR szUserName, PWSTR szPassword) SetCredentials;
 			}
 		}
 		[CRepr]
@@ -4325,8 +4325,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsAdminCreateObj self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName) Initialize;
-				public new function HRESULT(ref IDsAdminCreateObj self, HWND hwndParent, out IADs* ppADsObj) CreateModal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminCreateObj self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminCreateObj self, HWND hwndParent, out IADs* ppADsObj) CreateModal;
 			}
 		}
 		[CRepr]
@@ -4342,8 +4342,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsAdminNewObj self, uint32 nCurrIndex, BOOL bValid) SetButtons;
-				public new function HRESULT(ref IDsAdminNewObj self, out int32 pnTotal, out int32 pnStartIndex) GetPageCounts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObj self, uint32 nCurrIndex, BOOL bValid) SetButtons;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObj self, out int32 pnTotal, out int32 pnStartIndex) GetPageCounts;
 			}
 		}
 		[CRepr]
@@ -4359,8 +4359,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsAdminNewObjPrimarySite self, PWSTR pszName) CreateNew;
-				public new function HRESULT(ref IDsAdminNewObjPrimarySite self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjPrimarySite self, PWSTR pszName) CreateNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjPrimarySite self) Commit;
 			}
 		}
 		[CRepr]
@@ -4380,12 +4380,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsAdminNewObjExt self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName, ref IDsAdminNewObj pDsAdminNewObj, out DSA_NEWOBJ_DISPINFO pDispInfo) Initialize;
-				public new function HRESULT(ref IDsAdminNewObjExt self, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) AddPages;
-				public new function HRESULT(ref IDsAdminNewObjExt self, ref IADs pADsObj) SetObject;
-				public new function HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, uint32 uContext) WriteData;
-				public new function HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, HRESULT hr, uint32 uContext) OnError;
-				public new function HRESULT(ref IDsAdminNewObjExt self, out BSTR pBstrText) GetSummaryInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName, ref IDsAdminNewObj pDsAdminNewObj, out DSA_NEWOBJ_DISPINFO pDispInfo) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) AddPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, ref IADs pADsObj) SetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, uint32 uContext) WriteData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, HRESULT hr, uint32 uContext) OnError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNewObjExt self, out BSTR pBstrText) GetSummaryInfo;
 			}
 		}
 		[CRepr]
@@ -4403,10 +4403,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDsAdminNotifyHandler self, ref IDataObject pExtraInfo, out uint32 puEventFlags) Initialize;
-				public new function HRESULT(ref IDsAdminNotifyHandler self, uint32 uEvent, ref IDataObject pArg1, ref IDataObject pArg2, out uint32 puFlags, out BSTR pBstr) Begin;
-				public new function HRESULT(ref IDsAdminNotifyHandler self, uint32 nItem, uint32 uFlags) Notify;
-				public new function HRESULT(ref IDsAdminNotifyHandler self) End;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNotifyHandler self, ref IDataObject pExtraInfo, out uint32 puEventFlags) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNotifyHandler self, uint32 uEvent, ref IDataObject pArg1, ref IDataObject pArg2, out uint32 puFlags, out BSTR pBstr) Begin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNotifyHandler self, uint32 nItem, uint32 uFlags) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNotifyHandler self) End;
 			}
 		}
 		

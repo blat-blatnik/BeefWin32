@@ -20,8 +20,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IThumbnailExtractor self, ref IStorage pStg, uint32 ulLength, uint32 ulHeight, out uint32 pulOutputLength, out uint32 pulOutputHeight, out HBITMAP phOutputBitmap) ExtractThumbnail;
-				public new function HRESULT(ref IThumbnailExtractor self, ref IStorage pStg) OnFileUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IThumbnailExtractor self, ref IStorage pStg, uint32 ulLength, uint32 ulHeight, out uint32 pulOutputLength, out uint32 pulOutputHeight, out HBITMAP phOutputBitmap) ExtractThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IThumbnailExtractor self, ref IStorage pStg) OnFileUpdated;
 			}
 		}
 		[CRepr]
@@ -36,7 +36,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDummyHICONIncluder self, HICON h1, HDC h2) Dummy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDummyHICONIncluder self, HICON h1, HDC h2) Dummy;
 			}
 		}
 		

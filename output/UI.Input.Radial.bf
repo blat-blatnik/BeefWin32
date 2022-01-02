@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IRadialControllerInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRadialControllerInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
 			}
 		}
 		[CRepr]
@@ -34,7 +34,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IRadialControllerConfigurationInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRadialControllerConfigurationInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -49,7 +49,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IRadialControllerIndependentInputSourceInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRadialControllerIndependentInputSourceInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
 			}
 		}
 		

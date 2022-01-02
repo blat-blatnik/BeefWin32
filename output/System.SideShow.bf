@@ -149,8 +149,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowSession self, ref Guid in_applicationId, ref Guid in_endpointId, ISideShowContentManager** out_ppIContent) RegisterContent;
-				public new function HRESULT(ref ISideShowSession self, ref Guid in_applicationId, ISideShowNotificationManager** out_ppINotification) RegisterNotifications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowSession self, ref Guid in_applicationId, ref Guid in_endpointId, ISideShowContentManager** out_ppIContent) RegisterContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowSession self, ref Guid in_applicationId, ISideShowNotificationManager** out_ppINotification) RegisterNotifications;
 			}
 		}
 		[CRepr]
@@ -167,9 +167,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowNotificationManager self, ISideShowNotification* in_pINotification) Show;
-				public new function HRESULT(ref ISideShowNotificationManager self, uint32 in_notificationId) Revoke;
-				public new function HRESULT(ref ISideShowNotificationManager self) RevokeAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotificationManager self, ISideShowNotification* in_pINotification) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotificationManager self, uint32 in_notificationId) Revoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotificationManager self) RevokeAll;
 			}
 		}
 		[CRepr]
@@ -193,16 +193,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowNotification self, out uint32 out_pNotificationId) get_NotificationId;
-				public new function HRESULT(ref ISideShowNotification self, uint32 in_notificationId) put_NotificationId;
-				public new function HRESULT(ref ISideShowNotification self, PWSTR* out_ppwszTitle) get_Title;
-				public new function HRESULT(ref ISideShowNotification self, PWSTR in_pwszTitle) put_Title;
-				public new function HRESULT(ref ISideShowNotification self, PWSTR* out_ppwszMessage) get_Message;
-				public new function HRESULT(ref ISideShowNotification self, PWSTR in_pwszMessage) put_Message;
-				public new function HRESULT(ref ISideShowNotification self, HICON* out_phIcon) get_Image;
-				public new function HRESULT(ref ISideShowNotification self, HICON in_hIcon) put_Image;
-				public new function HRESULT(ref ISideShowNotification self, out SYSTEMTIME out_pTime) get_ExpirationTime;
-				public new function HRESULT(ref ISideShowNotification self, SYSTEMTIME* in_pTime) put_ExpirationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, out uint32 out_pNotificationId) get_NotificationId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, uint32 in_notificationId) put_NotificationId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, PWSTR* out_ppwszTitle) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, PWSTR in_pwszTitle) put_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, PWSTR* out_ppwszMessage) get_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, PWSTR in_pwszMessage) put_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, HICON* out_phIcon) get_Image;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, HICON in_hIcon) put_Image;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, out SYSTEMTIME out_pTime) get_ExpirationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowNotification self, SYSTEMTIME* in_pTime) put_ExpirationTime;
 			}
 		}
 		[CRepr]
@@ -221,11 +221,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowContentManager self, ISideShowContent* in_pIContent) Add;
-				public new function HRESULT(ref ISideShowContentManager self, uint32 in_contentId) Remove;
-				public new function HRESULT(ref ISideShowContentManager self) RemoveAll;
-				public new function HRESULT(ref ISideShowContentManager self, ISideShowEvents* in_pIEvents) SetEventSink;
-				public new function HRESULT(ref ISideShowContentManager self, ISideShowCapabilitiesCollection** out_ppCollection) GetDeviceCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContentManager self, ISideShowContent* in_pIContent) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContentManager self, uint32 in_contentId) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContentManager self) RemoveAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContentManager self, ISideShowEvents* in_pIEvents) SetEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContentManager self, ISideShowCapabilitiesCollection** out_ppCollection) GetDeviceCapabilities;
 			}
 		}
 		[CRepr]
@@ -242,9 +242,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowContent self, ISideShowCapabilities* in_pICapabilities, out uint32 out_pdwSize, uint8** out_ppbData) GetContent;
-				public new function HRESULT(ref ISideShowContent self, out uint32 out_pcontentId) get_ContentId;
-				public new function HRESULT(ref ISideShowContent self, out BOOL out_pfDifferentiateContent) get_DifferentiateContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContent self, ISideShowCapabilities* in_pICapabilities, out uint32 out_pdwSize, uint8** out_ppbData) GetContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContent self, out uint32 out_pcontentId) get_ContentId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowContent self, out BOOL out_pfDifferentiateContent) get_DifferentiateContent;
 			}
 		}
 		[CRepr]
@@ -262,10 +262,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowEvents self, uint32 in_contentId, ISideShowContent** out_ppIContent) ContentMissing;
-				public new function HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) ApplicationEvent;
-				public new function HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pIDevice) DeviceAdded;
-				public new function HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pIDevice) DeviceRemoved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowEvents self, uint32 in_contentId, ISideShowContent** out_ppIContent) ContentMissing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) ApplicationEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pIDevice) DeviceAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowEvents self, ISideShowCapabilities* in_pIDevice) DeviceRemoved;
 			}
 		}
 		[CRepr]
@@ -280,7 +280,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowCapabilities self, in PROPERTYKEY in_keyCapability, out PROPVARIANT inout_pValue) GetCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowCapabilities self, in PROPERTYKEY in_keyCapability, out PROPVARIANT inout_pValue) GetCapability;
 			}
 		}
 		[CRepr]
@@ -296,8 +296,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowCapabilitiesCollection self, out uint32 out_pdwCount) GetCount;
-				public new function HRESULT(ref ISideShowCapabilitiesCollection self, uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowCapabilitiesCollection self, out uint32 out_pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowCapabilitiesCollection self, uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) GetAt;
 			}
 		}
 		[CRepr]
@@ -312,7 +312,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISideShowCapabilities.VTable
 			{
-				public new function HRESULT(ref ISideShowBulkCapabilities self, ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) GetCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowBulkCapabilities self, ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) GetCapabilities;
 			}
 		}
 		[CRepr]
@@ -331,11 +331,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowKeyCollection self, in PROPERTYKEY Key) Add;
-				public new function HRESULT(ref ISideShowKeyCollection self) Clear;
-				public new function HRESULT(ref ISideShowKeyCollection self, uint32 dwIndex, out PROPERTYKEY pKey) GetAt;
-				public new function HRESULT(ref ISideShowKeyCollection self, ref uint32 pcElems) GetCount;
-				public new function HRESULT(ref ISideShowKeyCollection self, uint32 dwIndex) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowKeyCollection self, in PROPERTYKEY Key) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowKeyCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowKeyCollection self, uint32 dwIndex, out PROPERTYKEY pKey) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowKeyCollection self, ref uint32 pcElems) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowKeyCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -354,11 +354,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISideShowPropVariantCollection self, in PROPVARIANT pValue) Add;
-				public new function HRESULT(ref ISideShowPropVariantCollection self) Clear;
-				public new function HRESULT(ref ISideShowPropVariantCollection self, uint32 dwIndex, out PROPVARIANT pValue) GetAt;
-				public new function HRESULT(ref ISideShowPropVariantCollection self, ref uint32 pcElems) GetCount;
-				public new function HRESULT(ref ISideShowPropVariantCollection self, uint32 dwIndex) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self, in PROPVARIANT pValue) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self, uint32 dwIndex, out PROPVARIANT pValue) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self, ref uint32 pcElems) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		

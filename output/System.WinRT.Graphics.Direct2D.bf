@@ -41,12 +41,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out Guid id) GetEffectId;
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) GetNamedPropertyMapping;
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetPropertyCount;
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* value) GetProperty;
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* source) GetSource;
-				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetSourceCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, out Guid id) GetEffectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) GetNamedPropertyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetPropertyCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* value) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* source) GetSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetSourceCount;
 			}
 		}
 		[CRepr]
@@ -62,8 +62,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGeometrySource2DInterop self, out ID2D1Geometry* value) GetGeometry;
-				public new function HRESULT(ref IGeometrySource2DInterop self, ref ID2D1Factory factory, ID2D1Geometry** value) TryGetGeometryUsingFactory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGeometrySource2DInterop self, out ID2D1Geometry* value) GetGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGeometrySource2DInterop self, ref ID2D1Factory factory, ID2D1Geometry** value) TryGetGeometryUsingFactory;
 			}
 		}
 		

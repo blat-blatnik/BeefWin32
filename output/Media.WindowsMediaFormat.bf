@@ -987,7 +987,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMWMBufferPass self, ref IAMWMBufferPassCallback pCallback) SetNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPass self, ref IAMWMBufferPassCallback pCallback) SetNotify;
 			}
 		}
 		[CRepr]
@@ -1002,7 +1002,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMWMBufferPassCallback self, ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWMBufferPassCallback self, ref INSSBuffer3 pNSSBuffer3, ref IPin pPin, ref int64 prtStart, ref int64 prtEnd) Notify;
 			}
 		}
 		[CRepr]
@@ -1021,11 +1021,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INSSBuffer self, out uint32 pdwLength) GetLength;
-				public new function HRESULT(ref INSSBuffer self, uint32 dwLength) SetLength;
-				public new function HRESULT(ref INSSBuffer self, out uint32 pdwLength) GetMaxLength;
-				public new function HRESULT(ref INSSBuffer self, out uint8* ppdwBuffer) GetBuffer;
-				public new function HRESULT(ref INSSBuffer self, out uint8* ppdwBuffer, out uint32 pdwLength) GetBufferAndLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer self, out uint32 pdwLength) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer self, uint32 dwLength) SetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer self, out uint32 pdwLength) GetMaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer self, out uint8* ppdwBuffer) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer self, out uint8* ppdwBuffer, out uint32 pdwLength) GetBufferAndLength;
 			}
 		}
 		[CRepr]
@@ -1041,8 +1041,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INSSBuffer.VTable
 			{
-				public new function HRESULT(ref INSSBuffer2 self, uint32 cbProperties, out uint8 pbProperties) GetSampleProperties;
-				public new function HRESULT(ref INSSBuffer2 self, uint32 cbProperties, ref uint8 pbProperties) SetSampleProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer2 self, uint32 cbProperties, out uint8 pbProperties) GetSampleProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer2 self, uint32 cbProperties, ref uint8 pbProperties) SetSampleProperties;
 			}
 		}
 		[CRepr]
@@ -1058,8 +1058,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INSSBuffer2.VTable
 			{
-				public new function HRESULT(ref INSSBuffer3 self, Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) SetProperty;
-				public new function HRESULT(ref INSSBuffer3 self, Guid guidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer3 self, Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer3 self, Guid guidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1075,8 +1075,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INSSBuffer3.VTable
 			{
-				public new function HRESULT(ref INSSBuffer4 self, out uint32 pcBufferProperties) GetPropertyCount;
-				public new function HRESULT(ref INSSBuffer4 self, uint32 dwBufferPropertyIndex, out Guid pguidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) GetPropertyByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer4 self, out uint32 pcBufferProperties) GetPropertyCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSSBuffer4 self, uint32 dwBufferPropertyIndex, out Guid pguidBufferProperty, void* pvBufferProperty, out uint32 pdwBufferPropertySize) GetPropertyByIndex;
 			}
 		}
 		[CRepr]
@@ -1092,8 +1092,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMSBufferAllocator self, uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) AllocateBuffer;
-				public new function HRESULT(ref IWMSBufferAllocator self, uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) AllocatePageSizeBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSBufferAllocator self, uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) AllocateBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSBufferAllocator self, uint32 dwMaxBufferSize, out INSSBuffer* ppBuffer) AllocatePageSizeBuffer;
 			}
 		}
 		[CRepr]
@@ -1110,9 +1110,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMMediaProps self, out Guid pguidType) ComGetType;
-				public new function HRESULT(ref IWMMediaProps self, out WM_MEDIA_TYPE pType, out uint32 pcbType) GetMediaType;
-				public new function HRESULT(ref IWMMediaProps self, ref WM_MEDIA_TYPE pType) SetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMediaProps self, out Guid pguidType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMediaProps self, out WM_MEDIA_TYPE pType, out uint32 pcbType) GetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMediaProps self, ref WM_MEDIA_TYPE pType) SetMediaType;
 			}
 		}
 		[CRepr]
@@ -1130,10 +1130,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public new function HRESULT(ref IWMVideoMediaProps self, out int64 pllTime) GetMaxKeyFrameSpacing;
-				public new function HRESULT(ref IWMVideoMediaProps self, int64 llTime) SetMaxKeyFrameSpacing;
-				public new function HRESULT(ref IWMVideoMediaProps self, out uint32 pdwQuality) GetQuality;
-				public new function HRESULT(ref IWMVideoMediaProps self, uint32 dwQuality) SetQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMVideoMediaProps self, out int64 pllTime) GetMaxKeyFrameSpacing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMVideoMediaProps self, int64 llTime) SetMaxKeyFrameSpacing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMVideoMediaProps self, out uint32 pdwQuality) GetQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMVideoMediaProps self, uint32 dwQuality) SetQuality;
 			}
 		}
 		[CRepr]
@@ -1160,19 +1160,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWriter self, in Guid guidProfile) SetProfileByID;
-				public new function HRESULT(ref IWMWriter self, ref IWMProfile pProfile) SetProfile;
-				public new function HRESULT(ref IWMWriter self, PWSTR pwszFilename) SetOutputFilename;
-				public new function HRESULT(ref IWMWriter self, out uint32 pcInputs) GetInputCount;
-				public new function HRESULT(ref IWMWriter self, uint32 dwInputNum, out IWMInputMediaProps* ppInput) GetInputProps;
-				public new function HRESULT(ref IWMWriter self, uint32 dwInputNum, ref IWMInputMediaProps pInput) SetInputProps;
-				public new function HRESULT(ref IWMWriter self, uint32 dwInputNumber, out uint32 pcFormats) GetInputFormatCount;
-				public new function HRESULT(ref IWMWriter self, uint32 dwInputNumber, uint32 dwFormatNumber, out IWMInputMediaProps* pProps) GetInputFormat;
-				public new function HRESULT(ref IWMWriter self) BeginWriting;
-				public new function HRESULT(ref IWMWriter self) EndWriting;
-				public new function HRESULT(ref IWMWriter self, uint32 dwSampleSize, out INSSBuffer* ppSample) AllocateSample;
-				public new function HRESULT(ref IWMWriter self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) WriteSample;
-				public new function HRESULT(ref IWMWriter self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, in Guid guidProfile) SetProfileByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, ref IWMProfile pProfile) SetProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, PWSTR pwszFilename) SetOutputFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, out uint32 pcInputs) GetInputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwInputNum, out IWMInputMediaProps* ppInput) GetInputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwInputNum, ref IWMInputMediaProps pInput) SetInputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwInputNumber, out uint32 pcFormats) GetInputFormatCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwInputNumber, uint32 dwFormatNumber, out IWMInputMediaProps* pProps) GetInputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self) BeginWriting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self) EndWriting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwSampleSize, out INSSBuffer* ppSample) AllocateSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) WriteSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriter self) Flush;
 			}
 		}
 		[CRepr]
@@ -1190,10 +1190,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMWriter self, char16* pwszKeySeed, out uint32 pcwchLength) GenerateKeySeed;
-				public new function HRESULT(ref IWMDRMWriter self, char16* pwszKeyID, out uint32 pcwchLength) GenerateKeyID;
-				public new function HRESULT(ref IWMDRMWriter self, char16* pwszPrivKey, out uint32 pcwchPrivKeyLength, char16* pwszPubKey, out uint32 pcwchPubKeyLength) GenerateSigningKeyPair;
-				public new function HRESULT(ref IWMDRMWriter self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetDRMAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter self, char16* pwszKeySeed, out uint32 pcwchLength) GenerateKeySeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter self, char16* pwszKeyID, out uint32 pcwchLength) GenerateKeyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter self, char16* pwszPrivKey, out uint32 pcwchPrivKeyLength, char16* pwszPubKey, out uint32 pcwchPubKeyLength) GenerateSigningKeyPair;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetDRMAttribute;
 			}
 		}
 		[CRepr]
@@ -1208,7 +1208,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMDRMWriter.VTable
 			{
-				public new function HRESULT(ref IWMDRMWriter2 self, BOOL fSamplesEncrypted, ref uint8 pbKeyID, uint32 cbKeyID) SetWMDRMNetEncryption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter2 self, BOOL fSamplesEncrypted, ref uint8 pbKeyID, uint32 cbKeyID) SetWMDRMNetEncryption;
 			}
 		}
 		[CRepr]
@@ -1223,7 +1223,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMDRMWriter2.VTable
 			{
-				public new function HRESULT(ref IWMDRMWriter3 self, ref WMDRM_IMPORT_INIT_STRUCT pImportInitStruct) SetProtectStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMWriter3 self, ref WMDRM_IMPORT_INIT_STRUCT pImportInitStruct) SetProtectStreamSamples;
 			}
 		}
 		[CRepr]
@@ -1239,8 +1239,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public new function HRESULT(ref IWMInputMediaProps self, char16* pwszName, out uint16 pcchName) GetConnectionName;
-				public new function HRESULT(ref IWMInputMediaProps self, char16* pwszName, out uint16 pcchName) GetGroupName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMInputMediaProps self, char16* pwszName, out uint16 pcchName) GetConnectionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMInputMediaProps self, char16* pwszName, out uint16 pcchName) GetGroupName;
 			}
 		}
 		[CRepr]
@@ -1260,12 +1260,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMPropertyVault self, ref uint32 pdwCount) GetPropertyCount;
-				public new function HRESULT(ref IWMPropertyVault self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetPropertyByName;
-				public new function HRESULT(ref IWMPropertyVault self, PWSTR pszName, WMT_ATTR_DATATYPE pType, ref uint8 pValue, uint32 dwSize) SetProperty;
-				public new function HRESULT(ref IWMPropertyVault self, uint32 dwIndex, char16* pszName, out uint32 pdwNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetPropertyByIndex;
-				public new function HRESULT(ref IWMPropertyVault self, ref IWMPropertyVault pIWMPropertyVault) CopyPropertiesFrom;
-				public new function HRESULT(ref IWMPropertyVault self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self, ref uint32 pdwCount) GetPropertyCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetPropertyByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self, PWSTR pszName, WMT_ATTR_DATATYPE pType, ref uint8 pValue, uint32 dwSize) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self, uint32 dwIndex, char16* pszName, out uint32 pdwNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetPropertyByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self, ref IWMPropertyVault pIWMPropertyVault) CopyPropertiesFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPropertyVault self) Clear;
 			}
 		}
 		[CRepr]
@@ -1280,7 +1280,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMIStreamProps self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIStreamProps self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1305,17 +1305,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReader self, PWSTR pwszURL, ref IWMReaderCallback pCallback, void* pvContext) Open;
-				public new function HRESULT(ref IWMReader self) Close;
-				public new function HRESULT(ref IWMReader self, out uint32 pcOutputs) GetOutputCount;
-				public new function HRESULT(ref IWMReader self, uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) GetOutputProps;
-				public new function HRESULT(ref IWMReader self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) SetOutputProps;
-				public new function HRESULT(ref IWMReader self, uint32 dwOutputNumber, out uint32 pcFormats) GetOutputFormatCount;
-				public new function HRESULT(ref IWMReader self, uint32 dwOutputNumber, uint32 dwFormatNumber, out IWMOutputMediaProps* ppProps) GetOutputFormat;
-				public new function HRESULT(ref IWMReader self, uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) Start;
-				public new function HRESULT(ref IWMReader self) Stop;
-				public new function HRESULT(ref IWMReader self) Pause;
-				public new function HRESULT(ref IWMReader self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, PWSTR pwszURL, ref IWMReaderCallback pCallback, void* pvContext) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, out uint32 pcOutputs) GetOutputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) GetOutputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) SetOutputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, uint32 dwOutputNumber, out uint32 pcFormats) GetOutputFormatCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, uint32 dwOutputNumber, uint32 dwFormatNumber, out IWMOutputMediaProps* ppProps) GetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self, uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReader self) Resume;
 			}
 		}
 		[CRepr]
@@ -1350,27 +1350,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMSyncReader self, PWSTR pwszFilename) Open;
-				public new function HRESULT(ref IWMSyncReader self) Close;
-				public new function HRESULT(ref IWMSyncReader self, uint64 cnsStartTime, int64 cnsDuration) SetRange;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) SetRangeByFrame;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out INSSBuffer* ppSample, out uint64 pcnsSampleTime, out uint64 pcnsDuration, out uint32 pdwFlags, out uint32 pdwOutputNum, out uint16 pwStreamNum) GetNextSample;
-				public new function HRESULT(ref IWMSyncReader self, uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) SetStreamsSelected;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) GetStreamSelected;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, BOOL fCompressed) SetReadStreamSamples;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out BOOL pfCompressed) GetReadStreamSamples;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetOutputSetting;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
-				public new function HRESULT(ref IWMSyncReader self, out uint32 pcOutputs) GetOutputCount;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) GetOutputProps;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) SetOutputProps;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out uint32 pcFormats) GetOutputFormatCount;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, uint32 dwFormatNum, out IWMOutputMediaProps* ppProps) GetOutputFormat;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out uint32 pdwOutputNum) GetOutputNumberForStream;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out uint16 pwStreamNum) GetStreamNumberForOutput;
-				public new function HRESULT(ref IWMSyncReader self, uint32 dwOutput, out uint32 pcbMax) GetMaxOutputSampleSize;
-				public new function HRESULT(ref IWMSyncReader self, uint16 wStream, out uint32 pcbMax) GetMaxStreamSampleSize;
-				public new function HRESULT(ref IWMSyncReader self, ref IStream pStream) OpenStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, PWSTR pwszFilename) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint64 cnsStartTime, int64 cnsDuration) SetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) SetRangeByFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out INSSBuffer* ppSample, out uint64 pcnsSampleTime, out uint64 pcnsDuration, out uint32 pdwFlags, out uint32 pdwOutputNum, out uint16 pwStreamNum) GetNextSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) SetStreamsSelected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) GetStreamSelected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, BOOL fCompressed) SetReadStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out BOOL pfCompressed) GetReadStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetOutputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, out uint32 pcOutputs) GetOutputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out IWMOutputMediaProps* ppOutput) GetOutputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) SetOutputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out uint32 pcFormats) GetOutputFormatCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, uint32 dwFormatNum, out IWMOutputMediaProps* ppProps) GetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStreamNum, out uint32 pdwOutputNum) GetOutputNumberForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutputNum, out uint16 pwStreamNum) GetStreamNumberForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint32 dwOutput, out uint32 pcbMax) GetMaxOutputSampleSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, uint16 wStream, out uint32 pcbMax) GetMaxStreamSampleSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader self, ref IStream pStream) OpenStream;
 			}
 		}
 		[CRepr]
@@ -1390,12 +1390,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMSyncReader.VTable
 			{
-				public new function HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, ref WMT_TIMECODE_EXTENSION_DATA pStart, ref WMT_TIMECODE_EXTENSION_DATA pEnd) SetRangeByTimecode;
-				public new function HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, out uint64 pcnsStartTime) SetRangeByFrameEx;
-				public new function HRESULT(ref IWMSyncReader2 self, uint32 dwOutputNum, ref IWMReaderAllocatorEx pAllocator) SetAllocateForOutput;
-				public new function HRESULT(ref IWMSyncReader2 self, uint32 dwOutputNum, out IWMReaderAllocatorEx* ppAllocator) GetAllocateForOutput;
-				public new function HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, ref IWMReaderAllocatorEx pAllocator) SetAllocateForStream;
-				public new function HRESULT(ref IWMSyncReader2 self, uint16 dwSreamNum, out IWMReaderAllocatorEx* ppAllocator) GetAllocateForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, ref WMT_TIMECODE_EXTENSION_DATA pStart, ref WMT_TIMECODE_EXTENSION_DATA pEnd) SetRangeByTimecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, out uint64 pcnsStartTime) SetRangeByFrameEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint32 dwOutputNum, ref IWMReaderAllocatorEx pAllocator) SetAllocateForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint32 dwOutputNum, out IWMReaderAllocatorEx* ppAllocator) GetAllocateForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint16 wStreamNum, ref IWMReaderAllocatorEx pAllocator) SetAllocateForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSyncReader2 self, uint16 dwSreamNum, out IWMReaderAllocatorEx* ppAllocator) GetAllocateForStream;
 			}
 		}
 		[CRepr]
@@ -1411,8 +1411,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public new function HRESULT(ref IWMOutputMediaProps self, char16* pwszName, out uint16 pcchName) GetStreamGroupName;
-				public new function HRESULT(ref IWMOutputMediaProps self, char16* pwszName, out uint16 pcchName) GetConnectionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMOutputMediaProps self, char16* pwszName, out uint16 pcchName) GetStreamGroupName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMOutputMediaProps self, char16* pwszName, out uint16 pcchName) GetConnectionName;
 			}
 		}
 		[CRepr]
@@ -1427,7 +1427,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMStatusCallback self, WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, ref uint8 pValue, void* pvContext) OnStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStatusCallback self, WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, ref uint8 pValue, void* pvContext) OnStatus;
 			}
 		}
 		[CRepr]
@@ -1442,7 +1442,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
-				public new function HRESULT(ref IWMReaderCallback self, uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallback self, uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnSample;
 			}
 		}
 		[CRepr]
@@ -1457,7 +1457,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMCredentialCallback self, PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, out uint32 pdwFlags) AcquireCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCredentialCallback self, PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, out uint32 pdwFlags) AcquireCredentials;
 			}
 		}
 		[CRepr]
@@ -1474,9 +1474,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMMetadataEditor self, PWSTR pwszFilename) Open;
-				public new function HRESULT(ref IWMMetadataEditor self) Close;
-				public new function HRESULT(ref IWMMetadataEditor self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMetadataEditor self, PWSTR pwszFilename) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMetadataEditor self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMetadataEditor self) Flush;
 			}
 		}
 		[CRepr]
@@ -1491,7 +1491,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMMetadataEditor.VTable
 			{
-				public new function HRESULT(ref IWMMetadataEditor2 self, PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) OpenEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMetadataEditor2 self, PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) OpenEx;
 			}
 		}
 		[CRepr]
@@ -1506,7 +1506,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMEditor self, PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) GetDRMProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMEditor self, PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) GetDRMProperty;
 			}
 		}
 		[CRepr]
@@ -1532,18 +1532,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wStreamNum, out uint16 pcAttributes) GetAttributeCount;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wIndex, out uint16 pwStreamNum, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetAttributeByIndex;
-				public new function HRESULT(ref IWMHeaderInfo self, out uint16 pwStreamNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetAttributeByName;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetAttribute;
-				public new function HRESULT(ref IWMHeaderInfo self, out uint16 pcMarkers) GetMarkerCount;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wIndex, char16* pwszMarkerName, out uint16 pcchMarkerNameLen, out uint64 pcnsMarkerTime) GetMarker;
-				public new function HRESULT(ref IWMHeaderInfo self, PWSTR pwszMarkerName, uint64 cnsMarkerTime) AddMarker;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wIndex) RemoveMarker;
-				public new function HRESULT(ref IWMHeaderInfo self, out uint16 pcScripts) GetScriptCount;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wIndex, char16* pwszType, out uint16 pcchTypeLen, char16* pwszCommand, out uint16 pcchCommandLen, out uint64 pcnsScriptTime) GetScript;
-				public new function HRESULT(ref IWMHeaderInfo self, PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) AddScript;
-				public new function HRESULT(ref IWMHeaderInfo self, uint16 wIndex) RemoveScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wStreamNum, out uint16 pcAttributes) GetAttributeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wIndex, out uint16 pwStreamNum, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetAttributeByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, out uint16 pwStreamNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetAttributeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, out uint16 pcMarkers) GetMarkerCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wIndex, char16* pwszMarkerName, out uint16 pcchMarkerNameLen, out uint64 pcnsMarkerTime) GetMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, PWSTR pwszMarkerName, uint64 cnsMarkerTime) AddMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wIndex) RemoveMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, out uint16 pcScripts) GetScriptCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wIndex, char16* pwszType, out uint16 pcchTypeLen, char16* pwszCommand, out uint16 pcchCommandLen, out uint64 pcnsScriptTime) GetScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) AddScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo self, uint16 wIndex) RemoveScript;
 			}
 		}
 		[CRepr]
@@ -1559,8 +1559,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMHeaderInfo.VTable
 			{
-				public new function HRESULT(ref IWMHeaderInfo2 self, out uint32 pcCodecInfos) GetCodecInfoCount;
-				public new function HRESULT(ref IWMHeaderInfo2 self, uint32 wIndex, out uint16 pcchName, char16* pwszName, out uint16 pcchDescription, char16* pwszDescription, out WMT_CODEC_INFO_TYPE pCodecType, out uint16 pcbCodecInfo, uint8* pbCodecInfo) GetCodecInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo2 self, out uint32 pcCodecInfos) GetCodecInfoCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo2 self, uint32 wIndex, out uint16 pcchName, char16* pwszName, out uint16 pcchDescription, char16* pwszDescription, out WMT_CODEC_INFO_TYPE pCodecType, out uint16 pcbCodecInfo, uint8* pbCodecInfo) GetCodecInfo;
 			}
 		}
 		[CRepr]
@@ -1581,13 +1581,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMHeaderInfo2.VTable
 			{
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, out uint16 pcAttributes) GetAttributeCountEx;
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, PWSTR pwszName, ref uint16 pwLangIndex, uint16* pwIndices, out uint16 pwCount) GetAttributeIndices;
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex, char16* pwszName, out uint16 pwNameLen, out WMT_ATTR_DATATYPE pType, out uint16 pwLangIndex, uint8* pValue, out uint32 pdwDataLength) GetAttributeByIndexEx;
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) ModifyAttribute;
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, PWSTR pszName, out uint16 pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) AddAttribute;
-				public new function HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex) DeleteAttribute;
-				public new function HRESULT(ref IWMHeaderInfo3 self, PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) AddCodecInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, out uint16 pcAttributes) GetAttributeCountEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, PWSTR pwszName, ref uint16 pwLangIndex, uint16* pwIndices, out uint16 pwCount) GetAttributeIndices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex, char16* pwszName, out uint16 pwNameLen, out WMT_ATTR_DATATYPE pType, out uint16 pwLangIndex, uint8* pValue, out uint32 pdwDataLength) GetAttributeByIndexEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) ModifyAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, PWSTR pszName, out uint16 pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) AddAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, uint16 wStreamNum, uint16 wIndex) DeleteAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMHeaderInfo3 self, PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) AddCodecInfo;
 			}
 		}
 		[CRepr]
@@ -1607,12 +1607,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMProfileManager self, WMT_VERSION dwVersion, out IWMProfile* ppProfile) CreateEmptyProfile;
-				public new function HRESULT(ref IWMProfileManager self, in Guid guidProfile, out IWMProfile* ppProfile) LoadProfileByID;
-				public new function HRESULT(ref IWMProfileManager self, PWSTR pwszProfile, out IWMProfile* ppProfile) LoadProfileByData;
-				public new function HRESULT(ref IWMProfileManager self, ref IWMProfile pIWMProfile, PWSTR pwszProfile, out uint32 pdwLength) SaveProfile;
-				public new function HRESULT(ref IWMProfileManager self, out uint32 pcProfiles) GetSystemProfileCount;
-				public new function HRESULT(ref IWMProfileManager self, uint32 dwProfileIndex, out IWMProfile* ppProfile) LoadSystemProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, WMT_VERSION dwVersion, out IWMProfile* ppProfile) CreateEmptyProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, in Guid guidProfile, out IWMProfile* ppProfile) LoadProfileByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, PWSTR pwszProfile, out IWMProfile* ppProfile) LoadProfileByData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, ref IWMProfile pIWMProfile, PWSTR pwszProfile, out uint32 pdwLength) SaveProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, out uint32 pcProfiles) GetSystemProfileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager self, uint32 dwProfileIndex, out IWMProfile* ppProfile) LoadSystemProfile;
 			}
 		}
 		[CRepr]
@@ -1628,8 +1628,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMProfileManager.VTable
 			{
-				public new function HRESULT(ref IWMProfileManager2 self, out WMT_VERSION pdwVersion) GetSystemProfileVersion;
-				public new function HRESULT(ref IWMProfileManager2 self, WMT_VERSION dwVersion) SetSystemProfileVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager2 self, out WMT_VERSION pdwVersion) GetSystemProfileVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManager2 self, WMT_VERSION dwVersion) SetSystemProfileVersion;
 			}
 		}
 		[CRepr]
@@ -1645,8 +1645,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMProfileManagerLanguage self, out uint16 wLangID) GetUserLanguageID;
-				public new function HRESULT(ref IWMProfileManagerLanguage self, uint16 wLangID) SetUserLanguageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManagerLanguage self, out uint16 wLangID) GetUserLanguageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfileManagerLanguage self, uint16 wLangID) SetUserLanguageID;
 			}
 		}
 		[CRepr]
@@ -1678,24 +1678,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMProfile self, out WMT_VERSION pdwVersion) GetVersion;
-				public new function HRESULT(ref IWMProfile self, char16* pwszName, out uint32 pcchName) GetName;
-				public new function HRESULT(ref IWMProfile self, PWSTR pwszName) SetName;
-				public new function HRESULT(ref IWMProfile self, char16* pwszDescription, out uint32 pcchDescription) GetDescription;
-				public new function HRESULT(ref IWMProfile self, PWSTR pwszDescription) SetDescription;
-				public new function HRESULT(ref IWMProfile self, out uint32 pcStreams) GetStreamCount;
-				public new function HRESULT(ref IWMProfile self, uint32 dwStreamIndex, out IWMStreamConfig* ppConfig) GetStream;
-				public new function HRESULT(ref IWMProfile self, uint16 wStreamNum, out IWMStreamConfig* ppConfig) GetStreamByNumber;
-				public new function HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) RemoveStream;
-				public new function HRESULT(ref IWMProfile self, uint16 wStreamNum) RemoveStreamByNumber;
-				public new function HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) AddStream;
-				public new function HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) ReconfigStream;
-				public new function HRESULT(ref IWMProfile self, in Guid guidStreamType, out IWMStreamConfig* ppConfig) CreateNewStream;
-				public new function HRESULT(ref IWMProfile self, out uint32 pcME) GetMutualExclusionCount;
-				public new function HRESULT(ref IWMProfile self, uint32 dwMEIndex, out IWMMutualExclusion* ppME) GetMutualExclusion;
-				public new function HRESULT(ref IWMProfile self, ref IWMMutualExclusion pME) RemoveMutualExclusion;
-				public new function HRESULT(ref IWMProfile self, ref IWMMutualExclusion pME) AddMutualExclusion;
-				public new function HRESULT(ref IWMProfile self, out IWMMutualExclusion* ppME) CreateNewMutualExclusion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, out WMT_VERSION pdwVersion) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, char16* pwszName, out uint32 pcchName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, PWSTR pwszName) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, char16* pwszDescription, out uint32 pcchDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, PWSTR pwszDescription) SetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, out uint32 pcStreams) GetStreamCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, uint32 dwStreamIndex, out IWMStreamConfig* ppConfig) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, uint16 wStreamNum, out IWMStreamConfig* ppConfig) GetStreamByNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) RemoveStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, uint16 wStreamNum) RemoveStreamByNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) AddStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, ref IWMStreamConfig pConfig) ReconfigStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, in Guid guidStreamType, out IWMStreamConfig* ppConfig) CreateNewStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, out uint32 pcME) GetMutualExclusionCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, uint32 dwMEIndex, out IWMMutualExclusion* ppME) GetMutualExclusion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, ref IWMMutualExclusion pME) RemoveMutualExclusion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, ref IWMMutualExclusion pME) AddMutualExclusion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile self, out IWMMutualExclusion* ppME) CreateNewMutualExclusion;
 			}
 		}
 		[CRepr]
@@ -1710,7 +1710,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMProfile.VTable
 			{
-				public new function HRESULT(ref IWMProfile2 self, out Guid pguidID) GetProfileID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile2 self, out Guid pguidID) GetProfileID;
 			}
 		}
 		[CRepr]
@@ -1736,18 +1736,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMProfile2.VTable
 			{
-				public new function HRESULT(ref IWMProfile3 self, out WMT_STORAGE_FORMAT pnStorageFormat) GetStorageFormat;
-				public new function HRESULT(ref IWMProfile3 self, WMT_STORAGE_FORMAT nStorageFormat) SetStorageFormat;
-				public new function HRESULT(ref IWMProfile3 self, out uint32 pcBS) GetBandwidthSharingCount;
-				public new function HRESULT(ref IWMProfile3 self, uint32 dwBSIndex, out IWMBandwidthSharing* ppBS) GetBandwidthSharing;
-				public new function HRESULT(ref IWMProfile3 self, ref IWMBandwidthSharing pBS) RemoveBandwidthSharing;
-				public new function HRESULT(ref IWMProfile3 self, ref IWMBandwidthSharing pBS) AddBandwidthSharing;
-				public new function HRESULT(ref IWMProfile3 self, out IWMBandwidthSharing* ppBS) CreateNewBandwidthSharing;
-				public new function HRESULT(ref IWMProfile3 self, out IWMStreamPrioritization* ppSP) GetStreamPrioritization;
-				public new function HRESULT(ref IWMProfile3 self, ref IWMStreamPrioritization pSP) SetStreamPrioritization;
-				public new function HRESULT(ref IWMProfile3 self) RemoveStreamPrioritization;
-				public new function HRESULT(ref IWMProfile3 self, out IWMStreamPrioritization* ppSP) CreateNewStreamPrioritization;
-				public new function HRESULT(ref IWMProfile3 self, uint64 msDuration, out uint64 pcPackets) GetExpectedPacketCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, out WMT_STORAGE_FORMAT pnStorageFormat) GetStorageFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, WMT_STORAGE_FORMAT nStorageFormat) SetStorageFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, out uint32 pcBS) GetBandwidthSharingCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, uint32 dwBSIndex, out IWMBandwidthSharing* ppBS) GetBandwidthSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, ref IWMBandwidthSharing pBS) RemoveBandwidthSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, ref IWMBandwidthSharing pBS) AddBandwidthSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, out IWMBandwidthSharing* ppBS) CreateNewBandwidthSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, out IWMStreamPrioritization* ppSP) GetStreamPrioritization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, ref IWMStreamPrioritization pSP) SetStreamPrioritization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self) RemoveStreamPrioritization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, out IWMStreamPrioritization* ppSP) CreateNewStreamPrioritization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProfile3 self, uint64 msDuration, out uint64 pcPackets) GetExpectedPacketCount;
 			}
 		}
 		[CRepr]
@@ -1772,17 +1772,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMStreamConfig self, out Guid pguidStreamType) GetStreamType;
-				public new function HRESULT(ref IWMStreamConfig self, out uint16 pwStreamNum) GetStreamNumber;
-				public new function HRESULT(ref IWMStreamConfig self, uint16 wStreamNum) SetStreamNumber;
-				public new function HRESULT(ref IWMStreamConfig self, char16* pwszStreamName, out uint16 pcchStreamName) GetStreamName;
-				public new function HRESULT(ref IWMStreamConfig self, PWSTR pwszStreamName) SetStreamName;
-				public new function HRESULT(ref IWMStreamConfig self, char16* pwszInputName, out uint16 pcchInputName) GetConnectionName;
-				public new function HRESULT(ref IWMStreamConfig self, PWSTR pwszInputName) SetConnectionName;
-				public new function HRESULT(ref IWMStreamConfig self, out uint32 pdwBitrate) GetBitrate;
-				public new function HRESULT(ref IWMStreamConfig self, uint32 pdwBitrate) SetBitrate;
-				public new function HRESULT(ref IWMStreamConfig self, out uint32 pmsBufferWindow) GetBufferWindow;
-				public new function HRESULT(ref IWMStreamConfig self, uint32 msBufferWindow) SetBufferWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, out Guid pguidStreamType) GetStreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, out uint16 pwStreamNum) GetStreamNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, uint16 wStreamNum) SetStreamNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, char16* pwszStreamName, out uint16 pcchStreamName) GetStreamName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, PWSTR pwszStreamName) SetStreamName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, char16* pwszInputName, out uint16 pcchInputName) GetConnectionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, PWSTR pwszInputName) SetConnectionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, out uint32 pdwBitrate) GetBitrate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, uint32 pdwBitrate) SetBitrate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, out uint32 pmsBufferWindow) GetBufferWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig self, uint32 msBufferWindow) SetBufferWindow;
 			}
 		}
 		[CRepr]
@@ -1802,12 +1802,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStreamConfig.VTable
 			{
-				public new function HRESULT(ref IWMStreamConfig2 self, out WMT_TRANSPORT_TYPE pnTransportType) GetTransportType;
-				public new function HRESULT(ref IWMStreamConfig2 self, WMT_TRANSPORT_TYPE nTransportType) SetTransportType;
-				public new function HRESULT(ref IWMStreamConfig2 self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddDataUnitExtension;
-				public new function HRESULT(ref IWMStreamConfig2 self, out uint16 pcDataUnitExtensions) GetDataUnitExtensionCount;
-				public new function HRESULT(ref IWMStreamConfig2 self, uint16 wDataUnitExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, uint8* pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) GetDataUnitExtension;
-				public new function HRESULT(ref IWMStreamConfig2 self) RemoveAllDataUnitExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self, out WMT_TRANSPORT_TYPE pnTransportType) GetTransportType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self, WMT_TRANSPORT_TYPE nTransportType) SetTransportType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddDataUnitExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self, out uint16 pcDataUnitExtensions) GetDataUnitExtensionCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self, uint16 wDataUnitExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, uint8* pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) GetDataUnitExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig2 self) RemoveAllDataUnitExtensions;
 			}
 		}
 		[CRepr]
@@ -1823,8 +1823,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStreamConfig2.VTable
 			{
-				public new function HRESULT(ref IWMStreamConfig3 self, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguage;
-				public new function HRESULT(ref IWMStreamConfig3 self, PWSTR pwszLanguageString) SetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig3 self, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamConfig3 self, PWSTR pwszLanguageString) SetLanguage;
 			}
 		}
 		[CRepr]
@@ -1840,8 +1840,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMPacketSize self, out uint32 pdwMaxPacketSize) GetMaxPacketSize;
-				public new function HRESULT(ref IWMPacketSize self, uint32 dwMaxPacketSize) SetMaxPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPacketSize self, out uint32 pdwMaxPacketSize) GetMaxPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPacketSize self, uint32 dwMaxPacketSize) SetMaxPacketSize;
 			}
 		}
 		[CRepr]
@@ -1857,8 +1857,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMPacketSize.VTable
 			{
-				public new function HRESULT(ref IWMPacketSize2 self, out uint32 pdwMinPacketSize) GetMinPacketSize;
-				public new function HRESULT(ref IWMPacketSize2 self, uint32 dwMinPacketSize) SetMinPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPacketSize2 self, out uint32 pdwMinPacketSize) GetMinPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPacketSize2 self, uint32 dwMinPacketSize) SetMinPacketSize;
 			}
 		}
 		[CRepr]
@@ -1875,9 +1875,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMStreamList self, uint16* pwStreamNumArray, out uint16 pcStreams) GetStreams;
-				public new function HRESULT(ref IWMStreamList self, uint16 wStreamNum) AddStream;
-				public new function HRESULT(ref IWMStreamList self, uint16 wStreamNum) RemoveStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamList self, uint16* pwStreamNumArray, out uint16 pcStreams) GetStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamList self, uint16 wStreamNum) AddStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamList self, uint16 wStreamNum) RemoveStream;
 			}
 		}
 		[CRepr]
@@ -1893,8 +1893,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
-				public new function HRESULT(ref IWMMutualExclusion self, out Guid pguidType) ComGetType;
-				public new function HRESULT(ref IWMMutualExclusion self, in Guid guidType) SetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion self, out Guid pguidType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion self, in Guid guidType) SetType;
 			}
 		}
 		[CRepr]
@@ -1918,16 +1918,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMMutualExclusion.VTable
 			{
-				public new function HRESULT(ref IWMMutualExclusion2 self, char16* pwszName, out uint16 pcchName) GetName;
-				public new function HRESULT(ref IWMMutualExclusion2 self, PWSTR pwszName) SetName;
-				public new function HRESULT(ref IWMMutualExclusion2 self, out uint16 pwRecordCount) GetRecordCount;
-				public new function HRESULT(ref IWMMutualExclusion2 self) AddRecord;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber) RemoveRecord;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, char16* pwszRecordName, out uint16 pcchRecordName) GetRecordName;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, PWSTR pwszRecordName) SetRecordName;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16* pwStreamNumArray, out uint16 pcStreams) GetStreamsForRecord;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
-				public new function HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16 wStreamNumber) RemoveStreamForRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, char16* pwszName, out uint16 pcchName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, PWSTR pwszName) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, out uint16 pwRecordCount) GetRecordCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self) AddRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber) RemoveRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, char16* pwszRecordName, out uint16 pcchRecordName) GetRecordName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, PWSTR pwszRecordName) SetRecordName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16* pwStreamNumArray, out uint16 pcStreams) GetStreamsForRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMMutualExclusion2 self, uint16 wRecordNumber, uint16 wStreamNumber) RemoveStreamForRecord;
 			}
 		}
 		[CRepr]
@@ -1945,10 +1945,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
-				public new function HRESULT(ref IWMBandwidthSharing self, out Guid pguidType) ComGetType;
-				public new function HRESULT(ref IWMBandwidthSharing self, in Guid guidType) SetType;
-				public new function HRESULT(ref IWMBandwidthSharing self, out uint32 pdwBitrate, out uint32 pmsBufferWindow) GetBandwidth;
-				public new function HRESULT(ref IWMBandwidthSharing self, uint32 dwBitrate, uint32 msBufferWindow) SetBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBandwidthSharing self, out Guid pguidType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBandwidthSharing self, in Guid guidType) SetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBandwidthSharing self, out uint32 pdwBitrate, out uint32 pmsBufferWindow) GetBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBandwidthSharing self, uint32 dwBitrate, uint32 msBufferWindow) SetBandwidth;
 			}
 		}
 		[CRepr]
@@ -1964,8 +1964,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMStreamPrioritization self, WM_STREAM_PRIORITY_RECORD* pRecordArray, out uint16 pcRecords) GetPriorityRecords;
-				public new function HRESULT(ref IWMStreamPrioritization self, ref WM_STREAM_PRIORITY_RECORD pRecordArray, uint16 cRecords) SetPriorityRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamPrioritization self, WM_STREAM_PRIORITY_RECORD* pRecordArray, out uint16 pcRecords) GetPriorityRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMStreamPrioritization self, ref WM_STREAM_PRIORITY_RECORD pRecordArray, uint16 cRecords) SetPriorityRecords;
 			}
 		}
 		[CRepr]
@@ -1990,17 +1990,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWriterAdvanced self, out uint32 pcSinks) GetSinkCount;
-				public new function HRESULT(ref IWMWriterAdvanced self, uint32 dwSinkNum, out IWMWriterSink* ppSink) GetSink;
-				public new function HRESULT(ref IWMWriterAdvanced self, ref IWMWriterSink pSink) AddSink;
-				public new function HRESULT(ref IWMWriterAdvanced self, ref IWMWriterSink pSink) RemoveSink;
-				public new function HRESULT(ref IWMWriterAdvanced self, uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample) WriteStreamSample;
-				public new function HRESULT(ref IWMWriterAdvanced self, BOOL fIsLiveSource) SetLiveSource;
-				public new function HRESULT(ref IWMWriterAdvanced self, out BOOL pfRealTime) IsRealTime;
-				public new function HRESULT(ref IWMWriterAdvanced self, out uint64 pcnsCurrentTime) GetWriterTime;
-				public new function HRESULT(ref IWMWriterAdvanced self, uint16 wStreamNum, out WM_WRITER_STATISTICS pStats) GetStatistics;
-				public new function HRESULT(ref IWMWriterAdvanced self, uint32 msWindow) SetSyncTolerance;
-				public new function HRESULT(ref IWMWriterAdvanced self, out uint32 pmsWindow) GetSyncTolerance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, out uint32 pcSinks) GetSinkCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, uint32 dwSinkNum, out IWMWriterSink* ppSink) GetSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, ref IWMWriterSink pSink) AddSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, ref IWMWriterSink pSink) RemoveSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample) WriteStreamSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, BOOL fIsLiveSource) SetLiveSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, out BOOL pfRealTime) IsRealTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, out uint64 pcnsCurrentTime) GetWriterTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, uint16 wStreamNum, out WM_WRITER_STATISTICS pStats) GetStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, uint32 msWindow) SetSyncTolerance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced self, out uint32 pmsWindow) GetSyncTolerance;
 			}
 		}
 		[CRepr]
@@ -2016,8 +2016,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced.VTable
 			{
-				public new function HRESULT(ref IWMWriterAdvanced2 self, uint32 dwInputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetInputSetting;
-				public new function HRESULT(ref IWMWriterAdvanced2 self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetInputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced2 self, uint32 dwInputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetInputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced2 self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetInputSetting;
 			}
 		}
 		[CRepr]
@@ -2033,8 +2033,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced2.VTable
 			{
-				public new function HRESULT(ref IWMWriterAdvanced3 self, uint16 wStreamNum, out WM_WRITER_STATISTICS_EX pStats) GetStatisticsEx;
-				public new function HRESULT(ref IWMWriterAdvanced3 self) SetNonBlocking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced3 self, uint16 wStreamNum, out WM_WRITER_STATISTICS_EX pStats) GetStatisticsEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterAdvanced3 self) SetNonBlocking;
 			}
 		}
 		[CRepr]
@@ -2053,11 +2053,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags, out uint32 pdwMaxNumPasses) GetMaxPreprocessingPasses;
-				public new function HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) SetNumPreprocessingPasses;
-				public new function HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags) BeginPreprocessingPass;
-				public new function HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) PreprocessSample;
-				public new function HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags) EndPreprocessingPass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags, out uint32 pdwMaxNumPasses) GetMaxPreprocessingPasses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) SetNumPreprocessingPasses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags) BeginPreprocessingPass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, ref INSSBuffer pSample) PreprocessSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPreprocess self, uint32 dwInputNum, uint32 dwFlags) EndPreprocessingPass;
 			}
 		}
 		[CRepr]
@@ -2073,8 +2073,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
-				public new function HRESULT(ref IWMWriterPostViewCallback self, uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnPostViewSample;
-				public new function HRESULT(ref IWMWriterPostViewCallback self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForPostView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostViewCallback self, uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnPostViewSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostViewCallback self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForPostView;
 			}
 		}
 		[CRepr]
@@ -2097,15 +2097,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWriterPostView self, ref IWMWriterPostViewCallback pCallback, void* pvContext) SetPostViewCallback;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNum, BOOL fReceivePostViewSamples) SetReceivePostViewSamples;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNum, out BOOL pfReceivePostViewSamples) GetReceivePostViewSamples;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out IWMMediaProps* ppOutput) GetPostViewProps;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, ref IWMMediaProps pOutput) SetPostViewProps;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out uint32 pcFormats) GetPostViewFormatCount;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, uint32 dwFormatNumber, out IWMMediaProps* ppProps) GetPostViewFormat;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, BOOL fAllocate) SetAllocateForPostView;
-				public new function HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out BOOL pfAllocate) GetAllocateForPostView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, ref IWMWriterPostViewCallback pCallback, void* pvContext) SetPostViewCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNum, BOOL fReceivePostViewSamples) SetReceivePostViewSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNum, out BOOL pfReceivePostViewSamples) GetReceivePostViewSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out IWMMediaProps* ppOutput) GetPostViewProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, ref IWMMediaProps pOutput) SetPostViewProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out uint32 pcFormats) GetPostViewFormatCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, uint32 dwFormatNumber, out IWMMediaProps* ppProps) GetPostViewFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, BOOL fAllocate) SetAllocateForPostView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPostView self, uint16 wStreamNumber, out BOOL pfAllocate) GetAllocateForPostView;
 			}
 		}
 		[CRepr]
@@ -2124,11 +2124,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWriterSink self, ref INSSBuffer pHeader) OnHeader;
-				public new function HRESULT(ref IWMWriterSink self, out BOOL pfRealTime) IsRealTime;
-				public new function HRESULT(ref IWMWriterSink self, uint32 cbDataUnit, out INSSBuffer* ppDataUnit) AllocateDataUnit;
-				public new function HRESULT(ref IWMWriterSink self, ref INSSBuffer pDataUnit) OnDataUnit;
-				public new function HRESULT(ref IWMWriterSink self) OnEndWriting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterSink self, ref INSSBuffer pHeader) OnHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterSink self, out BOOL pfRealTime) IsRealTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterSink self, uint32 cbDataUnit, out INSSBuffer* ppDataUnit) AllocateDataUnit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterSink self, ref INSSBuffer pDataUnit) OnDataUnit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterSink self) OnEndWriting;
 			}
 		}
 		[CRepr]
@@ -2144,8 +2144,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMRegisterCallback self, ref IWMStatusCallback pCallback, void* pvContext) Advise;
-				public new function HRESULT(ref IWMRegisterCallback self, ref IWMStatusCallback pCallback, void* pvContext) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisterCallback self, ref IWMStatusCallback pCallback, void* pvContext) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisterCallback self, ref IWMStatusCallback pCallback, void* pvContext) Unadvise;
 			}
 		}
 		[CRepr]
@@ -2160,7 +2160,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public new function HRESULT(ref IWMWriterFileSink self, PWSTR pwszFilename) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink self, PWSTR pwszFilename) Open;
 			}
 		}
 		[CRepr]
@@ -2181,13 +2181,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterFileSink.VTable
 			{
-				public new function HRESULT(ref IWMWriterFileSink2 self, uint64 cnsStartTime) Start;
-				public new function HRESULT(ref IWMWriterFileSink2 self, uint64 cnsStopTime) Stop;
-				public new function HRESULT(ref IWMWriterFileSink2 self, out BOOL pfStopped) IsStopped;
-				public new function HRESULT(ref IWMWriterFileSink2 self, out uint64 pcnsDuration) GetFileDuration;
-				public new function HRESULT(ref IWMWriterFileSink2 self, out uint64 pcbFile) GetFileSize;
-				public new function HRESULT(ref IWMWriterFileSink2 self) Close;
-				public new function HRESULT(ref IWMWriterFileSink2 self, out BOOL pfClosed) IsClosed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, uint64 cnsStartTime) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, uint64 cnsStopTime) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, out BOOL pfStopped) IsStopped;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, out uint64 pcnsDuration) GetFileDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, out uint64 pcbFile) GetFileSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink2 self, out BOOL pfClosed) IsClosed;
 			}
 		}
 		[CRepr]
@@ -2209,14 +2209,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterFileSink2.VTable
 			{
-				public new function HRESULT(ref IWMWriterFileSink3 self, BOOL fDoAutoIndexing) SetAutoIndexing;
-				public new function HRESULT(ref IWMWriterFileSink3 self, out BOOL pfAutoIndexing) GetAutoIndexing;
-				public new function HRESULT(ref IWMWriterFileSink3 self, uint16 wStreamNumber, BOOL fShouldControlStartAndStop) SetControlStream;
-				public new function HRESULT(ref IWMWriterFileSink3 self, out uint32 pdwFileSinkMode) GetMode;
-				public new function HRESULT(ref IWMWriterFileSink3 self, ref WMT_FILESINK_DATA_UNIT pFileSinkDataUnit) OnDataUnitEx;
-				public new function HRESULT(ref IWMWriterFileSink3 self, BOOL fUnbufferedIO, BOOL fRestrictMemUsage) SetUnbufferedIO;
-				public new function HRESULT(ref IWMWriterFileSink3 self, out BOOL pfUnbufferedIO) GetUnbufferedIO;
-				public new function HRESULT(ref IWMWriterFileSink3 self) CompleteOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, BOOL fDoAutoIndexing) SetAutoIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, out BOOL pfAutoIndexing) GetAutoIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, uint16 wStreamNumber, BOOL fShouldControlStartAndStop) SetControlStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, out uint32 pdwFileSinkMode) GetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, ref WMT_FILESINK_DATA_UNIT pFileSinkDataUnit) OnDataUnitEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, BOOL fUnbufferedIO, BOOL fRestrictMemUsage) SetUnbufferedIO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self, out BOOL pfUnbufferedIO) GetUnbufferedIO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterFileSink3 self) CompleteOperations;
 			}
 		}
 		[CRepr]
@@ -2238,14 +2238,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public new function HRESULT(ref IWMWriterNetworkSink self, uint32 dwMaxClients) SetMaximumClients;
-				public new function HRESULT(ref IWMWriterNetworkSink self, out uint32 pdwMaxClients) GetMaximumClients;
-				public new function HRESULT(ref IWMWriterNetworkSink self, WMT_NET_PROTOCOL protocol) SetNetworkProtocol;
-				public new function HRESULT(ref IWMWriterNetworkSink self, out WMT_NET_PROTOCOL pProtocol) GetNetworkProtocol;
-				public new function HRESULT(ref IWMWriterNetworkSink self, PWSTR pwszURL, out uint32 pcchURL) GetHostURL;
-				public new function HRESULT(ref IWMWriterNetworkSink self, out uint32 pdwPortNum) Open;
-				public new function HRESULT(ref IWMWriterNetworkSink self) Disconnect;
-				public new function HRESULT(ref IWMWriterNetworkSink self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, uint32 dwMaxClients) SetMaximumClients;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, out uint32 pdwMaxClients) GetMaximumClients;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, WMT_NET_PROTOCOL protocol) SetNetworkProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, out WMT_NET_PROTOCOL pProtocol) GetNetworkProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, PWSTR pwszURL, out uint32 pcchURL) GetHostURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self, out uint32 pdwPortNum) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterNetworkSink self) Close;
 			}
 		}
 		[CRepr]
@@ -2261,8 +2261,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMClientConnections self, out uint32 pcClients) GetClientCount;
-				public new function HRESULT(ref IWMClientConnections self, uint32 dwClientNum, out WM_CLIENT_PROPERTIES pClientProperties) GetClientProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMClientConnections self, out uint32 pcClients) GetClientCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMClientConnections self, uint32 dwClientNum, out WM_CLIENT_PROPERTIES pClientProperties) GetClientProperties;
 			}
 		}
 		[CRepr]
@@ -2277,7 +2277,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMClientConnections.VTable
 			{
-				public new function HRESULT(ref IWMClientConnections2 self, uint32 dwClientNum, char16* pwszNetworkAddress, out uint32 pcchNetworkAddress, char16* pwszPort, out uint32 pcchPort, char16* pwszDNSName, out uint32 pcchDNSName) GetClientInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMClientConnections2 self, uint32 dwClientNum, char16* pwszNetworkAddress, out uint32 pcchNetworkAddress, char16* pwszPort, out uint32 pcchPort, char16* pwszDNSName, out uint32 pcchDNSName) GetClientInfo;
 			}
 		}
 		[CRepr]
@@ -2311,26 +2311,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced self, BOOL fUserClock) SetUserProvidedClock;
-				public new function HRESULT(ref IWMReaderAdvanced self, out BOOL pfUserClock) GetUserProvidedClock;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint64 cnsTime) DeliverTime;
-				public new function HRESULT(ref IWMReaderAdvanced self, BOOL fSelection) SetManualStreamSelection;
-				public new function HRESULT(ref IWMReaderAdvanced self, out BOOL pfSelection) GetManualStreamSelection;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) SetStreamsSelected;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) GetStreamSelected;
-				public new function HRESULT(ref IWMReaderAdvanced self, BOOL fGetCallbacks) SetReceiveSelectionCallbacks;
-				public new function HRESULT(ref IWMReaderAdvanced self, out BOOL pfGetCallbacks) GetReceiveSelectionCallbacks;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, BOOL fReceiveStreamSamples) SetReceiveStreamSamples;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, out BOOL pfReceiveStreamSamples) GetReceiveStreamSamples;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint32 dwOutputNum, BOOL fAllocate) SetAllocateForOutput;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint32 dwOutputNum, out BOOL pfAllocate) GetAllocateForOutput;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, BOOL fAllocate) SetAllocateForStream;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 dwSreamNum, out BOOL pfAllocate) GetAllocateForStream;
-				public new function HRESULT(ref IWMReaderAdvanced self, out WM_READER_STATISTICS pStatistics) GetStatistics;
-				public new function HRESULT(ref IWMReaderAdvanced self, ref WM_READER_CLIENTINFO pClientInfo) SetClientInfo;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint32 dwOutput, out uint32 pcbMax) GetMaxOutputSampleSize;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint16 wStream, out uint32 pcbMax) GetMaxStreamSampleSize;
-				public new function HRESULT(ref IWMReaderAdvanced self, uint64 cnsLateness) NotifyLateDelivery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, BOOL fUserClock) SetUserProvidedClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, out BOOL pfUserClock) GetUserProvidedClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint64 cnsTime) DeliverTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, BOOL fSelection) SetManualStreamSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, out BOOL pfSelection) GetManualStreamSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 cStreamCount, ref uint16 pwStreamNumbers, ref WMT_STREAM_SELECTION pSelections) SetStreamsSelected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, out WMT_STREAM_SELECTION pSelection) GetStreamSelected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, BOOL fGetCallbacks) SetReceiveSelectionCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, out BOOL pfGetCallbacks) GetReceiveSelectionCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, BOOL fReceiveStreamSamples) SetReceiveStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, out BOOL pfReceiveStreamSamples) GetReceiveStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint32 dwOutputNum, BOOL fAllocate) SetAllocateForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint32 dwOutputNum, out BOOL pfAllocate) GetAllocateForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 wStreamNum, BOOL fAllocate) SetAllocateForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 dwSreamNum, out BOOL pfAllocate) GetAllocateForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, out WM_READER_STATISTICS pStatistics) GetStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, ref WM_READER_CLIENTINFO pClientInfo) SetClientInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint32 dwOutput, out uint32 pcbMax) GetMaxOutputSampleSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint16 wStream, out uint32 pcbMax) GetMaxStreamSampleSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced self, uint64 cnsLateness) NotifyLateDelivery;
 			}
 		}
 		[CRepr]
@@ -2359,21 +2359,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced2 self, WMT_PLAY_MODE Mode) SetPlayMode;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, out WMT_PLAY_MODE pMode) GetPlayMode;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent, out uint64 pcnsBuffering) GetBufferProgress;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent, out uint64 pqwBytesDownloaded, out uint64 pcnsDownload) GetDownloadProgress;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent) GetSaveAsProgress;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, PWSTR pwszFilename) SaveFileAs;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, char16* pwszProtocol, out uint32 pcchProtocol) GetProtocolName;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) StartAtMarker;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetOutputSetting;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, uint64 cnsStart, uint64 cnsDuration, float fRate) Preroll;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, BOOL fLogClientID) SetLogClientID;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, out BOOL pfLogClientID) GetLogClientID;
-				public new function HRESULT(ref IWMReaderAdvanced2 self) StopBuffering;
-				public new function HRESULT(ref IWMReaderAdvanced2 self, ref IStream pStream, ref IWMReaderCallback pCallback, void* pvContext) OpenStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, WMT_PLAY_MODE Mode) SetPlayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, out WMT_PLAY_MODE pMode) GetPlayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent, out uint64 pcnsBuffering) GetBufferProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent, out uint64 pqwBytesDownloaded, out uint64 pcnsDownload) GetDownloadProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, out uint32 pdwPercent) GetSaveAsProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, PWSTR pwszFilename) SaveFileAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, char16* pwszProtocol, out uint32 pcchProtocol) GetProtocolName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) StartAtMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, uint32 dwOutputNum, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetOutputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, uint64 cnsStart, uint64 cnsDuration, float fRate) Preroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, BOOL fLogClientID) SetLogClientID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, out BOOL pfLogClientID) GetLogClientID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self) StopBuffering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced2 self, ref IStream pStream, ref IWMReaderCallback pCallback, void* pvContext) OpenStream;
 			}
 		}
 		[CRepr]
@@ -2389,8 +2389,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced2.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced3 self) StopNetStreaming;
-				public new function HRESULT(ref IWMReaderAdvanced3 self, uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) StartAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced3 self) StopNetStreaming;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced3 self, uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) StartAtPosition;
 			}
 		}
 		[CRepr]
@@ -2413,15 +2413,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced3.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced4 self, uint32 dwOutputNum, out uint16 pwLanguageCount) GetLanguageCount;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguage;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, out double pdblFactor) GetMaxSpeedFactor;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, out BOOL pfUsingFastCache) IsUsingFastCache;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) AddLogParam;
-				public new function HRESULT(ref IWMReaderAdvanced4 self) SendLogParams;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, out BOOL pfCanSave) CanSaveFileAs;
-				public new function HRESULT(ref IWMReaderAdvanced4 self) CancelSaveFileAs;
-				public new function HRESULT(ref IWMReaderAdvanced4 self, char16* pwszURL, out uint32 pcchURL) GetURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, uint32 dwOutputNum, out uint16 pwLanguageCount) GetLanguageCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, out double pdblFactor) GetMaxSpeedFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, out BOOL pfUsingFastCache) IsUsingFastCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) AddLogParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self) SendLogParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, out BOOL pfCanSave) CanSaveFileAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self) CancelSaveFileAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced4 self, char16* pwszURL, out uint32 pcchURL) GetURL;
 			}
 		}
 		[CRepr]
@@ -2436,7 +2436,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced4.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced5 self, uint32 dwOutputNum, ref IWMPlayerHook pHook) SetPlayerHook;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced5 self, uint32 dwOutputNum, ref IWMPlayerHook pHook) SetPlayerHook;
 			}
 		}
 		[CRepr]
@@ -2451,7 +2451,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced5.VTable
 			{
-				public new function HRESULT(ref IWMReaderAdvanced6 self, uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, out uint32 pcbInitializationVector) SetProtectStreamSamples;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAdvanced6 self, uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, out uint32 pcbInitializationVector) SetProtectStreamSamples;
 			}
 		}
 		[CRepr]
@@ -2466,7 +2466,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMPlayerHook self) PreDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPlayerHook self) PreDecode;
 			}
 		}
 		[CRepr]
@@ -2482,8 +2482,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderAllocatorEx self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForStreamEx;
-				public new function HRESULT(ref IWMReaderAllocatorEx self, uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForOutputEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAllocatorEx self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForStreamEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAllocatorEx self, uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForOutputEx;
 			}
 		}
 		[CRepr]
@@ -2498,7 +2498,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderTypeNegotiation self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) TryOutputProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderTypeNegotiation self, uint32 dwOutputNum, ref IWMOutputMediaProps pOutput) TryOutputProps;
 			}
 		}
 		[CRepr]
@@ -2518,12 +2518,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnStreamSample;
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint64 cnsCurrentTime, void* pvContext) OnTime;
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamCount, ref uint16 pStreamNumbers, ref WMT_STREAM_SELECTION pSelections, void* pvContext) OnStreamSelection;
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint32 dwOutputNum, ref WM_MEDIA_TYPE pMediaType, void* pvContext) OnOutputPropsChanged;
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForStream;
-				public new function HRESULT(ref IWMReaderCallbackAdvanced self, uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, ref INSSBuffer pSample, void* pvContext) OnStreamSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint64 cnsCurrentTime, void* pvContext) OnTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamCount, ref uint16 pStreamNumbers, ref WMT_STREAM_SELECTION pSelections, void* pvContext) OnStreamSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint32 dwOutputNum, ref WM_MEDIA_TYPE pMediaType, void* pvContext) OnOutputPropsChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint16 wStreamNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderCallbackAdvanced self, uint32 dwOutputNum, uint32 cbBuffer, out INSSBuffer* ppBuffer, void* pvContext) AllocateForOutput;
 			}
 		}
 		[CRepr]
@@ -2545,14 +2545,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMReader self, uint32 dwFlags) AcquireLicense;
-				public new function HRESULT(ref IWMDRMReader self) CancelLicenseAcquisition;
-				public new function HRESULT(ref IWMDRMReader self, uint32 dwFlags) Individualize;
-				public new function HRESULT(ref IWMDRMReader self) CancelIndividualization;
-				public new function HRESULT(ref IWMDRMReader self) MonitorLicenseAcquisition;
-				public new function HRESULT(ref IWMDRMReader self) CancelMonitorLicenseAcquisition;
-				public new function HRESULT(ref IWMDRMReader self, PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) SetDRMProperty;
-				public new function HRESULT(ref IWMDRMReader self, PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) GetDRMProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self, uint32 dwFlags) AcquireLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self) CancelLicenseAcquisition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self, uint32 dwFlags) Individualize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self) CancelIndividualization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self) MonitorLicenseAcquisition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self) CancelMonitorLicenseAcquisition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self, PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) SetDRMProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader self, PWSTR pwstrName, out WMT_ATTR_DATATYPE pdwType, uint8* pValue, out uint16 pcbLength) GetDRMProperty;
 			}
 		}
 		[CRepr]
@@ -2570,10 +2570,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMDRMReader.VTable
 			{
-				public new function HRESULT(ref IWMDRMReader2 self, BOOL fEvaluate) SetEvaluateOutputLevelLicenses;
-				public new function HRESULT(ref IWMDRMReader2 self, DRM_PLAY_OPL* pPlayOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) GetPlayOutputLevels;
-				public new function HRESULT(ref IWMDRMReader2 self, DRM_COPY_OPL* pCopyOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) GetCopyOutputLevels;
-				public new function HRESULT(ref IWMDRMReader2 self) TryNextLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader2 self, BOOL fEvaluate) SetEvaluateOutputLevelLicenses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader2 self, DRM_PLAY_OPL* pPlayOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) GetPlayOutputLevels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader2 self, DRM_COPY_OPL* pCopyOPL, out uint32 pcbLength, out uint32 pdwMinAppComplianceLevel) GetCopyOutputLevels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader2 self) TryNextLicense;
 			}
 		}
 		[CRepr]
@@ -2588,7 +2588,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMDRMReader2.VTable
 			{
-				public new function HRESULT(ref IWMDRMReader3 self, out Guid* ppGuids, out uint32 pcGuids) GetInclusionList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMReader3 self, out Guid* ppGuids, out uint32 pcGuids) GetInclusionList;
 			}
 		}
 		[CRepr]
@@ -2606,10 +2606,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderPlaylistBurn self, uint32 cFiles, ref PWSTR ppwszFilenames, ref IWMStatusCallback pCallback, void* pvContext) InitPlaylistBurn;
-				public new function HRESULT(ref IWMReaderPlaylistBurn self, uint32 cFiles, out HRESULT phrStati) GetInitResults;
-				public new function HRESULT(ref IWMReaderPlaylistBurn self) Cancel;
-				public new function HRESULT(ref IWMReaderPlaylistBurn self, HRESULT hrBurnResult) EndPlaylistBurn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderPlaylistBurn self, uint32 cFiles, ref PWSTR ppwszFilenames, ref IWMStatusCallback pCallback, void* pvContext) InitPlaylistBurn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderPlaylistBurn self, uint32 cFiles, out HRESULT phrStati) GetInitResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderPlaylistBurn self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderPlaylistBurn self, HRESULT hrBurnResult) EndPlaylistBurn;
 			}
 		}
 		[CRepr]
@@ -2656,39 +2656,39 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out uint64 pcnsBufferingTime) GetBufferingTime;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, uint64 cnsBufferingTime) SetBufferingTime;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, WM_PORT_NUMBER_RANGE* pRangeArray, out uint32 pcRanges) GetUDPPortRanges;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) SetUDPPortRanges;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out WMT_PROXY_SETTINGS pProxySetting) GetProxySettings;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) SetProxySettings;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, char16* pwszHostName, out uint32 pcchHostName) GetProxyHostName;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, PWSTR pwszHostName) SetProxyHostName;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out uint32 pdwPort) GetProxyPort;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, uint32 dwPort) SetProxyPort;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, char16* pwszExceptionList, out uint32 pcchExceptionList) GetProxyExceptionList;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, PWSTR pwszExceptionList) SetProxyExceptionList;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out BOOL pfBypassForLocal) GetProxyBypassForLocal;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, BOOL fBypassForLocal) SetProxyBypassForLocal;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfForceRerunDetection) GetForceRerunAutoProxyDetection;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, BOOL fForceRerunDetection) SetForceRerunAutoProxyDetection;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableMulticast) GetEnableMulticast;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableMulticast) SetEnableMulticast;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableHTTP) GetEnableHTTP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableHTTP) SetEnableHTTP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableUDP) GetEnableUDP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableUDP) SetEnableUDP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableTCP) GetEnableTCP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableTCP) SetEnableTCP;
-				public new function HRESULT(ref IWMReaderNetworkConfig self) ResetProtocolRollover;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out uint32 pdwConnectionBandwidth) GetConnectionBandwidth;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, uint32 dwConnectionBandwidth) SetConnectionBandwidth;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out uint32 pcProtocols) GetNumProtocolsSupported;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, uint32 dwProtocolNum, char16* pwszProtocolName, out uint32 pcchProtocolName) GetSupportedProtocolName;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszUrl) AddLoggingUrl;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, uint32 dwIndex, char16* pwszUrl, out uint32 pcchUrl) GetLoggingUrl;
-				public new function HRESULT(ref IWMReaderNetworkConfig self, out uint32 pdwUrlCount) GetLoggingUrlCount;
-				public new function HRESULT(ref IWMReaderNetworkConfig self) ResetLoggingUrlList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out uint64 pcnsBufferingTime) GetBufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, uint64 cnsBufferingTime) SetBufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, WM_PORT_NUMBER_RANGE* pRangeArray, out uint32 pcRanges) GetUDPPortRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) SetUDPPortRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out WMT_PROXY_SETTINGS pProxySetting) GetProxySettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) SetProxySettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, char16* pwszHostName, out uint32 pcchHostName) GetProxyHostName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, PWSTR pwszHostName) SetProxyHostName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out uint32 pdwPort) GetProxyPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, uint32 dwPort) SetProxyPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, char16* pwszExceptionList, out uint32 pcchExceptionList) GetProxyExceptionList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, PWSTR pwszExceptionList) SetProxyExceptionList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, out BOOL pfBypassForLocal) GetProxyBypassForLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszProtocol, BOOL fBypassForLocal) SetProxyBypassForLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfForceRerunDetection) GetForceRerunAutoProxyDetection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, BOOL fForceRerunDetection) SetForceRerunAutoProxyDetection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableMulticast) GetEnableMulticast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableMulticast) SetEnableMulticast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableHTTP) GetEnableHTTP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableHTTP) SetEnableHTTP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableUDP) GetEnableUDP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableUDP) SetEnableUDP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out BOOL pfEnableTCP) GetEnableTCP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, BOOL fEnableTCP) SetEnableTCP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self) ResetProtocolRollover;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out uint32 pdwConnectionBandwidth) GetConnectionBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, uint32 dwConnectionBandwidth) SetConnectionBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out uint32 pcProtocols) GetNumProtocolsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, uint32 dwProtocolNum, char16* pwszProtocolName, out uint32 pcchProtocolName) GetSupportedProtocolName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, PWSTR pwszUrl) AddLoggingUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, uint32 dwIndex, char16* pwszUrl, out uint32 pcchUrl) GetLoggingUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self, out uint32 pdwUrlCount) GetLoggingUrlCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig self) ResetLoggingUrlList;
 			}
 		}
 		[CRepr]
@@ -2715,19 +2715,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMReaderNetworkConfig.VTable
 			{
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableContentCaching) GetEnableContentCaching;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableContentCaching) SetEnableContentCaching;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableFastCache) GetEnableFastCache;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableFastCache) SetEnableFastCache;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out uint64 pcnsAccelDuration) GetAcceleratedStreamingDuration;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, uint64 cnsAccelDuration) SetAcceleratedStreamingDuration;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out uint32 pdwAutoReconnectLimit) GetAutoReconnectLimit;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, uint32 dwAutoReconnectLimit) SetAutoReconnectLimit;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableResends) GetEnableResends;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableResends) SetEnableResends;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableThinning) GetEnableThinning;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableThinning) SetEnableThinning;
-				public new function HRESULT(ref IWMReaderNetworkConfig2 self, out uint32 pdwMaxNetPacketSize) GetMaxNetPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableContentCaching) GetEnableContentCaching;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableContentCaching) SetEnableContentCaching;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableFastCache) GetEnableFastCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableFastCache) SetEnableFastCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out uint64 pcnsAccelDuration) GetAcceleratedStreamingDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, uint64 cnsAccelDuration) SetAcceleratedStreamingDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out uint32 pdwAutoReconnectLimit) GetAutoReconnectLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, uint32 dwAutoReconnectLimit) SetAutoReconnectLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableResends) GetEnableResends;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableResends) SetEnableResends;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out BOOL pfEnableThinning) GetEnableThinning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, BOOL fEnableThinning) SetEnableThinning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderNetworkConfig2 self, out uint32 pdwMaxNetPacketSize) GetMaxNetPacketSize;
 			}
 		}
 		[CRepr]
@@ -2744,9 +2744,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderStreamClock self, ref uint64 pcnsNow) GetTime;
-				public new function HRESULT(ref IWMReaderStreamClock self, uint64 cnsWhen, void* pvParam, out uint32 pdwTimerId) SetTimer;
-				public new function HRESULT(ref IWMReaderStreamClock self, uint32 dwTimerId) KillTimer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderStreamClock self, ref uint64 pcnsNow) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderStreamClock self, uint64 cnsWhen, void* pvParam, out uint32 pdwTimerId) SetTimer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderStreamClock self, uint32 dwTimerId) KillTimer;
 			}
 		}
 		[CRepr]
@@ -2762,8 +2762,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMIndexer self, PWSTR pwszURL, ref IWMStatusCallback pCallback, void* pvContext) StartIndexing;
-				public new function HRESULT(ref IWMIndexer self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIndexer self, PWSTR pwszURL, ref IWMStatusCallback pCallback, void* pvContext) StartIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIndexer self) Cancel;
 			}
 		}
 		[CRepr]
@@ -2778,7 +2778,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMIndexer.VTable
 			{
-				public new function HRESULT(ref IWMIndexer2 self, uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) Configure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIndexer2 self, uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) Configure;
 			}
 		}
 		[CRepr]
@@ -2794,8 +2794,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMLicenseBackup self, uint32 dwFlags, ref IWMStatusCallback pCallback) BackupLicenses;
-				public new function HRESULT(ref IWMLicenseBackup self) CancelLicenseBackup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseBackup self, uint32 dwFlags, ref IWMStatusCallback pCallback) BackupLicenses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseBackup self) CancelLicenseBackup;
 			}
 		}
 		[CRepr]
@@ -2811,8 +2811,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMLicenseRestore self, uint32 dwFlags, ref IWMStatusCallback pCallback) RestoreLicenses;
-				public new function HRESULT(ref IWMLicenseRestore self) CancelLicenseRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseRestore self, uint32 dwFlags, ref IWMStatusCallback pCallback) RestoreLicenses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseRestore self) CancelLicenseRestore;
 			}
 		}
 		[CRepr]
@@ -2832,12 +2832,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMBackupRestoreProps self, out uint16 pcProps) GetPropCount;
-				public new function HRESULT(ref IWMBackupRestoreProps self, uint16 wIndex, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetPropByIndex;
-				public new function HRESULT(ref IWMBackupRestoreProps self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetPropByName;
-				public new function HRESULT(ref IWMBackupRestoreProps self, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetProp;
-				public new function HRESULT(ref IWMBackupRestoreProps self, PWSTR pcwszName) RemoveProp;
-				public new function HRESULT(ref IWMBackupRestoreProps self) RemoveAllProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self, out uint16 pcProps) GetPropCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self, uint16 wIndex, char16* pwszName, out uint16 pcchNameLen, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetPropByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint16 pcbLength) GetPropByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self, PWSTR pcwszName) RemoveProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMBackupRestoreProps self) RemoveAllProps;
 			}
 		}
 		[CRepr]
@@ -2854,9 +2854,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMCodecInfo self, in Guid guidType, out uint32 pcCodecs) GetCodecInfoCount;
-				public new function HRESULT(ref IWMCodecInfo self, in Guid guidType, uint32 dwCodecIndex, out uint32 pcFormat) GetCodecFormatCount;
-				public new function HRESULT(ref IWMCodecInfo self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig) GetCodecFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo self, in Guid guidType, out uint32 pcCodecs) GetCodecInfoCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo self, in Guid guidType, uint32 dwCodecIndex, out uint32 pcFormat) GetCodecFormatCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig) GetCodecFormat;
 			}
 		}
 		[CRepr]
@@ -2872,8 +2872,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMCodecInfo.VTable
 			{
-				public new function HRESULT(ref IWMCodecInfo2 self, in Guid guidType, uint32 dwCodecIndex, char16* wszName, out uint32 pcchName) GetCodecName;
-				public new function HRESULT(ref IWMCodecInfo2 self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig, char16* wszDesc, out uint32 pcchDesc) GetCodecFormatDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo2 self, in Guid guidType, uint32 dwCodecIndex, char16* wszName, out uint32 pcchName) GetCodecName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo2 self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, out IWMStreamConfig* ppIStreamConfig, char16* wszDesc, out uint32 pcchDesc) GetCodecFormatDesc;
 			}
 		}
 		[CRepr]
@@ -2891,10 +2891,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMCodecInfo2.VTable
 			{
-				public new function HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecFormatProp;
-				public new function HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecProp;
-				public new function HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) SetCodecEnumerationSetting;
-				public new function HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecEnumerationSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecFormatProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) SetCodecEnumerationSetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecInfo3 self, in Guid guidType, uint32 dwCodecIndex, PWSTR pszName, out WMT_ATTR_DATATYPE pType, uint8* pValue, out uint32 pdwSize) GetCodecEnumerationSetting;
 			}
 		}
 		[CRepr]
@@ -2911,9 +2911,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMLanguageList self, out uint16 pwCount) GetLanguageCount;
-				public new function HRESULT(ref IWMLanguageList self, uint16 wIndex, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguageDetails;
-				public new function HRESULT(ref IWMLanguageList self, PWSTR pwszLanguageString, out uint16 pwIndex) AddLanguageByRFC1766String;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLanguageList self, out uint16 pwCount) GetLanguageCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLanguageList self, uint16 wIndex, char16* pwszLanguageString, out uint16 pcchLanguageStringLength) GetLanguageDetails;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLanguageList self, PWSTR pwszLanguageString, out uint16 pwIndex) AddLanguageByRFC1766String;
 			}
 		}
 		[CRepr]
@@ -2930,9 +2930,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public new function HRESULT(ref IWMWriterPushSink self, PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) Connect;
-				public new function HRESULT(ref IWMWriterPushSink self) Disconnect;
-				public new function HRESULT(ref IWMWriterPushSink self) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPushSink self, PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPushSink self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWriterPushSink self) EndSession;
 			}
 		}
 		[CRepr]
@@ -2952,12 +2952,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) RegisterDevice;
-				public new function HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) UnregisterDevice;
-				public new function HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, out uint32 pcRegisteredDevices) GetRegistrationStats;
-				public new function HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, out IWMRegisteredDevice* ppDevice) GetFirstRegisteredDevice;
-				public new function HRESULT(ref IWMDeviceRegistration self, out IWMRegisteredDevice* ppDevice) GetNextRegisteredDevice;
-				public new function HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) GetRegisteredDeviceByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) RegisterDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) UnregisterDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, out uint32 pcRegisteredDevices) GetRegistrationStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, out IWMRegisteredDevice* ppDevice) GetFirstRegisteredDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, out IWMRegisteredDevice* ppDevice) GetNextRegisteredDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDeviceRegistration self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, out IWMRegisteredDevice* ppDevice) GetRegisteredDeviceByID;
 			}
 		}
 		[CRepr]
@@ -2985,20 +2985,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMRegisteredDevice self, out DRM_VAL16 pSerialNumber) GetDeviceSerialNumber;
-				public new function HRESULT(ref IWMRegisteredDevice self, out INSSBuffer* ppCertificate) GetDeviceCertificate;
-				public new function HRESULT(ref IWMRegisteredDevice self, out uint32 pdwType) GetDeviceType;
-				public new function HRESULT(ref IWMRegisteredDevice self, out uint32 pcAttributes) GetAttributeCount;
-				public new function HRESULT(ref IWMRegisteredDevice self, uint32 dwIndex, out BSTR pbstrName, out BSTR pbstrValue) GetAttributeByIndex;
-				public new function HRESULT(ref IWMRegisteredDevice self, BSTR bstrName, out BSTR pbstrValue) GetAttributeByName;
-				public new function HRESULT(ref IWMRegisteredDevice self, BSTR bstrName, BSTR bstrValue) SetAttributeByName;
-				public new function HRESULT(ref IWMRegisteredDevice self, BOOL fApprove) Approve;
-				public new function HRESULT(ref IWMRegisteredDevice self, out BOOL pfValid) IsValid;
-				public new function HRESULT(ref IWMRegisteredDevice self, out BOOL pfApproved) IsApproved;
-				public new function HRESULT(ref IWMRegisteredDevice self, out BOOL pfCompliant) IsWmdrmCompliant;
-				public new function HRESULT(ref IWMRegisteredDevice self, out BOOL pfOpened) IsOpened;
-				public new function HRESULT(ref IWMRegisteredDevice self) Open;
-				public new function HRESULT(ref IWMRegisteredDevice self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out DRM_VAL16 pSerialNumber) GetDeviceSerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out INSSBuffer* ppCertificate) GetDeviceCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out uint32 pdwType) GetDeviceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out uint32 pcAttributes) GetAttributeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, uint32 dwIndex, out BSTR pbstrName, out BSTR pbstrValue) GetAttributeByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, BSTR bstrName, out BSTR pbstrValue) GetAttributeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, BSTR bstrName, BSTR bstrValue) SetAttributeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, BOOL fApprove) Approve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out BOOL pfValid) IsValid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out BOOL pfApproved) IsApproved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out BOOL pfCompliant) IsWmdrmCompliant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self, out BOOL pfOpened) IsOpened;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMRegisteredDevice self) Close;
 			}
 		}
 		[CRepr]
@@ -3013,7 +3013,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMProximityDetection self, uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, out INSSBuffer* ppRegistrationResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) StartDetection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMProximityDetection self, uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, out INSSBuffer* ppRegistrationResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) StartDetection;
 			}
 		}
 		[CRepr]
@@ -3029,8 +3029,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMMessageParser self, uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber) ParseRegistrationReqMsg;
-				public new function HRESULT(ref IWMDRMMessageParser self, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber, out BSTR pbstrAction) ParseLicenseRequestMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMMessageParser self, uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber) ParseRegistrationReqMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMMessageParser self, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppDeviceCert, out DRM_VAL16 pDeviceSerialNumber, out BSTR pbstrAction) ParseLicenseRequestMsg;
 			}
 		}
 		[CRepr]
@@ -3048,10 +3048,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMTranscryptor self, BSTR bstrFileName, out uint8 pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppLicenseResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) Initialize;
-				public new function HRESULT(ref IWMDRMTranscryptor self, uint64 hnsTime) Seek;
-				public new function HRESULT(ref IWMDRMTranscryptor self, ref uint8 pbData, ref uint32 pcbData) Read;
-				public new function HRESULT(ref IWMDRMTranscryptor self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor self, BSTR bstrFileName, out uint8 pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, out INSSBuffer* ppLicenseResponseMsg, ref IWMStatusCallback pCallback, void* pvContext) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor self, uint64 hnsTime) Seek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor self, ref uint8 pbData, ref uint32 pcbData) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor self) Close;
 			}
 		}
 		[CRepr]
@@ -3069,10 +3069,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMDRMTranscryptor.VTable
 			{
-				public new function HRESULT(ref IWMDRMTranscryptor2 self, uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) SeekEx;
-				public new function HRESULT(ref IWMDRMTranscryptor2 self, BOOL fEnable) ZeroAdjustTimestamps;
-				public new function HRESULT(ref IWMDRMTranscryptor2 self, out uint64 pcnsTime) GetSeekStartTime;
-				public new function HRESULT(ref IWMDRMTranscryptor2 self, out uint64 pcnsDuration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor2 self, uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) SeekEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor2 self, BOOL fEnable) ZeroAdjustTimestamps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor2 self, out uint64 pcnsTime) GetSeekStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptor2 self, out uint64 pcnsDuration) GetDuration;
 			}
 		}
 		[CRepr]
@@ -3087,7 +3087,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMDRMTranscryptionManager self, out IWMDRMTranscryptor* ppTranscryptor) CreateTranscryptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDRMTranscryptionManager self, out IWMDRMTranscryptor* ppTranscryptor) CreateTranscryptor;
 			}
 		}
 		[CRepr]
@@ -3103,8 +3103,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMWatermarkInfo self, WMT_WATERMARK_ENTRY_TYPE wmetType, out uint32 pdwCount) GetWatermarkEntryCount;
-				public new function HRESULT(ref IWMWatermarkInfo self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, out WMT_WATERMARK_ENTRY pEntry) GetWatermarkEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWatermarkInfo self, WMT_WATERMARK_ENTRY_TYPE wmetType, out uint32 pdwCount) GetWatermarkEntryCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMWatermarkInfo self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, out WMT_WATERMARK_ENTRY pEntry) GetWatermarkEntry;
 			}
 		}
 		[CRepr]
@@ -3120,8 +3120,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderAccelerator self, uint32 dwOutputNum, in Guid riid, void** ppvCodecInterface) GetCodecInterface;
-				public new function HRESULT(ref IWMReaderAccelerator self, uint32 dwOutputNum, ref WM_MEDIA_TYPE pSubtype) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAccelerator self, uint32 dwOutputNum, in Guid riid, void** ppvCodecInterface) GetCodecInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderAccelerator self, uint32 dwOutputNum, ref WM_MEDIA_TYPE pSubtype) Notify;
 			}
 		}
 		[CRepr]
@@ -3137,8 +3137,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMReaderTimecode self, uint16 wStreamNum, out uint16 pwRangeCount) GetTimecodeRangeCount;
-				public new function HRESULT(ref IWMReaderTimecode self, uint16 wStreamNum, uint16 wRangeNum, out uint32 pStartTimecode, out uint32 pEndTimecode) GetTimecodeRangeBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderTimecode self, uint16 wStreamNum, out uint16 pwRangeCount) GetTimecodeRangeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMReaderTimecode self, uint16 wStreamNum, uint16 wRangeNum, out uint32 pStartTimecode, out uint32 pEndTimecode) GetTimecodeRangeBounds;
 			}
 		}
 		[CRepr]
@@ -3156,10 +3156,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, out uint32 pcEntries) GetAccessEntryCount;
-				public new function HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, uint32 dwEntryNum, out WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) GetAccessEntry;
-				public new function HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, ref WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) AddAccessEntry;
-				public new function HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, uint32 dwEntryNum) RemoveAccessEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, out uint32 pcEntries) GetAccessEntryCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, uint32 dwEntryNum, out WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) GetAccessEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, ref WM_ADDRESS_ACCESSENTRY pAddrAccessEntry) AddAccessEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess self, WM_AETYPE aeType, uint32 dwEntryNum) RemoveAccessEntry;
 			}
 		}
 		[CRepr]
@@ -3175,8 +3175,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMAddressAccess.VTable
 			{
-				public new function HRESULT(ref IWMAddressAccess2 self, WM_AETYPE aeType, uint32 dwEntryNum, out BSTR pbstrAddress, out BSTR pbstrMask) GetAccessEntryEx;
-				public new function HRESULT(ref IWMAddressAccess2 self, WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) AddAccessEntryEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess2 self, WM_AETYPE aeType, uint32 dwEntryNum, out BSTR pbstrAddress, out BSTR pbstrMask) GetAccessEntryEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAddressAccess2 self, WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) AddAccessEntryEx;
 			}
 		}
 		[CRepr]
@@ -3192,8 +3192,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMImageInfo self, out uint32 pcImages) GetImageCount;
-				public new function HRESULT(ref IWMImageInfo self, uint32 wIndex, out uint16 pcchMIMEType, char16* pwszMIMEType, out uint16 pcchDescription, char16* pwszDescription, out uint16 pImageType, out uint32 pcbImageData, uint8* pbImageData) GetImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMImageInfo self, out uint32 pcImages) GetImageCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMImageInfo self, uint32 wIndex, out uint16 pcchMIMEType, char16* pwszMIMEType, out uint16 pcchDescription, char16* pwszDescription, out uint16 pImageType, out uint32 pcbImageData, uint8* pbImageData) GetImage;
 			}
 		}
 		[CRepr]
@@ -3209,8 +3209,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMLicenseRevocationAgent self, ref uint8 pMachineID, uint32 dwMachineIDLength, ref uint8 pChallenge, uint32 dwChallengeLength, out uint8 pChallengeOutput, out uint32 pdwChallengeOutputLength) GetLRBChallenge;
-				public new function HRESULT(ref IWMLicenseRevocationAgent self, ref uint8 pSignedLRB, uint32 dwSignedLRBLength, out uint8 pSignedACK, out uint32 pdwSignedACKLength) ProcessLRB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseRevocationAgent self, ref uint8 pMachineID, uint32 dwMachineIDLength, ref uint8 pChallenge, uint32 dwChallengeLength, out uint8 pChallengeOutput, out uint32 pdwChallengeOutputLength) GetLRBChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMLicenseRevocationAgent self, ref uint8 pSignedLRB, uint32 dwSignedLRBLength, out uint8 pSignedACK, out uint32 pdwSignedACKLength) ProcessLRB;
 			}
 		}
 		[CRepr]
@@ -3227,9 +3227,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMAuthorizer self, out uint32 pcCerts) GetCertCount;
-				public new function HRESULT(ref IWMAuthorizer self, uint32 dwIndex, out uint8* ppbCertData) GetCert;
-				public new function HRESULT(ref IWMAuthorizer self, uint32 dwCertIndex, in uint8 pbSharedData, ref uint8 pbCert, out uint8* ppbSharedData) GetSharedData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAuthorizer self, out uint32 pcCerts) GetCertCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAuthorizer self, uint32 dwIndex, out uint8* ppbCertData) GetCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMAuthorizer self, uint32 dwCertIndex, in uint8 pbSharedData, ref uint8 pbCert, out uint8* ppbSharedData) GetSharedData;
 			}
 		}
 		[CRepr]
@@ -3254,17 +3254,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMAuthorizer.VTable
 			{
-				public new function HRESULT(ref IWMSecureChannel self, ref IWMAuthorizer pCert) WMSC_AddCertificate;
-				public new function HRESULT(ref IWMSecureChannel self, ref uint8 pbCertSig, uint32 cbCertSig) WMSC_AddSignature;
-				public new function HRESULT(ref IWMSecureChannel self, ref IWMSecureChannel pOtherSide) WMSC_Connect;
-				public new function HRESULT(ref IWMSecureChannel self, out BOOL pfIsConnected) WMSC_IsConnected;
-				public new function HRESULT(ref IWMSecureChannel self) WMSC_Disconnect;
-				public new function HRESULT(ref IWMSecureChannel self, out uint8* ppbCertificate, out uint32 pdwSignature) WMSC_GetValidCertificate;
-				public new function HRESULT(ref IWMSecureChannel self, ref uint8 pbData, uint32 cbData) WMSC_Encrypt;
-				public new function HRESULT(ref IWMSecureChannel self, ref uint8 pbData, uint32 cbData) WMSC_Decrypt;
-				public new function HRESULT(ref IWMSecureChannel self) WMSC_Lock;
-				public new function HRESULT(ref IWMSecureChannel self) WMSC_Unlock;
-				public new function HRESULT(ref IWMSecureChannel self, uint32 dwCertIndex, in uint8 pbSharedData) WMSC_SetSharedData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, ref IWMAuthorizer pCert) WMSC_AddCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, ref uint8 pbCertSig, uint32 cbCertSig) WMSC_AddSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, ref IWMSecureChannel pOtherSide) WMSC_Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, out BOOL pfIsConnected) WMSC_IsConnected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self) WMSC_Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, out uint8* ppbCertificate, out uint32 pdwSignature) WMSC_GetValidCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, ref uint8 pbData, uint32 cbData) WMSC_Encrypt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, ref uint8 pbData, uint32 cbData) WMSC_Decrypt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self) WMSC_Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self) WMSC_Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSecureChannel self, uint32 dwCertIndex, in uint8 pbSharedData) WMSC_SetSharedData;
 			}
 		}
 		[CRepr]
@@ -3279,7 +3279,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMGetSecureChannel self, out IWMSecureChannel* ppPeer) GetPeerSecureChannelInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMGetSecureChannel self, out IWMSecureChannel* ppPeer) GetPeerSecureChannelInterface;
 			}
 		}
 		[CRepr]
@@ -3301,14 +3301,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INSNetSourceCreator self) Initialize;
-				public new function HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, ref IUnknown pMonitor, ref uint8 pData, ref IUnknown pUserContext, ref IUnknown pCallback, uint64 qwContext) CreateNetSource;
-				public new function HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, out IUnknown* ppPropertiesNode) GetNetSourceProperties;
-				public new function HRESULT(ref INSNetSourceCreator self, out IUnknown* ppSharedNamespace) GetNetSourceSharedNamespace;
-				public new function HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, out VARIANT pVal) GetNetSourceAdminInterface;
-				public new function HRESULT(ref INSNetSourceCreator self, out uint32 pcProtocols) GetNumProtocolsSupported;
-				public new function HRESULT(ref INSNetSourceCreator self, uint32 dwProtocolNum, PWSTR pwszProtocolName, out uint16 pcchProtocolName) GetProtocolName;
-				public new function HRESULT(ref INSNetSourceCreator self) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, ref IUnknown pMonitor, ref uint8 pData, ref IUnknown pUserContext, ref IUnknown pCallback, uint64 qwContext) CreateNetSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, out IUnknown* ppPropertiesNode) GetNetSourceProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, out IUnknown* ppSharedNamespace) GetNetSourceSharedNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, PWSTR pszStreamName, out VARIANT pVal) GetNetSourceAdminInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, out uint32 pcProtocols) GetNumProtocolsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self, uint32 dwProtocolNum, PWSTR pwszProtocolName, out uint16 pcchProtocolName) GetProtocolName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INSNetSourceCreator self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -3323,7 +3323,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMPlayerTimestampHook self, int64 rtIn, out int64 prtOut) MapTimestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMPlayerTimestampHook self, int64 rtIn, out int64 prtOut) MapTimestamp;
 			}
 		}
 		[CRepr]
@@ -3340,9 +3340,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMCodecAMVideoAccelerator self, ref IAMVideoAccelerator pIAMVA) SetAcceleratorInterface;
-				public new function HRESULT(ref IWMCodecAMVideoAccelerator self, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
-				public new function HRESULT(ref IWMCodecAMVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IAMVideoAccelerator pIAMVA) SetAcceleratorInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecAMVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
 			}
 		}
 		[CRepr]
@@ -3358,8 +3358,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMCodecVideoAccelerator self, ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
-				public new function HRESULT(ref IWMCodecVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IAMVideoAccelerator pIAMVA, ref AM_MEDIA_TYPE pMediaType) NegotiateConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMCodecVideoAccelerator self, ref IWMPlayerTimestampHook pHook) SetPlayerNotify;
 			}
 		}
 		[CRepr]
@@ -3384,17 +3384,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, ref IUnknown pSharedNamespace, ref IUnknown pNamespaceNode, ref INSNetSourceCreator pNetSourceCreator, BOOL fEmbeddedInServer) Initialize;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, out INSNetSourceCreator* ppNetSourceCreator) GetNetSourceCreator;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentials;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentials;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm) DeleteCredentials;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, out uint32 lpdwFlags) GetCredentialFlags;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwFlags) SetCredentialFlags;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrProtocol, BSTR bstrHost, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) FindProxyForURL;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, HRESULT hrParam, uint32 dwProxyContext) RegisterProxyFailure;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwProxyContext) ShutdownProxyContext;
-				public new function HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwProxyContext, out BOOL pfIsUsingIE) IsUsingIE;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, ref IUnknown pSharedNamespace, ref IUnknown pNamespaceNode, ref INSNetSourceCreator pNetSourceCreator, BOOL fEmbeddedInServer) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, out INSNetSourceCreator* ppNetSourceCreator) GetNetSourceCreator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrRealm) DeleteCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, out uint32 lpdwFlags) GetCredentialFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwFlags) SetCredentialFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, BSTR bstrProtocol, BSTR bstrHost, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) FindProxyForURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, HRESULT hrParam, uint32 dwProxyContext) RegisterProxyFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwProxyContext) ShutdownProxyContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource self, uint32 dwProxyContext, out BOOL pfIsUsingIE) IsUsingIE;
 			}
 		}
 		[CRepr]
@@ -3412,10 +3412,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentialsEx;
-				public new function HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentialsEx;
-				public new function HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) DeleteCredentialsEx;
-				public new function HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) FindProxyForURLEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentialsEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentialsEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) DeleteCredentialsEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource2 self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint32 pdwProxyContext) FindProxyForURLEx;
 			}
 		}
 		[CRepr]
@@ -3436,13 +3436,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWMSInternalAdminNetSource2.VTable
 			{
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, out IUnknown* ppNetSourceCreator) GetNetSourceCreator2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint64 pqwProxyContext) FindProxyForURLEx2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, HRESULT hrParam, uint64 qwProxyContext) RegisterProxyFailure2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, uint64 qwProxyContext) ShutdownProxyContext2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, uint64 qwProxyContext, out BOOL pfIsUsingIE) IsUsingIE2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) SetCredentialsEx2;
-				public new function HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentialsEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, out IUnknown* ppNetSourceCreator) GetNetSourceCreator2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, out BOOL pfProxyEnabled, out BSTR pbstrProxyServer, out uint32 pdwProxyPort, out uint64 pqwProxyContext) FindProxyForURLEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, HRESULT hrParam, uint64 qwProxyContext) RegisterProxyFailure2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, uint64 qwProxyContext) ShutdownProxyContext2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, uint64 qwProxyContext, out BOOL pfIsUsingIE) IsUsingIE2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) SetCredentialsEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentialsEx2;
 			}
 		}
 		

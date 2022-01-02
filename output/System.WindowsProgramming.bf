@@ -1463,11 +1463,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ICameraUIControlEventCallback self) OnStartupComplete;
-				public new function void(ref ICameraUIControlEventCallback self) OnSuspendComplete;
-				public new function void(ref ICameraUIControlEventCallback self, PWSTR pszPath) OnItemCaptured;
-				public new function void(ref ICameraUIControlEventCallback self, PWSTR pszPath) OnItemDeleted;
-				public new function void(ref ICameraUIControlEventCallback self) OnClosed;
+				public new function [CallingConvention(.Stdcall)] void(ref ICameraUIControlEventCallback self) OnStartupComplete;
+				public new function [CallingConvention(.Stdcall)] void(ref ICameraUIControlEventCallback self) OnSuspendComplete;
+				public new function [CallingConvention(.Stdcall)] void(ref ICameraUIControlEventCallback self, PWSTR pszPath) OnItemCaptured;
+				public new function [CallingConvention(.Stdcall)] void(ref ICameraUIControlEventCallback self, PWSTR pszPath) OnItemDeleted;
+				public new function [CallingConvention(.Stdcall)] void(ref ICameraUIControlEventCallback self) OnClosed;
 			}
 		}
 		[CRepr]
@@ -1489,14 +1489,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICameraUIControl self, ref IUnknown pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) Show;
-				public new function HRESULT(ref ICameraUIControl self) Close;
-				public new function HRESULT(ref ICameraUIControl self, out BOOL pbDeferralRequired) Suspend;
-				public new function HRESULT(ref ICameraUIControl self) Resume;
-				public new function HRESULT(ref ICameraUIControl self, out CameraUIControlViewType pViewType) GetCurrentViewType;
-				public new function HRESULT(ref ICameraUIControl self, BSTR* pbstrActiveItemPath) GetActiveItem;
-				public new function HRESULT(ref ICameraUIControl self, out SAFEARRAY* ppSelectedItemPaths) GetSelectedItems;
-				public new function HRESULT(ref ICameraUIControl self, PWSTR pszPath) RemoveCapturedItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, ref IUnknown pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, out BOOL pbDeferralRequired) Suspend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, out CameraUIControlViewType pViewType) GetCurrentViewType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, BSTR* pbstrActiveItemPath) GetActiveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, out SAFEARRAY* ppSelectedItemPaths) GetSelectedItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraUIControl self, PWSTR pszPath) RemoveCapturedItem;
 			}
 		}
 		[CRepr]
@@ -1515,11 +1515,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEditionUpgradeHelper self, out BOOL isAllowed) CanUpgrade;
-				public new function HRESULT(ref IEditionUpgradeHelper self, PWSTR contentId) UpdateOperatingSystem;
-				public new function HRESULT(ref IEditionUpgradeHelper self) ShowProductKeyUI;
-				public new function HRESULT(ref IEditionUpgradeHelper self, out PWSTR contentId) GetOsProductContentId;
-				public new function HRESULT(ref IEditionUpgradeHelper self, out BOOL isGenuine) GetGenuineLocalStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeHelper self, out BOOL isAllowed) CanUpgrade;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeHelper self, PWSTR contentId) UpdateOperatingSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeHelper self) ShowProductKeyUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeHelper self, out PWSTR contentId) GetOsProductContentId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeHelper self, out BOOL isGenuine) GetGenuineLocalStatus;
 			}
 		}
 		[CRepr]
@@ -1534,7 +1534,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWindowsLockModeHelper self, out BOOL isSmode) GetSMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsLockModeHelper self, out BOOL isSmode) GetSMode;
 			}
 		}
 		[CRepr]
@@ -1552,10 +1552,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEditionUpgradeBroker self, uint32 parentHandle) InitializeParentWindow;
-				public new function HRESULT(ref IEditionUpgradeBroker self, BSTR parameter) UpdateOperatingSystem;
-				public new function HRESULT(ref IEditionUpgradeBroker self) ShowProductKeyUI;
-				public new function HRESULT(ref IEditionUpgradeBroker self) CanUpgrade;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeBroker self, uint32 parentHandle) InitializeParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeBroker self, BSTR parameter) UpdateOperatingSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeBroker self) ShowProductKeyUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEditionUpgradeBroker self) CanUpgrade;
 			}
 		}
 		[CRepr]
@@ -1570,7 +1570,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContainerActivationHelper self, out int16 isAllowed) CanActivateClientVM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContainerActivationHelper self, out int16 isAllowed) CanActivateClientVM;
 			}
 		}
 		[CRepr]
@@ -1585,7 +1585,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IClipServiceNotificationHelper self, BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) ShowToast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IClipServiceNotificationHelper self, BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) ShowToast;
 			}
 		}
 		[CRepr]
@@ -1600,7 +1600,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(ref IDefaultBrowserSyncSettings self) IsEnabled;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDefaultBrowserSyncSettings self) IsEnabled;
 			}
 		}
 		[CRepr]
@@ -1615,7 +1615,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDeleteBrowsingHistory self, uint32 dwFlags) DeleteBrowsingHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeleteBrowsingHistory self, uint32 dwFlags) DeleteBrowsingHistory;
 			}
 		}
 		

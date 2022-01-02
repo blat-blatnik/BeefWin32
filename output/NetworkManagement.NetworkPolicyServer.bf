@@ -813,15 +813,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISdoMachine self, BSTR bstrComputerName) Attach;
-				public new function HRESULT(ref ISdoMachine self, out IUnknown* ppDictionarySDO) GetDictionarySDO;
-				public new function HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrServiceName, out IUnknown* ppServiceSDO) GetServiceSDO;
-				public new function HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrUserName, out IUnknown* ppUserSDO) GetUserSDO;
-				public new function HRESULT(ref ISdoMachine self, out IASOSTYPE eOSType) GetOSType;
-				public new function HRESULT(ref ISdoMachine self, out IASDOMAINTYPE eDomainType) GetDomainType;
-				public new function HRESULT(ref ISdoMachine self, out int16 boolDirectoryAvailable) IsDirectoryAvailable;
-				public new function HRESULT(ref ISdoMachine self, out BSTR bstrComputerName) GetAttachedComputer;
-				public new function HRESULT(ref ISdoMachine self, out IUnknown* ppSDOSchema) GetSDOSchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, BSTR bstrComputerName) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out IUnknown* ppDictionarySDO) GetDictionarySDO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrServiceName, out IUnknown* ppServiceSDO) GetServiceSDO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrUserName, out IUnknown* ppUserSDO) GetUserSDO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out IASOSTYPE eOSType) GetOSType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out IASDOMAINTYPE eDomainType) GetDomainType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out int16 boolDirectoryAvailable) IsDirectoryAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out BSTR bstrComputerName) GetAttachedComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine self, out IUnknown* ppSDOSchema) GetSDOSchema;
 			}
 		}
 		[CRepr]
@@ -840,11 +840,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISdoMachine.VTable
 			{
-				public new function HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppTemplatesSDO) GetTemplatesSDO;
-				public new function HRESULT(ref ISdoMachine2 self) EnableTemplates;
-				public new function HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppConfigRoot, out IUnknown* ppTemplatesRoot, int16 bForcedSync) SyncConfigAgainstTemplates;
-				public new function HRESULT(ref ISdoMachine2 self, IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) ImportRemoteTemplates;
-				public new function HRESULT(ref ISdoMachine2 self) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppTemplatesSDO) GetTemplatesSDO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine2 self) EnableTemplates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppConfigRoot, out IUnknown* ppTemplatesRoot, int16 bForcedSync) SyncConfigAgainstTemplates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine2 self, IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) ImportRemoteTemplates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoMachine2 self) Reload;
 			}
 		}
 		[CRepr]
@@ -862,10 +862,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISdoServiceControl self) StartService;
-				public new function HRESULT(ref ISdoServiceControl self) StopService;
-				public new function HRESULT(ref ISdoServiceControl self, out int32 status) GetServiceStatus;
-				public new function HRESULT(ref ISdoServiceControl self) ResetService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoServiceControl self) StartService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoServiceControl self) StopService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoServiceControl self, out int32 status) GetServiceStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoServiceControl self) ResetService;
 			}
 		}
 		[CRepr]
@@ -886,13 +886,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISdo self, int32 Id, out IUnknown* ppPropertyInfo) GetPropertyInfo;
-				public new function HRESULT(ref ISdo self, int32 Id, out VARIANT pValue) GetProperty;
-				public new function HRESULT(ref ISdo self, int32 Id, ref VARIANT pValue) PutProperty;
-				public new function HRESULT(ref ISdo self, int32 Id) ResetProperty;
-				public new function HRESULT(ref ISdo self) Apply;
-				public new function HRESULT(ref ISdo self) Restore;
-				public new function HRESULT(ref ISdo self, out IUnknown* ppEnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self, int32 Id, out IUnknown* ppPropertyInfo) GetPropertyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self, int32 Id, out VARIANT pValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self, int32 Id, ref VARIANT pValue) PutProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self, int32 Id) ResetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self) Apply;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdo self, out IUnknown* ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -914,14 +914,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISdoCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref ISdoCollection self, BSTR bstrName, out IDispatch* ppItem) Add;
-				public new function HRESULT(ref ISdoCollection self, ref IDispatch pItem) Remove;
-				public new function HRESULT(ref ISdoCollection self) RemoveAll;
-				public new function HRESULT(ref ISdoCollection self) Reload;
-				public new function HRESULT(ref ISdoCollection self, BSTR bstrName, out int16 pBool) IsNameUnique;
-				public new function HRESULT(ref ISdoCollection self, ref VARIANT Name, out IDispatch* pItem) Item;
-				public new function HRESULT(ref ISdoCollection self, out IUnknown* ppEnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, BSTR bstrName, out IDispatch* ppItem) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, ref IDispatch pItem) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self) RemoveAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, BSTR bstrName, out int16 pBool) IsNameUnique;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, ref VARIANT Name, out IDispatch* pItem) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoCollection self, out IUnknown* ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -938,9 +938,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISdo.VTable
 			{
-				public new function HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pCollection, out IDispatch* ppItem) AddToCollection;
-				public new function HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pSdoTarget, out IDispatch* ppItem) AddToSdo;
-				public new function HRESULT(ref ITemplateSdo self, ref IDispatch pSdoTarget, int32 id) AddToSdoAsProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pCollection, out IDispatch* ppItem) AddToCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pSdoTarget, out IDispatch* ppItem) AddToSdo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITemplateSdo self, ref IDispatch pSdoTarget, int32 id) AddToSdoAsProperty;
 			}
 		}
 		[CRepr]
@@ -959,11 +959,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISdoDictionaryOld self, out VARIANT Id, out VARIANT pValues) EnumAttributes;
-				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, ref VARIANT pInfoIDs, out VARIANT pInfoValues) GetAttributeInfo;
-				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out VARIANT pValueIds, out VARIANT pValuesDesc) EnumAttributeValues;
-				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out IDispatch* ppAttributeObject) CreateAttribute;
-				public new function HRESULT(ref ISdoDictionaryOld self, BSTR bstrAttributeName, out ATTRIBUTEID pId) GetAttributeID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, out VARIANT Id, out VARIANT pValues) EnumAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, ref VARIANT pInfoIDs, out VARIANT pInfoValues) GetAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out VARIANT pValueIds, out VARIANT pValuesDesc) EnumAttributeValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out IDispatch* ppAttributeObject) CreateAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, BSTR bstrAttributeName, out ATTRIBUTEID pId) GetAttributeID;
 			}
 		}
 		

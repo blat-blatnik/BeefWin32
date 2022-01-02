@@ -20,8 +20,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
-				public new function HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -37,8 +37,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
-				public new function HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -57,11 +57,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, ref IStream documentSequencePrintTicket) SetDocumentSequencePrintTicket;
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) AddDocumentData;
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) AddPage;
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver self, ref IStream documentSequencePrintTicket) SetDocumentSequencePrintTicket;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) AddDocumentData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) AddPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver self) Close;
 			}
 		}
 		[CRepr]
@@ -76,7 +76,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPrintWorkflowXpsReceiver.VTable
 			{
-				public new function HRESULT(ref IPrintWorkflowXpsReceiver2 self, HRESULT XpsError) Failed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsReceiver2 self, HRESULT XpsError) Failed;
 			}
 		}
 		[CRepr]
@@ -92,8 +92,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, ref IPrintWorkflowXpsReceiver receiver) StartXpsOMGeneration;
-				public new function HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, out IXpsOMObjectFactory1* value) get_ObjectFactory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, ref IPrintWorkflowXpsReceiver receiver) StartXpsOMGeneration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, out IXpsOMObjectFactory1* value) get_ObjectFactory;
 			}
 		}
 		[CRepr]
@@ -108,7 +108,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintWorkflowXpsObjectModelTargetPackageNative self, out IXpsDocumentPackageTarget* value) get_DocumentPackageTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowXpsObjectModelTargetPackageNative self, out IXpsDocumentPackageTarget* value) get_DocumentPackageTarget;
 			}
 		}
 		[CRepr]
@@ -125,9 +125,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterQueue* value) get_PrinterQueue;
-				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_DriverProperties;
-				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_UserProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterQueue* value) get_PrinterQueue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_DriverProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_UserProperties;
 			}
 		}
 		

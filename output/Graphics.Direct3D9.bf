@@ -1832,20 +1832,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3D9 self, void* pInitializeFunction) RegisterSoftwareDevice;
-				public new function uint32(ref IDirect3D9 self) GetAdapterCount;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, uint32 Flags, out D3DADAPTER_IDENTIFIER9 pIdentifier) GetAdapterIdentifier;
-				public new function uint32(ref IDirect3D9 self, uint32 Adapter, D3DFORMAT Format) GetAdapterModeCount;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DFORMAT Format, uint32 Mode, out D3DDISPLAYMODE pMode) EnumAdapterModes;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, out D3DDISPLAYMODE pMode) GetAdapterDisplayMode;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DevType, D3DFORMAT AdapterFormat, D3DFORMAT BackBufferFormat, BOOL bWindowed) CheckDeviceType;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, uint32 Usage, D3DRESOURCETYPE RType, D3DFORMAT CheckFormat) CheckDeviceFormat;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SurfaceFormat, BOOL Windowed, D3DMULTISAMPLE_TYPE MultiSampleType, out uint32 pQualityLevels) CheckDeviceMultiSampleType;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, D3DFORMAT RenderTargetFormat, D3DFORMAT DepthStencilFormat) CheckDepthStencilMatch;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SourceFormat, D3DFORMAT TargetFormat) CheckDeviceFormatConversion;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, out D3DCAPS9 pCaps) GetDeviceCaps;
-				public new function HMONITOR(ref IDirect3D9 self, uint32 Adapter) GetAdapterMonitor;
-				public new function HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DDevice9* ppReturnedDeviceInterface) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, void* pInitializeFunction) RegisterSoftwareDevice;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3D9 self) GetAdapterCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, uint32 Flags, out D3DADAPTER_IDENTIFIER9 pIdentifier) GetAdapterIdentifier;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3D9 self, uint32 Adapter, D3DFORMAT Format) GetAdapterModeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DFORMAT Format, uint32 Mode, out D3DDISPLAYMODE pMode) EnumAdapterModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, out D3DDISPLAYMODE pMode) GetAdapterDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DevType, D3DFORMAT AdapterFormat, D3DFORMAT BackBufferFormat, BOOL bWindowed) CheckDeviceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, uint32 Usage, D3DRESOURCETYPE RType, D3DFORMAT CheckFormat) CheckDeviceFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SurfaceFormat, BOOL Windowed, D3DMULTISAMPLE_TYPE MultiSampleType, out uint32 pQualityLevels) CheckDeviceMultiSampleType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, D3DFORMAT RenderTargetFormat, D3DFORMAT DepthStencilFormat) CheckDepthStencilMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SourceFormat, D3DFORMAT TargetFormat) CheckDeviceFormatConversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, out D3DCAPS9 pCaps) GetDeviceCaps;
+				public new function [CallingConvention(.Stdcall)] HMONITOR(ref IDirect3D9 self, uint32 Adapter) GetAdapterMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9 self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DDevice9* ppReturnedDeviceInterface) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -1975,122 +1975,122 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DDevice9 self) TestCooperativeLevel;
-				public new function uint32(ref IDirect3DDevice9 self) GetAvailableTextureMem;
-				public new function HRESULT(ref IDirect3DDevice9 self) EvictManagedResources;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3D9* ppD3D9) GetDirect3D;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DCAPS9 pCaps) GetDeviceCaps;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DDISPLAYMODE pMode) GetDisplayMode;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DDEVICE_CREATION_PARAMETERS pParameters) GetCreationParameters;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 XHotSpot, uint32 YHotSpot, ref IDirect3DSurface9 pCursorBitmap) SetCursorProperties;
-				public new function void(ref IDirect3DDevice9 self, int32 X, int32 Y, uint32 Flags) SetCursorPosition;
-				public new function BOOL(ref IDirect3DDevice9 self, BOOL bShow) ShowCursor;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DSwapChain9* pSwapChain) CreateAdditionalSwapChain;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out IDirect3DSwapChain9* pSwapChain) GetSwapChain;
-				public new function uint32(ref IDirect3DDevice9 self) GetNumberOfSwapChains;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DPRESENT_PARAMETERS pPresentationParameters) Reset;
-				public new function HRESULT(ref IDirect3DDevice9 self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion) Present;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) GetBackBuffer;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DRASTER_STATUS pRasterStatus) GetRasterStatus;
-				public new function HRESULT(ref IDirect3DDevice9 self, BOOL bEnableDialogs) SetDialogBoxMode;
-				public new function void(ref IDirect3DDevice9 self, uint32 iSwapChain, uint32 Flags, in D3DGAMMARAMP pRamp) SetGammaRamp;
-				public new function void(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DGAMMARAMP pRamp) GetGammaRamp;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DTexture9* ppTexture, out HANDLE pSharedHandle) CreateTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, uint32 Depth, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DVolumeTexture9* ppVolumeTexture, out HANDLE pSharedHandle) CreateVolumeTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 EdgeLength, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DCubeTexture9* ppCubeTexture, out HANDLE pSharedHandle) CreateCubeTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Length, uint32 Usage, uint32 FVF, D3DPOOL Pool, out IDirect3DVertexBuffer9* ppVertexBuffer, out HANDLE pSharedHandle) CreateVertexBuffer;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Length, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DIndexBuffer9* ppIndexBuffer, out HANDLE pSharedHandle) CreateIndexBuffer;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateRenderTarget;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateDepthStencilSurface;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, in POINT pDestPoint) UpdateSurface;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DBaseTexture9 pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture) UpdateTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pRenderTarget, ref IDirect3DSurface9 pDestSurface) GetRenderTargetData;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, ref IDirect3DSurface9 pDestSurface) GetFrontBufferData;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestSurface, in RECT pDestRect, D3DTEXTUREFILTERTYPE Filter) StretchRect;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSurface, in RECT pRect, uint32 color) ColorFill;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateOffscreenPlainSurface;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget) SetRenderTarget;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 RenderTargetIndex, out IDirect3DSurface9* ppRenderTarget) GetRenderTarget;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pNewZStencil) SetDepthStencilSurface;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DSurface9* ppZStencilSurface) GetDepthStencilSurface;
-				public new function HRESULT(ref IDirect3DDevice9 self) BeginScene;
-				public new function HRESULT(ref IDirect3DDevice9 self) EndScene;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Count, in D3DRECT pRects, uint32 Flags, uint32 Color, float Z, uint32 Stencil) Clear;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE State, in D3DMATRIX pMatrix) SetTransform;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE State, out D3DMATRIX pMatrix) GetTransform;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE param0, in D3DMATRIX param1) MultiplyTransform;
-				public new function HRESULT(ref IDirect3DDevice9 self, in D3DVIEWPORT9 pViewport) SetViewport;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DVIEWPORT9 pViewport) GetViewport;
-				public new function HRESULT(ref IDirect3DDevice9 self, in D3DMATERIAL9 pMaterial) SetMaterial;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DMATERIAL9 pMaterial) GetMaterial;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, in D3DLIGHT9 param1) SetLight;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, out D3DLIGHT9 param1) GetLight;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, BOOL Enable) LightEnable;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, out BOOL pEnable) GetLightEnable;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, in float pPlane) SetClipPlane;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Index, out float pPlane) GetClipPlane;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DRENDERSTATETYPE State, uint32 Value) SetRenderState;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DRENDERSTATETYPE State, out uint32 pValue) GetRenderState;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DSTATEBLOCKTYPE Type, out IDirect3DStateBlock9* ppSB) CreateStateBlock;
-				public new function HRESULT(ref IDirect3DDevice9 self) BeginStateBlock;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DStateBlock9* ppSB) EndStateBlock;
-				public new function HRESULT(ref IDirect3DDevice9 self, in D3DCLIPSTATUS9 pClipStatus) SetClipStatus;
-				public new function HRESULT(ref IDirect3DDevice9 self, out D3DCLIPSTATUS9 pClipStatus) GetClipStatus;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Stage, out IDirect3DBaseTexture9* ppTexture) GetTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Stage, ref IDirect3DBaseTexture9 pTexture) SetTexture;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, out uint32 pValue) GetTextureStageState;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32 Value) SetTextureStageState;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, out uint32 pValue) GetSamplerState;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32 Value) SetSamplerState;
-				public new function HRESULT(ref IDirect3DDevice9 self, out uint32 pNumPasses) ValidateDevice;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber, in PALETTEENTRY pEntries) SetPaletteEntries;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber, out PALETTEENTRY pEntries) GetPaletteEntries;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber) SetCurrentTexturePalette;
-				public new function HRESULT(ref IDirect3DDevice9 self, out uint32 PaletteNumber) GetCurrentTexturePalette;
-				public new function HRESULT(ref IDirect3DDevice9 self, in RECT pRect) SetScissorRect;
-				public new function HRESULT(ref IDirect3DDevice9 self, out RECT pRect) GetScissorRect;
-				public new function HRESULT(ref IDirect3DDevice9 self, BOOL bSoftware) SetSoftwareVertexProcessing;
-				public new function BOOL(ref IDirect3DDevice9 self) GetSoftwareVertexProcessing;
-				public new function HRESULT(ref IDirect3DDevice9 self, float nSegments) SetNPatchMode;
-				public new function float(ref IDirect3DDevice9 self) GetNPatchMode;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 StartVertex, uint32 PrimitiveCount) DrawPrimitive;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE param0, int32 BaseVertexIndex, uint32 MinVertexIndex, uint32 NumVertices, uint32 startIndex, uint32 primCount) DrawIndexedPrimitive;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 PrimitiveCount, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawPrimitiveUP;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 MinVertexIndex, uint32 NumVertices, uint32 PrimitiveCount, void* pIndexData, D3DFORMAT IndexDataFormat, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawIndexedPrimitiveUP;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 SrcStartIndex, uint32 DestIndex, uint32 VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint32 Flags) ProcessVertices;
-				public new function HRESULT(ref IDirect3DDevice9 self, in D3DVERTEXELEMENT9 pVertexElements, out IDirect3DVertexDeclaration9* ppDecl) CreateVertexDeclaration;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DVertexDeclaration9 pDecl) SetVertexDeclaration;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DVertexDeclaration9* ppDecl) GetVertexDeclaration;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 FVF) SetFVF;
-				public new function HRESULT(ref IDirect3DDevice9 self, out uint32 pFVF) GetFVF;
-				public new function HRESULT(ref IDirect3DDevice9 self, in uint32 pFunction, out IDirect3DVertexShader9* ppShader) CreateVertexShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DVertexShader9 pShader) SetVertexShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DVertexShader9* ppShader) GetVertexShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) SetVertexShaderConstantF;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) GetVertexShaderConstantF;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) SetVertexShaderConstantI;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) GetVertexShaderConstantI;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) SetVertexShaderConstantB;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) GetVertexShaderConstantB;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, ref IDirect3DVertexBuffer9 pStreamData, uint32 OffsetInBytes, uint32 Stride) SetStreamSource;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, out IDirect3DVertexBuffer9* ppStreamData, out uint32 pOffsetInBytes, out uint32 pStride) GetStreamSource;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, uint32 Setting) SetStreamSourceFreq;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, out uint32 pSetting) GetStreamSourceFreq;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DIndexBuffer9 pIndexData) SetIndices;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DIndexBuffer9* ppIndexData) GetIndices;
-				public new function HRESULT(ref IDirect3DDevice9 self, in uint32 pFunction, out IDirect3DPixelShader9* ppShader) CreatePixelShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, ref IDirect3DPixelShader9 pShader) SetPixelShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, out IDirect3DPixelShader9* ppShader) GetPixelShader;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) SetPixelShaderConstantF;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) GetPixelShaderConstantF;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) SetPixelShaderConstantI;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) GetPixelShaderConstantI;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) SetPixelShaderConstantB;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) GetPixelShaderConstantB;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Handle, in float pNumSegs, in D3DRECTPATCH_INFO pRectPatchInfo) DrawRectPatch;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Handle, in float pNumSegs, in D3DTRIPATCH_INFO pTriPatchInfo) DrawTriPatch;
-				public new function HRESULT(ref IDirect3DDevice9 self, uint32 Handle) DeletePatch;
-				public new function HRESULT(ref IDirect3DDevice9 self, D3DQUERYTYPE Type, out IDirect3DQuery9* ppQuery) CreateQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self) TestCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DDevice9 self) GetAvailableTextureMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self) EvictManagedResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3D9* ppD3D9) GetDirect3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DCAPS9 pCaps) GetDeviceCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DDISPLAYMODE pMode) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DDEVICE_CREATION_PARAMETERS pParameters) GetCreationParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 XHotSpot, uint32 YHotSpot, ref IDirect3DSurface9 pCursorBitmap) SetCursorProperties;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DDevice9 self, int32 X, int32 Y, uint32 Flags) SetCursorPosition;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDirect3DDevice9 self, BOOL bShow) ShowCursor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DPRESENT_PARAMETERS pPresentationParameters, out IDirect3DSwapChain9* pSwapChain) CreateAdditionalSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out IDirect3DSwapChain9* pSwapChain) GetSwapChain;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DDevice9 self) GetNumberOfSwapChains;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DPRESENT_PARAMETERS pPresentationParameters) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion) Present;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) GetBackBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DRASTER_STATUS pRasterStatus) GetRasterStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, BOOL bEnableDialogs) SetDialogBoxMode;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DDevice9 self, uint32 iSwapChain, uint32 Flags, in D3DGAMMARAMP pRamp) SetGammaRamp;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DDevice9 self, uint32 iSwapChain, out D3DGAMMARAMP pRamp) GetGammaRamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DTexture9* ppTexture, out HANDLE pSharedHandle) CreateTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, uint32 Depth, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DVolumeTexture9* ppVolumeTexture, out HANDLE pSharedHandle) CreateVolumeTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 EdgeLength, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DCubeTexture9* ppCubeTexture, out HANDLE pSharedHandle) CreateCubeTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Length, uint32 Usage, uint32 FVF, D3DPOOL Pool, out IDirect3DVertexBuffer9* ppVertexBuffer, out HANDLE pSharedHandle) CreateVertexBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Length, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DIndexBuffer9* ppIndexBuffer, out HANDLE pSharedHandle) CreateIndexBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateDepthStencilSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, in POINT pDestPoint) UpdateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DBaseTexture9 pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture) UpdateTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pRenderTarget, ref IDirect3DSurface9 pDestSurface) GetRenderTargetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 iSwapChain, ref IDirect3DSurface9 pDestSurface) GetFrontBufferData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSourceSurface, in RECT pSourceRect, ref IDirect3DSurface9 pDestSurface, in RECT pDestRect, D3DTEXTUREFILTERTYPE Filter) StretchRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pSurface, in RECT pRect, uint32 color) ColorFill;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle) CreateOffscreenPlainSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget) SetRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 RenderTargetIndex, out IDirect3DSurface9* ppRenderTarget) GetRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DSurface9 pNewZStencil) SetDepthStencilSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DSurface9* ppZStencilSurface) GetDepthStencilSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self) BeginScene;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self) EndScene;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Count, in D3DRECT pRects, uint32 Flags, uint32 Color, float Z, uint32 Stencil) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE State, in D3DMATRIX pMatrix) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE State, out D3DMATRIX pMatrix) GetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DTRANSFORMSTATETYPE param0, in D3DMATRIX param1) MultiplyTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in D3DVIEWPORT9 pViewport) SetViewport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DVIEWPORT9 pViewport) GetViewport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in D3DMATERIAL9 pMaterial) SetMaterial;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DMATERIAL9 pMaterial) GetMaterial;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, in D3DLIGHT9 param1) SetLight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, out D3DLIGHT9 param1) GetLight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, BOOL Enable) LightEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, out BOOL pEnable) GetLightEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, in float pPlane) SetClipPlane;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Index, out float pPlane) GetClipPlane;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DRENDERSTATETYPE State, uint32 Value) SetRenderState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DRENDERSTATETYPE State, out uint32 pValue) GetRenderState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DSTATEBLOCKTYPE Type, out IDirect3DStateBlock9* ppSB) CreateStateBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self) BeginStateBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DStateBlock9* ppSB) EndStateBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in D3DCLIPSTATUS9 pClipStatus) SetClipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out D3DCLIPSTATUS9 pClipStatus) GetClipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Stage, out IDirect3DBaseTexture9* ppTexture) GetTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Stage, ref IDirect3DBaseTexture9 pTexture) SetTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, out uint32 pValue) GetTextureStageState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32 Value) SetTextureStageState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, out uint32 pValue) GetSamplerState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32 Value) SetSamplerState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out uint32 pNumPasses) ValidateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber, in PALETTEENTRY pEntries) SetPaletteEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber, out PALETTEENTRY pEntries) GetPaletteEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 PaletteNumber) SetCurrentTexturePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out uint32 PaletteNumber) GetCurrentTexturePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in RECT pRect) SetScissorRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out RECT pRect) GetScissorRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, BOOL bSoftware) SetSoftwareVertexProcessing;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDirect3DDevice9 self) GetSoftwareVertexProcessing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, float nSegments) SetNPatchMode;
+				public new function [CallingConvention(.Stdcall)] float(ref IDirect3DDevice9 self) GetNPatchMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 StartVertex, uint32 PrimitiveCount) DrawPrimitive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE param0, int32 BaseVertexIndex, uint32 MinVertexIndex, uint32 NumVertices, uint32 startIndex, uint32 primCount) DrawIndexedPrimitive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 PrimitiveCount, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawPrimitiveUP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DPRIMITIVETYPE PrimitiveType, uint32 MinVertexIndex, uint32 NumVertices, uint32 PrimitiveCount, void* pIndexData, D3DFORMAT IndexDataFormat, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawIndexedPrimitiveUP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 SrcStartIndex, uint32 DestIndex, uint32 VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint32 Flags) ProcessVertices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in D3DVERTEXELEMENT9 pVertexElements, out IDirect3DVertexDeclaration9* ppDecl) CreateVertexDeclaration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DVertexDeclaration9 pDecl) SetVertexDeclaration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DVertexDeclaration9* ppDecl) GetVertexDeclaration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 FVF) SetFVF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out uint32 pFVF) GetFVF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in uint32 pFunction, out IDirect3DVertexShader9* ppShader) CreateVertexShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DVertexShader9 pShader) SetVertexShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DVertexShader9* ppShader) GetVertexShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) SetVertexShaderConstantF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) GetVertexShaderConstantF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) SetVertexShaderConstantI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) GetVertexShaderConstantI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) SetVertexShaderConstantB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) GetVertexShaderConstantB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, ref IDirect3DVertexBuffer9 pStreamData, uint32 OffsetInBytes, uint32 Stride) SetStreamSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, out IDirect3DVertexBuffer9* ppStreamData, out uint32 pOffsetInBytes, out uint32 pStride) GetStreamSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, uint32 Setting) SetStreamSourceFreq;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StreamNumber, out uint32 pSetting) GetStreamSourceFreq;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DIndexBuffer9 pIndexData) SetIndices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DIndexBuffer9* ppIndexData) GetIndices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, in uint32 pFunction, out IDirect3DPixelShader9* ppShader) CreatePixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, ref IDirect3DPixelShader9 pShader) SetPixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, out IDirect3DPixelShader9* ppShader) GetPixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in float pConstantData, uint32 Vector4fCount) SetPixelShaderConstantF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out float pConstantData, uint32 Vector4fCount) GetPixelShaderConstantF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in int32 pConstantData, uint32 Vector4iCount) SetPixelShaderConstantI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out int32 pConstantData, uint32 Vector4iCount) GetPixelShaderConstantI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, in BOOL pConstantData, uint32 BoolCount) SetPixelShaderConstantB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 StartRegister, out BOOL pConstantData, uint32 BoolCount) GetPixelShaderConstantB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Handle, in float pNumSegs, in D3DRECTPATCH_INFO pRectPatchInfo) DrawRectPatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Handle, in float pNumSegs, in D3DTRIPATCH_INFO pTriPatchInfo) DrawTriPatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, uint32 Handle) DeletePatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9 self, D3DQUERYTYPE Type, out IDirect3DQuery9* ppQuery) CreateQuery;
 			}
 		}
 		[CRepr]
@@ -2107,9 +2107,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DStateBlock9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DStateBlock9 self) Capture;
-				public new function HRESULT(ref IDirect3DStateBlock9 self) Apply;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DStateBlock9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DStateBlock9 self) Capture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DStateBlock9 self) Apply;
 			}
 		}
 		[CRepr]
@@ -2130,13 +2130,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DSwapChain9 self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) Present;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, ref IDirect3DSurface9 pDestSurface) GetFrontBufferData;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) GetBackBuffer;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, out D3DRASTER_STATUS pRasterStatus) GetRasterStatus;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, out D3DDISPLAYMODE pMode) GetDisplayMode;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DSwapChain9 self, out D3DPRESENT_PARAMETERS pPresentationParameters) GetPresentParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) Present;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, ref IDirect3DSurface9 pDestSurface) GetFrontBufferData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9* ppBackBuffer) GetBackBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, out D3DRASTER_STATUS pRasterStatus) GetRasterStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, out D3DDISPLAYMODE pMode) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9 self, out D3DPRESENT_PARAMETERS pPresentationParameters) GetPresentParameters;
 			}
 		}
 		[CRepr]
@@ -2158,14 +2158,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DResource9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DResource9 self, in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
-				public new function HRESULT(ref IDirect3DResource9 self, in Guid refguid, void* pData, out uint32 pSizeOfData) GetPrivateData;
-				public new function HRESULT(ref IDirect3DResource9 self, in Guid refguid) FreePrivateData;
-				public new function uint32(ref IDirect3DResource9 self, uint32 PriorityNew) SetPriority;
-				public new function uint32(ref IDirect3DResource9 self) GetPriority;
-				public new function void(ref IDirect3DResource9 self) PreLoad;
-				public new function D3DRESOURCETYPE(ref IDirect3DResource9 self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DResource9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DResource9 self, in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DResource9 self, in Guid refguid, void* pData, out uint32 pSizeOfData) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DResource9 self, in Guid refguid) FreePrivateData;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DResource9 self, uint32 PriorityNew) SetPriority;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DResource9 self) GetPriority;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DResource9 self) PreLoad;
+				public new function [CallingConvention(.Stdcall)] D3DRESOURCETYPE(ref IDirect3DResource9 self) ComGetType;
 			}
 		}
 		[CRepr]
@@ -2181,8 +2181,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DVertexDeclaration9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DVertexDeclaration9 self, out D3DVERTEXELEMENT9 pElement, out uint32 pNumElements) GetDeclaration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexDeclaration9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexDeclaration9 self, out D3DVERTEXELEMENT9 pElement, out uint32 pNumElements) GetDeclaration;
 			}
 		}
 		[CRepr]
@@ -2198,8 +2198,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DVertexShader9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DVertexShader9 self, void* param0, out uint32 pSizeOfData) GetFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexShader9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexShader9 self, void* param0, out uint32 pSizeOfData) GetFunction;
 			}
 		}
 		[CRepr]
@@ -2215,8 +2215,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DPixelShader9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DPixelShader9 self, void* param0, out uint32 pSizeOfData) GetFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DPixelShader9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DPixelShader9 self, void* param0, out uint32 pSizeOfData) GetFunction;
 			}
 		}
 		[CRepr]
@@ -2236,12 +2236,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
-				public new function uint32(ref IDirect3DBaseTexture9 self, uint32 LODNew) SetLOD;
-				public new function uint32(ref IDirect3DBaseTexture9 self) GetLOD;
-				public new function uint32(ref IDirect3DBaseTexture9 self) GetLevelCount;
-				public new function HRESULT(ref IDirect3DBaseTexture9 self, D3DTEXTUREFILTERTYPE FilterType) SetAutoGenFilterType;
-				public new function D3DTEXTUREFILTERTYPE(ref IDirect3DBaseTexture9 self) GetAutoGenFilterType;
-				public new function void(ref IDirect3DBaseTexture9 self) GenerateMipSubLevels;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DBaseTexture9 self, uint32 LODNew) SetLOD;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DBaseTexture9 self) GetLOD;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DBaseTexture9 self) GetLevelCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DBaseTexture9 self, D3DTEXTUREFILTERTYPE FilterType) SetAutoGenFilterType;
+				public new function [CallingConvention(.Stdcall)] D3DTEXTUREFILTERTYPE(ref IDirect3DBaseTexture9 self) GetAutoGenFilterType;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DBaseTexture9 self) GenerateMipSubLevels;
 			}
 		}
 		[CRepr]
@@ -2260,11 +2260,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
-				public new function HRESULT(ref IDirect3DTexture9 self, uint32 Level, out D3DSURFACE_DESC pDesc) GetLevelDesc;
-				public new function HRESULT(ref IDirect3DTexture9 self, uint32 Level, out IDirect3DSurface9* ppSurfaceLevel) GetSurfaceLevel;
-				public new function HRESULT(ref IDirect3DTexture9 self, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
-				public new function HRESULT(ref IDirect3DTexture9 self, uint32 Level) UnlockRect;
-				public new function HRESULT(ref IDirect3DTexture9 self, in RECT pDirtyRect) AddDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DTexture9 self, uint32 Level, out D3DSURFACE_DESC pDesc) GetLevelDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DTexture9 self, uint32 Level, out IDirect3DSurface9* ppSurfaceLevel) GetSurfaceLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DTexture9 self, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DTexture9 self, uint32 Level) UnlockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DTexture9 self, in RECT pDirtyRect) AddDirtyRect;
 			}
 		}
 		[CRepr]
@@ -2283,11 +2283,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
-				public new function HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out D3DVOLUME_DESC pDesc) GetLevelDesc;
-				public new function HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out IDirect3DVolume9* ppVolumeLevel) GetVolumeLevel;
-				public new function HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) LockBox;
-				public new function HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level) UnlockBox;
-				public new function HRESULT(ref IDirect3DVolumeTexture9 self, in D3DBOX pDirtyBox) AddDirtyBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out D3DVOLUME_DESC pDesc) GetLevelDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out IDirect3DVolume9* ppVolumeLevel) GetVolumeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) LockBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolumeTexture9 self, uint32 Level) UnlockBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolumeTexture9 self, in D3DBOX pDirtyBox) AddDirtyBox;
 			}
 		}
 		[CRepr]
@@ -2306,11 +2306,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DBaseTexture9.VTable
 			{
-				public new function HRESULT(ref IDirect3DCubeTexture9 self, uint32 Level, out D3DSURFACE_DESC pDesc) GetLevelDesc;
-				public new function HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level, out IDirect3DSurface9* ppCubeMapSurface) GetCubeMapSurface;
-				public new function HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
-				public new function HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level) UnlockRect;
-				public new function HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, in RECT pDirtyRect) AddDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DCubeTexture9 self, uint32 Level, out D3DSURFACE_DESC pDesc) GetLevelDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level, out IDirect3DSurface9* ppCubeMapSurface) GetCubeMapSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, uint32 Level) UnlockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DCubeTexture9 self, D3DCUBEMAP_FACES FaceType, in RECT pDirtyRect) AddDirtyRect;
 			}
 		}
 		[CRepr]
@@ -2327,9 +2327,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
-				public new function HRESULT(ref IDirect3DVertexBuffer9 self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
-				public new function HRESULT(ref IDirect3DVertexBuffer9 self) Unlock;
-				public new function HRESULT(ref IDirect3DVertexBuffer9 self, out D3DVERTEXBUFFER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexBuffer9 self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexBuffer9 self) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVertexBuffer9 self, out D3DVERTEXBUFFER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -2346,9 +2346,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
-				public new function HRESULT(ref IDirect3DIndexBuffer9 self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
-				public new function HRESULT(ref IDirect3DIndexBuffer9 self) Unlock;
-				public new function HRESULT(ref IDirect3DIndexBuffer9 self, out D3DINDEXBUFFER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DIndexBuffer9 self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DIndexBuffer9 self) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DIndexBuffer9 self, out D3DINDEXBUFFER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -2368,12 +2368,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DResource9.VTable
 			{
-				public new function HRESULT(ref IDirect3DSurface9 self, in Guid riid, void** ppContainer) GetContainer;
-				public new function HRESULT(ref IDirect3DSurface9 self, out D3DSURFACE_DESC pDesc) GetDesc;
-				public new function HRESULT(ref IDirect3DSurface9 self, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
-				public new function HRESULT(ref IDirect3DSurface9 self) UnlockRect;
-				public new function HRESULT(ref IDirect3DSurface9 self, out HDC phdc) GetDC;
-				public new function HRESULT(ref IDirect3DSurface9 self, HDC hdc) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self, in Guid riid, void** ppContainer) GetContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self, out D3DSURFACE_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self, out D3DLOCKED_RECT pLockedRect, in RECT pRect, uint32 Flags) LockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self) UnlockRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self, out HDC phdc) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSurface9 self, HDC hdc) ReleaseDC;
 			}
 		}
 		[CRepr]
@@ -2395,14 +2395,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DVolume9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function HRESULT(ref IDirect3DVolume9 self, in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
-				public new function HRESULT(ref IDirect3DVolume9 self, in Guid refguid, void* pData, out uint32 pSizeOfData) GetPrivateData;
-				public new function HRESULT(ref IDirect3DVolume9 self, in Guid refguid) FreePrivateData;
-				public new function HRESULT(ref IDirect3DVolume9 self, in Guid riid, void** ppContainer) GetContainer;
-				public new function HRESULT(ref IDirect3DVolume9 self, out D3DVOLUME_DESC pDesc) GetDesc;
-				public new function HRESULT(ref IDirect3DVolume9 self, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) LockBox;
-				public new function HRESULT(ref IDirect3DVolume9 self) UnlockBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, in Guid refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, in Guid refguid, void* pData, out uint32 pSizeOfData) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, in Guid refguid) FreePrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, in Guid riid, void** ppContainer) GetContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, out D3DVOLUME_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self, out D3DLOCKED_BOX pLockedVolume, in D3DBOX pBox, uint32 Flags) LockBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DVolume9 self) UnlockBox;
 			}
 		}
 		[CRepr]
@@ -2421,11 +2421,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DQuery9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function D3DQUERYTYPE(ref IDirect3DQuery9 self) ComGetType;
-				public new function uint32(ref IDirect3DQuery9 self) GetDataSize;
-				public new function HRESULT(ref IDirect3DQuery9 self, uint32 dwIssueFlags) Issue;
-				public new function HRESULT(ref IDirect3DQuery9 self, void* pData, uint32 dwSize, uint32 dwGetDataFlags) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, out IDirect3DDevice9* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] D3DQUERYTYPE(ref IDirect3DQuery9 self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DQuery9 self) GetDataSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, uint32 dwIssueFlags) Issue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, void* pData, uint32 dwSize, uint32 dwGetDataFlags) GetData;
 			}
 		}
 		[CRepr]
@@ -2444,11 +2444,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3D9.VTable
 			{
-				public new function uint32(ref IDirect3D9Ex self, uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter) GetAdapterModeCountEx;
-				public new function HRESULT(ref IDirect3D9Ex self, uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter, uint32 Mode, out D3DDISPLAYMODEEX pMode) EnumAdapterModesEx;
-				public new function HRESULT(ref IDirect3D9Ex self, uint32 Adapter, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetAdapterDisplayModeEx;
-				public new function HRESULT(ref IDirect3D9Ex self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode, out IDirect3DDevice9Ex* ppReturnedDeviceInterface) CreateDeviceEx;
-				public new function HRESULT(ref IDirect3D9Ex self, uint32 Adapter, out LUID pLUID) GetAdapterLUID;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3D9Ex self, uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter) GetAdapterModeCountEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9Ex self, uint32 Adapter, in D3DDISPLAYMODEFILTER pFilter, uint32 Mode, out D3DDISPLAYMODEEX pMode) EnumAdapterModesEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9Ex self, uint32 Adapter, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetAdapterDisplayModeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9Ex self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode, out IDirect3DDevice9Ex* ppReturnedDeviceInterface) CreateDeviceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3D9Ex self, uint32 Adapter, out LUID pLUID) GetAdapterLUID;
 			}
 		}
 		[CRepr]
@@ -2477,21 +2477,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DDevice9.VTable
 			{
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 width, uint32 height, out float rows, out float columns) SetConvolutionMonoKernel;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint32 NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, D3DCOMPOSERECTSOP Operation, int32 Xoffset, int32 Yoffset) ComposeRects;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) PresentEx;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, out int32 pPriority) GetGPUThreadPriority;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, int32 Priority) SetGPUThreadPriority;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 iSwapChain) WaitForVBlank;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, out IDirect3DResource9* pResourceArray, uint32 NumResources) CheckResourceResidency;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 MaxLatency) SetMaximumFrameLatency;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, out uint32 pMaxLatency) GetMaximumFrameLatency;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, HWND hDestinationWindow) CheckDeviceState;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateRenderTargetEx;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateOffscreenPlainSurfaceEx;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateDepthStencilSurfaceEx;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode) ResetEx;
-				public new function HRESULT(ref IDirect3DDevice9Ex self, uint32 iSwapChain, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetDisplayModeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 width, uint32 height, out float rows, out float columns) SetConvolutionMonoKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint32 NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, D3DCOMPOSERECTSOP Operation, int32 Xoffset, int32 Yoffset) ComposeRects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, in RECT pSourceRect, in RECT pDestRect, HWND hDestWindowOverride, in RGNDATA pDirtyRegion, uint32 dwFlags) PresentEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, out int32 pPriority) GetGPUThreadPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, int32 Priority) SetGPUThreadPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 iSwapChain) WaitForVBlank;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, out IDirect3DResource9* pResourceArray, uint32 NumResources) CheckResourceResidency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 MaxLatency) SetMaximumFrameLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, out uint32 pMaxLatency) GetMaximumFrameLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, HWND hDestinationWindow) CheckDeviceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateRenderTargetEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateOffscreenPlainSurfaceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, out IDirect3DSurface9* ppSurface, out HANDLE pSharedHandle, uint32 Usage) CreateDepthStencilSurfaceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, out D3DPRESENT_PARAMETERS pPresentationParameters, out D3DDISPLAYMODEEX pFullscreenDisplayMode) ResetEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDevice9Ex self, uint32 iSwapChain, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetDisplayModeEx;
 			}
 		}
 		[CRepr]
@@ -2508,9 +2508,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirect3DSwapChain9.VTable
 			{
-				public new function HRESULT(ref IDirect3DSwapChain9Ex self, out uint32 pLastPresentCount) GetLastPresentCount;
-				public new function HRESULT(ref IDirect3DSwapChain9Ex self, out D3DPRESENTSTATS pPresentationStatistics) GetPresentStats;
-				public new function HRESULT(ref IDirect3DSwapChain9Ex self, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetDisplayModeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9Ex self, out uint32 pLastPresentCount) GetLastPresentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9Ex self, out D3DPRESENTSTATS pPresentationStatistics) GetPresentStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9Ex self, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetDisplayModeEx;
 			}
 		}
 		

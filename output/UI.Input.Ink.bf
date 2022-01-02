@@ -33,7 +33,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkCommitRequestHandler self) OnCommitRequested;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCommitRequestHandler self) OnCommitRequested;
 			}
 		}
 		[CRepr]
@@ -52,11 +52,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkPresenterDesktop self, ref IUnknown rootVisual, ref IUnknown device) SetRootVisual;
-				public new function HRESULT(ref IInkPresenterDesktop self, ref IInkCommitRequestHandler handler) SetCommitRequestHandler;
-				public new function HRESULT(ref IInkPresenterDesktop self, out float width, out float height) GetSize;
-				public new function HRESULT(ref IInkPresenterDesktop self, float width, float height) SetSize;
-				public new function HRESULT(ref IInkPresenterDesktop self) OnHighContrastChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPresenterDesktop self, ref IUnknown rootVisual, ref IUnknown device) SetRootVisual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPresenterDesktop self, ref IInkCommitRequestHandler handler) SetCommitRequestHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPresenterDesktop self, out float width, out float height) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPresenterDesktop self, float width, float height) SetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPresenterDesktop self) OnHighContrastChanged;
 			}
 		}
 		[CRepr]
@@ -71,7 +71,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkHostWorkItem self) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkHostWorkItem self) Invoke;
 			}
 		}
 		[CRepr]
@@ -88,9 +88,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkDesktopHost self, ref IInkHostWorkItem workItem) QueueWorkItem;
-				public new function HRESULT(ref IInkDesktopHost self, in Guid riid, void** ppv) CreateInkPresenter;
-				public new function HRESULT(ref IInkDesktopHost self, ref IUnknown rootVisual, float width, float height, in Guid riid, void** ppv) CreateAndInitializeInkPresenter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDesktopHost self, ref IInkHostWorkItem workItem) QueueWorkItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDesktopHost self, in Guid riid, void** ppv) CreateInkPresenter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDesktopHost self, ref IUnknown rootVisual, float width, float height, in Guid riid, void** ppv) CreateAndInitializeInkPresenter;
 			}
 		}
 		[CRepr]
@@ -105,7 +105,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkD2DRenderer self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, BOOL fHighContrast) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkD2DRenderer self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, BOOL fHighContrast) Draw;
 			}
 		}
 		[CRepr]
@@ -120,7 +120,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkD2DRenderer2 self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkD2DRenderer2 self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
 			}
 		}
 		

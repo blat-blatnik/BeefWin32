@@ -25,8 +25,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationScriptEvents self, ref IHTMLWindow2 htmlWindow) BeforeScriptExecute;
-				public new function HRESULT(ref IWebApplicationScriptEvents self, IHTMLWindow2* htmlWindow, ref IActiveScriptError scriptError, PWSTR url, BOOL errorHandled) ScriptError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationScriptEvents self, ref IHTMLWindow2 htmlWindow) BeforeScriptExecute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationScriptEvents self, IHTMLWindow2* htmlWindow, ref IActiveScriptError scriptError, PWSTR url, BOOL errorHandled) ScriptError;
 			}
 		}
 		[CRepr]
@@ -46,12 +46,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url, uint32 navigationFlags, PWSTR targetFrameName) BeforeNavigate;
-				public new function HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url) NavigateComplete;
-				public new function HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url, PWSTR targetFrameName, uint32 statusCode) NavigateError;
-				public new function HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url) DocumentComplete;
-				public new function HRESULT(ref IWebApplicationNavigationEvents self) DownloadBegin;
-				public new function HRESULT(ref IWebApplicationNavigationEvents self) DownloadComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url, uint32 navigationFlags, PWSTR targetFrameName) BeforeNavigate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url) NavigateComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url, PWSTR targetFrameName, uint32 statusCode) NavigateError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self, ref IHTMLWindow2 htmlWindow, PWSTR url) DocumentComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self) DownloadBegin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationNavigationEvents self) DownloadComplete;
 			}
 		}
 		[CRepr]
@@ -66,7 +66,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationUIEvents self, uint32 securityProblem, out HRESULT result) SecurityProblem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationUIEvents self, uint32 securityProblem, out HRESULT result) SecurityProblem;
 			}
 		}
 		[CRepr]
@@ -82,8 +82,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationUpdateEvents self) OnPaint;
-				public new function HRESULT(ref IWebApplicationUpdateEvents self) OnCssChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationUpdateEvents self) OnPaint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationUpdateEvents self) OnCssChanged;
 			}
 		}
 		[CRepr]
@@ -102,11 +102,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationHost self, out HWND hwnd) get_HWND;
-				public new function HRESULT(ref IWebApplicationHost self, out IHTMLDocument2* htmlDocument) get_Document;
-				public new function HRESULT(ref IWebApplicationHost self) Refresh;
-				public new function HRESULT(ref IWebApplicationHost self, in Guid interfaceId, ref IUnknown callback, out uint32 cookie) Advise;
-				public new function HRESULT(ref IWebApplicationHost self, uint32 cookie) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationHost self, out HWND hwnd) get_HWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationHost self, out IHTMLDocument2* htmlDocument) get_Document;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationHost self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationHost self, in Guid interfaceId, ref IUnknown callback, out uint32 cookie) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationHost self, uint32 cookie) Unadvise;
 			}
 		}
 		[CRepr]
@@ -121,7 +121,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebApplicationActivation self) CancelPendingActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationActivation self) CancelPendingActivation;
 			}
 		}
 		[CRepr]
@@ -136,7 +136,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{
-				public new function HRESULT(ref IWebApplicationAuthoringMode self, BSTR* designModeDllPath) get_AuthoringClientBinary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationAuthoringMode self, BSTR* designModeDllPath) get_AuthoringClientBinary;
 			}
 		}
 		

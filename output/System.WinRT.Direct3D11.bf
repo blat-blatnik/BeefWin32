@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirect3DDxgiInterfaceAccess self, in Guid iid, void** p) GetInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDxgiInterfaceAccess self, in Guid iid, void** p) GetInterface;
 			}
 		}
 		

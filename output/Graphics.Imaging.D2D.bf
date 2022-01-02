@@ -21,9 +21,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrame;
-				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrameThumbnail;
-				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) WriteThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrameThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) WriteThumbnail;
 			}
 		}
 		[CRepr]
@@ -38,7 +38,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICImagingFactory.VTable
 			{
-				public new function HRESULT(ref IWICImagingFactory2 self, ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) CreateImageEncoder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory2 self, ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) CreateImageEncoder;
 			}
 		}
 		

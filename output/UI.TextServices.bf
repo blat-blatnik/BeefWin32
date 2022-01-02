@@ -899,32 +899,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreACP self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
-				public new function HRESULT(ref ITextStoreACP self, ref IUnknown punk) UnadviseSink;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
-				public new function HRESULT(ref ITextStoreACP self, out TS_STATUS pdcs) GetStatus;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, out int32 pacpResultStart, out int32 pacpResultEnd) QueryInsert;
-				public new function HRESULT(ref ITextStoreACP self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, out uint32 pcFetched) GetSelection;
-				public new function HRESULT(ref ITextStoreACP self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, out uint32 pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, out uint32 pcRunInfoRet, out int32 pacpNext) GetText;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, out TS_TEXTCHANGE pChange) SetText;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpEnd, out IDataObject* ppDataObject) GetFormattedText;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
-				public new function HRESULT(ref ITextStoreACP self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwFlags, int32 acpStart, int32 acpEnd, ref IDataObject pDataObject, out TS_TEXTCHANGE pChange) InsertEmbedded;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwFlags, char16* pchText, uint32 cch, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertTextAtSelection;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwFlags, ref IDataObject pDataObject, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertEmbeddedAtSelection;
-				public new function HRESULT(ref ITextStoreACP self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
-				public new function HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out int32 pacpNext, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
-				public new function HRESULT(ref ITextStoreACP self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
-				public new function HRESULT(ref ITextStoreACP self, out int32 pacp) GetEndACP;
-				public new function HRESULT(ref ITextStoreACP self, out uint32 pvcView) GetActiveView;
-				public new function HRESULT(ref ITextStoreACP self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
-				public new function HRESULT(ref ITextStoreACP self, uint32 vcView, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
-				public new function HRESULT(ref ITextStoreACP self, uint32 vcView, out RECT prc) GetScreenExt;
-				public new function HRESULT(ref ITextStoreACP self, uint32 vcView, out HWND phwnd) GetWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, ref IUnknown punk) UnadviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, out TS_STATUS pdcs) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, out int32 pacpResultStart, out int32 pacpResultEnd) QueryInsert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, out uint32 pcFetched) GetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, out uint32 pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, out uint32 pcRunInfoRet, out int32 pacpNext) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, out TS_TEXTCHANGE pChange) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpEnd, out IDataObject* ppDataObject) GetFormattedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwFlags, int32 acpStart, int32 acpEnd, ref IDataObject pDataObject, out TS_TEXTCHANGE pChange) InsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwFlags, char16* pchText, uint32 cch, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertTextAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwFlags, ref IDataObject pDataObject, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertEmbeddedAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out int32 pacpNext, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, out int32 pacp) GetEndACP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, out uint32 pvcView) GetActiveView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 vcView, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 vcView, out RECT prc) GetScreenExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP self, uint32 vcView, out HWND phwnd) GetWnd;
 			}
 		}
 		[CRepr]
@@ -963,31 +963,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreACP2 self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
-				public new function HRESULT(ref ITextStoreACP2 self, ref IUnknown punk) UnadviseSink;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
-				public new function HRESULT(ref ITextStoreACP2 self, out TS_STATUS pdcs) GetStatus;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, out int32 pacpResultStart, out int32 pacpResultEnd) QueryInsert;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, out uint32 pcFetched) GetSelection;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, out uint32 pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, out uint32 pcRunInfoRet, out int32 pacpNext) GetText;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, out TS_TEXTCHANGE pChange) SetText;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpEnd, out IDataObject* ppDataObject) GetFormattedText;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
-				public new function HRESULT(ref ITextStoreACP2 self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, int32 acpStart, int32 acpEnd, ref IDataObject pDataObject, out TS_TEXTCHANGE pChange) InsertEmbedded;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, char16* pchText, uint32 cch, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertTextAtSelection;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, ref IDataObject pDataObject, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertEmbeddedAtSelection;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
-				public new function HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out int32 pacpNext, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
-				public new function HRESULT(ref ITextStoreACP2 self, out int32 pacp) GetEndACP;
-				public new function HRESULT(ref ITextStoreACP2 self, out uint32 pvcView) GetActiveView;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 vcView, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
-				public new function HRESULT(ref ITextStoreACP2 self, uint32 vcView, out RECT prc) GetScreenExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, ref IUnknown punk) UnadviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, out TS_STATUS pdcs) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, out int32 pacpResultStart, out int32 pacpResultEnd) QueryInsert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, out uint32 pcFetched) GetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, out uint32 pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, out uint32 pcRunInfoRet, out int32 pacpNext) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, out TS_TEXTCHANGE pChange) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpEnd, out IDataObject* ppDataObject) GetFormattedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, int32 acpStart, int32 acpEnd, ref IDataObject pDataObject, out TS_TEXTCHANGE pChange) InsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, char16* pchText, uint32 cch, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertTextAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, ref IDataObject pDataObject, out int32 pacpStart, out int32 pacpEnd, out TS_TEXTCHANGE pChange) InsertEmbeddedAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out int32 pacpNext, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, out int32 pacp) GetEndACP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, out uint32 pvcView) GetActiveView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 vcView, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACP2 self, uint32 vcView, out RECT prc) GetScreenExt;
 			}
 		}
 		[CRepr]
@@ -1009,14 +1009,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreACPSink self, TEXT_STORE_TEXT_CHANGE_FLAGS dwFlags, in TS_TEXTCHANGE pChange) OnTextChange;
-				public new function HRESULT(ref ITextStoreACPSink self) OnSelectionChange;
-				public new function HRESULT(ref ITextStoreACPSink self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
-				public new function HRESULT(ref ITextStoreACPSink self, uint32 dwFlags) OnStatusChange;
-				public new function HRESULT(ref ITextStoreACPSink self, int32 acpStart, int32 acpEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
-				public new function HRESULT(ref ITextStoreACPSink self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
-				public new function HRESULT(ref ITextStoreACPSink self) OnStartEditTransaction;
-				public new function HRESULT(ref ITextStoreACPSink self) OnEndEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self, TEXT_STORE_TEXT_CHANGE_FLAGS dwFlags, in TS_TEXTCHANGE pChange) OnTextChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self) OnSelectionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self, uint32 dwFlags) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self, int32 acpStart, int32 acpEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self) OnStartEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSink self) OnEndEditTransaction;
 			}
 		}
 		[CRepr]
@@ -1041,17 +1041,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAnchor self, TsGravity gravity) SetGravity;
-				public new function HRESULT(ref IAnchor self, out TsGravity pgravity) GetGravity;
-				public new function HRESULT(ref IAnchor self, ref IAnchor paWith, out BOOL pfEqual) IsEqual;
-				public new function HRESULT(ref IAnchor self, ref IAnchor paWith, out int32 plResult) Compare;
-				public new function HRESULT(ref IAnchor self, uint32 dwFlags, int32 cchReq, out int32 pcch, ref IAnchor paHaltAnchor) Shift;
-				public new function HRESULT(ref IAnchor self, ref IAnchor paSite) ShiftTo;
-				public new function HRESULT(ref IAnchor self, uint32 dwFlags, TsShiftDir dir, out BOOL pfNoRegion) ShiftRegion;
-				public new function HRESULT(ref IAnchor self, uint32 dwMask) SetChangeHistoryMask;
-				public new function HRESULT(ref IAnchor self, out ANCHOR_CHANGE_HISTORY_FLAGS pdwHistory) GetChangeHistory;
-				public new function HRESULT(ref IAnchor self) ClearChangeHistory;
-				public new function HRESULT(ref IAnchor self, out IAnchor* ppaClone) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, TsGravity gravity) SetGravity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, out TsGravity pgravity) GetGravity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, ref IAnchor paWith, out BOOL pfEqual) IsEqual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, ref IAnchor paWith, out int32 plResult) Compare;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, uint32 dwFlags, int32 cchReq, out int32 pcch, ref IAnchor paHaltAnchor) Shift;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, ref IAnchor paSite) ShiftTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, uint32 dwFlags, TsShiftDir dir, out BOOL pfNoRegion) ShiftRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, uint32 dwMask) SetChangeHistoryMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, out ANCHOR_CHANGE_HISTORY_FLAGS pdwHistory) GetChangeHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self) ClearChangeHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnchor self, out IAnchor* ppaClone) Clone;
 			}
 		}
 		[CRepr]
@@ -1092,33 +1092,33 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreAnchor self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IUnknown punk) UnadviseSink;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
-				public new function HRESULT(ref ITextStoreAnchor self, out TS_STATUS pdcs) GetStatus;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IAnchor paTestStart, ref IAnchor paTestEnd, uint32 cch, out IAnchor* ppaResultStart, out IAnchor* ppaResultEnd) QueryInsert;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection, out uint32 pcFetched) GetSelection;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection) SetSelection;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, char16* pchText, uint32 cchReq, out uint32 pcch, BOOL fUpdateAnchor) GetText;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, char16* pchText, uint32 cch) SetText;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IAnchor paStart, ref IAnchor paEnd, out IDataObject* ppDataObject) GetFormattedText;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, ref IDataObject pDataObject) InsertEmbedded;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IAnchor paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IAnchor paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
-				public new function HRESULT(ref ITextStoreAnchor self, ref IAnchor paStart, ref IAnchor paHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
-				public new function HRESULT(ref ITextStoreAnchor self, out IAnchor* ppaStart) GetStart;
-				public new function HRESULT(ref ITextStoreAnchor self, out IAnchor* ppaEnd) GetEnd;
-				public new function HRESULT(ref ITextStoreAnchor self, out uint32 pvcView) GetActiveView;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out IAnchor* ppaSite) GetAnchorFromPoint;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 vcView, ref IAnchor paStart, ref IAnchor paEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 vcView, out RECT prc) GetScreenExt;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 vcView, out HWND phwnd) GetWnd;
-				public new function HRESULT(ref ITextStoreAnchor self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, char16* pchText, uint32 cch, out IAnchor* ppaStart, out IAnchor* ppaEnd) InsertTextAtSelection;
-				public new function HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IDataObject pDataObject, out IAnchor* ppaStart, out IAnchor* ppaEnd) InsertEmbeddedAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, in Guid riid, ref IUnknown punk, uint32 dwMask) AdviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IUnknown punk) UnadviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwLockFlags, out HRESULT phrSession) RequestLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, out TS_STATUS pdcs) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IAnchor paTestStart, ref IAnchor paTestEnd, uint32 cch, out IAnchor* ppaResultStart, out IAnchor* ppaResultEnd) QueryInsert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection, out uint32 pcFetched) GetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection) SetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, char16* pchText, uint32 cchReq, out uint32 pcch, BOOL fUpdateAnchor) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, char16* pchText, uint32 cch) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IAnchor paStart, ref IAnchor paEnd, out IDataObject* ppDataObject) GetFormattedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paPos, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IAnchor paStart, ref IAnchor paEnd, ref IDataObject pDataObject) InsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IAnchor paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IAnchor paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, ref IAnchor paStart, ref IAnchor paHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, out BOOL pfFound, out int32 plFoundOffset) FindNextAttrTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 ulCount, TS_ATTRVAL* paAttrVals, out uint32 pcFetched) RetrieveRequestedAttrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, out IAnchor* ppaStart) GetStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, out IAnchor* ppaEnd) GetEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, out uint32 pvcView) GetActiveView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 vcView, in POINT ptScreen, uint32 dwFlags, out IAnchor* ppaSite) GetAnchorFromPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 vcView, ref IAnchor paStart, ref IAnchor paEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 vcView, out RECT prc) GetScreenExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 vcView, out HWND phwnd) GetWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, char16* pchText, uint32 cch, out IAnchor* ppaStart, out IAnchor* ppaEnd) InsertTextAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchor self, uint32 dwFlags, ref IDataObject pDataObject, out IAnchor* ppaStart, out IAnchor* ppaEnd) InsertEmbeddedAtSelection;
 			}
 		}
 		[CRepr]
@@ -1140,14 +1140,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreAnchorSink self, TEXT_STORE_CHANGE_FLAGS dwFlags, ref IAnchor paStart, ref IAnchor paEnd) OnTextChange;
-				public new function HRESULT(ref ITextStoreAnchorSink self) OnSelectionChange;
-				public new function HRESULT(ref ITextStoreAnchorSink self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
-				public new function HRESULT(ref ITextStoreAnchorSink self, uint32 dwFlags) OnStatusChange;
-				public new function HRESULT(ref ITextStoreAnchorSink self, ref IAnchor paStart, ref IAnchor paEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
-				public new function HRESULT(ref ITextStoreAnchorSink self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
-				public new function HRESULT(ref ITextStoreAnchorSink self) OnStartEditTransaction;
-				public new function HRESULT(ref ITextStoreAnchorSink self) OnEndEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self, TEXT_STORE_CHANGE_FLAGS dwFlags, ref IAnchor paStart, ref IAnchor paEnd) OnTextChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self) OnSelectionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self, uint32 dwFlags) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self, ref IAnchor paStart, ref IAnchor paEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self) OnStartEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorSink self) OnEndEditTransaction;
 			}
 		}
 		[CRepr]
@@ -1170,15 +1170,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLangBarMgr self, ref ITfLangBarEventSink pSink, HWND hwnd, uint32 dwFlags, ref uint32 pdwCookie) AdviseEventSink;
-				public new function HRESULT(ref ITfLangBarMgr self, uint32 dwCookie) UnadviseEventSink;
-				public new function HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, uint32 dwType, in Guid riid, out IUnknown* ppunk) GetThreadMarshalInterface;
-				public new function HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, out ITfLangBarItemMgr* pplbi, out uint32 pdwThreadid) GetThreadLangBarItemMgr;
-				public new function HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, out ITfInputProcessorProfiles* ppaip, out uint32 pdwThreadid) GetInputProcessorProfiles;
-				public new function HRESULT(ref ITfLangBarMgr self, out uint32 pdwThreadId, BOOL fPrev) RestoreLastFocus;
-				public new function HRESULT(ref ITfLangBarMgr self, ref ITfLangBarEventSink pSink, uint32 dwThreadId, uint32 dwFlags) SetModalInput;
-				public new function HRESULT(ref ITfLangBarMgr self, uint32 dwFlags) ShowFloating;
-				public new function HRESULT(ref ITfLangBarMgr self, out uint32 pdwFlags) GetShowFloatingStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, ref ITfLangBarEventSink pSink, HWND hwnd, uint32 dwFlags, ref uint32 pdwCookie) AdviseEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, uint32 dwCookie) UnadviseEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, uint32 dwType, in Guid riid, out IUnknown* ppunk) GetThreadMarshalInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, out ITfLangBarItemMgr* pplbi, out uint32 pdwThreadid) GetThreadLangBarItemMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, uint32 dwThreadId, out ITfInputProcessorProfiles* ppaip, out uint32 pdwThreadid) GetInputProcessorProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, out uint32 pdwThreadId, BOOL fPrev) RestoreLastFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, ref ITfLangBarEventSink pSink, uint32 dwThreadId, uint32 dwFlags) SetModalInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, uint32 dwFlags) ShowFloating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarMgr self, out uint32 pdwFlags) GetShowFloatingStatus;
 			}
 		}
 		[CRepr]
@@ -1198,12 +1198,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnSetFocus;
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnThreadTerminate;
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnThreadItemChange;
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId, uint32 uMsg, WPARAM wParam, LPARAM lParam) OnModalInput;
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwFlags) ShowFloating;
-				public new function HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId, in Guid rguid, out RECT prc) GetItemFloatingRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnSetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnThreadTerminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId) OnThreadItemChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId, uint32 uMsg, WPARAM wParam, LPARAM lParam) OnModalInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwFlags) ShowFloating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarEventSink self, uint32 dwThreadId, in Guid rguid, out RECT prc) GetItemFloatingRect;
 			}
 		}
 		[CRepr]
@@ -1218,7 +1218,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemSink self, uint32 dwFlags) OnUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemSink self, uint32 dwFlags) OnUpdate;
 			}
 		}
 		[CRepr]
@@ -1236,10 +1236,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfLangBarItems self, out IEnumTfLangBarItems* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfLangBarItems self, uint32 ulCount, ITfLangBarItem** ppItem, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfLangBarItems self) Reset;
-				public new function HRESULT(ref IEnumTfLangBarItems self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLangBarItems self, out IEnumTfLangBarItems* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLangBarItems self, uint32 ulCount, ITfLangBarItem** ppItem, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLangBarItems self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLangBarItems self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1265,18 +1265,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemMgr self, out IEnumTfLangBarItems* ppEnum) EnumItems;
-				public new function HRESULT(ref ITfLangBarItemMgr self, in Guid rguid, out ITfLangBarItem* ppItem) GetItem;
-				public new function HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItem punk) AddItem;
-				public new function HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItem punk) RemoveItem;
-				public new function HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItemSink punk, out uint32 pdwCookie, in Guid rguidItem) AdviseItemSink;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 dwCookie) UnadviseItemSink;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 dwThreadId, in Guid rguid, out RECT prc) GetItemFloatingRect;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, Guid* prgguid, uint32* pdwStatus) GetItemsStatus;
-				public new function HRESULT(ref ITfLangBarItemMgr self, out uint32 pulCount) GetItemNum;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, uint32* pdwStatus, out uint32 pcFetched) GetItems;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, ITfLangBarItemSink** ppunk, Guid* pguidItem, uint32* pdwCookie) AdviseItemsSink;
-				public new function HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, uint32* pdwCookie) UnadviseItemsSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, out IEnumTfLangBarItems* ppEnum) EnumItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, in Guid rguid, out ITfLangBarItem* ppItem) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItem punk) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItem punk) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, ref ITfLangBarItemSink punk, out uint32 pdwCookie, in Guid rguidItem) AdviseItemSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 dwCookie) UnadviseItemSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 dwThreadId, in Guid rguid, out RECT prc) GetItemFloatingRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, Guid* prgguid, uint32* pdwStatus) GetItemsStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, out uint32 pulCount) GetItemNum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, uint32* pdwStatus, out uint32 pcFetched) GetItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, ITfLangBarItemSink** ppunk, Guid* pguidItem, uint32* pdwCookie) AdviseItemsSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemMgr self, uint32 ulCount, uint32* pdwCookie) UnadviseItemsSink;
 			}
 		}
 		[CRepr]
@@ -1294,10 +1294,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItem self, out TF_LANGBARITEMINFO pInfo) GetInfo;
-				public new function HRESULT(ref ITfLangBarItem self, out uint32 pdwStatus) GetStatus;
-				public new function HRESULT(ref ITfLangBarItem self, BOOL fShow) Show;
-				public new function HRESULT(ref ITfLangBarItem self, out BSTR pbstrToolTip) GetTooltipString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItem self, out TF_LANGBARITEMINFO pInfo) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItem self, out uint32 pdwStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItem self, BOOL fShow) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItem self, out BSTR pbstrToolTip) GetTooltipString;
 			}
 		}
 		[CRepr]
@@ -1313,8 +1313,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSystemLangBarItemSink self, ref ITfMenu pMenu) InitMenu;
-				public new function HRESULT(ref ITfSystemLangBarItemSink self, uint32 wID) OnMenuSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItemSink self, ref ITfMenu pMenu) InitMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItemSink self, uint32 wID) OnMenuSelect;
 			}
 		}
 		[CRepr]
@@ -1330,8 +1330,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSystemLangBarItem self, HICON hIcon) SetIcon;
-				public new function HRESULT(ref ITfSystemLangBarItem self, char16* pchToolTip, uint32 cch) SetTooltipString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItem self, HICON hIcon) SetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItem self, char16* pchToolTip, uint32 cch) SetTooltipString;
 			}
 		}
 		[CRepr]
@@ -1347,8 +1347,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSystemLangBarItemText self, char16* pch, uint32 cch) SetItemText;
-				public new function HRESULT(ref ITfSystemLangBarItemText self, out BSTR pbstrText) GetItemText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItemText self, char16* pch, uint32 cch) SetItemText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemLangBarItemText self, out BSTR pbstrText) GetItemText;
 			}
 		}
 		[CRepr]
@@ -1364,8 +1364,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSystemDeviceTypeLangBarItem self, LANG_BAR_ITEM_ICON_MODE_FLAGS dwFlags) SetIconMode;
-				public new function HRESULT(ref ITfSystemDeviceTypeLangBarItem self, out uint32 pdwFlags) GetIconMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemDeviceTypeLangBarItem self, LANG_BAR_ITEM_ICON_MODE_FLAGS dwFlags) SetIconMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSystemDeviceTypeLangBarItem self, out uint32 pdwFlags) GetIconMode;
 			}
 		}
 		[CRepr]
@@ -1384,11 +1384,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfLangBarItem.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemButton self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
-				public new function HRESULT(ref ITfLangBarItemButton self, ref ITfMenu pMenu) InitMenu;
-				public new function HRESULT(ref ITfLangBarItemButton self, uint32 wID) OnMenuSelect;
-				public new function HRESULT(ref ITfLangBarItemButton self, out HICON phIcon) GetIcon;
-				public new function HRESULT(ref ITfLangBarItemButton self, out BSTR pbstrText) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemButton self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemButton self, ref ITfMenu pMenu) InitMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemButton self, uint32 wID) OnMenuSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemButton self, out HICON phIcon) GetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemButton self, out BSTR pbstrText) GetText;
 			}
 		}
 		[CRepr]
@@ -1408,12 +1408,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfLangBarItem.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, ref ITfMenu pMenu) InitMenu;
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, uint32 wID) OnMenuSelect;
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, out HBITMAP phbmp, out HBITMAP phbmpMask) DrawBitmap;
-				public new function HRESULT(ref ITfLangBarItemBitmapButton self, out BSTR pbstrText) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, ref ITfMenu pMenu) InitMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, uint32 wID) OnMenuSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, out HBITMAP phbmp, out HBITMAP phbmpMask) DrawBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmapButton self, out BSTR pbstrText) GetText;
 			}
 		}
 		[CRepr]
@@ -1430,9 +1430,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfLangBarItem.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemBitmap self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
-				public new function HRESULT(ref ITfLangBarItemBitmap self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
-				public new function HRESULT(ref ITfLangBarItemBitmap self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, out HBITMAP phbmp, out HBITMAP phbmpMask) DrawBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmap self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmap self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBitmap self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, out HBITMAP phbmp, out HBITMAP phbmpMask) DrawBitmap;
 			}
 		}
 		[CRepr]
@@ -1449,9 +1449,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfLangBarItem.VTable
 			{
-				public new function HRESULT(ref ITfLangBarItemBalloon self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
-				public new function HRESULT(ref ITfLangBarItemBalloon self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
-				public new function HRESULT(ref ITfLangBarItemBalloon self, out TF_LBBALLOONINFO pInfo) GetBalloonInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBalloon self, TfLBIClick click, POINT pt, in RECT prcArea) OnClick;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBalloon self, in SIZE pszDefault, out SIZE psz) GetPreferredSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLangBarItemBalloon self, out TF_LBBALLOONINFO pInfo) GetBalloonInfo;
 			}
 		}
 		[CRepr]
@@ -1466,7 +1466,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMenu self, uint32 uId, uint32 dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, char16* pch, uint32 cch, out ITfMenu* ppMenu) AddMenuItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMenu self, uint32 uId, uint32 dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, char16* pch, uint32 cch, out ITfMenu* ppMenu) AddMenuItem;
 			}
 		}
 		[CRepr]
@@ -1491,17 +1491,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfThreadMgr self, out uint32 ptid) Activate;
-				public new function HRESULT(ref ITfThreadMgr self) Deactivate;
-				public new function HRESULT(ref ITfThreadMgr self, out ITfDocumentMgr* ppdim) CreateDocumentMgr;
-				public new function HRESULT(ref ITfThreadMgr self, out IEnumTfDocumentMgrs* ppEnum) EnumDocumentMgrs;
-				public new function HRESULT(ref ITfThreadMgr self, out ITfDocumentMgr* ppdimFocus) GetFocus;
-				public new function HRESULT(ref ITfThreadMgr self, ref ITfDocumentMgr pdimFocus) SetFocus;
-				public new function HRESULT(ref ITfThreadMgr self, HWND hwnd, ref ITfDocumentMgr pdimNew, out ITfDocumentMgr* ppdimPrev) AssociateFocus;
-				public new function HRESULT(ref ITfThreadMgr self, out BOOL pfThreadFocus) IsThreadFocus;
-				public new function HRESULT(ref ITfThreadMgr self, in Guid clsid, out ITfFunctionProvider* ppFuncProv) GetFunctionProvider;
-				public new function HRESULT(ref ITfThreadMgr self, out IEnumTfFunctionProviders* ppEnum) EnumFunctionProviders;
-				public new function HRESULT(ref ITfThreadMgr self, out ITfCompartmentMgr* ppCompMgr) GetGlobalCompartment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out uint32 ptid) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out ITfDocumentMgr* ppdim) CreateDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out IEnumTfDocumentMgrs* ppEnum) EnumDocumentMgrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out ITfDocumentMgr* ppdimFocus) GetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, ref ITfDocumentMgr pdimFocus) SetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, HWND hwnd, ref ITfDocumentMgr pdimNew, out ITfDocumentMgr* ppdimPrev) AssociateFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out BOOL pfThreadFocus) IsThreadFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, in Guid clsid, out ITfFunctionProvider* ppFuncProv) GetFunctionProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out IEnumTfFunctionProviders* ppEnum) EnumFunctionProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr self, out ITfCompartmentMgr* ppCompMgr) GetGlobalCompartment;
 			}
 		}
 		[CRepr]
@@ -1517,8 +1517,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfThreadMgr.VTable
 			{
-				public new function HRESULT(ref ITfThreadMgrEx self, out uint32 ptid, uint32 dwFlags) ActivateEx;
-				public new function HRESULT(ref ITfThreadMgrEx self, out uint32 lpdwFlags) GetActiveFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEx self, out uint32 ptid, uint32 dwFlags) ActivateEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEx self, out uint32 lpdwFlags) GetActiveFlags;
 			}
 		}
 		[CRepr]
@@ -1546,20 +1546,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfThreadMgr2 self, out uint32 ptid) Activate;
-				public new function HRESULT(ref ITfThreadMgr2 self) Deactivate;
-				public new function HRESULT(ref ITfThreadMgr2 self, out ITfDocumentMgr* ppdim) CreateDocumentMgr;
-				public new function HRESULT(ref ITfThreadMgr2 self, out IEnumTfDocumentMgrs* ppEnum) EnumDocumentMgrs;
-				public new function HRESULT(ref ITfThreadMgr2 self, out ITfDocumentMgr* ppdimFocus) GetFocus;
-				public new function HRESULT(ref ITfThreadMgr2 self, ref ITfDocumentMgr pdimFocus) SetFocus;
-				public new function HRESULT(ref ITfThreadMgr2 self, out BOOL pfThreadFocus) IsThreadFocus;
-				public new function HRESULT(ref ITfThreadMgr2 self, in Guid clsid, out ITfFunctionProvider* ppFuncProv) GetFunctionProvider;
-				public new function HRESULT(ref ITfThreadMgr2 self, out IEnumTfFunctionProviders* ppEnum) EnumFunctionProviders;
-				public new function HRESULT(ref ITfThreadMgr2 self, out ITfCompartmentMgr* ppCompMgr) GetGlobalCompartment;
-				public new function HRESULT(ref ITfThreadMgr2 self, out uint32 ptid, uint32 dwFlags) ActivateEx;
-				public new function HRESULT(ref ITfThreadMgr2 self, out uint32 lpdwFlags) GetActiveFlags;
-				public new function HRESULT(ref ITfThreadMgr2 self) SuspendKeystrokeHandling;
-				public new function HRESULT(ref ITfThreadMgr2 self) ResumeKeystrokeHandling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out uint32 ptid) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out ITfDocumentMgr* ppdim) CreateDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out IEnumTfDocumentMgrs* ppEnum) EnumDocumentMgrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out ITfDocumentMgr* ppdimFocus) GetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, ref ITfDocumentMgr pdimFocus) SetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out BOOL pfThreadFocus) IsThreadFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, in Guid clsid, out ITfFunctionProvider* ppFuncProv) GetFunctionProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out IEnumTfFunctionProviders* ppEnum) EnumFunctionProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out ITfCompartmentMgr* ppCompMgr) GetGlobalCompartment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out uint32 ptid, uint32 dwFlags) ActivateEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self, out uint32 lpdwFlags) GetActiveFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self) SuspendKeystrokeHandling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgr2 self) ResumeKeystrokeHandling;
 			}
 		}
 		[CRepr]
@@ -1578,11 +1578,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdim) OnInitDocumentMgr;
-				public new function HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdim) OnUninitDocumentMgr;
-				public new function HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdimFocus, ref ITfDocumentMgr pdimPrevFocus) OnSetFocus;
-				public new function HRESULT(ref ITfThreadMgrEventSink self, ref ITfContext pic) OnPushContext;
-				public new function HRESULT(ref ITfThreadMgrEventSink self, ref ITfContext pic) OnPopContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdim) OnInitDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdim) OnUninitDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEventSink self, ref ITfDocumentMgr pdimFocus, ref ITfDocumentMgr pdimPrevFocus) OnSetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEventSink self, ref ITfContext pic) OnPushContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadMgrEventSink self, ref ITfContext pic) OnPopContext;
 			}
 		}
 		[CRepr]
@@ -1598,8 +1598,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfConfigureSystemKeystrokeFeed self) DisableSystemKeystrokeFeed;
-				public new function HRESULT(ref ITfConfigureSystemKeystrokeFeed self) EnableSystemKeystrokeFeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfConfigureSystemKeystrokeFeed self) DisableSystemKeystrokeFeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfConfigureSystemKeystrokeFeed self) EnableSystemKeystrokeFeed;
 			}
 		}
 		[CRepr]
@@ -1617,10 +1617,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfDocumentMgrs self, out IEnumTfDocumentMgrs* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfDocumentMgrs self, uint32 ulCount, ITfDocumentMgr** rgDocumentMgr, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfDocumentMgrs self) Reset;
-				public new function HRESULT(ref IEnumTfDocumentMgrs self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDocumentMgrs self, out IEnumTfDocumentMgrs* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDocumentMgrs self, uint32 ulCount, ITfDocumentMgr** rgDocumentMgr, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDocumentMgrs self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDocumentMgrs self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1640,12 +1640,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfDocumentMgr self, uint32 tidOwner, uint32 dwFlags, ref IUnknown punk, out ITfContext* ppic, out uint32 pecTextStore) CreateContext;
-				public new function HRESULT(ref ITfDocumentMgr self, ref ITfContext pic) Push;
-				public new function HRESULT(ref ITfDocumentMgr self, uint32 dwFlags) Pop;
-				public new function HRESULT(ref ITfDocumentMgr self, out ITfContext* ppic) GetTop;
-				public new function HRESULT(ref ITfDocumentMgr self, out ITfContext* ppic) GetBase;
-				public new function HRESULT(ref ITfDocumentMgr self, out IEnumTfContexts* ppEnum) EnumContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, uint32 tidOwner, uint32 dwFlags, ref IUnknown punk, out ITfContext* ppic, out uint32 pecTextStore) CreateContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, ref ITfContext pic) Push;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, uint32 dwFlags) Pop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, out ITfContext* ppic) GetTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, out ITfContext* ppic) GetBase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDocumentMgr self, out IEnumTfContexts* ppEnum) EnumContexts;
 			}
 		}
 		[CRepr]
@@ -1663,10 +1663,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfContexts self, out IEnumTfContexts* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfContexts self, uint32 ulCount, ITfContext** rgContext, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfContexts self) Reset;
-				public new function HRESULT(ref IEnumTfContexts self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContexts self, out IEnumTfContexts* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContexts self, uint32 ulCount, ITfContext** rgContext, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContexts self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContexts self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1682,8 +1682,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCompositionView self, out Guid pclsid) GetOwnerClsid;
-				public new function HRESULT(ref ITfCompositionView self, out ITfRange* ppRange) GetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompositionView self, out Guid pclsid) GetOwnerClsid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompositionView self, out ITfRange* ppRange) GetRange;
 			}
 		}
 		[CRepr]
@@ -1701,10 +1701,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumITfCompositionView self, out IEnumITfCompositionView* ppEnum) Clone;
-				public new function HRESULT(ref IEnumITfCompositionView self, uint32 ulCount, ITfCompositionView** rgCompositionView, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumITfCompositionView self) Reset;
-				public new function HRESULT(ref IEnumITfCompositionView self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumITfCompositionView self, out IEnumITfCompositionView* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumITfCompositionView self, uint32 ulCount, ITfCompositionView** rgCompositionView, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumITfCompositionView self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumITfCompositionView self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1722,10 +1722,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfComposition self, out ITfRange* ppRange) GetRange;
-				public new function HRESULT(ref ITfComposition self, uint32 ecWrite, ref ITfRange pNewStart) ShiftStart;
-				public new function HRESULT(ref ITfComposition self, uint32 ecWrite, ref ITfRange pNewEnd) ShiftEnd;
-				public new function HRESULT(ref ITfComposition self, uint32 ecWrite) EndComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfComposition self, out ITfRange* ppRange) GetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfComposition self, uint32 ecWrite, ref ITfRange pNewStart) ShiftStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfComposition self, uint32 ecWrite, ref ITfRange pNewEnd) ShiftEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfComposition self, uint32 ecWrite) EndComposition;
 			}
 		}
 		[CRepr]
@@ -1740,7 +1740,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCompositionSink self, uint32 ecWrite, ref ITfComposition pComposition) OnCompositionTerminated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompositionSink self, uint32 ecWrite, ref ITfComposition pComposition) OnCompositionTerminated;
 			}
 		}
 		[CRepr]
@@ -1758,10 +1758,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextComposition self, uint32 ecWrite, ref ITfRange pCompositionRange, ref ITfCompositionSink pSink, out ITfComposition* ppComposition) StartComposition;
-				public new function HRESULT(ref ITfContextComposition self, out IEnumITfCompositionView* ppEnum) EnumCompositions;
-				public new function HRESULT(ref ITfContextComposition self, uint32 ecRead, ref ITfRange pTestRange, out IEnumITfCompositionView* ppEnum) FindComposition;
-				public new function HRESULT(ref ITfContextComposition self, uint32 ecWrite, ref ITfCompositionView pComposition, ref ITfCompositionSink pSink, out ITfComposition* ppComposition) TakeOwnership;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextComposition self, uint32 ecWrite, ref ITfRange pCompositionRange, ref ITfCompositionSink pSink, out ITfComposition* ppComposition) StartComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextComposition self, out IEnumITfCompositionView* ppEnum) EnumCompositions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextComposition self, uint32 ecRead, ref ITfRange pTestRange, out IEnumITfCompositionView* ppEnum) FindComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextComposition self, uint32 ecWrite, ref ITfCompositionView pComposition, ref ITfCompositionSink pSink, out ITfComposition* ppComposition) TakeOwnership;
 			}
 		}
 		[CRepr]
@@ -1776,7 +1776,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfContextComposition.VTable
 			{
-				public new function HRESULT(ref ITfContextOwnerCompositionServices self, ref ITfCompositionView pComposition) TerminateComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerCompositionServices self, ref ITfCompositionView pComposition) TerminateComposition;
 			}
 		}
 		[CRepr]
@@ -1793,9 +1793,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition, out BOOL pfOk) OnStartComposition;
-				public new function HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition, ref ITfRange pRangeNew) OnUpdateComposition;
-				public new function HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition) OnEndComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition, out BOOL pfOk) OnStartComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition, ref ITfRange pRangeNew) OnUpdateComposition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerCompositionSink self, ref ITfCompositionView pComposition) OnEndComposition;
 			}
 		}
 		[CRepr]
@@ -1813,10 +1813,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextView self, uint32 ec, in POINT ppt, uint32 dwFlags, out ITfRange* ppRange) GetRangeFromPoint;
-				public new function HRESULT(ref ITfContextView self, uint32 ec, ref ITfRange pRange, out RECT prc, out BOOL pfClipped) GetTextExt;
-				public new function HRESULT(ref ITfContextView self, out RECT prc) GetScreenExt;
-				public new function HRESULT(ref ITfContextView self, out HWND phwnd) GetWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextView self, uint32 ec, in POINT ppt, uint32 dwFlags, out ITfRange* ppRange) GetRangeFromPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextView self, uint32 ec, ref ITfRange pRange, out RECT prc, out BOOL pfClipped) GetTextExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextView self, out RECT prc) GetScreenExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextView self, out HWND phwnd) GetWnd;
 			}
 		}
 		[CRepr]
@@ -1834,10 +1834,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfContextViews self, out IEnumTfContextViews* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfContextViews self, uint32 ulCount, ITfContextView** rgViews, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfContextViews self) Reset;
-				public new function HRESULT(ref IEnumTfContextViews self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContextViews self, out IEnumTfContextViews* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContextViews self, uint32 ulCount, ITfContextView** rgViews, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContextViews self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfContextViews self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1866,21 +1866,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContext self, uint32 tid, ref ITfEditSession pes, TF_CONTEXT_EDIT_CONTEXT_FLAGS dwFlags, out HRESULT phrSession) RequestEditSession;
-				public new function HRESULT(ref ITfContext self, uint32 tid, out BOOL pfWriteSession) InWriteSession;
-				public new function HRESULT(ref ITfContext self, uint32 ec, uint32 ulIndex, uint32 ulCount, TF_SELECTION* pSelection, out uint32 pcFetched) GetSelection;
-				public new function HRESULT(ref ITfContext self, uint32 ec, uint32 ulCount, TF_SELECTION* pSelection) SetSelection;
-				public new function HRESULT(ref ITfContext self, uint32 ec, out ITfRange* ppStart) GetStart;
-				public new function HRESULT(ref ITfContext self, uint32 ec, out ITfRange* ppEnd) GetEnd;
-				public new function HRESULT(ref ITfContext self, out ITfContextView* ppView) GetActiveView;
-				public new function HRESULT(ref ITfContext self, out IEnumTfContextViews* ppEnum) EnumViews;
-				public new function HRESULT(ref ITfContext self, out TS_STATUS pdcs) GetStatus;
-				public new function HRESULT(ref ITfContext self, in Guid guidProp, out ITfProperty* ppProp) GetProperty;
-				public new function HRESULT(ref ITfContext self, in Guid guidProp, out ITfReadOnlyProperty* ppProp) GetAppProperty;
-				public new function HRESULT(ref ITfContext self, Guid** prgProp, uint32 cProp, Guid** prgAppProp, uint32 cAppProp, out ITfReadOnlyProperty* ppProperty) TrackProperties;
-				public new function HRESULT(ref ITfContext self, out IEnumTfProperties* ppEnum) EnumProperties;
-				public new function HRESULT(ref ITfContext self, out ITfDocumentMgr* ppDm) GetDocumentMgr;
-				public new function HRESULT(ref ITfContext self, uint32 ec, ref ITfRange pRange, out ITfRangeBackup* ppBackup) CreateRangeBackup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 tid, ref ITfEditSession pes, TF_CONTEXT_EDIT_CONTEXT_FLAGS dwFlags, out HRESULT phrSession) RequestEditSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 tid, out BOOL pfWriteSession) InWriteSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 ec, uint32 ulIndex, uint32 ulCount, TF_SELECTION* pSelection, out uint32 pcFetched) GetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 ec, uint32 ulCount, TF_SELECTION* pSelection) SetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 ec, out ITfRange* ppStart) GetStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 ec, out ITfRange* ppEnd) GetEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, out ITfContextView* ppView) GetActiveView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, out IEnumTfContextViews* ppEnum) EnumViews;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, out TS_STATUS pdcs) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, in Guid guidProp, out ITfProperty* ppProp) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, in Guid guidProp, out ITfReadOnlyProperty* ppProp) GetAppProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, Guid** prgProp, uint32 cProp, Guid** prgAppProp, uint32 cAppProp, out ITfReadOnlyProperty* ppProperty) TrackProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, out IEnumTfProperties* ppEnum) EnumProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, out ITfDocumentMgr* ppDm) GetDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContext self, uint32 ec, ref ITfRange pRange, out ITfRangeBackup* ppBackup) CreateRangeBackup;
 			}
 		}
 		[CRepr]
@@ -1895,7 +1895,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfQueryEmbedded self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfQueryEmbedded self, in Guid pguidService, in FORMATETC pFormatEtc, out BOOL pfInsertable) QueryInsertEmbedded;
 			}
 		}
 		[CRepr]
@@ -1911,8 +1911,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInsertAtSelection self, uint32 ec, INSERT_TEXT_AT_SELECTION_FLAGS dwFlags, char16* pchText, int32 cch, out ITfRange* ppRange) InsertTextAtSelection;
-				public new function HRESULT(ref ITfInsertAtSelection self, uint32 ec, uint32 dwFlags, ref IDataObject pDataObject, out ITfRange* ppRange) InsertEmbeddedAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInsertAtSelection self, uint32 ec, INSERT_TEXT_AT_SELECTION_FLAGS dwFlags, char16* pchText, int32 cch, out ITfRange* ppRange) InsertTextAtSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInsertAtSelection self, uint32 ec, uint32 dwFlags, ref IDataObject pDataObject, out ITfRange* ppRange) InsertEmbeddedAtSelection;
 			}
 		}
 		[CRepr]
@@ -1927,7 +1927,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCleanupContextSink self, uint32 ecWrite, ref ITfContext pic) OnCleanupContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCleanupContextSink self, uint32 ecWrite, ref ITfContext pic) OnCleanupContext;
 			}
 		}
 		[CRepr]
@@ -1943,8 +1943,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCleanupContextDurationSink self) OnStartCleanupContext;
-				public new function HRESULT(ref ITfCleanupContextDurationSink self) OnEndCleanupContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCleanupContextDurationSink self) OnStartCleanupContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCleanupContextDurationSink self) OnEndCleanupContext;
 			}
 		}
 		[CRepr]
@@ -1962,10 +1962,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfReadOnlyProperty self, out Guid pguid) ComGetType;
-				public new function HRESULT(ref ITfReadOnlyProperty self, uint32 ec, out IEnumTfRanges* ppEnum, ref ITfRange pTargetRange) EnumRanges;
-				public new function HRESULT(ref ITfReadOnlyProperty self, uint32 ec, ref ITfRange pRange, out VARIANT pvarValue) GetValue;
-				public new function HRESULT(ref ITfReadOnlyProperty self, out ITfContext* ppContext) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadOnlyProperty self, out Guid pguid) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadOnlyProperty self, uint32 ec, out IEnumTfRanges* ppEnum, ref ITfRange pTargetRange) EnumRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadOnlyProperty self, uint32 ec, ref ITfRange pRange, out VARIANT pvarValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadOnlyProperty self, out ITfContext* ppContext) GetContext;
 			}
 		}
 		[CRepr]
@@ -1983,10 +1983,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfPropertyValue self, out IEnumTfPropertyValue* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfPropertyValue self, uint32 ulCount, TF_PROPERTYVAL* rgValues, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfPropertyValue self) Reset;
-				public new function HRESULT(ref IEnumTfPropertyValue self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfPropertyValue self, out IEnumTfPropertyValue* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfPropertyValue self, uint32 ulCount, TF_PROPERTYVAL* rgValues, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfPropertyValue self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfPropertyValue self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2002,8 +2002,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMouseTracker self, ref ITfRange range, ref ITfMouseSink pSink, out uint32 pdwCookie) AdviseMouseSink;
-				public new function HRESULT(ref ITfMouseTracker self, uint32 dwCookie) UnadviseMouseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMouseTracker self, ref ITfRange range, ref ITfMouseSink pSink, out uint32 pdwCookie) AdviseMouseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMouseTracker self, uint32 dwCookie) UnadviseMouseSink;
 			}
 		}
 		[CRepr]
@@ -2019,8 +2019,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMouseTrackerACP self, ref ITfRangeACP range, ref ITfMouseSink pSink, out uint32 pdwCookie) AdviseMouseSink;
-				public new function HRESULT(ref ITfMouseTrackerACP self, uint32 dwCookie) UnadviseMouseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMouseTrackerACP self, ref ITfRangeACP range, ref ITfMouseSink pSink, out uint32 pdwCookie) AdviseMouseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMouseTrackerACP self, uint32 dwCookie) UnadviseMouseSink;
 			}
 		}
 		[CRepr]
@@ -2035,7 +2035,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMouseSink self, uint32 uEdge, uint32 uQuadrant, uint32 dwBtnStatus, out BOOL pfEaten) OnMouseEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMouseSink self, uint32 uEdge, uint32 uQuadrant, uint32 dwBtnStatus, out BOOL pfEaten) OnMouseEvent;
 			}
 		}
 		[CRepr]
@@ -2051,8 +2051,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfEditRecord self, out BOOL pfChanged) GetSelectionStatus;
-				public new function HRESULT(ref ITfEditRecord self, GET_TEXT_AND_PROPERTY_UPDATES_FLAGS dwFlags, Guid** prgProperties, uint32 cProperties, out IEnumTfRanges* ppEnum) GetTextAndPropertyUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfEditRecord self, out BOOL pfChanged) GetSelectionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfEditRecord self, GET_TEXT_AND_PROPERTY_UPDATES_FLAGS dwFlags, Guid** prgProperties, uint32 cProperties, out IEnumTfRanges* ppEnum) GetTextAndPropertyUpdates;
 			}
 		}
 		[CRepr]
@@ -2067,7 +2067,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfTextEditSink self, ref ITfContext pic, uint32 ecReadOnly, ref ITfEditRecord pEditRecord) OnEndEdit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTextEditSink self, ref ITfContext pic, uint32 ecReadOnly, ref ITfEditRecord pEditRecord) OnEndEdit;
 			}
 		}
 		[CRepr]
@@ -2082,7 +2082,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfTextLayoutSink self, ref ITfContext pic, TfLayoutCode lcode, ref ITfContextView pView) OnLayoutChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTextLayoutSink self, ref ITfContext pic, TfLayoutCode lcode, ref ITfContextView pView) OnLayoutChange;
 			}
 		}
 		[CRepr]
@@ -2097,7 +2097,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfStatusSink self, ref ITfContext pic, uint32 dwFlags) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfStatusSink self, ref ITfContext pic, uint32 dwFlags) OnStatusChange;
 			}
 		}
 		[CRepr]
@@ -2113,8 +2113,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfEditTransactionSink self, ref ITfContext pic) OnStartEditTransaction;
-				public new function HRESULT(ref ITfEditTransactionSink self, ref ITfContext pic) OnEndEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfEditTransactionSink self, ref ITfContext pic) OnStartEditTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfEditTransactionSink self, ref ITfContext pic) OnEndEditTransaction;
 			}
 		}
 		[CRepr]
@@ -2134,12 +2134,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextOwner self, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
-				public new function HRESULT(ref ITfContextOwner self, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
-				public new function HRESULT(ref ITfContextOwner self, out RECT prc) GetScreenExt;
-				public new function HRESULT(ref ITfContextOwner self, out TS_STATUS pdcs) GetStatus;
-				public new function HRESULT(ref ITfContextOwner self, out HWND phwnd) GetWnd;
-				public new function HRESULT(ref ITfContextOwner self, in Guid rguidAttribute, out VARIANT pvarValue) GetAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, in POINT ptScreen, uint32 dwFlags, out int32 pacp) GetACPFromPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, int32 acpStart, int32 acpEnd, out RECT prc, out BOOL pfClipped) GetTextExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, out RECT prc) GetScreenExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, out TS_STATUS pdcs) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, out HWND phwnd) GetWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwner self, in Guid rguidAttribute, out VARIANT pvarValue) GetAttribute;
 			}
 		}
 		[CRepr]
@@ -2160,13 +2160,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextOwnerServices self) OnLayoutChange;
-				public new function HRESULT(ref ITfContextOwnerServices self, uint32 dwFlags) OnStatusChange;
-				public new function HRESULT(ref ITfContextOwnerServices self, in Guid rguidAttribute) OnAttributeChange;
-				public new function HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp, ref ITfRange pRange, out TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream) Serialize;
-				public new function HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream, ref ITfPersistentPropertyLoaderACP pLoader) Unserialize;
-				public new function HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp) ForceLoadProperty;
-				public new function HRESULT(ref ITfContextOwnerServices self, int32 acpStart, int32 acpEnd, out ITfRangeACP* ppRange) CreateRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self) OnLayoutChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, uint32 dwFlags) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, in Guid rguidAttribute) OnAttributeChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp, ref ITfRange pRange, out TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream, ref ITfPersistentPropertyLoaderACP pLoader) Unserialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, ref ITfProperty pProp) ForceLoadProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextOwnerServices self, int32 acpStart, int32 acpEnd, out ITfRangeACP* ppRange) CreateRange;
 			}
 		}
 		[CRepr]
@@ -2184,10 +2184,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
-				public new function HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyUp;
-				public new function HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyDown;
-				public new function HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfContextKeyEventSink self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyUp;
 			}
 		}
 		[CRepr]
@@ -2202,7 +2202,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfEditSession self, uint32 ec) DoEditSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfEditSession self, uint32 ec) DoEditSession;
 			}
 		}
 		[CRepr]
@@ -2238,28 +2238,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, char16* pchText, uint32 cchMax, out uint32 pcch) GetText;
-				public new function HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, char16* pchText, int32 cch) SetText;
-				public new function HRESULT(ref ITfRange self, uint32 ec, out IDataObject* ppDataObject) GetFormattedText;
-				public new function HRESULT(ref ITfRange self, uint32 ec, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
-				public new function HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, ref IDataObject pDataObject) InsertEmbedded;
-				public new function HRESULT(ref ITfRange self, uint32 ec, int32 cchReq, out int32 pcch, in TF_HALTCOND pHalt) ShiftStart;
-				public new function HRESULT(ref ITfRange self, uint32 ec, int32 cchReq, out int32 pcch, in TF_HALTCOND pHalt) ShiftEnd;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pRange, TfAnchor aPos) ShiftStartToRange;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pRange, TfAnchor aPos) ShiftEndToRange;
-				public new function HRESULT(ref ITfRange self, uint32 ec, TfShiftDir dir, out BOOL pfNoRegion) ShiftStartRegion;
-				public new function HRESULT(ref ITfRange self, uint32 ec, TfShiftDir dir, out BOOL pfNoRegion) ShiftEndRegion;
-				public new function HRESULT(ref ITfRange self, uint32 ec, out BOOL pfEmpty) IsEmpty;
-				public new function HRESULT(ref ITfRange self, uint32 ec, TfAnchor aPos) Collapse;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out BOOL pfEqual) IsEqualStart;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out BOOL pfEqual) IsEqualEnd;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out int32 plResult) CompareStart;
-				public new function HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out int32 plResult) CompareEnd;
-				public new function HRESULT(ref ITfRange self, uint32 ec, uint32 cchInsert, out BOOL pfInsertOk) AdjustForInsert;
-				public new function HRESULT(ref ITfRange self, out TfGravity pgStart, out TfGravity pgEnd) GetGravity;
-				public new function HRESULT(ref ITfRange self, uint32 ec, TfGravity gStart, TfGravity gEnd) SetGravity;
-				public new function HRESULT(ref ITfRange self, out ITfRange* ppClone) Clone;
-				public new function HRESULT(ref ITfRange self, out ITfContext* ppContext) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, char16* pchText, uint32 cchMax, out uint32 pcch) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, char16* pchText, int32 cch) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, out IDataObject* ppDataObject) GetFormattedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, in Guid rguidService, in Guid riid, out IUnknown* ppunk) GetEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, uint32 dwFlags, ref IDataObject pDataObject) InsertEmbedded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, int32 cchReq, out int32 pcch, in TF_HALTCOND pHalt) ShiftStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, int32 cchReq, out int32 pcch, in TF_HALTCOND pHalt) ShiftEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pRange, TfAnchor aPos) ShiftStartToRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pRange, TfAnchor aPos) ShiftEndToRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, TfShiftDir dir, out BOOL pfNoRegion) ShiftStartRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, TfShiftDir dir, out BOOL pfNoRegion) ShiftEndRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, out BOOL pfEmpty) IsEmpty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, TfAnchor aPos) Collapse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out BOOL pfEqual) IsEqualStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out BOOL pfEqual) IsEqualEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out int32 plResult) CompareStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, ref ITfRange pWith, TfAnchor aPos, out int32 plResult) CompareEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, uint32 cchInsert, out BOOL pfInsertOk) AdjustForInsert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, out TfGravity pgStart, out TfGravity pgEnd) GetGravity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, uint32 ec, TfGravity gStart, TfGravity gEnd) SetGravity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, out ITfRange* ppClone) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRange self, out ITfContext* ppContext) GetContext;
 			}
 		}
 		[CRepr]
@@ -2275,8 +2275,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfRange.VTable
 			{
-				public new function HRESULT(ref ITfRangeACP self, out int32 pacpAnchor, out int32 pcch) GetExtent;
-				public new function HRESULT(ref ITfRangeACP self, int32 acpAnchor, int32 cch) SetExtent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRangeACP self, out int32 pacpAnchor, out int32 pcch) GetExtent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRangeACP self, int32 acpAnchor, int32 cch) SetExtent;
 			}
 		}
 		[CRepr]
@@ -2294,10 +2294,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp, ref ITfRange pRange, out TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream) Serialize;
-				public new function HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream, ref ITfPersistentPropertyLoaderACP pLoader) Unserialize;
-				public new function HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp) ForceLoadProperty;
-				public new function HRESULT(ref ITextStoreACPServices self, int32 acpStart, int32 acpEnd, out ITfRangeACP* ppRange) CreateRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp, ref ITfRange pRange, out TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, ref IStream pStream, ref ITfPersistentPropertyLoaderACP pLoader) Unserialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPServices self, ref ITfProperty pProp) ForceLoadProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPServices self, int32 acpStart, int32 acpEnd, out ITfRangeACP* ppRange) CreateRange;
 			}
 		}
 		[CRepr]
@@ -2312,7 +2312,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfRangeBackup self, uint32 ec, ref ITfRange pRange) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfRangeBackup self, uint32 ec, ref ITfRange pRange) Restore;
 			}
 		}
 		[CRepr]
@@ -2335,15 +2335,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfPropertyStore self, out Guid pguid) ComGetType;
-				public new function HRESULT(ref ITfPropertyStore self, out uint32 pdwReserved) GetDataType;
-				public new function HRESULT(ref ITfPropertyStore self, out VARIANT pvarValue) GetData;
-				public new function HRESULT(ref ITfPropertyStore self, uint32 dwFlags, ref ITfRange pRangeNew, out BOOL pfAccept) OnTextUpdated;
-				public new function HRESULT(ref ITfPropertyStore self, ref ITfRange pRangeNew, out BOOL pfFree) Shrink;
-				public new function HRESULT(ref ITfPropertyStore self, ref ITfRange pRangeThis, ref ITfRange pRangeNew, out ITfPropertyStore* ppPropStore) Divide;
-				public new function HRESULT(ref ITfPropertyStore self, out ITfPropertyStore* pPropStore) Clone;
-				public new function HRESULT(ref ITfPropertyStore self, out Guid pclsid) GetPropertyRangeCreator;
-				public new function HRESULT(ref ITfPropertyStore self, ref IStream pStream, out uint32 pcb) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, out Guid pguid) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, out uint32 pdwReserved) GetDataType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, out VARIANT pvarValue) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, uint32 dwFlags, ref ITfRange pRangeNew, out BOOL pfAccept) OnTextUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, ref ITfRange pRangeNew, out BOOL pfFree) Shrink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, ref ITfRange pRangeThis, ref ITfRange pRangeNew, out ITfPropertyStore* ppPropStore) Divide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, out ITfPropertyStore* pPropStore) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, out Guid pclsid) GetPropertyRangeCreator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPropertyStore self, ref IStream pStream, out uint32 pcb) Serialize;
 			}
 		}
 		[CRepr]
@@ -2361,10 +2361,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfRanges self, out IEnumTfRanges* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfRanges self, uint32 ulCount, ITfRange** ppRange, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfRanges self) Reset;
-				public new function HRESULT(ref IEnumTfRanges self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfRanges self, out IEnumTfRanges* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfRanges self, uint32 ulCount, ITfRange** ppRange, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfRanges self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfRanges self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2380,8 +2380,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCreatePropertyStore self, in Guid guidProp, ref ITfRange pRange, ref ITfPropertyStore pPropStore, out BOOL pfSerializable) IsStoreSerializable;
-				public new function HRESULT(ref ITfCreatePropertyStore self, in Guid guidProp, ref ITfRange pRange, uint32 cb, ref IStream pStream, out ITfPropertyStore* ppStore) CreatePropertyStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCreatePropertyStore self, in Guid guidProp, ref ITfRange pRange, ref ITfPropertyStore pPropStore, out BOOL pfSerializable) IsStoreSerializable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCreatePropertyStore self, in Guid guidProp, ref ITfRange pRange, uint32 cb, ref IStream pStream, out ITfPropertyStore* ppStore) CreatePropertyStore;
 			}
 		}
 		[CRepr]
@@ -2396,7 +2396,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfPersistentPropertyLoaderACP self, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, out IStream* ppStream) LoadProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPersistentPropertyLoaderACP self, in TF_PERSISTENT_PROPERTY_HEADER_ACP pHdr, out IStream* ppStream) LoadProperty;
 			}
 		}
 		[CRepr]
@@ -2414,10 +2414,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfReadOnlyProperty.VTable
 			{
-				public new function HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, out ITfRange* ppRange, TfAnchor aPos) FindRange;
-				public new function HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, ref ITfPropertyStore pPropStore) SetValueStore;
-				public new function HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, in VARIANT pvarValue) SetValue;
-				public new function HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, out ITfRange* ppRange, TfAnchor aPos) FindRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, ref ITfPropertyStore pPropStore) SetValueStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange, in VARIANT pvarValue) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfProperty self, uint32 ec, ref ITfRange pRange) Clear;
 			}
 		}
 		[CRepr]
@@ -2435,10 +2435,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfProperties self, out IEnumTfProperties* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfProperties self, uint32 ulCount, ITfProperty** ppProp, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfProperties self) Reset;
-				public new function HRESULT(ref IEnumTfProperties self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfProperties self, out IEnumTfProperties* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfProperties self, uint32 ulCount, ITfProperty** ppProp, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfProperties self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfProperties self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2454,8 +2454,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCompartment self, uint32 tid, in VARIANT pvarValue) SetValue;
-				public new function HRESULT(ref ITfCompartment self, out VARIANT pvarValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartment self, uint32 tid, in VARIANT pvarValue) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartment self, out VARIANT pvarValue) GetValue;
 			}
 		}
 		[CRepr]
@@ -2470,7 +2470,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCompartmentEventSink self, in Guid rguid) OnChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartmentEventSink self, in Guid rguid) OnChange;
 			}
 		}
 		[CRepr]
@@ -2487,9 +2487,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCompartmentMgr self, in Guid rguid, out ITfCompartment* ppcomp) GetCompartment;
-				public new function HRESULT(ref ITfCompartmentMgr self, uint32 tid, in Guid rguid) ClearCompartment;
-				public new function HRESULT(ref ITfCompartmentMgr self, out IEnumGUID* ppEnum) EnumCompartments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartmentMgr self, in Guid rguid, out ITfCompartment* ppcomp) GetCompartment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartmentMgr self, uint32 tid, in Guid rguid) ClearCompartment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCompartmentMgr self, out IEnumGUID* ppEnum) EnumCompartments;
 			}
 		}
 		[CRepr]
@@ -2504,7 +2504,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfFunction self, out BSTR pbstrName) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFunction self, out BSTR pbstrName) GetDisplayName;
 			}
 		}
 		[CRepr]
@@ -2521,9 +2521,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfFunctionProvider self, out Guid pguid) ComGetType;
-				public new function HRESULT(ref ITfFunctionProvider self, out BSTR pbstrDesc) GetDescription;
-				public new function HRESULT(ref ITfFunctionProvider self, in Guid rguid, in Guid riid, out IUnknown* ppunk) GetFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFunctionProvider self, out Guid pguid) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFunctionProvider self, out BSTR pbstrDesc) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFunctionProvider self, in Guid rguid, in Guid riid, out IUnknown* ppunk) GetFunction;
 			}
 		}
 		[CRepr]
@@ -2541,10 +2541,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfFunctionProviders self, out IEnumTfFunctionProviders* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfFunctionProviders self, uint32 ulCount, ITfFunctionProvider** ppCmdobj, out uint32 pcFetch) Next;
-				public new function HRESULT(ref IEnumTfFunctionProviders self) Reset;
-				public new function HRESULT(ref IEnumTfFunctionProviders self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfFunctionProviders self, out IEnumTfFunctionProviders* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfFunctionProviders self, uint32 ulCount, ITfFunctionProvider** ppCmdobj, out uint32 pcFetch) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfFunctionProviders self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfFunctionProviders self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2576,24 +2576,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid) Register;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid) Unregister;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex) AddLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile) RemoveLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, out IEnumGUID* ppEnum) EnumInputProcessorInfo;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, in Guid catid, out Guid pclsid, out Guid pguidProfile) GetDefaultLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, in Guid rclsid, in Guid guidProfiles) SetDefaultLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfiles) ActivateLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, out uint16 plangid, out Guid pguidProfile) GetActiveLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, out BSTR pbstrProfile) GetLanguageProfileDescription;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, out uint16 plangid) GetCurrentLanguage;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, uint16 langid) ChangeCurrentLanguage;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, uint16** ppLangId, out uint32 pulCount) GetLanguageList;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, out IEnumTfLanguageProfiles* ppEnum) EnumLanguageProfiles;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, BOOL fEnable) EnableLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, out BOOL pfEnable) IsEnabledLanguageProfile;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, BOOL fEnable) EnableLanguageProfileByDefault;
-				public new function HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, HKL hKL) SubstituteKeyboardLayout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid) Unregister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex) AddLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile) RemoveLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, out IEnumGUID* ppEnum) EnumInputProcessorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, in Guid catid, out Guid pclsid, out Guid pguidProfile) GetDefaultLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, in Guid rclsid, in Guid guidProfiles) SetDefaultLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfiles) ActivateLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, out uint16 plangid, out Guid pguidProfile) GetActiveLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, out BSTR pbstrProfile) GetLanguageProfileDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, out uint16 plangid) GetCurrentLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, uint16 langid) ChangeCurrentLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, uint16** ppLangId, out uint32 pulCount) GetLanguageList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, uint16 langid, out IEnumTfLanguageProfiles* ppEnum) EnumLanguageProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, BOOL fEnable) EnableLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, out BOOL pfEnable) IsEnabledLanguageProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, BOOL fEnable) EnableLanguageProfileByDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfiles self, in Guid rclsid, uint16 langid, in Guid guidProfile, HKL hKL) SubstituteKeyboardLayout;
 			}
 		}
 		[CRepr]
@@ -2608,7 +2608,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfInputProcessorProfiles.VTable
 			{
-				public new function HRESULT(ref ITfInputProcessorProfilesEx self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchFile, uint32 cchFile, uint32 uResId) SetLanguageProfileDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfilesEx self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchFile, uint32 cchFile, uint32 uResId) SetLanguageProfileDisplayName;
 			}
 		}
 		[CRepr]
@@ -2623,7 +2623,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInputProcessorProfileSubstituteLayout self, in Guid rclsid, uint16 langid, in Guid guidProfile, out HKL phKL) GetSubstituteKeyboardLayout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileSubstituteLayout self, in Guid rclsid, uint16 langid, in Guid guidProfile, out HKL phKL) GetSubstituteKeyboardLayout;
 			}
 		}
 		[CRepr]
@@ -2638,7 +2638,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfActiveLanguageProfileNotifySink self, in Guid clsid, in Guid guidProfile, BOOL fActivated) OnActivated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfActiveLanguageProfileNotifySink self, in Guid clsid, in Guid guidProfile, BOOL fActivated) OnActivated;
 			}
 		}
 		[CRepr]
@@ -2656,10 +2656,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfLanguageProfiles self, out IEnumTfLanguageProfiles* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfLanguageProfiles self, uint32 ulCount, TF_LANGUAGEPROFILE* pProfile, out uint32 pcFetch) Next;
-				public new function HRESULT(ref IEnumTfLanguageProfiles self) Reset;
-				public new function HRESULT(ref IEnumTfLanguageProfiles self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLanguageProfiles self, out IEnumTfLanguageProfiles* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLanguageProfiles self, uint32 ulCount, TF_LANGUAGEPROFILE* pProfile, out uint32 pcFetch) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLanguageProfiles self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLanguageProfiles self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2675,8 +2675,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLanguageProfileNotifySink self, uint16 langid, out BOOL pfAccept) OnLanguageChange;
-				public new function HRESULT(ref ITfLanguageProfileNotifySink self) OnLanguageChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLanguageProfileNotifySink self, uint16 langid, out BOOL pfAccept) OnLanguageChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLanguageProfileNotifySink self) OnLanguageChanged;
 			}
 		}
 		[CRepr]
@@ -2698,14 +2698,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, uint32 dwFlags) ActivateProfile;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, uint32 dwFlags) DeactivateProfile;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, out TF_INPUTPROCESSORPROFILE pProfile) GetProfile;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, uint16 langid, out IEnumTfInputProcessorProfiles* ppEnum) EnumProfiles;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint32 dwFlags) ReleaseInputProcessor;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex, HKL hklsubstitute, uint32 dwPreferredLayout, BOOL bEnabledByDefault, uint32 dwFlags) RegisterProfile;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint16 langid, in Guid guidProfile, uint32 dwFlags) UnregisterProfile;
-				public new function HRESULT(ref ITfInputProcessorProfileMgr self, in Guid catid, out TF_INPUTPROCESSORPROFILE pProfile) GetActiveProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, uint32 dwFlags) ActivateProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, uint32 dwFlags) DeactivateProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid guidProfile, HKL hkl, out TF_INPUTPROCESSORPROFILE pProfile) GetProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, uint16 langid, out IEnumTfInputProcessorProfiles* ppEnum) EnumProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint32 dwFlags) ReleaseInputProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint16 langid, in Guid guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex, HKL hklsubstitute, uint32 dwPreferredLayout, BOOL bEnabledByDefault, uint32 dwFlags) RegisterProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, in Guid rclsid, uint16 langid, in Guid guidProfile, uint32 dwFlags) UnregisterProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileMgr self, in Guid catid, out TF_INPUTPROCESSORPROFILE pProfile) GetActiveProfile;
 			}
 		}
 		[CRepr]
@@ -2723,10 +2723,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfInputProcessorProfiles self, out IEnumTfInputProcessorProfiles* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfInputProcessorProfiles self, uint32 ulCount, TF_INPUTPROCESSORPROFILE* pProfile, out uint32 pcFetch) Next;
-				public new function HRESULT(ref IEnumTfInputProcessorProfiles self) Reset;
-				public new function HRESULT(ref IEnumTfInputProcessorProfiles self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfInputProcessorProfiles self, out IEnumTfInputProcessorProfiles* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfInputProcessorProfiles self, uint32 ulCount, TF_INPUTPROCESSORPROFILE* pProfile, out uint32 pcFetch) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfInputProcessorProfiles self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfInputProcessorProfiles self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2741,7 +2741,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInputProcessorProfileActivationSink self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid catid, in Guid guidProfile, HKL hkl, uint32 dwFlags) OnActivated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputProcessorProfileActivationSink self, uint32 dwProfileType, uint16 langid, in Guid clsid, in Guid catid, in Guid guidProfile, HKL hkl, uint32 dwFlags) OnActivated;
 			}
 		}
 		[CRepr]
@@ -2769,20 +2769,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfKeystrokeMgr self, uint32 tid, ref ITfKeyEventSink pSink, BOOL fForeground) AdviseKeyEventSink;
-				public new function HRESULT(ref ITfKeystrokeMgr self, uint32 tid) UnadviseKeyEventSink;
-				public new function HRESULT(ref ITfKeystrokeMgr self, out Guid pclsid) GetForeground;
-				public new function HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) TestKeyDown;
-				public new function HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) TestKeyUp;
-				public new function HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) KeyDown;
-				public new function HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) KeyUp;
-				public new function HRESULT(ref ITfKeystrokeMgr self, ref ITfContext pic, in TF_PRESERVEDKEY pprekey, out Guid pguid) GetPreservedKey;
-				public new function HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, in TF_PRESERVEDKEY pprekey, out BOOL pfRegistered) IsPreservedKey;
-				public new function HRESULT(ref ITfKeystrokeMgr self, uint32 tid, in Guid rguid, in TF_PRESERVEDKEY prekey, char16* pchDesc, uint32 cchDesc) PreserveKey;
-				public new function HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, in TF_PRESERVEDKEY pprekey) UnpreserveKey;
-				public new function HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, char16* pchDesc, uint32 cchDesc) SetPreservedKeyDescription;
-				public new function HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, out BSTR pbstrDesc) GetPreservedKeyDescription;
-				public new function HRESULT(ref ITfKeystrokeMgr self, ref ITfContext pic, in Guid rguid, out BOOL pfEaten) SimulatePreservedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, uint32 tid, ref ITfKeyEventSink pSink, BOOL fForeground) AdviseKeyEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, uint32 tid) UnadviseKeyEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, out Guid pclsid) GetForeground;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) TestKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) TestKeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) KeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) KeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, ref ITfContext pic, in TF_PRESERVEDKEY pprekey, out Guid pguid) GetPreservedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, in TF_PRESERVEDKEY pprekey, out BOOL pfRegistered) IsPreservedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, uint32 tid, in Guid rguid, in TF_PRESERVEDKEY prekey, char16* pchDesc, uint32 cchDesc) PreserveKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, in TF_PRESERVEDKEY pprekey) UnpreserveKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, char16* pchDesc, uint32 cchDesc) SetPreservedKeyDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, in Guid rguid, out BSTR pbstrDesc) GetPreservedKeyDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeystrokeMgr self, ref ITfContext pic, in Guid rguid, out BOOL pfEaten) SimulatePreservedKey;
 			}
 		}
 		[CRepr]
@@ -2802,12 +2802,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfKeyEventSink self, BOOL fForeground) OnSetFocus;
-				public new function HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyDown;
-				public new function HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyUp;
-				public new function HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
-				public new function HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyUp;
-				public new function HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, in Guid rguid, out BOOL pfEaten) OnPreservedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, BOOL fForeground) OnSetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnTestKeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyEventSink self, ref ITfContext pic, in Guid rguid, out BOOL pfEaten) OnPreservedKey;
 			}
 		}
 		[CRepr]
@@ -2823,8 +2823,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfKeyTraceEventSink self, WPARAM wParam, LPARAM lParam) OnKeyTraceDown;
-				public new function HRESULT(ref ITfKeyTraceEventSink self, WPARAM wParam, LPARAM lParam) OnKeyTraceUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyTraceEventSink self, WPARAM wParam, LPARAM lParam) OnKeyTraceDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfKeyTraceEventSink self, WPARAM wParam, LPARAM lParam) OnKeyTraceUp;
 			}
 		}
 		[CRepr]
@@ -2839,7 +2839,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfPreservedKeyNotifySink self, in TF_PRESERVEDKEY pprekey) OnUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfPreservedKeyNotifySink self, in TF_PRESERVEDKEY pprekey) OnUpdated;
 			}
 		}
 		[CRepr]
@@ -2857,10 +2857,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, out BOOL pfResult) PeekMessageA;
-				public new function HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, out BOOL pfResult) GetMessageA;
-				public new function HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, out BOOL pfResult) PeekMessageW;
-				public new function HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, out BOOL pfResult) GetMessageW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, out BOOL pfResult) PeekMessageA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, out BOOL pfResult) GetMessageA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, out BOOL pfResult) PeekMessageW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMessagePump self, out MSG pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, out BOOL pfResult) GetMessageW;
 			}
 		}
 		[CRepr]
@@ -2876,8 +2876,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfThreadFocusSink self) OnSetThreadFocus;
-				public new function HRESULT(ref ITfThreadFocusSink self) OnKillThreadFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadFocusSink self) OnSetThreadFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfThreadFocusSink self) OnKillThreadFocus;
 			}
 		}
 		[CRepr]
@@ -2893,8 +2893,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfTextInputProcessor self, ref ITfThreadMgr ptim, uint32 tid) Activate;
-				public new function HRESULT(ref ITfTextInputProcessor self) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTextInputProcessor self, ref ITfThreadMgr ptim, uint32 tid) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTextInputProcessor self) Deactivate;
 			}
 		}
 		[CRepr]
@@ -2909,7 +2909,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfTextInputProcessor.VTable
 			{
-				public new function HRESULT(ref ITfTextInputProcessorEx self, ref ITfThreadMgr ptim, uint32 tid, uint32 dwFlags) ActivateEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTextInputProcessorEx self, ref ITfThreadMgr ptim, uint32 tid, uint32 dwFlags) ActivateEx;
 			}
 		}
 		[CRepr]
@@ -2924,7 +2924,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfClientId self, in Guid rclsid, out uint32 ptid) GetClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfClientId self, in Guid rclsid, out uint32 ptid) GetClientId;
 			}
 		}
 		[CRepr]
@@ -2943,11 +2943,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfDisplayAttributeInfo self, out Guid pguid) GetGUID;
-				public new function HRESULT(ref ITfDisplayAttributeInfo self, out BSTR pbstrDesc) GetDescription;
-				public new function HRESULT(ref ITfDisplayAttributeInfo self, out TF_DISPLAYATTRIBUTE pda) GetAttributeInfo;
-				public new function HRESULT(ref ITfDisplayAttributeInfo self, in TF_DISPLAYATTRIBUTE pda) SetAttributeInfo;
-				public new function HRESULT(ref ITfDisplayAttributeInfo self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeInfo self, out Guid pguid) GetGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeInfo self, out BSTR pbstrDesc) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeInfo self, out TF_DISPLAYATTRIBUTE pda) GetAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeInfo self, in TF_DISPLAYATTRIBUTE pda) SetAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeInfo self) Reset;
 			}
 		}
 		[CRepr]
@@ -2965,10 +2965,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfDisplayAttributeInfo self, out IEnumTfDisplayAttributeInfo* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfDisplayAttributeInfo self, uint32 ulCount, ITfDisplayAttributeInfo** rgInfo, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfDisplayAttributeInfo self) Reset;
-				public new function HRESULT(ref IEnumTfDisplayAttributeInfo self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDisplayAttributeInfo self, out IEnumTfDisplayAttributeInfo* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDisplayAttributeInfo self, uint32 ulCount, ITfDisplayAttributeInfo** rgInfo, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDisplayAttributeInfo self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfDisplayAttributeInfo self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2984,8 +2984,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfDisplayAttributeProvider self, out IEnumTfDisplayAttributeInfo* ppEnum) EnumDisplayAttributeInfo;
-				public new function HRESULT(ref ITfDisplayAttributeProvider self, in Guid guid, out ITfDisplayAttributeInfo* ppInfo) GetDisplayAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeProvider self, out IEnumTfDisplayAttributeInfo* ppEnum) EnumDisplayAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeProvider self, in Guid guid, out ITfDisplayAttributeInfo* ppInfo) GetDisplayAttributeInfo;
 			}
 		}
 		[CRepr]
@@ -3002,9 +3002,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfDisplayAttributeMgr self) OnUpdateInfo;
-				public new function HRESULT(ref ITfDisplayAttributeMgr self, out IEnumTfDisplayAttributeInfo* ppEnum) EnumDisplayAttributeInfo;
-				public new function HRESULT(ref ITfDisplayAttributeMgr self, in Guid guid, out ITfDisplayAttributeInfo* ppInfo, out Guid pclsidOwner) GetDisplayAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeMgr self) OnUpdateInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeMgr self, out IEnumTfDisplayAttributeInfo* ppEnum) EnumDisplayAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeMgr self, in Guid guid, out ITfDisplayAttributeInfo* ppInfo, out Guid pclsidOwner) GetDisplayAttributeInfo;
 			}
 		}
 		[CRepr]
@@ -3019,7 +3019,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfDisplayAttributeNotifySink self) OnUpdateInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfDisplayAttributeNotifySink self) OnUpdateInfo;
 			}
 		}
 		[CRepr]
@@ -3047,20 +3047,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rcatid, in Guid rguid) RegisterCategory;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rcatid, in Guid rguid) UnregisterCategory;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rguid, out IEnumGUID* ppEnum) EnumCategoriesInItem;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rcatid, out IEnumGUID* ppEnum) EnumItemsInCategory;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rguid, out Guid pcatid, Guid** ppcatidList, uint32 ulCount) FindClosestCategory;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid, char16* pchDesc, uint32 cch) RegisterGUIDDescription;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid) UnregisterGUIDDescription;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rguid, out BSTR pbstrDesc) GetGUIDDescription;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid, uint32 dw) RegisterGUIDDWORD;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid) UnregisterGUIDDWORD;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rguid, out uint32 pdw) GetGUIDDWORD;
-				public new function HRESULT(ref ITfCategoryMgr self, in Guid rguid, out uint32 pguidatom) RegisterGUID;
-				public new function HRESULT(ref ITfCategoryMgr self, uint32 guidatom, out Guid pguid) GetGUID;
-				public new function HRESULT(ref ITfCategoryMgr self, uint32 guidatom, in Guid rguid, out BOOL pfEqual) IsEqualTfGuidAtom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rcatid, in Guid rguid) RegisterCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rcatid, in Guid rguid) UnregisterCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rguid, out IEnumGUID* ppEnum) EnumCategoriesInItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rcatid, out IEnumGUID* ppEnum) EnumItemsInCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rguid, out Guid pcatid, Guid** ppcatidList, uint32 ulCount) FindClosestCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid, char16* pchDesc, uint32 cch) RegisterGUIDDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid) UnregisterGUIDDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rguid, out BSTR pbstrDesc) GetGUIDDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid, uint32 dw) RegisterGUIDDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rclsid, in Guid rguid) UnregisterGUIDDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rguid, out uint32 pdw) GetGUIDDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, in Guid rguid, out uint32 pguidatom) RegisterGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, uint32 guidatom, out Guid pguid) GetGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCategoryMgr self, uint32 guidatom, in Guid rguid, out BOOL pfEqual) IsEqualTfGuidAtom;
 			}
 		}
 		[CRepr]
@@ -3076,8 +3076,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSource self, in Guid riid, ref IUnknown punk, out uint32 pdwCookie) AdviseSink;
-				public new function HRESULT(ref ITfSource self, uint32 dwCookie) UnadviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSource self, in Guid riid, ref IUnknown punk, out uint32 pdwCookie) AdviseSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSource self, uint32 dwCookie) UnadviseSink;
 			}
 		}
 		[CRepr]
@@ -3093,8 +3093,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSourceSingle self, uint32 tid, in Guid riid, ref IUnknown punk) AdviseSingleSink;
-				public new function HRESULT(ref ITfSourceSingle self, uint32 tid, in Guid riid) UnadviseSingleSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSourceSingle self, uint32 tid, in Guid riid, ref IUnknown punk) AdviseSingleSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSourceSingle self, uint32 tid, in Guid riid) UnadviseSingleSink;
 			}
 		}
 		[CRepr]
@@ -3113,11 +3113,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfUIElementMgr self, ref ITfUIElement pElement, out BOOL pbShow, out uint32 pdwUIElementId) BeginUIElement;
-				public new function HRESULT(ref ITfUIElementMgr self, uint32 dwUIElementId) UpdateUIElement;
-				public new function HRESULT(ref ITfUIElementMgr self, uint32 dwUIElementId) EndUIElement;
-				public new function HRESULT(ref ITfUIElementMgr self, uint32 dwUIELementId, out ITfUIElement* ppElement) GetUIElement;
-				public new function HRESULT(ref ITfUIElementMgr self, out IEnumTfUIElements* ppEnum) EnumUIElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementMgr self, ref ITfUIElement pElement, out BOOL pbShow, out uint32 pdwUIElementId) BeginUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementMgr self, uint32 dwUIElementId) UpdateUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementMgr self, uint32 dwUIElementId) EndUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementMgr self, uint32 dwUIELementId, out ITfUIElement* ppElement) GetUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementMgr self, out IEnumTfUIElements* ppEnum) EnumUIElements;
 			}
 		}
 		[CRepr]
@@ -3135,10 +3135,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfUIElements self, out IEnumTfUIElements* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfUIElements self, uint32 ulCount, ITfUIElement** ppElement, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfUIElements self) Reset;
-				public new function HRESULT(ref IEnumTfUIElements self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfUIElements self, out IEnumTfUIElements* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfUIElements self, uint32 ulCount, ITfUIElement** ppElement, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfUIElements self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfUIElements self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -3155,9 +3155,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId, out BOOL pbShow) BeginUIElement;
-				public new function HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId) UpdateUIElement;
-				public new function HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId) EndUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId, out BOOL pbShow) BeginUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId) UpdateUIElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElementSink self, uint32 dwUIElementId) EndUIElement;
 			}
 		}
 		[CRepr]
@@ -3175,10 +3175,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfUIElement self, out BSTR pbstrDescription) GetDescription;
-				public new function HRESULT(ref ITfUIElement self, out Guid pguid) GetGUID;
-				public new function HRESULT(ref ITfUIElement self, BOOL bShow) Show;
-				public new function HRESULT(ref ITfUIElement self, out BOOL pbShow) IsShown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElement self, out BSTR pbstrDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElement self, out Guid pguid) GetGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElement self, BOOL bShow) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfUIElement self, out BOOL pbShow) IsShown;
 			}
 		}
 		[CRepr]
@@ -3200,14 +3200,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfUIElement.VTable
 			{
-				public new function HRESULT(ref ITfCandidateListUIElement self, out uint32 pdwFlags) GetUpdatedFlags;
-				public new function HRESULT(ref ITfCandidateListUIElement self, out ITfDocumentMgr* ppdim) GetDocumentMgr;
-				public new function HRESULT(ref ITfCandidateListUIElement self, out uint32 puCount) GetCount;
-				public new function HRESULT(ref ITfCandidateListUIElement self, out uint32 puIndex) GetSelection;
-				public new function HRESULT(ref ITfCandidateListUIElement self, uint32 uIndex, out BSTR pstr) GetString;
-				public new function HRESULT(ref ITfCandidateListUIElement self, uint32* pIndex, uint32 uSize, out uint32 puPageCnt) GetPageIndex;
-				public new function HRESULT(ref ITfCandidateListUIElement self, uint32* pIndex, uint32 uPageCnt) SetPageIndex;
-				public new function HRESULT(ref ITfCandidateListUIElement self, out uint32 puPage) GetCurrentPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, out uint32 pdwFlags) GetUpdatedFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, out ITfDocumentMgr* ppdim) GetDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, out uint32 puIndex) GetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, uint32 uIndex, out BSTR pstr) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, uint32* pIndex, uint32 uSize, out uint32 puPageCnt) GetPageIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, uint32* pIndex, uint32 uPageCnt) SetPageIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElement self, out uint32 puPage) GetCurrentPage;
 			}
 		}
 		[CRepr]
@@ -3224,9 +3224,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfCandidateListUIElement.VTable
 			{
-				public new function HRESULT(ref ITfCandidateListUIElementBehavior self, uint32 nIndex) SetSelection;
-				public new function HRESULT(ref ITfCandidateListUIElementBehavior self) Finalize;
-				public new function HRESULT(ref ITfCandidateListUIElementBehavior self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElementBehavior self, uint32 nIndex) SetSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElementBehavior self) Finalize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateListUIElementBehavior self) Abort;
 			}
 		}
 		[CRepr]
@@ -3246,12 +3246,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfUIElement.VTable
 			{
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out uint32 pdwFlags) GetUpdatedFlags;
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out ITfContext* ppic) GetContext;
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out BSTR pstr) GetString;
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out uint32 pcchMax) GetMaxReadingStringLength;
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out uint32 pErrorIndex) GetErrorIndex;
-				public new function HRESULT(ref ITfReadingInformationUIElement self, out BOOL pfVertical) IsVerticalOrderPreferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out uint32 pdwFlags) GetUpdatedFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out ITfContext* ppic) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out BSTR pstr) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out uint32 pcchMax) GetMaxReadingStringLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out uint32 pErrorIndex) GetErrorIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReadingInformationUIElement self, out BOOL pfVertical) IsVerticalOrderPreferred;
 			}
 		}
 		[CRepr]
@@ -3266,7 +3266,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfUIElement.VTable
 			{
-				public new function HRESULT(ref ITfTransitoryExtensionUIElement self, out ITfDocumentMgr* ppdim) GetDocumentMgr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTransitoryExtensionUIElement self, out ITfDocumentMgr* ppdim) GetDocumentMgr;
 			}
 		}
 		[CRepr]
@@ -3281,7 +3281,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfTransitoryExtensionSink self, ref ITfContext pic, uint32 ecReadOnly, ref ITfRange pResultRange, ref ITfRange pCompositionRange, out BOOL pfDeleteResultRange) OnTransitoryExtensionUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfTransitoryExtensionSink self, ref ITfContext pic, uint32 ecReadOnly, ref ITfRange pResultRange, ref ITfRange pCompositionRange, out BOOL pfDeleteResultRange) OnTransitoryExtensionUpdated;
 			}
 		}
 		[CRepr]
@@ -3296,7 +3296,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfUIElement.VTable
 			{
-				public new function HRESULT(ref ITfToolTipUIElement self, out BSTR pstr) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfToolTipUIElement self, out BSTR pstr) GetString;
 			}
 		}
 		[CRepr]
@@ -3312,8 +3312,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfReverseConversionList self, out uint32 puIndex) GetLength;
-				public new function HRESULT(ref ITfReverseConversionList self, uint32 uIndex, out BSTR pbstr) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReverseConversionList self, out uint32 puIndex) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReverseConversionList self, uint32 uIndex, out BSTR pbstr) GetString;
 			}
 		}
 		[CRepr]
@@ -3328,7 +3328,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfReverseConversion self, PWSTR lpstr, out ITfReverseConversionList* ppList) DoReverseConversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReverseConversion self, PWSTR lpstr, out ITfReverseConversionList* ppList) DoReverseConversion;
 			}
 		}
 		[CRepr]
@@ -3343,7 +3343,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfReverseConversionMgr self, uint16 langid, in Guid guidProfile, uint32 dwflag, out ITfReverseConversion* ppReverseConversion) GetReverseConversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfReverseConversionMgr self, uint16 langid, in Guid guidProfile, uint32 dwflag, out ITfReverseConversion* ppReverseConversion) GetReverseConversion;
 			}
 		}
 		[CRepr]
@@ -3359,8 +3359,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCandidateString self, out BSTR pbstr) GetString;
-				public new function HRESULT(ref ITfCandidateString self, out uint32 pnIndex) GetIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateString self, out BSTR pbstr) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateString self, out uint32 pnIndex) GetIndex;
 			}
 		}
 		[CRepr]
@@ -3378,10 +3378,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfCandidates self, out IEnumTfCandidates* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfCandidates self, uint32 ulCount, ITfCandidateString** ppCand, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfCandidates self) Reset;
-				public new function HRESULT(ref IEnumTfCandidates self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfCandidates self, out IEnumTfCandidates* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfCandidates self, uint32 ulCount, ITfCandidateString** ppCand, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfCandidates self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfCandidates self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -3399,10 +3399,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfCandidateList self, out IEnumTfCandidates* ppEnum) EnumCandidates;
-				public new function HRESULT(ref ITfCandidateList self, uint32 nIndex, out ITfCandidateString* ppCand) GetCandidate;
-				public new function HRESULT(ref ITfCandidateList self, out uint32 pnCnt) GetCandidateNum;
-				public new function HRESULT(ref ITfCandidateList self, uint32 nIndex, TfCandidateResult imcr) SetResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateList self, out IEnumTfCandidates* ppEnum) EnumCandidates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateList self, uint32 nIndex, out ITfCandidateString* ppCand) GetCandidate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateList self, out uint32 pnCnt) GetCandidateNum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfCandidateList self, uint32 nIndex, TfCandidateResult imcr) SetResult;
 			}
 		}
 		[CRepr]
@@ -3419,9 +3419,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnReconversion self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfConvertable) QueryRange;
-				public new function HRESULT(ref ITfFnReconversion self, ref ITfRange pRange, out ITfCandidateList* ppCandList) GetReconversion;
-				public new function HRESULT(ref ITfFnReconversion self, ref ITfRange pRange) Reconvert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnReconversion self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfConvertable) QueryRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnReconversion self, ref ITfRange pRange, out ITfCandidateList* ppCandList) GetReconversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnReconversion self, ref ITfRange pRange) Reconvert;
 			}
 		}
 		[CRepr]
@@ -3437,8 +3437,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnPlayBack self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfPlayable) QueryRange;
-				public new function HRESULT(ref ITfFnPlayBack self, ref ITfRange pRange) Play;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnPlayBack self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfPlayable) QueryRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnPlayBack self, ref ITfRange pRange) Play;
 			}
 		}
 		[CRepr]
@@ -3454,8 +3454,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnLangProfileUtil self) RegisterActiveProfiles;
-				public new function HRESULT(ref ITfFnLangProfileUtil self, uint16 langid, out BOOL pfAvailable) IsProfileAvailableForLang;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLangProfileUtil self) RegisterActiveProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLangProfileUtil self, uint16 langid, out BOOL pfAvailable) IsProfileAvailableForLang;
 			}
 		}
 		[CRepr]
@@ -3470,7 +3470,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnConfigure self, HWND hwndParent, uint16 langid, in Guid rguidProfile) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnConfigure self, HWND hwndParent, uint16 langid, in Guid rguidProfile) Show;
 			}
 		}
 		[CRepr]
@@ -3485,7 +3485,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnConfigureRegisterWord self, HWND hwndParent, uint16 langid, in Guid rguidProfile, BSTR bstrRegistered) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnConfigureRegisterWord self, HWND hwndParent, uint16 langid, in Guid rguidProfile, BSTR bstrRegistered) Show;
 			}
 		}
 		[CRepr]
@@ -3500,7 +3500,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnConfigureRegisterEudc self, HWND hwndParent, uint16 langid, in Guid rguidProfile, BSTR bstrRegistered) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnConfigureRegisterEudc self, HWND hwndParent, uint16 langid, in Guid rguidProfile, BSTR bstrRegistered) Show;
 			}
 		}
 		[CRepr]
@@ -3515,7 +3515,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnShowHelp self, HWND hwndParent) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnShowHelp self, HWND hwndParent) Show;
 			}
 		}
 		[CRepr]
@@ -3530,7 +3530,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfFnBalloon self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnBalloon self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
 			}
 		}
 		[CRepr]
@@ -3545,7 +3545,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnGetSAPIObject self, TfSapiObject sObj, out IUnknown* ppunk) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnGetSAPIObject self, TfSapiObject sObj, out IUnknown* ppunk) Get;
 			}
 		}
 		[CRepr]
@@ -3561,8 +3561,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnPropertyUIStatus self, in Guid refguidProp, out uint32 pdw) GetStatus;
-				public new function HRESULT(ref ITfFnPropertyUIStatus self, in Guid refguidProp, uint32 dw) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnPropertyUIStatus self, in Guid refguidProp, out uint32 pdw) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnPropertyUIStatus self, in Guid refguidProp, uint32 dw) SetStatus;
 			}
 		}
 		[CRepr]
@@ -3580,10 +3580,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumSpeechCommands self, out IEnumSpeechCommands* ppEnum) Clone;
-				public new function HRESULT(ref IEnumSpeechCommands self, uint32 ulCount, uint16** pSpCmds, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumSpeechCommands self) Reset;
-				public new function HRESULT(ref IEnumSpeechCommands self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpeechCommands self, out IEnumSpeechCommands* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpeechCommands self, uint32 ulCount, uint16** pSpCmds, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpeechCommands self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpeechCommands self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -3599,8 +3599,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpeechCommandProvider self, uint16 langid, out IEnumSpeechCommands* ppEnum) EnumSpeechCommands;
-				public new function HRESULT(ref ISpeechCommandProvider self, char16* pszCommand, uint32 cch, uint16 langid) ProcessCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechCommandProvider self, uint16 langid, out IEnumSpeechCommands* ppEnum) EnumSpeechCommands;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechCommandProvider self, char16* pszCommand, uint32 cch, uint16 langid) ProcessCommand;
 			}
 		}
 		[CRepr]
@@ -3615,7 +3615,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnCustomSpeechCommand self, ref IUnknown pspcmdProvider) SetSpeechCommandProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnCustomSpeechCommand self, ref IUnknown pspcmdProvider) SetSpeechCommandProvider;
 			}
 		}
 		[CRepr]
@@ -3636,13 +3636,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfAccepted) QueryRange;
-				public new function HRESULT(ref ITfFnLMProcessor self, uint16 langid, out BOOL pfAccepted) QueryLangID;
-				public new function HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange, out ITfCandidateList* ppCandList) GetReconversion;
-				public new function HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange) Reconvert;
-				public new function HRESULT(ref ITfFnLMProcessor self, BOOL fUp, WPARAM vKey, LPARAM lparamKeydata, out BOOL pfInterested) QueryKey;
-				public new function HRESULT(ref ITfFnLMProcessor self, BOOL fUp, WPARAM vKey, LPARAM lparamKeyData) InvokeKey;
-				public new function HRESULT(ref ITfFnLMProcessor self, ref ITfContext pic, in Guid refguidFunc) InvokeFunc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange, out ITfRange* ppNewRange, out BOOL pfAccepted) QueryRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, uint16 langid, out BOOL pfAccepted) QueryLangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange, out ITfCandidateList* ppCandList) GetReconversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, ref ITfRange pRange) Reconvert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, BOOL fUp, WPARAM vKey, LPARAM lparamKeydata, out BOOL pfInterested) QueryKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, BOOL fUp, WPARAM vKey, LPARAM lparamKeyData) InvokeKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMProcessor self, ref ITfContext pic, in Guid refguidFunc) InvokeFunc;
 			}
 		}
 		[CRepr]
@@ -3657,7 +3657,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFnLMProcessor.VTable
 			{
-				public new function HRESULT(ref ITfFnLMInternal self, ref ITfRange pRange) ProcessLattice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnLMInternal self, ref ITfRange pRange) ProcessLattice;
 			}
 		}
 		[CRepr]
@@ -3675,10 +3675,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTfLatticeElements self, out IEnumTfLatticeElements* ppEnum) Clone;
-				public new function HRESULT(ref IEnumTfLatticeElements self, uint32 ulCount, TF_LMLATTELEMENT* rgsElements, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumTfLatticeElements self) Reset;
-				public new function HRESULT(ref IEnumTfLatticeElements self, uint32 ulCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLatticeElements self, out IEnumTfLatticeElements* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLatticeElements self, uint32 ulCount, TF_LMLATTELEMENT* rgsElements, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLatticeElements self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTfLatticeElements self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -3694,8 +3694,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfLMLattice self, in Guid rguidType, out BOOL pfSupported) QueryType;
-				public new function HRESULT(ref ITfLMLattice self, uint32 dwFrameStart, in Guid rguidType, out IEnumTfLatticeElements* ppEnum) EnumLatticeElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLMLattice self, in Guid rguidType, out BOOL pfSupported) QueryType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfLMLattice self, uint32 dwFrameStart, in Guid rguidType, out IEnumTfLatticeElements* ppEnum) EnumLatticeElements;
 			}
 		}
 		[CRepr]
@@ -3711,8 +3711,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnAdviseText self, ref ITfRange pRange, char16* pchText, int32 cch) OnTextUpdate;
-				public new function HRESULT(ref ITfFnAdviseText self, ref ITfRange pRange, ref ITfLMLattice pLattice) OnLatticeUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnAdviseText self, ref ITfRange pRange, char16* pchText, int32 cch) OnTextUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnAdviseText self, ref ITfRange pRange, ref ITfLMLattice pLattice) OnLatticeUpdate;
 			}
 		}
 		[CRepr]
@@ -3728,8 +3728,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnSearchCandidateProvider self, BSTR bstrQuery, BSTR bstrApplicationId, out ITfCandidateList* pplist) GetSearchCandidates;
-				public new function HRESULT(ref ITfFnSearchCandidateProvider self, BSTR bstrQuery, BSTR bstrApplicationID, BSTR bstrResult) SetResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnSearchCandidateProvider self, BSTR bstrQuery, BSTR bstrApplicationId, out ITfCandidateList* pplist) GetSearchCandidates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnSearchCandidateProvider self, BSTR bstrQuery, BSTR bstrApplicationID, BSTR bstrResult) SetResult;
 			}
 		}
 		[CRepr]
@@ -3748,11 +3748,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfIntegratableCandidateListUIElement self, Guid guidIntegrationStyle) SetIntegrationStyle;
-				public new function HRESULT(ref ITfIntegratableCandidateListUIElement self, out TfIntegratableCandidateListSelectionStyle ptfSelectionStyle) GetSelectionStyle;
-				public new function HRESULT(ref ITfIntegratableCandidateListUIElement self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
-				public new function HRESULT(ref ITfIntegratableCandidateListUIElement self, out BOOL pfShow) ShowCandidateNumbers;
-				public new function HRESULT(ref ITfIntegratableCandidateListUIElement self) FinalizeExactCompositionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfIntegratableCandidateListUIElement self, Guid guidIntegrationStyle) SetIntegrationStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfIntegratableCandidateListUIElement self, out TfIntegratableCandidateListSelectionStyle ptfSelectionStyle) GetSelectionStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfIntegratableCandidateListUIElement self, WPARAM wParam, LPARAM lParam, out BOOL pfEaten) OnKeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfIntegratableCandidateListUIElement self, out BOOL pfShow) ShowCandidateNumbers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfIntegratableCandidateListUIElement self) FinalizeExactCompositionString;
 			}
 		}
 		[CRepr]
@@ -3767,7 +3767,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnGetPreferredTouchKeyboardLayout self, out TKBLayoutType pTKBLayoutType, ref uint16 pwPreferredLayoutId) GetLayout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnGetPreferredTouchKeyboardLayout self, out TKBLayoutType pTKBLayoutType, ref uint16 pwPreferredLayoutId) GetLayout;
 			}
 		}
 		[CRepr]
@@ -3782,7 +3782,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfFunction.VTable
 			{
-				public new function HRESULT(ref ITfFnGetLinguisticAlternates self, ref ITfRange pRange, out ITfCandidateList* ppCandidateList) GetAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfFnGetLinguisticAlternates self, ref ITfRange pRange, out ITfCandidateList* ppCandidateList) GetAlternates;
 			}
 		}
 		[CRepr]
@@ -3802,12 +3802,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIManagerEventSink self, ref RECT prcBounds) OnWindowOpening;
-				public new function HRESULT(ref IUIManagerEventSink self, ref RECT prcBounds) OnWindowOpened;
-				public new function HRESULT(ref IUIManagerEventSink self, ref RECT prcUpdatedBounds) OnWindowUpdating;
-				public new function HRESULT(ref IUIManagerEventSink self, ref RECT prcUpdatedBounds) OnWindowUpdated;
-				public new function HRESULT(ref IUIManagerEventSink self) OnWindowClosing;
-				public new function HRESULT(ref IUIManagerEventSink self) OnWindowClosed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self, ref RECT prcBounds) OnWindowOpening;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self, ref RECT prcBounds) OnWindowOpened;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self, ref RECT prcUpdatedBounds) OnWindowUpdating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self, ref RECT prcUpdatedBounds) OnWindowUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self) OnWindowClosing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIManagerEventSink self) OnWindowClosed;
 			}
 		}
 		[CRepr]
@@ -3826,11 +3826,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfInputScope self, InputScope** pprgInputScopes, out uint32 pcCount) GetInputScopes;
-				public new function HRESULT(ref ITfInputScope self, BSTR** ppbstrPhrases, out uint32 pcCount) GetPhrase;
-				public new function HRESULT(ref ITfInputScope self, out BSTR pbstrRegExp) GetRegularExpression;
-				public new function HRESULT(ref ITfInputScope self, out BSTR pbstrSRGS) GetSRGS;
-				public new function HRESULT(ref ITfInputScope self, out BSTR pbstrXML) GetXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope self, InputScope** pprgInputScopes, out uint32 pcCount) GetInputScopes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope self, BSTR** ppbstrPhrases, out uint32 pcCount) GetPhrase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope self, out BSTR pbstrRegExp) GetRegularExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope self, out BSTR pbstrSRGS) GetSRGS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope self, out BSTR pbstrXML) GetXML;
 			}
 		}
 		[CRepr]
@@ -3845,7 +3845,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITfInputScope.VTable
 			{
-				public new function HRESULT(ref ITfInputScope2 self, out IEnumString* ppEnumString) EnumWordList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfInputScope2 self, out IEnumString* ppEnumString) EnumWordList;
 			}
 		}
 		[CRepr]
@@ -3861,8 +3861,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfMSAAControl self) SystemEnableMSAA;
-				public new function HRESULT(ref ITfMSAAControl self) SystemDisableMSAA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMSAAControl self) SystemEnableMSAA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfMSAAControl self) SystemDisableMSAA;
 			}
 		}
 		[CRepr]
@@ -3877,7 +3877,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternalDocWrap self) NotifyRevoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternalDocWrap self) NotifyRevoke;
 			}
 		}
 		[CRepr]
@@ -3892,7 +3892,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreACPEx self, int32 acpStart, int32 acpEnd, RECT rc, uint32 dwPosition) ScrollToRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPEx self, int32 acpStart, int32 acpEnd, RECT rc, uint32 dwPosition) ScrollToRect;
 			}
 		}
 		[CRepr]
@@ -3907,7 +3907,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextStoreAnchorEx self, ref IAnchor pStart, ref IAnchor pEnd, RECT rc, uint32 dwPosition) ScrollToRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreAnchorEx self, ref IAnchor pStart, ref IAnchor pEnd, RECT rc, uint32 dwPosition) ScrollToRect;
 			}
 		}
 		[CRepr]
@@ -3922,7 +3922,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITextStoreACPSink.VTable
 			{
-				public new function HRESULT(ref ITextStoreACPSinkEx self) OnDisconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreACPSinkEx self) OnDisconnect;
 			}
 		}
 		[CRepr]
@@ -3937,7 +3937,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITextStoreAnchorSink.VTable
 			{
-				public new function HRESULT(ref ITextStoreSinkAnchorEx self) OnDisconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextStoreSinkAnchorEx self) OnDisconnect;
 			}
 		}
 		[CRepr]
@@ -3956,11 +3956,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAccDictionary self, in Guid Term, uint32 lcid, out BSTR pResult, out uint32 plcid) GetLocalizedString;
-				public new function HRESULT(ref IAccDictionary self, in Guid Term, out Guid pParentTerm) GetParentTerm;
-				public new function HRESULT(ref IAccDictionary self, in Guid Term, out BSTR pResult) GetMnemonicString;
-				public new function HRESULT(ref IAccDictionary self, BSTR bstrMnemonic, out Guid pTerm) LookupMnemonicTerm;
-				public new function HRESULT(ref IAccDictionary self, in Guid Term, uint32 lcid, VARIANT varValue, out BSTR pbstrResult, out uint32 plcid) ConvertValueToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccDictionary self, in Guid Term, uint32 lcid, out BSTR pResult, out uint32 plcid) GetLocalizedString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccDictionary self, in Guid Term, out Guid pParentTerm) GetParentTerm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccDictionary self, in Guid Term, out BSTR pResult) GetMnemonicString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccDictionary self, BSTR bstrMnemonic, out Guid pTerm) LookupMnemonicTerm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccDictionary self, in Guid Term, uint32 lcid, VARIANT varValue, out BSTR pbstrResult, out uint32 plcid) ConvertValueToString;
 			}
 		}
 		[CRepr]
@@ -3979,11 +3979,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVersionInfo self, uint32 ulSub, out uint32 ulCount) GetSubcomponentCount;
-				public new function HRESULT(ref IVersionInfo self, uint32 ulSub, out Guid implid) GetImplementationID;
-				public new function HRESULT(ref IVersionInfo self, uint32 ulSub, out uint32 pdwMajor, out uint32 pdwMinor) GetBuildVersion;
-				public new function HRESULT(ref IVersionInfo self, uint32 ulSub, out BSTR pImplStr) GetComponentDescription;
-				public new function HRESULT(ref IVersionInfo self, uint32 ulSub, out BSTR pImplStr) GetInstanceDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVersionInfo self, uint32 ulSub, out uint32 ulCount) GetSubcomponentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVersionInfo self, uint32 ulSub, out Guid implid) GetImplementationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVersionInfo self, uint32 ulSub, out uint32 pdwMajor, out uint32 pdwMinor) GetBuildVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVersionInfo self, uint32 ulSub, out BSTR pImplStr) GetComponentDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVersionInfo self, uint32 ulSub, out BSTR pImplStr) GetInstanceDescription;
 			}
 		}
 		[CRepr]
@@ -3998,7 +3998,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICoCreateLocally self, in Guid rclsid, uint32 dwClsContext, in Guid riid, out IUnknown* punk, in Guid riidParam, ref IUnknown punkParam, VARIANT varParam) CoCreateLocally;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoCreateLocally self, in Guid rclsid, uint32 dwClsContext, in Guid riid, out IUnknown* punk, in Guid riidParam, ref IUnknown punkParam, VARIANT varParam) CoCreateLocally;
 			}
 		}
 		[CRepr]
@@ -4013,7 +4013,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICoCreatedLocally self, ref IUnknown punkLocalObject, in Guid riidParam, ref IUnknown punkParam, VARIANT varParam) LocalInit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoCreatedLocally self, ref IUnknown punkLocalObject, in Guid riidParam, ref IUnknown punkParam, VARIANT varParam) LocalInit;
 			}
 		}
 		[CRepr]
@@ -4034,13 +4034,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAccStore self, in Guid riid, ref IUnknown punk) Register;
-				public new function HRESULT(ref IAccStore self, ref IUnknown punk) Unregister;
-				public new function HRESULT(ref IAccStore self, out IEnumUnknown* enumUnknown) GetDocuments;
-				public new function HRESULT(ref IAccStore self, HWND hWnd, in Guid riid, out IUnknown* ppunk) LookupByHWND;
-				public new function HRESULT(ref IAccStore self, POINT pt, in Guid riid, out IUnknown* ppunk) LookupByPoint;
-				public new function HRESULT(ref IAccStore self, ref IUnknown punk) OnDocumentFocus;
-				public new function HRESULT(ref IAccStore self, in Guid riid, out IUnknown* ppunk) GetFocused;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, in Guid riid, ref IUnknown punk) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, ref IUnknown punk) Unregister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, out IEnumUnknown* enumUnknown) GetDocuments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, HWND hWnd, in Guid riid, out IUnknown* ppunk) LookupByHWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, POINT pt, in Guid riid, out IUnknown* ppunk) LookupByPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, ref IUnknown punk) OnDocumentFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccStore self, in Guid riid, out IUnknown* ppunk) GetFocused;
 			}
 		}
 		[CRepr]
@@ -4057,9 +4057,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAccServerDocMgr self, in Guid riid, ref IUnknown punk) NewDocument;
-				public new function HRESULT(ref IAccServerDocMgr self, ref IUnknown punk) RevokeDocument;
-				public new function HRESULT(ref IAccServerDocMgr self, ref IUnknown punk) OnDocumentFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccServerDocMgr self, in Guid riid, ref IUnknown punk) NewDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccServerDocMgr self, ref IUnknown punk) RevokeDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccServerDocMgr self, ref IUnknown punk) OnDocumentFocus;
 			}
 		}
 		[CRepr]
@@ -4077,10 +4077,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAccClientDocMgr self, out IEnumUnknown* enumUnknown) GetDocuments;
-				public new function HRESULT(ref IAccClientDocMgr self, HWND hWnd, in Guid riid, out IUnknown* ppunk) LookupByHWND;
-				public new function HRESULT(ref IAccClientDocMgr self, POINT pt, in Guid riid, out IUnknown* ppunk) LookupByPoint;
-				public new function HRESULT(ref IAccClientDocMgr self, in Guid riid, out IUnknown* ppunk) GetFocused;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccClientDocMgr self, out IEnumUnknown* enumUnknown) GetDocuments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccClientDocMgr self, HWND hWnd, in Guid riid, out IUnknown* ppunk) LookupByHWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccClientDocMgr self, POINT pt, in Guid riid, out IUnknown* ppunk) LookupByPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccClientDocMgr self, in Guid riid, out IUnknown* ppunk) GetFocused;
 			}
 		}
 		[CRepr]
@@ -4096,8 +4096,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDocWrap self, in Guid riid, ref IUnknown punk) SetDoc;
-				public new function HRESULT(ref IDocWrap self, in Guid riid, out IUnknown* ppunk) GetWrappedDoc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDocWrap self, in Guid riid, ref IUnknown punk) SetDoc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDocWrap self, in Guid riid, out IUnknown* ppunk) GetWrappedDoc;
 			}
 		}
 		[CRepr]
@@ -4112,7 +4112,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IClonableWrapper self, in Guid riid, void** ppv) CloneNewWrapper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IClonableWrapper self, in Guid riid, void** ppv) CloneNewWrapper;
 			}
 		}
 		[CRepr]
@@ -4129,9 +4129,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITfSpeechUIServer self) Initialize;
-				public new function HRESULT(ref ITfSpeechUIServer self, BOOL fShow) ShowUI;
-				public new function HRESULT(ref ITfSpeechUIServer self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSpeechUIServer self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSpeechUIServer self, BOOL fShow) ShowUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITfSpeechUIServer self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
 			}
 		}
 		

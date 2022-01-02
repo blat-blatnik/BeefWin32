@@ -136,25 +136,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationManager self, double initialValue, out IUIAnimationVariable* variable) CreateAnimationVariable;
-				public new function HRESULT(ref IUIAnimationManager self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, double timeNow) ScheduleTransition;
-				public new function HRESULT(ref IUIAnimationManager self, out IUIAnimationStoryboard* storyboard) CreateStoryboard;
-				public new function HRESULT(ref IUIAnimationManager self, double completionDeadline) FinishAllStoryboards;
-				public new function HRESULT(ref IUIAnimationManager self) AbandonAllStoryboards;
-				public new function HRESULT(ref IUIAnimationManager self, double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) Update;
-				public new function HRESULT(ref IUIAnimationManager self, IUnknown* object, uint32 id, out IUIAnimationVariable* variable) GetVariableFromTag;
-				public new function HRESULT(ref IUIAnimationManager self, IUnknown* object, uint32 id, out IUIAnimationStoryboard* storyboard) GetStoryboardFromTag;
-				public new function HRESULT(ref IUIAnimationManager self, out UI_ANIMATION_MANAGER_STATUS status) GetStatus;
-				public new function HRESULT(ref IUIAnimationManager self, UI_ANIMATION_MODE mode) SetAnimationMode;
-				public new function HRESULT(ref IUIAnimationManager self) Pause;
-				public new function HRESULT(ref IUIAnimationManager self) Resume;
-				public new function HRESULT(ref IUIAnimationManager self, IUIAnimationManagerEventHandler* handler) SetManagerEventHandler;
-				public new function HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetCancelPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetTrimPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetCompressPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetConcludePriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager self, double delay) SetDefaultLongestAcceptableDelay;
-				public new function HRESULT(ref IUIAnimationManager self) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, double initialValue, out IUIAnimationVariable* variable) CreateAnimationVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, double timeNow) ScheduleTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, out IUIAnimationStoryboard* storyboard) CreateStoryboard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, double completionDeadline) FinishAllStoryboards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self) AbandonAllStoryboards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) Update;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUnknown* object, uint32 id, out IUIAnimationVariable* variable) GetVariableFromTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUnknown* object, uint32 id, out IUIAnimationStoryboard* storyboard) GetStoryboardFromTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, out UI_ANIMATION_MANAGER_STATUS status) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, UI_ANIMATION_MODE mode) SetAnimationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUIAnimationManagerEventHandler* handler) SetManagerEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetCancelPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetTrimPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetCompressPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, IUIAnimationPriorityComparison* comparison) SetConcludePriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self, double delay) SetDefaultLongestAcceptableDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -182,20 +182,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariable self, out double value) GetValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out double finalValue) GetFinalValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out double previousValue) GetPreviousValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out int32 value) GetIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out int32 finalValue) GetFinalIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out int32 previousValue) GetPreviousIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable self, out IUIAnimationStoryboard* storyboard) GetCurrentStoryboard;
-				public new function HRESULT(ref IUIAnimationVariable self, double bound) SetLowerBound;
-				public new function HRESULT(ref IUIAnimationVariable self, double bound) SetUpperBound;
-				public new function HRESULT(ref IUIAnimationVariable self, UI_ANIMATION_ROUNDING_MODE mode) SetRoundingMode;
-				public new function HRESULT(ref IUIAnimationVariable self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(ref IUIAnimationVariable self, IUnknown** object, uint32* id) GetTag;
-				public new function HRESULT(ref IUIAnimationVariable self, IUIAnimationVariableChangeHandler* handler) SetVariableChangeHandler;
-				public new function HRESULT(ref IUIAnimationVariable self, IUIAnimationVariableIntegerChangeHandler* handler) SetVariableIntegerChangeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out double value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out double finalValue) GetFinalValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out double previousValue) GetPreviousValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out int32 value) GetIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out int32 finalValue) GetFinalIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out int32 previousValue) GetPreviousIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, out IUIAnimationStoryboard* storyboard) GetCurrentStoryboard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, double bound) SetLowerBound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, double bound) SetUpperBound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, UI_ANIMATION_ROUNDING_MODE mode) SetRoundingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, IUnknown* object, uint32 id) SetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, IUnknown** object, uint32* id) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, IUIAnimationVariableChangeHandler* handler) SetVariableChangeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable self, IUIAnimationVariableIntegerChangeHandler* handler) SetVariableIntegerChangeHandler;
 			}
 		}
 		[CRepr]
@@ -226,23 +226,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition) AddTransition;
-				public new function HRESULT(ref IUIAnimationStoryboard self, UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAtOffset;
-				public new function HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationTransition transition, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAfterTransition;
-				public new function HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe) AddTransitionAtKeyframe;
-				public new function HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) AddTransitionBetweenKeyframes;
-				public new function HRESULT(ref IUIAnimationStoryboard self, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, int32 repetitionCount) RepeatBetweenKeyframes;
-				public new function HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable) HoldVariable;
-				public new function HRESULT(ref IUIAnimationStoryboard self, double delay) SetLongestAcceptableDelay;
-				public new function HRESULT(ref IUIAnimationStoryboard self, double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) Schedule;
-				public new function HRESULT(ref IUIAnimationStoryboard self) Conclude;
-				public new function HRESULT(ref IUIAnimationStoryboard self, double completionDeadline) Finish;
-				public new function HRESULT(ref IUIAnimationStoryboard self) Abandon;
-				public new function HRESULT(ref IUIAnimationStoryboard self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(ref IUIAnimationStoryboard self, IUnknown** object, uint32* id) GetTag;
-				public new function HRESULT(ref IUIAnimationStoryboard self, out UI_ANIMATION_STORYBOARD_STATUS status) GetStatus;
-				public new function HRESULT(ref IUIAnimationStoryboard self, out double elapsedTime) GetElapsedTime;
-				public new function HRESULT(ref IUIAnimationStoryboard self, IUIAnimationStoryboardEventHandler* handler) SetStoryboardEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition) AddTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAtOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationTransition transition, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAfterTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe) AddTransitionAtKeyframe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable, ref IUIAnimationTransition transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) AddTransitionBetweenKeyframes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, int32 repetitionCount) RepeatBetweenKeyframes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, ref IUIAnimationVariable variable) HoldVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, double delay) SetLongestAcceptableDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) Schedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self) Conclude;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, double completionDeadline) Finish;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self) Abandon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, IUnknown* object, uint32 id) SetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, IUnknown** object, uint32* id) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, out UI_ANIMATION_STORYBOARD_STATUS status) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, out double elapsedTime) GetElapsedTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard self, IUIAnimationStoryboardEventHandler* handler) SetStoryboardEventHandler;
 			}
 		}
 		[CRepr]
@@ -260,10 +260,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransition self, double value) SetInitialValue;
-				public new function HRESULT(ref IUIAnimationTransition self, double velocity) SetInitialVelocity;
-				public new function HRESULT(ref IUIAnimationTransition self) IsDurationKnown;
-				public new function HRESULT(ref IUIAnimationTransition self, out double duration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition self, double value) SetInitialValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition self, double velocity) SetInitialVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition self) IsDurationKnown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition self, out double duration) GetDuration;
 			}
 		}
 		[CRepr]
@@ -278,7 +278,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationManagerEventHandler self, UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) OnManagerStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManagerEventHandler self, UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) OnManagerStatusChanged;
 			}
 		}
 		[CRepr]
@@ -293,7 +293,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariableChangeHandler self, ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, double newValue, double previousValue) OnValueChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariableChangeHandler self, ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, double newValue, double previousValue) OnValueChanged;
 			}
 		}
 		[CRepr]
@@ -308,7 +308,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariableIntegerChangeHandler self, ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, int32 newValue, int32 previousValue) OnIntegerValueChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariableIntegerChangeHandler self, ref IUIAnimationStoryboard storyboard, ref IUIAnimationVariable variable, int32 newValue, int32 previousValue) OnIntegerValueChanged;
 			}
 		}
 		[CRepr]
@@ -324,8 +324,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationStoryboardEventHandler self, ref IUIAnimationStoryboard storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) OnStoryboardStatusChanged;
-				public new function HRESULT(ref IUIAnimationStoryboardEventHandler self, ref IUIAnimationStoryboard storyboard) OnStoryboardUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboardEventHandler self, ref IUIAnimationStoryboard storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) OnStoryboardStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboardEventHandler self, ref IUIAnimationStoryboard storyboard) OnStoryboardUpdated;
 			}
 		}
 		[CRepr]
@@ -340,7 +340,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationPriorityComparison self, ref IUIAnimationStoryboard scheduledStoryboard, ref IUIAnimationStoryboard newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) HasPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationPriorityComparison self, ref IUIAnimationStoryboard scheduledStoryboard, ref IUIAnimationStoryboard newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) HasPriority;
 			}
 		}
 		[CRepr]
@@ -366,18 +366,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double finalValue, out IUIAnimationTransition* transition) CreateInstantaneousTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, out IUIAnimationTransition* transition) CreateConstantTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double delay, double finalValue, double hold, out IUIAnimationTransition* transition) CreateDiscreteTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, out IUIAnimationTransition* transition) CreateLinearTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double speed, double finalValue, out IUIAnimationTransition* transition) CreateLinearTransitionFromSpeed;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double period, out IUIAnimationTransition* transition) CreateSinusoidalTransitionFromVelocity;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition* transition) CreateSinusoidalTransitionFromRange;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition* transition) CreateAccelerateDecelerateTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, out IUIAnimationTransition* transition) CreateReversalTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, double finalVelocity, out IUIAnimationTransition* transition) CreateCubicTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double maximumDuration, double finalValue, out IUIAnimationTransition* transition) CreateSmoothStopTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary self, double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition* transition) CreateParabolicTransitionFromAcceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double finalValue, out IUIAnimationTransition* transition) CreateInstantaneousTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, out IUIAnimationTransition* transition) CreateConstantTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double delay, double finalValue, double hold, out IUIAnimationTransition* transition) CreateDiscreteTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, out IUIAnimationTransition* transition) CreateLinearTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double speed, double finalValue, out IUIAnimationTransition* transition) CreateLinearTransitionFromSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double period, out IUIAnimationTransition* transition) CreateSinusoidalTransitionFromVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition* transition) CreateSinusoidalTransitionFromRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition* transition) CreateAccelerateDecelerateTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, out IUIAnimationTransition* transition) CreateReversalTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double duration, double finalValue, double finalVelocity, out IUIAnimationTransition* transition) CreateCubicTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double maximumDuration, double finalValue, out IUIAnimationTransition* transition) CreateSmoothStopTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary self, double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition* transition) CreateParabolicTransitionFromAcceleration;
 			}
 		}
 		[CRepr]
@@ -398,13 +398,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationInterpolator self, double initialValue, double initialVelocity) SetInitialValueAndVelocity;
-				public new function HRESULT(ref IUIAnimationInterpolator self, double duration) SetDuration;
-				public new function HRESULT(ref IUIAnimationInterpolator self, out double duration) GetDuration;
-				public new function HRESULT(ref IUIAnimationInterpolator self, out double value) GetFinalValue;
-				public new function HRESULT(ref IUIAnimationInterpolator self, double offset, out double value) InterpolateValue;
-				public new function HRESULT(ref IUIAnimationInterpolator self, double offset, out double velocity) InterpolateVelocity;
-				public new function HRESULT(ref IUIAnimationInterpolator self, out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) GetDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, double initialValue, double initialVelocity) SetInitialValueAndVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, double duration) SetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, out double duration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, out double value) GetFinalValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, double offset, out double value) InterpolateValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, double offset, out double velocity) InterpolateVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator self, out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) GetDependencies;
 			}
 		}
 		[CRepr]
@@ -419,7 +419,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransitionFactory self, ref IUIAnimationInterpolator interpolator, out IUIAnimationTransition* transition) CreateTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionFactory self, ref IUIAnimationInterpolator interpolator, out IUIAnimationTransition* transition) CreateTransition;
 			}
 		}
 		[CRepr]
@@ -440,13 +440,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTimer self, IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) SetTimerUpdateHandler;
-				public new function HRESULT(ref IUIAnimationTimer self, IUIAnimationTimerEventHandler* handler) SetTimerEventHandler;
-				public new function HRESULT(ref IUIAnimationTimer self) Enable;
-				public new function HRESULT(ref IUIAnimationTimer self) Disable;
-				public new function HRESULT(ref IUIAnimationTimer self) IsEnabled;
-				public new function HRESULT(ref IUIAnimationTimer self, out double seconds) GetTime;
-				public new function HRESULT(ref IUIAnimationTimer self, uint32 framesPerSecond) SetFrameRateThreshold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self, IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior) SetTimerUpdateHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self, IUIAnimationTimerEventHandler* handler) SetTimerEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self) Disable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self) IsEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self, out double seconds) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimer self, uint32 framesPerSecond) SetFrameRateThreshold;
 			}
 		}
 		[CRepr]
@@ -463,9 +463,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTimerUpdateHandler self, double timeNow, out UI_ANIMATION_UPDATE_RESULT result) OnUpdate;
-				public new function HRESULT(ref IUIAnimationTimerUpdateHandler self, ref IUIAnimationTimerClientEventHandler handler) SetTimerClientEventHandler;
-				public new function HRESULT(ref IUIAnimationTimerUpdateHandler self) ClearTimerClientEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerUpdateHandler self, double timeNow, out UI_ANIMATION_UPDATE_RESULT result) OnUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerUpdateHandler self, ref IUIAnimationTimerClientEventHandler handler) SetTimerClientEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerUpdateHandler self) ClearTimerClientEventHandler;
 			}
 		}
 		[CRepr]
@@ -480,7 +480,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTimerClientEventHandler self, UI_ANIMATION_TIMER_CLIENT_STATUS newStatus, UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) OnTimerClientStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerClientEventHandler self, UI_ANIMATION_TIMER_CLIENT_STATUS newStatus, UI_ANIMATION_TIMER_CLIENT_STATUS previousStatus) OnTimerClientStatusChanged;
 			}
 		}
 		[CRepr]
@@ -497,9 +497,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTimerEventHandler self) OnPreUpdate;
-				public new function HRESULT(ref IUIAnimationTimerEventHandler self) OnPostUpdate;
-				public new function HRESULT(ref IUIAnimationTimerEventHandler self, uint32 framesPerSecond) OnRenderingTooSlow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerEventHandler self) OnPreUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerEventHandler self) OnPostUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTimerEventHandler self, uint32 framesPerSecond) OnRenderingTooSlow;
 			}
 		}
 		[CRepr]
@@ -534,27 +534,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationManager2 self, double* initialValue, uint32 cDimension, out IUIAnimationVariable2* variable) CreateAnimationVectorVariable;
-				public new function HRESULT(ref IUIAnimationManager2 self, double initialValue, out IUIAnimationVariable2* variable) CreateAnimationVariable;
-				public new function HRESULT(ref IUIAnimationManager2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, double timeNow) ScheduleTransition;
-				public new function HRESULT(ref IUIAnimationManager2 self, out IUIAnimationStoryboard2* storyboard) CreateStoryboard;
-				public new function HRESULT(ref IUIAnimationManager2 self, double completionDeadline) FinishAllStoryboards;
-				public new function HRESULT(ref IUIAnimationManager2 self) AbandonAllStoryboards;
-				public new function HRESULT(ref IUIAnimationManager2 self, double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) Update;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUnknown* object, uint32 id, out IUIAnimationVariable2* variable) GetVariableFromTag;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUnknown* object, uint32 id, out IUIAnimationStoryboard2* storyboard) GetStoryboardFromTag;
-				public new function HRESULT(ref IUIAnimationManager2 self, out double seconds) EstimateNextEventTime;
-				public new function HRESULT(ref IUIAnimationManager2 self, out UI_ANIMATION_MANAGER_STATUS status) GetStatus;
-				public new function HRESULT(ref IUIAnimationManager2 self, UI_ANIMATION_MODE mode) SetAnimationMode;
-				public new function HRESULT(ref IUIAnimationManager2 self) Pause;
-				public new function HRESULT(ref IUIAnimationManager2 self) Resume;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUIAnimationManagerEventHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetManagerEventHandler;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetCancelPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetTrimPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetCompressPriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetConcludePriorityComparison;
-				public new function HRESULT(ref IUIAnimationManager2 self, double delay) SetDefaultLongestAcceptableDelay;
-				public new function HRESULT(ref IUIAnimationManager2 self) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, double* initialValue, uint32 cDimension, out IUIAnimationVariable2* variable) CreateAnimationVectorVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, double initialValue, out IUIAnimationVariable2* variable) CreateAnimationVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, double timeNow) ScheduleTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, out IUIAnimationStoryboard2* storyboard) CreateStoryboard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, double completionDeadline) FinishAllStoryboards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self) AbandonAllStoryboards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult) Update;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUnknown* object, uint32 id, out IUIAnimationVariable2* variable) GetVariableFromTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUnknown* object, uint32 id, out IUIAnimationStoryboard2* storyboard) GetStoryboardFromTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, out double seconds) EstimateNextEventTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, out UI_ANIMATION_MANAGER_STATUS status) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, UI_ANIMATION_MODE mode) SetAnimationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUIAnimationManagerEventHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetManagerEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetCancelPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetTrimPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetCompressPriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, IUIAnimationPriorityComparison2* comparison) SetConcludePriorityComparison;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self, double delay) SetDefaultLongestAcceptableDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManager2 self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -594,32 +594,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariable2 self, out uint32 dimension) GetDimension;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out double value) GetValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double* value, uint32 cDimension) GetVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, ref IDCompositionAnimation animation) GetCurve;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IDCompositionAnimation** animation, uint32 cDimension) GetVectorCurve;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out double finalValue) GetFinalValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double* finalValue, uint32 cDimension) GetFinalVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out double previousValue) GetPreviousValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double* previousValue, uint32 cDimension) GetPreviousVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out int32 value) GetIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, int32* value, uint32 cDimension) GetIntegerVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out int32 finalValue) GetFinalIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, int32* finalValue, uint32 cDimension) GetFinalIntegerVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out int32 previousValue) GetPreviousIntegerValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, int32* previousValue, uint32 cDimension) GetPreviousIntegerVectorValue;
-				public new function HRESULT(ref IUIAnimationVariable2 self, out IUIAnimationStoryboard2* storyboard) GetCurrentStoryboard;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double bound) SetLowerBound;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double* bound, uint32 cDimension) SetLowerBoundVector;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double bound) SetUpperBound;
-				public new function HRESULT(ref IUIAnimationVariable2 self, double* bound, uint32 cDimension) SetUpperBoundVector;
-				public new function HRESULT(ref IUIAnimationVariable2 self, UI_ANIMATION_ROUNDING_MODE mode) SetRoundingMode;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IUnknown** object, uint32* id) GetTag;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetVariableChangeHandler;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableIntegerChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetVariableIntegerChangeHandler;
-				public new function HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableCurveChangeHandler2* handler) SetVariableCurveChangeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out uint32 dimension) GetDimension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out double value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double* value, uint32 cDimension) GetVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, ref IDCompositionAnimation animation) GetCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IDCompositionAnimation** animation, uint32 cDimension) GetVectorCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out double finalValue) GetFinalValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double* finalValue, uint32 cDimension) GetFinalVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out double previousValue) GetPreviousValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double* previousValue, uint32 cDimension) GetPreviousVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out int32 value) GetIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, int32* value, uint32 cDimension) GetIntegerVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out int32 finalValue) GetFinalIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, int32* finalValue, uint32 cDimension) GetFinalIntegerVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out int32 previousValue) GetPreviousIntegerValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, int32* previousValue, uint32 cDimension) GetPreviousIntegerVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, out IUIAnimationStoryboard2* storyboard) GetCurrentStoryboard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double bound) SetLowerBound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double* bound, uint32 cDimension) SetLowerBoundVector;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double bound) SetUpperBound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, double* bound, uint32 cDimension) SetUpperBoundVector;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, UI_ANIMATION_ROUNDING_MODE mode) SetRoundingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IUnknown* object, uint32 id) SetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IUnknown** object, uint32* id) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetVariableChangeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableIntegerChangeHandler2* handler, BOOL fRegisterForNextAnimationEvent) SetVariableIntegerChangeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariable2 self, IUIAnimationVariableCurveChangeHandler2* handler) SetVariableCurveChangeHandler;
 			}
 		}
 		[CRepr]
@@ -640,13 +640,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransition2 self, out uint32 dimension) GetDimension;
-				public new function HRESULT(ref IUIAnimationTransition2 self, double value) SetInitialValue;
-				public new function HRESULT(ref IUIAnimationTransition2 self, double* value, uint32 cDimension) SetInitialVectorValue;
-				public new function HRESULT(ref IUIAnimationTransition2 self, double velocity) SetInitialVelocity;
-				public new function HRESULT(ref IUIAnimationTransition2 self, double* velocity, uint32 cDimension) SetInitialVectorVelocity;
-				public new function HRESULT(ref IUIAnimationTransition2 self) IsDurationKnown;
-				public new function HRESULT(ref IUIAnimationTransition2 self, out double duration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, out uint32 dimension) GetDimension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, double value) SetInitialValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, double* value, uint32 cDimension) SetInitialVectorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, double velocity) SetInitialVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, double* velocity, uint32 cDimension) SetInitialVectorVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self) IsDurationKnown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransition2 self, out double duration) GetDuration;
 			}
 		}
 		[CRepr]
@@ -661,7 +661,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationManagerEventHandler2 self, UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) OnManagerStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationManagerEventHandler2 self, UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus) OnManagerStatusChanged;
 			}
 		}
 		[CRepr]
@@ -676,7 +676,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariableChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, double* newValue, double* previousValue, uint32 cDimension) OnValueChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariableChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, double* newValue, double* previousValue, uint32 cDimension) OnValueChanged;
 			}
 		}
 		[CRepr]
@@ -691,7 +691,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariableIntegerChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, int32* newValue, int32* previousValue, uint32 cDimension) OnIntegerValueChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariableIntegerChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, ref IUIAnimationVariable2 variable, int32* newValue, int32* previousValue, uint32 cDimension) OnIntegerValueChanged;
 			}
 		}
 		[CRepr]
@@ -706,7 +706,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationVariableCurveChangeHandler2 self, ref IUIAnimationVariable2 variable) OnCurveChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationVariableCurveChangeHandler2 self, ref IUIAnimationVariable2 variable) OnCurveChanged;
 			}
 		}
 		[CRepr]
@@ -722,8 +722,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationStoryboardEventHandler2 self, ref IUIAnimationStoryboard2 storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) OnStoryboardStatusChanged;
-				public new function HRESULT(ref IUIAnimationStoryboardEventHandler2 self, ref IUIAnimationStoryboard2 storyboard) OnStoryboardUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboardEventHandler2 self, ref IUIAnimationStoryboard2 storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus) OnStoryboardStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboardEventHandler2 self, ref IUIAnimationStoryboard2 storyboard) OnStoryboardUpdated;
 			}
 		}
 		[CRepr]
@@ -738,7 +738,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationLoopIterationChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, uint id, uint32 newIterationCount, uint32 oldIterationCount) OnLoopIterationChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationLoopIterationChangeHandler2 self, ref IUIAnimationStoryboard2 storyboard, uint id, uint32 newIterationCount, uint32 oldIterationCount) OnLoopIterationChanged;
 			}
 		}
 		[CRepr]
@@ -753,7 +753,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationPriorityComparison2 self, ref IUIAnimationStoryboard2 scheduledStoryboard, ref IUIAnimationStoryboard2 newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) HasPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationPriorityComparison2 self, ref IUIAnimationStoryboard2 scheduledStoryboard, ref IUIAnimationStoryboard2 newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect) HasPriority;
 			}
 		}
 		[CRepr]
@@ -786,25 +786,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double finalValue, out IUIAnimationTransition2* transition) CreateInstantaneousTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateInstantaneousVectorTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, out IUIAnimationTransition2* transition) CreateConstantTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double delay, double finalValue, double hold, out IUIAnimationTransition2* transition) CreateDiscreteTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double delay, double* finalValue, uint32 cDimension, double hold, out IUIAnimationTransition2* transition) CreateDiscreteVectorTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, out IUIAnimationTransition2* transition) CreateLinearTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateLinearVectorTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double speed, double finalValue, out IUIAnimationTransition2* transition) CreateLinearTransitionFromSpeed;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double speed, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateLinearVectorTransitionFromSpeed;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double period, out IUIAnimationTransition2* transition) CreateSinusoidalTransitionFromVelocity;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition2* transition) CreateSinusoidalTransitionFromRange;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition2* transition) CreateAccelerateDecelerateTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, out IUIAnimationTransition2* transition) CreateReversalTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double finalVelocity, out IUIAnimationTransition2* transition) CreateCubicTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, double* finalVelocity, uint32 cDimension, out IUIAnimationTransition2* transition) CreateCubicVectorTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double maximumDuration, double finalValue, out IUIAnimationTransition2* transition) CreateSmoothStopTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition2* transition) CreateParabolicTransitionFromAcceleration;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) CreateCubicBezierLinearTransition;
-				public new function HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, uint32 cDimension, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) CreateCubicBezierLinearVectorTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double finalValue, out IUIAnimationTransition2* transition) CreateInstantaneousTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateInstantaneousVectorTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, out IUIAnimationTransition2* transition) CreateConstantTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double delay, double finalValue, double hold, out IUIAnimationTransition2* transition) CreateDiscreteTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double delay, double* finalValue, uint32 cDimension, double hold, out IUIAnimationTransition2* transition) CreateDiscreteVectorTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, out IUIAnimationTransition2* transition) CreateLinearTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateLinearVectorTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double speed, double finalValue, out IUIAnimationTransition2* transition) CreateLinearTransitionFromSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double speed, double* finalValue, uint32 cDimension, out IUIAnimationTransition2* transition) CreateLinearVectorTransitionFromSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double period, out IUIAnimationTransition2* transition) CreateSinusoidalTransitionFromVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double minimumValue, double maximumValue, double period, UI_ANIMATION_SLOPE slope, out IUIAnimationTransition2* transition) CreateSinusoidalTransitionFromRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double accelerationRatio, double decelerationRatio, out IUIAnimationTransition2* transition) CreateAccelerateDecelerateTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, out IUIAnimationTransition2* transition) CreateReversalTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double finalVelocity, out IUIAnimationTransition2* transition) CreateCubicTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, double* finalVelocity, uint32 cDimension, out IUIAnimationTransition2* transition) CreateCubicVectorTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double maximumDuration, double finalValue, out IUIAnimationTransition2* transition) CreateSmoothStopTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double finalValue, double finalVelocity, double acceleration, out IUIAnimationTransition2* transition) CreateParabolicTransitionFromAcceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double finalValue, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) CreateCubicBezierLinearTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionLibrary2 self, double duration, double* finalValue, uint32 cDimension, double x1, double y1, double x2, double y2, out IUIAnimationTransition2* ppTransition) CreateCubicBezierLinearVectorTransition;
 			}
 		}
 		[CRepr]
@@ -820,8 +820,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationPrimitiveInterpolation self, uint32 dimension, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) AddCubic;
-				public new function HRESULT(ref IUIAnimationPrimitiveInterpolation self, uint32 dimension, double beginOffset, float bias, float amplitude, float frequency, float phase) AddSinusoidal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationPrimitiveInterpolation self, uint32 dimension, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) AddCubic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationPrimitiveInterpolation self, uint32 dimension, double beginOffset, float bias, float amplitude, float frequency, float phase) AddSinusoidal;
 			}
 		}
 		[CRepr]
@@ -844,15 +844,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, out uint32 dimension) GetDimension;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, double* initialValue, double* initialVelocity, uint32 cDimension) SetInitialValueAndVelocity;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, double duration) SetDuration;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, out double duration) GetDuration;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, double* value, uint32 cDimension) GetFinalValue;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, double offset, double* value, uint32 cDimension) InterpolateValue;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, double offset, double* velocity, uint32 cDimension) InterpolateVelocity;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, ref IUIAnimationPrimitiveInterpolation interpolation, uint32 cDimension) GetPrimitiveInterpolation;
-				public new function HRESULT(ref IUIAnimationInterpolator2 self, out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) GetDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, out uint32 dimension) GetDimension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, double* initialValue, double* initialVelocity, uint32 cDimension) SetInitialValueAndVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, double duration) SetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, out double duration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, double* value, uint32 cDimension) GetFinalValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, double offset, double* value, uint32 cDimension) InterpolateValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, double offset, double* velocity, uint32 cDimension) InterpolateVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, ref IUIAnimationPrimitiveInterpolation interpolation, uint32 cDimension) GetPrimitiveInterpolation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationInterpolator2 self, out UI_ANIMATION_DEPENDENCIES initialValueDependencies, out UI_ANIMATION_DEPENDENCIES initialVelocityDependencies, out UI_ANIMATION_DEPENDENCIES durationDependencies) GetDependencies;
 			}
 		}
 		[CRepr]
@@ -867,7 +867,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationTransitionFactory2 self, ref IUIAnimationInterpolator2 interpolator, out IUIAnimationTransition2* transition) CreateTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationTransitionFactory2 self, ref IUIAnimationInterpolator2 interpolator, out IUIAnimationTransition2* transition) CreateTransition;
 			}
 		}
 		[CRepr]
@@ -899,24 +899,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition) AddTransition;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAtOffset;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationTransition2 transition, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAfterTransition;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe) AddTransitionAtKeyframe;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) AddTransitionBetweenKeyframes;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, uint id, BOOL fRegisterForNextAnimationEvent) RepeatBetweenKeyframes;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable) HoldVariable;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, double delay) SetLongestAcceptableDelay;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, double secondsDuration) SetSkipDuration;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) Schedule;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self) Conclude;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, double completionDeadline) Finish;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self) Abandon;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, IUnknown** object, uint32* id) GetTag;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, out UI_ANIMATION_STORYBOARD_STATUS status) GetStatus;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, out double elapsedTime) GetElapsedTime;
-				public new function HRESULT(ref IUIAnimationStoryboard2 self, IUIAnimationStoryboardEventHandler2* handler, BOOL fRegisterStatusChangeForNextAnimationEvent, BOOL fRegisterUpdateForNextAnimationEvent) SetStoryboardEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition) AddTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, UI_ANIMATION_KEYFRAME existingKeyframe, double offset, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAtOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationTransition2 transition, out UI_ANIMATION_KEYFRAME keyframe) AddKeyframeAfterTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe) AddTransitionAtKeyframe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable, ref IUIAnimationTransition2 transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe) AddTransitionBetweenKeyframes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, uint id, BOOL fRegisterForNextAnimationEvent) RepeatBetweenKeyframes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, ref IUIAnimationVariable2 variable) HoldVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, double delay) SetLongestAcceptableDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, double secondsDuration) SetSkipDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult) Schedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self) Conclude;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, double completionDeadline) Finish;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self) Abandon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, IUnknown* object, uint32 id) SetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, IUnknown** object, uint32* id) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, out UI_ANIMATION_STORYBOARD_STATUS status) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, out double elapsedTime) GetElapsedTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, IUIAnimationStoryboardEventHandler2* handler, BOOL fRegisterStatusChangeForNextAnimationEvent, BOOL fRegisterUpdateForNextAnimationEvent) SetStoryboardEventHandler;
 			}
 		}
 		

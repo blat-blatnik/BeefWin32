@@ -28,7 +28,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDDEInitializer self, PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, ref IShellItem execTarget, ref IUnknown site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDEInitializer self, PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, ref IShellItem execTarget, ref IUnknown site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) Initialize;
 			}
 		}
 		

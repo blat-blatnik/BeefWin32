@@ -352,9 +352,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPNAT self, out IStaticPortMappingCollection* ppSPMs) get_StaticPortMappingCollection;
-				public new function HRESULT(ref IUPnPNAT self, out IDynamicPortMappingCollection* ppDPMs) get_DynamicPortMappingCollection;
-				public new function HRESULT(ref IUPnPNAT self, out INATEventManager* ppNEM) get_NATEventManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPNAT self, out IStaticPortMappingCollection* ppSPMs) get_StaticPortMappingCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPNAT self, out IDynamicPortMappingCollection* ppDPMs) get_DynamicPortMappingCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPNAT self, out INATEventManager* ppNEM) get_NATEventManager;
 			}
 		}
 		[CRepr]
@@ -370,8 +370,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INATEventManager self, ref IUnknown pUnk) put_ExternalIPAddressCallback;
-				public new function HRESULT(ref INATEventManager self, ref IUnknown pUnk) put_NumberOfEntriesCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INATEventManager self, ref IUnknown pUnk) put_ExternalIPAddressCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INATEventManager self, ref IUnknown pUnk) put_NumberOfEntriesCallback;
 			}
 		}
 		[CRepr]
@@ -386,7 +386,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INATExternalIPAddressCallback self, BSTR bstrNewExternalIPAddress) NewExternalIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INATExternalIPAddressCallback self, BSTR bstrNewExternalIPAddress) NewExternalIPAddress;
 			}
 		}
 		[CRepr]
@@ -401,7 +401,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INATNumberOfEntriesCallback self, int32 lNewNumberOfEntries) NewNumberOfEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INATNumberOfEntriesCallback self, int32 lNewNumberOfEntries) NewNumberOfEntries;
 			}
 		}
 		[CRepr]
@@ -420,11 +420,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDynamicPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, out IDynamicPortMapping* ppDPM) get_Item;
-				public new function HRESULT(ref IDynamicPortMappingCollection self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol) Remove;
-				public new function HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, int32 lLeaseDuration, out IDynamicPortMapping* ppDPM) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, out IDynamicPortMapping* ppDPM) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMappingCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMappingCollection self, BSTR bstrRemoteHost, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, int32 lLeaseDuration, out IDynamicPortMapping* ppDPM) Add;
 			}
 		}
 		[CRepr]
@@ -452,20 +452,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_ExternalIPAddress;
-				public new function HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_RemoteHost;
-				public new function HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_ExternalPort;
-				public new function HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_Protocol;
-				public new function HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_InternalPort;
-				public new function HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_InternalClient;
-				public new function HRESULT(ref IDynamicPortMapping self, out int16 pVal) get_Enabled;
-				public new function HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_Description;
-				public new function HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_LeaseDuration;
-				public new function HRESULT(ref IDynamicPortMapping self, int32 lLeaseDurationDesired, out int32 pLeaseDurationReturned) RenewLease;
-				public new function HRESULT(ref IDynamicPortMapping self, BSTR bstrInternalClient) EditInternalClient;
-				public new function HRESULT(ref IDynamicPortMapping self, int16 vb) Enable;
-				public new function HRESULT(ref IDynamicPortMapping self, BSTR bstrDescription) EditDescription;
-				public new function HRESULT(ref IDynamicPortMapping self, int32 lInternalPort) EditInternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_ExternalIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_RemoteHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_ExternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_InternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_InternalClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out int16 pVal) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out BSTR pVal) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, out int32 pVal) get_LeaseDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, int32 lLeaseDurationDesired, out int32 pLeaseDurationReturned) RenewLease;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, BSTR bstrInternalClient) EditInternalClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, int16 vb) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, BSTR bstrDescription) EditDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicPortMapping self, int32 lInternalPort) EditInternalPort;
 			}
 		}
 		[CRepr]
@@ -484,11 +484,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IStaticPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol, out IStaticPortMapping* ppSPM) get_Item;
-				public new function HRESULT(ref IStaticPortMappingCollection self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol) Remove;
-				public new function HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, out IStaticPortMapping* ppSPM) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol, out IStaticPortMapping* ppSPM) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMappingCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMappingCollection self, int32 lExternalPort, BSTR bstrProtocol, int32 lInternalPort, BSTR bstrInternalClient, int16 bEnabled, BSTR bstrDescription, out IStaticPortMapping* ppSPM) Add;
 			}
 		}
 		[CRepr]
@@ -513,17 +513,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_ExternalIPAddress;
-				public new function HRESULT(ref IStaticPortMapping self, out int32 pVal) get_ExternalPort;
-				public new function HRESULT(ref IStaticPortMapping self, out int32 pVal) get_InternalPort;
-				public new function HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_Protocol;
-				public new function HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_InternalClient;
-				public new function HRESULT(ref IStaticPortMapping self, out int16 pVal) get_Enabled;
-				public new function HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_Description;
-				public new function HRESULT(ref IStaticPortMapping self, BSTR bstrInternalClient) EditInternalClient;
-				public new function HRESULT(ref IStaticPortMapping self, int16 vb) Enable;
-				public new function HRESULT(ref IStaticPortMapping self, BSTR bstrDescription) EditDescription;
-				public new function HRESULT(ref IStaticPortMapping self, int32 lInternalPort) EditInternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_ExternalIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out int32 pVal) get_ExternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out int32 pVal) get_InternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_InternalClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out int16 pVal) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, out BSTR pVal) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, BSTR bstrInternalClient) EditInternalClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, int16 vb) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, BSTR bstrDescription) EditDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStaticPortMapping self, int32 lInternalPort) EditInternalPort;
 			}
 		}
 		[CRepr]
@@ -541,10 +541,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetConnection self, uint32 celt, INetConnection** rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetConnection self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetConnection self) Reset;
-				public new function HRESULT(ref IEnumNetConnection self, out IEnumNetConnection* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetConnection self, uint32 celt, INetConnection** rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetConnection self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetConnection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetConnection self, out IEnumNetConnection* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -565,13 +565,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetConnection self) Connect;
-				public new function HRESULT(ref INetConnection self) Disconnect;
-				public new function HRESULT(ref INetConnection self) Delete;
-				public new function HRESULT(ref INetConnection self, PWSTR pszwDuplicateName, out INetConnection* ppCon) Duplicate;
-				public new function HRESULT(ref INetConnection self, out NETCON_PROPERTIES* ppProps) GetProperties;
-				public new function HRESULT(ref INetConnection self, out Guid pclsid) GetUiObjectClassId;
-				public new function HRESULT(ref INetConnection self, PWSTR pszwNewName) Rename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self, PWSTR pszwDuplicateName, out INetConnection* ppCon) Duplicate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self, out NETCON_PROPERTIES* ppProps) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self, out Guid pclsid) GetUiObjectClassId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnection self, PWSTR pszwNewName) Rename;
 			}
 		}
 		[CRepr]
@@ -586,7 +586,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetConnectionManager self, NETCONMGR_ENUM_FLAGS Flags, out IEnumNetConnection* ppEnum) EnumConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionManager self, NETCONMGR_ENUM_FLAGS Flags, out IEnumNetConnection* ppEnum) EnumConnections;
 			}
 		}
 		[CRepr]
@@ -603,9 +603,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetConnectionConnectUi self, ref INetConnection pCon) SetConnection;
-				public new function HRESULT(ref INetConnectionConnectUi self, HWND hwndParent, uint32 dwFlags) Connect;
-				public new function HRESULT(ref INetConnectionConnectUi self, HWND hwndParent, uint32 dwFlags) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionConnectUi self, ref INetConnection pCon) SetConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionConnectUi self, HWND hwndParent, uint32 dwFlags) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionConnectUi self, HWND hwndParent, uint32 dwFlags) Disconnect;
 			}
 		}
 		[CRepr]
@@ -623,10 +623,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetSharingPortMapping self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetSharingPortMapping self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetSharingPortMapping self) Reset;
-				public new function HRESULT(ref IEnumNetSharingPortMapping self, out IEnumNetSharingPortMapping* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPortMapping self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPortMapping self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPortMapping self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPortMapping self, out IEnumNetSharingPortMapping* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -648,14 +648,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out uint8 pucIPProt) get_IPProtocol;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out int32 pusPort) get_ExternalPort;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out int32 pusPort) get_InternalPort;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out int32 pdwOptions) get_Options;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrTargetName) get_TargetName;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrTargetIPAddress) get_TargetIPAddress;
-				public new function HRESULT(ref INetSharingPortMappingProps self, out int16 pbool) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out uint8 pucIPProt) get_IPProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out int32 pusPort) get_ExternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out int32 pusPort) get_InternalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out int32 pdwOptions) get_Options;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrTargetName) get_TargetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out BSTR pbstrTargetIPAddress) get_TargetIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingProps self, out int16 pbool) get_Enabled;
 			}
 		}
 		[CRepr]
@@ -673,10 +673,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingPortMapping self) Disable;
-				public new function HRESULT(ref INetSharingPortMapping self) Enable;
-				public new function HRESULT(ref INetSharingPortMapping self, out INetSharingPortMappingProps* ppNSPMP) get_Properties;
-				public new function HRESULT(ref INetSharingPortMapping self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMapping self) Disable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMapping self) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMapping self, out INetSharingPortMappingProps* ppNSPMP) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMapping self) Delete;
 			}
 		}
 		[CRepr]
@@ -694,10 +694,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetSharingEveryConnection self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetSharingEveryConnection self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetSharingEveryConnection self) Reset;
-				public new function HRESULT(ref IEnumNetSharingEveryConnection self, out IEnumNetSharingEveryConnection* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingEveryConnection self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingEveryConnection self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingEveryConnection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingEveryConnection self, out IEnumNetSharingEveryConnection* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -715,10 +715,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetSharingPublicConnection self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetSharingPublicConnection self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetSharingPublicConnection self) Reset;
-				public new function HRESULT(ref IEnumNetSharingPublicConnection self, out IEnumNetSharingPublicConnection* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPublicConnection self, uint32 celt, VARIANT* rgVar, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPublicConnection self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPublicConnection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPublicConnection self, out IEnumNetSharingPublicConnection* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -736,10 +736,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetSharingPrivateConnection self, uint32 celt, VARIANT* rgVar, out uint32 pCeltFetched) Next;
-				public new function HRESULT(ref IEnumNetSharingPrivateConnection self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetSharingPrivateConnection self) Reset;
-				public new function HRESULT(ref IEnumNetSharingPrivateConnection self, out IEnumNetSharingPrivateConnection* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPrivateConnection self, uint32 celt, VARIANT* rgVar, out uint32 pCeltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPrivateConnection self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPrivateConnection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetSharingPrivateConnection self, out IEnumNetSharingPrivateConnection* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -755,8 +755,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref INetSharingPortMappingCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPortMappingCollection self, out int32 pVal) get_Count;
 			}
 		}
 		[CRepr]
@@ -776,12 +776,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetConnectionProps self, out BSTR pbstrGuid) get_Guid;
-				public new function HRESULT(ref INetConnectionProps self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref INetConnectionProps self, out BSTR pbstrDeviceName) get_DeviceName;
-				public new function HRESULT(ref INetConnectionProps self, out NETCON_STATUS pStatus) get_Status;
-				public new function HRESULT(ref INetConnectionProps self, out NETCON_MEDIATYPE pMediaType) get_MediaType;
-				public new function HRESULT(ref INetConnectionProps self, out uint32 pdwFlags) get_Characteristics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out BSTR pbstrGuid) get_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out BSTR pbstrDeviceName) get_DeviceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out NETCON_STATUS pStatus) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out NETCON_MEDIATYPE pMediaType) get_MediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetConnectionProps self, out uint32 pdwFlags) get_Characteristics;
 			}
 		}
 		[CRepr]
@@ -805,16 +805,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingConfiguration self, out int16 pbEnabled) get_SharingEnabled;
-				public new function HRESULT(ref INetSharingConfiguration self, out SHARINGCONNECTIONTYPE pType) get_SharingConnectionType;
-				public new function HRESULT(ref INetSharingConfiguration self) DisableSharing;
-				public new function HRESULT(ref INetSharingConfiguration self, SHARINGCONNECTIONTYPE Type) EnableSharing;
-				public new function HRESULT(ref INetSharingConfiguration self, out int16 pbEnabled) get_InternetFirewallEnabled;
-				public new function HRESULT(ref INetSharingConfiguration self) DisableInternetFirewall;
-				public new function HRESULT(ref INetSharingConfiguration self) EnableInternetFirewall;
-				public new function HRESULT(ref INetSharingConfiguration self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPortMappingCollection* ppColl) get_EnumPortMappings;
-				public new function HRESULT(ref INetSharingConfiguration self, BSTR bstrName, uint8 ucIPProtocol, uint16 usExternalPort, uint16 usInternalPort, uint32 dwOptions, BSTR bstrTargetNameOrIPAddress, ICS_TARGETTYPE eTargetType, out INetSharingPortMapping* ppMapping) AddPortMapping;
-				public new function HRESULT(ref INetSharingConfiguration self, ref INetSharingPortMapping pMapping) RemovePortMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, out int16 pbEnabled) get_SharingEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, out SHARINGCONNECTIONTYPE pType) get_SharingConnectionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self) DisableSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, SHARINGCONNECTIONTYPE Type) EnableSharing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, out int16 pbEnabled) get_InternetFirewallEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self) DisableInternetFirewall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self) EnableInternetFirewall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPortMappingCollection* ppColl) get_EnumPortMappings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, BSTR bstrName, uint8 ucIPProtocol, uint16 usExternalPort, uint16 usInternalPort, uint32 dwOptions, BSTR bstrTargetNameOrIPAddress, ICS_TARGETTYPE eTargetType, out INetSharingPortMapping* ppMapping) AddPortMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingConfiguration self, ref INetSharingPortMapping pMapping) RemovePortMapping;
 			}
 		}
 		[CRepr]
@@ -830,8 +830,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingEveryConnectionCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref INetSharingEveryConnectionCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingEveryConnectionCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingEveryConnectionCollection self, out int32 pVal) get_Count;
 			}
 		}
 		[CRepr]
@@ -847,8 +847,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingPublicConnectionCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref INetSharingPublicConnectionCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPublicConnectionCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPublicConnectionCollection self, out int32 pVal) get_Count;
 			}
 		}
 		[CRepr]
@@ -864,8 +864,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingPrivateConnectionCollection self, out IUnknown* pVal) get__NewEnum;
-				public new function HRESULT(ref INetSharingPrivateConnectionCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPrivateConnectionCollection self, out IUnknown* pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingPrivateConnectionCollection self, out int32 pVal) get_Count;
 			}
 		}
 		[CRepr]
@@ -885,12 +885,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetSharingManager self, out int16 pbInstalled) get_SharingInstalled;
-				public new function HRESULT(ref INetSharingManager self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPublicConnectionCollection* ppColl) get_EnumPublicConnections;
-				public new function HRESULT(ref INetSharingManager self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPrivateConnectionCollection* ppColl) get_EnumPrivateConnections;
-				public new function HRESULT(ref INetSharingManager self, ref INetConnection pNetConnection, out INetSharingConfiguration* ppNetSharingConfiguration) get_INetSharingConfigurationForINetConnection;
-				public new function HRESULT(ref INetSharingManager self, out INetSharingEveryConnectionCollection* ppColl) get_EnumEveryConnection;
-				public new function HRESULT(ref INetSharingManager self, ref INetConnection pNetConnection, out INetConnectionProps* ppProps) get_NetConnectionProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, out int16 pbInstalled) get_SharingInstalled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPublicConnectionCollection* ppColl) get_EnumPublicConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, SHARINGCONNECTION_ENUM_FLAGS Flags, out INetSharingPrivateConnectionCollection* ppColl) get_EnumPrivateConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, ref INetConnection pNetConnection, out INetSharingConfiguration* ppNetSharingConfiguration) get_INetSharingConfigurationForINetConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, out INetSharingEveryConnectionCollection* ppColl) get_EnumEveryConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetSharingManager self, ref INetConnection pNetConnection, out INetConnectionProps* ppProps) get_NetConnectionProps;
 			}
 		}
 		[CRepr]
@@ -912,14 +912,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, out NET_FW_SCOPE @scope) get_Scope;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, NET_FW_SCOPE @scope) put_Scope;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, out BSTR remoteAddrs) get_RemoteAddresses;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, BSTR remoteAddrs) put_RemoteAddresses;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref INetFwRemoteAdminSettings self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, out NET_FW_SCOPE @scope) get_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, NET_FW_SCOPE @scope) put_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, out BSTR remoteAddrs) get_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, BSTR remoteAddrs) put_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRemoteAdminSettings self, int16 enabled) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -953,26 +953,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundDestinationUnreachable;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundDestinationUnreachable;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowRedirect;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowRedirect;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundEchoRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundEchoRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundTimeExceeded;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundTimeExceeded;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundParameterProblem;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundParameterProblem;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundSourceQuench;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundSourceQuench;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundRouterRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundRouterRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundTimestampRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundTimestampRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundMaskRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundMaskRequest;
-				public new function HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundPacketTooBig;
-				public new function HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundPacketTooBig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundDestinationUnreachable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundDestinationUnreachable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowRedirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowRedirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundEchoRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundEchoRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundTimeExceeded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundTimeExceeded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundParameterProblem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundParameterProblem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundSourceQuench;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundSourceQuench;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundRouterRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundRouterRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundTimestampRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundTimestampRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowInboundMaskRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowInboundMaskRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, out int16 allow) get_AllowOutboundPacketTooBig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwIcmpSettings self, int16 allow) put_AllowOutboundPacketTooBig;
 			}
 		}
 		[CRepr]
@@ -1001,21 +1001,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwOpenPort self, out BSTR name) get_Name;
-				public new function HRESULT(ref INetFwOpenPort self, BSTR name) put_Name;
-				public new function HRESULT(ref INetFwOpenPort self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
-				public new function HRESULT(ref INetFwOpenPort self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
-				public new function HRESULT(ref INetFwOpenPort self, out NET_FW_IP_PROTOCOL ipProtocol) get_Protocol;
-				public new function HRESULT(ref INetFwOpenPort self, NET_FW_IP_PROTOCOL ipProtocol) put_Protocol;
-				public new function HRESULT(ref INetFwOpenPort self, out int32 portNumber) get_Port;
-				public new function HRESULT(ref INetFwOpenPort self, int32 portNumber) put_Port;
-				public new function HRESULT(ref INetFwOpenPort self, out NET_FW_SCOPE @scope) get_Scope;
-				public new function HRESULT(ref INetFwOpenPort self, NET_FW_SCOPE @scope) put_Scope;
-				public new function HRESULT(ref INetFwOpenPort self, out BSTR remoteAddrs) get_RemoteAddresses;
-				public new function HRESULT(ref INetFwOpenPort self, BSTR remoteAddrs) put_RemoteAddresses;
-				public new function HRESULT(ref INetFwOpenPort self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref INetFwOpenPort self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref INetFwOpenPort self, out int16 builtIn) get_BuiltIn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out BSTR name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out NET_FW_IP_PROTOCOL ipProtocol) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, NET_FW_IP_PROTOCOL ipProtocol) put_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out int32 portNumber) get_Port;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, int32 portNumber) put_Port;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out NET_FW_SCOPE @scope) get_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, NET_FW_SCOPE @scope) put_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out BSTR remoteAddrs) get_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, BSTR remoteAddrs) put_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPort self, out int16 builtIn) get_BuiltIn;
 			}
 		}
 		[CRepr]
@@ -1034,11 +1034,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwOpenPorts self, out int32 count) get_Count;
-				public new function HRESULT(ref INetFwOpenPorts self, ref INetFwOpenPort port) Add;
-				public new function HRESULT(ref INetFwOpenPorts self, int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol) Remove;
-				public new function HRESULT(ref INetFwOpenPorts self, int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol, out INetFwOpenPort* openPort) Item;
-				public new function HRESULT(ref INetFwOpenPorts self, out IUnknown* newEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPorts self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPorts self, ref INetFwOpenPort port) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPorts self, int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPorts self, int32 portNumber, NET_FW_IP_PROTOCOL ipProtocol, out INetFwOpenPort* openPort) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwOpenPorts self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1064,18 +1064,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwService self, out BSTR name) get_Name;
-				public new function HRESULT(ref INetFwService self, out NET_FW_SERVICE_TYPE type) get_Type;
-				public new function HRESULT(ref INetFwService self, out int16 customized) get_Customized;
-				public new function HRESULT(ref INetFwService self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
-				public new function HRESULT(ref INetFwService self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
-				public new function HRESULT(ref INetFwService self, out NET_FW_SCOPE @scope) get_Scope;
-				public new function HRESULT(ref INetFwService self, NET_FW_SCOPE @scope) put_Scope;
-				public new function HRESULT(ref INetFwService self, out BSTR remoteAddrs) get_RemoteAddresses;
-				public new function HRESULT(ref INetFwService self, BSTR remoteAddrs) put_RemoteAddresses;
-				public new function HRESULT(ref INetFwService self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref INetFwService self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref INetFwService self, out INetFwOpenPorts* openPorts) get_GloballyOpenPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out BSTR name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out NET_FW_SERVICE_TYPE type) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out int16 customized) get_Customized;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out NET_FW_SCOPE @scope) get_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, NET_FW_SCOPE @scope) put_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out BSTR remoteAddrs) get_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, BSTR remoteAddrs) put_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwService self, out INetFwOpenPorts* openPorts) get_GloballyOpenPorts;
 			}
 		}
 		[CRepr]
@@ -1092,9 +1092,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwServices self, out int32 count) get_Count;
-				public new function HRESULT(ref INetFwServices self, NET_FW_SERVICE_TYPE svcType, out INetFwService* service) Item;
-				public new function HRESULT(ref INetFwServices self, out IUnknown* newEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServices self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServices self, NET_FW_SERVICE_TYPE svcType, out INetFwService* service) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServices self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1120,18 +1120,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out BSTR name) get_Name;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, BSTR name) put_Name;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out BSTR imageFileName) get_ProcessImageFileName;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, BSTR imageFileName) put_ProcessImageFileName;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out NET_FW_SCOPE @scope) get_Scope;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, NET_FW_SCOPE @scope) put_Scope;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out BSTR remoteAddrs) get_RemoteAddresses;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, BSTR remoteAddrs) put_RemoteAddresses;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref INetFwAuthorizedApplication self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out BSTR name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out BSTR imageFileName) get_ProcessImageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, BSTR imageFileName) put_ProcessImageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out NET_FW_IP_VERSION ipVersion) get_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, NET_FW_IP_VERSION ipVersion) put_IpVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out NET_FW_SCOPE @scope) get_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, NET_FW_SCOPE @scope) put_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out BSTR remoteAddrs) get_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, BSTR remoteAddrs) put_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplication self, int16 enabled) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -1150,11 +1150,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwAuthorizedApplications self, out int32 count) get_Count;
-				public new function HRESULT(ref INetFwAuthorizedApplications self, ref INetFwAuthorizedApplication app) Add;
-				public new function HRESULT(ref INetFwAuthorizedApplications self, BSTR imageFileName) Remove;
-				public new function HRESULT(ref INetFwAuthorizedApplications self, BSTR imageFileName, out INetFwAuthorizedApplication* app) Item;
-				public new function HRESULT(ref INetFwAuthorizedApplications self, out IUnknown* newEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplications self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplications self, ref INetFwAuthorizedApplication app) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplications self, BSTR imageFileName) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplications self, BSTR imageFileName, out INetFwAuthorizedApplication* app) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwAuthorizedApplications self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1204,42 +1204,42 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwRule self, out BSTR name) get_Name;
-				public new function HRESULT(ref INetFwRule self, BSTR name) put_Name;
-				public new function HRESULT(ref INetFwRule self, out BSTR desc) get_Description;
-				public new function HRESULT(ref INetFwRule self, BSTR desc) put_Description;
-				public new function HRESULT(ref INetFwRule self, out BSTR imageFileName) get_ApplicationName;
-				public new function HRESULT(ref INetFwRule self, BSTR imageFileName) put_ApplicationName;
-				public new function HRESULT(ref INetFwRule self, out BSTR serviceName) get_ServiceName;
-				public new function HRESULT(ref INetFwRule self, BSTR serviceName) put_ServiceName;
-				public new function HRESULT(ref INetFwRule self, out int32 protocol) get_Protocol;
-				public new function HRESULT(ref INetFwRule self, int32 protocol) put_Protocol;
-				public new function HRESULT(ref INetFwRule self, out BSTR portNumbers) get_LocalPorts;
-				public new function HRESULT(ref INetFwRule self, BSTR portNumbers) put_LocalPorts;
-				public new function HRESULT(ref INetFwRule self, out BSTR portNumbers) get_RemotePorts;
-				public new function HRESULT(ref INetFwRule self, BSTR portNumbers) put_RemotePorts;
-				public new function HRESULT(ref INetFwRule self, out BSTR localAddrs) get_LocalAddresses;
-				public new function HRESULT(ref INetFwRule self, BSTR localAddrs) put_LocalAddresses;
-				public new function HRESULT(ref INetFwRule self, out BSTR remoteAddrs) get_RemoteAddresses;
-				public new function HRESULT(ref INetFwRule self, BSTR remoteAddrs) put_RemoteAddresses;
-				public new function HRESULT(ref INetFwRule self, out BSTR icmpTypesAndCodes) get_IcmpTypesAndCodes;
-				public new function HRESULT(ref INetFwRule self, BSTR icmpTypesAndCodes) put_IcmpTypesAndCodes;
-				public new function HRESULT(ref INetFwRule self, out NET_FW_RULE_DIRECTION dir) get_Direction;
-				public new function HRESULT(ref INetFwRule self, NET_FW_RULE_DIRECTION dir) put_Direction;
-				public new function HRESULT(ref INetFwRule self, out VARIANT interfaces) get_Interfaces;
-				public new function HRESULT(ref INetFwRule self, VARIANT interfaces) put_Interfaces;
-				public new function HRESULT(ref INetFwRule self, out BSTR interfaceTypes) get_InterfaceTypes;
-				public new function HRESULT(ref INetFwRule self, BSTR interfaceTypes) put_InterfaceTypes;
-				public new function HRESULT(ref INetFwRule self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref INetFwRule self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref INetFwRule self, out BSTR context) get_Grouping;
-				public new function HRESULT(ref INetFwRule self, BSTR context) put_Grouping;
-				public new function HRESULT(ref INetFwRule self, out int32 profileTypesBitmask) get_Profiles;
-				public new function HRESULT(ref INetFwRule self, int32 profileTypesBitmask) put_Profiles;
-				public new function HRESULT(ref INetFwRule self, out int16 enabled) get_EdgeTraversal;
-				public new function HRESULT(ref INetFwRule self, int16 enabled) put_EdgeTraversal;
-				public new function HRESULT(ref INetFwRule self, out NET_FW_ACTION action) get_Action;
-				public new function HRESULT(ref INetFwRule self, NET_FW_ACTION action) put_Action;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR desc) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR desc) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR imageFileName) get_ApplicationName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR imageFileName) put_ApplicationName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR serviceName) get_ServiceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR serviceName) put_ServiceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out int32 protocol) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, int32 protocol) put_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR portNumbers) get_LocalPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR portNumbers) put_LocalPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR portNumbers) get_RemotePorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR portNumbers) put_RemotePorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR localAddrs) get_LocalAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR localAddrs) put_LocalAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR remoteAddrs) get_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR remoteAddrs) put_RemoteAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR icmpTypesAndCodes) get_IcmpTypesAndCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR icmpTypesAndCodes) put_IcmpTypesAndCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out NET_FW_RULE_DIRECTION dir) get_Direction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, NET_FW_RULE_DIRECTION dir) put_Direction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out VARIANT interfaces) get_Interfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, VARIANT interfaces) put_Interfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR interfaceTypes) get_InterfaceTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR interfaceTypes) put_InterfaceTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out BSTR context) get_Grouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, BSTR context) put_Grouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out int32 profileTypesBitmask) get_Profiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, int32 profileTypesBitmask) put_Profiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out int16 enabled) get_EdgeTraversal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, int16 enabled) put_EdgeTraversal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, out NET_FW_ACTION action) get_Action;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule self, NET_FW_ACTION action) put_Action;
 			}
 		}
 		[CRepr]
@@ -1255,8 +1255,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INetFwRule.VTable
 			{
-				public new function HRESULT(ref INetFwRule2 self, out int32 lOptions) get_EdgeTraversalOptions;
-				public new function HRESULT(ref INetFwRule2 self, int32 lOptions) put_EdgeTraversalOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule2 self, out int32 lOptions) get_EdgeTraversalOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule2 self, int32 lOptions) put_EdgeTraversalOptions;
 			}
 		}
 		[CRepr]
@@ -1282,18 +1282,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INetFwRule2.VTable
 			{
-				public new function HRESULT(ref INetFwRule3 self, out BSTR wszPackageId) get_LocalAppPackageId;
-				public new function HRESULT(ref INetFwRule3 self, BSTR wszPackageId) put_LocalAppPackageId;
-				public new function HRESULT(ref INetFwRule3 self, out BSTR wszUserOwner) get_LocalUserOwner;
-				public new function HRESULT(ref INetFwRule3 self, BSTR wszUserOwner) put_LocalUserOwner;
-				public new function HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_LocalUserAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_LocalUserAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_RemoteUserAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_RemoteUserAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_RemoteMachineAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_RemoteMachineAuthorizedList;
-				public new function HRESULT(ref INetFwRule3 self, out int32 lOptions) get_SecureFlags;
-				public new function HRESULT(ref INetFwRule3 self, int32 lOptions) put_SecureFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out BSTR wszPackageId) get_LocalAppPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, BSTR wszPackageId) put_LocalAppPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out BSTR wszUserOwner) get_LocalUserOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, BSTR wszUserOwner) put_LocalUserOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_LocalUserAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_LocalUserAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_RemoteUserAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_RemoteUserAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out BSTR wszUserAuthList) get_RemoteMachineAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, BSTR wszUserAuthList) put_RemoteMachineAuthorizedList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, out int32 lOptions) get_SecureFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRule3 self, int32 lOptions) put_SecureFlags;
 			}
 		}
 		[CRepr]
@@ -1312,11 +1312,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwRules self, out int32 count) get_Count;
-				public new function HRESULT(ref INetFwRules self, ref INetFwRule rule) Add;
-				public new function HRESULT(ref INetFwRules self, BSTR name) Remove;
-				public new function HRESULT(ref INetFwRules self, BSTR name, out INetFwRule* rule) Item;
-				public new function HRESULT(ref INetFwRules self, out IUnknown* newEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRules self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRules self, ref INetFwRule rule) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRules self, BSTR name) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRules self, BSTR name, out INetFwRule* rule) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwRules self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1333,9 +1333,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwServiceRestriction self, BSTR serviceName, BSTR appName, int16 restrictService, int16 serviceSidRestricted) RestrictService;
-				public new function HRESULT(ref INetFwServiceRestriction self, BSTR serviceName, BSTR appName, out int16 serviceRestricted) ServiceRestricted;
-				public new function HRESULT(ref INetFwServiceRestriction self, out INetFwRules* rules) get_Rules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServiceRestriction self, BSTR serviceName, BSTR appName, int16 restrictService, int16 serviceSidRestricted) RestrictService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServiceRestriction self, BSTR serviceName, BSTR appName, out int16 serviceRestricted) ServiceRestricted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwServiceRestriction self, out INetFwRules* rules) get_Rules;
 			}
 		}
 		[CRepr]
@@ -1363,20 +1363,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwProfile self, out NET_FW_PROFILE_TYPE type) get_Type;
-				public new function HRESULT(ref INetFwProfile self, out int16 enabled) get_FirewallEnabled;
-				public new function HRESULT(ref INetFwProfile self, int16 enabled) put_FirewallEnabled;
-				public new function HRESULT(ref INetFwProfile self, out int16 notAllowed) get_ExceptionsNotAllowed;
-				public new function HRESULT(ref INetFwProfile self, int16 notAllowed) put_ExceptionsNotAllowed;
-				public new function HRESULT(ref INetFwProfile self, out int16 disabled) get_NotificationsDisabled;
-				public new function HRESULT(ref INetFwProfile self, int16 disabled) put_NotificationsDisabled;
-				public new function HRESULT(ref INetFwProfile self, out int16 disabled) get_UnicastResponsesToMulticastBroadcastDisabled;
-				public new function HRESULT(ref INetFwProfile self, int16 disabled) put_UnicastResponsesToMulticastBroadcastDisabled;
-				public new function HRESULT(ref INetFwProfile self, out INetFwRemoteAdminSettings* remoteAdminSettings) get_RemoteAdminSettings;
-				public new function HRESULT(ref INetFwProfile self, out INetFwIcmpSettings* icmpSettings) get_IcmpSettings;
-				public new function HRESULT(ref INetFwProfile self, out INetFwOpenPorts* openPorts) get_GloballyOpenPorts;
-				public new function HRESULT(ref INetFwProfile self, out INetFwServices* services) get_Services;
-				public new function HRESULT(ref INetFwProfile self, out INetFwAuthorizedApplications* apps) get_AuthorizedApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out NET_FW_PROFILE_TYPE type) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out int16 enabled) get_FirewallEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, int16 enabled) put_FirewallEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out int16 notAllowed) get_ExceptionsNotAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, int16 notAllowed) put_ExceptionsNotAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out int16 disabled) get_NotificationsDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, int16 disabled) put_NotificationsDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out int16 disabled) get_UnicastResponsesToMulticastBroadcastDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, int16 disabled) put_UnicastResponsesToMulticastBroadcastDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out INetFwRemoteAdminSettings* remoteAdminSettings) get_RemoteAdminSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out INetFwIcmpSettings* icmpSettings) get_IcmpSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out INetFwOpenPorts* openPorts) get_GloballyOpenPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out INetFwServices* services) get_Services;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProfile self, out INetFwAuthorizedApplications* apps) get_AuthorizedApplications;
 			}
 		}
 		[CRepr]
@@ -1392,8 +1392,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwPolicy self, out INetFwProfile* profile) get_CurrentProfile;
-				public new function HRESULT(ref INetFwPolicy self, NET_FW_PROFILE_TYPE profileType, out INetFwProfile* profile) GetProfileByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy self, out INetFwProfile* profile) get_CurrentProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy self, NET_FW_PROFILE_TYPE profileType, out INetFwProfile* profile) GetProfileByType;
 			}
 		}
 		[CRepr]
@@ -1429,28 +1429,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwPolicy2 self, out int32 profileTypesBitmask) get_CurrentProfileTypes;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 enabled) get_FirewallEnabled;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 enabled) put_FirewallEnabled;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out VARIANT interfaces) get_ExcludedInterfaces;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, VARIANT interfaces) put_ExcludedInterfaces;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 Block) get_BlockAllInboundTraffic;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 Block) put_BlockAllInboundTraffic;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) get_NotificationsDisabled;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 disabled) put_NotificationsDisabled;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) get_UnicastResponsesToMulticastBroadcastDisabled;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 disabled) put_UnicastResponsesToMulticastBroadcastDisabled;
-				public new function HRESULT(ref INetFwPolicy2 self, out INetFwRules* rules) get_Rules;
-				public new function HRESULT(ref INetFwPolicy2 self, out INetFwServiceRestriction* ServiceRestriction) get_ServiceRestriction;
-				public new function HRESULT(ref INetFwPolicy2 self, int32 profileTypesBitmask, BSTR group, int16 enable) EnableRuleGroup;
-				public new function HRESULT(ref INetFwPolicy2 self, int32 profileTypesBitmask, BSTR group, out int16 enabled) IsRuleGroupEnabled;
-				public new function HRESULT(ref INetFwPolicy2 self) RestoreLocalFirewallDefaults;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) get_DefaultInboundAction;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) put_DefaultInboundAction;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) get_DefaultOutboundAction;
-				public new function HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) put_DefaultOutboundAction;
-				public new function HRESULT(ref INetFwPolicy2 self, BSTR group, out int16 enabled) get_IsRuleGroupCurrentlyEnabled;
-				public new function HRESULT(ref INetFwPolicy2 self, out NET_FW_MODIFY_STATE modifyState) get_LocalPolicyModifyState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, out int32 profileTypesBitmask) get_CurrentProfileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 enabled) get_FirewallEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 enabled) put_FirewallEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out VARIANT interfaces) get_ExcludedInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, VARIANT interfaces) put_ExcludedInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 Block) get_BlockAllInboundTraffic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 Block) put_BlockAllInboundTraffic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) get_NotificationsDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 disabled) put_NotificationsDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out int16 disabled) get_UnicastResponsesToMulticastBroadcastDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, int16 disabled) put_UnicastResponsesToMulticastBroadcastDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, out INetFwRules* rules) get_Rules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, out INetFwServiceRestriction* ServiceRestriction) get_ServiceRestriction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, int32 profileTypesBitmask, BSTR group, int16 enable) EnableRuleGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, int32 profileTypesBitmask, BSTR group, out int16 enabled) IsRuleGroupEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self) RestoreLocalFirewallDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) get_DefaultInboundAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) put_DefaultInboundAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, out NET_FW_ACTION action) get_DefaultOutboundAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, NET_FW_PROFILE_TYPE2 profileType, NET_FW_ACTION action) put_DefaultOutboundAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, BSTR group, out int16 enabled) get_IsRuleGroupCurrentlyEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwPolicy2 self, out NET_FW_MODIFY_STATE modifyState) get_LocalPolicyModifyState;
 			}
 		}
 		[CRepr]
@@ -1469,11 +1469,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwMgr self, out INetFwPolicy* localPolicy) get_LocalPolicy;
-				public new function HRESULT(ref INetFwMgr self, out NET_FW_PROFILE_TYPE profileType) get_CurrentProfileType;
-				public new function HRESULT(ref INetFwMgr self) RestoreDefaults;
-				public new function HRESULT(ref INetFwMgr self, BSTR imageFileName, NET_FW_IP_VERSION ipVersion, int32 portNumber, BSTR localAddress, NET_FW_IP_PROTOCOL ipProtocol, out VARIANT allowed, out VARIANT restricted) IsPortAllowed;
-				public new function HRESULT(ref INetFwMgr self, NET_FW_IP_VERSION ipVersion, BSTR localAddress, uint8 type, out VARIANT allowed, out VARIANT restricted) IsIcmpTypeAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwMgr self, out INetFwPolicy* localPolicy) get_LocalPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwMgr self, out NET_FW_PROFILE_TYPE profileType) get_CurrentProfileType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwMgr self) RestoreDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwMgr self, BSTR imageFileName, NET_FW_IP_VERSION ipVersion, int32 portNumber, BSTR localAddress, NET_FW_IP_PROTOCOL ipProtocol, out VARIANT allowed, out VARIANT restricted) IsPortAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwMgr self, NET_FW_IP_VERSION ipVersion, BSTR localAddress, uint8 type, out VARIANT allowed, out VARIANT restricted) IsIcmpTypeAllowed;
 			}
 		}
 		[CRepr]
@@ -1492,11 +1492,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwProduct self, out VARIANT ruleCategories) get_RuleCategories;
-				public new function HRESULT(ref INetFwProduct self, VARIANT ruleCategories) put_RuleCategories;
-				public new function HRESULT(ref INetFwProduct self, out BSTR displayName) get_DisplayName;
-				public new function HRESULT(ref INetFwProduct self, BSTR displayName) put_DisplayName;
-				public new function HRESULT(ref INetFwProduct self, out BSTR path) get_PathToSignedProductExe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProduct self, out VARIANT ruleCategories) get_RuleCategories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProduct self, VARIANT ruleCategories) put_RuleCategories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProduct self, out BSTR displayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProduct self, BSTR displayName) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProduct self, out BSTR path) get_PathToSignedProductExe;
 			}
 		}
 		[CRepr]
@@ -1514,10 +1514,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetFwProducts self, out int32 count) get_Count;
-				public new function HRESULT(ref INetFwProducts self, ref INetFwProduct product, out IUnknown* registration) Register;
-				public new function HRESULT(ref INetFwProducts self, int32 index, out INetFwProduct* product) Item;
-				public new function HRESULT(ref INetFwProducts self, out IUnknown* newEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProducts self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProducts self, ref INetFwProduct product, out IUnknown* registration) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProducts self, int32 index, out INetFwProduct* product) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProducts self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
 		

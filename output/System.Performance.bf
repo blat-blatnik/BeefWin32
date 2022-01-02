@@ -1073,66 +1073,66 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDataCollectorSet self, IDataCollectorCollection** collectors) get_DataCollectors;
-				public new function HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_Duration;
-				public new function HRESULT(ref IDataCollectorSet self, uint32 seconds) put_Duration;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* description) get_Description;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR description) put_Description;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* Descr) get_DescriptionUnresolved;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* DisplayName) get_DisplayName;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR DisplayName) put_DisplayName;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* name) get_DisplayNameUnresolved;
-				public new function HRESULT(ref IDataCollectorSet self, SAFEARRAY** keywords) get_Keywords;
-				public new function HRESULT(ref IDataCollectorSet self, ref SAFEARRAY keywords) put_Keywords;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* path) get_LatestOutputLocation;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR path) put_LatestOutputLocation;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* name) get_Name;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* path) get_OutputLocation;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* folder) get_RootPath;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR folder) put_RootPath;
-				public new function HRESULT(ref IDataCollectorSet self, out int16 segment) get_Segment;
-				public new function HRESULT(ref IDataCollectorSet self, int16 segment) put_Segment;
-				public new function HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_SegmentMaxDuration;
-				public new function HRESULT(ref IDataCollectorSet self, uint32 seconds) put_SegmentMaxDuration;
-				public new function HRESULT(ref IDataCollectorSet self, out uint32 size) get_SegmentMaxSize;
-				public new function HRESULT(ref IDataCollectorSet self, uint32 size) put_SegmentMaxSize;
-				public new function HRESULT(ref IDataCollectorSet self, out uint32 index) get_SerialNumber;
-				public new function HRESULT(ref IDataCollectorSet self, uint32 index) put_SerialNumber;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* server) get_Server;
-				public new function HRESULT(ref IDataCollectorSet self, out DataCollectorSetStatus status) get_Status;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* folder) get_Subdirectory;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR folder) put_Subdirectory;
-				public new function HRESULT(ref IDataCollectorSet self, out AutoPathFormat format) get_SubdirectoryFormat;
-				public new function HRESULT(ref IDataCollectorSet self, AutoPathFormat format) put_SubdirectoryFormat;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* pattern) get_SubdirectoryFormatPattern;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR pattern) put_SubdirectoryFormatPattern;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* task) get_Task;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR task) put_Task;
-				public new function HRESULT(ref IDataCollectorSet self, out int16 RunAsSelf) get_TaskRunAsSelf;
-				public new function HRESULT(ref IDataCollectorSet self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* task) get_TaskArguments;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR task) put_TaskArguments;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* UserText) get_TaskUserTextArguments;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR UserText) put_TaskUserTextArguments;
-				public new function HRESULT(ref IDataCollectorSet self, IScheduleCollection** ppSchedules) get_Schedules;
-				public new function HRESULT(ref IDataCollectorSet self, out int16 enabled) get_SchedulesEnabled;
-				public new function HRESULT(ref IDataCollectorSet self, int16 enabled) put_SchedulesEnabled;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* user) get_UserAccount;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* xml) get_Xml;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR* pbstrSecurity) get_Security;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR bstrSecurity) put_Security;
-				public new function HRESULT(ref IDataCollectorSet self, out int16 Stop) get_StopOnCompletion;
-				public new function HRESULT(ref IDataCollectorSet self, int16 Stop) put_StopOnCompletion;
-				public new function HRESULT(ref IDataCollectorSet self, IDataManager** DataManager) get_DataManager;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR user, BSTR password) SetCredentials;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server) Query;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
-				public new function HRESULT(ref IDataCollectorSet self) Delete;
-				public new function HRESULT(ref IDataCollectorSet self, int16 Synchronous) Start;
-				public new function HRESULT(ref IDataCollectorSet self, int16 Synchronous) Stop;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR xml, IValueMap** validation) SetXml;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR key, BSTR value) SetValue;
-				public new function HRESULT(ref IDataCollectorSet self, BSTR key, BSTR* value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IDataCollectorCollection** collectors) get_DataCollectors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_Duration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 seconds) put_Duration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* description) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR description) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* Descr) get_DescriptionUnresolved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* DisplayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR DisplayName) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* name) get_DisplayNameUnresolved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, SAFEARRAY** keywords) get_Keywords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, ref SAFEARRAY keywords) put_Keywords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* path) get_LatestOutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR path) put_LatestOutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* path) get_OutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* folder) get_RootPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR folder) put_RootPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 segment) get_Segment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 segment) put_Segment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_SegmentMaxDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 seconds) put_SegmentMaxDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 size) get_SegmentMaxSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 size) put_SegmentMaxSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out uint32 index) get_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, uint32 index) put_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* server) get_Server;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out DataCollectorSetStatus status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* folder) get_Subdirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR folder) put_Subdirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out AutoPathFormat format) get_SubdirectoryFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, AutoPathFormat format) put_SubdirectoryFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* pattern) get_SubdirectoryFormatPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR pattern) put_SubdirectoryFormatPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* task) get_Task;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR task) put_Task;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 RunAsSelf) get_TaskRunAsSelf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* task) get_TaskArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR task) put_TaskArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* UserText) get_TaskUserTextArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR UserText) put_TaskUserTextArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IScheduleCollection** ppSchedules) get_Schedules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 enabled) get_SchedulesEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 enabled) put_SchedulesEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* user) get_UserAccount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* xml) get_Xml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR* pbstrSecurity) get_Security;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR bstrSecurity) put_Security;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, out int16 Stop) get_StopOnCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Stop) put_StopOnCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, IDataManager** DataManager) get_DataManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR user, BSTR password) SetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Synchronous) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, int16 Synchronous) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR xml, IValueMap** validation) SetXml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR key, BSTR value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSet self, BSTR key, BSTR* value) GetValue;
 			}
 		}
 		[CRepr]
@@ -1171,31 +1171,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDataManager self, out int16 pfEnabled) get_Enabled;
-				public new function HRESULT(ref IDataManager self, int16 fEnabled) put_Enabled;
-				public new function HRESULT(ref IDataManager self, out int16 pfCheck) get_CheckBeforeRunning;
-				public new function HRESULT(ref IDataManager self, int16 fCheck) put_CheckBeforeRunning;
-				public new function HRESULT(ref IDataManager self, out uint32 MinFreeDisk) get_MinFreeDisk;
-				public new function HRESULT(ref IDataManager self, uint32 MinFreeDisk) put_MinFreeDisk;
-				public new function HRESULT(ref IDataManager self, out uint32 pulMaxSize) get_MaxSize;
-				public new function HRESULT(ref IDataManager self, uint32 ulMaxSize) put_MaxSize;
-				public new function HRESULT(ref IDataManager self, out uint32 pulMaxFolderCount) get_MaxFolderCount;
-				public new function HRESULT(ref IDataManager self, uint32 ulMaxFolderCount) put_MaxFolderCount;
-				public new function HRESULT(ref IDataManager self, out ResourcePolicy pPolicy) get_ResourcePolicy;
-				public new function HRESULT(ref IDataManager self, ResourcePolicy Policy) put_ResourcePolicy;
-				public new function HRESULT(ref IDataManager self, IFolderActionCollection** Actions) get_FolderActions;
-				public new function HRESULT(ref IDataManager self, BSTR* ReportSchema) get_ReportSchema;
-				public new function HRESULT(ref IDataManager self, BSTR ReportSchema) put_ReportSchema;
-				public new function HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_ReportFileName;
-				public new function HRESULT(ref IDataManager self, BSTR pbstrFilename) put_ReportFileName;
-				public new function HRESULT(ref IDataManager self, BSTR* Filename) get_RuleTargetFileName;
-				public new function HRESULT(ref IDataManager self, BSTR Filename) put_RuleTargetFileName;
-				public new function HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_EventsFileName;
-				public new function HRESULT(ref IDataManager self, BSTR pbstrFilename) put_EventsFileName;
-				public new function HRESULT(ref IDataManager self, BSTR* pbstrXml) get_Rules;
-				public new function HRESULT(ref IDataManager self, BSTR bstrXml) put_Rules;
-				public new function HRESULT(ref IDataManager self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
-				public new function HRESULT(ref IDataManager self, BSTR CabFilename, BSTR DestinationPath) Extract;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out int16 pfEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, int16 fEnabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out int16 pfCheck) get_CheckBeforeRunning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, int16 fCheck) put_CheckBeforeRunning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out uint32 MinFreeDisk) get_MinFreeDisk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, uint32 MinFreeDisk) put_MinFreeDisk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out uint32 pulMaxSize) get_MaxSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, uint32 ulMaxSize) put_MaxSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out uint32 pulMaxFolderCount) get_MaxFolderCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, uint32 ulMaxFolderCount) put_MaxFolderCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, out ResourcePolicy pPolicy) get_ResourcePolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, ResourcePolicy Policy) put_ResourcePolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, IFolderActionCollection** Actions) get_FolderActions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* ReportSchema) get_ReportSchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR ReportSchema) put_ReportSchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_ReportFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR pbstrFilename) put_ReportFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* Filename) get_RuleTargetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR Filename) put_RuleTargetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_EventsFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR pbstrFilename) put_EventsFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR* pbstrXml) get_Rules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR bstrXml) put_Rules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataManager self, BSTR CabFilename, BSTR DestinationPath) Extract;
 			}
 		}
 		[CRepr]
@@ -1217,14 +1217,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IFolderAction self, out uint32 pulAge) get_Age;
-				public new function HRESULT(ref IFolderAction self, uint32 ulAge) put_Age;
-				public new function HRESULT(ref IFolderAction self, out uint32 pulAge) get_Size;
-				public new function HRESULT(ref IFolderAction self, uint32 ulAge) put_Size;
-				public new function HRESULT(ref IFolderAction self, out FolderActionSteps Steps) get_Actions;
-				public new function HRESULT(ref IFolderAction self, FolderActionSteps Steps) put_Actions;
-				public new function HRESULT(ref IFolderAction self, BSTR* pbstrDestination) get_SendCabTo;
-				public new function HRESULT(ref IFolderAction self, BSTR bstrDestination) put_SendCabTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, out uint32 pulAge) get_Age;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, uint32 ulAge) put_Age;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, out uint32 pulAge) get_Size;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, uint32 ulAge) put_Size;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, out FolderActionSteps Steps) get_Actions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, FolderActionSteps Steps) put_Actions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, BSTR* pbstrDestination) get_SendCabTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderAction self, BSTR bstrDestination) put_SendCabTo;
 			}
 		}
 		[CRepr]
@@ -1246,14 +1246,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IFolderActionCollection self, out uint32 Count) get_Count;
-				public new function HRESULT(ref IFolderActionCollection self, VARIANT Index, IFolderAction** Action) get_Item;
-				public new function HRESULT(ref IFolderActionCollection self, IUnknown** Enum) get__NewEnum;
-				public new function HRESULT(ref IFolderActionCollection self, IFolderAction* Action) Add;
-				public new function HRESULT(ref IFolderActionCollection self, VARIANT Index) Remove;
-				public new function HRESULT(ref IFolderActionCollection self) Clear;
-				public new function HRESULT(ref IFolderActionCollection self, IFolderActionCollection* Actions) AddRange;
-				public new function HRESULT(ref IFolderActionCollection self, IFolderAction** FolderAction) CreateFolderAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, out uint32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, VARIANT Index, IFolderAction** Action) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IUnknown** Enum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderAction* Action) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, VARIANT Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderActionCollection* Actions) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFolderActionCollection self, IFolderAction** FolderAction) CreateFolderAction;
 			}
 		}
 		[CRepr]
@@ -1292,31 +1292,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDataCollector self, IDataCollectorSet** group) get_DataCollectorSet;
-				public new function HRESULT(ref IDataCollector self, IDataCollectorSet* group) put_DataCollectorSet;
-				public new function HRESULT(ref IDataCollector self, out DataCollectorType type) get_DataCollectorType;
-				public new function HRESULT(ref IDataCollector self, BSTR* name) get_FileName;
-				public new function HRESULT(ref IDataCollector self, BSTR name) put_FileName;
-				public new function HRESULT(ref IDataCollector self, out AutoPathFormat format) get_FileNameFormat;
-				public new function HRESULT(ref IDataCollector self, AutoPathFormat format) put_FileNameFormat;
-				public new function HRESULT(ref IDataCollector self, BSTR* pattern) get_FileNameFormatPattern;
-				public new function HRESULT(ref IDataCollector self, BSTR pattern) put_FileNameFormatPattern;
-				public new function HRESULT(ref IDataCollector self, BSTR* path) get_LatestOutputLocation;
-				public new function HRESULT(ref IDataCollector self, BSTR path) put_LatestOutputLocation;
-				public new function HRESULT(ref IDataCollector self, out int16 @append) get_LogAppend;
-				public new function HRESULT(ref IDataCollector self, int16 @append) put_LogAppend;
-				public new function HRESULT(ref IDataCollector self, out int16 circular) get_LogCircular;
-				public new function HRESULT(ref IDataCollector self, int16 circular) put_LogCircular;
-				public new function HRESULT(ref IDataCollector self, out int16 overwrite) get_LogOverwrite;
-				public new function HRESULT(ref IDataCollector self, int16 overwrite) put_LogOverwrite;
-				public new function HRESULT(ref IDataCollector self, BSTR* name) get_Name;
-				public new function HRESULT(ref IDataCollector self, BSTR name) put_Name;
-				public new function HRESULT(ref IDataCollector self, BSTR* path) get_OutputLocation;
-				public new function HRESULT(ref IDataCollector self, out int32 index) get_Index;
-				public new function HRESULT(ref IDataCollector self, int32 index) put_Index;
-				public new function HRESULT(ref IDataCollector self, BSTR* Xml) get_Xml;
-				public new function HRESULT(ref IDataCollector self, BSTR Xml, IValueMap** Validation) SetXml;
-				public new function HRESULT(ref IDataCollector self, int16 Latest, BSTR* Location) CreateOutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, IDataCollectorSet** group) get_DataCollectorSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, IDataCollectorSet* group) put_DataCollectorSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out DataCollectorType type) get_DataCollectorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* name) get_FileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR name) put_FileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out AutoPathFormat format) get_FileNameFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, AutoPathFormat format) put_FileNameFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* pattern) get_FileNameFormatPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR pattern) put_FileNameFormatPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* path) get_LatestOutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR path) put_LatestOutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int16 @append) get_LogAppend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 @append) put_LogAppend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int16 circular) get_LogCircular;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 circular) put_LogCircular;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int16 overwrite) get_LogOverwrite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 overwrite) put_LogOverwrite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* path) get_OutputLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, out int32 index) get_Index;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int32 index) put_Index;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR* Xml) get_Xml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, BSTR Xml, IValueMap** Validation) SetXml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollector self, int16 Latest, BSTR* Location) CreateOutputLocation;
 			}
 		}
 		[CRepr]
@@ -1340,16 +1340,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, BSTR* dsn) get_DataSourceName;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, BSTR dsn) put_DataSourceName;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, SAFEARRAY** counters) get_PerformanceCounters;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, ref SAFEARRAY counters) put_PerformanceCounters;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, out FileFormat format) get_LogFileFormat;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, FileFormat format) put_LogFileFormat;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, out uint32 interval) get_SampleInterval;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, uint32 interval) put_SampleInterval;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, out uint32 records) get_SegmentMaxRecords;
-				public new function HRESULT(ref IPerformanceCounterDataCollector self, uint32 records) put_SegmentMaxRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, BSTR* dsn) get_DataSourceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, BSTR dsn) put_DataSourceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, SAFEARRAY** counters) get_PerformanceCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, ref SAFEARRAY counters) put_PerformanceCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out FileFormat format) get_LogFileFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, FileFormat format) put_LogFileFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out uint32 interval) get_SampleInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, uint32 interval) put_SampleInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, out uint32 records) get_SegmentMaxRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerformanceCounterDataCollector self, uint32 records) put_SegmentMaxRecords;
 			}
 		}
 		[CRepr]
@@ -1403,46 +1403,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 size) get_BufferSize;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 size) put_BufferSize;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersLost;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersLost;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersWritten;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersWritten;
-				public new function HRESULT(ref ITraceDataCollector self, out ClockType clock) get_ClockType;
-				public new function HRESULT(ref ITraceDataCollector self, ClockType clock) put_ClockType;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 events) get_EventsLost;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 events) put_EventsLost;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 mode) get_ExtendedModes;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 mode) put_ExtendedModes;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 seconds) get_FlushTimer;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 seconds) put_FlushTimer;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_FreeBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_FreeBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, out Guid guid) get_Guid;
-				public new function HRESULT(ref ITraceDataCollector self, Guid guid) put_Guid;
-				public new function HRESULT(ref ITraceDataCollector self, out int16 kernel) get_IsKernelTrace;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MaximumBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MaximumBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MinimumBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MinimumBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_NumberOfBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_NumberOfBuffers;
-				public new function HRESULT(ref ITraceDataCollector self, out int16 allocate) get_PreallocateFile;
-				public new function HRESULT(ref ITraceDataCollector self, int16 allocate) put_PreallocateFile;
-				public new function HRESULT(ref ITraceDataCollector self, out int16 process) get_ProcessMode;
-				public new function HRESULT(ref ITraceDataCollector self, int16 process) put_ProcessMode;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_RealTimeBuffersLost;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_RealTimeBuffersLost;
-				public new function HRESULT(ref ITraceDataCollector self, out uint64 id) get_SessionId;
-				public new function HRESULT(ref ITraceDataCollector self, uint64 id) put_SessionId;
-				public new function HRESULT(ref ITraceDataCollector self, BSTR* name) get_SessionName;
-				public new function HRESULT(ref ITraceDataCollector self, BSTR name) put_SessionName;
-				public new function HRESULT(ref ITraceDataCollector self, out uint32 tid) get_SessionThreadId;
-				public new function HRESULT(ref ITraceDataCollector self, uint32 tid) put_SessionThreadId;
-				public new function HRESULT(ref ITraceDataCollector self, out StreamMode mode) get_StreamMode;
-				public new function HRESULT(ref ITraceDataCollector self, StreamMode mode) put_StreamMode;
-				public new function HRESULT(ref ITraceDataCollector self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 size) get_BufferSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 size) put_BufferSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersWritten;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersWritten;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out ClockType clock) get_ClockType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, ClockType clock) put_ClockType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 events) get_EventsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 events) put_EventsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 mode) get_ExtendedModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 mode) put_ExtendedModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 seconds) get_FlushTimer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 seconds) put_FlushTimer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_FreeBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_FreeBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out Guid guid) get_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, Guid guid) put_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out int16 kernel) get_IsKernelTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MaximumBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MaximumBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MinimumBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MinimumBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_NumberOfBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_NumberOfBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out int16 allocate) get_PreallocateFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, int16 allocate) put_PreallocateFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out int16 process) get_ProcessMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, int16 process) put_ProcessMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_RealTimeBuffersLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 buffers) put_RealTimeBuffersLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint64 id) get_SessionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint64 id) put_SessionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, BSTR* name) get_SessionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, BSTR name) put_SessionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out uint32 tid) get_SessionThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, uint32 tid) put_SessionThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, out StreamMode mode) get_StreamMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, StreamMode mode) put_StreamMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataCollector self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
 			}
 		}
 		[CRepr]
@@ -1474,24 +1474,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 count) get_FileMaxCount;
-				public new function HRESULT(ref IConfigurationDataCollector self, uint32 count) put_FileMaxCount;
-				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_FileMaxRecursiveDepth;
-				public new function HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_FileMaxRecursiveDepth;
-				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 size) get_FileMaxTotalSize;
-				public new function HRESULT(ref IConfigurationDataCollector self, uint32 size) put_FileMaxTotalSize;
-				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Files) get_Files;
-				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Files) put_Files;
-				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Queries) get_ManagementQueries;
-				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Queries) put_ManagementQueries;
-				public new function HRESULT(ref IConfigurationDataCollector self, out int16 network) get_QueryNetworkAdapters;
-				public new function HRESULT(ref IConfigurationDataCollector self, int16 network) put_QueryNetworkAdapters;
-				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** query) get_RegistryKeys;
-				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY query) put_RegistryKeys;
-				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_RegistryMaxRecursiveDepth;
-				public new function HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_RegistryMaxRecursiveDepth;
-				public new function HRESULT(ref IConfigurationDataCollector self, BSTR* FileName) get_SystemStateFile;
-				public new function HRESULT(ref IConfigurationDataCollector self, BSTR FileName) put_SystemStateFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 count) get_FileMaxCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 count) put_FileMaxCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_FileMaxRecursiveDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_FileMaxRecursiveDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 size) get_FileMaxTotalSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 size) put_FileMaxTotalSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Files) get_Files;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Files) put_Files;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Queries) get_ManagementQueries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Queries) put_ManagementQueries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out int16 network) get_QueryNetworkAdapters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, int16 network) put_QueryNetworkAdapters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** query) get_RegistryKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY query) put_RegistryKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_RegistryMaxRecursiveDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_RegistryMaxRecursiveDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, BSTR* FileName) get_SystemStateFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigurationDataCollector self, BSTR FileName) put_SystemStateFile;
 			}
 		}
 		[CRepr]
@@ -1521,22 +1521,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ref IAlertDataCollector self, SAFEARRAY** alerts) get_AlertThresholds;
-				public new function HRESULT(ref IAlertDataCollector self, ref SAFEARRAY alerts) put_AlertThresholds;
-				public new function HRESULT(ref IAlertDataCollector self, out int16 log) get_EventLog;
-				public new function HRESULT(ref IAlertDataCollector self, int16 log) put_EventLog;
-				public new function HRESULT(ref IAlertDataCollector self, out uint32 interval) get_SampleInterval;
-				public new function HRESULT(ref IAlertDataCollector self, uint32 interval) put_SampleInterval;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_Task;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_Task;
-				public new function HRESULT(ref IAlertDataCollector self, out int16 RunAsSelf) get_TaskRunAsSelf;
-				public new function HRESULT(ref IAlertDataCollector self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskArguments;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskArguments;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskUserTextArguments;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskUserTextArguments;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR* name) get_TriggerDataCollectorSet;
-				public new function HRESULT(ref IAlertDataCollector self, BSTR name) put_TriggerDataCollectorSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, SAFEARRAY** alerts) get_AlertThresholds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, ref SAFEARRAY alerts) put_AlertThresholds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out int16 log) get_EventLog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, int16 log) put_EventLog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out uint32 interval) get_SampleInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, uint32 interval) put_SampleInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_Task;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_Task;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, out int16 RunAsSelf) get_TaskRunAsSelf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskUserTextArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskUserTextArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR* name) get_TriggerDataCollectorSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlertDataCollector self, BSTR name) put_TriggerDataCollectorSet;
 			}
 		}
 		[CRepr]
@@ -1564,20 +1564,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ref IApiTracingDataCollector self, out int16 logapinames) get_LogApiNamesOnly;
-				public new function HRESULT(ref IApiTracingDataCollector self, int16 logapinames) put_LogApiNamesOnly;
-				public new function HRESULT(ref IApiTracingDataCollector self, out int16 logrecursively) get_LogApisRecursively;
-				public new function HRESULT(ref IApiTracingDataCollector self, int16 logrecursively) put_LogApisRecursively;
-				public new function HRESULT(ref IApiTracingDataCollector self, BSTR* exepath) get_ExePath;
-				public new function HRESULT(ref IApiTracingDataCollector self, BSTR exepath) put_ExePath;
-				public new function HRESULT(ref IApiTracingDataCollector self, BSTR* logfilepath) get_LogFilePath;
-				public new function HRESULT(ref IApiTracingDataCollector self, BSTR logfilepath) put_LogFilePath;
-				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includemodules) get_IncludeModules;
-				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includemodules) put_IncludeModules;
-				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includeapis) get_IncludeApis;
-				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includeapis) put_IncludeApis;
-				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** excludeapis) get_ExcludeApis;
-				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY excludeapis) put_ExcludeApis;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out int16 logapinames) get_LogApiNamesOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, int16 logapinames) put_LogApiNamesOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, out int16 logrecursively) get_LogApisRecursively;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, int16 logrecursively) put_LogApisRecursively;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR* exepath) get_ExePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR exepath) put_ExePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR* logfilepath) get_LogFilePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, BSTR logfilepath) put_LogFilePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includemodules) get_IncludeModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includemodules) put_IncludeModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includeapis) get_IncludeApis;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includeapis) put_IncludeApis;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** excludeapis) get_ExcludeApis;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY excludeapis) put_ExcludeApis;
 			}
 		}
 		[CRepr]
@@ -1600,15 +1600,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDataCollectorCollection self, out int32 retVal) get_Count;
-				public new function HRESULT(ref IDataCollectorCollection self, VARIANT index, IDataCollector** collector) get_Item;
-				public new function HRESULT(ref IDataCollectorCollection self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(ref IDataCollectorCollection self, IDataCollector* collector) Add;
-				public new function HRESULT(ref IDataCollectorCollection self, VARIANT collector) Remove;
-				public new function HRESULT(ref IDataCollectorCollection self) Clear;
-				public new function HRESULT(ref IDataCollectorCollection self, IDataCollectorCollection* collectors) AddRange;
-				public new function HRESULT(ref IDataCollectorCollection self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
-				public new function HRESULT(ref IDataCollectorCollection self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, out int32 retVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, VARIANT index, IDataCollector** collector) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IUnknown** retVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IDataCollector* collector) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, VARIANT collector) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, IDataCollectorCollection* collectors) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorCollection self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
 			}
 		}
 		[CRepr]
@@ -1630,14 +1630,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDataCollectorSetCollection self, out int32 retVal) get_Count;
-				public new function HRESULT(ref IDataCollectorSetCollection self, VARIANT index, IDataCollectorSet** set) get_Item;
-				public new function HRESULT(ref IDataCollectorSetCollection self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSet* set) Add;
-				public new function HRESULT(ref IDataCollectorSetCollection self, VARIANT set) Remove;
-				public new function HRESULT(ref IDataCollectorSetCollection self) Clear;
-				public new function HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSetCollection* sets) AddRange;
-				public new function HRESULT(ref IDataCollectorSetCollection self, BSTR server, BSTR filter) GetDataCollectorSets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, out int32 retVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, VARIANT index, IDataCollectorSet** set) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, IUnknown** retVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSet* set) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, VARIANT set) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSetCollection* sets) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataCollectorSetCollection self, BSTR server, BSTR filter) GetDataCollectorSets;
 			}
 		}
 		[CRepr]
@@ -1670,25 +1670,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITraceDataProvider self, BSTR* name) get_DisplayName;
-				public new function HRESULT(ref ITraceDataProvider self, BSTR name) put_DisplayName;
-				public new function HRESULT(ref ITraceDataProvider self, out Guid guid) get_Guid;
-				public new function HRESULT(ref ITraceDataProvider self, Guid guid) put_Guid;
-				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppLevel) get_Level;
-				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAny;
-				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAll;
-				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppProperties) get_Properties;
-				public new function HRESULT(ref ITraceDataProvider self, out int16 FilterEnabled) get_FilterEnabled;
-				public new function HRESULT(ref ITraceDataProvider self, int16 FilterEnabled) put_FilterEnabled;
-				public new function HRESULT(ref ITraceDataProvider self, out uint32 pulType) get_FilterType;
-				public new function HRESULT(ref ITraceDataProvider self, uint32 ulType) put_FilterType;
-				public new function HRESULT(ref ITraceDataProvider self, SAFEARRAY** ppData) get_FilterData;
-				public new function HRESULT(ref ITraceDataProvider self, ref SAFEARRAY pData) put_FilterData;
-				public new function HRESULT(ref ITraceDataProvider self, BSTR bstrName, BSTR bstrServer) Query;
-				public new function HRESULT(ref ITraceDataProvider self, IDispatch* pFrom) Resolve;
-				public new function HRESULT(ref ITraceDataProvider self, BSTR Sddl) SetSecurity;
-				public new function HRESULT(ref ITraceDataProvider self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
-				public new function HRESULT(ref ITraceDataProvider self, IValueMap** Processes) GetRegisteredProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR* name) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR name) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out Guid guid) get_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, Guid guid) put_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppLevel) get_Level;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAny;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** ppProperties) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out int16 FilterEnabled) get_FilterEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, int16 FilterEnabled) put_FilterEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, out uint32 pulType) get_FilterType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, uint32 ulType) put_FilterType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, SAFEARRAY** ppData) get_FilterData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, ref SAFEARRAY pData) put_FilterData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR bstrName, BSTR bstrServer) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IDispatch* pFrom) Resolve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, BSTR Sddl) SetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProvider self, IValueMap** Processes) GetRegisteredProcesses;
 			}
 		}
 		[CRepr]
@@ -1712,16 +1712,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITraceDataProviderCollection self, out int32 retVal) get_Count;
-				public new function HRESULT(ref ITraceDataProviderCollection self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
-				public new function HRESULT(ref ITraceDataProviderCollection self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider* pProvider) Add;
-				public new function HRESULT(ref ITraceDataProviderCollection self, VARIANT vProvider) Remove;
-				public new function HRESULT(ref ITraceDataProviderCollection self) Clear;
-				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProviderCollection* providers) AddRange;
-				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider** Provider) CreateTraceDataProvider;
-				public new function HRESULT(ref ITraceDataProviderCollection self, BSTR server) GetTraceDataProviders;
-				public new function HRESULT(ref ITraceDataProviderCollection self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, out int32 retVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, IUnknown** retVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider* pProvider) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, VARIANT vProvider) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProviderCollection* providers) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider** Provider) CreateTraceDataProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, BSTR server) GetTraceDataProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceDataProviderCollection self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
 			}
 		}
 		[CRepr]
@@ -1743,14 +1743,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISchedule self, out VARIANT start) get_StartDate;
-				public new function HRESULT(ref ISchedule self, VARIANT start) put_StartDate;
-				public new function HRESULT(ref ISchedule self, out VARIANT end) get_EndDate;
-				public new function HRESULT(ref ISchedule self, VARIANT end) put_EndDate;
-				public new function HRESULT(ref ISchedule self, out VARIANT start) get_StartTime;
-				public new function HRESULT(ref ISchedule self, VARIANT start) put_StartTime;
-				public new function HRESULT(ref ISchedule self, out WeekDays days) get_Days;
-				public new function HRESULT(ref ISchedule self, WeekDays days) put_Days;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, out VARIANT start) get_StartDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, VARIANT start) put_StartDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, out VARIANT end) get_EndDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, VARIANT end) put_EndDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, out VARIANT start) get_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, VARIANT start) put_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, out WeekDays days) get_Days;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchedule self, WeekDays days) put_Days;
 			}
 		}
 		[CRepr]
@@ -1772,14 +1772,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IScheduleCollection self, out int32 retVal) get_Count;
-				public new function HRESULT(ref IScheduleCollection self, VARIANT index, ISchedule** ppSchedule) get_Item;
-				public new function HRESULT(ref IScheduleCollection self, IUnknown** ienum) get__NewEnum;
-				public new function HRESULT(ref IScheduleCollection self, ISchedule* pSchedule) Add;
-				public new function HRESULT(ref IScheduleCollection self, VARIANT vSchedule) Remove;
-				public new function HRESULT(ref IScheduleCollection self) Clear;
-				public new function HRESULT(ref IScheduleCollection self, IScheduleCollection* pSchedules) AddRange;
-				public new function HRESULT(ref IScheduleCollection self, ISchedule** Schedule) CreateSchedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, out int32 retVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, VARIANT index, ISchedule** ppSchedule) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, IUnknown** ienum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, ISchedule* pSchedule) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, VARIANT vSchedule) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, IScheduleCollection* pSchedules) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduleCollection self, ISchedule** Schedule) CreateSchedule;
 			}
 		}
 		[CRepr]
@@ -1803,16 +1803,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IValueMapItem self, BSTR* description) get_Description;
-				public new function HRESULT(ref IValueMapItem self, BSTR description) put_Description;
-				public new function HRESULT(ref IValueMapItem self, out int16 enabled) get_Enabled;
-				public new function HRESULT(ref IValueMapItem self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref IValueMapItem self, BSTR* key) get_Key;
-				public new function HRESULT(ref IValueMapItem self, BSTR key) put_Key;
-				public new function HRESULT(ref IValueMapItem self, out VARIANT Value) get_Value;
-				public new function HRESULT(ref IValueMapItem self, VARIANT Value) put_Value;
-				public new function HRESULT(ref IValueMapItem self, out ValueMapType type) get_ValueMapType;
-				public new function HRESULT(ref IValueMapItem self, ValueMapType type) put_ValueMapType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR* description) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR description) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out int16 enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR* key) get_Key;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, BSTR key) put_Key;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out VARIANT Value) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, VARIANT Value) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, out ValueMapType type) get_ValueMapType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMapItem self, ValueMapType type) put_ValueMapType;
 			}
 		}
 		[CRepr]
@@ -1840,20 +1840,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IValueMap self, out int32 retVal) get_Count;
-				public new function HRESULT(ref IValueMap self, VARIANT index, IValueMapItem** value) get_Item;
-				public new function HRESULT(ref IValueMap self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(ref IValueMap self, BSTR* description) get_Description;
-				public new function HRESULT(ref IValueMap self, BSTR description) put_Description;
-				public new function HRESULT(ref IValueMap self, out VARIANT Value) get_Value;
-				public new function HRESULT(ref IValueMap self, VARIANT Value) put_Value;
-				public new function HRESULT(ref IValueMap self, out ValueMapType type) get_ValueMapType;
-				public new function HRESULT(ref IValueMap self, ValueMapType type) put_ValueMapType;
-				public new function HRESULT(ref IValueMap self, VARIANT value) Add;
-				public new function HRESULT(ref IValueMap self, VARIANT value) Remove;
-				public new function HRESULT(ref IValueMap self) Clear;
-				public new function HRESULT(ref IValueMap self, IValueMap* map) AddRange;
-				public new function HRESULT(ref IValueMap self, IValueMapItem** Item) CreateValueMapItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out int32 retVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT index, IValueMapItem** value) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IUnknown** retVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, BSTR* description) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, BSTR description) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out VARIANT Value) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT Value) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, out ValueMapType type) get_ValueMapType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, ValueMapType type) put_ValueMapType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT value) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, VARIANT value) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IValueMap* map) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValueMap self, IValueMapItem** Item) CreateValueMapItem;
 			}
 		}
 		[CRepr]
@@ -1879,18 +1879,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICounterItem self, out double pdblValue) get_Value;
-				public new function HRESULT(ref ICounterItem self, uint32 Color) put_Color;
-				public new function HRESULT(ref ICounterItem self, out uint32 pColor) get_Color;
-				public new function HRESULT(ref ICounterItem self, int32 iWidth) put_Width;
-				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_Width;
-				public new function HRESULT(ref ICounterItem self, int32 iLineStyle) put_LineStyle;
-				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_LineStyle;
-				public new function HRESULT(ref ICounterItem self, int32 iScale) put_ScaleFactor;
-				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_ScaleFactor;
-				public new function HRESULT(ref ICounterItem self, BSTR* pstrValue) get_Path;
-				public new function HRESULT(ref ICounterItem self, out double Value, out int32 Status) GetValue;
-				public new function HRESULT(ref ICounterItem self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out double pdblValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, uint32 Color) put_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out uint32 pColor) get_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, int32 iWidth) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out int32 piValue) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, int32 iLineStyle) put_LineStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out int32 piValue) get_LineStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, int32 iScale) put_ScaleFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out int32 piValue) get_ScaleFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, BSTR* pstrValue) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out double Value, out int32 Status) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
 			}
 		}
 		[CRepr]
@@ -1909,11 +1909,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICounterItem.VTable
 			{
-				public new function HRESULT(ref ICounterItem2 self, int16 bState) put_Selected;
-				public new function HRESULT(ref ICounterItem2 self, out int16 pbState) get_Selected;
-				public new function HRESULT(ref ICounterItem2 self, int16 bState) put_Visible;
-				public new function HRESULT(ref ICounterItem2 self, out int16 pbState) get_Visible;
-				public new function HRESULT(ref ICounterItem2 self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem2 self, int16 bState) put_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem2 self, out int16 pbState) get_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem2 self, int16 bState) put_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem2 self, out int16 pbState) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounterItem2 self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -1944,23 +1944,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref _ICounterItemUnion self, out double pdblValue) get_Value;
-				public new function HRESULT(ref _ICounterItemUnion self, uint32 Color) put_Color;
-				public new function HRESULT(ref _ICounterItemUnion self, out uint32 pColor) get_Color;
-				public new function HRESULT(ref _ICounterItemUnion self, int32 iWidth) put_Width;
-				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_Width;
-				public new function HRESULT(ref _ICounterItemUnion self, int32 iLineStyle) put_LineStyle;
-				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_LineStyle;
-				public new function HRESULT(ref _ICounterItemUnion self, int32 iScale) put_ScaleFactor;
-				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_ScaleFactor;
-				public new function HRESULT(ref _ICounterItemUnion self, BSTR* pstrValue) get_Path;
-				public new function HRESULT(ref _ICounterItemUnion self, out double Value, out int32 Status) GetValue;
-				public new function HRESULT(ref _ICounterItemUnion self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
-				public new function HRESULT(ref _ICounterItemUnion self, int16 bState) put_Selected;
-				public new function HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Selected;
-				public new function HRESULT(ref _ICounterItemUnion self, int16 bState) put_Visible;
-				public new function HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Visible;
-				public new function HRESULT(ref _ICounterItemUnion self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out double pdblValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, uint32 Color) put_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out uint32 pColor) get_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int32 iWidth) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int32 iLineStyle) put_LineStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_LineStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int32 iScale) put_ScaleFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_ScaleFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, BSTR* pstrValue) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out double Value, out int32 Status) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int16 bState) put_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int16 bState) put_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ICounterItemUnion self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -1992,11 +1992,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICounters self, out int32 pLong) get_Count;
-				public new function HRESULT(ref ICounters self, IUnknown** ppIunk) get__NewEnum;
-				public new function HRESULT(ref ICounters self, VARIANT index, DICounterItem** ppI) get_Item;
-				public new function HRESULT(ref ICounters self, BSTR pathname, DICounterItem** ppI) Add;
-				public new function HRESULT(ref ICounters self, VARIANT index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, out int32 pLong) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, IUnknown** ppIunk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, VARIANT index, DICounterItem** ppI) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, BSTR pathname, DICounterItem** ppI) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICounters self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -2011,7 +2011,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILogFileItem self, BSTR* pstrValue) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFileItem self, BSTR* pstrValue) get_Path;
 			}
 		}
 		[CRepr]
@@ -2043,11 +2043,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ILogFiles self, out int32 pLong) get_Count;
-				public new function HRESULT(ref ILogFiles self, IUnknown** ppIunk) get__NewEnum;
-				public new function HRESULT(ref ILogFiles self, VARIANT index, DILogFileItem** ppI) get_Item;
-				public new function HRESULT(ref ILogFiles self, BSTR pathname, DILogFileItem** ppI) Add;
-				public new function HRESULT(ref ILogFiles self, VARIANT index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, out int32 pLong) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, IUnknown** ppIunk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, VARIANT index, DILogFileItem** ppI) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, BSTR pathname, DILogFileItem** ppI) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogFiles self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -2137,82 +2137,82 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISystemMonitor self, out int32 iAppearance) get_Appearance;
-				public new function HRESULT(ref ISystemMonitor self, int32 iAppearance) put_Appearance;
-				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColor;
-				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColor;
-				public new function HRESULT(ref ISystemMonitor self, out int32 iBorderStyle) get_BorderStyle;
-				public new function HRESULT(ref ISystemMonitor self, int32 iBorderStyle) put_BorderStyle;
-				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_ForeColor;
-				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_ForeColor;
-				public new function HRESULT(ref ISystemMonitor self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(ref ISystemMonitor self, IFontDisp* pFont) putref_Font;
-				public new function HRESULT(ref ISystemMonitor self, ICounters** ppICounters) get_Counters;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowVerticalGrid;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowVerticalGrid;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowHorizontalGrid;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowHorizontalGrid;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowLegend;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowLegend;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowScaleLabels;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowScaleLabels;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowValueBar;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowValueBar;
-				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_MaximumScale;
-				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_MaximumScale;
-				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_MinimumScale;
-				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_MinimumScale;
-				public new function HRESULT(ref ISystemMonitor self, float fValue) put_UpdateInterval;
-				public new function HRESULT(ref ISystemMonitor self, out float pfValue) get_UpdateInterval;
-				public new function HRESULT(ref ISystemMonitor self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public new function HRESULT(ref ISystemMonitor self, out DisplayTypeConstants peDisplayType) get_DisplayType;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ManualUpdate;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ManualUpdate;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_GraphTitle;
-				public new function HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_GraphTitle;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_YAxisLabel;
-				public new function HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_YAxisLabel;
-				public new function HRESULT(ref ISystemMonitor self) CollectSample;
-				public new function HRESULT(ref ISystemMonitor self) UpdateGraph;
-				public new function HRESULT(ref ISystemMonitor self) BrowseCounters;
-				public new function HRESULT(ref ISystemMonitor self) DisplayProperties;
-				public new function HRESULT(ref ISystemMonitor self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public new function HRESULT(ref ISystemMonitor self, ICounterItem* pCtr) DeleteCounter;
-				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColorCtl;
-				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColorCtl;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsFileName) put_LogFileName;
-				public new function HRESULT(ref ISystemMonitor self, BSTR* bsFileName) get_LogFileName;
-				public new function HRESULT(ref ISystemMonitor self, double StartTime) put_LogViewStart;
-				public new function HRESULT(ref ISystemMonitor self, out double StartTime) get_LogViewStart;
-				public new function HRESULT(ref ISystemMonitor self, double StopTime) put_LogViewStop;
-				public new function HRESULT(ref ISystemMonitor self, out double StopTime) get_LogViewStop;
-				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_GridColor;
-				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_GridColor;
-				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_TimeBarColor;
-				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_TimeBarColor;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_Highlight;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_Highlight;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowToolbar;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowToolbar;
-				public new function HRESULT(ref ISystemMonitor self) Paste;
-				public new function HRESULT(ref ISystemMonitor self) Copy;
-				public new function HRESULT(ref ISystemMonitor self) Reset;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ReadOnly;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ReadOnly;
-				public new function HRESULT(ref ISystemMonitor self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public new function HRESULT(ref ISystemMonitor self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
-				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_MonitorDuplicateInstances;
-				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_MonitorDuplicateInstances;
-				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_DisplayFilter;
-				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_DisplayFilter;
-				public new function HRESULT(ref ISystemMonitor self, ILogFiles** ppILogFiles) get_LogFiles;
-				public new function HRESULT(ref ISystemMonitor self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public new function HRESULT(ref ISystemMonitor self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public new function HRESULT(ref ISystemMonitor self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public new function HRESULT(ref ISystemMonitor self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public new function HRESULT(ref ISystemMonitor self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 iAppearance) get_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iAppearance) put_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 iBorderStyle) get_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iBorderStyle) put_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_ForeColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_ForeColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, IFontDisp** ppFont) get_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, IFontDisp* pFont) putref_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ICounters** ppICounters) get_Counters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowVerticalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowVerticalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowHorizontalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowHorizontalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowLegend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowLegend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowScaleLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowScaleLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowValueBar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowValueBar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iValue) put_MaximumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 piValue) get_MaximumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iValue) put_MinimumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 piValue) get_MinimumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, float fValue) put_UpdateInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out float pfValue) get_UpdateInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out DisplayTypeConstants peDisplayType) get_DisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ManualUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ManualUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_GraphTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_GraphTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_YAxisLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) CollectSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) UpdateGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) BrowseCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) DisplayProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ICounterItem* pCtr) DeleteCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColorCtl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColorCtl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsFileName) put_LogFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsFileName) get_LogFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, double StartTime) put_LogViewStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out double StartTime) get_LogViewStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, double StopTime) put_LogViewStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out double StopTime) get_LogViewStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_GridColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_GridColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out uint32 pColor) get_TimeBarColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, uint32 Color) put_TimeBarColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_Highlight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_Highlight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowToolbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ShowToolbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) Paste;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int16 bState) put_MonitorDuplicateInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int16 pbState) get_MonitorDuplicateInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, int32 iValue) put_DisplayFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out int32 piValue) get_DisplayFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
 			}
 		}
 		[CRepr]
@@ -2246,26 +2246,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISystemMonitor.VTable
 			{
-				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableDigitGrouping;
-				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableDigitGrouping;
-				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableToolTips;
-				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableToolTips;
-				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_ShowTimeAxisLabels;
-				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_ShowTimeAxisLabels;
-				public new function HRESULT(ref ISystemMonitor2 self, int16 bScroll) put_ChartScroll;
-				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbScroll) get_ChartScroll;
-				public new function HRESULT(ref ISystemMonitor2 self, int32 iNewCount) put_DataPointCount;
-				public new function HRESULT(ref ISystemMonitor2 self, out int32 piDataPointCount) get_DataPointCount;
-				public new function HRESULT(ref ISystemMonitor2 self, int16 bSelectedCountersOnly) ScaleToFit;
-				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public new function HRESULT(ref ISystemMonitor2 self) ClearData;
-				public new function HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStartTime;
-				public new function HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStopTime;
-				public new function HRESULT(ref ISystemMonitor2 self, double StartTime, double StopTime) SetLogViewRange;
-				public new function HRESULT(ref ISystemMonitor2 self, out double StartTime, out double StopTime) GetLogViewRange;
-				public new function HRESULT(ref ISystemMonitor2 self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrSettingFileName) LoadSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableDigitGrouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableDigitGrouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableToolTips;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableToolTips;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 bState) put_ShowTimeAxisLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_ShowTimeAxisLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 bScroll) put_ChartScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out int16 pbScroll) get_ChartScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int32 iNewCount) put_DataPointCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out int32 piDataPointCount) get_DataPointCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self) ClearData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, double StartTime, double StopTime) SetLogViewRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, out double StartTime, out double StopTime) GetLogViewRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMonitor2 self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -2375,102 +2375,102 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 iAppearance) get_Appearance;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iAppearance) put_Appearance;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 iBorderStyle) get_BorderStyle;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iBorderStyle) put_BorderStyle;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_ForeColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_ForeColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(ref _ISystemMonitorUnion self, IFontDisp* pFont) putref_Font;
-				public new function HRESULT(ref _ISystemMonitorUnion self, ICounters** ppICounters) get_Counters;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowVerticalGrid;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowVerticalGrid;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowHorizontalGrid;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowHorizontalGrid;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowLegend;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowLegend;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowScaleLabels;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowScaleLabels;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowValueBar;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowValueBar;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MaximumScale;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MaximumScale;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MinimumScale;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MinimumScale;
-				public new function HRESULT(ref _ISystemMonitorUnion self, float fValue) put_UpdateInterval;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out float pfValue) get_UpdateInterval;
-				public new function HRESULT(ref _ISystemMonitorUnion self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out DisplayTypeConstants peDisplayType) get_DisplayType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ManualUpdate;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ManualUpdate;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_GraphTitle;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_GraphTitle;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_YAxisLabel;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_YAxisLabel;
-				public new function HRESULT(ref _ISystemMonitorUnion self) CollectSample;
-				public new function HRESULT(ref _ISystemMonitorUnion self) UpdateGraph;
-				public new function HRESULT(ref _ISystemMonitorUnion self) BrowseCounters;
-				public new function HRESULT(ref _ISystemMonitorUnion self) DisplayProperties;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public new function HRESULT(ref _ISystemMonitorUnion self, ICounterItem* pCtr) DeleteCounter;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColorCtl;
-				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColorCtl;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsFileName) put_LogFileName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsFileName) get_LogFileName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, double StartTime) put_LogViewStart;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out double StartTime) get_LogViewStart;
-				public new function HRESULT(ref _ISystemMonitorUnion self, double StopTime) put_LogViewStop;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out double StopTime) get_LogViewStop;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_GridColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_GridColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_TimeBarColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_TimeBarColor;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_Highlight;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_Highlight;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowToolbar;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowToolbar;
-				public new function HRESULT(ref _ISystemMonitorUnion self) Paste;
-				public new function HRESULT(ref _ISystemMonitorUnion self) Copy;
-				public new function HRESULT(ref _ISystemMonitorUnion self) Reset;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ReadOnly;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ReadOnly;
-				public new function HRESULT(ref _ISystemMonitorUnion self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_MonitorDuplicateInstances;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_MonitorDuplicateInstances;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_DisplayFilter;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_DisplayFilter;
-				public new function HRESULT(ref _ISystemMonitorUnion self, ILogFiles** ppILogFiles) get_LogFiles;
-				public new function HRESULT(ref _ISystemMonitorUnion self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableDigitGrouping;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableDigitGrouping;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableToolTips;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableToolTips;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowTimeAxisLabels;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowTimeAxisLabels;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bScroll) put_ChartScroll;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbScroll) get_ChartScroll;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iNewCount) put_DataPointCount;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piDataPointCount) get_DataPointCount;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bSelectedCountersOnly) ScaleToFit;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public new function HRESULT(ref _ISystemMonitorUnion self) ClearData;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStartTime;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStopTime;
-				public new function HRESULT(ref _ISystemMonitorUnion self, double StartTime, double StopTime) SetLogViewRange;
-				public new function HRESULT(ref _ISystemMonitorUnion self, out double StartTime, out double StopTime) GetLogViewRange;
-				public new function HRESULT(ref _ISystemMonitorUnion self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrSettingFileName) LoadSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 iAppearance) get_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iAppearance) put_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 iBorderStyle) get_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iBorderStyle) put_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_ForeColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_ForeColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, IFontDisp** ppFont) get_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, IFontDisp* pFont) putref_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ICounters** ppICounters) get_Counters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowVerticalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowVerticalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowHorizontalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowHorizontalGrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowLegend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowLegend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowScaleLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowScaleLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowValueBar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowValueBar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MaximumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MaximumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MinimumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MinimumScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, float fValue) put_UpdateInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out float pfValue) get_UpdateInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out DisplayTypeConstants peDisplayType) get_DisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ManualUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ManualUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_GraphTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_GraphTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_YAxisLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) CollectSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) UpdateGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) BrowseCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) DisplayProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ICounterItem* pCtr) DeleteCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColorCtl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColorCtl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsFileName) put_LogFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsFileName) get_LogFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, double StartTime) put_LogViewStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double StartTime) get_LogViewStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, double StopTime) put_LogViewStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double StopTime) get_LogViewStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_GridColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_GridColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_TimeBarColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_TimeBarColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_Highlight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_Highlight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowToolbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowToolbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) Paste;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_MonitorDuplicateInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_MonitorDuplicateInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_DisplayFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_DisplayFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableDigitGrouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableDigitGrouping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableToolTips;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableToolTips;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowTimeAxisLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowTimeAxisLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bScroll) put_ChartScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int16 pbScroll) get_ChartScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int32 iNewCount) put_DataPointCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out int32 piDataPointCount) get_DataPointCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self) ClearData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, double StartTime, double StopTime) SetLogViewRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, out double StartTime, out double StopTime) GetLogViewRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _ISystemMonitorUnion self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -2515,11 +2515,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterSelected;
-				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterAdded;
-				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterDeleted;
-				public new function void(ref ISystemMonitorEvents self) OnSampleCollected;
-				public new function void(ref ISystemMonitorEvents self, int32 Index) OnDblClick;
+				public new function [CallingConvention(.Stdcall)] void(ref ISystemMonitorEvents self, int32 Index) OnCounterSelected;
+				public new function [CallingConvention(.Stdcall)] void(ref ISystemMonitorEvents self, int32 Index) OnCounterAdded;
+				public new function [CallingConvention(.Stdcall)] void(ref ISystemMonitorEvents self, int32 Index) OnCounterDeleted;
+				public new function [CallingConvention(.Stdcall)] void(ref ISystemMonitorEvents self) OnSampleCollected;
+				public new function [CallingConvention(.Stdcall)] void(ref ISystemMonitorEvents self, int32 Index) OnDblClick;
 			}
 		}
 		[CRepr]

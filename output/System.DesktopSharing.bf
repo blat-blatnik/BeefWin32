@@ -267,8 +267,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIDebug self, BSTR CLXCmdLine) put_CLXCmdLine;
-				public new function HRESULT(ref IRDPSRAPIDebug self, out BSTR pCLXCmdLine) get_CLXCmdLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIDebug self, BSTR CLXCmdLine) put_CLXCmdLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIDebug self, out BSTR pCLXCmdLine) get_CLXCmdLine;
 			}
 		}
 		[CRepr]
@@ -283,7 +283,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIPerfCounterLogger self, int64 lValue) LogValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIPerfCounterLogger self, int64 lValue) LogValue;
 			}
 		}
 		[CRepr]
@@ -298,7 +298,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIPerfCounterLoggingManager self, BSTR bstrCounterName, out IRDPSRAPIPerfCounterLogger* ppLogger) CreateLogger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIPerfCounterLoggingManager self, BSTR bstrCounterName, out IRDPSRAPIPerfCounterLogger* ppLogger) CreateLogger;
 			}
 		}
 		[CRepr]
@@ -317,11 +317,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIAudioStream self, out int64 pnPeriodInHundredNsIntervals) Initialize;
-				public new function HRESULT(ref IRDPSRAPIAudioStream self) Start;
-				public new function HRESULT(ref IRDPSRAPIAudioStream self) Stop;
-				public new function HRESULT(ref IRDPSRAPIAudioStream self, uint8** ppbData, out uint32 pcbData, out uint64 pTimestamp) GetBuffer;
-				public new function HRESULT(ref IRDPSRAPIAudioStream self) FreeBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAudioStream self, out int64 pnPeriodInHundredNsIntervals) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAudioStream self) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAudioStream self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAudioStream self, uint8** ppbData, out uint32 pcbData, out uint64 pTimestamp) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAudioStream self) FreeBuffer;
 			}
 		}
 		[CRepr]
@@ -336,7 +336,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIClipboardUseEvents self, uint32 clipboardFormat, ref IDispatch pAttendee, out int16 pRetVal) OnPasteFromClipboard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIClipboardUseEvents self, uint32 clipboardFormat, ref IDispatch pAttendee, out int16 pRetVal) OnPasteFromClipboard;
 			}
 		}
 		[CRepr]
@@ -357,13 +357,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIWindow self, out int32 pRetVal) get_Id;
-				public new function HRESULT(ref IRDPSRAPIWindow self, out IRDPSRAPIApplication* pApplication) get_Application;
-				public new function HRESULT(ref IRDPSRAPIWindow self, out int16 pRetVal) get_Shared;
-				public new function HRESULT(ref IRDPSRAPIWindow self, int16 NewVal) put_Shared;
-				public new function HRESULT(ref IRDPSRAPIWindow self, out BSTR pRetVal) get_Name;
-				public new function HRESULT(ref IRDPSRAPIWindow self) Show;
-				public new function HRESULT(ref IRDPSRAPIWindow self, out uint32 pdwFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, out int32 pRetVal) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, out IRDPSRAPIApplication* pApplication) get_Application;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, out int16 pRetVal) get_Shared;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, int16 NewVal) put_Shared;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, out BSTR pRetVal) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindow self, out uint32 pdwFlags) get_Flags;
 			}
 		}
 		[CRepr]
@@ -379,8 +379,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIWindowList self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IRDPSRAPIWindowList self, int32 item, out IRDPSRAPIWindow* pWindow) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindowList self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIWindowList self, int32 item, out IRDPSRAPIWindow* pWindow) get_Item;
 			}
 		}
 		[CRepr]
@@ -400,12 +400,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIApplication self, out IRDPSRAPIWindowList* pWindowList) get_Windows;
-				public new function HRESULT(ref IRDPSRAPIApplication self, out int32 pRetVal) get_Id;
-				public new function HRESULT(ref IRDPSRAPIApplication self, out int16 pRetVal) get_Shared;
-				public new function HRESULT(ref IRDPSRAPIApplication self, int16 NewVal) put_Shared;
-				public new function HRESULT(ref IRDPSRAPIApplication self, out BSTR pRetVal) get_Name;
-				public new function HRESULT(ref IRDPSRAPIApplication self, out uint32 pdwFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, out IRDPSRAPIWindowList* pWindowList) get_Windows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, out int32 pRetVal) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, out int16 pRetVal) get_Shared;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, int16 NewVal) put_Shared;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, out BSTR pRetVal) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplication self, out uint32 pdwFlags) get_Flags;
 			}
 		}
 		[CRepr]
@@ -421,8 +421,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIApplicationList self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IRDPSRAPIApplicationList self, int32 item, out IRDPSRAPIApplication* pApplication) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationList self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationList self, int32 item, out IRDPSRAPIApplication* pApplication) get_Item;
 			}
 		}
 		[CRepr]
@@ -440,10 +440,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIApplicationList* pApplications) get_Applications;
-				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIWindowList* pWindows) get_Windows;
-				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out int16 pRetVal) get_Enabled;
-				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, int16 NewVal) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIApplicationList* pApplications) get_Applications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIWindowList* pWindows) get_Windows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationFilter self, out int16 pRetVal) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIApplicationFilter self, int16 NewVal) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -459,8 +459,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, out VARIANT pVal) get_Property;
-				public new function HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, VARIANT newVal) put_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, out VARIANT pVal) get_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, VARIANT newVal) put_Property;
 			}
 		}
 		[CRepr]
@@ -481,13 +481,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_ConnectionString;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_GroupName;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_Password;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, out int32 pRetVal) get_AttendeeLimit;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, int32 NewVal) put_AttendeeLimit;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, out int16 pRetVal) get_Revoked;
-				public new function HRESULT(ref IRDPSRAPIInvitation self, int16 NewVal) put_Revoked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_ConnectionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_GroupName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_Password;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, out int32 pRetVal) get_AttendeeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, int32 NewVal) put_AttendeeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, out int16 pRetVal) get_Revoked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitation self, int16 NewVal) put_Revoked;
 			}
 		}
 		[CRepr]
@@ -505,10 +505,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIInvitationManager self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IRDPSRAPIInvitationManager self, VARIANT item, out IRDPSRAPIInvitation* ppInvitation) get_Item;
-				public new function HRESULT(ref IRDPSRAPIInvitationManager self, out int32 pRetVal) get_Count;
-				public new function HRESULT(ref IRDPSRAPIInvitationManager self, BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, out IRDPSRAPIInvitation* ppInvitation) CreateInvitation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitationManager self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitationManager self, VARIANT item, out IRDPSRAPIInvitation* ppInvitation) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitationManager self, out int32 pRetVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIInvitationManager self, BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, out IRDPSRAPIInvitation* ppInvitation) CreateInvitation;
 			}
 		}
 		[CRepr]
@@ -527,11 +527,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plProtocol) get_Protocol;
-				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_LocalPort;
-				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbsrLocalIP) get_LocalIP;
-				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_PeerPort;
-				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbstrIP) get_PeerIP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plProtocol) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_LocalPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbsrLocalIP) get_LocalIP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_PeerPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbstrIP) get_PeerIP;
 			}
 		}
 		[CRepr]
@@ -553,14 +553,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out int32 pId) get_Id;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out BSTR pVal) get_RemoteName;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out CTRL_LEVEL pVal) get_ControlLevel;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, CTRL_LEVEL pNewVal) put_ControlLevel;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out IRDPSRAPIInvitation* ppVal) get_Invitation;
-				public new function HRESULT(ref IRDPSRAPIAttendee self) TerminateConnection;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out int32 plFlags) get_Flags;
-				public new function HRESULT(ref IRDPSRAPIAttendee self, out IUnknown* ppVal) get_ConnectivityInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out int32 pId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out BSTR pVal) get_RemoteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out CTRL_LEVEL pVal) get_ControlLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, CTRL_LEVEL pNewVal) put_ControlLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out IRDPSRAPIInvitation* ppVal) get_Invitation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self) TerminateConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out int32 plFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendee self, out IUnknown* ppVal) get_ConnectivityInfo;
 			}
 		}
 		[CRepr]
@@ -576,8 +576,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIAttendeeManager self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IRDPSRAPIAttendeeManager self, int32 id, out IRDPSRAPIAttendee* ppItem) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendeeManager self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendeeManager self, int32 id, out IRDPSRAPIAttendee* ppItem) get_Item;
 			}
 		}
 		[CRepr]
@@ -594,9 +594,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out IRDPSRAPIAttendee* retval) get_Attendee;
-				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out ATTENDEE_DISCONNECT_REASON pReason) get_Reason;
-				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out int32 pVal) get_Code;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out IRDPSRAPIAttendee* retval) get_Attendee;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out ATTENDEE_DISCONNECT_REASON pReason) get_Reason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out int32 pVal) get_Code;
 			}
 		}
 		[CRepr]
@@ -615,11 +615,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, BSTR bstrData, int32 lAttendeeId, uint32 ChannelSendFlags) SendData;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, int32 lAttendeeId, CHANNEL_ACCESS_ENUM AccessType) SetAccess;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out int32 plFlags) get_Flags;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out CHANNEL_PRIORITY pPriority) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannel self, BSTR bstrData, int32 lAttendeeId, uint32 ChannelSendFlags) SendData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannel self, int32 lAttendeeId, CHANNEL_ACCESS_ENUM AccessType) SetAccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannel self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannel self, out int32 plFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannel self, out CHANNEL_PRIORITY pPriority) get_Priority;
 			}
 		}
 		[CRepr]
@@ -636,9 +636,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, VARIANT item, out IRDPSRAPIVirtualChannel* pChannel) get_Item;
-				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, out IRDPSRAPIVirtualChannel* ppChannel) CreateVirtualChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannelManager self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannelManager self, VARIANT item, out IRDPSRAPIVirtualChannel* pChannel) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIVirtualChannelManager self, BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, out IRDPSRAPIVirtualChannel* ppChannel) CreateVirtualChannel;
 			}
 		}
 		[CRepr]
@@ -666,20 +666,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrName, BSTR bstrPassword) Connect;
-				public new function HRESULT(ref IRDPSRAPIViewer self) Disconnect;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
-				public new function HRESULT(ref IRDPSRAPIViewer self, int16 vbSmartSizing) put_SmartSizing;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out int16 pvbSmartSizing) get_SmartSizing;
-				public new function HRESULT(ref IRDPSRAPIViewer self, CTRL_LEVEL CtrlLevel) RequestControl;
-				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrDisconnectedText) put_DisconnectedText;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out BSTR pbstrDisconnectedText) get_DisconnectedText;
-				public new function HRESULT(ref IRDPSRAPIViewer self, int32 Bpp) RequestColorDepthChange;
-				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
-				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, out BSTR pbstrReverseConnectString) StartReverseConnectListener;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrName, BSTR bstrPassword) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, int16 vbSmartSizing) put_SmartSizing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out int16 pvbSmartSizing) get_SmartSizing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, CTRL_LEVEL CtrlLevel) RequestControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, BSTR bstrDisconnectedText) put_DisconnectedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out BSTR pbstrDisconnectedText) get_DisconnectedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, int32 Bpp) RequestColorDepthChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, out BSTR pbstrReverseConnectString) StartReverseConnectListener;
 			}
 		}
 		[CRepr]
@@ -701,14 +701,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_MOUSE_BUTTON_TYPE buttonType, int16 vbButtonDown, uint32 xPos, uint32 yPos) SendMouseButtonEvent;
-				public new function HRESULT(ref IRDPViewerInputSink self, uint32 xPos, uint32 yPos) SendMouseMoveEvent;
-				public new function HRESULT(ref IRDPViewerInputSink self, uint16 wheelRotation) SendMouseWheelEvent;
-				public new function HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_KBD_CODE_TYPE codeType, uint16 keycode, int16 vbKeyUp, int16 vbRepeat, int16 vbExtended) SendKeyboardEvent;
-				public new function HRESULT(ref IRDPViewerInputSink self, uint32 syncFlags) SendSyncEvent;
-				public new function HRESULT(ref IRDPViewerInputSink self) BeginTouchFrame;
-				public new function HRESULT(ref IRDPViewerInputSink self, uint32 contactId, uint32 event, int32 x, int32 y) AddTouchInput;
-				public new function HRESULT(ref IRDPViewerInputSink self) EndTouchFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_MOUSE_BUTTON_TYPE buttonType, int16 vbButtonDown, uint32 xPos, uint32 yPos) SendMouseButtonEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, uint32 xPos, uint32 yPos) SendMouseMoveEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, uint16 wheelRotation) SendMouseWheelEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_KBD_CODE_TYPE codeType, uint16 keycode, int16 vbKeyUp, int16 vbRepeat, int16 vbExtended) SendKeyboardEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, uint32 syncFlags) SendSyncEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self) BeginTouchFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self, uint32 contactId, uint32 event, int32 x, int32 y) AddTouchInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPViewerInputSink self) EndTouchFrame;
 			}
 		}
 		[CRepr]
@@ -726,10 +726,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plWidth) get_Width;
-				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plHeight) get_Height;
-				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plBpp) get_Bpp;
-				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, int32 x, int32 y, int32 Width, int32 Heigth, out SAFEARRAY* ppBits) GetFrameBufferBits;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plWidth) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plHeight) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plBpp) get_Bpp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPIFrameBuffer self, int32 x, int32 y, int32 Width, int32 Heigth, out SAFEARRAY* ppBits) GetFrameBufferBits;
 			}
 		}
 		[CRepr]
@@ -753,16 +753,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out uint8* ppbStorage) get_Storage;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plMaxStore) get_StorageSize;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadSize;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lVal) put_PayloadSize;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadOffset;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lRetVal) put_PayloadOffset;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plFlags) get_Flags;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lFlags) put_Flags;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out IUnknown* ppContext) get_Context;
-				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, ref IUnknown pContext) put_Context;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out uint8* ppbStorage) get_Storage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plMaxStore) get_StorageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lVal) put_PayloadSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lRetVal) put_PayloadOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lFlags) put_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, out IUnknown* ppContext) get_Context;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStreamBuffer self, ref IUnknown pContext) put_Context;
 			}
 		}
 		[CRepr]
@@ -779,9 +779,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnWriteCompleted;
-				public new function void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnReadCompleted;
-				public new function void(ref IRDPSRAPITransportStreamEvents self, HRESULT hrReason) OnStreamClosed;
+				public new function [CallingConvention(.Stdcall)] void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnWriteCompleted;
+				public new function [CallingConvention(.Stdcall)] void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnReadCompleted;
+				public new function [CallingConvention(.Stdcall)] void(ref IRDPSRAPITransportStreamEvents self, HRESULT hrReason) OnStreamClosed;
 			}
 		}
 		[CRepr]
@@ -801,12 +801,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPITransportStream self, int32 maxPayload, out IRDPSRAPITransportStreamBuffer* ppBuffer) AllocBuffer;
-				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) FreeBuffer;
-				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) WriteBuffer;
-				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) ReadBuffer;
-				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamEvents pCallbacks) Open;
-				public new function HRESULT(ref IRDPSRAPITransportStream self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self, int32 maxPayload, out IRDPSRAPITransportStreamBuffer* ppBuffer) AllocBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) FreeBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) WriteBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) ReadBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamEvents pCallbacks) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPITransportStream self) Close;
 			}
 		}
 		[CRepr]
@@ -834,20 +834,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPISharingSession self) Open;
-				public new function HRESULT(ref IRDPSRAPISharingSession self) Close;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, int32 colorDepth) put_ColorDepth;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out int32 pColorDepth) get_ColorDepth;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
-				public new function HRESULT(ref IRDPSRAPISharingSession self) Pause;
-				public new function HRESULT(ref IRDPSRAPISharingSession self) Resume;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, BSTR bstrConnectionString) ConnectToClient;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, int32 left, int32 top, int32 right, int32 bottom) SetDesktopSharedRect;
-				public new function HRESULT(ref IRDPSRAPISharingSession self, out int32 pleft, out int32 ptop, out int32 pright, out int32 pbottom) GetDesktopSharedRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, int32 colorDepth) put_ColorDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out int32 pColorDepth) get_ColorDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, BSTR bstrConnectionString) ConnectToClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, int32 left, int32 top, int32 right, int32 bottom) SetDesktopSharedRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession self, out int32 pleft, out int32 ptop, out int32 pright, out int32 pbottom) GetDesktopSharedRect;
 			}
 		}
 		[CRepr]
@@ -864,9 +864,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRDPSRAPISharingSession.VTable
 			{
-				public new function HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPITransportStream pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) ConnectUsingTransportStream;
-				public new function HRESULT(ref IRDPSRAPISharingSession2 self, out IRDPSRAPIFrameBuffer* ppVal) get_FrameBuffer;
-				public new function HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPIAttendee pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) SendControlLevelChangeResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPITransportStream pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) ConnectUsingTransportStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession2 self, out IRDPSRAPIFrameBuffer* ppVal) get_FrameBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPIAttendee pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) SendControlLevelChangeResponse;
 			}
 		}
 		[CRepr]

@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILearningModelOperatorProviderNative self, out IMLOperatorRegistry* ppOperatorRegistry) GetRegistry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILearningModelOperatorProviderNative self, out IMLOperatorRegistry* ppOperatorRegistry) GetRegistry;
 			}
 		}
 		[CRepr]
@@ -35,8 +35,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITensorNative self, uint8** value, out uint32 capacity) GetBuffer;
-				public new function HRESULT(ref ITensorNative self, out ID3D12Resource* result) GetD3D12Resource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITensorNative self, uint8** value, out uint32 capacity) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITensorNative self, out ID3D12Resource* result) GetD3D12Resource;
 			}
 		}
 		[CRepr]
@@ -51,7 +51,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITensorStaticsNative self, ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) CreateFromD3D12Resource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITensorStaticsNative self, ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) CreateFromD3D12Resource;
 			}
 		}
 		[CRepr]
@@ -66,7 +66,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILearningModelDeviceFactoryNative self, ref ID3D12CommandQueue value, out IUnknown* result) CreateFromD3D12CommandQueue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILearningModelDeviceFactoryNative self, ref ID3D12CommandQueue value, out IUnknown* result) CreateFromD3D12CommandQueue;
 			}
 		}
 		[CRepr]
@@ -81,7 +81,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILearningModelSessionOptionsNative self, uint32 intraOpNumThreads) SetIntraOpNumThreadsOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILearningModelSessionOptionsNative self, uint32 intraOpNumThreads) SetIntraOpNumThreadsOverride;
 			}
 		}
 		

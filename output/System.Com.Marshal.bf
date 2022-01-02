@@ -32,12 +32,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMarshal self, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out Guid pCid) GetUnmarshalClass;
-				public new function HRESULT(ref IMarshal self, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out uint32 pSize) GetMarshalSizeMax;
-				public new function HRESULT(ref IMarshal self, ref IStream pStm, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
-				public new function HRESULT(ref IMarshal self, ref IStream pStm, in Guid riid, void** ppv) UnmarshalInterface;
-				public new function HRESULT(ref IMarshal self, ref IStream pStm) ReleaseMarshalData;
-				public new function HRESULT(ref IMarshal self, uint32 dwReserved) DisconnectObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out Guid pCid) GetUnmarshalClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, out uint32 pSize) GetMarshalSizeMax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, ref IStream pStm, in Guid riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, ref IStream pStm, in Guid riid, void** ppv) UnmarshalInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, ref IStream pStm) ReleaseMarshalData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshal self, uint32 dwReserved) DisconnectObject;
 			}
 		}
 		[CRepr]
@@ -65,7 +65,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(ref IMarshalingStream self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, out uint pAttributeValue) GetMarshalingContextAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMarshalingStream self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, out uint pAttributeValue) GetMarshalingContextAttribute;
 			}
 		}
 		

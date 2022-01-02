@@ -162,13 +162,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISecurityInformation self, out SI_OBJECT_INFO pObjectInfo) GetObjectInformation;
-				public new function HRESULT(ref ISecurityInformation self, OBJECT_SECURITY_INFORMATION RequestedInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, BOOL fDefault) GetSecurity;
-				public new function HRESULT(ref ISecurityInformation self, OBJECT_SECURITY_INFORMATION SecurityInformation, out SECURITY_DESCRIPTOR pSecurityDescriptor) SetSecurity;
-				public new function HRESULT(ref ISecurityInformation self, in Guid pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, out SI_ACCESS* ppAccess, out uint32 pcAccesses, out uint32 piDefaultAccess) GetAccessRights;
-				public new function HRESULT(ref ISecurityInformation self, in Guid pguidObjectType, out uint8 pAceFlags, out uint32 pMask) MapGeneric;
-				public new function HRESULT(ref ISecurityInformation self, out SI_INHERIT_TYPE* ppInheritTypes, out uint32 pcInheritTypes) GetInheritTypes;
-				public new function HRESULT(ref ISecurityInformation self, HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) PropertySheetPageCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, out SI_OBJECT_INFO pObjectInfo) GetObjectInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, OBJECT_SECURITY_INFORMATION RequestedInformation, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, BOOL fDefault) GetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, OBJECT_SECURITY_INFORMATION SecurityInformation, out SECURITY_DESCRIPTOR pSecurityDescriptor) SetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, in Guid pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, out SI_ACCESS* ppAccess, out uint32 pcAccesses, out uint32 piDefaultAccess) GetAccessRights;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, in Guid pguidObjectType, out uint8 pAceFlags, out uint32 pMask) MapGeneric;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, out SI_INHERIT_TYPE* ppInheritTypes, out uint32 pcInheritTypes) GetInheritTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation self, HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) PropertySheetPageCallback;
 			}
 		}
 		[CRepr]
@@ -184,8 +184,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(ref ISecurityInformation2 self, out ACL pDacl) IsDaclCanonical;
-				public new function HRESULT(ref ISecurityInformation2 self, uint32 cSids, out PSID rgpSids, out IDataObject* ppdo) LookupSids;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ISecurityInformation2 self, out ACL pDacl) IsDaclCanonical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation2 self, uint32 cSids, out PSID rgpSids, out IDataObject* ppdo) LookupSids;
 			}
 		}
 		[CRepr]
@@ -200,7 +200,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEffectivePermission self, in Guid pguidObjectType, PSID pUserSid, PWSTR pszServerName, out SECURITY_DESCRIPTOR pSD, out OBJECT_TYPE_LIST* ppObjectTypeList, out uint32 pcObjectTypeListLength, out uint32* ppGrantedAccessList, out uint32 pcGrantedAccessListLength) GetEffectivePermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEffectivePermission self, in Guid pguidObjectType, PSID pUserSid, PWSTR pszServerName, out SECURITY_DESCRIPTOR pSD, out OBJECT_TYPE_LIST* ppObjectTypeList, out uint32 pcObjectTypeListLength, out uint32* ppGrantedAccessList, out uint32 pcGrantedAccessListLength) GetEffectivePermission;
 			}
 		}
 		[CRepr]
@@ -215,7 +215,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISecurityObjectTypeInfo self, uint32 si, out ACL pACL, out INHERITED_FROMA* ppInheritArray) GetInheritSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityObjectTypeInfo self, uint32 si, out ACL pACL, out INHERITED_FROMA* ppInheritArray) GetInheritSource;
 			}
 		}
 		[CRepr]
@@ -231,8 +231,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISecurityInformation3 self, out PWSTR ppszResourceName) GetFullResourceName;
-				public new function HRESULT(ref ISecurityInformation3 self, HWND hWnd, SI_PAGE_TYPE uPage) OpenElevatedEditor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation3 self, out PWSTR ppszResourceName) GetFullResourceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation3 self, HWND hWnd, SI_PAGE_TYPE uPage) OpenElevatedEditor;
 			}
 		}
 		[CRepr]
@@ -247,7 +247,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISecurityInformation4 self, out SECURITY_OBJECT* pSecurityObjects, out uint32 pSecurityObjectCount) GetSecondarySecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISecurityInformation4 self, out SECURITY_OBJECT* pSecurityObjects, out uint32 pSecurityObjectCount) GetSecondarySecurity;
 			}
 		}
 		[CRepr]
@@ -262,7 +262,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEffectivePermission2 self, PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) ComputeEffectivePermissionWithSecondarySecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEffectivePermission2 self, PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) ComputeEffectivePermissionWithSecondarySecurity;
 			}
 		}
 		

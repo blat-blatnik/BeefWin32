@@ -4575,10 +4575,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID3D11DeviceChild self, out ID3D11Device* ppDevice) GetDevice;
-				public new function HRESULT(ref ID3D11DeviceChild self, in Guid guid, out uint32 pDataSize, void* pData) GetPrivateData;
-				public new function HRESULT(ref ID3D11DeviceChild self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
-				public new function HRESULT(ref ID3D11DeviceChild self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceChild self, out ID3D11Device* ppDevice) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceChild self, in Guid guid, out uint32 pDataSize, void* pData) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceChild self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceChild self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
 			}
 		}
 		[CRepr]
@@ -4593,7 +4593,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11DepthStencilState self, out D3D11_DEPTH_STENCIL_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DepthStencilState self, out D3D11_DEPTH_STENCIL_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4608,7 +4608,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11BlendState self, out D3D11_BLEND_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11BlendState self, out D3D11_BLEND_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4623,7 +4623,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11RasterizerState self, out D3D11_RASTERIZER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11RasterizerState self, out D3D11_RASTERIZER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4640,9 +4640,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11Resource self, out D3D11_RESOURCE_DIMENSION pResourceDimension) ComGetType;
-				public new function void(ref ID3D11Resource self, uint32 EvictionPriority) SetEvictionPriority;
-				public new function uint32(ref ID3D11Resource self) GetEvictionPriority;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Resource self, out D3D11_RESOURCE_DIMENSION pResourceDimension) ComGetType;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Resource self, uint32 EvictionPriority) SetEvictionPriority;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Resource self) GetEvictionPriority;
 			}
 		}
 		[CRepr]
@@ -4657,7 +4657,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
-				public new function void(ref ID3D11Buffer self, out D3D11_BUFFER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Buffer self, out D3D11_BUFFER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4672,7 +4672,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
-				public new function void(ref ID3D11Texture1D self, out D3D11_TEXTURE1D_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Texture1D self, out D3D11_TEXTURE1D_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4687,7 +4687,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
-				public new function void(ref ID3D11Texture2D self, out D3D11_TEXTURE2D_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Texture2D self, out D3D11_TEXTURE2D_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4702,7 +4702,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Resource.VTable
 			{
-				public new function void(ref ID3D11Texture3D self, out D3D11_TEXTURE3D_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Texture3D self, out D3D11_TEXTURE3D_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4717,7 +4717,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11View self, out ID3D11Resource* ppResource) GetResource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11View self, out ID3D11Resource* ppResource) GetResource;
 			}
 		}
 		[CRepr]
@@ -4732,7 +4732,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11ShaderResourceView self, out D3D11_SHADER_RESOURCE_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ShaderResourceView self, out D3D11_SHADER_RESOURCE_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4747,7 +4747,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11RenderTargetView self, out D3D11_RENDER_TARGET_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11RenderTargetView self, out D3D11_RENDER_TARGET_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4762,7 +4762,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11DepthStencilView self, out D3D11_DEPTH_STENCIL_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DepthStencilView self, out D3D11_DEPTH_STENCIL_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4777,7 +4777,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11UnorderedAccessView self, out D3D11_UNORDERED_ACCESS_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11UnorderedAccessView self, out D3D11_UNORDERED_ACCESS_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4883,7 +4883,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11SamplerState self, out D3D11_SAMPLER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11SamplerState self, out D3D11_SAMPLER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4898,7 +4898,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function uint32(ref ID3D11Asynchronous self) GetDataSize;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Asynchronous self) GetDataSize;
 			}
 		}
 		[CRepr]
@@ -4913,7 +4913,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Asynchronous.VTable
 			{
-				public new function void(ref ID3D11Query self, out D3D11_QUERY_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Query self, out D3D11_QUERY_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4941,7 +4941,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Asynchronous.VTable
 			{
-				public new function void(ref ID3D11Counter self, out D3D11_COUNTER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Counter self, out D3D11_COUNTER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4959,10 +4959,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11ClassInstance self, out ID3D11ClassLinkage* ppLinkage) GetClassLinkage;
-				public new function void(ref ID3D11ClassInstance self, out D3D11_CLASS_INSTANCE_DESC pDesc) GetDesc;
-				public new function void(ref ID3D11ClassInstance self, uint8* pInstanceName, out uint pBufferLength) GetInstanceName;
-				public new function void(ref ID3D11ClassInstance self, uint8* pTypeName, out uint pBufferLength) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ClassInstance self, out ID3D11ClassLinkage* ppLinkage) GetClassLinkage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ClassInstance self, out D3D11_CLASS_INSTANCE_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ClassInstance self, uint8* pInstanceName, out uint pBufferLength) GetInstanceName;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ClassInstance self, uint8* pTypeName, out uint pBufferLength) GetTypeName;
 			}
 		}
 		[CRepr]
@@ -4978,8 +4978,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11ClassLinkage self, PSTR pClassInstanceName, uint32 InstanceIndex, out ID3D11ClassInstance* ppInstance) GetClassInstance;
-				public new function HRESULT(ref ID3D11ClassLinkage self, PSTR pClassTypeName, uint32 ConstantBufferOffset, uint32 ConstantVectorOffset, uint32 TextureOffset, uint32 SamplerOffset, out ID3D11ClassInstance* ppInstance) CreateClassInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ClassLinkage self, PSTR pClassInstanceName, uint32 InstanceIndex, out ID3D11ClassInstance* ppInstance) GetClassInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ClassLinkage self, PSTR pClassTypeName, uint32 ConstantBufferOffset, uint32 ConstantVectorOffset, uint32 TextureOffset, uint32 SamplerOffset, out ID3D11ClassInstance* ppInstance) CreateClassInstance;
 			}
 		}
 		[CRepr]
@@ -4994,7 +4994,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function uint32(ref ID3D11CommandList self) GetContextFlags;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11CommandList self) GetContextFlags;
 			}
 		}
 		[CRepr]
@@ -5116,114 +5116,114 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) PSSetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) VSSetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) DrawIndexed;
-				public new function void(ref ID3D11DeviceContext self, uint32 VertexCount, uint32 StartVertexLocation) Draw;
-				public new function HRESULT(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, uint32 Subresource, D3D11_MAP MapType, uint32 MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource) Map;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, uint32 Subresource) Unmap;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11InputLayout* pInputLayout) IASetInputLayout;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IASetVertexBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) IASetIndexBuffer;
-				public new function void(ref ID3D11DeviceContext self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
-				public new function void(ref ID3D11DeviceContext self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) GSSetShader;
-				public new function void(ref ID3D11DeviceContext self, D3D_PRIMITIVE_TOPOLOGY Topology) IASetPrimitiveTopology;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync) Begin;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync) End;
-				public new function HRESULT(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync, void* pData, uint32 DataSize, uint32 GetDataFlags) GetData;
-				public new function void(ref ID3D11DeviceContext self, ID3D11Predicate* pPredicate, BOOL PredicateValue) SetPredication;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) OMSetRenderTargets;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) OMSetRenderTargetsAndUnorderedAccessViews;
-				public new function void(ref ID3D11DeviceContext self, ID3D11BlendState* pBlendState, float* BlendFactor, uint32 SampleMask) OMSetBlendState;
-				public new function void(ref ID3D11DeviceContext self, ID3D11DepthStencilState* pDepthStencilState, uint32 StencilRef) OMSetDepthStencilState;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets, uint32* pOffsets) SOSetTargets;
-				public new function void(ref ID3D11DeviceContext self) DrawAuto;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawIndexedInstancedIndirect;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawInstancedIndirect;
-				public new function void(ref ID3D11DeviceContext self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DispatchIndirect;
-				public new function void(ref ID3D11DeviceContext self, ID3D11RasterizerState* pRasterizerState) RSSetState;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumViewports, D3D11_VIEWPORT* pViewports) RSSetViewports;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) CopySubresourceRegion;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, ref ID3D11Resource pSrcResource) CopyResource;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) UpdateSubresource;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Buffer pDstBuffer, uint32 DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView) CopyStructureCount;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11RenderTargetView pRenderTargetView, in float ColorRGBA) ClearRenderTargetView;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11UnorderedAccessView pUnorderedAccessView, in uint32 Values) ClearUnorderedAccessViewUint;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11UnorderedAccessView pUnorderedAccessView, in float Values) ClearUnorderedAccessViewFloat;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) ClearDepthStencilView;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11ShaderResourceView pShaderResourceView) GenerateMips;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, float MinLOD) SetResourceMinLOD;
-				public new function float(ref ID3D11DeviceContext self, ref ID3D11Resource pResource) GetResourceMinLOD;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
-				public new function void(ref ID3D11DeviceContext self, ref ID3D11CommandList pCommandList, BOOL RestoreContextState) ExecuteCommandList;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) HSSetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) DSSetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSSetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) CSSetUnorderedAccessViews;
-				public new function void(ref ID3D11DeviceContext self, ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) CSSetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSSetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSSetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) PSGetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) VSGetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11InputLayout** ppInputLayout) IAGetInputLayout;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IAGetVertexBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) IAGetIndexBuffer;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) GSGetShader;
-				public new function void(ref ID3D11DeviceContext self, out D3D_PRIMITIVE_TOPOLOGY pTopology) IAGetPrimitiveTopology;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, ID3D11Predicate** ppPredicate, BOOL* pPredicateValue) GetPredication;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView) OMGetRenderTargets;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) OMGetRenderTargetsAndUnorderedAccessViews;
-				public new function void(ref ID3D11DeviceContext self, ID3D11BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) OMGetBlendState;
-				public new function void(ref ID3D11DeviceContext self, ID3D11DepthStencilState** ppDepthStencilState, uint32* pStencilRef) OMGetDepthStencilState;
-				public new function void(ref ID3D11DeviceContext self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets) SOGetTargets;
-				public new function void(ref ID3D11DeviceContext self, ID3D11RasterizerState** ppRasterizerState) RSGetState;
-				public new function void(ref ID3D11DeviceContext self, out uint32 pNumViewports, D3D11_VIEWPORT* pViewports) RSGetViewports;
-				public new function void(ref ID3D11DeviceContext self, out uint32 pNumRects, RECT* pRects) RSGetScissorRects;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) HSGetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) DSGetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSGetShaderResources;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) CSGetUnorderedAccessViews;
-				public new function void(ref ID3D11DeviceContext self, ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) CSGetShader;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSGetSamplers;
-				public new function void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSGetConstantBuffers;
-				public new function void(ref ID3D11DeviceContext self) ClearState;
-				public new function void(ref ID3D11DeviceContext self) Flush;
-				public new function D3D11_DEVICE_CONTEXT_TYPE(ref ID3D11DeviceContext self) ComGetType;
-				public new function uint32(ref ID3D11DeviceContext self) GetContextFlags;
-				public new function HRESULT(ref ID3D11DeviceContext self, BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) FinishCommandList;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) PSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) VSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) DrawIndexed;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 VertexCount, uint32 StartVertexLocation) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, uint32 Subresource, D3D11_MAP MapType, uint32 MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource) Map;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, uint32 Subresource) Unmap;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11InputLayout* pInputLayout) IASetInputLayout;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IASetVertexBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) IASetIndexBuffer;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) GSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, D3D_PRIMITIVE_TOPOLOGY Topology) IASetPrimitiveTopology;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync) Begin;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync) End;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext self, ref ID3D11Asynchronous pAsync, void* pData, uint32 DataSize, uint32 GetDataFlags) GetData;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11Predicate* pPredicate, BOOL PredicateValue) SetPredication;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) OMSetRenderTargets;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) OMSetRenderTargetsAndUnorderedAccessViews;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11BlendState* pBlendState, float* BlendFactor, uint32 SampleMask) OMSetBlendState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11DepthStencilState* pDepthStencilState, uint32 StencilRef) OMSetDepthStencilState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets, uint32* pOffsets) SOSetTargets;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self) DrawAuto;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawIndexedInstancedIndirect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawInstancedIndirect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Buffer pBufferForArgs, uint32 AlignedByteOffsetForArgs) DispatchIndirect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11RasterizerState* pRasterizerState) RSSetState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumViewports, D3D11_VIEWPORT* pViewports) RSSetViewports;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) CopySubresourceRegion;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, ref ID3D11Resource pSrcResource) CopyResource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) UpdateSubresource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Buffer pDstBuffer, uint32 DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView) CopyStructureCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11RenderTargetView pRenderTargetView, in float ColorRGBA) ClearRenderTargetView;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11UnorderedAccessView pUnorderedAccessView, in uint32 Values) ClearUnorderedAccessViewUint;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11UnorderedAccessView pUnorderedAccessView, in float Values) ClearUnorderedAccessViewFloat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11DepthStencilView pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) ClearDepthStencilView;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11ShaderResourceView pShaderResourceView) GenerateMips;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pResource, float MinLOD) SetResourceMinLOD;
+				public new function [CallingConvention(.Stdcall)] float(ref ID3D11DeviceContext self, ref ID3D11Resource pResource) GetResourceMinLOD;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11Resource pDstResource, uint32 DstSubresource, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ref ID3D11CommandList pCommandList, BOOL RestoreContextState) ExecuteCommandList;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) HSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) DSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSSetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) CSSetUnorderedAccessViews;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) CSSetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSSetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSSetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) PSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) VSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11InputLayout** ppInputLayout) IAGetInputLayout;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IAGetVertexBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) IAGetIndexBuffer;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) GSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, out D3D_PRIMITIVE_TOPOLOGY pTopology) IAGetPrimitiveTopology;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11Predicate** ppPredicate, BOOL* pPredicateValue) GetPredication;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView) OMGetRenderTargets;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) OMGetRenderTargetsAndUnorderedAccessViews;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) OMGetBlendState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11DepthStencilState** ppDepthStencilState, uint32* pStencilRef) OMGetDepthStencilState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets) SOGetTargets;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11RasterizerState** ppRasterizerState) RSGetState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, out uint32 pNumViewports, D3D11_VIEWPORT* pViewports) RSGetViewports;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, out uint32 pNumRects, RECT* pRects) RSGetScissorRects;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) HSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) DSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSGetShaderResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) CSGetUnorderedAccessViews;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) CSGetShader;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSGetSamplers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSGetConstantBuffers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self) ClearState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self) Flush;
+				public new function [CallingConvention(.Stdcall)] D3D11_DEVICE_CONTEXT_TYPE(ref ID3D11DeviceContext self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11DeviceContext self) GetContextFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext self, BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) FinishCommandList;
 			}
 		}
 		[CRepr]
@@ -5239,8 +5239,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoDecoder self, out D3D11_VIDEO_DECODER_DESC pVideoDesc, out D3D11_VIDEO_DECODER_CONFIG pConfig) GetCreationParameters;
-				public new function HRESULT(ref ID3D11VideoDecoder self, out HANDLE pDriverHandle) GetDriverHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDecoder self, out D3D11_VIDEO_DECODER_DESC pVideoDesc, out D3D11_VIDEO_DECODER_CONFIG pConfig) GetCreationParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDecoder self, out HANDLE pDriverHandle) GetDriverHandle;
 			}
 		}
 		[CRepr]
@@ -5260,12 +5260,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pContentDesc) GetVideoProcessorContentDesc;
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, DXGI_FORMAT Format, out uint32 pFlags) CheckVideoProcessorFormat;
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, out D3D11_VIDEO_PROCESSOR_CAPS pCaps) GetVideoProcessorCaps;
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, uint32 TypeIndex, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) GetVideoProcessorRateConversionCaps;
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, uint32 TypeIndex, uint32 CustomRateIndex, out D3D11_VIDEO_PROCESSOR_CUSTOM_RATE pRate) GetVideoProcessorCustomRate;
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator self, D3D11_VIDEO_PROCESSOR_FILTER Filter, out D3D11_VIDEO_PROCESSOR_FILTER_RANGE pRange) GetVideoProcessorFilterRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pContentDesc) GetVideoProcessorContentDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, DXGI_FORMAT Format, out uint32 pFlags) CheckVideoProcessorFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, out D3D11_VIDEO_PROCESSOR_CAPS pCaps) GetVideoProcessorCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, uint32 TypeIndex, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) GetVideoProcessorRateConversionCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, uint32 TypeIndex, uint32 CustomRateIndex, out D3D11_VIDEO_PROCESSOR_CUSTOM_RATE pRate) GetVideoProcessorCustomRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator self, D3D11_VIDEO_PROCESSOR_FILTER Filter, out D3D11_VIDEO_PROCESSOR_FILTER_RANGE pRange) GetVideoProcessorFilterRange;
 			}
 		}
 		[CRepr]
@@ -5281,8 +5281,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11VideoProcessor self, out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc) GetContentDesc;
-				public new function void(ref ID3D11VideoProcessor self, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) GetRateConversionCaps;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoProcessor self, out D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc) GetContentDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoProcessor self, out D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS pCaps) GetRateConversionCaps;
 			}
 		}
 		[CRepr]
@@ -5299,9 +5299,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11AuthenticatedChannel self, out uint32 pCertificateSize) GetCertificateSize;
-				public new function HRESULT(ref ID3D11AuthenticatedChannel self, uint32 CertificateSize, out uint8 pCertificate) GetCertificate;
-				public new function void(ref ID3D11AuthenticatedChannel self, out HANDLE pChannelHandle) GetChannelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11AuthenticatedChannel self, out uint32 pCertificateSize) GetCertificateSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11AuthenticatedChannel self, uint32 CertificateSize, out uint8 pCertificate) GetCertificate;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11AuthenticatedChannel self, out HANDLE pChannelHandle) GetChannelHandle;
 			}
 		}
 		[CRepr]
@@ -5320,11 +5320,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function void(ref ID3D11CryptoSession self, out Guid pCryptoType) GetCryptoType;
-				public new function void(ref ID3D11CryptoSession self, out Guid pDecoderProfile) GetDecoderProfile;
-				public new function HRESULT(ref ID3D11CryptoSession self, out uint32 pCertificateSize) GetCertificateSize;
-				public new function HRESULT(ref ID3D11CryptoSession self, uint32 CertificateSize, out uint8 pCertificate) GetCertificate;
-				public new function void(ref ID3D11CryptoSession self, out HANDLE pCryptoSessionHandle) GetCryptoSessionHandle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11CryptoSession self, out Guid pCryptoType) GetCryptoType;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11CryptoSession self, out Guid pDecoderProfile) GetDecoderProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11CryptoSession self, out uint32 pCertificateSize) GetCertificateSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11CryptoSession self, uint32 CertificateSize, out uint8 pCertificate) GetCertificate;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11CryptoSession self, out HANDLE pCryptoSessionHandle) GetCryptoSessionHandle;
 			}
 		}
 		[CRepr]
@@ -5339,7 +5339,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11VideoDecoderOutputView self, out D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoDecoderOutputView self, out D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5354,7 +5354,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11VideoProcessorInputView self, out D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoProcessorInputView self, out D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5369,7 +5369,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11View.VTable
 			{
-				public new function void(ref ID3D11VideoProcessorOutputView self, out D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoProcessorOutputView self, out D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5441,64 +5441,64 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type, out uint32 pBufferSize, void** ppBuffer) GetDecoderBuffer;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type) ReleaseDecoderBuffer;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey) DecoderBeginFrame;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder) DecoderEndFrame;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC* pBufferDesc) SubmitDecoderBuffers;
-				public new function int32(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_DECODER_EXTENSION pExtensionData) DecoderExtension;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, RECT* pRect) VideoProcessorSetOutputTargetRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL YCbCr, in D3D11_VIDEO_COLOR pColor) VideoProcessorSetOutputBackgroundColor;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorSetOutputColorSpace;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint32 StreamIndex) VideoProcessorSetOutputAlphaFillMode;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, SIZE Size) VideoProcessorSetOutputConstriction;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable) VideoProcessorSetOutputStereoMode;
-				public new function int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetOutputExtension;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL Enabled, out RECT pRect) VideoProcessorGetOutputTargetRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pYCbCr, out D3D11_VIDEO_COLOR pColor) VideoProcessorGetOutputBackgroundColor;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorGetOutputColorSpace;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE pAlphaFillMode, out uint32 pStreamIndex) VideoProcessorGetOutputAlphaFillMode;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled, out SIZE pSize) VideoProcessorGetOutputConstriction;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled) VideoProcessorGetOutputStereoMode;
-				public new function int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetOutputExtension;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat) VideoProcessorSetStreamFrameFormat;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorSetStreamColorSpace;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, DXGI_RATIONAL* pCustomRate) VideoProcessorSetStreamOutputRate;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamSourceRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamDestRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Alpha) VideoProcessorSetStreamAlpha;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorSetStreamPalette;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) VideoProcessorSetStreamPixelAspectRatio;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Lower, float Upper) VideoProcessorSetStreamLumaKey;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int32 MonoOffset) VideoProcessorSetStreamStereoFormat;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable) VideoProcessorSetStreamAutoProcessingMode;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int32 Level) VideoProcessorSetStreamFilter;
-				public new function int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetStreamExtension;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_FRAME_FORMAT pFrameFormat) VideoProcessorGetStreamFrameFormat;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorGetStreamColorSpace;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_OUTPUT_RATE pOutputRate, out BOOL pRepeatFrame, out DXGI_RATIONAL pCustomRate) VideoProcessorGetStreamOutputRate;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) VideoProcessorGetStreamSourceRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) VideoProcessorGetStreamDestRect;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pAlpha) VideoProcessorGetStreamAlpha;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorGetStreamPalette;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out DXGI_RATIONAL pSourceAspectRatio, out DXGI_RATIONAL pDestinationAspectRatio) VideoProcessorGetStreamPixelAspectRatio;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pLower, out float pUpper) VideoProcessorGetStreamLumaKey;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_STEREO_FORMAT pFormat, out BOOL pLeftViewFrame0, out BOOL pBaseViewFrame0, out D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE pFlipMode, out int32 MonoOffset) VideoProcessorGetStreamStereoFormat;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled) VideoProcessorGetStreamAutoProcessingMode;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, out BOOL pEnabled, out int32 pLevel) VideoProcessorGetStreamFilter;
-				public new function int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetStreamExtension;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint32 OutputFrame, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM* pStreams) VideoProcessorBlt;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchange;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint32 IVSize, void* pIV) EncryptionBlt;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, D3D11_ENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, uint32 ContentKeySize, void* pContentKey, uint32 IVSize, void* pIV) DecryptionBlt;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 RandomNumberSize, void* pRandomNumber) StartSessionKeyRefresh;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession) FinishSessionKeyRefresh;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 KeySize, void* pReadbackKey) GetEncryptionBltKey;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 DataSize, void* pData) NegotiateAuthenticatedChannelKeyExchange;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) QueryAuthenticatedChannel;
-				public new function HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput) ConfigureAuthenticatedChannel;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation) VideoProcessorSetStreamRotation;
-				public new function void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_ROTATION pRotation) VideoProcessorGetStreamRotation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type, out uint32 pBufferSize, void** ppBuffer) GetDecoderBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type) ReleaseDecoderBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey) DecoderBeginFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder) DecoderEndFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC* pBufferDesc) SubmitDecoderBuffers;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3D11VideoContext self, ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_DECODER_EXTENSION pExtensionData) DecoderExtension;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, RECT* pRect) VideoProcessorSetOutputTargetRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL YCbCr, in D3D11_VIDEO_COLOR pColor) VideoProcessorSetOutputBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorSetOutputColorSpace;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint32 StreamIndex) VideoProcessorSetOutputAlphaFillMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable, SIZE Size) VideoProcessorSetOutputConstriction;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, BOOL Enable) VideoProcessorSetOutputStereoMode;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetOutputExtension;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL Enabled, out RECT pRect) VideoProcessorGetOutputTargetRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pYCbCr, out D3D11_VIDEO_COLOR pColor) VideoProcessorGetOutputBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorGetOutputColorSpace;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE pAlphaFillMode, out uint32 pStreamIndex) VideoProcessorGetOutputAlphaFillMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled, out SIZE pSize) VideoProcessorGetOutputConstriction;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pEnabled) VideoProcessorGetOutputStereoMode;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetOutputExtension;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat) VideoProcessorSetStreamFrameFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorSetStreamColorSpace;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, DXGI_RATIONAL* pCustomRate) VideoProcessorSetStreamOutputRate;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamSourceRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamDestRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Alpha) VideoProcessorSetStreamAlpha;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorSetStreamPalette;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) VideoProcessorSetStreamPixelAspectRatio;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Lower, float Upper) VideoProcessorSetStreamLumaKey;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int32 MonoOffset) VideoProcessorSetStreamStereoFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable) VideoProcessorSetStreamAutoProcessingMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int32 Level) VideoProcessorSetStreamFilter;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetStreamExtension;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_FRAME_FORMAT pFrameFormat) VideoProcessorGetStreamFrameFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_COLOR_SPACE pColorSpace) VideoProcessorGetStreamColorSpace;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out D3D11_VIDEO_PROCESSOR_OUTPUT_RATE pOutputRate, out BOOL pRepeatFrame, out DXGI_RATIONAL pCustomRate) VideoProcessorGetStreamOutputRate;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) VideoProcessorGetStreamSourceRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out RECT pRect) VideoProcessorGetStreamDestRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pAlpha) VideoProcessorGetStreamAlpha;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorGetStreamPalette;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out DXGI_RATIONAL pSourceAspectRatio, out DXGI_RATIONAL pDestinationAspectRatio) VideoProcessorGetStreamPixelAspectRatio;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled, out float pLower, out float pUpper) VideoProcessorGetStreamLumaKey;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_STEREO_FORMAT pFormat, out BOOL pLeftViewFrame0, out BOOL pBaseViewFrame0, out D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE pFlipMode, out int32 MonoOffset) VideoProcessorGetStreamStereoFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnabled) VideoProcessorGetStreamAutoProcessingMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, out BOOL pEnabled, out int32 pLevel) VideoProcessorGetStreamFilter;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, in Guid pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetStreamExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint32 OutputFrame, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM* pStreams) VideoProcessorBlt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchange;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint32 IVSize, void* pIV) EncryptionBlt;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, D3D11_ENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, uint32 ContentKeySize, void* pContentKey, uint32 IVSize, void* pIV) DecryptionBlt;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 RandomNumberSize, void* pRandomNumber) StartSessionKeyRefresh;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession) FinishSessionKeyRefresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11CryptoSession pCryptoSession, uint32 KeySize, void* pReadbackKey) GetEncryptionBltKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 DataSize, void* pData) NegotiateAuthenticatedChannelKeyExchange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) QueryAuthenticatedChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext self, ref ID3D11AuthenticatedChannel pChannel, uint32 InputSize, void* pInput, out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput) ConfigureAuthenticatedChannel;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation) VideoProcessorSetStreamRotation;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out D3D11_VIDEO_PROCESSOR_ROTATION pRotation) VideoProcessorGetStreamRotation;
 			}
 		}
 		[CRepr]
@@ -5529,23 +5529,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pVideoDesc, in D3D11_VIDEO_DECODER_CONFIG pConfig, out ID3D11VideoDecoder* ppDecoder) CreateVideoDecoder;
-				public new function HRESULT(ref ID3D11VideoDevice self, ref ID3D11VideoProcessorEnumerator pEnum, uint32 RateConversionIndex, out ID3D11VideoProcessor* ppVideoProcessor) CreateVideoProcessor;
-				public new function HRESULT(ref ID3D11VideoDevice self, D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, out ID3D11AuthenticatedChannel* ppAuthenticatedChannel) CreateAuthenticatedChannel;
-				public new function HRESULT(ref ID3D11VideoDevice self, in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out ID3D11CryptoSession* ppCryptoSession) CreateCryptoSession;
-				public new function HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, in D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) CreateVideoDecoderOutputView;
-				public new function HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc, ID3D11VideoProcessorInputView** ppVPIView) CreateVideoProcessorInputView;
-				public new function HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc, ID3D11VideoProcessorOutputView** ppVPOView) CreateVideoProcessorOutputView;
-				public new function HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc, out ID3D11VideoProcessorEnumerator* ppEnum) CreateVideoProcessorEnumerator;
-				public new function uint32(ref ID3D11VideoDevice self) GetVideoDecoderProfileCount;
-				public new function HRESULT(ref ID3D11VideoDevice self, uint32 Index, out Guid pDecoderProfile) GetVideoDecoderProfile;
-				public new function HRESULT(ref ID3D11VideoDevice self, in Guid pDecoderProfile, DXGI_FORMAT Format, out BOOL pSupported) CheckVideoDecoderFormat;
-				public new function HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pDesc, out uint32 pCount) GetVideoDecoderConfigCount;
-				public new function HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pDesc, uint32 Index, out D3D11_VIDEO_DECODER_CONFIG pConfig) GetVideoDecoderConfig;
-				public new function HRESULT(ref ID3D11VideoDevice self, Guid* pCryptoType, Guid* pDecoderProfile, out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps) GetContentProtectionCaps;
-				public new function HRESULT(ref ID3D11VideoDevice self, in Guid pCryptoType, Guid* pDecoderProfile, uint32 Index, out Guid pKeyExchangeType) CheckCryptoKeyExchange;
-				public new function HRESULT(ref ID3D11VideoDevice self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
-				public new function HRESULT(ref ID3D11VideoDevice self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pVideoDesc, in D3D11_VIDEO_DECODER_CONFIG pConfig, out ID3D11VideoDecoder* ppDecoder) CreateVideoDecoder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, ref ID3D11VideoProcessorEnumerator pEnum, uint32 RateConversionIndex, out ID3D11VideoProcessor* ppVideoProcessor) CreateVideoProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, out ID3D11AuthenticatedChannel* ppAuthenticatedChannel) CreateAuthenticatedChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out ID3D11CryptoSession* ppCryptoSession) CreateCryptoSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, in D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) CreateVideoDecoderOutputView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC pDesc, ID3D11VideoProcessorInputView** ppVPIView) CreateVideoProcessorInputView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, in D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC pDesc, ID3D11VideoProcessorOutputView** ppVPOView) CreateVideoProcessorOutputView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_PROCESSOR_CONTENT_DESC pDesc, out ID3D11VideoProcessorEnumerator* ppEnum) CreateVideoProcessorEnumerator;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11VideoDevice self) GetVideoDecoderProfileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, uint32 Index, out Guid pDecoderProfile) GetVideoDecoderProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in Guid pDecoderProfile, DXGI_FORMAT Format, out BOOL pSupported) CheckVideoDecoderFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pDesc, out uint32 pCount) GetVideoDecoderConfigCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in D3D11_VIDEO_DECODER_DESC pDesc, uint32 Index, out D3D11_VIDEO_DECODER_CONFIG pConfig) GetVideoDecoderConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, Guid* pCryptoType, Guid* pDecoderProfile, out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps) GetContentProtectionCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in Guid pCryptoType, Guid* pDecoderProfile, uint32 Index, out Guid pKeyExchangeType) CheckCryptoKeyExchange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
 			}
 		}
 		[CRepr]
@@ -5599,46 +5599,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11Device self, in D3D11_BUFFER_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer) CreateBuffer;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_TEXTURE1D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture1D** ppTexture1D) CreateTexture1D;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_TEXTURE2D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D** ppTexture2D) CreateTexture2D;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_TEXTURE3D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D** ppTexture3D) CreateTexture3D;
-				public new function HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D11ShaderResourceView** ppSRView) CreateShaderResourceView;
-				public new function HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc, ID3D11UnorderedAccessView** ppUAView) CreateUnorderedAccessView;
-				public new function HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC* pDesc, ID3D11RenderTargetView** ppRTView) CreateRenderTargetView;
-				public new function HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D11DepthStencilView** ppDepthStencilView) CreateDepthStencilView;
-				public new function HRESULT(ref ID3D11Device self, D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) CreateInputLayout;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) CreateVertexShader;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShader;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, D3D11_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32* pBufferStrides, uint32 NumStrides, uint32 RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShaderWithStreamOutput;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) CreatePixelShader;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) CreateHullShader;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) CreateDomainShader;
-				public new function HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) CreateComputeShader;
-				public new function HRESULT(ref ID3D11Device self, out ID3D11ClassLinkage* ppLinkage) CreateClassLinkage;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_BLEND_DESC pBlendStateDesc, ID3D11BlendState** ppBlendState) CreateBlendState;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D11DepthStencilState** ppDepthStencilState) CreateDepthStencilState;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_RASTERIZER_DESC pRasterizerDesc, ID3D11RasterizerState** ppRasterizerState) CreateRasterizerState;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_SAMPLER_DESC pSamplerDesc, ID3D11SamplerState** ppSamplerState) CreateSamplerState;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_QUERY_DESC pQueryDesc, ID3D11Query** ppQuery) CreateQuery;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_QUERY_DESC pPredicateDesc, ID3D11Predicate** ppPredicate) CreatePredicate;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_COUNTER_DESC pCounterDesc, ID3D11Counter** ppCounter) CreateCounter;
-				public new function HRESULT(ref ID3D11Device self, uint32 ContextFlags, ID3D11DeviceContext** ppDeferredContext) CreateDeferredContext;
-				public new function HRESULT(ref ID3D11Device self, HANDLE hResource, in Guid ReturnedInterface, void** ppResource) OpenSharedResource;
-				public new function HRESULT(ref ID3D11Device self, DXGI_FORMAT Format, out uint32 pFormatSupport) CheckFormatSupport;
-				public new function HRESULT(ref ID3D11Device self, DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) CheckMultisampleQualityLevels;
-				public new function void(ref ID3D11Device self, out D3D11_COUNTER_INFO pCounterInfo) CheckCounterInfo;
-				public new function HRESULT(ref ID3D11Device self, in D3D11_COUNTER_DESC pDesc, out D3D11_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) CheckCounter;
-				public new function HRESULT(ref ID3D11Device self, D3D11_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
-				public new function HRESULT(ref ID3D11Device self, in Guid guid, out uint32 pDataSize, void* pData) GetPrivateData;
-				public new function HRESULT(ref ID3D11Device self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
-				public new function HRESULT(ref ID3D11Device self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
-				public new function D3D_FEATURE_LEVEL(ref ID3D11Device self) GetFeatureLevel;
-				public new function uint32(ref ID3D11Device self) GetCreationFlags;
-				public new function HRESULT(ref ID3D11Device self) GetDeviceRemovedReason;
-				public new function void(ref ID3D11Device self, out ID3D11DeviceContext* ppImmediateContext) GetImmediateContext;
-				public new function HRESULT(ref ID3D11Device self, uint32 RaiseFlags) SetExceptionMode;
-				public new function uint32(ref ID3D11Device self) GetExceptionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_BUFFER_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer) CreateBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_TEXTURE1D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture1D** ppTexture1D) CreateTexture1D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_TEXTURE2D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D** ppTexture2D) CreateTexture2D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_TEXTURE3D_DESC pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D** ppTexture3D) CreateTexture3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D11ShaderResourceView** ppSRView) CreateShaderResourceView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc, ID3D11UnorderedAccessView** ppUAView) CreateUnorderedAccessView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC* pDesc, ID3D11RenderTargetView** ppRTView) CreateRenderTargetView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, ref ID3D11Resource pResource, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D11DepthStencilView** ppDepthStencilView) CreateDepthStencilView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) CreateInputLayout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) CreateVertexShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, D3D11_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32* pBufferStrides, uint32 NumStrides, uint32 RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShaderWithStreamOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) CreatePixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) CreateHullShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) CreateDomainShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) CreateComputeShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, out ID3D11ClassLinkage* ppLinkage) CreateClassLinkage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_BLEND_DESC pBlendStateDesc, ID3D11BlendState** ppBlendState) CreateBlendState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_DEPTH_STENCIL_DESC pDepthStencilDesc, ID3D11DepthStencilState** ppDepthStencilState) CreateDepthStencilState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_RASTERIZER_DESC pRasterizerDesc, ID3D11RasterizerState** ppRasterizerState) CreateRasterizerState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_SAMPLER_DESC pSamplerDesc, ID3D11SamplerState** ppSamplerState) CreateSamplerState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_QUERY_DESC pQueryDesc, ID3D11Query** ppQuery) CreateQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_QUERY_DESC pPredicateDesc, ID3D11Predicate** ppPredicate) CreatePredicate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_COUNTER_DESC pCounterDesc, ID3D11Counter** ppCounter) CreateCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, uint32 ContextFlags, ID3D11DeviceContext** ppDeferredContext) CreateDeferredContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, HANDLE hResource, in Guid ReturnedInterface, void** ppResource) OpenSharedResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, DXGI_FORMAT Format, out uint32 pFormatSupport) CheckFormatSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, DXGI_FORMAT Format, uint32 SampleCount, out uint32 pNumQualityLevels) CheckMultisampleQualityLevels;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device self, out D3D11_COUNTER_INFO pCounterInfo) CheckCounterInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in D3D11_COUNTER_DESC pDesc, out D3D11_COUNTER_TYPE pType, out uint32 pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) CheckCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, D3D11_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, out uint32 pDataSize, void* pData) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
+				public new function [CallingConvention(.Stdcall)] D3D_FEATURE_LEVEL(ref ID3D11Device self) GetFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Device self) GetCreationFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self) GetDeviceRemovedReason;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device self, out ID3D11DeviceContext* ppImmediateContext) GetImmediateContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, uint32 RaiseFlags) SetExceptionMode;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Device self) GetExceptionMode;
 			}
 		}
 		[CRepr]
@@ -5661,15 +5661,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11Debug self, uint32 Mask) SetFeatureMask;
-				public new function uint32(ref ID3D11Debug self) GetFeatureMask;
-				public new function HRESULT(ref ID3D11Debug self, uint32 Milliseconds) SetPresentPerRenderOpDelay;
-				public new function uint32(ref ID3D11Debug self) GetPresentPerRenderOpDelay;
-				public new function HRESULT(ref ID3D11Debug self, IDXGISwapChain* pSwapChain) SetSwapChain;
-				public new function HRESULT(ref ID3D11Debug self, out IDXGISwapChain* ppSwapChain) GetSwapChain;
-				public new function HRESULT(ref ID3D11Debug self, ref ID3D11DeviceContext pContext) ValidateContext;
-				public new function HRESULT(ref ID3D11Debug self, D3D11_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
-				public new function HRESULT(ref ID3D11Debug self, ref ID3D11DeviceContext pContext) ValidateContextForDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, uint32 Mask) SetFeatureMask;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Debug self) GetFeatureMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, uint32 Milliseconds) SetPresentPerRenderOpDelay;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Debug self) GetPresentPerRenderOpDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, IDXGISwapChain* pSwapChain) SetSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, out IDXGISwapChain* ppSwapChain) GetSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, ref ID3D11DeviceContext pContext) ValidateContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, D3D11_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Debug self, ref ID3D11DeviceContext pContext) ValidateContextForDispatch;
 			}
 		}
 		[CRepr]
@@ -5685,8 +5685,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(ref ID3D11SwitchToRef self, BOOL UseRef) SetUseRef;
-				public new function BOOL(ref ID3D11SwitchToRef self) GetUseRef;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11SwitchToRef self, BOOL UseRef) SetUseRef;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11SwitchToRef self) GetUseRef;
 			}
 		}
 		[CRepr]
@@ -5702,8 +5702,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11TracingDevice self, uint32 ResourceTypeFlags, uint32 Options) SetShaderTrackingOptionsByType;
-				public new function HRESULT(ref ID3D11TracingDevice self, ref IUnknown pShader, uint32 Options) SetShaderTrackingOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11TracingDevice self, uint32 ResourceTypeFlags, uint32 Options) SetShaderTrackingOptionsByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11TracingDevice self, ref IUnknown pShader, uint32 Options) SetShaderTrackingOptions;
 			}
 		}
 		[CRepr]
@@ -5718,7 +5718,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11RefTrackingOptions self, uint32 uOptions) SetTrackingOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11RefTrackingOptions self, uint32 uOptions) SetTrackingOptions;
 			}
 		}
 		[CRepr]
@@ -5733,7 +5733,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11RefDefaultTrackingOptions self, uint32 ResourceTypeFlags, uint32 Options) SetTrackingOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11RefDefaultTrackingOptions self, uint32 ResourceTypeFlags, uint32 Options) SetTrackingOptions;
 			}
 		}
 		[CRepr]
@@ -5782,41 +5782,41 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11InfoQueue self, uint64 MessageCountLimit) SetMessageCountLimit;
-				public new function void(ref ID3D11InfoQueue self) ClearStoredMessages;
-				public new function HRESULT(ref ID3D11InfoQueue self, uint64 MessageIndex, D3D11_MESSAGE* pMessage, out uint pMessageByteLength) GetMessage;
-				public new function uint64(ref ID3D11InfoQueue self) GetNumMessagesAllowedByStorageFilter;
-				public new function uint64(ref ID3D11InfoQueue self) GetNumMessagesDeniedByStorageFilter;
-				public new function uint64(ref ID3D11InfoQueue self) GetNumStoredMessages;
-				public new function uint64(ref ID3D11InfoQueue self) GetNumStoredMessagesAllowedByRetrievalFilter;
-				public new function uint64(ref ID3D11InfoQueue self) GetNumMessagesDiscardedByMessageCountLimit;
-				public new function uint64(ref ID3D11InfoQueue self) GetMessageCountLimit;
-				public new function HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) AddStorageFilterEntries;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) GetStorageFilter;
-				public new function void(ref ID3D11InfoQueue self) ClearStorageFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self) PushEmptyStorageFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self) PushCopyOfStorageFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) PushStorageFilter;
-				public new function void(ref ID3D11InfoQueue self) PopStorageFilter;
-				public new function uint32(ref ID3D11InfoQueue self) GetStorageFilterStackSize;
-				public new function HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) AddRetrievalFilterEntries;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) GetRetrievalFilter;
-				public new function void(ref ID3D11InfoQueue self) ClearRetrievalFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self) PushEmptyRetrievalFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self) PushCopyOfRetrievalFilter;
-				public new function HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) PushRetrievalFilter;
-				public new function void(ref ID3D11InfoQueue self) PopRetrievalFilter;
-				public new function uint32(ref ID3D11InfoQueue self) GetRetrievalFilterStackSize;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, PSTR pDescription) AddMessage;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
-				public new function HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
-				public new function BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category) GetBreakOnCategory;
-				public new function BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
-				public new function BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_ID ID) GetBreakOnID;
-				public new function void(ref ID3D11InfoQueue self, BOOL bMute) SetMuteDebugOutput;
-				public new function BOOL(ref ID3D11InfoQueue self) GetMuteDebugOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, uint64 MessageCountLimit) SetMessageCountLimit;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self) ClearStoredMessages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, uint64 MessageIndex, D3D11_MESSAGE* pMessage, out uint pMessageByteLength) GetMessage;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetNumMessagesAllowedByStorageFilter;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetNumMessagesDeniedByStorageFilter;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetNumStoredMessages;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetNumStoredMessagesAllowedByRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetNumMessagesDiscardedByMessageCountLimit;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11InfoQueue self) GetMessageCountLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) AddStorageFilterEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) GetStorageFilter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self) ClearStorageFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self) PushEmptyStorageFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self) PushCopyOfStorageFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) PushStorageFilter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self) PopStorageFilter;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11InfoQueue self) GetStorageFilterStackSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) AddRetrievalFilterEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_INFO_QUEUE_FILTER* pFilter, out uint pFilterByteLength) GetRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self) ClearRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self) PushEmptyRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self) PushCopyOfRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, ref D3D11_INFO_QUEUE_FILTER pFilter) PushRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self) PopRetrievalFilter;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11InfoQueue self) GetRetrievalFilterStackSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, PSTR pDescription) AddMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11InfoQueue self, D3D11_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_CATEGORY Category) GetBreakOnCategory;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11InfoQueue self, D3D11_MESSAGE_ID ID) GetBreakOnID;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11InfoQueue self, BOOL bMute) SetMuteDebugOutput;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11InfoQueue self) GetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -5831,7 +5831,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11BlendState.VTable
 			{
-				public new function void(ref ID3D11BlendState1 self, out D3D11_BLEND_DESC1 pDesc) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11BlendState1 self, out D3D11_BLEND_DESC1 pDesc) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -5846,7 +5846,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11RasterizerState.VTable
 			{
-				public new function void(ref ID3D11RasterizerState1 self, out D3D11_RASTERIZER_DESC1 pDesc) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11RasterizerState1 self, out D3D11_RASTERIZER_DESC1 pDesc) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -5892,25 +5892,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext.VTable
 			{
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox, uint32 CopyFlags) CopySubresourceRegion1;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch, uint32 CopyFlags) UpdateSubresource1;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pResource) DiscardResource;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11View pResourceView) DiscardView;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSSetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSGetConstantBuffers1;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState) SwapDeviceContextState;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11View pView, in float Color, RECT* pRect, uint32 NumRects) ClearView;
-				public new function void(ref ID3D11DeviceContext1 self, ref ID3D11View pResourceView, RECT* pRects, uint32 NumRects) DiscardView1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox, uint32 CopyFlags) CopySubresourceRegion1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch, uint32 CopyFlags) UpdateSubresource1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11Resource pResource) DiscardResource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11View pResourceView) DiscardView;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSSetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSGetConstantBuffers1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState) SwapDeviceContextState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11View pView, in float Color, RECT* pRect, uint32 NumRects) ClearView;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext1 self, ref ID3D11View pResourceView, RECT* pRects, uint32 NumRects) DiscardView1;
 			}
 		}
 		[CRepr]
@@ -5938,20 +5938,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoContext.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC1* pBufferDesc) SubmitDecoderBuffers1;
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11CryptoSession pCryptoSession, uint32 PrivateInputSize, void* pPrivatInputData, out uint64 pPrivateOutputData) GetDataForNewHardwareKey;
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11CryptoSession pCryptoSession, out D3D11_CRYPTO_SESSION_STATUS pStatus) CheckCryptoSessionStatus;
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, uint32 ReferenceFrameCount) DecoderEnableDownsampling;
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc) DecoderUpdateDownsampling;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetOutputColorSpace1;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, BOOL ShaderUsage) VideoProcessorSetOutputShaderUsage;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, out DXGI_COLOR_SPACE_TYPE pColorSpace) VideoProcessorGetOutputColorSpace1;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pShaderUsage) VideoProcessorGetOutputShaderUsage;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetStreamColorSpace1;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical) VideoProcessorSetStreamMirror;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_COLOR_SPACE_TYPE pColorSpace) VideoProcessorGetStreamColorSpace1;
-				public new function void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out BOOL pFlipHorizontal, out BOOL pFlipVertical) VideoProcessorGetStreamMirror;
-				public new function HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 OutputWidth, uint32 OutputHeight, DXGI_FORMAT OutputFormat, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT* pStreams, out uint32 pBehaviorHints) VideoProcessorGetBehaviorHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC1* pBufferDesc) SubmitDecoderBuffers1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11CryptoSession pCryptoSession, uint32 PrivateInputSize, void* pPrivatInputData, out uint64 pPrivateOutputData) GetDataForNewHardwareKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11CryptoSession pCryptoSession, out D3D11_CRYPTO_SESSION_STATUS pStatus) CheckCryptoSessionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, uint32 ReferenceFrameCount) DecoderEnableDownsampling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoDecoder pDecoder, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc) DecoderUpdateDownsampling;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetOutputColorSpace1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, BOOL ShaderUsage) VideoProcessorSetOutputShaderUsage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, out DXGI_COLOR_SPACE_TYPE pColorSpace) VideoProcessorGetOutputColorSpace1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, out BOOL pShaderUsage) VideoProcessorGetOutputShaderUsage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetStreamColorSpace1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical) VideoProcessorSetStreamMirror;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_COLOR_SPACE_TYPE pColorSpace) VideoProcessorGetStreamColorSpace1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out BOOL pEnable, out BOOL pFlipHorizontal, out BOOL pFlipVertical) VideoProcessorGetStreamMirror;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext1 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 OutputWidth, uint32 OutputHeight, DXGI_FORMAT OutputFormat, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT* pStreams, out uint32 pBehaviorHints) VideoProcessorGetBehaviorHints;
 			}
 		}
 		[CRepr]
@@ -5969,10 +5969,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoDevice.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoDevice1 self, in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out uint32 pPrivateInputSize, out uint32 pPrivateOutputSize) GetCryptoSessionPrivateDataSize;
-				public new function HRESULT(ref ID3D11VideoDevice1 self, in Guid pDecoderProfile, uint32 SampleWidth, uint32 SampleHeight, in DXGI_RATIONAL pFrameRate, uint32 BitRate, Guid* pCryptoType, out uint32 pDecoderCaps) GetVideoDecoderCaps;
-				public new function HRESULT(ref ID3D11VideoDevice1 self, in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, out BOOL pSupported, out BOOL pRealTimeHint) CheckVideoDecoderDownsampling;
-				public new function HRESULT(ref ID3D11VideoDevice1 self, in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, out D3D11_VIDEO_SAMPLE_DESC pRecommendedOutputDesc) RecommendVideoDecoderDownsampleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice1 self, in Guid pCryptoType, Guid* pDecoderProfile, in Guid pKeyExchangeType, out uint32 pPrivateInputSize, out uint32 pPrivateOutputSize) GetCryptoSessionPrivateDataSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice1 self, in Guid pDecoderProfile, uint32 SampleWidth, uint32 SampleHeight, in DXGI_RATIONAL pFrameRate, uint32 BitRate, Guid* pCryptoType, out uint32 pDecoderCaps) GetVideoDecoderCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice1 self, in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, in D3D11_VIDEO_SAMPLE_DESC pOutputDesc, out BOOL pSupported, out BOOL pRealTimeHint) CheckVideoDecoderDownsampling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice1 self, in D3D11_VIDEO_DECODER_DESC pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, in D3D11_VIDEO_DECODER_CONFIG pInputConfig, in DXGI_RATIONAL pFrameRate, out D3D11_VIDEO_SAMPLE_DESC pRecommendedOutputDesc) RecommendVideoDecoderDownsampleParameters;
 			}
 		}
 		[CRepr]
@@ -5987,7 +5987,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoProcessorEnumerator.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoProcessorEnumerator1 self, DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, out BOOL pSupported) CheckVideoProcessorFormatConversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoProcessorEnumerator1 self, DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, out BOOL pSupported) CheckVideoProcessorFormatConversion;
 			}
 		}
 		[CRepr]
@@ -6008,13 +6008,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Device.VTable
 			{
-				public new function void(ref ID3D11Device1 self, out ID3D11DeviceContext1* ppImmediateContext) GetImmediateContext1;
-				public new function HRESULT(ref ID3D11Device1 self, uint32 ContextFlags, ID3D11DeviceContext1** ppDeferredContext) CreateDeferredContext1;
-				public new function HRESULT(ref ID3D11Device1 self, in D3D11_BLEND_DESC1 pBlendStateDesc, ID3D11BlendState1** ppBlendState) CreateBlendState1;
-				public new function HRESULT(ref ID3D11Device1 self, in D3D11_RASTERIZER_DESC1 pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState) CreateRasterizerState1;
-				public new function HRESULT(ref ID3D11Device1 self, uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, in Guid EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState) CreateDeviceContextState;
-				public new function HRESULT(ref ID3D11Device1 self, HANDLE hResource, in Guid returnedInterface, void** ppResource) OpenSharedResource1;
-				public new function HRESULT(ref ID3D11Device1 self, PWSTR lpName, uint32 dwDesiredAccess, in Guid returnedInterface, void** ppResource) OpenSharedResourceByName;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device1 self, out ID3D11DeviceContext1* ppImmediateContext) GetImmediateContext1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, uint32 ContextFlags, ID3D11DeviceContext1** ppDeferredContext) CreateDeferredContext1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, in D3D11_BLEND_DESC1 pBlendStateDesc, ID3D11BlendState1** ppBlendState) CreateBlendState1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, in D3D11_RASTERIZER_DESC1 pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState) CreateRasterizerState1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, in Guid EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState) CreateDeviceContextState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, HANDLE hResource, in Guid returnedInterface, void** ppResource) OpenSharedResource1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device1 self, PWSTR lpName, uint32 dwDesiredAccess, in Guid returnedInterface, void** ppResource) OpenSharedResourceByName;
 			}
 		}
 		[CRepr]
@@ -6032,10 +6032,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function int32(ref ID3DUserDefinedAnnotation self, PWSTR Name) BeginEvent;
-				public new function int32(ref ID3DUserDefinedAnnotation self) EndEvent;
-				public new function void(ref ID3DUserDefinedAnnotation self, PWSTR Name) SetMarker;
-				public new function BOOL(ref ID3DUserDefinedAnnotation self) GetStatus;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3DUserDefinedAnnotation self, PWSTR Name) BeginEvent;
+				public new function [CallingConvention(.Stdcall)] int32(ref ID3DUserDefinedAnnotation self) EndEvent;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3DUserDefinedAnnotation self, PWSTR Name) SetMarker;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3DUserDefinedAnnotation self) GetStatus;
 			}
 		}
 		[CRepr]
@@ -6059,16 +6059,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext1.VTable
 			{
-				public new function HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Resource pTiledResource, uint32 NumTiledResourceRegions, D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint32 NumRanges, uint32* pRangeFlags, uint32* pTilePoolStartOffsets, uint32* pRangeTileCounts, uint32 Flags) UpdateTileMappings;
-				public new function HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pSourceRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, uint32 Flags) CopyTileMappings;
-				public new function void(ref ID3D11DeviceContext2 self, ref ID3D11Resource pTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, ref ID3D11Buffer pBuffer, uint64 BufferStartOffsetInBytes, uint32 Flags) CopyTiles;
-				public new function void(ref ID3D11DeviceContext2 self, ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pDestTileRegionSize, void* pSourceTileData, uint32 Flags) UpdateTiles;
-				public new function HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Buffer pTilePool, uint64 NewSizeInBytes) ResizeTilePool;
-				public new function void(ref ID3D11DeviceContext2 self, ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier) TiledResourceBarrier;
-				public new function BOOL(ref ID3D11DeviceContext2 self) IsAnnotationEnabled;
-				public new function void(ref ID3D11DeviceContext2 self, PWSTR pLabel, int32 Data) SetMarkerInt;
-				public new function void(ref ID3D11DeviceContext2 self, PWSTR pLabel, int32 Data) BeginEventInt;
-				public new function void(ref ID3D11DeviceContext2 self) EndEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Resource pTiledResource, uint32 NumTiledResourceRegions, D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint32 NumRanges, uint32* pRangeFlags, uint32* pTilePoolStartOffsets, uint32* pRangeTileCounts, uint32 Flags) UpdateTileMappings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pSourceRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, uint32 Flags) CopyTileMappings;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self, ref ID3D11Resource pTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pTileRegionSize, ref ID3D11Buffer pBuffer, uint64 BufferStartOffsetInBytes, uint32 Flags) CopyTiles;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self, ref ID3D11Resource pDestTiledResource, in D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, in D3D11_TILE_REGION_SIZE pDestTileRegionSize, void* pSourceTileData, uint32 Flags) UpdateTiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext2 self, ref ID3D11Buffer pTilePool, uint64 NewSizeInBytes) ResizeTilePool;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self, ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier) TiledResourceBarrier;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11DeviceContext2 self) IsAnnotationEnabled;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self, PWSTR pLabel, int32 Data) SetMarkerInt;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self, PWSTR pLabel, int32 Data) BeginEventInt;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext2 self) EndEvent;
 			}
 		}
 		[CRepr]
@@ -6086,10 +6086,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Device1.VTable
 			{
-				public new function void(ref ID3D11Device2 self, out ID3D11DeviceContext2* ppImmediateContext) GetImmediateContext2;
-				public new function HRESULT(ref ID3D11Device2 self, uint32 ContextFlags, ID3D11DeviceContext2** ppDeferredContext) CreateDeferredContext2;
-				public new function void(ref ID3D11Device2 self, ref ID3D11Resource pTiledResource, uint32* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
-				public new function HRESULT(ref ID3D11Device2 self, DXGI_FORMAT Format, uint32 SampleCount, uint32 Flags, out uint32 pNumQualityLevels) CheckMultisampleQualityLevels1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device2 self, out ID3D11DeviceContext2* ppImmediateContext) GetImmediateContext2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device2 self, uint32 ContextFlags, ID3D11DeviceContext2** ppDeferredContext) CreateDeferredContext2;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device2 self, ref ID3D11Resource pTiledResource, uint32* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device2 self, DXGI_FORMAT Format, uint32 SampleCount, uint32 Flags, out uint32 pNumQualityLevels) CheckMultisampleQualityLevels1;
 			}
 		}
 		[CRepr]
@@ -6104,7 +6104,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Texture2D.VTable
 			{
-				public new function void(ref ID3D11Texture2D1 self, out D3D11_TEXTURE2D_DESC1 pDesc) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Texture2D1 self, out D3D11_TEXTURE2D_DESC1 pDesc) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6119,7 +6119,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Texture3D.VTable
 			{
-				public new function void(ref ID3D11Texture3D1 self, out D3D11_TEXTURE3D_DESC1 pDesc) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Texture3D1 self, out D3D11_TEXTURE3D_DESC1 pDesc) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6134,7 +6134,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11RasterizerState1.VTable
 			{
-				public new function void(ref ID3D11RasterizerState2 self, out D3D11_RASTERIZER_DESC2 pDesc) GetDesc2;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11RasterizerState2 self, out D3D11_RASTERIZER_DESC2 pDesc) GetDesc2;
 			}
 		}
 		[CRepr]
@@ -6149,7 +6149,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11ShaderResourceView.VTable
 			{
-				public new function void(ref ID3D11ShaderResourceView1 self, out D3D11_SHADER_RESOURCE_VIEW_DESC1 pDesc1) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ShaderResourceView1 self, out D3D11_SHADER_RESOURCE_VIEW_DESC1 pDesc1) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6164,7 +6164,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11RenderTargetView.VTable
 			{
-				public new function void(ref ID3D11RenderTargetView1 self, out D3D11_RENDER_TARGET_VIEW_DESC1 pDesc1) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11RenderTargetView1 self, out D3D11_RENDER_TARGET_VIEW_DESC1 pDesc1) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6179,7 +6179,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11UnorderedAccessView.VTable
 			{
-				public new function void(ref ID3D11UnorderedAccessView1 self, out D3D11_UNORDERED_ACCESS_VIEW_DESC1 pDesc1) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11UnorderedAccessView1 self, out D3D11_UNORDERED_ACCESS_VIEW_DESC1 pDesc1) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6194,7 +6194,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Query.VTable
 			{
-				public new function void(ref ID3D11Query1 self, out D3D11_QUERY_DESC1 pDesc1) GetDesc1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Query1 self, out D3D11_QUERY_DESC1 pDesc1) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -6211,9 +6211,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext2.VTable
 			{
-				public new function void(ref ID3D11DeviceContext3 self, D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent) Flush1;
-				public new function void(ref ID3D11DeviceContext3 self, BOOL HwProtectionEnable) SetHardwareProtectionState;
-				public new function void(ref ID3D11DeviceContext3 self, out BOOL pHwProtectionEnable) GetHardwareProtectionState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext3 self, D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent) Flush1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext3 self, BOOL HwProtectionEnable) SetHardwareProtectionState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext3 self, out BOOL pHwProtectionEnable) GetHardwareProtectionState;
 			}
 		}
 		[CRepr]
@@ -6230,9 +6230,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceChild.VTable
 			{
-				public new function HRESULT(ref ID3D11Fence self, SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, out HANDLE pHandle) CreateSharedHandle;
-				public new function uint64(ref ID3D11Fence self) GetCompletedValue;
-				public new function HRESULT(ref ID3D11Fence self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Fence self, SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, out HANDLE pHandle) CreateSharedHandle;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11Fence self) GetCompletedValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Fence self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
 			}
 		}
 		[CRepr]
@@ -6248,8 +6248,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11DeviceContext3.VTable
 			{
-				public new function HRESULT(ref ID3D11DeviceContext4 self, ref ID3D11Fence pFence, uint64 Value) Signal;
-				public new function HRESULT(ref ID3D11DeviceContext4 self, ref ID3D11Fence pFence, uint64 Value) Wait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext4 self, ref ID3D11Fence pFence, uint64 Value) Signal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext4 self, ref ID3D11Fence pFence, uint64 Value) Wait;
 			}
 		}
 		[CRepr]
@@ -6274,17 +6274,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Device2.VTable
 			{
-				public new function HRESULT(ref ID3D11Device3 self, in D3D11_TEXTURE2D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D) CreateTexture2D1;
-				public new function HRESULT(ref ID3D11Device3 self, in D3D11_TEXTURE3D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D) CreateTexture3D1;
-				public new function HRESULT(ref ID3D11Device3 self, in D3D11_RASTERIZER_DESC2 pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState) CreateRasterizerState2;
-				public new function HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1) CreateShaderResourceView1;
-				public new function HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1) CreateUnorderedAccessView1;
-				public new function HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1) CreateRenderTargetView1;
-				public new function HRESULT(ref ID3D11Device3 self, in D3D11_QUERY_DESC1 pQueryDesc1, ID3D11Query1** ppQuery1) CreateQuery1;
-				public new function void(ref ID3D11Device3 self, out ID3D11DeviceContext3* ppImmediateContext) GetImmediateContext3;
-				public new function HRESULT(ref ID3D11Device3 self, uint32 ContextFlags, ID3D11DeviceContext3** ppDeferredContext) CreateDeferredContext3;
-				public new function void(ref ID3D11Device3 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
-				public new function void(ref ID3D11Device3 self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) ReadFromSubresource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, in D3D11_TEXTURE2D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D) CreateTexture2D1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, in D3D11_TEXTURE3D_DESC1 pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D) CreateTexture3D1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, in D3D11_RASTERIZER_DESC2 pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState) CreateRasterizerState2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1) CreateShaderResourceView1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1) CreateUnorderedAccessView1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, ref ID3D11Resource pResource, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1) CreateRenderTargetView1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, in D3D11_QUERY_DESC1 pQueryDesc1, ID3D11Query1** ppQuery1) CreateQuery1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device3 self, out ID3D11DeviceContext3* ppImmediateContext) GetImmediateContext3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device3 self, uint32 ContextFlags, ID3D11DeviceContext3** ppDeferredContext) CreateDeferredContext3;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device3 self, ref ID3D11Resource pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device3 self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, ref ID3D11Resource pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) ReadFromSubresource;
 			}
 		}
 		[CRepr]
@@ -6300,8 +6300,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Device3.VTable
 			{
-				public new function HRESULT(ref ID3D11Device4 self, HANDLE hEvent, out uint32 pdwCookie) RegisterDeviceRemovedEvent;
-				public new function void(ref ID3D11Device4 self, uint32 dwCookie) UnregisterDeviceRemoved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device4 self, HANDLE hEvent, out uint32 pdwCookie) RegisterDeviceRemovedEvent;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device4 self, uint32 dwCookie) UnregisterDeviceRemoved;
 			}
 		}
 		[CRepr]
@@ -6317,8 +6317,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11Device4.VTable
 			{
-				public new function HRESULT(ref ID3D11Device5 self, HANDLE hFence, in Guid ReturnedInterface, void** ppFence) OpenSharedFence;
-				public new function HRESULT(ref ID3D11Device5 self, uint64 InitialValue, D3D11_FENCE_FLAG Flags, in Guid ReturnedInterface, void** ppFence) CreateFence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device5 self, HANDLE hFence, in Guid ReturnedInterface, void** ppFence) OpenSharedFence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device5 self, uint64 InitialValue, D3D11_FENCE_FLAG Flags, in Guid ReturnedInterface, void** ppFence) CreateFence;
 			}
 		}
 		[CRepr]
@@ -6336,10 +6336,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID3D11Multithread self) Enter;
-				public new function void(ref ID3D11Multithread self) Leave;
-				public new function BOOL(ref ID3D11Multithread self, BOOL bMTProtect) SetMultithreadProtected;
-				public new function BOOL(ref ID3D11Multithread self) GetMultithreadProtected;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Multithread self) Enter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Multithread self) Leave;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11Multithread self, BOOL bMTProtect) SetMultithreadProtected;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11Multithread self) GetMultithreadProtected;
 			}
 		}
 		[CRepr]
@@ -6357,10 +6357,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoContext1.VTable
 			{
-				public new function void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetOutputHDRMetaData;
-				public new function void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) VideoProcessorGetOutputHDRMetaData;
-				public new function void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetStreamHDRMetaData;
-				public new function void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) VideoProcessorGetStreamHDRMetaData;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetOutputHDRMetaData;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) VideoProcessorGetOutputHDRMetaData;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetStreamHDRMetaData;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11VideoContext2 self, ref ID3D11VideoProcessor pVideoProcessor, uint32 StreamIndex, out DXGI_HDR_METADATA_TYPE pType, uint32 Size, void* pMetaData) VideoProcessorGetStreamHDRMetaData;
 			}
 		}
 		[CRepr]
@@ -6376,8 +6376,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoDevice1.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoDevice2 self, D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
-				public new function HRESULT(ref ID3D11VideoDevice2 self, ref ID3D11CryptoSession pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchangeMT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice2 self, D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoDevice2 self, ref ID3D11CryptoSession pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchangeMT;
 			}
 		}
 		[CRepr]
@@ -6393,8 +6393,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11VideoContext2.VTable
 			{
-				public new function HRESULT(ref ID3D11VideoContext3 self, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey, uint32 NumComponentHistograms, uint32* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) DecoderBeginFrame1;
-				public new function HRESULT(ref ID3D11VideoContext3 self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc) SubmitDecoderBuffers2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext3 self, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint32 ContentKeySize, void* pContentKey, uint32 NumComponentHistograms, uint32* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) DecoderBeginFrame1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11VideoContext3 self, ref ID3D11VideoDecoder pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc) SubmitDecoderBuffers2;
 			}
 		}
 		[CRepr]
@@ -6420,17 +6420,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderReflectionType self, out D3D11_SHADER_TYPE_DESC pDesc) GetDesc;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, uint32 Index) GetMemberTypeByIndex;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, PSTR Name) GetMemberTypeByName;
-				public new function PSTR(ref ID3D11ShaderReflectionType self, uint32 Index) GetMemberTypeName;
-				public new function HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pType) IsEqual;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self) GetSubType;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self) GetBaseClass;
-				public new function uint32(ref ID3D11ShaderReflectionType self) GetNumInterfaces;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, uint32 uIndex) GetInterfaceByIndex;
-				public new function HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pType) IsOfType;
-				public new function HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pBase) ImplementsInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionType self, out D3D11_SHADER_TYPE_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, uint32 Index) GetMemberTypeByIndex;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, PSTR Name) GetMemberTypeByName;
+				public new function [CallingConvention(.Stdcall)] PSTR(ref ID3D11ShaderReflectionType self, uint32 Index) GetMemberTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pType) IsEqual;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self) GetSubType;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self) GetBaseClass;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflectionType self) GetNumInterfaces;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionType self, uint32 uIndex) GetInterfaceByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pType) IsOfType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionType self, ref ID3D11ShaderReflectionType pBase) ImplementsInterface;
 			}
 		}
 		[CRepr]
@@ -6449,10 +6449,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderReflectionVariable self, out D3D11_SHADER_VARIABLE_DESC pDesc) GetDesc;
-				public new function ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionVariable self) ComGetType;
-				public new function ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflectionVariable self) GetBuffer;
-				public new function uint32(ref ID3D11ShaderReflectionVariable self, uint32 uArrayIndex) GetInterfaceSlot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionVariable self, out D3D11_SHADER_VARIABLE_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionType*(ref ID3D11ShaderReflectionVariable self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflectionVariable self) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflectionVariable self, uint32 uArrayIndex) GetInterfaceSlot;
 			}
 		}
 		[CRepr]
@@ -6470,9 +6470,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderReflectionConstantBuffer self, out D3D11_SHADER_BUFFER_DESC pDesc) GetDesc;
-				public new function ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflectionConstantBuffer self, uint32 Index) GetVariableByIndex;
-				public new function ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflectionConstantBuffer self, PSTR Name) GetVariableByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflectionConstantBuffer self, out D3D11_SHADER_BUFFER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflectionConstantBuffer self, uint32 Index) GetVariableByIndex;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflectionConstantBuffer self, PSTR Name) GetVariableByName;
 			}
 		}
 		[CRepr]
@@ -6505,25 +6505,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderReflection self, out D3D11_SHADER_DESC pDesc) GetDesc;
-				public new function ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflection self, uint32 Index) GetConstantBufferByIndex;
-				public new function ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflection self, PSTR Name) GetConstantBufferByName;
-				public new function HRESULT(ref ID3D11ShaderReflection self, uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDesc;
-				public new function HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetInputParameterDesc;
-				public new function HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetOutputParameterDesc;
-				public new function HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetPatchConstantParameterDesc;
-				public new function ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflection self, PSTR Name) GetVariableByName;
-				public new function HRESULT(ref ID3D11ShaderReflection self, PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDescByName;
-				public new function uint32(ref ID3D11ShaderReflection self) GetMovInstructionCount;
-				public new function uint32(ref ID3D11ShaderReflection self) GetMovcInstructionCount;
-				public new function uint32(ref ID3D11ShaderReflection self) GetConversionInstructionCount;
-				public new function uint32(ref ID3D11ShaderReflection self) GetBitwiseInstructionCount;
-				public new function D3D_PRIMITIVE(ref ID3D11ShaderReflection self) GetGSInputPrimitive;
-				public new function BOOL(ref ID3D11ShaderReflection self) IsSampleFrequencyShader;
-				public new function uint32(ref ID3D11ShaderReflection self) GetNumInterfaceSlots;
-				public new function HRESULT(ref ID3D11ShaderReflection self, out D3D_FEATURE_LEVEL pLevel) GetMinFeatureLevel;
-				public new function uint32(ref ID3D11ShaderReflection self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
-				public new function uint64(ref ID3D11ShaderReflection self) GetRequiresFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, out D3D11_SHADER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflection self, uint32 Index) GetConstantBufferByIndex;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionConstantBuffer*(ref ID3D11ShaderReflection self, PSTR Name) GetConstantBufferByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetInputParameterDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetOutputParameterDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, uint32 ParameterIndex, out D3D11_SIGNATURE_PARAMETER_DESC pDesc) GetPatchConstantParameterDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionVariable*(ref ID3D11ShaderReflection self, PSTR Name) GetVariableByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDescByName;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetMovInstructionCount;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetMovcInstructionCount;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetConversionInstructionCount;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetBitwiseInstructionCount;
+				public new function [CallingConvention(.Stdcall)] D3D_PRIMITIVE(ref ID3D11ShaderReflection self) GetGSInputPrimitive;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11ShaderReflection self) IsSampleFrequencyShader;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetNumInterfaceSlots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, out D3D_FEATURE_LEVEL pLevel) GetMinFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID3D11ShaderReflection self) GetRequiresFlags;
 			}
 		}
 		[CRepr]
@@ -6539,8 +6539,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11LibraryReflection self, out D3D11_LIBRARY_DESC pDesc) GetDesc;
-				public new function ID3D11FunctionReflection*(ref ID3D11LibraryReflection self, int32 FunctionIndex) GetFunctionByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11LibraryReflection self, out D3D11_LIBRARY_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11FunctionReflection*(ref ID3D11LibraryReflection self, int32 FunctionIndex) GetFunctionByIndex;
 			}
 		}
 		[CRepr]
@@ -6562,13 +6562,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3D11FunctionReflection self, out D3D11_FUNCTION_DESC pDesc) GetDesc;
-				public new function ID3D11ShaderReflectionConstantBuffer*(ref ID3D11FunctionReflection self, uint32 BufferIndex) GetConstantBufferByIndex;
-				public new function ID3D11ShaderReflectionConstantBuffer*(ref ID3D11FunctionReflection self, PSTR Name) GetConstantBufferByName;
-				public new function HRESULT(ref ID3D11FunctionReflection self, uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDesc;
-				public new function ID3D11ShaderReflectionVariable*(ref ID3D11FunctionReflection self, PSTR Name) GetVariableByName;
-				public new function HRESULT(ref ID3D11FunctionReflection self, PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDescByName;
-				public new function ID3D11FunctionParameterReflection*(ref ID3D11FunctionReflection self, int32 ParameterIndex) GetFunctionParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionReflection self, out D3D11_FUNCTION_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionConstantBuffer*(ref ID3D11FunctionReflection self, uint32 BufferIndex) GetConstantBufferByIndex;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionConstantBuffer*(ref ID3D11FunctionReflection self, PSTR Name) GetConstantBufferByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionReflection self, uint32 ResourceIndex, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDesc;
+				public new function [CallingConvention(.Stdcall)] ID3D11ShaderReflectionVariable*(ref ID3D11FunctionReflection self, PSTR Name) GetVariableByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionReflection self, PSTR Name, out D3D11_SHADER_INPUT_BIND_DESC pDesc) GetResourceBindingDescByName;
+				public new function [CallingConvention(.Stdcall)] ID3D11FunctionParameterReflection*(ref ID3D11FunctionReflection self, int32 ParameterIndex) GetFunctionParameter;
 			}
 		}
 		[CRepr]
@@ -6584,7 +6584,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3D11FunctionParameterReflection self, out D3D11_PARAMETER_DESC pDesc) GetDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionParameterReflection self, out D3D11_PARAMETER_DESC pDesc) GetDesc;
 			}
 		}
 		[CRepr]
@@ -6608,16 +6608,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBuffer;
-				public new function HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBufferByName;
-				public new function HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindResource;
-				public new function HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindResourceByName;
-				public new function HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindSampler;
-				public new function HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindSamplerByName;
-				public new function HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessView;
-				public new function HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessViewByName;
-				public new function HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSrvSlot, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessView;
-				public new function HRESULT(ref ID3D11ModuleInstance self, PSTR pSrvName, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessViewByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBufferByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindResourceByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindSampler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindSamplerByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessViewByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, uint32 uSrcSrvSlot, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ModuleInstance self, PSTR pSrvName, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessViewByName;
 			}
 		}
 		[CRepr]
@@ -6632,7 +6632,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11Module self, PSTR pNamespace, out ID3D11ModuleInstance* ppModuleInstance) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Module self, PSTR pNamespace, out ID3D11ModuleInstance* ppModuleInstance) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -6649,9 +6649,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11Linker self, ref ID3D11ModuleInstance pEntry, PSTR pEntryName, PSTR pTargetName, uint32 uFlags, out ID3DBlob* ppShaderBlob, ID3DBlob** ppErrorBuffer) Link;
-				public new function HRESULT(ref ID3D11Linker self, ref ID3D11ModuleInstance pLibraryMI) UseLibrary;
-				public new function HRESULT(ref ID3D11Linker self, uint32 uCBufferSlot, uint32 uCBufferEntry) AddClipPlaneFromCBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Linker self, ref ID3D11ModuleInstance pEntry, PSTR pEntryName, PSTR pTargetName, uint32 uFlags, out ID3DBlob* ppShaderBlob, ID3DBlob** ppErrorBuffer) Link;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Linker self, ref ID3D11ModuleInstance pLibraryMI) UseLibrary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Linker self, uint32 uCBufferSlot, uint32 uCBufferEntry) AddClipPlaneFromCBuffer;
 			}
 		}
 		[CRepr]
@@ -6686,14 +6686,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, out ID3D11ModuleInstance* ppModuleInstance, ID3DBlob** ppErrorBuffer) CreateModuleInstance;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, D3D11_PARAMETER_DESC* pInputParameters, uint32 cInputParameters, out ID3D11LinkingNode* ppInputNode) SetInputSignature;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, D3D11_PARAMETER_DESC* pOutputParameters, uint32 cOutputParameters, out ID3D11LinkingNode* ppOutputNode) SetOutputSignature;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, PSTR pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, PSTR pFunctionName, out ID3D11LinkingNode* ppCallNode) CallFunction;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex) PassValue;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, PSTR pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex, PSTR pDstSwizzle) PassValueWithSwizzle;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, ID3DBlob** ppErrorBuffer) GetLastError;
-				public new function HRESULT(ref ID3D11FunctionLinkingGraph self, uint32 uFlags, out ID3DBlob* ppBuffer) GenerateHlsl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, out ID3D11ModuleInstance* ppModuleInstance, ID3DBlob** ppErrorBuffer) CreateModuleInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, D3D11_PARAMETER_DESC* pInputParameters, uint32 cInputParameters, out ID3D11LinkingNode* ppInputNode) SetInputSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, D3D11_PARAMETER_DESC* pOutputParameters, uint32 cOutputParameters, out ID3D11LinkingNode* ppOutputNode) SetOutputSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, PSTR pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, PSTR pFunctionName, out ID3D11LinkingNode* ppCallNode) CallFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex) PassValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, ref ID3D11LinkingNode pSrcNode, int32 SrcParameterIndex, PSTR pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int32 DstParameterIndex, PSTR pDstSwizzle) PassValueWithSwizzle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, ID3DBlob** ppErrorBuffer) GetLastError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11FunctionLinkingGraph self, uint32 uFlags, out ID3DBlob* ppBuffer) GenerateHlsl;
 			}
 		}
 		[CRepr]
@@ -6715,14 +6715,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderTrace self, uint64* pTestCount) TraceReady;
-				public new function void(ref ID3D11ShaderTrace self) ResetTrace;
-				public new function HRESULT(ref ID3D11ShaderTrace self, out D3D11_TRACE_STATS pTraceStats) GetTraceStats;
-				public new function HRESULT(ref ID3D11ShaderTrace self, uint32 stampIndex) PSSelectStamp;
-				public new function HRESULT(ref ID3D11ShaderTrace self, ref D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetInitialRegisterContents;
-				public new function HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, out D3D11_TRACE_STEP pTraceStep) GetStep;
-				public new function HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, uint32 writtenRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetWrittenRegister;
-				public new function HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, uint32 readRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetReadRegister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, uint64* pTestCount) TraceReady;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ShaderTrace self) ResetTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, out D3D11_TRACE_STATS pTraceStats) GetTraceStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, uint32 stampIndex) PSSelectStamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, ref D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetInitialRegisterContents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, out D3D11_TRACE_STEP pTraceStep) GetStep;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, uint32 writtenRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetWrittenRegister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTrace self, uint32 stepIndex, uint32 readRegisterIndex, out D3D11_TRACE_REGISTER pRegister, out D3D11_TRACE_VALUE pValue) GetReadRegister;
 			}
 		}
 		[CRepr]
@@ -6737,7 +6737,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11ShaderTraceFactory self, ref IUnknown pShader, ref D3D11_SHADER_TRACE_DESC pTraceDesc, out ID3D11ShaderTrace* ppShaderTrace) CreateShaderTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderTraceFactory self, ref IUnknown pShader, ref D3D11_SHADER_TRACE_DESC pTraceDesc, out ID3D11ShaderTrace* ppShaderTrace) CreateShaderTrace;
 			}
 		}
 		[CRepr]
@@ -6754,9 +6754,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
-				public new function HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) Scan;
-				public new function HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, uint32 ElementScanPitch, uint32 ScanCount, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) Multiscan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) Scan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11Scan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, uint32 ElementScanPitch, uint32 ScanCount, ref ID3D11UnorderedAccessView pSrc, ref ID3D11UnorderedAccessView pDst) Multiscan;
 			}
 		}
 		[CRepr]
@@ -6772,8 +6772,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3DX11SegmentedScan self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
-				public new function HRESULT(ref ID3DX11SegmentedScan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ref ID3D11UnorderedAccessView pSrcElementFlags, ref ID3D11UnorderedAccessView pDst) SegScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11SegmentedScan self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11SegmentedScan self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ref ID3D11UnorderedAccessView pSrcElementFlags, ref ID3D11UnorderedAccessView pDst) SegScan;
 			}
 		}
 		[CRepr]
@@ -6794,13 +6794,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3DX11FFT self, float ForwardScale) SetForwardScale;
-				public new function float(ref ID3DX11FFT self) GetForwardScale;
-				public new function HRESULT(ref ID3DX11FFT self, float InverseScale) SetInverseScale;
-				public new function float(ref ID3DX11FFT self) GetInverseScale;
-				public new function HRESULT(ref ID3DX11FFT self, uint32 NumTempBuffers, ID3D11UnorderedAccessView** ppTempBuffers, uint32 NumPrecomputeBuffers, ID3D11UnorderedAccessView** ppPrecomputeBufferSizes) AttachBuffersAndPrecompute;
-				public new function HRESULT(ref ID3DX11FFT self, in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) ForwardTransform;
-				public new function HRESULT(ref ID3DX11FFT self, in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) InverseTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, float ForwardScale) SetForwardScale;
+				public new function [CallingConvention(.Stdcall)] float(ref ID3DX11FFT self) GetForwardScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, float InverseScale) SetInverseScale;
+				public new function [CallingConvention(.Stdcall)] float(ref ID3DX11FFT self) GetInverseScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, uint32 NumTempBuffers, ID3D11UnorderedAccessView** ppTempBuffers, uint32 NumPrecomputeBuffers, ID3D11UnorderedAccessView** ppPrecomputeBufferSizes) AttachBuffersAndPrecompute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) ForwardTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) InverseTransform;
 			}
 		}
 		

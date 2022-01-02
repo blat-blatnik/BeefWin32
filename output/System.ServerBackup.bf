@@ -72,7 +72,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWsbApplicationBackupSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, out IWsbApplicationAsync* ppAsync) CheckConsistency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationBackupSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, out IWsbApplicationAsync* ppAsync) CheckConsistency;
 			}
 		}
 		[CRepr]
@@ -90,10 +90,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWsbApplicationRestoreSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PreRestore;
-				public new function HRESULT(ref IWsbApplicationRestoreSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PostRestore;
-				public new function HRESULT(ref IWsbApplicationRestoreSupport self, uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) OrderComponents;
-				public new function HRESULT(ref IWsbApplicationRestoreSupport self, out uint8 pbRollForwardSupported) IsRollForwardSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationRestoreSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PreRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationRestoreSupport self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PostRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationRestoreSupport self, uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) OrderComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationRestoreSupport self, out uint8 pbRollForwardSupported) IsRollForwardSupported;
 			}
 		}
 		[CRepr]
@@ -109,8 +109,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWsbApplicationAsync self, out HRESULT phrResult) QueryStatus;
-				public new function HRESULT(ref IWsbApplicationAsync self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationAsync self, out HRESULT phrResult) QueryStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationAsync self) Abort;
 			}
 		}
 		

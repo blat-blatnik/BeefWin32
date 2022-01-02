@@ -662,8 +662,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDAddress self, char16* pszBuffer, uint32 cchLength, BOOL fSafe) Serialize;
-				public new function HRESULT(ref IWSDAddress self, PWSTR pszBuffer) Deserialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAddress self, char16* pszBuffer, uint32 cchLength, BOOL fSafe) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAddress self, PWSTR pszBuffer) Deserialize;
 			}
 		}
 		[CRepr]
@@ -682,11 +682,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDAddress.VTable
 			{
-				public new function HRESULT(ref IWSDTransportAddress self, out uint16 pwPort) GetPort;
-				public new function HRESULT(ref IWSDTransportAddress self, uint16 wPort) SetPort;
-				public new function HRESULT(ref IWSDTransportAddress self, out PWSTR ppszAddress) GetTransportAddress;
-				public new function HRESULT(ref IWSDTransportAddress self, BOOL fSafe, out PWSTR ppszAddress) GetTransportAddressEx;
-				public new function HRESULT(ref IWSDTransportAddress self, PWSTR pszAddress) SetTransportAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDTransportAddress self, out uint16 pwPort) GetPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDTransportAddress self, uint16 wPort) SetPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDTransportAddress self, out PWSTR ppszAddress) GetTransportAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDTransportAddress self, BOOL fSafe, out PWSTR ppszAddress) GetTransportAddressEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDTransportAddress self, PWSTR pszAddress) SetTransportAddress;
 			}
 		}
 		[CRepr]
@@ -705,11 +705,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDMessageParameters self, out IWSDAddress* ppAddress) GetLocalAddress;
-				public new function HRESULT(ref IWSDMessageParameters self, ref IWSDAddress pAddress) SetLocalAddress;
-				public new function HRESULT(ref IWSDMessageParameters self, out IWSDAddress* ppAddress) GetRemoteAddress;
-				public new function HRESULT(ref IWSDMessageParameters self, ref IWSDAddress pAddress) SetRemoteAddress;
-				public new function HRESULT(ref IWSDMessageParameters self, out IWSDMessageParameters* ppTxParams) GetLowerParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMessageParameters self, out IWSDAddress* ppAddress) GetLocalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMessageParameters self, ref IWSDAddress pAddress) SetLocalAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMessageParameters self, out IWSDAddress* ppAddress) GetRemoteAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMessageParameters self, ref IWSDAddress pAddress) SetRemoteAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMessageParameters self, out IWSDMessageParameters* ppTxParams) GetLowerParameters;
 			}
 		}
 		[CRepr]
@@ -725,8 +725,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDMessageParameters.VTable
 			{
-				public new function HRESULT(ref IWSDUdpMessageParameters self, in WSDUdpRetransmitParams pParams) SetRetransmitParams;
-				public new function HRESULT(ref IWSDUdpMessageParameters self, out WSDUdpRetransmitParams pParams) GetRetransmitParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpMessageParameters self, in WSDUdpRetransmitParams pParams) SetRetransmitParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpMessageParameters self, out WSDUdpRetransmitParams pParams) GetRetransmitParams;
 			}
 		}
 		[CRepr]
@@ -750,16 +750,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDTransportAddress.VTable
 			{
-				public new function HRESULT(ref IWSDUdpAddress self, in SOCKADDR_STORAGE pSockAddr) SetSockaddr;
-				public new function HRESULT(ref IWSDUdpAddress self, out SOCKADDR_STORAGE pSockAddr) GetSockaddr;
-				public new function HRESULT(ref IWSDUdpAddress self, BOOL fExclusive) SetExclusive;
-				public new function HRESULT(ref IWSDUdpAddress self) GetExclusive;
-				public new function HRESULT(ref IWSDUdpAddress self, WSDUdpMessageType messageType) SetMessageType;
-				public new function HRESULT(ref IWSDUdpAddress self, out WSDUdpMessageType pMessageType) GetMessageType;
-				public new function HRESULT(ref IWSDUdpAddress self, uint32 dwTTL) SetTTL;
-				public new function HRESULT(ref IWSDUdpAddress self, out uint32 pdwTTL) GetTTL;
-				public new function HRESULT(ref IWSDUdpAddress self, in Guid pAlias) SetAlias;
-				public new function HRESULT(ref IWSDUdpAddress self, out Guid pAlias) GetAlias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, in SOCKADDR_STORAGE pSockAddr) SetSockaddr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, out SOCKADDR_STORAGE pSockAddr) GetSockaddr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, BOOL fExclusive) SetExclusive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self) GetExclusive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, WSDUdpMessageType messageType) SetMessageType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, out WSDUdpMessageType pMessageType) GetMessageType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, uint32 dwTTL) SetTTL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, out uint32 pdwTTL) GetTTL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, in Guid pAlias) SetAlias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDUdpAddress self, out Guid pAlias) GetAlias;
 			}
 		}
 		[CRepr]
@@ -782,15 +782,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDMessageParameters.VTable
 			{
-				public new function HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszHeaders) SetInboundHttpHeaders;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszHeaders) GetInboundHttpHeaders;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszHeaders) SetOutboundHttpHeaders;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszHeaders) GetOutboundHttpHeaders;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszId) SetID;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszId) GetID;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, ref IUnknown pContext) SetContext;
-				public new function HRESULT(ref IWSDHttpMessageParameters self, out IUnknown* ppContext) GetContext;
-				public new function HRESULT(ref IWSDHttpMessageParameters self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszHeaders) SetInboundHttpHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszHeaders) GetInboundHttpHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszHeaders) SetOutboundHttpHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszHeaders) GetOutboundHttpHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, PWSTR pszId) SetID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, out PWSTR ppszId) GetID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, ref IUnknown pContext) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self, out IUnknown* ppContext) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpMessageParameters self) Clear;
 			}
 		}
 		[CRepr]
@@ -808,10 +808,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDTransportAddress.VTable
 			{
-				public new function HRESULT(ref IWSDHttpAddress self) GetSecure;
-				public new function HRESULT(ref IWSDHttpAddress self, BOOL fSecure) SetSecure;
-				public new function HRESULT(ref IWSDHttpAddress self, out PWSTR ppszPath) GetPath;
-				public new function HRESULT(ref IWSDHttpAddress self, PWSTR pszPath) SetPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAddress self) GetSecure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAddress self, BOOL fSecure) SetSecure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAddress self, out PWSTR ppszPath) GetPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAddress self, PWSTR pszPath) SetPath;
 			}
 		}
 		[CRepr]
@@ -827,8 +827,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDSSLClientCertificate self, out CERT_CONTEXT* ppCertContext) GetClientCertificate;
-				public new function HRESULT(ref IWSDSSLClientCertificate self, out HANDLE phToken) GetMappedAccessToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSSLClientCertificate self, out CERT_CONTEXT* ppCertContext) GetClientCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSSLClientCertificate self, out HANDLE phToken) GetMappedAccessToken;
 			}
 		}
 		[CRepr]
@@ -844,8 +844,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDHttpAuthParameters self, out HANDLE phToken) GetClientAccessToken;
-				public new function HRESULT(ref IWSDHttpAuthParameters self, out uint32 pAuthType) GetAuthType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAuthParameters self, out HANDLE phToken) GetClientAccessToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDHttpAuthParameters self, out uint32 pAuthType) GetAuthType;
 			}
 		}
 		[CRepr]
@@ -864,11 +864,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDSignatureProperty self, out BOOL pbSigned) IsMessageSigned;
-				public new function HRESULT(ref IWSDSignatureProperty self, out BOOL pbSignatureTrusted) IsMessageSignatureTrusted;
-				public new function HRESULT(ref IWSDSignatureProperty self, uint8* pbKeyInfo, out uint32 pdwKeyInfoSize) GetKeyInfo;
-				public new function HRESULT(ref IWSDSignatureProperty self, uint8* pbSignature, out uint32 pdwSignatureSize) GetSignature;
-				public new function HRESULT(ref IWSDSignatureProperty self, uint8* pbSignedInfoHash, out uint32 pdwHashSize) GetSignedInfoHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSignatureProperty self, out BOOL pbSigned) IsMessageSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSignatureProperty self, out BOOL pbSignatureTrusted) IsMessageSignatureTrusted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSignatureProperty self, uint8* pbKeyInfo, out uint32 pdwKeyInfoSize) GetKeyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSignatureProperty self, uint8* pbSignature, out uint32 pdwSignatureSize) GetSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDSignatureProperty self, uint8* pbSignedInfoHash, out uint32 pdwHashSize) GetSignedInfoHash;
 			}
 		}
 		[CRepr]
@@ -898,9 +898,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDAttachment.VTable
 			{
-				public new function HRESULT(ref IWSDOutboundAttachment self, uint8* pBuffer, uint32 dwBytesToWrite, out uint32 pdwNumberOfBytesWritten) Write;
-				public new function HRESULT(ref IWSDOutboundAttachment self) Close;
-				public new function HRESULT(ref IWSDOutboundAttachment self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDOutboundAttachment self, uint8* pBuffer, uint32 dwBytesToWrite, out uint32 pdwNumberOfBytesWritten) Write;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDOutboundAttachment self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDOutboundAttachment self) Abort;
 			}
 		}
 		[CRepr]
@@ -916,8 +916,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDAttachment.VTable
 			{
-				public new function HRESULT(ref IWSDInboundAttachment self, uint8* pBuffer, uint32 dwBytesToRead, out uint32 pdwNumberOfBytesRead) Read;
-				public new function HRESULT(ref IWSDInboundAttachment self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDInboundAttachment self, uint8* pBuffer, uint32 dwBytesToRead, out uint32 pdwNumberOfBytesRead) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDInboundAttachment self) Close;
 			}
 		}
 		[CRepr]
@@ -935,10 +935,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDXMLContext self, PWSTR pszUri, PWSTR pszSuggestedPrefix, WSDXML_NAMESPACE** ppNamespace) AddNamespace;
-				public new function HRESULT(ref IWSDXMLContext self, PWSTR pszUri, PWSTR pszName, WSDXML_NAME** ppName) AddNameToNamespace;
-				public new function HRESULT(ref IWSDXMLContext self, WSDXML_NAMESPACE** pNamespaces, uint16 wNamespacesCount, uint8 bLayerNumber) SetNamespaces;
-				public new function HRESULT(ref IWSDXMLContext self, WSDXML_TYPE** pTypes, uint32 dwTypesCount, uint8 bLayerNumber) SetTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDXMLContext self, PWSTR pszUri, PWSTR pszSuggestedPrefix, WSDXML_NAMESPACE** ppNamespace) AddNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDXMLContext self, PWSTR pszUri, PWSTR pszName, WSDXML_NAME** ppName) AddNameToNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDXMLContext self, WSDXML_NAMESPACE** pNamespaces, uint16 wNamespacesCount, uint8 bLayerNumber) SetNamespaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDXMLContext self, WSDXML_TYPE** pTypes, uint32 dwTypesCount, uint8 bLayerNumber) SetTypes;
 			}
 		}
 		[CRepr]
@@ -959,13 +959,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDiscoveryProvider self, uint32 dwAddressFamily) SetAddressFamily;
-				public new function HRESULT(ref IWSDiscoveryProvider self, ref IWSDiscoveryProviderNotify pSink) Attach;
-				public new function HRESULT(ref IWSDiscoveryProvider self) Detach;
-				public new function HRESULT(ref IWSDiscoveryProvider self, PWSTR pszId, PWSTR pszTag) SearchById;
-				public new function HRESULT(ref IWSDiscoveryProvider self, PWSTR pszAddress, PWSTR pszTag) SearchByAddress;
-				public new function HRESULT(ref IWSDiscoveryProvider self, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, PWSTR pszMatchBy, PWSTR pszTag) SearchByType;
-				public new function HRESULT(ref IWSDiscoveryProvider self, out IWSDXMLContext* ppContext) GetXMLContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, uint32 dwAddressFamily) SetAddressFamily;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, ref IWSDiscoveryProviderNotify pSink) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self) Detach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, PWSTR pszId, PWSTR pszTag) SearchById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, PWSTR pszAddress, PWSTR pszTag) SearchByAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, PWSTR pszMatchBy, PWSTR pszTag) SearchByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProvider self, out IWSDXMLContext* ppContext) GetXMLContext;
 			}
 		}
 		[CRepr]
@@ -983,10 +983,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDiscoveryProviderNotify self, ref IWSDiscoveredService pService) Add;
-				public new function HRESULT(ref IWSDiscoveryProviderNotify self, ref IWSDiscoveredService pService) Remove;
-				public new function HRESULT(ref IWSDiscoveryProviderNotify self, HRESULT hr, PWSTR pszTag) SearchFailed;
-				public new function HRESULT(ref IWSDiscoveryProviderNotify self, PWSTR pszTag) SearchComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProviderNotify self, ref IWSDiscoveredService pService) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProviderNotify self, ref IWSDiscoveredService pService) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProviderNotify self, HRESULT hr, PWSTR pszTag) SearchFailed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryProviderNotify self, PWSTR pszTag) SearchComplete;
 			}
 		}
 		[CRepr]
@@ -1011,17 +1011,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDiscoveredService self, out WSD_ENDPOINT_REFERENCE* ppEndpointReference) GetEndpointReference;
-				public new function HRESULT(ref IWSDiscoveredService self, out WSD_NAME_LIST* ppTypesList) GetTypes;
-				public new function HRESULT(ref IWSDiscoveredService self, out WSD_URI_LIST* ppScopesList) GetScopes;
-				public new function HRESULT(ref IWSDiscoveredService self, out WSD_URI_LIST* ppXAddrsList) GetXAddrs;
-				public new function HRESULT(ref IWSDiscoveredService self, out uint64 pullMetadataVersion) GetMetadataVersion;
-				public new function HRESULT(ref IWSDiscoveredService self, out WSDXML_ELEMENT* ppHeaderAny, out WSDXML_ELEMENT* ppBodyAny) GetExtendedDiscoXML;
-				public new function HRESULT(ref IWSDiscoveredService self, out PWSTR ppszTag) GetProbeResolveTag;
-				public new function HRESULT(ref IWSDiscoveredService self, out PWSTR ppszRemoteTransportAddress) GetRemoteTransportAddress;
-				public new function HRESULT(ref IWSDiscoveredService self, out PWSTR ppszLocalTransportAddress) GetLocalTransportAddress;
-				public new function HRESULT(ref IWSDiscoveredService self, out Guid pGuid) GetLocalInterfaceGUID;
-				public new function HRESULT(ref IWSDiscoveredService self, out uint64 pullInstanceId) GetInstanceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out WSD_ENDPOINT_REFERENCE* ppEndpointReference) GetEndpointReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out WSD_NAME_LIST* ppTypesList) GetTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out WSD_URI_LIST* ppScopesList) GetScopes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out WSD_URI_LIST* ppXAddrsList) GetXAddrs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out uint64 pullMetadataVersion) GetMetadataVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out WSDXML_ELEMENT* ppHeaderAny, out WSDXML_ELEMENT* ppBodyAny) GetExtendedDiscoXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out PWSTR ppszTag) GetProbeResolveTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out PWSTR ppszRemoteTransportAddress) GetRemoteTransportAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out PWSTR ppszLocalTransportAddress) GetLocalTransportAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out Guid pGuid) GetLocalInterfaceGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveredService self, out uint64 pullInstanceId) GetInstanceId;
 			}
 		}
 		[CRepr]
@@ -1048,19 +1048,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDiscoveryPublisher self, uint32 dwAddressFamily) SetAddressFamily;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, ref IWSDiscoveryPublisherNotify pSink) RegisterNotificationSink;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, ref IWSDiscoveryPublisherNotify pSink) UnRegisterNotificationSink;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) Publish;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSDXML_ELEMENT* pAny) UnPublish;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pProbeMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchProbe;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pResolveMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchResolve;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) PublishEx;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pProbeMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchProbeEx;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pResolveMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchResolveEx;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, ref IWSDScopeMatchingRule pScopeMatchingRule) RegisterScopeMatchingRule;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, ref IWSDScopeMatchingRule pScopeMatchingRule) UnRegisterScopeMatchingRule;
-				public new function HRESULT(ref IWSDiscoveryPublisher self, out IWSDXMLContext* ppContext) GetXMLContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, uint32 dwAddressFamily) SetAddressFamily;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, ref IWSDiscoveryPublisherNotify pSink) RegisterNotificationSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, ref IWSDiscoveryPublisherNotify pSink) UnRegisterNotificationSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) Publish;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSDXML_ELEMENT* pAny) UnPublish;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pProbeMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchProbe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pResolveMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchResolve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) PublishEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pProbeMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchProbeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, in WSD_SOAP_MESSAGE pResolveMessage, ref IWSDMessageParameters pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchResolveEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, ref IWSDScopeMatchingRule pScopeMatchingRule) RegisterScopeMatchingRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, ref IWSDScopeMatchingRule pScopeMatchingRule) UnRegisterScopeMatchingRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisher self, out IWSDXMLContext* ppContext) GetXMLContext;
 			}
 		}
 		[CRepr]
@@ -1076,8 +1076,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDiscoveryPublisherNotify self, in WSD_SOAP_MESSAGE pSoap, ref IWSDMessageParameters pMessageParameters) ProbeHandler;
-				public new function HRESULT(ref IWSDiscoveryPublisherNotify self, in WSD_SOAP_MESSAGE pSoap, ref IWSDMessageParameters pMessageParameters) ResolveHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisherNotify self, in WSD_SOAP_MESSAGE pSoap, ref IWSDMessageParameters pMessageParameters) ProbeHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDiscoveryPublisherNotify self, in WSD_SOAP_MESSAGE pSoap, ref IWSDMessageParameters pMessageParameters) ResolveHandler;
 			}
 		}
 		[CRepr]
@@ -1093,8 +1093,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDScopeMatchingRule self, out PWSTR ppszScopeMatchingRule) GetScopeRule;
-				public new function HRESULT(ref IWSDScopeMatchingRule self, PWSTR pszScope1, PWSTR pszScope2, out BOOL pfMatch) MatchScopes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDScopeMatchingRule self, out PWSTR ppszScopeMatchingRule) GetScopeRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDScopeMatchingRule self, PWSTR pszScope1, PWSTR pszScope2, out BOOL pfMatch) MatchScopes;
 			}
 		}
 		[CRepr]
@@ -1115,13 +1115,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation) SendOneWayRequest;
-				public new function HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation, WSD_SYNCHRONOUS_RESPONSE_CONTEXT* pResponseContext) SendTwoWayRequest;
-				public new function HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation, ref IUnknown pAsyncState, ref IWSDAsyncCallback pCallback, out IWSDAsyncResult* pResult) SendTwoWayRequestAsync;
-				public new function HRESULT(ref IWSDEndpointProxy self, ref IWSDAsyncResult pAsyncResult) AbortAsyncOperation;
-				public new function HRESULT(ref IWSDEndpointProxy self, in WSD_SOAP_FAULT pFault) ProcessFault;
-				public new function HRESULT(ref IWSDEndpointProxy self, out PWSTR ppszErrorInfo) GetErrorInfo;
-				public new function HRESULT(ref IWSDEndpointProxy self, out WSD_SOAP_FAULT* ppFault) GetFaultInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation) SendOneWayRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation, WSD_SYNCHRONOUS_RESPONSE_CONTEXT* pResponseContext) SendTwoWayRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, void* pBody, in WSD_OPERATION pOperation, ref IUnknown pAsyncState, ref IWSDAsyncCallback pCallback, out IWSDAsyncResult* pResult) SendTwoWayRequestAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, ref IWSDAsyncResult pAsyncResult) AbortAsyncOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, in WSD_SOAP_FAULT pFault) ProcessFault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, out PWSTR ppszErrorInfo) GetErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDEndpointProxy self, out WSD_SOAP_FAULT* ppFault) GetFaultInfo;
 			}
 		}
 		[CRepr]
@@ -1136,7 +1136,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDMetadataExchange self, out WSD_METADATA_SECTION_LIST* MetadataOut) GetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDMetadataExchange self, out WSD_METADATA_SECTION_LIST* MetadataOut) GetMetadata;
 			}
 		}
 		[CRepr]
@@ -1157,13 +1157,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDMetadataExchange.VTable
 			{
-				public new function HRESULT(ref IWSDServiceProxy self, out IWSDAsyncResult* ppResult) BeginGetMetadata;
-				public new function HRESULT(ref IWSDServiceProxy self, ref IWSDAsyncResult pResult, out WSD_METADATA_SECTION_LIST* ppMetadata) EndGetMetadata;
-				public new function HRESULT(ref IWSDServiceProxy self, out WSD_SERVICE_METADATA* ppServiceMetadata) GetServiceMetadata;
-				public new function HRESULT(ref IWSDServiceProxy self, in WSD_OPERATION pOperation, ref IUnknown pUnknown, in WSDXML_ELEMENT pAny, WSDXML_ELEMENT** ppAny) SubscribeToOperation;
-				public new function HRESULT(ref IWSDServiceProxy self, in WSD_OPERATION pOperation) UnsubscribeToOperation;
-				public new function HRESULT(ref IWSDServiceProxy self, IWSDEventingStatus* pStatus) SetEventingStatusCallback;
-				public new function HRESULT(ref IWSDServiceProxy self, out IWSDEndpointProxy* ppProxy) GetEndpointProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, out IWSDAsyncResult* ppResult) BeginGetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, ref IWSDAsyncResult pResult, out WSD_METADATA_SECTION_LIST* ppMetadata) EndGetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, out WSD_SERVICE_METADATA* ppServiceMetadata) GetServiceMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, in WSD_OPERATION pOperation, ref IUnknown pUnknown, in WSDXML_ELEMENT pAny, WSDXML_ELEMENT** ppAny) SubscribeToOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, in WSD_OPERATION pOperation) UnsubscribeToOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, IWSDEventingStatus* pStatus) SetEventingStatusCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxy self, out IWSDEndpointProxy* ppProxy) GetEndpointProxy;
 			}
 		}
 		[CRepr]
@@ -1189,18 +1189,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWSDServiceProxy.VTable
 			{
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) SubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginSubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndSubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, in WSDXML_ELEMENT pAny) UnsubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginUnsubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult) EndUnsubscribeToMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) RenewMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginRenewMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndRenewMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) GetStatusForMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginGetStatusForMultipleOperations;
-				public new function HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndGetStatusForMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) SubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginSubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndSubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, in WSDXML_ELEMENT pAny) UnsubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginUnsubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult) EndUnsubscribeToMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) RenewMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginRenewMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndRenewMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) GetStatusForMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, out IWSDAsyncResult* ppResult) BeginGetStatusForMultipleOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceProxyEventing self, WSD_OPERATION* pOperations, uint32 dwOperationCount, ref IWSDAsyncResult pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndGetStatusForMultipleOperations;
 			}
 		}
 		[CRepr]
@@ -1224,16 +1224,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDDeviceProxy self, PWSTR pszDeviceId, ref IWSDAddress pDeviceAddress, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDDeviceProxy* pSponsor) Init;
-				public new function HRESULT(ref IWSDDeviceProxy self, out IWSDAsyncResult* ppResult) BeginGetMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, ref IWSDAsyncResult pResult) EndGetMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, out WSD_HOST_METADATA* ppHostMetadata) GetHostMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, out WSD_THIS_MODEL_METADATA* ppManufacturerMetadata) GetThisModelMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, out WSD_THIS_DEVICE_METADATA* ppThisDeviceMetadata) GetThisDeviceMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, out WSD_METADATA_SECTION_LIST* ppMetadata) GetAllMetadata;
-				public new function HRESULT(ref IWSDDeviceProxy self, PWSTR pszServiceId, out IWSDServiceProxy* ppServiceProxy) GetServiceProxyById;
-				public new function HRESULT(ref IWSDDeviceProxy self, in WSDXML_NAME pType, out IWSDServiceProxy* ppServiceProxy) GetServiceProxyByType;
-				public new function HRESULT(ref IWSDDeviceProxy self, out IWSDEndpointProxy* ppProxy) GetEndpointProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, PWSTR pszDeviceId, ref IWSDAddress pDeviceAddress, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDDeviceProxy* pSponsor) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out IWSDAsyncResult* ppResult) BeginGetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, ref IWSDAsyncResult pResult) EndGetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out WSD_HOST_METADATA* ppHostMetadata) GetHostMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out WSD_THIS_MODEL_METADATA* ppManufacturerMetadata) GetThisModelMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out WSD_THIS_DEVICE_METADATA* ppThisDeviceMetadata) GetThisDeviceMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out WSD_METADATA_SECTION_LIST* ppMetadata) GetAllMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, PWSTR pszServiceId, out IWSDServiceProxy* ppServiceProxy) GetServiceProxyById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, in WSDXML_NAME pType, out IWSDServiceProxy* ppServiceProxy) GetServiceProxyByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceProxy self, out IWSDEndpointProxy* ppProxy) GetEndpointProxy;
 			}
 		}
 		[CRepr]
@@ -1254,13 +1254,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDAsyncResult self, ref IWSDAsyncCallback pCallback, ref IUnknown pAsyncState) SetCallback;
-				public new function HRESULT(ref IWSDAsyncResult self, HANDLE hWaitHandle) SetWaitHandle;
-				public new function HRESULT(ref IWSDAsyncResult self) HasCompleted;
-				public new function HRESULT(ref IWSDAsyncResult self, out IUnknown* ppAsyncState) GetAsyncState;
-				public new function HRESULT(ref IWSDAsyncResult self) Abort;
-				public new function HRESULT(ref IWSDAsyncResult self, out WSD_EVENT pEvent) GetEvent;
-				public new function HRESULT(ref IWSDAsyncResult self, out IWSDEndpointProxy* ppEndpoint) GetEndpointProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self, ref IWSDAsyncCallback pCallback, ref IUnknown pAsyncState) SetCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self, HANDLE hWaitHandle) SetWaitHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self) HasCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self, out IUnknown* ppAsyncState) GetAsyncState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self, out WSD_EVENT pEvent) GetEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncResult self, out IWSDEndpointProxy* ppEndpoint) GetEndpointProxy;
 			}
 		}
 		[CRepr]
@@ -1275,7 +1275,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDAsyncCallback self, ref IWSDAsyncResult pAsyncResult, ref IUnknown pAsyncState) AsyncOperationComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDAsyncCallback self, ref IWSDAsyncResult pAsyncResult, ref IUnknown pAsyncState) AsyncOperationComplete;
 			}
 		}
 		[CRepr]
@@ -1292,9 +1292,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction) SubscriptionRenewed;
-				public new function void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction, HRESULT hr) SubscriptionRenewalFailed;
-				public new function void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction) SubscriptionEnded;
+				public new function [CallingConvention(.Stdcall)] void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction) SubscriptionRenewed;
+				public new function [CallingConvention(.Stdcall)] void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction, HRESULT hr) SubscriptionRenewalFailed;
+				public new function [CallingConvention(.Stdcall)] void(ref IWSDEventingStatus self, PWSTR pszSubscriptionAction) SubscriptionEnded;
 			}
 		}
 		[CRepr]
@@ -1320,18 +1320,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDAddress** ppHostAddresses, uint32 dwHostAddressCount) Init;
-				public new function HRESULT(ref IWSDDeviceHost self, uint64 ullInstanceId, in WSD_URI_LIST pScopeList, IWSDDeviceHostNotify* pNotificationSink) Start;
-				public new function HRESULT(ref IWSDDeviceHost self) Stop;
-				public new function HRESULT(ref IWSDDeviceHost self) Terminate;
-				public new function HRESULT(ref IWSDDeviceHost self, in WSD_PORT_TYPE pPortType) RegisterPortType;
-				public new function HRESULT(ref IWSDDeviceHost self, in WSD_THIS_MODEL_METADATA pThisModelMetadata, in WSD_THIS_DEVICE_METADATA pThisDeviceMetadata, WSD_HOST_METADATA* pHostMetadata, WSD_METADATA_SECTION_LIST* pCustomMetadata) SetMetadata;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, ref IUnknown pService) RegisterService;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId) RetireService;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, PWSTR pszEndpointAddress, WSD_PORT_TYPE* pPortType, WSDXML_NAME* pPortName, WSDXML_ELEMENT* pAny, IUnknown* pService) AddDynamicService;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId) RemoveDynamicService;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, BOOL fDiscoverable) SetServiceDiscoverable;
-				public new function HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, void* pBody, in WSD_OPERATION pOperation) SignalEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDAddress** ppHostAddresses, uint32 dwHostAddressCount) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, uint64 ullInstanceId, in WSD_URI_LIST pScopeList, IWSDDeviceHostNotify* pNotificationSink) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, in WSD_PORT_TYPE pPortType) RegisterPortType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, in WSD_THIS_MODEL_METADATA pThisModelMetadata, in WSD_THIS_DEVICE_METADATA pThisDeviceMetadata, WSD_HOST_METADATA* pHostMetadata, WSD_METADATA_SECTION_LIST* pCustomMetadata) SetMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, ref IUnknown pService) RegisterService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId) RetireService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, PWSTR pszEndpointAddress, WSD_PORT_TYPE* pPortType, WSDXML_NAME* pPortName, WSDXML_ELEMENT* pAny, IUnknown* pService) AddDynamicService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId) RemoveDynamicService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, BOOL fDiscoverable) SetServiceDiscoverable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHost self, PWSTR pszServiceId, void* pBody, in WSD_OPERATION pOperation) SignalEvent;
 			}
 		}
 		[CRepr]
@@ -1346,7 +1346,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDDeviceHostNotify self, PWSTR pszServiceId, out IUnknown* ppService) GetService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDDeviceHostNotify self, PWSTR pszServiceId, out IUnknown* ppService) GetService;
 			}
 		}
 		[CRepr]
@@ -1362,8 +1362,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWSDServiceMessaging self, void* pBody, ref WSD_OPERATION pOperation, ref IWSDMessageParameters pMessageParameters) SendResponse;
-				public new function HRESULT(ref IWSDServiceMessaging self, ref WSD_SOAP_HEADER pRequestHeader, ref IWSDMessageParameters pMessageParameters, WSD_SOAP_FAULT* pFault) FaultRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceMessaging self, void* pBody, ref WSD_OPERATION pOperation, ref IWSDMessageParameters pMessageParameters) SendResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceMessaging self, ref WSD_SOAP_HEADER pRequestHeader, ref IWSDMessageParameters pMessageParameters, WSD_SOAP_FAULT* pFault) FaultRequest;
 			}
 		}
 		

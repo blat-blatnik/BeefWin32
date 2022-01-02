@@ -134,8 +134,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) GetStringProperty;
-				public new function HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) GetNumericalProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) GetStringProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) GetNumericalProperty;
 			}
 		}
 		[CRepr]
@@ -151,8 +151,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFhScopeIterator self) MoveToNextItem;
-				public new function HRESULT(ref IFhScopeIterator self, out BSTR Item) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhScopeIterator self) MoveToNextItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhScopeIterator self, out BSTR Item) GetItem;
 			}
 		}
 		[CRepr]
@@ -180,20 +180,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFhConfigMgr self) LoadConfiguration;
-				public new function HRESULT(ref IFhConfigMgr self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
-				public new function HRESULT(ref IFhConfigMgr self) SaveConfiguration;
-				public new function HRESULT(ref IFhConfigMgr self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
-				public new function HRESULT(ref IFhConfigMgr self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) GetIncludeExcludeRules;
-				public new function HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) GetLocalPolicy;
-				public new function HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
-				public new function HRESULT(ref IFhConfigMgr self, out FH_BACKUP_STATUS BackupStatus) GetBackupStatus;
-				public new function HRESULT(ref IFhConfigMgr self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
-				public new function HRESULT(ref IFhConfigMgr self, out IFhTarget* DefaultTarget) GetDefaultTarget;
-				public new function HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
-				public new function HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
-				public new function HRESULT(ref IFhConfigMgr self, BOOL Recommend) ChangeDefaultTargetRecommendation;
-				public new function HRESULT(ref IFhConfigMgr self, out uint32 ProtectionState, out BSTR ProtectedUntilTime) QueryProtectionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self) LoadConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self) SaveConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) GetIncludeExcludeRules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) GetLocalPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, out FH_BACKUP_STATUS BackupStatus) GetBackupStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, out IFhTarget* DefaultTarget) GetDefaultTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, BOOL Recommend) ChangeDefaultTargetRecommendation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhConfigMgr self, out uint32 ProtectionState, out BSTR ProtectedUntilTime) QueryProtectionStatus;
 			}
 		}
 		[CRepr]
@@ -212,11 +212,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFhReassociation self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
-				public new function HRESULT(ref IFhReassociation self, BSTR TargetUrl) ScanTargetForConfigurations;
-				public new function HRESULT(ref IFhReassociation self, uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) GetConfigurationDetails;
-				public new function HRESULT(ref IFhReassociation self, uint32 Index) SelectConfiguration;
-				public new function HRESULT(ref IFhReassociation self, BOOL OverwriteIfExists) PerformReassociation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, BSTR TargetUrl) ScanTargetForConfigurations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) GetConfigurationDetails;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, uint32 Index) SelectConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, BOOL OverwriteIfExists) PerformReassociation;
 			}
 		}
 		

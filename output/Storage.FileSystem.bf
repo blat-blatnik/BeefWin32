@@ -3465,21 +3465,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDiskQuotaUser self, out uint32 pulID) GetID;
-				public new function HRESULT(ref IDiskQuotaUser self, PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) GetName;
-				public new function HRESULT(ref IDiskQuotaUser self, out uint32 pdwLength) GetSidLength;
-				public new function HRESULT(ref IDiskQuotaUser self, out uint8 pbSidBuffer, uint32 cbSidBuffer) GetSid;
-				public new function HRESULT(ref IDiskQuotaUser self, out int64 pllThreshold) GetQuotaThreshold;
-				public new function HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaThresholdText;
-				public new function HRESULT(ref IDiskQuotaUser self, out int64 pllLimit) GetQuotaLimit;
-				public new function HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaLimitText;
-				public new function HRESULT(ref IDiskQuotaUser self, out int64 pllUsed) GetQuotaUsed;
-				public new function HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaUsedText;
-				public new function HRESULT(ref IDiskQuotaUser self, void* pbQuotaInfo, uint32 cbQuotaInfo) GetQuotaInformation;
-				public new function HRESULT(ref IDiskQuotaUser self, int64 llThreshold, BOOL fWriteThrough) SetQuotaThreshold;
-				public new function HRESULT(ref IDiskQuotaUser self, int64 llLimit, BOOL fWriteThrough) SetQuotaLimit;
-				public new function HRESULT(ref IDiskQuotaUser self) Invalidate;
-				public new function HRESULT(ref IDiskQuotaUser self, out uint32 pdwStatus) GetAccountStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out uint32 pulID) GetID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out uint32 pdwLength) GetSidLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out uint8 pbSidBuffer, uint32 cbSidBuffer) GetSid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out int64 pllThreshold) GetQuotaThreshold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaThresholdText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out int64 pllLimit) GetQuotaLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaLimitText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out int64 pllUsed) GetQuotaUsed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, PWSTR pszText, uint32 cchText) GetQuotaUsedText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, void* pbQuotaInfo, uint32 cbQuotaInfo) GetQuotaInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, int64 llThreshold, BOOL fWriteThrough) SetQuotaThreshold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, int64 llLimit, BOOL fWriteThrough) SetQuotaLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self) Invalidate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUser self, out uint32 pdwStatus) GetAccountStatus;
 			}
 		}
 		[CRepr]
@@ -3497,10 +3497,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDiskQuotaUsers self, uint32 cUsers, out IDiskQuotaUser* rgUsers, out uint32 pcUsersFetched) Next;
-				public new function HRESULT(ref IEnumDiskQuotaUsers self, uint32 cUsers) Skip;
-				public new function HRESULT(ref IEnumDiskQuotaUsers self) Reset;
-				public new function HRESULT(ref IEnumDiskQuotaUsers self, out IEnumDiskQuotaUsers* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDiskQuotaUsers self, uint32 cUsers, out IDiskQuotaUser* rgUsers, out uint32 pcUsersFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDiskQuotaUsers self, uint32 cUsers) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDiskQuotaUsers self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDiskQuotaUsers self, out IEnumDiskQuotaUsers* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -3518,10 +3518,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDiskQuotaUserBatch self, ref IDiskQuotaUser pUser) Add;
-				public new function HRESULT(ref IDiskQuotaUserBatch self, ref IDiskQuotaUser pUser) Remove;
-				public new function HRESULT(ref IDiskQuotaUserBatch self) RemoveAll;
-				public new function HRESULT(ref IDiskQuotaUserBatch self) FlushToDisk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUserBatch self, ref IDiskQuotaUser pUser) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUserBatch self, ref IDiskQuotaUser pUser) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUserBatch self) RemoveAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaUserBatch self) FlushToDisk;
 			}
 		}
 		[CRepr]
@@ -3556,27 +3556,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IConnectionPointContainer.VTable
 			{
-				public new function HRESULT(ref IDiskQuotaControl self, PWSTR pszPath, BOOL bReadWrite) Initialize;
-				public new function HRESULT(ref IDiskQuotaControl self, uint32 dwState) SetQuotaState;
-				public new function HRESULT(ref IDiskQuotaControl self, out uint32 pdwState) GetQuotaState;
-				public new function HRESULT(ref IDiskQuotaControl self, uint32 dwFlags) SetQuotaLogFlags;
-				public new function HRESULT(ref IDiskQuotaControl self, out uint32 pdwFlags) GetQuotaLogFlags;
-				public new function HRESULT(ref IDiskQuotaControl self, int64 llThreshold) SetDefaultQuotaThreshold;
-				public new function HRESULT(ref IDiskQuotaControl self, out int64 pllThreshold) GetDefaultQuotaThreshold;
-				public new function HRESULT(ref IDiskQuotaControl self, PWSTR pszText, uint32 cchText) GetDefaultQuotaThresholdText;
-				public new function HRESULT(ref IDiskQuotaControl self, int64 llLimit) SetDefaultQuotaLimit;
-				public new function HRESULT(ref IDiskQuotaControl self, out int64 pllLimit) GetDefaultQuotaLimit;
-				public new function HRESULT(ref IDiskQuotaControl self, PWSTR pszText, uint32 cchText) GetDefaultQuotaLimitText;
-				public new function HRESULT(ref IDiskQuotaControl self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) AddUserSid;
-				public new function HRESULT(ref IDiskQuotaControl self, PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) AddUserName;
-				public new function HRESULT(ref IDiskQuotaControl self, ref IDiskQuotaUser pUser) DeleteUser;
-				public new function HRESULT(ref IDiskQuotaControl self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) FindUserSid;
-				public new function HRESULT(ref IDiskQuotaControl self, PWSTR pszLogonName, out IDiskQuotaUser* ppUser) FindUserName;
-				public new function HRESULT(ref IDiskQuotaControl self, out PSID rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IEnumDiskQuotaUsers* ppEnum) CreateEnumUsers;
-				public new function HRESULT(ref IDiskQuotaControl self, out IDiskQuotaUserBatch* ppBatch) CreateUserBatch;
-				public new function HRESULT(ref IDiskQuotaControl self) InvalidateSidNameCache;
-				public new function HRESULT(ref IDiskQuotaControl self, ref IDiskQuotaUser pUser) GiveUserNameResolutionPriority;
-				public new function HRESULT(ref IDiskQuotaControl self) ShutdownNameResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PWSTR pszPath, BOOL bReadWrite) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, uint32 dwState) SetQuotaState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out uint32 pdwState) GetQuotaState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, uint32 dwFlags) SetQuotaLogFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out uint32 pdwFlags) GetQuotaLogFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, int64 llThreshold) SetDefaultQuotaThreshold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out int64 pllThreshold) GetDefaultQuotaThreshold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PWSTR pszText, uint32 cchText) GetDefaultQuotaThresholdText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, int64 llLimit) SetDefaultQuotaLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out int64 pllLimit) GetDefaultQuotaLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PWSTR pszText, uint32 cchText) GetDefaultQuotaLimitText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) AddUserSid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) AddUserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, ref IDiskQuotaUser pUser) DeleteUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IDiskQuotaUser* ppUser) FindUserSid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, PWSTR pszLogonName, out IDiskQuotaUser* ppUser) FindUserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out PSID rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, out IEnumDiskQuotaUsers* ppEnum) CreateEnumUsers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, out IDiskQuotaUserBatch* ppBatch) CreateUserBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self) InvalidateSidNameCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self, ref IDiskQuotaUser pUser) GiveUserNameResolutionPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaControl self) ShutdownNameResolution;
 			}
 		}
 		[CRepr]
@@ -3591,7 +3591,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDiskQuotaEvents self, ref IDiskQuotaUser pUser) OnUserNameChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaEvents self, ref IDiskQuotaUser pUser) OnUserNameChanged;
 			}
 		}
 		

@@ -32,7 +32,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsolatedAppLauncher self, PWSTR appUserModelId, PWSTR arguments, in IsolatedAppLauncherTelemetryParameters telemetryParameters) Launch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsolatedAppLauncher self, PWSTR appUserModelId, PWSTR arguments, in IsolatedAppLauncherTelemetryParameters telemetryParameters) Launch;
 			}
 		}
 		

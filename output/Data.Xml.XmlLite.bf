@@ -209,29 +209,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXmlReader self, IUnknown* pInput) SetInput;
-				public new function HRESULT(ref IXmlReader self, uint32 nProperty, out int ppValue) GetProperty;
-				public new function HRESULT(ref IXmlReader self, uint32 nProperty, int pValue) SetProperty;
-				public new function HRESULT(ref IXmlReader self, XmlNodeType* pNodeType) Read;
-				public new function HRESULT(ref IXmlReader self, out XmlNodeType pNodeType) GetNodeType;
-				public new function HRESULT(ref IXmlReader self) MoveToFirstAttribute;
-				public new function HRESULT(ref IXmlReader self) MoveToNextAttribute;
-				public new function HRESULT(ref IXmlReader self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) MoveToAttributeByName;
-				public new function HRESULT(ref IXmlReader self) MoveToElement;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) GetQualifiedName;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) GetNamespaceUri;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszLocalName, uint32* pcwchLocalName) GetLocalName;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszPrefix, uint32* pcwchPrefix) GetPrefix;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszValue, uint32* pcwchValue) GetValue;
-				public new function HRESULT(ref IXmlReader self, char16* pwchBuffer, uint32 cwchChunkSize, out uint32 pcwchRead) ReadValueChunk;
-				public new function HRESULT(ref IXmlReader self, PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) GetBaseUri;
-				public new function BOOL(ref IXmlReader self) IsDefault;
-				public new function BOOL(ref IXmlReader self) IsEmptyElement;
-				public new function HRESULT(ref IXmlReader self, out uint32 pnLineNumber) GetLineNumber;
-				public new function HRESULT(ref IXmlReader self, out uint32 pnLinePosition) GetLinePosition;
-				public new function HRESULT(ref IXmlReader self, out uint32 pnAttributeCount) GetAttributeCount;
-				public new function HRESULT(ref IXmlReader self, out uint32 pnDepth) GetDepth;
-				public new function BOOL(ref IXmlReader self) IsEOF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, IUnknown* pInput) SetInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, uint32 nProperty, out int ppValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, uint32 nProperty, int pValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, XmlNodeType* pNodeType) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, out XmlNodeType pNodeType) GetNodeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self) MoveToFirstAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self) MoveToNextAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) MoveToAttributeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self) MoveToElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) GetQualifiedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) GetNamespaceUri;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszLocalName, uint32* pcwchLocalName) GetLocalName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszPrefix, uint32* pcwchPrefix) GetPrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszValue, uint32* pcwchValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, char16* pwchBuffer, uint32 cwchChunkSize, out uint32 pcwchRead) ReadValueChunk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) GetBaseUri;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IXmlReader self) IsDefault;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IXmlReader self) IsEmptyElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, out uint32 pnLineNumber) GetLineNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, out uint32 pnLinePosition) GetLinePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, out uint32 pnAttributeCount) GetAttributeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlReader self, out uint32 pnDepth) GetDepth;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IXmlReader self) IsEOF;
 			}
 		}
 		[CRepr]
@@ -246,7 +246,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXmlResolver self, PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, out IUnknown* ppResolvedInput) ResolveUri;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlResolver self, PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, out IUnknown* ppResolvedInput) ResolveUri;
 			}
 		}
 		[CRepr]
@@ -289,35 +289,35 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXmlWriter self, IUnknown* pOutput) SetOutput;
-				public new function HRESULT(ref IXmlWriter self, uint32 nProperty, out int ppValue) GetProperty;
-				public new function HRESULT(ref IXmlWriter self, uint32 nProperty, int pValue) SetProperty;
-				public new function HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteAttributeString;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszText) WriteCData;
-				public new function HRESULT(ref IXmlWriter self, char16 wch) WriteCharEntity;
-				public new function HRESULT(ref IXmlWriter self, char16* pwch, uint32 cwch) WriteChars;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszComment) WriteComment;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteElementString;
-				public new function HRESULT(ref IXmlWriter self) WriteEndDocument;
-				public new function HRESULT(ref IXmlWriter self) WriteEndElement;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszName) WriteEntityRef;
-				public new function HRESULT(ref IXmlWriter self) WriteFullEndElement;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszName) WriteName;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszNmToken) WriteNmToken;
-				public new function HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNode;
-				public new function HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteQualifiedName;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszData) WriteRaw;
-				public new function HRESULT(ref IXmlWriter self, char16* pwch, uint32 cwch) WriteRawChars;
-				public new function HRESULT(ref IXmlWriter self, XmlStandalone standalone) WriteStartDocument;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteStartElement;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszText) WriteString;
-				public new function HRESULT(ref IXmlWriter self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
-				public new function HRESULT(ref IXmlWriter self, PWSTR pwszWhitespace) WriteWhitespace;
-				public new function HRESULT(ref IXmlWriter self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, IUnknown* pOutput) SetOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, uint32 nProperty, out int ppValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, uint32 nProperty, int pValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteAttributeString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszText) WriteCData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, char16 wch) WriteCharEntity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, char16* pwch, uint32 cwch) WriteChars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszComment) WriteComment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteElementString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self) WriteEndDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self) WriteEndElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszName) WriteEntityRef;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self) WriteFullEndElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszName) WriteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszNmToken) WriteNmToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteQualifiedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszData) WriteRaw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, char16* pwch, uint32 cwch) WriteRawChars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, XmlStandalone standalone) WriteStartDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteStartElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszText) WriteString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self, PWSTR pwszWhitespace) WriteWhitespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriter self) Flush;
 			}
 		}
 		[CRepr]
@@ -359,34 +359,34 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXmlWriterLite self, IUnknown* pOutput) SetOutput;
-				public new function HRESULT(ref IXmlWriterLite self, uint32 nProperty, out int ppValue) GetProperty;
-				public new function HRESULT(ref IXmlWriterLite self, uint32 nProperty, int pValue) SetProperty;
-				public new function HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) WriteAttributeString;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszText) WriteCData;
-				public new function HRESULT(ref IXmlWriterLite self, char16 wch) WriteCharEntity;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwch, uint32 cwch) WriteChars;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszComment) WriteComment;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) WriteElementString;
-				public new function HRESULT(ref IXmlWriterLite self) WriteEndDocument;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteEndElement;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszName) WriteEntityRef;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteFullEndElement;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszName) WriteName;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszNmToken) WriteNmToken;
-				public new function HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNode;
-				public new function HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszData) WriteRaw;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwch, uint32 cwch) WriteRawChars;
-				public new function HRESULT(ref IXmlWriterLite self, XmlStandalone standalone) WriteStartDocument;
-				public new function HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteStartElement;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszText) WriteString;
-				public new function HRESULT(ref IXmlWriterLite self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
-				public new function HRESULT(ref IXmlWriterLite self, PWSTR pwszWhitespace) WriteWhitespace;
-				public new function HRESULT(ref IXmlWriterLite self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, IUnknown* pOutput) SetOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, uint32 nProperty, out int ppValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, uint32 nProperty, int pValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) WriteAttributeString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszText) WriteCData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16 wch) WriteCharEntity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwch, uint32 cwch) WriteChars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszComment) WriteComment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) WriteElementString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self) WriteEndDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteEndElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszName) WriteEntityRef;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteFullEndElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszName) WriteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszNmToken) WriteNmToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, ref IXmlReader pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszData) WriteRaw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwch, uint32 cwch) WriteRawChars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, XmlStandalone standalone) WriteStartDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16* pwszQName, uint32 cwszQName) WriteStartElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszText) WriteString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self, PWSTR pwszWhitespace) WriteWhitespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self) Flush;
 			}
 		}
 		

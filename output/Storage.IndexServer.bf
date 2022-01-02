@@ -284,11 +284,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function int32(ref IFilter self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) Init;
-				public new function int32(ref IFilter self, out STAT_CHUNK pStat) GetChunk;
-				public new function int32(ref IFilter self, out uint32 pcwcBuffer, char16* awcBuffer) GetText;
-				public new function int32(ref IFilter self, out PROPVARIANT* ppPropValue) GetValue;
-				public new function int32(ref IFilter self, FILTERREGION origPos, in Guid riid, void** ppunk) BindRegion;
+				public new function [CallingConvention(.Stdcall)] int32(ref IFilter self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) Init;
+				public new function [CallingConvention(.Stdcall)] int32(ref IFilter self, out STAT_CHUNK pStat) GetChunk;
+				public new function [CallingConvention(.Stdcall)] int32(ref IFilter self, out uint32 pcwcBuffer, char16* awcBuffer) GetText;
+				public new function [CallingConvention(.Stdcall)] int32(ref IFilter self, out PROPVARIANT* ppPropValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] int32(ref IFilter self, FILTERREGION origPos, in Guid riid, void** ppunk) BindRegion;
 			}
 		}
 		[CRepr]
@@ -304,8 +304,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPhraseSink self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
-				public new function HRESULT(ref IPhraseSink self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhraseSink self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhraseSink self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
 			}
 		}
 		

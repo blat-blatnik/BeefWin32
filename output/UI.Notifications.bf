@@ -28,7 +28,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INotificationActivationCallback self, PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INotificationActivationCallback self, PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) Activate;
 			}
 		}
 		

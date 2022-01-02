@@ -112,9 +112,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) Save;
-				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName) IsDirty;
-				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, void* pvData) FreeBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName) IsDirty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentPersistInfo self, void* pvData) FreeBuffer;
 			}
 		}
 		[CRepr]
@@ -132,10 +132,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) GetData;
-				public new function HRESULT(ref ISceSvcAttachmentData self, out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) Initialize;
-				public new function HRESULT(ref ISceSvcAttachmentData self, void* pvData) FreeBuffer;
-				public new function HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle) CloseHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentData self, out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentData self, void* pvData) FreeBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle) CloseHandle;
 			}
 		}
 		

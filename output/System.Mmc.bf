@@ -614,9 +614,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISnapinProperties self, ref Properties pProperties) Initialize;
-				public new function HRESULT(ref ISnapinProperties self, ref ISnapinPropertiesCallback pCallback) QueryPropertyNames;
-				public new function HRESULT(ref ISnapinProperties self, int32 cProperties, MMC_SNAPIN_PROPERTY* pProperties) PropertiesChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinProperties self, ref Properties pProperties) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinProperties self, ref ISnapinPropertiesCallback pCallback) QueryPropertyNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinProperties self, int32 cProperties, MMC_SNAPIN_PROPERTY* pProperties) PropertiesChanged;
 			}
 		}
 		[CRepr]
@@ -631,7 +631,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISnapinPropertiesCallback self, PWSTR pszPropName, uint32 dwFlags) AddPropertyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinPropertiesCallback self, PWSTR pszPropName, uint32 dwFlags) AddPropertyName;
 			}
 		}
 		[CRepr]
@@ -657,18 +657,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function void(ref _Application self) Help;
-				public new function void(ref _Application self) Quit;
-				public new function HRESULT(ref _Application self, out Document* Document) get_Document;
-				public new function HRESULT(ref _Application self, BSTR Filename) Load;
-				public new function HRESULT(ref _Application self, out Frame* Frame) get_Frame;
-				public new function HRESULT(ref _Application self, out BOOL Visible) get_Visible;
-				public new function HRESULT(ref _Application self) Show;
-				public new function HRESULT(ref _Application self) Hide;
-				public new function HRESULT(ref _Application self, out BOOL UserControl) get_UserControl;
-				public new function HRESULT(ref _Application self, BOOL UserControl) put_UserControl;
-				public new function HRESULT(ref _Application self, out int32 VersionMajor) get_VersionMajor;
-				public new function HRESULT(ref _Application self, out int32 VersionMinor) get_VersionMinor;
+				public new function [CallingConvention(.Stdcall)] void(ref _Application self) Help;
+				public new function [CallingConvention(.Stdcall)] void(ref _Application self) Quit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out Document* Document) get_Document;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, BSTR Filename) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out Frame* Frame) get_Frame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out BOOL Visible) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self) Hide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out BOOL UserControl) get_UserControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, BOOL UserControl) put_UserControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out int32 VersionMajor) get_VersionMajor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _Application self, out int32 VersionMinor) get_VersionMinor;
 			}
 		}
 		[CRepr]
@@ -694,18 +694,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref _AppEvents self, ref _Application Application) OnQuit;
-				public new function HRESULT(ref _AppEvents self, ref Document Document, BOOL New) OnDocumentOpen;
-				public new function HRESULT(ref _AppEvents self, ref Document Document) OnDocumentClose;
-				public new function HRESULT(ref _AppEvents self, ref Document Document, ref SnapIn SnapIn) OnSnapInAdded;
-				public new function HRESULT(ref _AppEvents self, ref Document Document, ref SnapIn SnapIn) OnSnapInRemoved;
-				public new function HRESULT(ref _AppEvents self, ref View View) OnNewView;
-				public new function HRESULT(ref _AppEvents self, ref View View) OnViewClose;
-				public new function HRESULT(ref _AppEvents self, ref View View, ref Node NewOwnerNode) OnViewChange;
-				public new function HRESULT(ref _AppEvents self, ref View View, ref Nodes NewNodes) OnSelectionChange;
-				public new function HRESULT(ref _AppEvents self, ref MenuItem MenuItem) OnContextMenuExecuted;
-				public new function HRESULT(ref _AppEvents self) OnToolbarButtonClicked;
-				public new function HRESULT(ref _AppEvents self, ref View View) OnListUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref _Application Application) OnQuit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref Document Document, BOOL New) OnDocumentOpen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref Document Document) OnDocumentClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref Document Document, ref SnapIn SnapIn) OnSnapInAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref Document Document, ref SnapIn SnapIn) OnSnapInRemoved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref View View) OnNewView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref View View) OnViewClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref View View, ref Node NewOwnerNode) OnViewChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref View View, ref Nodes NewNodes) OnSelectionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref MenuItem MenuItem) OnContextMenuExecuted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self) OnToolbarButtonClicked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _AppEvents self, ref View View) OnListUpdated;
 			}
 		}
 		[CRepr]
@@ -734,8 +734,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref _EventConnector self, ref _Application Application) ConnectTo;
-				public new function HRESULT(ref _EventConnector self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _EventConnector self, ref _Application Application) ConnectTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _EventConnector self) Disconnect;
 			}
 		}
 		[CRepr]
@@ -760,17 +760,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Frame self) Maximize;
-				public new function HRESULT(ref Frame self) Minimize;
-				public new function HRESULT(ref Frame self) Restore;
-				public new function HRESULT(ref Frame self, out int32 Top) get_Top;
-				public new function HRESULT(ref Frame self, int32 top) put_Top;
-				public new function HRESULT(ref Frame self, out int32 Bottom) get_Bottom;
-				public new function HRESULT(ref Frame self, int32 bottom) put_Bottom;
-				public new function HRESULT(ref Frame self, out int32 Left) get_Left;
-				public new function HRESULT(ref Frame self, int32 left) put_Left;
-				public new function HRESULT(ref Frame self, out int32 Right) get_Right;
-				public new function HRESULT(ref Frame self, int32 right) put_Right;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self) Maximize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self) Minimize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, out int32 Top) get_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, int32 top) put_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, out int32 Bottom) get_Bottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, int32 bottom) put_Bottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, out int32 Left) get_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, int32 left) put_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, out int32 Right) get_Right;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Frame self, int32 right) put_Right;
 			}
 		}
 		[CRepr]
@@ -789,11 +789,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Node self, out uint16* Name) get_Name;
-				public new function HRESULT(ref Node self, BSTR PropertyName, out uint16* PropertyValue) get_Property;
-				public new function HRESULT(ref Node self, out uint16* Bookmark) get_Bookmark;
-				public new function HRESULT(ref Node self, out BOOL IsScopeNode) IsScopeNode;
-				public new function HRESULT(ref Node self, out uint16* Nodetype) get_Nodetype;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Node self, out uint16* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Node self, BSTR PropertyName, out uint16* PropertyValue) get_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Node self, out uint16* Bookmark) get_Bookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Node self, out BOOL IsScopeNode) IsScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Node self, out uint16* Nodetype) get_Nodetype;
 			}
 		}
 		[CRepr]
@@ -812,11 +812,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Parent) GetParent;
-				public new function HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Child) GetChild;
-				public new function HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Next) GetNext;
-				public new function HRESULT(ref ScopeNamespace self, out Node* Root) GetRoot;
-				public new function HRESULT(ref ScopeNamespace self, ref Node Node) Expand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Parent) GetParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Child) GetChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ScopeNamespace self, ref Node Node, out Node* Next) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ScopeNamespace self, out Node* Root) GetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ScopeNamespace self, ref Node Node) Expand;
 			}
 		}
 		[CRepr]
@@ -846,22 +846,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Document self) Save;
-				public new function HRESULT(ref Document self, BSTR Filename) SaveAs;
-				public new function HRESULT(ref Document self, BOOL SaveChanges) Close;
-				public new function HRESULT(ref Document self, out Views* Views) get_Views;
-				public new function HRESULT(ref Document self, out SnapIns* SnapIns) get_SnapIns;
-				public new function HRESULT(ref Document self, out View* View) get_ActiveView;
-				public new function HRESULT(ref Document self, out uint16* Name) get_Name;
-				public new function HRESULT(ref Document self, BSTR Name) put_Name;
-				public new function HRESULT(ref Document self, out uint16* Location) get_Location;
-				public new function HRESULT(ref Document self, out BOOL IsSaved) get_IsSaved;
-				public new function HRESULT(ref Document self, out _DocumentMode Mode) get_Mode;
-				public new function HRESULT(ref Document self, _DocumentMode Mode) put_Mode;
-				public new function HRESULT(ref Document self, out Node* Node) get_RootNode;
-				public new function HRESULT(ref Document self, out ScopeNamespace* ScopeNamespace) get_ScopeNamespace;
-				public new function HRESULT(ref Document self, out Properties* Properties) CreateProperties;
-				public new function HRESULT(ref Document self, out _Application* Application) get_Application;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, BSTR Filename) SaveAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, BOOL SaveChanges) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out Views* Views) get_Views;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out SnapIns* SnapIns) get_SnapIns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out View* View) get_ActiveView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out uint16* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, BSTR Name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out uint16* Location) get_Location;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out BOOL IsSaved) get_IsSaved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out _DocumentMode Mode) get_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, _DocumentMode Mode) put_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out Node* Node) get_RootNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out ScopeNamespace* ScopeNamespace) get_ScopeNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out Properties* Properties) CreateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Document self, out _Application* Application) get_Application;
 			}
 		}
 		[CRepr]
@@ -882,13 +882,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref SnapIn self, out uint16* Name) get_Name;
-				public new function HRESULT(ref SnapIn self, out uint16* Vendor) get_Vendor;
-				public new function HRESULT(ref SnapIn self, out uint16* Version) get_Version;
-				public new function HRESULT(ref SnapIn self, out Extensions* Extensions) get_Extensions;
-				public new function HRESULT(ref SnapIn self, out uint16* SnapinCLSID) get_SnapinCLSID;
-				public new function HRESULT(ref SnapIn self, out Properties* Properties) get_Properties;
-				public new function HRESULT(ref SnapIn self, BOOL Enable) EnableAllExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out uint16* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out uint16* Vendor) get_Vendor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out uint16* Version) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out Extensions* Extensions) get_Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out uint16* SnapinCLSID) get_SnapinCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, out Properties* Properties) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIn self, BOOL Enable) EnableAllExtensions;
 			}
 		}
 		[CRepr]
@@ -907,11 +907,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref SnapIns self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref SnapIns self, int32 Index, out SnapIn* SnapIn) Item;
-				public new function HRESULT(ref SnapIns self, out int32 Count) get_Count;
-				public new function HRESULT(ref SnapIns self, BSTR SnapinNameOrCLSID, VARIANT ParentSnapin, VARIANT Properties, out SnapIn* SnapIn) Add;
-				public new function HRESULT(ref SnapIns self, ref SnapIn SnapIn) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIns self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIns self, int32 Index, out SnapIn* SnapIn) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIns self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIns self, BSTR SnapinNameOrCLSID, VARIANT ParentSnapin, VARIANT Properties, out SnapIn* SnapIn) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref SnapIns self, ref SnapIn SnapIn) Remove;
 			}
 		}
 		[CRepr]
@@ -932,13 +932,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Extension self, out uint16* Name) get_Name;
-				public new function HRESULT(ref Extension self, out uint16* Vendor) get_Vendor;
-				public new function HRESULT(ref Extension self, out uint16* Version) get_Version;
-				public new function HRESULT(ref Extension self, out Extensions* Extensions) get_Extensions;
-				public new function HRESULT(ref Extension self, out uint16* SnapinCLSID) get_SnapinCLSID;
-				public new function HRESULT(ref Extension self, BOOL Enable) EnableAllExtensions;
-				public new function HRESULT(ref Extension self, BOOL Enable) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, out uint16* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, out uint16* Vendor) get_Vendor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, out uint16* Version) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, out Extensions* Extensions) get_Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, out uint16* SnapinCLSID) get_SnapinCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, BOOL Enable) EnableAllExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extension self, BOOL Enable) Enable;
 			}
 		}
 		[CRepr]
@@ -955,9 +955,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Extensions self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref Extensions self, int32 Index, out Extension* Extension) Item;
-				public new function HRESULT(ref Extensions self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extensions self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extensions self, int32 Index, out Extension* Extension) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Extensions self, out int32 Count) get_Count;
 			}
 		}
 		[CRepr]
@@ -974,9 +974,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Columns self, int32 Index, out Column* Column) Item;
-				public new function HRESULT(ref Columns self, out int32 Count) get_Count;
-				public new function HRESULT(ref Columns self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Columns self, int32 Index, out Column* Column) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Columns self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Columns self, out IUnknown* retval) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -999,15 +999,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Column self, out BSTR Name) Name;
-				public new function HRESULT(ref Column self, out int32 Width) get_Width;
-				public new function HRESULT(ref Column self, int32 Width) put_Width;
-				public new function HRESULT(ref Column self, out int32 DisplayPosition) get_DisplayPosition;
-				public new function HRESULT(ref Column self, int32 Index) put_DisplayPosition;
-				public new function HRESULT(ref Column self, out BOOL Hidden) get_Hidden;
-				public new function HRESULT(ref Column self, BOOL Hidden) put_Hidden;
-				public new function HRESULT(ref Column self, _ColumnSortOrder SortOrder) SetAsSortColumn;
-				public new function HRESULT(ref Column self, out BOOL IsSortColumn) IsSortColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, out BSTR Name) Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, out int32 Width) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, int32 Width) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, out int32 DisplayPosition) get_DisplayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, int32 Index) put_DisplayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, out BOOL Hidden) get_Hidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, BOOL Hidden) put_Hidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, _ColumnSortOrder SortOrder) SetAsSortColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Column self, out BOOL IsSortColumn) IsSortColumn;
 			}
 		}
 		[CRepr]
@@ -1025,10 +1025,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Views self, int32 Index, out View* View) Item;
-				public new function HRESULT(ref Views self, out int32 Count) get_Count;
-				public new function HRESULT(ref Views self, ref Node Node, _ViewOptions viewOptions) Add;
-				public new function HRESULT(ref Views self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Views self, int32 Index, out View* View) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Views self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Views self, ref Node Node, _ViewOptions viewOptions) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Views self, out IUnknown* retval) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1084,48 +1084,48 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref View self, out Node* Node) get_ActiveScopeNode;
-				public new function HRESULT(ref View self, ref Node Node) put_ActiveScopeNode;
-				public new function HRESULT(ref View self, out Nodes* Nodes) get_Selection;
-				public new function HRESULT(ref View self, out Nodes* Nodes) get_ListItems;
-				public new function HRESULT(ref View self, VARIANT ScopeNode, out IDispatch* ScopeNodeObject) SnapinScopeObject;
-				public new function HRESULT(ref View self, out IDispatch* SelectionObject) SnapinSelectionObject;
-				public new function HRESULT(ref View self, ref View View, out int16 TheSame) Is;
-				public new function HRESULT(ref View self, out Document* Document) get_Document;
-				public new function HRESULT(ref View self) SelectAll;
-				public new function HRESULT(ref View self, ref Node Node) Select;
-				public new function HRESULT(ref View self, ref Node Node) Deselect;
-				public new function HRESULT(ref View self, ref Node Node, out BOOL IsSelected) IsSelected;
-				public new function HRESULT(ref View self, VARIANT ScopeNode) DisplayScopeNodePropertySheet;
-				public new function HRESULT(ref View self) DisplaySelectionPropertySheet;
-				public new function HRESULT(ref View self, VARIANT ScopeNode) CopyScopeNode;
-				public new function HRESULT(ref View self) CopySelection;
-				public new function HRESULT(ref View self, VARIANT ScopeNode) DeleteScopeNode;
-				public new function HRESULT(ref View self) DeleteSelection;
-				public new function HRESULT(ref View self, BSTR NewName, VARIANT ScopeNode) RenameScopeNode;
-				public new function HRESULT(ref View self, BSTR NewName) RenameSelectedItem;
-				public new function HRESULT(ref View self, VARIANT ScopeNode, out ContextMenu* ContextMenu) get_ScopeNodeContextMenu;
-				public new function HRESULT(ref View self, out ContextMenu* ContextMenu) get_SelectionContextMenu;
-				public new function HRESULT(ref View self, VARIANT ScopeNode) RefreshScopeNode;
-				public new function HRESULT(ref View self) RefreshSelection;
-				public new function HRESULT(ref View self, BSTR MenuItemPath) ExecuteSelectionMenuItem;
-				public new function HRESULT(ref View self, BSTR MenuItemPath, VARIANT ScopeNode) ExecuteScopeNodeMenuItem;
-				public new function HRESULT(ref View self, BSTR Command, BSTR Directory, BSTR Parameters, BSTR WindowState) ExecuteShellCommand;
-				public new function HRESULT(ref View self, out Frame* Frame) get_Frame;
-				public new function HRESULT(ref View self) Close;
-				public new function HRESULT(ref View self, out BOOL Visible) get_ScopeTreeVisible;
-				public new function HRESULT(ref View self, BOOL Visible) put_ScopeTreeVisible;
-				public new function HRESULT(ref View self) Back;
-				public new function HRESULT(ref View self) Forward;
-				public new function HRESULT(ref View self, BSTR StatusBarText) put_StatusBarText;
-				public new function HRESULT(ref View self, out uint16* Memento) get_Memento;
-				public new function HRESULT(ref View self, BSTR Memento) ViewMemento;
-				public new function HRESULT(ref View self, out Columns* Columns) get_Columns;
-				public new function HRESULT(ref View self, ref Node Node, int32 Column, out uint16* CellContents) get_CellContents;
-				public new function HRESULT(ref View self, BSTR File, _ExportListOptions exportoptions) ExportList;
-				public new function HRESULT(ref View self, out _ListViewMode Mode) get_ListViewMode;
-				public new function HRESULT(ref View self, _ListViewMode mode) put_ListViewMode;
-				public new function HRESULT(ref View self, out IDispatch* Control) get_ControlObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Node* Node) get_ActiveScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref Node Node) put_ActiveScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Nodes* Nodes) get_Selection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Nodes* Nodes) get_ListItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode, out IDispatch* ScopeNodeObject) SnapinScopeObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out IDispatch* SelectionObject) SnapinSelectionObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref View View, out int16 TheSame) Is;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Document* Document) get_Document;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) SelectAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref Node Node) Select;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref Node Node) Deselect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref Node Node, out BOOL IsSelected) IsSelected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode) DisplayScopeNodePropertySheet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) DisplaySelectionPropertySheet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode) CopyScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) CopySelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode) DeleteScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) DeleteSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR NewName, VARIANT ScopeNode) RenameScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR NewName) RenameSelectedItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode, out ContextMenu* ContextMenu) get_ScopeNodeContextMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out ContextMenu* ContextMenu) get_SelectionContextMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, VARIANT ScopeNode) RefreshScopeNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) RefreshSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR MenuItemPath) ExecuteSelectionMenuItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR MenuItemPath, VARIANT ScopeNode) ExecuteScopeNodeMenuItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR Command, BSTR Directory, BSTR Parameters, BSTR WindowState) ExecuteShellCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Frame* Frame) get_Frame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out BOOL Visible) get_ScopeTreeVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BOOL Visible) put_ScopeTreeVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) Back;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self) Forward;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR StatusBarText) put_StatusBarText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out uint16* Memento) get_Memento;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR Memento) ViewMemento;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out Columns* Columns) get_Columns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, ref Node Node, int32 Column, out uint16* CellContents) get_CellContents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, BSTR File, _ExportListOptions exportoptions) ExportList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out _ListViewMode Mode) get_ListViewMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, _ListViewMode mode) put_ListViewMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref View self, out IDispatch* Control) get_ControlObject;
 			}
 		}
 		[CRepr]
@@ -1142,9 +1142,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Nodes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref Nodes self, int32 Index, out Node* Node) Item;
-				public new function HRESULT(ref Nodes self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Nodes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Nodes self, int32 Index, out Node* Node) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Nodes self, out int32 Count) get_Count;
 			}
 		}
 		[CRepr]
@@ -1161,9 +1161,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ContextMenu self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ContextMenu self, VARIANT IndexOrPath, out MenuItem* MenuItem) get_Item;
-				public new function HRESULT(ref ContextMenu self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextMenu self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextMenu self, VARIANT IndexOrPath, out MenuItem* MenuItem) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ContextMenu self, out int32 Count) get_Count;
 			}
 		}
 		[CRepr]
@@ -1183,12 +1183,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref MenuItem self, out uint16* DisplayName) get_DisplayName;
-				public new function HRESULT(ref MenuItem self, out uint16* LanguageIndependentName) get_LanguageIndependentName;
-				public new function HRESULT(ref MenuItem self, out uint16* Path) get_Path;
-				public new function HRESULT(ref MenuItem self, out uint16* LanguageIndependentPath) get_LanguageIndependentPath;
-				public new function HRESULT(ref MenuItem self) Execute;
-				public new function HRESULT(ref MenuItem self, out BOOL Enabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self, out uint16* DisplayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self, out uint16* LanguageIndependentName) get_LanguageIndependentName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self, out uint16* Path) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self, out uint16* LanguageIndependentPath) get_LanguageIndependentPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref MenuItem self, out BOOL Enabled) get_Enabled;
 			}
 		}
 		[CRepr]
@@ -1206,10 +1206,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Properties self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref Properties self, BSTR Name, out Property* Property) Item;
-				public new function HRESULT(ref Properties self, out int32 Count) get_Count;
-				public new function HRESULT(ref Properties self, BSTR Name) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Properties self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Properties self, BSTR Name, out Property* Property) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Properties self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Properties self, BSTR Name) Remove;
 			}
 		}
 		[CRepr]
@@ -1226,9 +1226,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref Property self, out VARIANT Value) get_Value;
-				public new function HRESULT(ref Property self, VARIANT Value) put_Value;
-				public new function HRESULT(ref Property self, out uint16* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Property self, out VARIANT Value) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Property self, VARIANT Value) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref Property self, out uint16* Name) get_Name;
 			}
 		}
 		[CRepr]
@@ -1249,13 +1249,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IComponentData self, ref IUnknown pUnknown) Initialize;
-				public new function HRESULT(ref IComponentData self, out IComponentAlt* ppComponent) CreateComponent;
-				public new function HRESULT(ref IComponentData self, ref IDataObject lpDataObject, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param3) Notify;
-				public new function HRESULT(ref IComponentData self) Destroy;
-				public new function HRESULT(ref IComponentData self, int cookie, DATA_OBJECT_TYPES type, out IDataObject* ppDataObject) QueryDataObject;
-				public new function HRESULT(ref IComponentData self, out SCOPEDATAITEM pScopeDataItem) GetDisplayInfo;
-				public new function HRESULT(ref IComponentData self, ref IDataObject lpDataObjectA, ref IDataObject lpDataObjectB) CompareObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, ref IUnknown pUnknown) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, out IComponentAlt* ppComponent) CreateComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, ref IDataObject lpDataObject, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param3) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self) Destroy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, int cookie, DATA_OBJECT_TYPES type, out IDataObject* ppDataObject) QueryDataObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, out SCOPEDATAITEM pScopeDataItem) GetDisplayInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData self, ref IDataObject lpDataObjectA, ref IDataObject lpDataObjectB) CompareObjects;
 			}
 		}
 		[CRepr]
@@ -1276,13 +1276,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IComponentAlt self, ref IConsole lpConsole) Initialize;
-				public new function HRESULT(ref IComponentAlt self, ref IDataObject lpDataObject, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param3) Notify;
-				public new function HRESULT(ref IComponentAlt self, int cookie) Destroy;
-				public new function HRESULT(ref IComponentAlt self, int cookie, DATA_OBJECT_TYPES type, out IDataObject* ppDataObject) QueryDataObject;
-				public new function HRESULT(ref IComponentAlt self, int cookie, out PWSTR ppViewType, out int32 pViewOptions) GetResultViewType;
-				public new function HRESULT(ref IComponentAlt self, out RESULTDATAITEM pResultDataItem) GetDisplayInfo;
-				public new function HRESULT(ref IComponentAlt self, ref IDataObject lpDataObjectA, ref IDataObject lpDataObjectB) CompareObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, ref IConsole lpConsole) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, ref IDataObject lpDataObject, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param3) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, int cookie) Destroy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, int cookie, DATA_OBJECT_TYPES type, out IDataObject* ppDataObject) QueryDataObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, int cookie, out PWSTR ppViewType, out int32 pViewOptions) GetResultViewType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, out RESULTDATAITEM pResultDataItem) GetDisplayInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentAlt self, ref IDataObject lpDataObjectA, ref IDataObject lpDataObjectB) CompareObjects;
 			}
 		}
 		[CRepr]
@@ -1297,7 +1297,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResultDataCompare self, LPARAM lUserParam, int cookieA, int cookieB, out int32 pnResult) Compare;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultDataCompare self, LPARAM lUserParam, int cookieA, int cookieB, out int32 pnResult) Compare;
 			}
 		}
 		[CRepr]
@@ -1314,9 +1314,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResultOwnerData self, ref RESULTFINDINFO pFindInfo, out int32 pnFoundIndex) FindItem;
-				public new function HRESULT(ref IResultOwnerData self, int32 nStartIndex, int32 nEndIndex) CacheHint;
-				public new function HRESULT(ref IResultOwnerData self, int32 nColumn, uint32 dwSortOptions, LPARAM lUserParam) SortItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultOwnerData self, ref RESULTFINDINFO pFindInfo, out int32 pnFoundIndex) FindItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultOwnerData self, int32 nStartIndex, int32 nEndIndex) CacheHint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultOwnerData self, int32 nColumn, uint32 dwSortOptions, LPARAM lUserParam) SortItems;
 			}
 		}
 		[CRepr]
@@ -1341,17 +1341,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConsole self, ref IHeaderCtrl pHeader) SetHeader;
-				public new function HRESULT(ref IConsole self, ref IToolbar pToolbar) SetToolbar;
-				public new function HRESULT(ref IConsole self, out IUnknown* pUnknown) QueryResultView;
-				public new function HRESULT(ref IConsole self, out IImageListAlt* ppImageList) QueryScopeImageList;
-				public new function HRESULT(ref IConsole self, out IImageListAlt* ppImageList) QueryResultImageList;
-				public new function HRESULT(ref IConsole self, ref IDataObject lpDataObject, LPARAM data, int hint) UpdateAllViews;
-				public new function HRESULT(ref IConsole self, PWSTR lpszText, PWSTR lpszTitle, uint32 fuStyle, out int32 piRetval) MessageBox;
-				public new function HRESULT(ref IConsole self, out IConsoleVerb* ppConsoleVerb) QueryConsoleVerb;
-				public new function HRESULT(ref IConsole self, int hScopeItem) SelectScopeItem;
-				public new function HRESULT(ref IConsole self, out HWND phwnd) GetMainWindow;
-				public new function HRESULT(ref IConsole self, int hScopeItem, uint32 lOptions) NewWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, ref IHeaderCtrl pHeader) SetHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, ref IToolbar pToolbar) SetToolbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, out IUnknown* pUnknown) QueryResultView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, out IImageListAlt* ppImageList) QueryScopeImageList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, out IImageListAlt* ppImageList) QueryResultImageList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, ref IDataObject lpDataObject, LPARAM data, int hint) UpdateAllViews;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, PWSTR lpszText, PWSTR lpszTitle, uint32 fuStyle, out int32 piRetval) MessageBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, out IConsoleVerb* ppConsoleVerb) QueryConsoleVerb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, int hScopeItem) SelectScopeItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, out HWND phwnd) GetMainWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole self, int hScopeItem, uint32 lOptions) NewWindow;
 			}
 		}
 		[CRepr]
@@ -1371,12 +1371,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol, PWSTR title, int32 nFormat, int32 nWidth) InsertColumn;
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol) DeleteColumn;
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol, PWSTR title) SetColumnText;
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol, out PWSTR pText) GetColumnText;
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol, int32 nWidth) SetColumnWidth;
-				public new function HRESULT(ref IHeaderCtrl self, int32 nCol, out int32 pWidth) GetColumnWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol, PWSTR title, int32 nFormat, int32 nWidth) InsertColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol) DeleteColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol, PWSTR title) SetColumnText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol, out PWSTR pText) GetColumnText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol, int32 nWidth) SetColumnWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl self, int32 nCol, out int32 pWidth) GetColumnWidth;
 			}
 		}
 		[CRepr]
@@ -1391,7 +1391,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContextMenuCallback self, ref CONTEXTMENUITEM pItem) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuCallback self, ref CONTEXTMENUITEM pItem) AddItem;
 			}
 		}
 		[CRepr]
@@ -1409,10 +1409,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IContextMenuCallback.VTable
 			{
-				public new function HRESULT(ref IContextMenuProvider self) EmptyMenuList;
-				public new function HRESULT(ref IContextMenuProvider self, ref IUnknown piExtension, ref IDataObject piDataObject) AddPrimaryExtensionItems;
-				public new function HRESULT(ref IContextMenuProvider self, ref IDataObject piDataObject) AddThirdPartyExtensionItems;
-				public new function HRESULT(ref IContextMenuProvider self, HWND hwndParent, int32 xPos, int32 yPos, out int32 plSelected) ShowContextMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuProvider self) EmptyMenuList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuProvider self, ref IUnknown piExtension, ref IDataObject piDataObject) AddPrimaryExtensionItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuProvider self, ref IDataObject piDataObject) AddThirdPartyExtensionItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuProvider self, HWND hwndParent, int32 xPos, int32 yPos, out int32 plSelected) ShowContextMenu;
 			}
 		}
 		[CRepr]
@@ -1428,8 +1428,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IExtendContextMenu self, ref IDataObject piDataObject, ref IContextMenuCallback piCallback, out int32 pInsertionAllowed) AddMenuItems;
-				public new function HRESULT(ref IExtendContextMenu self, int32 lCommandID, ref IDataObject piDataObject) Command;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendContextMenu self, ref IDataObject piDataObject, ref IContextMenuCallback piCallback, out int32 pInsertionAllowed) AddMenuItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendContextMenu self, int32 lCommandID, ref IDataObject piDataObject) Command;
 			}
 		}
 		[CRepr]
@@ -1445,8 +1445,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IImageListAlt self, ref int pIcon, int32 nLoc) ImageListSetIcon;
-				public new function HRESULT(ref IImageListAlt self, ref int pBMapSm, ref int pBMapLg, int32 nStartLoc, uint32 cMask) ImageListSetStrip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageListAlt self, ref int pIcon, int32 nLoc) ImageListSetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageListAlt self, ref int pBMapSm, ref int pBMapLg, int32 nStartLoc, uint32 cMask) ImageListSetStrip;
 			}
 		}
 		[CRepr]
@@ -1475,21 +1475,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResultData self, out RESULTDATAITEM item) InsertItem;
-				public new function HRESULT(ref IResultData self, int itemID, int32 nCol) DeleteItem;
-				public new function HRESULT(ref IResultData self, LPARAM lParam, out int pItemID) FindItemByLParam;
-				public new function HRESULT(ref IResultData self) DeleteAllRsltItems;
-				public new function HRESULT(ref IResultData self, ref RESULTDATAITEM item) SetItem;
-				public new function HRESULT(ref IResultData self, out RESULTDATAITEM item) GetItem;
-				public new function HRESULT(ref IResultData self, out RESULTDATAITEM item) GetNextItem;
-				public new function HRESULT(ref IResultData self, int32 nIndex, int itemID, uint32 uAdd, uint32 uRemove) ModifyItemState;
-				public new function HRESULT(ref IResultData self, MMC_RESULT_VIEW_STYLE add, MMC_RESULT_VIEW_STYLE remove) ModifyViewStyle;
-				public new function HRESULT(ref IResultData self, int32 lViewMode) SetViewMode;
-				public new function HRESULT(ref IResultData self, out int32 lViewMode) GetViewMode;
-				public new function HRESULT(ref IResultData self, int itemID) UpdateItem;
-				public new function HRESULT(ref IResultData self, int32 nColumn, uint32 dwSortOptions, LPARAM lUserParam) Sort;
-				public new function HRESULT(ref IResultData self, PWSTR DescText) SetDescBarText;
-				public new function HRESULT(ref IResultData self, int32 nItemCount, uint32 dwOptions) SetItemCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, out RESULTDATAITEM item) InsertItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int itemID, int32 nCol) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, LPARAM lParam, out int pItemID) FindItemByLParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self) DeleteAllRsltItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, ref RESULTDATAITEM item) SetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, out RESULTDATAITEM item) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, out RESULTDATAITEM item) GetNextItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int32 nIndex, int itemID, uint32 uAdd, uint32 uRemove) ModifyItemState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, MMC_RESULT_VIEW_STYLE add, MMC_RESULT_VIEW_STYLE remove) ModifyViewStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int32 lViewMode) SetViewMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, out int32 lViewMode) GetViewMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int itemID) UpdateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int32 nColumn, uint32 dwSortOptions, LPARAM lUserParam) Sort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, PWSTR DescText) SetDescBarText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData self, int32 nItemCount, uint32 dwOptions) SetItemCount;
 			}
 		}
 		[CRepr]
@@ -1510,13 +1510,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConsoleNameSpace self, out SCOPEDATAITEM item) InsertItem;
-				public new function HRESULT(ref IConsoleNameSpace self, int hItem, int32 fDeleteThis) DeleteItem;
-				public new function HRESULT(ref IConsoleNameSpace self, ref SCOPEDATAITEM item) SetItem;
-				public new function HRESULT(ref IConsoleNameSpace self, out SCOPEDATAITEM item) GetItem;
-				public new function HRESULT(ref IConsoleNameSpace self, int item, out int pItemChild, out int pCookie) GetChildItem;
-				public new function HRESULT(ref IConsoleNameSpace self, int item, out int pItemNext, out int pCookie) GetNextItem;
-				public new function HRESULT(ref IConsoleNameSpace self, int item, out int pItemParent, out int pCookie) GetParentItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, out SCOPEDATAITEM item) InsertItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, int hItem, int32 fDeleteThis) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, ref SCOPEDATAITEM item) SetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, out SCOPEDATAITEM item) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, int item, out int pItemChild, out int pCookie) GetChildItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, int item, out int pItemNext, out int pCookie) GetNextItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace self, int item, out int pItemParent, out int pCookie) GetParentItem;
 			}
 		}
 		[CRepr]
@@ -1532,8 +1532,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IConsoleNameSpace.VTable
 			{
-				public new function HRESULT(ref IConsoleNameSpace2 self, int hItem) Expand;
-				public new function HRESULT(ref IConsoleNameSpace2 self, int hItem, ref Guid lpClsid) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace2 self, int hItem) Expand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleNameSpace2 self, int hItem, ref Guid lpClsid) AddExtension;
 			}
 		}
 		[CRepr]
@@ -1549,8 +1549,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertySheetCallback self, HPROPSHEETPAGE hPage) AddPage;
-				public new function HRESULT(ref IPropertySheetCallback self, HPROPSHEETPAGE hPage) RemovePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetCallback self, HPROPSHEETPAGE hPage) AddPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetCallback self, HPROPSHEETPAGE hPage) RemovePage;
 			}
 		}
 		[CRepr]
@@ -1569,11 +1569,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertySheetProvider self, PWSTR title, uint8 type, int cookie, ref IDataObject pIDataObjectm, uint32 dwOptions) CreatePropertySheet;
-				public new function HRESULT(ref IPropertySheetProvider self, int hItem, ref IComponentAlt lpComponent, ref IDataObject lpDataObject) FindPropertySheet;
-				public new function HRESULT(ref IPropertySheetProvider self, IUnknown* lpUnknown, BOOL bCreateHandle, HWND hNotifyWindow, BOOL bScopePane) AddPrimaryPages;
-				public new function HRESULT(ref IPropertySheetProvider self) AddExtensionPages;
-				public new function HRESULT(ref IPropertySheetProvider self, int window, int32 page) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetProvider self, PWSTR title, uint8 type, int cookie, ref IDataObject pIDataObjectm, uint32 dwOptions) CreatePropertySheet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetProvider self, int hItem, ref IComponentAlt lpComponent, ref IDataObject lpDataObject) FindPropertySheet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetProvider self, IUnknown* lpUnknown, BOOL bCreateHandle, HWND hNotifyWindow, BOOL bScopePane) AddPrimaryPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetProvider self) AddExtensionPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySheetProvider self, int window, int32 page) Show;
 			}
 		}
 		[CRepr]
@@ -1589,8 +1589,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IExtendPropertySheet self, ref IPropertySheetCallback lpProvider, int handle, ref IDataObject lpIDataObject) CreatePropertyPages;
-				public new function HRESULT(ref IExtendPropertySheet self, ref IDataObject lpDataObject) QueryPagesFor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendPropertySheet self, ref IPropertySheetCallback lpProvider, int handle, ref IDataObject lpIDataObject) CreatePropertyPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendPropertySheet self, ref IDataObject lpDataObject) QueryPagesFor;
 			}
 		}
 		[CRepr]
@@ -1607,9 +1607,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IControlbar self, MMC_CONTROL_TYPE nType, ref IExtendControlbar pExtendControlbar, out IUnknown* ppUnknown) Create;
-				public new function HRESULT(ref IControlbar self, MMC_CONTROL_TYPE nType, ref IUnknown lpUnknown) Attach;
-				public new function HRESULT(ref IControlbar self, ref IUnknown lpUnknown) Detach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IControlbar self, MMC_CONTROL_TYPE nType, ref IExtendControlbar pExtendControlbar, out IUnknown* ppUnknown) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IControlbar self, MMC_CONTROL_TYPE nType, ref IUnknown lpUnknown) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IControlbar self, ref IUnknown lpUnknown) Detach;
 			}
 		}
 		[CRepr]
@@ -1625,8 +1625,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IExtendControlbar self, ref IControlbar pControlbar) SetControlbar;
-				public new function HRESULT(ref IExtendControlbar self, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param2) ControlbarNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendControlbar self, ref IControlbar pControlbar) SetControlbar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendControlbar self, MMC_NOTIFY_TYPE event, LPARAM arg, LPARAM param2) ControlbarNotify;
 			}
 		}
 		[CRepr]
@@ -1646,12 +1646,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IToolbar self, int32 nImages, HBITMAP hbmp, int32 cxSize, int32 cySize, uint32 crMask) AddBitmap;
-				public new function HRESULT(ref IToolbar self, int32 nButtons, ref MMCBUTTON lpButtons) AddButtons;
-				public new function HRESULT(ref IToolbar self, int32 nIndex, ref MMCBUTTON lpButton) InsertButton;
-				public new function HRESULT(ref IToolbar self, int32 nIndex) DeleteButton;
-				public new function HRESULT(ref IToolbar self, int32 idCommand, MMC_BUTTON_STATE nState, out BOOL pState) GetButtonState;
-				public new function HRESULT(ref IToolbar self, int32 idCommand, MMC_BUTTON_STATE nState, BOOL bState) SetButtonState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 nImages, HBITMAP hbmp, int32 cxSize, int32 cySize, uint32 crMask) AddBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 nButtons, ref MMCBUTTON lpButtons) AddButtons;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 nIndex, ref MMCBUTTON lpButton) InsertButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 nIndex) DeleteButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 idCommand, MMC_BUTTON_STATE nState, out BOOL pState) GetButtonState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IToolbar self, int32 idCommand, MMC_BUTTON_STATE nState, BOOL bState) SetButtonState;
 			}
 		}
 		[CRepr]
@@ -1669,10 +1669,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID, MMC_BUTTON_STATE nState, out BOOL pState) GetVerbState;
-				public new function HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID, MMC_BUTTON_STATE nState, BOOL bState) SetVerbState;
-				public new function HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID) SetDefaultVerb;
-				public new function HRESULT(ref IConsoleVerb self, out MMC_CONSOLE_VERB peCmdID) GetDefaultVerb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID, MMC_BUTTON_STATE nState, out BOOL pState) GetVerbState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID, MMC_BUTTON_STATE nState, BOOL bState) SetVerbState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleVerb self, MMC_CONSOLE_VERB eCmdID) SetDefaultVerb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsoleVerb self, out MMC_CONSOLE_VERB peCmdID) GetDefaultVerb;
 			}
 		}
 		[CRepr]
@@ -1691,11 +1691,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISnapinAbout self, out PWSTR lpDescription) GetSnapinDescription;
-				public new function HRESULT(ref ISnapinAbout self, out PWSTR lpName) GetProvider;
-				public new function HRESULT(ref ISnapinAbout self, out PWSTR lpVersion) GetSnapinVersion;
-				public new function HRESULT(ref ISnapinAbout self, out HICON hAppIcon) GetSnapinImage;
-				public new function HRESULT(ref ISnapinAbout self, out HBITMAP hSmallImage, out HBITMAP hSmallImageOpen, out HBITMAP hLargeImage, out uint32 cMask) GetStaticFolderImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinAbout self, out PWSTR lpDescription) GetSnapinDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinAbout self, out PWSTR lpName) GetProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinAbout self, out PWSTR lpVersion) GetSnapinVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinAbout self, out HICON hAppIcon) GetSnapinImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinAbout self, out HBITMAP hSmallImage, out HBITMAP hSmallImageOpen, out HBITMAP hLargeImage, out uint32 cMask) GetStaticFolderImage;
 			}
 		}
 		[CRepr]
@@ -1712,9 +1712,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMenuButton self, int32 idCommand, PWSTR lpButtonText, PWSTR lpTooltipText) AddButton;
-				public new function HRESULT(ref IMenuButton self, int32 idCommand, PWSTR lpButtonText, PWSTR lpTooltipText) SetButton;
-				public new function HRESULT(ref IMenuButton self, int32 idCommand, MMC_BUTTON_STATE nState, BOOL bState) SetButtonState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMenuButton self, int32 idCommand, PWSTR lpButtonText, PWSTR lpTooltipText) AddButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMenuButton self, int32 idCommand, PWSTR lpButtonText, PWSTR lpTooltipText) SetButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMenuButton self, int32 idCommand, MMC_BUTTON_STATE nState, BOOL bState) SetButtonState;
 			}
 		}
 		[CRepr]
@@ -1729,7 +1729,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISnapinHelp self, out PWSTR lpCompiledHelpFile) GetHelpTopic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinHelp self, out PWSTR lpCompiledHelpFile) GetHelpTopic;
 			}
 		}
 		[CRepr]
@@ -1744,7 +1744,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IExtendPropertySheet.VTable
 			{
-				public new function HRESULT(ref IExtendPropertySheet2 self, ref IDataObject lpIDataObject, out HBITMAP lphWatermark, out HBITMAP lphHeader, out HPALETTE lphPalette, out BOOL bStretch) GetWatermarks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendPropertySheet2 self, ref IDataObject lpIDataObject, out HBITMAP lphWatermark, out HBITMAP lphHeader, out HPALETTE lphPalette, out BOOL bStretch) GetWatermarks;
 			}
 		}
 		[CRepr]
@@ -1761,9 +1761,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IHeaderCtrl.VTable
 			{
-				public new function HRESULT(ref IHeaderCtrl2 self, uint32 uTimeout) SetChangeTimeOut;
-				public new function HRESULT(ref IHeaderCtrl2 self, uint32 nColumn, uint32 dwType, ref MMC_FILTERDATA pFilterData) SetColumnFilter;
-				public new function HRESULT(ref IHeaderCtrl2 self, uint32 nColumn, out uint32 pdwType, out MMC_FILTERDATA pFilterData) GetColumnFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl2 self, uint32 uTimeout) SetChangeTimeOut;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl2 self, uint32 nColumn, uint32 dwType, ref MMC_FILTERDATA pFilterData) SetColumnFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHeaderCtrl2 self, uint32 nColumn, out uint32 pdwType, out MMC_FILTERDATA pFilterData) GetColumnFilter;
 			}
 		}
 		[CRepr]
@@ -1778,7 +1778,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISnapinHelp.VTable
 			{
-				public new function HRESULT(ref ISnapinHelp2 self, out PWSTR lpCompiledHelpFiles) GetLinkedTopics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISnapinHelp2 self, out PWSTR lpCompiledHelpFiles) GetLinkedTopics;
 			}
 		}
 		[CRepr]
@@ -1796,10 +1796,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTASK self, uint32 celt, MMC_TASK* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumTASK self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumTASK self) Reset;
-				public new function HRESULT(ref IEnumTASK self, out IEnumTASK* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTASK self, uint32 celt, MMC_TASK* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTASK self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTASK self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTASK self, out IEnumTASK* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -1819,12 +1819,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IExtendTaskPad self, ref IDataObject pdo, ref VARIANT arg, ref VARIANT param2) TaskNotify;
-				public new function HRESULT(ref IExtendTaskPad self, ref IDataObject pdo, PWSTR szTaskGroup, out IEnumTASK* ppEnumTASK) EnumTasks;
-				public new function HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out PWSTR pszTitle) GetTitle;
-				public new function HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out PWSTR pszDescriptiveText) GetDescriptiveText;
-				public new function HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out MMC_TASK_DISPLAY_OBJECT pTDO) GetBackground;
-				public new function HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out MMC_LISTPAD_INFO lpListPadInfo) GetListPadInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, ref IDataObject pdo, ref VARIANT arg, ref VARIANT param2) TaskNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, ref IDataObject pdo, PWSTR szTaskGroup, out IEnumTASK* ppEnumTASK) EnumTasks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out PWSTR pszTitle) GetTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out PWSTR pszDescriptiveText) GetDescriptiveText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out MMC_TASK_DISPLAY_OBJECT pTDO) GetBackground;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendTaskPad self, PWSTR pszGroup, out MMC_LISTPAD_INFO lpListPadInfo) GetListPadInfo;
 			}
 		}
 		[CRepr]
@@ -1841,9 +1841,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IConsole.VTable
 			{
-				public new function HRESULT(ref IConsole2 self, int hItem, BOOL bExpand) Expand;
-				public new function HRESULT(ref IConsole2 self) IsTaskpadViewPreferred;
-				public new function HRESULT(ref IConsole2 self, PWSTR pszStatusText) SetStatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole2 self, int hItem, BOOL bExpand) Expand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole2 self) IsTaskpadViewPreferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole2 self, PWSTR pszStatusText) SetStatusText;
 			}
 		}
 		[CRepr]
@@ -1858,7 +1858,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDisplayHelp self, PWSTR pszHelpTopic) ShowTopic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayHelp self, PWSTR pszHelpTopic) ShowTopic;
 			}
 		}
 		[CRepr]
@@ -1875,9 +1875,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRequiredExtensions self) EnableAllExtensions;
-				public new function HRESULT(ref IRequiredExtensions self, out Guid pExtCLSID) GetFirstExtension;
-				public new function HRESULT(ref IRequiredExtensions self, out Guid pExtCLSID) GetNextExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRequiredExtensions self) EnableAllExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRequiredExtensions self, out Guid pExtCLSID) GetFirstExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRequiredExtensions self, out Guid pExtCLSID) GetNextExtension;
 			}
 		}
 		[CRepr]
@@ -1898,13 +1898,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStringTable self, PWSTR pszAdd, out uint32 pStringID) AddString;
-				public new function HRESULT(ref IStringTable self, uint32 StringID, uint32 cchBuffer, char16* lpBuffer, out uint32 pcchOut) GetString;
-				public new function HRESULT(ref IStringTable self, uint32 StringID, out uint32 pcchString) GetStringLength;
-				public new function HRESULT(ref IStringTable self, uint32 StringID) DeleteString;
-				public new function HRESULT(ref IStringTable self) DeleteAllStrings;
-				public new function HRESULT(ref IStringTable self, PWSTR pszFind, out uint32 pStringID) FindString;
-				public new function HRESULT(ref IStringTable self, out IEnumString* ppEnum) Enumerate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, PWSTR pszAdd, out uint32 pStringID) AddString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, uint32 StringID, uint32 cchBuffer, char16* lpBuffer, out uint32 pcchOut) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, uint32 StringID, out uint32 pcchString) GetStringLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, uint32 StringID) DeleteString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self) DeleteAllStrings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, PWSTR pszFind, out uint32 pStringID) FindString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringTable self, out IEnumString* ppEnum) Enumerate;
 			}
 		}
 		[CRepr]
@@ -1922,10 +1922,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IColumnData self, ref SColumnSetID pColID, ref MMC_COLUMN_SET_DATA pColSetData) SetColumnConfigData;
-				public new function HRESULT(ref IColumnData self, ref SColumnSetID pColID, out MMC_COLUMN_SET_DATA* ppColSetData) GetColumnConfigData;
-				public new function HRESULT(ref IColumnData self, ref SColumnSetID pColID, ref MMC_SORT_SET_DATA pColSortData) SetColumnSortData;
-				public new function HRESULT(ref IColumnData self, ref SColumnSetID pColID, out MMC_SORT_SET_DATA* ppColSortData) GetColumnSortData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IColumnData self, ref SColumnSetID pColID, ref MMC_COLUMN_SET_DATA pColSetData) SetColumnConfigData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IColumnData self, ref SColumnSetID pColID, out MMC_COLUMN_SET_DATA* ppColSetData) GetColumnConfigData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IColumnData self, ref SColumnSetID pColID, ref MMC_SORT_SET_DATA pColSortData) SetColumnSortData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IColumnData self, ref SColumnSetID pColID, out MMC_SORT_SET_DATA* ppColSortData) GetColumnSortData;
 			}
 		}
 		[CRepr]
@@ -1943,10 +1943,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMessageView self, PWSTR pszTitleText) SetTitleText;
-				public new function HRESULT(ref IMessageView self, PWSTR pszBodyText) SetBodyText;
-				public new function HRESULT(ref IMessageView self, IconIdentifier id) SetIcon;
-				public new function HRESULT(ref IMessageView self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageView self, PWSTR pszTitleText) SetTitleText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageView self, PWSTR pszBodyText) SetBodyText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageView self, IconIdentifier id) SetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageView self) Clear;
 			}
 		}
 		[CRepr]
@@ -1961,7 +1961,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResultDataCompareEx self, ref RDCOMPARE prdc, out int32 pnResult) Compare;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultDataCompareEx self, ref RDCOMPARE prdc, out int32 pnResult) Compare;
 			}
 		}
 		[CRepr]
@@ -1976,7 +1976,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IComponentData.VTable
 			{
-				public new function HRESULT(ref IComponentData2 self, int cookie, DATA_OBJECT_TYPES type, out IDispatch* ppDispatch) QueryDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentData2 self, int cookie, DATA_OBJECT_TYPES type, out IDispatch* ppDispatch) QueryDispatch;
 			}
 		}
 		[CRepr]
@@ -1993,9 +1993,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IComponentAlt.VTable
 			{
-				public new function HRESULT(ref IComponent2 self, int cookie, DATA_OBJECT_TYPES type, out IDispatch* ppDispatch) QueryDispatch;
-				public new function HRESULT(ref IComponent2 self, int cookie, out RESULT_VIEW_TYPE_INFO pResultViewType) GetResultViewType2;
-				public new function HRESULT(ref IComponent2 self, int cookie, ref RESULT_VIEW_TYPE_INFO pResultViewType) RestoreResultView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent2 self, int cookie, DATA_OBJECT_TYPES type, out IDispatch* ppDispatch) QueryDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent2 self, int cookie, out RESULT_VIEW_TYPE_INFO pResultViewType) GetResultViewType2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent2 self, int cookie, ref RESULT_VIEW_TYPE_INFO pResultViewType) RestoreResultView;
 			}
 		}
 		[CRepr]
@@ -2010,7 +2010,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContextMenuCallback2 self, ref CONTEXTMENUITEM2 pItem) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContextMenuCallback2 self, ref CONTEXTMENUITEM2 pItem) AddItem;
 			}
 		}
 		[CRepr]
@@ -2025,7 +2025,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMMCVersionInfo self, out int32 pVersionMajor, out int32 pVersionMinor) GetMMCVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMMCVersionInfo self, out int32 pVersionMajor, out int32 pVersionMinor) GetMMCVersion;
 			}
 		}
 		[CRepr]
@@ -2040,7 +2040,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IExtendView self, ref IDataObject pDataObject, ref IViewExtensionCallback pViewExtensionCallback) GetViews;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExtendView self, ref IDataObject pDataObject, ref IViewExtensionCallback pViewExtensionCallback) GetViews;
 			}
 		}
 		[CRepr]
@@ -2055,7 +2055,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IViewExtensionCallback self, ref MMC_EXT_VIEW_DATA pExtViewData) AddView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewExtensionCallback self, ref MMC_EXT_VIEW_DATA pExtViewData) AddView;
 			}
 		}
 		[CRepr]
@@ -2071,8 +2071,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConsolePower self, uint32 dwAdd, uint32 dwRemove) SetExecutionState;
-				public new function HRESULT(ref IConsolePower self, uint32 dwFlags) ResetIdleTimer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsolePower self, uint32 dwAdd, uint32 dwRemove) SetExecutionState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsolePower self, uint32 dwFlags) ResetIdleTimer;
 			}
 		}
 		[CRepr]
@@ -2087,7 +2087,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConsolePowerSink self, uint32 nEvent, LPARAM lParam, out LRESULT plReturn) OnPowerBroadcast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsolePowerSink self, uint32 nEvent, LPARAM lParam, out LRESULT plReturn) OnPowerBroadcast;
 			}
 		}
 		[CRepr]
@@ -2102,7 +2102,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INodeProperties self, ref IDataObject pDataObject, BSTR szPropertyName, out uint16* pbstrProperty) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INodeProperties self, ref IDataObject pDataObject, BSTR szPropertyName, out uint16* pbstrProperty) GetProperty;
 			}
 		}
 		[CRepr]
@@ -2117,7 +2117,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IConsole2.VTable
 			{
-				public new function HRESULT(ref IConsole3 self, int hScopeItem) RenameScopeItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConsole3 self, int hScopeItem) RenameScopeItem;
 			}
 		}
 		[CRepr]
@@ -2132,7 +2132,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IResultData.VTable
 			{
-				public new function HRESULT(ref IResultData2 self, int itemID) RenameResultItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData2 self, int itemID) RenameResultItem;
 			}
 		}
 		

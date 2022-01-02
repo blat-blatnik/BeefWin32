@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsolatedEnvironmentInterop self, HWND containerHwnd, out HWND hostHwnd) GetHostHwndInterop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsolatedEnvironmentInterop self, HWND containerHwnd, out HWND hostHwnd) GetHostHwndInterop;
 			}
 		}
 		

@@ -3221,10 +3221,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGetClusterUIInfo self, BSTR lpszName, out int32 pcchName) GetClusterName;
-				public new function uint32(ref IGetClusterUIInfo self) GetLocale;
-				public new function HFONT(ref IGetClusterUIInfo self) GetFont;
-				public new function HICON(ref IGetClusterUIInfo self) GetIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetClusterUIInfo self, BSTR lpszName, out int32 pcchName) GetClusterName;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IGetClusterUIInfo self) GetLocale;
+				public new function [CallingConvention(.Stdcall)] HFONT(ref IGetClusterUIInfo self) GetFont;
+				public new function [CallingConvention(.Stdcall)] HICON(ref IGetClusterUIInfo self) GetIcon;
 			}
 		}
 		[CRepr]
@@ -3241,9 +3241,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGetClusterDataInfo self, BSTR lpszName, out int32 pcchName) GetClusterName;
-				public new function _HCLUSTER*(ref IGetClusterDataInfo self) GetClusterHandle;
-				public new function int32(ref IGetClusterDataInfo self) GetObjectCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetClusterDataInfo self, BSTR lpszName, out int32 pcchName) GetClusterName;
+				public new function [CallingConvention(.Stdcall)] _HCLUSTER*(ref IGetClusterDataInfo self) GetClusterHandle;
+				public new function [CallingConvention(.Stdcall)] int32(ref IGetClusterDataInfo self) GetObjectCount;
 			}
 		}
 		[CRepr]
@@ -3259,8 +3259,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGetClusterObjectInfo self, int32 lObjIndex, BSTR lpszName, out int32 pcchName) GetObjectName;
-				public new function CLUADMEX_OBJECT_TYPE(ref IGetClusterObjectInfo self, int32 lObjIndex) GetObjectType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetClusterObjectInfo self, int32 lObjIndex, BSTR lpszName, out int32 pcchName) GetObjectName;
+				public new function [CallingConvention(.Stdcall)] CLUADMEX_OBJECT_TYPE(ref IGetClusterObjectInfo self, int32 lObjIndex) GetObjectType;
 			}
 		}
 		[CRepr]
@@ -3275,7 +3275,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function _HNODE*(ref IGetClusterNodeInfo self, int32 lObjIndex) GetNodeHandle;
+				public new function [CallingConvention(.Stdcall)] _HNODE*(ref IGetClusterNodeInfo self, int32 lObjIndex) GetNodeHandle;
 			}
 		}
 		[CRepr]
@@ -3290,7 +3290,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function _HGROUP*(ref IGetClusterGroupInfo self, int32 lObjIndex) GetGroupHandle;
+				public new function [CallingConvention(.Stdcall)] _HGROUP*(ref IGetClusterGroupInfo self, int32 lObjIndex) GetGroupHandle;
 			}
 		}
 		[CRepr]
@@ -3307,9 +3307,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function _HRESOURCE*(ref IGetClusterResourceInfo self, int32 lObjIndex) GetResourceHandle;
-				public new function HRESULT(ref IGetClusterResourceInfo self, int32 lObjIndex, BSTR lpszResTypeName, out int32 pcchResTypeName) GetResourceTypeName;
-				public new function BOOL(ref IGetClusterResourceInfo self, int32 lObjIndex, BSTR lpszNetName, out uint32 pcchNetName) GetResourceNetworkName;
+				public new function [CallingConvention(.Stdcall)] _HRESOURCE*(ref IGetClusterResourceInfo self, int32 lObjIndex) GetResourceHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetClusterResourceInfo self, int32 lObjIndex, BSTR lpszResTypeName, out int32 pcchResTypeName) GetResourceTypeName;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IGetClusterResourceInfo self, int32 lObjIndex, BSTR lpszNetName, out uint32 pcchNetName) GetResourceNetworkName;
 			}
 		}
 		[CRepr]
@@ -3324,7 +3324,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function _HNETWORK*(ref IGetClusterNetworkInfo self, int32 lObjIndex) GetNetworkHandle;
+				public new function [CallingConvention(.Stdcall)] _HNETWORK*(ref IGetClusterNetworkInfo self, int32 lObjIndex) GetNetworkHandle;
 			}
 		}
 		[CRepr]
@@ -3339,7 +3339,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function _HNETINTERFACE*(ref IGetClusterNetInterfaceInfo self, int32 lObjIndex) GetNetInterfaceHandle;
+				public new function [CallingConvention(.Stdcall)] _HNETINTERFACE*(ref IGetClusterNetInterfaceInfo self, int32 lObjIndex) GetNetInterfaceHandle;
 			}
 		}
 		[CRepr]
@@ -3354,7 +3354,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCPropertySheetCallback self, ref int32 hpage) AddPropertySheetPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCPropertySheetCallback self, ref int32 hpage) AddPropertySheetPage;
 			}
 		}
 		[CRepr]
@@ -3369,7 +3369,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWEExtendPropertySheet self, ref IUnknown piData, ref IWCPropertySheetCallback piCallback) CreatePropertySheetPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWEExtendPropertySheet self, ref IUnknown piData, ref IWCPropertySheetCallback piCallback) CreatePropertySheetPages;
 			}
 		}
 		[CRepr]
@@ -3385,8 +3385,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCWizardCallback self, ref int32 hpage) AddWizardPage;
-				public new function HRESULT(ref IWCWizardCallback self, ref int32 hpage, BOOL bEnable) EnableNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCWizardCallback self, ref int32 hpage) AddWizardPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCWizardCallback self, ref int32 hpage, BOOL bEnable) EnableNext;
 			}
 		}
 		[CRepr]
@@ -3401,7 +3401,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWEExtendWizard self, ref IUnknown piData, ref IWCWizardCallback piCallback) CreateWizardPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWEExtendWizard self, ref IUnknown piData, ref IWCWizardCallback piCallback) CreateWizardPages;
 			}
 		}
 		[CRepr]
@@ -3416,7 +3416,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCContextMenuCallback self, BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) AddExtensionMenuItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCContextMenuCallback self, BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) AddExtensionMenuItem;
 			}
 		}
 		[CRepr]
@@ -3431,7 +3431,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWEExtendContextMenu self, ref IUnknown piData, ref IWCContextMenuCallback piCallback) AddContextMenuItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWEExtendContextMenu self, ref IUnknown piData, ref IWCContextMenuCallback piCallback) AddContextMenuItems;
 			}
 		}
 		[CRepr]
@@ -3446,7 +3446,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWEInvokeCommand self, uint32 nCommandID, ref IUnknown piData) InvokeCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWEInvokeCommand self, uint32 nCommandID, ref IUnknown piData) InvokeCommand;
 			}
 		}
 		[CRepr]
@@ -3462,8 +3462,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCWizard97Callback self, ref int32 hpage) AddWizard97Page;
-				public new function HRESULT(ref IWCWizard97Callback self, ref int32 hpage, BOOL bEnable) EnableNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCWizard97Callback self, ref int32 hpage) AddWizard97Page;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCWizard97Callback self, ref int32 hpage, BOOL bEnable) EnableNext;
 			}
 		}
 		[CRepr]
@@ -3478,7 +3478,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWEExtendWizard97 self, ref IUnknown piData, ref IWCWizard97Callback piCallback) CreateWizard97Pages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWEExtendWizard97 self, ref IUnknown piData, ref IWCWizard97Callback piCallback) CreateWizard97Pages;
 			}
 		}
 		[CRepr]
@@ -3495,9 +3495,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusApplication self, out ISDomainNames* ppDomains) get_DomainNames;
-				public new function HRESULT(ref ISClusApplication self, BSTR bstrDomainName, out ISClusterNames* ppClusters) get_ClusterNames;
-				public new function HRESULT(ref ISClusApplication self, BSTR bstrClusterName, out ISCluster* pCluster) OpenCluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusApplication self, out ISDomainNames* ppDomains) get_DomainNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusApplication self, BSTR bstrDomainName, out ISClusterNames* ppClusters) get_ClusterNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusApplication self, BSTR bstrClusterName, out ISCluster* pCluster) OpenCluster;
 			}
 		}
 		[CRepr]
@@ -3515,10 +3515,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISDomainNames self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISDomainNames self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISDomainNames self) Refresh;
-				public new function HRESULT(ref ISDomainNames self, VARIANT varIndex, out BSTR pbstrDomainName) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISDomainNames self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISDomainNames self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISDomainNames self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISDomainNames self, VARIANT varIndex, out BSTR pbstrDomainName) get_Item;
 			}
 		}
 		[CRepr]
@@ -3537,11 +3537,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusterNames self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusterNames self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusterNames self) Refresh;
-				public new function HRESULT(ref ISClusterNames self, VARIANT varIndex, out BSTR pbstrClusterName) get_Item;
-				public new function HRESULT(ref ISClusterNames self, out BSTR pbstrDomainName) get_DomainName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusterNames self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusterNames self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusterNames self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusterNames self, VARIANT varIndex, out BSTR pbstrClusterName) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusterNames self, out BSTR pbstrDomainName) get_DomainName;
 			}
 		}
 		[CRepr]
@@ -3556,7 +3556,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusRefObject self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRefObject self, out uint phandle) get_Handle;
 			}
 		}
 		[CRepr]
@@ -3580,16 +3580,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusVersion self, out BSTR pbstrClusterName) get_Name;
-				public new function HRESULT(ref ISClusVersion self, out int32 pnMajorVersion) get_MajorVersion;
-				public new function HRESULT(ref ISClusVersion self, out int32 pnMinorVersion) get_MinorVersion;
-				public new function HRESULT(ref ISClusVersion self, out int16 pnBuildNumber) get_BuildNumber;
-				public new function HRESULT(ref ISClusVersion self, out BSTR pbstrVendorId) get_VendorId;
-				public new function HRESULT(ref ISClusVersion self, out BSTR pbstrCSDVersion) get_CSDVersion;
-				public new function HRESULT(ref ISClusVersion self, out int32 pnClusterHighestVersion) get_ClusterHighestVersion;
-				public new function HRESULT(ref ISClusVersion self, out int32 pnClusterLowestVersion) get_ClusterLowestVersion;
-				public new function HRESULT(ref ISClusVersion self, out int32 pnFlags) get_Flags;
-				public new function HRESULT(ref ISClusVersion self, out VARIANT pvarMixedVersion) get_MixedVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out BSTR pbstrClusterName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int32 pnMajorVersion) get_MajorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int32 pnMinorVersion) get_MinorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int16 pnBuildNumber) get_BuildNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out BSTR pbstrVendorId) get_VendorId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out BSTR pbstrCSDVersion) get_CSDVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int32 pnClusterHighestVersion) get_ClusterHighestVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int32 pnClusterLowestVersion) get_ClusterLowestVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out int32 pnFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusVersion self, out VARIANT pvarMixedVersion) get_MixedVersion;
 			}
 		}
 		[CRepr]
@@ -3624,27 +3624,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISCluster self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISCluster self, BSTR bstrClusterName) Open;
-				public new function HRESULT(ref ISCluster self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISCluster self, BSTR bstrClusterName) put_Name;
-				public new function HRESULT(ref ISCluster self, out ISClusVersion* ppClusVersion) get_Version;
-				public new function HRESULT(ref ISCluster self, ref ISClusResource pClusterResource) put_QuorumResource;
-				public new function HRESULT(ref ISCluster self, out ISClusResource* pClusterResource) get_QuorumResource;
-				public new function HRESULT(ref ISCluster self, out int32 pnLogSize) get_QuorumLogSize;
-				public new function HRESULT(ref ISCluster self, int32 nLogSize) put_QuorumLogSize;
-				public new function HRESULT(ref ISCluster self, out BSTR ppPath) get_QuorumPath;
-				public new function HRESULT(ref ISCluster self, BSTR pPath) put_QuorumPath;
-				public new function HRESULT(ref ISCluster self, out ISClusNodes* ppNodes) get_Nodes;
-				public new function HRESULT(ref ISCluster self, out ISClusResGroups* ppClusterResourceGroups) get_ResourceGroups;
-				public new function HRESULT(ref ISCluster self, out ISClusResources* ppClusterResources) get_Resources;
-				public new function HRESULT(ref ISCluster self, out ISClusResTypes* ppResourceTypes) get_ResourceTypes;
-				public new function HRESULT(ref ISCluster self, out ISClusNetworks* ppNetworks) get_Networks;
-				public new function HRESULT(ref ISCluster self, out ISClusNetInterfaces* ppNetInterfaces) get_NetInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, BSTR bstrClusterName) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, BSTR bstrClusterName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusVersion* ppClusVersion) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, ref ISClusResource pClusterResource) put_QuorumResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusResource* pClusterResource) get_QuorumResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out int32 pnLogSize) get_QuorumLogSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, int32 nLogSize) put_QuorumLogSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out BSTR ppPath) get_QuorumPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, BSTR pPath) put_QuorumPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusNodes* ppNodes) get_Nodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusResGroups* ppClusterResourceGroups) get_ResourceGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusResources* ppClusterResources) get_Resources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusResTypes* ppResourceTypes) get_ResourceTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusNetworks* ppNetworks) get_Networks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCluster self, out ISClusNetInterfaces* ppNetInterfaces) get_NetInterfaces;
 			}
 		}
 		[CRepr]
@@ -3672,20 +3672,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusNode self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusNode self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISClusNode self, out BSTR pbstrNodeID) get_NodeID;
-				public new function HRESULT(ref ISClusNode self, out CLUSTER_NODE_STATE dwState) get_State;
-				public new function HRESULT(ref ISClusNode self) Pause;
-				public new function HRESULT(ref ISClusNode self) Resume;
-				public new function HRESULT(ref ISClusNode self) Evict;
-				public new function HRESULT(ref ISClusNode self, out ISClusResGroups* ppResourceGroups) get_ResourceGroups;
-				public new function HRESULT(ref ISClusNode self, out ISCluster* ppCluster) get_Cluster;
-				public new function HRESULT(ref ISClusNode self, out ISClusNodeNetInterfaces* ppClusNetInterfaces) get_NetInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out BSTR pbstrNodeID) get_NodeID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out CLUSTER_NODE_STATE dwState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self) Evict;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusResGroups* ppResourceGroups) get_ResourceGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNode self, out ISClusNodeNetInterfaces* ppClusNetInterfaces) get_NetInterfaces;
 			}
 		}
 		[CRepr]
@@ -3703,10 +3703,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNodes self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusNodes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusNodes self) Refresh;
-				public new function HRESULT(ref ISClusNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodes self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodes self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
 			}
 		}
 		[CRepr]
@@ -3731,17 +3731,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusNetwork self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISClusNetwork self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusNetwork self, BSTR bstrNetworkName) put_Name;
-				public new function HRESULT(ref ISClusNetwork self, out BSTR pbstrNetworkID) get_NetworkID;
-				public new function HRESULT(ref ISClusNetwork self, out CLUSTER_NETWORK_STATE dwState) get_State;
-				public new function HRESULT(ref ISClusNetwork self, out ISClusNetworkNetInterfaces* ppClusNetInterfaces) get_NetInterfaces;
-				public new function HRESULT(ref ISClusNetwork self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, BSTR bstrNetworkName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out BSTR pbstrNetworkID) get_NetworkID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out CLUSTER_NETWORK_STATE dwState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISClusNetworkNetInterfaces* ppClusNetInterfaces) get_NetInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetwork self, out ISCluster* ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3759,10 +3759,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNetworks self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusNetworks self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusNetworks self) Refresh;
-				public new function HRESULT(ref ISClusNetworks self, VARIANT varIndex, out ISClusNetwork* ppClusNetwork) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworks self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworks self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworks self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworks self, VARIANT varIndex, out ISClusNetwork* ppClusNetwork) get_Item;
 			}
 		}
 		[CRepr]
@@ -3784,14 +3784,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusNetInterface self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusNetInterface self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISClusNetInterface self, out CLUSTER_NETINTERFACE_STATE dwState) get_State;
-				public new function HRESULT(ref ISClusNetInterface self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out CLUSTER_NETINTERFACE_STATE dwState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterface self, out ISCluster* ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3809,10 +3809,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNetInterfaces self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusNetInterfaces self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusNetInterfaces self) Refresh;
-				public new function HRESULT(ref ISClusNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterfaces self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterfaces self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterfaces self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3830,10 +3830,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNodeNetInterfaces self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusNodeNetInterfaces self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusNodeNetInterfaces self) Refresh;
-				public new function HRESULT(ref ISClusNodeNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodeNetInterfaces self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodeNetInterfaces self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodeNetInterfaces self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNodeNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3851,10 +3851,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusNetworkNetInterfaces self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusNetworkNetInterfaces self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusNetworkNetInterfaces self) Refresh;
-				public new function HRESULT(ref ISClusNetworkNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworkNetInterfaces self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworkNetInterfaces self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworkNetInterfaces self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusNetworkNetInterfaces self, VARIANT varIndex, out ISClusNetInterface* ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3884,22 +3884,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusResGroup self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISClusResGroup self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusResGroup self, BSTR bstrGroupName) put_Name;
-				public new function HRESULT(ref ISClusResGroup self, out CLUSTER_GROUP_STATE dwState) get_State;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusNode* ppOwnerNode) get_OwnerNode;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusResGroupResources* ppClusterGroupResources) get_Resources;
-				public new function HRESULT(ref ISClusResGroup self, out ISClusResGroupPreferredOwnerNodes* ppOwnerNodes) get_PreferredOwnerNodes;
-				public new function HRESULT(ref ISClusResGroup self) Delete;
-				public new function HRESULT(ref ISClusResGroup self, VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) Online;
-				public new function HRESULT(ref ISClusResGroup self, VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) Move;
-				public new function HRESULT(ref ISClusResGroup self, VARIANT varTimeout, out VARIANT pvarPending) Offline;
-				public new function HRESULT(ref ISClusResGroup self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, BSTR bstrGroupName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out CLUSTER_GROUP_STATE dwState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusNode* ppOwnerNode) get_OwnerNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusResGroupResources* ppClusterGroupResources) get_Resources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISClusResGroupPreferredOwnerNodes* ppOwnerNodes) get_PreferredOwnerNodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) Online;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, VARIANT varTimeout, VARIANT varNode, out VARIANT pvarPending) Move;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, VARIANT varTimeout, out VARIANT pvarPending) Offline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroup self, out ISCluster* ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3919,12 +3919,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResGroups self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResGroups self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResGroups self) Refresh;
-				public new function HRESULT(ref ISClusResGroups self, VARIANT varIndex, out ISClusResGroup* ppClusResGroup) get_Item;
-				public new function HRESULT(ref ISClusResGroups self, BSTR bstrResourceGroupName, out ISClusResGroup* ppResourceGroup) CreateItem;
-				public new function HRESULT(ref ISClusResGroups self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self, VARIANT varIndex, out ISClusResGroup* ppClusResGroup) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self, BSTR bstrResourceGroupName, out ISClusResGroup* ppResourceGroup) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroups self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -3970,38 +3970,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusResource self, out uint phandle) get_Handle;
-				public new function HRESULT(ref ISClusResource self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusResource self, BSTR bstrResourceName) put_Name;
-				public new function HRESULT(ref ISClusResource self, out CLUSTER_RESOURCE_STATE dwState) get_State;
-				public new function HRESULT(ref ISClusResource self, out CLUS_FLAGS dwCoreFlag) get_CoreFlag;
-				public new function HRESULT(ref ISClusResource self, BSTR bstrDevicePath, int32 lMaxLogSize) BecomeQuorumResource;
-				public new function HRESULT(ref ISClusResource self) Delete;
-				public new function HRESULT(ref ISClusResource self) Fail;
-				public new function HRESULT(ref ISClusResource self, int32 nTimeout, out VARIANT pvarPending) Online;
-				public new function HRESULT(ref ISClusResource self, int32 nTimeout, out VARIANT pvarPending) Offline;
-				public new function HRESULT(ref ISClusResource self, ref ISClusResGroup pResourceGroup) ChangeResourceGroup;
-				public new function HRESULT(ref ISClusResource self, ref ISClusNode pNode) AddResourceNode;
-				public new function HRESULT(ref ISClusResource self, ref ISClusNode pNode) RemoveResourceNode;
-				public new function HRESULT(ref ISClusResource self, ref ISClusResource pResource, out VARIANT pvarDependent) CanResourceBeDependent;
-				public new function HRESULT(ref ISClusResource self, out ISClusResPossibleOwnerNodes* ppOwnerNodes) get_PossibleOwnerNodes;
-				public new function HRESULT(ref ISClusResource self, out ISClusResDependencies* ppResDependencies) get_Dependencies;
-				public new function HRESULT(ref ISClusResource self, out ISClusResDependents* ppResDependents) get_Dependents;
-				public new function HRESULT(ref ISClusResource self, out ISClusResGroup* ppResGroup) get_Group;
-				public new function HRESULT(ref ISClusResource self, out ISClusNode* ppOwnerNode) get_OwnerNode;
-				public new function HRESULT(ref ISClusResource self, out ISCluster* ppCluster) get_Cluster;
-				public new function HRESULT(ref ISClusResource self, out CLUSTER_RESOURCE_CLASS prcClassInfo) get_ClassInfo;
-				public new function HRESULT(ref ISClusResource self, out ISClusDisk* ppDisk) get_Disk;
-				public new function HRESULT(ref ISClusResource self, out ISClusRegistryKeys* ppRegistryKeys) get_RegistryKeys;
-				public new function HRESULT(ref ISClusResource self, out ISClusCryptoKeys* ppCryptoKeys) get_CryptoKeys;
-				public new function HRESULT(ref ISClusResource self, out BSTR pbstrTypeName) get_TypeName;
-				public new function HRESULT(ref ISClusResource self, out ISClusResType* ppResourceType) get_Type;
-				public new function HRESULT(ref ISClusResource self, out BOOL pbMaintenanceMode) get_MaintenanceMode;
-				public new function HRESULT(ref ISClusResource self, BOOL bMaintenanceMode) put_MaintenanceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out uint phandle) get_Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, BSTR bstrResourceName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out CLUSTER_RESOURCE_STATE dwState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out CLUS_FLAGS dwCoreFlag) get_CoreFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, BSTR bstrDevicePath, int32 lMaxLogSize) BecomeQuorumResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self) Fail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, int32 nTimeout, out VARIANT pvarPending) Online;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, int32 nTimeout, out VARIANT pvarPending) Offline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, ref ISClusResGroup pResourceGroup) ChangeResourceGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, ref ISClusNode pNode) AddResourceNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, ref ISClusNode pNode) RemoveResourceNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, ref ISClusResource pResource, out VARIANT pvarDependent) CanResourceBeDependent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusResPossibleOwnerNodes* ppOwnerNodes) get_PossibleOwnerNodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusResDependencies* ppResDependencies) get_Dependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusResDependents* ppResDependents) get_Dependents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusResGroup* ppResGroup) get_Group;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusNode* ppOwnerNode) get_OwnerNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out CLUSTER_RESOURCE_CLASS prcClassInfo) get_ClassInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusDisk* ppDisk) get_Disk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusRegistryKeys* ppRegistryKeys) get_RegistryKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusCryptoKeys* ppCryptoKeys) get_CryptoKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out BSTR pbstrTypeName) get_TypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out ISClusResType* ppResourceType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, out BOOL pbMaintenanceMode) get_MaintenanceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResource self, BOOL bMaintenanceMode) put_MaintenanceMode;
 			}
 		}
 		[CRepr]
@@ -4023,14 +4023,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResDependencies self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResDependencies self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResDependencies self) Refresh;
-				public new function HRESULT(ref ISClusResDependencies self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
-				public new function HRESULT(ref ISClusResDependencies self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
-				public new function HRESULT(ref ISClusResDependencies self, VARIANT varIndex) DeleteItem;
-				public new function HRESULT(ref ISClusResDependencies self, ref ISClusResource pResource) AddItem;
-				public new function HRESULT(ref ISClusResDependencies self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, ref ISClusResource pResource) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependencies self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4050,12 +4050,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResGroupResources self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResGroupResources self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResGroupResources self) Refresh;
-				public new function HRESULT(ref ISClusResGroupResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
-				public new function HRESULT(ref ISClusResGroupResources self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
-				public new function HRESULT(ref ISClusResGroupResources self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupResources self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -4075,12 +4075,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResTypeResources self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResTypeResources self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResTypeResources self) Refresh;
-				public new function HRESULT(ref ISClusResTypeResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
-				public new function HRESULT(ref ISClusResTypeResources self, BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
-				public new function HRESULT(ref ISClusResTypeResources self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self, BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypeResources self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -4100,12 +4100,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResources self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResources self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResources self) Refresh;
-				public new function HRESULT(ref ISClusResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
-				public new function HRESULT(ref ISClusResources self, BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
-				public new function HRESULT(ref ISClusResources self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self, BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResources self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -4128,15 +4128,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self) Refresh;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, ref ISClusNode pNode, int32 nPosition) InsertItem;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, VARIANT varIndex) RemoveItem;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out VARIANT pvarModified) get_Modified;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self) SaveChanges;
-				public new function HRESULT(ref ISClusResGroupPreferredOwnerNodes self, ref ISClusNode pNode) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, ref ISClusNode pNode, int32 nPosition) InsertItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, out VARIANT pvarModified) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self) SaveChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResGroupPreferredOwnerNodes self, ref ISClusNode pNode) AddItem;
 			}
 		}
 		[CRepr]
@@ -4157,13 +4157,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self) Refresh;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, ref ISClusNode pNode) AddItem;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, VARIANT varIndex) RemoveItem;
-				public new function HRESULT(ref ISClusResPossibleOwnerNodes self, out VARIANT pvarModified) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, ref ISClusNode pNode) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResPossibleOwnerNodes self, out VARIANT pvarModified) get_Modified;
 			}
 		}
 		[CRepr]
@@ -4181,10 +4181,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResTypePossibleOwnerNodes self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResTypePossibleOwnerNodes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResTypePossibleOwnerNodes self) Refresh;
-				public new function HRESULT(ref ISClusResTypePossibleOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypePossibleOwnerNodes self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypePossibleOwnerNodes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypePossibleOwnerNodes self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypePossibleOwnerNodes self, VARIANT varIndex, out ISClusNode* ppNode) get_Item;
 			}
 		}
 		[CRepr]
@@ -4208,16 +4208,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_CommonProperties;
-				public new function HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_PrivateProperties;
-				public new function HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_CommonROProperties;
-				public new function HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_PrivateROProperties;
-				public new function HRESULT(ref ISClusResType self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusResType self) Delete;
-				public new function HRESULT(ref ISClusResType self, out ISCluster* ppCluster) get_Cluster;
-				public new function HRESULT(ref ISClusResType self, out ISClusResTypeResources* ppClusterResTypeResources) get_Resources;
-				public new function HRESULT(ref ISClusResType self, out ISClusResTypePossibleOwnerNodes* ppOwnerNodes) get_PossibleOwnerNodes;
-				public new function HRESULT(ref ISClusResType self, out ISClusDisks* ppAvailableDisks) get_AvailableDisks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_CommonProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_PrivateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_CommonROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusProperties* ppProperties) get_PrivateROProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISCluster* ppCluster) get_Cluster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusResTypeResources* ppClusterResTypeResources) get_Resources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusResTypePossibleOwnerNodes* ppOwnerNodes) get_PossibleOwnerNodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResType self, out ISClusDisks* ppAvailableDisks) get_AvailableDisks;
 			}
 		}
 		[CRepr]
@@ -4237,12 +4237,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResTypes self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResTypes self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResTypes self) Refresh;
-				public new function HRESULT(ref ISClusResTypes self, VARIANT varIndex, out ISClusResType* ppClusResType) get_Item;
-				public new function HRESULT(ref ISClusResTypes self, BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, out ISClusResType* ppResourceType) CreateItem;
-				public new function HRESULT(ref ISClusResTypes self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self, VARIANT varIndex, out ISClusResType* ppClusResType) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self, BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, out ISClusResType* ppResourceType) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResTypes self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -4271,21 +4271,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusProperty self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref ISClusProperty self, out int32 pLength) get_Length;
-				public new function HRESULT(ref ISClusProperty self, out int32 pCount) get_ValueCount;
-				public new function HRESULT(ref ISClusProperty self, out ISClusPropertyValues* ppClusterPropertyValues) get_Values;
-				public new function HRESULT(ref ISClusProperty self, out VARIANT pvarValue) get_Value;
-				public new function HRESULT(ref ISClusProperty self, VARIANT varValue) put_Value;
-				public new function HRESULT(ref ISClusProperty self, out CLUSTER_PROPERTY_TYPE pType) get_Type;
-				public new function HRESULT(ref ISClusProperty self, CLUSTER_PROPERTY_TYPE Type) put_Type;
-				public new function HRESULT(ref ISClusProperty self, out CLUSTER_PROPERTY_FORMAT pFormat) get_Format;
-				public new function HRESULT(ref ISClusProperty self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
-				public new function HRESULT(ref ISClusProperty self, out VARIANT pvarReadOnly) get_ReadOnly;
-				public new function HRESULT(ref ISClusProperty self, out VARIANT pvarPrivate) get_Private;
-				public new function HRESULT(ref ISClusProperty self, out VARIANT pvarCommon) get_Common;
-				public new function HRESULT(ref ISClusProperty self, out VARIANT pvarModified) get_Modified;
-				public new function HRESULT(ref ISClusProperty self) UseDefaultValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out int32 pLength) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out int32 pCount) get_ValueCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out ISClusPropertyValues* ppClusterPropertyValues) get_Values;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out VARIANT pvarValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, VARIANT varValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out CLUSTER_PROPERTY_TYPE pType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out CLUSTER_PROPERTY_FORMAT pFormat) get_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out VARIANT pvarReadOnly) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out VARIANT pvarPrivate) get_Private;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out VARIANT pvarCommon) get_Common;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self, out VARIANT pvarModified) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperty self) UseDefaultValue;
 			}
 		}
 		[CRepr]
@@ -4308,15 +4308,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusPropertyValue self, out VARIANT pvarValue) get_Value;
-				public new function HRESULT(ref ISClusPropertyValue self, VARIANT varValue) put_Value;
-				public new function HRESULT(ref ISClusPropertyValue self, out CLUSTER_PROPERTY_TYPE pType) get_Type;
-				public new function HRESULT(ref ISClusPropertyValue self, CLUSTER_PROPERTY_TYPE Type) put_Type;
-				public new function HRESULT(ref ISClusPropertyValue self, out CLUSTER_PROPERTY_FORMAT pFormat) get_Format;
-				public new function HRESULT(ref ISClusPropertyValue self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
-				public new function HRESULT(ref ISClusPropertyValue self, out int32 pLength) get_Length;
-				public new function HRESULT(ref ISClusPropertyValue self, out int32 pCount) get_DataCount;
-				public new function HRESULT(ref ISClusPropertyValue self, out ISClusPropertyValueData* ppClusterPropertyValueData) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out VARIANT pvarValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, VARIANT varValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out CLUSTER_PROPERTY_TYPE pType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out CLUSTER_PROPERTY_FORMAT pFormat) get_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out int32 pLength) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out int32 pCount) get_DataCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValue self, out ISClusPropertyValueData* ppClusterPropertyValueData) get_Data;
 			}
 		}
 		[CRepr]
@@ -4335,11 +4335,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusPropertyValues self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusPropertyValues self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusPropertyValues self, VARIANT varIndex, out ISClusPropertyValue* ppPropertyValue) get_Item;
-				public new function HRESULT(ref ISClusPropertyValues self, BSTR bstrName, VARIANT varValue, out ISClusPropertyValue* ppPropertyValue) CreateItem;
-				public new function HRESULT(ref ISClusPropertyValues self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValues self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValues self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValues self, VARIANT varIndex, out ISClusPropertyValue* ppPropertyValue) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValues self, BSTR bstrName, VARIANT varValue, out ISClusPropertyValue* ppPropertyValue) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValues self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4364,17 +4364,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusProperties self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusProperties self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusProperties self) Refresh;
-				public new function HRESULT(ref ISClusProperties self, VARIANT varIndex, out ISClusProperty* ppClusProperty) get_Item;
-				public new function HRESULT(ref ISClusProperties self, BSTR bstrName, VARIANT varValue, out ISClusProperty* pProperty) CreateItem;
-				public new function HRESULT(ref ISClusProperties self, VARIANT varIndex) UseDefaultValue;
-				public new function HRESULT(ref ISClusProperties self, out VARIANT pvarStatusCode) SaveChanges;
-				public new function HRESULT(ref ISClusProperties self, out VARIANT pvarReadOnly) get_ReadOnly;
-				public new function HRESULT(ref ISClusProperties self, out VARIANT pvarPrivate) get_Private;
-				public new function HRESULT(ref ISClusProperties self, out VARIANT pvarCommon) get_Common;
-				public new function HRESULT(ref ISClusProperties self, out VARIANT pvarModified) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, VARIANT varIndex, out ISClusProperty* ppClusProperty) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, BSTR bstrName, VARIANT varValue, out ISClusProperty* pProperty) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, VARIANT varIndex) UseDefaultValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out VARIANT pvarStatusCode) SaveChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out VARIANT pvarReadOnly) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out VARIANT pvarPrivate) get_Private;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out VARIANT pvarCommon) get_Common;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusProperties self, out VARIANT pvarModified) get_Modified;
 			}
 		}
 		[CRepr]
@@ -4393,11 +4393,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusPropertyValueData self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusPropertyValueData self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusPropertyValueData self, VARIANT varIndex, out VARIANT pvarValue) get_Item;
-				public new function HRESULT(ref ISClusPropertyValueData self, VARIANT varValue, out VARIANT pvarData) CreateItem;
-				public new function HRESULT(ref ISClusPropertyValueData self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValueData self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValueData self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValueData self, VARIANT varIndex, out VARIANT pvarValue) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValueData self, VARIANT varValue, out VARIANT pvarData) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPropertyValueData self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4418,13 +4418,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusPartition self, out int32 plFlags) get_Flags;
-				public new function HRESULT(ref ISClusPartition self, out BSTR pbstrDeviceName) get_DeviceName;
-				public new function HRESULT(ref ISClusPartition self, out BSTR pbstrVolumeLabel) get_VolumeLabel;
-				public new function HRESULT(ref ISClusPartition self, out int32 plSerialNumber) get_SerialNumber;
-				public new function HRESULT(ref ISClusPartition self, out int32 plMaximumComponentLength) get_MaximumComponentLength;
-				public new function HRESULT(ref ISClusPartition self, out int32 plFileSystemFlags) get_FileSystemFlags;
-				public new function HRESULT(ref ISClusPartition self, out BSTR pbstrFileSystem) get_FileSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out int32 plFlags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out BSTR pbstrDeviceName) get_DeviceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out BSTR pbstrVolumeLabel) get_VolumeLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out int32 plSerialNumber) get_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out int32 plMaximumComponentLength) get_MaximumComponentLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out int32 plFileSystemFlags) get_FileSystemFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartition self, out BSTR pbstrFileSystem) get_FileSystem;
 			}
 		}
 		[CRepr]
@@ -4443,11 +4443,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISClusPartition.VTable
 			{
-				public new function HRESULT(ref ISClusPartitionEx self, out int32 plTotalSize) get_TotalSize;
-				public new function HRESULT(ref ISClusPartitionEx self, out int32 plFreeSpace) get_FreeSpace;
-				public new function HRESULT(ref ISClusPartitionEx self, out int32 plDeviceNumber) get_DeviceNumber;
-				public new function HRESULT(ref ISClusPartitionEx self, out int32 plPartitionNumber) get_PartitionNumber;
-				public new function HRESULT(ref ISClusPartitionEx self, out BSTR pbstrVolumeGuid) get_VolumeGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitionEx self, out int32 plTotalSize) get_TotalSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitionEx self, out int32 plFreeSpace) get_FreeSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitionEx self, out int32 plDeviceNumber) get_DeviceNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitionEx self, out int32 plPartitionNumber) get_PartitionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitionEx self, out BSTR pbstrVolumeGuid) get_VolumeGuid;
 			}
 		}
 		[CRepr]
@@ -4464,9 +4464,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusPartitions self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusPartitions self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusPartitions self, VARIANT varIndex, out ISClusPartition* ppPartition) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitions self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitions self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusPartitions self, VARIANT varIndex, out ISClusPartition* ppPartition) get_Item;
 			}
 		}
 		[CRepr]
@@ -4484,10 +4484,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusDisk self, out int32 plSignature) get_Signature;
-				public new function HRESULT(ref ISClusDisk self, out ISClusScsiAddress* ppScsiAddress) get_ScsiAddress;
-				public new function HRESULT(ref ISClusDisk self, out int32 plDiskNumber) get_DiskNumber;
-				public new function HRESULT(ref ISClusDisk self, out ISClusPartitions* ppPartitions) get_Partitions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisk self, out int32 plSignature) get_Signature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisk self, out ISClusScsiAddress* ppScsiAddress) get_ScsiAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisk self, out int32 plDiskNumber) get_DiskNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisk self, out ISClusPartitions* ppPartitions) get_Partitions;
 			}
 		}
 		[CRepr]
@@ -4504,9 +4504,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusDisks self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusDisks self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusDisks self, VARIANT varIndex, out ISClusDisk* ppDisk) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisks self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisks self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusDisks self, VARIANT varIndex, out ISClusDisk* ppDisk) get_Item;
 			}
 		}
 		[CRepr]
@@ -4524,10 +4524,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusScsiAddress self, out VARIANT pvarPortNumber) get_PortNumber;
-				public new function HRESULT(ref ISClusScsiAddress self, out VARIANT pvarPathId) get_PathId;
-				public new function HRESULT(ref ISClusScsiAddress self, out VARIANT pvarTargetId) get_TargetId;
-				public new function HRESULT(ref ISClusScsiAddress self, out VARIANT pvarLun) get_Lun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusScsiAddress self, out VARIANT pvarPortNumber) get_PortNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusScsiAddress self, out VARIANT pvarPathId) get_PathId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusScsiAddress self, out VARIANT pvarTargetId) get_TargetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusScsiAddress self, out VARIANT pvarLun) get_Lun;
 			}
 		}
 		[CRepr]
@@ -4547,12 +4547,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusRegistryKeys self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusRegistryKeys self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusRegistryKeys self) Refresh;
-				public new function HRESULT(ref ISClusRegistryKeys self, VARIANT varIndex, out BSTR pbstrRegistryKey) get_Item;
-				public new function HRESULT(ref ISClusRegistryKeys self, BSTR bstrRegistryKey) AddItem;
-				public new function HRESULT(ref ISClusRegistryKeys self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self, VARIANT varIndex, out BSTR pbstrRegistryKey) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self, BSTR bstrRegistryKey) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusRegistryKeys self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4572,12 +4572,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusCryptoKeys self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusCryptoKeys self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusCryptoKeys self) Refresh;
-				public new function HRESULT(ref ISClusCryptoKeys self, VARIANT varIndex, out BSTR pbstrCyrptoKey) get_Item;
-				public new function HRESULT(ref ISClusCryptoKeys self, BSTR bstrCryptoKey) AddItem;
-				public new function HRESULT(ref ISClusCryptoKeys self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self, VARIANT varIndex, out BSTR pbstrCyrptoKey) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self, BSTR bstrCryptoKey) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusCryptoKeys self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4599,14 +4599,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISClusResDependents self, out int32 plCount) get_Count;
-				public new function HRESULT(ref ISClusResDependents self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ISClusResDependents self) Refresh;
-				public new function HRESULT(ref ISClusResDependents self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
-				public new function HRESULT(ref ISClusResDependents self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
-				public new function HRESULT(ref ISClusResDependents self, VARIANT varIndex) DeleteItem;
-				public new function HRESULT(ref ISClusResDependents self, ref ISClusResource pResource) AddItem;
-				public new function HRESULT(ref ISClusResDependents self, VARIANT varIndex) RemoveItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, VARIANT varIndex, out ISClusResource* ppClusResource) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, out ISClusResource* ppClusterResource) CreateItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, VARIANT varIndex) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, ref ISClusResource pResource) AddItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		

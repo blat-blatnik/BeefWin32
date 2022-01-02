@@ -352,13 +352,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_FILL_MODE fillMode) SetFillMode;
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
-				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_FIGURE_END figureEnd) EndFigure;
-				public new function HRESULT(ref ID2D1SimplifiedGeometrySink self) Close;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D1_FILL_MODE fillMode) SetFillMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SimplifiedGeometrySink self, D2D1_FIGURE_END figureEnd) EndFigure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SimplifiedGeometrySink self) Close;
 			}
 		}
 		

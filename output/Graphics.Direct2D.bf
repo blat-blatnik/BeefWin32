@@ -1850,7 +1850,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID2D1Resource self, out ID2D1Factory* factory) GetFactory;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Resource self, out ID2D1Factory* factory) GetFactory;
 			}
 		}
 		[CRepr]
@@ -1884,13 +1884,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
-				public new function D2D_SIZE_F(ref ID2D1Bitmap self) GetSize;
-				public new function D2D_SIZE_U(ref ID2D1Bitmap self) GetPixelSize;
-				public new function D2D1_PIXEL_FORMAT(ref ID2D1Bitmap self) GetPixelFormat;
-				public new function void(ref ID2D1Bitmap self, out float dpiX, out float dpiY) GetDpi;
-				public new function HRESULT(ref ID2D1Bitmap self, D2D_POINT_2U* destPoint, ref ID2D1Bitmap bitmap, D2D_RECT_U* srcRect) CopyFromBitmap;
-				public new function HRESULT(ref ID2D1Bitmap self, D2D_POINT_2U* destPoint, ref ID2D1RenderTarget renderTarget, D2D_RECT_U* srcRect) CopyFromRenderTarget;
-				public new function HRESULT(ref ID2D1Bitmap self, D2D_RECT_U* dstRect, void* srcData, uint32 pitch) CopyFromMemory;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_F(ref ID2D1Bitmap self) GetSize;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_U(ref ID2D1Bitmap self) GetPixelSize;
+				public new function [CallingConvention(.Stdcall)] D2D1_PIXEL_FORMAT(ref ID2D1Bitmap self) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Bitmap self, out float dpiX, out float dpiY) GetDpi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap self, D2D_POINT_2U* destPoint, ref ID2D1Bitmap bitmap, D2D_RECT_U* srcRect) CopyFromBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap self, D2D_POINT_2U* destPoint, ref ID2D1RenderTarget renderTarget, D2D_RECT_U* srcRect) CopyFromRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap self, D2D_RECT_U* dstRect, void* srcData, uint32 pitch) CopyFromMemory;
 			}
 		}
 		[CRepr]
@@ -1908,10 +1908,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function uint32(ref ID2D1GradientStopCollection self) GetGradientStopCount;
-				public new function void(ref ID2D1GradientStopCollection self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops;
-				public new function D2D1_GAMMA(ref ID2D1GradientStopCollection self) GetColorInterpolationGamma;
-				public new function D2D1_EXTEND_MODE(ref ID2D1GradientStopCollection self) GetExtendMode;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1GradientStopCollection self) GetGradientStopCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GradientStopCollection self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops;
+				public new function [CallingConvention(.Stdcall)] D2D1_GAMMA(ref ID2D1GradientStopCollection self) GetColorInterpolationGamma;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1GradientStopCollection self) GetExtendMode;
 			}
 		}
 		[CRepr]
@@ -1929,10 +1929,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1Brush self, float opacity) SetOpacity;
-				public new function void(ref ID2D1Brush self, in D2D_MATRIX_3X2_F transform) SetTransform;
-				public new function float(ref ID2D1Brush self) GetOpacity;
-				public new function void(ref ID2D1Brush self, out D2D_MATRIX_3X2_F transform) GetTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Brush self, float opacity) SetOpacity;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Brush self, in D2D_MATRIX_3X2_F transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] float(ref ID2D1Brush self) GetOpacity;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Brush self, out D2D_MATRIX_3X2_F transform) GetTransform;
 			}
 		}
 		[CRepr]
@@ -1954,14 +1954,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
-				public new function void(ref ID2D1BitmapBrush self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
-				public new function void(ref ID2D1BitmapBrush self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
-				public new function void(ref ID2D1BitmapBrush self, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
-				public new function void(ref ID2D1BitmapBrush self, ID2D1Bitmap* bitmap) SetBitmap;
-				public new function D2D1_EXTEND_MODE(ref ID2D1BitmapBrush self) GetExtendModeX;
-				public new function D2D1_EXTEND_MODE(ref ID2D1BitmapBrush self) GetExtendModeY;
-				public new function D2D1_BITMAP_INTERPOLATION_MODE(ref ID2D1BitmapBrush self) GetInterpolationMode;
-				public new function void(ref ID2D1BitmapBrush self, ID2D1Bitmap** bitmap) GetBitmap;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush self, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush self, ID2D1Bitmap* bitmap) SetBitmap;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1BitmapBrush self) GetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1BitmapBrush self) GetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] D2D1_BITMAP_INTERPOLATION_MODE(ref ID2D1BitmapBrush self) GetInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush self, ID2D1Bitmap** bitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -1977,8 +1977,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
-				public new function void(ref ID2D1SolidColorBrush self, in D2D1_COLOR_F color) SetColor;
-				public new function D2D1_COLOR_F(ref ID2D1SolidColorBrush self) GetColor;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SolidColorBrush self, in D2D1_COLOR_F color) SetColor;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_F(ref ID2D1SolidColorBrush self) GetColor;
 			}
 		}
 		[CRepr]
@@ -1997,11 +1997,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
-				public new function void(ref ID2D1LinearGradientBrush self, D2D_POINT_2F startPoint) SetStartPoint;
-				public new function void(ref ID2D1LinearGradientBrush self, D2D_POINT_2F endPoint) SetEndPoint;
-				public new function D2D_POINT_2F(ref ID2D1LinearGradientBrush self) GetStartPoint;
-				public new function D2D_POINT_2F(ref ID2D1LinearGradientBrush self) GetEndPoint;
-				public new function void(ref ID2D1LinearGradientBrush self, out ID2D1GradientStopCollection* gradientStopCollection) GetGradientStopCollection;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1LinearGradientBrush self, D2D_POINT_2F startPoint) SetStartPoint;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1LinearGradientBrush self, D2D_POINT_2F endPoint) SetEndPoint;
+				public new function [CallingConvention(.Stdcall)] D2D_POINT_2F(ref ID2D1LinearGradientBrush self) GetStartPoint;
+				public new function [CallingConvention(.Stdcall)] D2D_POINT_2F(ref ID2D1LinearGradientBrush self) GetEndPoint;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1LinearGradientBrush self, out ID2D1GradientStopCollection* gradientStopCollection) GetGradientStopCollection;
 			}
 		}
 		[CRepr]
@@ -2024,15 +2024,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
-				public new function void(ref ID2D1RadialGradientBrush self, D2D_POINT_2F center) SetCenter;
-				public new function void(ref ID2D1RadialGradientBrush self, D2D_POINT_2F gradientOriginOffset) SetGradientOriginOffset;
-				public new function void(ref ID2D1RadialGradientBrush self, float radiusX) SetRadiusX;
-				public new function void(ref ID2D1RadialGradientBrush self, float radiusY) SetRadiusY;
-				public new function D2D_POINT_2F(ref ID2D1RadialGradientBrush self) GetCenter;
-				public new function D2D_POINT_2F(ref ID2D1RadialGradientBrush self) GetGradientOriginOffset;
-				public new function float(ref ID2D1RadialGradientBrush self) GetRadiusX;
-				public new function float(ref ID2D1RadialGradientBrush self) GetRadiusY;
-				public new function void(ref ID2D1RadialGradientBrush self, out ID2D1GradientStopCollection* gradientStopCollection) GetGradientStopCollection;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RadialGradientBrush self, D2D_POINT_2F center) SetCenter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RadialGradientBrush self, D2D_POINT_2F gradientOriginOffset) SetGradientOriginOffset;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RadialGradientBrush self, float radiusX) SetRadiusX;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RadialGradientBrush self, float radiusY) SetRadiusY;
+				public new function [CallingConvention(.Stdcall)] D2D_POINT_2F(ref ID2D1RadialGradientBrush self) GetCenter;
+				public new function [CallingConvention(.Stdcall)] D2D_POINT_2F(ref ID2D1RadialGradientBrush self) GetGradientOriginOffset;
+				public new function [CallingConvention(.Stdcall)] float(ref ID2D1RadialGradientBrush self) GetRadiusX;
+				public new function [CallingConvention(.Stdcall)] float(ref ID2D1RadialGradientBrush self) GetRadiusY;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RadialGradientBrush self, out ID2D1GradientStopCollection* gradientStopCollection) GetGradientStopCollection;
 			}
 		}
 		[CRepr]
@@ -2055,15 +2055,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetStartCap;
-				public new function D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetEndCap;
-				public new function D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetDashCap;
-				public new function float(ref ID2D1StrokeStyle self) GetMiterLimit;
-				public new function D2D1_LINE_JOIN(ref ID2D1StrokeStyle self) GetLineJoin;
-				public new function float(ref ID2D1StrokeStyle self) GetDashOffset;
-				public new function D2D1_DASH_STYLE(ref ID2D1StrokeStyle self) GetDashStyle;
-				public new function uint32(ref ID2D1StrokeStyle self) GetDashesCount;
-				public new function void(ref ID2D1StrokeStyle self, float* dashes, uint32 dashesCount) GetDashes;
+				public new function [CallingConvention(.Stdcall)] D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetStartCap;
+				public new function [CallingConvention(.Stdcall)] D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetEndCap;
+				public new function [CallingConvention(.Stdcall)] D2D1_CAP_STYLE(ref ID2D1StrokeStyle self) GetDashCap;
+				public new function [CallingConvention(.Stdcall)] float(ref ID2D1StrokeStyle self) GetMiterLimit;
+				public new function [CallingConvention(.Stdcall)] D2D1_LINE_JOIN(ref ID2D1StrokeStyle self) GetLineJoin;
+				public new function [CallingConvention(.Stdcall)] float(ref ID2D1StrokeStyle self) GetDashOffset;
+				public new function [CallingConvention(.Stdcall)] D2D1_DASH_STYLE(ref ID2D1StrokeStyle self) GetDashStyle;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1StrokeStyle self) GetDashesCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1StrokeStyle self, float* dashes, uint32 dashesCount) GetDashes;
 			}
 		}
 		[CRepr]
@@ -2090,19 +2090,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) GetBounds;
-				public new function HRESULT(ref ID2D1Geometry self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D_RECT_F bounds) GetWidenedBounds;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) StrokeContainsPoint;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) FillContainsPoint;
-				public new function HRESULT(ref ID2D1Geometry self, ref ID2D1Geometry inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, out D2D1_GEOMETRY_RELATION relation) CompareWithGeometry;
-				public new function HRESULT(ref ID2D1Geometry self, D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Simplify;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink) Tessellate;
-				public new function HRESULT(ref ID2D1Geometry self, ref ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) CombineWithGeometry;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Outline;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float area) ComputeArea;
-				public new function HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float length) ComputeLength;
-				public new function HRESULT(ref ID2D1Geometry self, float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) ComputePointAtLength;
-				public new function HRESULT(ref ID2D1Geometry self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Widen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) GetBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D_RECT_F bounds) GetWidenedBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) StrokeContainsPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out BOOL contains) FillContainsPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, ref ID2D1Geometry inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, out D2D1_GEOMETRY_RELATION relation) CompareWithGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Simplify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1TessellationSink tessellationSink) Tessellate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, ref ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) CombineWithGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Outline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float area) ComputeArea;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out float length) ComputeLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) ComputePointAtLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Geometry self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) Widen;
 			}
 		}
 		[CRepr]
@@ -2117,7 +2117,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function void(ref ID2D1RectangleGeometry self, out D2D_RECT_F rect) GetRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RectangleGeometry self, out D2D_RECT_F rect) GetRect;
 			}
 		}
 		[CRepr]
@@ -2132,7 +2132,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function void(ref ID2D1RoundedRectangleGeometry self, out D2D1_ROUNDED_RECT roundedRect) GetRoundedRect;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RoundedRectangleGeometry self, out D2D1_ROUNDED_RECT roundedRect) GetRoundedRect;
 			}
 		}
 		[CRepr]
@@ -2147,7 +2147,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function void(ref ID2D1EllipseGeometry self, out D2D1_ELLIPSE ellipse) GetEllipse;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1EllipseGeometry self, out D2D1_ELLIPSE ellipse) GetEllipse;
 			}
 		}
 		[CRepr]
@@ -2164,9 +2164,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function D2D1_FILL_MODE(ref ID2D1GeometryGroup self) GetFillMode;
-				public new function uint32(ref ID2D1GeometryGroup self) GetSourceGeometryCount;
-				public new function void(ref ID2D1GeometryGroup self, ID2D1Geometry** geometries, uint32 geometriesCount) GetSourceGeometries;
+				public new function [CallingConvention(.Stdcall)] D2D1_FILL_MODE(ref ID2D1GeometryGroup self) GetFillMode;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1GeometryGroup self) GetSourceGeometryCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometryGroup self, ID2D1Geometry** geometries, uint32 geometriesCount) GetSourceGeometries;
 			}
 		}
 		[CRepr]
@@ -2182,8 +2182,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function void(ref ID2D1TransformedGeometry self, out ID2D1Geometry* sourceGeometry) GetSourceGeometry;
-				public new function void(ref ID2D1TransformedGeometry self, out D2D_MATRIX_3X2_F transform) GetTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TransformedGeometry self, out ID2D1Geometry* sourceGeometry) GetSourceGeometry;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TransformedGeometry self, out D2D_MATRIX_3X2_F transform) GetTransform;
 			}
 		}
 		[CRepr]
@@ -2202,11 +2202,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1SimplifiedGeometrySink.VTable
 			{
-				public new function void(ref ID2D1GeometrySink self, D2D_POINT_2F point) AddLine;
-				public new function void(ref ID2D1GeometrySink self, in D2D1_BEZIER_SEGMENT bezier) AddBezier;
-				public new function void(ref ID2D1GeometrySink self, in D2D1_QUADRATIC_BEZIER_SEGMENT bezier) AddQuadraticBezier;
-				public new function void(ref ID2D1GeometrySink self, D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddQuadraticBeziers;
-				public new function void(ref ID2D1GeometrySink self, in D2D1_ARC_SEGMENT arc) AddArc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometrySink self, D2D_POINT_2F point) AddLine;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometrySink self, in D2D1_BEZIER_SEGMENT bezier) AddBezier;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometrySink self, in D2D1_QUADRATIC_BEZIER_SEGMENT bezier) AddQuadraticBezier;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometrySink self, D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddQuadraticBeziers;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GeometrySink self, in D2D1_ARC_SEGMENT arc) AddArc;
 			}
 		}
 		[CRepr]
@@ -2222,8 +2222,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID2D1TessellationSink self, D2D1_TRIANGLE* triangles, uint32 trianglesCount) AddTriangles;
-				public new function HRESULT(ref ID2D1TessellationSink self) Close;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TessellationSink self, D2D1_TRIANGLE* triangles, uint32 trianglesCount) AddTriangles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TessellationSink self) Close;
 			}
 		}
 		[CRepr]
@@ -2241,10 +2241,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Geometry.VTable
 			{
-				public new function HRESULT(ref ID2D1PathGeometry self, out ID2D1GeometrySink* geometrySink) Open;
-				public new function HRESULT(ref ID2D1PathGeometry self, ref ID2D1GeometrySink geometrySink) Stream;
-				public new function HRESULT(ref ID2D1PathGeometry self, out uint32 count) GetSegmentCount;
-				public new function HRESULT(ref ID2D1PathGeometry self, out uint32 count) GetFigureCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PathGeometry self, out ID2D1GeometrySink* geometrySink) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PathGeometry self, ref ID2D1GeometrySink geometrySink) Stream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PathGeometry self, out uint32 count) GetSegmentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PathGeometry self, out uint32 count) GetFigureCount;
 			}
 		}
 		[CRepr]
@@ -2259,7 +2259,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1Mesh self, out ID2D1TessellationSink* tessellationSink) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Mesh self, out ID2D1TessellationSink* tessellationSink) Open;
 			}
 		}
 		[CRepr]
@@ -2274,7 +2274,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function D2D_SIZE_F(ref ID2D1Layer self) GetSize;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_F(ref ID2D1Layer self) GetSize;
 			}
 		}
 		[CRepr]
@@ -2292,10 +2292,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1DrawingStateBlock self, out D2D1_DRAWING_STATE_DESCRIPTION stateDescription) GetDescription;
-				public new function void(ref ID2D1DrawingStateBlock self, in D2D1_DRAWING_STATE_DESCRIPTION stateDescription) SetDescription;
-				public new function void(ref ID2D1DrawingStateBlock self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-				public new function void(ref ID2D1DrawingStateBlock self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock self, out D2D1_DRAWING_STATE_DESCRIPTION stateDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock self, in D2D1_DRAWING_STATE_DESCRIPTION stateDescription) SetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
 			}
 		}
 		[CRepr]
@@ -2362,59 +2362,59 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_U size, void* srcData, uint32 pitch, in D2D1_BITMAP_PROPERTIES bitmapProperties, out ID2D1Bitmap* bitmap) CreateBitmap;
-				public new function HRESULT(ref ID2D1RenderTarget self, ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) CreateBitmapFromWicBitmap;
-				public new function HRESULT(ref ID2D1RenderTarget self, in Guid riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) CreateSharedBitmap;
-				public new function HRESULT(ref ID2D1RenderTarget self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush* bitmapBrush) CreateBitmapBrush;
-				public new function HRESULT(ref ID2D1RenderTarget self, in D2D1_COLOR_F color, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1SolidColorBrush* solidColorBrush) CreateSolidColorBrush;
-				public new function HRESULT(ref ID2D1RenderTarget self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, out ID2D1GradientStopCollection* gradientStopCollection) CreateGradientStopCollection;
-				public new function HRESULT(ref ID2D1RenderTarget self, in D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1LinearGradientBrush* linearGradientBrush) CreateLinearGradientBrush;
-				public new function HRESULT(ref ID2D1RenderTarget self, in D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1RadialGradientBrush* radialGradientBrush) CreateRadialGradientBrush;
-				public new function HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, out ID2D1BitmapRenderTarget* bitmapRenderTarget) CreateCompatibleRenderTarget;
-				public new function HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_F* size, out ID2D1Layer* layer) CreateLayer;
-				public new function HRESULT(ref ID2D1RenderTarget self, out ID2D1Mesh* mesh) CreateMesh;
-				public new function void(ref ID2D1RenderTarget self, D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
-				public new function void(ref ID2D1RenderTarget self, in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
-				public new function void(ref ID2D1RenderTarget self, in D2D_RECT_F rect, ref ID2D1Brush brush) FillRectangle;
-				public new function void(ref ID2D1RenderTarget self, in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRoundedRectangle;
-				public new function void(ref ID2D1RenderTarget self, in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush) FillRoundedRectangle;
-				public new function void(ref ID2D1RenderTarget self, in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawEllipse;
-				public new function void(ref ID2D1RenderTarget self, in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush) FillEllipse;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) FillGeometry;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1Mesh mesh, ref ID2D1Brush brush) FillMesh;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) DrawBitmap;
-				public new function void(ref ID2D1RenderTarget self, char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
-				public new function void(ref ID2D1RenderTarget self, D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
-				public new function void(ref ID2D1RenderTarget self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-				public new function void(ref ID2D1RenderTarget self, in D2D_MATRIX_3X2_F transform) SetTransform;
-				public new function void(ref ID2D1RenderTarget self, out D2D_MATRIX_3X2_F transform) GetTransform;
-				public new function void(ref ID2D1RenderTarget self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
-				public new function D2D1_ANTIALIAS_MODE(ref ID2D1RenderTarget self) GetAntialiasMode;
-				public new function void(ref ID2D1RenderTarget self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
-				public new function D2D1_TEXT_ANTIALIAS_MODE(ref ID2D1RenderTarget self) GetTextAntialiasMode;
-				public new function void(ref ID2D1RenderTarget self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-				public new function void(ref ID2D1RenderTarget self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
-				public new function void(ref ID2D1RenderTarget self, uint64 tag1, uint64 tag2) SetTags;
-				public new function void(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) GetTags;
-				public new function void(ref ID2D1RenderTarget self, in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) PushLayer;
-				public new function void(ref ID2D1RenderTarget self) PopLayer;
-				public new function HRESULT(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) Flush;
-				public new function void(ref ID2D1RenderTarget self, out ID2D1DrawingStateBlock drawingStateBlock) SaveDrawingState;
-				public new function void(ref ID2D1RenderTarget self, ref ID2D1DrawingStateBlock drawingStateBlock) RestoreDrawingState;
-				public new function void(ref ID2D1RenderTarget self, in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
-				public new function void(ref ID2D1RenderTarget self) PopAxisAlignedClip;
-				public new function void(ref ID2D1RenderTarget self, D2D1_COLOR_F* clearColor) Clear;
-				public new function void(ref ID2D1RenderTarget self) BeginDraw;
-				public new function HRESULT(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) EndDraw;
-				public new function D2D1_PIXEL_FORMAT(ref ID2D1RenderTarget self) GetPixelFormat;
-				public new function void(ref ID2D1RenderTarget self, float dpiX, float dpiY) SetDpi;
-				public new function void(ref ID2D1RenderTarget self, out float dpiX, out float dpiY) GetDpi;
-				public new function D2D_SIZE_F(ref ID2D1RenderTarget self) GetSize;
-				public new function D2D_SIZE_U(ref ID2D1RenderTarget self) GetPixelSize;
-				public new function uint32(ref ID2D1RenderTarget self) GetMaximumBitmapSize;
-				public new function BOOL(ref ID2D1RenderTarget self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties) IsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_U size, void* srcData, uint32 pitch, in D2D1_BITMAP_PROPERTIES bitmapProperties, out ID2D1Bitmap* bitmap) CreateBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) CreateBitmapFromWicBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, in Guid riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, out ID2D1Bitmap* bitmap) CreateSharedBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush* bitmapBrush) CreateBitmapBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, in D2D1_COLOR_F color, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1SolidColorBrush* solidColorBrush) CreateSolidColorBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, out ID2D1GradientStopCollection* gradientStopCollection) CreateGradientStopCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, in D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1LinearGradientBrush* linearGradientBrush) CreateLinearGradientBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, in D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, out ID2D1RadialGradientBrush* radialGradientBrush) CreateRadialGradientBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, out ID2D1BitmapRenderTarget* bitmapRenderTarget) CreateCompatibleRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, D2D_SIZE_F* size, out ID2D1Layer* layer) CreateLayer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, out ID2D1Mesh* mesh) CreateMesh;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D_RECT_F rect, ref ID2D1Brush brush) FillRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRoundedRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_ROUNDED_RECT roundedRect, ref ID2D1Brush brush) FillRoundedRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawEllipse;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_ELLIPSE ellipse, ref ID2D1Brush brush) FillEllipse;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) FillGeometry;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1Mesh mesh, ref ID2D1Brush brush) FillMesh;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) DrawBitmap;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D_MATRIX_3X2_F transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, out D2D_MATRIX_3X2_F transform) GetTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] D2D1_ANTIALIAS_MODE(ref ID2D1RenderTarget self) GetAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] D2D1_TEXT_ANTIALIAS_MODE(ref ID2D1RenderTarget self) GetTextAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, uint64 tag1, uint64 tag2) SetTags;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) GetTags;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D1_LAYER_PARAMETERS layerParameters, ID2D1Layer* layer) PushLayer;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self) PopLayer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) Flush;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, out ID2D1DrawingStateBlock drawingStateBlock) SaveDrawingState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, ref ID2D1DrawingStateBlock drawingStateBlock) RestoreDrawingState;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self) PopAxisAlignedClip;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, D2D1_COLOR_F* clearColor) Clear;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self) BeginDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderTarget self, uint64* tag1, uint64* tag2) EndDraw;
+				public new function [CallingConvention(.Stdcall)] D2D1_PIXEL_FORMAT(ref ID2D1RenderTarget self) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, float dpiX, float dpiY) SetDpi;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderTarget self, out float dpiX, out float dpiY) GetDpi;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_F(ref ID2D1RenderTarget self) GetSize;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_U(ref ID2D1RenderTarget self) GetPixelSize;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1RenderTarget self) GetMaximumBitmapSize;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1RenderTarget self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties) IsSupported;
 			}
 		}
 		[CRepr]
@@ -2429,7 +2429,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
-				public new function HRESULT(ref ID2D1BitmapRenderTarget self, out ID2D1Bitmap* bitmap) GetBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1BitmapRenderTarget self, out ID2D1Bitmap* bitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -2446,9 +2446,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
-				public new function D2D1_WINDOW_STATE(ref ID2D1HwndRenderTarget self) CheckWindowState;
-				public new function HRESULT(ref ID2D1HwndRenderTarget self, in D2D_SIZE_U pixelSize) Resize;
-				public new function HWND(ref ID2D1HwndRenderTarget self) GetHwnd;
+				public new function [CallingConvention(.Stdcall)] D2D1_WINDOW_STATE(ref ID2D1HwndRenderTarget self) CheckWindowState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1HwndRenderTarget self, in D2D_SIZE_U pixelSize) Resize;
+				public new function [CallingConvention(.Stdcall)] HWND(ref ID2D1HwndRenderTarget self) GetHwnd;
 			}
 		}
 		[CRepr]
@@ -2464,8 +2464,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1GdiInteropRenderTarget self, D2D1_DC_INITIALIZE_MODE mode, out HDC hdc) GetDC;
-				public new function HRESULT(ref ID2D1GdiInteropRenderTarget self, RECT* update) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiInteropRenderTarget self, D2D1_DC_INITIALIZE_MODE mode, out HDC hdc) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiInteropRenderTarget self, RECT* update) ReleaseDC;
 			}
 		}
 		[CRepr]
@@ -2480,7 +2480,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
-				public new function HRESULT(ref ID2D1DCRenderTarget self, HDC hDC, in RECT pSubRect) BindDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DCRenderTarget self, HDC hDC, in RECT pSubRect) BindDC;
 			}
 		}
 		[CRepr]
@@ -2508,20 +2508,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory self) ReloadSystemMetrics;
-				public new function void(ref ID2D1Factory self, out float dpiX, out float dpiY) GetDesktopDpi;
-				public new function HRESULT(ref ID2D1Factory self, in D2D_RECT_F rectangle, out ID2D1RectangleGeometry* rectangleGeometry) CreateRectangleGeometry;
-				public new function HRESULT(ref ID2D1Factory self, in D2D1_ROUNDED_RECT roundedRectangle, out ID2D1RoundedRectangleGeometry* roundedRectangleGeometry) CreateRoundedRectangleGeometry;
-				public new function HRESULT(ref ID2D1Factory self, in D2D1_ELLIPSE ellipse, out ID2D1EllipseGeometry* ellipseGeometry) CreateEllipseGeometry;
-				public new function HRESULT(ref ID2D1Factory self, D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, out ID2D1GeometryGroup* geometryGroup) CreateGeometryGroup;
-				public new function HRESULT(ref ID2D1Factory self, ref ID2D1Geometry sourceGeometry, in D2D_MATRIX_3X2_F transform, out ID2D1TransformedGeometry* transformedGeometry) CreateTransformedGeometry;
-				public new function HRESULT(ref ID2D1Factory self, out ID2D1PathGeometry* pathGeometry) CreatePathGeometry;
-				public new function HRESULT(ref ID2D1Factory self, in D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle* strokeStyle) CreateStrokeStyle;
-				public new function HRESULT(ref ID2D1Factory self, D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock* drawingStateBlock) CreateDrawingStateBlock;
-				public new function HRESULT(ref ID2D1Factory self, ref IWICBitmap target, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) CreateWicBitmapRenderTarget;
-				public new function HRESULT(ref ID2D1Factory self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, in D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, out ID2D1HwndRenderTarget* hwndRenderTarget) CreateHwndRenderTarget;
-				public new function HRESULT(ref ID2D1Factory self, ref IDXGISurface dxgiSurface, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) CreateDxgiSurfaceRenderTarget;
-				public new function HRESULT(ref ID2D1Factory self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1DCRenderTarget* dcRenderTarget) CreateDCRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self) ReloadSystemMetrics;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Factory self, out float dpiX, out float dpiY) GetDesktopDpi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D_RECT_F rectangle, out ID2D1RectangleGeometry* rectangleGeometry) CreateRectangleGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D1_ROUNDED_RECT roundedRectangle, out ID2D1RoundedRectangleGeometry* roundedRectangleGeometry) CreateRoundedRectangleGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D1_ELLIPSE ellipse, out ID2D1EllipseGeometry* ellipseGeometry) CreateEllipseGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, out ID2D1GeometryGroup* geometryGroup) CreateGeometryGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, ref ID2D1Geometry sourceGeometry, in D2D_MATRIX_3X2_F transform, out ID2D1TransformedGeometry* transformedGeometry) CreateTransformedGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, out ID2D1PathGeometry* pathGeometry) CreatePathGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle* strokeStyle) CreateStrokeStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock* drawingStateBlock) CreateDrawingStateBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, ref IWICBitmap target, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) CreateWicBitmapRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, in D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, out ID2D1HwndRenderTarget* hwndRenderTarget) CreateHwndRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, ref IDXGISurface dxgiSurface, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget* renderTarget) CreateDxgiSurfaceRenderTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory self, in D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1DCRenderTarget* dcRenderTarget) CreateDCRenderTarget;
 			}
 		}
 		[CRepr]
@@ -2536,7 +2536,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1GdiMetafileSink self, uint32 recordType, void* recordData, uint32 recordDataSize) ProcessRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafileSink self, uint32 recordType, void* recordData, uint32 recordDataSize) ProcessRecord;
 			}
 		}
 		[CRepr]
@@ -2552,8 +2552,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1GdiMetafile self, ref ID2D1GdiMetafileSink sink) Stream;
-				public new function HRESULT(ref ID2D1GdiMetafile self, out D2D_RECT_F bounds) GetBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafile self, ref ID2D1GdiMetafileSink sink) Stream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafile self, out D2D_RECT_F bounds) GetBounds;
 			}
 		}
 		[CRepr]
@@ -2592,31 +2592,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink self) BeginDraw;
-				public new function HRESULT(ref ID2D1CommandSink self) EndDraw;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
-				public new function HRESULT(ref ID2D1CommandSink self, uint64 tag1, uint64 tag2) SetTags;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
-				public new function HRESULT(ref ID2D1CommandSink self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-				public new function HRESULT(ref ID2D1CommandSink self, in D2D_MATRIX_3X2_F transform) SetTransform;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D1_UNIT_MODE unitMode) SetUnitMode;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D1_COLOR_F* color) Clear;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-				public new function HRESULT(ref ID2D1CommandSink self, D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
-				public new function HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Mesh mesh, ref ID2D1Brush brush) FillMesh;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
-				public new function HRESULT(ref ID2D1CommandSink self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) FillGeometry;
-				public new function HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F rect, ref ID2D1Brush brush) FillRectangle;
-				public new function HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
-				public new function HRESULT(ref ID2D1CommandSink self, in D2D1_LAYER_PARAMETERS1 layerParameters1, ID2D1Layer* layer) PushLayer;
-				public new function HRESULT(ref ID2D1CommandSink self) PopAxisAlignedClip;
-				public new function HRESULT(ref ID2D1CommandSink self) PopLayer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self) BeginDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self) EndDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, uint64 tag1, uint64 tag2) SetTags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, in D2D_MATRIX_3X2_F transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D1_UNIT_MODE unitMode) SetUnitMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D1_COLOR_F* color) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Mesh mesh, ref ID2D1Brush brush) FillMesh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, ref ID2D1Geometry geometry, ref ID2D1Brush brush, ID2D1Brush* opacityBrush) FillGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F rect, ref ID2D1Brush brush) FillRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, in D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self, in D2D1_LAYER_PARAMETERS1 layerParameters1, ID2D1Layer* layer) PushLayer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self) PopAxisAlignedClip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink self) PopLayer;
 			}
 		}
 		[CRepr]
@@ -2632,8 +2632,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandList self, ref ID2D1CommandSink sink) Stream;
-				public new function HRESULT(ref ID2D1CommandList self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandList self, ref ID2D1CommandSink sink) Stream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandList self) Close;
 			}
 		}
 		[CRepr]
@@ -2649,8 +2649,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1PrintControl self, ref ID2D1CommandList commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) AddPage;
-				public new function HRESULT(ref ID2D1PrintControl self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PrintControl self, ref ID2D1CommandList commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) AddPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PrintControl self) Close;
 			}
 		}
 		[CRepr]
@@ -2674,16 +2674,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Brush.VTable
 			{
-				public new function void(ref ID2D1ImageBrush self, ID2D1Image* image) SetImage;
-				public new function void(ref ID2D1ImageBrush self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
-				public new function void(ref ID2D1ImageBrush self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
-				public new function void(ref ID2D1ImageBrush self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
-				public new function void(ref ID2D1ImageBrush self, in D2D_RECT_F sourceRectangle) SetSourceRectangle;
-				public new function void(ref ID2D1ImageBrush self, ID2D1Image** image) GetImage;
-				public new function D2D1_EXTEND_MODE(ref ID2D1ImageBrush self) GetExtendModeX;
-				public new function D2D1_EXTEND_MODE(ref ID2D1ImageBrush self) GetExtendModeY;
-				public new function D2D1_INTERPOLATION_MODE(ref ID2D1ImageBrush self) GetInterpolationMode;
-				public new function void(ref ID2D1ImageBrush self, out D2D_RECT_F sourceRectangle) GetSourceRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, ID2D1Image* image) SetImage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, in D2D_RECT_F sourceRectangle) SetSourceRectangle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, ID2D1Image** image) GetImage;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1ImageBrush self) GetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1ImageBrush self) GetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] D2D1_INTERPOLATION_MODE(ref ID2D1ImageBrush self) GetInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageBrush self, out D2D_RECT_F sourceRectangle) GetSourceRectangle;
 			}
 		}
 		[CRepr]
@@ -2699,8 +2699,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1BitmapBrush.VTable
 			{
-				public new function void(ref ID2D1BitmapBrush1 self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode1;
-				public new function D2D1_INTERPOLATION_MODE(ref ID2D1BitmapBrush1 self) GetInterpolationMode1;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BitmapBrush1 self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode1;
+				public new function [CallingConvention(.Stdcall)] D2D1_INTERPOLATION_MODE(ref ID2D1BitmapBrush1 self) GetInterpolationMode1;
 			}
 		}
 		[CRepr]
@@ -2715,7 +2715,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1StrokeStyle.VTable
 			{
-				public new function D2D1_STROKE_TRANSFORM_TYPE(ref ID2D1StrokeStyle1 self) GetStrokeTransformType;
+				public new function [CallingConvention(.Stdcall)] D2D1_STROKE_TRANSFORM_TYPE(ref ID2D1StrokeStyle1 self) GetStrokeTransformType;
 			}
 		}
 		[CRepr]
@@ -2730,7 +2730,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1PathGeometry.VTable
 			{
-				public new function HRESULT(ref ID2D1PathGeometry1 self, float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D1_POINT_DESCRIPTION pointDescription) ComputePointAndSegmentAtLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1PathGeometry1 self, float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, out D2D1_POINT_DESCRIPTION pointDescription) ComputePointAndSegmentAtLength;
 			}
 		}
 		[CRepr]
@@ -2755,17 +2755,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(ref ID2D1Properties self) GetPropertyCount;
-				public new function HRESULT(ref ID2D1Properties self, uint32 index, char16* name, uint32 nameCount) GetPropertyName;
-				public new function uint32(ref ID2D1Properties self, uint32 index) GetPropertyNameLength;
-				public new function D2D1_PROPERTY_TYPE(ref ID2D1Properties self, uint32 index) ComGetType;
-				public new function uint32(ref ID2D1Properties self, PWSTR name) GetPropertyIndex;
-				public new function HRESULT(ref ID2D1Properties self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValueByName;
-				public new function HRESULT(ref ID2D1Properties self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValue;
-				public new function HRESULT(ref ID2D1Properties self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValueByName;
-				public new function HRESULT(ref ID2D1Properties self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValue;
-				public new function uint32(ref ID2D1Properties self, uint32 index) GetValueSize;
-				public new function HRESULT(ref ID2D1Properties self, uint32 index, ID2D1Properties** subProperties) GetSubProperties;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Properties self) GetPropertyCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, uint32 index, char16* name, uint32 nameCount) GetPropertyName;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Properties self, uint32 index) GetPropertyNameLength;
+				public new function [CallingConvention(.Stdcall)] D2D1_PROPERTY_TYPE(ref ID2D1Properties self, uint32 index) ComGetType;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Properties self, PWSTR name) GetPropertyIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValueByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValueByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValue;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Properties self, uint32 index) GetValueSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Properties self, uint32 index, ID2D1Properties** subProperties) GetSubProperties;
 			}
 		}
 		[CRepr]
@@ -2784,11 +2784,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Properties.VTable
 			{
-				public new function void(ref ID2D1Effect self, uint32 index, ID2D1Image* input, BOOL invalidate) SetInput;
-				public new function HRESULT(ref ID2D1Effect self, uint32 inputCount) SetInputCount;
-				public new function void(ref ID2D1Effect self, uint32 index, ID2D1Image** input) GetInput;
-				public new function uint32(ref ID2D1Effect self) GetInputCount;
-				public new function void(ref ID2D1Effect self, out ID2D1Image* outputImage) GetOutput;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Effect self, uint32 index, ID2D1Image* input, BOOL invalidate) SetInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Effect self, uint32 inputCount) SetInputCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Effect self, uint32 index, ID2D1Image** input) GetInput;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Effect self) GetInputCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Effect self, out ID2D1Image* outputImage) GetOutput;
 			}
 		}
 		[CRepr]
@@ -2807,11 +2807,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Bitmap.VTable
 			{
-				public new function void(ref ID2D1Bitmap1 self, ID2D1ColorContext** colorContext) GetColorContext;
-				public new function D2D1_BITMAP_OPTIONS(ref ID2D1Bitmap1 self) GetOptions;
-				public new function HRESULT(ref ID2D1Bitmap1 self, IDXGISurface** dxgiSurface) GetSurface;
-				public new function HRESULT(ref ID2D1Bitmap1 self, D2D1_MAP_OPTIONS options, out D2D1_MAPPED_RECT mappedRect) Map;
-				public new function HRESULT(ref ID2D1Bitmap1 self) Unmap;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Bitmap1 self, ID2D1ColorContext** colorContext) GetColorContext;
+				public new function [CallingConvention(.Stdcall)] D2D1_BITMAP_OPTIONS(ref ID2D1Bitmap1 self) GetOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap1 self, IDXGISurface** dxgiSurface) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap1 self, D2D1_MAP_OPTIONS options, out D2D1_MAPPED_RECT mappedRect) Map;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Bitmap1 self) Unmap;
 			}
 		}
 		[CRepr]
@@ -2828,9 +2828,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function D2D1_COLOR_SPACE(ref ID2D1ColorContext self) GetColorSpace;
-				public new function uint32(ref ID2D1ColorContext self) GetProfileSize;
-				public new function HRESULT(ref ID2D1ColorContext self, uint8* profile, uint32 profileSize) GetProfile;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_SPACE(ref ID2D1ColorContext self) GetColorSpace;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1ColorContext self) GetProfileSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ColorContext self, uint8* profile, uint32 profileSize) GetProfile;
 			}
 		}
 		[CRepr]
@@ -2849,11 +2849,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1GradientStopCollection.VTable
 			{
-				public new function void(ref ID2D1GradientStopCollection1 self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops1;
-				public new function D2D1_COLOR_SPACE(ref ID2D1GradientStopCollection1 self) GetPreInterpolationSpace;
-				public new function D2D1_COLOR_SPACE(ref ID2D1GradientStopCollection1 self) GetPostInterpolationSpace;
-				public new function D2D1_BUFFER_PRECISION(ref ID2D1GradientStopCollection1 self) GetBufferPrecision;
-				public new function D2D1_COLOR_INTERPOLATION_MODE(ref ID2D1GradientStopCollection1 self) GetColorInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1GradientStopCollection1 self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops1;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_SPACE(ref ID2D1GradientStopCollection1 self) GetPreInterpolationSpace;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_SPACE(ref ID2D1GradientStopCollection1 self) GetPostInterpolationSpace;
+				public new function [CallingConvention(.Stdcall)] D2D1_BUFFER_PRECISION(ref ID2D1GradientStopCollection1 self) GetBufferPrecision;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_INTERPOLATION_MODE(ref ID2D1GradientStopCollection1 self) GetColorInterpolationMode;
 			}
 		}
 		[CRepr]
@@ -2869,8 +2869,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DrawingStateBlock.VTable
 			{
-				public new function void(ref ID2D1DrawingStateBlock1 self, out D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) GetDescription;
-				public new function void(ref ID2D1DrawingStateBlock1 self, in D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) SetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock1 self, out D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DrawingStateBlock1 self, in D2D1_DRAWING_STATE_DESCRIPTION1 stateDescription) SetDescription;
 			}
 		}
 		[CRepr]
@@ -2919,41 +2919,41 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderTarget.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext self, D2D_SIZE_U size, void* sourceData, uint32 pitch, in D2D1_BITMAP_PROPERTIES1 bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmap;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmapFromWicBitmap;
-				public new function HRESULT(ref ID2D1DeviceContext self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) CreateColorContext;
-				public new function HRESULT(ref ID2D1DeviceContext self, PWSTR filename, out ID2D1ColorContext* colorContext) CreateColorContextFromFilename;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) CreateColorContextFromWicColorContext;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref IDXGISurface surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmapFromDxgiSurface;
-				public new function HRESULT(ref ID2D1DeviceContext self, in Guid effectId, out ID2D1Effect* effect) CreateEffect;
-				public new function HRESULT(ref ID2D1DeviceContext self, D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, out ID2D1GradientStopCollection1* gradientStopCollection1) CreateGradientStopCollection;
-				public new function HRESULT(ref ID2D1DeviceContext self, ID2D1Image* image, in D2D1_IMAGE_BRUSH_PROPERTIES imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1ImageBrush* imageBrush) CreateImageBrush;
-				public new function HRESULT(ref ID2D1DeviceContext self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush1* bitmapBrush) CreateBitmapBrush;
-				public new function HRESULT(ref ID2D1DeviceContext self, out ID2D1CommandList* commandList) CreateCommandList;
-				public new function BOOL(ref ID2D1DeviceContext self, DXGI_FORMAT format) IsDxgiFormatSupported;
-				public new function BOOL(ref ID2D1DeviceContext self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Image image, out D2D_RECT_F localBounds) GetImageLocalBounds;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Image image, out D2D_RECT_F worldBounds) GetImageWorldBounds;
-				public new function HRESULT(ref ID2D1DeviceContext self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, out D2D_RECT_F bounds) GetGlyphRunWorldBounds;
-				public new function void(ref ID2D1DeviceContext self, out ID2D1Device* device) GetDevice;
-				public new function void(ref ID2D1DeviceContext self, ID2D1Image* image) SetTarget;
-				public new function void(ref ID2D1DeviceContext self, ID2D1Image** image) GetTarget;
-				public new function void(ref ID2D1DeviceContext self, in D2D1_RENDERING_CONTROLS renderingControls) SetRenderingControls;
-				public new function void(ref ID2D1DeviceContext self, out D2D1_RENDERING_CONTROLS renderingControls) GetRenderingControls;
-				public new function void(ref ID2D1DeviceContext self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
-				public new function D2D1_PRIMITIVE_BLEND(ref ID2D1DeviceContext self) GetPrimitiveBlend;
-				public new function void(ref ID2D1DeviceContext self, D2D1_UNIT_MODE unitMode) SetUnitMode;
-				public new function D2D1_UNIT_MODE(ref ID2D1DeviceContext self) GetUnitMode;
-				public new function void(ref ID2D1DeviceContext self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-				public new function void(ref ID2D1DeviceContext self, ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
-				public new function void(ref ID2D1DeviceContext self, ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
-				public new function void(ref ID2D1DeviceContext self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
-				public new function void(ref ID2D1DeviceContext self, in D2D1_LAYER_PARAMETERS1 layerParameters, ID2D1Layer* layer) PushLayer;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, uint32 input, in D2D_RECT_F inputRectangle) InvalidateEffectInputRectangle;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, out uint32 rectangleCount) GetEffectInvalidRectangleCount;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) GetEffectInvalidRectangles;
-				public new function HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) GetEffectRequiredInputRectangles;
-				public new function void(ref ID2D1DeviceContext self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, D2D_SIZE_U size, void* sourceData, uint32 pitch, in D2D1_BITMAP_PROPERTIES1 bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref IWICBitmapSource wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmapFromWicBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) CreateColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, PWSTR filename, out ID2D1ColorContext* colorContext) CreateColorContextFromFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) CreateColorContextFromWicColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref IDXGISurface surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, out ID2D1Bitmap1* bitmap) CreateBitmapFromDxgiSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, in Guid effectId, out ID2D1Effect* effect) CreateEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, out ID2D1GradientStopCollection1* gradientStopCollection1) CreateGradientStopCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ID2D1Image* image, in D2D1_IMAGE_BRUSH_PROPERTIES imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1ImageBrush* imageBrush) CreateImageBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, out ID2D1BitmapBrush1* bitmapBrush) CreateBitmapBrush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, out ID2D1CommandList* commandList) CreateCommandList;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1DeviceContext self, DXGI_FORMAT format) IsDxgiFormatSupported;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1DeviceContext self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Image image, out D2D_RECT_F localBounds) GetImageLocalBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Image image, out D2D_RECT_F worldBounds) GetImageWorldBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, out D2D_RECT_F bounds) GetGlyphRunWorldBounds;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, out ID2D1Device* device) GetDevice;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ID2D1Image* image) SetTarget;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ID2D1Image** image) GetTarget;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, in D2D1_RENDERING_CONTROLS renderingControls) SetRenderingControls;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, out D2D1_RENDERING_CONTROLS renderingControls) GetRenderingControls;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
+				public new function [CallingConvention(.Stdcall)] D2D1_PRIMITIVE_BLEND(ref ID2D1DeviceContext self) GetPrimitiveBlend;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, D2D1_UNIT_MODE unitMode) SetUnitMode;
+				public new function [CallingConvention(.Stdcall)] D2D1_UNIT_MODE(ref ID2D1DeviceContext self) GetUnitMode;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ref ID2D1Image image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ref ID2D1Bitmap bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, in D2D1_LAYER_PARAMETERS1 layerParameters, ID2D1Layer* layer) PushLayer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, uint32 input, in D2D_RECT_F inputRectangle) InvalidateEffectInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, out uint32 rectangleCount) GetEffectInvalidRectangleCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) GetEffectInvalidRectangles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext self, ref ID2D1Effect renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) GetEffectRequiredInputRectangles;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext self, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
 			}
 		}
 		[CRepr]
@@ -2972,11 +2972,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1Device self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext* deviceContext) CreateDeviceContext;
-				public new function HRESULT(ref ID2D1Device self, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, out ID2D1PrintControl* printControl) CreatePrintControl;
-				public new function void(ref ID2D1Device self, uint64 maximumInBytes) SetMaximumTextureMemory;
-				public new function uint64(ref ID2D1Device self) GetMaximumTextureMemory;
-				public new function void(ref ID2D1Device self, uint32 millisecondsSinceUse) ClearResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext* deviceContext) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device self, ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, out ID2D1PrintControl* printControl) CreatePrintControl;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Device self, uint64 maximumInBytes) SetMaximumTextureMemory;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID2D1Device self) GetMaximumTextureMemory;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Device self, uint32 millisecondsSinceUse) ClearResources;
 			}
 		}
 		[CRepr]
@@ -3000,16 +3000,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory1 self, ref IDXGIDevice dxgiDevice, out ID2D1Device* d2dDevice) CreateDevice;
-				public new function HRESULT(ref ID2D1Factory1 self, in D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle1* strokeStyle) CreateStrokeStyle;
-				public new function HRESULT(ref ID2D1Factory1 self, out ID2D1PathGeometry1* pathGeometry) CreatePathGeometry;
-				public new function HRESULT(ref ID2D1Factory1 self, D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock1* drawingStateBlock) CreateDrawingStateBlock;
-				public new function HRESULT(ref ID2D1Factory1 self, ref IStream metafileStream, out ID2D1GdiMetafile* metafile) CreateGdiMetafile;
-				public new function HRESULT(ref ID2D1Factory1 self, in Guid classId, ref IStream propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromStream;
-				public new function HRESULT(ref ID2D1Factory1 self, in Guid classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromString;
-				public new function HRESULT(ref ID2D1Factory1 self, in Guid classId) UnregisterEffect;
-				public new function HRESULT(ref ID2D1Factory1 self, Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) GetRegisteredEffects;
-				public new function HRESULT(ref ID2D1Factory1 self, in Guid effectId, out ID2D1Properties* properties) GetEffectProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, ref IDXGIDevice dxgiDevice, out ID2D1Device* d2dDevice) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, in D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, float* dashes, uint32 dashesCount, out ID2D1StrokeStyle1* strokeStyle) CreateStrokeStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, out ID2D1PathGeometry1* pathGeometry) CreatePathGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, out ID2D1DrawingStateBlock1* drawingStateBlock) CreateDrawingStateBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, ref IStream metafileStream, out ID2D1GdiMetafile* metafile) CreateGdiMetafile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, in Guid classId, ref IStream propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, in Guid classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, in Guid classId) UnregisterEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) GetRegisteredEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory1 self, in Guid effectId, out ID2D1Properties* properties) GetEffectProperties;
 			}
 		}
 		[CRepr]
@@ -3026,9 +3026,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(ref ID2D1Multithread self) GetMultithreadProtected;
-				public new function void(ref ID2D1Multithread self) Enter;
-				public new function void(ref ID2D1Multithread self) Leave;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1Multithread self) GetMultithreadProtected;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Multithread self) Enter;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Multithread self) Leave;
 			}
 		}
 		[CRepr]
@@ -3044,8 +3044,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1VertexBuffer self, out uint8* data, uint32 bufferSize) Map;
-				public new function HRESULT(ref ID2D1VertexBuffer self) Unmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1VertexBuffer self, out uint8* data, uint32 bufferSize) Map;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1VertexBuffer self) Unmap;
 			}
 		}
 		[CRepr]
@@ -3060,7 +3060,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1ResourceTexture self, uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) Update;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ResourceTexture self, uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) Update;
 			}
 		}
 		[CRepr]
@@ -3078,10 +3078,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1RenderInfo self, uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) SetInputDescription;
-				public new function HRESULT(ref ID2D1RenderInfo self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
-				public new function void(ref ID2D1RenderInfo self, BOOL isCached) SetCached;
-				public new function void(ref ID2D1RenderInfo self, uint32 instructionCount) SetInstructionCountHint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderInfo self, uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) SetInputDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1RenderInfo self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderInfo self, BOOL isCached) SetCached;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1RenderInfo self, uint32 instructionCount) SetInstructionCountHint;
 			}
 		}
 		[CRepr]
@@ -3100,11 +3100,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderInfo.VTable
 			{
-				public new function HRESULT(ref ID2D1DrawInfo self, uint8* buffer, uint32 bufferCount) SetPixelShaderConstantBuffer;
-				public new function HRESULT(ref ID2D1DrawInfo self, uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) SetResourceTexture;
-				public new function HRESULT(ref ID2D1DrawInfo self, uint8* buffer, uint32 bufferCount) SetVertexShaderConstantBuffer;
-				public new function HRESULT(ref ID2D1DrawInfo self, in Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions) SetPixelShader;
-				public new function HRESULT(ref ID2D1DrawInfo self, ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) SetVertexProcessing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawInfo self, uint8* buffer, uint32 bufferCount) SetPixelShaderConstantBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawInfo self, uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) SetResourceTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawInfo self, uint8* buffer, uint32 bufferCount) SetVertexShaderConstantBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawInfo self, in Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions) SetPixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawInfo self, ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) SetVertexProcessing;
 			}
 		}
 		[CRepr]
@@ -3121,9 +3121,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1RenderInfo.VTable
 			{
-				public new function HRESULT(ref ID2D1ComputeInfo self, uint8* buffer, uint32 bufferCount) SetComputeShaderConstantBuffer;
-				public new function HRESULT(ref ID2D1ComputeInfo self, in Guid shaderId) SetComputeShader;
-				public new function HRESULT(ref ID2D1ComputeInfo self, uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) SetResourceTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ComputeInfo self, uint8* buffer, uint32 bufferCount) SetComputeShaderConstantBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ComputeInfo self, in Guid shaderId) SetComputeShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ComputeInfo self, uint32 textureIndex, ref ID2D1ResourceTexture resourceTexture) SetResourceTexture;
 			}
 		}
 		[CRepr]
@@ -3138,7 +3138,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(ref ID2D1TransformNode self) GetInputCount;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1TransformNode self) GetInputCount;
 			}
 		}
 		[CRepr]
@@ -3161,15 +3161,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(ref ID2D1TransformGraph self) GetInputCount;
-				public new function HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) SetSingleTransformNode;
-				public new function HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) AddNode;
-				public new function HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) RemoveNode;
-				public new function HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) SetOutputNode;
-				public new function HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode fromNode, ref ID2D1TransformNode toNode, uint32 toNodeInputIndex) ConnectNode;
-				public new function HRESULT(ref ID2D1TransformGraph self, uint32 toEffectInputIndex, ref ID2D1TransformNode node, uint32 toNodeInputIndex) ConnectToEffectInput;
-				public new function void(ref ID2D1TransformGraph self) Clear;
-				public new function HRESULT(ref ID2D1TransformGraph self, uint32 effectInputIndex) SetPassthroughGraph;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1TransformGraph self) GetInputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) SetSingleTransformNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) AddNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) RemoveNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode node) SetOutputNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, ref ID2D1TransformNode fromNode, ref ID2D1TransformNode toNode, uint32 toNodeInputIndex) ConnectNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, uint32 toEffectInputIndex, ref ID2D1TransformNode node, uint32 toNodeInputIndex) ConnectToEffectInput;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TransformGraph self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1TransformGraph self, uint32 effectInputIndex) SetPassthroughGraph;
 			}
 		}
 		[CRepr]
@@ -3186,9 +3186,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
-				public new function HRESULT(ref ID2D1Transform self, in RECT outputRect, RECT* inputRects, uint32 inputRectsCount) MapOutputRectToInputRects;
-				public new function HRESULT(ref ID2D1Transform self, RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, out RECT outputRect, out RECT outputOpaqueSubRect) MapInputRectsToOutputRect;
-				public new function HRESULT(ref ID2D1Transform self, uint32 inputIndex, RECT invalidInputRect, out RECT invalidOutputRect) MapInvalidRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Transform self, in RECT outputRect, RECT* inputRects, uint32 inputRectsCount) MapOutputRectToInputRects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Transform self, RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, out RECT outputRect, out RECT outputOpaqueSubRect) MapInputRectsToOutputRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Transform self, uint32 inputIndex, RECT invalidInputRect, out RECT invalidOutputRect) MapInvalidRect;
 			}
 		}
 		[CRepr]
@@ -3203,7 +3203,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
-				public new function HRESULT(ref ID2D1DrawTransform self, ref ID2D1DrawInfo drawInfo) SetDrawInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DrawTransform self, ref ID2D1DrawInfo drawInfo) SetDrawInfo;
 			}
 		}
 		[CRepr]
@@ -3219,8 +3219,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
-				public new function HRESULT(ref ID2D1ComputeTransform self, ref ID2D1ComputeInfo computeInfo) SetComputeInfo;
-				public new function HRESULT(ref ID2D1ComputeTransform self, in RECT outputRect, out uint32 dimensionX, out uint32 dimensionY, out uint32 dimensionZ) CalculateThreadgroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ComputeTransform self, ref ID2D1ComputeInfo computeInfo) SetComputeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ComputeTransform self, in RECT outputRect, out uint32 dimensionX, out uint32 dimensionY, out uint32 dimensionZ) CalculateThreadgroups;
 			}
 		}
 		[CRepr]
@@ -3235,7 +3235,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1AnalysisTransform self, uint8* analysisData, uint32 analysisDataCount) ProcessAnalysisResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1AnalysisTransform self, uint8* analysisData, uint32 analysisDataCount) ProcessAnalysisResults;
 			}
 		}
 		[CRepr]
@@ -3251,8 +3251,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Transform.VTable
 			{
-				public new function HRESULT(ref ID2D1SourceTransform self, ref ID2D1RenderInfo renderInfo) SetRenderInfo;
-				public new function HRESULT(ref ID2D1SourceTransform self, ref ID2D1Bitmap1 target, in RECT drawRect, D2D_POINT_2U targetOrigin) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SourceTransform self, ref ID2D1RenderInfo renderInfo) SetRenderInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SourceTransform self, ref ID2D1Bitmap1 target, in RECT drawRect, D2D_POINT_2U targetOrigin) Draw;
 			}
 		}
 		[CRepr]
@@ -3268,8 +3268,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
-				public new function HRESULT(ref ID2D1ConcreteTransform self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
-				public new function void(ref ID2D1ConcreteTransform self, BOOL isCached) SetCached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ConcreteTransform self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ConcreteTransform self, BOOL isCached) SetCached;
 			}
 		}
 		[CRepr]
@@ -3285,8 +3285,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1ConcreteTransform.VTable
 			{
-				public new function void(ref ID2D1BlendTransform self, in D2D1_BLEND_DESCRIPTION description) SetDescription;
-				public new function void(ref ID2D1BlendTransform self, out D2D1_BLEND_DESCRIPTION description) GetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BlendTransform self, in D2D1_BLEND_DESCRIPTION description) SetDescription;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BlendTransform self, out D2D1_BLEND_DESCRIPTION description) GetDescription;
 			}
 		}
 		[CRepr]
@@ -3304,10 +3304,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1ConcreteTransform.VTable
 			{
-				public new function void(ref ID2D1BorderTransform self, D2D1_EXTEND_MODE extendMode) SetExtendModeX;
-				public new function void(ref ID2D1BorderTransform self, D2D1_EXTEND_MODE extendMode) SetExtendModeY;
-				public new function D2D1_EXTEND_MODE(ref ID2D1BorderTransform self) GetExtendModeX;
-				public new function D2D1_EXTEND_MODE(ref ID2D1BorderTransform self) GetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BorderTransform self, D2D1_EXTEND_MODE extendMode) SetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BorderTransform self, D2D1_EXTEND_MODE extendMode) SetExtendModeY;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1BorderTransform self) GetExtendModeX;
+				public new function [CallingConvention(.Stdcall)] D2D1_EXTEND_MODE(ref ID2D1BorderTransform self) GetExtendModeY;
 			}
 		}
 		[CRepr]
@@ -3323,8 +3323,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
-				public new function void(ref ID2D1OffsetTransform self, POINT offset) SetOffset;
-				public new function POINT(ref ID2D1OffsetTransform self) GetOffset;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1OffsetTransform self, POINT offset) SetOffset;
+				public new function [CallingConvention(.Stdcall)] POINT(ref ID2D1OffsetTransform self) GetOffset;
 			}
 		}
 		[CRepr]
@@ -3340,8 +3340,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1TransformNode.VTable
 			{
-				public new function void(ref ID2D1BoundsAdjustmentTransform self, in RECT outputBounds) SetOutputBounds;
-				public new function void(ref ID2D1BoundsAdjustmentTransform self, out RECT outputBounds) GetOutputBounds;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BoundsAdjustmentTransform self, in RECT outputBounds) SetOutputBounds;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1BoundsAdjustmentTransform self, out RECT outputBounds) GetOutputBounds;
 			}
 		}
 		[CRepr]
@@ -3358,9 +3358,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID2D1EffectImpl self, ref ID2D1EffectContext effectContext, ref ID2D1TransformGraph transformGraph) Initialize;
-				public new function HRESULT(ref ID2D1EffectImpl self, D2D1_CHANGE_TYPE changeType) PrepareForRender;
-				public new function HRESULT(ref ID2D1EffectImpl self, ref ID2D1TransformGraph transformGraph) SetGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectImpl self, ref ID2D1EffectContext effectContext, ref ID2D1TransformGraph transformGraph) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectImpl self, D2D1_CHANGE_TYPE changeType) PrepareForRender;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectImpl self, ref ID2D1TransformGraph transformGraph) SetGraph;
 			}
 		}
 		[CRepr]
@@ -3395,27 +3395,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref ID2D1EffectContext self, out float dpiX, out float dpiY) GetDpi;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid effectId, out ID2D1Effect* effect) CreateEffect;
-				public new function HRESULT(ref ID2D1EffectContext self, D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel) GetMaximumSupportedFeatureLevel;
-				public new function HRESULT(ref ID2D1EffectContext self, ref ID2D1Effect effect, out ID2D1TransformNode* transformNode) CreateTransformNodeFromEffect;
-				public new function HRESULT(ref ID2D1EffectContext self, uint32 numInputs, in D2D1_BLEND_DESCRIPTION blendDescription, out ID2D1BlendTransform* transform) CreateBlendTransform;
-				public new function HRESULT(ref ID2D1EffectContext self, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, out ID2D1BorderTransform* transform) CreateBorderTransform;
-				public new function HRESULT(ref ID2D1EffectContext self, POINT offset, out ID2D1OffsetTransform* transform) CreateOffsetTransform;
-				public new function HRESULT(ref ID2D1EffectContext self, in RECT outputRectangle, out ID2D1BoundsAdjustmentTransform* transform) CreateBoundsAdjustmentTransform;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadPixelShader;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadVertexShader;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadComputeShader;
-				public new function BOOL(ref ID2D1EffectContext self, in Guid shaderId) IsShaderLoaded;
-				public new function HRESULT(ref ID2D1EffectContext self, Guid* resourceId, in D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, out ID2D1ResourceTexture* resourceTexture) CreateResourceTexture;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid resourceId, out ID2D1ResourceTexture* resourceTexture) FindResourceTexture;
-				public new function HRESULT(ref ID2D1EffectContext self, in D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, out ID2D1VertexBuffer* buffer) CreateVertexBuffer;
-				public new function HRESULT(ref ID2D1EffectContext self, in Guid resourceId, out ID2D1VertexBuffer* buffer) FindVertexBuffer;
-				public new function HRESULT(ref ID2D1EffectContext self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) CreateColorContext;
-				public new function HRESULT(ref ID2D1EffectContext self, PWSTR filename, out ID2D1ColorContext* colorContext) CreateColorContextFromFilename;
-				public new function HRESULT(ref ID2D1EffectContext self, ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) CreateColorContextFromWicColorContext;
-				public new function HRESULT(ref ID2D1EffectContext self, D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) CheckFeatureSupport;
-				public new function BOOL(ref ID2D1EffectContext self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1EffectContext self, out float dpiX, out float dpiY) GetDpi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid effectId, out ID2D1Effect* effect) CreateEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel) GetMaximumSupportedFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, ref ID2D1Effect effect, out ID2D1TransformNode* transformNode) CreateTransformNodeFromEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, uint32 numInputs, in D2D1_BLEND_DESCRIPTION blendDescription, out ID2D1BlendTransform* transform) CreateBlendTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, out ID2D1BorderTransform* transform) CreateBorderTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, POINT offset, out ID2D1OffsetTransform* transform) CreateOffsetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in RECT outputRectangle, out ID2D1BoundsAdjustmentTransform* transform) CreateBoundsAdjustmentTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadPixelShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadVertexShader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadComputeShader;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1EffectContext self, in Guid shaderId) IsShaderLoaded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, Guid* resourceId, in D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, out ID2D1ResourceTexture* resourceTexture) CreateResourceTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid resourceId, out ID2D1ResourceTexture* resourceTexture) FindResourceTexture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, out ID2D1VertexBuffer* buffer) CreateVertexBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, in Guid resourceId, out ID2D1VertexBuffer* buffer) FindVertexBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, out ID2D1ColorContext* colorContext) CreateColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, PWSTR filename, out ID2D1ColorContext* colorContext) CreateColorContextFromFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, ref IWICColorContext wicColorContext, out ID2D1ColorContext* colorContext) CreateColorContextFromWicColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext self, D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) CheckFeatureSupport;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1EffectContext self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
 			}
 		}
 		[CRepr]
@@ -3445,9 +3445,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext1 self, ref ID2D1Geometry geometry, float flatteningTolerance, out ID2D1GeometryRealization* geometryRealization) CreateFilledGeometryRealization;
-				public new function HRESULT(ref ID2D1DeviceContext1 self, ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, out ID2D1GeometryRealization* geometryRealization) CreateStrokedGeometryRealization;
-				public new function void(ref ID2D1DeviceContext1 self, ref ID2D1GeometryRealization geometryRealization, ref ID2D1Brush brush) DrawGeometryRealization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext1 self, ref ID2D1Geometry geometry, float flatteningTolerance, out ID2D1GeometryRealization* geometryRealization) CreateFilledGeometryRealization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext1 self, ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, out ID2D1GeometryRealization* geometryRealization) CreateStrokedGeometryRealization;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext1 self, ref ID2D1GeometryRealization geometryRealization, ref ID2D1Brush brush) DrawGeometryRealization;
 			}
 		}
 		[CRepr]
@@ -3464,9 +3464,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device.VTable
 			{
-				public new function D2D1_RENDERING_PRIORITY(ref ID2D1Device1 self) GetRenderingPriority;
-				public new function void(ref ID2D1Device1 self, D2D1_RENDERING_PRIORITY renderingPriority) SetRenderingPriority;
-				public new function HRESULT(ref ID2D1Device1 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext1* deviceContext1) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] D2D1_RENDERING_PRIORITY(ref ID2D1Device1 self) GetRenderingPriority;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Device1 self, D2D1_RENDERING_PRIORITY renderingPriority) SetRenderingPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device1 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext1* deviceContext1) CreateDeviceContext;
 			}
 		}
 		[CRepr]
@@ -3481,7 +3481,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory1.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory2 self, ref IDXGIDevice dxgiDevice, out ID2D1Device1* d2dDevice1) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory2 self, ref IDXGIDevice dxgiDevice, out ID2D1Device1* d2dDevice1) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -3496,7 +3496,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1CommandSink.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink1 self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink1 self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend1;
 			}
 		}
 		[CRepr]
@@ -3512,8 +3512,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1SvgAttribute self, ID2D1SvgElement** element) GetElement;
-				public new function HRESULT(ref ID2D1SvgAttribute self, out ID2D1SvgAttribute* attribute) Clone;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgAttribute self, ID2D1SvgElement** element) GetElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgAttribute self, out ID2D1SvgAttribute* attribute) Clone;
 			}
 		}
 		[CRepr]
@@ -3534,13 +3534,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgPaint self, D2D1_SVG_PAINT_TYPE paintType) SetPaintType;
-				public new function D2D1_SVG_PAINT_TYPE(ref ID2D1SvgPaint self) GetPaintType;
-				public new function HRESULT(ref ID2D1SvgPaint self, in D2D1_COLOR_F color) SetColor;
-				public new function void(ref ID2D1SvgPaint self, out D2D1_COLOR_F color) GetColor;
-				public new function HRESULT(ref ID2D1SvgPaint self, PWSTR id) SetId;
-				public new function HRESULT(ref ID2D1SvgPaint self, char16* id, uint32 idCount) GetId;
-				public new function uint32(ref ID2D1SvgPaint self) GetIdLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPaint self, D2D1_SVG_PAINT_TYPE paintType) SetPaintType;
+				public new function [CallingConvention(.Stdcall)] D2D1_SVG_PAINT_TYPE(ref ID2D1SvgPaint self) GetPaintType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPaint self, in D2D1_COLOR_F color) SetColor;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgPaint self, out D2D1_COLOR_F color) GetColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPaint self, PWSTR id) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPaint self, char16* id, uint32 idCount) GetId;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgPaint self) GetIdLength;
 			}
 		}
 		[CRepr]
@@ -3560,12 +3560,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgStrokeDashArray self, uint32 dashesCount) RemoveDashesAtEnd;
-				public new function HRESULT(ref ID2D1SvgStrokeDashArray self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes;
-				public new function HRESULT(ref ID2D1SvgStrokeDashArray self, float* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes2;
-				public new function HRESULT(ref ID2D1SvgStrokeDashArray self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) GetDashes;
-				public new function HRESULT(ref ID2D1SvgStrokeDashArray self, float* dashes, uint32 dashesCount, uint32 startIndex) GetDashes2;
-				public new function uint32(ref ID2D1SvgStrokeDashArray self) GetDashesCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgStrokeDashArray self, uint32 dashesCount) RemoveDashesAtEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgStrokeDashArray self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgStrokeDashArray self, float* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgStrokeDashArray self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) GetDashes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgStrokeDashArray self, float* dashes, uint32 dashesCount, uint32 startIndex) GetDashes2;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgStrokeDashArray self) GetDashesCount;
 			}
 		}
 		[CRepr]
@@ -3583,10 +3583,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgPointCollection self, uint32 pointsCount) RemovePointsAtEnd;
-				public new function HRESULT(ref ID2D1SvgPointCollection self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) UpdatePoints;
-				public new function HRESULT(ref ID2D1SvgPointCollection self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) GetPoints;
-				public new function uint32(ref ID2D1SvgPointCollection self) GetPointsCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPointCollection self, uint32 pointsCount) RemovePointsAtEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPointCollection self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) UpdatePoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPointCollection self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) GetPoints;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgPointCollection self) GetPointsCount;
 			}
 		}
 		[CRepr]
@@ -3609,15 +3609,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1SvgAttribute.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgPathData self, uint32 dataCount) RemoveSegmentDataAtEnd;
-				public new function HRESULT(ref ID2D1SvgPathData self, float* data, uint32 dataCount, uint32 startIndex) UpdateSegmentData;
-				public new function HRESULT(ref ID2D1SvgPathData self, float* data, uint32 dataCount, uint32 startIndex) GetSegmentData;
-				public new function uint32(ref ID2D1SvgPathData self) GetSegmentDataCount;
-				public new function HRESULT(ref ID2D1SvgPathData self, uint32 commandsCount) RemoveCommandsAtEnd;
-				public new function HRESULT(ref ID2D1SvgPathData self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) UpdateCommands;
-				public new function HRESULT(ref ID2D1SvgPathData self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) GetCommands;
-				public new function uint32(ref ID2D1SvgPathData self) GetCommandsCount;
-				public new function HRESULT(ref ID2D1SvgPathData self, D2D1_FILL_MODE fillMode, out ID2D1PathGeometry1* pathGeometry) CreatePathGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, uint32 dataCount) RemoveSegmentDataAtEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, float* data, uint32 dataCount, uint32 startIndex) UpdateSegmentData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, float* data, uint32 dataCount, uint32 startIndex) GetSegmentData;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgPathData self) GetSegmentDataCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, uint32 commandsCount) RemoveCommandsAtEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) UpdateCommands;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) GetCommands;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgPathData self) GetCommandsCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgPathData self, D2D1_FILL_MODE fillMode, out ID2D1PathGeometry1* pathGeometry) CreatePathGeometry;
 			}
 		}
 		[CRepr]
@@ -3661,36 +3661,36 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1SvgElement self, ID2D1SvgDocument** document) GetDocument;
-				public new function HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) GetTagName;
-				public new function uint32(ref ID2D1SvgElement self) GetTagNameLength;
-				public new function BOOL(ref ID2D1SvgElement self) IsTextContent;
-				public new function void(ref ID2D1SvgElement self, ID2D1SvgElement** parent) GetParent;
-				public new function BOOL(ref ID2D1SvgElement self) HasChildren;
-				public new function void(ref ID2D1SvgElement self, ID2D1SvgElement** child) GetFirstChild;
-				public new function void(ref ID2D1SvgElement self, ID2D1SvgElement** child) GetLastChild;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement referenceChild, ID2D1SvgElement** previousChild) GetPreviousChild;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement referenceChild, ID2D1SvgElement** nextChild) GetNextChild;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild, ID2D1SvgElement* referenceChild) InsertChildBefore;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild) AppendChild;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild, ref ID2D1SvgElement oldChild) ReplaceChild;
-				public new function HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement oldChild) RemoveChild;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR tagName, out ID2D1SvgElement* newChild) CreateChild;
-				public new function BOOL(ref ID2D1SvgElement self, PWSTR name, BOOL* inherited) IsAttributeSpecified;
-				public new function uint32(ref ID2D1SvgElement self) GetSpecifiedAttributeCount;
-				public new function HRESULT(ref ID2D1SvgElement self, uint32 index, char16* name, uint32 nameCount, BOOL* inherited) GetSpecifiedAttributeName;
-				public new function HRESULT(ref ID2D1SvgElement self, uint32 index, out uint32 nameLength, BOOL* inherited) GetSpecifiedAttributeNameLength;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name) RemoveAttribute;
-				public new function HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) SetTextValue;
-				public new function HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) GetTextValue;
-				public new function uint32(ref ID2D1SvgElement self) GetTextValueLength;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, ref ID2D1SvgAttribute value) SetAttributeValue;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) SetAttributeValue2;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) SetAttributeValue3;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, in Guid riid, void** value) GetAttributeValue;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) GetAttributeValue2;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) GetAttributeValue3;
-				public new function HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, out uint32 valueLength) GetAttributeValueLength;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgElement self, ID2D1SvgDocument** document) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) GetTagName;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgElement self) GetTagNameLength;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1SvgElement self) IsTextContent;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgElement self, ID2D1SvgElement** parent) GetParent;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1SvgElement self) HasChildren;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgElement self, ID2D1SvgElement** child) GetFirstChild;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgElement self, ID2D1SvgElement** child) GetLastChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement referenceChild, ID2D1SvgElement** previousChild) GetPreviousChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement referenceChild, ID2D1SvgElement** nextChild) GetNextChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild, ID2D1SvgElement* referenceChild) InsertChildBefore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild) AppendChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement newChild, ref ID2D1SvgElement oldChild) ReplaceChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, ref ID2D1SvgElement oldChild) RemoveChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR tagName, out ID2D1SvgElement* newChild) CreateChild;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref ID2D1SvgElement self, PWSTR name, BOOL* inherited) IsAttributeSpecified;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgElement self) GetSpecifiedAttributeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, uint32 index, char16* name, uint32 nameCount, BOOL* inherited) GetSpecifiedAttributeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, uint32 index, out uint32 nameLength, BOOL* inherited) GetSpecifiedAttributeNameLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name) RemoveAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) SetTextValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, char16* name, uint32 nameCount) GetTextValue;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgElement self) GetTextValueLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, ref ID2D1SvgAttribute value) SetAttributeValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) SetAttributeValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) SetAttributeValue3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, in Guid riid, void** value) GetAttributeValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) GetAttributeValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) GetAttributeValue3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgElement self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, out uint32 valueLength) GetAttributeValueLength;
 			}
 		}
 		[CRepr]
@@ -3715,17 +3715,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgDocument self, D2D_SIZE_F viewportSize) SetViewportSize;
-				public new function D2D_SIZE_F(ref ID2D1SvgDocument self) GetViewportSize;
-				public new function HRESULT(ref ID2D1SvgDocument self, ID2D1SvgElement* root) SetRoot;
-				public new function void(ref ID2D1SvgDocument self, ID2D1SvgElement** root) GetRoot;
-				public new function HRESULT(ref ID2D1SvgDocument self, PWSTR id, ID2D1SvgElement** svgElement) FindElementById;
-				public new function HRESULT(ref ID2D1SvgDocument self, ref IStream outputXmlStream, ID2D1SvgElement* subtree) Serialize;
-				public new function HRESULT(ref ID2D1SvgDocument self, ref IStream inputXmlStream, out ID2D1SvgElement* subtree) Deserialize;
-				public new function HRESULT(ref ID2D1SvgDocument self, D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, out ID2D1SvgPaint* paint) CreatePaint;
-				public new function HRESULT(ref ID2D1SvgDocument self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, out ID2D1SvgStrokeDashArray* strokeDashArray) CreateStrokeDashArray;
-				public new function HRESULT(ref ID2D1SvgDocument self, D2D_POINT_2F* points, uint32 pointsCount, out ID2D1SvgPointCollection* pointCollection) CreatePointCollection;
-				public new function HRESULT(ref ID2D1SvgDocument self, float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, out ID2D1SvgPathData* pathData) CreatePathData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, D2D_SIZE_F viewportSize) SetViewportSize;
+				public new function [CallingConvention(.Stdcall)] D2D_SIZE_F(ref ID2D1SvgDocument self) GetViewportSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, ID2D1SvgElement* root) SetRoot;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgDocument self, ID2D1SvgElement** root) GetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, PWSTR id, ID2D1SvgElement** svgElement) FindElementById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, ref IStream outputXmlStream, ID2D1SvgElement* subtree) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, ref IStream inputXmlStream, out ID2D1SvgElement* subtree) Deserialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, out ID2D1SvgPaint* paint) CreatePaint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, out ID2D1SvgStrokeDashArray* strokeDashArray) CreateStrokeDashArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, D2D_POINT_2F* points, uint32 pointsCount, out ID2D1SvgPointCollection* pointCollection) CreatePointCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgDocument self, float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, out ID2D1SvgPathData* pathData) CreatePathData;
 			}
 		}
 		[CRepr]
@@ -3743,10 +3743,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1InkStyle self, in D2D_MATRIX_3X2_F transform) SetNibTransform;
-				public new function void(ref ID2D1InkStyle self, out D2D_MATRIX_3X2_F transform) GetNibTransform;
-				public new function void(ref ID2D1InkStyle self, D2D1_INK_NIB_SHAPE nibShape) SetNibShape;
-				public new function D2D1_INK_NIB_SHAPE(ref ID2D1InkStyle self) GetNibShape;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1InkStyle self, in D2D_MATRIX_3X2_F transform) SetNibTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1InkStyle self, out D2D_MATRIX_3X2_F transform) GetNibTransform;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1InkStyle self, D2D1_INK_NIB_SHAPE nibShape) SetNibShape;
+				public new function [CallingConvention(.Stdcall)] D2D1_INK_NIB_SHAPE(ref ID2D1InkStyle self) GetNibShape;
 			}
 		}
 		[CRepr]
@@ -3770,16 +3770,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function void(ref ID2D1Ink self, in D2D1_INK_POINT startPoint) SetStartPoint;
-				public new function D2D1_INK_POINT(ref ID2D1Ink self) GetStartPoint;
-				public new function HRESULT(ref ID2D1Ink self, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) AddSegments;
-				public new function HRESULT(ref ID2D1Ink self, uint32 segmentsCount) RemoveSegmentsAtEnd;
-				public new function HRESULT(ref ID2D1Ink self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) SetSegments;
-				public new function HRESULT(ref ID2D1Ink self, in D2D1_INK_BEZIER_SEGMENT segment) SetSegmentAtEnd;
-				public new function uint32(ref ID2D1Ink self) GetSegmentCount;
-				public new function HRESULT(ref ID2D1Ink self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) GetSegments;
-				public new function HRESULT(ref ID2D1Ink self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) StreamAsGeometry;
-				public new function HRESULT(ref ID2D1Ink self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) GetBounds;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Ink self, in D2D1_INK_POINT startPoint) SetStartPoint;
+				public new function [CallingConvention(.Stdcall)] D2D1_INK_POINT(ref ID2D1Ink self) GetStartPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) AddSegments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, uint32 segmentsCount) RemoveSegmentsAtEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) SetSegments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, in D2D1_INK_BEZIER_SEGMENT segment) SetSegmentAtEnd;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1Ink self) GetSegmentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) GetSegments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) StreamAsGeometry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Ink self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, out D2D_RECT_F bounds) GetBounds;
 			}
 		}
 		[CRepr]
@@ -3795,8 +3795,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function uint32(ref ID2D1GradientMesh self) GetPatchCount;
-				public new function HRESULT(ref ID2D1GradientMesh self, uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) GetPatches;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1GradientMesh self) GetPatchCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GradientMesh self, uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) GetPatches;
 			}
 		}
 		[CRepr]
@@ -3812,8 +3812,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
-				public new function HRESULT(ref ID2D1ImageSource self) OfferResources;
-				public new function HRESULT(ref ID2D1ImageSource self, out BOOL resourcesDiscarded) TryReclaimResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ImageSource self) OfferResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ImageSource self, out BOOL resourcesDiscarded) TryReclaimResources;
 			}
 		}
 		[CRepr]
@@ -3830,9 +3830,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1ImageSource.VTable
 			{
-				public new function HRESULT(ref ID2D1ImageSourceFromWic self, D2D_RECT_U* rectangleToFill) EnsureCached;
-				public new function HRESULT(ref ID2D1ImageSourceFromWic self, D2D_RECT_U* rectangleToPreserve) TrimCache;
-				public new function void(ref ID2D1ImageSourceFromWic self, IWICBitmapSource** wicBitmapSource) GetSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ImageSourceFromWic self, D2D_RECT_U* rectangleToFill) EnsureCached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ImageSourceFromWic self, D2D_RECT_U* rectangleToPreserve) TrimCache;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1ImageSourceFromWic self, IWICBitmapSource** wicBitmapSource) GetSource;
 			}
 		}
 		[CRepr]
@@ -3848,8 +3848,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Image.VTable
 			{
-				public new function void(ref ID2D1TransformedImageSource self, ID2D1ImageSource** imageSource) GetSource;
-				public new function void(ref ID2D1TransformedImageSource self, out D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties) GetProperties;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TransformedImageSource self, ID2D1ImageSource** imageSource) GetSource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1TransformedImageSource self, out D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties) GetProperties;
 			}
 		}
 		[CRepr]
@@ -3887,17 +3887,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext1.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext2 self, in D2D1_INK_POINT startPoint, out ID2D1Ink* ink) CreateInk;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, out ID2D1InkStyle* inkStyle) CreateInkStyle;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, out ID2D1GradientMesh* gradientMesh) CreateGradientMesh;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, ref IWICBitmapSource wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, out ID2D1ImageSourceFromWic* imageSource) CreateImageSourceFromWic;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) CreateLookupTable3D;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, out ID2D1ImageSource* imageSource) CreateImageSourceFromDxgi;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, ref ID2D1GradientMesh gradientMesh, out D2D_RECT_F pBounds) GetGradientMeshWorldBounds;
-				public new function void(ref ID2D1DeviceContext2 self, ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) DrawInk;
-				public new function void(ref ID2D1DeviceContext2 self, ref ID2D1GradientMesh gradientMesh) DrawGradientMesh;
-				public new function void(ref ID2D1DeviceContext2 self, ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
-				public new function HRESULT(ref ID2D1DeviceContext2 self, ref ID2D1ImageSource imageSource, in D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties, out ID2D1TransformedImageSource* transformedImageSource) CreateTransformedImageSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, in D2D1_INK_POINT startPoint, out ID2D1Ink* ink) CreateInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, out ID2D1InkStyle* inkStyle) CreateInkStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, out ID2D1GradientMesh* gradientMesh) CreateGradientMesh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, ref IWICBitmapSource wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, out ID2D1ImageSourceFromWic* imageSource) CreateImageSourceFromWic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) CreateLookupTable3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, out ID2D1ImageSource* imageSource) CreateImageSourceFromDxgi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, ref ID2D1GradientMesh gradientMesh, out D2D_RECT_F pBounds) GetGradientMeshWorldBounds;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext2 self, ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) DrawInk;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext2 self, ref ID2D1GradientMesh gradientMesh) DrawGradientMesh;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext2 self, ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext2 self, ref ID2D1ImageSource imageSource, in D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES properties, out ID2D1TransformedImageSource* transformedImageSource) CreateTransformedImageSource;
 			}
 		}
 		[CRepr]
@@ -3914,9 +3914,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device1.VTable
 			{
-				public new function HRESULT(ref ID2D1Device2 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext2* deviceContext2) CreateDeviceContext;
-				public new function void(ref ID2D1Device2 self, ref ID2D1Bitmap bitmap) FlushDeviceContexts;
-				public new function HRESULT(ref ID2D1Device2 self, out IDXGIDevice* dxgiDevice) GetDxgiDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device2 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext2* deviceContext2) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Device2 self, ref ID2D1Bitmap bitmap) FlushDeviceContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device2 self, out IDXGIDevice* dxgiDevice) GetDxgiDevice;
 			}
 		}
 		[CRepr]
@@ -3931,7 +3931,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory2.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory3 self, ref IDXGIDevice dxgiDevice, out ID2D1Device2* d2dDevice2) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory3 self, ref IDXGIDevice dxgiDevice, out ID2D1Device2* d2dDevice2) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -3948,9 +3948,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1CommandSink1.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink2 self, ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) DrawInk;
-				public new function HRESULT(ref ID2D1CommandSink2 self, ref ID2D1GradientMesh gradientMesh) DrawGradientMesh;
-				public new function HRESULT(ref ID2D1CommandSink2 self, ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink2 self, ref ID2D1Ink ink, ref ID2D1Brush brush, ID2D1InkStyle* inkStyle) DrawInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink2 self, ref ID2D1GradientMesh gradientMesh) DrawGradientMesh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink2 self, ref ID2D1GdiMetafile gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
 			}
 		}
 		[CRepr]
@@ -3966,8 +3966,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1GdiMetafile.VTable
 			{
-				public new function HRESULT(ref ID2D1GdiMetafile1 self, out float dpiX, out float dpiY) GetDpi;
-				public new function HRESULT(ref ID2D1GdiMetafile1 self, out D2D_RECT_F bounds) GetSourceBounds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafile1 self, out float dpiX, out float dpiY) GetDpi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafile1 self, out D2D_RECT_F bounds) GetSourceBounds;
 			}
 		}
 		[CRepr]
@@ -3982,7 +3982,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1GdiMetafileSink.VTable
 			{
-				public new function HRESULT(ref ID2D1GdiMetafileSink1 self, uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) ProcessRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1GdiMetafileSink1 self, uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) ProcessRecord;
 			}
 		}
 		[CRepr]
@@ -4001,11 +4001,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1SpriteBatch self, uint32 spriteCount, in D2D_RECT_F destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) AddSprites;
-				public new function HRESULT(ref ID2D1SpriteBatch self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) SetSprites;
-				public new function HRESULT(ref ID2D1SpriteBatch self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) GetSprites;
-				public new function uint32(ref ID2D1SpriteBatch self) GetSpriteCount;
-				public new function void(ref ID2D1SpriteBatch self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SpriteBatch self, uint32 spriteCount, in D2D_RECT_F destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) AddSprites;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SpriteBatch self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) SetSprites;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SpriteBatch self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) GetSprites;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SpriteBatch self) GetSpriteCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SpriteBatch self) Clear;
 			}
 		}
 		[CRepr]
@@ -4021,8 +4021,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext2.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext3 self, out ID2D1SpriteBatch* spriteBatch) CreateSpriteBatch;
-				public new function void(ref ID2D1DeviceContext3 self, ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext3 self, out ID2D1SpriteBatch* spriteBatch) CreateSpriteBatch;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext3 self, ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
 			}
 		}
 		[CRepr]
@@ -4037,7 +4037,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device2.VTable
 			{
-				public new function HRESULT(ref ID2D1Device3 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext3* deviceContext3) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device3 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext3* deviceContext3) CreateDeviceContext;
 			}
 		}
 		[CRepr]
@@ -4052,7 +4052,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory3.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory4 self, ref IDXGIDevice dxgiDevice, out ID2D1Device3* d2dDevice3) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory4 self, ref IDXGIDevice dxgiDevice, out ID2D1Device3* d2dDevice3) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -4067,7 +4067,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1CommandSink2.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink3 self, ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink3 self, ref ID2D1SpriteBatch spriteBatch, uint32 startIndex, uint32 spriteCount, ref ID2D1Bitmap bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
 			}
 		}
 		[CRepr]
@@ -4086,11 +4086,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Resource.VTable
 			{
-				public new function HRESULT(ref ID2D1SvgGlyphStyle self, ID2D1Brush* brush) SetFill;
-				public new function void(ref ID2D1SvgGlyphStyle self, ID2D1Brush** brush) GetFill;
-				public new function HRESULT(ref ID2D1SvgGlyphStyle self, ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) SetStroke;
-				public new function uint32(ref ID2D1SvgGlyphStyle self) GetStrokeDashesCount;
-				public new function void(ref ID2D1SvgGlyphStyle self, ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) GetStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgGlyphStyle self, ID2D1Brush* brush) SetFill;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgGlyphStyle self, ID2D1Brush** brush) GetFill;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SvgGlyphStyle self, ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) SetStroke;
+				public new function [CallingConvention(.Stdcall)] uint32(ref ID2D1SvgGlyphStyle self) GetStrokeDashesCount;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1SvgGlyphStyle self, ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) GetStroke;
 			}
 		}
 		[CRepr]
@@ -4111,13 +4111,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext3.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext4 self, out ID2D1SvgGlyphStyle* svgGlyphStyle) CreateSvgGlyphStyle;
-				public new function void(ref ID2D1DeviceContext4 self, char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
-				public new function void(ref ID2D1DeviceContext4 self, D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
-				public new function void(ref ID2D1DeviceContext4 self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) DrawColorBitmapGlyphRun;
-				public new function void(ref ID2D1DeviceContext4 self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) DrawSvgGlyphRun;
-				public new function HRESULT(ref ID2D1DeviceContext4 self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1Image* glyphImage) GetColorBitmapGlyphImage;
-				public new function HRESULT(ref ID2D1DeviceContext4 self, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1CommandList* glyphImage) GetSvgGlyphImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext4 self, out ID2D1SvgGlyphStyle* svgGlyphStyle) CreateSvgGlyphStyle;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext4 self, char16* string, uint32 stringLength, ref IDWriteTextFormat textFormat, in D2D_RECT_F layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext4 self, D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext4 self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) DrawColorBitmapGlyphRun;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext4 self, D2D_POINT_2F baselineOrigin, in DWRITE_GLYPH_RUN glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) DrawSvgGlyphRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext4 self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1Image* glyphImage) GetColorBitmapGlyphImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext4 self, D2D_POINT_2F glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, out D2D_MATRIX_3X2_F glyphTransform, out ID2D1CommandList* glyphImage) GetSvgGlyphImage;
 			}
 		}
 		[CRepr]
@@ -4134,9 +4134,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device3.VTable
 			{
-				public new function HRESULT(ref ID2D1Device4 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext4* deviceContext4) CreateDeviceContext;
-				public new function void(ref ID2D1Device4 self, uint64 maximumInBytes) SetMaximumColorGlyphCacheMemory;
-				public new function uint64(ref ID2D1Device4 self) GetMaximumColorGlyphCacheMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device4 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext4* deviceContext4) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1Device4 self, uint64 maximumInBytes) SetMaximumColorGlyphCacheMemory;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ID2D1Device4 self) GetMaximumColorGlyphCacheMemory;
 			}
 		}
 		[CRepr]
@@ -4151,7 +4151,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory4.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory5 self, ref IDXGIDevice dxgiDevice, out ID2D1Device4* d2dDevice4) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory5 self, ref IDXGIDevice dxgiDevice, out ID2D1Device4* d2dDevice4) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -4166,7 +4166,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1CommandSink3.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink4 self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink4 self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend2;
 			}
 		}
 		[CRepr]
@@ -4183,9 +4183,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1ColorContext.VTable
 			{
-				public new function D2D1_COLOR_CONTEXT_TYPE(ref ID2D1ColorContext1 self) GetColorContextType;
-				public new function DXGI_COLOR_SPACE_TYPE(ref ID2D1ColorContext1 self) GetDXGIColorSpace;
-				public new function HRESULT(ref ID2D1ColorContext1 self, out D2D1_SIMPLE_COLOR_PROFILE simpleProfile) GetSimpleColorProfile;
+				public new function [CallingConvention(.Stdcall)] D2D1_COLOR_CONTEXT_TYPE(ref ID2D1ColorContext1 self) GetColorContextType;
+				public new function [CallingConvention(.Stdcall)] DXGI_COLOR_SPACE_TYPE(ref ID2D1ColorContext1 self) GetDXGIColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1ColorContext1 self, out D2D1_SIMPLE_COLOR_PROFILE simpleProfile) GetSimpleColorProfile;
 			}
 		}
 		[CRepr]
@@ -4203,10 +4203,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext4.VTable
 			{
-				public new function HRESULT(ref ID2D1DeviceContext5 self, IStream* inputXmlStream, D2D_SIZE_F viewportSize, out ID2D1SvgDocument* svgDocument) CreateSvgDocument;
-				public new function void(ref ID2D1DeviceContext5 self, ref ID2D1SvgDocument svgDocument) DrawSvgDocument;
-				public new function HRESULT(ref ID2D1DeviceContext5 self, DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) CreateColorContextFromDxgiColorSpace;
-				public new function HRESULT(ref ID2D1DeviceContext5 self, in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) CreateColorContextFromSimpleColorProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext5 self, IStream* inputXmlStream, D2D_SIZE_F viewportSize, out ID2D1SvgDocument* svgDocument) CreateSvgDocument;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext5 self, ref ID2D1SvgDocument svgDocument) DrawSvgDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext5 self, DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) CreateColorContextFromDxgiColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1DeviceContext5 self, in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) CreateColorContextFromSimpleColorProfile;
 			}
 		}
 		[CRepr]
@@ -4221,7 +4221,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device4.VTable
 			{
-				public new function HRESULT(ref ID2D1Device5 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext5* deviceContext5) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device5 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext5* deviceContext5) CreateDeviceContext;
 			}
 		}
 		[CRepr]
@@ -4236,7 +4236,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory5.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory6 self, ref IDXGIDevice dxgiDevice, out ID2D1Device5* d2dDevice5) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory6 self, ref IDXGIDevice dxgiDevice, out ID2D1Device5* d2dDevice5) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -4251,7 +4251,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1CommandSink4.VTable
 			{
-				public new function HRESULT(ref ID2D1CommandSink5 self, ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1CommandSink5 self, ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
 			}
 		}
 		[CRepr]
@@ -4266,7 +4266,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1DeviceContext5.VTable
 			{
-				public new function void(ref ID2D1DeviceContext6 self, ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+				public new function [CallingConvention(.Stdcall)] void(ref ID2D1DeviceContext6 self, ref ID2D1Image image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
 			}
 		}
 		[CRepr]
@@ -4281,7 +4281,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Device5.VTable
 			{
-				public new function HRESULT(ref ID2D1Device6 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext6* deviceContext6) CreateDeviceContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Device6 self, D2D1_DEVICE_CONTEXT_OPTIONS options, out ID2D1DeviceContext6* deviceContext6) CreateDeviceContext;
 			}
 		}
 		[CRepr]
@@ -4296,7 +4296,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1Factory6.VTable
 			{
-				public new function HRESULT(ref ID2D1Factory7 self, ref IDXGIDevice dxgiDevice, out ID2D1Device6* d2dDevice6) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1Factory7 self, ref IDXGIDevice dxgiDevice, out ID2D1Device6* d2dDevice6) CreateDevice;
 			}
 		}
 		[CRepr]
@@ -4311,7 +4311,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1EffectContext.VTable
 			{
-				public new function HRESULT(ref ID2D1EffectContext1 self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) CreateLookupTable3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext1 self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, out ID2D1LookupTable3D* lookupTable) CreateLookupTable3D;
 			}
 		}
 		[CRepr]
@@ -4327,8 +4327,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID2D1EffectContext1.VTable
 			{
-				public new function HRESULT(ref ID2D1EffectContext2 self, DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) CreateColorContextFromDxgiColorSpace;
-				public new function HRESULT(ref ID2D1EffectContext2 self, in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) CreateColorContextFromSimpleColorProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext2 self, DXGI_COLOR_SPACE_TYPE colorSpace, out ID2D1ColorContext1* colorContext) CreateColorContextFromDxgiColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext2 self, in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) CreateColorContextFromSimpleColorProfile;
 			}
 		}
 		

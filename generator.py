@@ -578,9 +578,9 @@ for filename in filenames:
                         return_type = get_type_name(method['ReturnType'])
                         parameters = method['Params']
                         if ENHANCED_POINTERS:
-                            output.write(f'{indent}public new function {return_type}(ref {name} self')
+                            output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
                         else:
-                            output.write(f'{indent}public new function {return_type}({name}* self')
+                            output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}({name}* self')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             param_type = get_param_type(param)

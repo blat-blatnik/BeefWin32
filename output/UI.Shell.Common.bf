@@ -143,8 +143,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IObjectArray self, out uint32 pcObjects) GetCount;
-				public new function HRESULT(ref IObjectArray self, uint32 uiIndex, in Guid riid, void** ppv) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectArray self, out uint32 pcObjects) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectArray self, uint32 uiIndex, in Guid riid, void** ppv) GetAt;
 			}
 		}
 		[CRepr]
@@ -162,10 +162,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IObjectArray.VTable
 			{
-				public new function HRESULT(ref IObjectCollection self, ref IUnknown punk) AddObject;
-				public new function HRESULT(ref IObjectCollection self, ref IObjectArray poaSource) AddFromArray;
-				public new function HRESULT(ref IObjectCollection self, uint32 uiIndex) RemoveObjectAt;
-				public new function HRESULT(ref IObjectCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectCollection self, ref IUnknown punk) AddObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectCollection self, ref IObjectArray poaSource) AddFromArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectCollection self, uint32 uiIndex) RemoveObjectAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectCollection self) Clear;
 			}
 		}
 		

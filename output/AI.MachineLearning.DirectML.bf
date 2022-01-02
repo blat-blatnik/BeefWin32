@@ -1790,10 +1790,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDMLObject self, in Guid guid, out uint32 dataSize, void* data) GetPrivateData;
-				public new function HRESULT(ref IDMLObject self, in Guid guid, uint32 dataSize, void* data) SetPrivateData;
-				public new function HRESULT(ref IDMLObject self, in Guid guid, IUnknown* data) SetPrivateDataInterface;
-				public new function HRESULT(ref IDMLObject self, PWSTR name) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLObject self, in Guid guid, out uint32 dataSize, void* data) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLObject self, in Guid guid, uint32 dataSize, void* data) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLObject self, in Guid guid, IUnknown* data) SetPrivateDataInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLObject self, PWSTR name) SetName;
 			}
 		}
 		[CRepr]
@@ -1817,16 +1817,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public new function HRESULT(ref IDMLDevice self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
-				public new function HRESULT(ref IDMLDevice self, in DML_OPERATOR_DESC desc, in Guid riid, void** ppv) CreateOperator;
-				public new function HRESULT(ref IDMLDevice self, ref IDMLOperator op, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileOperator;
-				public new function HRESULT(ref IDMLDevice self, uint32 operatorCount, IDMLCompiledOperator** operators, in Guid riid, void** ppv) CreateOperatorInitializer;
-				public new function HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) CreateCommandRecorder;
-				public new function HRESULT(ref IDMLDevice self, DML_BINDING_TABLE_DESC* desc, in Guid riid, void** ppv) CreateBindingTable;
-				public new function HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) Evict;
-				public new function HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) MakeResident;
-				public new function HRESULT(ref IDMLDevice self) GetDeviceRemovedReason;
-				public new function HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) GetParentDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, in DML_OPERATOR_DESC desc, in Guid riid, void** ppv) CreateOperator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, ref IDMLOperator op, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileOperator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, uint32 operatorCount, IDMLCompiledOperator** operators, in Guid riid, void** ppv) CreateOperatorInitializer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) CreateCommandRecorder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, DML_BINDING_TABLE_DESC* desc, in Guid riid, void** ppv) CreateBindingTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) Evict;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) MakeResident;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self) GetDeviceRemovedReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) GetParentDevice;
 			}
 		}
 		[CRepr]
@@ -1841,7 +1841,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public new function HRESULT(ref IDMLDeviceChild self, in Guid riid, void** ppv) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDeviceChild self, in Guid riid, void** ppv) GetDevice;
 			}
 		}
 		[CRepr]
@@ -1882,7 +1882,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLPageable.VTable
 			{
-				public new function DML_BINDING_PROPERTIES(ref IDMLDispatchable self) GetBindingProperties;
+				public new function [CallingConvention(.Stdcall)] DML_BINDING_PROPERTIES(ref IDMLDispatchable self) GetBindingProperties;
 			}
 		}
 		[CRepr]
@@ -1910,7 +1910,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLDispatchable.VTable
 			{
-				public new function HRESULT(ref IDMLOperatorInitializer self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLOperatorInitializer self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
 			}
 		}
 		[CRepr]
@@ -1929,11 +1929,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public new function void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
-				public new function void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
-				public new function void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindTemporaryResource;
-				public new function void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindPersistentResource;
-				public new function HRESULT(ref IDMLBindingTable self, DML_BINDING_TABLE_DESC* desc) Reset;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindTemporaryResource;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindPersistentResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLBindingTable self, DML_BINDING_TABLE_DESC* desc) Reset;
 			}
 		}
 		[CRepr]
@@ -1948,7 +1948,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public new function void(ref IDMLCommandRecorder self, ref ID3D12CommandList commandList, ref IDMLDispatchable dispatchable, ref IDMLBindingTable bindings) RecordDispatch;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLCommandRecorder self, ref ID3D12CommandList commandList, ref IDMLDispatchable dispatchable, ref IDMLBindingTable bindings) RecordDispatch;
 			}
 		}
 		[CRepr]
@@ -1963,7 +1963,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IDMLDebugDevice self, BOOL mute) SetMuteDebugOutput;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLDebugDevice self, BOOL mute) SetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -1978,7 +1978,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLDevice.VTable
 			{
-				public new function HRESULT(ref IDMLDevice1 self, in DML_GRAPH_DESC desc, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice1 self, in DML_GRAPH_DESC desc, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileGraph;
 			}
 		}
 		

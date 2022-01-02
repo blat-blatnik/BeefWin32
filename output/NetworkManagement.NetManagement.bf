@@ -4612,10 +4612,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetCfgBindingInterface self, uint32 celt, INetCfgBindingInterface** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetCfgBindingInterface self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetCfgBindingInterface self) Reset;
-				public new function HRESULT(ref IEnumNetCfgBindingInterface self, out IEnumNetCfgBindingInterface* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingInterface self, uint32 celt, INetCfgBindingInterface** rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingInterface self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingInterface self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingInterface self, out IEnumNetCfgBindingInterface* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -4633,10 +4633,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetCfgBindingPath self, uint32 celt, INetCfgBindingPath** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetCfgBindingPath self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetCfgBindingPath self) Reset;
-				public new function HRESULT(ref IEnumNetCfgBindingPath self, out IEnumNetCfgBindingPath* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingPath self, uint32 celt, INetCfgBindingPath** rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingPath self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingPath self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgBindingPath self, out IEnumNetCfgBindingPath* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -4654,10 +4654,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumNetCfgComponent self, uint32 celt, INetCfgComponent** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetCfgComponent self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetCfgComponent self) Reset;
-				public new function HRESULT(ref IEnumNetCfgComponent self, out IEnumNetCfgComponent* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgComponent self, uint32 celt, INetCfgComponent** rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgComponent self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgComponent self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetCfgComponent self, out IEnumNetCfgComponent* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -4678,13 +4678,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfg self, void* pvReserved) Initialize;
-				public new function HRESULT(ref INetCfg self) Uninitialize;
-				public new function HRESULT(ref INetCfg self) Apply;
-				public new function HRESULT(ref INetCfg self) Cancel;
-				public new function HRESULT(ref INetCfg self, in Guid pguidClass, IEnumNetCfgComponent** ppenumComponent) EnumComponents;
-				public new function HRESULT(ref INetCfg self, PWSTR pszwInfId, INetCfgComponent** pComponent) FindComponent;
-				public new function HRESULT(ref INetCfg self, in Guid pguidClass, in Guid riid, void** ppvObject) QueryNetCfgClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self, void* pvReserved) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self) Apply;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self, in Guid pguidClass, IEnumNetCfgComponent** ppenumComponent) EnumComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self, PWSTR pszwInfId, INetCfgComponent** pComponent) FindComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfg self, in Guid pguidClass, in Guid riid, void** ppvObject) QueryNetCfgClass;
 			}
 		}
 		[CRepr]
@@ -4701,9 +4701,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgLock self, uint32 cmsTimeout, PWSTR pszwClientDescription, PWSTR* ppszwClientDescription) AcquireWriteLock;
-				public new function HRESULT(ref INetCfgLock self) ReleaseWriteLock;
-				public new function HRESULT(ref INetCfgLock self, PWSTR* ppszwClientDescription) IsWriteLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgLock self, uint32 cmsTimeout, PWSTR pszwClientDescription, PWSTR* ppszwClientDescription) AcquireWriteLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgLock self) ReleaseWriteLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgLock self, PWSTR* ppszwClientDescription) IsWriteLocked;
 			}
 		}
 		[CRepr]
@@ -4720,9 +4720,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgBindingInterface self, PWSTR* ppszwInterfaceName) GetName;
-				public new function HRESULT(ref INetCfgBindingInterface self, INetCfgComponent** ppnccItem) GetUpperComponent;
-				public new function HRESULT(ref INetCfgBindingInterface self, INetCfgComponent** ppnccItem) GetLowerComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingInterface self, PWSTR* ppszwInterfaceName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingInterface self, INetCfgComponent** ppnccItem) GetUpperComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingInterface self, INetCfgComponent** ppnccItem) GetLowerComponent;
 			}
 		}
 		[CRepr]
@@ -4744,14 +4744,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgBindingPath self, ref INetCfgBindingPath pPath) IsSamePathAs;
-				public new function HRESULT(ref INetCfgBindingPath self, ref INetCfgBindingPath pPath) IsSubPathOf;
-				public new function HRESULT(ref INetCfgBindingPath self) IsEnabled;
-				public new function HRESULT(ref INetCfgBindingPath self, BOOL fEnable) Enable;
-				public new function HRESULT(ref INetCfgBindingPath self, PWSTR* ppszwPathToken) GetPathToken;
-				public new function HRESULT(ref INetCfgBindingPath self, INetCfgComponent** ppComponent) GetOwner;
-				public new function HRESULT(ref INetCfgBindingPath self, out uint32 pcInterfaces) GetDepth;
-				public new function HRESULT(ref INetCfgBindingPath self, IEnumNetCfgBindingInterface** ppenumInterface) EnumBindingInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, ref INetCfgBindingPath pPath) IsSamePathAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, ref INetCfgBindingPath pPath) IsSubPathOf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self) IsEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, BOOL fEnable) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, PWSTR* ppszwPathToken) GetPathToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, INetCfgComponent** ppComponent) GetOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, out uint32 pcInterfaces) GetDepth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgBindingPath self, IEnumNetCfgBindingInterface** ppenumInterface) EnumBindingInterfaces;
 			}
 		}
 		[CRepr]
@@ -4767,8 +4767,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgClass self, PWSTR pszwInfId, INetCfgComponent** ppnccItem) FindComponent;
-				public new function HRESULT(ref INetCfgClass self, IEnumNetCfgComponent** ppenumComponent) EnumComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClass self, PWSTR pszwInfId, INetCfgComponent** ppnccItem) FindComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClass self, IEnumNetCfgComponent** ppenumComponent) EnumComponents;
 			}
 		}
 		[CRepr]
@@ -4785,9 +4785,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgClassSetup self, HWND hwndParent, OBO_TOKEN* pOboToken, INetCfgComponent** ppnccItem) SelectAndInstall;
-				public new function HRESULT(ref INetCfgClassSetup self, PWSTR pszwInfId, OBO_TOKEN* pOboToken, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections, INetCfgComponent** ppnccItem) Install;
-				public new function HRESULT(ref INetCfgClassSetup self, ref INetCfgComponent pComponent, OBO_TOKEN* pOboToken, PWSTR* pmszwRefs) DeInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClassSetup self, HWND hwndParent, OBO_TOKEN* pOboToken, INetCfgComponent** ppnccItem) SelectAndInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClassSetup self, PWSTR pszwInfId, OBO_TOKEN* pOboToken, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections, INetCfgComponent** ppnccItem) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClassSetup self, ref INetCfgComponent pComponent, OBO_TOKEN* pOboToken, PWSTR* pmszwRefs) DeInstall;
 			}
 		}
 		[CRepr]
@@ -4802,7 +4802,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : INetCfgClassSetup.VTable
 			{
-				public new function HRESULT(ref INetCfgClassSetup2 self, ref INetCfgComponent pIComp, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo) UpdateNonEnumeratedComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgClassSetup2 self, ref INetCfgComponent pIComp, uint32 dwSetupFlags, uint32 dwUpgradeFromBuildNo) UpdateNonEnumeratedComponent;
 			}
 		}
 		[CRepr]
@@ -4828,18 +4828,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponent self, PWSTR* ppszwDisplayName) GetDisplayName;
-				public new function HRESULT(ref INetCfgComponent self, PWSTR pszwDisplayName) SetDisplayName;
-				public new function HRESULT(ref INetCfgComponent self, PWSTR* pszwHelpText) GetHelpText;
-				public new function HRESULT(ref INetCfgComponent self, PWSTR* ppszwId) GetId;
-				public new function HRESULT(ref INetCfgComponent self, out uint32 pdwCharacteristics) GetCharacteristics;
-				public new function HRESULT(ref INetCfgComponent self, Guid* pGuid) GetInstanceGuid;
-				public new function HRESULT(ref INetCfgComponent self, PWSTR* ppszwDevNodeId) GetPnpDevNodeId;
-				public new function HRESULT(ref INetCfgComponent self, Guid* pGuid) GetClassGuid;
-				public new function HRESULT(ref INetCfgComponent self, PWSTR* ppszwBindName) GetBindName;
-				public new function HRESULT(ref INetCfgComponent self, out uint32 pulStatus) GetDeviceStatus;
-				public new function HRESULT(ref INetCfgComponent self, HKEY* phkey) OpenParamKey;
-				public new function HRESULT(ref INetCfgComponent self, HWND hwndParent, uint32 dwFlags, IUnknown* punkContext) RaisePropertyUi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR* ppszwDisplayName) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR pszwDisplayName) SetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR* pszwHelpText) GetHelpText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR* ppszwId) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, out uint32 pdwCharacteristics) GetCharacteristics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, Guid* pGuid) GetInstanceGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR* ppszwDevNodeId) GetPnpDevNodeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, Guid* pGuid) GetClassGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, PWSTR* ppszwBindName) GetBindName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, out uint32 pulStatus) GetDeviceStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, HKEY* phkey) OpenParamKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponent self, HWND hwndParent, uint32 dwFlags, IUnknown* punkContext) RaisePropertyUi;
 			}
 		}
 		[CRepr]
@@ -4861,14 +4861,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) BindTo;
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) UnbindFrom;
-				public new function HRESULT(ref INetCfgComponentBindings self, uint32 dwFlags, PWSTR pszwInterfaceName) SupportsBindingInterface;
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) IsBoundTo;
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) IsBindableTo;
-				public new function HRESULT(ref INetCfgComponentBindings self, uint32 dwFlags, IEnumNetCfgBindingPath** ppIEnum) EnumBindingPaths;
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) MoveBefore;
-				public new function HRESULT(ref INetCfgComponentBindings self, ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) MoveAfter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) BindTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) UnbindFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, uint32 dwFlags, PWSTR pszwInterfaceName) SupportsBindingInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) IsBoundTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgComponent pnccItem) IsBindableTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, uint32 dwFlags, IEnumNetCfgBindingPath** ppIEnum) EnumBindingPaths;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) MoveBefore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentBindings self, ref INetCfgBindingPath pncbItemSrc, INetCfgBindingPath* pncbItemDest) MoveAfter;
 			}
 		}
 		[CRepr]
@@ -4886,10 +4886,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, uint32 dwValue) HrSetupSetFirstDword;
-				public new function HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, PWSTR pwszValue) HrSetupSetFirstString;
-				public new function HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, BOOL fValue) HrSetupSetFirstStringAsBool;
-				public new function HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, PWSTR pmszValue) HrSetupSetFirstMultiSzField;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, uint32 dwValue) HrSetupSetFirstDword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, PWSTR pwszValue) HrSetupSetFirstString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, BOOL fValue) HrSetupSetFirstStringAsBool;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgSysPrep self, PWSTR pwszSection, PWSTR pwszKey, PWSTR pmszValue) HrSetupSetFirstMultiSzField;
 			}
 		}
 		[CRepr]
@@ -4904,7 +4904,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgPnpReconfigCallback self, NCPNP_RECONFIG_LAYER Layer, PWSTR pszwUpper, PWSTR pszwLower, void* pvData, uint32 dwSizeOfData) SendPnpReconfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgPnpReconfigCallback self, NCPNP_RECONFIG_LAYER Layer, PWSTR pszwUpper, PWSTR pszwLower, void* pvData, uint32 dwSizeOfData) SendPnpReconfig;
 			}
 		}
 		[CRepr]
@@ -4922,10 +4922,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentControl self, ref INetCfgComponent pIComp, ref INetCfg pINetCfg, BOOL fInstalling) Initialize;
-				public new function HRESULT(ref INetCfgComponentControl self) ApplyRegistryChanges;
-				public new function HRESULT(ref INetCfgComponentControl self, ref INetCfgPnpReconfigCallback pICallback) ApplyPnpChanges;
-				public new function HRESULT(ref INetCfgComponentControl self) CancelChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentControl self, ref INetCfgComponent pIComp, ref INetCfg pINetCfg, BOOL fInstalling) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentControl self) ApplyRegistryChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentControl self, ref INetCfgPnpReconfigCallback pICallback) ApplyPnpChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentControl self) CancelChanges;
 			}
 		}
 		[CRepr]
@@ -4943,10 +4943,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentSetup self, uint32 dwSetupFlags) Install;
-				public new function HRESULT(ref INetCfgComponentSetup self, uint32 dwSetupFlags, uint32 dwUpgradeFomBuildNo) Upgrade;
-				public new function HRESULT(ref INetCfgComponentSetup self, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections) ReadAnswerFile;
-				public new function HRESULT(ref INetCfgComponentSetup self) Removing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSetup self, uint32 dwSetupFlags) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSetup self, uint32 dwSetupFlags, uint32 dwUpgradeFomBuildNo) Upgrade;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSetup self, PWSTR pszwAnswerFile, PWSTR pszwAnswerSections) ReadAnswerFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSetup self) Removing;
 			}
 		}
 		[CRepr]
@@ -4966,12 +4966,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentPropertyUi self, ref IUnknown pUnkReserved) QueryPropertyUi;
-				public new function HRESULT(ref INetCfgComponentPropertyUi self, ref IUnknown pUnkReserved) SetContext;
-				public new function HRESULT(ref INetCfgComponentPropertyUi self, out uint32 pdwDefPages, out uint8* pahpspPrivate, out uint32 pcPages, HWND hwndParent, PWSTR* pszStartPage) MergePropPages;
-				public new function HRESULT(ref INetCfgComponentPropertyUi self, HWND hwndSheet) ValidateProperties;
-				public new function HRESULT(ref INetCfgComponentPropertyUi self) ApplyProperties;
-				public new function HRESULT(ref INetCfgComponentPropertyUi self) CancelProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self, ref IUnknown pUnkReserved) QueryPropertyUi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self, ref IUnknown pUnkReserved) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self, out uint32 pdwDefPages, out uint8* pahpspPrivate, out uint32 pcPages, HWND hwndParent, PWSTR* pszStartPage) MergePropPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self, HWND hwndSheet) ValidateProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self) ApplyProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentPropertyUi self) CancelProperties;
 			}
 		}
 		[CRepr]
@@ -4987,8 +4987,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentNotifyBinding self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) QueryBindingPath;
-				public new function HRESULT(ref INetCfgComponentNotifyBinding self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) NotifyBindingPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyBinding self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) QueryBindingPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyBinding self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) NotifyBindingPath;
 			}
 		}
 		[CRepr]
@@ -5006,10 +5006,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentNotifyGlobal self, out uint32 dwNotifications) GetSupportedNotifications;
-				public new function HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) SysQueryBindingPath;
-				public new function HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) SysNotifyBindingPath;
-				public new function HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgComponent pIComp) SysNotifyComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyGlobal self, out uint32 dwNotifications) GetSupportedNotifications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) SysQueryBindingPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgBindingPath pIPath) SysNotifyBindingPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentNotifyGlobal self, uint32 dwChangeFlag, ref INetCfgComponent pIComp) SysNotifyComponent;
 			}
 		}
 		[CRepr]
@@ -5026,9 +5026,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) GetInterfaceIdsForAdapter;
-				public new function HRESULT(ref INetCfgComponentUpperEdge self) AddInterfacesToAdapter;
-				public new function HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) RemoveInterfacesFromAdapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, out uint32 pdwNumInterfaces, Guid** ppguidInterfaceIds) GetInterfaceIdsForAdapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self) AddInterfacesToAdapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentUpperEdge self, ref INetCfgComponent pAdapter, uint32 dwNumInterfaces, Guid* pguidInterfaceIds) RemoveInterfacesFromAdapter;
 			}
 		}
 		[CRepr]
@@ -5043,7 +5043,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetLanConnectionUiInfo self, out Guid pguid) GetDeviceGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetLanConnectionUiInfo self, out Guid pguid) GetDeviceGuid;
 			}
 		}
 		[CRepr]
@@ -5058,7 +5058,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetRasConnectionIpUiInfo self, out RASCON_IPUI pInfo) GetUiInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetRasConnectionIpUiInfo self, out RASCON_IPUI pInfo) GetUiInfo;
 			}
 		}
 		[CRepr]
@@ -5074,8 +5074,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetCfgComponentSysPrep self, ref INetCfgSysPrep pncsp, PWSTR pszwAnswerSections, ref Guid pAdapterInstanceGuid) SaveAdapterParameters;
-				public new function HRESULT(ref INetCfgComponentSysPrep self, PWSTR pszwAnswerFile, PWSTR pszwAnswerSection, ref Guid pAdapterInstanceGuid) RestoreAdapterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSysPrep self, ref INetCfgSysPrep pncsp, PWSTR pszwAnswerSections, ref Guid pAdapterInstanceGuid) SaveAdapterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetCfgComponentSysPrep self, PWSTR pszwAnswerFile, PWSTR pszwAnswerSection, ref Guid pAdapterInstanceGuid) RestoreAdapterParameters;
 			}
 		}
 		[CRepr]
@@ -5091,8 +5091,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProvisioningDomain self, PWSTR pszwPathToFolder) Add;
-				public new function HRESULT(ref IProvisioningDomain self, PWSTR pszwDomain, PWSTR pszwLanguage, PWSTR pszwXPathQuery, out IXMLDOMNodeList* Nodes) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvisioningDomain self, PWSTR pszwPathToFolder) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvisioningDomain self, PWSTR pszwDomain, PWSTR pszwLanguage, PWSTR pszwXPathQuery, out IXMLDOMNodeList* Nodes) Query;
 			}
 		}
 		[CRepr]
@@ -5107,7 +5107,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProvisioningProfileWireless self, BSTR bstrXMLWirelessConfigProfile, BSTR bstrXMLConnectionConfigProfile, ref Guid pAdapterInstanceGuid, out uint32 pulStatus) CreateProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvisioningProfileWireless self, BSTR bstrXMLWirelessConfigProfile, BSTR bstrXMLConnectionConfigProfile, ref Guid pAdapterInstanceGuid, out uint32 pulStatus) CreateProfile;
 			}
 		}
 		

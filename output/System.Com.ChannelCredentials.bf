@@ -28,16 +28,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IChannelCredentials self, BSTR domain, BSTR username, BSTR password, int32 impersonationLevel, BOOL allowNtlm) SetWindowsCredential;
-				public new function HRESULT(ref IChannelCredentials self, BSTR username, BSTR password) SetUserNameCredential;
-				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findYype, VARIANT findValue) SetClientCertificateFromStore;
-				public new function HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetClientCertificateFromStoreByName;
-				public new function HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetClientCertificateFromFile;
-				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findType, VARIANT findValue) SetDefaultServiceCertificateFromStore;
-				public new function HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetDefaultServiceCertificateFromStoreByName;
-				public new function HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetDefaultServiceCertificateFromFile;
-				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR revocationMode, BSTR certificateValidationMode) SetServiceCertificateAuthentication;
-				public new function HRESULT(ref IChannelCredentials self, BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) SetIssuedToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR domain, BSTR username, BSTR password, int32 impersonationLevel, BOOL allowNtlm) SetWindowsCredential;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR username, BSTR password) SetUserNameCredential;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findYype, VARIANT findValue) SetClientCertificateFromStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetClientCertificateFromStoreByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetClientCertificateFromFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findType, VARIANT findValue) SetDefaultServiceCertificateFromStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetDefaultServiceCertificateFromStoreByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetDefaultServiceCertificateFromFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR revocationMode, BSTR certificateValidationMode) SetServiceCertificateAuthentication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) SetIssuedToken;
 			}
 		}
 		

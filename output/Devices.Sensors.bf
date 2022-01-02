@@ -367,11 +367,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensorManager self, ref Guid sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
-				public new function HRESULT(ref ISensorManager self, ref Guid sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
-				public new function HRESULT(ref ISensorManager self, ref Guid sensorID, ISensor** ppSensor) GetSensorByID;
-				public new function HRESULT(ref ISensorManager self, ISensorManagerEvents* pEvents) SetEventSink;
-				public new function HRESULT(ref ISensorManager self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ref Guid sensorID, ISensor** ppSensor) GetSensorByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, ISensorManagerEvents* pEvents) SetEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManager self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
 			}
 		}
 		[CRepr]
@@ -387,8 +387,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILocationPermissions self, out BOOL pfEnabled) GetGlobalLocationPermission;
-				public new function HRESULT(ref ILocationPermissions self, uint32 dwClientThreadId) CheckLocationCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocationPermissions self, out BOOL pfEnabled) GetGlobalLocationPermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocationPermissions self, uint32 dwClientThreadId) CheckLocationCapability;
 			}
 		}
 		[CRepr]
@@ -408,12 +408,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensorCollection self, uint32 ulIndex, ISensor** ppSensor) GetAt;
-				public new function HRESULT(ref ISensorCollection self, out uint32 pCount) GetCount;
-				public new function HRESULT(ref ISensorCollection self, ISensor* pSensor) Add;
-				public new function HRESULT(ref ISensorCollection self, ISensor* pSensor) Remove;
-				public new function HRESULT(ref ISensorCollection self, ref Guid sensorID) RemoveByID;
-				public new function HRESULT(ref ISensorCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, uint32 ulIndex, ISensor** ppSensor) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, out uint32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, ISensor* pSensor) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, ISensor* pSensor) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self, ref Guid sensorID) RemoveByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -442,21 +442,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensor self, out Guid pID) GetID;
-				public new function HRESULT(ref ISensor self, out Guid pSensorCategory) GetCategory;
-				public new function HRESULT(ref ISensor self, out Guid pSensorType) ComGetType;
-				public new function HRESULT(ref ISensor self, BSTR* pFriendlyName) GetFriendlyName;
-				public new function HRESULT(ref ISensor self, in PROPERTYKEY key, out PROPVARIANT pProperty) GetProperty;
-				public new function HRESULT(ref ISensor self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
-				public new function HRESULT(ref ISensor self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
-				public new function HRESULT(ref ISensor self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
-				public new function HRESULT(ref ISensor self, in PROPERTYKEY key, out int16 pIsSupported) SupportsDataField;
-				public new function HRESULT(ref ISensor self, out SensorState pState) GetState;
-				public new function HRESULT(ref ISensor self, ISensorDataReport** ppDataReport) GetData;
-				public new function HRESULT(ref ISensor self, in Guid eventGuid, out int16 pIsSupported) SupportsEvent;
-				public new function HRESULT(ref ISensor self, Guid** ppValues, out uint32 pCount) GetEventInterest;
-				public new function HRESULT(ref ISensor self, Guid* pValues, uint32 count) SetEventInterest;
-				public new function HRESULT(ref ISensor self, ISensorEvents* pEvents) SetEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pID) GetID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pSensorCategory) GetCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out Guid pSensorType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, BSTR* pFriendlyName) GetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in PROPERTYKEY key, out PROPVARIANT pProperty) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in PROPERTYKEY key, out int16 pIsSupported) SupportsDataField;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, out SensorState pState) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, ISensorDataReport** ppDataReport) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, in Guid eventGuid, out int16 pIsSupported) SupportsEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, Guid** ppValues, out uint32 pCount) GetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, Guid* pValues, uint32 count) SetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensor self, ISensorEvents* pEvents) SetEventSink;
 			}
 		}
 		[CRepr]
@@ -473,9 +473,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensorDataReport self, out SYSTEMTIME pTimeStamp) GetTimestamp;
-				public new function HRESULT(ref ISensorDataReport self, in PROPERTYKEY pKey, out PROPVARIANT pValue) GetSensorValue;
-				public new function HRESULT(ref ISensorDataReport self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, out SYSTEMTIME pTimeStamp) GetTimestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, in PROPERTYKEY pKey, out PROPVARIANT pValue) GetSensorValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorDataReport self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
 			}
 		}
 		[CRepr]
@@ -490,7 +490,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensorManagerEvents self, ISensor* pSensor, SensorState state) OnSensorEnter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorManagerEvents self, ISensor* pSensor, SensorState state) OnSensorEnter;
 			}
 		}
 		[CRepr]
@@ -508,10 +508,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, SensorState state) OnStateChanged;
-				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
-				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) OnEvent;
-				public new function HRESULT(ref ISensorEvents self, ref Guid ID) OnLeave;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorEvents self, ISensor* pSensor, SensorState state) OnStateChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorEvents self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorEvents self, ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorEvents self, ref Guid ID) OnLeave;
 			}
 		}
 		

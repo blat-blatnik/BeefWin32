@@ -20,8 +20,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGraphicsCaptureItemInterop self, HWND window, in Guid riid, void** result) CreateForWindow;
-				public new function HRESULT(ref IGraphicsCaptureItemInterop self, HMONITOR monitor, in Guid riid, void** result) CreateForMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsCaptureItemInterop self, HWND window, in Guid riid, void** result) CreateForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsCaptureItemInterop self, HMONITOR monitor, in Guid riid, void** result) CreateForMonitor;
 			}
 		}
 		

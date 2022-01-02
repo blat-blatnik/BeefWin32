@@ -64,9 +64,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, out float score) get_Score;
-				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* title) get_Title;
-				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* description) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, out float score) get_Score;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* title) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* description) get_Description;
 			}
 		}
 		[CRepr]
@@ -85,11 +85,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IProvideWinSATResultsInfo self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
-				public new function HRESULT(ref IProvideWinSATResultsInfo self, out WINSAT_ASSESSMENT_STATE state) get_AssessmentState;
-				public new function HRESULT(ref IProvideWinSATResultsInfo self, out VARIANT fileTime) get_AssessmentDateTime;
-				public new function HRESULT(ref IProvideWinSATResultsInfo self, out float level) get_SystemRating;
-				public new function HRESULT(ref IProvideWinSATResultsInfo self, BSTR* description) get_RatingStateDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out WINSAT_ASSESSMENT_STATE state) get_AssessmentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out VARIANT fileTime) get_AssessmentDateTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, out float level) get_SystemRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATResultsInfo self, BSTR* description) get_RatingStateDesc;
 			}
 		}
 		[CRepr]
@@ -105,8 +105,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IQueryRecentWinSATAssessment self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
-				public new function HRESULT(ref IQueryRecentWinSATAssessment self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryRecentWinSATAssessment self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
 			}
 		}
 		[CRepr]
@@ -121,7 +121,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProvideWinSATVisuals self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideWinSATVisuals self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
 			}
 		}
 		[CRepr]
@@ -136,7 +136,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IQueryAllWinSATAssessments self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryAllWinSATAssessments self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
 			}
 		}
 		[CRepr]
@@ -152,8 +152,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWinSATInitiateEvents self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
-				public new function HRESULT(ref IWinSATInitiateEvents self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinSATInitiateEvents self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinSATInitiateEvents self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
 			}
 		}
 		[CRepr]
@@ -170,9 +170,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInitiateWinSATAssessment self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
-				public new function HRESULT(ref IInitiateWinSATAssessment self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
-				public new function HRESULT(ref IInitiateWinSATAssessment self) CancelAssessment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInitiateWinSATAssessment self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInitiateWinSATAssessment self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInitiateWinSATAssessment self) CancelAssessment;
 			}
 		}
 		[CRepr]
@@ -187,7 +187,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAccessible.VTable
 			{
-				public new function HRESULT(ref IAccessibleWinSAT self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccessibleWinSAT self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
 			}
 		}
 		[CRepr]
@@ -202,7 +202,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IQueryOEMWinSATCustomization self, out WINSAT_OEM_DATA_TYPE state) GetOEMPrePopulationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueryOEMWinSATCustomization self, out WINSAT_OEM_DATA_TYPE state) GetOEMPrePopulationInfo;
 			}
 		}
 		

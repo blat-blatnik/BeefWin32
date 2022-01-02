@@ -117,16 +117,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function Boolean(ref IDXCoreAdapter self) IsValid;
-				public new function Boolean(ref IDXCoreAdapter self, in Guid attributeGUID) IsAttributeSupported;
-				public new function Boolean(ref IDXCoreAdapter self, DXCoreAdapterProperty property) IsPropertySupported;
-				public new function HRESULT(ref IDXCoreAdapter self, DXCoreAdapterProperty property, uint bufferSize, void* propertyData) GetProperty;
-				public new function HRESULT(ref IDXCoreAdapter self, DXCoreAdapterProperty property, out uint bufferSize) GetPropertySize;
-				public new function Boolean(ref IDXCoreAdapter self, DXCoreAdapterState property) IsQueryStateSupported;
-				public new function HRESULT(ref IDXCoreAdapter self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint outputBufferSize, void* outputBuffer) QueryState;
-				public new function Boolean(ref IDXCoreAdapter self, DXCoreAdapterState property) IsSetStateSupported;
-				public new function HRESULT(ref IDXCoreAdapter self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint inputDataSize, void* inputData) SetState;
-				public new function HRESULT(ref IDXCoreAdapter self, in Guid riid, void** ppvFactory) GetFactory;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapter self) IsValid;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapter self, in Guid attributeGUID) IsAttributeSupported;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapter self, DXCoreAdapterProperty property) IsPropertySupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapter self, DXCoreAdapterProperty property, uint bufferSize, void* propertyData) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapter self, DXCoreAdapterProperty property, out uint bufferSize) GetPropertySize;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapter self, DXCoreAdapterState property) IsQueryStateSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapter self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint outputBufferSize, void* outputBuffer) QueryState;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapter self, DXCoreAdapterState property) IsSetStateSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapter self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint inputDataSize, void* inputData) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapter self, in Guid riid, void** ppvFactory) GetFactory;
 			}
 		}
 		[CRepr]
@@ -146,12 +146,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDXCoreAdapterList self, uint32 index, in Guid riid, void** ppvAdapter) GetAdapter;
-				public new function uint32(ref IDXCoreAdapterList self) GetAdapterCount;
-				public new function Boolean(ref IDXCoreAdapterList self) IsStale;
-				public new function HRESULT(ref IDXCoreAdapterList self, in Guid riid, void** ppvFactory) GetFactory;
-				public new function HRESULT(ref IDXCoreAdapterList self, uint32 numPreferences, DXCoreAdapterPreference* preferences) Sort;
-				public new function Boolean(ref IDXCoreAdapterList self, DXCoreAdapterPreference preference) IsAdapterPreferenceSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterList self, uint32 index, in Guid riid, void** ppvAdapter) GetAdapter;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IDXCoreAdapterList self) GetAdapterCount;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapterList self) IsStale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterList self, in Guid riid, void** ppvFactory) GetFactory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterList self, uint32 numPreferences, DXCoreAdapterPreference* preferences) Sort;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapterList self, DXCoreAdapterPreference preference) IsAdapterPreferenceSupported;
 			}
 		}
 		[CRepr]
@@ -170,11 +170,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDXCoreAdapterFactory self, uint32 numAttributes, Guid* filterAttributes, in Guid riid, void** ppvAdapterList) CreateAdapterList;
-				public new function HRESULT(ref IDXCoreAdapterFactory self, in LUID adapterLUID, in Guid riid, void** ppvAdapter) GetAdapterByLuid;
-				public new function Boolean(ref IDXCoreAdapterFactory self, DXCoreNotificationType notificationType) IsNotificationTypeSupported;
-				public new function HRESULT(ref IDXCoreAdapterFactory self, ref IUnknown dxCoreObject, DXCoreNotificationType notificationType, PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, void* callbackContext, out uint32 eventCookie) RegisterEventNotification;
-				public new function HRESULT(ref IDXCoreAdapterFactory self, uint32 eventCookie) UnregisterEventNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterFactory self, uint32 numAttributes, Guid* filterAttributes, in Guid riid, void** ppvAdapterList) CreateAdapterList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterFactory self, in LUID adapterLUID, in Guid riid, void** ppvAdapter) GetAdapterByLuid;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDXCoreAdapterFactory self, DXCoreNotificationType notificationType) IsNotificationTypeSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterFactory self, ref IUnknown dxCoreObject, DXCoreNotificationType notificationType, PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, void* callbackContext, out uint32 eventCookie) RegisterEventNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterFactory self, uint32 eventCookie) UnregisterEventNotification;
 			}
 		}
 		

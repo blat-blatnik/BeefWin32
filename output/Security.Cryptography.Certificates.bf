@@ -1916,16 +1916,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pIndex) Next;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out BSTR pstrOut) GetName;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out BSTR pstrOut) GetDisplayName;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pType) ComGetType;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pIndexed) IsIndexed;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pMaxLength) GetMaxLength;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, out VARIANT pvarValue) GetValue;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, int32 celt) Skip;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self) Reset;
-				public new function HRESULT(ref IEnumCERTVIEWCOLUMN self, out IEnumCERTVIEWCOLUMN* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pIndex) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out BSTR pstrOut) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out BSTR pstrOut) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pIndexed) IsIndexed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out int32 pMaxLength) GetMaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, out VARIANT pvarValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, int32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWCOLUMN self, out IEnumCERTVIEWCOLUMN* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -1945,12 +1945,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out int32 pIndex) Next;
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out BSTR pstrOut) GetName;
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out BSTR pstrOut) GetValue;
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self, int32 celt) Skip;
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self) Reset;
-				public new function HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out IEnumCERTVIEWATTRIBUTE* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out int32 pIndex) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out BSTR pstrOut) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out BSTR pstrOut) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self, int32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWATTRIBUTE self, out IEnumCERTVIEWATTRIBUTE* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -1971,13 +1971,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, out int32 pIndex) Next;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, out BSTR pstrOut) GetName;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, out int32 pFlags) ComGetFlags;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, CERT_PROPERTY_TYPE Type, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, out VARIANT pvarValue) GetValue;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, int32 celt) Skip;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self) Reset;
-				public new function HRESULT(ref IEnumCERTVIEWEXTENSION self, out IEnumCERTVIEWEXTENSION* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, out int32 pIndex) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, out BSTR pstrOut) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, out int32 pFlags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, CERT_PROPERTY_TYPE Type, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, out VARIANT pvarValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, int32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWEXTENSION self, out IEnumCERTVIEWEXTENSION* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -1999,14 +1999,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumCERTVIEWROW self, out int32 pIndex) Next;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, out IEnumCERTVIEWCOLUMN* ppenum) EnumCertViewColumn;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, int32 Flags, out IEnumCERTVIEWATTRIBUTE* ppenum) EnumCertViewAttribute;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, int32 Flags, out IEnumCERTVIEWEXTENSION* ppenum) EnumCertViewExtension;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, int32 celt) Skip;
-				public new function HRESULT(ref IEnumCERTVIEWROW self) Reset;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, out IEnumCERTVIEWROW* ppenum) Clone;
-				public new function HRESULT(ref IEnumCERTVIEWROW self, out int32 pIndex) GetMaxIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, out int32 pIndex) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, out IEnumCERTVIEWCOLUMN* ppenum) EnumCertViewColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, int32 Flags, out IEnumCERTVIEWATTRIBUTE* ppenum) EnumCertViewAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, int32 Flags, out IEnumCERTVIEWEXTENSION* ppenum) EnumCertViewExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, int32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, out IEnumCERTVIEWROW* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCERTVIEWROW self, out int32 pIndex) GetMaxIndex;
 			}
 		}
 		[CRepr]
@@ -2028,14 +2028,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertView self, BSTR strConfig) OpenConnection;
-				public new function HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, out IEnumCERTVIEWCOLUMN* ppenum) EnumCertViewColumn;
-				public new function HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, out int32 pcColumn) GetColumnCount;
-				public new function HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, BSTR strColumnName, out int32 pColumnIndex) GetColumnIndex;
-				public new function HRESULT(ref ICertView self, int32 cResultColumn) SetResultColumnCount;
-				public new function HRESULT(ref ICertView self, int32 ColumnIndex) SetResultColumn;
-				public new function HRESULT(ref ICertView self, CERT_VIEW_COLUMN_INDEX ColumnIndex, CERT_VIEW_SEEK_OPERATOR_FLAGS SeekOperator, int32 SortOrder, in VARIANT pvarValue) SetRestriction;
-				public new function HRESULT(ref ICertView self, out IEnumCERTVIEWROW* ppenum) OpenView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, BSTR strConfig) OpenConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, out IEnumCERTVIEWCOLUMN* ppenum) EnumCertViewColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, out int32 pcColumn) GetColumnCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, CVRC_COLUMN fResultColumn, BSTR strColumnName, out int32 pColumnIndex) GetColumnIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, int32 cResultColumn) SetResultColumnCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, int32 ColumnIndex) SetResultColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, CERT_VIEW_COLUMN_INDEX ColumnIndex, CERT_VIEW_SEEK_OPERATOR_FLAGS SeekOperator, int32 SortOrder, in VARIANT pvarValue) SetRestriction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView self, out IEnumCERTVIEWROW* ppenum) OpenView;
 			}
 		}
 		[CRepr]
@@ -2050,7 +2050,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertView.VTable
 			{
-				public new function HRESULT(ref ICertView2 self, CVRC_TABLE Table) SetTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertView2 self, CVRC_TABLE Table) SetTable;
 			}
 		}
 		[CRepr]
@@ -2074,16 +2074,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strSerialNumber, out int32 pDisposition) IsValidCertificate;
-				public new function HRESULT(ref ICertAdmin self, out int32 pReason) GetRevocationReason;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strSerialNumber, int32 Reason, double Date) RevokeCertificate;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, BSTR strAttributes) SetRequestAttributes;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, int32 Flags, in VARIANT pvarValue) SetCertificateExtension;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId) DenyRequest;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, out int32 pDisposition) ResubmitRequest;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, double Date) PublishCRL;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, int32 Flags, BSTR* pstrCRL) GetCRL;
-				public new function HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strCertificate, CERT_IMPORT_FLAGS Flags, out int32 pRequestId) ImportCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strSerialNumber, out int32 pDisposition) IsValidCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, out int32 pReason) GetRevocationReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strSerialNumber, int32 Reason, double Date) RevokeCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, BSTR strAttributes) SetRequestAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, int32 Flags, in VARIANT pvarValue) SetCertificateExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId) DenyRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, int32 RequestId, out int32 pDisposition) ResubmitRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, double Date) PublishCRL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, int32 Flags, BSTR* pstrCRL) GetCRL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin self, BSTR strConfig, BSTR strCertificate, CERT_IMPORT_FLAGS Flags, out int32 pRequestId) ImportCertificate;
 			}
 		}
 		[CRepr]
@@ -2108,17 +2108,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertAdmin.VTable
 			{
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, double Date, int32 CRLFlags) PublishCRLs;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, out VARIANT pvarPropertyValue) GetCAProperty;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, ref VARIANT pvarPropertyValue) SetCAProperty;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, out int32 pPropFlags) GetCAPropertyFlags;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 RequestId, int32 Flags, BSTR* pstrArchivedKey) GetArchivedKey;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, out VARIANT pvarEntry) GetConfigEntry;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, ref VARIANT pvarEntry) SetConfigEntry;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 RequestId, BSTR strCertHash, CERT_IMPORT_FLAGS Flags, BSTR strKey) ImportKey;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, out CERTADMIN_GET_ROLES_FLAGS pRoles) GetMyRoles;
-				public new function HRESULT(ref ICertAdmin2 self, BSTR strConfig, CERT_DELETE_ROW_FLAGS Flags, double Date, CVRC_TABLE Table, int32 RowId, out int32 pcDeleted) DeleteRow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, double Date, int32 CRLFlags) PublishCRLs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, out VARIANT pvarPropertyValue) GetCAProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, ref VARIANT pvarPropertyValue) SetCAProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, out int32 pPropFlags) GetCAPropertyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 RequestId, int32 Flags, BSTR* pstrArchivedKey) GetArchivedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, out VARIANT pvarEntry) GetConfigEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, ref VARIANT pvarEntry) SetConfigEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, int32 RequestId, BSTR strCertHash, CERT_IMPORT_FLAGS Flags, BSTR strKey) ImportKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, out CERTADMIN_GET_ROLES_FLAGS pRoles) GetMyRoles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertAdmin2 self, BSTR strConfig, CERT_DELETE_ROW_FLAGS Flags, double Date, CVRC_TABLE Table, int32 RowId, out int32 pcDeleted) DeleteRow;
 			}
 		}
 		[CRepr]
@@ -2136,10 +2136,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IOCSPProperty self, BSTR* pVal) get_Name;
-				public new function HRESULT(ref IOCSPProperty self, out VARIANT pVal) get_Value;
-				public new function HRESULT(ref IOCSPProperty self, VARIANT newVal) put_Value;
-				public new function HRESULT(ref IOCSPProperty self, out int16 pVal) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPProperty self, BSTR* pVal) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPProperty self, out VARIANT pVal) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPProperty self, VARIANT newVal) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPProperty self, out int16 pVal) get_Modified;
 			}
 		}
 		[CRepr]
@@ -2161,14 +2161,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IOCSPPropertyCollection self, IUnknown** ppVal) get__NewEnum;
-				public new function HRESULT(ref IOCSPPropertyCollection self, int32 Index, out VARIANT pVal) get_Item;
-				public new function HRESULT(ref IOCSPPropertyCollection self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName, out VARIANT pVal) get_ItemByName;
-				public new function HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName, in VARIANT pVarPropValue, IOCSPProperty** ppVal) CreateProperty;
-				public new function HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName) DeleteProperty;
-				public new function HRESULT(ref IOCSPPropertyCollection self, in VARIANT pVarProperties) InitializeFromProperties;
-				public new function HRESULT(ref IOCSPPropertyCollection self, out VARIANT pVarProperties) GetAllProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, IUnknown** ppVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, int32 Index, out VARIANT pVal) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName, out VARIANT pVal) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName, in VARIANT pVarPropValue, IOCSPProperty** ppVal) CreateProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, BSTR bstrPropName) DeleteProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, in VARIANT pVarProperties) InitializeFromProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPPropertyCollection self, out VARIANT pVarProperties) GetAllProperties;
 			}
 		}
 		[CRepr]
@@ -2206,30 +2206,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_Identifier;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_CACertificate;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_HashAlgorithm;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_HashAlgorithm;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_SigningFlags;
-				public new function HRESULT(ref IOCSPCAConfiguration self, uint32 newVal) put_SigningFlags;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_SigningCertificate;
-				public new function HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_SigningCertificate;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_ReminderDuration;
-				public new function HRESULT(ref IOCSPCAConfiguration self, uint32 newVal) put_ReminderDuration;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_ErrorCode;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_CSPName;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_KeySpec;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_ProviderCLSID;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_ProviderCLSID;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_ProviderProperties;
-				public new function HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_ProviderProperties;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out int16 pVal) get_Modified;
-				public new function HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_LocalRevocationInformation;
-				public new function HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_LocalRevocationInformation;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_SigningCertificateTemplate;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_SigningCertificateTemplate;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_CAConfig;
-				public new function HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_CAConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_Identifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_CACertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_SigningFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, uint32 newVal) put_SigningFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_SigningCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_SigningCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_ReminderDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, uint32 newVal) put_ReminderDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_ErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_CSPName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out uint32 pVal) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_ProviderCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_ProviderCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_ProviderProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_ProviderProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out int16 pVal) get_Modified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, out VARIANT pVal) get_LocalRevocationInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, VARIANT newVal) put_LocalRevocationInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_SigningCertificateTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_SigningCertificateTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR* pVal) get_CAConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfiguration self, BSTR newVal) put_CAConfig;
 			}
 		}
 		[CRepr]
@@ -2249,12 +2249,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, int32 Index, out VARIANT pVal) get_Item;
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier, out VARIANT pVal) get_ItemByName;
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier, VARIANT varCACert, IOCSPCAConfiguration** ppVal) CreateCAConfiguration;
-				public new function HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier) DeleteCAConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, int32 Index, out VARIANT pVal) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier, out VARIANT pVal) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier, VARIANT varCACert, IOCSPCAConfiguration** ppVal) CreateCAConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPCAConfigurationCollection self, BSTR bstrIdentifier) DeleteCAConfiguration;
 			}
 		}
 		[CRepr]
@@ -2278,16 +2278,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IOCSPAdmin self, IOCSPPropertyCollection** ppVal) get_OCSPServiceProperties;
-				public new function HRESULT(ref IOCSPAdmin self, IOCSPCAConfigurationCollection** pVal) get_OCSPCAConfigurationCollection;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, int16 bForce) GetConfiguration;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, int16 bForce) SetConfiguration;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, out int32 pRoles) GetMyRoles;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName) Ping;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR bstrVal) SetSecurity;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR* pVal) GetSecurity;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, in VARIANT pCACertVar, out VARIANT pVal) GetSigningCertificates;
-				public new function HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR bstrCAId, out VARIANT pVal) GetHashAlgorithms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, IOCSPPropertyCollection** ppVal) get_OCSPServiceProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, IOCSPCAConfigurationCollection** pVal) get_OCSPCAConfigurationCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, int16 bForce) GetConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, int16 bForce) SetConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, out int32 pRoles) GetMyRoles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName) Ping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR bstrVal) SetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR* pVal) GetSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, in VARIANT pCACertVar, out VARIANT pVal) GetSigningCertificates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOCSPAdmin self, BSTR bstrServerName, BSTR bstrCAId, out VARIANT pVal) GetHashAlgorithms;
 			}
 		}
 		[CRepr]
@@ -2315,20 +2315,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertServerPolicy self, int32 Context) SetContext;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetRequestProperty;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, CERT_PROPERTY_TYPE PropertyType, out VARIANT pvarPropertyValue) GetCertificateProperty;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, int32 PropertyType, in VARIANT pvarPropertyValue) SetCertificateProperty;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, out VARIANT pvarValue) GetCertificateExtension;
-				public new function HRESULT(ref ICertServerPolicy self, out int32 pExtFlags) GetCertificateExtensionFlags;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR strExtensionName, int32 Type, int32 ExtFlags, in VARIANT pvarValue) SetCertificateExtension;
-				public new function HRESULT(ref ICertServerPolicy self, int32 Flags) EnumerateExtensionsSetup;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR* pstrExtensionName) EnumerateExtensions;
-				public new function HRESULT(ref ICertServerPolicy self) EnumerateExtensionsClose;
-				public new function HRESULT(ref ICertServerPolicy self, int32 Flags) EnumerateAttributesSetup;
-				public new function HRESULT(ref ICertServerPolicy self, BSTR* pstrAttributeName) EnumerateAttributes;
-				public new function HRESULT(ref ICertServerPolicy self) EnumerateAttributesClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, int32 Context) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetRequestProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, CERT_PROPERTY_TYPE PropertyType, out VARIANT pvarPropertyValue) GetCertificateProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strPropertyName, int32 PropertyType, in VARIANT pvarPropertyValue) SetCertificateProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, out VARIANT pvarValue) GetCertificateExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, out int32 pExtFlags) GetCertificateExtensionFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR strExtensionName, int32 Type, int32 ExtFlags, in VARIANT pvarValue) SetCertificateExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, int32 Flags) EnumerateExtensionsSetup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR* pstrExtensionName) EnumerateExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self) EnumerateExtensionsClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, int32 Flags) EnumerateAttributesSetup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self, BSTR* pstrAttributeName) EnumerateAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerPolicy self) EnumerateAttributesClose;
 			}
 		}
 		[CRepr]
@@ -2354,18 +2354,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertServerExit self, int32 Context) SetContext;
-				public new function HRESULT(ref ICertServerExit self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetRequestProperty;
-				public new function HRESULT(ref ICertServerExit self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
-				public new function HRESULT(ref ICertServerExit self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetCertificateProperty;
-				public new function HRESULT(ref ICertServerExit self, BSTR strExtensionName, int32 Type, out VARIANT pvarValue) GetCertificateExtension;
-				public new function HRESULT(ref ICertServerExit self, out int32 pExtFlags) GetCertificateExtensionFlags;
-				public new function HRESULT(ref ICertServerExit self, int32 Flags) EnumerateExtensionsSetup;
-				public new function HRESULT(ref ICertServerExit self, BSTR* pstrExtensionName) EnumerateExtensions;
-				public new function HRESULT(ref ICertServerExit self) EnumerateExtensionsClose;
-				public new function HRESULT(ref ICertServerExit self, int32 Flags) EnumerateAttributesSetup;
-				public new function HRESULT(ref ICertServerExit self, BSTR* pstrAttributeName) EnumerateAttributes;
-				public new function HRESULT(ref ICertServerExit self) EnumerateAttributesClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, int32 Context) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetRequestProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR strPropertyName, int32 PropertyType, out VARIANT pvarPropertyValue) GetCertificateProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR strExtensionName, int32 Type, out VARIANT pvarValue) GetCertificateExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, out int32 pExtFlags) GetCertificateExtensionFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, int32 Flags) EnumerateExtensionsSetup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR* pstrExtensionName) EnumerateExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self) EnumerateExtensionsClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, int32 Flags) EnumerateAttributesSetup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self, BSTR* pstrAttributeName) EnumerateAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertServerExit self) EnumerateAttributesClose;
 			}
 		}
 		[CRepr]
@@ -2380,7 +2380,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertGetConfig self, CERT_GET_CONFIG_FLAGS Flags, BSTR* pstrOut) GetConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertGetConfig self, CERT_GET_CONFIG_FLAGS Flags, BSTR* pstrOut) GetConfig;
 			}
 		}
 		[CRepr]
@@ -2398,10 +2398,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertConfig self, int32 Index, out int32 pCount) Reset;
-				public new function HRESULT(ref ICertConfig self, out int32 pIndex) Next;
-				public new function HRESULT(ref ICertConfig self, BSTR strFieldName, BSTR* pstrOut) GetField;
-				public new function HRESULT(ref ICertConfig self, int32 Flags, BSTR* pstrOut) GetConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertConfig self, int32 Index, out int32 pCount) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertConfig self, out int32 pIndex) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertConfig self, BSTR strFieldName, BSTR* pstrOut) GetField;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertConfig self, int32 Flags, BSTR* pstrOut) GetConfig;
 			}
 		}
 		[CRepr]
@@ -2416,7 +2416,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertConfig.VTable
 			{
-				public new function HRESULT(ref ICertConfig2 self, BSTR strSharedFolder) SetSharedFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertConfig2 self, BSTR strSharedFolder) SetSharedFolder;
 			}
 		}
 		[CRepr]
@@ -2437,13 +2437,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertRequest self, int32 Flags, BSTR strRequest, BSTR strAttributes, BSTR strConfig, out int32 pDisposition) Submit;
-				public new function HRESULT(ref ICertRequest self, int32 RequestId, BSTR strConfig, out int32 pDisposition) RetrievePending;
-				public new function HRESULT(ref ICertRequest self, out int32 pStatus) GetLastStatus;
-				public new function HRESULT(ref ICertRequest self, out int32 pRequestId) GetRequestId;
-				public new function HRESULT(ref ICertRequest self, BSTR* pstrDispositionMessage) GetDispositionMessage;
-				public new function HRESULT(ref ICertRequest self, int32 fExchangeCertificate, BSTR strConfig, int32 Flags, BSTR* pstrCertificate) GetCACertificate;
-				public new function HRESULT(ref ICertRequest self, int32 Flags, BSTR* pstrCertificate) GetCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, int32 Flags, BSTR strRequest, BSTR strAttributes, BSTR strConfig, out int32 pDisposition) Submit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, int32 RequestId, BSTR strConfig, out int32 pDisposition) RetrievePending;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, out int32 pStatus) GetLastStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, out int32 pRequestId) GetRequestId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, BSTR* pstrDispositionMessage) GetDispositionMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, int32 fExchangeCertificate, BSTR strConfig, int32 Flags, BSTR* pstrCertificate) GetCACertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest self, int32 Flags, BSTR* pstrCertificate) GetCertificate;
 			}
 		}
 		[CRepr]
@@ -2463,12 +2463,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertRequest.VTable
 			{
-				public new function HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 RequestId, BSTR strSerialNumber, out CR_DISP pDisposition) GetIssuedCertificate;
-				public new function HRESULT(ref ICertRequest2 self, int32 hrMessage, int32 Flags, BSTR* pstrErrorMessageText) GetErrorMessageText;
-				public new function HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, out VARIANT pvarPropertyValue) GetCAProperty;
-				public new function HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, out int32 pPropFlags) GetCAPropertyFlags;
-				public new function HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
-				public new function HRESULT(ref ICertRequest2 self, FULL_RESPONSE_PROPERTY_ID PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, CERT_REQUEST_OUT_TYPE Flags, out VARIANT pvarPropertyValue) GetFullResponseProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 RequestId, BSTR strSerialNumber, out CR_DISP pDisposition) GetIssuedCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, int32 hrMessage, int32 Flags, BSTR* pstrErrorMessageText) GetErrorMessageText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, out VARIANT pvarPropertyValue) GetCAProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, out int32 pPropFlags) GetCAPropertyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest2 self, FULL_RESPONSE_PROPERTY_ID PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, CERT_REQUEST_OUT_TYPE Flags, out VARIANT pvarPropertyValue) GetFullResponseProperty;
 			}
 		}
 		[CRepr]
@@ -2486,10 +2486,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertRequest2.VTable
 			{
-				public new function HRESULT(ref ICertRequest3 self, int32 hWnd, X509EnrollmentAuthFlags AuthType, BSTR strCredential, BSTR strPassword) SetCredential;
-				public new function HRESULT(ref ICertRequest3 self, BSTR* pstrRequestId) GetRequestIdString;
-				public new function HRESULT(ref ICertRequest3 self, BSTR strConfig, BSTR strRequestId, BSTR strSerialNumber, out CR_DISP pDisposition) GetIssuedCertificate2;
-				public new function HRESULT(ref ICertRequest3 self, out int16 pValue) GetRefreshPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest3 self, int32 hWnd, X509EnrollmentAuthFlags AuthType, BSTR strCredential, BSTR strPassword) SetCredential;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest3 self, BSTR* pstrRequestId) GetRequestIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest3 self, BSTR strConfig, BSTR strRequestId, BSTR strSerialNumber, out CR_DISP pDisposition) GetIssuedCertificate2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequest3 self, out int16 pValue) GetRefreshPolicy;
 			}
 		}
 		[CRepr]
@@ -2506,9 +2506,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, out VARIANT pvarProperty) GetProperty;
-				public new function HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, in VARIANT pvarProperty) SetProperty;
-				public new function HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, int32 Flags) Configure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, out VARIANT pvarProperty) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, in VARIANT pvarProperty) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertManageModule self, BSTR strConfig, BSTR strStorageLocation, int32 Flags) Configure;
 			}
 		}
 		[CRepr]
@@ -2526,10 +2526,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertPolicy self, BSTR strConfig) Initialize;
-				public new function HRESULT(ref ICertPolicy self, BSTR strConfig, int32 Context, int32 bNewRequest, int32 Flags, out int32 pDisposition) VerifyRequest;
-				public new function HRESULT(ref ICertPolicy self, out BSTR pstrDescription) GetDescription;
-				public new function HRESULT(ref ICertPolicy self) ShutDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPolicy self, BSTR strConfig) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPolicy self, BSTR strConfig, int32 Context, int32 bNewRequest, int32 Flags, out int32 pDisposition) VerifyRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPolicy self, out BSTR pstrDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPolicy self) ShutDown;
 			}
 		}
 		[CRepr]
@@ -2544,7 +2544,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertPolicy.VTable
 			{
-				public new function HRESULT(ref ICertPolicy2 self, out ICertManageModule* ppManageModule) GetManageModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPolicy2 self, out ICertManageModule* ppManageModule) GetManageModule;
 			}
 		}
 		[CRepr]
@@ -2563,11 +2563,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INDESPolicy self) Initialize;
-				public new function HRESULT(ref INDESPolicy self) Uninitialize;
-				public new function HRESULT(ref INDESPolicy self, PWSTR pwszTemplate, PWSTR pwszParams, out PWSTR ppwszResponse) GenerateChallenge;
-				public new function HRESULT(ref INDESPolicy self, out CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbSigningCertEncoded, PWSTR pwszTemplate, PWSTR pwszTransactionId, out BOOL pfVerified) VerifyRequest;
-				public new function HRESULT(ref INDESPolicy self, PWSTR pwszChallenge, PWSTR pwszTransactionId, X509SCEPDisposition disposition, int32 lastHResult, out CERTTRANSBLOB pctbIssuedCertEncoded) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INDESPolicy self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INDESPolicy self) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INDESPolicy self, PWSTR pwszTemplate, PWSTR pwszParams, out PWSTR ppwszResponse) GenerateChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INDESPolicy self, out CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbSigningCertEncoded, PWSTR pwszTemplate, PWSTR pwszTransactionId, out BOOL pfVerified) VerifyRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INDESPolicy self, PWSTR pwszChallenge, PWSTR pwszTransactionId, X509SCEPDisposition disposition, int32 lastHResult, out CERTTRANSBLOB pctbIssuedCertEncoded) Notify;
 			}
 		}
 		[CRepr]
@@ -2589,14 +2589,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IObjectId self, CERTENROLL_OBJECTID Name) InitializeFromName;
-				public new function HRESULT(ref IObjectId self, BSTR strValue) InitializeFromValue;
-				public new function HRESULT(ref IObjectId self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, AlgorithmFlags AlgFlags, BSTR strAlgorithmName) InitializeFromAlgorithmName;
-				public new function HRESULT(ref IObjectId self, out CERTENROLL_OBJECTID pValue) get_Name;
-				public new function HRESULT(ref IObjectId self, BSTR* pValue) get_FriendlyName;
-				public new function HRESULT(ref IObjectId self, BSTR Value) put_FriendlyName;
-				public new function HRESULT(ref IObjectId self, BSTR* pValue) get_Value;
-				public new function HRESULT(ref IObjectId self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, BSTR* pstrAlgorithmName) GetAlgorithmName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, CERTENROLL_OBJECTID Name) InitializeFromName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, BSTR strValue) InitializeFromValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, AlgorithmFlags AlgFlags, BSTR strAlgorithmName) InitializeFromAlgorithmName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, out CERTENROLL_OBJECTID pValue) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, BSTR* pValue) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, BSTR Value) put_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, BSTR* pValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectId self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, BSTR* pstrAlgorithmName) GetAlgorithmName;
 			}
 		}
 		[CRepr]
@@ -2617,13 +2617,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IObjectIds self, int32 Index, IObjectId** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IObjectIds self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IObjectIds self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IObjectIds self, IObjectId* pVal) Add;
-				public new function HRESULT(ref IObjectIds self, int32 Index) Remove;
-				public new function HRESULT(ref IObjectIds self) Clear;
-				public new function HRESULT(ref IObjectIds self, IObjectIds* pValue) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, int32 Index, IObjectId** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, IObjectId* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectIds self, IObjectIds* pValue) AddRange;
 			}
 		}
 		[CRepr]
@@ -2640,9 +2640,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IBinaryConverter self, BSTR strEncodedIn, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncoded) StringToString;
-				public new function HRESULT(ref IBinaryConverter self, ref VARIANT pvarByteArray, EncodingType Encoding, BSTR* pstrEncoded) VariantByteArrayToString;
-				public new function HRESULT(ref IBinaryConverter self, BSTR strEncoded, EncodingType Encoding, out VARIANT pvarByteArray) StringToVariantByteArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBinaryConverter self, BSTR strEncodedIn, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncoded) StringToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBinaryConverter self, ref VARIANT pvarByteArray, EncodingType Encoding, BSTR* pstrEncoded) VariantByteArrayToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBinaryConverter self, BSTR strEncoded, EncodingType Encoding, out VARIANT pvarByteArray) StringToVariantByteArray;
 			}
 		}
 		[CRepr]
@@ -2658,8 +2658,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBinaryConverter.VTable
 			{
-				public new function HRESULT(ref IBinaryConverter2 self, ref VARIANT pvarStringArray, out VARIANT pvarVariantArray) StringArrayToVariantArray;
-				public new function HRESULT(ref IBinaryConverter2 self, ref VARIANT pvarVariantArray, out VARIANT pvarStringArray) VariantArrayToStringArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBinaryConverter2 self, ref VARIANT pvarStringArray, out VARIANT pvarVariantArray) StringArrayToVariantArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBinaryConverter2 self, ref VARIANT pvarVariantArray, out VARIANT pvarStringArray) VariantArrayToStringArray;
 			}
 		}
 		[CRepr]
@@ -2677,10 +2677,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX500DistinguishedName self, BSTR strEncodedName, EncodingType Encoding, X500NameFlags NameFlags) Decode;
-				public new function HRESULT(ref IX500DistinguishedName self, BSTR strName, X500NameFlags NameFlags) Encode;
-				public new function HRESULT(ref IX500DistinguishedName self, BSTR* pValue) get_Name;
-				public new function HRESULT(ref IX500DistinguishedName self, EncodingType Encoding, BSTR* pValue) get_EncodedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX500DistinguishedName self, BSTR strEncodedName, EncodingType Encoding, X500NameFlags NameFlags) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX500DistinguishedName self, BSTR strName, X500NameFlags NameFlags) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX500DistinguishedName self, BSTR* pValue) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX500DistinguishedName self, EncodingType Encoding, BSTR* pValue) get_EncodedName;
 			}
 		}
 		[CRepr]
@@ -2706,18 +2706,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509EnrollmentStatus self, BSTR strText) AppendText;
-				public new function HRESULT(ref IX509EnrollmentStatus self, BSTR* pValue) get_Text;
-				public new function HRESULT(ref IX509EnrollmentStatus self, BSTR Value) put_Text;
-				public new function HRESULT(ref IX509EnrollmentStatus self, out EnrollmentSelectionStatus pValue) get_Selected;
-				public new function HRESULT(ref IX509EnrollmentStatus self, EnrollmentSelectionStatus Value) put_Selected;
-				public new function HRESULT(ref IX509EnrollmentStatus self, out EnrollmentDisplayStatus pValue) get_Display;
-				public new function HRESULT(ref IX509EnrollmentStatus self, EnrollmentDisplayStatus Value) put_Display;
-				public new function HRESULT(ref IX509EnrollmentStatus self, out EnrollmentEnrollStatus pValue) get_Status;
-				public new function HRESULT(ref IX509EnrollmentStatus self, EnrollmentEnrollStatus Value) put_Status;
-				public new function HRESULT(ref IX509EnrollmentStatus self, out HRESULT pValue) get_Error;
-				public new function HRESULT(ref IX509EnrollmentStatus self, HRESULT Value) put_Error;
-				public new function HRESULT(ref IX509EnrollmentStatus self, BSTR* pValue) get_ErrorText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, BSTR strText) AppendText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, BSTR* pValue) get_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, BSTR Value) put_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, out EnrollmentSelectionStatus pValue) get_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, EnrollmentSelectionStatus Value) put_Selected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, out EnrollmentDisplayStatus pValue) get_Display;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, EnrollmentDisplayStatus Value) put_Display;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, out EnrollmentEnrollStatus pValue) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, EnrollmentEnrollStatus Value) put_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, out HRESULT pValue) get_Error;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, HRESULT Value) put_Error;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentStatus self, BSTR* pValue) get_ErrorText;
 			}
 		}
 		[CRepr]
@@ -2741,16 +2741,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspAlgorithm self, int32 Length, AlgorithmFlags AlgFlags, IObjectId** ppValue) GetAlgorithmOid;
-				public new function HRESULT(ref ICspAlgorithm self, out int32 pValue) get_DefaultLength;
-				public new function HRESULT(ref ICspAlgorithm self, out int32 pValue) get_IncrementLength;
-				public new function HRESULT(ref ICspAlgorithm self, BSTR* pValue) get_LongName;
-				public new function HRESULT(ref ICspAlgorithm self, out int16 pValue) get_Valid;
-				public new function HRESULT(ref ICspAlgorithm self, out int32 pValue) get_MaxLength;
-				public new function HRESULT(ref ICspAlgorithm self, out int32 pValue) get_MinLength;
-				public new function HRESULT(ref ICspAlgorithm self, BSTR* pValue) get_Name;
-				public new function HRESULT(ref ICspAlgorithm self, out AlgorithmType pValue) get_Type;
-				public new function HRESULT(ref ICspAlgorithm self, out AlgorithmOperationFlags pValue) get_Operations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, int32 Length, AlgorithmFlags AlgFlags, IObjectId** ppValue) GetAlgorithmOid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out int32 pValue) get_DefaultLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out int32 pValue) get_IncrementLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, BSTR* pValue) get_LongName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out int16 pValue) get_Valid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out int32 pValue) get_MaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out int32 pValue) get_MinLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, BSTR* pValue) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out AlgorithmType pValue) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithm self, out AlgorithmOperationFlags pValue) get_Operations;
 			}
 		}
 		[CRepr]
@@ -2772,14 +2772,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspAlgorithms self, int32 Index, ICspAlgorithm** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICspAlgorithms self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICspAlgorithms self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICspAlgorithms self, ICspAlgorithm* pVal) Add;
-				public new function HRESULT(ref ICspAlgorithms self, int32 Index) Remove;
-				public new function HRESULT(ref ICspAlgorithms self) Clear;
-				public new function HRESULT(ref ICspAlgorithms self, BSTR strName, ICspAlgorithm** ppValue) get_ItemByName;
-				public new function HRESULT(ref ICspAlgorithms self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, int32 Index, ICspAlgorithm** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, ICspAlgorithm* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, BSTR strName, ICspAlgorithm** ppValue) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspAlgorithms self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
 			}
 		}
 		[CRepr]
@@ -2810,23 +2810,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspInformation self, BSTR strName) InitializeFromName;
-				public new function HRESULT(ref ICspInformation self, X509ProviderType Type, IObjectId* pAlgorithm, int16 MachineContext) InitializeFromType;
-				public new function HRESULT(ref ICspInformation self, ICspAlgorithms** ppValue) get_CspAlgorithms;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_HasHardwareRandomNumberGenerator;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_IsHardwareDevice;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_IsRemovable;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_IsSoftwareDevice;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_Valid;
-				public new function HRESULT(ref ICspInformation self, out int32 pValue) get_MaxKeyContainerNameLength;
-				public new function HRESULT(ref ICspInformation self, BSTR* pValue) get_Name;
-				public new function HRESULT(ref ICspInformation self, out X509ProviderType pValue) get_Type;
-				public new function HRESULT(ref ICspInformation self, out int32 pValue) get_Version;
-				public new function HRESULT(ref ICspInformation self, out X509KeySpec pValue) get_KeySpec;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_IsSmartCard;
-				public new function HRESULT(ref ICspInformation self, int16 MachineContext, BSTR* pValue) GetDefaultSecurityDescriptor;
-				public new function HRESULT(ref ICspInformation self, out int16 pValue) get_LegacyCsp;
-				public new function HRESULT(ref ICspInformation self, IObjectId* pAlgorithm, AlgorithmOperationFlags Operations, ICspStatus** ppValue) GetCspStatusFromOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, BSTR strName) InitializeFromName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, X509ProviderType Type, IObjectId* pAlgorithm, int16 MachineContext) InitializeFromType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, ICspAlgorithms** ppValue) get_CspAlgorithms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_HasHardwareRandomNumberGenerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_IsHardwareDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_IsRemovable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_IsSoftwareDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_Valid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int32 pValue) get_MaxKeyContainerNameLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, BSTR* pValue) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out X509ProviderType pValue) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int32 pValue) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out X509KeySpec pValue) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_IsSmartCard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, int16 MachineContext, BSTR* pValue) GetDefaultSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, out int16 pValue) get_LegacyCsp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformation self, IObjectId* pAlgorithm, AlgorithmOperationFlags Operations, ICspStatus** ppValue) GetCspStatusFromOperations;
 			}
 		}
 		[CRepr]
@@ -2852,18 +2852,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspInformations self, int32 Index, ICspInformation** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICspInformations self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICspInformations self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICspInformations self, ICspInformation* pVal) Add;
-				public new function HRESULT(ref ICspInformations self, int32 Index) Remove;
-				public new function HRESULT(ref ICspInformations self) Clear;
-				public new function HRESULT(ref ICspInformations self) AddAvailableCsps;
-				public new function HRESULT(ref ICspInformations self, BSTR strName, ICspInformation** ppCspInformation) get_ItemByName;
-				public new function HRESULT(ref ICspInformations self, BSTR strProviderName, X509KeySpec LegacyKeySpec, ICspStatus** ppValue) GetCspStatusFromProviderName;
-				public new function HRESULT(ref ICspInformations self, AlgorithmOperationFlags Operations, ICspInformation* pCspInformation, ICspStatuses** ppValue) GetCspStatusesFromOperations;
-				public new function HRESULT(ref ICspInformations self, ICspInformation* pCspInformation, ICspAlgorithms** ppValue) GetEncryptionCspAlgorithms;
-				public new function HRESULT(ref ICspInformations self, ICspInformation* pCspInformation, IObjectIds** ppValue) GetHashAlgorithms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, int32 Index, ICspInformation** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, ICspInformation* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self) AddAvailableCsps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, BSTR strName, ICspInformation** ppCspInformation) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, BSTR strProviderName, X509KeySpec LegacyKeySpec, ICspStatus** ppValue) GetCspStatusFromProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, AlgorithmOperationFlags Operations, ICspInformation* pCspInformation, ICspStatuses** ppValue) GetCspStatusesFromOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, ICspInformation* pCspInformation, ICspAlgorithms** ppValue) GetEncryptionCspAlgorithms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspInformations self, ICspInformation* pCspInformation, IObjectIds** ppValue) GetHashAlgorithms;
 			}
 		}
 		[CRepr]
@@ -2884,13 +2884,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspStatus self, ICspInformation* pCsp, ICspAlgorithm* pAlgorithm) Initialize;
-				public new function HRESULT(ref ICspStatus self, out int32 pValue) get_Ordinal;
-				public new function HRESULT(ref ICspStatus self, int32 Value) put_Ordinal;
-				public new function HRESULT(ref ICspStatus self, ICspAlgorithm** ppValue) get_CspAlgorithm;
-				public new function HRESULT(ref ICspStatus self, ICspInformation** ppValue) get_CspInformation;
-				public new function HRESULT(ref ICspStatus self, IX509EnrollmentStatus** ppValue) get_EnrollmentStatus;
-				public new function HRESULT(ref ICspStatus self, BSTR* pValue) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, ICspInformation* pCsp, ICspAlgorithm* pAlgorithm) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, out int32 pValue) get_Ordinal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, int32 Value) put_Ordinal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, ICspAlgorithm** ppValue) get_CspAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, ICspInformation** ppValue) get_CspInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, IX509EnrollmentStatus** ppValue) get_EnrollmentStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatus self, BSTR* pValue) get_DisplayName;
 			}
 		}
 		[CRepr]
@@ -2914,16 +2914,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICspStatuses self, int32 Index, ICspStatus** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICspStatuses self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICspStatuses self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICspStatuses self, ICspStatus* pVal) Add;
-				public new function HRESULT(ref ICspStatuses self, int32 Index) Remove;
-				public new function HRESULT(ref ICspStatuses self) Clear;
-				public new function HRESULT(ref ICspStatuses self, BSTR strCspName, BSTR strAlgorithmName, ICspStatus** ppValue) get_ItemByName;
-				public new function HRESULT(ref ICspStatuses self, int32 Ordinal, ICspStatus** ppValue) get_ItemByOrdinal;
-				public new function HRESULT(ref ICspStatuses self, BSTR strCspName, BSTR strAlgorithmName, AlgorithmOperationFlags Operations, ICspStatus** ppValue) get_ItemByOperations;
-				public new function HRESULT(ref ICspStatuses self, ICspStatus* pCspStatus, ICspStatus** ppValue) get_ItemByProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, int32 Index, ICspStatus** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, ICspStatus* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, BSTR strCspName, BSTR strAlgorithmName, ICspStatus** ppValue) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, int32 Ordinal, ICspStatus** ppValue) get_ItemByOrdinal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, BSTR strCspName, BSTR strAlgorithmName, AlgorithmOperationFlags Operations, ICspStatus** ppValue) get_ItemByOperations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICspStatuses self, ICspStatus* pCspStatus, ICspStatus** ppValue) get_ItemByProvider;
 			}
 		}
 		[CRepr]
@@ -2944,13 +2944,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509PublicKey self, IObjectId* pObjectId, BSTR strEncodedKey, BSTR strEncodedParameters, EncodingType Encoding) Initialize;
-				public new function HRESULT(ref IX509PublicKey self, BSTR strEncodedPublicKeyInfo, EncodingType Encoding) InitializeFromEncodedPublicKeyInfo;
-				public new function HRESULT(ref IX509PublicKey self, IObjectId** ppValue) get_Algorithm;
-				public new function HRESULT(ref IX509PublicKey self, out int32 pValue) get_Length;
-				public new function HRESULT(ref IX509PublicKey self, EncodingType Encoding, BSTR* pValue) get_EncodedKey;
-				public new function HRESULT(ref IX509PublicKey self, EncodingType Encoding, BSTR* pValue) get_EncodedParameters;
-				public new function HRESULT(ref IX509PublicKey self, KeyIdentifierHashAlgorithm Algorithm, EncodingType Encoding, BSTR* pValue) ComputeKeyIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, IObjectId* pObjectId, BSTR strEncodedKey, BSTR strEncodedParameters, EncodingType Encoding) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, BSTR strEncodedPublicKeyInfo, EncodingType Encoding) InitializeFromEncodedPublicKeyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, IObjectId** ppValue) get_Algorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, out int32 pValue) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, EncodingType Encoding, BSTR* pValue) get_EncodedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, EncodingType Encoding, BSTR* pValue) get_EncodedParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PublicKey self, KeyIdentifierHashAlgorithm Algorithm, EncodingType Encoding, BSTR* pValue) ComputeKeyIdentifier;
 			}
 		}
 		[CRepr]
@@ -3022,64 +3022,64 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509PrivateKey self) Open;
-				public new function HRESULT(ref IX509PrivateKey self) Create;
-				public new function HRESULT(ref IX509PrivateKey self) Close;
-				public new function HRESULT(ref IX509PrivateKey self) Delete;
-				public new function HRESULT(ref IX509PrivateKey self, X509PrivateKeyVerify VerifyType) Verify;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR strExportType, BSTR strEncodedKey, EncodingType Encoding) Import;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR strExportType, EncodingType Encoding, BSTR* pstrEncodedKey) Export;
-				public new function HRESULT(ref IX509PrivateKey self, IX509PublicKey** ppPublicKey) ExportPublicKey;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ContainerName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_ContainerName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ContainerNamePrefix;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_ContainerNamePrefix;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ReaderName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_ReaderName;
-				public new function HRESULT(ref IX509PrivateKey self, ICspInformations** ppValue) get_CspInformations;
-				public new function HRESULT(ref IX509PrivateKey self, ICspInformations* pValue) put_CspInformations;
-				public new function HRESULT(ref IX509PrivateKey self, ICspStatus** ppValue) get_CspStatus;
-				public new function HRESULT(ref IX509PrivateKey self, ICspStatus* pValue) put_CspStatus;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ProviderName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_ProviderName;
-				public new function HRESULT(ref IX509PrivateKey self, out X509ProviderType pValue) get_ProviderType;
-				public new function HRESULT(ref IX509PrivateKey self, X509ProviderType Value) put_ProviderType;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_LegacyCsp;
-				public new function HRESULT(ref IX509PrivateKey self, int16 Value) put_LegacyCsp;
-				public new function HRESULT(ref IX509PrivateKey self, IObjectId** ppValue) get_Algorithm;
-				public new function HRESULT(ref IX509PrivateKey self, IObjectId* pValue) put_Algorithm;
-				public new function HRESULT(ref IX509PrivateKey self, out X509KeySpec pValue) get_KeySpec;
-				public new function HRESULT(ref IX509PrivateKey self, X509KeySpec Value) put_KeySpec;
-				public new function HRESULT(ref IX509PrivateKey self, out int32 pValue) get_Length;
-				public new function HRESULT(ref IX509PrivateKey self, int32 Value) put_Length;
-				public new function HRESULT(ref IX509PrivateKey self, out X509PrivateKeyExportFlags pValue) get_ExportPolicy;
-				public new function HRESULT(ref IX509PrivateKey self, X509PrivateKeyExportFlags Value) put_ExportPolicy;
-				public new function HRESULT(ref IX509PrivateKey self, out X509PrivateKeyUsageFlags pValue) get_KeyUsage;
-				public new function HRESULT(ref IX509PrivateKey self, X509PrivateKeyUsageFlags Value) put_KeyUsage;
-				public new function HRESULT(ref IX509PrivateKey self, out X509PrivateKeyProtection pValue) get_KeyProtection;
-				public new function HRESULT(ref IX509PrivateKey self, X509PrivateKeyProtection Value) put_KeyProtection;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_MachineContext;
-				public new function HRESULT(ref IX509PrivateKey self, int16 Value) put_MachineContext;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_SecurityDescriptor;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_SecurityDescriptor;
-				public new function HRESULT(ref IX509PrivateKey self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-				public new function HRESULT(ref IX509PrivateKey self, EncodingType Encoding, BSTR Value) put_Certificate;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_UniqueContainerName;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Opened;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_DefaultContainer;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Existing;
-				public new function HRESULT(ref IX509PrivateKey self, int16 Value) put_Existing;
-				public new function HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Silent;
-				public new function HRESULT(ref IX509PrivateKey self, int16 Value) put_Silent;
-				public new function HRESULT(ref IX509PrivateKey self, out int32 pValue) get_ParentWindow;
-				public new function HRESULT(ref IX509PrivateKey self, int32 Value) put_ParentWindow;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_UIContextMessage;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_UIContextMessage;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_Pin;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_FriendlyName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_FriendlyName;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_Description;
-				public new function HRESULT(ref IX509PrivateKey self, BSTR Value) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509PrivateKeyVerify VerifyType) Verify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR strExportType, BSTR strEncodedKey, EncodingType Encoding) Import;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR strExportType, EncodingType Encoding, BSTR* pstrEncodedKey) Export;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, IX509PublicKey** ppPublicKey) ExportPublicKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ContainerNamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_ContainerNamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ReaderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_ReaderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, ICspInformations** ppValue) get_CspInformations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, ICspInformations* pValue) put_CspInformations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, ICspStatus** ppValue) get_CspStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, ICspStatus* pValue) put_CspStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out X509ProviderType pValue) get_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509ProviderType Value) put_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_LegacyCsp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int16 Value) put_LegacyCsp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, IObjectId** ppValue) get_Algorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, IObjectId* pValue) put_Algorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out X509KeySpec pValue) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509KeySpec Value) put_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int32 pValue) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int32 Value) put_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out X509PrivateKeyExportFlags pValue) get_ExportPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509PrivateKeyExportFlags Value) put_ExportPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out X509PrivateKeyUsageFlags pValue) get_KeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509PrivateKeyUsageFlags Value) put_KeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out X509PrivateKeyProtection pValue) get_KeyProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, X509PrivateKeyProtection Value) put_KeyProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_MachineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int16 Value) put_MachineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, EncodingType Encoding, BSTR Value) put_Certificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_UniqueContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Opened;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_DefaultContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Existing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int16 Value) put_Existing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int16 pValue) get_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int16 Value) put_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, out int32 pValue) get_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, int32 Value) put_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_Pin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR* pValue) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey self, BSTR Value) put_Description;
 			}
 		}
 		[CRepr]
@@ -3103,16 +3103,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509PrivateKey.VTable
 			{
-				public new function HRESULT(ref IX509PrivateKey2 self, out X509HardwareKeyUsageFlags pValue) get_HardwareKeyUsage;
-				public new function HRESULT(ref IX509PrivateKey2 self, X509HardwareKeyUsageFlags Value) put_HardwareKeyUsage;
-				public new function HRESULT(ref IX509PrivateKey2 self, BSTR* pValue) get_AlternateStorageLocation;
-				public new function HRESULT(ref IX509PrivateKey2 self, BSTR Value) put_AlternateStorageLocation;
-				public new function HRESULT(ref IX509PrivateKey2 self, BSTR* pValue) get_AlgorithmName;
-				public new function HRESULT(ref IX509PrivateKey2 self, BSTR Value) put_AlgorithmName;
-				public new function HRESULT(ref IX509PrivateKey2 self, EncodingType Encoding, BSTR* pValue) get_AlgorithmParameters;
-				public new function HRESULT(ref IX509PrivateKey2 self, EncodingType Encoding, BSTR Value) put_AlgorithmParameters;
-				public new function HRESULT(ref IX509PrivateKey2 self, out X509KeyParametersExportType pValue) get_ParametersExportType;
-				public new function HRESULT(ref IX509PrivateKey2 self, X509KeyParametersExportType Value) put_ParametersExportType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, out X509HardwareKeyUsageFlags pValue) get_HardwareKeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, X509HardwareKeyUsageFlags Value) put_HardwareKeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, BSTR* pValue) get_AlternateStorageLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, BSTR Value) put_AlternateStorageLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, BSTR* pValue) get_AlgorithmName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, BSTR Value) put_AlgorithmName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, EncodingType Encoding, BSTR* pValue) get_AlgorithmParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, EncodingType Encoding, BSTR Value) put_AlgorithmParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, out X509KeyParametersExportType pValue) get_ParametersExportType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PrivateKey2 self, X509KeyParametersExportType Value) put_ParametersExportType;
 			}
 		}
 		[CRepr]
@@ -3137,17 +3137,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509EndorsementKey self, BSTR* pValue) get_ProviderName;
-				public new function HRESULT(ref IX509EndorsementKey self, BSTR Value) put_ProviderName;
-				public new function HRESULT(ref IX509EndorsementKey self, out int32 pValue) get_Length;
-				public new function HRESULT(ref IX509EndorsementKey self, out int16 pValue) get_Opened;
-				public new function HRESULT(ref IX509EndorsementKey self, EncodingType Encoding, BSTR strCertificate) AddCertificate;
-				public new function HRESULT(ref IX509EndorsementKey self, EncodingType Encoding, BSTR strCertificate) RemoveCertificate;
-				public new function HRESULT(ref IX509EndorsementKey self, int16 ManufacturerOnly, int32 dwIndex, EncodingType Encoding, BSTR* pValue) GetCertificateByIndex;
-				public new function HRESULT(ref IX509EndorsementKey self, int16 ManufacturerOnly, out int32 pCount) GetCertificateCount;
-				public new function HRESULT(ref IX509EndorsementKey self, IX509PublicKey** ppPublicKey) ExportPublicKey;
-				public new function HRESULT(ref IX509EndorsementKey self) Open;
-				public new function HRESULT(ref IX509EndorsementKey self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, BSTR* pValue) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, BSTR Value) put_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, out int32 pValue) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, out int16 pValue) get_Opened;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, EncodingType Encoding, BSTR strCertificate) AddCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, EncodingType Encoding, BSTR strCertificate) RemoveCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, int16 ManufacturerOnly, int32 dwIndex, EncodingType Encoding, BSTR* pValue) GetCertificateByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, int16 ManufacturerOnly, out int32 pCount) GetCertificateCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self, IX509PublicKey** ppPublicKey) ExportPublicKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EndorsementKey self) Close;
 			}
 		}
 		[CRepr]
@@ -3166,11 +3166,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509Extension self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
-				public new function HRESULT(ref IX509Extension self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref IX509Extension self, EncodingType Encoding, BSTR* pValue) get_RawData;
-				public new function HRESULT(ref IX509Extension self, out int16 pValue) get_Critical;
-				public new function HRESULT(ref IX509Extension self, int16 Value) put_Critical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extension self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extension self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extension self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extension self, out int16 pValue) get_Critical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extension self, int16 Value) put_Critical;
 			}
 		}
 		[CRepr]
@@ -3192,14 +3192,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509Extensions self, int32 Index, IX509Extension** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509Extensions self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509Extensions self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509Extensions self, IX509Extension* pVal) Add;
-				public new function HRESULT(ref IX509Extensions self, int32 Index) Remove;
-				public new function HRESULT(ref IX509Extensions self) Clear;
-				public new function HRESULT(ref IX509Extensions self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
-				public new function HRESULT(ref IX509Extensions self, IX509Extensions* pValue) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, int32 Index, IX509Extension** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, IX509Extension* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Extensions self, IX509Extensions* pValue) AddRange;
 			}
 		}
 		[CRepr]
@@ -3216,9 +3216,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionKeyUsage self, X509KeyUsageFlags UsageFlags) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionKeyUsage self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionKeyUsage self, out X509KeyUsageFlags pValue) get_KeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionKeyUsage self, X509KeyUsageFlags UsageFlags) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionKeyUsage self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionKeyUsage self, out X509KeyUsageFlags pValue) get_KeyUsage;
 			}
 		}
 		[CRepr]
@@ -3235,9 +3235,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionEnhancedKeyUsage self, IObjectIds* pValue) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionEnhancedKeyUsage self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionEnhancedKeyUsage self, IObjectIds** ppValue) get_EnhancedKeyUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionEnhancedKeyUsage self, IObjectIds* pValue) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionEnhancedKeyUsage self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionEnhancedKeyUsage self, IObjectIds** ppValue) get_EnhancedKeyUsage;
 			}
 		}
 		[CRepr]
@@ -3254,9 +3254,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionTemplateName self, BSTR strTemplateName) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionTemplateName self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionTemplateName self, BSTR* pValue) get_TemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplateName self, BSTR strTemplateName) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplateName self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplateName self, BSTR* pValue) get_TemplateName;
 			}
 		}
 		[CRepr]
@@ -3275,11 +3275,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionTemplate self, IObjectId* pTemplateOid, int32 MajorVersion, int32 MinorVersion) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionTemplate self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionTemplate self, IObjectId** ppValue) get_TemplateOid;
-				public new function HRESULT(ref IX509ExtensionTemplate self, out int32 pValue) get_MajorVersion;
-				public new function HRESULT(ref IX509ExtensionTemplate self, out int32 pValue) get_MinorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplate self, IObjectId* pTemplateOid, int32 MajorVersion, int32 MinorVersion) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplate self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplate self, IObjectId** ppValue) get_TemplateOid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplate self, out int32 pValue) get_MajorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionTemplate self, out int32 pValue) get_MinorVersion;
 			}
 		}
 		[CRepr]
@@ -3300,13 +3300,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAlternativeName self, AlternativeNameType Type, BSTR strValue) InitializeFromString;
-				public new function HRESULT(ref IAlternativeName self, AlternativeNameType Type, EncodingType Encoding, BSTR strRawData) InitializeFromRawData;
-				public new function HRESULT(ref IAlternativeName self, IObjectId* pObjectId, EncodingType Encoding, BSTR strRawData, int16 ToBeWrapped) InitializeFromOtherName;
-				public new function HRESULT(ref IAlternativeName self, out AlternativeNameType pValue) get_Type;
-				public new function HRESULT(ref IAlternativeName self, BSTR* pValue) get_StrValue;
-				public new function HRESULT(ref IAlternativeName self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref IAlternativeName self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, AlternativeNameType Type, BSTR strValue) InitializeFromString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, AlternativeNameType Type, EncodingType Encoding, BSTR strRawData) InitializeFromRawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, IObjectId* pObjectId, EncodingType Encoding, BSTR strRawData, int16 ToBeWrapped) InitializeFromOtherName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, out AlternativeNameType pValue) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, BSTR* pValue) get_StrValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeName self, EncodingType Encoding, BSTR* pValue) get_RawData;
 			}
 		}
 		[CRepr]
@@ -3326,12 +3326,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAlternativeNames self, int32 Index, IAlternativeName** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IAlternativeNames self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IAlternativeNames self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IAlternativeNames self, IAlternativeName* pVal) Add;
-				public new function HRESULT(ref IAlternativeNames self, int32 Index) Remove;
-				public new function HRESULT(ref IAlternativeNames self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self, int32 Index, IAlternativeName** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self, IAlternativeName* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAlternativeNames self) Clear;
 			}
 		}
 		[CRepr]
@@ -3348,9 +3348,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionAlternativeNames self, IAlternativeNames* pValue) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionAlternativeNames self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionAlternativeNames self, IAlternativeNames** ppValue) get_AlternativeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAlternativeNames self, IAlternativeNames* pValue) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAlternativeNames self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAlternativeNames self, IAlternativeNames** ppValue) get_AlternativeNames;
 			}
 		}
 		[CRepr]
@@ -3368,10 +3368,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionBasicConstraints self, int16 IsCA, int32 PathLenConstraint) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionBasicConstraints self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionBasicConstraints self, out int16 pValue) get_IsCA;
-				public new function HRESULT(ref IX509ExtensionBasicConstraints self, out int32 pValue) get_PathLenConstraint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionBasicConstraints self, int16 IsCA, int32 PathLenConstraint) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionBasicConstraints self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionBasicConstraints self, out int16 pValue) get_IsCA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionBasicConstraints self, out int32 pValue) get_PathLenConstraint;
 			}
 		}
 		[CRepr]
@@ -3388,9 +3388,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR* pValue) get_SubjectKeyIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSubjectKeyIdentifier self, EncodingType Encoding, BSTR* pValue) get_SubjectKeyIdentifier;
 			}
 		}
 		[CRepr]
@@ -3407,9 +3407,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR* pValue) get_AuthorityKeyIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionAuthorityKeyIdentifier self, EncodingType Encoding, BSTR* pValue) get_AuthorityKeyIdentifier;
 			}
 		}
 		[CRepr]
@@ -3426,9 +3426,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISmimeCapability self, IObjectId* pObjectId, int32 BitCount) Initialize;
-				public new function HRESULT(ref ISmimeCapability self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref ISmimeCapability self, out int32 pValue) get_BitCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapability self, IObjectId* pObjectId, int32 BitCount) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapability self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapability self, out int32 pValue) get_BitCount;
 			}
 		}
 		[CRepr]
@@ -3450,14 +3450,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISmimeCapabilities self, int32 Index, ISmimeCapability** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ISmimeCapabilities self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ISmimeCapabilities self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ISmimeCapabilities self, ISmimeCapability* pVal) Add;
-				public new function HRESULT(ref ISmimeCapabilities self, int32 Index) Remove;
-				public new function HRESULT(ref ISmimeCapabilities self) Clear;
-				public new function HRESULT(ref ISmimeCapabilities self, ICspInformation* pValue) AddFromCsp;
-				public new function HRESULT(ref ISmimeCapabilities self, int16 MachineContext) AddAvailableSmimeCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, int32 Index, ISmimeCapability** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, ISmimeCapability* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, ICspInformation* pValue) AddFromCsp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISmimeCapabilities self, int16 MachineContext) AddAvailableSmimeCapabilities;
 			}
 		}
 		[CRepr]
@@ -3474,9 +3474,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionSmimeCapabilities self, ISmimeCapabilities* pValue) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionSmimeCapabilities self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionSmimeCapabilities self, ISmimeCapabilities** ppValue) get_SmimeCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSmimeCapabilities self, ISmimeCapabilities* pValue) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSmimeCapabilities self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionSmimeCapabilities self, ISmimeCapabilities** ppValue) get_SmimeCapabilities;
 			}
 		}
 		[CRepr]
@@ -3495,11 +3495,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPolicyQualifier self, BSTR strQualifier, PolicyQualifierType Type) InitializeEncode;
-				public new function HRESULT(ref IPolicyQualifier self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref IPolicyQualifier self, BSTR* pValue) get_Qualifier;
-				public new function HRESULT(ref IPolicyQualifier self, out PolicyQualifierType pValue) get_Type;
-				public new function HRESULT(ref IPolicyQualifier self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifier self, BSTR strQualifier, PolicyQualifierType Type) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifier self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifier self, BSTR* pValue) get_Qualifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifier self, out PolicyQualifierType pValue) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifier self, EncodingType Encoding, BSTR* pValue) get_RawData;
 			}
 		}
 		[CRepr]
@@ -3519,12 +3519,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPolicyQualifiers self, int32 Index, IPolicyQualifier** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IPolicyQualifiers self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IPolicyQualifiers self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IPolicyQualifiers self, IPolicyQualifier* pVal) Add;
-				public new function HRESULT(ref IPolicyQualifiers self, int32 Index) Remove;
-				public new function HRESULT(ref IPolicyQualifiers self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self, int32 Index, IPolicyQualifier** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self, IPolicyQualifier* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPolicyQualifiers self) Clear;
 			}
 		}
 		[CRepr]
@@ -3541,9 +3541,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificatePolicy self, IObjectId* pValue) Initialize;
-				public new function HRESULT(ref ICertificatePolicy self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref ICertificatePolicy self, IPolicyQualifiers** ppValue) get_PolicyQualifiers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicy self, IObjectId* pValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicy self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicy self, IPolicyQualifiers** ppValue) get_PolicyQualifiers;
 			}
 		}
 		[CRepr]
@@ -3563,12 +3563,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificatePolicies self, int32 Index, ICertificatePolicy** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICertificatePolicies self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICertificatePolicies self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICertificatePolicies self, ICertificatePolicy* pVal) Add;
-				public new function HRESULT(ref ICertificatePolicies self, int32 Index) Remove;
-				public new function HRESULT(ref ICertificatePolicies self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self, int32 Index, ICertificatePolicy** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self, ICertificatePolicy* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificatePolicies self) Clear;
 			}
 		}
 		[CRepr]
@@ -3585,9 +3585,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionCertificatePolicies self, ICertificatePolicies* pValue) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionCertificatePolicies self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionCertificatePolicies self, ICertificatePolicies** ppValue) get_Policies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionCertificatePolicies self, ICertificatePolicies* pValue) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionCertificatePolicies self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionCertificatePolicies self, ICertificatePolicies** ppValue) get_Policies;
 			}
 		}
 		[CRepr]
@@ -3604,9 +3604,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Extension.VTable
 			{
-				public new function HRESULT(ref IX509ExtensionMSApplicationPolicies self, ICertificatePolicies* pValue) InitializeEncode;
-				public new function HRESULT(ref IX509ExtensionMSApplicationPolicies self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509ExtensionMSApplicationPolicies self, ICertificatePolicies** ppValue) get_Policies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionMSApplicationPolicies self, ICertificatePolicies* pValue) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionMSApplicationPolicies self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509ExtensionMSApplicationPolicies self, ICertificatePolicies** ppValue) get_Policies;
 			}
 		}
 		[CRepr]
@@ -3623,9 +3623,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509Attribute self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
-				public new function HRESULT(ref IX509Attribute self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref IX509Attribute self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attribute self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attribute self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attribute self, EncodingType Encoding, BSTR* pValue) get_RawData;
 			}
 		}
 		[CRepr]
@@ -3645,12 +3645,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509Attributes self, int32 Index, IX509Attribute** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509Attributes self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509Attributes self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509Attributes self, IX509Attribute* pVal) Add;
-				public new function HRESULT(ref IX509Attributes self, int32 Index) Remove;
-				public new function HRESULT(ref IX509Attributes self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self, int32 Index, IX509Attribute** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self, IX509Attribute* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Attributes self) Clear;
 			}
 		}
 		[CRepr]
@@ -3667,9 +3667,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeExtensions self, IX509Extensions* pExtensions) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeExtensions self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeExtensions self, IX509Extensions** ppValue) get_X509Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeExtensions self, IX509Extensions* pExtensions) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeExtensions self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeExtensions self, IX509Extensions** ppValue) get_X509Extensions;
 			}
 		}
 		[CRepr]
@@ -3689,12 +3689,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeClientId self, RequestClientInfoClientId ClientId, BSTR strMachineDnsName, BSTR strUserSamName, BSTR strProcessName) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeClientId self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeClientId self, out RequestClientInfoClientId pValue) get_ClientId;
-				public new function HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_MachineDnsName;
-				public new function HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_UserSamName;
-				public new function HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_ProcessName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, RequestClientInfoClientId ClientId, BSTR strMachineDnsName, BSTR strUserSamName, BSTR strProcessName) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, out RequestClientInfoClientId pValue) get_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_MachineDnsName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_UserSamName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeClientId self, BSTR* pValue) get_ProcessName;
 			}
 		}
 		[CRepr]
@@ -3711,9 +3711,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR strCert) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR strCert) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeRenewalCertificate self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
 			}
 		}
 		[CRepr]
@@ -3732,11 +3732,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeArchiveKey self, IX509PrivateKey* pKey, EncodingType Encoding, BSTR strCAXCert, IObjectId* pAlgorithm, int32 EncryptionStrength) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeArchiveKey self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeArchiveKey self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyBlob;
-				public new function HRESULT(ref IX509AttributeArchiveKey self, IObjectId** ppValue) get_EncryptionAlgorithm;
-				public new function HRESULT(ref IX509AttributeArchiveKey self, out int32 pValue) get_EncryptionStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKey self, IX509PrivateKey* pKey, EncodingType Encoding, BSTR strCAXCert, IObjectId* pAlgorithm, int32 EncryptionStrength) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKey self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKey self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKey self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKey self, out int32 pValue) get_EncryptionStrength;
 			}
 		}
 		[CRepr]
@@ -3753,9 +3753,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR strEncryptedKeyBlob) InitializeEncodeFromEncryptedKeyBlob;
-				public new function HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHashBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR strEncryptedKeyBlob) InitializeEncodeFromEncryptedKeyBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeArchiveKeyHash self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHashBlob;
 			}
 		}
 		[CRepr]
@@ -3772,9 +3772,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeOSVersion self, BSTR strOSVersion) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeOSVersion self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeOSVersion self, BSTR* pValue) get_OSVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeOSVersion self, BSTR strOSVersion) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeOSVersion self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeOSVersion self, BSTR* pValue) get_OSVersion;
 			}
 		}
 		[CRepr]
@@ -3793,11 +3793,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Attribute.VTable
 			{
-				public new function HRESULT(ref IX509AttributeCspProvider self, X509KeySpec KeySpec, BSTR strProviderName, EncodingType Encoding, BSTR strSignature) InitializeEncode;
-				public new function HRESULT(ref IX509AttributeCspProvider self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref IX509AttributeCspProvider self, out X509KeySpec pValue) get_KeySpec;
-				public new function HRESULT(ref IX509AttributeCspProvider self, BSTR* pValue) get_ProviderName;
-				public new function HRESULT(ref IX509AttributeCspProvider self, EncodingType Encoding, BSTR* pValue) get_Signature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeCspProvider self, X509KeySpec KeySpec, BSTR strProviderName, EncodingType Encoding, BSTR strSignature) InitializeEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeCspProvider self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeCspProvider self, out X509KeySpec pValue) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeCspProvider self, BSTR* pValue) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509AttributeCspProvider self, EncodingType Encoding, BSTR* pValue) get_Signature;
 			}
 		}
 		[CRepr]
@@ -3815,10 +3815,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICryptAttribute self, IObjectId* pObjectId) InitializeFromObjectId;
-				public new function HRESULT(ref ICryptAttribute self, IX509Attributes* pAttributes) InitializeFromValues;
-				public new function HRESULT(ref ICryptAttribute self, IObjectId** ppValue) get_ObjectId;
-				public new function HRESULT(ref ICryptAttribute self, IX509Attributes** ppValue) get_Values;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttribute self, IObjectId* pObjectId) InitializeFromObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttribute self, IX509Attributes* pAttributes) InitializeFromValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttribute self, IObjectId** ppValue) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttribute self, IX509Attributes** ppValue) get_Values;
 			}
 		}
 		[CRepr]
@@ -3840,14 +3840,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICryptAttributes self, int32 Index, ICryptAttribute** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICryptAttributes self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICryptAttributes self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICryptAttributes self, ICryptAttribute* pVal) Add;
-				public new function HRESULT(ref ICryptAttributes self, int32 Index) Remove;
-				public new function HRESULT(ref ICryptAttributes self) Clear;
-				public new function HRESULT(ref ICryptAttributes self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
-				public new function HRESULT(ref ICryptAttributes self, ICryptAttributes* pValue) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, int32 Index, ICryptAttribute** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, ICryptAttribute* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, IObjectId* pObjectId, out int32 pIndex) get_IndexByObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICryptAttributes self, ICryptAttributes* pValue) AddRange;
 			}
 		}
 		[CRepr]
@@ -3868,13 +3868,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
-				public new function HRESULT(ref ICertProperty self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-				public new function HRESULT(ref ICertProperty self, out CERTENROLL_PROPERTYID pValue) get_PropertyId;
-				public new function HRESULT(ref ICertProperty self, CERTENROLL_PROPERTYID Value) put_PropertyId;
-				public new function HRESULT(ref ICertProperty self, EncodingType Encoding, BSTR* pValue) get_RawData;
-				public new function HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) RemoveFromCertificate;
-				public new function HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) SetValueOnCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, out CERTENROLL_PROPERTYID pValue) get_PropertyId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, CERTENROLL_PROPERTYID Value) put_PropertyId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) RemoveFromCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperty self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) SetValueOnCertificate;
 			}
 		}
 		[CRepr]
@@ -3895,13 +3895,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertProperties self, int32 Index, ICertProperty** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICertProperties self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICertProperties self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICertProperties self, ICertProperty* pVal) Add;
-				public new function HRESULT(ref ICertProperties self, int32 Index) Remove;
-				public new function HRESULT(ref ICertProperties self) Clear;
-				public new function HRESULT(ref ICertProperties self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, int32 Index, ICertProperty** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, ICertProperty* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertProperties self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
 			}
 		}
 		[CRepr]
@@ -3917,8 +3917,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyFriendlyName self, BSTR strFriendlyName) Initialize;
-				public new function HRESULT(ref ICertPropertyFriendlyName self, BSTR* pValue) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyFriendlyName self, BSTR strFriendlyName) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyFriendlyName self, BSTR* pValue) get_FriendlyName;
 			}
 		}
 		[CRepr]
@@ -3934,8 +3934,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyDescription self, BSTR strDescription) Initialize;
-				public new function HRESULT(ref ICertPropertyDescription self, BSTR* pValue) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyDescription self, BSTR strDescription) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyDescription self, BSTR* pValue) get_Description;
 			}
 		}
 		[CRepr]
@@ -3951,8 +3951,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyAutoEnroll self, BSTR strTemplateName) Initialize;
-				public new function HRESULT(ref ICertPropertyAutoEnroll self, BSTR* pValue) get_TemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyAutoEnroll self, BSTR strTemplateName) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyAutoEnroll self, BSTR* pValue) get_TemplateName;
 			}
 		}
 		[CRepr]
@@ -3969,9 +3969,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyRequestOriginator self, BSTR strRequestOriginator) Initialize;
-				public new function HRESULT(ref ICertPropertyRequestOriginator self) InitializeFromLocalRequestOriginator;
-				public new function HRESULT(ref ICertPropertyRequestOriginator self, BSTR* pValue) get_RequestOriginator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRequestOriginator self, BSTR strRequestOriginator) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRequestOriginator self) InitializeFromLocalRequestOriginator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRequestOriginator self, BSTR* pValue) get_RequestOriginator;
 			}
 		}
 		[CRepr]
@@ -3987,8 +3987,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertySHA1Hash self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
-				public new function HRESULT(ref ICertPropertySHA1Hash self, EncodingType Encoding, BSTR* pValue) get_SHA1Hash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertySHA1Hash self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertySHA1Hash self, EncodingType Encoding, BSTR* pValue) get_SHA1Hash;
 			}
 		}
 		[CRepr]
@@ -4004,8 +4004,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyKeyProvInfo self, IX509PrivateKey* pValue) Initialize;
-				public new function HRESULT(ref ICertPropertyKeyProvInfo self, IX509PrivateKey** ppValue) get_PrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyKeyProvInfo self, IX509PrivateKey* pValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyKeyProvInfo self, IX509PrivateKey** ppValue) get_PrivateKey;
 			}
 		}
 		[CRepr]
@@ -4021,8 +4021,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyArchived self, int16 ArchivedValue) Initialize;
-				public new function HRESULT(ref ICertPropertyArchived self, out int16 pValue) get_Archived;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyArchived self, int16 ArchivedValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyArchived self, out int16 pValue) get_Archived;
 			}
 		}
 		[CRepr]
@@ -4040,10 +4040,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyBackedUp self, int16 BackedUpValue) InitializeFromCurrentTime;
-				public new function HRESULT(ref ICertPropertyBackedUp self, int16 BackedUpValue, double Date) Initialize;
-				public new function HRESULT(ref ICertPropertyBackedUp self, out int16 pValue) get_BackedUpValue;
-				public new function HRESULT(ref ICertPropertyBackedUp self, out double pDate) get_BackedUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyBackedUp self, int16 BackedUpValue) InitializeFromCurrentTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyBackedUp self, int16 BackedUpValue, double Date) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyBackedUp self, out int16 pValue) get_BackedUpValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyBackedUp self, out double pDate) get_BackedUpTime;
 			}
 		}
 		[CRepr]
@@ -4062,11 +4062,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyEnrollment self, int32 RequestId, BSTR strCADnsName, BSTR strCAName, BSTR strFriendlyName) Initialize;
-				public new function HRESULT(ref ICertPropertyEnrollment self, out int32 pValue) get_RequestId;
-				public new function HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_CADnsName;
-				public new function HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_CAName;
-				public new function HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollment self, int32 RequestId, BSTR strCADnsName, BSTR strCAName, BSTR strFriendlyName) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollment self, out int32 pValue) get_RequestId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_CADnsName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_CAName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollment self, BSTR* pValue) get_FriendlyName;
 			}
 		}
 		[CRepr]
@@ -4083,9 +4083,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyRenewal self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
-				public new function HRESULT(ref ICertPropertyRenewal self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificateHash;
-				public new function HRESULT(ref ICertPropertyRenewal self, EncodingType Encoding, BSTR* pValue) get_Renewal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRenewal self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRenewal self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificateHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyRenewal self, EncodingType Encoding, BSTR* pValue) get_Renewal;
 			}
 		}
 		[CRepr]
@@ -4101,8 +4101,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyArchivedKeyHash self, EncodingType Encoding, BSTR strArchivedKeyHashValue) Initialize;
-				public new function HRESULT(ref ICertPropertyArchivedKeyHash self, EncodingType Encoding, BSTR* pValue) get_ArchivedKeyHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyArchivedKeyHash self, EncodingType Encoding, BSTR strArchivedKeyHashValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyArchivedKeyHash self, EncodingType Encoding, BSTR* pValue) get_ArchivedKeyHash;
 			}
 		}
 		[CRepr]
@@ -4125,15 +4125,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertProperty.VTable
 			{
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, EnrollmentPolicyServerPropertyFlags PropertyFlags, X509EnrollmentAuthFlags AuthFlags, X509EnrollmentAuthFlags EnrollmentServerAuthFlags, PolicyServerUrlFlags UrlFlags, BSTR strRequestId, BSTR strUrl, BSTR strId, BSTR strEnrollmentServerUrl) Initialize;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerUrl;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerId;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetEnrollmentServerUrl;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetRequestIdString;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out EnrollmentPolicyServerPropertyFlags pValue) GetPropertyFlags;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out PolicyServerUrlFlags pValue) GetUrlFlags;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetAuthentication;
-				public new function HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetEnrollmentServerAuthentication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, EnrollmentPolicyServerPropertyFlags PropertyFlags, X509EnrollmentAuthFlags AuthFlags, X509EnrollmentAuthFlags EnrollmentServerAuthFlags, PolicyServerUrlFlags UrlFlags, BSTR strRequestId, BSTR strUrl, BSTR strId, BSTR strEnrollmentServerUrl) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetEnrollmentServerUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, BSTR* pValue) GetRequestIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out EnrollmentPolicyServerPropertyFlags pValue) GetPropertyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out PolicyServerUrlFlags pValue) GetUrlFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetAuthentication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertPropertyEnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetEnrollmentServerAuthentication;
 			}
 		}
 		[CRepr]
@@ -4160,19 +4160,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509SignatureInformation self, IObjectId** ppValue) get_HashAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, IObjectId* pValue) put_HashAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, IObjectId** ppValue) get_PublicKeyAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, IObjectId* pValue) put_PublicKeyAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, EncodingType Encoding, BSTR* pValue) get_Parameters;
-				public new function HRESULT(ref IX509SignatureInformation self, EncodingType Encoding, BSTR Value) put_Parameters;
-				public new function HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, int16 Value) put_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_AlternateSignatureAlgorithmSet;
-				public new function HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_NullSigned;
-				public new function HRESULT(ref IX509SignatureInformation self, int16 Value) put_NullSigned;
-				public new function HRESULT(ref IX509SignatureInformation self, int16 Pkcs7Signature, int16 SignatureKey, IObjectId** ppValue) GetSignatureAlgorithm;
-				public new function HRESULT(ref IX509SignatureInformation self) SetDefaultValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, IObjectId** ppValue) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, IObjectId* pValue) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, IObjectId** ppValue) get_PublicKeyAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, IObjectId* pValue) put_PublicKeyAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, EncodingType Encoding, BSTR* pValue) get_Parameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, EncodingType Encoding, BSTR Value) put_Parameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, int16 Value) put_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_AlternateSignatureAlgorithmSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, out int16 pValue) get_NullSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, int16 Value) put_NullSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self, int16 Pkcs7Signature, int16 SignatureKey, IObjectId** ppValue) GetSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SignatureInformation self) SetDefaultValues;
 			}
 		}
 		[CRepr]
@@ -4197,17 +4197,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISignerCertificate self, int16 MachineContext, X509PrivateKeyVerify VerifyType, EncodingType Encoding, BSTR strCertificate) Initialize;
-				public new function HRESULT(ref ISignerCertificate self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-				public new function HRESULT(ref ISignerCertificate self, IX509PrivateKey** ppValue) get_PrivateKey;
-				public new function HRESULT(ref ISignerCertificate self, out int16 pValue) get_Silent;
-				public new function HRESULT(ref ISignerCertificate self, int16 Value) put_Silent;
-				public new function HRESULT(ref ISignerCertificate self, out int32 pValue) get_ParentWindow;
-				public new function HRESULT(ref ISignerCertificate self, int32 Value) put_ParentWindow;
-				public new function HRESULT(ref ISignerCertificate self, BSTR* pValue) get_UIContextMessage;
-				public new function HRESULT(ref ISignerCertificate self, BSTR Value) put_UIContextMessage;
-				public new function HRESULT(ref ISignerCertificate self, BSTR Value) put_Pin;
-				public new function HRESULT(ref ISignerCertificate self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, int16 MachineContext, X509PrivateKeyVerify VerifyType, EncodingType Encoding, BSTR strCertificate) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, IX509PrivateKey** ppValue) get_PrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, out int16 pValue) get_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, int16 Value) put_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, out int32 pValue) get_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, int32 Value) put_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, BSTR* pValue) get_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, BSTR Value) put_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, BSTR Value) put_Pin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificate self, IX509SignatureInformation** ppValue) get_SignatureInformation;
 			}
 		}
 		[CRepr]
@@ -4228,13 +4228,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISignerCertificates self, int32 Index, ISignerCertificate** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ISignerCertificates self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ISignerCertificates self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ISignerCertificates self, ISignerCertificate* pVal) Add;
-				public new function HRESULT(ref ISignerCertificates self, int32 Index) Remove;
-				public new function HRESULT(ref ISignerCertificates self) Clear;
-				public new function HRESULT(ref ISignerCertificates self, ISignerCertificate* pSignerCert, out int32 piSignerCert) Find;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, int32 Index, ISignerCertificate** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, ISignerCertificate* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISignerCertificates self, ISignerCertificate* pSignerCert, out int32 piSignerCert) Find;
 			}
 		}
 		[CRepr]
@@ -4251,9 +4251,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509NameValuePair self, BSTR strName, BSTR strValue) Initialize;
-				public new function HRESULT(ref IX509NameValuePair self, BSTR* pValue) get_Value;
-				public new function HRESULT(ref IX509NameValuePair self, BSTR* pValue) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePair self, BSTR strName, BSTR strValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePair self, BSTR* pValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePair self, BSTR* pValue) get_Name;
 			}
 		}
 		[CRepr]
@@ -4273,12 +4273,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509NameValuePairs self, int32 Index, IX509NameValuePair** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509NameValuePairs self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509NameValuePairs self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509NameValuePairs self, IX509NameValuePair* pVal) Add;
-				public new function HRESULT(ref IX509NameValuePairs self, int32 Index) Remove;
-				public new function HRESULT(ref IX509NameValuePairs self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self, int32 Index, IX509NameValuePair** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self, IX509NameValuePair* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509NameValuePairs self) Clear;
 			}
 		}
 		[CRepr]
@@ -4293,7 +4293,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateTemplate self, EnrollmentTemplateProperty property, out VARIANT pValue) get_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplate self, EnrollmentTemplateProperty property, out VARIANT pValue) get_Property;
 			}
 		}
 		[CRepr]
@@ -4315,14 +4315,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateTemplates self, int32 Index, IX509CertificateTemplate** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509CertificateTemplates self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509CertificateTemplates self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509CertificateTemplates self, IX509CertificateTemplate* pVal) Add;
-				public new function HRESULT(ref IX509CertificateTemplates self, int32 Index) Remove;
-				public new function HRESULT(ref IX509CertificateTemplates self) Clear;
-				public new function HRESULT(ref IX509CertificateTemplates self, BSTR bstrName, IX509CertificateTemplate** ppValue) get_ItemByName;
-				public new function HRESULT(ref IX509CertificateTemplates self, IObjectId* pOid, IX509CertificateTemplate** ppValue) get_ItemByOid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, int32 Index, IX509CertificateTemplate** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, IX509CertificateTemplate* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, BSTR bstrName, IX509CertificateTemplate** ppValue) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplates self, IObjectId* pOid, IX509CertificateTemplate** ppValue) get_ItemByOid;
 			}
 		}
 		[CRepr]
@@ -4341,11 +4341,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateTemplateWritable self, IX509CertificateTemplate* pValue) Initialize;
-				public new function HRESULT(ref IX509CertificateTemplateWritable self, CommitTemplateFlags commitFlags, BSTR strServerContext) Commit;
-				public new function HRESULT(ref IX509CertificateTemplateWritable self, EnrollmentTemplateProperty property, out VARIANT pValue) get_Property;
-				public new function HRESULT(ref IX509CertificateTemplateWritable self, EnrollmentTemplateProperty property, VARIANT value) put_Property;
-				public new function HRESULT(ref IX509CertificateTemplateWritable self, IX509CertificateTemplate** ppValue) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplateWritable self, IX509CertificateTemplate* pValue) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplateWritable self, CommitTemplateFlags commitFlags, BSTR strServerContext) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplateWritable self, EnrollmentTemplateProperty property, out VARIANT pValue) get_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplateWritable self, EnrollmentTemplateProperty property, VARIANT value) put_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateTemplateWritable self, IX509CertificateTemplate** ppValue) get_Template;
 			}
 		}
 		[CRepr]
@@ -4360,7 +4360,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificationAuthority self, EnrollmentCAProperty property, out VARIANT pValue) get_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthority self, EnrollmentCAProperty property, out VARIANT pValue) get_Property;
 			}
 		}
 		[CRepr]
@@ -4382,14 +4382,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificationAuthorities self, int32 Index, ICertificationAuthority** pVal) get_ItemByIndex;
-				public new function HRESULT(ref ICertificationAuthorities self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICertificationAuthorities self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref ICertificationAuthorities self, ICertificationAuthority* pVal) Add;
-				public new function HRESULT(ref ICertificationAuthorities self, int32 Index) Remove;
-				public new function HRESULT(ref ICertificationAuthorities self) Clear;
-				public new function HRESULT(ref ICertificationAuthorities self) ComputeSiteCosts;
-				public new function HRESULT(ref ICertificationAuthorities self, BSTR strName, ICertificationAuthority** ppValue) get_ItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, int32 Index, ICertificationAuthority** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, ICertificationAuthority* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self) ComputeSiteCosts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificationAuthorities self, BSTR strName, ICertificationAuthority** ppValue) get_ItemByName;
 			}
 		}
 		[CRepr]
@@ -4427,30 +4427,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR bstrPolicyServerUrl, BSTR bstrPolicyServerId, X509EnrollmentAuthFlags authFlags, int16 fIsUnTrusted, X509CertificateEnrollmentContext context) Initialize;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, X509EnrollmentPolicyLoadOption option) LoadPolicy;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, IX509CertificateTemplates** pTemplates) GetTemplates;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, IX509CertificateTemplate* pTemplate, ICertificationAuthorities** ppCAs) GetCAsForTemplate;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, ICertificationAuthorities** ppCAs) GetCAs;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self) Validate;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, IObjectIds** ppObjectIds) GetCustomOids;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out double pDate) GetNextUpdateTime;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out double pDate) GetLastUpdateTime;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerUrl;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerId;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetFriendlyName;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetIsDefaultCEP;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetUseClientId;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetAllowUnTrustedCA;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetCachePath;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetCacheDir;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetAuthFlags;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, int32 hWndParent, X509EnrollmentAuthFlags flag, BSTR strCredential, BSTR strPassword) SetCredential;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) QueryChanges;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, VARIANT val) InitializeImport;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, X509EnrollmentPolicyExportFlags exportFlags, out VARIANT pVal) Export;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, out uint32 pValue) get_Cost;
-				public new function HRESULT(ref IX509EnrollmentPolicyServer self, uint32 value) put_Cost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR bstrPolicyServerUrl, BSTR bstrPolicyServerId, X509EnrollmentAuthFlags authFlags, int16 fIsUnTrusted, X509CertificateEnrollmentContext context) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, X509EnrollmentPolicyLoadOption option) LoadPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, IX509CertificateTemplates** pTemplates) GetTemplates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, IX509CertificateTemplate* pTemplate, ICertificationAuthorities** ppCAs) GetCAsForTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, ICertificationAuthorities** ppCAs) GetCAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self) Validate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, IObjectIds** ppObjectIds) GetCustomOids;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out double pDate) GetNextUpdateTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out double pDate) GetLastUpdateTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetPolicyServerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetIsDefaultCEP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetUseClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) GetAllowUnTrustedCA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetCachePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, BSTR* pValue) GetCacheDir;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out X509EnrollmentAuthFlags pValue) GetAuthFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, int32 hWndParent, X509EnrollmentAuthFlags flag, BSTR strCredential, BSTR strPassword) SetCredential;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out int16 pValue) QueryChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, VARIANT val) InitializeImport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, X509EnrollmentPolicyExportFlags exportFlags, out VARIANT pVal) Export;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, out uint32 pValue) get_Cost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentPolicyServer self, uint32 value) put_Cost;
 			}
 		}
 		[CRepr]
@@ -4479,21 +4479,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) Initialize;
-				public new function HRESULT(ref IX509PolicyServerUrl self, BSTR* ppValue) get_Url;
-				public new function HRESULT(ref IX509PolicyServerUrl self, BSTR pValue) put_Url;
-				public new function HRESULT(ref IX509PolicyServerUrl self, out int16 pValue) get_Default;
-				public new function HRESULT(ref IX509PolicyServerUrl self, int16 value) put_Default;
-				public new function HRESULT(ref IX509PolicyServerUrl self, out PolicyServerUrlFlags pValue) get_Flags;
-				public new function HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlFlags Flags) put_Flags;
-				public new function HRESULT(ref IX509PolicyServerUrl self, out X509EnrollmentAuthFlags pValue) get_AuthFlags;
-				public new function HRESULT(ref IX509PolicyServerUrl self, X509EnrollmentAuthFlags Flags) put_AuthFlags;
-				public new function HRESULT(ref IX509PolicyServerUrl self, out uint32 pValue) get_Cost;
-				public new function HRESULT(ref IX509PolicyServerUrl self, uint32 value) put_Cost;
-				public new function HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlPropertyID propertyId, BSTR* ppValue) GetStringProperty;
-				public new function HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlPropertyID propertyId, BSTR pValue) SetStringProperty;
-				public new function HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) UpdateRegistry;
-				public new function HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) RemoveFromRegistry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, BSTR* ppValue) get_Url;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, BSTR pValue) put_Url;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, out int16 pValue) get_Default;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, int16 value) put_Default;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, out PolicyServerUrlFlags pValue) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlFlags Flags) put_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, out X509EnrollmentAuthFlags pValue) get_AuthFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, X509EnrollmentAuthFlags Flags) put_AuthFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, out uint32 pValue) get_Cost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, uint32 value) put_Cost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlPropertyID propertyId, BSTR* ppValue) GetStringProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, PolicyServerUrlPropertyID propertyId, BSTR pValue) SetStringProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) UpdateRegistry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerUrl self, X509CertificateEnrollmentContext context) RemoveFromRegistry;
 			}
 		}
 		[CRepr]
@@ -4514,13 +4514,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509PolicyServerListManager self, int32 Index, IX509PolicyServerUrl** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509PolicyServerListManager self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509PolicyServerListManager self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509PolicyServerListManager self, IX509PolicyServerUrl* pVal) Add;
-				public new function HRESULT(ref IX509PolicyServerListManager self, int32 Index) Remove;
-				public new function HRESULT(ref IX509PolicyServerListManager self) Clear;
-				public new function HRESULT(ref IX509PolicyServerListManager self, X509CertificateEnrollmentContext context, PolicyServerUrlFlags Flags) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, int32 Index, IX509PolicyServerUrl** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, IX509PolicyServerUrl* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509PolicyServerListManager self, X509CertificateEnrollmentContext context, PolicyServerUrlFlags Flags) Initialize;
 			}
 		}
 		[CRepr]
@@ -4559,31 +4559,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequest self, X509CertificateEnrollmentContext Context) Initialize;
-				public new function HRESULT(ref IX509CertificateRequest self) Encode;
-				public new function HRESULT(ref IX509CertificateRequest self) ResetForEncode;
-				public new function HRESULT(ref IX509CertificateRequest self, InnerRequestLevel Level, IX509CertificateRequest** ppValue) GetInnerRequest;
-				public new function HRESULT(ref IX509CertificateRequest self, out X509RequestType pValue) get_Type;
-				public new function HRESULT(ref IX509CertificateRequest self, out X509CertificateEnrollmentContext pValue) get_EnrollmentContext;
-				public new function HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_Silent;
-				public new function HRESULT(ref IX509CertificateRequest self, int16 Value) put_Silent;
-				public new function HRESULT(ref IX509CertificateRequest self, out int32 pValue) get_ParentWindow;
-				public new function HRESULT(ref IX509CertificateRequest self, int32 Value) put_ParentWindow;
-				public new function HRESULT(ref IX509CertificateRequest self, BSTR* pValue) get_UIContextMessage;
-				public new function HRESULT(ref IX509CertificateRequest self, BSTR Value) put_UIContextMessage;
-				public new function HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_SuppressDefaults;
-				public new function HRESULT(ref IX509CertificateRequest self, int16 Value) put_SuppressDefaults;
-				public new function HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
-				public new function HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR Value) put_RenewalCertificate;
-				public new function HRESULT(ref IX509CertificateRequest self, out RequestClientInfoClientId pValue) get_ClientId;
-				public new function HRESULT(ref IX509CertificateRequest self, RequestClientInfoClientId Value) put_ClientId;
-				public new function HRESULT(ref IX509CertificateRequest self, ICspInformations** ppValue) get_CspInformations;
-				public new function HRESULT(ref IX509CertificateRequest self, ICspInformations* pValue) put_CspInformations;
-				public new function HRESULT(ref IX509CertificateRequest self, IObjectId** ppValue) get_HashAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequest self, IObjectId* pValue) put_HashAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequest self, int16 Value) put_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, X509CertificateEnrollmentContext Context) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self) ResetForEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, InnerRequestLevel Level, IX509CertificateRequest** ppValue) GetInnerRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out X509RequestType pValue) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out X509CertificateEnrollmentContext pValue) get_EnrollmentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, int16 Value) put_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out int32 pValue) get_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, int32 Value) put_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, BSTR* pValue) get_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, BSTR Value) put_UIContextMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_SuppressDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, int16 Value) put_SuppressDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR Value) put_RenewalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out RequestClientInfoClientId pValue) get_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, RequestClientInfoClientId Value) put_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, ICspInformations** ppValue) get_CspInformations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, ICspInformations* pValue) put_CspInformations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, IObjectId** ppValue) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, IObjectId* pValue) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, out int16 pValue) get_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, int16 Value) put_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequest self, EncodingType Encoding, BSTR* pValue) get_RawData;
 			}
 		}
 		[CRepr]
@@ -4625,34 +4625,34 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequest.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, BSTR strTemplateName) InitializeFromPrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, BSTR strTemplateName) InitializeFromPublicKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) IsSmartCard;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectId** ppValue) get_TemplateObjectId;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX509PublicKey** ppValue) get_PublicKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX509PrivateKey** ppValue) get_PrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_NullSigned;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_ReuseKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_OldCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX500DistinguishedName** ppValue) get_Subject;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX500DistinguishedName* pValue) put_Subject;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, ICspStatuses** ppValue) get_CspStatuses;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_SmimeCapabilities;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, int16 Value) put_SmimeCapabilities;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR* pValue) get_KeyContainerNamePrefix;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR Value) put_KeyContainerNamePrefix;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, ICryptAttributes** ppValue) get_CryptAttributes;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IX509Extensions** ppValue) get_X509Extensions;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectIds** ppValue) get_CriticalExtensions;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectIds** ppValue) get_SuppressOids;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_Signature;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10 self, X509KeySpec KeySpec, ICspStatuses** ppCspStatuses) GetCspStatuses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, BSTR strTemplateName) InitializeFromPrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, BSTR strTemplateName) InitializeFromPublicKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, X509CertificateEnrollmentContext Context, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) IsSmartCard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectId** ppValue) get_TemplateObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX509PublicKey** ppValue) get_PublicKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX509PrivateKey** ppValue) get_PrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_NullSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_ReuseKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_OldCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX500DistinguishedName** ppValue) get_Subject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX500DistinguishedName* pValue) put_Subject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, ICspStatuses** ppValue) get_CspStatuses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, out int16 pValue) get_SmimeCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, int16 Value) put_SmimeCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR* pValue) get_KeyContainerNamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, BSTR Value) put_KeyContainerNamePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, ICryptAttributes** ppValue) get_CryptAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IX509Extensions** ppValue) get_X509Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectIds** ppValue) get_CriticalExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, IObjectIds** ppValue) get_SuppressOids;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, EncodingType Encoding, BSTR* pValue) get_Signature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10 self, X509KeySpec KeySpec, ICspStatuses** ppCspStatuses) GetCspStatuses;
 			}
 		}
 		[CRepr]
@@ -4671,11 +4671,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs10.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPublicKeyTemplate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V2 self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V2 self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPublicKeyTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V2 self, IX509CertificateTemplate** ppTemplate) get_Template;
 			}
 		}
 		[CRepr]
@@ -4700,17 +4700,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs10V2.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, out int16 pValue) get_AttestPrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, int16 Value) put_AttestPrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, EncodingType Encoding, BSTR* pValue) get_AttestationEncryptionCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, EncodingType Encoding, BSTR Value) put_AttestationEncryptionCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, IObjectId** ppValue) get_EncryptionAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, IObjectId* pValue) put_EncryptionAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, out int32 pValue) get_EncryptionStrength;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, int32 Value) put_EncryptionStrength;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, BSTR* pValue) get_ChallengePassword;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, BSTR Value) put_ChallengePassword;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V3 self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, out int16 pValue) get_AttestPrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, int16 Value) put_AttestPrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, EncodingType Encoding, BSTR* pValue) get_AttestationEncryptionCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, EncodingType Encoding, BSTR Value) put_AttestationEncryptionCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, IObjectId* pValue) put_EncryptionAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, out int32 pValue) get_EncryptionStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, int32 Value) put_EncryptionStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, BSTR* pValue) get_ChallengePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, BSTR Value) put_ChallengePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V3 self, IX509NameValuePairs** ppValue) get_NameValuePairs;
 			}
 		}
 		[CRepr]
@@ -4728,10 +4728,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs10V3.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V4 self, out KeyAttestationClaimType pValue) get_ClaimType;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V4 self, KeyAttestationClaimType Value) put_ClaimType;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V4 self, out int16 pValue) get_AttestPrivateKeyPreferred;
-				public new function HRESULT(ref IX509CertificateRequestPkcs10V4 self, int16 Value) put_AttestPrivateKeyPreferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V4 self, out KeyAttestationClaimType pValue) get_ClaimType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V4 self, KeyAttestationClaimType Value) put_ClaimType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V4 self, out int16 pValue) get_AttestPrivateKeyPreferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs10V4 self, int16 Value) put_AttestPrivateKeyPreferred;
 			}
 		}
 		[CRepr]
@@ -4756,17 +4756,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs10.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, IX500DistinguishedName** ppValue) get_Issuer;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, IX500DistinguishedName* pValue) put_Issuer;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, out double pValue) get_NotBefore;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, double Value) put_NotBefore;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, out double pValue) get_NotAfter;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, double Value) put_NotAfter;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, EncodingType Encoding, BSTR Value) put_SerialNumber;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, ISignerCertificate** ppValue) get_SignerCertificate;
-				public new function HRESULT(ref IX509CertificateRequestCertificate self, ISignerCertificate* pValue) put_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, IX500DistinguishedName** ppValue) get_Issuer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, IX500DistinguishedName* pValue) put_Issuer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, out double pValue) get_NotBefore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, double Value) put_NotBefore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, out double pValue) get_NotAfter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, double Value) put_NotAfter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, EncodingType Encoding, BSTR Value) put_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate self, ISignerCertificate* pValue) put_SignerCertificate;
 			}
 		}
 		[CRepr]
@@ -4784,10 +4784,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestCertificate.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestCertificate2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-				public new function HRESULT(ref IX509CertificateRequestCertificate2 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
-				public new function HRESULT(ref IX509CertificateRequestCertificate2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-				public new function HRESULT(ref IX509CertificateRequestCertificate2 self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate2 self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCertificate2 self, IX509CertificateTemplate** ppTemplate) get_Template;
 			}
 		}
 		[CRepr]
@@ -4809,14 +4809,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequest.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, X509CertificateEnrollmentContext Context, int16 RenewalRequest, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, IX509CertificateRequest* pInnerRequest) InitializeFromInnerRequest;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR* pValue) get_RequesterName;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR Value) put_RequesterName;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, ISignerCertificate** ppValue) get_SignerCertificate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7 self, ISignerCertificate* pValue) put_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, X509CertificateEnrollmentContext Context, int16 RenewalRequest, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, IX509CertificateRequest* pInnerRequest) InitializeFromInnerRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR* pValue) get_RequesterName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, BSTR Value) put_RequesterName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7 self, ISignerCertificate* pValue) put_SignerCertificate;
 			}
 		}
 		[CRepr]
@@ -4834,10 +4834,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs7.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestPkcs7V2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7V2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7V2 self, IX509CertificateTemplate** ppTemplate) get_Template;
-				public new function HRESULT(ref IX509CertificateRequestPkcs7V2 self, int16 ValidateCertificateChain) CheckCertificateSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7V2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7V2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7V2 self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestPkcs7V2 self, int16 ValidateCertificateChain) CheckCertificateSignature;
 			}
 		}
 		[CRepr]
@@ -4874,29 +4874,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestPkcs7.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IX509CertificateRequest* pInnerRequest, BSTR strTemplateName) InitializeFromInnerRequestTemplateName;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IObjectId** ppValue) get_TemplateObjectId;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, out int16 pValue) get_NullSigned;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, ICryptAttributes** ppValue) get_CryptAttributes;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IX509NameValuePairs** ppValue) get_NameValuePairs;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IX509Extensions** ppValue) get_X509Extensions;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IObjectIds** ppValue) get_CriticalExtensions;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IObjectIds** ppValue) get_SuppressOids;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, out int32 pValue) get_TransactionId;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, int32 Value) put_TransactionId;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_SenderNonce;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR Value) put_SenderNonce;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, out int16 pValue) get_ArchivePrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, int16 Value) put_ArchivePrivateKey;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_KeyArchivalCertificate;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR Value) put_KeyArchivalCertificate;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IObjectId** ppValue) get_EncryptionAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, IObjectId* pValue) put_EncryptionAlgorithm;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, out int32 pValue) get_EncryptionStrength;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, int32 Value) put_EncryptionStrength;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHash;
-				public new function HRESULT(ref IX509CertificateRequestCmc self, ISignerCertificates** ppValue) get_SignerCertificates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IX509CertificateRequest* pInnerRequest, BSTR strTemplateName) InitializeFromInnerRequestTemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IObjectId** ppValue) get_TemplateObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, out int16 pValue) get_NullSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, ICryptAttributes** ppValue) get_CryptAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IX509Extensions** ppValue) get_X509Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IObjectIds** ppValue) get_CriticalExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IObjectIds** ppValue) get_SuppressOids;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, out int32 pValue) get_TransactionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, int32 Value) put_TransactionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_SenderNonce;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR Value) put_SenderNonce;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, out int16 pValue) get_ArchivePrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, int16 Value) put_ArchivePrivateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_KeyArchivalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR Value) put_KeyArchivalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, IObjectId* pValue) put_EncryptionAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, out int32 pValue) get_EncryptionStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, int32 Value) put_EncryptionStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc self, ISignerCertificates** ppValue) get_SignerCertificates;
 			}
 		}
 		[CRepr]
@@ -4916,12 +4916,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509CertificateRequestCmc.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, IX509CertificateRequest* pInnerRequest, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromInnerRequestTemplate;
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, IX509CertificateTemplate** ppTemplate) get_Template;
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
-				public new function HRESULT(ref IX509CertificateRequestCmc2 self, ISignerCertificate* pSignerCertificate, int16 ValidateCertificateChain) CheckCertificateSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, IX509CertificateRequest* pInnerRequest, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromInnerRequestTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRequestCmc2 self, ISignerCertificate* pSignerCertificate, int16 ValidateCertificateChain) CheckCertificateSignature;
 			}
 		}
 		[CRepr]
@@ -4958,29 +4958,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509Enrollment self, X509CertificateEnrollmentContext Context) Initialize;
-				public new function HRESULT(ref IX509Enrollment self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-				public new function HRESULT(ref IX509Enrollment self, IX509CertificateRequest* pRequest) InitializeFromRequest;
-				public new function HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) CreateRequest;
-				public new function HRESULT(ref IX509Enrollment self) Enroll;
-				public new function HRESULT(ref IX509Enrollment self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword) InstallResponse;
-				public new function HRESULT(ref IX509Enrollment self, BSTR strPassword, PFXExportOptions ExportOptions, EncodingType Encoding, BSTR* pValue) CreatePFX;
-				public new function HRESULT(ref IX509Enrollment self, IX509CertificateRequest** pValue) get_Request;
-				public new function HRESULT(ref IX509Enrollment self, out int16 pValue) get_Silent;
-				public new function HRESULT(ref IX509Enrollment self, int16 Value) put_Silent;
-				public new function HRESULT(ref IX509Enrollment self, out int32 pValue) get_ParentWindow;
-				public new function HRESULT(ref IX509Enrollment self, int32 Value) put_ParentWindow;
-				public new function HRESULT(ref IX509Enrollment self, IX509NameValuePairs** ppValue) get_NameValuePairs;
-				public new function HRESULT(ref IX509Enrollment self, out X509CertificateEnrollmentContext pValue) get_EnrollmentContext;
-				public new function HRESULT(ref IX509Enrollment self, IX509EnrollmentStatus** ppValue) get_Status;
-				public new function HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-				public new function HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) get_Response;
-				public new function HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CertificateFriendlyName;
-				public new function HRESULT(ref IX509Enrollment self, BSTR strValue) put_CertificateFriendlyName;
-				public new function HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CertificateDescription;
-				public new function HRESULT(ref IX509Enrollment self, BSTR strValue) put_CertificateDescription;
-				public new function HRESULT(ref IX509Enrollment self, out int32 pValue) get_RequestId;
-				public new function HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CAConfigString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, X509CertificateEnrollmentContext Context) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, IX509CertificateRequest* pRequest) InitializeFromRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) CreateRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self) Enroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword) InstallResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR strPassword, PFXExportOptions ExportOptions, EncodingType Encoding, BSTR* pValue) CreatePFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, IX509CertificateRequest** pValue) get_Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, out int16 pValue) get_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, int16 Value) put_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, out int32 pValue) get_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, int32 Value) put_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, out X509CertificateEnrollmentContext pValue) get_EnrollmentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, IX509EnrollmentStatus** ppValue) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, EncodingType Encoding, BSTR* pValue) get_Response;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CertificateFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR strValue) put_CertificateFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CertificateDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR strValue) put_CertificateDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, out int32 pValue) get_RequestId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment self, BSTR* pValue) get_CAConfigString;
 			}
 		}
 		[CRepr]
@@ -4999,11 +4999,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509Enrollment.VTable
 			{
-				public new function HRESULT(ref IX509Enrollment2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-				public new function HRESULT(ref IX509Enrollment2 self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword, BSTR strEnrollmentPolicyServerUrl, BSTR strEnrollmentPolicyServerID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags) InstallResponse2;
-				public new function HRESULT(ref IX509Enrollment2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-				public new function HRESULT(ref IX509Enrollment2 self, IX509CertificateTemplate** ppTemplate) get_Template;
-				public new function HRESULT(ref IX509Enrollment2 self, BSTR* pValue) get_RequestIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment2 self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment2 self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword, BSTR strEnrollmentPolicyServerUrl, BSTR strEnrollmentPolicyServerID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags) InstallResponse2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment2 self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment2 self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509Enrollment2 self, BSTR* pValue) get_RequestIdString;
 			}
 		}
 		[CRepr]
@@ -5021,10 +5021,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentPolicyServerURI, BSTR strEnrollmentPolicyID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddPolicyServer;
-				public new function HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentServerURI, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddEnrollmentServer;
-				public new function HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentPolicyServerURI, BSTR strTemplateName, EncodingType Encoding, WebEnrollmentFlags enrollFlags, BSTR* pstrCertificate) Enroll;
-				public new function HRESULT(ref IX509EnrollmentHelper self, X509CertificateEnrollmentContext Context) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentPolicyServerURI, BSTR strEnrollmentPolicyID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddPolicyServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentServerURI, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddEnrollmentServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentHelper self, BSTR strEnrollmentPolicyServerURI, BSTR strTemplateName, EncodingType Encoding, WebEnrollmentFlags enrollFlags, BSTR* pstrCertificate) Enroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentHelper self, X509CertificateEnrollmentContext Context) Initialize;
 			}
 		}
 		[CRepr]
@@ -5039,7 +5039,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509EnrollmentWebClassFactory self, BSTR strProgID, IUnknown** ppIUnknown) CreateObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509EnrollmentWebClassFactory self, BSTR strProgID, IUnknown** ppIUnknown) CreateObject;
 			}
 		}
 		[CRepr]
@@ -5054,7 +5054,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509MachineEnrollmentFactory self, BSTR strProgID, IX509EnrollmentHelper** ppIHelper) CreateObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509MachineEnrollmentFactory self, BSTR strProgID, IX509EnrollmentHelper** ppIHelper) CreateObject;
 			}
 		}
 		[CRepr]
@@ -5075,13 +5075,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, EncodingType Encoding, BSTR SerialNumber, double RevocationDate) Initialize;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, out double pValue) get_RevocationDate;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, out CRLRevocationReason pValue) get_RevocationReason;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, CRLRevocationReason Value) put_RevocationReason;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, IX509Extensions** ppValue) get_X509Extensions;
-				public new function HRESULT(ref IX509CertificateRevocationListEntry self, IObjectIds** ppValue) get_CriticalExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, EncodingType Encoding, BSTR SerialNumber, double RevocationDate) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, out double pValue) get_RevocationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, out CRLRevocationReason pValue) get_RevocationReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, CRLRevocationReason Value) put_RevocationReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, IX509Extensions** ppValue) get_X509Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntry self, IObjectIds** ppValue) get_CriticalExtensions;
 			}
 		}
 		[CRepr]
@@ -5103,14 +5103,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, int32 Index, IX509CertificateRevocationListEntry** pVal) get_ItemByIndex;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, IUnknown** pVal) get__NewEnum;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, IX509CertificateRevocationListEntry* pVal) Add;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, int32 Index) Remove;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self) Clear;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, EncodingType Encoding, BSTR SerialNumber, out int32 pIndex) get_IndexBySerialNumber;
-				public new function HRESULT(ref IX509CertificateRevocationListEntries self, IX509CertificateRevocationListEntries* pValue) AddRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, int32 Index, IX509CertificateRevocationListEntry** pVal) get_ItemByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, IUnknown** pVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, IX509CertificateRevocationListEntry* pVal) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, int32 Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, EncodingType Encoding, BSTR SerialNumber, out int32 pIndex) get_IndexBySerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationListEntries self, IX509CertificateRevocationListEntries* pValue) AddRange;
 			}
 		}
 		[CRepr]
@@ -5155,37 +5155,37 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509CertificateRevocationList self) Initialize;
-				public new function HRESULT(ref IX509CertificateRevocationList self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-				public new function HRESULT(ref IX509CertificateRevocationList self) Encode;
-				public new function HRESULT(ref IX509CertificateRevocationList self) ResetForEncode;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
-				public new function HRESULT(ref IX509CertificateRevocationList self) CheckSignature;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX500DistinguishedName** ppValue) get_Issuer;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX500DistinguishedName* pValue) put_Issuer;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out double pValue) get_ThisUpdate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, double Value) put_ThisUpdate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out double pValue) get_NextUpdate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, double Value) put_NextUpdate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX509CertificateRevocationListEntries** ppValue) get_X509CRLEntries;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX509Extensions** ppValue) get_X509Extensions;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IObjectIds** ppValue) get_CriticalExtensions;
-				public new function HRESULT(ref IX509CertificateRevocationList self, ISignerCertificate** ppValue) get_SignerCertificate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, ISignerCertificate* pValue) put_SignerCertificate;
-				public new function HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_CRLNumber;
-				public new function HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR Value) put_CRLNumber;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out int32 pValue) get_CAVersion;
-				public new function HRESULT(ref IX509CertificateRevocationList self, int32 pValue) put_CAVersion;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_BaseCRL;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_NullSigned;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IObjectId** ppValue) get_HashAlgorithm;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IObjectId* pValue) put_HashAlgorithm;
-				public new function HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509CertificateRevocationList self, int16 Value) put_AlternateSignatureAlgorithm;
-				public new function HRESULT(ref IX509CertificateRevocationList self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-				public new function HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_RawData;
-				public new function HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
-				public new function HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_Signature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self) ResetForEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self) CheckSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX500DistinguishedName** ppValue) get_Issuer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX500DistinguishedName* pValue) put_Issuer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out double pValue) get_ThisUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, double Value) put_ThisUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out double pValue) get_NextUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, double Value) put_NextUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX509CertificateRevocationListEntries** ppValue) get_X509CRLEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX509Extensions** ppValue) get_X509Extensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IObjectIds** ppValue) get_CriticalExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, ISignerCertificate* pValue) put_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_CRLNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR Value) put_CRLNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out int32 pValue) get_CAVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, int32 pValue) put_CAVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_BaseCRL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_NullSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IObjectId** ppValue) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IObjectId* pValue) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, out int16 pValue) get_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, int16 Value) put_AlternateSignatureAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509CertificateRevocationList self, EncodingType Encoding, BSTR* pValue) get_Signature;
 			}
 		}
 		[CRepr]
@@ -5202,9 +5202,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificateAttestationChallenge self, EncodingType Encoding, BSTR strPendingFullCmcResponseWithChallenge) Initialize;
-				public new function HRESULT(ref ICertificateAttestationChallenge self, EncodingType Encoding, BSTR* pstrEnvelopedPkcs7ReencryptedToCA) DecryptChallenge;
-				public new function HRESULT(ref ICertificateAttestationChallenge self, BSTR* pstrRequestID) get_RequestID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateAttestationChallenge self, EncodingType Encoding, BSTR strPendingFullCmcResponseWithChallenge) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateAttestationChallenge self, EncodingType Encoding, BSTR* pstrEnvelopedPkcs7ReencryptedToCA) DecryptChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateAttestationChallenge self, BSTR* pstrRequestID) get_RequestID;
 			}
 		}
 		[CRepr]
@@ -5220,8 +5220,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertificateAttestationChallenge.VTable
 			{
-				public new function HRESULT(ref ICertificateAttestationChallenge2 self, BSTR Value) put_KeyContainerName;
-				public new function HRESULT(ref ICertificateAttestationChallenge2 self, EncodingType Encoding, BSTR Value) put_KeyBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateAttestationChallenge2 self, BSTR Value) put_KeyContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateAttestationChallenge2 self, EncodingType Encoding, BSTR Value) put_KeyBlob;
 			}
 		}
 		[CRepr]
@@ -5257,28 +5257,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509SCEPEnrollment self, IX509CertificateRequestPkcs10* pRequest, BSTR strThumbprint, EncodingType ThumprintEncoding, BSTR strServerCertificates, EncodingType Encoding) Initialize;
-				public new function HRESULT(ref IX509SCEPEnrollment self, X509CertificateEnrollmentContext Context) InitializeForPending;
-				public new function HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) CreateRequestMessage;
-				public new function HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) CreateRetrievePendingMessage;
-				public new function HRESULT(ref IX509SCEPEnrollment self, X509CertificateEnrollmentContext Context, BSTR strIssuer, EncodingType IssuerEncoding, BSTR strSerialNumber, EncodingType SerialNumberEncoding, EncodingType Encoding, BSTR* pValue) CreateRetrieveCertificateMessage;
-				public new function HRESULT(ref IX509SCEPEnrollment self, BSTR strResponse, EncodingType Encoding, out X509SCEPDisposition pDisposition) ProcessResponseMessage;
-				public new function HRESULT(ref IX509SCEPEnrollment self, BSTR Value) put_ServerCapabilities;
-				public new function HRESULT(ref IX509SCEPEnrollment self, out X509SCEPFailInfo pValue) get_FailInfo;
-				public new function HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate** ppValue) get_SignerCertificate;
-				public new function HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate* pValue) put_SignerCertificate;
-				public new function HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate** ppValue) get_OldCertificate;
-				public new function HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate* pValue) put_OldCertificate;
-				public new function HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) get_TransactionId;
-				public new function HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR Value) put_TransactionId;
-				public new function HRESULT(ref IX509SCEPEnrollment self, IX509CertificateRequestPkcs10** ppValue) get_Request;
-				public new function HRESULT(ref IX509SCEPEnrollment self, BSTR* pValue) get_CertificateFriendlyName;
-				public new function HRESULT(ref IX509SCEPEnrollment self, BSTR Value) put_CertificateFriendlyName;
-				public new function HRESULT(ref IX509SCEPEnrollment self, IX509EnrollmentStatus** ppValue) get_Status;
-				public new function HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-				public new function HRESULT(ref IX509SCEPEnrollment self, out int16 pValue) get_Silent;
-				public new function HRESULT(ref IX509SCEPEnrollment self, int16 Value) put_Silent;
-				public new function HRESULT(ref IX509SCEPEnrollment self) DeleteRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, IX509CertificateRequestPkcs10* pRequest, BSTR strThumbprint, EncodingType ThumprintEncoding, BSTR strServerCertificates, EncodingType Encoding) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, X509CertificateEnrollmentContext Context) InitializeForPending;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) CreateRequestMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) CreateRetrievePendingMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, X509CertificateEnrollmentContext Context, BSTR strIssuer, EncodingType IssuerEncoding, BSTR strSerialNumber, EncodingType SerialNumberEncoding, EncodingType Encoding, BSTR* pValue) CreateRetrieveCertificateMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, BSTR strResponse, EncodingType Encoding, out X509SCEPDisposition pDisposition) ProcessResponseMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, BSTR Value) put_ServerCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, out X509SCEPFailInfo pValue) get_FailInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate* pValue) put_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate** ppValue) get_OldCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, ISignerCertificate* pValue) put_OldCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) get_TransactionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR Value) put_TransactionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, IX509CertificateRequestPkcs10** ppValue) get_Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, BSTR* pValue) get_CertificateFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, BSTR Value) put_CertificateFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, IX509EnrollmentStatus** ppValue) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, out int16 pValue) get_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self, int16 Value) put_Silent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment self) DeleteRequest;
 			}
 		}
 		[CRepr]
@@ -5298,12 +5298,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IX509SCEPEnrollment.VTable
 			{
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, EncodingType Encoding, BSTR* pValue) CreateChallengeAnswerMessage;
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, X509SCEPProcessMessageFlags Flags, BSTR strResponse, EncodingType Encoding, out X509SCEPDisposition pDisposition) ProcessResponseMessage2;
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, BSTR* pValue) get_ResultMessageText;
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, out DelayRetryAction pValue) get_DelayRetry;
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, BSTR* pValue) get_ActivityId;
-				public new function HRESULT(ref IX509SCEPEnrollment2 self, BSTR Value) put_ActivityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, EncodingType Encoding, BSTR* pValue) CreateChallengeAnswerMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, X509SCEPProcessMessageFlags Flags, BSTR strResponse, EncodingType Encoding, out X509SCEPDisposition pDisposition) ProcessResponseMessage2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, BSTR* pValue) get_ResultMessageText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, out DelayRetryAction pValue) get_DelayRetry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, BSTR* pValue) get_ActivityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollment2 self, BSTR Value) put_ActivityId;
 			}
 		}
 		[CRepr]
@@ -5323,12 +5323,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR strServerUrl, BSTR strRequestHeaders, IX509CertificateRequestPkcs10* pRequest, BSTR strCACertificateThumbprint) Initialize;
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR strServerUrl, BSTR strRequestHeaders, X509CertificateEnrollmentContext Context, BSTR strTransactionId) InitializeForPending;
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, X509SCEPProcessMessageFlags ProcessFlags, out X509SCEPDisposition pDisposition) Enroll;
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, X509SCEPProcessMessageFlags ProcessFlags, out X509SCEPDisposition pDisposition) FetchPending;
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, IX509SCEPEnrollment** ppValue) get_X509SCEPEnrollment;
-				public new function HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR* pValue) get_ResultMessageText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR strServerUrl, BSTR strRequestHeaders, IX509CertificateRequestPkcs10* pRequest, BSTR strCACertificateThumbprint) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR strServerUrl, BSTR strRequestHeaders, X509CertificateEnrollmentContext Context, BSTR strTransactionId) InitializeForPending;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, X509SCEPProcessMessageFlags ProcessFlags, out X509SCEPDisposition pDisposition) Enroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, X509SCEPProcessMessageFlags ProcessFlags, out X509SCEPDisposition pDisposition) FetchPending;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, IX509SCEPEnrollment** ppValue) get_X509SCEPEnrollment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IX509SCEPEnrollmentHelper self, BSTR* pValue) get_ResultMessageText;
 			}
 		}
 		[CRepr]
@@ -5349,13 +5349,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeStringArray self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeStringArray self, out int32 pStringType) GetStringType;
-				public new function HRESULT(ref ICertEncodeStringArray self, out int32 pCount) GetCount;
-				public new function HRESULT(ref ICertEncodeStringArray self, int32 Index, BSTR* pstr) GetValue;
-				public new function HRESULT(ref ICertEncodeStringArray self, int32 Count, CERT_RDN_ATTR_VALUE_TYPE StringType) Reset;
-				public new function HRESULT(ref ICertEncodeStringArray self, int32 Index, BSTR str) SetValue;
-				public new function HRESULT(ref ICertEncodeStringArray self, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, out int32 pStringType) GetStringType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, out int32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, int32 Index, BSTR* pstr) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, int32 Count, CERT_RDN_ATTR_VALUE_TYPE StringType) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, int32 Index, BSTR str) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray self, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5371,8 +5371,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeStringArray.VTable
 			{
-				public new function HRESULT(ref ICertEncodeStringArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeStringArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeStringArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
 			}
 		}
 		[CRepr]
@@ -5392,12 +5392,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeLongArray self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeLongArray self, out int32 pCount) GetCount;
-				public new function HRESULT(ref ICertEncodeLongArray self, int32 Index, out int32 pValue) GetValue;
-				public new function HRESULT(ref ICertEncodeLongArray self, int32 Count) Reset;
-				public new function HRESULT(ref ICertEncodeLongArray self, int32 Index, int32 Value) SetValue;
-				public new function HRESULT(ref ICertEncodeLongArray self, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, out int32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, int32 Index, out int32 pValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, int32 Count) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, int32 Index, int32 Value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray self, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5413,8 +5413,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeLongArray.VTable
 			{
-				public new function HRESULT(ref ICertEncodeLongArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeLongArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeLongArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
 			}
 		}
 		[CRepr]
@@ -5434,12 +5434,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeDateArray self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeDateArray self, out int32 pCount) GetCount;
-				public new function HRESULT(ref ICertEncodeDateArray self, int32 Index, out double pValue) GetValue;
-				public new function HRESULT(ref ICertEncodeDateArray self, int32 Count) Reset;
-				public new function HRESULT(ref ICertEncodeDateArray self, int32 Index, double Value) SetValue;
-				public new function HRESULT(ref ICertEncodeDateArray self, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, out int32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, int32 Index, out double pValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, int32 Count) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, int32 Index, double Value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray self, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5455,8 +5455,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeDateArray.VTable
 			{
-				public new function HRESULT(ref ICertEncodeDateArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeDateArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeDateArray2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
 			}
 		}
 		[CRepr]
@@ -5479,15 +5479,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, out int32 pDistPointCount) GetDistPointCount;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, out int32 pNameCount) GetNameCount;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, out int32 pNameChoice) GetNameChoice;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, BSTR* pstrName) GetName;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointCount) Reset;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameCount) SetNameCount;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo self, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, out int32 pDistPointCount) GetDistPointCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, out int32 pNameCount) GetNameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, out int32 pNameChoice) GetNameChoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, BSTR* pstrName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointCount) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameCount) SetNameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, int32 DistPointIndex, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo self, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5503,8 +5503,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeCRLDistInfo.VTable
 			{
-				public new function HRESULT(ref ICertEncodeCRLDistInfo2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeCRLDistInfo2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeCRLDistInfo2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
 			}
 		}
 		[CRepr]
@@ -5525,13 +5525,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeAltName self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeAltName self, out int32 pNameCount) GetNameCount;
-				public new function HRESULT(ref ICertEncodeAltName self, int32 NameIndex, out int32 pNameChoice) GetNameChoice;
-				public new function HRESULT(ref ICertEncodeAltName self, int32 NameIndex, BSTR* pstrName) GetName;
-				public new function HRESULT(ref ICertEncodeAltName self, int32 NameCount) Reset;
-				public new function HRESULT(ref ICertEncodeAltName self, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
-				public new function HRESULT(ref ICertEncodeAltName self, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, out int32 pNameCount) GetNameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, int32 NameIndex, out int32 pNameChoice) GetNameChoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, int32 NameIndex, BSTR* pstrName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, int32 NameCount) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName self, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5549,10 +5549,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeAltName.VTable
 			{
-				public new function HRESULT(ref ICertEncodeAltName2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeAltName2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
-				public new function HRESULT(ref ICertEncodeAltName2 self, int32 NameIndex, EncodingType Encoding, BSTR* pstrName) GetNameBlob;
-				public new function HRESULT(ref ICertEncodeAltName2 self, int32 NameIndex, int32 NameChoice, BSTR strName, EncodingType Encoding) SetNameEntryBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName2 self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName2 self, int32 NameIndex, EncodingType Encoding, BSTR* pstrName) GetNameBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeAltName2 self, int32 NameIndex, int32 NameChoice, BSTR strName, EncodingType Encoding) SetNameEntryBlob;
 			}
 		}
 		[CRepr]
@@ -5570,10 +5570,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertEncodeBitString self, BSTR strBinary) Decode;
-				public new function HRESULT(ref ICertEncodeBitString self, out int32 pBitCount) GetBitCount;
-				public new function HRESULT(ref ICertEncodeBitString self, BSTR* pstrBitString) GetBitString;
-				public new function HRESULT(ref ICertEncodeBitString self, int32 BitCount, BSTR strBitString, BSTR* pstrBinary) Encode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString self, BSTR strBinary) Decode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString self, out int32 pBitCount) GetBitCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString self, BSTR* pstrBitString) GetBitString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString self, int32 BitCount, BSTR strBitString, BSTR* pstrBinary) Encode;
 			}
 		}
 		[CRepr]
@@ -5590,9 +5590,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertEncodeBitString.VTable
 			{
-				public new function HRESULT(ref ICertEncodeBitString2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-				public new function HRESULT(ref ICertEncodeBitString2 self, int32 BitCount, BSTR strBitString, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
-				public new function HRESULT(ref ICertEncodeBitString2 self, EncodingType Encoding, BSTR* pstrBitString) GetBitStringBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString2 self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString2 self, int32 BitCount, BSTR strBitString, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertEncodeBitString2 self, EncodingType Encoding, BSTR* pstrBitString) GetBitStringBlob;
 			}
 		}
 		[CRepr]
@@ -5609,9 +5609,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertExit self, BSTR strConfig, out CERT_EXIT_EVENT_MASK pEventMask) Initialize;
-				public new function HRESULT(ref ICertExit self, int32 ExitEvent, int32 Context) Notify;
-				public new function HRESULT(ref ICertExit self, out BSTR pstrDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertExit self, BSTR strConfig, out CERT_EXIT_EVENT_MASK pEventMask) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertExit self, int32 ExitEvent, int32 Context) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertExit self, out BSTR pstrDescription) GetDescription;
 			}
 		}
 		[CRepr]
@@ -5626,7 +5626,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertExit.VTable
 			{
-				public new function HRESULT(ref ICertExit2 self, out ICertManageModule* ppManageModule) GetManageModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertExit2 self, out ICertManageModule* ppManageModule) GetManageModule;
 			}
 		}
 		[CRepr]
@@ -5696,62 +5696,62 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICEnroll self, BSTR DNName, BSTR Usage, BSTR wszPKCS10FileName) createFilePKCS10;
-				public new function HRESULT(ref ICEnroll self, BSTR wszPKCS7FileName) acceptFilePKCS7;
-				public new function HRESULT(ref ICEnroll self, BSTR DNName, BSTR Usage, BSTR* pPKCS10) createPKCS10;
-				public new function HRESULT(ref ICEnroll self, BSTR PKCS7) acceptPKCS7;
-				public new function HRESULT(ref ICEnroll self, BSTR wszPKCS7, BSTR* pbstrCert) getCertFromPKCS7;
-				public new function HRESULT(ref ICEnroll self, int32 dwIndex, int32 dwFlags, BSTR* pbstrProvName) enumProviders;
-				public new function HRESULT(ref ICEnroll self, int32 dwIndex, BSTR* pbstr) enumContainers;
-				public new function HRESULT(ref ICEnroll self, BSTR PKCS7OrPKCS10) freeRequestInfo;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrName) get_MyStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrName) put_MyStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrType) get_MyStoreType;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrType) put_MyStoreType;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_MyStoreFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_MyStoreFlags;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrName) get_CAStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrName) put_CAStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrType) get_CAStoreType;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrType) put_CAStoreType;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_CAStoreFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_CAStoreFlags;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrName) get_RootStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrName) put_RootStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrType) get_RootStoreType;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrType) put_RootStoreType;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_RootStoreFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_RootStoreFlags;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrName) get_RequestStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrName) put_RequestStoreName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrType) get_RequestStoreType;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrType) put_RequestStoreType;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_RequestStoreFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_RequestStoreFlags;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrContainer) get_ContainerName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrContainer) put_ContainerName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstrProvider) get_ProviderName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstrProvider) put_ProviderName;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwType) get_ProviderType;
-				public new function HRESULT(ref ICEnroll self, int32 dwType) put_ProviderType;
-				public new function HRESULT(ref ICEnroll self, out int32 pdw) get_KeySpec;
-				public new function HRESULT(ref ICEnroll self, int32 dw) put_KeySpec;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_ProviderFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_ProviderFlags;
-				public new function HRESULT(ref ICEnroll self, out BOOL fUseExistingKeys) get_UseExistingKeySet;
-				public new function HRESULT(ref ICEnroll self, BOOL fUseExistingKeys) put_UseExistingKeySet;
-				public new function HRESULT(ref ICEnroll self, out int32 pdwFlags) get_GenKeyFlags;
-				public new function HRESULT(ref ICEnroll self, int32 dwFlags) put_GenKeyFlags;
-				public new function HRESULT(ref ICEnroll self, out BOOL fDelete) get_DeleteRequestCert;
-				public new function HRESULT(ref ICEnroll self, BOOL fDelete) put_DeleteRequestCert;
-				public new function HRESULT(ref ICEnroll self, out BOOL fBool) get_WriteCertToCSP;
-				public new function HRESULT(ref ICEnroll self, BOOL fBool) put_WriteCertToCSP;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstr) get_SPCFileName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstr) put_SPCFileName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstr) get_PVKFileName;
-				public new function HRESULT(ref ICEnroll self, BSTR bstr) put_PVKFileName;
-				public new function HRESULT(ref ICEnroll self, BSTR* pbstr) get_HashAlgorithm;
-				public new function HRESULT(ref ICEnroll self, BSTR bstr) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR DNName, BSTR Usage, BSTR wszPKCS10FileName) createFilePKCS10;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR wszPKCS7FileName) acceptFilePKCS7;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR DNName, BSTR Usage, BSTR* pPKCS10) createPKCS10;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR PKCS7) acceptPKCS7;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR wszPKCS7, BSTR* pbstrCert) getCertFromPKCS7;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwIndex, int32 dwFlags, BSTR* pbstrProvName) enumProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwIndex, BSTR* pbstr) enumContainers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR PKCS7OrPKCS10) freeRequestInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrName) get_MyStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrName) put_MyStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrType) get_MyStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrType) put_MyStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_MyStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_MyStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrName) get_CAStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrName) put_CAStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrType) get_CAStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrType) put_CAStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_CAStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_CAStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrName) get_RootStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrName) put_RootStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrType) get_RootStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrType) put_RootStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_RootStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_RootStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrName) get_RequestStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrName) put_RequestStoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrType) get_RequestStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrType) put_RequestStoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_RequestStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_RequestStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrContainer) get_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrContainer) put_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstrProvider) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstrProvider) put_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwType) get_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwType) put_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdw) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dw) put_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_ProviderFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_ProviderFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out BOOL fUseExistingKeys) get_UseExistingKeySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BOOL fUseExistingKeys) put_UseExistingKeySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out int32 pdwFlags) get_GenKeyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, int32 dwFlags) put_GenKeyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out BOOL fDelete) get_DeleteRequestCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BOOL fDelete) put_DeleteRequestCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, out BOOL fBool) get_WriteCertToCSP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BOOL fBool) put_WriteCertToCSP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstr) get_SPCFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstr) put_SPCFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstr) get_PVKFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstr) put_PVKFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR* pbstr) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll self, BSTR bstr) put_HashAlgorithm;
 			}
 		}
 		[CRepr]
@@ -5771,12 +5771,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICEnroll.VTable
 			{
-				public new function HRESULT(ref ICEnroll2 self, BSTR CertType) addCertTypeToRequest;
-				public new function HRESULT(ref ICEnroll2 self, BSTR Name, BSTR Value) addNameValuePairToSignature;
-				public new function HRESULT(ref ICEnroll2 self, out BOOL fBool) get_WriteCertToUserDS;
-				public new function HRESULT(ref ICEnroll2 self, BOOL fBool) put_WriteCertToUserDS;
-				public new function HRESULT(ref ICEnroll2 self, out BOOL fBool) get_EnableT61DNEncoding;
-				public new function HRESULT(ref ICEnroll2 self, BOOL fBool) put_EnableT61DNEncoding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, BSTR CertType) addCertTypeToRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, BSTR Name, BSTR Value) addNameValuePairToSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, out BOOL fBool) get_WriteCertToUserDS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, BOOL fBool) put_WriteCertToUserDS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, out BOOL fBool) get_EnableT61DNEncoding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll2 self, BOOL fBool) put_EnableT61DNEncoding;
 			}
 		}
 		[CRepr]
@@ -5804,20 +5804,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICEnroll2.VTable
 			{
-				public new function HRESULT(ref ICEnroll3 self, BSTR PKCS7) InstallPKCS7;
-				public new function HRESULT(ref ICEnroll3 self) Reset;
-				public new function HRESULT(ref ICEnroll3 self, out int32 pdwKeySpec) GetSupportedKeySpec;
-				public new function HRESULT(ref ICEnroll3 self, BOOL fMin, BOOL fExchange, out int32 pdwKeySize) GetKeyLen;
-				public new function HRESULT(ref ICEnroll3 self, int32 dwIndex, int32 algClass, out int32 pdwAlgID) EnumAlgs;
-				public new function HRESULT(ref ICEnroll3 self, int32 algID, BSTR* pbstr) GetAlgName;
-				public new function HRESULT(ref ICEnroll3 self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
-				public new function HRESULT(ref ICEnroll3 self, out BOOL fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
-				public new function HRESULT(ref ICEnroll3 self, int32 hashAlgID) put_HashAlgID;
-				public new function HRESULT(ref ICEnroll3 self, out int32 hashAlgID) get_HashAlgID;
-				public new function HRESULT(ref ICEnroll3 self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
-				public new function HRESULT(ref ICEnroll3 self, out BOOL fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
-				public new function HRESULT(ref ICEnroll3 self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
-				public new function HRESULT(ref ICEnroll3 self, out BOOL fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, BSTR PKCS7) InstallPKCS7;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, out int32 pdwKeySpec) GetSupportedKeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, BOOL fMin, BOOL fExchange, out int32 pdwKeySize) GetKeyLen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, int32 dwIndex, int32 algClass, out int32 pdwAlgID) EnumAlgs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, int32 algID, BSTR* pbstr) GetAlgName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, out BOOL fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, int32 hashAlgID) put_HashAlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, out int32 hashAlgID) get_HashAlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, out BOOL fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll3 self, out BOOL fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
 			}
 		}
 		[CRepr]
@@ -5864,39 +5864,39 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICEnroll3.VTable
 			{
-				public new function HRESULT(ref ICEnroll4 self, BSTR bstrCert) put_PrivateKeyArchiveCertificate;
-				public new function HRESULT(ref ICEnroll4 self, BSTR* pbstrCert) get_PrivateKeyArchiveCertificate;
-				public new function HRESULT(ref ICEnroll4 self, BSTR bstrThumbPrint) put_ThumbPrint;
-				public new function HRESULT(ref ICEnroll4 self, BSTR* pbstrThumbPrint) get_ThumbPrint;
-				public new function HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strBinary, BSTR* pstrEncoded) binaryToString;
-				public new function HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strEncoded, BSTR* pstrBinary) stringToBinary;
-				public new function HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addExtensionToRequest;
-				public new function HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addAttributeToRequest;
-				public new function HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addNameValuePairToRequest;
-				public new function HRESULT(ref ICEnroll4 self) resetExtensions;
-				public new function HRESULT(ref ICEnroll4 self) resetAttributes;
-				public new function HRESULT(ref ICEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR Usage, BSTR* pstrRequest) createRequest;
-				public new function HRESULT(ref ICEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR strUsage, BSTR strRequestFileName) createFileRequest;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strResponse) acceptResponse;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strResponseFileName) acceptFileResponse;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strResponse, BSTR* pstrCert) getCertFromResponse;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strResponseFileName, BSTR* pstrCert) getCertFromFileResponse;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strPassword, BSTR* pstrPFX) createPFX;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strPassword, BSTR strPFXFileName) createFilePFX;
-				public new function HRESULT(ref ICEnroll4 self, int32 lRequestID, BSTR strCADNS, BSTR strCAName, BSTR strFriendlyName) setPendingRequestInfo;
-				public new function HRESULT(ref ICEnroll4 self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, out VARIANT pvarProperty) enumPendingRequest;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strThumbprint) removePendingRequest;
-				public new function HRESULT(ref ICEnroll4 self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, out int32 pdwKeySize) GetKeyLenEx;
-				public new function HRESULT(ref ICEnroll4 self, BSTR PKCS7, out int32 plCertInstalled) InstallPKCS7Ex;
-				public new function HRESULT(ref ICEnroll4 self, ADDED_CERT_TYPE lType, BSTR bstrOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) addCertTypeToRequestEx;
-				public new function HRESULT(ref ICEnroll4 self, BSTR strProvName, out int32 plProvType) getProviderType;
-				public new function HRESULT(ref ICEnroll4 self, BSTR bstrCert) put_SignerCertificate;
-				public new function HRESULT(ref ICEnroll4 self, int32 lClientId) put_ClientId;
-				public new function HRESULT(ref ICEnroll4 self, out int32 plClientId) get_ClientId;
-				public new function HRESULT(ref ICEnroll4 self, int32 lPropertyId, int32 lReserved, BSTR bstrProperty) addBlobPropertyToCertificate;
-				public new function HRESULT(ref ICEnroll4 self) resetBlobProperties;
-				public new function HRESULT(ref ICEnroll4 self, BOOL fInclude) put_IncludeSubjectKeyID;
-				public new function HRESULT(ref ICEnroll4 self, out BOOL pfInclude) get_IncludeSubjectKeyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR bstrCert) put_PrivateKeyArchiveCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR* pbstrCert) get_PrivateKeyArchiveCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR bstrThumbPrint) put_ThumbPrint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR* pbstrThumbPrint) get_ThumbPrint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strBinary, BSTR* pstrEncoded) binaryToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strEncoded, BSTR* pstrBinary) stringToBinary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addExtensionToRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addAttributeToRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 Flags, BSTR strName, BSTR strValue) addNameValuePairToRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self) resetExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self) resetAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR Usage, BSTR* pstrRequest) createRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR strUsage, BSTR strRequestFileName) createFileRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strResponse) acceptResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strResponseFileName) acceptFileResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strResponse, BSTR* pstrCert) getCertFromResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strResponseFileName, BSTR* pstrCert) getCertFromFileResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strPassword, BSTR* pstrPFX) createPFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strPassword, BSTR strPFXFileName) createFilePFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 lRequestID, BSTR strCADNS, BSTR strCAName, BSTR strFriendlyName) setPendingRequestInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, out VARIANT pvarProperty) enumPendingRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strThumbprint) removePendingRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, out int32 pdwKeySize) GetKeyLenEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR PKCS7, out int32 plCertInstalled) InstallPKCS7Ex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, ADDED_CERT_TYPE lType, BSTR bstrOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) addCertTypeToRequestEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR strProvName, out int32 plProvType) getProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BSTR bstrCert) put_SignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 lClientId) put_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, out int32 plClientId) get_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, int32 lPropertyId, int32 lReserved, BSTR bstrProperty) addBlobPropertyToCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self) resetBlobProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, BOOL fInclude) put_IncludeSubjectKeyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICEnroll4 self, out BOOL pfInclude) get_IncludeSubjectKeyID;
 			}
 		}
 		[CRepr]
@@ -5980,76 +5980,76 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnroll self, PWSTR DNName, PWSTR Usage, PWSTR wszPKCS10FileName) createFilePKCS10WStr;
-				public new function HRESULT(ref IEnroll self, PWSTR wszPKCS7FileName) acceptFilePKCS7WStr;
-				public new function HRESULT(ref IEnroll self, PWSTR DNName, PWSTR Usage, out CRYPTOAPI_BLOB pPkcs10Blob) createPKCS10WStr;
-				public new function HRESULT(ref IEnroll self, out CRYPTOAPI_BLOB pBlobPKCS7) acceptPKCS7Blob;
-				public new function CERT_CONTEXT*(ref IEnroll self, out CRYPTOAPI_BLOB pBlobPKCS7) getCertContextFromPKCS7;
-				public new function void*(ref IEnroll self) getMyStore;
-				public new function void*(ref IEnroll self) getCAStore;
-				public new function void*(ref IEnroll self) getROOTHStore;
-				public new function HRESULT(ref IEnroll self, int32 dwIndex, int32 dwFlags, out PWSTR pbstrProvName) enumProvidersWStr;
-				public new function HRESULT(ref IEnroll self, int32 dwIndex, out PWSTR pbstr) enumContainersWStr;
-				public new function HRESULT(ref IEnroll self, CRYPTOAPI_BLOB pkcs7OrPkcs10) freeRequestInfoBlob;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwName) get_MyStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwName) put_MyStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwType) get_MyStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwType) put_MyStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_MyStoreFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_MyStoreFlags;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwName) get_CAStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwName) put_CAStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwType) get_CAStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwType) put_CAStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_CAStoreFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_CAStoreFlags;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwName) get_RootStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwName) put_RootStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwType) get_RootStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwType) put_RootStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_RootStoreFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_RootStoreFlags;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwName) get_RequestStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwName) put_RequestStoreNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwType) get_RequestStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwType) put_RequestStoreTypeWStr;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_RequestStoreFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_RequestStoreFlags;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwContainer) get_ContainerNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwContainer) put_ContainerNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szwProvider) get_ProviderNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szwProvider) put_ProviderNameWStr;
-				public new function HRESULT(ref IEnroll self, out int32 pdwType) get_ProviderType;
-				public new function HRESULT(ref IEnroll self, int32 dwType) put_ProviderType;
-				public new function HRESULT(ref IEnroll self, out int32 pdw) get_KeySpec;
-				public new function HRESULT(ref IEnroll self, int32 dw) put_KeySpec;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_ProviderFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_ProviderFlags;
-				public new function HRESULT(ref IEnroll self, out BOOL fUseExistingKeys) get_UseExistingKeySet;
-				public new function HRESULT(ref IEnroll self, BOOL fUseExistingKeys) put_UseExistingKeySet;
-				public new function HRESULT(ref IEnroll self, out int32 pdwFlags) get_GenKeyFlags;
-				public new function HRESULT(ref IEnroll self, int32 dwFlags) put_GenKeyFlags;
-				public new function HRESULT(ref IEnroll self, out BOOL fDelete) get_DeleteRequestCert;
-				public new function HRESULT(ref IEnroll self, BOOL fDelete) put_DeleteRequestCert;
-				public new function HRESULT(ref IEnroll self, out BOOL fBool) get_WriteCertToUserDS;
-				public new function HRESULT(ref IEnroll self, BOOL fBool) put_WriteCertToUserDS;
-				public new function HRESULT(ref IEnroll self, out BOOL fBool) get_EnableT61DNEncoding;
-				public new function HRESULT(ref IEnroll self, BOOL fBool) put_EnableT61DNEncoding;
-				public new function HRESULT(ref IEnroll self, out BOOL fBool) get_WriteCertToCSP;
-				public new function HRESULT(ref IEnroll self, BOOL fBool) put_WriteCertToCSP;
-				public new function HRESULT(ref IEnroll self, out PWSTR szw) get_SPCFileNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szw) put_SPCFileNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szw) get_PVKFileNameWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szw) put_PVKFileNameWStr;
-				public new function HRESULT(ref IEnroll self, out PWSTR szw) get_HashAlgorithmWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR szw) put_HashAlgorithmWStr;
-				public new function HRESULT(ref IEnroll self, out CERT_CONTEXT* ppCertContext) get_RenewalCertificate;
-				public new function HRESULT(ref IEnroll self, in CERT_CONTEXT pCertContext) put_RenewalCertificate;
-				public new function HRESULT(ref IEnroll self, PWSTR szw) AddCertTypeToRequestWStr;
-				public new function HRESULT(ref IEnroll self, PWSTR Name, PWSTR Value) AddNameValuePairToSignatureWStr;
-				public new function HRESULT(ref IEnroll self, out CERT_EXTENSIONS pCertExtensions) AddExtensionsToRequest;
-				public new function HRESULT(ref IEnroll self, out CRYPT_ATTRIBUTES pAttributes) AddAuthenticatedAttributesToPKCS7Request;
-				public new function HRESULT(ref IEnroll self, out CRYPTOAPI_BLOB pRequest, in CERT_CONTEXT pSigningCertContext, out CRYPTOAPI_BLOB pPkcs7Blob) CreatePKCS7RequestFromRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR DNName, PWSTR Usage, PWSTR wszPKCS10FileName) createFilePKCS10WStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR wszPKCS7FileName) acceptFilePKCS7WStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR DNName, PWSTR Usage, out CRYPTOAPI_BLOB pPkcs10Blob) createPKCS10WStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out CRYPTOAPI_BLOB pBlobPKCS7) acceptPKCS7Blob;
+				public new function [CallingConvention(.Stdcall)] CERT_CONTEXT*(ref IEnroll self, out CRYPTOAPI_BLOB pBlobPKCS7) getCertContextFromPKCS7;
+				public new function [CallingConvention(.Stdcall)] void*(ref IEnroll self) getMyStore;
+				public new function [CallingConvention(.Stdcall)] void*(ref IEnroll self) getCAStore;
+				public new function [CallingConvention(.Stdcall)] void*(ref IEnroll self) getROOTHStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwIndex, int32 dwFlags, out PWSTR pbstrProvName) enumProvidersWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwIndex, out PWSTR pbstr) enumContainersWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, CRYPTOAPI_BLOB pkcs7OrPkcs10) freeRequestInfoBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwName) get_MyStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwName) put_MyStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwType) get_MyStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwType) put_MyStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_MyStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_MyStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwName) get_CAStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwName) put_CAStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwType) get_CAStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwType) put_CAStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_CAStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_CAStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwName) get_RootStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwName) put_RootStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwType) get_RootStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwType) put_RootStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_RootStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_RootStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwName) get_RequestStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwName) put_RequestStoreNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwType) get_RequestStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwType) put_RequestStoreTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_RequestStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_RequestStoreFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwContainer) get_ContainerNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwContainer) put_ContainerNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szwProvider) get_ProviderNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szwProvider) put_ProviderNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwType) get_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwType) put_ProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdw) get_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dw) put_KeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_ProviderFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_ProviderFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out BOOL fUseExistingKeys) get_UseExistingKeySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, BOOL fUseExistingKeys) put_UseExistingKeySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out int32 pdwFlags) get_GenKeyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, int32 dwFlags) put_GenKeyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out BOOL fDelete) get_DeleteRequestCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, BOOL fDelete) put_DeleteRequestCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out BOOL fBool) get_WriteCertToUserDS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, BOOL fBool) put_WriteCertToUserDS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out BOOL fBool) get_EnableT61DNEncoding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, BOOL fBool) put_EnableT61DNEncoding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out BOOL fBool) get_WriteCertToCSP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, BOOL fBool) put_WriteCertToCSP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szw) get_SPCFileNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szw) put_SPCFileNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szw) get_PVKFileNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szw) put_PVKFileNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out PWSTR szw) get_HashAlgorithmWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szw) put_HashAlgorithmWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out CERT_CONTEXT* ppCertContext) get_RenewalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, in CERT_CONTEXT pCertContext) put_RenewalCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR szw) AddCertTypeToRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, PWSTR Name, PWSTR Value) AddNameValuePairToSignatureWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out CERT_EXTENSIONS pCertExtensions) AddExtensionsToRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out CRYPT_ATTRIBUTES pAttributes) AddAuthenticatedAttributesToPKCS7Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll self, out CRYPTOAPI_BLOB pRequest, in CERT_CONTEXT pSigningCertContext, out CRYPTOAPI_BLOB pPkcs7Blob) CreatePKCS7RequestFromRequest;
 			}
 		}
 		[CRepr]
@@ -6081,24 +6081,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEnroll.VTable
 			{
-				public new function HRESULT(ref IEnroll2 self, out CRYPTOAPI_BLOB pBlobPKCS7) InstallPKCS7Blob;
-				public new function HRESULT(ref IEnroll2 self) Reset;
-				public new function HRESULT(ref IEnroll2 self, out int32 pdwKeySpec) GetSupportedKeySpec;
-				public new function HRESULT(ref IEnroll2 self, BOOL fMin, BOOL fExchange, out int32 pdwKeySize) GetKeyLen;
-				public new function HRESULT(ref IEnroll2 self, int32 dwIndex, int32 algClass, out int32 pdwAlgID) EnumAlgs;
-				public new function HRESULT(ref IEnroll2 self, int32 algID, out PWSTR ppwsz) GetAlgNameWStr;
-				public new function HRESULT(ref IEnroll2 self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
-				public new function HRESULT(ref IEnroll2 self, out BOOL fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
-				public new function HRESULT(ref IEnroll2 self, int32 hashAlgID) put_HashAlgID;
-				public new function HRESULT(ref IEnroll2 self, out int32 hashAlgID) get_HashAlgID;
-				public new function HRESULT(ref IEnroll2 self, void* hStore) SetHStoreMy;
-				public new function HRESULT(ref IEnroll2 self, void* hStore) SetHStoreCA;
-				public new function HRESULT(ref IEnroll2 self, void* hStore) SetHStoreROOT;
-				public new function HRESULT(ref IEnroll2 self, void* hStore) SetHStoreRequest;
-				public new function HRESULT(ref IEnroll2 self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
-				public new function HRESULT(ref IEnroll2 self, out BOOL fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
-				public new function HRESULT(ref IEnroll2 self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
-				public new function HRESULT(ref IEnroll2 self, out BOOL fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out CRYPTOAPI_BLOB pBlobPKCS7) InstallPKCS7Blob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out int32 pdwKeySpec) GetSupportedKeySpec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, BOOL fMin, BOOL fExchange, out int32 pdwKeySize) GetKeyLen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, int32 dwIndex, int32 algClass, out int32 pdwAlgID) EnumAlgs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, int32 algID, out PWSTR ppwsz) GetAlgNameWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out BOOL fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, int32 hashAlgID) put_HashAlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out int32 hashAlgID) get_HashAlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, void* hStore) SetHStoreMy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, void* hStore) SetHStoreCA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, void* hStore) SetHStoreROOT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, void* hStore) SetHStoreRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out BOOL fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll2 self, out BOOL fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
 			}
 		}
 		[CRepr]
@@ -6144,38 +6144,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEnroll2.VTable
 			{
-				public new function HRESULT(ref IEnroll4 self, CRYPTOAPI_BLOB thumbPrintBlob) put_ThumbPrintWStr;
-				public new function HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB thumbPrintBlob) get_ThumbPrintWStr;
-				public new function HRESULT(ref IEnroll4 self, in CERT_CONTEXT pPrivateKeyArchiveCert) SetPrivateKeyArchiveCertificate;
-				public new function CERT_CONTEXT*(ref IEnroll4 self) GetPrivateKeyArchiveCertificate;
-				public new function HRESULT(ref IEnroll4 self, int32 Flags, out CRYPTOAPI_BLOB pblobBinary, out PWSTR ppwszString) binaryBlobToString;
-				public new function HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszString, out CRYPTOAPI_BLOB pblobBinary, out int32 pdwSkip, out int32 pdwFlags) stringToBinaryBlob;
-				public new function HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, out CRYPTOAPI_BLOB pblobValue) addExtensionToRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, out CRYPTOAPI_BLOB pblobValue) addAttributeToRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, PWSTR pwszValue) addNameValuePairToRequestWStr;
-				public new function HRESULT(ref IEnroll4 self) resetExtensions;
-				public new function HRESULT(ref IEnroll4 self) resetAttributes;
-				public new function HRESULT(ref IEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, out CRYPTOAPI_BLOB pblobRequest) createRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, PWSTR pwszRequestFileName) createFileRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pblobResponse) acceptResponseBlob;
-				public new function HRESULT(ref IEnroll4 self, PWSTR pwszResponseFileName) acceptFileResponseWStr;
-				public new function HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pblobResponse, out CERT_CONTEXT* ppCertContext) getCertContextFromResponseBlob;
-				public new function HRESULT(ref IEnroll4 self, PWSTR pwszResponseFileName, out CERT_CONTEXT* ppCertContext) getCertContextFromFileResponseWStr;
-				public new function HRESULT(ref IEnroll4 self, PWSTR pwszPassword, out CRYPTOAPI_BLOB pblobPFX) createPFXWStr;
-				public new function HRESULT(ref IEnroll4 self, PWSTR pwszPassword, PWSTR pwszPFXFileName) createFilePFXWStr;
-				public new function HRESULT(ref IEnroll4 self, int32 lRequestID, PWSTR pwszCADNS, PWSTR pwszCAName, PWSTR pwszFriendlyName) setPendingRequestInfoWStr;
-				public new function HRESULT(ref IEnroll4 self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, void* ppProperty) enumPendingRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, CRYPTOAPI_BLOB thumbPrintBlob) removePendingRequestWStr;
-				public new function HRESULT(ref IEnroll4 self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, out int32 pdwKeySize) GetKeyLenEx;
-				public new function HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pBlobPKCS7, out int32 plCertInstalled) InstallPKCS7BlobEx;
-				public new function HRESULT(ref IEnroll4 self, ADDED_CERT_TYPE lType, PWSTR pwszOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) AddCertTypeToRequestWStrEx;
-				public new function HRESULT(ref IEnroll4 self, PWSTR pwszProvName, out int32 plProvType) getProviderTypeWStr;
-				public new function HRESULT(ref IEnroll4 self, int32 lPropertyId, int32 lReserved, out CRYPTOAPI_BLOB pBlobProperty) addBlobPropertyToCertificateWStr;
-				public new function HRESULT(ref IEnroll4 self, in CERT_CONTEXT pSignerCert) SetSignerCertificate;
-				public new function HRESULT(ref IEnroll4 self, int32 lClientId) put_ClientId;
-				public new function HRESULT(ref IEnroll4 self, out int32 plClientId) get_ClientId;
-				public new function HRESULT(ref IEnroll4 self, BOOL fInclude) put_IncludeSubjectKeyID;
-				public new function HRESULT(ref IEnroll4 self, out BOOL pfInclude) get_IncludeSubjectKeyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, CRYPTOAPI_BLOB thumbPrintBlob) put_ThumbPrintWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB thumbPrintBlob) get_ThumbPrintWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, in CERT_CONTEXT pPrivateKeyArchiveCert) SetPrivateKeyArchiveCertificate;
+				public new function [CallingConvention(.Stdcall)] CERT_CONTEXT*(ref IEnroll4 self) GetPrivateKeyArchiveCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 Flags, out CRYPTOAPI_BLOB pblobBinary, out PWSTR ppwszString) binaryBlobToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszString, out CRYPTOAPI_BLOB pblobBinary, out int32 pdwSkip, out int32 pdwFlags) stringToBinaryBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, out CRYPTOAPI_BLOB pblobValue) addExtensionToRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, out CRYPTOAPI_BLOB pblobValue) addAttributeToRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 Flags, PWSTR pwszName, PWSTR pwszValue) addNameValuePairToRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self) resetExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self) resetAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, out CRYPTOAPI_BLOB pblobRequest) createRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, PWSTR pwszRequestFileName) createFileRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pblobResponse) acceptResponseBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, PWSTR pwszResponseFileName) acceptFileResponseWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pblobResponse, out CERT_CONTEXT* ppCertContext) getCertContextFromResponseBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, PWSTR pwszResponseFileName, out CERT_CONTEXT* ppCertContext) getCertContextFromFileResponseWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, PWSTR pwszPassword, out CRYPTOAPI_BLOB pblobPFX) createPFXWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, PWSTR pwszPassword, PWSTR pwszPFXFileName) createFilePFXWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 lRequestID, PWSTR pwszCADNS, PWSTR pwszCAName, PWSTR pwszFriendlyName) setPendingRequestInfoWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, void* ppProperty) enumPendingRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, CRYPTOAPI_BLOB thumbPrintBlob) removePendingRequestWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, out int32 pdwKeySize) GetKeyLenEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out CRYPTOAPI_BLOB pBlobPKCS7, out int32 plCertInstalled) InstallPKCS7BlobEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, ADDED_CERT_TYPE lType, PWSTR pwszOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) AddCertTypeToRequestWStrEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, PWSTR pwszProvName, out int32 plProvType) getProviderTypeWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 lPropertyId, int32 lReserved, out CRYPTOAPI_BLOB pBlobProperty) addBlobPropertyToCertificateWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, in CERT_CONTEXT pSignerCert) SetSignerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, int32 lClientId) put_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out int32 plClientId) get_ClientId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, BOOL fInclude) put_IncludeSubjectKeyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnroll4 self, out BOOL pfInclude) get_IncludeSubjectKeyID;
 			}
 		}
 		[CRepr]
@@ -6192,9 +6192,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICertRequestD self, uint32 dwFlags, PWSTR pwszAuthority, out uint32 pdwRequestId, out uint32 pdwDisposition, PWSTR pwszAttributes, in CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbCertChain, out CERTTRANSBLOB pctbEncodedCert, out CERTTRANSBLOB pctbDispositionMessage) Request;
-				public new function HRESULT(ref ICertRequestD self, uint32 fchain, PWSTR pwszAuthority, out CERTTRANSBLOB pctbOut) GetCACert;
-				public new function HRESULT(ref ICertRequestD self, PWSTR pwszAuthority) Ping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD self, uint32 dwFlags, PWSTR pwszAuthority, out uint32 pdwRequestId, out uint32 pdwDisposition, PWSTR pwszAttributes, in CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbCertChain, out CERTTRANSBLOB pctbEncodedCert, out CERTTRANSBLOB pctbDispositionMessage) Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD self, uint32 fchain, PWSTR pwszAuthority, out CERTTRANSBLOB pctbOut) GetCACert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD self, PWSTR pwszAuthority) Ping;
 			}
 		}
 		[CRepr]
@@ -6212,10 +6212,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICertRequestD.VTable
 			{
-				public new function HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, uint32 dwFlags, PWSTR pwszSerialNumber, out uint32 pdwRequestId, out uint32 pdwDisposition, PWSTR pwszAttributes, in CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbFullResponse, out CERTTRANSBLOB pctbEncodedCert, out CERTTRANSBLOB pctbDispositionMessage) Request2;
-				public new function HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, int32 PropId, int32 PropIndex, int32 PropType, out CERTTRANSBLOB pctbPropertyValue) GetCAProperty;
-				public new function HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, out int32 pcProperty, out CERTTRANSBLOB pctbPropInfo) GetCAPropertyInfo;
-				public new function HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority) Ping2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, uint32 dwFlags, PWSTR pwszSerialNumber, out uint32 pdwRequestId, out uint32 pdwDisposition, PWSTR pwszAttributes, in CERTTRANSBLOB pctbRequest, out CERTTRANSBLOB pctbFullResponse, out CERTTRANSBLOB pctbEncodedCert, out CERTTRANSBLOB pctbDispositionMessage) Request2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, int32 PropId, int32 PropIndex, int32 PropType, out CERTTRANSBLOB pctbPropertyValue) GetCAProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority, out int32 pcProperty, out CERTTRANSBLOB pctbPropInfo) GetCAPropertyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority) Ping2;
 			}
 		}
 		

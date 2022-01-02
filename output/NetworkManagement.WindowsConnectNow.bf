@@ -394,17 +394,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCNDevice self, WCN_PASSWORD_TYPE Type, uint32 dwPasswordLength, uint8* pbPassword) SetPassword;
-				public new function HRESULT(ref IWCNDevice self, IWCNConnectNotify* pNotify) Connect;
-				public new function HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 dwMaxBufferSize, uint8* pbBuffer, out uint32 pdwBufferUsed) GetAttribute;
-				public new function HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, out uint32 puInteger) GetIntegerAttribute;
-				public new function HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 cchMaxString, char16* wszString) GetStringAttribute;
-				public new function HRESULT(ref IWCNDevice self, uint32 cchMaxStringLength, char16* wszProfile) GetNetworkProfile;
-				public new function HRESULT(ref IWCNDevice self, PWSTR pszProfileXml) SetNetworkProfile;
-				public new function HRESULT(ref IWCNDevice self, in WCN_VENDOR_EXTENSION_SPEC pVendorExtSpec, uint32 dwMaxBufferSize, uint8* pbBuffer, out uint32 pdwBufferUsed) GetVendorExtension;
-				public new function HRESULT(ref IWCNDevice self, in WCN_VENDOR_EXTENSION_SPEC pVendorExtSpec, uint32 cbBuffer, uint8* pbBuffer) SetVendorExtension;
-				public new function HRESULT(ref IWCNDevice self) Unadvise;
-				public new function HRESULT(ref IWCNDevice self, WCN_PASSWORD_TYPE Type, uint32 dwOOBPasswordID, uint32 dwPasswordLength, uint8* pbPassword, uint32 dwRemotePublicKeyHashLength, uint8* pbRemotePublicKeyHash, uint32 dwDHKeyBlobLength, uint8* pbDHKeyBlob) SetNFCPasswordParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, WCN_PASSWORD_TYPE Type, uint32 dwPasswordLength, uint8* pbPassword) SetPassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, IWCNConnectNotify* pNotify) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 dwMaxBufferSize, uint8* pbBuffer, out uint32 pdwBufferUsed) GetAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, out uint32 puInteger) GetIntegerAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 cchMaxString, char16* wszString) GetStringAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, uint32 cchMaxStringLength, char16* wszProfile) GetNetworkProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, PWSTR pszProfileXml) SetNetworkProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, in WCN_VENDOR_EXTENSION_SPEC pVendorExtSpec, uint32 dwMaxBufferSize, uint8* pbBuffer, out uint32 pdwBufferUsed) GetVendorExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, in WCN_VENDOR_EXTENSION_SPEC pVendorExtSpec, uint32 cbBuffer, uint8* pbBuffer) SetVendorExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNDevice self, WCN_PASSWORD_TYPE Type, uint32 dwOOBPasswordID, uint32 dwPasswordLength, uint8* pbPassword, uint32 dwRemotePublicKeyHashLength, uint8* pbRemotePublicKeyHash, uint32 dwDHKeyBlobLength, uint8* pbDHKeyBlob) SetNFCPasswordParams;
 			}
 		}
 		[CRepr]
@@ -420,8 +420,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWCNConnectNotify self) ConnectSucceeded;
-				public new function HRESULT(ref IWCNConnectNotify self, HRESULT hrFailure) ConnectFailed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNConnectNotify self) ConnectSucceeded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNConnectNotify self, HRESULT hrFailure) ConnectFailed;
 			}
 		}
 		

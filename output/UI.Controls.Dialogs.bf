@@ -681,9 +681,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintDialogCallback self) InitDone;
-				public new function HRESULT(ref IPrintDialogCallback self) SelectionChange;
-				public new function HRESULT(ref IPrintDialogCallback self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) HandleMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogCallback self) InitDone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogCallback self) SelectionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogCallback self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) HandleMessage;
 			}
 		}
 		[CRepr]
@@ -700,9 +700,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintDialogServices self, out DEVMODEA pDevMode, out uint32 pcbSize) GetCurrentDevMode;
-				public new function HRESULT(ref IPrintDialogServices self, char16* pPrinterName, out uint32 pcchSize) GetCurrentPrinterName;
-				public new function HRESULT(ref IPrintDialogServices self, char16* pPortName, out uint32 pcchSize) GetCurrentPortName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogServices self, out DEVMODEA pDevMode, out uint32 pcbSize) GetCurrentDevMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogServices self, char16* pPrinterName, out uint32 pcchSize) GetCurrentPrinterName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogServices self, char16* pPortName, out uint32 pcchSize) GetCurrentPortName;
 			}
 		}
 		

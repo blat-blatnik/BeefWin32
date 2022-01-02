@@ -654,48 +654,48 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCClient self) Initialize;
-				public new function HRESULT(ref IRTCClient self) Shutdown;
-				public new function HRESULT(ref IRTCClient self) PrepareForShutdown;
-				public new function HRESULT(ref IRTCClient self, int32 lFilter) put_EventFilter;
-				public new function HRESULT(ref IRTCClient self, out int32 plFilter) get_EventFilter;
-				public new function HRESULT(ref IRTCClient self, int32 lMediaTypes, int16 fPersistent) SetPreferredMediaTypes;
-				public new function HRESULT(ref IRTCClient self, out int32 plMediaTypes) get_PreferredMediaTypes;
-				public new function HRESULT(ref IRTCClient self, out int32 plMediaTypes) get_MediaCapabilities;
-				public new function HRESULT(ref IRTCClient self, RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession* ppSession) CreateSession;
-				public new function HRESULT(ref IRTCClient self, RTC_LISTEN_MODE enListen) put_ListenForIncomingSessions;
-				public new function HRESULT(ref IRTCClient self, out RTC_LISTEN_MODE penListen) get_ListenForIncomingSessions;
-				public new function HRESULT(ref IRTCClient self, int16 fTCP, int16 fExternal, out VARIANT pvAddresses) get_NetworkAddresses;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int32 lVolume) put_Volume;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int32 plVolume) get_Volume;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int16 fMuted) put_AudioMuted;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int16 pfMuted) get_AudioMuted;
-				public new function HRESULT(ref IRTCClient self, RTC_VIDEO_DEVICE enDevice, out IVideoWindow* ppIVideoWindow) get_IVideoWindow;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, BSTR bstrDeviceName) put_PreferredAudioDevice;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out BSTR pbstrDeviceName) get_PreferredAudioDevice;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int32 lVolume) put_PreferredVolume;
-				public new function HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int32 plVolume) get_PreferredVolume;
-				public new function HRESULT(ref IRTCClient self, int16 bEnable) put_PreferredAEC;
-				public new function HRESULT(ref IRTCClient self, out int16 pbEnabled) get_PreferredAEC;
-				public new function HRESULT(ref IRTCClient self, BSTR bstrDeviceName) put_PreferredVideoDevice;
-				public new function HRESULT(ref IRTCClient self, out BSTR pbstrDeviceName) get_PreferredVideoDevice;
-				public new function HRESULT(ref IRTCClient self, out int32 plMediaType) get_ActiveMedia;
-				public new function HRESULT(ref IRTCClient self, int32 lMaxBitrate) put_MaxBitrate;
-				public new function HRESULT(ref IRTCClient self, out int32 plMaxBitrate) get_MaxBitrate;
-				public new function HRESULT(ref IRTCClient self, int32 lValue) put_TemporalSpatialTradeOff;
-				public new function HRESULT(ref IRTCClient self, out int32 plValue) get_TemporalSpatialTradeOff;
-				public new function HRESULT(ref IRTCClient self, out int32 plNetworkQuality) get_NetworkQuality;
-				public new function HRESULT(ref IRTCClient self, RTC_T120_APPLET enApplet) StartT120Applet;
-				public new function HRESULT(ref IRTCClient self) StopT120Applets;
-				public new function HRESULT(ref IRTCClient self, RTC_T120_APPLET enApplet, out int16 pfRunning) get_IsT120AppletRunning;
-				public new function HRESULT(ref IRTCClient self, out BSTR pbstrUserURI) get_LocalUserURI;
-				public new function HRESULT(ref IRTCClient self, BSTR bstrUserURI) put_LocalUserURI;
-				public new function HRESULT(ref IRTCClient self, out BSTR pbstrUserName) get_LocalUserName;
-				public new function HRESULT(ref IRTCClient self, BSTR bstrUserName) put_LocalUserName;
-				public new function HRESULT(ref IRTCClient self, RTC_RING_TYPE enType, int16 bPlay) PlayRing;
-				public new function HRESULT(ref IRTCClient self, RTC_DTMF enDTMF) SendDTMF;
-				public new function HRESULT(ref IRTCClient self, int hwndParent) InvokeTuningWizard;
-				public new function HRESULT(ref IRTCClient self, out int16 pfTuned) get_IsTuned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self) PrepareForShutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int32 lFilter) put_EventFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plFilter) get_EventFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int32 lMediaTypes, int16 fPersistent) SetPreferredMediaTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plMediaTypes) get_PreferredMediaTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plMediaTypes) get_MediaCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession* ppSession) CreateSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_LISTEN_MODE enListen) put_ListenForIncomingSessions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out RTC_LISTEN_MODE penListen) get_ListenForIncomingSessions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int16 fTCP, int16 fExternal, out VARIANT pvAddresses) get_NetworkAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int32 lVolume) put_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int32 plVolume) get_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int16 fMuted) put_AudioMuted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int16 pfMuted) get_AudioMuted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_VIDEO_DEVICE enDevice, out IVideoWindow* ppIVideoWindow) get_IVideoWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, BSTR bstrDeviceName) put_PreferredAudioDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out BSTR pbstrDeviceName) get_PreferredAudioDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, int32 lVolume) put_PreferredVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_AUDIO_DEVICE enDevice, out int32 plVolume) get_PreferredVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int16 bEnable) put_PreferredAEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int16 pbEnabled) get_PreferredAEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, BSTR bstrDeviceName) put_PreferredVideoDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out BSTR pbstrDeviceName) get_PreferredVideoDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plMediaType) get_ActiveMedia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int32 lMaxBitrate) put_MaxBitrate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plMaxBitrate) get_MaxBitrate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int32 lValue) put_TemporalSpatialTradeOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plValue) get_TemporalSpatialTradeOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int32 plNetworkQuality) get_NetworkQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_T120_APPLET enApplet) StartT120Applet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self) StopT120Applets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_T120_APPLET enApplet, out int16 pfRunning) get_IsT120AppletRunning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out BSTR pbstrUserURI) get_LocalUserURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, BSTR bstrUserURI) put_LocalUserURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out BSTR pbstrUserName) get_LocalUserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, BSTR bstrUserName) put_LocalUserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_RING_TYPE enType, int16 bPlay) PlayRing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, RTC_DTMF enDTMF) SendDTMF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, int hwndParent) InvokeTuningWizard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient self, out int16 pfTuned) get_IsTuned;
 			}
 		}
 		[CRepr]
@@ -722,19 +722,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCClient.VTable
 			{
-				public new function HRESULT(ref IRTCClient2 self, RTC_SESSION_TYPE enType, RTC_ANSWER_MODE enMode) put_AnswerMode;
-				public new function HRESULT(ref IRTCClient2 self, RTC_SESSION_TYPE enType, out RTC_ANSWER_MODE penMode) get_AnswerMode;
-				public new function HRESULT(ref IRTCClient2 self, int hwndParent, int16 fAllowAudio, int16 fAllowVideo) InvokeTuningWizardEx;
-				public new function HRESULT(ref IRTCClient2 self, out int32 plVersion) get_Version;
-				public new function HRESULT(ref IRTCClient2 self, BSTR bstrClientName) put_ClientName;
-				public new function HRESULT(ref IRTCClient2 self, BSTR bstrClientCurVer) put_ClientCurVer;
-				public new function HRESULT(ref IRTCClient2 self, int32 lFlags) InitializeEx;
-				public new function HRESULT(ref IRTCClient2 self, BSTR bstrContentType, BSTR bstrSessionDescription, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession2* ppSession2) CreateSessionWithDescription;
-				public new function HRESULT(ref IRTCClient2 self, ref IRTCSessionDescriptionManager pSessionDescriptionManager) SetSessionDescriptionManager;
-				public new function HRESULT(ref IRTCClient2 self, RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) put_PreferredSecurityLevel;
-				public new function HRESULT(ref IRTCClient2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_PreferredSecurityLevel;
-				public new function HRESULT(ref IRTCClient2 self, int32 lTransport, RTC_LISTEN_MODE enListenMode) put_AllowedPorts;
-				public new function HRESULT(ref IRTCClient2 self, int32 lTransport, out RTC_LISTEN_MODE penListenMode) get_AllowedPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, RTC_SESSION_TYPE enType, RTC_ANSWER_MODE enMode) put_AnswerMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, RTC_SESSION_TYPE enType, out RTC_ANSWER_MODE penMode) get_AnswerMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, int hwndParent, int16 fAllowAudio, int16 fAllowVideo) InvokeTuningWizardEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, out int32 plVersion) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, BSTR bstrClientName) put_ClientName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, BSTR bstrClientCurVer) put_ClientCurVer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, int32 lFlags) InitializeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, BSTR bstrContentType, BSTR bstrSessionDescription, ref IRTCProfile pProfile, int32 lFlags, out IRTCSession2* ppSession2) CreateSessionWithDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, ref IRTCSessionDescriptionManager pSessionDescriptionManager) SetSessionDescriptionManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) put_PreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_PreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, int32 lTransport, RTC_LISTEN_MODE enListenMode) put_AllowedPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClient2 self, int32 lTransport, out RTC_LISTEN_MODE penListenMode) get_AllowedPorts;
 			}
 		}
 		[CRepr]
@@ -766,24 +766,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCClientPresence self, int16 fUseStorage, VARIANT varStorage) EnablePresence;
-				public new function HRESULT(ref IRTCClientPresence self, VARIANT varStorage) Export;
-				public new function HRESULT(ref IRTCClientPresence self, VARIANT varStorage, int16 fReplaceAll) Import;
-				public new function HRESULT(ref IRTCClientPresence self, out IRTCEnumBuddies* ppEnum) EnumerateBuddies;
-				public new function HRESULT(ref IRTCClientPresence self, out IRTCCollection* ppCollection) get_Buddies;
-				public new function HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, out IRTCBuddy* ppBuddy) get_Buddy;
-				public new function HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy* ppBuddy) AddBuddy;
-				public new function HRESULT(ref IRTCClientPresence self, ref IRTCBuddy pBuddy) RemoveBuddy;
-				public new function HRESULT(ref IRTCClientPresence self, out IRTCEnumWatchers* ppEnum) EnumerateWatchers;
-				public new function HRESULT(ref IRTCClientPresence self, out IRTCCollection* ppCollection) get_Watchers;
-				public new function HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, out IRTCWatcher* ppWatcher) get_Watcher;
-				public new function HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fBlocked, int16 fPersistent, out IRTCWatcher* ppWatcher) AddWatcher;
-				public new function HRESULT(ref IRTCClientPresence self, ref IRTCWatcher pWatcher) RemoveWatcher;
-				public new function HRESULT(ref IRTCClientPresence self, RTC_PRESENCE_STATUS enStatus, BSTR bstrNotes) SetLocalPresenceInfo;
-				public new function HRESULT(ref IRTCClientPresence self, out RTC_OFFER_WATCHER_MODE penMode) get_OfferWatcherMode;
-				public new function HRESULT(ref IRTCClientPresence self, RTC_OFFER_WATCHER_MODE enMode) put_OfferWatcherMode;
-				public new function HRESULT(ref IRTCClientPresence self, out RTC_PRIVACY_MODE penMode) get_PrivacyMode;
-				public new function HRESULT(ref IRTCClientPresence self, RTC_PRIVACY_MODE enMode) put_PrivacyMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, int16 fUseStorage, VARIANT varStorage) EnablePresence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, VARIANT varStorage) Export;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, VARIANT varStorage, int16 fReplaceAll) Import;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out IRTCEnumBuddies* ppEnum) EnumerateBuddies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out IRTCCollection* ppCollection) get_Buddies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, out IRTCBuddy* ppBuddy) get_Buddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy* ppBuddy) AddBuddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, ref IRTCBuddy pBuddy) RemoveBuddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out IRTCEnumWatchers* ppEnum) EnumerateWatchers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out IRTCCollection* ppCollection) get_Watchers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, out IRTCWatcher* ppWatcher) get_Watcher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fBlocked, int16 fPersistent, out IRTCWatcher* ppWatcher) AddWatcher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, ref IRTCWatcher pWatcher) RemoveWatcher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, RTC_PRESENCE_STATUS enStatus, BSTR bstrNotes) SetLocalPresenceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out RTC_OFFER_WATCHER_MODE penMode) get_OfferWatcherMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, RTC_OFFER_WATCHER_MODE enMode) put_OfferWatcherMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, out RTC_PRIVACY_MODE penMode) get_PrivacyMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence self, RTC_PRIVACY_MODE enMode) put_PrivacyMode;
 			}
 		}
 		[CRepr]
@@ -812,21 +812,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCClientPresence.VTable
 			{
-				public new function HRESULT(ref IRTCClientPresence2 self, ref IRTCProfile pProfile, VARIANT varStorage, int32 lFlags) EnablePresenceEx;
-				public new function HRESULT(ref IRTCClientPresence2 self) DisablePresence;
-				public new function HRESULT(ref IRTCClientPresence2 self, BSTR bstrGroupName, BSTR bstrData, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddyGroup* ppGroup) AddGroup;
-				public new function HRESULT(ref IRTCClientPresence2 self, ref IRTCBuddyGroup pGroup) RemoveGroup;
-				public new function HRESULT(ref IRTCClientPresence2 self, out IRTCEnumGroups* ppEnum) EnumerateGroups;
-				public new function HRESULT(ref IRTCClientPresence2 self, out IRTCCollection* ppCollection) get_Groups;
-				public new function HRESULT(ref IRTCClientPresence2 self, BSTR bstrGroupName, out IRTCBuddyGroup* ppGroup) get_Group;
-				public new function HRESULT(ref IRTCClientPresence2 self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, RTC_WATCHER_STATE enState, int16 fPersistent, RTC_ACE_SCOPE enScope, ref IRTCProfile pProfile, int32 lFlags, out IRTCWatcher2* ppWatcher) AddWatcherEx;
-				public new function HRESULT(ref IRTCClientPresence2 self, RTC_WATCHER_MATCH_MODE enMode, BSTR bstrPresentityURI, out IRTCWatcher2* ppWatcher) get_WatcherEx;
-				public new function HRESULT(ref IRTCClientPresence2 self, RTC_PRESENCE_PROPERTY enProperty, BSTR bstrProperty) put_PresenceProperty;
-				public new function HRESULT(ref IRTCClientPresence2 self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
-				public new function HRESULT(ref IRTCClientPresence2 self, BSTR bstrNamespace, BSTR bstrData) SetPresenceData;
-				public new function HRESULT(ref IRTCClientPresence2 self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
-				public new function HRESULT(ref IRTCClientPresence2 self, out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) GetLocalPresenceInfo;
-				public new function HRESULT(ref IRTCClientPresence2 self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy2* ppBuddy) AddBuddyEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, ref IRTCProfile pProfile, VARIANT varStorage, int32 lFlags) EnablePresenceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self) DisablePresence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, BSTR bstrGroupName, BSTR bstrData, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddyGroup* ppGroup) AddGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, ref IRTCBuddyGroup pGroup) RemoveGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, out IRTCEnumGroups* ppEnum) EnumerateGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, out IRTCCollection* ppCollection) get_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, BSTR bstrGroupName, out IRTCBuddyGroup* ppGroup) get_Group;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, RTC_WATCHER_STATE enState, int16 fPersistent, RTC_ACE_SCOPE enScope, ref IRTCProfile pProfile, int32 lFlags, out IRTCWatcher2* ppWatcher) AddWatcherEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, RTC_WATCHER_MATCH_MODE enMode, BSTR bstrPresentityURI, out IRTCWatcher2* ppWatcher) get_WatcherEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, RTC_PRESENCE_PROPERTY enProperty, BSTR bstrProperty) put_PresenceProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, BSTR bstrNamespace, BSTR bstrData) SetPresenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) GetLocalPresenceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPresence2 self, BSTR bstrPresentityURI, BSTR bstrUserName, BSTR bstrData, int16 fPersistent, RTC_BUDDY_SUBSCRIPTION_TYPE enSubscriptionType, ref IRTCProfile pProfile, int32 lFlags, out IRTCBuddy2* ppBuddy) AddBuddyEx;
 			}
 		}
 		[CRepr]
@@ -847,13 +847,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCClientProvisioning self, BSTR bstrProfileXML, out IRTCProfile* ppProfile) CreateProfile;
-				public new function HRESULT(ref IRTCClientProvisioning self, ref IRTCProfile pProfile, int32 lRegisterFlags) EnableProfile;
-				public new function HRESULT(ref IRTCClientProvisioning self, ref IRTCProfile pProfile) DisableProfile;
-				public new function HRESULT(ref IRTCClientProvisioning self, out IRTCEnumProfiles* ppEnum) EnumerateProfiles;
-				public new function HRESULT(ref IRTCClientProvisioning self, out IRTCCollection* ppCollection) get_Profiles;
-				public new function HRESULT(ref IRTCClientProvisioning self, BSTR bstrUserAccount, BSTR bstrUserPassword, BSTR bstrUserURI, BSTR bstrServer, int32 lTransport, int lCookie) GetProfile;
-				public new function HRESULT(ref IRTCClientProvisioning self, out int32 plSupportedSessions) get_SessionCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, BSTR bstrProfileXML, out IRTCProfile* ppProfile) CreateProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, ref IRTCProfile pProfile, int32 lRegisterFlags) EnableProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, ref IRTCProfile pProfile) DisableProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, out IRTCEnumProfiles* ppEnum) EnumerateProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, out IRTCCollection* ppCollection) get_Profiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, BSTR bstrUserAccount, BSTR bstrUserPassword, BSTR bstrUserURI, BSTR bstrServer, int32 lTransport, int lCookie) GetProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning self, out int32 plSupportedSessions) get_SessionCapabilities;
 			}
 		}
 		[CRepr]
@@ -868,7 +868,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCClientProvisioning.VTable
 			{
-				public new function HRESULT(ref IRTCClientProvisioning2 self, ref IRTCProfile pProfile, int32 lRegisterFlags, int32 lRoamingFlags) EnableProfileEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientProvisioning2 self, ref IRTCProfile pProfile, int32 lRegisterFlags, int32 lRoamingFlags) EnableProfileEx;
 			}
 		}
 		[CRepr]
@@ -900,24 +900,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrKey) get_Key;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrXML) get_XML;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_ProviderName;
-				public new function HRESULT(ref IRTCProfile self, RTC_PROVIDER_URI enURI, out BSTR pbstrURI) get_ProviderURI;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrData) get_ProviderData;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_ClientName;
-				public new function HRESULT(ref IRTCProfile self, out int16 pfBanner) get_ClientBanner;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrMinVer) get_ClientMinVer;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrCurVer) get_ClientCurVer;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrUpdateURI) get_ClientUpdateURI;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrData) get_ClientData;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrUserURI) get_UserURI;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrUserName) get_UserName;
-				public new function HRESULT(ref IRTCProfile self, out BSTR pbstrUserAccount) get_UserAccount;
-				public new function HRESULT(ref IRTCProfile self, BSTR bstrUserURI, BSTR bstrUserAccount, BSTR bstrPassword) SetCredentials;
-				public new function HRESULT(ref IRTCProfile self, out int32 plSupportedSessions) get_SessionCapabilities;
-				public new function HRESULT(ref IRTCProfile self, out RTC_REGISTRATION_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrKey) get_Key;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrXML) get_XML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, RTC_PROVIDER_URI enURI, out BSTR pbstrURI) get_ProviderURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrData) get_ProviderData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrName) get_ClientName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out int16 pfBanner) get_ClientBanner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrMinVer) get_ClientMinVer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrCurVer) get_ClientCurVer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrUpdateURI) get_ClientUpdateURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrData) get_ClientData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrUserURI) get_UserURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrUserName) get_UserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out BSTR pbstrUserAccount) get_UserAccount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, BSTR bstrUserURI, BSTR bstrUserAccount, BSTR bstrPassword) SetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out int32 plSupportedSessions) get_SessionCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile self, out RTC_REGISTRATION_STATE penState) get_State;
 			}
 		}
 		[CRepr]
@@ -935,10 +935,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCProfile.VTable
 			{
-				public new function HRESULT(ref IRTCProfile2 self, out BSTR pbstrRealm) get_Realm;
-				public new function HRESULT(ref IRTCProfile2 self, BSTR bstrRealm) put_Realm;
-				public new function HRESULT(ref IRTCProfile2 self, out int32 plAllowedAuth) get_AllowedAuth;
-				public new function HRESULT(ref IRTCProfile2 self, int32 lAllowedAuth) put_AllowedAuth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile2 self, out BSTR pbstrRealm) get_Realm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile2 self, BSTR bstrRealm) put_Realm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile2 self, out int32 plAllowedAuth) get_AllowedAuth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfile2 self, int32 lAllowedAuth) put_AllowedAuth;
 			}
 		}
 		[CRepr]
@@ -972,26 +972,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCSession self, out IRTCClient* ppClient) get_Client;
-				public new function HRESULT(ref IRTCSession self, out RTC_SESSION_STATE penState) get_State;
-				public new function HRESULT(ref IRTCSession self, out RTC_SESSION_TYPE penType) get_Type;
-				public new function HRESULT(ref IRTCSession self, out IRTCProfile* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCSession self, out IRTCCollection* ppCollection) get_Participants;
-				public new function HRESULT(ref IRTCSession self) Answer;
-				public new function HRESULT(ref IRTCSession self, RTC_TERMINATE_REASON enReason) Terminate;
-				public new function HRESULT(ref IRTCSession self, RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags) Redirect;
-				public new function HRESULT(ref IRTCSession self, BSTR bstrAddress, BSTR bstrName, out IRTCParticipant* ppParticipant) AddParticipant;
-				public new function HRESULT(ref IRTCSession self, ref IRTCParticipant pParticipant) RemoveParticipant;
-				public new function HRESULT(ref IRTCSession self, out IRTCEnumParticipants* ppEnum) EnumerateParticipants;
-				public new function HRESULT(ref IRTCSession self, out int16 pfCanAdd) get_CanAddParticipants;
-				public new function HRESULT(ref IRTCSession self, out BSTR pbstrUserURI) get_RedirectedUserURI;
-				public new function HRESULT(ref IRTCSession self, out BSTR pbstrUserName) get_RedirectedUserName;
-				public new function HRESULT(ref IRTCSession self) NextRedirectedUser;
-				public new function HRESULT(ref IRTCSession self, BSTR bstrMessageHeader, BSTR bstrMessage, int lCookie) SendMessage;
-				public new function HRESULT(ref IRTCSession self, RTC_MESSAGING_USER_STATUS enUserStatus, int lCookie) SendMessageStatus;
-				public new function HRESULT(ref IRTCSession self, int32 lMediaType, int lCookie) AddStream;
-				public new function HRESULT(ref IRTCSession self, int32 lMediaType, int lCookie) RemoveStream;
-				public new function HRESULT(ref IRTCSession self, int32 lMediaType, BSTR EncryptionKey) put_EncryptionKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out IRTCClient* ppClient) get_Client;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out RTC_SESSION_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out RTC_SESSION_TYPE penType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out IRTCProfile* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out IRTCCollection* ppCollection) get_Participants;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self) Answer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, RTC_TERMINATE_REASON enReason) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, RTC_SESSION_TYPE enType, BSTR bstrLocalPhoneURI, ref IRTCProfile pProfile, int32 lFlags) Redirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, BSTR bstrAddress, BSTR bstrName, out IRTCParticipant* ppParticipant) AddParticipant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, ref IRTCParticipant pParticipant) RemoveParticipant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out IRTCEnumParticipants* ppEnum) EnumerateParticipants;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out int16 pfCanAdd) get_CanAddParticipants;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out BSTR pbstrUserURI) get_RedirectedUserURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, out BSTR pbstrUserName) get_RedirectedUserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self) NextRedirectedUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, BSTR bstrMessageHeader, BSTR bstrMessage, int lCookie) SendMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, RTC_MESSAGING_USER_STATUS enUserStatus, int lCookie) SendMessageStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, int32 lMediaType, int lCookie) AddStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, int32 lMediaType, int lCookie) RemoveStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession self, int32 lMediaType, BSTR EncryptionKey) put_EncryptionKey;
 			}
 		}
 		[CRepr]
@@ -1011,12 +1011,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCSession.VTable
 			{
-				public new function HRESULT(ref IRTCSession2 self, BSTR bstrInfoHeader, BSTR bstrInfo, int lCookie) SendInfo;
-				public new function HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) put_PreferredSecurityLevel;
-				public new function HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_PreferredSecurityLevel;
-				public new function HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, out int16 pfSecurityEnabled) IsSecurityEnabled;
-				public new function HRESULT(ref IRTCSession2 self, BSTR bstrContentType, BSTR bstrSessionDescription) AnswerWithSessionDescription;
-				public new function HRESULT(ref IRTCSession2 self, BSTR bstrContentType, BSTR bstrSessionDescription, int lCookie) ReInviteWithSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, BSTR bstrInfoHeader, BSTR bstrInfo, int lCookie) SendInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, RTC_SECURITY_LEVEL enSecurityLevel) put_PreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_PreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, RTC_SECURITY_TYPE enSecurityType, out int16 pfSecurityEnabled) IsSecurityEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, BSTR bstrContentType, BSTR bstrSessionDescription) AnswerWithSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSession2 self, BSTR bstrContentType, BSTR bstrSessionDescription, int lCookie) ReInviteWithSessionDescription;
 			}
 		}
 		[CRepr]
@@ -1039,15 +1039,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCSessionCallControl self, int lCookie) Hold;
-				public new function HRESULT(ref IRTCSessionCallControl self, int lCookie) UnHold;
-				public new function HRESULT(ref IRTCSessionCallControl self, BSTR bstrForwardToURI) Forward;
-				public new function HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferToURI, BSTR bstrReferCookie) Refer;
-				public new function HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferredByURI) put_ReferredByURI;
-				public new function HRESULT(ref IRTCSessionCallControl self, out BSTR pbstrReferredByURI) get_ReferredByURI;
-				public new function HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferCookie) put_ReferCookie;
-				public new function HRESULT(ref IRTCSessionCallControl self, out BSTR pbstrReferCookie) get_ReferCookie;
-				public new function HRESULT(ref IRTCSessionCallControl self, out int16 pfIsReferred) get_IsReferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, int lCookie) Hold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, int lCookie) UnHold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, BSTR bstrForwardToURI) Forward;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferToURI, BSTR bstrReferCookie) Refer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferredByURI) put_ReferredByURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, out BSTR pbstrReferredByURI) get_ReferredByURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, BSTR bstrReferCookie) put_ReferCookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, out BSTR pbstrReferCookie) get_ReferCookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionCallControl self, out int16 pfIsReferred) get_IsReferred;
 			}
 		}
 		[CRepr]
@@ -1066,11 +1066,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCParticipant self, out BSTR pbstrUserURI) get_UserURI;
-				public new function HRESULT(ref IRTCParticipant self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref IRTCParticipant self, out int16 pfRemovable) get_Removable;
-				public new function HRESULT(ref IRTCParticipant self, out RTC_PARTICIPANT_STATE penState) get_State;
-				public new function HRESULT(ref IRTCParticipant self, out IRTCSession* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipant self, out BSTR pbstrUserURI) get_UserURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipant self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipant self, out int16 pfRemovable) get_Removable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipant self, out RTC_PARTICIPANT_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipant self, out IRTCSession* ppSession) get_Session;
 			}
 		}
 		[CRepr]
@@ -1088,10 +1088,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCRoamingEvent self, out RTC_ROAMING_EVENT_TYPE pEventType) get_EventType;
-				public new function HRESULT(ref IRTCRoamingEvent self, out IRTCProfile2* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCRoamingEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCRoamingEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRoamingEvent self, out RTC_ROAMING_EVENT_TYPE pEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRoamingEvent self, out IRTCProfile2* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRoamingEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRoamingEvent self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -1108,9 +1108,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCProfileEvent self, out IRTCProfile* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCProfileEvent self, out int plCookie) get_Cookie;
-				public new function HRESULT(ref IRTCProfileEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfileEvent self, out IRTCProfile* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfileEvent self, out int plCookie) get_Cookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfileEvent self, out int32 plStatusCode) get_StatusCode;
 			}
 		}
 		[CRepr]
@@ -1125,7 +1125,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCProfileEvent.VTable
 			{
-				public new function HRESULT(ref IRTCProfileEvent2 self, out RTC_PROFILE_EVENT_TYPE pEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCProfileEvent2 self, out RTC_PROFILE_EVENT_TYPE pEventType) get_EventType;
 			}
 		}
 		[CRepr]
@@ -1141,8 +1141,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCClientEvent self, out RTC_CLIENT_EVENT_TYPE penEventType) get_EventType;
-				public new function HRESULT(ref IRTCClientEvent self, out IRTCClient* ppClient) get_Client;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientEvent self, out RTC_CLIENT_EVENT_TYPE penEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientEvent self, out IRTCClient* ppClient) get_Client;
 			}
 		}
 		[CRepr]
@@ -1160,10 +1160,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCRegistrationStateChangeEvent self, out IRTCProfile* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCRegistrationStateChangeEvent self, out RTC_REGISTRATION_STATE penState) get_State;
-				public new function HRESULT(ref IRTCRegistrationStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCRegistrationStateChangeEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRegistrationStateChangeEvent self, out IRTCProfile* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRegistrationStateChangeEvent self, out RTC_REGISTRATION_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRegistrationStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCRegistrationStateChangeEvent self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -1181,10 +1181,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCSessionStateChangeEvent self, out IRTCSession* ppSession) get_Session;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent self, out RTC_SESSION_STATE penState) get_State;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent self, out IRTCSession* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent self, out RTC_SESSION_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -1202,10 +1202,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCSessionStateChangeEvent.VTable
 			{
-				public new function HRESULT(ref IRTCSessionStateChangeEvent2 self, out int32 pMediaTypes) get_MediaTypes;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_RemotePreferredSecurityLevel;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent2 self, out int16 pfIsForked) get_IsForked;
-				public new function HRESULT(ref IRTCSessionStateChangeEvent2 self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent2 self, out int32 pMediaTypes) get_MediaTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent2 self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_RemotePreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent2 self, out int16 pfIsForked) get_IsForked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionStateChangeEvent2 self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
 			}
 		}
 		[CRepr]
@@ -1223,10 +1223,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent self, out IRTCSession* ppSession) get_Session;
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent self, out int plCookie) get_Cookie;
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent self, out IRTCSession* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent self, out int plCookie) get_Cookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -1242,8 +1242,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCSessionOperationCompleteEvent.VTable
 			{
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent2 self, out IRTCParticipant* ppParticipant) get_Participant;
-				public new function HRESULT(ref IRTCSessionOperationCompleteEvent2 self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent2 self, out IRTCParticipant* ppParticipant) get_Participant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionOperationCompleteEvent2 self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
 			}
 		}
 		[CRepr]
@@ -1260,9 +1260,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCParticipantStateChangeEvent self, out IRTCParticipant* ppParticipant) get_Participant;
-				public new function HRESULT(ref IRTCParticipantStateChangeEvent self, out RTC_PARTICIPANT_STATE penState) get_State;
-				public new function HRESULT(ref IRTCParticipantStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipantStateChangeEvent self, out IRTCParticipant* ppParticipant) get_Participant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipantStateChangeEvent self, out RTC_PARTICIPANT_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCParticipantStateChangeEvent self, out int32 plStatusCode) get_StatusCode;
 			}
 		}
 		[CRepr]
@@ -1279,9 +1279,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCMediaEvent self, out int32 pMediaType) get_MediaType;
-				public new function HRESULT(ref IRTCMediaEvent self, out RTC_MEDIA_EVENT_TYPE penEventType) get_EventType;
-				public new function HRESULT(ref IRTCMediaEvent self, out RTC_MEDIA_EVENT_REASON penEventReason) get_EventReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaEvent self, out int32 pMediaType) get_MediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaEvent self, out RTC_MEDIA_EVENT_TYPE penEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaEvent self, out RTC_MEDIA_EVENT_REASON penEventReason) get_EventReason;
 			}
 		}
 		[CRepr]
@@ -1299,10 +1299,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCIntensityEvent self, out int32 plLevel) get_Level;
-				public new function HRESULT(ref IRTCIntensityEvent self, out int32 plMin) get_Min;
-				public new function HRESULT(ref IRTCIntensityEvent self, out int32 plMax) get_Max;
-				public new function HRESULT(ref IRTCIntensityEvent self, out RTC_AUDIO_DEVICE penDirection) get_Direction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCIntensityEvent self, out int32 plLevel) get_Level;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCIntensityEvent self, out int32 plMin) get_Min;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCIntensityEvent self, out int32 plMax) get_Max;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCIntensityEvent self, out RTC_AUDIO_DEVICE penDirection) get_Direction;
 			}
 		}
 		[CRepr]
@@ -1322,12 +1322,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCMessagingEvent self, out IRTCSession* ppSession) get_Session;
-				public new function HRESULT(ref IRTCMessagingEvent self, out IRTCParticipant* ppParticipant) get_Participant;
-				public new function HRESULT(ref IRTCMessagingEvent self, out RTC_MESSAGING_EVENT_TYPE penEventType) get_EventType;
-				public new function HRESULT(ref IRTCMessagingEvent self, out BSTR pbstrMessage) get_Message;
-				public new function HRESULT(ref IRTCMessagingEvent self, out BSTR pbstrMessageHeader) get_MessageHeader;
-				public new function HRESULT(ref IRTCMessagingEvent self, out RTC_MESSAGING_USER_STATUS penUserStatus) get_UserStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out IRTCSession* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out IRTCParticipant* ppParticipant) get_Participant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out RTC_MESSAGING_EVENT_TYPE penEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out BSTR pbstrMessage) get_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out BSTR pbstrMessageHeader) get_MessageHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMessagingEvent self, out RTC_MESSAGING_USER_STATUS penUserStatus) get_UserStatus;
 			}
 		}
 		[CRepr]
@@ -1342,7 +1342,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCBuddyEvent self, out IRTCBuddy* ppBuddy) get_Buddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyEvent self, out IRTCBuddy* ppBuddy) get_Buddy;
 			}
 		}
 		[CRepr]
@@ -1359,9 +1359,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCBuddyEvent.VTable
 			{
-				public new function HRESULT(ref IRTCBuddyEvent2 self, out RTC_BUDDY_EVENT_TYPE pEventType) get_EventType;
-				public new function HRESULT(ref IRTCBuddyEvent2 self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCBuddyEvent2 self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyEvent2 self, out RTC_BUDDY_EVENT_TYPE pEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyEvent2 self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyEvent2 self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -1376,7 +1376,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCWatcherEvent self, out IRTCWatcher* ppWatcher) get_Watcher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcherEvent self, out IRTCWatcher* ppWatcher) get_Watcher;
 			}
 		}
 		[CRepr]
@@ -1392,8 +1392,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCWatcherEvent.VTable
 			{
-				public new function HRESULT(ref IRTCWatcherEvent2 self, out RTC_WATCHER_EVENT_TYPE pEventType) get_EventType;
-				public new function HRESULT(ref IRTCWatcherEvent2 self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcherEvent2 self, out RTC_WATCHER_EVENT_TYPE pEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcherEvent2 self, out int32 plStatusCode) get_StatusCode;
 			}
 		}
 		[CRepr]
@@ -1411,10 +1411,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCBuddyGroupEvent self, out RTC_GROUP_EVENT_TYPE pEventType) get_EventType;
-				public new function HRESULT(ref IRTCBuddyGroupEvent self, out IRTCBuddyGroup* ppGroup) get_Group;
-				public new function HRESULT(ref IRTCBuddyGroupEvent self, out IRTCBuddy2* ppBuddy) get_Buddy;
-				public new function HRESULT(ref IRTCBuddyGroupEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroupEvent self, out RTC_GROUP_EVENT_TYPE pEventType) get_EventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroupEvent self, out IRTCBuddyGroup* ppGroup) get_Group;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroupEvent self, out IRTCBuddy2* ppBuddy) get_Buddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroupEvent self, out int32 plStatusCode) get_StatusCode;
 			}
 		}
 		[CRepr]
@@ -1432,10 +1432,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCInfoEvent self, out IRTCSession2* ppSession) get_Session;
-				public new function HRESULT(ref IRTCInfoEvent self, out IRTCParticipant* ppParticipant) get_Participant;
-				public new function HRESULT(ref IRTCInfoEvent self, out BSTR pbstrInfo) get_Info;
-				public new function HRESULT(ref IRTCInfoEvent self, out BSTR pbstrInfoHeader) get_InfoHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCInfoEvent self, out IRTCSession2* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCInfoEvent self, out IRTCParticipant* ppParticipant) get_Participant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCInfoEvent self, out BSTR pbstrInfo) get_Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCInfoEvent self, out BSTR pbstrInfoHeader) get_InfoHeader;
 			}
 		}
 		[CRepr]
@@ -1456,13 +1456,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCMediaRequestEvent self, out IRTCSession2* ppSession) get_Session;
-				public new function HRESULT(ref IRTCMediaRequestEvent self, out int32 plMediaTypes) get_ProposedMedia;
-				public new function HRESULT(ref IRTCMediaRequestEvent self, out int32 plMediaTypes) get_CurrentMedia;
-				public new function HRESULT(ref IRTCMediaRequestEvent self, int32 lMediaTypes) Accept;
-				public new function HRESULT(ref IRTCMediaRequestEvent self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_RemotePreferredSecurityLevel;
-				public new function HRESULT(ref IRTCMediaRequestEvent self) Reject;
-				public new function HRESULT(ref IRTCMediaRequestEvent self, out RTC_REINVITE_STATE pState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, out IRTCSession2* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, out int32 plMediaTypes) get_ProposedMedia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, out int32 plMediaTypes) get_CurrentMedia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, int32 lMediaTypes) Accept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, RTC_SECURITY_TYPE enSecurityType, out RTC_SECURITY_LEVEL penSecurityLevel) get_RemotePreferredSecurityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self) Reject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCMediaRequestEvent self, out RTC_REINVITE_STATE pState) get_State;
 			}
 		}
 		[CRepr]
@@ -1481,11 +1481,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCReInviteEvent self, out IRTCSession2* ppSession2) get_Session;
-				public new function HRESULT(ref IRTCReInviteEvent self, BSTR bstrContentType, BSTR bstrSessionDescription) Accept;
-				public new function HRESULT(ref IRTCReInviteEvent self) Reject;
-				public new function HRESULT(ref IRTCReInviteEvent self, out RTC_REINVITE_STATE pState) get_State;
-				public new function HRESULT(ref IRTCReInviteEvent self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCReInviteEvent self, out IRTCSession2* ppSession2) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCReInviteEvent self, BSTR bstrContentType, BSTR bstrSessionDescription) Accept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCReInviteEvent self) Reject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCReInviteEvent self, out RTC_REINVITE_STATE pState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCReInviteEvent self, out BSTR pbstrContentType, out BSTR pbstrSessionDescription) GetRemoteSessionDescription;
 			}
 		}
 		[CRepr]
@@ -1503,10 +1503,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCPresencePropertyEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCPresencePropertyEvent self, out BSTR pbstrStatusText) get_StatusText;
-				public new function HRESULT(ref IRTCPresencePropertyEvent self, out RTC_PRESENCE_PROPERTY penPresProp) get_PresenceProperty;
-				public new function HRESULT(ref IRTCPresencePropertyEvent self, out BSTR pbstrValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresencePropertyEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresencePropertyEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresencePropertyEvent self, out RTC_PRESENCE_PROPERTY penPresProp) get_PresenceProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresencePropertyEvent self, out BSTR pbstrValue) get_Value;
 			}
 		}
 		[CRepr]
@@ -1523,9 +1523,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCPresenceDataEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCPresenceDataEvent self, out BSTR pbstrStatusText) get_StatusText;
-				public new function HRESULT(ref IRTCPresenceDataEvent self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDataEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDataEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDataEvent self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
 			}
 		}
 		[CRepr]
@@ -1542,9 +1542,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCPresenceStatusEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCPresenceStatusEvent self, out BSTR pbstrStatusText) get_StatusText;
-				public new function HRESULT(ref IRTCPresenceStatusEvent self, out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) GetLocalPresenceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceStatusEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceStatusEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceStatusEvent self, out RTC_PRESENCE_STATUS penStatus, out BSTR pbstrNotes) GetLocalPresenceInfo;
 			}
 		}
 		[CRepr]
@@ -1561,9 +1561,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCCollection self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IRTCCollection self, int32 Index, out VARIANT pVariant) get_Item;
-				public new function HRESULT(ref IRTCCollection self, out IUnknown* ppNewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCCollection self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCCollection self, int32 Index, out VARIANT pVariant) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCCollection self, out IUnknown* ppNewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1581,10 +1581,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumParticipants self, uint32 celt, IRTCParticipant** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumParticipants self) Reset;
-				public new function HRESULT(ref IRTCEnumParticipants self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumParticipants self, out IRTCEnumParticipants* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumParticipants self, uint32 celt, IRTCParticipant** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumParticipants self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumParticipants self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumParticipants self, out IRTCEnumParticipants* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1602,10 +1602,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumProfiles self, uint32 celt, IRTCProfile** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumProfiles self) Reset;
-				public new function HRESULT(ref IRTCEnumProfiles self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumProfiles self, out IRTCEnumProfiles* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumProfiles self, uint32 celt, IRTCProfile** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumProfiles self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumProfiles self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumProfiles self, out IRTCEnumProfiles* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1623,10 +1623,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumBuddies self, uint32 celt, IRTCBuddy** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumBuddies self) Reset;
-				public new function HRESULT(ref IRTCEnumBuddies self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumBuddies self, out IRTCEnumBuddies* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumBuddies self, uint32 celt, IRTCBuddy** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumBuddies self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumBuddies self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumBuddies self, out IRTCEnumBuddies* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1644,10 +1644,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumWatchers self, uint32 celt, IRTCWatcher** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumWatchers self) Reset;
-				public new function HRESULT(ref IRTCEnumWatchers self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumWatchers self, out IRTCEnumWatchers* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumWatchers self, uint32 celt, IRTCWatcher** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumWatchers self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumWatchers self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumWatchers self, out IRTCEnumWatchers* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1665,10 +1665,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumGroups self, uint32 celt, IRTCBuddyGroup** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumGroups self) Reset;
-				public new function HRESULT(ref IRTCEnumGroups self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumGroups self, out IRTCEnumGroups* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumGroups self, uint32 celt, IRTCBuddyGroup** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumGroups self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumGroups self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumGroups self, out IRTCEnumGroups* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1690,14 +1690,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCPresenceContact self, out BSTR pbstrPresentityURI) get_PresentityURI;
-				public new function HRESULT(ref IRTCPresenceContact self, BSTR bstrPresentityURI) put_PresentityURI;
-				public new function HRESULT(ref IRTCPresenceContact self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref IRTCPresenceContact self, BSTR bstrName) put_Name;
-				public new function HRESULT(ref IRTCPresenceContact self, out BSTR pbstrData) get_Data;
-				public new function HRESULT(ref IRTCPresenceContact self, BSTR bstrData) put_Data;
-				public new function HRESULT(ref IRTCPresenceContact self, out int16 pfPersistent) get_Persistent;
-				public new function HRESULT(ref IRTCPresenceContact self, int16 fPersistent) put_Persistent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, out BSTR pbstrPresentityURI) get_PresentityURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, BSTR bstrPresentityURI) put_PresentityURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, BSTR bstrName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, out BSTR pbstrData) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, BSTR bstrData) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, out int16 pfPersistent) get_Persistent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceContact self, int16 fPersistent) put_Persistent;
 			}
 		}
 		[CRepr]
@@ -1713,8 +1713,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCPresenceContact.VTable
 			{
-				public new function HRESULT(ref IRTCBuddy self, out RTC_PRESENCE_STATUS penStatus) get_Status;
-				public new function HRESULT(ref IRTCBuddy self, out BSTR pbstrNotes) get_Notes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy self, out RTC_PRESENCE_STATUS penStatus) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy self, out BSTR pbstrNotes) get_Notes;
 			}
 		}
 		[CRepr]
@@ -1736,14 +1736,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCBuddy.VTable
 			{
-				public new function HRESULT(ref IRTCBuddy2 self, out IRTCProfile2* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCBuddy2 self) Refresh;
-				public new function HRESULT(ref IRTCBuddy2 self, out IRTCEnumGroups* ppEnum) EnumerateGroups;
-				public new function HRESULT(ref IRTCBuddy2 self, out IRTCCollection* ppCollection) get_Groups;
-				public new function HRESULT(ref IRTCBuddy2 self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
-				public new function HRESULT(ref IRTCBuddy2 self, out IRTCEnumPresenceDevices* ppEnumDevices) EnumeratePresenceDevices;
-				public new function HRESULT(ref IRTCBuddy2 self, out IRTCCollection* ppDevicesCollection) get_PresenceDevices;
-				public new function HRESULT(ref IRTCBuddy2 self, out RTC_BUDDY_SUBSCRIPTION_TYPE penSubscriptionType) get_SubscriptionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out IRTCProfile2* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out IRTCEnumGroups* ppEnum) EnumerateGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out IRTCCollection* ppCollection) get_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out IRTCEnumPresenceDevices* ppEnumDevices) EnumeratePresenceDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out IRTCCollection* ppDevicesCollection) get_PresenceDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddy2 self, out RTC_BUDDY_SUBSCRIPTION_TYPE penSubscriptionType) get_SubscriptionType;
 			}
 		}
 		[CRepr]
@@ -1759,8 +1759,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCPresenceContact.VTable
 			{
-				public new function HRESULT(ref IRTCWatcher self, out RTC_WATCHER_STATE penState) get_State;
-				public new function HRESULT(ref IRTCWatcher self, RTC_WATCHER_STATE enState) put_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcher self, out RTC_WATCHER_STATE penState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcher self, RTC_WATCHER_STATE enState) put_State;
 			}
 		}
 		[CRepr]
@@ -1776,8 +1776,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRTCWatcher.VTable
 			{
-				public new function HRESULT(ref IRTCWatcher2 self, out IRTCProfile2* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCWatcher2 self, out RTC_ACE_SCOPE penScope) get_Scope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcher2 self, out IRTCProfile2* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCWatcher2 self, out RTC_ACE_SCOPE penScope) get_Scope;
 			}
 		}
 		[CRepr]
@@ -1800,15 +1800,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCBuddyGroup self, out BSTR pbstrGroupName) get_Name;
-				public new function HRESULT(ref IRTCBuddyGroup self, BSTR bstrGroupName) put_Name;
-				public new function HRESULT(ref IRTCBuddyGroup self, ref IRTCBuddy pBuddy) AddBuddy;
-				public new function HRESULT(ref IRTCBuddyGroup self, ref IRTCBuddy pBuddy) RemoveBuddy;
-				public new function HRESULT(ref IRTCBuddyGroup self, out IRTCEnumBuddies* ppEnum) EnumerateBuddies;
-				public new function HRESULT(ref IRTCBuddyGroup self, out IRTCCollection* ppCollection) get_Buddies;
-				public new function HRESULT(ref IRTCBuddyGroup self, out BSTR pbstrData) get_Data;
-				public new function HRESULT(ref IRTCBuddyGroup self, BSTR bstrData) put_Data;
-				public new function HRESULT(ref IRTCBuddyGroup self, out IRTCProfile2* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, out BSTR pbstrGroupName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, BSTR bstrGroupName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, ref IRTCBuddy pBuddy) AddBuddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, ref IRTCBuddy pBuddy) RemoveBuddy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, out IRTCEnumBuddies* ppEnum) EnumerateBuddies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, out IRTCCollection* ppCollection) get_Buddies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, out BSTR pbstrData) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, BSTR bstrData) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCBuddyGroup self, out IRTCProfile2* ppProfile) get_Profile;
 			}
 		}
 		[CRepr]
@@ -1823,7 +1823,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEventNotification self, RTC_EVENT RTCEvent, ref IDispatch pEvent) Event;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEventNotification self, RTC_EVENT RTCEvent, ref IDispatch pEvent) Event;
 			}
 		}
 		[CRepr]
@@ -1840,9 +1840,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCPortManager self, BSTR bstrRemoteAddress, RTC_PORT_TYPE enPortType, out BSTR pbstrInternalLocalAddress, out int32 plInternalLocalPort, out BSTR pbstrExternalLocalAddress, out int32 plExternalLocalPort) GetMapping;
-				public new function HRESULT(ref IRTCPortManager self, BSTR bstrRemoteAddress, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalPort) UpdateRemoteAddress;
-				public new function HRESULT(ref IRTCPortManager self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalAddress) ReleaseMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPortManager self, BSTR bstrRemoteAddress, RTC_PORT_TYPE enPortType, out BSTR pbstrInternalLocalAddress, out int32 plInternalLocalPort, out BSTR pbstrExternalLocalAddress, out int32 plExternalLocalPort) GetMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPortManager self, BSTR bstrRemoteAddress, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalPort) UpdateRemoteAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPortManager self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort, BSTR bstrExternalLocalAddress, int32 lExternalLocalAddress) ReleaseMapping;
 			}
 		}
 		[CRepr]
@@ -1857,7 +1857,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCSessionPortManagement self, ref IRTCPortManager pPortManager) SetPortManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionPortManagement self, ref IRTCPortManager pPortManager) SetPortManager;
 			}
 		}
 		[CRepr]
@@ -1874,9 +1874,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCClientPortManagement self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) StartListenAddressAndPort;
-				public new function HRESULT(ref IRTCClientPortManagement self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) StopListenAddressAndPort;
-				public new function HRESULT(ref IRTCClientPortManagement self, RTC_PORT_TYPE enPortType, out int32 plMinValue, out int32 plMaxValue) GetPortRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPortManagement self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) StartListenAddressAndPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPortManagement self, BSTR bstrInternalLocalAddress, int32 lInternalLocalPort) StopListenAddressAndPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCClientPortManagement self, RTC_PORT_TYPE enPortType, out int32 plMinValue, out int32 plMaxValue) GetPortRange;
 			}
 		}
 		[CRepr]
@@ -1892,8 +1892,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCUserSearch self, out IRTCUserSearchQuery* ppQuery) CreateQuery;
-				public new function HRESULT(ref IRTCUserSearch self, ref IRTCUserSearchQuery pQuery, ref IRTCProfile pProfile, int lCookie) ExecuteSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearch self, out IRTCUserSearchQuery* ppQuery) CreateQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearch self, ref IRTCUserSearchQuery pQuery, ref IRTCProfile pProfile, int lCookie) ExecuteSearch;
 			}
 		}
 		[CRepr]
@@ -1914,13 +1914,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCUserSearchQuery self, BSTR bstrName, BSTR bstrValue) put_SearchTerm;
-				public new function HRESULT(ref IRTCUserSearchQuery self, BSTR bstrName, out BSTR pbstrValue) get_SearchTerm;
-				public new function HRESULT(ref IRTCUserSearchQuery self, out BSTR pbstrNames) get_SearchTerms;
-				public new function HRESULT(ref IRTCUserSearchQuery self, RTC_USER_SEARCH_PREFERENCE enPreference, int32 lValue) put_SearchPreference;
-				public new function HRESULT(ref IRTCUserSearchQuery self, RTC_USER_SEARCH_PREFERENCE enPreference, out int32 plValue) get_SearchPreference;
-				public new function HRESULT(ref IRTCUserSearchQuery self, BSTR bstrDomain) put_SearchDomain;
-				public new function HRESULT(ref IRTCUserSearchQuery self, out BSTR pbstrDomain) get_SearchDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, BSTR bstrName, BSTR bstrValue) put_SearchTerm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, BSTR bstrName, out BSTR pbstrValue) get_SearchTerm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, out BSTR pbstrNames) get_SearchTerms;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, RTC_USER_SEARCH_PREFERENCE enPreference, int32 lValue) put_SearchPreference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, RTC_USER_SEARCH_PREFERENCE enPreference, out int32 plValue) get_SearchPreference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, BSTR bstrDomain) put_SearchDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchQuery self, out BSTR pbstrDomain) get_SearchDomain;
 			}
 		}
 		[CRepr]
@@ -1935,7 +1935,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCUserSearchResult self, RTC_USER_SEARCH_COLUMN enColumn, out BSTR pbstrValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResult self, RTC_USER_SEARCH_COLUMN enColumn, out BSTR pbstrValue) get_Value;
 			}
 		}
 		[CRepr]
@@ -1953,10 +1953,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumUserSearchResults self, uint32 celt, IRTCUserSearchResult** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumUserSearchResults self) Reset;
-				public new function HRESULT(ref IRTCEnumUserSearchResults self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumUserSearchResults self, out IRTCEnumUserSearchResults* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumUserSearchResults self, uint32 celt, IRTCUserSearchResult** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumUserSearchResults self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumUserSearchResults self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumUserSearchResults self, out IRTCEnumUserSearchResults* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1977,13 +1977,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCEnumUserSearchResults* ppEnum) EnumerateResults;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCCollection* ppCollection) get_Results;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCProfile2* ppProfile) get_Profile;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCUserSearchQuery* ppQuery) get_Query;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out int plCookie) get_Cookie;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCUserSearchResultsEvent self, out int16 pfMoreAvailable) get_MoreAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCEnumUserSearchResults* ppEnum) EnumerateResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCCollection* ppCollection) get_Results;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCProfile2* ppProfile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out IRTCUserSearchQuery* ppQuery) get_Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out int plCookie) get_Cookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCUserSearchResultsEvent self, out int16 pfMoreAvailable) get_MoreAvailable;
 			}
 		}
 		[CRepr]
@@ -2001,10 +2001,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCSessionReferStatusEvent self, out IRTCSession2* ppSession) get_Session;
-				public new function HRESULT(ref IRTCSessionReferStatusEvent self, out RTC_SESSION_REFER_STATUS penReferStatus) get_ReferStatus;
-				public new function HRESULT(ref IRTCSessionReferStatusEvent self, out int32 plStatusCode) get_StatusCode;
-				public new function HRESULT(ref IRTCSessionReferStatusEvent self, out BSTR pbstrStatusText) get_StatusText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferStatusEvent self, out IRTCSession2* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferStatusEvent self, out RTC_SESSION_REFER_STATUS penReferStatus) get_ReferStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferStatusEvent self, out int32 plStatusCode) get_StatusCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferStatusEvent self, out BSTR pbstrStatusText) get_StatusText;
 			}
 		}
 		[CRepr]
@@ -2025,13 +2025,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRTCSessionReferredEvent self, out IRTCSession2* ppSession) get_Session;
-				public new function HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferredByURI) get_ReferredByURI;
-				public new function HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferoURI) get_ReferToURI;
-				public new function HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferCookie) get_ReferCookie;
-				public new function HRESULT(ref IRTCSessionReferredEvent self) Accept;
-				public new function HRESULT(ref IRTCSessionReferredEvent self) Reject;
-				public new function HRESULT(ref IRTCSessionReferredEvent self, RTC_SESSION_STATE enState) SetReferredSessionState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self, out IRTCSession2* ppSession) get_Session;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferredByURI) get_ReferredByURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferoURI) get_ReferToURI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self, out BSTR pbstrReferCookie) get_ReferCookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self) Accept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self) Reject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionReferredEvent self, RTC_SESSION_STATE enState) SetReferredSessionState;
 			}
 		}
 		[CRepr]
@@ -2046,7 +2046,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCSessionDescriptionManager self, BSTR bstrContentType, BSTR bstrSessionDescription, out int16 pfApplicationSession) EvaluateSessionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCSessionDescriptionManager self, BSTR bstrContentType, BSTR bstrSessionDescription, out int16 pfApplicationSession) EvaluateSessionDescription;
 			}
 		}
 		[CRepr]
@@ -2064,10 +2064,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCEnumPresenceDevices self, uint32 celt, IRTCPresenceDevice** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IRTCEnumPresenceDevices self) Reset;
-				public new function HRESULT(ref IRTCEnumPresenceDevices self, uint32 celt) Skip;
-				public new function HRESULT(ref IRTCEnumPresenceDevices self, out IRTCEnumPresenceDevices* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumPresenceDevices self, uint32 celt, IRTCPresenceDevice** ppElements, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumPresenceDevices self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumPresenceDevices self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCEnumPresenceDevices self, out IRTCEnumPresenceDevices* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -2085,10 +2085,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRTCPresenceDevice self, out RTC_PRESENCE_STATUS penStatus) get_Status;
-				public new function HRESULT(ref IRTCPresenceDevice self, out BSTR pbstrNotes) get_Notes;
-				public new function HRESULT(ref IRTCPresenceDevice self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
-				public new function HRESULT(ref IRTCPresenceDevice self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDevice self, out RTC_PRESENCE_STATUS penStatus) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDevice self, out BSTR pbstrNotes) get_Notes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDevice self, RTC_PRESENCE_PROPERTY enProperty, out BSTR pbstrProperty) get_PresenceProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRTCPresenceDevice self, out BSTR pbstrNamespace, out BSTR pbstrData) GetPresenceData;
 			}
 		}
 		[CRepr]
@@ -2117,8 +2117,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITransportSettingsInternal self, out TRANSPORT_SETTING Setting) ApplySetting;
-				public new function HRESULT(ref ITransportSettingsInternal self, out TRANSPORT_SETTING Setting) QuerySetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransportSettingsInternal self, out TRANSPORT_SETTING Setting) ApplySetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITransportSettingsInternal self, out TRANSPORT_SETTING Setting) QuerySetting;
 			}
 		}
 		[CRepr]
@@ -2134,8 +2134,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkTransportSettings self, in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) ApplySetting;
-				public new function HRESULT(ref INetworkTransportSettings self, in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) QuerySetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkTransportSettings self, in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) ApplySetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkTransportSettings self, in TRANSPORT_SETTING_ID SettingId, uint32 LengthIn, uint8* ValueIn, out uint32 LengthOut, uint8** ValueOut) QuerySetting;
 			}
 		}
 		[CRepr]
@@ -2151,8 +2151,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INotificationTransportSync self) CompleteDelivery;
-				public new function HRESULT(ref INotificationTransportSync self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INotificationTransportSync self) CompleteDelivery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INotificationTransportSync self) Flush;
 			}
 		}
 		

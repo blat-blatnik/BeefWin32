@@ -942,16 +942,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICPalette self, WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) InitializePredefined;
-				public new function HRESULT(ref IWICPalette self, uint32* pColors, uint32 cCount) InitializeCustom;
-				public new function HRESULT(ref IWICPalette self, ref IWICBitmapSource pISurface, uint32 cCount, BOOL fAddTransparentColor) InitializeFromBitmap;
-				public new function HRESULT(ref IWICPalette self, ref IWICPalette pIPalette) InitializeFromPalette;
-				public new function HRESULT(ref IWICPalette self, out WICBitmapPaletteType pePaletteType) ComGetType;
-				public new function HRESULT(ref IWICPalette self, out uint32 pcCount) GetColorCount;
-				public new function HRESULT(ref IWICPalette self, uint32 cCount, uint32* pColors, out uint32 pcActualColors) GetColors;
-				public new function HRESULT(ref IWICPalette self, out BOOL pfIsBlackWhite) IsBlackWhite;
-				public new function HRESULT(ref IWICPalette self, out BOOL pfIsGrayscale) IsGrayscale;
-				public new function HRESULT(ref IWICPalette self, out BOOL pfHasAlpha) HasAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) InitializePredefined;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, uint32* pColors, uint32 cCount) InitializeCustom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, ref IWICBitmapSource pISurface, uint32 cCount, BOOL fAddTransparentColor) InitializeFromBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, ref IWICPalette pIPalette) InitializeFromPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, out WICBitmapPaletteType pePaletteType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, out uint32 pcCount) GetColorCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, uint32 cCount, uint32* pColors, out uint32 pcActualColors) GetColors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, out BOOL pfIsBlackWhite) IsBlackWhite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, out BOOL pfIsGrayscale) IsGrayscale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPalette self, out BOOL pfHasAlpha) HasAlpha;
 			}
 		}
 		[CRepr]
@@ -970,11 +970,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapSource self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
-				public new function HRESULT(ref IWICBitmapSource self, out Guid pPixelFormat) GetPixelFormat;
-				public new function HRESULT(ref IWICBitmapSource self, out double pDpiX, out double pDpiY) GetResolution;
-				public new function HRESULT(ref IWICBitmapSource self, ref IWICPalette pIPalette) CopyPalette;
-				public new function HRESULT(ref IWICBitmapSource self, in WICRect prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSource self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSource self, out Guid pPixelFormat) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSource self, out double pDpiX, out double pDpiY) GetResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSource self, ref IWICPalette pIPalette) CopyPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSource self, in WICRect prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
 			}
 		}
 		[CRepr]
@@ -990,8 +990,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICFormatConverter self, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
-				public new function HRESULT(ref IWICFormatConverter self, ref Guid srcPixelFormat, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFormatConverter self, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFormatConverter self, ref Guid srcPixelFormat, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
 			}
 		}
 		[CRepr]
@@ -1007,8 +1007,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICPlanarFormatConverter self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
-				public new function HRESULT(ref IWICPlanarFormatConverter self, Guid* pSrcPixelFormats, uint32 cSrcPlanes, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarFormatConverter self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarFormatConverter self, Guid* pSrcPixelFormats, uint32 cSrcPlanes, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
 			}
 		}
 		[CRepr]
@@ -1023,7 +1023,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICBitmapScaler self, ref IWICBitmapSource pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapScaler self, ref IWICBitmapSource pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) Initialize;
 			}
 		}
 		[CRepr]
@@ -1038,7 +1038,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICBitmapClipper self, ref IWICBitmapSource pISource, in WICRect prc) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapClipper self, ref IWICBitmapSource pISource, in WICRect prc) Initialize;
 			}
 		}
 		[CRepr]
@@ -1053,7 +1053,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICBitmapFlipRotator self, ref IWICBitmapSource pISource, WICBitmapTransformOptions options) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFlipRotator self, ref IWICBitmapSource pISource, WICBitmapTransformOptions options) Initialize;
 			}
 		}
 		[CRepr]
@@ -1071,10 +1071,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapLock self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
-				public new function HRESULT(ref IWICBitmapLock self, out uint32 pcbStride) GetStride;
-				public new function HRESULT(ref IWICBitmapLock self, out uint32 pcbBufferSize, uint8** ppbData) GetDataPointer;
-				public new function HRESULT(ref IWICBitmapLock self, out Guid pPixelFormat) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapLock self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapLock self, out uint32 pcbStride) GetStride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapLock self, out uint32 pcbBufferSize, uint8** ppbData) GetDataPointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapLock self, out Guid pPixelFormat) GetPixelFormat;
 			}
 		}
 		[CRepr]
@@ -1091,9 +1091,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICBitmap self, in WICRect prcLock, uint32 flags, out IWICBitmapLock* ppILock) Lock;
-				public new function HRESULT(ref IWICBitmap self, ref IWICPalette pIPalette) SetPalette;
-				public new function HRESULT(ref IWICBitmap self, double dpiX, double dpiY) SetResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmap self, in WICRect prcLock, uint32 flags, out IWICBitmapLock* ppILock) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmap self, ref IWICPalette pIPalette) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmap self, double dpiX, double dpiY) SetResolution;
 			}
 		}
 		[CRepr]
@@ -1113,12 +1113,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICColorContext self, PWSTR wzFilename) InitializeFromFilename;
-				public new function HRESULT(ref IWICColorContext self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
-				public new function HRESULT(ref IWICColorContext self, uint32 value) InitializeFromExifColorSpace;
-				public new function HRESULT(ref IWICColorContext self, out WICColorContextType pType) ComGetType;
-				public new function HRESULT(ref IWICColorContext self, uint32 cbBuffer, uint8* pbBuffer, out uint32 pcbActual) GetProfileBytes;
-				public new function HRESULT(ref IWICColorContext self, out uint32 pValue) GetExifColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, PWSTR wzFilename) InitializeFromFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, uint32 value) InitializeFromExifColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, out WICColorContextType pType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, uint32 cbBuffer, uint8* pbBuffer, out uint32 pcbActual) GetProfileBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorContext self, out uint32 pValue) GetExifColorSpace;
 			}
 		}
 		[CRepr]
@@ -1133,7 +1133,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICColorTransform self, ref IWICBitmapSource pIBitmapSource, ref IWICColorContext pIContextSource, ref IWICColorContext pIContextDest, ref Guid pixelFmtDest) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICColorTransform self, ref IWICBitmapSource pIBitmapSource, ref IWICColorContext pIContextSource, ref IWICColorContext pIContextDest, ref Guid pixelFmtDest) Initialize;
 			}
 		}
 		[CRepr]
@@ -1149,8 +1149,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICFastMetadataEncoder self) Commit;
-				public new function HRESULT(ref IWICFastMetadataEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFastMetadataEncoder self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFastMetadataEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1168,10 +1168,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(ref IWICStream self, ref IStream pIStream) InitializeFromIStream;
-				public new function HRESULT(ref IWICStream self, PWSTR wzFileName, uint32 dwDesiredAccess) InitializeFromFilename;
-				public new function HRESULT(ref IWICStream self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
-				public new function HRESULT(ref IWICStream self, ref IStream pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) InitializeFromIStreamRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStream self, ref IStream pIStream) InitializeFromIStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStream self, PWSTR wzFileName, uint32 dwDesiredAccess) InitializeFromFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStream self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStream self, ref IStream pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) InitializeFromIStreamRegion;
 			}
 		}
 		[CRepr]
@@ -1189,10 +1189,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICEnumMetadataItem self, uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IWICEnumMetadataItem self, uint32 celt) Skip;
-				public new function HRESULT(ref IWICEnumMetadataItem self) Reset;
-				public new function HRESULT(ref IWICEnumMetadataItem self, out IWICEnumMetadataItem* ppIEnumMetadataItem) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICEnumMetadataItem self, uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICEnumMetadataItem self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICEnumMetadataItem self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICEnumMetadataItem self, out IWICEnumMetadataItem* ppIEnumMetadataItem) Clone;
 			}
 		}
 		[CRepr]
@@ -1210,10 +1210,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICMetadataQueryReader self, out Guid pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(ref IWICMetadataQueryReader self, uint32 cchMaxLength, char16* wzNamespace, out uint32 pcchActualLength) GetLocation;
-				public new function HRESULT(ref IWICMetadataQueryReader self, PWSTR wzName, out PROPVARIANT pvarValue) GetMetadataByName;
-				public new function HRESULT(ref IWICMetadataQueryReader self, out IEnumString* ppIEnumString) GetEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryReader self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryReader self, uint32 cchMaxLength, char16* wzNamespace, out uint32 pcchActualLength) GetLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryReader self, PWSTR wzName, out PROPVARIANT pvarValue) GetMetadataByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryReader self, out IEnumString* ppIEnumString) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1229,8 +1229,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICMetadataQueryReader.VTable
 			{
-				public new function HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName, in PROPVARIANT pvarValue) SetMetadataByName;
-				public new function HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName) RemoveMetadataByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName, in PROPVARIANT pvarValue) SetMetadataByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName) RemoveMetadataByName;
 			}
 		}
 		[CRepr]
@@ -1254,16 +1254,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapEncoder self, ref IStream pIStream, WICBitmapEncoderCacheOption cacheOption) Initialize;
-				public new function HRESULT(ref IWICBitmapEncoder self, out Guid pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(ref IWICBitmapEncoder self, out IWICBitmapEncoderInfo* ppIEncoderInfo) GetEncoderInfo;
-				public new function HRESULT(ref IWICBitmapEncoder self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
-				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICPalette pIPalette) SetPalette;
-				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
-				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIPreview) SetPreview;
-				public new function HRESULT(ref IWICBitmapEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out IPropertyBag2* ppIEncoderOptions) CreateNewFrame;
-				public new function HRESULT(ref IWICBitmapEncoder self) Commit;
-				public new function HRESULT(ref IWICBitmapEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, ref IStream pIStream, WICBitmapEncoderCacheOption cacheOption) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, out IWICBitmapEncoderInfo* ppIEncoderInfo) GetEncoderInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, ref IWICPalette pIPalette) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIPreview) SetPreview;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out IPropertyBag2* ppIEncoderOptions) CreateNewFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1288,17 +1288,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IPropertyBag2 pIEncoderOptions) Initialize;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 uiWidth, uint32 uiHeight) SetSize;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, double dpiX, double dpiY) SetResolution;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, out Guid pPixelFormat) SetPixelFormat;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICPalette pIPalette) SetPalette;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) WritePixels;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIBitmapSource, ref WICRect prc) WriteSource;
-				public new function HRESULT(ref IWICBitmapFrameEncode self) Commit;
-				public new function HRESULT(ref IWICBitmapFrameEncode self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, ref IPropertyBag2 pIEncoderOptions) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, uint32 uiWidth, uint32 uiHeight) SetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, double dpiX, double dpiY) SetResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, out Guid pPixelFormat) SetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, ref IWICPalette pIPalette) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) WritePixels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIBitmapSource, ref WICRect prc) WriteSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameEncode self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1314,8 +1314,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICPlanarBitmapFrameEncode self, uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) WritePixels;
-				public new function HRESULT(ref IWICPlanarBitmapFrameEncode self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref WICRect prcSource) WriteSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarBitmapFrameEncode self, uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) WritePixels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarBitmapFrameEncode self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref WICRect prcSource) WriteSource;
 			}
 		}
 		[CRepr]
@@ -1340,17 +1340,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, out uint32 pdwCapability) QueryCapability;
-				public new function HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, WICDecodeOptions cacheOptions) Initialize;
-				public new function HRESULT(ref IWICBitmapDecoder self, out Guid pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapDecoderInfo* ppIDecoderInfo) GetDecoderInfo;
-				public new function HRESULT(ref IWICBitmapDecoder self, ref IWICPalette pIPalette) CopyPalette;
-				public new function HRESULT(ref IWICBitmapDecoder self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
-				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIBitmapSource) GetPreview;
-				public new function HRESULT(ref IWICBitmapDecoder self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
-				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
-				public new function HRESULT(ref IWICBitmapDecoder self, out uint32 pCount) GetFrameCount;
-				public new function HRESULT(ref IWICBitmapDecoder self, uint32 index, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, out uint32 pdwCapability) QueryCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, WICDecodeOptions cacheOptions) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out IWICBitmapDecoderInfo* ppIDecoderInfo) GetDecoderInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, ref IWICPalette pIPalette) CopyPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIBitmapSource) GetPreview;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, out uint32 pCount) GetFrameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoder self, uint32 index, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
 			}
 		}
 		[CRepr]
@@ -1368,10 +1368,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapSourceTransform self, in WICRect prc, uint32 uiWidth, uint32 uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
-				public new function HRESULT(ref IWICBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight) GetClosestSize;
-				public new function HRESULT(ref IWICBitmapSourceTransform self, out Guid pguidDstFormat) GetClosestPixelFormat;
-				public new function HRESULT(ref IWICBitmapSourceTransform self, WICBitmapTransformOptions dstTransform, out BOOL pfIsSupported) DoesSupportTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSourceTransform self, in WICRect prc, uint32 uiWidth, uint32 uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight) GetClosestSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSourceTransform self, out Guid pguidDstFormat) GetClosestPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapSourceTransform self, WICBitmapTransformOptions dstTransform, out BOOL pfIsSupported) DoesSupportTransform;
 			}
 		}
 		[CRepr]
@@ -1387,8 +1387,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICPlanarBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, out BOOL pfIsSupported) DoesSupportTransform;
-				public new function HRESULT(ref IWICPlanarBitmapSourceTransform self, in WICRect prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) CopyPixels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, out BOOL pfIsSupported) DoesSupportTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPlanarBitmapSourceTransform self, in WICRect prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) CopyPixels;
 			}
 		}
 		[CRepr]
@@ -1405,9 +1405,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(ref IWICBitmapFrameDecode self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
-				public new function HRESULT(ref IWICBitmapFrameDecode self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
-				public new function HRESULT(ref IWICBitmapFrameDecode self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameDecode self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameDecode self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapFrameDecode self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
 			}
 		}
 		[CRepr]
@@ -1424,9 +1424,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICProgressiveLevelControl self, out uint32 pcLevels) GetLevelCount;
-				public new function HRESULT(ref IWICProgressiveLevelControl self, out uint32 pnLevel) GetCurrentLevel;
-				public new function HRESULT(ref IWICProgressiveLevelControl self, uint32 nLevel) SetCurrentLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICProgressiveLevelControl self, out uint32 pcLevels) GetLevelCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICProgressiveLevelControl self, out uint32 pnLevel) GetCurrentLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICProgressiveLevelControl self, uint32 nLevel) SetCurrentLevel;
 			}
 		}
 		[CRepr]
@@ -1441,7 +1441,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICProgressCallback self, uint32 uFrameNum, WICProgressOperation operation, double dblProgress) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICProgressCallback self, uint32 uFrameNum, WICProgressOperation operation, double dblProgress) Notify;
 			}
 		}
 		[CRepr]
@@ -1456,7 +1456,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICBitmapCodecProgressNotification self, PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) RegisterProgressNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecProgressNotification self, PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) RegisterProgressNotification;
 			}
 		}
 		[CRepr]
@@ -1478,14 +1478,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICComponentInfo self, out WICComponentType pType) GetComponentType;
-				public new function HRESULT(ref IWICComponentInfo self, out Guid pclsid) GetCLSID;
-				public new function HRESULT(ref IWICComponentInfo self, out uint32 pStatus) GetSigningStatus;
-				public new function HRESULT(ref IWICComponentInfo self, uint32 cchAuthor, char16* wzAuthor, out uint32 pcchActual) GetAuthor;
-				public new function HRESULT(ref IWICComponentInfo self, out Guid pguidVendor) GetVendorGUID;
-				public new function HRESULT(ref IWICComponentInfo self, uint32 cchVersion, char16* wzVersion, out uint32 pcchActual) GetVersion;
-				public new function HRESULT(ref IWICComponentInfo self, uint32 cchSpecVersion, char16* wzSpecVersion, out uint32 pcchActual) GetSpecVersion;
-				public new function HRESULT(ref IWICComponentInfo self, uint32 cchFriendlyName, char16* wzFriendlyName, out uint32 pcchActual) GetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, out WICComponentType pType) GetComponentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, out Guid pclsid) GetCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, out uint32 pStatus) GetSigningStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, uint32 cchAuthor, char16* wzAuthor, out uint32 pcchActual) GetAuthor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, out Guid pguidVendor) GetVendorGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, uint32 cchVersion, char16* wzVersion, out uint32 pcchActual) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, uint32 cchSpecVersion, char16* wzSpecVersion, out uint32 pcchActual) GetSpecVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentInfo self, uint32 cchFriendlyName, char16* wzFriendlyName, out uint32 pcchActual) GetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -1501,8 +1501,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(ref IWICFormatConverterInfo self, uint32 cFormats, Guid* pPixelFormatGUIDs, out uint32 pcActual) GetPixelFormats;
-				public new function HRESULT(ref IWICFormatConverterInfo self, out IWICFormatConverter* ppIConverter) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFormatConverterInfo self, uint32 cFormats, Guid* pPixelFormatGUIDs, out uint32 pcActual) GetPixelFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICFormatConverterInfo self, out IWICFormatConverter* ppIConverter) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1528,18 +1528,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(ref IWICBitmapCodecInfo self, out Guid pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cFormats, Guid* pguidPixelFormats, out uint32 pcActual) GetPixelFormats;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchColorManagementVersion, char16* wzColorManagementVersion, out uint32 pcchActual) GetColorManagementVersion;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchMimeTypes, char16* wzMimeTypes, out uint32 pcchActual) GetMimeTypes;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchFileExtensions, char16* wzFileExtensions, out uint32 pcchActual) GetFileExtensions;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportAnimation) DoesSupportAnimation;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportChromakey) DoesSupportChromakey;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportLossless) DoesSupportLossless;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportMultiframe) DoesSupportMultiframe;
-				public new function HRESULT(ref IWICBitmapCodecInfo self, PWSTR wzMimeType, out BOOL pfMatches) MatchesMimeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cFormats, Guid* pguidPixelFormats, out uint32 pcActual) GetPixelFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cchColorManagementVersion, char16* wzColorManagementVersion, out uint32 pcchActual) GetColorManagementVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cchMimeTypes, char16* wzMimeTypes, out uint32 pcchActual) GetMimeTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, uint32 cchFileExtensions, char16* wzFileExtensions, out uint32 pcchActual) GetFileExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportAnimation) DoesSupportAnimation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportChromakey) DoesSupportChromakey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportLossless) DoesSupportLossless;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportMultiframe) DoesSupportMultiframe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapCodecInfo self, PWSTR wzMimeType, out BOOL pfMatches) MatchesMimeType;
 			}
 		}
 		[CRepr]
@@ -1554,7 +1554,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapCodecInfo.VTable
 			{
-				public new function HRESULT(ref IWICBitmapEncoderInfo self, out IWICBitmapEncoder* ppIBitmapEncoder) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapEncoderInfo self, out IWICBitmapEncoder* ppIBitmapEncoder) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1571,9 +1571,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapCodecInfo.VTable
 			{
-				public new function HRESULT(ref IWICBitmapDecoderInfo self, uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, out uint32 pcbPatternsActual) GetPatterns;
-				public new function HRESULT(ref IWICBitmapDecoderInfo self, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
-				public new function HRESULT(ref IWICBitmapDecoderInfo self, out IWICBitmapDecoder* ppIBitmapDecoder) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoderInfo self, uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, out uint32 pcbPatternsActual) GetPatterns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoderInfo self, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICBitmapDecoderInfo self, out IWICBitmapDecoder* ppIBitmapDecoder) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1592,11 +1592,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(ref IWICPixelFormatInfo self, out Guid pFormat) GetFormatGUID;
-				public new function HRESULT(ref IWICPixelFormatInfo self, out IWICColorContext* ppIColorContext) GetColorContext;
-				public new function HRESULT(ref IWICPixelFormatInfo self, out uint32 puiBitsPerPixel) GetBitsPerPixel;
-				public new function HRESULT(ref IWICPixelFormatInfo self, out uint32 puiChannelCount) GetChannelCount;
-				public new function HRESULT(ref IWICPixelFormatInfo self, uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, out uint32 pcbActual) GetChannelMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo self, out Guid pFormat) GetFormatGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo self, out IWICColorContext* ppIColorContext) GetColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo self, out uint32 puiBitsPerPixel) GetBitsPerPixel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo self, out uint32 puiChannelCount) GetChannelCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo self, uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, out uint32 pcbActual) GetChannelMask;
 			}
 		}
 		[CRepr]
@@ -1612,8 +1612,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICPixelFormatInfo.VTable
 			{
-				public new function HRESULT(ref IWICPixelFormatInfo2 self, out BOOL pfSupportsTransparency) SupportsTransparency;
-				public new function HRESULT(ref IWICPixelFormatInfo2 self, out WICPixelFormatNumericRepresentation pNumericRepresentation) GetNumericRepresentation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo2 self, out BOOL pfSupportsTransparency) SupportsTransparency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPixelFormatInfo2 self, out WICPixelFormatNumericRepresentation pNumericRepresentation) GetNumericRepresentation;
 			}
 		}
 		[CRepr]
@@ -1652,31 +1652,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICImagingFactory self, PWSTR wzFilename, in Guid pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFilename;
-				public new function HRESULT(ref IWICImagingFactory self, ref IStream pIStream, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromStream;
-				public new function HRESULT(ref IWICImagingFactory self, uint hFile, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFileHandle;
-				public new function HRESULT(ref IWICImagingFactory self, in Guid clsidComponent, out IWICComponentInfo* ppIInfo) CreateComponentInfo;
-				public new function HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapDecoder* ppIDecoder) CreateDecoder;
-				public new function HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapEncoder* ppIEncoder) CreateEncoder;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICPalette* ppIPalette) CreatePalette;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICFormatConverter* ppIFormatConverter) CreateFormatConverter;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapScaler* ppIBitmapScaler) CreateBitmapScaler;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapClipper* ppIBitmapClipper) CreateBitmapClipper;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapFlipRotator* ppIBitmapFlipRotator) CreateBitmapFlipRotator;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICStream* ppIWICStream) CreateStream;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICColorContext* ppIWICColorContext) CreateColorContext;
-				public new function HRESULT(ref IWICImagingFactory self, out IWICColorTransform* ppIWICColorTransform) CreateColorTransformer;
-				public new function HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmap;
-				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmapFromSource;
-				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, out IWICBitmap* ppIBitmap) CreateBitmapFromSourceRect;
-				public new function HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, out IWICBitmap* ppIBitmap) CreateBitmapFromMemory;
-				public new function HRESULT(ref IWICImagingFactory self, HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, out IWICBitmap* ppIBitmap) CreateBitmapFromHBITMAP;
-				public new function HRESULT(ref IWICImagingFactory self, HICON hIcon, out IWICBitmap* ppIBitmap) CreateBitmapFromHICON;
-				public new function HRESULT(ref IWICImagingFactory self, uint32 componentTypes, uint32 options, out IEnumUnknown* ppIEnumUnknown) CreateComponentEnumerator;
-				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapDecoder pIDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromDecoder;
-				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapFrameDecode pIFrameDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromFrameDecode;
-				public new function HRESULT(ref IWICImagingFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriter;
-				public new function HRESULT(ref IWICImagingFactory self, ref IWICMetadataQueryReader pIQueryReader, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, PWSTR wzFilename, in Guid pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IStream pIStream, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, uint hFile, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFileHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, in Guid clsidComponent, out IWICComponentInfo* ppIInfo) CreateComponentInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapDecoder* ppIDecoder) CreateDecoder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapEncoder* ppIEncoder) CreateEncoder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICPalette* ppIPalette) CreatePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICFormatConverter* ppIFormatConverter) CreateFormatConverter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICBitmapScaler* ppIBitmapScaler) CreateBitmapScaler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICBitmapClipper* ppIBitmapClipper) CreateBitmapClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICBitmapFlipRotator* ppIBitmapFlipRotator) CreateBitmapFlipRotator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICStream* ppIWICStream) CreateStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICColorContext* ppIWICColorContext) CreateColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, out IWICColorTransform* ppIWICColorTransform) CreateColorTransformer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmapFromSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, out IWICBitmap* ppIBitmap) CreateBitmapFromSourceRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, out IWICBitmap* ppIBitmap) CreateBitmapFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, out IWICBitmap* ppIBitmap) CreateBitmapFromHBITMAP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, HICON hIcon, out IWICBitmap* ppIBitmap) CreateBitmapFromHICON;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, uint32 componentTypes, uint32 options, out IEnumUnknown* ppIEnumUnknown) CreateComponentEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IWICBitmapDecoder pIDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromDecoder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IWICBitmapFrameDecode pIFrameDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromFrameDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory self, ref IWICMetadataQueryReader pIQueryReader, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromReader;
 			}
 		}
 		[CRepr]
@@ -1691,7 +1691,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICDevelopRawNotificationCallback self, uint32 NotificationMask) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRawNotificationCallback self, uint32 NotificationMask) Notify;
 			}
 		}
 		[CRepr]
@@ -1737,38 +1737,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICBitmapFrameDecode.VTable
 			{
-				public new function HRESULT(ref IWICDevelopRaw self, out WICRawCapabilitiesInfo pInfo) QueryRawCapabilitiesInfo;
-				public new function HRESULT(ref IWICDevelopRaw self, WICRawParameterSet ParameterSet) LoadParameterSet;
-				public new function HRESULT(ref IWICDevelopRaw self, out IPropertyBag2* ppCurrentParameterSet) GetCurrentParameterSet;
-				public new function HRESULT(ref IWICDevelopRaw self, double ev) SetExposureCompensation;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pEV) GetExposureCompensation;
-				public new function HRESULT(ref IWICDevelopRaw self, uint32 Red, uint32 Green, uint32 Blue) SetWhitePointRGB;
-				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pRed, out uint32 pGreen, out uint32 pBlue) GetWhitePointRGB;
-				public new function HRESULT(ref IWICDevelopRaw self, WICNamedWhitePoint WhitePoint) SetNamedWhitePoint;
-				public new function HRESULT(ref IWICDevelopRaw self, out WICNamedWhitePoint pWhitePoint) GetNamedWhitePoint;
-				public new function HRESULT(ref IWICDevelopRaw self, uint32 WhitePointKelvin) SetWhitePointKelvin;
-				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pWhitePointKelvin) GetWhitePointKelvin;
-				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pMinKelvinTemp, out uint32 pMaxKelvinTemp, out uint32 pKelvinTempStepValue) GetKelvinRangeInfo;
-				public new function HRESULT(ref IWICDevelopRaw self, double Contrast) SetContrast;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pContrast) GetContrast;
-				public new function HRESULT(ref IWICDevelopRaw self, double Gamma) SetGamma;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pGamma) GetGamma;
-				public new function HRESULT(ref IWICDevelopRaw self, double Sharpness) SetSharpness;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pSharpness) GetSharpness;
-				public new function HRESULT(ref IWICDevelopRaw self, double Saturation) SetSaturation;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pSaturation) GetSaturation;
-				public new function HRESULT(ref IWICDevelopRaw self, double Tint) SetTint;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pTint) GetTint;
-				public new function HRESULT(ref IWICDevelopRaw self, double NoiseReduction) SetNoiseReduction;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pNoiseReduction) GetNoiseReduction;
-				public new function HRESULT(ref IWICDevelopRaw self, ref IWICColorContext pColorContext) SetDestinationColorContext;
-				public new function HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveSize, in WICRawToneCurve pToneCurve) SetToneCurve;
-				public new function HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) GetToneCurve;
-				public new function HRESULT(ref IWICDevelopRaw self, double Rotation) SetRotation;
-				public new function HRESULT(ref IWICDevelopRaw self, out double pRotation) GetRotation;
-				public new function HRESULT(ref IWICDevelopRaw self, WICRawRenderMode RenderMode) SetRenderMode;
-				public new function HRESULT(ref IWICDevelopRaw self, out WICRawRenderMode pRenderMode) GetRenderMode;
-				public new function HRESULT(ref IWICDevelopRaw self, ref IWICDevelopRawNotificationCallback pCallback) SetNotificationCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out WICRawCapabilitiesInfo pInfo) QueryRawCapabilitiesInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, WICRawParameterSet ParameterSet) LoadParameterSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out IPropertyBag2* ppCurrentParameterSet) GetCurrentParameterSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double ev) SetExposureCompensation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pEV) GetExposureCompensation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, uint32 Red, uint32 Green, uint32 Blue) SetWhitePointRGB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out uint32 pRed, out uint32 pGreen, out uint32 pBlue) GetWhitePointRGB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, WICNamedWhitePoint WhitePoint) SetNamedWhitePoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out WICNamedWhitePoint pWhitePoint) GetNamedWhitePoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, uint32 WhitePointKelvin) SetWhitePointKelvin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out uint32 pWhitePointKelvin) GetWhitePointKelvin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out uint32 pMinKelvinTemp, out uint32 pMaxKelvinTemp, out uint32 pKelvinTempStepValue) GetKelvinRangeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Contrast) SetContrast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pContrast) GetContrast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Gamma) SetGamma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pGamma) GetGamma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Sharpness) SetSharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pSharpness) GetSharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Saturation) SetSaturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pSaturation) GetSaturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Tint) SetTint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pTint) GetTint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double NoiseReduction) SetNoiseReduction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pNoiseReduction) GetNoiseReduction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, ref IWICColorContext pColorContext) SetDestinationColorContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveSize, in WICRawToneCurve pToneCurve) SetToneCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) GetToneCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, double Rotation) SetRotation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out double pRotation) GetRotation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, WICRawRenderMode RenderMode) SetRenderMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, out WICRawRenderMode pRenderMode) GetRenderMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDevelopRaw self, ref IWICDevelopRawNotificationCallback pCallback) SetNotificationCallback;
 			}
 		}
 		[CRepr]
@@ -1784,8 +1784,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICDdsDecoder self, out WICDdsParameters pParameters) GetParameters;
-				public new function HRESULT(ref IWICDdsDecoder self, uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsDecoder self, out WICDdsParameters pParameters) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsDecoder self, uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
 			}
 		}
 		[CRepr]
@@ -1802,9 +1802,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICDdsEncoder self, ref WICDdsParameters pParameters) SetParameters;
-				public new function HRESULT(ref IWICDdsEncoder self, out WICDdsParameters pParameters) GetParameters;
-				public new function HRESULT(ref IWICDdsEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out uint32 pArrayIndex, out uint32 pMipLevel, out uint32 pSliceIndex) CreateNewFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsEncoder self, ref WICDdsParameters pParameters) SetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsEncoder self, out WICDdsParameters pParameters) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out uint32 pArrayIndex, out uint32 pMipLevel, out uint32 pSliceIndex) CreateNewFrame;
 			}
 		}
 		[CRepr]
@@ -1821,9 +1821,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICDdsFrameDecode self, out uint32 pWidthInBlocks, out uint32 pHeightInBlocks) GetSizeInBlocks;
-				public new function HRESULT(ref IWICDdsFrameDecode self, out WICDdsFormatInfo pFormatInfo) GetFormatInfo;
-				public new function HRESULT(ref IWICDdsFrameDecode self, in WICRect prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyBlocks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsFrameDecode self, out uint32 pWidthInBlocks, out uint32 pHeightInBlocks) GetSizeInBlocks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsFrameDecode self, out WICDdsFormatInfo pFormatInfo) GetFormatInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICDdsFrameDecode self, in WICRect prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyBlocks;
 			}
 		}
 		[CRepr]
@@ -1847,16 +1847,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICJpegFrameDecode self, out BOOL pfIndexingSupported) DoesSupportIndexing;
-				public new function HRESULT(ref IWICJpegFrameDecode self, WICJpegIndexingOptions options, uint32 horizontalIntervalSize) SetIndexing;
-				public new function HRESULT(ref IWICJpegFrameDecode self) ClearIndexing;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
-				public new function HRESULT(ref IWICJpegFrameDecode self, out WICJpegFrameHeader pFrameHeader) GetFrameHeader;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, out WICJpegScanHeader pScanHeader) GetScanHeader;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, out uint32 pcbScanDataActual) CopyScan;
-				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, out uint32 pcbStreamDataActual) CopyMinimalStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, out BOOL pfIndexingSupported) DoesSupportIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, WICJpegIndexingOptions options, uint32 horizontalIntervalSize) SetIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self) ClearIndexing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, out WICJpegFrameHeader pFrameHeader) GetFrameHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, out WICJpegScanHeader pScanHeader) GetScanHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, out uint32 pcbScanDataActual) CopyScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameDecode self, uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, out uint32 pcbStreamDataActual) CopyMinimalStream;
 			}
 		}
 		[CRepr]
@@ -1874,10 +1874,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
-				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
-				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
-				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 cbScanData, uint8* pbScanData) WriteScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICJpegFrameEncode self, uint32 cbScanData, uint8* pbScanData) WriteScan;
 			}
 		}
 		[CRepr]
@@ -1895,10 +1895,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICMetadataBlockReader self, out Guid pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(ref IWICMetadataBlockReader self, out uint32 pcCount) GetCount;
-				public new function HRESULT(ref IWICMetadataBlockReader self, uint32 nIndex, out IWICMetadataReader* ppIMetadataReader) GetReaderByIndex;
-				public new function HRESULT(ref IWICMetadataBlockReader self, out IEnumUnknown* ppIEnumMetadata) GetEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockReader self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockReader self, out uint32 pcCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockReader self, uint32 nIndex, out IWICMetadataReader* ppIMetadataReader) GetReaderByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockReader self, out IEnumUnknown* ppIEnumMetadata) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1917,11 +1917,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICMetadataBlockReader.VTable
 			{
-				public new function HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataBlockReader pIMDBlockReader) InitializeFromBlockReader;
-				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, out IWICMetadataWriter* ppIMetadataWriter) GetWriterByIndex;
-				public new function HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataWriter pIMetadataWriter) AddWriter;
-				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, ref IWICMetadataWriter pIMetadataWriter) SetWriterByIndex;
-				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex) RemoveWriterByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataBlockReader pIMDBlockReader) InitializeFromBlockReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, out IWICMetadataWriter* ppIMetadataWriter) GetWriterByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataWriter pIMetadataWriter) AddWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, ref IWICMetadataWriter pIMetadataWriter) SetWriterByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex) RemoveWriterByIndex;
 			}
 		}
 		[CRepr]
@@ -1941,12 +1941,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICMetadataReader self, out Guid pguidMetadataFormat) GetMetadataFormat;
-				public new function HRESULT(ref IWICMetadataReader self, out IWICMetadataHandlerInfo* ppIHandler) GetMetadataHandlerInfo;
-				public new function HRESULT(ref IWICMetadataReader self, out uint32 pcCount) GetCount;
-				public new function HRESULT(ref IWICMetadataReader self, uint32 nIndex, out PROPVARIANT pvarSchema, out PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValueByIndex;
-				public new function HRESULT(ref IWICMetadataReader self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValue;
-				public new function HRESULT(ref IWICMetadataReader self, out IWICEnumMetadataItem* ppIEnumMetadata) GetEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, out Guid pguidMetadataFormat) GetMetadataFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, out IWICMetadataHandlerInfo* ppIHandler) GetMetadataHandlerInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, out uint32 pcCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, uint32 nIndex, out PROPVARIANT pvarSchema, out PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValueByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReader self, out IWICEnumMetadataItem* ppIEnumMetadata) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1964,10 +1964,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICMetadataReader.VTable
 			{
-				public new function HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValue;
-				public new function HRESULT(ref IWICMetadataWriter self, uint32 nIndex, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValueByIndex;
-				public new function HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId) RemoveValue;
-				public new function HRESULT(ref IWICMetadataWriter self, uint32 nIndex) RemoveValueByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriter self, uint32 nIndex, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValueByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId) RemoveValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriter self, uint32 nIndex) RemoveValueByIndex;
 			}
 		}
 		[CRepr]
@@ -1985,10 +1985,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWICStreamProvider self, out IStream* ppIStream) GetStream;
-				public new function HRESULT(ref IWICStreamProvider self, out uint32 pdwPersistOptions) GetPersistOptions;
-				public new function HRESULT(ref IWICStreamProvider self, out Guid pguidPreferredVendor) GetPreferredVendorGUID;
-				public new function HRESULT(ref IWICStreamProvider self) RefreshStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStreamProvider self, out IStream* ppIStream) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStreamProvider self, out uint32 pdwPersistOptions) GetPersistOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStreamProvider self, out Guid pguidPreferredVendor) GetPreferredVendorGUID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICStreamProvider self) RefreshStream;
 			}
 		}
 		[CRepr]
@@ -2004,8 +2004,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersistStream.VTable
 			{
-				public new function HRESULT(ref IWICPersistStream self, ref IStream pIStream, in Guid pguidPreferredVendor, uint32 dwPersistOptions) LoadEx;
-				public new function HRESULT(ref IWICPersistStream self, ref IStream pIStream, uint32 dwPersistOptions, BOOL fClearDirty) SaveEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPersistStream self, ref IStream pIStream, in Guid pguidPreferredVendor, uint32 dwPersistOptions) LoadEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICPersistStream self, ref IStream pIStream, uint32 dwPersistOptions, BOOL fClearDirty) SaveEx;
 			}
 		}
 		[CRepr]
@@ -2026,13 +2026,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, out Guid pguidMetadataFormat) GetMetadataFormat;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cContainerFormats, Guid* pguidContainerFormats, out uint32 pcchActual) GetContainerFormats;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfRequiresFullStream) DoesRequireFullStream;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfSupportsPadding) DoesSupportPadding;
-				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfFixedSize) DoesRequireFixedSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, out Guid pguidMetadataFormat) GetMetadataFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, uint32 cContainerFormats, Guid* pguidContainerFormats, out uint32 pcchActual) GetContainerFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfRequiresFullStream) DoesRequireFullStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfSupportsPadding) DoesSupportPadding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfFixedSize) DoesRequireFixedSize;
 			}
 		}
 		[CRepr]
@@ -2049,9 +2049,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICMetadataHandlerInfo.VTable
 			{
-				public new function HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) GetPatterns;
-				public new function HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
-				public new function HRESULT(ref IWICMetadataReaderInfo self, out IWICMetadataReader* ppIReader) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) GetPatterns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataReaderInfo self, out IWICMetadataReader* ppIReader) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -2067,8 +2067,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICMetadataHandlerInfo.VTable
 			{
-				public new function HRESULT(ref IWICMetadataWriterInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) GetHeader;
-				public new function HRESULT(ref IWICMetadataWriterInfo self, out IWICMetadataWriter* ppIWriter) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriterInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) GetHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICMetadataWriterInfo self, out IWICMetadataWriter* ppIWriter) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -2089,13 +2089,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWICImagingFactory.VTable
 			{
-				public new function HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReader;
-				public new function HRESULT(ref IWICComponentFactory self, in Guid guidContainerFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReaderFromContainer;
-				public new function HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwMetadataOptions, out IWICMetadataWriter* ppIWriter) CreateMetadataWriter;
-				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataReader pIReader, in Guid pguidVendor, out IWICMetadataWriter* ppIWriter) CreateMetadataWriterFromReader;
-				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockReader pIBlockReader, out IWICMetadataQueryReader* ppIQueryReader) CreateQueryReaderFromBlockReader;
-				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockWriter pIBlockWriter, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromBlockWriter;
-				public new function HRESULT(ref IWICComponentFactory self, PROPBAG2* ppropOptions, uint32 cCount, out IPropertyBag2* ppIPropertyBag) CreateEncoderPropertyBag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, in Guid guidContainerFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReaderFromContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwMetadataOptions, out IWICMetadataWriter* ppIWriter) CreateMetadataWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, ref IWICMetadataReader pIReader, in Guid pguidVendor, out IWICMetadataWriter* ppIWriter) CreateMetadataWriterFromReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockReader pIBlockReader, out IWICMetadataQueryReader* ppIQueryReader) CreateQueryReaderFromBlockReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockWriter pIBlockWriter, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromBlockWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, PROPBAG2* ppropOptions, uint32 cCount, out IPropertyBag2* ppIPropertyBag) CreateEncoderPropertyBag;
 			}
 		}
 		

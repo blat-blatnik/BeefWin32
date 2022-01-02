@@ -112,10 +112,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) AddGame;
-				public new function HRESULT(ref IGameExplorer self, Guid guidInstanceID) RemoveGame;
-				public new function HRESULT(ref IGameExplorer self, Guid guidInstanceID) UpdateGame;
-				public new function HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) VerifyAccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) AddGame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer self, Guid guidInstanceID) RemoveGame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer self, Guid guidInstanceID) UpdateGame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) VerifyAccess;
 			}
 		}
 		[CRepr]
@@ -141,18 +141,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxCategoryLength;
-				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxNameLength;
-				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxValueLength;
-				public new function HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxCategories;
-				public new function HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxStatsPerCategory;
-				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
-				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
-				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
-				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
-				public new function HRESULT(ref IGameStatistics self, BOOL trackChanges) Save;
-				public new function HRESULT(ref IGameStatistics self, uint32 categoryIndex) SetLastPlayedCategory;
-				public new function HRESULT(ref IGameStatistics self, out uint32 pCategoryIndex) GetLastPlayedCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxCategoryLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxNameLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxValueLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxCategories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxStatsPerCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, BOOL trackChanges) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, uint32 categoryIndex) SetLastPlayedCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatistics self, out uint32 pCategoryIndex) GetLastPlayedCategory;
 			}
 		}
 		[CRepr]
@@ -168,8 +168,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
-				public new function HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath) RemoveGameStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath) RemoveGameStatistics;
 			}
 		}
 		[CRepr]
@@ -186,9 +186,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
-				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath) UninstallGame;
-				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, out BOOL pHasAccess) CheckAccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath) UninstallGame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, out BOOL pHasAccess) CheckAccess;
 			}
 		}
 		[CRepr]
@@ -208,12 +208,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
-				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR msaAccountId, out PWSTR xuid) GetGamerAccount;
-				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
-				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR environment) GetEnvironment;
-				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR sandbox) GetSandbox;
-				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) GetTokenAndSignatureWithTokenResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, out PWSTR msaAccountId, out PWSTR xuid) GetGamerAccount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, out PWSTR environment) GetEnvironment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, out PWSTR sandbox) GetSandbox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) GetTokenAndSignatureWithTokenResult;
 			}
 		}
 		[CRepr]
@@ -247,26 +247,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out XBL_IDP_AUTH_TOKEN_STATUS status) GetStatus;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out HRESULT errorCode) GetErrorCode;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR token) GetToken;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR signature) GetSignature;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR sandbox) GetSandbox;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR environment) GetEnvironment;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAccountId) GetMsaAccountId;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR xuid) GetXuid;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR gamertag) GetGamertag;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR ageGroup) GetAgeGroup;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR privileges) GetPrivileges;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaTarget) GetMsaTarget;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaPolicy) GetMsaPolicy;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAppId) GetMsaAppId;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR redirect) GetRedirect;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR message) GetMessage;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR helpId) GetHelpId;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR enforcementBans) GetEnforcementBans;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR restrictions) GetRestrictions;
-				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR titleRestrictions) GetTitleRestrictions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out XBL_IDP_AUTH_TOKEN_STATUS status) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out HRESULT errorCode) GetErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR token) GetToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR signature) GetSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR sandbox) GetSandbox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR environment) GetEnvironment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAccountId) GetMsaAccountId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR xuid) GetXuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR gamertag) GetGamertag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR ageGroup) GetAgeGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR privileges) GetPrivileges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaTarget) GetMsaTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaPolicy) GetMsaPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAppId) GetMsaAppId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR redirect) GetRedirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR message) GetMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR helpId) GetHelpId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR enforcementBans) GetEnforcementBans;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR restrictions) GetRestrictions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR titleRestrictions) GetTitleRestrictions;
 			}
 		}
 		[CRepr]
@@ -283,9 +283,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertag;
-				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertagSuffix;
-				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetUniqueModernGamertag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertagSuffix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetUniqueModernGamertag;
 			}
 		}
 		

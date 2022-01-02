@@ -36,9 +36,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3D11On12Device self, ref IUnknown pResource12, in D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, in Guid riid, void** ppResource11) CreateWrappedResource;
-				public new function void(ref ID3D11On12Device self, ID3D11Resource** ppResources, uint32 NumResources) ReleaseWrappedResources;
-				public new function void(ref ID3D11On12Device self, ID3D11Resource** ppResources, uint32 NumResources) AcquireWrappedResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11On12Device self, ref IUnknown pResource12, in D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, in Guid riid, void** ppResource11) CreateWrappedResource;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11On12Device self, ID3D11Resource** ppResources, uint32 NumResources) ReleaseWrappedResources;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11On12Device self, ID3D11Resource** ppResources, uint32 NumResources) AcquireWrappedResources;
 			}
 		}
 		[CRepr]
@@ -53,7 +53,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11On12Device.VTable
 			{
-				public new function HRESULT(ref ID3D11On12Device1 self, in Guid riid, void** ppvDevice) GetD3D12Device;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11On12Device1 self, in Guid riid, void** ppvDevice) GetD3D12Device;
 			}
 		}
 		[CRepr]
@@ -69,8 +69,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D11On12Device1.VTable
 			{
-				public new function HRESULT(ref ID3D11On12Device2 self, ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, in Guid riid, void** ppvResource12) UnwrapUnderlyingResource;
-				public new function HRESULT(ref ID3D11On12Device2 self, ref ID3D11Resource pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) ReturnUnderlyingResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11On12Device2 self, ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, in Guid riid, void** ppvResource12) UnwrapUnderlyingResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11On12Device2 self, ref ID3D11Resource pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) ReturnUnderlyingResource;
 			}
 		}
 		

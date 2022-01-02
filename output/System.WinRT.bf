@@ -147,7 +147,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAgileReference self, in Guid riid, void** ppvObjectReference) Resolve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAgileReference self, in Guid riid, void** ppvObjectReference) Resolve;
 			}
 		}
 		[CRepr]
@@ -162,7 +162,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IApartmentShutdown self, uint64 ui64ApartmentIdentifier) OnUninitialize;
+				public new function [CallingConvention(.Stdcall)] void(ref IApartmentShutdown self, uint64 ui64ApartmentIdentifier) OnUninitialize;
 			}
 		}
 		[CRepr]
@@ -177,7 +177,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ISpatialInteractionManagerInterop self, HWND window, in Guid riid, void** spatialInteractionManager) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpatialInteractionManagerInterop self, HWND window, in Guid riid, void** spatialInteractionManager) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -192,7 +192,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IHolographicSpaceInterop self, HWND window, in Guid riid, void** holographicSpace) CreateForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicSpaceInterop self, HWND window, in Guid riid, void** holographicSpace) CreateForWindow;
 			}
 		}
 		[CRepr]
@@ -209,9 +209,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInspectable self, out uint32 iidCount, Guid** iids) GetIids;
-				public new function HRESULT(ref IInspectable self, HSTRING* className) GetRuntimeClassName;
-				public new function HRESULT(ref IInspectable self, out TrustLevel trustLevel) GetTrustLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, out uint32 iidCount, Guid** iids) GetIids;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, HSTRING* className) GetRuntimeClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInspectable self, out TrustLevel trustLevel) GetTrustLevel;
 			}
 		}
 		[CRepr]
@@ -228,9 +228,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** accountsSettingsPane) GetForWindow;
-				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowManageAccountsForWindowAsync;
-				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowAddAccountForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** accountsSettingsPane) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowManageAccountsForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowAddAccountForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -245,7 +245,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppServiceConnectionExtendedExecution self, in Guid riid, void** operation) OpenForExtendedExecutionAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppServiceConnectionExtendedExecution self, in Guid riid, void** operation) OpenForExtendedExecutionAsync;
 			}
 		}
 		[CRepr]
@@ -260,7 +260,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICorrelationVectorSource self, out HSTRING cv) get_CorrelationVector;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICorrelationVectorSource self, out HSTRING cv) get_CorrelationVector;
 			}
 		}
 		[CRepr]
@@ -276,8 +276,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_STATE newState) OnStateChanged;
-				public new function HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_STATE newState) OnStateChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
 			}
 		}
 		[CRepr]
@@ -296,11 +296,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICastingController self, ref IUnknown castingEngine, ref IUnknown castingSource) Initialize;
-				public new function HRESULT(ref ICastingController self) Connect;
-				public new function HRESULT(ref ICastingController self) Disconnect;
-				public new function HRESULT(ref ICastingController self, ref ICastingEventHandler eventHandler, out uint32 cookie) Advise;
-				public new function HRESULT(ref ICastingController self, uint32 cookie) UnAdvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingController self, ref IUnknown castingEngine, ref IUnknown castingSource) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingController self) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingController self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingController self, ref ICastingEventHandler eventHandler, out uint32 cookie) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingController self, uint32 cookie) UnAdvise;
 			}
 		}
 		[CRepr]
@@ -316,8 +316,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICastingSourceInfo self, out ICastingController* controller) GetController;
-				public new function HRESULT(ref ICastingSourceInfo self, out INamedPropertyStore* props) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingSourceInfo self, out ICastingController* controller) GetController;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICastingSourceInfo self, out INamedPropertyStore* props) GetProperties;
 			}
 		}
 		[CRepr]
@@ -332,7 +332,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IDragDropManagerInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDragDropManagerInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -347,7 +347,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IInputPaneInterop self, HWND appWindow, in Guid riid, void** inputPane) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPaneInterop self, HWND appWindow, in Guid riid, void** inputPane) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -363,8 +363,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IPlayToManagerInterop self, HWND appWindow, in Guid riid, void** playToManager) GetForWindow;
-				public new function HRESULT(ref IPlayToManagerInterop self, HWND appWindow) ShowPlayToUIForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPlayToManagerInterop self, HWND appWindow, in Guid riid, void** playToManager) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPlayToManagerInterop self, HWND appWindow) ShowPlayToUIForWindow;
 			}
 		}
 		[CRepr]
@@ -381,9 +381,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_LastCorrelationVectorForThread;
-				public new function HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_NextCorrelationVectorForThread;
-				public new function HRESULT(ref ICorrelationVectorInformation self, HSTRING cv) put_NextCorrelationVectorForThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_LastCorrelationVectorForThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_NextCorrelationVectorForThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICorrelationVectorInformation self, HSTRING cv) put_NextCorrelationVectorForThread;
 			}
 		}
 		[CRepr]
@@ -398,7 +398,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IUIViewSettingsInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIViewSettingsInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -413,7 +413,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IUserActivityInterop self, HWND window, in Guid iid, void** value) CreateSessionForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserActivityInterop self, HWND window, in Guid iid, void** value) CreateSessionForWindow;
 			}
 		}
 		[CRepr]
@@ -428,7 +428,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IUserActivitySourceHostInterop self, HSTRING activitySourceHost) SetActivitySourceHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserActivitySourceHostInterop self, HSTRING activitySourceHost) SetActivitySourceHost;
 			}
 		}
 		[CRepr]
@@ -443,7 +443,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IUserActivityRequestManagerInterop self, HWND window, in Guid iid, void** value) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserActivityRequestManagerInterop self, HWND window, in Guid iid, void** value) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -458,7 +458,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IUserConsentVerifierInterop self, HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) RequestVerificationForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserConsentVerifierInterop self, HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) RequestVerificationForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -474,8 +474,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) RequestTokenForWindowAsync;
-				public new function HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) RequestTokenForWindowAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -491,8 +491,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRestrictedErrorInfo self, out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) GetErrorDetails;
-				public new function HRESULT(ref IRestrictedErrorInfo self, out BSTR reference) GetReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRestrictedErrorInfo self, out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) GetErrorDetails;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRestrictedErrorInfo self, out BSTR reference) GetReference;
 			}
 		}
 		[CRepr]
@@ -507,7 +507,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILanguageExceptionErrorInfo self, out IUnknown* languageException) GetLanguageException;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionErrorInfo self, out IUnknown* languageException) GetLanguageException;
 			}
 		}
 		[CRepr]
@@ -522,7 +522,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILanguageExceptionTransform self, out IRestrictedErrorInfo* restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionTransform self, out IRestrictedErrorInfo* restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
 			}
 		}
 		[CRepr]
@@ -537,7 +537,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ILanguageExceptionStackBackTrace self, uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) GetStackBackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionStackBackTrace self, uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) GetStackBackTrace;
 			}
 		}
 		[CRepr]
@@ -554,9 +554,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ILanguageExceptionErrorInfo.VTable
 			{
-				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
-				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, ref IUnknown languageException) CapturePropagationContext;
-				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionErrorInfo2 self, ref IUnknown languageException) CapturePropagationContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
 			}
 		}
 		[CRepr]
@@ -571,7 +571,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IActivationFactory self, IInspectable** instance) ActivateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActivationFactory self, IInspectable** instance) ActivateInstance;
 			}
 		}
 		[CRepr]
@@ -586,7 +586,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBufferByteAccess self, out uint8* value) Buffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBufferByteAccess self, out uint8* value) Buffer;
 			}
 		}
 		[CRepr]
@@ -609,16 +609,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetWinRtInterface;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetDelegate;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR baseType) SetEnum;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedInterface;
-				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetWinRtInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetDelegate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR baseType) SetEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
 			}
 		}
 		[CRepr]
@@ -632,7 +632,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref IRoMetaDataLocator self, PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) Locate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoMetaDataLocator self, PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) Locate;
 			}
 		}
 		[CRepr]
@@ -647,7 +647,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMemoryBufferByteAccess self, out uint8* value, out uint32 capacity) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemoryBufferByteAccess self, out uint8* value, out uint32 capacity) GetBuffer;
 			}
 		}
 		[CRepr]
@@ -662,7 +662,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWeakReference self, in Guid riid, void** objectReference) Resolve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeakReference self, in Guid riid, void** objectReference) Resolve;
 			}
 		}
 		[CRepr]
@@ -677,7 +677,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWeakReferenceSource self, IWeakReference** weakReference) GetWeakReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeakReferenceSource self, IWeakReference** weakReference) GetWeakReference;
 			}
 		}
 		[CRepr]
@@ -692,7 +692,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ISystemMediaTransportControlsInterop self, HWND appWindow, in Guid riid, void** mediaTransportControl) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemMediaTransportControlsInterop self, HWND appWindow, in Guid riid, void** mediaTransportControl) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -707,7 +707,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IShareWindowCommandEventArgsInterop self, out HWND value) GetWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShareWindowCommandEventArgsInterop self, out HWND value) GetWindow;
 			}
 		}
 		[CRepr]
@@ -722,7 +722,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IShareWindowCommandSourceInterop self, HWND appWindow, in Guid riid, void** shareWindowCommandSource) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShareWindowCommandSourceInterop self, HWND appWindow, in Guid riid, void** shareWindowCommandSource) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -737,7 +737,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IMessageDispatcher self) PumpMessages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageDispatcher self) PumpMessages;
 			}
 		}
 		

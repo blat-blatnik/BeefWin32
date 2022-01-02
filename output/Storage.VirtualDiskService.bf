@@ -1674,10 +1674,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumVdsObject self, uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumVdsObject self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumVdsObject self) Reset;
-				public new function HRESULT(ref IEnumVdsObject self, IEnumVdsObject** ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumVdsObject self, uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumVdsObject self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumVdsObject self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumVdsObject self, IEnumVdsObject** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1694,9 +1694,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsAsync self) Cancel;
-				public new function HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) Wait;
-				public new function HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out uint32 pulPercentCompleted) QueryStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAsync self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) Wait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out uint32 pulPercentCompleted) QueryStatus;
 			}
 		}
 		[CRepr]
@@ -1711,7 +1711,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsAdviseSink self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAdviseSink self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
 			}
 		}
 		[CRepr]
@@ -1726,7 +1726,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsProvider self, out VDS_PROVIDER_PROP pProviderProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsProvider self, out VDS_PROVIDER_PROP pProviderProp) GetProperties;
 			}
 		}
 		[CRepr]
@@ -1741,7 +1741,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsProviderSupport self, out uint32 ulVersionSupport) GetVersionSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsProviderSupport self, out uint32 ulVersionSupport) GetVersionSupport;
 			}
 		}
 		[CRepr]
@@ -1758,9 +1758,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsProviderPrivate self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
-				public new function HRESULT(ref IVdsProviderPrivate self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
-				public new function HRESULT(ref IVdsProviderPrivate self, BOOL bForceUnload) OnUnload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsProviderPrivate self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsProviderPrivate self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsProviderPrivate self, BOOL bForceUnload) OnUnload;
 			}
 		}
 		[CRepr]
@@ -1777,9 +1777,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProvider self, IEnumVdsObject** ppEnum) QuerySubSystems;
-				public new function HRESULT(ref IVdsHwProvider self) Reenumerate;
-				public new function HRESULT(ref IVdsHwProvider self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProvider self, IEnumVdsObject** ppEnum) QuerySubSystems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProvider self) Reenumerate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProvider self) Refresh;
 			}
 		}
 		[CRepr]
@@ -1794,7 +1794,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProviderType self, out VDS_HWPROVIDER_TYPE pType) GetProviderType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderType self, out VDS_HWPROVIDER_TYPE pType) GetProviderType;
 			}
 		}
 		[CRepr]
@@ -1809,7 +1809,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProviderType2 self, out VDS_HWPROVIDER_TYPE pType) GetProviderType2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderType2 self, out VDS_HWPROVIDER_TYPE pType) GetProviderType2;
 			}
 		}
 		[CRepr]
@@ -1826,9 +1826,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProviderStoragePools self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
-				public new function HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
-				public new function HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderStoragePools self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
 			}
 		}
 		[CRepr]
@@ -1854,18 +1854,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsSubSystem self, out VDS_SUB_SYSTEM_PROP pSubSystemProp) GetProperties;
-				public new function HRESULT(ref IVdsSubSystem self, IVdsProvider** ppProvider) GetProvider;
-				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryControllers;
-				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryLuns;
-				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryDrives;
-				public new function HRESULT(ref IVdsSubSystem self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
-				public new function HRESULT(ref IVdsSubSystem self) Reenumerate;
-				public new function HRESULT(ref IVdsSubSystem self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
-				public new function HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
-				public new function HRESULT(ref IVdsSubSystem self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
-				public new function HRESULT(ref IVdsSubSystem self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
-				public new function HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) QueryMaxLunCreateSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, out VDS_SUB_SYSTEM_PROP pSubSystemProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, IVdsProvider** ppProvider) GetProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryControllers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryDrives;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self) Reenumerate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) QueryMaxLunCreateSize;
 			}
 		}
 		[CRepr]
@@ -1883,10 +1883,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsSubSystem2 self, out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) GetProperties2;
-				public new function HRESULT(ref IVdsSubSystem2 self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
-				public new function HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
-				public new function HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSize2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem2 self, out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) GetProperties2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem2 self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSize2;
 			}
 		}
 		[CRepr]
@@ -1901,7 +1901,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsSubSystemNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -1919,10 +1919,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryTargets;
-				public new function HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryPortals;
-				public new function HRESULT(ref IVdsSubSystemIscsi self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
-				public new function HRESULT(ref IVdsSubSystemIscsi self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryTargets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryPortals;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemIscsi self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemIscsi self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
 			}
 		}
 		[CRepr]
@@ -1937,7 +1937,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsSubSystemInterconnect self, out uint32 pulSupportedInterconnectsFlag) GetSupportedInterconnects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsSubSystemInterconnect self, out uint32 pulSupportedInterconnectsFlag) GetSupportedInterconnects;
 			}
 		}
 		[CRepr]
@@ -1956,11 +1956,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsControllerPort self, out VDS_PORT_PROP pPortProp) GetProperties;
-				public new function HRESULT(ref IVdsControllerPort self, IVdsController** ppController) GetController;
-				public new function HRESULT(ref IVdsControllerPort self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(ref IVdsControllerPort self) Reset;
-				public new function HRESULT(ref IVdsControllerPort self, VDS_PORT_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerPort self, out VDS_PORT_PROP pPortProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerPort self, IVdsController** ppController) GetController;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerPort self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerPort self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerPort self, VDS_PORT_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -1982,14 +1982,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsController self, out VDS_CONTROLLER_PROP pControllerProp) GetProperties;
-				public new function HRESULT(ref IVdsController self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(ref IVdsController self, int16 sPortNumber, out VDS_PORT_PROP pPortProp) GetPortProperties;
-				public new function HRESULT(ref IVdsController self) FlushCache;
-				public new function HRESULT(ref IVdsController self) InvalidateCache;
-				public new function HRESULT(ref IVdsController self) Reset;
-				public new function HRESULT(ref IVdsController self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(ref IVdsController self, VDS_CONTROLLER_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self, out VDS_CONTROLLER_PROP pControllerProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self, int16 sPortNumber, out VDS_PORT_PROP pPortProp) GetPortProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self) FlushCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self) InvalidateCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsController self, VDS_CONTROLLER_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2004,7 +2004,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsControllerControllerPort self, IEnumVdsObject** ppEnum) QueryControllerPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsControllerControllerPort self, IEnumVdsObject** ppEnum) QueryControllerPorts;
 			}
 		}
 		[CRepr]
@@ -2024,12 +2024,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsDrive self, out VDS_DRIVE_PROP pDriveProp) GetProperties;
-				public new function HRESULT(ref IVdsDrive self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(ref IVdsDrive self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
-				public new function HRESULT(ref IVdsDrive self, uint32 ulFlags) SetFlags;
-				public new function HRESULT(ref IVdsDrive self, uint32 ulFlags) ClearFlags;
-				public new function HRESULT(ref IVdsDrive self, VDS_DRIVE_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, out VDS_DRIVE_PROP pDriveProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, uint32 ulFlags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, uint32 ulFlags) ClearFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive self, VDS_DRIVE_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2044,7 +2044,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsDrive2 self, out VDS_DRIVE_PROP2 pDriveProp2) GetProperties2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsDrive2 self, out VDS_DRIVE_PROP2 pDriveProp2) GetProperties2;
 			}
 		}
 		[CRepr]
@@ -2075,23 +2075,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLun self, out VDS_LUN_PROP pLunProp) GetProperties;
-				public new function HRESULT(ref IVdsLun self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(ref IVdsLun self, out VDS_LUN_INFORMATION pLunInfo) GetIdentificationData;
-				public new function HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryActiveControllers;
-				public new function HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
-				public new function HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
-				public new function HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryPlexes;
-				public new function HRESULT(ref IVdsLun self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
-				public new function HRESULT(ref IVdsLun self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
-				public new function HRESULT(ref IVdsLun self, IVdsAsync** ppAsync) Recover;
-				public new function HRESULT(ref IVdsLun self, PWSTR pwszUnmaskingList) SetMask;
-				public new function HRESULT(ref IVdsLun self) Delete;
-				public new function HRESULT(ref IVdsLun self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
-				public new function HRESULT(ref IVdsLun self, out VDS_HINTS pHints) QueryHints;
-				public new function HRESULT(ref IVdsLun self, ref VDS_HINTS pHints) ApplyHints;
-				public new function HRESULT(ref IVdsLun self, VDS_LUN_STATUS status) SetStatus;
-				public new function HRESULT(ref IVdsLun self, Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, out VDS_LUN_PROP pLunProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, out VDS_LUN_INFORMATION pLunInfo) GetIdentificationData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryActiveControllers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryPlexes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, IVdsAsync** ppAsync) Recover;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, PWSTR pwszUnmaskingList) SetMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, out VDS_HINTS pHints) QueryHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, ref VDS_HINTS pHints) ApplyHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, VDS_LUN_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun self, Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
 			}
 		}
 		[CRepr]
@@ -2107,8 +2107,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLun2 self, out VDS_HINTS2 pHints2) QueryHints2;
-				public new function HRESULT(ref IVdsLun2 self, ref VDS_HINTS2 pHints2) ApplyHints2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun2 self, out VDS_HINTS2 pHints2) QueryHints2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLun2 self, ref VDS_HINTS2 pHints2) ApplyHints2;
 			}
 		}
 		[CRepr]
@@ -2123,7 +2123,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -2138,7 +2138,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunNumber self, out uint32 pulLunNumber) GetLunNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunNumber self, out uint32 pulLunNumber) GetLunNumber;
 			}
 		}
 		[CRepr]
@@ -2154,8 +2154,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunControllerPorts self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
-				public new function HRESULT(ref IVdsLunControllerPorts self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunControllerPorts self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunControllerPorts self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
 			}
 		}
 		[CRepr]
@@ -2173,10 +2173,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunMpio self, VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) GetPathInfo;
-				public new function HRESULT(ref IVdsLunMpio self, out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) GetLoadBalancePolicy;
-				public new function HRESULT(ref IVdsLunMpio self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
-				public new function HRESULT(ref IVdsLunMpio self, out uint32 pulLbFlags) GetSupportedLbPolicies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunMpio self, VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) GetPathInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunMpio self, out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) GetLoadBalancePolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunMpio self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunMpio self, out uint32 pulLbFlags) GetSupportedLbPolicies;
 			}
 		}
 		[CRepr]
@@ -2192,8 +2192,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunIscsi self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
-				public new function HRESULT(ref IVdsLunIscsi self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunIscsi self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunIscsi self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
 			}
 		}
 		[CRepr]
@@ -2212,11 +2212,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsLunPlex self, out VDS_LUN_PLEX_PROP pPlexProp) GetProperties;
-				public new function HRESULT(ref IVdsLunPlex self, IVdsLun** ppLun) GetLun;
-				public new function HRESULT(ref IVdsLunPlex self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
-				public new function HRESULT(ref IVdsLunPlex self, out VDS_HINTS pHints) QueryHints;
-				public new function HRESULT(ref IVdsLunPlex self, ref VDS_HINTS pHints) ApplyHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunPlex self, out VDS_LUN_PLEX_PROP pPlexProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunPlex self, IVdsLun** ppLun) GetLun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunPlex self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunPlex self, out VDS_HINTS pHints) QueryHints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsLunPlex self, ref VDS_HINTS pHints) ApplyHints;
 			}
 		}
 		[CRepr]
@@ -2237,13 +2237,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsIscsiPortal self, out VDS_ISCSI_PORTAL_PROP pPortalProp) GetProperties;
-				public new function HRESULT(ref IVdsIscsiPortal self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(ref IVdsIscsiPortal self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
-				public new function HRESULT(ref IVdsIscsiPortal self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
-				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) SetIpsecTunnelAddress;
-				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) GetIpsecSecurity;
-				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, out VDS_ISCSI_PORTAL_PROP pPortalProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) SetIpsecTunnelAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) GetIpsecSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
 			}
 		}
 		[CRepr]
@@ -2267,16 +2267,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsIscsiTarget self, out VDS_ISCSI_TARGET_PROP pTargetProp) GetProperties;
-				public new function HRESULT(ref IVdsIscsiTarget self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryPortalGroups;
-				public new function HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) CreatePortalGroup;
-				public new function HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) Delete;
-				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR pwszFriendlyName) SetFriendlyName;
-				public new function HRESULT(ref IVdsIscsiTarget self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
-				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
-				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) GetConnectedInitiators;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, out VDS_ISCSI_TARGET_PROP pTargetProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryPortalGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) CreatePortalGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiTarget self, PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) GetConnectedInitiators;
 			}
 		}
 		[CRepr]
@@ -2296,12 +2296,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) GetProperties;
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, IVdsIscsiTarget** ppTarget) GetTarget;
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
-				public new function HRESULT(ref IVdsIscsiPortalGroup self, IVdsAsync** ppAsync) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, IVdsIscsiTarget** ppTarget) GetTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsIscsiPortalGroup self, IVdsAsync** ppAsync) Delete;
 			}
 		}
 		[CRepr]
@@ -2321,12 +2321,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsStoragePool self, IVdsProvider** ppProvider) GetProvider;
-				public new function HRESULT(ref IVdsStoragePool self, out VDS_STORAGE_POOL_PROP pStoragePoolProp) GetProperties;
-				public new function HRESULT(ref IVdsStoragePool self, out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) GetAttributes;
-				public new function HRESULT(ref IVdsStoragePool self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryDriveExtents;
-				public new function HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
-				public new function HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, IVdsProvider** ppProvider) GetProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, out VDS_STORAGE_POOL_PROP pStoragePoolProp) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) GetAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryDriveExtents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
 			}
 		}
 		[CRepr]
@@ -2343,9 +2343,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
-				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
-				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
 			}
 		}
 		[CRepr]
@@ -2360,7 +2360,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProviderPrivate self, PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) QueryIfCreatedLun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderPrivate self, PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) QueryIfCreatedLun;
 			}
 		}
 		[CRepr]
@@ -2375,7 +2375,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsHwProviderPrivateMpio self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsHwProviderPrivateMpio self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
 			}
 		}
 		[CRepr]
@@ -2391,8 +2391,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVdsAdmin self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
-				public new function HRESULT(ref IVdsAdmin self, Guid providerId) UnregisterProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAdmin self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAdmin self, Guid providerId) UnregisterProvider;
 			}
 		}
 		

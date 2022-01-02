@@ -20,8 +20,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDisplayDeviceInterop self, ref IInspectable pObject, in SECURITY_ATTRIBUTES pSecurityAttributes, uint32 Access, HSTRING Name, out HANDLE pHandle) CreateSharedHandle;
-				public new function HRESULT(ref IDisplayDeviceInterop self, HANDLE NTHandle, Guid riid, void** ppvObj) OpenSharedHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayDeviceInterop self, ref IInspectable pObject, in SECURITY_ATTRIBUTES pSecurityAttributes, uint32 Access, HSTRING Name, out HANDLE pHandle) CreateSharedHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayDeviceInterop self, HANDLE NTHandle, Guid riid, void** ppvObj) OpenSharedHandle;
 			}
 		}
 		[CRepr]
@@ -37,8 +37,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDisplayPathInterop self, out HANDLE pValue) CreateSourcePresentationHandle;
-				public new function HRESULT(ref IDisplayPathInterop self, out uint32 pSourceId) GetSourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayPathInterop self, out HANDLE pValue) CreateSourcePresentationHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayPathInterop self, out uint32 pSourceId) GetSourceId;
 			}
 		}
 		

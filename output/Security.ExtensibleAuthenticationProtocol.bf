@@ -968,8 +968,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRouterProtocolConfig self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) AddProtocol;
-				public new function HRESULT(ref IRouterProtocolConfig self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) RemoveProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRouterProtocolConfig self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) AddProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRouterProtocolConfig self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, ref IUnknown pRouter, uint uReserved1) RemoveProtocol;
 			}
 		}
 		[CRepr]
@@ -988,11 +988,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAuthenticationProviderConfig self, PWSTR pszMachineName, out uint puConnectionParam) Initialize;
-				public new function HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam) Uninitialize;
-				public new function HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
-				public new function HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
-				public new function HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuthenticationProviderConfig self, PWSTR pszMachineName, out uint puConnectionParam) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuthenticationProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
 			}
 		}
 		[CRepr]
@@ -1011,11 +1011,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAccountingProviderConfig self, PWSTR pszMachineName, out uint puConnectionParam) Initialize;
-				public new function HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam) Uninitialize;
-				public new function HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
-				public new function HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
-				public new function HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountingProviderConfig self, PWSTR pszMachineName, out uint puConnectionParam) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAccountingProviderConfig self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
 			}
 		}
 		[CRepr]
@@ -1034,11 +1034,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEAPProviderConfig self, PWSTR pszMachineName, uint32 dwEapTypeId, out uint puConnectionParam) Initialize;
-				public new function HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam) Uninitialize;
-				public new function HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) ServerInvokeConfigUI;
-				public new function HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, out uint32 pdwSizeOfConnectionDataOut) RouterInvokeConfigUI;
-				public new function HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, out uint32 pdwSizeOfUserDataOut) RouterInvokeCredentialsUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig self, PWSTR pszMachineName, uint32 dwEapTypeId, out uint puConnectionParam) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) ServerInvokeConfigUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, out uint32 pdwSizeOfConnectionDataOut) RouterInvokeConfigUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, out uint32 pdwSizeOfUserDataOut) RouterInvokeCredentialsUI;
 			}
 		}
 		[CRepr]
@@ -1054,8 +1054,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEAPProviderConfig.VTable
 			{
-				public new function HRESULT(ref IEAPProviderConfig2 self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) ServerInvokeConfigUI2;
-				public new function HRESULT(ref IEAPProviderConfig2 self, uint32 dwEapTypeId, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) GetGlobalConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig2 self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) ServerInvokeConfigUI2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig2 self, uint32 dwEapTypeId, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut) GetGlobalConfig;
 			}
 		}
 		[CRepr]
@@ -1070,7 +1070,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEAPProviderConfig2.VTable
 			{
-				public new function HRESULT(ref IEAPProviderConfig3 self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig3 self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
 			}
 		}
 		

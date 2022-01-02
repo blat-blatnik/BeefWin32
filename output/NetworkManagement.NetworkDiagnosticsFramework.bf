@@ -265,24 +265,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetDiagHelper self, uint32 celt, HELPER_ATTRIBUTE* rgAttributes) Initialize;
-				public new function HRESULT(ref INetDiagHelper self, out DiagnosticsInfo* ppInfo) GetDiagnosticsInfo;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetKeyAttributes;
-				public new function HRESULT(ref INetDiagHelper self, PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) LowHealth;
-				public new function HRESULT(ref INetDiagHelper self, PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) HighUtilization;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetLowerHypotheses;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetDownStreamHypotheses;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetHigherHypotheses;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetUpStreamHypotheses;
-				public new function HRESULT(ref INetDiagHelper self, ref RepairInfo pInfo, out int32 pDeferredTime, out REPAIR_STATUS pStatus) Repair;
-				public new function HRESULT(ref INetDiagHelper self, PROBLEM_TYPE problem, out int32 pDeferredTime, out REPAIR_STATUS pStatus) Validate;
-				public new function HRESULT(ref INetDiagHelper self, PROBLEM_TYPE problem, out uint32 pcelt, RepairInfo** ppInfo) GetRepairInfo;
-				public new function HRESULT(ref INetDiagHelper self, out LIFE_TIME pLifeTime) GetLifeTime;
-				public new function HRESULT(ref INetDiagHelper self, LIFE_TIME lifeTime) SetLifeTime;
-				public new function HRESULT(ref INetDiagHelper self, out FILETIME pCacheTime) GetCacheTime;
-				public new function HRESULT(ref INetDiagHelper self, out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetAttributes;
-				public new function HRESULT(ref INetDiagHelper self) Cancel;
-				public new function HRESULT(ref INetDiagHelper self) Cleanup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, uint32 celt, HELPER_ATTRIBUTE* rgAttributes) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out DiagnosticsInfo* ppInfo) GetDiagnosticsInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetKeyAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) LowHealth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, PWSTR pwszInstanceDescription, out PWSTR ppwszDescription, out int32 pDeferredTime, out DIAGNOSIS_STATUS pStatus) HighUtilization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetLowerHypotheses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetDownStreamHypotheses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetHigherHypotheses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HYPOTHESIS** pprgHypotheses) GetUpStreamHypotheses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, ref RepairInfo pInfo, out int32 pDeferredTime, out REPAIR_STATUS pStatus) Repair;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, PROBLEM_TYPE problem, out int32 pDeferredTime, out REPAIR_STATUS pStatus) Validate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, PROBLEM_TYPE problem, out uint32 pcelt, RepairInfo** ppInfo) GetRepairInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out LIFE_TIME pLifeTime) GetLifeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, LIFE_TIME lifeTime) SetLifeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out FILETIME pCacheTime) GetCacheTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self, out uint32 pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelper self) Cleanup;
 			}
 		}
 		[CRepr]
@@ -297,7 +297,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetDiagHelperUtilFactory self, in Guid riid, void** ppvObject) CreateUtilityInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelperUtilFactory self, in Guid riid, void** ppvObject) CreateUtilityInstance;
 			}
 		}
 		[CRepr]
@@ -314,9 +314,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetDiagHelperEx self, uint32 celt, HypothesisResult* pResults, out PWSTR ppwszUpdatedDescription, out DIAGNOSIS_STATUS pUpdatedStatus) ReconfirmLowHealth;
-				public new function HRESULT(ref INetDiagHelperEx self, ref INetDiagHelperUtilFactory pUtilities) SetUtilities;
-				public new function HRESULT(ref INetDiagHelperEx self) ReproduceFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelperEx self, uint32 celt, HypothesisResult* pResults, out PWSTR ppwszUpdatedDescription, out DIAGNOSIS_STATUS pUpdatedStatus) ReconfirmLowHealth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelperEx self, ref INetDiagHelperUtilFactory pUtilities) SetUtilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelperEx self) ReproduceFailure;
 			}
 		}
 		[CRepr]
@@ -331,7 +331,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetDiagHelperInfo self, out uint32 pcelt, HelperAttributeInfo** pprgAttributeInfos) GetAttributeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagHelperInfo self, out uint32 pcelt, HelperAttributeInfo** pprgAttributeInfos) GetAttributeInfo;
 			}
 		}
 		[CRepr]
@@ -346,7 +346,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetDiagExtensibleHelper self, uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, out uint32 pcelt, HELPER_ATTRIBUTE** prgMatchValues) ResolveAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagExtensibleHelper self, uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, out uint32 pcelt, HELPER_ATTRIBUTE** prgMatchValues) ResolveAttributes;
 			}
 		}
 		

@@ -1783,7 +1783,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ISpNotifyCallback self, WPARAM wParam, LPARAM lParam) NotifyCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyCallback self, WPARAM wParam, LPARAM lParam) NotifyCallback;
 			}
 		}
 		[CRepr]
@@ -1804,13 +1804,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpNotifySource self, ISpNotifySink* pNotifySink) SetNotifySink;
-				public new function HRESULT(ref ISpNotifySource self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) SetNotifyWindowMessage;
-				public new function HRESULT(ref ISpNotifySource self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackFunction;
-				public new function HRESULT(ref ISpNotifySource self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackInterface;
-				public new function HRESULT(ref ISpNotifySource self) SetNotifyWin32Event;
-				public new function HRESULT(ref ISpNotifySource self, uint32 dwMilliseconds) WaitForNotifyEvent;
-				public new function HANDLE(ref ISpNotifySource self) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self, ISpNotifySink* pNotifySink) SetNotifySink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) SetNotifyWindowMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self) SetNotifyWin32Event;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySource self, uint32 dwMilliseconds) WaitForNotifyEvent;
+				public new function [CallingConvention(.Stdcall)] HANDLE(ref ISpNotifySource self) GetNotifyEventHandle;
 			}
 		}
 		[CRepr]
@@ -1825,7 +1825,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpNotifySink self) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifySink self) Notify;
 			}
 		}
 		[CRepr]
@@ -1845,12 +1845,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpNotifySink.VTable
 			{
-				public new function HRESULT(ref ISpNotifyTranslator self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) InitWindowMessage;
-				public new function HRESULT(ref ISpNotifyTranslator self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) InitCallback;
-				public new function HRESULT(ref ISpNotifyTranslator self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) InitSpNotifyCallback;
-				public new function HRESULT(ref ISpNotifyTranslator self, HANDLE hEvent, BOOL fCloseHandleOnRelease) InitWin32Event;
-				public new function HRESULT(ref ISpNotifyTranslator self, uint32 dwMilliseconds) Wait;
-				public new function HANDLE(ref ISpNotifyTranslator self) GetEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyTranslator self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) InitWindowMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyTranslator self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) InitCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyTranslator self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) InitSpNotifyCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyTranslator self, HANDLE hEvent, BOOL fCloseHandleOnRelease) InitWin32Event;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpNotifyTranslator self, uint32 dwMilliseconds) Wait;
+				public new function [CallingConvention(.Stdcall)] HANDLE(ref ISpNotifyTranslator self) GetEventHandle;
 			}
 		}
 		[CRepr]
@@ -1876,18 +1876,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 cbData, in uint8 pData) SetData;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pcbData, out uint8 pData) GetData;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, PWSTR pszValue) SetStringValue;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out PWSTR ppszValue) GetStringValue;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 dwValue) SetDWORD;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pdwValue) GetDWORD;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKeyName, out ISpDataKey* ppSubKey) OpenKey;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKey, out ISpDataKey* ppSubKey) CreateKey;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKey) DeleteKey;
-				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName) DeleteValue;
-				public new function HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszSubKeyName) EnumKeys;
-				public new function HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszValueName) EnumValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 cbData, in uint8 pData) SetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pcbData, out uint8 pData) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, PWSTR pszValue) SetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, out PWSTR ppszValue) GetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 dwValue) SetDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pdwValue) GetDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszSubKeyName, out ISpDataKey* ppSubKey) OpenKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszSubKey, out ISpDataKey* ppSubKey) CreateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszSubKey) DeleteKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, PWSTR pszValueName) DeleteValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszSubKeyName) EnumKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszValueName) EnumValues;
 			}
 		}
 		[CRepr]
@@ -1902,7 +1902,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ref ISpRegDataKey self, HKEY hkey, BOOL fReadOnly) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRegDataKey self, HKEY hkey, BOOL fReadOnly) SetKey;
 			}
 		}
 		[CRepr]
@@ -1922,12 +1922,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pszCategoryId, BOOL fCreateIfNotExist) SetId;
-				public new function HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemCategoryId) GetId;
-				public new function HRESULT(ref ISpObjectTokenCategory self, SPDATAKEYLOCATION spdkl, out ISpDataKey* ppDataKey) GetDataKey;
-				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pzsReqAttribs, PWSTR pszOptAttribs, out IEnumSpObjectTokens* ppEnum) EnumTokens;
-				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pszTokenId) SetDefaultTokenId;
-				public new function HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemTokenId) GetDefaultTokenId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, PWSTR pszCategoryId, BOOL fCreateIfNotExist) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemCategoryId) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, SPDATAKEYLOCATION spdkl, out ISpDataKey* ppDataKey) GetDataKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, PWSTR pzsReqAttribs, PWSTR pszOptAttribs, out IEnumSpObjectTokens* ppEnum) EnumTokens;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, PWSTR pszTokenId) SetDefaultTokenId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemTokenId) GetDefaultTokenId;
 			}
 		}
 		[CRepr]
@@ -1951,16 +1951,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ref ISpObjectToken self, PWSTR pszCategoryId, PWSTR pszTokenId, BOOL fCreateIfNotExist) SetId;
-				public new function HRESULT(ref ISpObjectToken self, out PWSTR ppszCoMemTokenId) GetId;
-				public new function HRESULT(ref ISpObjectToken self, out ISpObjectTokenCategory* ppTokenCategory) GetCategory;
-				public new function HRESULT(ref ISpObjectToken self, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppvObject) CreateInstance;
-				public new function HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, out PWSTR ppszFilePath) GetStorageFileName;
-				public new function HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) RemoveStorageFileName;
-				public new function HRESULT(ref ISpObjectToken self, Guid* pclsidCaller) Remove;
-				public new function HRESULT(ref ISpObjectToken self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject, out BOOL pfSupported) IsUISupported;
-				public new function HRESULT(ref ISpObjectToken self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject) DisplayUI;
-				public new function HRESULT(ref ISpObjectToken self, PWSTR pszAttributes, out BOOL pfMatches) MatchesAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, PWSTR pszCategoryId, PWSTR pszTokenId, BOOL fCreateIfNotExist) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, out PWSTR ppszCoMemTokenId) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, out ISpObjectTokenCategory* ppTokenCategory) GetCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppvObject) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, out PWSTR ppszFilePath) GetStorageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) RemoveStorageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, Guid* pclsidCaller) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject, out BOOL pfSupported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectToken self, PWSTR pszAttributes, out BOOL pfMatches) MatchesAttributes;
 			}
 		}
 		[CRepr]
@@ -1975,7 +1975,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpObjectToken.VTable
 			{
-				public new function HRESULT(ref ISpObjectTokenInit self, PWSTR pszCategoryId, PWSTR pszTokenId, ISpDataKey* pDataKey) InitFromDataKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectTokenInit self, PWSTR pszCategoryId, PWSTR pszTokenId, ISpDataKey* pDataKey) InitFromDataKey;
 			}
 		}
 		[CRepr]
@@ -1995,12 +1995,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 celt, out ISpObjectToken* pelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumSpObjectTokens self) Reset;
-				public new function HRESULT(ref IEnumSpObjectTokens self, out IEnumSpObjectTokens* ppEnum) Clone;
-				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 Index, out ISpObjectToken* ppToken) Item;
-				public new function HRESULT(ref IEnumSpObjectTokens self, out uint32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self, uint32 celt, out ISpObjectToken* pelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self, out IEnumSpObjectTokens* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self, uint32 Index, out ISpObjectToken* ppToken) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpObjectTokens self, out uint32 pCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -2016,8 +2016,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpObjectWithToken self, ISpObjectToken* pToken) SetObjectToken;
-				public new function HRESULT(ref ISpObjectWithToken self, ISpObjectToken** ppToken) GetObjectToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectWithToken self, ISpObjectToken* pToken) SetObjectToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpObjectWithToken self, ISpObjectToken** ppToken) GetObjectToken;
 			}
 		}
 		[CRepr]
@@ -2033,8 +2033,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{
-				public new function HRESULT(ref ISpResourceManager self, in Guid guidServiceId, IUnknown* pUnkObject) SetObject;
-				public new function HRESULT(ref ISpResourceManager self, in Guid guidServiceId, in Guid ObjectCLSID, in Guid ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpResourceManager self, in Guid guidServiceId, IUnknown* pUnkObject) SetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpResourceManager self, in Guid guidServiceId, in Guid ObjectCLSID, in Guid ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) GetObject;
 			}
 		}
 		[CRepr]
@@ -2051,9 +2051,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpNotifySource.VTable
 			{
-				public new function HRESULT(ref ISpEventSource self, uint64 ullEventInterest, uint64 ullQueuedInterest) SetInterest;
-				public new function HRESULT(ref ISpEventSource self, uint32 ulCount, out SPEVENT pEventArray, out uint32 pulFetched) GetEvents;
-				public new function HRESULT(ref ISpEventSource self, out SPEVENTSOURCEINFO pInfo) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSource self, uint64 ullEventInterest, uint64 ullQueuedInterest) SetInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSource self, uint32 ulCount, out SPEVENT pEventArray, out uint32 pulFetched) GetEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSource self, out SPEVENTSOURCEINFO pInfo) GetInfo;
 			}
 		}
 		[CRepr]
@@ -2068,7 +2068,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ref ISpEventSource2 self, uint32 ulCount, out SPEVENTEX pEventArray, out uint32 pulFetched) GetEventsEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSource2 self, uint32 ulCount, out SPEVENTEX pEventArray, out uint32 pulFetched) GetEventsEx;
 			}
 		}
 		[CRepr]
@@ -2084,8 +2084,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpEventSink self, in SPEVENT pEventArray, uint32 ulCount) AddEvents;
-				public new function HRESULT(ref ISpEventSink self, out uint64 pullEventInterest) GetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSink self, in SPEVENT pEventArray, uint32 ulCount) AddEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEventSink self, out uint64 pullEventInterest) GetEventInterest;
 			}
 		}
 		[CRepr]
@@ -2100,7 +2100,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(ref ISpStreamFormat self, ref Guid pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormat self, ref Guid pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) GetFormat;
 			}
 		}
 		[CRepr]
@@ -2118,10 +2118,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ref ISpStream self, ref IStream pStream, in Guid rguidFormat, in WAVEFORMATEX pWaveFormatEx) SetBaseStream;
-				public new function HRESULT(ref ISpStream self, out IStream* ppStream) GetBaseStream;
-				public new function HRESULT(ref ISpStream self, PWSTR pszFileName, SPFILEMODE eMode, Guid* pFormatId, WAVEFORMATEX* pWaveFormatEx, uint64 ullEventInterest) BindToFile;
-				public new function HRESULT(ref ISpStream self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStream self, ref IStream pStream, in Guid rguidFormat, in WAVEFORMATEX pWaveFormatEx) SetBaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStream self, out IStream* ppStream) GetBaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStream self, PWSTR pszFileName, SPFILEMODE eMode, Guid* pFormatId, WAVEFORMATEX* pWaveFormatEx, uint64 ullEventInterest) BindToFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStream self) Close;
 			}
 		}
 		[CRepr]
@@ -2141,12 +2141,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream) SetBaseStream;
-				public new function HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat** ppStream) GetBaseStream;
-				public new function HRESULT(ref ISpStreamFormatConverter self, in Guid rguidFormatIdOfConvertedStream, in WAVEFORMATEX pWaveFormatExOfConvertedStream) SetFormat;
-				public new function HRESULT(ref ISpStreamFormatConverter self) ResetSeekPosition;
-				public new function HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetConvertedStream, out uint64 pullOffsetBaseStream) ScaleConvertedToBaseOffset;
-				public new function HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetBaseStream, out uint64 pullOffsetConvertedStream) ScaleBaseToConvertedOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream) SetBaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat** ppStream) GetBaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self, in Guid rguidFormatIdOfConvertedStream, in WAVEFORMATEX pWaveFormatExOfConvertedStream) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self) ResetSeekPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetConvertedStream, out uint64 pullOffsetBaseStream) ScaleConvertedToBaseOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetBaseStream, out uint64 pullOffsetConvertedStream) ScaleBaseToConvertedOffset;
 			}
 		}
 		[CRepr]
@@ -2171,17 +2171,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ref ISpAudio self, SPAUDIOSTATE NewState, uint64 ullReserved) SetState;
-				public new function HRESULT(ref ISpAudio self, in Guid rguidFmtId, in WAVEFORMATEX pWaveFormatEx) SetFormat;
-				public new function HRESULT(ref ISpAudio self, out SPAUDIOSTATUS pStatus) GetStatus;
-				public new function HRESULT(ref ISpAudio self, in SPAUDIOBUFFERINFO pBuffInfo) SetBufferInfo;
-				public new function HRESULT(ref ISpAudio self, out SPAUDIOBUFFERINFO pBuffInfo) GetBufferInfo;
-				public new function HRESULT(ref ISpAudio self, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWaveFormatEx) GetDefaultFormat;
-				public new function HANDLE(ref ISpAudio self) EventHandle;
-				public new function HRESULT(ref ISpAudio self, out uint32 pLevel) GetVolumeLevel;
-				public new function HRESULT(ref ISpAudio self, uint32 Level) SetVolumeLevel;
-				public new function HRESULT(ref ISpAudio self, out uint32 pcbSize) GetBufferNotifySize;
-				public new function HRESULT(ref ISpAudio self, uint32 cbSize) SetBufferNotifySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, SPAUDIOSTATE NewState, uint64 ullReserved) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, in Guid rguidFmtId, in WAVEFORMATEX pWaveFormatEx) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, out SPAUDIOSTATUS pStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, in SPAUDIOBUFFERINFO pBuffInfo) SetBufferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, out SPAUDIOBUFFERINFO pBuffInfo) GetBufferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWaveFormatEx) GetDefaultFormat;
+				public new function [CallingConvention(.Stdcall)] HANDLE(ref ISpAudio self) EventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, out uint32 pLevel) GetVolumeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, uint32 Level) SetVolumeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, out uint32 pcbSize) GetBufferNotifySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpAudio self, uint32 cbSize) SetBufferNotifySize;
 			}
 		}
 		[CRepr]
@@ -2200,11 +2200,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpAudio.VTable
 			{
-				public new function HRESULT(ref ISpMMSysAudio self, out uint32 puDeviceId) GetDeviceId;
-				public new function HRESULT(ref ISpMMSysAudio self, uint32 uDeviceId) SetDeviceId;
-				public new function HRESULT(ref ISpMMSysAudio self, void** pHandle) GetMMHandle;
-				public new function HRESULT(ref ISpMMSysAudio self, out uint32 puLineId) GetLineId;
-				public new function HRESULT(ref ISpMMSysAudio self, uint32 uLineId) SetLineId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpMMSysAudio self, out uint32 puDeviceId) GetDeviceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpMMSysAudio self, uint32 uDeviceId) SetDeviceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpMMSysAudio self, void** pHandle) GetMMHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpMMSysAudio self, out uint32 puLineId) GetLineId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpMMSysAudio self, uint32 uLineId) SetLineId;
 			}
 		}
 		[CRepr]
@@ -2220,8 +2220,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpTranscript self, PWSTR* ppszTranscript) GetTranscript;
-				public new function HRESULT(ref ISpTranscript self, PWSTR pszTranscript) AppendTranscript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpTranscript self, PWSTR* ppszTranscript) GetTranscript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpTranscript self, PWSTR pszTranscript) AppendTranscript;
 			}
 		}
 		[CRepr]
@@ -2241,12 +2241,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, uint32 dwFlags, out SPWORDPRONUNCIATIONLIST pWordPronunciationList) GetPronunciations;
-				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) AddPronunciation;
-				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) RemovePronunciation;
-				public new function HRESULT(ref ISpLexicon self, out uint32 pdwGeneration) GetGeneration;
-				public new function HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetGenerationChange;
-				public new function HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, uint32* pdwCookie, out SPWORDLIST pWordList) GetWords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, uint32 dwFlags, out SPWORDPRONUNCIATIONLIST pWordPronunciationList) GetPronunciations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) AddPronunciation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) RemovePronunciation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, out uint32 pdwGeneration) GetGeneration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetGenerationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, uint32* pdwCookie, out SPWORDLIST pWordList) GetWords;
 			}
 		}
 		[CRepr]
@@ -2261,7 +2261,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpLexicon.VTable
 			{
-				public new function HRESULT(ref ISpContainerLexicon self, ISpLexicon* pAddLexicon, uint32 dwFlags) AddLexicon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpContainerLexicon self, ISpLexicon* pAddLexicon, uint32 dwFlags) AddLexicon;
 			}
 		}
 		[CRepr]
@@ -2283,14 +2283,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) AddShortcut;
-				public new function HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) RemoveShortcut;
-				public new function HRESULT(ref ISpShortcut self, uint16 LangID, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcuts;
-				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration) GetGeneration;
-				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetWordsFromGenerationChange;
-				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPWORDLIST pWordList) GetWords;
-				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcutsForGeneration;
-				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPSHORTCUTPAIRLIST pShortcutpairList) GetGenerationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) AddShortcut;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) RemoveShortcut;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, uint16 LangID, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcuts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, out uint32 pdwGeneration) GetGeneration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetWordsFromGenerationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPWORDLIST pWordList) GetWords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcutsForGeneration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPSHORTCUTPAIRLIST pShortcutpairList) GetGenerationChange;
 			}
 		}
 		[CRepr]
@@ -2306,8 +2306,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpObjectWithToken.VTable
 			{
-				public new function HRESULT(ref ISpPhoneConverter self, PWSTR pszPhone, out uint16 pId) PhoneToId;
-				public new function HRESULT(ref ISpPhoneConverter self, ref uint16 pId, PWSTR pszPhone) IdToPhone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneConverter self, PWSTR pszPhone, out uint16 pId) PhoneToId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneConverter self, ref uint16 pId, PWSTR pszPhone) IdToPhone;
 			}
 		}
 		[CRepr]
@@ -2326,11 +2326,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, out uint16 pLangID) GetLangId;
-				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, uint16 LangID) SetLangId;
-				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) SAPI2UPS;
-				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) UPS2SAPI;
-				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, uint32 cSrcLength, BOOL bSAPI2UPS, out uint32 pcMaxDestLength) GetMaxConvertLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetConverter self, out uint16 pLangID) GetLangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetConverter self, uint16 LangID) SetLangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) SAPI2UPS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) UPS2SAPI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetConverter self, uint32 cSrcLength, BOOL bSAPI2UPS, out uint32 pcMaxDestLength) GetMaxConvertLength;
 			}
 		}
 		[CRepr]
@@ -2346,8 +2346,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpPhoneticAlphabetSelection self, out BOOL pfIsUPS) IsAlphabetUPS;
-				public new function HRESULT(ref ISpPhoneticAlphabetSelection self, BOOL fForceUPS) SetAlphabetToUPS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetSelection self, out BOOL pfIsUPS) IsAlphabetUPS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhoneticAlphabetSelection self, BOOL fForceUPS) SetAlphabetToUPS;
 			}
 		}
 		[CRepr]
@@ -2386,31 +2386,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ref ISpVoice self, ref IUnknown pUnkOutput, BOOL fAllowFormatChanges) SetOutput;
-				public new function HRESULT(ref ISpVoice self, out ISpObjectToken* ppObjectToken) GetOutputObjectToken;
-				public new function HRESULT(ref ISpVoice self, out ISpStreamFormat* ppStream) GetOutputStream;
-				public new function HRESULT(ref ISpVoice self) Pause;
-				public new function HRESULT(ref ISpVoice self) Resume;
-				public new function HRESULT(ref ISpVoice self, ref ISpObjectToken pToken) SetVoice;
-				public new function HRESULT(ref ISpVoice self, out ISpObjectToken* ppToken) GetVoice;
-				public new function HRESULT(ref ISpVoice self, PWSTR pwcs, uint32 dwFlags, uint32* pulStreamNumber) Speak;
-				public new function HRESULT(ref ISpVoice self, ref IStream pStream, uint32 dwFlags, uint32* pulStreamNumber) SpeakStream;
-				public new function HRESULT(ref ISpVoice self, out SPVOICESTATUS pStatus, out PWSTR ppszLastBookmark) GetStatus;
-				public new function HRESULT(ref ISpVoice self, PWSTR pItemType, int32 lNumItems, out uint32 pulNumSkipped) Skip;
-				public new function HRESULT(ref ISpVoice self, SPVPRIORITY ePriority) SetPriority;
-				public new function HRESULT(ref ISpVoice self, out SPVPRIORITY pePriority) GetPriority;
-				public new function HRESULT(ref ISpVoice self, SPEVENTENUM eBoundary) SetAlertBoundary;
-				public new function HRESULT(ref ISpVoice self, out SPEVENTENUM peBoundary) GetAlertBoundary;
-				public new function HRESULT(ref ISpVoice self, int32 RateAdjust) SetRate;
-				public new function HRESULT(ref ISpVoice self, out int32 pRateAdjust) GetRate;
-				public new function HRESULT(ref ISpVoice self, uint16 usVolume) SetVolume;
-				public new function HRESULT(ref ISpVoice self, out uint16 pusVolume) GetVolume;
-				public new function HRESULT(ref ISpVoice self, uint32 msTimeout) WaitUntilDone;
-				public new function HRESULT(ref ISpVoice self, uint32 msTimeout) SetSyncSpeakTimeout;
-				public new function HRESULT(ref ISpVoice self, out uint32 pmsTimeout) GetSyncSpeakTimeout;
-				public new function HANDLE(ref ISpVoice self) SpeakCompleteEvent;
-				public new function HRESULT(ref ISpVoice self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
-				public new function HRESULT(ref ISpVoice self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, ref IUnknown pUnkOutput, BOOL fAllowFormatChanges) SetOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out ISpObjectToken* ppObjectToken) GetOutputObjectToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out ISpStreamFormat* ppStream) GetOutputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, ref ISpObjectToken pToken) SetVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out ISpObjectToken* ppToken) GetVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, PWSTR pwcs, uint32 dwFlags, uint32* pulStreamNumber) Speak;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, ref IStream pStream, uint32 dwFlags, uint32* pulStreamNumber) SpeakStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out SPVOICESTATUS pStatus, out PWSTR ppszLastBookmark) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, PWSTR pItemType, int32 lNumItems, out uint32 pulNumSkipped) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, SPVPRIORITY ePriority) SetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out SPVPRIORITY pePriority) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, SPEVENTENUM eBoundary) SetAlertBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out SPEVENTENUM peBoundary) GetAlertBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, int32 RateAdjust) SetRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out int32 pRateAdjust) GetRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, uint16 usVolume) SetVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out uint16 pusVolume) GetVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, uint32 msTimeout) WaitUntilDone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, uint32 msTimeout) SetSyncSpeakTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, out uint32 pmsTimeout) GetSyncSpeakTimeout;
+				public new function [CallingConvention(.Stdcall)] HANDLE(ref ISpVoice self) SpeakCompleteEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpVoice self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
 			}
 		}
 		[CRepr]
@@ -2428,10 +2428,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpPhrase self, out SPPHRASE* ppCoMemPhrase) GetPhrase;
-				public new function HRESULT(ref ISpPhrase self, out SPSERIALIZEDPHRASE* ppCoMemPhrase) GetSerializedPhrase;
-				public new function HRESULT(ref ISpPhrase self, uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, out PWSTR ppszCoMemText, uint8* pbDisplayAttributes) GetText;
-				public new function HRESULT(ref ISpPhrase self, uint32 dwValueTypes) Discard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase self, out SPPHRASE* ppCoMemPhrase) GetPhrase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase self, out SPSERIALIZEDPHRASE* ppCoMemPhrase) GetSerializedPhrase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase self, uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, out PWSTR ppszCoMemText, uint8* pbDisplayAttributes) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase self, uint32 dwValueTypes) Discard;
 			}
 		}
 		[CRepr]
@@ -2447,8 +2447,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ref ISpPhraseAlt self, out ISpPhrase* ppParent, out uint32 pulStartElementInParent, out uint32 pcElementsInParent, out uint32 pcElementsInAlt) GetAltInfo;
-				public new function HRESULT(ref ISpPhraseAlt self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhraseAlt self, out ISpPhrase* ppParent, out uint32 pulStartElementInParent, out uint32 pcElementsInParent, out uint32 pcElementsInAlt) GetAltInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhraseAlt self) Commit;
 			}
 		}
 		[CRepr]
@@ -2465,9 +2465,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ref ISpPhrase2 self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
-				public new function HRESULT(ref ISpPhrase2 self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
-				public new function HRESULT(ref ISpPhrase2 self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase2 self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase2 self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpPhrase2 self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
 			}
 		}
 		[CRepr]
@@ -2488,13 +2488,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ref ISpRecoResult self, out SPRECORESULTTIMES pTimes) GetResultTimes;
-				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, out uint32 pcPhrasesReturned) GetAlternates;
-				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
-				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 dwFlags, out uint32 pulStreamNumber) SpeakAudio;
-				public new function HRESULT(ref ISpRecoResult self, out SPSERIALIZEDRESULT* ppCoMemSerializedResult) Serialize;
-				public new function HRESULT(ref ISpRecoResult self, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) ScaleAudio;
-				public new function HRESULT(ref ISpRecoResult self, out ISpRecoContext* ppRecoContext) GetRecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, out SPRECORESULTTIMES pTimes) GetResultTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, out uint32 pcPhrasesReturned) GetAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 dwFlags, out uint32 pulStreamNumber) SpeakAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, out SPSERIALIZEDRESULT* ppCoMemSerializedResult) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) ScaleAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult self, out ISpRecoContext* ppRecoContext) GetRecoContext;
 			}
 		}
 		[CRepr]
@@ -2511,9 +2511,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpRecoResult.VTable
 			{
-				public new function HRESULT(ref ISpRecoResult2 self, ref ISpPhraseAlt pPhraseAlt, out ISpRecoResult* ppNewResult) CommitAlternate;
-				public new function HRESULT(ref ISpRecoResult2 self, uint32 ulStartElement, uint32 cElements, PWSTR pszCorrectedData, uint32 eCommitFlags) CommitText;
-				public new function HRESULT(ref ISpRecoResult2 self, PWSTR pszFeedback, BOOL fSuccessful) SetTextFeedback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult2 self, ref ISpPhraseAlt pPhraseAlt, out ISpRecoResult* ppNewResult) CommitAlternate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult2 self, uint32 ulStartElement, uint32 cElements, PWSTR pszCorrectedData, uint32 eCommitFlags) CommitText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoResult2 self, PWSTR pszFeedback, BOOL fSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -2529,8 +2529,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpRecoResult.VTable
 			{
-				public new function HRESULT(ref ISpXMLRecoResult self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
-				public new function HRESULT(ref ISpXMLRecoResult self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpXMLRecoResult self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpXMLRecoResult self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
 			}
 		}
 		[CRepr]
@@ -2552,14 +2552,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpGrammarBuilder self, uint16 NewLanguage) ResetGrammar;
-				public new function HRESULT(ref ISpGrammarBuilder self, PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, out SPSTATEHANDLE__* phInitialState) GetRule;
-				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState) ClearRule;
-				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState, out SPSTATEHANDLE__* phState) CreateNewState;
-				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, in SPPROPERTYINFO pPropInfo) AddWordTransition;
-				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, out SPSTATEHANDLE__ hRule, float Weight, in SPPROPERTYINFO pPropInfo) AddRuleTransition;
-				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) AddResource;
-				public new function HRESULT(ref ISpGrammarBuilder self, uint32 dwReserved) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, uint16 NewLanguage) ResetGrammar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, out SPSTATEHANDLE__* phInitialState) GetRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState) ClearRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState, out SPSTATEHANDLE__* phState) CreateNewState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, in SPPROPERTYINFO pPropInfo) AddWordTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, out SPSTATEHANDLE__ hRule, float Weight, in SPPROPERTYINFO pPropInfo) AddRuleTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) AddResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder self, uint32 dwReserved) Commit;
 			}
 		}
 		[CRepr]
@@ -2591,24 +2591,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpGrammarBuilder.VTable
 			{
-				public new function HRESULT(ref ISpRecoGrammar self, out uint64 pullGrammarId) GetGrammarId;
-				public new function HRESULT(ref ISpRecoGrammar self, out ISpRecoContext* ppRecoCtxt) GetRecoContext;
-				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszFileName, SPLOADOPTIONS Options) LoadCmdFromFile;
-				public new function HRESULT(ref ISpRecoGrammar self, in Guid rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) LoadCmdFromObject;
-				public new function HRESULT(ref ISpRecoGrammar self, HINSTANCE hModule, PWSTR pszResourceName, PWSTR pszResourceType, uint16 wLanguage, SPLOADOPTIONS Options) LoadCmdFromResource;
-				public new function HRESULT(ref ISpRecoGrammar self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options) LoadCmdFromMemory;
-				public new function HRESULT(ref ISpRecoGrammar self, in Guid rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) LoadCmdFromProprietaryGrammar;
-				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszName, void* pReserved, SPRULESTATE NewState) SetRuleState;
-				public new function HRESULT(ref ISpRecoGrammar self, uint32 ulRuleId, SPRULESTATE NewState) SetRuleIdState;
-				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszTopicName, SPLOADOPTIONS Options) LoadDictation;
-				public new function HRESULT(ref ISpRecoGrammar self) UnloadDictation;
-				public new function HRESULT(ref ISpRecoGrammar self, SPRULESTATE NewState) SetDictationState;
-				public new function HRESULT(ref ISpRecoGrammar self, char16* pText, uint32 cchText, in SPTEXTSELECTIONINFO pInfo) SetWordSequenceData;
-				public new function HRESULT(ref ISpRecoGrammar self, in SPTEXTSELECTIONINFO pInfo) SetTextSelection;
-				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszWord, out SPWORDPRONOUNCEABLE pWordPronounceable) IsPronounceable;
-				public new function HRESULT(ref ISpRecoGrammar self, SPGRAMMARSTATE eGrammarState) SetGrammarState;
-				public new function HRESULT(ref ISpRecoGrammar self, ref IStream pStream, PWSTR* ppszCoMemErrorText) SaveCmd;
-				public new function HRESULT(ref ISpRecoGrammar self, out SPGRAMMARSTATE peGrammarState) GetGrammarState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, out uint64 pullGrammarId) GetGrammarId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, out ISpRecoContext* ppRecoCtxt) GetRecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, PWSTR pszFileName, SPLOADOPTIONS Options) LoadCmdFromFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, in Guid rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) LoadCmdFromObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, HINSTANCE hModule, PWSTR pszResourceName, PWSTR pszResourceType, uint16 wLanguage, SPLOADOPTIONS Options) LoadCmdFromResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options) LoadCmdFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, in Guid rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) LoadCmdFromProprietaryGrammar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, PWSTR pszName, void* pReserved, SPRULESTATE NewState) SetRuleState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, uint32 ulRuleId, SPRULESTATE NewState) SetRuleIdState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, PWSTR pszTopicName, SPLOADOPTIONS Options) LoadDictation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self) UnloadDictation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, SPRULESTATE NewState) SetDictationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, char16* pText, uint32 cchText, in SPTEXTSELECTIONINFO pInfo) SetWordSequenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, in SPTEXTSELECTIONINFO pInfo) SetTextSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, PWSTR pszWord, out SPWORDPRONOUNCEABLE pWordPronounceable) IsPronounceable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, SPGRAMMARSTATE eGrammarState) SetGrammarState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, ref IStream pStream, PWSTR* ppszCoMemErrorText) SaveCmd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar self, out SPGRAMMARSTATE peGrammarState) GetGrammarState;
 			}
 		}
 		[CRepr]
@@ -2624,8 +2624,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpGrammarBuilder2 self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) AddTextSubset;
-				public new function HRESULT(ref ISpGrammarBuilder2 self, PHONETICALPHABET phoneticALphabet) SetPhoneticAlphabet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder2 self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) AddTextSubset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpGrammarBuilder2 self, PHONETICALPHABET phoneticALphabet) SetPhoneticAlphabet;
 			}
 		}
 		[CRepr]
@@ -2647,14 +2647,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpRecoGrammar2 self, out SPRULE* ppCoMemRules, out uint32 puNumRules) GetRules;
-				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszFileName, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromFile2;
-				public new function HRESULT(ref ISpRecoGrammar2 self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromMemory2;
-				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, int32 nRulePriority) SetRulePriority;
-				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, float flWeight) SetRuleWeight;
-				public new function HRESULT(ref ISpRecoGrammar2 self, float flWeight) SetDictationWeight;
-				public new function HRESULT(ref ISpRecoGrammar2 self, ref ISpeechResourceLoader pLoader) SetGrammarLoader;
-				public new function HRESULT(ref ISpRecoGrammar2 self, ref IInternetSecurityManager pSMLSecurityManager) SetSMLSecurityManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, out SPRULE* ppCoMemRules, out uint32 puNumRules) GetRules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, PWSTR pszFileName, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromMemory2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, int32 nRulePriority) SetRulePriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, float flWeight) SetRuleWeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, float flWeight) SetDictationWeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, ref ISpeechResourceLoader pLoader) SetGrammarLoader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoGrammar2 self, ref IInternetSecurityManager pSMLSecurityManager) SetSMLSecurityManager;
 			}
 		}
 		[CRepr]
@@ -2671,9 +2671,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, int16 fAlwaysReload, out IUnknown* pStream, BSTR* pbstrMIMEType, out int16 pfModified, BSTR* pbstrRedirectUrl) LoadResource;
-				public new function HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, out BSTR pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) GetLocalCopy;
-				public new function HRESULT(ref ISpeechResourceLoader self, BSTR pbstrLocalPath) ReleaseLocalCopy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, int16 fAlwaysReload, out IUnknown* pStream, BSTR* pbstrMIMEType, out int16 pfModified, BSTR* pbstrRedirectUrl) LoadResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, out BSTR pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) GetLocalCopy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechResourceLoader self, BSTR pbstrLocalPath) ReleaseLocalCopy;
 			}
 		}
 		[CRepr]
@@ -2705,24 +2705,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ref ISpRecoContext self, out ISpRecognizer* ppRecognizer) GetRecognizer;
-				public new function HRESULT(ref ISpRecoContext self, uint64 ullGrammarId, out ISpRecoGrammar* ppGrammar) CreateGrammar;
-				public new function HRESULT(ref ISpRecoContext self, out SPRECOCONTEXTSTATUS pStatus) GetStatus;
-				public new function HRESULT(ref ISpRecoContext self, out uint32 pcAlternates) GetMaxAlternates;
-				public new function HRESULT(ref ISpRecoContext self, uint32 cAlternates) SetMaxAlternates;
-				public new function HRESULT(ref ISpRecoContext self, SPAUDIOOPTIONS Options, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) SetAudioOptions;
-				public new function HRESULT(ref ISpRecoContext self, out SPAUDIOOPTIONS pOptions, out Guid pAudioFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetAudioOptions;
-				public new function HRESULT(ref ISpRecoContext self, in SPSERIALIZEDRESULT pSerializedResult, out ISpRecoResult* ppResult) DeserializeResult;
-				public new function HRESULT(ref ISpRecoContext self, SPBOOKMARKOPTIONS Options, uint64 ullStreamPosition, LPARAM lparamEvent) Bookmark;
-				public new function HRESULT(ref ISpRecoContext self, PWSTR pAdaptationData, uint32 cch) SetAdaptationData;
-				public new function HRESULT(ref ISpRecoContext self, uint32 dwReserved) Pause;
-				public new function HRESULT(ref ISpRecoContext self, uint32 dwReserved) Resume;
-				public new function HRESULT(ref ISpRecoContext self, ref ISpVoice pVoice, BOOL fAllowFormatChanges) SetVoice;
-				public new function HRESULT(ref ISpRecoContext self, out ISpVoice* ppVoice) GetVoice;
-				public new function HRESULT(ref ISpRecoContext self, uint64 ullEventInterest) SetVoicePurgeEvent;
-				public new function HRESULT(ref ISpRecoContext self, out uint64 pullEventInterest) GetVoicePurgeEvent;
-				public new function HRESULT(ref ISpRecoContext self, SPCONTEXTSTATE eContextState) SetContextState;
-				public new function HRESULT(ref ISpRecoContext self, out SPCONTEXTSTATE peContextState) GetContextState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out ISpRecognizer* ppRecognizer) GetRecognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, uint64 ullGrammarId, out ISpRecoGrammar* ppGrammar) CreateGrammar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out SPRECOCONTEXTSTATUS pStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out uint32 pcAlternates) GetMaxAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, uint32 cAlternates) SetMaxAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, SPAUDIOOPTIONS Options, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) SetAudioOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out SPAUDIOOPTIONS pOptions, out Guid pAudioFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetAudioOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, in SPSERIALIZEDRESULT pSerializedResult, out ISpRecoResult* ppResult) DeserializeResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, SPBOOKMARKOPTIONS Options, uint64 ullStreamPosition, LPARAM lparamEvent) Bookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, PWSTR pAdaptationData, uint32 cch) SetAdaptationData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, uint32 dwReserved) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, uint32 dwReserved) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, ref ISpVoice pVoice, BOOL fAllowFormatChanges) SetVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out ISpVoice* ppVoice) GetVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, uint64 ullEventInterest) SetVoicePurgeEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out uint64 pullEventInterest) GetVoicePurgeEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, SPCONTEXTSTATE eContextState) SetContextState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext self, out SPCONTEXTSTATE peContextState) GetContextState;
 			}
 		}
 		[CRepr]
@@ -2739,9 +2739,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpRecoContext2 self, uint32 eGrammarOptions) SetGrammarOptions;
-				public new function HRESULT(ref ISpRecoContext2 self, out uint32 peGrammarOptions) GetGrammarOptions;
-				public new function HRESULT(ref ISpRecoContext2 self, PWSTR pAdaptationData, uint32 cch, PWSTR pTopicName, uint32 eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance) SetAdaptationData2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext2 self, uint32 eGrammarOptions) SetGrammarOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext2 self, out uint32 peGrammarOptions) GetGrammarOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecoContext2 self, PWSTR pAdaptationData, uint32 cch, PWSTR pTopicName, uint32 eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance) SetAdaptationData2;
 			}
 		}
 		[CRepr]
@@ -2759,10 +2759,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpProperties self, PWSTR pName, int32 lValue) SetPropertyNum;
-				public new function HRESULT(ref ISpProperties self, PWSTR pName, out int32 plValue) GetPropertyNum;
-				public new function HRESULT(ref ISpProperties self, PWSTR pName, PWSTR pValue) SetPropertyString;
-				public new function HRESULT(ref ISpProperties self, PWSTR pName, out PWSTR ppCoMemValue) GetPropertyString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpProperties self, PWSTR pName, int32 lValue) SetPropertyNum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpProperties self, PWSTR pName, out int32 plValue) GetPropertyNum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpProperties self, PWSTR pName, PWSTR pValue) SetPropertyString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpProperties self, PWSTR pName, out PWSTR ppCoMemValue) GetPropertyString;
 			}
 		}
 		[CRepr]
@@ -2792,22 +2792,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpProperties.VTable
 			{
-				public new function HRESULT(ref ISpRecognizer self, ref ISpObjectToken pRecognizer) SetRecognizer;
-				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppRecognizer) GetRecognizer;
-				public new function HRESULT(ref ISpRecognizer self, IUnknown* pUnkInput, BOOL fAllowFormatChanges) SetInput;
-				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetInputObjectToken;
-				public new function HRESULT(ref ISpRecognizer self, out ISpStreamFormat* ppStream) GetInputStream;
-				public new function HRESULT(ref ISpRecognizer self, out ISpRecoContext* ppNewCtxt) CreateRecoContext;
-				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetRecoProfile;
-				public new function HRESULT(ref ISpRecognizer self, ref ISpObjectToken pToken) SetRecoProfile;
-				public new function HRESULT(ref ISpRecognizer self) IsSharedInstance;
-				public new function HRESULT(ref ISpRecognizer self, out SPRECOSTATE pState) GetRecoState;
-				public new function HRESULT(ref ISpRecognizer self, SPRECOSTATE NewState) SetRecoState;
-				public new function HRESULT(ref ISpRecognizer self, out SPRECOGNIZERSTATUS pStatus) GetStatus;
-				public new function HRESULT(ref ISpRecognizer self, SPWAVEFORMATTYPE WaveFormatType, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetFormat;
-				public new function HRESULT(ref ISpRecognizer self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
-				public new function HRESULT(ref ISpRecognizer self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
-				public new function HRESULT(ref ISpRecognizer self, ref ISpPhrase pPhrase) EmulateRecognition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, ref ISpObjectToken pRecognizer) SetRecognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppRecognizer) GetRecognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, IUnknown* pUnkInput, BOOL fAllowFormatChanges) SetInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetInputObjectToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out ISpStreamFormat* ppStream) GetInputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out ISpRecoContext* ppNewCtxt) CreateRecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetRecoProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, ref ISpObjectToken pToken) SetRecoProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self) IsSharedInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out SPRECOSTATE pState) GetRecoState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, SPRECOSTATE NewState) SetRecoState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, out SPRECOGNIZERSTATUS pStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, SPWAVEFORMATTYPE WaveFormatType, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer self, ref ISpPhrase pPhrase) EmulateRecognition;
 			}
 		}
 		[CRepr]
@@ -2823,8 +2823,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpSerializeState self, uint8** ppbData, out uint32 pulSize, uint32 dwReserved) GetSerializedState;
-				public new function HRESULT(ref ISpSerializeState self, ref uint8 pbData, uint32 ulSize, uint32 dwReserved) SetSerializedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpSerializeState self, uint8** ppbData, out uint32 pulSize, uint32 dwReserved) GetSerializedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpSerializeState self, ref uint8 pbData, uint32 ulSize, uint32 dwReserved) SetSerializedState;
 			}
 		}
 		[CRepr]
@@ -2841,9 +2841,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpRecognizer2 self, ref ISpPhrase pPhrase, uint32 dwCompareFlags) EmulateRecognitionEx;
-				public new function HRESULT(ref ISpRecognizer2 self, BOOL fDoingTraining, BOOL fAdaptFromTrainingData) SetTrainingState;
-				public new function HRESULT(ref ISpRecognizer2 self) ResetAcousticModelAdaptation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer2 self, ref ISpPhrase pPhrase, uint32 dwCompareFlags) EmulateRecognitionEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer2 self, BOOL fDoingTraining, BOOL fAdaptFromTrainingData) SetTrainingState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpRecognizer2 self) ResetAcousticModelAdaptation;
 			}
 		}
 		[CRepr]
@@ -2859,8 +2859,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPNORMALIZATIONLIST pNormalizationList) Normalize;
-				public new function HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPWORDPRONUNCIATIONLIST pEnginePronunciationList) GetPronunciations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPNORMALIZATIONLIST pNormalizationList) Normalize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPWORDPRONUNCIATIONLIST pEnginePronunciationList) GetPronunciations;
 			}
 		}
 		[CRepr]
@@ -2876,8 +2876,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpDisplayAlternates self, in SPDISPLAYPHRASE pPhrase, uint32 cRequestCount, out SPDISPLAYPHRASE* ppCoMemPhrases, out uint32 pcPhrasesReturned) GetDisplayAlternates;
-				public new function HRESULT(ref ISpDisplayAlternates self, uint32 ulTrailSpace) SetFullStopTrailSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDisplayAlternates self, in SPDISPLAYPHRASE pPhrase, uint32 cRequestCount, out SPDISPLAYPHRASE* ppCoMemPhrases, out uint32 pcPhrasesReturned) GetDisplayAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpDisplayAlternates self, uint32 ulTrailSpace) SetFullStopTrailSpace;
 			}
 		}
 		[CRepr]
@@ -2903,18 +2903,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, VARIANT Value) SetBinaryValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, out VARIANT Value) GetBinaryValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR Value) SetStringValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR* Value) GetStringValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, int32 Value) SetLongValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, out int32 Value) GetLongValue;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) OpenKey;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) CreateKey;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName) DeleteKey;
-				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName) DeleteValue;
-				public new function HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* SubKeyName) EnumKeys;
-				public new function HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* ValueName) EnumValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, VARIANT Value) SetBinaryValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, out VARIANT Value) GetBinaryValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR Value) SetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR* Value) GetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, int32 Value) SetLongValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName, out int32 Value) GetLongValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) OpenKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) CreateKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR SubKeyName) DeleteKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, BSTR ValueName) DeleteValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* SubKeyName) EnumKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* ValueName) EnumValues;
 			}
 		}
 		[CRepr]
@@ -2941,19 +2941,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR* ObjectId) get_Id;
-				public new function HRESULT(ref ISpeechObjectToken self, ISpeechDataKey** DataKey) get_DataKey;
-				public new function HRESULT(ref ISpeechObjectToken self, ISpeechObjectTokenCategory** Category) get_Category;
-				public new function HRESULT(ref ISpeechObjectToken self, int32 Locale, BSTR* Description) GetDescription;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR Id, BSTR CategoryID, int16 CreateIfNotExist) SetId;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR AttributeName, BSTR* AttributeValue) GetAttribute;
-				public new function HRESULT(ref ISpeechObjectToken self, IUnknown* pUnkOuter, SpeechTokenContext ClsContext, IUnknown** Object) CreateInstance;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID) Remove;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, BSTR FileName, SpeechTokenShellFolder Folder, BSTR* FilePath) GetStorageFileName;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, int16 DeleteFileA) RemoveStorageFileName;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object, out int16 Supported) IsUISupported;
-				public new function HRESULT(ref ISpeechObjectToken self, int32 hWnd, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object) DisplayUI;
-				public new function HRESULT(ref ISpeechObjectToken self, BSTR Attributes, out int16 Matches) MatchesAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR* ObjectId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, ISpeechDataKey** DataKey) get_DataKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, ISpeechObjectTokenCategory** Category) get_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, int32 Locale, BSTR* Description) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR Id, BSTR CategoryID, int16 CreateIfNotExist) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR AttributeName, BSTR* AttributeValue) GetAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, IUnknown* pUnkOuter, SpeechTokenContext ClsContext, IUnknown** Object) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, BSTR FileName, SpeechTokenShellFolder Folder, BSTR* FilePath) GetStorageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, int16 DeleteFileA) RemoveStorageFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object, out int16 Supported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, int32 hWnd, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectToken self, BSTR Attributes, out int16 Matches) MatchesAttributes;
 			}
 		}
 		[CRepr]
@@ -2970,9 +2970,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechObjectTokens self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechObjectTokens self, int32 Index, ISpeechObjectToken** Token) Item;
-				public new function HRESULT(ref ISpeechObjectTokens self, IUnknown** ppEnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokens self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokens self, int32 Index, ISpeechObjectToken** Token) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokens self, IUnknown** ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -2992,12 +2992,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR* Id) get_Id;
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR TokenId) put_Default;
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR* TokenId) get_Default;
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR Id, int16 CreateIfNotExist) SetId;
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, SpeechDataKeyLocation Location, ISpeechDataKey** DataKey) GetDataKey;
-				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** Tokens) EnumerateTokens;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, BSTR* Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, BSTR TokenId) put_Default;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, BSTR* TokenId) get_Default;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, BSTR Id, int16 CreateIfNotExist) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, SpeechDataKeyLocation Location, ISpeechDataKey** DataKey) GetDataKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechObjectTokenCategory self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** Tokens) EnumerateTokens;
 			}
 		}
 		[CRepr]
@@ -3017,12 +3017,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 MinNotification) get_MinNotification;
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 MinNotification) put_MinNotification;
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 BufferSize) get_BufferSize;
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 BufferSize) put_BufferSize;
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 EventBias) get_EventBias;
-				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 EventBias) put_EventBias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, out int32 MinNotification) get_MinNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, int32 MinNotification) put_MinNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, out int32 BufferSize) get_BufferSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, int32 BufferSize) put_BufferSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, out int32 EventBias) get_EventBias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioBufferInfo self, int32 EventBias) put_EventBias;
 			}
 		}
 		[CRepr]
@@ -3041,11 +3041,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechAudioStatus self, out int32 FreeBufferSpace) get_FreeBufferSpace;
-				public new function HRESULT(ref ISpeechAudioStatus self, out int32 NonBlockingIO) get_NonBlockingIO;
-				public new function HRESULT(ref ISpeechAudioStatus self, out SpeechAudioState State) get_State;
-				public new function HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentSeekPosition) get_CurrentSeekPosition;
-				public new function HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentDevicePosition) get_CurrentDevicePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioStatus self, out int32 FreeBufferSpace) get_FreeBufferSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioStatus self, out int32 NonBlockingIO) get_NonBlockingIO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioStatus self, out SpeechAudioState State) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentSeekPosition) get_CurrentSeekPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentDevicePosition) get_CurrentDevicePosition;
 			}
 		}
 		[CRepr]
@@ -3065,12 +3065,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechAudioFormat self, out SpeechAudioFormatType AudioFormat) get_Type;
-				public new function HRESULT(ref ISpeechAudioFormat self, SpeechAudioFormatType AudioFormat) put_Type;
-				public new function HRESULT(ref ISpeechAudioFormat self, BSTR* Guid) get_Guid;
-				public new function HRESULT(ref ISpeechAudioFormat self, BSTR Guid) put_Guid;
-				public new function HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx** SpeechWaveFormatEx) GetWaveFormatEx;
-				public new function HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx* SpeechWaveFormatEx) SetWaveFormatEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, out SpeechAudioFormatType AudioFormat) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, SpeechAudioFormatType AudioFormat) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, BSTR* Guid) get_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, BSTR Guid) put_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx** SpeechWaveFormatEx) GetWaveFormatEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx* SpeechWaveFormatEx) SetWaveFormatEx;
 			}
 		}
 		[CRepr]
@@ -3098,20 +3098,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 FormatTag) get_FormatTag;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 FormatTag) put_FormatTag;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 Channels) get_Channels;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 Channels) put_Channels;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int32 SamplesPerSec) get_SamplesPerSec;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int32 SamplesPerSec) put_SamplesPerSec;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int32 AvgBytesPerSec) get_AvgBytesPerSec;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int32 AvgBytesPerSec) put_AvgBytesPerSec;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 BlockAlign) get_BlockAlign;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 BlockAlign) put_BlockAlign;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 BitsPerSample) get_BitsPerSample;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 BitsPerSample) put_BitsPerSample;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, out VARIANT ExtraData) get_ExtraData;
-				public new function HRESULT(ref ISpeechWaveFormatEx self, VARIANT ExtraData) put_ExtraData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int16 FormatTag) get_FormatTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int16 FormatTag) put_FormatTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int16 Channels) get_Channels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int16 Channels) put_Channels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int32 SamplesPerSec) get_SamplesPerSec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int32 SamplesPerSec) put_SamplesPerSec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int32 AvgBytesPerSec) get_AvgBytesPerSec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int32 AvgBytesPerSec) put_AvgBytesPerSec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int16 BlockAlign) get_BlockAlign;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int16 BlockAlign) put_BlockAlign;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out int16 BitsPerSample) get_BitsPerSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, int16 BitsPerSample) put_BitsPerSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, out VARIANT ExtraData) get_ExtraData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechWaveFormatEx self, VARIANT ExtraData) put_ExtraData;
 			}
 		}
 		[CRepr]
@@ -3130,11 +3130,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat** AudioFormat) get_Format;
-				public new function HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat* AudioFormat) putref_Format;
-				public new function HRESULT(ref ISpeechBaseStream self, out VARIANT Buffer, int32 NumberOfBytes, out int32 BytesRead) Read;
-				public new function HRESULT(ref ISpeechBaseStream self, VARIANT Buffer, out int32 BytesWritten) Write;
-				public new function HRESULT(ref ISpeechBaseStream self, VARIANT Position, SpeechStreamSeekPositionType Origin, out VARIANT NewPosition) Seek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat** AudioFormat) get_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat* AudioFormat) putref_Format;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechBaseStream self, out VARIANT Buffer, int32 NumberOfBytes, out int32 BytesRead) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechBaseStream self, VARIANT Buffer, out int32 BytesWritten) Write;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechBaseStream self, VARIANT Position, SpeechStreamSeekPositionType Origin, out VARIANT NewPosition) Seek;
 			}
 		}
 		[CRepr]
@@ -3150,8 +3150,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ref ISpeechFileStream self, BSTR FileName, SpeechStreamFileMode FileMode, int16 DoEvents) Open;
-				public new function HRESULT(ref ISpeechFileStream self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechFileStream self, BSTR FileName, SpeechStreamFileMode FileMode, int16 DoEvents) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechFileStream self) Close;
 			}
 		}
 		[CRepr]
@@ -3167,8 +3167,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ref ISpeechMemoryStream self, VARIANT Data) SetData;
-				public new function HRESULT(ref ISpeechMemoryStream self, out VARIANT pData) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMemoryStream self, VARIANT Data) SetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMemoryStream self, out VARIANT pData) GetData;
 			}
 		}
 		[CRepr]
@@ -3184,8 +3184,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ref ISpeechCustomStream self, IUnknown** ppUnkStream) get_BaseStream;
-				public new function HRESULT(ref ISpeechCustomStream self, IUnknown* pUnkStream) putref_BaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechCustomStream self, IUnknown** ppUnkStream) get_BaseStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechCustomStream self, IUnknown* pUnkStream) putref_BaseStream;
 			}
 		}
 		[CRepr]
@@ -3208,15 +3208,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioStatus** Status) get_Status;
-				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioBufferInfo** BufferInfo) get_BufferInfo;
-				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioFormat** StreamFormat) get_DefaultFormat;
-				public new function HRESULT(ref ISpeechAudio self, out int32 Volume) get_Volume;
-				public new function HRESULT(ref ISpeechAudio self, int32 Volume) put_Volume;
-				public new function HRESULT(ref ISpeechAudio self, out int32 BufferNotifySize) get_BufferNotifySize;
-				public new function HRESULT(ref ISpeechAudio self, int32 BufferNotifySize) put_BufferNotifySize;
-				public new function HRESULT(ref ISpeechAudio self, out int32 EventHandle) get_EventHandle;
-				public new function HRESULT(ref ISpeechAudio self, SpeechAudioState State) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, ISpeechAudioStatus** Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, ISpeechAudioBufferInfo** BufferInfo) get_BufferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, ISpeechAudioFormat** StreamFormat) get_DefaultFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, out int32 Volume) get_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, int32 Volume) put_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, out int32 BufferNotifySize) get_BufferNotifySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, int32 BufferNotifySize) put_BufferNotifySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, out int32 EventHandle) get_EventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechAudio self, SpeechAudioState State) SetState;
 			}
 		}
 		[CRepr]
@@ -3235,11 +3235,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechAudio.VTable
 			{
-				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 DeviceId) get_DeviceId;
-				public new function HRESULT(ref ISpeechMMSysAudio self, int32 DeviceId) put_DeviceId;
-				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 LineId) get_LineId;
-				public new function HRESULT(ref ISpeechMMSysAudio self, int32 LineId) put_LineId;
-				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 Handle) get_MMHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMMSysAudio self, out int32 DeviceId) get_DeviceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMMSysAudio self, int32 DeviceId) put_DeviceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMMSysAudio self, out int32 LineId) get_LineId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMMSysAudio self, int32 LineId) put_LineId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechMMSysAudio self, out int32 Handle) get_MMHandle;
 			}
 		}
 		[CRepr]
@@ -3285,38 +3285,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechVoice self, ISpeechVoiceStatus** Status) get_Status;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken** Voice) get_Voice;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken* Voice) putref_Voice;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken** AudioOutput) get_AudioOutput;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken* AudioOutput) putref_AudioOutput;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream** AudioOutputStream) get_AudioOutputStream;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream* AudioOutputStream) putref_AudioOutputStream;
-				public new function HRESULT(ref ISpeechVoice self, out int32 Rate) get_Rate;
-				public new function HRESULT(ref ISpeechVoice self, int32 Rate) put_Rate;
-				public new function HRESULT(ref ISpeechVoice self, out int32 Volume) get_Volume;
-				public new function HRESULT(ref ISpeechVoice self, int32 Volume) put_Volume;
-				public new function HRESULT(ref ISpeechVoice self, int16 Allow) put_AllowAudioOutputFormatChangesOnNextSet;
-				public new function HRESULT(ref ISpeechVoice self, out int16 Allow) get_AllowAudioOutputFormatChangesOnNextSet;
-				public new function HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents EventInterestFlags) get_EventInterests;
-				public new function HRESULT(ref ISpeechVoice self, SpeechVoiceEvents EventInterestFlags) put_EventInterests;
-				public new function HRESULT(ref ISpeechVoice self, SpeechVoicePriority Priority) put_Priority;
-				public new function HRESULT(ref ISpeechVoice self, out SpeechVoicePriority Priority) get_Priority;
-				public new function HRESULT(ref ISpeechVoice self, SpeechVoiceEvents Boundary) put_AlertBoundary;
-				public new function HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents Boundary) get_AlertBoundary;
-				public new function HRESULT(ref ISpeechVoice self, int32 msTimeout) put_SynchronousSpeakTimeout;
-				public new function HRESULT(ref ISpeechVoice self, out int32 msTimeout) get_SynchronousSpeakTimeout;
-				public new function HRESULT(ref ISpeechVoice self, BSTR Text, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) Speak;
-				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakStream;
-				public new function HRESULT(ref ISpeechVoice self) Pause;
-				public new function HRESULT(ref ISpeechVoice self) Resume;
-				public new function HRESULT(ref ISpeechVoice self, BSTR Type, int32 NumItems, out int32 NumSkipped) Skip;
-				public new function HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetVoices;
-				public new function HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioOutputs;
-				public new function HRESULT(ref ISpeechVoice self, int32 msTimeout, out int16 Done) WaitUntilDone;
-				public new function HRESULT(ref ISpeechVoice self, out int32 Handle) SpeakCompleteEvent;
-				public new function HRESULT(ref ISpeechVoice self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
-				public new function HRESULT(ref ISpeechVoice self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechVoiceStatus** Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechObjectToken** Voice) get_Voice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechObjectToken* Voice) putref_Voice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechObjectToken** AudioOutput) get_AudioOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechObjectToken* AudioOutput) putref_AudioOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechBaseStream** AudioOutputStream) get_AudioOutputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechBaseStream* AudioOutputStream) putref_AudioOutputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out int32 Rate) get_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int32 Rate) put_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out int32 Volume) get_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int32 Volume) put_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int16 Allow) put_AllowAudioOutputFormatChangesOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out int16 Allow) get_AllowAudioOutputFormatChangesOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents EventInterestFlags) get_EventInterests;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, SpeechVoiceEvents EventInterestFlags) put_EventInterests;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, SpeechVoicePriority Priority) put_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out SpeechVoicePriority Priority) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, SpeechVoiceEvents Boundary) put_AlertBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents Boundary) get_AlertBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int32 msTimeout) put_SynchronousSpeakTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out int32 msTimeout) get_SynchronousSpeakTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, BSTR Text, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) Speak;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, BSTR Type, int32 NumItems, out int32 NumSkipped) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetVoices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioOutputs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int32 msTimeout, out int16 Done) WaitUntilDone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, out int32 Handle) SpeakCompleteEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoice self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
 			}
 		}
 		[CRepr]
@@ -3342,18 +3342,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_LastStreamNumberQueued;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 HResult) get_LastHResult;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out SpeechRunState State) get_RunningState;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputWordPosition;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputWordLength;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputSentencePosition;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputSentenceLength;
-				public new function HRESULT(ref ISpeechVoiceStatus self, BSTR* Bookmark) get_LastBookmark;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 BookmarkId) get_LastBookmarkId;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int16 PhoneId) get_PhonemeId;
-				public new function HRESULT(ref ISpeechVoiceStatus self, out int16 VisemeId) get_VisemeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_LastStreamNumberQueued;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 HResult) get_LastHResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out SpeechRunState State) get_RunningState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputWordPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputWordLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputSentencePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputSentenceLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, BSTR* Bookmark) get_LastBookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int32 BookmarkId) get_LastBookmarkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int16 PhoneId) get_PhonemeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechVoiceStatus self, out int16 VisemeId) get_VisemeId;
 			}
 		}
 		[CRepr]
@@ -3406,32 +3406,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Recognizer) putref_Recognizer;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Recognizer) get_Recognizer;
-				public new function HRESULT(ref ISpeechRecognizer self, int16 Allow) put_AllowAudioInputFormatChangesOnNextSet;
-				public new function HRESULT(ref ISpeechRecognizer self, out int16 Allow) get_AllowAudioInputFormatChangesOnNextSet;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* AudioInput) putref_AudioInput;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** AudioInput) get_AudioInput;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream* AudioInputStream) putref_AudioInputStream;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream** AudioInputStream) get_AudioInputStream;
-				public new function HRESULT(ref ISpeechRecognizer self, out int16 Shared) get_IsShared;
-				public new function HRESULT(ref ISpeechRecognizer self, SpeechRecognizerState State) put_State;
-				public new function HRESULT(ref ISpeechRecognizer self, out SpeechRecognizerState State) get_State;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechRecognizerStatus** Status) get_Status;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Profile) putref_Profile;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Profile) get_Profile;
-				public new function HRESULT(ref ISpeechRecognizer self, VARIANT TextElements, ref VARIANT ElementDisplayAttributes, int32 LanguageId) EmulateRecognition;
-				public new function HRESULT(ref ISpeechRecognizer self, ISpeechRecoContext** NewContext) CreateRecoContext;
-				public new function HRESULT(ref ISpeechRecognizer self, SpeechFormatType Type, ISpeechAudioFormat** Format) GetFormat;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, int32 Value, out int16 Supported) SetPropertyNumber;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, out int32 Value, out int16 Supported) GetPropertyNumber;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR Value, out int16 Supported) SetPropertyString;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR* Value, out int16 Supported) GetPropertyString;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
-				public new function HRESULT(ref ISpeechRecognizer self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetRecognizers;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioInputs;
-				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Recognizer) putref_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Recognizer) get_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, int16 Allow) put_AllowAudioInputFormatChangesOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, out int16 Allow) get_AllowAudioInputFormatChangesOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* AudioInput) putref_AudioInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** AudioInput) get_AudioInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream* AudioInputStream) putref_AudioInputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream** AudioInputStream) get_AudioInputStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, out int16 Shared) get_IsShared;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, SpeechRecognizerState State) put_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, out SpeechRecognizerState State) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechRecognizerStatus** Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Profile) putref_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Profile) get_Profile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, VARIANT TextElements, ref VARIANT ElementDisplayAttributes, int32 LanguageId) EmulateRecognition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, ISpeechRecoContext** NewContext) CreateRecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, SpeechFormatType Type, ISpeechAudioFormat** Format) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR Name, int32 Value, out int16 Supported) SetPropertyNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR Name, out int32 Value, out int16 Supported) GetPropertyNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR Value, out int16 Supported) SetPropertyString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR* Value, out int16 Supported) GetPropertyString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetRecognizers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioInputs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetProfiles;
 			}
 		}
 		[CRepr]
@@ -3451,12 +3451,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecognizerStatus self, ISpeechAudioStatus** AudioStatus) get_AudioStatus;
-				public new function HRESULT(ref ISpeechRecognizerStatus self, out VARIANT pCurrentStreamPos) get_CurrentStreamPosition;
-				public new function HRESULT(ref ISpeechRecognizerStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
-				public new function HRESULT(ref ISpeechRecognizerStatus self, out int32 NumberOfActiveRules) get_NumberOfActiveRules;
-				public new function HRESULT(ref ISpeechRecognizerStatus self, BSTR* ClsidEngine) get_ClsidEngine;
-				public new function HRESULT(ref ISpeechRecognizerStatus self, out VARIANT SupportedLanguages) get_SupportedLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, ISpeechAudioStatus** AudioStatus) get_AudioStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, out VARIANT pCurrentStreamPos) get_CurrentStreamPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, out int32 NumberOfActiveRules) get_NumberOfActiveRules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, BSTR* ClsidEngine) get_ClsidEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecognizerStatus self, out VARIANT SupportedLanguages) get_SupportedLanguages;
 			}
 		}
 		[CRepr]
@@ -3495,31 +3495,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoContext self, ISpeechRecognizer** Recognizer) get_Recognizer;
-				public new function HRESULT(ref ISpeechRecoContext self, out SpeechInterference Interference) get_AudioInputInterferenceStatus;
-				public new function HRESULT(ref ISpeechRecoContext self, BSTR* UIType) get_RequestedUIType;
-				public new function HRESULT(ref ISpeechRecoContext self, ISpeechVoice* Voice) putref_Voice;
-				public new function HRESULT(ref ISpeechRecoContext self, ISpeechVoice** Voice) get_Voice;
-				public new function HRESULT(ref ISpeechRecoContext self, int16 Allow) put_AllowVoiceFormatMatchingOnNextSet;
-				public new function HRESULT(ref ISpeechRecoContext self, out int16 pAllow) get_AllowVoiceFormatMatchingOnNextSet;
-				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_VoicePurgeEvent;
-				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_VoicePurgeEvent;
-				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_EventInterests;
-				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_EventInterests;
-				public new function HRESULT(ref ISpeechRecoContext self, int32 MaxAlternates) put_CmdMaxAlternates;
-				public new function HRESULT(ref ISpeechRecoContext self, out int32 MaxAlternates) get_CmdMaxAlternates;
-				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoContextState State) put_State;
-				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoContextState State) get_State;
-				public new function HRESULT(ref ISpeechRecoContext self, SpeechRetainedAudioOptions Option) put_RetainedAudio;
-				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRetainedAudioOptions Option) get_RetainedAudio;
-				public new function HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat* Format) putref_RetainedAudioFormat;
-				public new function HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat** Format) get_RetainedAudioFormat;
-				public new function HRESULT(ref ISpeechRecoContext self) Pause;
-				public new function HRESULT(ref ISpeechRecoContext self) Resume;
-				public new function HRESULT(ref ISpeechRecoContext self, VARIANT GrammarId, ISpeechRecoGrammar** Grammar) CreateGrammar;
-				public new function HRESULT(ref ISpeechRecoContext self, ref VARIANT ResultBlock, ISpeechRecoResult** Result) CreateResultFromMemory;
-				public new function HRESULT(ref ISpeechRecoContext self, SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId) Bookmark;
-				public new function HRESULT(ref ISpeechRecoContext self, BSTR AdaptationString) SetAdaptationData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ISpeechRecognizer** Recognizer) get_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out SpeechInterference Interference) get_AudioInputInterferenceStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, BSTR* UIType) get_RequestedUIType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ISpeechVoice* Voice) putref_Voice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ISpeechVoice** Voice) get_Voice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, int16 Allow) put_AllowVoiceFormatMatchingOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out int16 pAllow) get_AllowVoiceFormatMatchingOnNextSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_VoicePurgeEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_VoicePurgeEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_EventInterests;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_EventInterests;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, int32 MaxAlternates) put_CmdMaxAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out int32 MaxAlternates) get_CmdMaxAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, SpeechRecoContextState State) put_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out SpeechRecoContextState State) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, SpeechRetainedAudioOptions Option) put_RetainedAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, out SpeechRetainedAudioOptions Option) get_RetainedAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat* Format) putref_RetainedAudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat** Format) get_RetainedAudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, VARIANT GrammarId, ISpeechRecoGrammar** Grammar) CreateGrammar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, ref VARIANT ResultBlock, ISpeechRecoResult** Result) CreateResultFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId) Bookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoContext self, BSTR AdaptationString) SetAdaptationData;
 			}
 		}
 		[CRepr]
@@ -3552,25 +3552,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoGrammar self, out VARIANT Id) get_Id;
-				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ref ISpeechRecoGrammar self, SpeechGrammarState State) put_State;
-				public new function HRESULT(ref ISpeechRecoGrammar self, out SpeechGrammarState State) get_State;
-				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechGrammarRules** Rules) get_Rules;
-				public new function HRESULT(ref ISpeechRecoGrammar self, int32 NewLanguage) Reset;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR FileName, SpeechLoadOption LoadOption) CmdLoadFromFile;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR ClassId, BSTR GrammarName, SpeechLoadOption LoadOption) CmdLoadFromObject;
-				public new function HRESULT(ref ISpeechRecoGrammar self, int32 hModule, VARIANT ResourceName, VARIANT ResourceType, int32 LanguageId, SpeechLoadOption LoadOption) CmdLoadFromResource;
-				public new function HRESULT(ref ISpeechRecoGrammar self, VARIANT GrammarData, SpeechLoadOption LoadOption) CmdLoadFromMemory;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR ProprietaryGuid, BSTR ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption) CmdLoadFromProprietaryGrammar;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Name, SpeechRuleState State) CmdSetRuleState;
-				public new function HRESULT(ref ISpeechRecoGrammar self, int32 RuleId, SpeechRuleState State) CmdSetRuleIdState;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR TopicName, SpeechLoadOption LoadOption) DictationLoad;
-				public new function HRESULT(ref ISpeechRecoGrammar self) DictationUnload;
-				public new function HRESULT(ref ISpeechRecoGrammar self, SpeechRuleState State) DictationSetState;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Text, int32 TextLength, ISpeechTextSelectionInformation* Info) SetWordSequenceData;
-				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechTextSelectionInformation* Info) SetTextSelection;
-				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Word, out SpeechWordPronounceable WordPronounceable) IsPronounceable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, out VARIANT Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, SpeechGrammarState State) put_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, out SpeechGrammarState State) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, ISpeechGrammarRules** Rules) get_Rules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, int32 NewLanguage) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR FileName, SpeechLoadOption LoadOption) CmdLoadFromFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR ClassId, BSTR GrammarName, SpeechLoadOption LoadOption) CmdLoadFromObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, int32 hModule, VARIANT ResourceName, VARIANT ResourceType, int32 LanguageId, SpeechLoadOption LoadOption) CmdLoadFromResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, VARIANT GrammarData, SpeechLoadOption LoadOption) CmdLoadFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR ProprietaryGuid, BSTR ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption) CmdLoadFromProprietaryGrammar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR Name, SpeechRuleState State) CmdSetRuleState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, int32 RuleId, SpeechRuleState State) CmdSetRuleIdState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR TopicName, SpeechLoadOption LoadOption) DictationLoad;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self) DictationUnload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, SpeechRuleState State) DictationSetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR Text, int32 TextLength, ISpeechTextSelectionInformation* Info) SetWordSequenceData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, ISpeechTextSelectionInformation* Info) SetTextSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoGrammar self, BSTR Word, out SpeechWordPronounceable WordPronounceable) IsPronounceable;
 			}
 		}
 		[CRepr]
@@ -3604,13 +3604,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechGrammarRule self, out SpeechRuleAttributes Attributes) get_Attributes;
-				public new function HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) get_InitialState;
-				public new function HRESULT(ref ISpeechGrammarRule self, BSTR* Name) get_Name;
-				public new function HRESULT(ref ISpeechGrammarRule self, out int32 Id) get_Id;
-				public new function HRESULT(ref ISpeechGrammarRule self) Clear;
-				public new function HRESULT(ref ISpeechGrammarRule self, BSTR ResourceName, BSTR ResourceValue) AddResource;
-				public new function HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) AddState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, out SpeechRuleAttributes Attributes) get_Attributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) get_InitialState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, out int32 Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, BSTR ResourceName, BSTR ResourceValue) AddResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) AddState;
 			}
 		}
 		[CRepr]
@@ -3632,14 +3632,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechGrammarRules self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechGrammarRules self, VARIANT RuleNameOrId, ISpeechGrammarRule** Rule) FindRule;
-				public new function HRESULT(ref ISpeechGrammarRules self, int32 Index, ISpeechGrammarRule** Rule) Item;
-				public new function HRESULT(ref ISpeechGrammarRules self, IUnknown** EnumVARIANT) get__NewEnum;
-				public new function HRESULT(ref ISpeechGrammarRules self, out int16 Dynamic) get_Dynamic;
-				public new function HRESULT(ref ISpeechGrammarRules self, BSTR RuleName, SpeechRuleAttributes Attributes, int32 RuleId, ISpeechGrammarRule** Rule) Add;
-				public new function HRESULT(ref ISpeechGrammarRules self) Commit;
-				public new function HRESULT(ref ISpeechGrammarRules self, BSTR* ErrorText, out VARIANT SaveStream) CommitAndSave;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, VARIANT RuleNameOrId, ISpeechGrammarRule** Rule) FindRule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, int32 Index, ISpeechGrammarRule** Rule) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, out int16 Dynamic) get_Dynamic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, BSTR RuleName, SpeechRuleAttributes Attributes, int32 RuleId, ISpeechGrammarRule** Rule) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRules self, BSTR* ErrorText, out VARIANT SaveStream) CommitAndSave;
 			}
 		}
 		[CRepr]
@@ -3658,11 +3658,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRule** Rule) get_Rule;
-				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleStateTransitions** Transitions) get_Transitions;
-				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddWordTransition;
-				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddRuleTransition;
-				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddSpecialTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRule** Rule) get_Rule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleStateTransitions** Transitions) get_Transitions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddWordTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddRuleTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddSpecialTransition;
 			}
 		}
 		[CRepr]
@@ -3684,14 +3684,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out SpeechGrammarRuleStateTransitionType Type) get_Type;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* Text) get_Text;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRule** Rule) get_Rule;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT Weight) get_Weight;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* PropertyName) get_PropertyName;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out int32 PropertyId) get_PropertyId;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT PropertyValue) get_PropertyValue;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRuleState** NextState) get_NextState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, out SpeechGrammarRuleStateTransitionType Type) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* Text) get_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRule** Rule) get_Rule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT Weight) get_Weight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* PropertyName) get_PropertyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, out int32 PropertyId) get_PropertyId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT PropertyValue) get_PropertyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRuleState** NextState) get_NextState;
 			}
 		}
 		[CRepr]
@@ -3708,9 +3708,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, int32 Index, ISpeechGrammarRuleStateTransition** Transition) Item;
-				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransitions self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransitions self, int32 Index, ISpeechGrammarRuleStateTransition** Transition) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechGrammarRuleStateTransitions self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -3732,14 +3732,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveOffset) put_ActiveOffset;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveOffset) get_ActiveOffset;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveLength) put_ActiveLength;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveLength) get_ActiveLength;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionOffset) put_SelectionOffset;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionOffset) get_SelectionOffset;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionLength) put_SelectionLength;
-				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionLength) get_SelectionLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveOffset) put_ActiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveOffset) get_ActiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveLength) put_ActiveLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveLength) get_ActiveLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionOffset) put_SelectionOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionOffset) get_SelectionOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionLength) put_SelectionLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionLength) get_SelectionLength;
 			}
 		}
 		[CRepr]
@@ -3763,16 +3763,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoResult self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ref ISpeechRecoResult self, ISpeechRecoResultTimes** Times) get_Times;
-				public new function HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat* Format) putref_AudioFormat;
-				public new function HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat** Format) get_AudioFormat;
-				public new function HRESULT(ref ISpeechRecoResult self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ref ISpeechRecoResult self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
-				public new function HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
-				public new function HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
-				public new function HRESULT(ref ISpeechRecoResult self, out VARIANT ResultBlock) SaveToMemory;
-				public new function HRESULT(ref ISpeechRecoResult self, SpeechDiscardType ValueTypes) DiscardResultInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, ISpeechRecoResultTimes** Times) get_Times;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat* Format) putref_AudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat** Format) get_AudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, out VARIANT ResultBlock) SaveToMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult self, SpeechDiscardType ValueTypes) DiscardResultInfo;
 			}
 		}
 		[CRepr]
@@ -3787,7 +3787,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechRecoResult.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoResult2 self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResult2 self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -3805,10 +3805,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Time) get_StreamTime;
-				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Length) get_Length;
-				public new function HRESULT(ref ISpeechRecoResultTimes self, out int32 TickCount) get_TickCount;
-				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT OffsetFromStart) get_OffsetFromStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Time) get_StreamTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Length) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultTimes self, out int32 TickCount) get_TickCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultTimes self, out VARIANT OffsetFromStart) get_OffsetFromStart;
 			}
 		}
 		[CRepr]
@@ -3827,11 +3827,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseAlternate self, ISpeechRecoResult** RecoResult) get_RecoResult;
-				public new function HRESULT(ref ISpeechPhraseAlternate self, out int32 StartElement) get_StartElementInResult;
-				public new function HRESULT(ref ISpeechPhraseAlternate self, out int32 NumberOfElements) get_NumberOfElementsInResult;
-				public new function HRESULT(ref ISpeechPhraseAlternate self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ref ISpeechPhraseAlternate self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternate self, ISpeechRecoResult** RecoResult) get_RecoResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternate self, out int32 StartElement) get_StartElementInResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternate self, out int32 NumberOfElements) get_NumberOfElementsInResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternate self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternate self) Commit;
 			}
 		}
 		[CRepr]
@@ -3848,9 +3848,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseAlternates self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechPhraseAlternates self, int32 Index, ISpeechPhraseAlternate** PhraseAlternate) Item;
-				public new function HRESULT(ref ISpeechPhraseAlternates self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternates self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternates self, int32 Index, ISpeechPhraseAlternate** PhraseAlternate) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseAlternates self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -3880,22 +3880,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 LanguageId) get_LanguageId;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT GrammarId) get_GrammarId;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT StartTime) get_StartTime;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT AudioStreamPosition) get_AudioStreamPosition;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 pAudioSizeBytes) get_AudioSizeBytes;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 AudioSizeTime) get_AudioSizeTime;
-				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseRule** Rule) get_Rule;
-				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseProperties** Properties) get_Properties;
-				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseElements** Elements) get_Elements;
-				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseReplacements** Replacements) get_Replacements;
-				public new function HRESULT(ref ISpeechPhraseInfo self, BSTR* EngineIdGuid) get_EngineId;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT PrivateData) get_EnginePrivateData;
-				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT PhraseBlock) SaveToMemory;
-				public new function HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, BSTR* Text) GetText;
-				public new function HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, out SpeechDisplayAttributes DisplayAttributes) GetDisplayAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out int32 LanguageId) get_LanguageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out VARIANT GrammarId) get_GrammarId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out VARIANT StartTime) get_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out VARIANT AudioStreamPosition) get_AudioStreamPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out int32 pAudioSizeBytes) get_AudioSizeBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out int32 AudioSizeTime) get_AudioSizeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseRule** Rule) get_Rule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseProperties** Properties) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseElements** Elements) get_Elements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseReplacements** Replacements) get_Replacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, BSTR* EngineIdGuid) get_EngineId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out VARIANT PrivateData) get_EnginePrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, out VARIANT PhraseBlock) SaveToMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, BSTR* Text) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, out SpeechDisplayAttributes DisplayAttributes) GetDisplayAttributes;
 			}
 		}
 		[CRepr]
@@ -3922,19 +3922,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioTimeOffset) get_AudioTimeOffset;
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeTime) get_AudioSizeTime;
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioStreamOffset) get_AudioStreamOffset;
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeBytes) get_AudioSizeBytes;
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 RetainedStreamOffset) get_RetainedStreamOffset;
-				public new function HRESULT(ref ISpeechPhraseElement self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
-				public new function HRESULT(ref ISpeechPhraseElement self, BSTR* DisplayText) get_DisplayText;
-				public new function HRESULT(ref ISpeechPhraseElement self, BSTR* LexicalForm) get_LexicalForm;
-				public new function HRESULT(ref ISpeechPhraseElement self, out VARIANT Pronunciation) get_Pronunciation;
-				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
-				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence RequiredConfidence) get_RequiredConfidence;
-				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence ActualConfidence) get_ActualConfidence;
-				public new function HRESULT(ref ISpeechPhraseElement self, out float EngineConfidence) get_EngineConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 AudioTimeOffset) get_AudioTimeOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeTime) get_AudioSizeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 AudioStreamOffset) get_AudioStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeBytes) get_AudioSizeBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 RetainedStreamOffset) get_RetainedStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, BSTR* DisplayText) get_DisplayText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, BSTR* LexicalForm) get_LexicalForm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out VARIANT Pronunciation) get_Pronunciation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence RequiredConfidence) get_RequiredConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence ActualConfidence) get_ActualConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElement self, out float EngineConfidence) get_EngineConfidence;
 			}
 		}
 		[CRepr]
@@ -3951,9 +3951,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseElements self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechPhraseElements self, int32 Index, ISpeechPhraseElement** Element) Item;
-				public new function HRESULT(ref ISpeechPhraseElements self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElements self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElements self, int32 Index, ISpeechPhraseElement** Element) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseElements self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -3971,10 +3971,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseReplacement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
-				public new function HRESULT(ref ISpeechPhraseReplacement self, BSTR* Text) get_Text;
-				public new function HRESULT(ref ISpeechPhraseReplacement self, out int32 FirstElement) get_FirstElement;
-				public new function HRESULT(ref ISpeechPhraseReplacement self, out int32 NumberOfElements) get_NumberOfElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacement self, BSTR* Text) get_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacement self, out int32 FirstElement) get_FirstElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacement self, out int32 NumberOfElements) get_NumberOfElements;
 			}
 		}
 		[CRepr]
@@ -3991,9 +3991,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseReplacements self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechPhraseReplacements self, int32 Index, ISpeechPhraseReplacement** Reps) Item;
-				public new function HRESULT(ref ISpeechPhraseReplacements self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacements self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacements self, int32 Index, ISpeechPhraseReplacement** Reps) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseReplacements self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4016,15 +4016,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseProperty self, BSTR* Name) get_Name;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 Id) get_Id;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out VARIANT Value) get_Value;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 FirstElement) get_FirstElement;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 NumberOfElements) get_NumberOfElements;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out float Confidence) get_EngineConfidence;
-				public new function HRESULT(ref ISpeechPhraseProperty self, out SpeechEngineConfidence Confidence) get_Confidence;
-				public new function HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperty** ParentProperty) get_Parent;
-				public new function HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperties** Children) get_Children;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out int32 Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out VARIANT Value) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out int32 FirstElement) get_FirstElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out int32 NumberOfElements) get_NumberOfElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out float Confidence) get_EngineConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, out SpeechEngineConfidence Confidence) get_Confidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperty** ParentProperty) get_Parent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperties** Children) get_Children;
 			}
 		}
 		[CRepr]
@@ -4041,9 +4041,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseProperties self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechPhraseProperties self, int32 Index, ISpeechPhraseProperty** Property) Item;
-				public new function HRESULT(ref ISpeechPhraseProperties self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperties self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperties self, int32 Index, ISpeechPhraseProperty** Property) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseProperties self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4065,14 +4065,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseRule self, BSTR* Name) get_Name;
-				public new function HRESULT(ref ISpeechPhraseRule self, out int32 Id) get_Id;
-				public new function HRESULT(ref ISpeechPhraseRule self, out int32 FirstElement) get_FirstElement;
-				public new function HRESULT(ref ISpeechPhraseRule self, out int32 NumberOfElements) get_NumberOfElements;
-				public new function HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRule** Parent) get_Parent;
-				public new function HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRules** Children) get_Children;
-				public new function HRESULT(ref ISpeechPhraseRule self, out SpeechEngineConfidence ActualConfidence) get_Confidence;
-				public new function HRESULT(ref ISpeechPhraseRule self, out float EngineConfidence) get_EngineConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, out int32 Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, out int32 FirstElement) get_FirstElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, out int32 NumberOfElements) get_NumberOfElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRule** Parent) get_Parent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRules** Children) get_Children;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, out SpeechEngineConfidence ActualConfidence) get_Confidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRule self, out float EngineConfidence) get_EngineConfidence;
 			}
 		}
 		[CRepr]
@@ -4089,9 +4089,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseRules self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechPhraseRules self, int32 Index, ISpeechPhraseRule** Rule) Item;
-				public new function HRESULT(ref ISpeechPhraseRules self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRules self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRules self, int32 Index, ISpeechPhraseRule** Rule) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseRules self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4113,14 +4113,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechLexicon self, out int32 GenerationId) get_GenerationId;
-				public new function HRESULT(ref ISpeechLexicon self, SpeechLexiconType Flags, out int32 GenerationID, ISpeechLexiconWords** Words) GetWords;
-				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) AddPronunciation;
-				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) AddPronunciationByPhoneIds;
-				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) RemovePronunciation;
-				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) RemovePronunciationByPhoneIds;
-				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations) GetPronunciations;
-				public new function HRESULT(ref ISpeechLexicon self, out int32 GenerationID, ISpeechLexiconWords** ppWords) GetGenerationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, out int32 GenerationId) get_GenerationId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, SpeechLexiconType Flags, out int32 GenerationID, ISpeechLexiconWords** Words) GetWords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) AddPronunciation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) AddPronunciationByPhoneIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) RemovePronunciation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) RemovePronunciationByPhoneIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations) GetPronunciations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexicon self, out int32 GenerationID, ISpeechLexiconWords** ppWords) GetGenerationChange;
 			}
 		}
 		[CRepr]
@@ -4137,9 +4137,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechLexiconWords self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechLexiconWords self, int32 Index, ISpeechLexiconWord** Word) Item;
-				public new function HRESULT(ref ISpeechLexiconWords self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWords self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWords self, int32 Index, ISpeechLexiconWord** Word) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWords self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4157,10 +4157,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechLexiconWord self, out int32 LangId) get_LangId;
-				public new function HRESULT(ref ISpeechLexiconWord self, out SpeechWordType WordType) get_Type;
-				public new function HRESULT(ref ISpeechLexiconWord self, BSTR* Word) get_Word;
-				public new function HRESULT(ref ISpeechLexiconWord self, ISpeechLexiconPronunciations** Pronunciations) get_Pronunciations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWord self, out int32 LangId) get_LangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWord self, out SpeechWordType WordType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWord self, BSTR* Word) get_Word;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconWord self, ISpeechLexiconPronunciations** Pronunciations) get_Pronunciations;
 			}
 		}
 		[CRepr]
@@ -4177,9 +4177,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechLexiconPronunciations self, out int32 Count) get_Count;
-				public new function HRESULT(ref ISpeechLexiconPronunciations self, int32 Index, ISpeechLexiconPronunciation** Pronunciation) Item;
-				public new function HRESULT(ref ISpeechLexiconPronunciations self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciations self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciations self, int32 Index, ISpeechLexiconPronunciation** Pronunciation) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciations self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4198,11 +4198,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechLexiconPronunciation self, out SpeechLexiconType LexiconType) get_Type;
-				public new function HRESULT(ref ISpeechLexiconPronunciation self, out int32 LangId) get_LangId;
-				public new function HRESULT(ref ISpeechLexiconPronunciation self, out SpeechPartOfSpeech PartOfSpeech) get_PartOfSpeech;
-				public new function HRESULT(ref ISpeechLexiconPronunciation self, out VARIANT PhoneIds) get_PhoneIds;
-				public new function HRESULT(ref ISpeechLexiconPronunciation self, BSTR* Symbolic) get_Symbolic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciation self, out SpeechLexiconType LexiconType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciation self, out int32 LangId) get_LangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciation self, out SpeechPartOfSpeech PartOfSpeech) get_PartOfSpeech;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciation self, out VARIANT PhoneIds) get_PhoneIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechLexiconPronunciation self, BSTR* Symbolic) get_Symbolic;
 			}
 		}
 		[CRepr]
@@ -4218,8 +4218,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpeechRecoResult.VTable
 			{
-				public new function HRESULT(ref ISpeechXMLRecoResult self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
-				public new function HRESULT(ref ISpeechXMLRecoResult self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out int32 ResultCode, out int16 IsError) GetXMLErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechXMLRecoResult self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechXMLRecoResult self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out int32 ResultCode, out int16 IsError) GetXMLErrorInfo;
 			}
 		}
 		[CRepr]
@@ -4246,19 +4246,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoResultTimes** Times) get_Times;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat* Format) putref_AudioFormat;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat** Format) get_AudioFormat;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, out VARIANT ResultBlock) SaveToMemory;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, SpeechDiscardType ValueTypes) DiscardResultInfo;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out HRESULT ResultCode, out int16 IsError) GetXMLErrorInfo;
-				public new function HRESULT(ref ISpeechRecoResultDispatch self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoResultTimes** Times) get_Times;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat* Format) putref_AudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat** Format) get_AudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, out VARIANT ResultBlock) SaveToMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, SpeechDiscardType ValueTypes) DiscardResultInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out HRESULT ResultCode, out int16 IsError) GetXMLErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechRecoResultDispatch self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -4273,7 +4273,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhraseInfoBuilder self, ref VARIANT PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) RestorePhraseFromMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhraseInfoBuilder self, ref VARIANT PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) RestorePhraseFromMemory;
 			}
 		}
 		[CRepr]
@@ -4291,10 +4291,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISpeechPhoneConverter self, out int32 LanguageId) get_LanguageId;
-				public new function HRESULT(ref ISpeechPhoneConverter self, int32 LanguageId) put_LanguageId;
-				public new function HRESULT(ref ISpeechPhoneConverter self, BSTR Phonemes, out VARIANT IdArray) PhoneToId;
-				public new function HRESULT(ref ISpeechPhoneConverter self, VARIANT IdArray, BSTR* Phonemes) IdToPhone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhoneConverter self, out int32 LanguageId) get_LanguageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhoneConverter self, int32 LanguageId) put_LanguageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhoneConverter self, BSTR Phonemes, out VARIANT IdArray) PhoneToId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhoneConverter self, VARIANT IdArray, BSTR* Phonemes) IdToPhone;
 			}
 		}
 		

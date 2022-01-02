@@ -287,8 +287,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumEnhancedStorageACT self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, out uint32 pcEnhancedStorageACTs) GetACTs;
-				public new function HRESULT(ref IEnumEnhancedStorageACT self, PWSTR szVolume, out IEnhancedStorageACT* ppIEnhancedStorageACT) GetMatchingACT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEnhancedStorageACT self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, out uint32 pcEnhancedStorageACTs) GetACTs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEnhancedStorageACT self, PWSTR szVolume, out IEnhancedStorageACT* ppIEnhancedStorageACT) GetMatchingACT;
 			}
 		}
 		[CRepr]
@@ -308,12 +308,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnhancedStorageACT self, uint32 hwndParent, uint32 dwFlags) Authorize;
-				public new function HRESULT(ref IEnhancedStorageACT self) Unauthorize;
-				public new function HRESULT(ref IEnhancedStorageACT self, out ACT_AUTHORIZATION_STATE pState) GetAuthorizationState;
-				public new function HRESULT(ref IEnhancedStorageACT self, out PWSTR ppwszVolume) GetMatchingVolume;
-				public new function HRESULT(ref IEnhancedStorageACT self, out PWSTR ppwszIdentity) GetUniqueIdentity;
-				public new function HRESULT(ref IEnhancedStorageACT self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, out uint32 pcEnhancedStorageSilos) GetSilos;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self, uint32 hwndParent, uint32 dwFlags) Authorize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self) Unauthorize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self, out ACT_AUTHORIZATION_STATE pState) GetAuthorizationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self, out PWSTR ppwszVolume) GetMatchingVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self, out PWSTR ppwszIdentity) GetUniqueIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, out uint32 pcEnhancedStorageSilos) GetSilos;
 			}
 		}
 		[CRepr]
@@ -329,8 +329,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT.VTable
 			{
-				public new function HRESULT(ref IEnhancedStorageACT2 self, out PWSTR ppwszDeviceName) GetDeviceName;
-				public new function HRESULT(ref IEnhancedStorageACT2 self, out BOOL pIsDeviceRemovable) IsDeviceRemovable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT2 self, out PWSTR ppwszDeviceName) GetDeviceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT2 self, out BOOL pIsDeviceRemovable) IsDeviceRemovable;
 			}
 		}
 		[CRepr]
@@ -347,9 +347,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT2.VTable
 			{
-				public new function HRESULT(ref IEnhancedStorageACT3 self, uint32 dwFlags) UnauthorizeEx;
-				public new function HRESULT(ref IEnhancedStorageACT3 self, out BOOL pIsQueueFrozen) IsQueueFrozen;
-				public new function HRESULT(ref IEnhancedStorageACT3 self, out BOOL pShellExtSupport) GetShellExtSupport;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT3 self, uint32 dwFlags) UnauthorizeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT3 self, out BOOL pIsQueueFrozen) IsQueueFrozen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageACT3 self, out BOOL pShellExtSupport) GetShellExtSupport;
 			}
 		}
 		[CRepr]
@@ -368,11 +368,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnhancedStorageSilo self, out SILO_INFO pSiloInfo) GetInfo;
-				public new function HRESULT(ref IEnhancedStorageSilo self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, out uint32 pcEnhancedStorageSiloActions) GetActions;
-				public new function HRESULT(ref IEnhancedStorageSilo self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, out uint32 pcbResponseBuffer) SendCommand;
-				public new function HRESULT(ref IEnhancedStorageSilo self, out IPortableDevice* ppIPortableDevice) GetPortableDevice;
-				public new function HRESULT(ref IEnhancedStorageSilo self, out PWSTR ppwszSiloDevicePath) GetDevicePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSilo self, out SILO_INFO pSiloInfo) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSilo self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, out uint32 pcEnhancedStorageSiloActions) GetActions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSilo self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, out uint32 pcbResponseBuffer) SendCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSilo self, out IPortableDevice* ppIPortableDevice) GetPortableDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSilo self, out PWSTR ppwszSiloDevicePath) GetDevicePath;
 			}
 		}
 		[CRepr]
@@ -389,9 +389,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnhancedStorageSiloAction self, out PWSTR ppwszActionName) GetName;
-				public new function HRESULT(ref IEnhancedStorageSiloAction self, out PWSTR ppwszActionDescription) GetDescription;
-				public new function HRESULT(ref IEnhancedStorageSiloAction self) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSiloAction self, out PWSTR ppwszActionName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSiloAction self, out PWSTR ppwszActionDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSiloAction self) Invoke;
 			}
 		}
 		

@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ICoreFrameworkInputViewInterop self, HWND appWindow, in Guid riid, void** coreFrameworkInputView) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreFrameworkInputViewInterop self, HWND appWindow, in Guid riid, void** coreFrameworkInputView) GetForWindow;
 			}
 		}
 		

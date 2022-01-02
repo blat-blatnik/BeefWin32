@@ -125,11 +125,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceFinder self, BSTR bstrTypeURI, uint32 dwFlags, out IUPnPDevices* pDevices) FindByType;
-				public new function HRESULT(ref IUPnPDeviceFinder self, BSTR bstrTypeURI, uint32 dwFlags, ref IUnknown punkDeviceFinderCallback, out int32 plFindData) CreateAsyncFind;
-				public new function HRESULT(ref IUPnPDeviceFinder self, int32 lFindData) StartAsyncFind;
-				public new function HRESULT(ref IUPnPDeviceFinder self, int32 lFindData) CancelAsyncFind;
-				public new function HRESULT(ref IUPnPDeviceFinder self, BSTR bstrUDN, out IUPnPDevice* pDevice) FindByUDN;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinder self, BSTR bstrTypeURI, uint32 dwFlags, out IUPnPDevices* pDevices) FindByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinder self, BSTR bstrTypeURI, uint32 dwFlags, ref IUnknown punkDeviceFinderCallback, out int32 plFindData) CreateAsyncFind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinder self, int32 lFindData) StartAsyncFind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinder self, int32 lFindData) CancelAsyncFind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinder self, BSTR bstrUDN, out IUPnPDevice* pDevice) FindByUDN;
 			}
 		}
 		[CRepr]
@@ -145,8 +145,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPAddressFamilyControl self, int32 dwFlags) SetAddressFamily;
-				public new function HRESULT(ref IUPnPAddressFamilyControl self, out int32 pdwFlags) GetAddressFamily;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPAddressFamilyControl self, int32 dwFlags) SetAddressFamily;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPAddressFamilyControl self, out int32 pdwFlags) GetAddressFamily;
 			}
 		}
 		[CRepr]
@@ -161,7 +161,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPHttpHeaderControl self, BSTR bstrHttpHeaders) AddRequestHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPHttpHeaderControl self, BSTR bstrHttpHeaders) AddRequestHeaders;
 			}
 		}
 		[CRepr]
@@ -178,9 +178,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData, ref IUPnPDevice pDevice) DeviceAdded;
-				public new function HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData, BSTR bstrUDN) DeviceRemoved;
-				public new function HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData) SearchComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData, ref IUPnPDevice pDevice) DeviceAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData, BSTR bstrUDN) DeviceRemoved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinderCallback self, int32 lFindData) SearchComplete;
 			}
 		}
 		[CRepr]
@@ -197,9 +197,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPServices self, out int32 plCount) get_Count;
-				public new function HRESULT(ref IUPnPServices self, out IUnknown* ppunk) get__NewEnum;
-				public new function HRESULT(ref IUPnPServices self, BSTR bstrServiceId, out IUPnPService* ppService) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServices self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServices self, out IUnknown* ppunk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServices self, BSTR bstrServiceId, out IUPnPService* ppService) get_Item;
 			}
 		}
 		[CRepr]
@@ -219,12 +219,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPService self, BSTR bstrVariableName, out VARIANT pValue) QueryStateVariable;
-				public new function HRESULT(ref IUPnPService self, BSTR bstrActionName, VARIANT vInActionArgs, out VARIANT pvOutActionArgs, out VARIANT pvRetVal) InvokeAction;
-				public new function HRESULT(ref IUPnPService self, out BSTR pVal) get_ServiceTypeIdentifier;
-				public new function HRESULT(ref IUPnPService self, ref IUnknown pUnkCallback) AddCallback;
-				public new function HRESULT(ref IUPnPService self, out BSTR pbstrId) get_Id;
-				public new function HRESULT(ref IUPnPService self, out int32 plValue) get_LastTransportStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, BSTR bstrVariableName, out VARIANT pValue) QueryStateVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, BSTR bstrActionName, VARIANT vInActionArgs, out VARIANT pvOutActionArgs, out VARIANT pvRetVal) InvokeAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, out BSTR pVal) get_ServiceTypeIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, ref IUnknown pUnkCallback) AddCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, out BSTR pbstrId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPService self, out int32 plValue) get_LastTransportStatus;
 			}
 		}
 		[CRepr]
@@ -239,7 +239,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPAsyncResult self, uint64 ullRequestID) AsyncOperationComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPAsyncResult self, uint64 ullRequestID) AsyncOperationComplete;
 			}
 		}
 		[CRepr]
@@ -262,15 +262,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPServiceAsync self, BSTR bstrActionName, VARIANT vInActionArgs, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginInvokeAction;
-				public new function HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out VARIANT pvOutActionArgs, out VARIANT pvRetVal) EndInvokeAction;
-				public new function HRESULT(ref IUPnPServiceAsync self, BSTR bstrVariableName, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginQueryStateVariable;
-				public new function HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out VARIANT pValue) EndQueryStateVariable;
-				public new function HRESULT(ref IUPnPServiceAsync self, ref IUnknown pUnkCallback, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginSubscribeToEvents;
-				public new function HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID) EndSubscribeToEvents;
-				public new function HRESULT(ref IUPnPServiceAsync self, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginSCPDDownload;
-				public new function HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out BSTR pbstrSCPDDoc) EndSCPDDownload;
-				public new function HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID) CancelAsyncOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, BSTR bstrActionName, VARIANT vInActionArgs, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginInvokeAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out VARIANT pvOutActionArgs, out VARIANT pvRetVal) EndInvokeAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, BSTR bstrVariableName, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginQueryStateVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out VARIANT pValue) EndQueryStateVariable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, ref IUnknown pUnkCallback, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginSubscribeToEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID) EndSubscribeToEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, ref IUPnPAsyncResult pAsyncResult, out uint64 pullRequestID) BeginSCPDDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID, out BSTR pbstrSCPDDoc) EndSCPDDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceAsync self, uint64 ullRequestID) CancelAsyncOperation;
 			}
 		}
 		[CRepr]
@@ -286,8 +286,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPServiceCallback self, ref IUPnPService pus, PWSTR pcwszStateVarName, VARIANT vaValue) StateVariableChanged;
-				public new function HRESULT(ref IUPnPServiceCallback self, ref IUPnPService pus) ServiceInstanceDied;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceCallback self, ref IUPnPService pus, PWSTR pcwszStateVarName, VARIANT vaValue) StateVariableChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceCallback self, ref IUPnPService pus) ServiceInstanceDied;
 			}
 		}
 		[CRepr]
@@ -302,7 +302,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPServiceEnumProperty self, uint32 dwMask) SetServiceEnumProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceEnumProperty self, uint32 dwMask) SetServiceEnumProperty;
 			}
 		}
 		[CRepr]
@@ -318,8 +318,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPServiceDocumentAccess self, out BSTR pbstrDocUrl) GetDocumentURL;
-				public new function HRESULT(ref IUPnPServiceDocumentAccess self, out BSTR pbstrDoc) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceDocumentAccess self, out BSTR pbstrDocUrl) GetDocumentURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPServiceDocumentAccess self, out BSTR pbstrDoc) GetDocument;
 			}
 		}
 		[CRepr]
@@ -336,9 +336,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPDevices self, out int32 plCount) get_Count;
-				public new function HRESULT(ref IUPnPDevices self, out IUnknown* ppunk) get__NewEnum;
-				public new function HRESULT(ref IUPnPDevices self, BSTR bstrUDN, out IUPnPDevice* ppDevice) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevices self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevices self, out IUnknown* ppunk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevices self, BSTR bstrUDN, out IUPnPDevice* ppDevice) get_Item;
 			}
 		}
 		[CRepr]
@@ -371,25 +371,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPDevice self, out int16 pvarb) get_IsRootDevice;
-				public new function HRESULT(ref IUPnPDevice self, out IUPnPDevice* ppudRootDevice) get_RootDevice;
-				public new function HRESULT(ref IUPnPDevice self, out IUPnPDevice* ppudDeviceParent) get_ParentDevice;
-				public new function HRESULT(ref IUPnPDevice self, out int16 pvarb) get_HasChildren;
-				public new function HRESULT(ref IUPnPDevice self, out IUPnPDevices* ppudChildren) get_Children;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_UniqueDeviceName;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_FriendlyName;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_Type;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_PresentationURL;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ManufacturerName;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ManufacturerURL;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelName;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelNumber;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_Description;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelURL;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_UPC;
-				public new function HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_SerialNumber;
-				public new function HRESULT(ref IUPnPDevice self, BSTR bstrEncodingFormat, int32 lSizeX, int32 lSizeY, int32 lBitDepth, out BSTR pbstrIconURL) IconURL;
-				public new function HRESULT(ref IUPnPDevice self, out IUPnPServices* ppusServices) get_Services;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out int16 pvarb) get_IsRootDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out IUPnPDevice* ppudRootDevice) get_RootDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out IUPnPDevice* ppudDeviceParent) get_ParentDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out int16 pvarb) get_HasChildren;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out IUPnPDevices* ppudChildren) get_Children;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_UniqueDeviceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_PresentationURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ManufacturerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ManufacturerURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_ModelURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_UPC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out BSTR pbstr) get_SerialNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, BSTR bstrEncodingFormat, int32 lSizeX, int32 lSizeY, int32 lBitDepth, out BSTR pbstrIconURL) IconURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDevice self, out IUPnPServices* ppusServices) get_Services;
 			}
 		}
 		[CRepr]
@@ -404,7 +404,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceDocumentAccess self, out BSTR pbstrDocument) GetDocumentURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceDocumentAccess self, out BSTR pbstrDocument) GetDocumentURL;
 			}
 		}
 		[CRepr]
@@ -419,7 +419,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceDocumentAccessEx self, out BSTR pbstrDocument) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceDocumentAccessEx self, out BSTR pbstrDocument) GetDocument;
 			}
 		}
 		[CRepr]
@@ -440,13 +440,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUPnPDescriptionDocument self, out int32 plReadyState) get_ReadyState;
-				public new function HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUrl) Load;
-				public new function HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUrl, ref IUnknown punkCallback) LoadAsync;
-				public new function HRESULT(ref IUPnPDescriptionDocument self, out int32 phrError) get_LoadResult;
-				public new function HRESULT(ref IUPnPDescriptionDocument self) Abort;
-				public new function HRESULT(ref IUPnPDescriptionDocument self, out IUPnPDevice* ppudRootDevice) RootDevice;
-				public new function HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUDN, out IUPnPDevice* ppudDevice) DeviceByUDN;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, out int32 plReadyState) get_ReadyState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUrl) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUrl, ref IUnknown punkCallback) LoadAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, out int32 phrError) get_LoadResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, out IUPnPDevice* ppudRootDevice) RootDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocument self, BSTR bstrUDN, out IUPnPDevice* ppudDevice) DeviceByUDN;
 			}
 		}
 		[CRepr]
@@ -461,7 +461,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceFinderAddCallbackWithInterface self, int32 lFindData, ref IUPnPDevice pDevice, ref Guid pguidInterface) DeviceAddedWithInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceFinderAddCallbackWithInterface self, int32 lFindData, ref IUPnPDevice pDevice, ref Guid pguidInterface) DeviceAddedWithInterface;
 			}
 		}
 		[CRepr]
@@ -476,7 +476,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDescriptionDocumentCallback self, HRESULT hrLoadResult) LoadComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDescriptionDocumentCallback self, HRESULT hrLoadResult) LoadComplete;
 			}
 		}
 		[CRepr]
@@ -492,8 +492,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPEventSink self, uint32 cChanges, int32* rgdispidChanges) OnStateChanged;
-				public new function HRESULT(ref IUPnPEventSink self, VARIANT varsadispidChanges) OnStateChangedSafe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPEventSink self, uint32 cChanges, int32* rgdispidChanges) OnStateChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPEventSink self, VARIANT varsadispidChanges) OnStateChangedSafe;
 			}
 		}
 		[CRepr]
@@ -509,8 +509,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPEventSource self, ref IUPnPEventSink pesSubscriber) Advise;
-				public new function HRESULT(ref IUPnPEventSource self, ref IUPnPEventSink pesSubscriber) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPEventSource self, ref IUPnPEventSink pesSubscriber) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPEventSource self, ref IUPnPEventSink pesSubscriber) Unadvise;
 			}
 		}
 		[CRepr]
@@ -530,12 +530,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrXMLDesc, BSTR bstrProgIDDeviceControlClass, BSTR bstrInitString, BSTR bstrContainerId, BSTR bstrResourcePath, int32 nLifeTime, out BSTR pbstrDeviceIdentifier) RegisterDevice;
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrXMLDesc, ref IUnknown punkDeviceControl, BSTR bstrInitString, BSTR bstrResourcePath, int32 nLifeTime, out BSTR pbstrDeviceIdentifier) RegisterRunningDevice;
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrProviderName, BSTR bstrProgIDProviderClass, BSTR bstrInitString, BSTR bstrContainerId) RegisterDeviceProvider;
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrDeviceIdentifier, BSTR bstrTemplateUDN, out BSTR pbstrUDN) GetUniqueDeviceName;
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrDeviceIdentifier, BOOL fPermanent) UnregisterDevice;
-				public new function HRESULT(ref IUPnPRegistrar self, BSTR bstrProviderName) UnregisterDeviceProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrXMLDesc, BSTR bstrProgIDDeviceControlClass, BSTR bstrInitString, BSTR bstrContainerId, BSTR bstrResourcePath, int32 nLifeTime, out BSTR pbstrDeviceIdentifier) RegisterDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrXMLDesc, ref IUnknown punkDeviceControl, BSTR bstrInitString, BSTR bstrResourcePath, int32 nLifeTime, out BSTR pbstrDeviceIdentifier) RegisterRunningDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrProviderName, BSTR bstrProgIDProviderClass, BSTR bstrInitString, BSTR bstrContainerId) RegisterDeviceProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrDeviceIdentifier, BSTR bstrTemplateUDN, out BSTR pbstrUDN) GetUniqueDeviceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrDeviceIdentifier, BOOL fPermanent) UnregisterDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRegistrar self, BSTR bstrProviderName) UnregisterDeviceProvider;
 			}
 		}
 		[CRepr]
@@ -551,8 +551,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPReregistrar self, BSTR bstrDeviceIdentifier, BSTR bstrXMLDesc, BSTR bstrProgIDDeviceControlClass, BSTR bstrInitString, BSTR bstrContainerId, BSTR bstrResourcePath, int32 nLifeTime) ReregisterDevice;
-				public new function HRESULT(ref IUPnPReregistrar self, BSTR bstrDeviceIdentifier, BSTR bstrXMLDesc, ref IUnknown punkDeviceControl, BSTR bstrInitString, BSTR bstrResourcePath, int32 nLifeTime) ReregisterRunningDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPReregistrar self, BSTR bstrDeviceIdentifier, BSTR bstrXMLDesc, BSTR bstrProgIDDeviceControlClass, BSTR bstrInitString, BSTR bstrContainerId, BSTR bstrResourcePath, int32 nLifeTime) ReregisterDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPReregistrar self, BSTR bstrDeviceIdentifier, BSTR bstrXMLDesc, ref IUnknown punkDeviceControl, BSTR bstrInitString, BSTR bstrResourcePath, int32 nLifeTime) ReregisterRunningDevice;
 			}
 		}
 		[CRepr]
@@ -568,8 +568,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceControl self, BSTR bstrXMLDesc, BSTR bstrDeviceIdentifier, BSTR bstrInitString) Initialize;
-				public new function HRESULT(ref IUPnPDeviceControl self, BSTR bstrUDN, BSTR bstrServiceId, out IDispatch* ppdispService) GetServiceObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceControl self, BSTR bstrXMLDesc, BSTR bstrDeviceIdentifier, BSTR bstrInitString) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceControl self, BSTR bstrUDN, BSTR bstrServiceId, out IDispatch* ppdispService) GetServiceObject;
 			}
 		}
 		[CRepr]
@@ -584,7 +584,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceControlHttpHeaders self, out BSTR bstrHttpResponseHeaders) GetAdditionalResponseHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceControlHttpHeaders self, out BSTR bstrHttpResponseHeaders) GetAdditionalResponseHeaders;
 			}
 		}
 		[CRepr]
@@ -600,8 +600,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPDeviceProvider self, BSTR bstrInitString) Start;
-				public new function HRESULT(ref IUPnPDeviceProvider self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceProvider self, BSTR bstrInitString) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPDeviceProvider self) Stop;
 			}
 		}
 		[CRepr]
@@ -618,9 +618,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out uint32 pdwValue) GetDwordValue;
-				public new function HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out BSTR pbstrValue) GetStringValue;
-				public new function HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out Guid pguidValue) GetGuidValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out uint32 pdwValue) GetDwordValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out BSTR pbstrValue) GetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out Guid pguidValue) GetGuidValue;
 			}
 		}
 		

@@ -647,7 +647,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUpdateLockdown self, int32 flags) LockDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateLockdown self, int32 flags) LockDown;
 			}
 		}
 		[CRepr]
@@ -671,16 +671,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IStringCollection self, int32 index, out BSTR retval) get_Item;
-				public new function HRESULT(ref IStringCollection self, int32 index, BSTR value) put_Item;
-				public new function HRESULT(ref IStringCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IStringCollection self, out int32 retval) get_Count;
-				public new function HRESULT(ref IStringCollection self, out int16 retval) get_ReadOnly;
-				public new function HRESULT(ref IStringCollection self, BSTR value, out int32 retval) Add;
-				public new function HRESULT(ref IStringCollection self) Clear;
-				public new function HRESULT(ref IStringCollection self, out IStringCollection* retval) Copy;
-				public new function HRESULT(ref IStringCollection self, int32 index, BSTR value) Insert;
-				public new function HRESULT(ref IStringCollection self, int32 index) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, int32 index, out BSTR retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, int32 index, BSTR value) put_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, out int16 retval) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, BSTR value, out int32 retval) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, out IStringCollection* retval) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, int32 index, BSTR value) Insert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringCollection self, int32 index) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -708,20 +708,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWebProxy self, out BSTR retval) get_Address;
-				public new function HRESULT(ref IWebProxy self, BSTR value) put_Address;
-				public new function HRESULT(ref IWebProxy self, out IStringCollection* retval) get_BypassList;
-				public new function HRESULT(ref IWebProxy self, ref IStringCollection value) put_BypassList;
-				public new function HRESULT(ref IWebProxy self, out int16 retval) get_BypassProxyOnLocal;
-				public new function HRESULT(ref IWebProxy self, int16 value) put_BypassProxyOnLocal;
-				public new function HRESULT(ref IWebProxy self, out int16 retval) get_ReadOnly;
-				public new function HRESULT(ref IWebProxy self, out BSTR retval) get_UserName;
-				public new function HRESULT(ref IWebProxy self, BSTR value) put_UserName;
-				public new function HRESULT(ref IWebProxy self, BSTR value) SetPassword;
-				public new function HRESULT(ref IWebProxy self, ref IUnknown parentWindow, BSTR title) PromptForCredentials;
-				public new function HRESULT(ref IWebProxy self, HWND parentWindow, BSTR title) PromptForCredentialsFromHwnd;
-				public new function HRESULT(ref IWebProxy self, out int16 retval) get_AutoDetect;
-				public new function HRESULT(ref IWebProxy self, int16 value) put_AutoDetect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out BSTR retval) get_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, BSTR value) put_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out IStringCollection* retval) get_BypassList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, ref IStringCollection value) put_BypassList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out int16 retval) get_BypassProxyOnLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, int16 value) put_BypassProxyOnLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out int16 retval) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out BSTR retval) get_UserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, BSTR value) put_UserName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, BSTR value) SetPassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, ref IUnknown parentWindow, BSTR title) PromptForCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, HWND parentWindow, BSTR title) PromptForCredentialsFromHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, out int16 retval) get_AutoDetect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebProxy self, int16 value) put_AutoDetect;
 			}
 		}
 		[CRepr]
@@ -737,8 +737,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISystemInformation self, out BSTR retval) get_OemHardwareSupportLink;
-				public new function HRESULT(ref ISystemInformation self, out int16 retval) get_RebootRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemInformation self, out BSTR retval) get_OemHardwareSupportLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISystemInformation self, out int16 retval) get_RebootRequired;
 			}
 		}
 		[CRepr]
@@ -753,7 +753,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsUpdateAgentInfo self, VARIANT varInfoIdentifier, out VARIANT retval) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsUpdateAgentInfo self, VARIANT varInfoIdentifier, out VARIANT retval) GetInfo;
 			}
 		}
 		[CRepr]
@@ -769,8 +769,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdatesResults self, out VARIANT retval) get_LastSearchSuccessDate;
-				public new function HRESULT(ref IAutomaticUpdatesResults self, out VARIANT retval) get_LastInstallationSuccessDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesResults self, out VARIANT retval) get_LastSearchSuccessDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesResults self, out VARIANT retval) get_LastInstallationSuccessDate;
 			}
 		}
 		[CRepr]
@@ -794,16 +794,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, out AutomaticUpdatesNotificationLevel retval) get_NotificationLevel;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, AutomaticUpdatesNotificationLevel value) put_NotificationLevel;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, out int16 retval) get_ReadOnly;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, out int16 retval) get_Required;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, out AutomaticUpdatesScheduledInstallationDay retval) get_ScheduledInstallationDay;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, AutomaticUpdatesScheduledInstallationDay value) put_ScheduledInstallationDay;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, out int32 retval) get_ScheduledInstallationTime;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self, int32 value) put_ScheduledInstallationTime;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self) Refresh;
-				public new function HRESULT(ref IAutomaticUpdatesSettings self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, out AutomaticUpdatesNotificationLevel retval) get_NotificationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, AutomaticUpdatesNotificationLevel value) put_NotificationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, out int16 retval) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, out int16 retval) get_Required;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, out AutomaticUpdatesScheduledInstallationDay retval) get_ScheduledInstallationDay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, AutomaticUpdatesScheduledInstallationDay value) put_ScheduledInstallationDay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, out int32 retval) get_ScheduledInstallationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self, int32 value) put_ScheduledInstallationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings self) Save;
 			}
 		}
 		[CRepr]
@@ -820,9 +820,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAutomaticUpdatesSettings.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdatesSettings2 self, out int16 retval) get_IncludeRecommendedUpdates;
-				public new function HRESULT(ref IAutomaticUpdatesSettings2 self, int16 value) put_IncludeRecommendedUpdates;
-				public new function HRESULT(ref IAutomaticUpdatesSettings2 self, AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, out int16 userHasPermission) CheckPermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings2 self, out int16 retval) get_IncludeRecommendedUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings2 self, int16 value) put_IncludeRecommendedUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings2 self, AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, out int16 userHasPermission) CheckPermission;
 			}
 		}
 		[CRepr]
@@ -840,10 +840,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAutomaticUpdatesSettings2.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdatesSettings3 self, out int16 retval) get_NonAdministratorsElevated;
-				public new function HRESULT(ref IAutomaticUpdatesSettings3 self, int16 value) put_NonAdministratorsElevated;
-				public new function HRESULT(ref IAutomaticUpdatesSettings3 self, out int16 retval) get_FeaturedUpdatesEnabled;
-				public new function HRESULT(ref IAutomaticUpdatesSettings3 self, int16 value) put_FeaturedUpdatesEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings3 self, out int16 retval) get_NonAdministratorsElevated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings3 self, int16 value) put_NonAdministratorsElevated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings3 self, out int16 retval) get_FeaturedUpdatesEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdatesSettings3 self, int16 value) put_FeaturedUpdatesEnabled;
 			}
 		}
 		[CRepr]
@@ -864,13 +864,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdates self) DetectNow;
-				public new function HRESULT(ref IAutomaticUpdates self) Pause;
-				public new function HRESULT(ref IAutomaticUpdates self) Resume;
-				public new function HRESULT(ref IAutomaticUpdates self) ShowSettingsDialog;
-				public new function HRESULT(ref IAutomaticUpdates self, out IAutomaticUpdatesSettings* retval) get_Settings;
-				public new function HRESULT(ref IAutomaticUpdates self, out int16 retval) get_ServiceEnabled;
-				public new function HRESULT(ref IAutomaticUpdates self) EnableService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self) DetectNow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self) ShowSettingsDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self, out IAutomaticUpdatesSettings* retval) get_Settings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self, out int16 retval) get_ServiceEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates self) EnableService;
 			}
 		}
 		[CRepr]
@@ -885,7 +885,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAutomaticUpdates.VTable
 			{
-				public new function HRESULT(ref IAutomaticUpdates2 self, out IAutomaticUpdatesResults* retval) get_Results;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAutomaticUpdates2 self, out IAutomaticUpdatesResults* retval) get_Results;
 			}
 		}
 		[CRepr]
@@ -901,8 +901,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateIdentity self, out int32 retval) get_RevisionNumber;
-				public new function HRESULT(ref IUpdateIdentity self, out BSTR retval) get_UpdateID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateIdentity self, out int32 retval) get_RevisionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateIdentity self, out BSTR retval) get_UpdateID;
 			}
 		}
 		[CRepr]
@@ -920,10 +920,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IImageInformation self, out BSTR retval) get_AltText;
-				public new function HRESULT(ref IImageInformation self, out int32 retval) get_Height;
-				public new function HRESULT(ref IImageInformation self, out BSTR retval) get_Source;
-				public new function HRESULT(ref IImageInformation self, out int32 retval) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageInformation self, out BSTR retval) get_AltText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageInformation self, out int32 retval) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageInformation self, out BSTR retval) get_Source;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageInformation self, out int32 retval) get_Width;
 			}
 		}
 		[CRepr]
@@ -946,15 +946,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICategory self, out BSTR retval) get_Name;
-				public new function HRESULT(ref ICategory self, out BSTR retval) get_CategoryID;
-				public new function HRESULT(ref ICategory self, out ICategoryCollection* retval) get_Children;
-				public new function HRESULT(ref ICategory self, out BSTR retval) get_Description;
-				public new function HRESULT(ref ICategory self, out IImageInformation* retval) get_Image;
-				public new function HRESULT(ref ICategory self, out int32 retval) get_Order;
-				public new function HRESULT(ref ICategory self, out ICategory* retval) get_Parent;
-				public new function HRESULT(ref ICategory self, out BSTR retval) get_Type;
-				public new function HRESULT(ref ICategory self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out BSTR retval) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out BSTR retval) get_CategoryID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out ICategoryCollection* retval) get_Children;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out BSTR retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out IImageInformation* retval) get_Image;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out int32 retval) get_Order;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out ICategory* retval) get_Parent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out BSTR retval) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategory self, out IUpdateCollection* retval) get_Updates;
 			}
 		}
 		[CRepr]
@@ -971,9 +971,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICategoryCollection self, int32 index, out ICategory* retval) get_Item;
-				public new function HRESULT(ref ICategoryCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref ICategoryCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategoryCollection self, int32 index, out ICategory* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategoryCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICategoryCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -991,10 +991,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationBehavior self, out int16 retval) get_CanRequestUserInput;
-				public new function HRESULT(ref IInstallationBehavior self, out InstallationImpact retval) get_Impact;
-				public new function HRESULT(ref IInstallationBehavior self, out InstallationRebootBehavior retval) get_RebootBehavior;
-				public new function HRESULT(ref IInstallationBehavior self, out int16 retval) get_RequiresNetworkConnectivity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationBehavior self, out int16 retval) get_CanRequestUserInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationBehavior self, out InstallationImpact retval) get_Impact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationBehavior self, out InstallationRebootBehavior retval) get_RebootBehavior;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationBehavior self, out int16 retval) get_RequiresNetworkConnectivity;
 			}
 		}
 		[CRepr]
@@ -1009,7 +1009,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateDownloadContent self, out BSTR retval) get_DownloadUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadContent self, out BSTR retval) get_DownloadUrl;
 			}
 		}
 		[CRepr]
@@ -1024,7 +1024,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateDownloadContent.VTable
 			{
-				public new function HRESULT(ref IUpdateDownloadContent2 self, out int16 retval) get_IsDeltaCompressedContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadContent2 self, out int16 retval) get_IsDeltaCompressedContent;
 			}
 		}
 		[CRepr]
@@ -1041,9 +1041,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateDownloadContentCollection self, int32 index, out IUpdateDownloadContent* retval) get_Item;
-				public new function HRESULT(ref IUpdateDownloadContentCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IUpdateDownloadContentCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadContentCollection self, int32 index, out IUpdateDownloadContent* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadContentCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadContentCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1102,51 +1102,51 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_Title;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_AutoSelectOnWebSites;
-				public new function HRESULT(ref IUpdate self, out IUpdateCollection* retval) get_BundledUpdates;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_CanRequireSource;
-				public new function HRESULT(ref IUpdate self, out ICategoryCollection* retval) get_Categories;
-				public new function HRESULT(ref IUpdate self, out VARIANT retval) get_Deadline;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_DeltaCompressedContentAvailable;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_DeltaCompressedContentPreferred;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_Description;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_EulaAccepted;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_EulaText;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_HandlerID;
-				public new function HRESULT(ref IUpdate self, out IUpdateIdentity* retval) get_Identity;
-				public new function HRESULT(ref IUpdate self, out IImageInformation* retval) get_Image;
-				public new function HRESULT(ref IUpdate self, out IInstallationBehavior* retval) get_InstallationBehavior;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsBeta;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsDownloaded;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsHidden;
-				public new function HRESULT(ref IUpdate self, int16 value) put_IsHidden;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsInstalled;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsMandatory;
-				public new function HRESULT(ref IUpdate self, out int16 retval) get_IsUninstallable;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_Languages;
-				public new function HRESULT(ref IUpdate self, out double retval) get_LastDeploymentChangeTime;
-				public new function HRESULT(ref IUpdate self, out DECIMAL retval) get_MaxDownloadSize;
-				public new function HRESULT(ref IUpdate self, out DECIMAL retval) get_MinDownloadSize;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_MoreInfoUrls;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_MsrcSeverity;
-				public new function HRESULT(ref IUpdate self, out int32 retval) get_RecommendedCpuSpeed;
-				public new function HRESULT(ref IUpdate self, out int32 retval) get_RecommendedHardDiskSpace;
-				public new function HRESULT(ref IUpdate self, out int32 retval) get_RecommendedMemory;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_ReleaseNotes;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_SecurityBulletinIDs;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_SupersededUpdateIDs;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_SupportUrl;
-				public new function HRESULT(ref IUpdate self, out UpdateType retval) get_Type;
-				public new function HRESULT(ref IUpdate self, out BSTR retval) get_UninstallationNotes;
-				public new function HRESULT(ref IUpdate self, out IInstallationBehavior* retval) get_UninstallationBehavior;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_UninstallationSteps;
-				public new function HRESULT(ref IUpdate self, out IStringCollection* retval) get_KBArticleIDs;
-				public new function HRESULT(ref IUpdate self) AcceptEula;
-				public new function HRESULT(ref IUpdate self, out DeploymentAction retval) get_DeploymentAction;
-				public new function HRESULT(ref IUpdate self, BSTR path, int16 toExtractCabFiles) CopyFromCache;
-				public new function HRESULT(ref IUpdate self, out DownloadPriority retval) get_DownloadPriority;
-				public new function HRESULT(ref IUpdate self, out IUpdateDownloadContentCollection* retval) get_DownloadContents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_AutoSelectOnWebSites;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IUpdateCollection* retval) get_BundledUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_CanRequireSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out ICategoryCollection* retval) get_Categories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out VARIANT retval) get_Deadline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_DeltaCompressedContentAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_DeltaCompressedContentPreferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_EulaAccepted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_EulaText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_HandlerID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IUpdateIdentity* retval) get_Identity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IImageInformation* retval) get_Image;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IInstallationBehavior* retval) get_InstallationBehavior;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsBeta;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsDownloaded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsHidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, int16 value) put_IsHidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsInstalled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsMandatory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int16 retval) get_IsUninstallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_Languages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out double retval) get_LastDeploymentChangeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out DECIMAL retval) get_MaxDownloadSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out DECIMAL retval) get_MinDownloadSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_MoreInfoUrls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_MsrcSeverity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int32 retval) get_RecommendedCpuSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int32 retval) get_RecommendedHardDiskSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out int32 retval) get_RecommendedMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_ReleaseNotes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_SecurityBulletinIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_SupersededUpdateIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_SupportUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out UpdateType retval) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out BSTR retval) get_UninstallationNotes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IInstallationBehavior* retval) get_UninstallationBehavior;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_UninstallationSteps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IStringCollection* retval) get_KBArticleIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self) AcceptEula;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out DeploymentAction retval) get_DeploymentAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, BSTR path, int16 toExtractCabFiles) CopyFromCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out DownloadPriority retval) get_DownloadPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate self, out IUpdateDownloadContentCollection* retval) get_DownloadContents;
 			}
 		}
 		[CRepr]
@@ -1168,14 +1168,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdate.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverClass;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverHardwareID;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverManufacturer;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverModel;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverProvider;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out double retval) get_DriverVerDate;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out int32 retval) get_DeviceProblemNumber;
-				public new function HRESULT(ref IWindowsDriverUpdate self, out int32 retval) get_DeviceStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverHardwareID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverManufacturer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out BSTR retval) get_DriverProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out double retval) get_DriverVerDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out int32 retval) get_DeviceProblemNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate self, out int32 retval) get_DeviceStatus;
 			}
 		}
 		[CRepr]
@@ -1193,10 +1193,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdate.VTable
 			{
-				public new function HRESULT(ref IUpdate2 self, out int16 retval) get_RebootRequired;
-				public new function HRESULT(ref IUpdate2 self, out int16 retval) get_IsPresent;
-				public new function HRESULT(ref IUpdate2 self, out IStringCollection* retval) get_CveIDs;
-				public new function HRESULT(ref IUpdate2 self, ref IStringCollection pFiles) CopyToCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate2 self, out int16 retval) get_RebootRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate2 self, out int16 retval) get_IsPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate2 self, out IStringCollection* retval) get_CveIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate2 self, ref IStringCollection pFiles) CopyToCache;
 			}
 		}
 		[CRepr]
@@ -1211,7 +1211,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdate2.VTable
 			{
-				public new function HRESULT(ref IUpdate3 self, out int16 retval) get_BrowseOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate3 self, out int16 retval) get_BrowseOnly;
 			}
 		}
 		[CRepr]
@@ -1226,7 +1226,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdate3.VTable
 			{
-				public new function HRESULT(ref IUpdate4 self, out int16 retval) get_PerUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate4 self, out int16 retval) get_PerUser;
 			}
 		}
 		[CRepr]
@@ -1242,8 +1242,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdate4.VTable
 			{
-				public new function HRESULT(ref IUpdate5 self, out AutoSelectionMode retval) get_AutoSelection;
-				public new function HRESULT(ref IUpdate5 self, out AutoDownloadMode retval) get_AutoDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate5 self, out AutoSelectionMode retval) get_AutoSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdate5 self, out AutoDownloadMode retval) get_AutoDownload;
 			}
 		}
 		[CRepr]
@@ -1261,10 +1261,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdate2 self, out int16 retval) get_RebootRequired;
-				public new function HRESULT(ref IWindowsDriverUpdate2 self, out int16 retval) get_IsPresent;
-				public new function HRESULT(ref IWindowsDriverUpdate2 self, out IStringCollection* retval) get_CveIDs;
-				public new function HRESULT(ref IWindowsDriverUpdate2 self, ref IStringCollection pFiles) CopyToCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate2 self, out int16 retval) get_RebootRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate2 self, out int16 retval) get_IsPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate2 self, out IStringCollection* retval) get_CveIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate2 self, ref IStringCollection pFiles) CopyToCache;
 			}
 		}
 		[CRepr]
@@ -1279,7 +1279,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate2.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdate3 self, out int16 retval) get_BrowseOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate3 self, out int16 retval) get_BrowseOnly;
 			}
 		}
 		[CRepr]
@@ -1301,14 +1301,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverClass;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverHardwareID;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverManufacturer;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverModel;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverProvider;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out double retval) get_DriverVerDate;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out int32 retval) get_DeviceProblemNumber;
-				public new function HRESULT(ref IWindowsDriverUpdateEntry self, out int32 retval) get_DeviceStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverHardwareID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverManufacturer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out BSTR retval) get_DriverProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out double retval) get_DriverVerDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out int32 retval) get_DeviceProblemNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntry self, out int32 retval) get_DeviceStatus;
 			}
 		}
 		[CRepr]
@@ -1325,9 +1325,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdateEntryCollection self, int32 index, out IWindowsDriverUpdateEntry* retval) get_Item;
-				public new function HRESULT(ref IWindowsDriverUpdateEntryCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IWindowsDriverUpdateEntryCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntryCollection self, int32 index, out IWindowsDriverUpdateEntry* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntryCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdateEntryCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1343,8 +1343,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate3.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdate4 self, out IWindowsDriverUpdateEntryCollection* retval) get_WindowsDriverUpdateEntries;
-				public new function HRESULT(ref IWindowsDriverUpdate4 self, out int16 retval) get_PerUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate4 self, out IWindowsDriverUpdateEntryCollection* retval) get_WindowsDriverUpdateEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate4 self, out int16 retval) get_PerUser;
 			}
 		}
 		[CRepr]
@@ -1360,8 +1360,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate4.VTable
 			{
-				public new function HRESULT(ref IWindowsDriverUpdate5 self, out AutoSelectionMode retval) get_AutoSelection;
-				public new function HRESULT(ref IWindowsDriverUpdate5 self, out AutoDownloadMode retval) get_AutoDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate5 self, out AutoSelectionMode retval) get_AutoSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDriverUpdate5 self, out AutoDownloadMode retval) get_AutoDownload;
 			}
 		}
 		[CRepr]
@@ -1385,16 +1385,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateCollection self, int32 index, out IUpdate* retval) get_Item;
-				public new function HRESULT(ref IUpdateCollection self, int32 index, ref IUpdate value) put_Item;
-				public new function HRESULT(ref IUpdateCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IUpdateCollection self, out int32 retval) get_Count;
-				public new function HRESULT(ref IUpdateCollection self, out int16 retval) get_ReadOnly;
-				public new function HRESULT(ref IUpdateCollection self, ref IUpdate value, out int32 retval) Add;
-				public new function HRESULT(ref IUpdateCollection self) Clear;
-				public new function HRESULT(ref IUpdateCollection self, out IUpdateCollection* retval) Copy;
-				public new function HRESULT(ref IUpdateCollection self, int32 index, ref IUpdate value) Insert;
-				public new function HRESULT(ref IUpdateCollection self, int32 index) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, int32 index, out IUpdate* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, int32 index, ref IUpdate value) put_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, out int16 retval) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, ref IUpdate value, out int32 retval) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, out IUpdateCollection* retval) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, int32 index, ref IUpdate value) Insert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateCollection self, int32 index) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -1411,9 +1411,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateException self, out BSTR retval) get_Message;
-				public new function HRESULT(ref IUpdateException self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IUpdateException self, out UpdateExceptionContext retval) get_Context;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateException self, out BSTR retval) get_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateException self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateException self, out UpdateExceptionContext retval) get_Context;
 			}
 		}
 		[CRepr]
@@ -1428,7 +1428,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateException.VTable
 			{
-				public new function HRESULT(ref IInvalidProductLicenseException self, out BSTR retval) get_Product;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInvalidProductLicenseException self, out BSTR retval) get_Product;
 			}
 		}
 		[CRepr]
@@ -1445,9 +1445,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateExceptionCollection self, int32 index, out IUpdateException* retval) get_Item;
-				public new function HRESULT(ref IUpdateExceptionCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IUpdateExceptionCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateExceptionCollection self, int32 index, out IUpdateException* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateExceptionCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateExceptionCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1465,10 +1465,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISearchResult self, out OperationResultCode retval) get_ResultCode;
-				public new function HRESULT(ref ISearchResult self, out ICategoryCollection* retval) get_RootCategories;
-				public new function HRESULT(ref ISearchResult self, out IUpdateCollection* retval) get_Updates;
-				public new function HRESULT(ref ISearchResult self, out IUpdateExceptionCollection* retval) get_Warnings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchResult self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchResult self, out ICategoryCollection* retval) get_RootCategories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchResult self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchResult self, out IUpdateExceptionCollection* retval) get_Warnings;
 			}
 		}
 		[CRepr]
@@ -1486,10 +1486,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISearchJob self, out VARIANT retval) get_AsyncState;
-				public new function HRESULT(ref ISearchJob self, out int16 retval) get_IsCompleted;
-				public new function HRESULT(ref ISearchJob self) CleanUp;
-				public new function HRESULT(ref ISearchJob self) RequestAbort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchJob self, out VARIANT retval) get_AsyncState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchJob self, out int16 retval) get_IsCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchJob self) CleanUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchJob self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1517,7 +1517,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISearchCompletedCallback self, ref ISearchJob searchJob, ref ISearchCompletedCallbackArgs callbackArgs) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISearchCompletedCallback self, ref ISearchJob searchJob, ref ISearchCompletedCallbackArgs callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1545,20 +1545,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateHistoryEntry self, out UpdateOperation retval) get_Operation;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out OperationResultCode retval) get_ResultCode;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out double retval) get_Date;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out IUpdateIdentity* retval) get_UpdateIdentity;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_Title;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_Description;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out int32 retval) get_UnmappedResultCode;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out ServerSelection retval) get_ServerSelection;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_ServiceID;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out IStringCollection* retval) get_UninstallationSteps;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_UninstallationNotes;
-				public new function HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_SupportUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out UpdateOperation retval) get_Operation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out double retval) get_Date;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out IUpdateIdentity* retval) get_UpdateIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out int32 retval) get_UnmappedResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out ServerSelection retval) get_ServerSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_ServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out IStringCollection* retval) get_UninstallationSteps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_UninstallationNotes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry self, out BSTR retval) get_SupportUrl;
 			}
 		}
 		[CRepr]
@@ -1573,7 +1573,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateHistoryEntry.VTable
 			{
-				public new function HRESULT(ref IUpdateHistoryEntry2 self, out ICategoryCollection* retval) get_Categories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntry2 self, out ICategoryCollection* retval) get_Categories;
 			}
 		}
 		[CRepr]
@@ -1590,9 +1590,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateHistoryEntryCollection self, int32 index, out IUpdateHistoryEntry* retval) get_Item;
-				public new function HRESULT(ref IUpdateHistoryEntryCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IUpdateHistoryEntryCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntryCollection self, int32 index, out IUpdateHistoryEntry* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntryCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateHistoryEntryCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1624,24 +1624,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateSearcher self, out int16 retval) get_CanAutomaticallyUpgradeService;
-				public new function HRESULT(ref IUpdateSearcher self, int16 value) put_CanAutomaticallyUpgradeService;
-				public new function HRESULT(ref IUpdateSearcher self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateSearcher self, BSTR value) put_ClientApplicationID;
-				public new function HRESULT(ref IUpdateSearcher self, out int16 retval) get_IncludePotentiallySupersededUpdates;
-				public new function HRESULT(ref IUpdateSearcher self, int16 value) put_IncludePotentiallySupersededUpdates;
-				public new function HRESULT(ref IUpdateSearcher self, out ServerSelection retval) get_ServerSelection;
-				public new function HRESULT(ref IUpdateSearcher self, ServerSelection value) put_ServerSelection;
-				public new function HRESULT(ref IUpdateSearcher self, BSTR criteria, ref IUnknown onCompleted, VARIANT state, out ISearchJob* retval) BeginSearch;
-				public new function HRESULT(ref IUpdateSearcher self, ref ISearchJob searchJob, out ISearchResult* retval) EndSearch;
-				public new function HRESULT(ref IUpdateSearcher self, BSTR unescaped, out BSTR retval) EscapeString;
-				public new function HRESULT(ref IUpdateSearcher self, int32 startIndex, int32 count, out IUpdateHistoryEntryCollection* retval) QueryHistory;
-				public new function HRESULT(ref IUpdateSearcher self, BSTR criteria, out ISearchResult* retval) Search;
-				public new function HRESULT(ref IUpdateSearcher self, out int16 retval) get_Online;
-				public new function HRESULT(ref IUpdateSearcher self, int16 value) put_Online;
-				public new function HRESULT(ref IUpdateSearcher self, out int32 retval) GetTotalHistoryCount;
-				public new function HRESULT(ref IUpdateSearcher self, out BSTR retval) get_ServiceID;
-				public new function HRESULT(ref IUpdateSearcher self, BSTR value) put_ServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out int16 retval) get_CanAutomaticallyUpgradeService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, int16 value) put_CanAutomaticallyUpgradeService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, BSTR value) put_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out int16 retval) get_IncludePotentiallySupersededUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, int16 value) put_IncludePotentiallySupersededUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out ServerSelection retval) get_ServerSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, ServerSelection value) put_ServerSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, BSTR criteria, ref IUnknown onCompleted, VARIANT state, out ISearchJob* retval) BeginSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, ref ISearchJob searchJob, out ISearchResult* retval) EndSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, BSTR unescaped, out BSTR retval) EscapeString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, int32 startIndex, int32 count, out IUpdateHistoryEntryCollection* retval) QueryHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, BSTR criteria, out ISearchResult* retval) Search;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out int16 retval) get_Online;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, int16 value) put_Online;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out int32 retval) GetTotalHistoryCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, out BSTR retval) get_ServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher self, BSTR value) put_ServiceID;
 			}
 		}
 		[CRepr]
@@ -1657,8 +1657,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateSearcher.VTable
 			{
-				public new function HRESULT(ref IUpdateSearcher2 self, out int16 retval) get_IgnoreDownloadPriority;
-				public new function HRESULT(ref IUpdateSearcher2 self, int16 value) put_IgnoreDownloadPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher2 self, out int16 retval) get_IgnoreDownloadPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher2 self, int16 value) put_IgnoreDownloadPriority;
 			}
 		}
 		[CRepr]
@@ -1674,8 +1674,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateSearcher2.VTable
 			{
-				public new function HRESULT(ref IUpdateSearcher3 self, out SearchScope retval) get_SearchScope;
-				public new function HRESULT(ref IUpdateSearcher3 self, SearchScope value) put_SearchScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher3 self, out SearchScope retval) get_SearchScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSearcher3 self, SearchScope value) put_SearchScope;
 			}
 		}
 		[CRepr]
@@ -1691,8 +1691,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateDownloadResult self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IUpdateDownloadResult self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadResult self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloadResult self, out OperationResultCode retval) get_ResultCode;
 			}
 		}
 		[CRepr]
@@ -1709,9 +1709,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDownloadResult self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IDownloadResult self, out OperationResultCode retval) get_ResultCode;
-				public new function HRESULT(ref IDownloadResult self, int32 updateIndex, out IUpdateDownloadResult* retval) GetUpdateResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadResult self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadResult self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadResult self, int32 updateIndex, out IUpdateDownloadResult* retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1734,15 +1734,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_CurrentUpdateBytesDownloaded;
-				public new function HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_CurrentUpdateBytesToDownload;
-				public new function HRESULT(ref IDownloadProgress self, out int32 retval) get_CurrentUpdateIndex;
-				public new function HRESULT(ref IDownloadProgress self, out int32 retval) get_PercentComplete;
-				public new function HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_TotalBytesDownloaded;
-				public new function HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_TotalBytesToDownload;
-				public new function HRESULT(ref IDownloadProgress self, int32 updateIndex, out IUpdateDownloadResult* retval) GetUpdateResult;
-				public new function HRESULT(ref IDownloadProgress self, out DownloadPhase retval) get_CurrentUpdateDownloadPhase;
-				public new function HRESULT(ref IDownloadProgress self, out int32 retval) get_CurrentUpdatePercentComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_CurrentUpdateBytesDownloaded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_CurrentUpdateBytesToDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out int32 retval) get_CurrentUpdateIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out int32 retval) get_PercentComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_TotalBytesDownloaded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out DECIMAL retval) get_TotalBytesToDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, int32 updateIndex, out IUpdateDownloadResult* retval) GetUpdateResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out DownloadPhase retval) get_CurrentUpdateDownloadPhase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgress self, out int32 retval) get_CurrentUpdatePercentComplete;
 			}
 		}
 		[CRepr]
@@ -1762,12 +1762,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDownloadJob self, out VARIANT retval) get_AsyncState;
-				public new function HRESULT(ref IDownloadJob self, out int16 retval) get_IsCompleted;
-				public new function HRESULT(ref IDownloadJob self, out IUpdateCollection* retval) get_Updates;
-				public new function HRESULT(ref IDownloadJob self) CleanUp;
-				public new function HRESULT(ref IDownloadJob self, out IDownloadProgress* retval) GetProgress;
-				public new function HRESULT(ref IDownloadJob self) RequestAbort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self, out VARIANT retval) get_AsyncState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self, out int16 retval) get_IsCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self) CleanUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self, out IDownloadProgress* retval) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadJob self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1795,7 +1795,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDownloadCompletedCallback self, ref IDownloadJob downloadJob, ref IDownloadCompletedCallbackArgs callbackArgs) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadCompletedCallback self, ref IDownloadJob downloadJob, ref IDownloadCompletedCallbackArgs callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1810,7 +1810,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IDownloadProgressChangedCallbackArgs self, out IDownloadProgress* retval) get_Progress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgressChangedCallbackArgs self, out IDownloadProgress* retval) get_Progress;
 			}
 		}
 		[CRepr]
@@ -1825,7 +1825,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDownloadProgressChangedCallback self, ref IDownloadJob downloadJob, ref IDownloadProgressChangedCallbackArgs callbackArgs) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDownloadProgressChangedCallback self, ref IDownloadJob downloadJob, ref IDownloadProgressChangedCallbackArgs callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1850,17 +1850,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateDownloader self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateDownloader self, BSTR value) put_ClientApplicationID;
-				public new function HRESULT(ref IUpdateDownloader self, out int16 retval) get_IsForced;
-				public new function HRESULT(ref IUpdateDownloader self, int16 value) put_IsForced;
-				public new function HRESULT(ref IUpdateDownloader self, out DownloadPriority retval) get_Priority;
-				public new function HRESULT(ref IUpdateDownloader self, DownloadPriority value) put_Priority;
-				public new function HRESULT(ref IUpdateDownloader self, out IUpdateCollection* retval) get_Updates;
-				public new function HRESULT(ref IUpdateDownloader self, ref IUpdateCollection value) put_Updates;
-				public new function HRESULT(ref IUpdateDownloader self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IDownloadJob* retval) BeginDownload;
-				public new function HRESULT(ref IUpdateDownloader self, out IDownloadResult* retval) Download;
-				public new function HRESULT(ref IUpdateDownloader self, ref IDownloadJob value, out IDownloadResult* retval) EndDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, BSTR value) put_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, out int16 retval) get_IsForced;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, int16 value) put_IsForced;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, out DownloadPriority retval) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, DownloadPriority value) put_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, ref IUpdateCollection value) put_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IDownloadJob* retval) BeginDownload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, out IDownloadResult* retval) Download;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateDownloader self, ref IDownloadJob value, out IDownloadResult* retval) EndDownload;
 			}
 		}
 		[CRepr]
@@ -1877,9 +1877,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateInstallationResult self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IUpdateInstallationResult self, out int16 retval) get_RebootRequired;
-				public new function HRESULT(ref IUpdateInstallationResult self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstallationResult self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstallationResult self, out int16 retval) get_RebootRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstallationResult self, out OperationResultCode retval) get_ResultCode;
 			}
 		}
 		[CRepr]
@@ -1897,10 +1897,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationResult self, out int32 retval) get_HResult;
-				public new function HRESULT(ref IInstallationResult self, out int16 retval) get_RebootRequired;
-				public new function HRESULT(ref IInstallationResult self, out OperationResultCode retval) get_ResultCode;
-				public new function HRESULT(ref IInstallationResult self, int32 updateIndex, out IUpdateInstallationResult* retval) GetUpdateResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationResult self, out int32 retval) get_HResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationResult self, out int16 retval) get_RebootRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationResult self, out OperationResultCode retval) get_ResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationResult self, int32 updateIndex, out IUpdateInstallationResult* retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1918,10 +1918,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationProgress self, out int32 retval) get_CurrentUpdateIndex;
-				public new function HRESULT(ref IInstallationProgress self, out int32 retval) get_CurrentUpdatePercentComplete;
-				public new function HRESULT(ref IInstallationProgress self, out int32 retval) get_PercentComplete;
-				public new function HRESULT(ref IInstallationProgress self, int32 updateIndex, out IUpdateInstallationResult* retval) GetUpdateResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgress self, out int32 retval) get_CurrentUpdateIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgress self, out int32 retval) get_CurrentUpdatePercentComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgress self, out int32 retval) get_PercentComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgress self, int32 updateIndex, out IUpdateInstallationResult* retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1941,12 +1941,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationJob self, out VARIANT retval) get_AsyncState;
-				public new function HRESULT(ref IInstallationJob self, out int16 retval) get_IsCompleted;
-				public new function HRESULT(ref IInstallationJob self, out IUpdateCollection* retval) get_Updates;
-				public new function HRESULT(ref IInstallationJob self) CleanUp;
-				public new function HRESULT(ref IInstallationJob self, out IInstallationProgress* retval) GetProgress;
-				public new function HRESULT(ref IInstallationJob self) RequestAbort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self, out VARIANT retval) get_AsyncState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self, out int16 retval) get_IsCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self) CleanUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self, out IInstallationProgress* retval) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationJob self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1974,7 +1974,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInstallationCompletedCallback self, ref IInstallationJob installationJob, ref IInstallationCompletedCallbackArgs callbackArgs) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationCompletedCallback self, ref IInstallationJob installationJob, ref IInstallationCompletedCallbackArgs callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1989,7 +1989,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationProgressChangedCallbackArgs self, out IInstallationProgress* retval) get_Progress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgressChangedCallbackArgs self, out IInstallationProgress* retval) get_Progress;
 			}
 		}
 		[CRepr]
@@ -2004,7 +2004,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInstallationProgressChangedCallback self, ref IInstallationJob installationJob, ref IInstallationProgressChangedCallbackArgs callbackArgs) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationProgressChangedCallback self, ref IInstallationJob installationJob, ref IInstallationProgressChangedCallbackArgs callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -2039,27 +2039,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateInstaller self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateInstaller self, BSTR value) put_ClientApplicationID;
-				public new function HRESULT(ref IUpdateInstaller self, out int16 retval) get_IsForced;
-				public new function HRESULT(ref IUpdateInstaller self, int16 value) put_IsForced;
-				public new function HRESULT(ref IUpdateInstaller self, out HWND retval) get_ParentHwnd;
-				public new function HRESULT(ref IUpdateInstaller self, HWND value) put_ParentHwnd;
-				public new function HRESULT(ref IUpdateInstaller self, ref IUnknown value) put_ParentWindow;
-				public new function HRESULT(ref IUpdateInstaller self, out IUnknown* retval) get_ParentWindow;
-				public new function HRESULT(ref IUpdateInstaller self, out IUpdateCollection* retval) get_Updates;
-				public new function HRESULT(ref IUpdateInstaller self, ref IUpdateCollection value) put_Updates;
-				public new function HRESULT(ref IUpdateInstaller self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IInstallationJob* retval) BeginInstall;
-				public new function HRESULT(ref IUpdateInstaller self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IInstallationJob* retval) BeginUninstall;
-				public new function HRESULT(ref IUpdateInstaller self, ref IInstallationJob value, out IInstallationResult* retval) EndInstall;
-				public new function HRESULT(ref IUpdateInstaller self, ref IInstallationJob value, out IInstallationResult* retval) EndUninstall;
-				public new function HRESULT(ref IUpdateInstaller self, out IInstallationResult* retval) Install;
-				public new function HRESULT(ref IUpdateInstaller self, BSTR dialogTitle, out IInstallationResult* retval) RunWizard;
-				public new function HRESULT(ref IUpdateInstaller self, out int16 retval) get_IsBusy;
-				public new function HRESULT(ref IUpdateInstaller self, out IInstallationResult* retval) Uninstall;
-				public new function HRESULT(ref IUpdateInstaller self, out int16 retval) get_AllowSourcePrompts;
-				public new function HRESULT(ref IUpdateInstaller self, int16 value) put_AllowSourcePrompts;
-				public new function HRESULT(ref IUpdateInstaller self, out int16 retval) get_RebootRequiredBeforeInstallation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, BSTR value) put_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out int16 retval) get_IsForced;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, int16 value) put_IsForced;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out HWND retval) get_ParentHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, HWND value) put_ParentHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IUnknown value) put_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out IUnknown* retval) get_ParentWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out IUpdateCollection* retval) get_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IUpdateCollection value) put_Updates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IInstallationJob* retval) BeginInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IUnknown onProgressChanged, ref IUnknown onCompleted, VARIANT state, out IInstallationJob* retval) BeginUninstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IInstallationJob value, out IInstallationResult* retval) EndInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, ref IInstallationJob value, out IInstallationResult* retval) EndUninstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out IInstallationResult* retval) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, BSTR dialogTitle, out IInstallationResult* retval) RunWizard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out int16 retval) get_IsBusy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out IInstallationResult* retval) Uninstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out int16 retval) get_AllowSourcePrompts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, int16 value) put_AllowSourcePrompts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller self, out int16 retval) get_RebootRequiredBeforeInstallation;
 			}
 		}
 		[CRepr]
@@ -2075,8 +2075,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateInstaller.VTable
 			{
-				public new function HRESULT(ref IUpdateInstaller2 self, out int16 retval) get_ForceQuiet;
-				public new function HRESULT(ref IUpdateInstaller2 self, int16 value) put_ForceQuiet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller2 self, out int16 retval) get_ForceQuiet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller2 self, int16 value) put_ForceQuiet;
 			}
 		}
 		[CRepr]
@@ -2092,8 +2092,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateInstaller2.VTable
 			{
-				public new function HRESULT(ref IUpdateInstaller3 self, out int16 retval) get_AttemptCloseAppsIfNecessary;
-				public new function HRESULT(ref IUpdateInstaller3 self, int16 value) put_AttemptCloseAppsIfNecessary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller3 self, out int16 retval) get_AttemptCloseAppsIfNecessary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller3 self, int16 value) put_AttemptCloseAppsIfNecessary;
 			}
 		}
 		[CRepr]
@@ -2108,7 +2108,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateInstaller3.VTable
 			{
-				public new function HRESULT(ref IUpdateInstaller4 self, uint32 dwFlags) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateInstaller4 self, uint32 dwFlags) Commit;
 			}
 		}
 		[CRepr]
@@ -2130,14 +2130,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateSession self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateSession self, BSTR value) put_ClientApplicationID;
-				public new function HRESULT(ref IUpdateSession self, out int16 retval) get_ReadOnly;
-				public new function HRESULT(ref IUpdateSession self, out IWebProxy* retval) get_WebProxy;
-				public new function HRESULT(ref IUpdateSession self, ref IWebProxy value) put_WebProxy;
-				public new function HRESULT(ref IUpdateSession self, out IUpdateSearcher* retval) CreateUpdateSearcher;
-				public new function HRESULT(ref IUpdateSession self, out IUpdateDownloader* retval) CreateUpdateDownloader;
-				public new function HRESULT(ref IUpdateSession self, out IUpdateInstaller* retval) CreateUpdateInstaller;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, BSTR value) put_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out int16 retval) get_ReadOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out IWebProxy* retval) get_WebProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, ref IWebProxy value) put_WebProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out IUpdateSearcher* retval) CreateUpdateSearcher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out IUpdateDownloader* retval) CreateUpdateDownloader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession self, out IUpdateInstaller* retval) CreateUpdateInstaller;
 			}
 		}
 		[CRepr]
@@ -2153,8 +2153,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateSession.VTable
 			{
-				public new function HRESULT(ref IUpdateSession2 self, out uint32 retval) get_UserLocale;
-				public new function HRESULT(ref IUpdateSession2 self, uint32 lcid) put_UserLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession2 self, out uint32 retval) get_UserLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession2 self, uint32 lcid) put_UserLocale;
 			}
 		}
 		[CRepr]
@@ -2170,8 +2170,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateSession2.VTable
 			{
-				public new function HRESULT(ref IUpdateSession3 self, out IUpdateServiceManager2* retval) CreateUpdateServiceManager;
-				public new function HRESULT(ref IUpdateSession3 self, BSTR criteria, int32 startIndex, int32 count, out IUpdateHistoryEntryCollection* retval) QueryHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession3 self, out IUpdateServiceManager2* retval) CreateUpdateServiceManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateSession3 self, BSTR criteria, int32 startIndex, int32 count, out IUpdateHistoryEntryCollection* retval) QueryHistory;
 			}
 		}
 		[CRepr]
@@ -2198,19 +2198,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateService self, out BSTR retval) get_Name;
-				public new function HRESULT(ref IUpdateService self, out VARIANT retval) get_ContentValidationCert;
-				public new function HRESULT(ref IUpdateService self, out double retval) get_ExpirationDate;
-				public new function HRESULT(ref IUpdateService self, out int16 retval) get_IsManaged;
-				public new function HRESULT(ref IUpdateService self, out int16 retval) get_IsRegisteredWithAU;
-				public new function HRESULT(ref IUpdateService self, out double retval) get_IssueDate;
-				public new function HRESULT(ref IUpdateService self, out int16 retval) get_OffersWindowsUpdates;
-				public new function HRESULT(ref IUpdateService self, out IStringCollection* retval) get_RedirectUrls;
-				public new function HRESULT(ref IUpdateService self, out BSTR retval) get_ServiceID;
-				public new function HRESULT(ref IUpdateService self, out int16 retval) get_IsScanPackageService;
-				public new function HRESULT(ref IUpdateService self, out int16 retval) get_CanRegisterWithAU;
-				public new function HRESULT(ref IUpdateService self, out BSTR retval) get_ServiceUrl;
-				public new function HRESULT(ref IUpdateService self, out BSTR retval) get_SetupPrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out BSTR retval) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out VARIANT retval) get_ContentValidationCert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out double retval) get_ExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out int16 retval) get_IsManaged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out int16 retval) get_IsRegisteredWithAU;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out double retval) get_IssueDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out int16 retval) get_OffersWindowsUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out IStringCollection* retval) get_RedirectUrls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out BSTR retval) get_ServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out int16 retval) get_IsScanPackageService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out int16 retval) get_CanRegisterWithAU;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out BSTR retval) get_ServiceUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService self, out BSTR retval) get_SetupPrefix;
 			}
 		}
 		[CRepr]
@@ -2225,7 +2225,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateService.VTable
 			{
-				public new function HRESULT(ref IUpdateService2 self, out int16 retval) get_IsDefaultAUService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateService2 self, out int16 retval) get_IsDefaultAUService;
 			}
 		}
 		[CRepr]
@@ -2242,9 +2242,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateServiceCollection self, int32 index, out IUpdateService* retval) get_Item;
-				public new function HRESULT(ref IUpdateServiceCollection self, out IUnknown* retval) get__NewEnum;
-				public new function HRESULT(ref IUpdateServiceCollection self, out int32 retval) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceCollection self, int32 index, out IUpdateService* retval) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceCollection self, out IUnknown* retval) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceCollection self, out int32 retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -2262,10 +2262,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateServiceRegistration self, out UpdateServiceRegistrationState retval) get_RegistrationState;
-				public new function HRESULT(ref IUpdateServiceRegistration self, out BSTR retval) get_ServiceID;
-				public new function HRESULT(ref IUpdateServiceRegistration self, out int16 retval) get_IsPendingRegistrationWithAU;
-				public new function HRESULT(ref IUpdateServiceRegistration self, out IUpdateService2* retval) get_Service;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceRegistration self, out UpdateServiceRegistrationState retval) get_RegistrationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceRegistration self, out BSTR retval) get_ServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceRegistration self, out int16 retval) get_IsPendingRegistrationWithAU;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceRegistration self, out IUpdateService2* retval) get_Service;
 			}
 		}
 		[CRepr]
@@ -2286,13 +2286,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IUpdateServiceManager self, out IUpdateServiceCollection* retval) get_Services;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR serviceID, BSTR authorizationCabPath, out IUpdateService* retval) AddService;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR serviceID) RegisterServiceWithAU;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR serviceID) RemoveService;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR serviceID) UnregisterServiceWithAU;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR serviceName, BSTR scanFileLocation, int32 flags, out IUpdateService* ppService) AddScanPackageService;
-				public new function HRESULT(ref IUpdateServiceManager self, BSTR optionName, VARIANT optionValue) SetOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, out IUpdateServiceCollection* retval) get_Services;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR serviceID, BSTR authorizationCabPath, out IUpdateService* retval) AddService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR serviceID) RegisterServiceWithAU;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR serviceID) RemoveService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR serviceID) UnregisterServiceWithAU;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR serviceName, BSTR scanFileLocation, int32 flags, out IUpdateService* ppService) AddScanPackageService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager self, BSTR optionName, VARIANT optionValue) SetOption;
 			}
 		}
 		[CRepr]
@@ -2310,10 +2310,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUpdateServiceManager.VTable
 			{
-				public new function HRESULT(ref IUpdateServiceManager2 self, out BSTR retval) get_ClientApplicationID;
-				public new function HRESULT(ref IUpdateServiceManager2 self, BSTR value) put_ClientApplicationID;
-				public new function HRESULT(ref IUpdateServiceManager2 self, BSTR serviceID, out IUpdateServiceRegistration* retval) QueryServiceRegistration;
-				public new function HRESULT(ref IUpdateServiceManager2 self, BSTR serviceID, int32 flags, BSTR authorizationCabPath, out IUpdateServiceRegistration* retval) AddService2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager2 self, out BSTR retval) get_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager2 self, BSTR value) put_ClientApplicationID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager2 self, BSTR serviceID, out IUpdateServiceRegistration* retval) QueryServiceRegistration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUpdateServiceManager2 self, BSTR serviceID, int32 flags, BSTR authorizationCabPath, out IUpdateServiceRegistration* retval) AddService2;
 			}
 		}
 		[CRepr]
@@ -2328,7 +2328,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInstallationAgent self, BSTR installationResultCookie, int32 hresult, ref IStringCollection extendedReportingData) RecordInstallationResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationAgent self, BSTR installationResultCookie, int32 hresult, ref IStringCollection extendedReportingData) RecordInstallationResult;
 			}
 		}
 		

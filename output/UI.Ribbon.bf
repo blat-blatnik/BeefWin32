@@ -175,7 +175,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUISimplePropertySet self, in PROPERTYKEY key, out PROPVARIANT value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUISimplePropertySet self, in PROPERTYKEY key, out PROPVARIANT value) GetValue;
 			}
 		}
 		[CRepr]
@@ -192,9 +192,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIRibbon self, out uint32 cy) GetHeight;
-				public new function HRESULT(ref IUIRibbon self, ref IStream pStream) LoadSettingsFromStream;
-				public new function HRESULT(ref IUIRibbon self, ref IStream pStream) SaveSettingsToStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIRibbon self, out uint32 cy) GetHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIRibbon self, ref IStream pStream) LoadSettingsFromStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIRibbon self, ref IStream pStream) SaveSettingsToStream;
 			}
 		}
 		[CRepr]
@@ -217,15 +217,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIFramework self, HWND frameWnd, ref IUIApplication application) Initialize;
-				public new function HRESULT(ref IUIFramework self) Destroy;
-				public new function HRESULT(ref IUIFramework self, HINSTANCE instance, PWSTR resourceName) LoadUI;
-				public new function HRESULT(ref IUIFramework self, uint32 viewId, in Guid riid, void** ppv) GetView;
-				public new function HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, out PROPVARIANT value) GetUICommandProperty;
-				public new function HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, in PROPVARIANT value) SetUICommandProperty;
-				public new function HRESULT(ref IUIFramework self, uint32 commandId, UI_INVALIDATIONS flags, PROPERTYKEY* key) InvalidateUICommand;
-				public new function HRESULT(ref IUIFramework self) FlushPendingInvalidations;
-				public new function HRESULT(ref IUIFramework self, int32 iModes) SetModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, HWND frameWnd, ref IUIApplication application) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self) Destroy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, HINSTANCE instance, PWSTR resourceName) LoadUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, uint32 viewId, in Guid riid, void** ppv) GetView;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, out PROPVARIANT value) GetUICommandProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, in PROPVARIANT value) SetUICommandProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, uint32 commandId, UI_INVALIDATIONS flags, PROPERTYKEY* key) InvalidateUICommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self) FlushPendingInvalidations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIFramework self, int32 iModes) SetModes;
 			}
 		}
 		[CRepr]
@@ -240,7 +240,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IUIEventLogger self, ref UI_EVENTPARAMS pEventParams) OnUIEvent;
+				public new function [CallingConvention(.Stdcall)] void(ref IUIEventLogger self, ref UI_EVENTPARAMS pEventParams) OnUIEvent;
 			}
 		}
 		[CRepr]
@@ -255,7 +255,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIEventingManager self, ref IUIEventLogger eventLogger) SetEventLogger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIEventingManager self, ref IUIEventLogger eventLogger) SetEventLogger;
 			}
 		}
 		[CRepr]
@@ -270,7 +270,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIContextualUI self, int32 x, int32 y) ShowAtLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIContextualUI self, int32 x, int32 y) ShowAtLocation;
 			}
 		}
 		[CRepr]
@@ -291,13 +291,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUICollection self, out uint32 count) GetCount;
-				public new function HRESULT(ref IUICollection self, uint32 index, out IUnknown* item) GetItem;
-				public new function HRESULT(ref IUICollection self, ref IUnknown item) Add;
-				public new function HRESULT(ref IUICollection self, uint32 index, ref IUnknown item) Insert;
-				public new function HRESULT(ref IUICollection self, uint32 index) RemoveAt;
-				public new function HRESULT(ref IUICollection self, uint32 indexReplaced, ref IUnknown itemReplaceWith) Replace;
-				public new function HRESULT(ref IUICollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, out uint32 count) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, uint32 index, out IUnknown* item) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, ref IUnknown item) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, uint32 index, ref IUnknown item) Insert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, uint32 index) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self, uint32 indexReplaced, ref IUnknown itemReplaceWith) Replace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -312,7 +312,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUICollectionChangedEvent self, UI_COLLECTIONCHANGE action, uint32 oldIndex, IUnknown* oldItem, uint32 newIndex, IUnknown* newItem) OnChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICollectionChangedEvent self, UI_COLLECTIONCHANGE action, uint32 oldIndex, IUnknown* oldItem, uint32 newIndex, IUnknown* newItem) OnChanged;
 			}
 		}
 		[CRepr]
@@ -328,8 +328,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUICommandHandler self, uint32 commandId, UI_EXECUTIONVERB verb, PROPERTYKEY* key, PROPVARIANT* currentValue, IUISimplePropertySet* commandExecutionProperties) Execute;
-				public new function HRESULT(ref IUICommandHandler self, uint32 commandId, in PROPERTYKEY key, PROPVARIANT* currentValue, out PROPVARIANT newValue) UpdateProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICommandHandler self, uint32 commandId, UI_EXECUTIONVERB verb, PROPERTYKEY* key, PROPVARIANT* currentValue, IUISimplePropertySet* commandExecutionProperties) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUICommandHandler self, uint32 commandId, in PROPERTYKEY key, PROPVARIANT* currentValue, out PROPVARIANT newValue) UpdateProperty;
 			}
 		}
 		[CRepr]
@@ -346,9 +346,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIApplication self, uint32 viewId, UI_VIEWTYPE typeID, ref IUnknown view, UI_VIEWVERB verb, int32 uReasonCode) OnViewChanged;
-				public new function HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, out IUICommandHandler* commandHandler) OnCreateUICommand;
-				public new function HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler* commandHandler) OnDestroyUICommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIApplication self, uint32 viewId, UI_VIEWTYPE typeID, ref IUnknown view, UI_VIEWVERB verb, int32 uReasonCode) OnViewChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, out IUICommandHandler* commandHandler) OnCreateUICommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler* commandHandler) OnDestroyUICommand;
 			}
 		}
 		[CRepr]
@@ -363,7 +363,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIImage self, out HBITMAP bitmap) GetBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIImage self, out HBITMAP bitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -378,7 +378,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUIImageFromBitmap self, HBITMAP bitmap, UI_OWNERSHIP options, out IUIImage* image) CreateImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIImageFromBitmap self, HBITMAP bitmap, UI_OWNERSHIP options, out IUIImage* image) CreateImage;
 			}
 		}
 		

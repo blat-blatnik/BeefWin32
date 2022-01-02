@@ -24,7 +24,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IAudioFrameNative self, in Guid riid, void** ppv) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioFrameNative self, in Guid riid, void** ppv) GetData;
 			}
 		}
 		[CRepr]
@@ -40,8 +40,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetData;
-				public new function HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetDevice;
 			}
 		}
 		[CRepr]
@@ -56,7 +56,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IAudioFrameNativeFactory self, ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) CreateFromMFSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioFrameNativeFactory self, ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) CreateFromMFSample;
 			}
 		}
 		[CRepr]
@@ -71,7 +71,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IVideoFrameNativeFactory self, ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) CreateFromMFSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameNativeFactory self, ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) CreateFromMFSample;
 			}
 		}
 		

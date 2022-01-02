@@ -3433,8 +3433,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IContentPrefetcherTaskTrigger self, PWSTR packageFullName) TriggerContentPrefetcherTask;
-				public new function HRESULT(ref IContentPrefetcherTaskTrigger self, PWSTR packageFullName, out uint8 isRegistered) IsRegisteredForContentPrefetch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContentPrefetcherTaskTrigger self, PWSTR packageFullName) TriggerContentPrefetcherTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContentPrefetcherTaskTrigger self, PWSTR packageFullName, out uint8 isRegistered) IsRegisteredForContentPrefetch;
 			}
 		}
 		

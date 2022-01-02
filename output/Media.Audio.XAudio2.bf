@@ -555,16 +555,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXAPO self, out XAPO_REGISTRATION_PROPERTIES* ppRegistrationProperties) GetRegistrationProperties;
-				public new function HRESULT(ref IXAPO self, in WAVEFORMATEX pOutputFormat, in WAVEFORMATEX pRequestedInputFormat, WAVEFORMATEX** ppSupportedInputFormat) IsInputFormatSupported;
-				public new function HRESULT(ref IXAPO self, in WAVEFORMATEX pInputFormat, in WAVEFORMATEX pRequestedOutputFormat, WAVEFORMATEX** ppSupportedOutputFormat) IsOutputFormatSupported;
-				public new function HRESULT(ref IXAPO self, void* pData, uint32 DataByteSize) Initialize;
-				public new function void(ref IXAPO self) Reset;
-				public new function HRESULT(ref IXAPO self, uint32 InputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pInputLockedParameters, uint32 OutputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pOutputLockedParameters) LockForProcess;
-				public new function void(ref IXAPO self) UnlockForProcess;
-				public new function void(ref IXAPO self, uint32 InputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pInputProcessParameters, uint32 OutputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pOutputProcessParameters, BOOL IsEnabled) Process;
-				public new function uint32(ref IXAPO self, uint32 OutputFrameCount) CalcInputFrames;
-				public new function uint32(ref IXAPO self, uint32 InputFrameCount) CalcOutputFrames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPO self, out XAPO_REGISTRATION_PROPERTIES* ppRegistrationProperties) GetRegistrationProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPO self, in WAVEFORMATEX pOutputFormat, in WAVEFORMATEX pRequestedInputFormat, WAVEFORMATEX** ppSupportedInputFormat) IsInputFormatSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPO self, in WAVEFORMATEX pInputFormat, in WAVEFORMATEX pRequestedOutputFormat, WAVEFORMATEX** ppSupportedOutputFormat) IsOutputFormatSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPO self, void* pData, uint32 DataByteSize) Initialize;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAPO self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPO self, uint32 InputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pInputLockedParameters, uint32 OutputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pOutputLockedParameters) LockForProcess;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAPO self) UnlockForProcess;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAPO self, uint32 InputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pInputProcessParameters, uint32 OutputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pOutputProcessParameters, BOOL IsEnabled) Process;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IXAPO self, uint32 OutputFrameCount) CalcInputFrames;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IXAPO self, uint32 InputFrameCount) CalcOutputFrames;
 			}
 		}
 		[CRepr]
@@ -580,8 +580,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IXAPOParameters self, void* pParameters, uint32 ParameterByteSize) SetParameters;
-				public new function void(ref IXAPOParameters self, void* pParameters, uint32 ParameterByteSize) GetParameters;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAPOParameters self, void* pParameters, uint32 ParameterByteSize) SetParameters;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAPOParameters self, void* pParameters, uint32 ParameterByteSize) GetParameters;
 			}
 		}
 		[CRepr]
@@ -605,16 +605,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXAudio2 self, ref IXAudio2EngineCallback pCallback) RegisterForCallbacks;
-				public new function void(ref IXAudio2 self, ref IXAudio2EngineCallback pCallback) UnregisterForCallbacks;
-				public new function HRESULT(ref IXAudio2 self, out IXAudio2SourceVoice* ppSourceVoice, in WAVEFORMATEX pSourceFormat, uint32 Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSourceVoice;
-				public new function HRESULT(ref IXAudio2 self, out IXAudio2SubmixVoice* ppSubmixVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, uint32 ProcessingStage, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSubmixVoice;
-				public new function HRESULT(ref IXAudio2 self, out IXAudio2MasteringVoice* ppMasteringVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, PWSTR szDeviceId, XAUDIO2_EFFECT_CHAIN* pEffectChain, AUDIO_STREAM_CATEGORY StreamCategory) CreateMasteringVoice;
-				public new function HRESULT(ref IXAudio2 self) StartEngine;
-				public new function void(ref IXAudio2 self) StopEngine;
-				public new function HRESULT(ref IXAudio2 self, uint32 OperationSet) CommitChanges;
-				public new function void(ref IXAudio2 self, out XAUDIO2_PERFORMANCE_DATA pPerfData) GetPerformanceData;
-				public new function void(ref IXAudio2 self, XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved) SetDebugConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self, ref IXAudio2EngineCallback pCallback) RegisterForCallbacks;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2 self, ref IXAudio2EngineCallback pCallback) UnregisterForCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self, out IXAudio2SourceVoice* ppSourceVoice, in WAVEFORMATEX pSourceFormat, uint32 Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSourceVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self, out IXAudio2SubmixVoice* ppSubmixVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, uint32 ProcessingStage, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSubmixVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self, out IXAudio2MasteringVoice* ppMasteringVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, PWSTR szDeviceId, XAUDIO2_EFFECT_CHAIN* pEffectChain, AUDIO_STREAM_CATEGORY StreamCategory) CreateMasteringVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self) StartEngine;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2 self) StopEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2 self, uint32 OperationSet) CommitChanges;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2 self, out XAUDIO2_PERFORMANCE_DATA pPerfData) GetPerformanceData;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2 self, XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved) SetDebugConfiguration;
 			}
 		}
 		[CRepr]
@@ -630,8 +630,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IXAudio2Extension self, out uint32 quantumNumerator, out uint32 quantumDenominator) GetProcessingQuantum;
-				public new function void(ref IXAudio2Extension self, out uint32 processor) GetProcessor;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Extension self, out uint32 quantumNumerator, out uint32 quantumDenominator) GetProcessingQuantum;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Extension self, out uint32 processor) GetProcessor;
 			}
 		}
 		[CRepr]
@@ -663,25 +663,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function void(ref IXAudio2Voice self, out XAUDIO2_VOICE_DETAILS pVoiceDetails) GetVoiceDetails;
-				public new function HRESULT(ref IXAudio2Voice self, XAUDIO2_VOICE_SENDS* pSendList) SetOutputVoices;
-				public new function HRESULT(ref IXAudio2Voice self, XAUDIO2_EFFECT_CHAIN* pEffectChain) SetEffectChain;
-				public new function HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, uint32 OperationSet) EnableEffect;
-				public new function HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, uint32 OperationSet) DisableEffect;
-				public new function void(ref IXAudio2Voice self, uint32 EffectIndex, out BOOL pEnabled) GetEffectState;
-				public new function HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize, uint32 OperationSet) SetEffectParameters;
-				public new function HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize) GetEffectParameters;
-				public new function HRESULT(ref IXAudio2Voice self, in XAUDIO2_FILTER_PARAMETERS pParameters, uint32 OperationSet) SetFilterParameters;
-				public new function void(ref IXAudio2Voice self, out XAUDIO2_FILTER_PARAMETERS pParameters) GetFilterParameters;
-				public new function HRESULT(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, in XAUDIO2_FILTER_PARAMETERS pParameters, uint32 OperationSet) SetOutputFilterParameters;
-				public new function void(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, out XAUDIO2_FILTER_PARAMETERS pParameters) GetOutputFilterParameters;
-				public new function HRESULT(ref IXAudio2Voice self, float Volume, uint32 OperationSet) SetVolume;
-				public new function void(ref IXAudio2Voice self, out float pVolume) GetVolume;
-				public new function HRESULT(ref IXAudio2Voice self, uint32 Channels, float* pVolumes, uint32 OperationSet) SetChannelVolumes;
-				public new function void(ref IXAudio2Voice self, uint32 Channels, float* pVolumes) GetChannelVolumes;
-				public new function HRESULT(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, in float pLevelMatrix, uint32 OperationSet) SetOutputMatrix;
-				public new function void(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, out float pLevelMatrix) GetOutputMatrix;
-				public new function void(ref IXAudio2Voice self) DestroyVoice;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, out XAUDIO2_VOICE_DETAILS pVoiceDetails) GetVoiceDetails;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, XAUDIO2_VOICE_SENDS* pSendList) SetOutputVoices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, XAUDIO2_EFFECT_CHAIN* pEffectChain) SetEffectChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, uint32 OperationSet) EnableEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, uint32 OperationSet) DisableEffect;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, uint32 EffectIndex, out BOOL pEnabled) GetEffectState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize, uint32 OperationSet) SetEffectParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize) GetEffectParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, in XAUDIO2_FILTER_PARAMETERS pParameters, uint32 OperationSet) SetFilterParameters;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, out XAUDIO2_FILTER_PARAMETERS pParameters) GetFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, in XAUDIO2_FILTER_PARAMETERS pParameters, uint32 OperationSet) SetOutputFilterParameters;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, out XAUDIO2_FILTER_PARAMETERS pParameters) GetOutputFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, float Volume, uint32 OperationSet) SetVolume;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, out float pVolume) GetVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, uint32 Channels, float* pVolumes, uint32 OperationSet) SetChannelVolumes;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, uint32 Channels, float* pVolumes) GetChannelVolumes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, in float pLevelMatrix, uint32 OperationSet) SetOutputMatrix;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, out float pLevelMatrix) GetOutputMatrix;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2Voice self) DestroyVoice;
 			}
 		}
 		[CRepr]
@@ -703,16 +703,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IXAudio2Voice.VTable
 			{
-				public new function HRESULT(ref IXAudio2SourceVoice self, uint32 Flags, uint32 OperationSet) Start;
-				public new function HRESULT(ref IXAudio2SourceVoice self, uint32 Flags, uint32 OperationSet) Stop;
-				public new function HRESULT(ref IXAudio2SourceVoice self, in XAUDIO2_BUFFER pBuffer, XAUDIO2_BUFFER_WMA* pBufferWMA) SubmitSourceBuffer;
-				public new function HRESULT(ref IXAudio2SourceVoice self) FlushSourceBuffers;
-				public new function HRESULT(ref IXAudio2SourceVoice self) Discontinuity;
-				public new function HRESULT(ref IXAudio2SourceVoice self, uint32 OperationSet) ExitLoop;
-				public new function void(ref IXAudio2SourceVoice self, out XAUDIO2_VOICE_STATE pVoiceState, uint32 Flags) GetState;
-				public new function HRESULT(ref IXAudio2SourceVoice self, float Ratio, uint32 OperationSet) SetFrequencyRatio;
-				public new function void(ref IXAudio2SourceVoice self, out float pRatio) GetFrequencyRatio;
-				public new function HRESULT(ref IXAudio2SourceVoice self, uint32 NewSourceSampleRate) SetSourceSampleRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, uint32 Flags, uint32 OperationSet) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, uint32 Flags, uint32 OperationSet) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, in XAUDIO2_BUFFER pBuffer, XAUDIO2_BUFFER_WMA* pBufferWMA) SubmitSourceBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self) FlushSourceBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self) Discontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, uint32 OperationSet) ExitLoop;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2SourceVoice self, out XAUDIO2_VOICE_STATE pVoiceState, uint32 Flags) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, float Ratio, uint32 OperationSet) SetFrequencyRatio;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2SourceVoice self, out float pRatio) GetFrequencyRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2SourceVoice self, uint32 NewSourceSampleRate) SetSourceSampleRate;
 			}
 		}
 		[CRepr]
@@ -736,7 +736,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IXAudio2Voice.VTable
 			{
-				public new function HRESULT(ref IXAudio2MasteringVoice self, out uint32 pChannelmask) GetChannelMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAudio2MasteringVoice self, out uint32 pChannelmask) GetChannelMask;
 			}
 		}
 		[CRepr]
@@ -752,9 +752,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function void(ref IXAudio2EngineCallback self) OnProcessingPassStart;
-				public new function void(ref IXAudio2EngineCallback self) OnProcessingPassEnd;
-				public new function void(ref IXAudio2EngineCallback self, HRESULT Error) OnCriticalError;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2EngineCallback self) OnProcessingPassStart;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2EngineCallback self) OnProcessingPassEnd;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2EngineCallback self, HRESULT Error) OnCriticalError;
 			}
 		}
 		[CRepr]
@@ -774,13 +774,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function void(ref IXAudio2VoiceCallback self, uint32 BytesRequired) OnVoiceProcessingPassStart;
-				public new function void(ref IXAudio2VoiceCallback self) OnVoiceProcessingPassEnd;
-				public new function void(ref IXAudio2VoiceCallback self) OnStreamEnd;
-				public new function void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnBufferStart;
-				public new function void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnBufferEnd;
-				public new function void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnLoopEnd;
-				public new function void(ref IXAudio2VoiceCallback self, void* pBufferContext, HRESULT Error) OnVoiceError;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self, uint32 BytesRequired) OnVoiceProcessingPassStart;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self) OnVoiceProcessingPassEnd;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self) OnStreamEnd;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnBufferStart;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnBufferEnd;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self, void* pBufferContext) OnLoopEnd;
+				public new function [CallingConvention(.Stdcall)] void(ref IXAudio2VoiceCallback self, void* pBufferContext, HRESULT Error) OnVoiceError;
 			}
 		}
 		[CRepr]
@@ -798,10 +798,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXAPOHrtfParameters self, in HrtfPosition position) SetSourcePosition;
-				public new function HRESULT(ref IXAPOHrtfParameters self, in HrtfOrientation orientation) SetSourceOrientation;
-				public new function HRESULT(ref IXAPOHrtfParameters self, float gain) SetSourceGain;
-				public new function HRESULT(ref IXAPOHrtfParameters self, HrtfEnvironment environment) SetEnvironment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPOHrtfParameters self, in HrtfPosition position) SetSourcePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPOHrtfParameters self, in HrtfOrientation orientation) SetSourceOrientation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPOHrtfParameters self, float gain) SetSourceGain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPOHrtfParameters self, HrtfEnvironment environment) SetEnvironment;
 			}
 		}
 		

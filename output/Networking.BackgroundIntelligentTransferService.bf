@@ -445,9 +445,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile self, out PWSTR pVal) GetRemoteName;
-				public new function HRESULT(ref IBackgroundCopyFile self, out PWSTR pVal) GetLocalName;
-				public new function HRESULT(ref IBackgroundCopyFile self, out BG_FILE_PROGRESS pVal) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile self, out PWSTR pVal) GetRemoteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile self, out PWSTR pVal) GetLocalName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile self, out BG_FILE_PROGRESS pVal) GetProgress;
 			}
 		}
 		[CRepr]
@@ -466,11 +466,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBackgroundCopyFiles self, uint32 celt, out IBackgroundCopyFile* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBackgroundCopyFiles self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBackgroundCopyFiles self) Reset;
-				public new function HRESULT(ref IEnumBackgroundCopyFiles self, out IEnumBackgroundCopyFiles* ppenum) Clone;
-				public new function HRESULT(ref IEnumBackgroundCopyFiles self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyFiles self, uint32 celt, out IBackgroundCopyFile* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyFiles self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyFiles self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyFiles self, out IEnumBackgroundCopyFiles* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyFiles self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -489,11 +489,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyError self, out BG_ERROR_CONTEXT pContext, out HRESULT pCode) GetError;
-				public new function HRESULT(ref IBackgroundCopyError self, out IBackgroundCopyFile* pVal) GetFile;
-				public new function HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
-				public new function HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pContextDescription) GetErrorContextDescription;
-				public new function HRESULT(ref IBackgroundCopyError self, PWSTR* pProtocol) GetProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, out BG_ERROR_CONTEXT pContext, out HRESULT pCode) GetError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, out IBackgroundCopyFile* pVal) GetFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, uint32 LanguageId, PWSTR* pContextDescription) GetErrorContextDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyError self, PWSTR* pProtocol) GetProtocol;
 			}
 		}
 		[CRepr]
@@ -539,38 +539,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob self, uint32 cFileCount, BG_FILE_INFO* pFileSet) AddFileSet;
-				public new function HRESULT(ref IBackgroundCopyJob self, PWSTR RemoteUrl, PWSTR LocalName) AddFile;
-				public new function HRESULT(ref IBackgroundCopyJob self, out IEnumBackgroundCopyFiles* pEnum) EnumFiles;
-				public new function HRESULT(ref IBackgroundCopyJob self) Suspend;
-				public new function HRESULT(ref IBackgroundCopyJob self) Resume;
-				public new function HRESULT(ref IBackgroundCopyJob self) Cancel;
-				public new function HRESULT(ref IBackgroundCopyJob self) Complete;
-				public new function HRESULT(ref IBackgroundCopyJob self, out Guid pVal) GetId;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_TYPE pVal) ComGetType;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PROGRESS pVal) GetProgress;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_TIMES pVal) GetTimes;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_STATE pVal) GetState;
-				public new function HRESULT(ref IBackgroundCopyJob self, out IBackgroundCopyError* ppError) GetError;
-				public new function HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetOwner;
-				public new function HRESULT(ref IBackgroundCopyJob self, PWSTR Val) SetDisplayName;
-				public new function HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetDisplayName;
-				public new function HRESULT(ref IBackgroundCopyJob self, PWSTR Val) SetDescription;
-				public new function HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetDescription;
-				public new function HRESULT(ref IBackgroundCopyJob self, BG_JOB_PRIORITY Val) SetPriority;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PRIORITY pVal) GetPriority;
-				public new function HRESULT(ref IBackgroundCopyJob self, uint32 Val) SetNotifyFlags;
-				public new function HRESULT(ref IBackgroundCopyJob self, out uint32 pVal) GetNotifyFlags;
-				public new function HRESULT(ref IBackgroundCopyJob self, ref IUnknown Val) SetNotifyInterface;
-				public new function HRESULT(ref IBackgroundCopyJob self, out IUnknown* pVal) GetNotifyInterface;
-				public new function HRESULT(ref IBackgroundCopyJob self, uint32 Seconds) SetMinimumRetryDelay;
-				public new function HRESULT(ref IBackgroundCopyJob self, out uint32 Seconds) GetMinimumRetryDelay;
-				public new function HRESULT(ref IBackgroundCopyJob self, uint32 Seconds) SetNoProgressTimeout;
-				public new function HRESULT(ref IBackgroundCopyJob self, out uint32 Seconds) GetNoProgressTimeout;
-				public new function HRESULT(ref IBackgroundCopyJob self, out uint32 Errors) GetErrorCount;
-				public new function HRESULT(ref IBackgroundCopyJob self, BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) SetProxySettings;
-				public new function HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PROXY_USAGE pProxyUsage, out PWSTR pProxyList, out PWSTR pProxyBypassList) GetProxySettings;
-				public new function HRESULT(ref IBackgroundCopyJob self) TakeOwnership;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, uint32 cFileCount, BG_FILE_INFO* pFileSet) AddFileSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, PWSTR RemoteUrl, PWSTR LocalName) AddFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out IEnumBackgroundCopyFiles* pEnum) EnumFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self) Suspend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self) Complete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out Guid pVal) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_TYPE pVal) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PROGRESS pVal) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_TIMES pVal) GetTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_STATE pVal) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out IBackgroundCopyError* ppError) GetError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, PWSTR Val) SetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, PWSTR Val) SetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out PWSTR pVal) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, BG_JOB_PRIORITY Val) SetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PRIORITY pVal) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, uint32 Val) SetNotifyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out uint32 pVal) GetNotifyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, ref IUnknown Val) SetNotifyInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out IUnknown* pVal) GetNotifyInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, uint32 Seconds) SetMinimumRetryDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out uint32 Seconds) GetMinimumRetryDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, uint32 Seconds) SetNoProgressTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out uint32 Seconds) GetNoProgressTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out uint32 Errors) GetErrorCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) SetProxySettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self, out BG_JOB_PROXY_USAGE pProxyUsage, out PWSTR pProxyList, out PWSTR pProxyBypassList) GetProxySettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob self) TakeOwnership;
 			}
 		}
 		[CRepr]
@@ -589,11 +589,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBackgroundCopyJobs self, uint32 celt, out IBackgroundCopyJob* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs self) Reset;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs self, out IEnumBackgroundCopyJobs* ppenum) Clone;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs self, uint32 celt, out IBackgroundCopyJob* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs self, out IEnumBackgroundCopyJobs* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -610,9 +610,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob) JobTransferred;
-				public new function HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) JobError;
-				public new function HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, uint32 dwReserved) JobModification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob) JobTransferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) JobError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, uint32 dwReserved) JobModification;
 			}
 		}
 		[CRepr]
@@ -632,12 +632,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob) Begin_JobTransferred;
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobTransferred;
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) Begin_JobError;
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobError;
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, uint32 dwReserved) Begin_JobModification;
-				public new function HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobModification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob) Begin_JobTransferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobTransferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyError pError) Begin_JobError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self, ref IBackgroundCopyJob pJob, uint32 dwReserved) Begin_JobModification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIBackgroundCopyCallback self) Finish_JobModification;
 			}
 		}
 		[CRepr]
@@ -655,10 +655,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyManager self, PWSTR DisplayName, BG_JOB_TYPE Type, out Guid pJobId, out IBackgroundCopyJob* ppJob) CreateJob;
-				public new function HRESULT(ref IBackgroundCopyManager self, in Guid jobID, out IBackgroundCopyJob* ppJob) GetJob;
-				public new function HRESULT(ref IBackgroundCopyManager self, uint32 dwFlags, out IEnumBackgroundCopyJobs* ppEnum) EnumJobs;
-				public new function HRESULT(ref IBackgroundCopyManager self, HRESULT hResult, uint32 LanguageId, out PWSTR pErrorDescription) GetErrorDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyManager self, PWSTR DisplayName, BG_JOB_TYPE Type, out Guid pJobId, out IBackgroundCopyJob* ppJob) CreateJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyManager self, in Guid jobID, out IBackgroundCopyJob* ppJob) GetJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyManager self, uint32 dwFlags, out IEnumBackgroundCopyJobs* ppEnum) EnumJobs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyManager self, HRESULT hResult, uint32 LanguageId, out PWSTR pErrorDescription) GetErrorDescription;
 			}
 		}
 		[CRepr]
@@ -680,14 +680,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob2 self, PWSTR Program, PWSTR Parameters) SetNotifyCmdLine;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pProgram, out PWSTR pParameters) GetNotifyCmdLine;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, out BG_JOB_REPLY_PROGRESS pProgress) GetReplyProgress;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, uint8** ppBuffer, out uint64 pLength) GetReplyData;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, PWSTR ReplyFileName) SetReplyFileName;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pReplyFileName) GetReplyFileName;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, ref BG_AUTH_CREDENTIALS credentials) SetCredentials;
-				public new function HRESULT(ref IBackgroundCopyJob2 self, BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) RemoveCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, PWSTR Program, PWSTR Parameters) SetNotifyCmdLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pProgram, out PWSTR pParameters) GetNotifyCmdLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out BG_JOB_REPLY_PROGRESS pProgress) GetReplyProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, uint8** ppBuffer, out uint64 pLength) GetReplyData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, PWSTR ReplyFileName) SetReplyFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, out PWSTR pReplyFileName) GetReplyFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, ref BG_AUTH_CREDENTIALS credentials) SetCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob2 self, BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) RemoveCredentials;
 			}
 		}
 		[CRepr]
@@ -705,10 +705,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob2.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob3 self, PWSTR OldPrefix, PWSTR NewPrefix) ReplaceRemotePrefix;
-				public new function HRESULT(ref IBackgroundCopyJob3 self, PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) AddFileWithRanges;
-				public new function HRESULT(ref IBackgroundCopyJob3 self, uint32 Flags) SetFileACLFlags;
-				public new function HRESULT(ref IBackgroundCopyJob3 self, out uint32 Flags) GetFileACLFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob3 self, PWSTR OldPrefix, PWSTR NewPrefix) ReplaceRemotePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob3 self, PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) AddFileWithRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob3 self, uint32 Flags) SetFileACLFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob3 self, out uint32 Flags) GetFileACLFlags;
 			}
 		}
 		[CRepr]
@@ -724,8 +724,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile2 self, out uint32 RangeCount, BG_FILE_RANGE** Ranges) GetFileRanges;
-				public new function HRESULT(ref IBackgroundCopyFile2 self, PWSTR Val) SetRemoteName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile2 self, out uint32 RangeCount, BG_FILE_RANGE** Ranges) GetFileRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile2 self, PWSTR Val) SetRemoteName;
 			}
 		}
 		[CRepr]
@@ -747,14 +747,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) SetClientCertificateByID;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) SetClientCertificateByName;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self) RemoveClientCertificate;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) GetClientCertificate;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR RequestHeaders) SetCustomHeaders;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR* pRequestHeaders) GetCustomHeaders;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, uint32 Flags) SetSecurityFlags;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions self, out uint32 pFlags) GetSecurityFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) SetClientCertificateByID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) SetClientCertificateByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self) RemoveClientCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out BG_CERT_STORE_LOCATION pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) GetClientCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR RequestHeaders) SetCustomHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, PWSTR* pRequestHeaders) GetCustomHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, uint32 Flags) SetSecurityFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions self, out uint32 pFlags) GetSecurityFlags;
 			}
 		}
 		[CRepr]
@@ -775,13 +775,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out Guid pVal) GetId;
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out PWSTR pVal) GetOriginUrl;
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out uint64 pVal) GetFileSize;
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out FILETIME pVal) GetFileModificationTime;
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out FILETIME pVal) GetLastAccessTime;
-				public new function HRESULT(ref IBitsPeerCacheRecord self) IsFileValidated;
-				public new function HRESULT(ref IBitsPeerCacheRecord self, out uint32 pRangeCount, BG_FILE_RANGE** ppRanges) GetFileRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out Guid pVal) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out PWSTR pVal) GetOriginUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out uint64 pVal) GetFileSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out FILETIME pVal) GetFileModificationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out FILETIME pVal) GetLastAccessTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self) IsFileValidated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheRecord self, out uint32 pRangeCount, BG_FILE_RANGE** ppRanges) GetFileRanges;
 			}
 		}
 		[CRepr]
@@ -800,11 +800,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBitsPeerCacheRecords self, uint32 celt, out IBitsPeerCacheRecord* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBitsPeerCacheRecords self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBitsPeerCacheRecords self) Reset;
-				public new function HRESULT(ref IEnumBitsPeerCacheRecords self, out IEnumBitsPeerCacheRecords* ppenum) Clone;
-				public new function HRESULT(ref IEnumBitsPeerCacheRecords self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeerCacheRecords self, uint32 celt, out IBitsPeerCacheRecord* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeerCacheRecords self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeerCacheRecords self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeerCacheRecords self, out IEnumBitsPeerCacheRecords* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeerCacheRecords self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -821,9 +821,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBitsPeer self, PWSTR* pName) GetPeerName;
-				public new function HRESULT(ref IBitsPeer self, out BOOL pAuth) IsAuthenticated;
-				public new function HRESULT(ref IBitsPeer self, out BOOL pOnline) IsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, PWSTR* pName) GetPeerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, out BOOL pAuth) IsAuthenticated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeer self, out BOOL pOnline) IsAvailable;
 			}
 		}
 		[CRepr]
@@ -842,11 +842,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBitsPeers self, uint32 celt, out IBitsPeer* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBitsPeers self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBitsPeers self) Reset;
-				public new function HRESULT(ref IEnumBitsPeers self, out IEnumBitsPeers* ppenum) Clone;
-				public new function HRESULT(ref IEnumBitsPeers self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeers self, uint32 celt, out IBitsPeer* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeers self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeers self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeers self, out IEnumBitsPeers* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBitsPeers self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -874,20 +874,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pBytes) GetMaximumCacheSize;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, uint32 Bytes) SetMaximumCacheSize;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pSeconds) GetMaximumContentAge;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, uint32 Seconds) SetMaximumContentAge;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pFlags) GetConfigurationFlags;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, uint32 Flags) SetConfigurationFlags;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, out IEnumBitsPeerCacheRecords* ppEnum) EnumRecords;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, in Guid id, out IBitsPeerCacheRecord* ppRecord) GetRecord;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self) ClearRecords;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, in Guid id) DeleteRecord;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, PWSTR url) DeleteUrl;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self, IEnumBitsPeers** ppEnum) EnumPeers;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self) ClearPeers;
-				public new function HRESULT(ref IBitsPeerCacheAdministration self) DiscoverPeers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pBytes) GetMaximumCacheSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, uint32 Bytes) SetMaximumCacheSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pSeconds) GetMaximumContentAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, uint32 Seconds) SetMaximumContentAge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, out uint32 pFlags) GetConfigurationFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, uint32 Flags) SetConfigurationFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, out IEnumBitsPeerCacheRecords* ppEnum) EnumRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, in Guid id, out IBitsPeerCacheRecord* ppRecord) GetRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) ClearRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, in Guid id) DeleteRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, PWSTR url) DeleteUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self, IEnumBitsPeers** ppEnum) EnumPeers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) ClearPeers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsPeerCacheAdministration self) DiscoverPeers;
 			}
 		}
 		[CRepr]
@@ -907,12 +907,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob3.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob4 self, uint32 Flags) SetPeerCachingFlags;
-				public new function HRESULT(ref IBackgroundCopyJob4 self, out uint32 pFlags) GetPeerCachingFlags;
-				public new function HRESULT(ref IBackgroundCopyJob4 self, out uint32 pLevel) GetOwnerIntegrityLevel;
-				public new function HRESULT(ref IBackgroundCopyJob4 self, out BOOL pElevated) GetOwnerElevationState;
-				public new function HRESULT(ref IBackgroundCopyJob4 self, uint32 Timeout) SetMaximumDownloadTime;
-				public new function HRESULT(ref IBackgroundCopyJob4 self, out uint32 pTimeout) GetMaximumDownloadTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, uint32 Flags) SetPeerCachingFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, out uint32 pFlags) GetPeerCachingFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, out uint32 pLevel) GetOwnerIntegrityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, out BOOL pElevated) GetOwnerElevationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, uint32 Timeout) SetMaximumDownloadTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob4 self, out uint32 pTimeout) GetMaximumDownloadTime;
 			}
 		}
 		[CRepr]
@@ -930,10 +930,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile2.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile3 self, out PWSTR pFilename) GetTemporaryName;
-				public new function HRESULT(ref IBackgroundCopyFile3 self, BOOL state) SetValidationState;
-				public new function HRESULT(ref IBackgroundCopyFile3 self, out BOOL pState) GetValidationState;
-				public new function HRESULT(ref IBackgroundCopyFile3 self, out BOOL pVal) IsDownloadedFromPeer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile3 self, out PWSTR pFilename) GetTemporaryName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile3 self, BOOL state) SetValidationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile3 self, out BOOL pState) GetValidationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile3 self, out BOOL pVal) IsDownloadedFromPeer;
 			}
 		}
 		[CRepr]
@@ -948,7 +948,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyCallback2 self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyFile pFile) FileTransferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback2 self, ref IBackgroundCopyJob pJob, ref IBackgroundCopyFile pFile) FileTransferred;
 			}
 		}
 		[CRepr]
@@ -967,11 +967,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBitsTokenOptions self, BG_TOKEN UsageFlags) SetHelperTokenFlags;
-				public new function HRESULT(ref IBitsTokenOptions self, out BG_TOKEN pFlags) GetHelperTokenFlags;
-				public new function HRESULT(ref IBitsTokenOptions self) SetHelperToken;
-				public new function HRESULT(ref IBitsTokenOptions self) ClearHelperToken;
-				public new function HRESULT(ref IBitsTokenOptions self, out PWSTR pSid) GetHelperTokenSid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsTokenOptions self, BG_TOKEN UsageFlags) SetHelperTokenFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsTokenOptions self, out BG_TOKEN pFlags) GetHelperTokenFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsTokenOptions self) SetHelperToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsTokenOptions self) ClearHelperToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBitsTokenOptions self, out PWSTR pSid) GetHelperTokenSid;
 			}
 		}
 		[CRepr]
@@ -986,7 +986,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile3.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile4 self, out uint64 pFromOrigin, out uint64 pFromPeers) GetPeerDownloadStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile4 self, out uint64 pFromOrigin, out uint64 pFromPeers) GetPeerDownloadStats;
 			}
 		}
 		[CRepr]
@@ -1002,8 +1002,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob4.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob5 self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) SetProperty;
-				public new function HRESULT(ref IBackgroundCopyJob5 self, BITS_JOB_PROPERTY_ID PropertyId, out BITS_JOB_PROPERTY_VALUE PropertyValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob5 self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob5 self, BITS_JOB_PROPERTY_ID PropertyId, out BITS_JOB_PROPERTY_VALUE PropertyValue) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1019,8 +1019,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile4.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile5 self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) SetProperty;
-				public new function HRESULT(ref IBackgroundCopyFile5 self, BITS_FILE_PROPERTY_ID PropertyId, out BITS_FILE_PROPERTY_VALUE PropertyValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile5 self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile5 self, BITS_FILE_PROPERTY_ID PropertyId, out BITS_FILE_PROPERTY_VALUE PropertyValue) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1035,7 +1035,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback2.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyCallback3 self, ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 rangeCount, BG_FILE_RANGE* ranges) FileRangesTransferred;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback3 self, ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 rangeCount, BG_FILE_RANGE* ranges) FileRangesTransferred;
 			}
 		}
 		[CRepr]
@@ -1052,9 +1052,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile5.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyFile6 self, uint64 offset) UpdateDownloadPosition;
-				public new function HRESULT(ref IBackgroundCopyFile6 self, uint32 rangeCount, BG_FILE_RANGE* ranges) RequestFileRanges;
-				public new function HRESULT(ref IBackgroundCopyFile6 self, out uint32 rangeCount, BG_FILE_RANGE** ranges) GetFilledFileRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile6 self, uint64 offset) UpdateDownloadPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile6 self, uint32 rangeCount, BG_FILE_RANGE* ranges) RequestFileRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyFile6 self, out uint32 rangeCount, BG_FILE_RANGE** ranges) GetFilledFileRanges;
 			}
 		}
 		[CRepr]
@@ -1070,8 +1070,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions2 self, PWSTR method) SetHttpMethod;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions2 self, out PWSTR method) GetHttpMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions2 self, PWSTR method) SetHttpMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions2 self, out PWSTR method) GetHttpMethod;
 			}
 		}
 		[CRepr]
@@ -1086,7 +1086,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyServerCertificateValidationCallback self, ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) ValidateServerCertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyServerCertificateValidationCallback self, ref IBackgroundCopyJob job, ref IBackgroundCopyFile file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) ValidateServerCertificate;
 			}
 		}
 		[CRepr]
@@ -1102,8 +1102,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions2.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions3 self, ref IUnknown certValidationCallback) SetServerCertificateValidationInterface;
-				public new function HRESULT(ref IBackgroundCopyJobHttpOptions3 self) MakeCustomHeadersWriteOnly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions3 self, ref IUnknown certValidationCallback) SetServerCertificateValidationInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJobHttpOptions3 self) MakeCustomHeadersWriteOnly;
 			}
 		}
 		[CRepr]
@@ -1121,10 +1121,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IBITSExtensionSetup self) EnableBITSUploads;
-				public new function HRESULT(ref IBITSExtensionSetup self) DisableBITSUploads;
-				public new function HRESULT(ref IBITSExtensionSetup self, out BSTR pTaskName) GetCleanupTaskName;
-				public new function HRESULT(ref IBITSExtensionSetup self, in Guid riid, out IUnknown* ppUnk) GetCleanupTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBITSExtensionSetup self) EnableBITSUploads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBITSExtensionSetup self) DisableBITSUploads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBITSExtensionSetup self, out BSTR pTaskName) GetCleanupTaskName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBITSExtensionSetup self, in Guid riid, out IUnknown* ppUnk) GetCleanupTask;
 			}
 		}
 		[CRepr]
@@ -1139,7 +1139,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IBITSExtensionSetupFactory self, BSTR Path, out IBITSExtensionSetup* ppExtensionSetup) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBITSExtensionSetupFactory self, BSTR Path, out IBITSExtensionSetup* ppExtensionSetup) GetObject;
 			}
 		}
 		[CRepr]
@@ -1161,14 +1161,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyJob1 self) CancelJob;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, uint32 dwFlags, out uint32 pdwProgress) GetProgress;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, out uint32 pdwStatus, out uint32 pdwWin32Result, out uint32 pdwTransportResult, out uint32 pdwNumOfRetries) GetStatus;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, uint32 cFileCount, FILESETINFO** ppFileSet) AddFiles;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, uint32 cFileIndex, out FILESETINFO pFileInfo) GetFile;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, out uint32 pdwFileCount) GetFileCount;
-				public new function HRESULT(ref IBackgroundCopyJob1 self) SwitchToForeground;
-				public new function HRESULT(ref IBackgroundCopyJob1 self, out Guid pguidJobID) get_JobID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self) CancelJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, uint32 dwFlags, out uint32 pdwProgress) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, out uint32 pdwStatus, out uint32 pdwWin32Result, out uint32 pdwTransportResult, out uint32 pdwNumOfRetries) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, uint32 cFileCount, FILESETINFO** ppFileSet) AddFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, uint32 cFileIndex, out FILESETINFO pFileInfo) GetFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, out uint32 pdwFileCount) GetFileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self) SwitchToForeground;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyJob1 self, out Guid pguidJobID) get_JobID;
 			}
 		}
 		[CRepr]
@@ -1187,11 +1187,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBackgroundCopyJobs1 self, uint32 celt, Guid* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs1 self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs1 self) Reset;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs1 self, out IEnumBackgroundCopyJobs1* ppenum) Clone;
-				public new function HRESULT(ref IEnumBackgroundCopyJobs1 self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs1 self, uint32 celt, Guid* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs1 self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs1 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs1 self, out IEnumBackgroundCopyJobs1* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyJobs1 self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -1220,21 +1220,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyGroup self, GROUPPROP propID, out VARIANT pvarVal) GetProp;
-				public new function HRESULT(ref IBackgroundCopyGroup self, GROUPPROP propID, ref VARIANT pvarVal) SetProp;
-				public new function HRESULT(ref IBackgroundCopyGroup self, uint32 dwFlags, out uint32 pdwProgress) GetProgress;
-				public new function HRESULT(ref IBackgroundCopyGroup self, out uint32 pdwStatus, out uint32 pdwJobIndex) GetStatus;
-				public new function HRESULT(ref IBackgroundCopyGroup self, Guid jobID, out IBackgroundCopyJob1* ppJob) GetJob;
-				public new function HRESULT(ref IBackgroundCopyGroup self) SuspendGroup;
-				public new function HRESULT(ref IBackgroundCopyGroup self) ResumeGroup;
-				public new function HRESULT(ref IBackgroundCopyGroup self) CancelGroup;
-				public new function HRESULT(ref IBackgroundCopyGroup self, out uint32 pdwSize) get_Size;
-				public new function HRESULT(ref IBackgroundCopyGroup self, out Guid pguidGroupID) get_GroupID;
-				public new function HRESULT(ref IBackgroundCopyGroup self, Guid guidJobID, out IBackgroundCopyJob1* ppJob) CreateJob;
-				public new function HRESULT(ref IBackgroundCopyGroup self, uint32 dwFlags, out IEnumBackgroundCopyJobs1* ppEnumJobs) EnumJobs;
-				public new function HRESULT(ref IBackgroundCopyGroup self) SwitchToForeground;
-				public new function HRESULT(ref IBackgroundCopyGroup self, in Guid iid, out IUnknown* pUnk) QueryNewJobInterface;
-				public new function HRESULT(ref IBackgroundCopyGroup self, in Guid iid, ref IUnknown pUnk) SetNotificationPointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, GROUPPROP propID, out VARIANT pvarVal) GetProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, GROUPPROP propID, ref VARIANT pvarVal) SetProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, uint32 dwFlags, out uint32 pdwProgress) GetProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, out uint32 pdwStatus, out uint32 pdwJobIndex) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, Guid jobID, out IBackgroundCopyJob1* ppJob) GetJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self) SuspendGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self) ResumeGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self) CancelGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, out uint32 pdwSize) get_Size;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, out Guid pguidGroupID) get_GroupID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, Guid guidJobID, out IBackgroundCopyJob1* ppJob) CreateJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, uint32 dwFlags, out IEnumBackgroundCopyJobs1* ppEnumJobs) EnumJobs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self) SwitchToForeground;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, in Guid iid, out IUnknown* pUnk) QueryNewJobInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyGroup self, in Guid iid, ref IUnknown pUnk) SetNotificationPointer;
 			}
 		}
 		[CRepr]
@@ -1253,11 +1253,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumBackgroundCopyGroups self, uint32 celt, Guid* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumBackgroundCopyGroups self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumBackgroundCopyGroups self) Reset;
-				public new function HRESULT(ref IEnumBackgroundCopyGroups self, out IEnumBackgroundCopyGroups* ppenum) Clone;
-				public new function HRESULT(ref IEnumBackgroundCopyGroups self, out uint32 puCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyGroups self, uint32 celt, Guid* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyGroups self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyGroups self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyGroups self, out IEnumBackgroundCopyGroups* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumBackgroundCopyGroups self, out uint32 puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -1274,9 +1274,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyCallback1 self, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) OnStatus;
-				public new function HRESULT(ref IBackgroundCopyCallback1 self, uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue) OnProgress;
-				public new function HRESULT(ref IBackgroundCopyCallback1 self, uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) OnProgressEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback1 self, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) OnStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback1 self, uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue) OnProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyCallback1 self, uint32 ProgressType, ref IBackgroundCopyGroup pGroup, ref IBackgroundCopyJob1 pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) OnProgressEx;
 			}
 		}
 		[CRepr]
@@ -1293,9 +1293,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBackgroundCopyQMgr self, Guid guidGroupID, out IBackgroundCopyGroup* ppGroup) CreateGroup;
-				public new function HRESULT(ref IBackgroundCopyQMgr self, Guid groupID, out IBackgroundCopyGroup* ppGroup) GetGroup;
-				public new function HRESULT(ref IBackgroundCopyQMgr self, uint32 dwFlags, out IEnumBackgroundCopyGroups* ppEnumGroups) EnumGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyQMgr self, Guid guidGroupID, out IBackgroundCopyGroup* ppGroup) CreateGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyQMgr self, Guid groupID, out IBackgroundCopyGroup* ppGroup) GetGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyQMgr self, uint32 dwFlags, out IEnumBackgroundCopyGroups* ppEnumGroups) EnumGroups;
 			}
 		}
 		

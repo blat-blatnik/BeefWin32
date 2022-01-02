@@ -123,9 +123,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref _IManipulationEvents self, float x, float y) ManipulationStarted;
-				public new function HRESULT(ref _IManipulationEvents self, float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationDelta;
-				public new function HRESULT(ref _IManipulationEvents self, float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _IManipulationEvents self, float x, float y) ManipulationStarted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _IManipulationEvents self, float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationDelta;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref _IManipulationEvents self, float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationCompleted;
 			}
 		}
 		[CRepr]
@@ -188,55 +188,55 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInertiaProcessor self, out float x) get_InitialOriginX;
-				public new function HRESULT(ref IInertiaProcessor self, float x) put_InitialOriginX;
-				public new function HRESULT(ref IInertiaProcessor self, out float y) get_InitialOriginY;
-				public new function HRESULT(ref IInertiaProcessor self, float y) put_InitialOriginY;
-				public new function HRESULT(ref IInertiaProcessor self, out float x) get_InitialVelocityX;
-				public new function HRESULT(ref IInertiaProcessor self, float x) put_InitialVelocityX;
-				public new function HRESULT(ref IInertiaProcessor self, out float y) get_InitialVelocityY;
-				public new function HRESULT(ref IInertiaProcessor self, float y) put_InitialVelocityY;
-				public new function HRESULT(ref IInertiaProcessor self, out float velocity) get_InitialAngularVelocity;
-				public new function HRESULT(ref IInertiaProcessor self, float velocity) put_InitialAngularVelocity;
-				public new function HRESULT(ref IInertiaProcessor self, out float velocity) get_InitialExpansionVelocity;
-				public new function HRESULT(ref IInertiaProcessor self, float velocity) put_InitialExpansionVelocity;
-				public new function HRESULT(ref IInertiaProcessor self, out float radius) get_InitialRadius;
-				public new function HRESULT(ref IInertiaProcessor self, float radius) put_InitialRadius;
-				public new function HRESULT(ref IInertiaProcessor self, out float left) get_BoundaryLeft;
-				public new function HRESULT(ref IInertiaProcessor self, float left) put_BoundaryLeft;
-				public new function HRESULT(ref IInertiaProcessor self, out float top) get_BoundaryTop;
-				public new function HRESULT(ref IInertiaProcessor self, float top) put_BoundaryTop;
-				public new function HRESULT(ref IInertiaProcessor self, out float right) get_BoundaryRight;
-				public new function HRESULT(ref IInertiaProcessor self, float right) put_BoundaryRight;
-				public new function HRESULT(ref IInertiaProcessor self, out float bottom) get_BoundaryBottom;
-				public new function HRESULT(ref IInertiaProcessor self, float bottom) put_BoundaryBottom;
-				public new function HRESULT(ref IInertiaProcessor self, out float left) get_ElasticMarginLeft;
-				public new function HRESULT(ref IInertiaProcessor self, float left) put_ElasticMarginLeft;
-				public new function HRESULT(ref IInertiaProcessor self, out float top) get_ElasticMarginTop;
-				public new function HRESULT(ref IInertiaProcessor self, float top) put_ElasticMarginTop;
-				public new function HRESULT(ref IInertiaProcessor self, out float right) get_ElasticMarginRight;
-				public new function HRESULT(ref IInertiaProcessor self, float right) put_ElasticMarginRight;
-				public new function HRESULT(ref IInertiaProcessor self, out float bottom) get_ElasticMarginBottom;
-				public new function HRESULT(ref IInertiaProcessor self, float bottom) put_ElasticMarginBottom;
-				public new function HRESULT(ref IInertiaProcessor self, out float displacement) get_DesiredDisplacement;
-				public new function HRESULT(ref IInertiaProcessor self, float displacement) put_DesiredDisplacement;
-				public new function HRESULT(ref IInertiaProcessor self, out float rotation) get_DesiredRotation;
-				public new function HRESULT(ref IInertiaProcessor self, float rotation) put_DesiredRotation;
-				public new function HRESULT(ref IInertiaProcessor self, out float expansion) get_DesiredExpansion;
-				public new function HRESULT(ref IInertiaProcessor self, float expansion) put_DesiredExpansion;
-				public new function HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredAngularDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredAngularDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredExpansionDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredExpansionDeceleration;
-				public new function HRESULT(ref IInertiaProcessor self, out uint32 timestamp) get_InitialTimestamp;
-				public new function HRESULT(ref IInertiaProcessor self, uint32 timestamp) put_InitialTimestamp;
-				public new function HRESULT(ref IInertiaProcessor self) Reset;
-				public new function HRESULT(ref IInertiaProcessor self, out BOOL completed) Process;
-				public new function HRESULT(ref IInertiaProcessor self, uint32 timestamp, out BOOL completed) ProcessTime;
-				public new function HRESULT(ref IInertiaProcessor self) Complete;
-				public new function HRESULT(ref IInertiaProcessor self, uint32 timestamp) CompleteTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float x) get_InitialOriginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float x) put_InitialOriginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float y) get_InitialOriginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float y) put_InitialOriginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float x) get_InitialVelocityX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float x) put_InitialVelocityX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float y) get_InitialVelocityY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float y) put_InitialVelocityY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float velocity) get_InitialAngularVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float velocity) put_InitialAngularVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float velocity) get_InitialExpansionVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float velocity) put_InitialExpansionVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float radius) get_InitialRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float radius) put_InitialRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float left) get_BoundaryLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float left) put_BoundaryLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float top) get_BoundaryTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float top) put_BoundaryTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float right) get_BoundaryRight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float right) put_BoundaryRight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float bottom) get_BoundaryBottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float bottom) put_BoundaryBottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float left) get_ElasticMarginLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float left) put_ElasticMarginLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float top) get_ElasticMarginTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float top) put_ElasticMarginTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float right) get_ElasticMarginRight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float right) put_ElasticMarginRight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float bottom) get_ElasticMarginBottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float bottom) put_ElasticMarginBottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float displacement) get_DesiredDisplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float displacement) put_DesiredDisplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float rotation) get_DesiredRotation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float rotation) put_DesiredRotation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float expansion) get_DesiredExpansion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float expansion) put_DesiredExpansion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredAngularDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredAngularDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out float deceleration) get_DesiredExpansionDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, float deceleration) put_DesiredExpansionDeceleration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out uint32 timestamp) get_InitialTimestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, uint32 timestamp) put_InitialTimestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, out BOOL completed) Process;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, uint32 timestamp, out BOOL completed) ProcessTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self) Complete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInertiaProcessor self, uint32 timestamp) CompleteTime;
 			}
 		}
 		[CRepr]
@@ -271,27 +271,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IManipulationProcessor self, out MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) get_SupportedManipulations;
-				public new function HRESULT(ref IManipulationProcessor self, MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) put_SupportedManipulations;
-				public new function HRESULT(ref IManipulationProcessor self, out float pivotPointX) get_PivotPointX;
-				public new function HRESULT(ref IManipulationProcessor self, float pivotPointX) put_PivotPointX;
-				public new function HRESULT(ref IManipulationProcessor self, out float pivotPointY) get_PivotPointY;
-				public new function HRESULT(ref IManipulationProcessor self, float pivotPointY) put_PivotPointY;
-				public new function HRESULT(ref IManipulationProcessor self, out float pivotRadius) get_PivotRadius;
-				public new function HRESULT(ref IManipulationProcessor self, float pivotRadius) put_PivotRadius;
-				public new function HRESULT(ref IManipulationProcessor self) CompleteManipulation;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessDown;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessMove;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessUp;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessDownWithTime;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessMoveWithTime;
-				public new function HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessUpWithTime;
-				public new function HRESULT(ref IManipulationProcessor self, out float velocityX) GetVelocityX;
-				public new function HRESULT(ref IManipulationProcessor self, out float velocityY) GetVelocityY;
-				public new function HRESULT(ref IManipulationProcessor self, out float expansionVelocity) GetExpansionVelocity;
-				public new function HRESULT(ref IManipulationProcessor self, out float angularVelocity) GetAngularVelocity;
-				public new function HRESULT(ref IManipulationProcessor self, out float minRadius) get_MinimumScaleRotateRadius;
-				public new function HRESULT(ref IManipulationProcessor self, float minRadius) put_MinimumScaleRotateRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) get_SupportedManipulations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) put_SupportedManipulations;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float pivotPointX) get_PivotPointX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, float pivotPointX) put_PivotPointX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float pivotPointY) get_PivotPointY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, float pivotPointY) put_PivotPointY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float pivotRadius) get_PivotRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, float pivotRadius) put_PivotRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self) CompleteManipulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessMove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y) ProcessUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessDownWithTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessMoveWithTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessUpWithTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float velocityX) GetVelocityX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float velocityY) GetVelocityY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float expansionVelocity) GetExpansionVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float angularVelocity) GetAngularVelocity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, out float minRadius) get_MinimumScaleRotateRadius;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, float minRadius) put_MinimumScaleRotateRadius;
 			}
 		}
 		

@@ -2974,10 +2974,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
-				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
-				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
-				public new function HRESULT(ref ICloneViewHelper self, BOOL fFinalCall) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICloneViewHelper self, BOOL fFinalCall) Commit;
 			}
 		}
 		[CRepr]
@@ -2997,12 +2997,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
-				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
-				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
-				public new function HRESULT(ref IViewHelper self) Commit;
-				public new function HRESULT(ref IViewHelper self, ref IStream pIStream, out uint32 pulStatus) SetConfiguration;
-				public new function HRESULT(ref IViewHelper self) GetProceedOnNewConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self, ref IStream pIStream, out uint32 pulStatus) SetConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self) GetProceedOnNewConfiguration;
 			}
 		}
 		

@@ -1973,18 +1973,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITraceEvent self, out ITraceEvent* NewEvent) Clone;
-				public new function HRESULT(ref ITraceEvent self, void** UserContext) GetUserContext;
-				public new function HRESULT(ref ITraceEvent self, out EVENT_RECORD* EventRecord) GetEventRecord;
-				public new function HRESULT(ref ITraceEvent self, uint8* Payload, uint32 PayloadSize) SetPayload;
-				public new function HRESULT(ref ITraceEvent self, in EVENT_DESCRIPTOR EventDescriptor) SetEventDescriptor;
-				public new function HRESULT(ref ITraceEvent self, uint32 ProcessId) SetProcessId;
-				public new function HRESULT(ref ITraceEvent self, uint32 ProcessorIndex) SetProcessorIndex;
-				public new function HRESULT(ref ITraceEvent self, uint32 ThreadId) SetThreadId;
-				public new function HRESULT(ref ITraceEvent self, uint32 KernelTime, uint32 UserTime) SetThreadTimes;
-				public new function HRESULT(ref ITraceEvent self, in Guid ActivityId) SetActivityId;
-				public new function HRESULT(ref ITraceEvent self, ref LARGE_INTEGER TimeStamp) SetTimeStamp;
-				public new function HRESULT(ref ITraceEvent self, in Guid ProviderId) SetProviderId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, out ITraceEvent* NewEvent) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, void** UserContext) GetUserContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, out EVENT_RECORD* EventRecord) GetEventRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, uint8* Payload, uint32 PayloadSize) SetPayload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, in EVENT_DESCRIPTOR EventDescriptor) SetEventDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, uint32 ProcessId) SetProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, uint32 ProcessorIndex) SetProcessorIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, uint32 ThreadId) SetThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, uint32 KernelTime, uint32 UserTime) SetThreadTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, in Guid ActivityId) SetActivityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, ref LARGE_INTEGER TimeStamp) SetTimeStamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEvent self, in Guid ProviderId) SetProviderId;
 			}
 		}
 		[CRepr]
@@ -2001,9 +2001,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITraceEventCallback self, ref ITraceEvent HeaderEvent, ref ITraceRelogger Relogger) OnBeginProcessTrace;
-				public new function HRESULT(ref ITraceEventCallback self, ref ITraceRelogger Relogger) OnFinalizeProcessTrace;
-				public new function HRESULT(ref ITraceEventCallback self, ref ITraceEvent Event, ref ITraceRelogger Relogger) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEventCallback self, ref ITraceEvent HeaderEvent, ref ITraceRelogger Relogger) OnBeginProcessTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEventCallback self, ref ITraceRelogger Relogger) OnFinalizeProcessTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceEventCallback self, ref ITraceEvent Event, ref ITraceRelogger Relogger) OnEvent;
 			}
 		}
 		[CRepr]
@@ -2026,15 +2026,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITraceRelogger self, BSTR LogfileName, void* UserContext, out uint64 TraceHandle) AddLogfileTraceStream;
-				public new function HRESULT(ref ITraceRelogger self, BSTR LoggerName, void* UserContext, out uint64 TraceHandle) AddRealtimeTraceStream;
-				public new function HRESULT(ref ITraceRelogger self, ref ITraceEventCallback Callback) RegisterCallback;
-				public new function HRESULT(ref ITraceRelogger self, ref ITraceEvent Event) Inject;
-				public new function HRESULT(ref ITraceRelogger self, uint64 TraceHandle, uint32 Flags, out ITraceEvent* Event) CreateEventInstance;
-				public new function HRESULT(ref ITraceRelogger self) ProcessTrace;
-				public new function HRESULT(ref ITraceRelogger self, BSTR LogfileName) SetOutputFilename;
-				public new function HRESULT(ref ITraceRelogger self, BOOLEAN CompressionMode) SetCompressionMode;
-				public new function HRESULT(ref ITraceRelogger self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, BSTR LogfileName, void* UserContext, out uint64 TraceHandle) AddLogfileTraceStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, BSTR LoggerName, void* UserContext, out uint64 TraceHandle) AddRealtimeTraceStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, ref ITraceEventCallback Callback) RegisterCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, ref ITraceEvent Event) Inject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, uint64 TraceHandle, uint32 Flags, out ITraceEvent* Event) CreateEventInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self) ProcessTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, BSTR LogfileName) SetOutputFilename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self, BOOLEAN CompressionMode) SetCompressionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self) Cancel;
 			}
 		}
 		

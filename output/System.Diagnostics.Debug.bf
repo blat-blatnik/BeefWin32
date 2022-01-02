@@ -7735,8 +7735,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAdvanced self, void* Context, uint32 ContextSize) GetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced self, void* Context, uint32 ContextSize) SetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced self, void* Context, uint32 ContextSize) GetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced self, void* Context, uint32 ContextSize) SetThreadContext;
 			}
 		}
 		[CRepr]
@@ -7757,13 +7757,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAdvanced2 self, void* Context, uint32 ContextSize) GetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced2 self, void* Context, uint32 ContextSize) SetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced2 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-				public new function HRESULT(ref IDebugAdvanced2 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-				public new function HRESULT(ref IDebugAdvanced2 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-				public new function HRESULT(ref IDebugAdvanced2 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-				public new function HRESULT(ref IDebugAdvanced2 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, void* Context, uint32 ContextSize) GetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, void* Context, uint32 ContextSize) SetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced2 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
 			}
 		}
 		[CRepr]
@@ -7787,16 +7787,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAdvanced3 self, void* Context, uint32 ContextSize) GetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced3 self, void* Context, uint32 ContextSize) SetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
-				public new function HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, void* Context, uint32 ContextSize) GetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, void* Context, uint32 ContextSize) SetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced3 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
 			}
 		}
 		[CRepr]
@@ -7821,17 +7821,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAdvanced4 self, void* Context, uint32 ContextSize) GetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced4 self, void* Context, uint32 ContextSize) SetThreadContext;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
-				public new function HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize, SYMBOL_INFO_EX* pInfoEx) GetSymbolInformationWideEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, void* Context, uint32 ContextSize) GetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, void* Context, uint32 ContextSize) SetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAdvanced4 self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize, SYMBOL_INFO_EX* pInfoEx) GetSymbolInformationWideEx;
 			}
 		}
 		[CRepr]
@@ -7866,27 +7866,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Id) GetId;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 BreakType, out uint32 ProcType) ComGetType;
-				public new function HRESULT(ref IDebugBreakpoint self, out IDebugClient* Adder) GetAdder;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Flags) ComGetFlags;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Flags) AddFlags;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Flags) RemoveFlags;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Flags) SetFlags;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint64 Offset) GetOffset;
-				public new function HRESULT(ref IDebugBreakpoint self, uint64 Offset) SetOffset;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Size, out uint32 AccessType) GetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Size, uint32 AccessType) SetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Count) GetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Count) SetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Count) GetCurrentPassCount;
-				public new function HRESULT(ref IDebugBreakpoint self, out uint32 Id) GetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint self, uint32 Thread) SetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-				public new function HRESULT(ref IDebugBreakpoint self, PSTR Command) SetCommand;
-				public new function HRESULT(ref IDebugBreakpoint self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint self, PSTR Expression) SetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Id) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 BreakType, out uint32 ProcType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out IDebugClient* Adder) GetAdder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Flags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Flags) AddFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Flags) RemoveFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Flags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint64 Offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint64 Offset) SetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Size, out uint32 AccessType) GetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Count) GetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Count) SetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Count) GetCurrentPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out uint32 Id) GetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint32 Thread) SetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, PSTR Command) SetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, PSTR Expression) SetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
 			}
 		}
 		[CRepr]
@@ -7925,31 +7925,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Id) GetId;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 BreakType, out uint32 ProcType) ComGetType;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out IDebugClient* Adder) GetAdder;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Flags) ComGetFlags;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) AddFlags;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) RemoveFlags;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) SetFlags;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint64 Offset) GetOffset;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint64 Offset) SetOffset;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Size, out uint32 AccessType) GetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Size, uint32 AccessType) SetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Count) GetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Count) SetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Count) GetCurrentPassCount;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out uint32 Id) GetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint32 Thread) SetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-				public new function HRESULT(ref IDebugBreakpoint2 self, PSTR Command) SetCommand;
-				public new function HRESULT(ref IDebugBreakpoint2 self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint2 self, PSTR Expression) SetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint2 self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
-				public new function HRESULT(ref IDebugBreakpoint2 self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
-				public new function HRESULT(ref IDebugBreakpoint2 self, PWSTR Command) SetCommandWide;
-				public new function HRESULT(ref IDebugBreakpoint2 self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
-				public new function HRESULT(ref IDebugBreakpoint2 self, PWSTR Expression) SetOffsetExpressionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Id) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 BreakType, out uint32 ProcType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out IDebugClient* Adder) GetAdder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Flags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) AddFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) RemoveFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Flags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint64 Offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint64 Offset) SetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Size, out uint32 AccessType) GetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Count) GetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Count) SetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Count) GetCurrentPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out uint32 Id) GetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint32 Thread) SetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, PSTR Command) SetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, PSTR Expression) SetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, PWSTR Command) SetCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint2 self, PWSTR Expression) SetOffsetExpressionWide;
 			}
 		}
 		[CRepr]
@@ -7989,32 +7989,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Id) GetId;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 BreakType, out uint32 ProcType) ComGetType;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out IDebugClient* Adder) GetAdder;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Flags) ComGetFlags;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) AddFlags;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) RemoveFlags;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) SetFlags;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint64 Offset) GetOffset;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint64 Offset) SetOffset;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Size, out uint32 AccessType) GetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Size, uint32 AccessType) SetDataParameters;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Count) GetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Count) SetPassCount;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Count) GetCurrentPassCount;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out uint32 Id) GetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint32 Thread) SetMatchThreadId;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-				public new function HRESULT(ref IDebugBreakpoint3 self, PSTR Command) SetCommand;
-				public new function HRESULT(ref IDebugBreakpoint3 self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint3 self, PSTR Expression) SetOffsetExpression;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
-				public new function HRESULT(ref IDebugBreakpoint3 self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
-				public new function HRESULT(ref IDebugBreakpoint3 self, PWSTR Command) SetCommandWide;
-				public new function HRESULT(ref IDebugBreakpoint3 self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
-				public new function HRESULT(ref IDebugBreakpoint3 self, PWSTR Expression) SetOffsetExpressionWide;
-				public new function HRESULT(ref IDebugBreakpoint3 self, out Guid Guid) GetGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Id) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 BreakType, out uint32 ProcType) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out IDebugClient* Adder) GetAdder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Flags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) AddFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) RemoveFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Flags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint64 Offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint64 Offset) SetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Size, out uint32 AccessType) GetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Count) GetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Count) SetPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Count) GetCurrentPassCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out uint32 Id) GetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint32 Thread) SetMatchThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, PSTR Command) SetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, PSTR Expression) SetOffsetExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out DEBUG_BREAKPOINT_PARAMETERS Params) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, PWSTR Command) SetCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, PWSTR Expression) SetOffsetExpressionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugBreakpoint3 self, out Guid Guid) GetGuid;
 			}
 		}
 		[CRepr]
@@ -8073,51 +8073,51 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient self) FlushCallbacks;
 			}
 		}
 		[CRepr]
@@ -8184,59 +8184,59 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient2 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient2 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient2 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient2 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient2 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient2 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient2 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient2 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient2 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient2 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient2 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient2 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient2 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient2 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient2 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient2 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient2 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient2 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient2 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient2 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient2 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient2 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient2 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient2 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient2 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient2 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient2 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient2 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient2 self) AbandonCurrentProcess;
 			}
 		}
 		[CRepr]
@@ -8307,63 +8307,63 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient3 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient3 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient3 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient3 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient3 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient3 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient3 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient3 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient3 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient3 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient3 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient3 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient3 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient3 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient3 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient3 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient3 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient3 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient3 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient3 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient3 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient3 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient3 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient3 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient3 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient3 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient3 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient3 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
 			}
 		}
 		[CRepr]
@@ -8440,69 +8440,69 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient4 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient4 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient4 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient4 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient4 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient4 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient4 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient4 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient4 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient4 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient4 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient4 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient4 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient4 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient4 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient4 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient4 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient4 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient4 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient4 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient4 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient4 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient4 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient4 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient4 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient4 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-				public new function HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-				public new function HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-				public new function HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-				public new function HRESULT(ref IDebugClient4 self, out uint32 Number) GetNumberDumpFiles;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
-				public new function HRESULT(ref IDebugClient4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, out uint32 Number) GetNumberDumpFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
 			}
 		}
 		[CRepr]
@@ -8608,98 +8608,98 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient5 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient5 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient5 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient5 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient5 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient5 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient5 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient5 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient5 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient5 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient5 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient5 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient5 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient5 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient5 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient5 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient5 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient5 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Number) GetNumberDumpFiles;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-				public new function HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR Options) SetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient5 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR Options) StartServerWide;
-				public new function HRESULT(ref IDebugClient5 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient5 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR Prefix) SetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-				public new function HRESULT(ref IDebugClient5 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-				public new function HRESULT(ref IDebugClient5 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient5 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-				public new function HRESULT(ref IDebugClient5 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient5 self, uint64 Handle) PopOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Count) GetNumberInputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, out uint32 Count) GetNumberOutputCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
-				public new function HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-				public new function HRESULT(ref IDebugClient5 self, PSTR String) SetQuitLockString;
-				public new function HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient5 self, PWSTR String) SetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Number) GetNumberDumpFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR Options) StartServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint64 Handle) PopOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Count) GetNumberInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, out uint32 Count) GetNumberOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PSTR String) SetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient5 self, PWSTR String) SetQuitLockStringWide;
 			}
 		}
 		[CRepr]
@@ -8806,99 +8806,99 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient6 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient6 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient6 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient6 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient6 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient6 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient6 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient6 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient6 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient6 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient6 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient6 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient6 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient6 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient6 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient6 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient6 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient6 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Number) GetNumberDumpFiles;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-				public new function HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR Options) SetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient6 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR Options) StartServerWide;
-				public new function HRESULT(ref IDebugClient6 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient6 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR Prefix) SetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-				public new function HRESULT(ref IDebugClient6 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-				public new function HRESULT(ref IDebugClient6 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient6 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-				public new function HRESULT(ref IDebugClient6 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient6 self, uint64 Handle) PopOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Count) GetNumberInputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, out uint32 Count) GetNumberOutputCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
-				public new function HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-				public new function HRESULT(ref IDebugClient6 self, PSTR String) SetQuitLockString;
-				public new function HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient6 self, PWSTR String) SetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient6 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Number) GetNumberDumpFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR Options) StartServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint64 Handle) PopOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Count) GetNumberInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, out uint32 Count) GetNumberOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PSTR String) SetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, PWSTR String) SetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient6 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
 			}
 		}
 		[CRepr]
@@ -9006,100 +9006,100 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient7 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient7 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient7 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient7 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient7 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient7 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient7 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient7 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient7 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient7 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient7 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient7 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient7 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient7 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient7 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient7 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient7 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient7 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Number) GetNumberDumpFiles;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-				public new function HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR Options) SetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient7 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR Options) StartServerWide;
-				public new function HRESULT(ref IDebugClient7 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient7 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR Prefix) SetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-				public new function HRESULT(ref IDebugClient7 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-				public new function HRESULT(ref IDebugClient7 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient7 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-				public new function HRESULT(ref IDebugClient7 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient7 self, uint64 Handle) PopOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Count) GetNumberInputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, out uint32 Count) GetNumberOutputCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-				public new function HRESULT(ref IDebugClient7 self, PSTR String) SetQuitLockString;
-				public new function HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient7 self, PWSTR String) SetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient7 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
-				public new function HRESULT(ref IDebugClient7 self, void* Context, uint32 ContextSize) SetClientContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Number) GetNumberDumpFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR Options) StartServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint64 Handle) PopOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Count) GetNumberInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, out uint32 Count) GetNumberOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PSTR String) SetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, PWSTR String) SetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient7 self, void* Context, uint32 ContextSize) SetClientContext;
 			}
 		}
 		[CRepr]
@@ -9208,101 +9208,101 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-				public new function HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient8 self, PSTR Options) SetKernelConnectionOptions;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-				public new function HRESULT(ref IDebugClient8 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server) DisconnectProcessServer;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Options) GetProcessOptions;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Options) AddProcessOptions;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Options) RemoveProcessOptions;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Options) SetProcessOptions;
-				public new function HRESULT(ref IDebugClient8 self, PSTR DumpFile) OpenDumpFile;
-				public new function HRESULT(ref IDebugClient8 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-				public new function HRESULT(ref IDebugClient8 self, PSTR Options) StartServer;
-				public new function HRESULT(ref IDebugClient8 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-				public new function HRESULT(ref IDebugClient8 self) TerminateProcesses;
-				public new function HRESULT(ref IDebugClient8 self) DetachProcesses;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags) EndSession;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Code) GetExitCode;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Timeout) DispatchCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, ref IDebugClient Client) ExitDispatch;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugClient* Client) CreateClient;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Mask) GetOutputMask;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Mask) SetOutputMask;
-				public new function HRESULT(ref IDebugClient8 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient8 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Columns) GetOutputWidth;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Columns) SetOutputWidth;
-				public new function HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient8 self, PSTR Prefix) SetOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-				public new function HRESULT(ref IDebugClient8 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-				public new function HRESULT(ref IDebugClient8 self) FlushCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-				public new function HRESULT(ref IDebugClient8 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server) EndProcessServer;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Timeout) WaitForProcessServerEnd;
-				public new function HRESULT(ref IDebugClient8 self) IsKernelDebuggerEnabled;
-				public new function HRESULT(ref IDebugClient8 self) TerminateCurrentProcess;
-				public new function HRESULT(ref IDebugClient8 self) DetachCurrentProcess;
-				public new function HRESULT(ref IDebugClient8 self) AbandonCurrentProcess;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Number) GetNumberDumpFiles;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-				public new function HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR Options) SetKernelConnectionOptionsWide;
-				public new function HRESULT(ref IDebugClient8 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR Options) StartServerWide;
-				public new function HRESULT(ref IDebugClient8 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient8 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
-				public new function HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR Prefix) SetOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-				public new function HRESULT(ref IDebugClient8 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-				public new function HRESULT(ref IDebugClient8 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient8 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-				public new function HRESULT(ref IDebugClient8 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
-				public new function HRESULT(ref IDebugClient8 self, uint64 Handle) PopOutputLinePrefix;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Count) GetNumberInputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, out uint32 Count) GetNumberOutputCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-				public new function HRESULT(ref IDebugClient8 self, PSTR String) SetQuitLockString;
-				public new function HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR String) SetQuitLockStringWide;
-				public new function HRESULT(ref IDebugClient8 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
-				public new function HRESULT(ref IDebugClient8 self, void* Context, uint32 ContextSize) SetClientContext;
-				public new function HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 AlternateArch) OpenDumpFileWide2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR Options) SetKernelConnectionOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR RemoteOptions, out uint64 Server) ConnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server) DisconnectProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Options) GetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Options) AddProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Options) RemoveProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Options) SetProcessOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR DumpFile) OpenDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR Options) StartServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) TerminateProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) DetachProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags) EndSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Code) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Timeout) DispatchCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, ref IDebugClient Client) ExitDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugClient* Client) CreateClient;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugInputCallbacks* Callbacks) GetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugOutputCallbacks* Callbacks) GetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Mask) GetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Mask) SetOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, ref IDebugClient Client, out uint32 Mask) GetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, ref IDebugClient Client, uint32 Mask) SetOtherOutputMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Columns) GetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Columns) SetOutputWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR Prefix) SetOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugEventCallbacks* Callbacks) GetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) FlushCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server) EndProcessServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Timeout) WaitForProcessServerEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) IsKernelDebuggerEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) TerminateCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) DetachCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self) AbandonCurrentProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR ExeName, uint32 Flags, out uint32 Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Number) GetNumberDumpFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, out uint32 Type) GetDumpFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR RemoteOptions, out uint64 Server) ConnectProcessServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR Options) StartServerWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugOutputCallbacksWide* Callbacks) GetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, ref IDebugOutputCallbacksWide Callbacks) SetOutputCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out IDebugEventCallbacksWide* Callbacks) GetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, ref IDebugEventCallbacksWide Callbacks) SetEventCallbacksWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR NewPrefix, out uint64 Handle) PushOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR NewPrefix, out uint64 Handle) PushOutputLinePrefixWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint64 Handle) PopOutputLinePrefix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Count) GetNumberInputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, out uint32 Count) GetNumberOutputCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint32 EventFlags, out uint32 Count) GetNumberEventCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PSTR String) SetQuitLockString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR String) SetQuitLockStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, void* Context, uint32 ContextSize) SetClientContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugClient8 self, PWSTR FileName, uint64 FileHandle, uint32 AlternateArch) OpenDumpFileWide2;
 			}
 		}
 		[CRepr]
@@ -9317,7 +9317,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugPlmClient self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
 			}
 		}
 		[CRepr]
@@ -9333,8 +9333,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugPlmClient2 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
-				public new function HRESULT(ref IDebugPlmClient2 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmBgTaskForDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient2 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient2 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmBgTaskForDebugWide;
 			}
 		}
 		[CRepr]
@@ -9359,17 +9359,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmBgTaskForDebugWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, ref IDebugOutputStream Stream) QueryPlmPackageWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, ref IDebugOutputStream Stream) QueryPlmPackageList;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) EnablePlmPackageDebugWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) DisablePlmPackageDebugWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) SuspendPlmPackageWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) ResumePlmPackageWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) TerminatePlmPackageWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments) LaunchAndDebugPlmAppWide;
-				public new function HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, PWSTR BackgroundTaskId) ActivateAndDebugPlmBgTaskWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmPackageForDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, out uint32 ProcessId, out uint32 ThreadId) LaunchPlmBgTaskForDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, ref IDebugOutputStream Stream) QueryPlmPackageWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, ref IDebugOutputStream Stream) QueryPlmPackageList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) EnablePlmPackageDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) DisablePlmPackageDebugWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) SuspendPlmPackageWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) ResumePlmPackageWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName) TerminatePlmPackageWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments) LaunchAndDebugPlmAppWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPlmClient3 self, uint64 Server, PWSTR PackageFullName, PWSTR BackgroundTaskId) ActivateAndDebugPlmBgTaskWide;
 			}
 		}
 		[CRepr]
@@ -9384,7 +9384,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugOutputStream self, PWSTR psz) Write;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputStream self, PWSTR psz) Write;
 			}
 		}
 		[CRepr]
@@ -9490,98 +9490,98 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
 			}
 		}
 		[CRepr]
@@ -9695,106 +9695,106 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl2 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl2 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl2 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl2 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl2 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl2 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl2 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl2 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl2 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl2 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl2 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl2 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl2 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl2 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl2 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl2 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl2 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl2 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl2 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl2 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl2 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl2 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl2 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
 			}
 		}
 		[CRepr]
@@ -9921,119 +9921,119 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl3 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl3 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl3 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl3 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl3 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl3 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl3 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl3 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl3 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl3 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl3 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl3 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl3 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl3 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl3 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl3 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl3 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl3 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl3 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl3 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Options) GetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) AddAssemblyOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) RemoveAssemblyOptions;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Options) SetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Flags) GetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Flags) SetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl3 self, PSTR AbbrevName) SetExpressionSyntaxByName;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberExpressionSyntaxes;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Events) GetNumberEvents;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-				public new function HRESULT(ref IDebugControl3 self, out uint32 Index) GetCurrentEventIndex;
-				public new function HRESULT(ref IDebugControl3 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Options) GetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) AddAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) RemoveAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Options) SetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Flags) GetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Flags) SetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Number) GetNumberExpressionSyntaxes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Events) GetNumberEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, out uint32 Index) GetCurrentEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl3 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
 			}
 		}
 		[CRepr]
@@ -10213,172 +10213,172 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl4 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl4 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl4 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl4 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl4 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl4 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl4 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl4 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl4 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl4 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl4 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl4 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl4 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl4 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl4 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl4 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl4 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl4 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl4 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Options) GetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) AddAssemblyOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) RemoveAssemblyOptions;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Options) SetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Flags) GetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Flags) SetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl4 self, PSTR AbbrevName) SetExpressionSyntaxByName;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberExpressionSyntaxes;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Events) GetNumberEvents;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Index) GetCurrentEventIndex;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
-				public new function HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR File, BOOL Append) OpenLogFileWide;
-				public new function HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR Buffer) ReturnInputWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Mask, PWSTR Format) OutputWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
-				public new function HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
-				public new function HRESULT(ref IDebugControl4 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-				public new function HRESULT(ref IDebugControl4 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-				public new function HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
-				public new function HRESULT(ref IDebugControl4 self, PSTR File, uint32 Flags) OpenLogFile2;
-				public new function HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
-				public new function HRESULT(ref IDebugControl4 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-				public new function HRESULT(ref IDebugControl4 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-				public new function HRESULT(ref IDebugControl4 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-				public new function HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-				public new function HRESULT(ref IDebugControl4 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-				public new function HRESULT(ref IDebugControl4 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-				public new function HRESULT(ref IDebugControl4 self, uint32 Flags) ResetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Options) GetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) AddAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) RemoveAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Options) SetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Flags) GetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Flags) SetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Number) GetNumberExpressionSyntaxes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Events) GetNumberEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Index) GetCurrentEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR Buffer) ReturnInputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Mask, PWSTR Format) OutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PSTR File, uint32 Flags) OpenLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl4 self, uint32 Flags) ResetManagedStatus;
 			}
 		}
 		[CRepr]
@@ -10563,177 +10563,177 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl5 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl5 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl5 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl5 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl5 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl5 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl5 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl5 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl5 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl5 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl5 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl5 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl5 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl5 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl5 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl5 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl5 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl5 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl5 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Options) GetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) AddAssemblyOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) RemoveAssemblyOptions;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Options) SetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Flags) GetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Flags) SetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl5 self, PSTR AbbrevName) SetExpressionSyntaxByName;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberExpressionSyntaxes;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Events) GetNumberEvents;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Index) GetCurrentEventIndex;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
-				public new function HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR File, BOOL Append) OpenLogFileWide;
-				public new function HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR Buffer) ReturnInputWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Mask, PWSTR Format) OutputWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
-				public new function HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
-				public new function HRESULT(ref IDebugControl5 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-				public new function HRESULT(ref IDebugControl5 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-				public new function HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
-				public new function HRESULT(ref IDebugControl5 self, PSTR File, uint32 Flags) OpenLogFile2;
-				public new function HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
-				public new function HRESULT(ref IDebugControl5 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-				public new function HRESULT(ref IDebugControl5 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-				public new function HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-				public new function HRESULT(ref IDebugControl5 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-				public new function HRESULT(ref IDebugControl5 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-				public new function HRESULT(ref IDebugControl5 self, uint32 Flags) ResetManagedStatus;
-				public new function HRESULT(ref IDebugControl5 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-				public new function HRESULT(ref IDebugControl5 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl5 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Options) GetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) AddAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) RemoveAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Options) SetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Flags) GetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Flags) SetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Number) GetNumberExpressionSyntaxes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Events) GetNumberEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Index) GetCurrentEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR Buffer) ReturnInputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Mask, PWSTR Format) OutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PSTR File, uint32 Flags) OpenLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 Flags) ResetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl5 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
 			}
 		}
 		[CRepr]
@@ -10920,179 +10920,179 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl6 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl6 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl6 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl6 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl6 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl6 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl6 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl6 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl6 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl6 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl6 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl6 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl6 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl6 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl6 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl6 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl6 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl6 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl6 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Options) GetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) AddAssemblyOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) RemoveAssemblyOptions;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Options) SetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Flags) GetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Flags) SetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl6 self, PSTR AbbrevName) SetExpressionSyntaxByName;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberExpressionSyntaxes;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Events) GetNumberEvents;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Index) GetCurrentEventIndex;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
-				public new function HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR File, BOOL Append) OpenLogFileWide;
-				public new function HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR Buffer) ReturnInputWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Mask, PWSTR Format) OutputWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
-				public new function HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
-				public new function HRESULT(ref IDebugControl6 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-				public new function HRESULT(ref IDebugControl6 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-				public new function HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
-				public new function HRESULT(ref IDebugControl6 self, PSTR File, uint32 Flags) OpenLogFile2;
-				public new function HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
-				public new function HRESULT(ref IDebugControl6 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-				public new function HRESULT(ref IDebugControl6 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-				public new function HRESULT(ref IDebugControl6 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-				public new function HRESULT(ref IDebugControl6 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-				public new function HRESULT(ref IDebugControl6 self, uint32 Flags) ResetManagedStatus;
-				public new function HRESULT(ref IDebugControl6 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-				public new function HRESULT(ref IDebugControl6 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl6 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 Status) GetExecutionStatusEx;
-				public new function HRESULT(ref IDebugControl6 self, out uint32 SendsAttempted, out uint32 SecondsSinceLastResponse) GetSynchronizationStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Options) GetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) AddAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) RemoveAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Options) SetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Flags) GetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Flags) SetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Number) GetNumberExpressionSyntaxes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Events) GetNumberEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Index) GetCurrentEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR Buffer) ReturnInputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Mask, PWSTR Format) OutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PSTR File, uint32 Flags) OpenLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 Flags) ResetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 Status) GetExecutionStatusEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl6 self, out uint32 SendsAttempted, out uint32 SecondsSinceLastResponse) GetSynchronizationStatus;
 			}
 		}
 		[CRepr]
@@ -11280,180 +11280,180 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugControl7 self) GetInterrupt;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Flags) SetInterrupt;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Seconds) GetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Seconds) SetInterruptTimeout;
-				public new function HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
-				public new function HRESULT(ref IDebugControl7 self, PSTR File, BOOL Append) OpenLogFile;
-				public new function HRESULT(ref IDebugControl7 self) CloseLogFile;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Mask) GetLogMask;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Mask) SetLogMask;
-				public new function HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-				public new function HRESULT(ref IDebugControl7 self, PSTR Buffer) ReturnInput;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Mask, PSTR Format) Output;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Format) OutputPrompt;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
-				public new function HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl) OutputVersionInformation;
-				public new function HRESULT(ref IDebugControl7 self, out uint64 Handle) GetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle) SetNotifyEventHandle;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
-				public new function HRESULT(ref IDebugControl7 self, out uint64 Offset) GetDisassembleEffectiveOffset;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
-				public new function HRESULT(ref IDebugControl7 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-				public new function HRESULT(ref IDebugControl7 self, out uint64 Offset) GetReturnOffset;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type) GetActualProcessorType;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type) GetExecutingProcessorType;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberProcessors;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Size) GetPageSize;
-				public new function HRESULT(ref IDebugControl7 self) IsPointer64Bit;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type) GetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Type) SetEffectiveProcessorType;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Status) GetExecutionStatus;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Status) SetExecutionStatus;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Level) GetCodeLevel;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Level) SetCodeLevel;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Options) GetEngineOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) AddEngineOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) RemoveEngineOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) SetEngineOptions;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Slot, PSTR Macro) SetTextMacro;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Radix) GetRadix;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Radix) SetRadix;
-				public new function HRESULT(ref IDebugControl7 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
-				public new function HRESULT(ref IDebugControl7 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberBreakpoints;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
-				public new function HRESULT(ref IDebugControl7 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
-				public new function HRESULT(ref IDebugControl7 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle) RemoveExtension;
-				public new function HRESULT(ref IDebugControl7 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
-				public new function HRESULT(ref IDebugControl7 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
-				public new function HRESULT(ref IDebugControl7 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Command) SetEventFilterCommand;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Flags, uint32 Timeout) WaitForEvent;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 TimeDate) GetCurrentTimeDate;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 UpTime) GetCurrentSystemUpTime;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 FormatFlags) GetDumpFormatFlags;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 NumRepl) GetNumberTextReplacements;
-				public new function HRESULT(ref IDebugControl7 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-				public new function HRESULT(ref IDebugControl7 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-				public new function HRESULT(ref IDebugControl7 self) RemoveTextReplacements;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Options) GetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) AddAssemblyOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) RemoveAssemblyOptions;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Options) SetAssemblyOptions;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Flags) GetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Flags) SetExpressionSyntax;
-				public new function HRESULT(ref IDebugControl7 self, PSTR AbbrevName) SetExpressionSyntaxByName;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberExpressionSyntaxes;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Events) GetNumberEvents;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Index) GetCurrentEventIndex;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
-				public new function HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR File, BOOL Append) OpenLogFileWide;
-				public new function HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR Buffer) ReturnInputWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Mask, PWSTR Format) OutputWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
-				public new function HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
-				public new function HRESULT(ref IDebugControl7 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-				public new function HRESULT(ref IDebugControl7 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-				public new function HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
-				public new function HRESULT(ref IDebugControl7 self, PSTR File, uint32 Flags) OpenLogFile2;
-				public new function HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
-				public new function HRESULT(ref IDebugControl7 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-				public new function HRESULT(ref IDebugControl7 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-				public new function HRESULT(ref IDebugControl7 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-				public new function HRESULT(ref IDebugControl7 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Flags) ResetManagedStatus;
-				public new function HRESULT(ref IDebugControl7 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-				public new function HRESULT(ref IDebugControl7 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-				public new function HRESULT(ref IDebugControl7 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 Status) GetExecutionStatusEx;
-				public new function HRESULT(ref IDebugControl7 self, out uint32 SendsAttempted, out uint32 SecondsSinceLastResponse) GetSynchronizationStatus;
-				public new function HRESULT(ref IDebugControl7 self, uint32 Flags, out uint32 Class, out uint32 Qualifier) GetDebuggeeType2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self) GetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Flags) SetInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Seconds) GetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Seconds) SetInterruptTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR File, BOOL Append) OpenLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self) CloseLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Mask) GetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Mask) SetLogMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR Buffer) ReturnInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Mask, PSTR Format) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Mask, PSTR Format, ref int8 Args) OutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PSTR Format, ref int8 Args) ControlledOutputVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Format, ref int8 Args) OutputPromptVaList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl) OutputVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint64 Handle) GetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle) SetNotifyEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Offset, PSTR Instr, out uint64 EndOffset) Assemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) Disassemble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint64 Offset) GetDisassembleEffectiveOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint64 Offset, uint32 Flags, out uint64 EndOffset) OutputDisassembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Offset, int32 Delta, out uint64 NearOffset) GetNearInstruction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint64 Offset) GetReturnOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Class, out uint32 Qualifier) GetDebuggeeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type) GetActualProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type) GetExecutingProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberProcessors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 PlatformId, out uint32 Major, out uint32 Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, out uint32 ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Size) GetPageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self) IsPointer64Bit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Code, out uint64 Arg1, out uint64 Arg2, out uint64 Arg3, out uint64 Arg4) ReadBugCheckData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type) GetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Type) SetEffectiveProcessorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Status) GetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Status) SetExecutionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Level) GetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Level) SetCodeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Options) GetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) AddEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) RemoveEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) SetEngineOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 OutputLevel, out uint32 BreakLevel) GetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Radix) GetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Radix) SetRadix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, ref DEBUG_VALUE In, uint32 OutType, out DEBUG_VALUE Out) CoerceValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, out IDebugBreakpoint* Bp) GetBreakpointByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Id, out IDebugBreakpoint* Bp) GetBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint* Bp) AddBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, ref IDebugBreakpoint Bp) RemoveBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR Path, uint32 Flags, out uint64 Handle) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR Path, out uint64 Handle) GetExtensionByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle, PSTR FuncName, out FARPROC Function) GetExtensionFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out WINDBG_EXTENSION_APIS32 Api) GetWindbgExtensionApis32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out WINDBG_EXTENSION_APIS64 Api) GetWindbgExtensionApis64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 SpecificEvents, out uint32 SpecificExceptions, out uint32 ArbitraryExceptions) GetNumberEventFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 TimeDate) GetCurrentTimeDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 UpTime) GetCurrentSystemUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 FormatFlags) GetDumpFormatFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 NumRepl) GetNumberTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self) RemoveTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Options) GetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) AddAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) RemoveAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Options) SetAssemblyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Flags) GetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Flags) SetExpressionSyntax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Number) GetNumberExpressionSyntaxes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Events) GetNumberEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Index) GetCurrentEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Relation, uint32 Value, out uint32 NextIndex) SetNextEventIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out BOOL Append) GetLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR Buffer) ReturnInputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Mask, PWSTR Format) OutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Mask, PWSTR Format, ref int8 Args) OutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, uint32 Mask, PWSTR Format, ref int8 Args) ControlledOutputVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Format, ref int8 Args) OutputPromptVaListWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Offset, PWSTR Instr, out uint64 EndOffset) AssembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, out uint64 EndOffset) DisassembleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR Expression, uint32 DesiredType, out DEBUG_VALUE Value, uint32* RemainderIndex) EvaluateWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, out IDebugBreakpoint2* Bp) GetBreakpointByIndex2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Id, out IDebugBreakpoint2* Bp) GetBreakpointById2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Type, uint32 DesiredId, out IDebugBreakpoint2* Bp) AddBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, ref IDebugBreakpoint2 Bp) RemoveBreakpoint2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR Path, uint32 Flags, out uint64 Handle) AddExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR Path, out uint64 Handle) GetExtensionByPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 Handle, PWSTR FuncName, out FARPROC Function) GetExtensionFunctionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PSTR File, uint32 Flags) OpenLogFile2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, char16* Buffer, uint32 BufferSize, uint32* FileSize, out uint32 Flags) GetLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 PlatformId, out uint32 Win32Major, out uint32 Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Type, out uint32 ProcessId, out uint32 ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Flags) ResetManagedStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, ref Guid Guid, out IDebugBreakpoint3* Bp) GetBreakpointByGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 Status) GetExecutionStatusEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, out uint32 SendsAttempted, out uint32 SecondsSinceLastResponse) GetSynchronizationStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugControl7 self, uint32 Flags, out uint32 Class, out uint32 Qualifier) GetDebuggeeType2;
 			}
 		}
 		[CRepr]
@@ -11487,26 +11487,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-				public new function HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Msr, out uint64 Value) ReadMsr;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Msr, uint64 Value) WriteMsr;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-				public new function HRESULT(ref IDebugDataSpaces self) CheckLowMemory;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-				public new function HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Msr, out uint64 Value) ReadMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Msr, uint64 Value) WriteMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self) CheckLowMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
 			}
 		}
 		[CRepr]
@@ -11546,32 +11546,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Msr, out uint64 Value) ReadMsr;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Msr, uint64 Value) WriteMsr;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-				public new function HRESULT(ref IDebugDataSpaces2 self) CheckLowMemory;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-				public new function HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Msr, out uint64 Value) ReadMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Msr, uint64 Value) WriteMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self) CheckLowMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces2 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
 			}
 		}
 		[CRepr]
@@ -11616,37 +11616,37 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Msr, out uint64 Value) ReadMsr;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Msr, uint64 Value) WriteMsr;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-				public new function HRESULT(ref IDebugDataSpaces3 self) CheckLowMemory;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 ImageBase, out IMAGE_NT_HEADERS64 Headers) ReadImageNtHeaders;
-				public new function HRESULT(ref IDebugDataSpaces3 self, ref Guid Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
-				public new function HRESULT(ref IDebugDataSpaces3 self, out uint64 Handle) StartEnumTagged;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Handle, out Guid Tag, out uint32 Size) GetNextTagged;
-				public new function HRESULT(ref IDebugDataSpaces3 self, uint64 Handle) EndEnumTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Msr, out uint64 Value) ReadMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Msr, uint64 Value) WriteMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self) CheckLowMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 ImageBase, out IMAGE_NT_HEADERS64 Headers) ReadImageNtHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, ref Guid Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, out uint64 Handle) StartEnumTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Handle, out Guid Tag, out uint32 Size) GetNextTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces3 self, uint64 Handle) EndEnumTagged;
 			}
 		}
 		[CRepr]
@@ -11701,47 +11701,47 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Msr, out uint64 Value) ReadMsr;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Msr, uint64 Value) WriteMsr;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-				public new function HRESULT(ref IDebugDataSpaces4 self) CheckLowMemory;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 ImageBase, out IMAGE_NT_HEADERS64 Headers) ReadImageNtHeaders;
-				public new function HRESULT(ref IDebugDataSpaces4 self, ref Guid Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
-				public new function HRESULT(ref IDebugDataSpaces4 self, out uint64 Handle) StartEnumTagged;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Handle, out Guid Tag, out uint32 Size) GetNextTagged;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Handle) EndEnumTagged;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint32 Space, uint32 Which, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetOffsetInformation;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, out uint64 NextOffset) GetNextDifferentlyValidOffsetVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Base, uint32 Size, out uint64 ValidBase, out uint32 ValidSize) GetValidRegionVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint64 Length, uint32 Flags, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual2;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtualWide;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtual;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtualWide;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical2;
-				public new function HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Msr, out uint64 Value) ReadMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Msr, uint64 Value) WriteMsr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self) CheckLowMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Virtual, out uint64 Physical) VirtualToPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, out MEMORY_BASIC_INFORMATION64 Info) QueryVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 ImageBase, out IMAGE_NT_HEADERS64 Headers) ReadImageNtHeaders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, ref Guid Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, out uint64 Handle) StartEnumTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Handle, out Guid Tag, out uint32 Size) GetNextTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Handle) EndEnumTagged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint32 Space, uint32 Which, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetOffsetInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, out uint64 NextOffset) GetNextDifferentlyValidOffsetVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Base, uint32 Size, out uint64 ValidBase, out uint32 ValidSize) GetValidRegionVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint64 Length, uint32 Flags, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, out uint64 MatchOffset) SearchVirtual2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtualWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 MaxBytes, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtualWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDataSpaces4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical2;
 			}
 		}
 		[CRepr]
@@ -11769,20 +11769,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugEventCallbacks self, out uint32 Mask) GetInterestMask;
-				public new function HRESULT(ref IDebugEventCallbacks self, ref IDebugBreakpoint Bp) Breakpoint;
-				public new function HRESULT(ref IDebugEventCallbacks self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance) Exception;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 ExitCode) ExitThread;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 ExitCode) ExitProcess;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
-				public new function HRESULT(ref IDebugEventCallbacks self, PSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 Error, uint32 Level) SystemError;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 Status) SessionStatus;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeEngineState;
-				public new function HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, out uint32 Mask) GetInterestMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, ref IDebugBreakpoint Bp) Breakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance) Exception;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 ExitCode) ExitThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 ExitCode) ExitProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, PSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 Error, uint32 Level) SystemError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 Status) SessionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeEngineState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacks self, uint32 Flags, uint64 Argument) ChangeSymbolState;
 			}
 		}
 		[CRepr]
@@ -11810,20 +11810,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugEventCallbacksWide self, out uint32 Mask) GetInterestMask;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, ref IDebugBreakpoint2 Bp) Breakpoint;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance) Exception;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 ExitCode) ExitThread;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 ExitCode) ExitProcess;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, PWSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 Error, uint32 Level) SystemError;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 Status) SessionStatus;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeEngineState;
-				public new function HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, out uint32 Mask) GetInterestMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, ref IDebugBreakpoint2 Bp) Breakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance) Exception;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 ExitCode) ExitThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 ExitCode) ExitProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, PWSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 Error, uint32 Level) SystemError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 Status) SessionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeEngineState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventCallbacksWide self, uint32 Flags, uint64 Argument) ChangeSymbolState;
 			}
 		}
 		[CRepr]
@@ -11851,20 +11851,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugEventContextCallbacks self, out uint32 Mask) GetInterestMask;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, ref IDebugBreakpoint2 Bp, void* Context, uint32 ContextSize) Breakpoint;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance, void* Context, uint32 ContextSize) Exception;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint64 Handle, uint64 DataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateThread;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitThread;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateProcessA;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitProcess;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, void* Context, uint32 ContextSize) LoadModule;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, PWSTR ImageBaseName, uint64 BaseOffset, void* Context, uint32 ContextSize) UnloadModule;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 Error, uint32 Level, void* Context, uint32 ContextSize) SystemError;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 Status) SessionStatus;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeDebuggeeState;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeEngineState;
-				public new function HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, out uint32 Mask) GetInterestMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, ref IDebugBreakpoint2 Bp, void* Context, uint32 ContextSize) Breakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, ref EXCEPTION_RECORD64 Exception, uint32 FirstChance, void* Context, uint32 ContextSize) Exception;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint64 Handle, uint64 DataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateProcessA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, void* Context, uint32 ContextSize) LoadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, PWSTR ImageBaseName, uint64 BaseOffset, void* Context, uint32 ContextSize) UnloadModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 Error, uint32 Level, void* Context, uint32 ContextSize) SystemError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 Status) SessionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeDebuggeeState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeEngineState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugEventContextCallbacks self, uint32 Flags, uint64 Argument) ChangeSymbolState;
 			}
 		}
 		[CRepr]
@@ -11880,8 +11880,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugInputCallbacks self, uint32 BufferSize) StartInput;
-				public new function HRESULT(ref IDebugInputCallbacks self) EndInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugInputCallbacks self, uint32 BufferSize) StartInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugInputCallbacks self) EndInput;
 			}
 		}
 		[CRepr]
@@ -11896,7 +11896,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugOutputCallbacks self, uint32 Mask, PSTR Text) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputCallbacks self, uint32 Mask, PSTR Text) Output;
 			}
 		}
 		[CRepr]
@@ -11911,7 +11911,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugOutputCallbacksWide self, uint32 Mask, PWSTR Text) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputCallbacksWide self, uint32 Mask, PWSTR Text) Output;
 			}
 		}
 		[CRepr]
@@ -11928,9 +11928,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugOutputCallbacks2 self, uint32 Mask, PSTR Text) Output;
-				public new function HRESULT(ref IDebugOutputCallbacks2 self, out uint32 Mask) GetInterestMask;
-				public new function HRESULT(ref IDebugOutputCallbacks2 self, uint32 Which, uint32 Flags, uint64 Arg, PWSTR Text) Output2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputCallbacks2 self, uint32 Mask, PSTR Text) Output;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputCallbacks2 self, out uint32 Mask) GetInterestMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugOutputCallbacks2 self, uint32 Which, uint32 Flags, uint64 Arg, PWSTR Text) Output2;
 			}
 		}
 		[CRepr]
@@ -11955,17 +11955,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugRegisters self, out uint32 Number) GetNumberRegisters;
-				public new function HRESULT(ref IDebugRegisters self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
-				public new function HRESULT(ref IDebugRegisters self, PSTR Name, out uint32 Index) GetIndexByName;
-				public new function HRESULT(ref IDebugRegisters self, uint32 Register, out DEBUG_VALUE Value) GetValue;
-				public new function HRESULT(ref IDebugRegisters self, uint32 Register, ref DEBUG_VALUE Value) SetValue;
-				public new function HRESULT(ref IDebugRegisters self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
-				public new function HRESULT(ref IDebugRegisters self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
-				public new function HRESULT(ref IDebugRegisters self, uint32 OutputControl, uint32 Flags) OutputRegisters;
-				public new function HRESULT(ref IDebugRegisters self, out uint64 Offset) GetInstructionOffset;
-				public new function HRESULT(ref IDebugRegisters self, out uint64 Offset) GetStackOffset;
-				public new function HRESULT(ref IDebugRegisters self, out uint64 Offset) GetFrameOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, out uint32 Number) GetNumberRegisters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, PSTR Name, out uint32 Index) GetIndexByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 Register, out DEBUG_VALUE Value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 Register, ref DEBUG_VALUE Value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, uint32 OutputControl, uint32 Flags) OutputRegisters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, out uint64 Offset) GetInstructionOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, out uint64 Offset) GetStackOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters self, out uint64 Offset) GetFrameOffset;
 			}
 		}
 		[CRepr]
@@ -12005,32 +12005,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugRegisters2 self, out uint32 Number) GetNumberRegisters;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
-				public new function HRESULT(ref IDebugRegisters2 self, PSTR Name, out uint32 Index) GetIndexByName;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, out DEBUG_VALUE Value) GetValue;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, ref DEBUG_VALUE Value) SetValue;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 OutputControl, uint32 Flags) OutputRegisters;
-				public new function HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetInstructionOffset;
-				public new function HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetStackOffset;
-				public new function HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetFrameOffset;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescriptionWide;
-				public new function HRESULT(ref IDebugRegisters2 self, PWSTR Name, out uint32 Index) GetIndexByNameWide;
-				public new function HRESULT(ref IDebugRegisters2 self, out uint32 Number) GetNumberPseudoRegisters;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescription;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescriptionWide;
-				public new function HRESULT(ref IDebugRegisters2 self, PSTR Name, out uint32 Index) GetPseudoIndexByName;
-				public new function HRESULT(ref IDebugRegisters2 self, PWSTR Name, out uint32 Index) GetPseudoIndexByNameWide;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetPseudoValues;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetPseudoValues;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues2;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues2;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 OutputControl, uint32 Source, uint32 Flags) OutputRegisters2;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetInstructionOffset2;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetStackOffset2;
-				public new function HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetFrameOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, out uint32 Number) GetNumberRegisters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, PSTR Name, out uint32 Index) GetIndexByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, out DEBUG_VALUE Value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, ref DEBUG_VALUE Value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 OutputControl, uint32 Flags) OutputRegisters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetInstructionOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetStackOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, out uint64 Offset) GetFrameOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, PWSTR Name, out uint32 Index) GetIndexByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, out uint32 Number) GetNumberPseudoRegisters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescriptionWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, PSTR Name, out uint32 Index) GetPseudoIndexByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, PWSTR Name, out uint32 Index) GetPseudoIndexByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetPseudoValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetPseudoValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 OutputControl, uint32 Source, uint32 Flags) OutputRegisters2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetInstructionOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetStackOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugRegisters2 self, uint32 Source, out uint64 Offset) GetFrameOffset2;
 			}
 		}
 		[CRepr]
@@ -12054,16 +12054,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbolGroup self, out uint32 Number) GetNumberSymbols;
-				public new function HRESULT(ref IDebugSymbolGroup self, PSTR Name, out uint32 Index) AddSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup self, PSTR Name) RemoveSymbolByName;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Index) RemoveSymbolByIndex;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Index, BOOL Expand) ExpandSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Index, PSTR Value) WriteSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup self, uint32 Index, PSTR Type) OutputAsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, out uint32 Number) GetNumberSymbols;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, PSTR Name, out uint32 Index) AddSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, PSTR Name) RemoveSymbolByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Index) RemoveSymbolByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Index, BOOL Expand) ExpandSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Index, PSTR Value) WriteSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup self, uint32 Index, PSTR Type) OutputAsType;
 			}
 		}
 		[CRepr]
@@ -12100,29 +12100,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbolGroup2 self, out uint32 Number) GetNumberSymbols;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, PSTR Name, out uint32 Index) AddSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, PSTR Name) RemoveSymbolByName;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index) RemoveSymbolByIndex;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, BOOL Expand) ExpandSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PSTR Value) WriteSymbol;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PSTR Type) OutputAsType;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, PWSTR Name, out uint32 Index) AddSymbolWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, PWSTR Name) RemoveSymbolByNameWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolNameWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PWSTR Value) WriteSymbolWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PWSTR Type) OutputAsTypeWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeName;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeNameWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint32 Size) GetSymbolSize;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint64 Offset) GetSymbolOffset;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint32 Register) GetSymbolRegister;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueText;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueTextWide;
-				public new function HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out DEBUG_SYMBOL_ENTRY Entry) GetSymbolEntryInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, out uint32 Number) GetNumberSymbols;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, PSTR Name, out uint32 Index) AddSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, PSTR Name) RemoveSymbolByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index) RemoveSymbolByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, BOOL Expand) ExpandSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PSTR Value) WriteSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PSTR Type) OutputAsType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, PWSTR Name, out uint32 Index) AddSymbolWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, PWSTR Name) RemoveSymbolByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PWSTR Value) WriteSymbolWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, PWSTR Type) OutputAsTypeWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint32 Size) GetSymbolSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint64 Offset) GetSymbolOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out uint32 Register) GetSymbolRegister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueTextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbolGroup2 self, uint32 Index, out DEBUG_SYMBOL_ENTRY Entry) GetSymbolEntryInformation;
 			}
 		}
 		[CRepr]
@@ -12185,55 +12185,55 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbols self, out uint32 Options) GetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Options) AddSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Options) RemoveSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Options) SetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
-				public new function HRESULT(ref IDebugSymbols self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Index, out uint64 Base) GetModuleByIndex;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint64 Base) GetSymbolModule;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-				public new function HRESULT(ref IDebugSymbols self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-				public new function HRESULT(ref IDebugSymbols self) ResetScope;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols self, uint64 Handle) EndSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Module) Reload;
-				public new function HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Path) SetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Addition) AppendSymbolPath;
-				public new function HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Path) SetImagePath;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Addition) AppendImagePath;
-				public new function HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-				public new function HRESULT(ref IDebugSymbols self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Path) SetSourcePath;
-				public new function HRESULT(ref IDebugSymbols self, PSTR Addition) AppendSourcePath;
-				public new function HRESULT(ref IDebugSymbols self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-				public new function HRESULT(ref IDebugSymbols self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, out uint32 Options) GetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Options) AddSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Options) RemoveSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Options) SetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Index, out uint64 Base) GetModuleByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint64 Base) GetSymbolModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self) ResetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint64 Handle) EndSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Module) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Path) SetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Addition) AppendSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Path) SetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Addition) AppendImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Path) SetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR Addition) AppendSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
 			}
 		}
 		[CRepr]
@@ -12304,63 +12304,63 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbols2 self, out uint32 Options) GetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) AddSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) RemoveSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) SetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
-				public new function HRESULT(ref IDebugSymbols2 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Index, out uint64 Base) GetModuleByIndex;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-				public new function HRESULT(ref IDebugSymbols2 self) ResetScope;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols2 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Handle) EndSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Module) Reload;
-				public new function HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Path) SetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendSymbolPath;
-				public new function HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Path) SetImagePath;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendImagePath;
-				public new function HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Path) SetSourcePath;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendSourcePath;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-				public new function HRESULT(ref IDebugSymbols2 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-				public new function HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-				public new function HRESULT(ref IDebugSymbols2 self, out uint32 Options) GetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) AddTypeOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) RemoveTypeOptions;
-				public new function HRESULT(ref IDebugSymbols2 self, uint32 Options) SetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, out uint32 Options) GetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) AddSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) RemoveSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) SetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Index, out uint64 Base) GetModuleByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self) ResetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Handle) EndSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Module) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Path) SetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Path) SetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Path) SetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR Addition) AppendSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, out uint32 Options) GetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) AddTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) RemoveTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols2 self, uint32 Options) SetTypeOptions;
 			}
 		}
 		[CRepr]
@@ -12497,129 +12497,129 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbols3 self, out uint32 Options) GetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) AddSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) RemoveSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) SetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
-				public new function HRESULT(ref IDebugSymbols3 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, out uint64 Base) GetModuleByIndex;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-				public new function HRESULT(ref IDebugSymbols3 self) ResetScope;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols3 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Handle) EndSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Module) Reload;
-				public new function HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Path) SetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendSymbolPath;
-				public new function HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Path) SetImagePath;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendImagePath;
-				public new function HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Path) SetSourcePath;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendSourcePath;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-				public new function HRESULT(ref IDebugSymbols3 self, out uint32 Options) GetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) AddTypeOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) RemoveTypeOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Options) SetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols3 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Module) ReloadWide;
-				public new function HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendImagePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base) IsManagedModule;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Base) RemoveSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols3 self, out uint32 Index) GetCurrentScopeFrameIndex;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Index) SetScopeFrameByIndex;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-				public new function HRESULT(ref IDebugSymbols3 self) SetScopeFromStoredEvent;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-				public new function HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
-				public new function HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-				public new function HRESULT(ref IDebugSymbols3 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out uint32 Options) GetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) AddSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) RemoveSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) SetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, out uint64 Base) GetModuleByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self) ResetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Handle) EndSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Module) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Path) SetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Path) SetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Path) SetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Addition) AppendSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out uint32 Options) GetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) AddTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) RemoveTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Options) SetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Module) ReloadWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Path) SetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Addition) AppendSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index, uint64 Base) IsManagedModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Base) RemoveSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, out uint32 Index) GetCurrentScopeFrameIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Index) SetScopeFrameByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self) SetScopeFromStoredEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols3 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
 			}
 		}
 		[CRepr]
@@ -12763,136 +12763,136 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbols4 self, out uint32 Options) GetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) AddSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) RemoveSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) SetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
-				public new function HRESULT(ref IDebugSymbols4 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, out uint64 Base) GetModuleByIndex;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-				public new function HRESULT(ref IDebugSymbols4 self) ResetScope;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols4 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Handle) EndSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Module) Reload;
-				public new function HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Path) SetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendSymbolPath;
-				public new function HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Path) SetImagePath;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendImagePath;
-				public new function HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Path) SetSourcePath;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendSourcePath;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-				public new function HRESULT(ref IDebugSymbols4 self, out uint32 Options) GetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) AddTypeOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) RemoveTypeOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Options) SetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols4 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Module) ReloadWide;
-				public new function HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendImagePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base) IsManagedModule;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Base) RemoveSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols4 self, out uint32 Index) GetCurrentScopeFrameIndex;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Index) SetScopeFrameByIndex;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-				public new function HRESULT(ref IDebugSymbols4 self) SetScopeFromStoredEvent;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-				public new function HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
-				public new function HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
-				public new function HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out uint32 Options) GetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) AddSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) RemoveSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) SetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, out uint64 Base) GetModuleByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self) ResetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Handle) EndSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Module) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Path) SetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Path) SetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Path) SetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Addition) AppendSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out uint32 Options) GetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) AddTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) RemoveTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Options) SetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Module) ReloadWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Path) SetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Addition) AppendSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index, uint64 Base) IsManagedModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Base) RemoveSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, out uint32 Index) GetCurrentScopeFrameIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Index) SetScopeFrameByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self) SetScopeFromStoredEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols4 self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
 			}
 		}
 		[CRepr]
@@ -13038,138 +13038,138 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSymbols5 self, out uint32 Options) GetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) AddSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) RemoveSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) SetSymbolOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
-				public new function HRESULT(ref IDebugSymbols5 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, out uint64 Base) GetModuleByIndex;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-				public new function HRESULT(ref IDebugSymbols5 self) ResetScope;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols5 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Handle) EndSymbolMatch;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Module) Reload;
-				public new function HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Path) SetSymbolPath;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendSymbolPath;
-				public new function HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Path) SetImagePath;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendImagePath;
-				public new function HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Path) SetSourcePath;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendSourcePath;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-				public new function HRESULT(ref IDebugSymbols5 self, out uint32 Options) GetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) AddTypeOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) RemoveTypeOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Options) SetTypeOptions;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols5 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Module) ReloadWide;
-				public new function HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendSymbolPathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetImagePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendImagePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendSourcePathWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base) IsManagedModule;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Base) RemoveSyntheticModule;
-				public new function HRESULT(ref IDebugSymbols5 self, out uint32 Index) GetCurrentScopeFrameIndex;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Index) SetScopeFrameByIndex;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-				public new function HRESULT(ref IDebugSymbols5 self) SetScopeFromStoredEvent;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-				public new function HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-				public new function HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
-				public new function HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Flags, out uint32 Index) GetCurrentScopeFrameIndexEx;
-				public new function HRESULT(ref IDebugSymbols5 self, uint32 Flags, uint32 Index) SetScopeFrameByIndexEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out uint32 Options) GetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) AddSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) RemoveSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) SetSymbolOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint64 Offset) GetOffsetByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Line, PSTR File, out uint64 Offset) GetOffsetByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out uint32 Loaded, out uint32 Unloaded) GetNumberModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, out uint64 Base) GetModuleByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint64 Base) GetSymbolModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, PSTR Name, out uint32 TypeId) GetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, out uint32 Size) GetTypeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, PSTR Field, out uint32 Offset) GetFieldOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, out uint32 TypeId, uint64* Module) GetOffsetTypeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self) ResetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Flags, IDebugSymbolGroup* Update, out IDebugSymbolGroup* Symbols) GetScopeSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out IDebugSymbolGroup* Group) CreateSymbolGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Pattern, out uint64 Handle) StartSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Handle) EndSymbolMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Module) Reload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Path) SetSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendSymbolPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Path) SetImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Path) SetSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Addition) AppendSourcePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out uint32 Options) GetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) AddTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) RemoveTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Options) SetTypeOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint64 Offset) GetOffsetByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Line, PWSTR File, out uint64 Offset) GetOffsetByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint64 Base) GetSymbolModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, PWSTR Name, out uint32 TypeId) GetTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, PWSTR Field, out uint32 Offset) GetFieldOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, out uint32 TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Flags, IDebugSymbolGroup2* Update, out IDebugSymbolGroup2* Symbols) GetScopeSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out IDebugSymbolGroup2* Group) CreateSymbolGroup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Pattern, out uint64 Handle) StartSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Module) ReloadWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendSymbolPathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendImagePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Path) SetSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Addition) AppendSourcePathWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index, uint64 Base) IsManagedModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Base) RemoveSyntheticModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, out uint32 Index) GetCurrentScopeFrameIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Index) SetScopeFrameByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self) SetScopeFromStoredEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id) RemoveSyntheticSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 ModuleBase, uint32 Token, out DEBUG_MODULE_AND_ID Id) GetSymbolEntryByToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, out DEBUG_SYMBOL_ENTRY Info) GetSymbolEntryInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_MODULE_AND_ID FromId, uint32 Flags, out DEBUG_MODULE_AND_ID ToId) GetSymbolEntryBySymbolEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, ref DEBUG_SYMBOL_SOURCE_ENTRY FromEntry, uint32 Flags, out DEBUG_SYMBOL_SOURCE_ENTRY ToEntry) GetSourceEntryBySourceEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Flags, out uint32 Index) GetCurrentScopeFrameIndexEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSymbols5 self, uint32 Flags, uint32 Index) SetScopeFrameByIndexEx;
 			}
 		}
 		[CRepr]
@@ -13212,35 +13212,35 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetEventThread;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetEventProcess;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 Id) SetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 Id) SetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Number) GetNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentThreadTeb;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 SysId) GetCurrentThreadSystemId;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Handle) GetCurrentThreadHandle;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 Number) GetNumberProcesses;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentProcessPeb;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint32 SysId) GetCurrentProcessSystemId;
-				public new function HRESULT(ref IDebugSystemObjects self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects self, out uint64 Handle) GetCurrentProcessHandle;
-				public new function HRESULT(ref IDebugSystemObjects self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetEventThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetEventProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 Id) SetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Id) GetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 Id) SetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Number) GetNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentThreadTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 SysId) GetCurrentThreadSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Handle) GetCurrentThreadHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 Number) GetNumberProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Offset) GetCurrentProcessPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint32 SysId) GetCurrentProcessSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, out uint64 Handle) GetCurrentProcessHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
 			}
 		}
 		[CRepr]
@@ -13288,40 +13288,40 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetEventThread;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetEventProcess;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 Id) SetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 Id) SetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Number) GetNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentThreadTeb;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 SysId) GetCurrentThreadSystemId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Handle) GetCurrentThreadHandle;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 Number) GetNumberProcesses;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentProcessPeb;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 SysId) GetCurrentProcessSystemId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Handle) GetCurrentProcessHandle;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint32 UpTime) GetCurrentProcessUpTime;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset) SetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetImplicitProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects2 self, uint64 Offset) SetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetEventThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetEventProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 Id) SetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Id) GetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 Id) SetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Number) GetNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentThreadTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 SysId) GetCurrentThreadSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Handle) GetCurrentThreadHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 Number) GetNumberProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetCurrentProcessPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 SysId) GetCurrentProcessSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Handle) GetCurrentProcessHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint32 UpTime) GetCurrentProcessUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset) SetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, out uint64 Offset) GetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects2 self, uint64 Offset) SetImplicitProcessDataOffset;
 			}
 		}
 		[CRepr]
@@ -13378,49 +13378,49 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventThread;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventProcess;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentThreadTeb;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 SysId) GetCurrentThreadSystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Handle) GetCurrentThreadHandle;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberProcesses;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentProcessPeb;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 SysId) GetCurrentProcessSystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Handle) GetCurrentProcessHandle;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 UpTime) GetCurrentProcessUpTime;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset) SetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetImplicitProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Offset) SetImplicitProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventSystem;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentSystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentSystemId;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberSystems;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint32 TotalThreads, out uint32 TotalProcesses, out uint32 LargestProcessThreads, out uint32 LargestSystemThreads, out uint32 LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
-				public new function HRESULT(ref IDebugSystemObjects3 self, out uint64 Server) GetCurrentSystemServer;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint64 Server, out uint32 Id) GetSystemByServer;
-				public new function HRESULT(ref IDebugSystemObjects3 self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentThreadTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 SysId) GetCurrentThreadSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Handle) GetCurrentThreadHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetCurrentProcessPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 SysId) GetCurrentProcessSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Handle) GetCurrentProcessHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 UpTime) GetCurrentProcessUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset) SetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Offset) GetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Offset) SetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetEventSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Id) GetCurrentSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Id) SetCurrentSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 Number) GetNumberSystems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint32 TotalThreads, out uint32 TotalProcesses, out uint32 LargestProcessThreads, out uint32 LargestSystemThreads, out uint32 LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, out uint64 Server) GetCurrentSystemServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint64 Server, out uint32 Id) GetSystemByServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects3 self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
 			}
 		}
 		[CRepr]
@@ -13479,51 +13479,51 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventThread;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventProcess;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentThreadId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentProcessId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentThreadTeb;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 SysId) GetCurrentThreadSystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Handle) GetCurrentThreadHandle;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberProcesses;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentProcessPeb;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 SysId) GetCurrentProcessSystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Handle) GetCurrentProcessHandle;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 UpTime) GetCurrentProcessUpTime;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset) SetImplicitThreadDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetImplicitProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Offset) SetImplicitProcessDataOffset;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventSystem;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentSystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentSystemId;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberSystems;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint32 TotalThreads, out uint32 TotalProcesses, out uint32 LargestProcessThreads, out uint32 LargestSystemThreads, out uint32 LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
-				public new function HRESULT(ref IDebugSystemObjects4 self, out uint64 Server) GetCurrentSystemServer;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint64 Server, out uint32 Id) GetSystemByServer;
-				public new function HRESULT(ref IDebugSystemObjects4 self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
-				public new function HRESULT(ref IDebugSystemObjects4 self, char16* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableNameWide;
-				public new function HRESULT(ref IDebugSystemObjects4 self, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentProcessId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Total, out uint32 LargestProcess) GetTotalNumberThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Processor, out uint32 Id) GetThreadIdByProcessor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetThreadIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentThreadTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetThreadIdByTeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 SysId) GetCurrentThreadSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 SysId, out uint32 Id) GetThreadIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Handle) GetCurrentThreadHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Handle, out uint32 Id) GetThreadIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetProcessIdByDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetCurrentProcessPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset, out uint32 Id) GetProcessIdByPeb;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 SysId) GetCurrentProcessSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 SysId, out uint32 Id) GetProcessIdBySystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Handle) GetCurrentProcessHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Handle, out uint32 Id) GetProcessIdByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 UpTime) GetCurrentProcessUpTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset) SetImplicitThreadDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Offset) GetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Offset) SetImplicitProcessDataOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetEventSystem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Id) GetCurrentSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Id) SetCurrentSystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 Number) GetNumberSystems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint32 TotalThreads, out uint32 TotalProcesses, out uint32 LargestProcessThreads, out uint32 LargestSystemThreads, out uint32 LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, out uint64 Server) GetCurrentSystemServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint64 Server, out uint32 Id) GetSystemByServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, char16* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableNameWide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSystemObjects4 self, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerNameWide;
 			}
 		}
 		[CRepr]
@@ -13560,7 +13560,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IHostDataModelAccess self, out IDataModelManager* manager, out IDebugHost* host) GetDataModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHostDataModelAccess self, out IDataModelManager* manager, out IDebugHost* host) GetDataModel;
 			}
 		}
 		[CRepr]
@@ -13579,11 +13579,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKeyStore self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
-				public new function HRESULT(ref IKeyStore self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
-				public new function HRESULT(ref IKeyStore self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-				public new function HRESULT(ref IKeyStore self, PWSTR key, ref IModelObject object) SetKeyValue;
-				public new function HRESULT(ref IKeyStore self) ClearKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyStore self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyStore self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyStore self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyStore self, PWSTR key, ref IModelObject object) SetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyStore self) ClearKeys;
 			}
 		}
 		[CRepr]
@@ -13630,39 +13630,39 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IModelObject self, IDebugHostContext** context) GetContext;
-				public new function HRESULT(ref IModelObject self, out ModelObjectKind kind) GetKind;
-				public new function HRESULT(ref IModelObject self, out VARIANT intrinsicData) GetIntrinsicValue;
-				public new function HRESULT(ref IModelObject self, uint16 vt, out VARIANT intrinsicData) GetIntrinsicValueAs;
-				public new function HRESULT(ref IModelObject self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-				public new function HRESULT(ref IModelObject self, PWSTR key, IModelObject* object) SetKeyValue;
-				public new function HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeyValues;
-				public new function HRESULT(ref IModelObject self, SymbolKind kind, PWSTR name, uint32 searchFlags, out IModelObject* object) GetRawValue;
-				public new function HRESULT(ref IModelObject self, SymbolKind kind, uint32 searchFlags, out IRawEnumerator* enumerator) EnumerateRawValues;
-				public new function HRESULT(ref IModelObject self, out IModelObject* object) Dereference;
-				public new function HRESULT(ref IModelObject self, out IModelObject* runtimeTypedObject) TryCastToRuntimeType;
-				public new function HRESULT(ref IModelObject self, in Guid conceptId, out IUnknown* conceptInterface, IKeyStore** conceptMetadata) GetConcept;
-				public new function HRESULT(ref IModelObject self, out Location location) GetLocation;
-				public new function HRESULT(ref IModelObject self, out IDebugHostType* type) GetTypeInfo;
-				public new function HRESULT(ref IModelObject self, out Location location, out IDebugHostType* type) GetTargetInfo;
-				public new function HRESULT(ref IModelObject self, out uint64 numModels) GetNumberOfParentModels;
-				public new function HRESULT(ref IModelObject self, uint64 i, out IModelObject* model, IModelObject** contextObject) GetParentModel;
-				public new function HRESULT(ref IModelObject self, ref IModelObject model, IModelObject* contextObject, uint8 @override) AddParentModel;
-				public new function HRESULT(ref IModelObject self, ref IModelObject model) RemoveParentModel;
-				public new function HRESULT(ref IModelObject self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
-				public new function HRESULT(ref IModelObject self, PWSTR key, IModelObject** objectReference, IKeyStore** metadata) GetKeyReference;
-				public new function HRESULT(ref IModelObject self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
-				public new function HRESULT(ref IModelObject self) ClearKeys;
-				public new function HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeys;
-				public new function HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeyReferences;
-				public new function HRESULT(ref IModelObject self, in Guid conceptId, ref IUnknown conceptInterface, IKeyStore* conceptMetadata) SetConcept;
-				public new function HRESULT(ref IModelObject self) ClearConcepts;
-				public new function HRESULT(ref IModelObject self, SymbolKind kind, PWSTR name, uint32 searchFlags, out IModelObject* object) GetRawReference;
-				public new function HRESULT(ref IModelObject self, SymbolKind kind, uint32 searchFlags, out IRawEnumerator* enumerator) EnumerateRawReferences;
-				public new function HRESULT(ref IModelObject self, ref IModelObject dataModelObject, ref IUnknown context) SetContextForDataModel;
-				public new function HRESULT(ref IModelObject self, ref IModelObject dataModelObject, out IUnknown* context) GetContextForDataModel;
-				public new function HRESULT(ref IModelObject self, ref IModelObject other, IModelObject** ppResult) Compare;
-				public new function HRESULT(ref IModelObject self, ref IModelObject other, out Boolean equal) IsEqualTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, IDebugHostContext** context) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out ModelObjectKind kind) GetKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out VARIANT intrinsicData) GetIntrinsicValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, uint16 vt, out VARIANT intrinsicData) GetIntrinsicValueAs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, PWSTR key, IModelObject* object) SetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeyValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, SymbolKind kind, PWSTR name, uint32 searchFlags, out IModelObject* object) GetRawValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, SymbolKind kind, uint32 searchFlags, out IRawEnumerator* enumerator) EnumerateRawValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IModelObject* object) Dereference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IModelObject* runtimeTypedObject) TryCastToRuntimeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, in Guid conceptId, out IUnknown* conceptInterface, IKeyStore** conceptMetadata) GetConcept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out Location location) GetLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IDebugHostType* type) GetTypeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out Location location, out IDebugHostType* type) GetTargetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out uint64 numModels) GetNumberOfParentModels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, uint64 i, out IModelObject* model, IModelObject** contextObject) GetParentModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject model, IModelObject* contextObject, uint8 @override) AddParentModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject model) RemoveParentModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, PWSTR key, IModelObject** objectReference, IKeyStore** metadata) GetKeyReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self) ClearKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, out IKeyEnumerator* enumerator) EnumerateKeyReferences;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, in Guid conceptId, ref IUnknown conceptInterface, IKeyStore* conceptMetadata) SetConcept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self) ClearConcepts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, SymbolKind kind, PWSTR name, uint32 searchFlags, out IModelObject* object) GetRawReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, SymbolKind kind, uint32 searchFlags, out IRawEnumerator* enumerator) EnumerateRawReferences;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject dataModelObject, ref IUnknown context) SetContextForDataModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject dataModelObject, out IUnknown* context) GetContextForDataModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject other, IModelObject** ppResult) Compare;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelObject self, ref IModelObject other, out Boolean equal) IsEqualTo;
 			}
 		}
 		[CRepr]
@@ -13696,26 +13696,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelManager self) Close;
-				public new function HRESULT(ref IDataModelManager self, out IModelObject* object) CreateNoValue;
-				public new function HRESULT(ref IDataModelManager self, HRESULT hrError, PWSTR pwszMessage, out IModelObject* object) CreateErrorObject;
-				public new function HRESULT(ref IDataModelManager self, IDebugHostContext* context, Location objectLocation, ref IDebugHostType objectType, out IModelObject* object) CreateTypedObject;
-				public new function HRESULT(ref IDataModelManager self, IDebugHostContext* context, Location objectLocation, ref IDebugHostType objectType, out IModelObject* object) CreateTypedObjectReference;
-				public new function HRESULT(ref IDataModelManager self, IDebugHostContext* context, out IModelObject* object) CreateSyntheticObject;
-				public new function HRESULT(ref IDataModelManager self, ref IDataModelConcept dataModel, out IModelObject* object) CreateDataModelObject;
-				public new function HRESULT(ref IDataModelManager self, ModelObjectKind objectKind, ref VARIANT intrinsicData, out IModelObject* object) CreateIntrinsicObject;
-				public new function HRESULT(ref IDataModelManager self, ref VARIANT intrinsicData, ref IDebugHostType type, out IModelObject* object) CreateTypedIntrinsicObject;
-				public new function HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, out IModelObject* dataModel) GetModelForTypeSignature;
-				public new function HRESULT(ref IDataModelManager self, ref IDebugHostType type, out IModelObject* dataModel, IDebugHostTypeSignature** typeSignature, IDebugHostSymbolEnumerator** wildcardMatches) GetModelForType;
-				public new function HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, ref IModelObject dataModel) RegisterModelForTypeSignature;
-				public new function HRESULT(ref IDataModelManager self, ref IModelObject dataModel, IDebugHostTypeSignature* typeSignature) UnregisterModelForTypeSignature;
-				public new function HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, ref IModelObject dataModel) RegisterExtensionForTypeSignature;
-				public new function HRESULT(ref IDataModelManager self, ref IModelObject dataModel, IDebugHostTypeSignature* typeSignature) UnregisterExtensionForTypeSignature;
-				public new function HRESULT(ref IDataModelManager self, IKeyStore* parentStore, out IKeyStore* metadataStore) CreateMetadataStore;
-				public new function HRESULT(ref IDataModelManager self, out IModelObject* rootNamespace) GetRootNamespace;
-				public new function HRESULT(ref IDataModelManager self, PWSTR modelName, ref IModelObject modeObject) RegisterNamedModel;
-				public new function HRESULT(ref IDataModelManager self, PWSTR modelName) UnregisterNamedModel;
-				public new function HRESULT(ref IDataModelManager self, PWSTR modelName, out IModelObject* modelObject) AcquireNamedModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, out IModelObject* object) CreateNoValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, HRESULT hrError, PWSTR pwszMessage, out IModelObject* object) CreateErrorObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, IDebugHostContext* context, Location objectLocation, ref IDebugHostType objectType, out IModelObject* object) CreateTypedObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, IDebugHostContext* context, Location objectLocation, ref IDebugHostType objectType, out IModelObject* object) CreateTypedObjectReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, IDebugHostContext* context, out IModelObject* object) CreateSyntheticObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IDataModelConcept dataModel, out IModelObject* object) CreateDataModelObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ModelObjectKind objectKind, ref VARIANT intrinsicData, out IModelObject* object) CreateIntrinsicObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref VARIANT intrinsicData, ref IDebugHostType type, out IModelObject* object) CreateTypedIntrinsicObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, out IModelObject* dataModel) GetModelForTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IDebugHostType type, out IModelObject* dataModel, IDebugHostTypeSignature** typeSignature, IDebugHostSymbolEnumerator** wildcardMatches) GetModelForType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, ref IModelObject dataModel) RegisterModelForTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IModelObject dataModel, IDebugHostTypeSignature* typeSignature) UnregisterModelForTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IDebugHostTypeSignature typeSignature, ref IModelObject dataModel) RegisterExtensionForTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, ref IModelObject dataModel, IDebugHostTypeSignature* typeSignature) UnregisterExtensionForTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, IKeyStore* parentStore, out IKeyStore* metadataStore) CreateMetadataStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, out IModelObject* rootNamespace) GetRootNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, PWSTR modelName, ref IModelObject modeObject) RegisterNamedModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, PWSTR modelName) UnregisterNamedModel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager self, PWSTR modelName, out IModelObject* modelObject) AcquireNamedModel;
 			}
 		}
 		[CRepr]
@@ -13736,13 +13736,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IModelKeyReference self, out BSTR keyName) GetKeyName;
-				public new function HRESULT(ref IModelKeyReference self, out IModelObject* originalObject) GetOriginalObject;
-				public new function HRESULT(ref IModelKeyReference self, out IModelObject* containingObject) GetContextObject;
-				public new function HRESULT(ref IModelKeyReference self, IModelObject** object, IKeyStore** metadata) GetKey;
-				public new function HRESULT(ref IModelKeyReference self, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-				public new function HRESULT(ref IModelKeyReference self, IModelObject* object, IKeyStore* metadata) SetKey;
-				public new function HRESULT(ref IModelKeyReference self, ref IModelObject object) SetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, out BSTR keyName) GetKeyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, out IModelObject* originalObject) GetOriginalObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, out IModelObject* containingObject) GetContextObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, IModelObject** object, IKeyStore** metadata) GetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, IModelObject* object, IKeyStore* metadata) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference self, ref IModelObject object) SetKeyValue;
 			}
 		}
 		[CRepr]
@@ -13758,8 +13758,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IModelPropertyAccessor self, PWSTR key, IModelObject* contextObject, out IModelObject* value) GetValue;
-				public new function HRESULT(ref IModelPropertyAccessor self, PWSTR key, IModelObject* contextObject, ref IModelObject value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelPropertyAccessor self, PWSTR key, IModelObject* contextObject, out IModelObject* value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelPropertyAccessor self, PWSTR key, IModelObject* contextObject, ref IModelObject value) SetValue;
 			}
 		}
 		[CRepr]
@@ -13774,7 +13774,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IModelMethod self, IModelObject* pContextObject, uint64 argCount, IModelObject** ppArguments, out IModelObject* ppResult, IKeyStore** ppMetadata) Call;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelMethod self, IModelObject* pContextObject, uint64 argCount, IModelObject** ppArguments, out IModelObject* ppResult, IKeyStore** ppMetadata) Call;
 			}
 		}
 		[CRepr]
@@ -13790,8 +13790,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKeyEnumerator self) Reset;
-				public new function HRESULT(ref IKeyEnumerator self, out BSTR key, IModelObject** value, IKeyStore** metadata) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKeyEnumerator self, out BSTR key, IModelObject** value, IKeyStore** metadata) GetNext;
 			}
 		}
 		[CRepr]
@@ -13807,8 +13807,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRawEnumerator self) Reset;
-				public new function HRESULT(ref IRawEnumerator self, BSTR* name, SymbolKind* kind, IModelObject** value) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRawEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRawEnumerator self, BSTR* name, SymbolKind* kind, IModelObject** value) GetNext;
 			}
 		}
 		[CRepr]
@@ -13824,8 +13824,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelConcept self, ref IModelObject modelObject, IDebugHostTypeSignature* matchingTypeSignature, IDebugHostSymbolEnumerator* wildcardMatches) InitializeObject;
-				public new function HRESULT(ref IDataModelConcept self, out BSTR modelName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelConcept self, ref IModelObject modelObject, IDebugHostTypeSignature* matchingTypeSignature, IDebugHostSymbolEnumerator* wildcardMatches) InitializeObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelConcept self, out BSTR modelName) GetName;
 			}
 		}
 		[CRepr]
@@ -13840,7 +13840,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStringDisplayableConcept self, ref IModelObject contextObject, IKeyStore* metadata, out BSTR displayString) ToDisplayString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStringDisplayableConcept self, ref IModelObject contextObject, IKeyStore* metadata, out BSTR displayString) ToDisplayString;
 			}
 		}
 		[CRepr]
@@ -13855,7 +13855,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICodeAddressConcept self, ref IModelObject pContextObject, out IDebugHostSymbol* ppSymbol) GetContainingSymbol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICodeAddressConcept self, ref IModelObject pContextObject, out IDebugHostSymbol* ppSymbol) GetContainingSymbol;
 			}
 		}
 		[CRepr]
@@ -13871,8 +13871,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IModelIterator self) Reset;
-				public new function HRESULT(ref IModelIterator self, out IModelObject* object, uint64 dimensions, IModelObject** indexers, IKeyStore** metadata) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelIterator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelIterator self, out IModelObject* object, uint64 dimensions, IModelObject** indexers, IKeyStore** metadata) GetNext;
 			}
 		}
 		[CRepr]
@@ -13888,8 +13888,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIterableConcept self, ref IModelObject contextObject, out uint64 dimensionality) GetDefaultIndexDimensionality;
-				public new function HRESULT(ref IIterableConcept self, ref IModelObject contextObject, out IModelIterator* iterator) GetIterator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIterableConcept self, ref IModelObject contextObject, out uint64 dimensionality) GetDefaultIndexDimensionality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIterableConcept self, ref IModelObject contextObject, out IModelIterator* iterator) GetIterator;
 			}
 		}
 		[CRepr]
@@ -13906,9 +13906,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, out uint64 dimensionality) GetDimensionality;
-				public new function HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, uint64 indexerCount, IModelObject** indexers, out IModelObject* object, IKeyStore** metadata) GetAt;
-				public new function HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, uint64 indexerCount, IModelObject** indexers, ref IModelObject value) SetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, out uint64 dimensionality) GetDimensionality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, uint64 indexerCount, IModelObject** indexers, out IModelObject* object, IKeyStore** metadata) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIndexableConcept self, ref IModelObject contextObject, uint64 indexerCount, IModelObject** indexers, ref IModelObject value) SetAt;
 			}
 		}
 		[CRepr]
@@ -13923,7 +13923,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPreferredRuntimeTypeConcept self, ref IModelObject contextObject, out IModelObject* object) CastToPreferredRuntimeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPreferredRuntimeTypeConcept self, ref IModelObject contextObject, out IModelObject* object) CastToPreferredRuntimeType;
 			}
 		}
 		[CRepr]
@@ -13940,9 +13940,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHost self, out IUnknown* hostUnk) GetHostDefinedInterface;
-				public new function HRESULT(ref IDebugHost self, out IDebugHostContext* context) GetCurrentContext;
-				public new function HRESULT(ref IDebugHost self, out IKeyStore* defaultMetadataStore) GetDefaultMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHost self, out IUnknown* hostUnk) GetHostDefinedInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHost self, out IDebugHostContext* context) GetCurrentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHost self, out IKeyStore* defaultMetadataStore) GetDefaultMetadata;
 			}
 		}
 		[CRepr]
@@ -13957,7 +13957,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostContext self, ref IDebugHostContext pContext, out Boolean pIsEqual) IsEqualTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostContext self, ref IDebugHostContext pContext, out Boolean pIsEqual) IsEqualTo;
 			}
 		}
 		[CRepr]
@@ -13972,7 +13972,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostErrorSink self, ErrorClass errClass, HRESULT hrError, PWSTR message) ReportError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostErrorSink self, ErrorClass errClass, HRESULT hrError, PWSTR message) ReportError;
 			}
 		}
 		[CRepr]
@@ -13993,13 +13993,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostSymbol self, out IDebugHostContext* context) GetContext;
-				public new function HRESULT(ref IDebugHostSymbol self, SymbolKind kind, PWSTR name, out IDebugHostSymbolEnumerator* ppEnum) EnumerateChildren;
-				public new function HRESULT(ref IDebugHostSymbol self, out SymbolKind kind) GetSymbolKind;
-				public new function HRESULT(ref IDebugHostSymbol self, out BSTR symbolName) GetName;
-				public new function HRESULT(ref IDebugHostSymbol self, out IDebugHostType* type) ComGetType;
-				public new function HRESULT(ref IDebugHostSymbol self, out IDebugHostModule* containingModule) GetContainingModule;
-				public new function HRESULT(ref IDebugHostSymbol self, ref IDebugHostSymbol pComparisonSymbol, uint32 comparisonFlags, out Boolean pMatches) CompareAgainst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, out IDebugHostContext* context) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, SymbolKind kind, PWSTR name, out IDebugHostSymbolEnumerator* ppEnum) EnumerateChildren;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, out SymbolKind kind) GetSymbolKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, out BSTR symbolName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, out IDebugHostType* type) ComGetType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, out IDebugHostModule* containingModule) GetContainingModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol self, ref IDebugHostSymbol pComparisonSymbol, uint32 comparisonFlags, out Boolean pMatches) CompareAgainst;
 			}
 		}
 		[CRepr]
@@ -14015,8 +14015,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostSymbolEnumerator self) Reset;
-				public new function HRESULT(ref IDebugHostSymbolEnumerator self, out IDebugHostSymbol* symbol) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbolEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbolEnumerator self, out IDebugHostSymbol* symbol) GetNext;
 			}
 		}
 		[CRepr]
@@ -14036,12 +14036,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostModule self, uint8 allowPath, out BSTR imageName) GetImageName;
-				public new function HRESULT(ref IDebugHostModule self, out Location moduleBaseLocation) GetBaseLocation;
-				public new function HRESULT(ref IDebugHostModule self, uint64* fileVersion, uint64* productVersion) GetVersion;
-				public new function HRESULT(ref IDebugHostModule self, PWSTR typeName, out IDebugHostType* type) FindTypeByName;
-				public new function HRESULT(ref IDebugHostModule self, uint64 rva, out IDebugHostSymbol* symbol) FindSymbolByRVA;
-				public new function HRESULT(ref IDebugHostModule self, PWSTR symbolName, out IDebugHostSymbol* symbol) FindSymbolByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, uint8 allowPath, out BSTR imageName) GetImageName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, out Location moduleBaseLocation) GetBaseLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, uint64* fileVersion, uint64* productVersion) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, PWSTR typeName, out IDebugHostType* type) FindTypeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, uint64 rva, out IDebugHostSymbol* symbol) FindSymbolByRVA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule self, PWSTR symbolName, out IDebugHostSymbol* symbol) FindSymbolByName;
 			}
 		}
 		[CRepr]
@@ -14074,25 +14074,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostType self, out TypeKind kind) GetTypeKind;
-				public new function HRESULT(ref IDebugHostType self, out uint64 size) GetSize;
-				public new function HRESULT(ref IDebugHostType self, out IDebugHostType* baseType) GetBaseType;
-				public new function HRESULT(ref IDebugHostType self, out uint32 hashCode) GetHashCode;
-				public new function HRESULT(ref IDebugHostType self, IntrinsicKind* intrinsicKind, uint16* carrierType) GetIntrinsicType;
-				public new function HRESULT(ref IDebugHostType self, out uint32 lsbOfField, out uint32 lengthOfField) GetBitField;
-				public new function HRESULT(ref IDebugHostType self, out PointerKind pointerKind) GetPointerKind;
-				public new function HRESULT(ref IDebugHostType self, out IDebugHostType* memberType) GetMemberType;
-				public new function HRESULT(ref IDebugHostType self, PointerKind kind, out IDebugHostType* newType) CreatePointerTo;
-				public new function HRESULT(ref IDebugHostType self, out uint64 arrayDimensionality) GetArrayDimensionality;
-				public new function HRESULT(ref IDebugHostType self, uint64 dimensions, ArrayDimension* pDimensions) GetArrayDimensions;
-				public new function HRESULT(ref IDebugHostType self, uint64 dimensions, ArrayDimension* pDimensions, out IDebugHostType* newType) CreateArrayOf;
-				public new function HRESULT(ref IDebugHostType self, out CallingConventionKind conventionKind) GetFunctionCallingConvention;
-				public new function HRESULT(ref IDebugHostType self, out IDebugHostType* returnType) GetFunctionReturnType;
-				public new function HRESULT(ref IDebugHostType self, out uint64 count) GetFunctionParameterTypeCount;
-				public new function HRESULT(ref IDebugHostType self, uint64 i, out IDebugHostType* parameterType) GetFunctionParameterTypeAt;
-				public new function HRESULT(ref IDebugHostType self, out Boolean isGeneric) IsGeneric;
-				public new function HRESULT(ref IDebugHostType self, out uint64 argCount) GetGenericArgumentCount;
-				public new function HRESULT(ref IDebugHostType self, uint64 i, out IDebugHostSymbol* argument) GetGenericArgumentAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out TypeKind kind) GetTypeKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint64 size) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out IDebugHostType* baseType) GetBaseType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint32 hashCode) GetHashCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, IntrinsicKind* intrinsicKind, uint16* carrierType) GetIntrinsicType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint32 lsbOfField, out uint32 lengthOfField) GetBitField;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out PointerKind pointerKind) GetPointerKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out IDebugHostType* memberType) GetMemberType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, PointerKind kind, out IDebugHostType* newType) CreatePointerTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint64 arrayDimensionality) GetArrayDimensionality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, uint64 dimensions, ArrayDimension* pDimensions) GetArrayDimensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, uint64 dimensions, ArrayDimension* pDimensions, out IDebugHostType* newType) CreateArrayOf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out CallingConventionKind conventionKind) GetFunctionCallingConvention;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out IDebugHostType* returnType) GetFunctionReturnType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint64 count) GetFunctionParameterTypeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, uint64 i, out IDebugHostType* parameterType) GetFunctionParameterTypeAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out Boolean isGeneric) IsGeneric;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, out uint64 argCount) GetGenericArgumentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType self, uint64 i, out IDebugHostSymbol* argument) GetGenericArgumentAt;
 			}
 		}
 		[CRepr]
@@ -14107,7 +14107,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostConstant self, out VARIANT value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostConstant self, out VARIANT value) GetValue;
 			}
 		}
 		[CRepr]
@@ -14125,10 +14125,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostField self, out LocationKind locationKind) GetLocationKind;
-				public new function HRESULT(ref IDebugHostField self, out uint64 offset) GetOffset;
-				public new function HRESULT(ref IDebugHostField self, out Location location) GetLocation;
-				public new function HRESULT(ref IDebugHostField self, out VARIANT value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostField self, out LocationKind locationKind) GetLocationKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostField self, out uint64 offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostField self, out Location location) GetLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostField self, out VARIANT value) GetValue;
 			}
 		}
 		[CRepr]
@@ -14145,9 +14145,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostData self, out LocationKind locationKind) GetLocationKind;
-				public new function HRESULT(ref IDebugHostData self, out Location location) GetLocation;
-				public new function HRESULT(ref IDebugHostData self, out VARIANT value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostData self, out LocationKind locationKind) GetLocationKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostData self, out Location location) GetLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostData self, out VARIANT value) GetValue;
 			}
 		}
 		[CRepr]
@@ -14163,8 +14163,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostPublic self, out LocationKind locationKind) GetLocationKind;
-				public new function HRESULT(ref IDebugHostPublic self, out Location location) GetLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostPublic self, out LocationKind locationKind) GetLocationKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostPublic self, out Location location) GetLocation;
 			}
 		}
 		[CRepr]
@@ -14179,7 +14179,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostBaseClass self, out uint64 offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostBaseClass self, out uint64 offset) GetOffset;
 			}
 		}
 		[CRepr]
@@ -14200,13 +14200,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostSymbols self, PWSTR pwszModuleName, PWSTR pwszMinVersion, PWSTR pwszMaxVersion, out IDebugHostModuleSignature* ppModuleSignature) CreateModuleSignature;
-				public new function HRESULT(ref IDebugHostSymbols self, PWSTR signatureSpecification, IDebugHostModule* module, out IDebugHostTypeSignature* typeSignature) CreateTypeSignature;
-				public new function HRESULT(ref IDebugHostSymbols self, PWSTR signatureSpecification, PWSTR moduleName, PWSTR minVersion, PWSTR maxVersion, out IDebugHostTypeSignature* typeSignature) CreateTypeSignatureForModuleRange;
-				public new function HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, out IDebugHostSymbolEnumerator* moduleEnum) EnumerateModules;
-				public new function HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, PWSTR moduleName, out IDebugHostModule* module) FindModuleByName;
-				public new function HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, Location moduleLocation, out IDebugHostModule* module) FindModuleByLocation;
-				public new function HRESULT(ref IDebugHostSymbols self, IDebugHostContext* pContext, Location location, ref IDebugHostType objectType, out Location derivedLocation, out IDebugHostType* derivedType) GetMostDerivedObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, PWSTR pwszModuleName, PWSTR pwszMinVersion, PWSTR pwszMaxVersion, out IDebugHostModuleSignature* ppModuleSignature) CreateModuleSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, PWSTR signatureSpecification, IDebugHostModule* module, out IDebugHostTypeSignature* typeSignature) CreateTypeSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, PWSTR signatureSpecification, PWSTR moduleName, PWSTR minVersion, PWSTR maxVersion, out IDebugHostTypeSignature* typeSignature) CreateTypeSignatureForModuleRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, out IDebugHostSymbolEnumerator* moduleEnum) EnumerateModules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, PWSTR moduleName, out IDebugHostModule* module) FindModuleByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, ref IDebugHostContext context, Location moduleLocation, out IDebugHostModule* module) FindModuleByLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbols self, IDebugHostContext* pContext, Location location, ref IDebugHostType objectType, out Location derivedLocation, out IDebugHostType* derivedType) GetMostDerivedObject;
 			}
 		}
 		[CRepr]
@@ -14225,11 +14225,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, void* buffer, uint64 bufferSize, uint64* bytesRead) ReadBytes;
-				public new function HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, void* buffer, uint64 bufferSize, uint64* bytesWritten) WriteBytes;
-				public new function HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint64 count, uint64* pointers) ReadPointers;
-				public new function HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint64 count, uint64* pointers) WritePointers;
-				public new function HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint8 verbose, out BSTR locationName) GetDisplayStringForLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, void* buffer, uint64 bufferSize, uint64* bytesRead) ReadBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, void* buffer, uint64 bufferSize, uint64* bytesWritten) WriteBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint64 count, uint64* pointers) ReadPointers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint64 count, uint64* pointers) WritePointers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory self, ref IDebugHostContext context, Location location, uint8 verbose, out BSTR locationName) GetDisplayStringForLocation;
 			}
 		}
 		[CRepr]
@@ -14245,8 +14245,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostEvaluator self, ref IDebugHostContext context, PWSTR expression, IModelObject* bindingContext, out IModelObject* result, IKeyStore** metadata) EvaluateExpression;
-				public new function HRESULT(ref IDebugHostEvaluator self, ref IDebugHostContext context, PWSTR expression, IModelObject* bindingContext, out IModelObject* result, IKeyStore** metadata) EvaluateExtendedExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostEvaluator self, ref IDebugHostContext context, PWSTR expression, IModelObject* bindingContext, out IModelObject* result, IKeyStore** metadata) EvaluateExpression;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostEvaluator self, ref IDebugHostContext context, PWSTR expression, IModelObject* bindingContext, out IModelObject* result, IKeyStore** metadata) EvaluateExtendedExpression;
 			}
 		}
 		[CRepr]
@@ -14261,7 +14261,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostModuleSignature self, ref IDebugHostModule pModule, out Boolean isMatch) IsMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModuleSignature self, ref IDebugHostModule pModule, out Boolean isMatch) IsMatch;
 			}
 		}
 		[CRepr]
@@ -14278,9 +14278,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostTypeSignature self, out uint32 hashCode) GetHashCode;
-				public new function HRESULT(ref IDebugHostTypeSignature self, ref IDebugHostType type, out Boolean isMatch, IDebugHostSymbolEnumerator** wildcardMatches) IsMatch;
-				public new function HRESULT(ref IDebugHostTypeSignature self, ref IDebugHostTypeSignature typeSignature, out SignatureComparison result) CompareAgainst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostTypeSignature self, out uint32 hashCode) GetHashCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostTypeSignature self, ref IDebugHostType type, out Boolean isMatch, IDebugHostSymbolEnumerator** wildcardMatches) IsMatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostTypeSignature self, ref IDebugHostTypeSignature typeSignature, out SignatureComparison result) CompareAgainst;
 			}
 		}
 		[CRepr]
@@ -14295,7 +14295,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostSymbol.VTable
 			{
-				public new function HRESULT(ref IDebugHostSymbol2 self, out LanguageKind pKind) GetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostSymbol2 self, out LanguageKind pKind) GetLanguage;
 			}
 		}
 		[CRepr]
@@ -14314,11 +14314,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostType.VTable
 			{
-				public new function HRESULT(ref IDebugHostType2 self, out Boolean isTypedef) IsTypedef;
-				public new function HRESULT(ref IDebugHostType2 self, out IDebugHostType2* baseType) GetTypedefBaseType;
-				public new function HRESULT(ref IDebugHostType2 self, out IDebugHostType2* finalBaseType) GetTypedefFinalBaseType;
-				public new function HRESULT(ref IDebugHostType2 self, out VarArgsKind varArgsKind) GetFunctionVarArgsKind;
-				public new function HRESULT(ref IDebugHostType2 self, out IDebugHostType2* instancePointerType) GetFunctionInstancePointerType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType2 self, out Boolean isTypedef) IsTypedef;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType2 self, out IDebugHostType2* baseType) GetTypedefBaseType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType2 self, out IDebugHostType2* finalBaseType) GetTypedefFinalBaseType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType2 self, out VarArgsKind varArgsKind) GetFunctionVarArgsKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostType2 self, out IDebugHostType2* instancePointerType) GetFunctionInstancePointerType;
 			}
 		}
 		[CRepr]
@@ -14333,7 +14333,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostStatus self, out Boolean interruptRequested) PollUserInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostStatus self, out Boolean interruptRequested) PollUserInterrupt;
 			}
 		}
 		[CRepr]
@@ -14348,7 +14348,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptClient self, ErrorClass errClass, HRESULT hrFail, PWSTR message, uint32 line, uint32 position) ReportError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptClient self, ErrorClass errClass, HRESULT hrFail, PWSTR message, uint32 line, uint32 position) ReportError;
 			}
 		}
 		[CRepr]
@@ -14365,9 +14365,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptTemplate self, out BSTR templateName) GetName;
-				public new function HRESULT(ref IDataModelScriptTemplate self, out BSTR templateDescription) GetDescription;
-				public new function HRESULT(ref IDataModelScriptTemplate self, out IStream* contentStream) GetContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptTemplate self, out BSTR templateName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptTemplate self, out BSTR templateDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptTemplate self, out IStream* contentStream) GetContent;
 			}
 		}
 		[CRepr]
@@ -14388,13 +14388,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScript self, out BSTR scriptName) GetName;
-				public new function HRESULT(ref IDataModelScript self, PWSTR scriptName) Rename;
-				public new function HRESULT(ref IDataModelScript self, ref IStream contentStream) Populate;
-				public new function HRESULT(ref IDataModelScript self, ref IDataModelScriptClient client) Execute;
-				public new function HRESULT(ref IDataModelScript self) Unlink;
-				public new function HRESULT(ref IDataModelScript self, out Boolean isInvocable) IsInvocable;
-				public new function HRESULT(ref IDataModelScript self, ref IDataModelScriptClient client) InvokeMain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, out BSTR scriptName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, PWSTR scriptName) Rename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, ref IStream contentStream) Populate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, ref IDataModelScriptClient client) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self) Unlink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, out Boolean isInvocable) IsInvocable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScript self, ref IDataModelScriptClient client) InvokeMain;
 			}
 		}
 		[CRepr]
@@ -14410,8 +14410,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptTemplateEnumerator self) Reset;
-				public new function HRESULT(ref IDataModelScriptTemplateEnumerator self, out IDataModelScriptTemplate* templateContent) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptTemplateEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptTemplateEnumerator self, out IDataModelScriptTemplate* templateContent) GetNext;
 			}
 		}
 		[CRepr]
@@ -14430,11 +14430,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptProvider self, out BSTR name) GetName;
-				public new function HRESULT(ref IDataModelScriptProvider self, out BSTR @extension) GetExtension;
-				public new function HRESULT(ref IDataModelScriptProvider self, out IDataModelScript* script) CreateScript;
-				public new function HRESULT(ref IDataModelScriptProvider self, out IDataModelScriptTemplate* templateContent) GetDefaultTemplateContent;
-				public new function HRESULT(ref IDataModelScriptProvider self, out IDataModelScriptTemplateEnumerator* enumerator) EnumerateTemplates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProvider self, out BSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProvider self, out BSTR @extension) GetExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProvider self, out IDataModelScript* script) CreateScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProvider self, out IDataModelScriptTemplate* templateContent) GetDefaultTemplateContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProvider self, out IDataModelScriptTemplateEnumerator* enumerator) EnumerateTemplates;
 			}
 		}
 		[CRepr]
@@ -14450,8 +14450,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptProviderEnumerator self) Reset;
-				public new function HRESULT(ref IDataModelScriptProviderEnumerator self, out IDataModelScriptProvider* provider) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProviderEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptProviderEnumerator self, out IDataModelScriptProvider* provider) GetNext;
 			}
 		}
 		[CRepr]
@@ -14471,12 +14471,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptManager self, out IDataModelNameBinder* ppNameBinder) GetDefaultNameBinder;
-				public new function HRESULT(ref IDataModelScriptManager self, ref IDataModelScriptProvider provider) RegisterScriptProvider;
-				public new function HRESULT(ref IDataModelScriptManager self, ref IDataModelScriptProvider provider) UnregisterScriptProvider;
-				public new function HRESULT(ref IDataModelScriptManager self, PWSTR scriptType, out IDataModelScriptProvider* provider) FindProviderForScriptType;
-				public new function HRESULT(ref IDataModelScriptManager self, PWSTR scriptExtension, out IDataModelScriptProvider* provider) FindProviderForScriptExtension;
-				public new function HRESULT(ref IDataModelScriptManager self, out IDataModelScriptProviderEnumerator* enumerator) EnumerateScriptProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, out IDataModelNameBinder* ppNameBinder) GetDefaultNameBinder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, ref IDataModelScriptProvider provider) RegisterScriptProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, ref IDataModelScriptProvider provider) UnregisterScriptProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, PWSTR scriptType, out IDataModelScriptProvider* provider) FindProviderForScriptType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, PWSTR scriptExtension, out IDataModelScriptProvider* provider) FindProviderForScriptExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptManager self, out IDataModelScriptProviderEnumerator* enumerator) EnumerateScriptProviders;
 			}
 		}
 		[CRepr]
@@ -14493,9 +14493,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, PWSTR key, IModelObject** keyValue, IKeyStore** metadata, Boolean* hasKey) GetKey;
-				public new function HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, PWSTR key, ref IModelObject keyValue, ref IKeyStore metadata) SetKey;
-				public new function HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, out IKeyEnumerator* ppEnumerator) EnumerateKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, PWSTR key, IModelObject** keyValue, IKeyStore** metadata, Boolean* hasKey) GetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, PWSTR key, ref IModelObject keyValue, ref IKeyStore metadata) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicKeyProviderConcept self, ref IModelObject contextObject, out IKeyEnumerator* ppEnumerator) EnumerateKeys;
 			}
 		}
 		[CRepr]
@@ -14514,11 +14514,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject contextObject, in Guid conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata, out Boolean hasConcept) GetConcept;
-				public new function HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject contextObject, in Guid conceptId, ref IUnknown conceptInterface, IKeyStore* conceptMetadata) SetConcept;
-				public new function HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject parentModel) NotifyParent;
-				public new function HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject parentModel) NotifyParentChange;
-				public new function HRESULT(ref IDynamicConceptProviderConcept self) NotifyDestruct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject contextObject, in Guid conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata, out Boolean hasConcept) GetConcept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject contextObject, in Guid conceptId, ref IUnknown conceptInterface, IKeyStore* conceptMetadata) SetConcept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject parentModel) NotifyParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicConceptProviderConcept self, ref IModelObject parentModel) NotifyParentChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicConceptProviderConcept self) NotifyDestruct;
 			}
 		}
 		[CRepr]
@@ -14534,8 +14534,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptHostContext self, ref IDataModelScript script, ScriptChangeKind changeKind) NotifyScriptChange;
-				public new function HRESULT(ref IDataModelScriptHostContext self, out IModelObject* namespaceObject) GetNamespaceObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptHostContext self, ref IDataModelScript script, ScriptChangeKind changeKind) NotifyScriptChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptHostContext self, out IModelObject* namespaceObject) GetNamespaceObject;
 			}
 		}
 		[CRepr]
@@ -14550,7 +14550,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostScriptHost self, ref IDataModelScript script, out IDataModelScriptHostContext* scriptContext) CreateContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostScriptHost self, ref IDataModelScript script, out IDataModelScriptHostContext* scriptContext) CreateContext;
 			}
 		}
 		[CRepr]
@@ -14568,10 +14568,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, PWSTR name, out IModelObject* value, IKeyStore** metadata) BindValue;
-				public new function HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, PWSTR name, out IModelObject* reference, IKeyStore** metadata) BindReference;
-				public new function HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, out IKeyEnumerator* enumerator) EnumerateValues;
-				public new function HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, out IKeyEnumerator* enumerator) EnumerateReferences;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, PWSTR name, out IModelObject* value, IKeyStore** metadata) BindValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, PWSTR name, out IModelObject* reference, IKeyStore** metadata) BindReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, out IKeyEnumerator* enumerator) EnumerateValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelNameBinder self, ref IModelObject contextObject, out IKeyEnumerator* enumerator) EnumerateReferences;
 			}
 		}
 		[CRepr]
@@ -14586,7 +14586,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IModelKeyReference.VTable
 			{
-				public new function HRESULT(ref IModelKeyReference2 self, ref IModelObject newContextObject) OverrideContextObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IModelKeyReference2 self, ref IModelObject newContextObject) OverrideContextObject;
 			}
 		}
 		[CRepr]
@@ -14601,7 +14601,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostEvaluator.VTable
 			{
-				public new function HRESULT(ref IDebugHostEvaluator2 self, ref IModelObject assignmentReference, ref IModelObject assignmentValue, out IModelObject* assignmentResult, IKeyStore** assignmentMetadata) AssignTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostEvaluator2 self, ref IModelObject assignmentReference, ref IModelObject assignmentValue, out IModelObject* assignmentResult, IKeyStore** assignmentMetadata) AssignTo;
 			}
 		}
 		[CRepr]
@@ -14617,8 +14617,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataModelManager.VTable
 			{
-				public new function HRESULT(ref IDataModelManager2 self, PWSTR modelName, PWSTR subNamespaceModelName, PWSTR accessName, IKeyStore* metadata, out IModelObject* namespaceModelObject) AcquireSubNamespace;
-				public new function HRESULT(ref IDataModelManager2 self, IDebugHostContext* context, ref VARIANT intrinsicData, ref IDebugHostType type, out IModelObject* object) CreateTypedIntrinsicObjectEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager2 self, PWSTR modelName, PWSTR subNamespaceModelName, PWSTR accessName, IKeyStore* metadata, out IModelObject* namespaceModelObject) AcquireSubNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelManager2 self, IDebugHostContext* context, ref VARIANT intrinsicData, ref IDebugHostType type, out IModelObject* object) CreateTypedIntrinsicObjectEx;
 			}
 		}
 		[CRepr]
@@ -14633,7 +14633,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostMemory.VTable
 			{
-				public new function HRESULT(ref IDebugHostMemory2 self, ref IDebugHostContext context, Location location, out Location pLinearizedLocation) LinearizeLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostMemory2 self, ref IDebugHostContext context, Location location, out Location pLinearizedLocation) LinearizeLocation;
 			}
 		}
 		[CRepr]
@@ -14649,8 +14649,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHostExtensibility self, PWSTR aliasName, ref IModelObject functionObject) CreateFunctionAlias;
-				public new function HRESULT(ref IDebugHostExtensibility self, PWSTR aliasName) DestroyFunctionAlias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostExtensibility self, PWSTR aliasName, ref IModelObject functionObject) CreateFunctionAlias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostExtensibility self, PWSTR aliasName) DestroyFunctionAlias;
 			}
 		}
 		[CRepr]
@@ -14665,7 +14665,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptDebugClient self, ref ScriptDebugEventInformation pEventInfo, ref IDataModelScript pScript, IModelObject* pEventDataObject, out ScriptExecutionKind resumeEventKind) NotifyDebugEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugClient self, ref ScriptDebugEventInformation pEventInfo, ref IDataModelScript pScript, IModelObject* pEventDataObject, out ScriptExecutionKind resumeEventKind) NotifyDebugEvent;
 			}
 		}
 		[CRepr]
@@ -14681,8 +14681,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptDebugVariableSetEnumerator self) Reset;
-				public new function HRESULT(ref IDataModelScriptDebugVariableSetEnumerator self, out BSTR variableName, IModelObject** variableValue, IKeyStore** variableMetadata) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugVariableSetEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugVariableSetEnumerator self, out BSTR variableName, IModelObject** variableValue, IKeyStore** variableMetadata) GetNext;
 			}
 		}
 		[CRepr]
@@ -14703,13 +14703,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out BSTR name) GetName;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out ScriptDebugPosition position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out Boolean isTransitionPoint) IsTransitionPoint;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScript* transitionScript, out Boolean isTransitionContiguous) GetTransition;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, PWSTR pwszExpression, out IModelObject* ppResult) Evaluate;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScriptDebugVariableSetEnumerator* variablesEnum) EnumerateLocals;
-				public new function HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScriptDebugVariableSetEnumerator* variablesEnum) EnumerateArguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out BSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out ScriptDebugPosition position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out Boolean isTransitionPoint) IsTransitionPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScript* transitionScript, out Boolean isTransitionContiguous) GetTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, PWSTR pwszExpression, out IModelObject* ppResult) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScriptDebugVariableSetEnumerator* variablesEnum) EnumerateLocals;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStackFrame self, out IDataModelScriptDebugVariableSetEnumerator* variablesEnum) EnumerateArguments;
 			}
 		}
 		[CRepr]
@@ -14725,8 +14725,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint64(ref IDataModelScriptDebugStack self) GetFrameCount;
-				public new function HRESULT(ref IDataModelScriptDebugStack self, uint64 frameNumber, out IDataModelScriptDebugStackFrame* stackFrame) GetStackFrame;
+				public new function [CallingConvention(.Stdcall)] uint64(ref IDataModelScriptDebugStack self) GetFrameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugStack self, uint64 frameNumber, out IDataModelScriptDebugStackFrame* stackFrame) GetStackFrame;
 			}
 		}
 		[CRepr]
@@ -14746,12 +14746,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint64(ref IDataModelScriptDebugBreakpoint self) GetId;
-				public new function Boolean(ref IDataModelScriptDebugBreakpoint self) IsEnabled;
-				public new function void(ref IDataModelScriptDebugBreakpoint self) Enable;
-				public new function void(ref IDataModelScriptDebugBreakpoint self) Disable;
-				public new function void(ref IDataModelScriptDebugBreakpoint self) Remove;
-				public new function HRESULT(ref IDataModelScriptDebugBreakpoint self, out ScriptDebugPosition position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
+				public new function [CallingConvention(.Stdcall)] uint64(ref IDataModelScriptDebugBreakpoint self) GetId;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IDataModelScriptDebugBreakpoint self) IsEnabled;
+				public new function [CallingConvention(.Stdcall)] void(ref IDataModelScriptDebugBreakpoint self) Enable;
+				public new function [CallingConvention(.Stdcall)] void(ref IDataModelScriptDebugBreakpoint self) Disable;
+				public new function [CallingConvention(.Stdcall)] void(ref IDataModelScriptDebugBreakpoint self) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugBreakpoint self, out ScriptDebugPosition position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
 			}
 		}
 		[CRepr]
@@ -14767,8 +14767,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptDebugBreakpointEnumerator self) Reset;
-				public new function HRESULT(ref IDataModelScriptDebugBreakpointEnumerator self, out IDataModelScriptDebugBreakpoint* breakpoint) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugBreakpointEnumerator self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebugBreakpointEnumerator self, out IDataModelScriptDebugBreakpoint* breakpoint) GetNext;
 			}
 		}
 		[CRepr]
@@ -14792,16 +14792,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function ScriptDebugState(ref IDataModelScriptDebug self) GetDebugState;
-				public new function HRESULT(ref IDataModelScriptDebug self, out ScriptDebugPosition currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetCurrentPosition;
-				public new function HRESULT(ref IDataModelScriptDebug self, out IDataModelScriptDebugStack* @stack) GetStack;
-				public new function HRESULT(ref IDataModelScriptDebug self, uint32 linePosition, uint32 columnPosition, out IDataModelScriptDebugBreakpoint* breakpoint) SetBreakpoint;
-				public new function HRESULT(ref IDataModelScriptDebug self, uint64 breakpointId, out IDataModelScriptDebugBreakpoint* breakpoint) FindBreakpointById;
-				public new function HRESULT(ref IDataModelScriptDebug self, out IDataModelScriptDebugBreakpointEnumerator* breakpointEnum) EnumerateBreakpoints;
-				public new function HRESULT(ref IDataModelScriptDebug self, ScriptDebugEventFilter eventFilter, out Boolean isBreakEnabled) GetEventFilter;
-				public new function HRESULT(ref IDataModelScriptDebug self, ScriptDebugEventFilter eventFilter, uint8 isBreakEnabled) SetEventFilter;
-				public new function HRESULT(ref IDataModelScriptDebug self, ref IDataModelScriptDebugClient debugClient) StartDebugging;
-				public new function HRESULT(ref IDataModelScriptDebug self, ref IDataModelScriptDebugClient debugClient) StopDebugging;
+				public new function [CallingConvention(.Stdcall)] ScriptDebugState(ref IDataModelScriptDebug self) GetDebugState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, out ScriptDebugPosition currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetCurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, out IDataModelScriptDebugStack* @stack) GetStack;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, uint32 linePosition, uint32 columnPosition, out IDataModelScriptDebugBreakpoint* breakpoint) SetBreakpoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, uint64 breakpointId, out IDataModelScriptDebugBreakpoint* breakpoint) FindBreakpointById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, out IDataModelScriptDebugBreakpointEnumerator* breakpointEnum) EnumerateBreakpoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, ScriptDebugEventFilter eventFilter, out Boolean isBreakEnabled) GetEventFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, ScriptDebugEventFilter eventFilter, uint8 isBreakEnabled) SetEventFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, ref IDataModelScriptDebugClient debugClient) StartDebugging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, ref IDataModelScriptDebugClient debugClient) StopDebugging;
 			}
 		}
 		[CRepr]
@@ -14816,7 +14816,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDataModelScriptDebug.VTable
 			{
-				public new function HRESULT(ref IDataModelScriptDebug2 self, PWSTR functionName, out IDataModelScriptDebugBreakpoint* breakpoint) SetBreakpointAtFunction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug2 self, PWSTR functionName, out IDataModelScriptDebugBreakpoint* breakpoint) SetBreakpointAtFunction;
 			}
 		}
 		[CRepr]
@@ -14831,7 +14831,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugHostModule.VTable
 			{
-				public new function HRESULT(ref IDebugHostModule2 self, uint64 rva, out IDebugHostSymbol* symbol, out uint64 offset) FindContainingSymbolByRVA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHostModule2 self, uint64 rva, out IDebugHostSymbol* symbol, out uint64 offset) FindContainingSymbolByRVA;
 			}
 		}
 		[CRepr]
@@ -14846,7 +14846,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IComparableConcept self, ref IModelObject contextObject, ref IModelObject otherObject, out int32 comparisonResult) CompareObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComparableConcept self, ref IModelObject contextObject, ref IModelObject otherObject, out int32 comparisonResult) CompareObjects;
 			}
 		}
 		[CRepr]
@@ -14861,7 +14861,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEquatableConcept self, ref IModelObject contextObject, ref IModelObject otherObject, out Boolean isEqual) AreObjectsEqual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEquatableConcept self, ref IModelObject contextObject, ref IModelObject otherObject, out Boolean isEqual) AreObjectsEqual;
 			}
 		}
 		[CRepr]
@@ -14883,14 +14883,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSite self, out uint32 plcid) GetLCID;
-				public new function HRESULT(ref IActiveScriptSite self, PWSTR pstrName, uint32 dwReturnMask, out IUnknown* ppiunkItem, out ITypeInfo* ppti) GetItemInfo;
-				public new function HRESULT(ref IActiveScriptSite self, out BSTR pbstrVersion) GetDocVersionString;
-				public new function HRESULT(ref IActiveScriptSite self, in VARIANT pvarResult, in EXCEPINFO pexcepinfo) OnScriptTerminate;
-				public new function HRESULT(ref IActiveScriptSite self, SCRIPTSTATE ssScriptState) OnStateChange;
-				public new function HRESULT(ref IActiveScriptSite self, ref IActiveScriptError pscripterror) OnScriptError;
-				public new function HRESULT(ref IActiveScriptSite self) OnEnterScript;
-				public new function HRESULT(ref IActiveScriptSite self) OnLeaveScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, out uint32 plcid) GetLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, PWSTR pstrName, uint32 dwReturnMask, out IUnknown* ppiunkItem, out ITypeInfo* ppti) GetItemInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, out BSTR pbstrVersion) GetDocVersionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, in VARIANT pvarResult, in EXCEPINFO pexcepinfo) OnScriptTerminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, SCRIPTSTATE ssScriptState) OnStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self, ref IActiveScriptError pscripterror) OnScriptError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self) OnEnterScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSite self) OnLeaveScript;
 			}
 		}
 		[CRepr]
@@ -14907,9 +14907,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptError self, out EXCEPINFO pexcepinfo) GetExceptionInfo;
-				public new function HRESULT(ref IActiveScriptError self, out uint32 pdwSourceContext, out uint32 pulLineNumber, out int32 plCharacterPosition) GetSourcePosition;
-				public new function HRESULT(ref IActiveScriptError self, out BSTR pbstrSourceLine) GetSourceLineText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptError self, out EXCEPINFO pexcepinfo) GetExceptionInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptError self, out uint32 pdwSourceContext, out uint32 pulLineNumber, out int32 plCharacterPosition) GetSourcePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptError self, out BSTR pbstrSourceLine) GetSourceLineText;
 			}
 		}
 		[CRepr]
@@ -14924,7 +14924,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptError.VTable
 			{
-				public new function HRESULT(ref IActiveScriptError64 self, out uint64 pdwSourceContext, out uint32 pulLineNumber, out int32 plCharacterPosition) GetSourcePosition64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptError64 self, out uint64 pdwSourceContext, out uint32 pulLineNumber, out int32 plCharacterPosition) GetSourcePosition64;
 			}
 		}
 		[CRepr]
@@ -14940,8 +14940,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteWindow self, out HWND phwnd) GetWindow;
-				public new function HRESULT(ref IActiveScriptSiteWindow self, BOOL fEnable) EnableModeless;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteWindow self, out HWND phwnd) GetWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteWindow self, BOOL fEnable) EnableModeless;
 			}
 		}
 		[CRepr]
@@ -14956,7 +14956,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteUIControl self, SCRIPTUICITEM UicItem, out SCRIPTUICHANDLING pUicHandling) GetUIBehavior;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteUIControl self, SCRIPTUICITEM UicItem, out SCRIPTUICHANDLING pUicHandling) GetUIBehavior;
 			}
 		}
 		[CRepr]
@@ -14971,7 +14971,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteInterruptPoll self) QueryContinue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteInterruptPoll self) QueryContinue;
 			}
 		}
 		[CRepr]
@@ -14998,19 +14998,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScript self, ref IActiveScriptSite pass) SetScriptSite;
-				public new function HRESULT(ref IActiveScript self, in Guid riid, void** ppvObject) GetScriptSite;
-				public new function HRESULT(ref IActiveScript self, SCRIPTSTATE ss) SetScriptState;
-				public new function HRESULT(ref IActiveScript self, out SCRIPTSTATE pssState) GetScriptState;
-				public new function HRESULT(ref IActiveScript self) Close;
-				public new function HRESULT(ref IActiveScript self, PWSTR pstrName, uint32 dwFlags) AddNamedItem;
-				public new function HRESULT(ref IActiveScript self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
-				public new function HRESULT(ref IActiveScript self, PWSTR pstrItemName, out IDispatch* ppdisp) GetScriptDispatch;
-				public new function HRESULT(ref IActiveScript self, out uint32 pstidThread) GetCurrentScriptThreadID;
-				public new function HRESULT(ref IActiveScript self, uint32 dwWin32ThreadId, out uint32 pstidThread) GetScriptThreadID;
-				public new function HRESULT(ref IActiveScript self, uint32 stidThread, out SCRIPTTHREADSTATE pstsState) GetScriptThreadState;
-				public new function HRESULT(ref IActiveScript self, uint32 stidThread, in EXCEPINFO pexcepinfo, uint32 dwFlags) InterruptScriptThread;
-				public new function HRESULT(ref IActiveScript self, out IActiveScript* ppscript) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, ref IActiveScriptSite pass) SetScriptSite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, in Guid riid, void** ppvObject) GetScriptSite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, SCRIPTSTATE ss) SetScriptState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, out SCRIPTSTATE pssState) GetScriptState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, PWSTR pstrName, uint32 dwFlags) AddNamedItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, PWSTR pstrItemName, out IDispatch* ppdisp) GetScriptDispatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, out uint32 pstidThread) GetCurrentScriptThreadID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, uint32 dwWin32ThreadId, out uint32 pstidThread) GetScriptThreadID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, uint32 stidThread, out SCRIPTTHREADSTATE pstsState) GetScriptThreadState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, uint32 stidThread, in EXCEPINFO pexcepinfo, uint32 dwFlags) InterruptScriptThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScript self, out IActiveScript* ppscript) Clone;
 			}
 		}
 		[CRepr]
@@ -15027,9 +15027,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParse32 self) InitNew;
-				public new function HRESULT(ref IActiveScriptParse32 self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out BSTR pbstrName, out EXCEPINFO pexcepinfo) AddScriptlet;
-				public new function HRESULT(ref IActiveScriptParse32 self, PWSTR pstrCode, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out VARIANT pvarResult, out EXCEPINFO pexcepinfo) ParseScriptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse32 self) InitNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse32 self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out BSTR pbstrName, out EXCEPINFO pexcepinfo) AddScriptlet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse32 self, PWSTR pstrCode, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out VARIANT pvarResult, out EXCEPINFO pexcepinfo) ParseScriptText;
 			}
 		}
 		[CRepr]
@@ -15046,9 +15046,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParse64 self) InitNew;
-				public new function HRESULT(ref IActiveScriptParse64 self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out BSTR pbstrName, out EXCEPINFO pexcepinfo) AddScriptlet;
-				public new function HRESULT(ref IActiveScriptParse64 self, PWSTR pstrCode, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out VARIANT pvarResult, out EXCEPINFO pexcepinfo) ParseScriptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse64 self) InitNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse64 self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out BSTR pbstrName, out EXCEPINFO pexcepinfo) AddScriptlet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParse64 self, PWSTR pstrCode, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out VARIANT pvarResult, out EXCEPINFO pexcepinfo) ParseScriptText;
 			}
 		}
 		[CRepr]
@@ -15063,7 +15063,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParseProcedureOld32 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParseProcedureOld32 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
 			}
 		}
 		[CRepr]
@@ -15078,7 +15078,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParseProcedureOld64 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParseProcedureOld64 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
 			}
 		}
 		[CRepr]
@@ -15093,7 +15093,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParseProcedure32 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParseProcedure32 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
 			}
 		}
 		[CRepr]
@@ -15108,7 +15108,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptParseProcedure64 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptParseProcedure64 self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, ref IUnknown punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, out IDispatch* ppdisp) ParseProcedureText;
 			}
 		}
 		[CRepr]
@@ -15151,9 +15151,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptEncode self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, out uint32 pcchRet) EncodeSection;
-				public new function HRESULT(ref IActiveScriptEncode self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, out uint32 pcchRet) DecodeScript;
-				public new function HRESULT(ref IActiveScriptEncode self, out BSTR pbstrOut) GetEncodeProgId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptEncode self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, out uint32 pcchRet) EncodeSection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptEncode self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, out uint32 pcchRet) DecodeScript;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptEncode self, out BSTR pbstrOut) GetEncodeProgId;
 			}
 		}
 		[CRepr]
@@ -15168,7 +15168,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptHostEncode self, BSTR bstrInFile, out BSTR pbstrOutFile, uint32 cFlags, BSTR bstrDefaultLang) EncodeScriptHostFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptHostEncode self, BSTR bstrInFile, out BSTR pbstrOutFile, uint32 cFlags, BSTR bstrDefaultLang) EncodeScriptHostFile;
 			}
 		}
 		[CRepr]
@@ -15183,7 +15183,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBindEventHandler self, PWSTR pstrEvent, ref IDispatch pdisp) BindHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBindEventHandler self, PWSTR pstrEvent, ref IDispatch pdisp) BindHandler;
 			}
 		}
 		[CRepr]
@@ -15200,9 +15200,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptStats self, uint32 stid, out uint32 pluHi, out uint32 pluLo) GetStat;
-				public new function HRESULT(ref IActiveScriptStats self, in Guid guid, out uint32 pluHi, out uint32 pluLo) GetStatEx;
-				public new function HRESULT(ref IActiveScriptStats self) ResetStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptStats self, uint32 stid, out uint32 pluHi, out uint32 pluLo) GetStat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptStats self, in Guid guid, out uint32 pluHi, out uint32 pluLo) GetStatEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptStats self) ResetStats;
 			}
 		}
 		[CRepr]
@@ -15218,8 +15218,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProperty self, uint32 dwProperty, ref VARIANT pvarIndex, out VARIANT pvarValue) GetProperty;
-				public new function HRESULT(ref IActiveScriptProperty self, uint32 dwProperty, ref VARIANT pvarIndex, ref VARIANT pvarValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProperty self, uint32 dwProperty, ref VARIANT pvarIndex, out VARIANT pvarValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProperty self, uint32 dwProperty, ref VARIANT pvarIndex, ref VARIANT pvarValue) SetProperty;
 			}
 		}
 		[CRepr]
@@ -15234,7 +15234,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITridentEventSink self, PWSTR pstrEvent, ref DISPPARAMS pdp, out VARIANT pvarRes, out EXCEPINFO pei) FireEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITridentEventSink self, PWSTR pstrEvent, ref DISPPARAMS pdp, out VARIANT pvarRes, out EXCEPINFO pei) FireEvent;
 			}
 		}
 		[CRepr]
@@ -15249,7 +15249,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptGarbageCollector self, SCRIPTGCTYPE scriptgctype) CollectGarbage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptGarbageCollector self, SCRIPTGCTYPE scriptgctype) CollectGarbage;
 			}
 		}
 		[CRepr]
@@ -15264,7 +15264,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSIPInfo self, out Guid poid_sip) GetSIPOID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSIPInfo self, out Guid poid_sip) GetSIPOID;
 			}
 		}
 		[CRepr]
@@ -15279,7 +15279,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteTraceInfo self, SCRIPTTRACEINFO stiEventType, Guid guidContextID, uint32 dwScriptContextCookie, int32 lScriptStatementStart, int32 lScriptStatementEnd, uint64 dwReserved) SendScriptTraceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteTraceInfo self, SCRIPTTRACEINFO stiEventType, Guid guidContextID, uint32 dwScriptContextCookie, int32 lScriptStatementStart, int32 lScriptStatementEnd, uint64 dwReserved) SendScriptTraceInfo;
 			}
 		}
 		[CRepr]
@@ -15295,8 +15295,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptTraceInfo self, ref IActiveScriptSiteTraceInfo pSiteTraceInfo, Guid guidContextID) StartScriptTracing;
-				public new function HRESULT(ref IActiveScriptTraceInfo self) StopScriptTracing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptTraceInfo self, ref IActiveScriptSiteTraceInfo pSiteTraceInfo, Guid guidContextID) StartScriptTracing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptTraceInfo self) StopScriptTracing;
 			}
 		}
 		[CRepr]
@@ -15311,7 +15311,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptStringCompare self, BSTR bszStr1, BSTR bszStr2, out int32 iRet) StrComp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptStringCompare self, BSTR bszStr1, BSTR bszStr2, out int32 iRet) StrComp;
 			}
 		}
 		[CRepr]
@@ -15330,11 +15330,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugProperty self, uint32 dwFieldSpec, uint32 nRadix, out DebugPropertyInfo pPropertyInfo) GetPropertyInfo;
-				public new function HRESULT(ref IDebugProperty self, uint32 cInfos, Guid* rgguidExtendedInfo, VARIANT* rgvar) GetExtendedInfo;
-				public new function HRESULT(ref IDebugProperty self, PWSTR pszValue, uint32 nRadix) SetValueAsString;
-				public new function HRESULT(ref IDebugProperty self, uint32 dwFieldSpec, uint32 nRadix, in Guid refiid, out IEnumDebugPropertyInfo* ppepi) EnumMembers;
-				public new function HRESULT(ref IDebugProperty self, out IDebugProperty* ppDebugProp) GetParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugProperty self, uint32 dwFieldSpec, uint32 nRadix, out DebugPropertyInfo pPropertyInfo) GetPropertyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugProperty self, uint32 cInfos, Guid* rgguidExtendedInfo, VARIANT* rgvar) GetExtendedInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugProperty self, PWSTR pszValue, uint32 nRadix) SetValueAsString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugProperty self, uint32 dwFieldSpec, uint32 nRadix, in Guid refiid, out IEnumDebugPropertyInfo* ppepi) EnumMembers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugProperty self, out IDebugProperty* ppDebugProp) GetParent;
 			}
 		}
 		[CRepr]
@@ -15353,11 +15353,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugPropertyInfo self, uint32 celt, DebugPropertyInfo* pi, out uint32 pcEltsfetched) Next;
-				public new function HRESULT(ref IEnumDebugPropertyInfo self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugPropertyInfo self) Reset;
-				public new function HRESULT(ref IEnumDebugPropertyInfo self, out IEnumDebugPropertyInfo* ppepi) Clone;
-				public new function HRESULT(ref IEnumDebugPropertyInfo self, out uint32 pcelt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugPropertyInfo self, uint32 celt, DebugPropertyInfo* pi, out uint32 pcEltsfetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugPropertyInfo self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugPropertyInfo self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugPropertyInfo self, out IEnumDebugPropertyInfo* ppepi) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugPropertyInfo self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -15373,8 +15373,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugProperty.VTable
 			{
-				public new function HRESULT(ref IDebugExtendedProperty self, uint32 dwFieldSpec, uint32 nRadix, out ExtendedDebugPropertyInfo pExtendedPropertyInfo) GetExtendedPropertyInfo;
-				public new function HRESULT(ref IDebugExtendedProperty self, uint32 dwFieldSpec, uint32 nRadix, out IEnumDebugExtendedPropertyInfo* ppeepi) EnumExtendedMembers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExtendedProperty self, uint32 dwFieldSpec, uint32 nRadix, out ExtendedDebugPropertyInfo pExtendedPropertyInfo) GetExtendedPropertyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExtendedProperty self, uint32 dwFieldSpec, uint32 nRadix, out IEnumDebugExtendedPropertyInfo* ppeepi) EnumExtendedMembers;
 			}
 		}
 		[CRepr]
@@ -15393,11 +15393,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugExtendedPropertyInfo self, uint32 celt, ExtendedDebugPropertyInfo* rgExtendedPropertyInfo, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumDebugExtendedPropertyInfo self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugExtendedPropertyInfo self) Reset;
-				public new function HRESULT(ref IEnumDebugExtendedPropertyInfo self, out IEnumDebugExtendedPropertyInfo* pedpe) Clone;
-				public new function HRESULT(ref IEnumDebugExtendedPropertyInfo self, out uint32 pcelt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExtendedPropertyInfo self, uint32 celt, ExtendedDebugPropertyInfo* rgExtendedPropertyInfo, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExtendedPropertyInfo self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExtendedPropertyInfo self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExtendedPropertyInfo self, out IEnumDebugExtendedPropertyInfo* pedpe) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExtendedPropertyInfo self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -15415,10 +15415,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out BSTR pBstr) GetDisplayString;
-				public new function HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out Guid pClsidPropPage) MapPropertyToPage;
-				public new function HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out CALPOLESTR pCaStrings, out CADWORD pCaCookies) GetPredefinedStrings;
-				public new function HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, uint32 dwCookie) SetPredefinedValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out BSTR pBstr) GetDisplayString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out Guid pClsidPropPage) MapPropertyToPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, out CALPOLESTR pCaStrings, out CADWORD pCaCookies) GetPredefinedStrings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPerPropertyBrowsing2 self, int32 dispid, uint32 dwCookie) SetPredefinedValue;
 			}
 		}
 		[CRepr]
@@ -15433,7 +15433,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugPropertyEnumType_All self, out BSTR __MIDL__IDebugPropertyEnumType_All0000) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugPropertyEnumType_All self, out BSTR __MIDL__IDebugPropertyEnumType_All0000) GetName;
 			}
 		}
 		[CRepr]
@@ -15502,9 +15502,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptDebug32 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-				public new function HRESULT(ref IActiveScriptDebug32 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-				public new function HRESULT(ref IActiveScriptDebug32 self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IEnumDebugCodeContexts* ppescc) EnumCodeContextsOfPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug32 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug32 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug32 self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IEnumDebugCodeContexts* ppescc) EnumCodeContextsOfPosition;
 			}
 		}
 		[CRepr]
@@ -15521,9 +15521,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptDebug64 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-				public new function HRESULT(ref IActiveScriptDebug64 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-				public new function HRESULT(ref IActiveScriptDebug64 self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IEnumDebugCodeContexts* ppescc) EnumCodeContextsOfPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug64 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug64 self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptDebug64 self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IEnumDebugCodeContexts* ppescc) EnumCodeContextsOfPosition;
 			}
 		}
 		[CRepr]
@@ -15541,10 +15541,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteDebug32 self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IDebugDocumentContext* ppsc) GetDocumentContextFromPosition;
-				public new function HRESULT(ref IActiveScriptSiteDebug32 self, out IDebugApplication32* ppda) GetApplication;
-				public new function HRESULT(ref IActiveScriptSiteDebug32 self, out IDebugApplicationNode* ppdanRoot) GetRootApplicationNode;
-				public new function HRESULT(ref IActiveScriptSiteDebug32 self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfEnterDebugger, out BOOL pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug32 self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IDebugDocumentContext* ppsc) GetDocumentContextFromPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug32 self, out IDebugApplication32* ppda) GetApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug32 self, out IDebugApplicationNode* ppdanRoot) GetRootApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug32 self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfEnterDebugger, out BOOL pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
 			}
 		}
 		[CRepr]
@@ -15562,10 +15562,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteDebug64 self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IDebugDocumentContext* ppsc) GetDocumentContextFromPosition;
-				public new function HRESULT(ref IActiveScriptSiteDebug64 self, out IDebugApplication64* ppda) GetApplication;
-				public new function HRESULT(ref IActiveScriptSiteDebug64 self, out IDebugApplicationNode* ppdanRoot) GetRootApplicationNode;
-				public new function HRESULT(ref IActiveScriptSiteDebug64 self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfEnterDebugger, out BOOL pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug64 self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, out IDebugDocumentContext* ppsc) GetDocumentContextFromPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug64 self, out IDebugApplication64* ppda) GetApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug64 self, out IDebugApplicationNode* ppdanRoot) GetRootApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebug64 self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfEnterDebugger, out BOOL pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
 			}
 		}
 		[CRepr]
@@ -15580,7 +15580,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptSiteDebugEx self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfCallOnScriptErrorWhenContinuing) OnCanNotJITScriptErrorDebug;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptSiteDebugEx self, ref IActiveScriptErrorDebug pErrorDebug, out BOOL pfCallOnScriptErrorWhenContinuing) OnCanNotJITScriptErrorDebug;
 			}
 		}
 		[CRepr]
@@ -15596,8 +15596,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptError.VTable
 			{
-				public new function HRESULT(ref IActiveScriptErrorDebug self, out IDebugDocumentContext* ppssc) GetDocumentContext;
-				public new function HRESULT(ref IActiveScriptErrorDebug self, out IDebugStackFrame* ppdsf) GetStackFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptErrorDebug self, out IDebugDocumentContext* ppssc) GetDocumentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptErrorDebug self, out IDebugStackFrame* ppdsf) GetStackFrame;
 			}
 		}
 		[CRepr]
@@ -15613,8 +15613,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugCodeContext self, out IDebugDocumentContext* ppsc) GetDocumentContext;
-				public new function HRESULT(ref IDebugCodeContext self, BREAKPOINT_STATE bps) SetBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugCodeContext self, out IDebugDocumentContext* ppsc) GetDocumentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugCodeContext self, BREAKPOINT_STATE bps) SetBreakPoint;
 			}
 		}
 		[CRepr]
@@ -15633,11 +15633,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugExpression self, ref IDebugExpressionCallBack pdecb) Start;
-				public new function HRESULT(ref IDebugExpression self) Abort;
-				public new function HRESULT(ref IDebugExpression self) QueryIsComplete;
-				public new function HRESULT(ref IDebugExpression self, out HRESULT phrResult, out BSTR pbstrResult) GetResultAsString;
-				public new function HRESULT(ref IDebugExpression self, out HRESULT phrResult, out IDebugProperty* ppdp) GetResultAsDebugProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpression self, ref IDebugExpressionCallBack pdecb) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpression self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpression self) QueryIsComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpression self, out HRESULT phrResult, out BSTR pbstrResult) GetResultAsString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpression self, out HRESULT phrResult, out IDebugProperty* ppdp) GetResultAsDebugProperty;
 			}
 		}
 		[CRepr]
@@ -15653,8 +15653,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugExpressionContext self, PWSTR pstrCode, uint32 nRadix, PWSTR pstrDelimiter, uint32 dwFlags, out IDebugExpression* ppe) ParseLanguageText;
-				public new function HRESULT(ref IDebugExpressionContext self, out BSTR pbstrLanguageName, out Guid pLanguageID) GetLanguageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpressionContext self, PWSTR pstrCode, uint32 nRadix, PWSTR pstrDelimiter, uint32 dwFlags, out IDebugExpression* ppe) ParseLanguageText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpressionContext self, out BSTR pbstrLanguageName, out Guid pLanguageID) GetLanguageInfo;
 			}
 		}
 		[CRepr]
@@ -15669,7 +15669,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugExpressionCallBack self) onComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugExpressionCallBack self) onComplete;
 			}
 		}
 		[CRepr]
@@ -15688,11 +15688,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugStackFrame self, out IDebugCodeContext* ppcc) GetCodeContext;
-				public new function HRESULT(ref IDebugStackFrame self, BOOL fLong, out BSTR pbstrDescription) GetDescriptionString;
-				public new function HRESULT(ref IDebugStackFrame self, BOOL fLong, out BSTR pbstrLanguage) GetLanguageString;
-				public new function HRESULT(ref IDebugStackFrame self, out IDebugApplicationThread* ppat) GetThread;
-				public new function HRESULT(ref IDebugStackFrame self, out IDebugProperty* ppDebugProp) GetDebugProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame self, out IDebugCodeContext* ppcc) GetCodeContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame self, BOOL fLong, out BSTR pbstrDescription) GetDescriptionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame self, BOOL fLong, out BSTR pbstrLanguage) GetLanguageString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame self, out IDebugApplicationThread* ppat) GetThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame self, out IDebugProperty* ppDebugProp) GetDebugProperty;
 			}
 		}
 		[CRepr]
@@ -15707,7 +15707,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugStackFrameSniffer self, out IEnumDebugStackFrames* ppedsf) EnumStackFrames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrameSniffer self, out IEnumDebugStackFrames* ppedsf) EnumStackFrames;
 			}
 		}
 		[CRepr]
@@ -15722,7 +15722,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugStackFrameSniffer.VTable
 			{
-				public new function HRESULT(ref IDebugStackFrameSnifferEx32 self, uint32 dwSpMin, out IEnumDebugStackFrames* ppedsf) EnumStackFramesEx32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrameSnifferEx32 self, uint32 dwSpMin, out IEnumDebugStackFrames* ppedsf) EnumStackFramesEx32;
 			}
 		}
 		[CRepr]
@@ -15737,7 +15737,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugStackFrameSniffer.VTable
 			{
-				public new function HRESULT(ref IDebugStackFrameSnifferEx64 self, uint64 dwSpMin, out IEnumDebugStackFrames64* ppedsf) EnumStackFramesEx64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrameSnifferEx64 self, uint64 dwSpMin, out IEnumDebugStackFrames64* ppedsf) EnumStackFramesEx64;
 			}
 		}
 		[CRepr]
@@ -15754,9 +15754,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSyncOperation self, out IDebugApplicationThread* ppatTarget) GetTargetThread;
-				public new function HRESULT(ref IDebugSyncOperation self, out IUnknown* ppunkResult) Execute;
-				public new function HRESULT(ref IDebugSyncOperation self) InProgressAbort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSyncOperation self, out IDebugApplicationThread* ppatTarget) GetTargetThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSyncOperation self, out IUnknown* ppunkResult) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSyncOperation self) InProgressAbort;
 			}
 		}
 		[CRepr]
@@ -15775,11 +15775,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAsyncOperation self, out IDebugSyncOperation* ppsdo) GetSyncDebugOperation;
-				public new function HRESULT(ref IDebugAsyncOperation self, ref IDebugAsyncOperationCallBack padocb) Start;
-				public new function HRESULT(ref IDebugAsyncOperation self) Abort;
-				public new function HRESULT(ref IDebugAsyncOperation self) QueryIsComplete;
-				public new function HRESULT(ref IDebugAsyncOperation self, out HRESULT phrResult, out IUnknown* ppunkResult) GetResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperation self, out IDebugSyncOperation* ppsdo) GetSyncDebugOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperation self, ref IDebugAsyncOperationCallBack padocb) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperation self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperation self) QueryIsComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperation self, out HRESULT phrResult, out IUnknown* ppunkResult) GetResult;
 			}
 		}
 		[CRepr]
@@ -15794,7 +15794,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugAsyncOperationCallBack self) onComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugAsyncOperationCallBack self) onComplete;
 			}
 		}
 		[CRepr]
@@ -15812,10 +15812,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugCodeContexts self, uint32 celt, out IDebugCodeContext* pscc, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumDebugCodeContexts self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugCodeContexts self) Reset;
-				public new function HRESULT(ref IEnumDebugCodeContexts self, out IEnumDebugCodeContexts* ppescc) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugCodeContexts self, uint32 celt, out IDebugCodeContext* pscc, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugCodeContexts self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugCodeContexts self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugCodeContexts self, out IEnumDebugCodeContexts* ppescc) Clone;
 			}
 		}
 		[CRepr]
@@ -15833,10 +15833,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugStackFrames self, uint32 celt, out DebugStackFrameDescriptor prgdsfd, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumDebugStackFrames self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugStackFrames self) Reset;
-				public new function HRESULT(ref IEnumDebugStackFrames self, out IEnumDebugStackFrames* ppedsf) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugStackFrames self, uint32 celt, out DebugStackFrameDescriptor prgdsfd, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugStackFrames self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugStackFrames self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugStackFrames self, out IEnumDebugStackFrames* ppedsf) Clone;
 			}
 		}
 		[CRepr]
@@ -15851,7 +15851,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEnumDebugStackFrames.VTable
 			{
-				public new function HRESULT(ref IEnumDebugStackFrames64 self, uint32 celt, out DebugStackFrameDescriptor64 prgdsfd, out uint32 pceltFetched) Next64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugStackFrames64 self, uint32 celt, out DebugStackFrameDescriptor64 prgdsfd, out uint32 pceltFetched) Next64;
 			}
 		}
 		[CRepr]
@@ -15867,8 +15867,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentInfo self, DOCUMENTNAMETYPE dnt, out BSTR pbstrName) GetName;
-				public new function HRESULT(ref IDebugDocumentInfo self, out Guid pclsidDocument) GetDocumentClassId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentInfo self, DOCUMENTNAMETYPE dnt, out BSTR pbstrName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentInfo self, out Guid pclsidDocument) GetDocumentClassId;
 			}
 		}
 		[CRepr]
@@ -15883,7 +15883,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugDocumentInfo.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentProvider self, out IDebugDocument* ppssd) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentProvider self, out IDebugDocument* ppssd) GetDocument;
 			}
 		}
 		[CRepr]
@@ -15917,13 +15917,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugDocument.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentText self, out uint32 ptextdocattr) GetDocumentAttributes;
-				public new function HRESULT(ref IDebugDocumentText self, out uint32 pcNumLines, out uint32 pcNumChars) GetSize;
-				public new function HRESULT(ref IDebugDocumentText self, uint32 cLineNumber, out uint32 pcCharacterPosition) GetPositionOfLine;
-				public new function HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, out uint32 pcLineNumber, out uint32 pcCharacterOffsetInLine) GetLineOfPosition;
-				public new function HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, char16* pcharText, uint16* pstaTextAttr, out uint32 pcNumChars, uint32 cMaxChars) GetText;
-				public new function HRESULT(ref IDebugDocumentText self, ref IDebugDocumentContext psc, out uint32 pcCharacterPosition, out uint32 cNumChars) GetPositionOfContext;
-				public new function HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, uint32 cNumChars, out IDebugDocumentContext* ppsc) GetContextOfPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, out uint32 ptextdocattr) GetDocumentAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, out uint32 pcNumLines, out uint32 pcNumChars) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, uint32 cLineNumber, out uint32 pcCharacterPosition) GetPositionOfLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, out uint32 pcLineNumber, out uint32 pcCharacterOffsetInLine) GetLineOfPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, char16* pcharText, uint16* pstaTextAttr, out uint32 pcNumChars, uint32 cMaxChars) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, ref IDebugDocumentContext psc, out uint32 pcCharacterPosition, out uint32 cNumChars) GetPositionOfContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentText self, uint32 cCharacterPosition, uint32 cNumChars, out IDebugDocumentContext* ppsc) GetContextOfPosition;
 			}
 		}
 		[CRepr]
@@ -15943,12 +15943,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentTextEvents self) onDestroy;
-				public new function HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToInsert) onInsertText;
-				public new function HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToRemove) onRemoveText;
-				public new function HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToReplace) onReplaceText;
-				public new function HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToUpdate) onUpdateTextAttributes;
-				public new function HRESULT(ref IDebugDocumentTextEvents self, uint32 textdocattr) onUpdateDocumentAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self) onDestroy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToInsert) onInsertText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToRemove) onRemoveText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToReplace) onReplaceText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self, uint32 cCharacterPosition, uint32 cNumToUpdate) onUpdateTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextEvents self, uint32 textdocattr) onUpdateDocumentAttributes;
 			}
 		}
 		[CRepr]
@@ -15965,9 +15965,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugDocumentText.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToInsert, char16* pcharText) InsertText;
-				public new function HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToRemove) RemoveText;
-				public new function HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToReplace, char16* pcharText) ReplaceText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToInsert, char16* pcharText) InsertText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToRemove) RemoveText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextAuthor self, uint32 cCharacterPosition, uint32 cNumToReplace, char16* pcharText) ReplaceText;
 			}
 		}
 		[CRepr]
@@ -15984,9 +15984,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentTextExternalAuthor self, out BSTR pbstrLongName, out BOOL pfIsOriginalFile) GetPathName;
-				public new function HRESULT(ref IDebugDocumentTextExternalAuthor self, out BSTR pbstrShortName) GetFileName;
-				public new function HRESULT(ref IDebugDocumentTextExternalAuthor self) NotifyChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextExternalAuthor self, out BSTR pbstrLongName, out BOOL pfIsOriginalFile) GetPathName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextExternalAuthor self, out BSTR pbstrShortName) GetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentTextExternalAuthor self) NotifyChanged;
 			}
 		}
 		[CRepr]
@@ -16018,24 +16018,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentHelper32 self, ref IDebugApplication32 pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, ref IDebugDocumentHelper32 pddhParent) Attach;
-				public new function HRESULT(ref IDebugDocumentHelper32 self) Detach;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszText) AddUnicodeText;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, PSTR pszText) AddDBCSText;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, ref IDebugDocumentHost pddh) SetDebugDocumentHost;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 ulCharOffset, uint32 cChars, ref IActiveScript pas, BOOL fScriptlet, out uint32 pdwSourceContext) DefineScriptBlock;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint16 staTextAttr) SetDefaultTextAttr;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszLongName) SetLongName;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszShortName) SetShortName;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 pszAttributes) SetDocumentAttr;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, out IDebugApplicationNode* ppdan) GetDebugApplicationNode;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 dwSourceContext, out IActiveScript* ppasd, out uint32 piCharPos, out uint32 pcChars) GetScriptBlockInfo;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, uint32 iCharPos, uint32 cChars, out IDebugDocumentContext* ppddc) CreateDebugDocumentContext;
-				public new function HRESULT(ref IDebugDocumentHelper32 self) BringDocumentToTop;
-				public new function HRESULT(ref IDebugDocumentHelper32 self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, ref IDebugApplication32 pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, ref IDebugDocumentHelper32 pddhParent) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self) Detach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszText) AddUnicodeText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, PSTR pszText) AddDBCSText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, ref IDebugDocumentHost pddh) SetDebugDocumentHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 ulCharOffset, uint32 cChars, ref IActiveScript pas, BOOL fScriptlet, out uint32 pdwSourceContext) DefineScriptBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint16 staTextAttr) SetDefaultTextAttr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszLongName) SetLongName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, PWSTR pszShortName) SetShortName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 pszAttributes) SetDocumentAttr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, out IDebugApplicationNode* ppdan) GetDebugApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 dwSourceContext, out IActiveScript* ppasd, out uint32 piCharPos, out uint32 pcChars) GetScriptBlockInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, uint32 iCharPos, uint32 cChars, out IDebugDocumentContext* ppddc) CreateDebugDocumentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self) BringDocumentToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper32 self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
 			}
 		}
 		[CRepr]
@@ -16067,24 +16067,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentHelper64 self, ref IDebugApplication64 pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, ref IDebugDocumentHelper64 pddhParent) Attach;
-				public new function HRESULT(ref IDebugDocumentHelper64 self) Detach;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszText) AddUnicodeText;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, PSTR pszText) AddDBCSText;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, ref IDebugDocumentHost pddh) SetDebugDocumentHost;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint32 ulCharOffset, uint32 cChars, ref IActiveScript pas, BOOL fScriptlet, out uint64 pdwSourceContext) DefineScriptBlock;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint16 staTextAttr) SetDefaultTextAttr;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszLongName) SetLongName;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszShortName) SetShortName;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint32 pszAttributes) SetDocumentAttr;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, out IDebugApplicationNode* ppdan) GetDebugApplicationNode;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint64 dwSourceContext, out IActiveScript* ppasd, out uint32 piCharPos, out uint32 pcChars) GetScriptBlockInfo;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, uint32 iCharPos, uint32 cChars, out IDebugDocumentContext* ppddc) CreateDebugDocumentContext;
-				public new function HRESULT(ref IDebugDocumentHelper64 self) BringDocumentToTop;
-				public new function HRESULT(ref IDebugDocumentHelper64 self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, ref IDebugApplication64 pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, ref IDebugDocumentHelper64 pddhParent) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self) Detach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszText) AddUnicodeText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, PSTR pszText) AddDBCSText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, ref IDebugDocumentHost pddh) SetDebugDocumentHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint32 ulCharOffset, uint32 cChars, ref IActiveScript pas, BOOL fScriptlet, out uint64 pdwSourceContext) DefineScriptBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint16 staTextAttr) SetDefaultTextAttr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszLongName) SetLongName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, PWSTR pszShortName) SetShortName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint32 pszAttributes) SetDocumentAttr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, out IDebugApplicationNode* ppdan) GetDebugApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint64 dwSourceContext, out IActiveScript* ppasd, out uint32 piCharPos, out uint32 pcChars) GetScriptBlockInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, uint32 iCharPos, uint32 cChars, out IDebugDocumentContext* ppddc) CreateDebugDocumentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self) BringDocumentToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHelper64 self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
 			}
 		}
 		[CRepr]
@@ -16104,12 +16104,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentHost self, uint32 dwTextStartCookie, char16* pcharText, uint16* pstaTextAttr, out uint32 pcNumChars, uint32 cMaxChars) GetDeferredText;
-				public new function HRESULT(ref IDebugDocumentHost self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-				public new function HRESULT(ref IDebugDocumentHost self, out IUnknown* ppunkOuter) OnCreateDocumentContext;
-				public new function HRESULT(ref IDebugDocumentHost self, out BSTR pbstrLongName, out BOOL pfIsOriginalFile) GetPathName;
-				public new function HRESULT(ref IDebugDocumentHost self, out BSTR pbstrShortName) GetFileName;
-				public new function HRESULT(ref IDebugDocumentHost self) NotifyChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self, uint32 dwTextStartCookie, char16* pcharText, uint16* pstaTextAttr, out uint32 pcNumChars, uint32 cMaxChars) GetDeferredText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self, out IUnknown* ppunkOuter) OnCreateDocumentContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self, out BSTR pbstrLongName, out BOOL pfIsOriginalFile) GetPathName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self, out BSTR pbstrShortName) GetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentHost self) NotifyChanged;
 			}
 		}
 		[CRepr]
@@ -16125,8 +16125,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugDocumentContext self, out IDebugDocument* ppsd) GetDocument;
-				public new function HRESULT(ref IDebugDocumentContext self, out IEnumDebugCodeContexts* ppescc) EnumCodeContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentContext self, out IDebugDocument* ppsd) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugDocumentContext self, out IEnumDebugCodeContexts* ppescc) EnumCodeContexts;
 			}
 		}
 		[CRepr]
@@ -16141,7 +16141,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugSessionProvider self, ref IRemoteDebugApplication pda) StartDebugSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugSessionProvider self, ref IRemoteDebugApplication pda) StartDebugSession;
 			}
 		}
 		[CRepr]
@@ -16161,12 +16161,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IApplicationDebugger self) QueryAlive;
-				public new function HRESULT(ref IApplicationDebugger self, in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, out IUnknown* ppvObject) CreateInstanceAtDebugger;
-				public new function HRESULT(ref IApplicationDebugger self, PWSTR pstr) onDebugOutput;
-				public new function HRESULT(ref IApplicationDebugger self, ref IRemoteDebugApplicationThread prpt, BREAKREASON br, ref IActiveScriptErrorDebug pError) onHandleBreakPoint;
-				public new function HRESULT(ref IApplicationDebugger self) onClose;
-				public new function HRESULT(ref IApplicationDebugger self, in Guid riid, ref IUnknown punk) onDebuggerEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self) QueryAlive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self, in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, out IUnknown* ppvObject) CreateInstanceAtDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self, PWSTR pstr) onDebugOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self, ref IRemoteDebugApplicationThread prpt, BREAKREASON br, ref IActiveScriptErrorDebug pError) onHandleBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self) onClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebugger self, in Guid riid, ref IUnknown punk) onDebuggerEvent;
 			}
 		}
 		[CRepr]
@@ -16182,8 +16182,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IApplicationDebuggerUI self, ref IDebugDocumentText pddt) BringDocumentToTop;
-				public new function HRESULT(ref IApplicationDebuggerUI self, ref IDebugDocumentContext pddc) BringDocumentContextToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebuggerUI self, ref IDebugDocumentText pddt) BringDocumentToTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IApplicationDebuggerUI self, ref IDebugDocumentContext pddc) BringDocumentContextToTop;
 			}
 		}
 		[CRepr]
@@ -16200,9 +16200,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMachineDebugManager self, ref IRemoteDebugApplication pda, out uint32 pdwAppCookie) AddApplication;
-				public new function HRESULT(ref IMachineDebugManager self, uint32 dwAppCookie) RemoveApplication;
-				public new function HRESULT(ref IMachineDebugManager self, out IEnumRemoteDebugApplications* ppeda) EnumApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManager self, ref IRemoteDebugApplication pda, out uint32 pdwAppCookie) AddApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManager self, uint32 dwAppCookie) RemoveApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManager self, out IEnumRemoteDebugApplications* ppeda) EnumApplications;
 			}
 		}
 		[CRepr]
@@ -16219,9 +16219,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMachineDebugManagerCookie self, ref IRemoteDebugApplication pda, uint32 dwDebugAppCookie, out uint32 pdwAppCookie) AddApplication;
-				public new function HRESULT(ref IMachineDebugManagerCookie self, uint32 dwDebugAppCookie, uint32 dwAppCookie) RemoveApplication;
-				public new function HRESULT(ref IMachineDebugManagerCookie self, out IEnumRemoteDebugApplications* ppeda) EnumApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManagerCookie self, ref IRemoteDebugApplication pda, uint32 dwDebugAppCookie, out uint32 pdwAppCookie) AddApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManagerCookie self, uint32 dwDebugAppCookie, uint32 dwAppCookie) RemoveApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManagerCookie self, out IEnumRemoteDebugApplications* ppeda) EnumApplications;
 			}
 		}
 		[CRepr]
@@ -16237,8 +16237,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMachineDebugManagerEvents self, ref IRemoteDebugApplication pda, uint32 dwAppCookie) onAddApplication;
-				public new function HRESULT(ref IMachineDebugManagerEvents self, ref IRemoteDebugApplication pda, uint32 dwAppCookie) onRemoveApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManagerEvents self, ref IRemoteDebugApplication pda, uint32 dwAppCookie) onAddApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMachineDebugManagerEvents self, ref IRemoteDebugApplication pda, uint32 dwAppCookie) onRemoveApplication;
 			}
 		}
 		[CRepr]
@@ -16257,11 +16257,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProcessDebugManager32 self, out IDebugApplication32* ppda) CreateApplication;
-				public new function HRESULT(ref IProcessDebugManager32 self, out IDebugApplication32* ppda) GetDefaultApplication;
-				public new function HRESULT(ref IProcessDebugManager32 self, ref IDebugApplication32 pda, out uint32 pdwAppCookie) AddApplication;
-				public new function HRESULT(ref IProcessDebugManager32 self, uint32 dwAppCookie) RemoveApplication;
-				public new function HRESULT(ref IProcessDebugManager32 self, ref IUnknown punkOuter, out IDebugDocumentHelper32* pddh) CreateDebugDocumentHelper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager32 self, out IDebugApplication32* ppda) CreateApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager32 self, out IDebugApplication32* ppda) GetDefaultApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager32 self, ref IDebugApplication32 pda, out uint32 pdwAppCookie) AddApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager32 self, uint32 dwAppCookie) RemoveApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager32 self, ref IUnknown punkOuter, out IDebugDocumentHelper32* pddh) CreateDebugDocumentHelper;
 			}
 		}
 		[CRepr]
@@ -16280,11 +16280,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProcessDebugManager64 self, out IDebugApplication64* ppda) CreateApplication;
-				public new function HRESULT(ref IProcessDebugManager64 self, out IDebugApplication64* ppda) GetDefaultApplication;
-				public new function HRESULT(ref IProcessDebugManager64 self, ref IDebugApplication64 pda, out uint32 pdwAppCookie) AddApplication;
-				public new function HRESULT(ref IProcessDebugManager64 self, uint32 dwAppCookie) RemoveApplication;
-				public new function HRESULT(ref IProcessDebugManager64 self, ref IUnknown punkOuter, out IDebugDocumentHelper64* pddh) CreateDebugDocumentHelper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager64 self, out IDebugApplication64* ppda) CreateApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager64 self, out IDebugApplication64* ppda) GetDefaultApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager64 self, ref IDebugApplication64 pda, out uint32 pdwAppCookie) AddApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager64 self, uint32 dwAppCookie) RemoveApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProcessDebugManager64 self, ref IUnknown punkOuter, out IDebugDocumentHelper64* pddh) CreateDebugDocumentHelper;
 			}
 		}
 		[CRepr]
@@ -16309,17 +16309,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugApplication self, ref IRemoteDebugApplicationThread prptFocus, BREAKRESUME_ACTION bra, ERRORRESUMEACTION era) ResumeFromBreakPoint;
-				public new function HRESULT(ref IRemoteDebugApplication self) CauseBreak;
-				public new function HRESULT(ref IRemoteDebugApplication self, ref IApplicationDebugger pad) ConnectDebugger;
-				public new function HRESULT(ref IRemoteDebugApplication self) DisconnectDebugger;
-				public new function HRESULT(ref IRemoteDebugApplication self, out IApplicationDebugger* pad) GetDebugger;
-				public new function HRESULT(ref IRemoteDebugApplication self, in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, out IUnknown* ppvObject) CreateInstanceAtApplication;
-				public new function HRESULT(ref IRemoteDebugApplication self) QueryAlive;
-				public new function HRESULT(ref IRemoteDebugApplication self, out IEnumRemoteDebugApplicationThreads* pperdat) EnumThreads;
-				public new function HRESULT(ref IRemoteDebugApplication self, out BSTR pbstrName) GetName;
-				public new function HRESULT(ref IRemoteDebugApplication self, out IDebugApplicationNode* ppdanRoot) GetRootNode;
-				public new function HRESULT(ref IRemoteDebugApplication self, out IEnumDebugExpressionContexts* ppedec) EnumGlobalExpressionContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, ref IRemoteDebugApplicationThread prptFocus, BREAKRESUME_ACTION bra, ERRORRESUMEACTION era) ResumeFromBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self) CauseBreak;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, ref IApplicationDebugger pad) ConnectDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self) DisconnectDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, out IApplicationDebugger* pad) GetDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, out IUnknown* ppvObject) CreateInstanceAtApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self) QueryAlive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, out IEnumRemoteDebugApplicationThreads* pperdat) EnumThreads;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, out BSTR pbstrName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, out IDebugApplicationNode* ppdanRoot) GetRootNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication self, out IEnumDebugExpressionContexts* ppedec) EnumGlobalExpressionContexts;
 			}
 		}
 		[CRepr]
@@ -16353,26 +16353,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRemoteDebugApplication.VTable
 			{
-				public new function HRESULT(ref IDebugApplication32 self, PWSTR pstrName) SetName;
-				public new function HRESULT(ref IDebugApplication32 self) StepOutComplete;
-				public new function HRESULT(ref IDebugApplication32 self, PWSTR pstr) DebugOutput;
-				public new function HRESULT(ref IDebugApplication32 self) StartDebugSession;
-				public new function HRESULT(ref IDebugApplication32 self, BREAKREASON br, out BREAKRESUME_ACTION pbra) HandleBreakPoint;
-				public new function HRESULT(ref IDebugApplication32 self) Close;
-				public new function HRESULT(ref IDebugApplication32 self, out uint32 pabf, out IRemoteDebugApplicationThread* pprdatSteppingThread) GetBreakFlags;
-				public new function HRESULT(ref IDebugApplication32 self, out IDebugApplicationThread* pat) GetCurrentThread;
-				public new function HRESULT(ref IDebugApplication32 self, ref IDebugSyncOperation psdo, out IDebugAsyncOperation* ppado) CreateAsyncDebugOperation;
-				public new function HRESULT(ref IDebugApplication32 self, ref IDebugStackFrameSniffer pdsfs, out uint32 pdwCookie) AddStackFrameSniffer;
-				public new function HRESULT(ref IDebugApplication32 self, uint32 dwCookie) RemoveStackFrameSniffer;
-				public new function HRESULT(ref IDebugApplication32 self) QueryCurrentThreadIsDebuggerThread;
-				public new function HRESULT(ref IDebugApplication32 self, ref IDebugThreadCall32 pptc, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallInDebuggerThread;
-				public new function HRESULT(ref IDebugApplication32 self, out IDebugApplicationNode* ppdanNew) CreateApplicationNode;
-				public new function HRESULT(ref IDebugApplication32 self, in Guid riid, ref IUnknown punk) FireDebuggerEvent;
-				public new function HRESULT(ref IDebugApplication32 self, ref IActiveScriptErrorDebug pErrorDebug, ref IActiveScriptSite pScriptSite, out BREAKRESUME_ACTION pbra, out ERRORRESUMEACTION perra, out BOOL pfCallOnScriptError) HandleRuntimeError;
-				public new function BOOL(ref IDebugApplication32 self) FCanJitDebug;
-				public new function BOOL(ref IDebugApplication32 self) FIsAutoJitDebugEnabled;
-				public new function HRESULT(ref IDebugApplication32 self, ref IProvideExpressionContexts pdsfs, out uint32 pdwCookie) AddGlobalExpressionContextProvider;
-				public new function HRESULT(ref IDebugApplication32 self, uint32 dwCookie) RemoveGlobalExpressionContextProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, PWSTR pstrName) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self) StepOutComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, PWSTR pstr) DebugOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self) StartDebugSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, BREAKREASON br, out BREAKRESUME_ACTION pbra) HandleBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, out uint32 pabf, out IRemoteDebugApplicationThread* pprdatSteppingThread) GetBreakFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, out IDebugApplicationThread* pat) GetCurrentThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, ref IDebugSyncOperation psdo, out IDebugAsyncOperation* ppado) CreateAsyncDebugOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, ref IDebugStackFrameSniffer pdsfs, out uint32 pdwCookie) AddStackFrameSniffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, uint32 dwCookie) RemoveStackFrameSniffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self) QueryCurrentThreadIsDebuggerThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, ref IDebugThreadCall32 pptc, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallInDebuggerThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, out IDebugApplicationNode* ppdanNew) CreateApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, in Guid riid, ref IUnknown punk) FireDebuggerEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, ref IActiveScriptErrorDebug pErrorDebug, ref IActiveScriptSite pScriptSite, out BREAKRESUME_ACTION pbra, out ERRORRESUMEACTION perra, out BOOL pfCallOnScriptError) HandleRuntimeError;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDebugApplication32 self) FCanJitDebug;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDebugApplication32 self) FIsAutoJitDebugEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, ref IProvideExpressionContexts pdsfs, out uint32 pdwCookie) AddGlobalExpressionContextProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication32 self, uint32 dwCookie) RemoveGlobalExpressionContextProvider;
 			}
 		}
 		[CRepr]
@@ -16406,26 +16406,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRemoteDebugApplication.VTable
 			{
-				public new function HRESULT(ref IDebugApplication64 self, PWSTR pstrName) SetName;
-				public new function HRESULT(ref IDebugApplication64 self) StepOutComplete;
-				public new function HRESULT(ref IDebugApplication64 self, PWSTR pstr) DebugOutput;
-				public new function HRESULT(ref IDebugApplication64 self) StartDebugSession;
-				public new function HRESULT(ref IDebugApplication64 self, BREAKREASON br, out BREAKRESUME_ACTION pbra) HandleBreakPoint;
-				public new function HRESULT(ref IDebugApplication64 self) Close;
-				public new function HRESULT(ref IDebugApplication64 self, out uint32 pabf, out IRemoteDebugApplicationThread* pprdatSteppingThread) GetBreakFlags;
-				public new function HRESULT(ref IDebugApplication64 self, out IDebugApplicationThread* pat) GetCurrentThread;
-				public new function HRESULT(ref IDebugApplication64 self, ref IDebugSyncOperation psdo, out IDebugAsyncOperation* ppado) CreateAsyncDebugOperation;
-				public new function HRESULT(ref IDebugApplication64 self, ref IDebugStackFrameSniffer pdsfs, out uint32 pdwCookie) AddStackFrameSniffer;
-				public new function HRESULT(ref IDebugApplication64 self, uint32 dwCookie) RemoveStackFrameSniffer;
-				public new function HRESULT(ref IDebugApplication64 self) QueryCurrentThreadIsDebuggerThread;
-				public new function HRESULT(ref IDebugApplication64 self, ref IDebugThreadCall64 pptc, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallInDebuggerThread;
-				public new function HRESULT(ref IDebugApplication64 self, out IDebugApplicationNode* ppdanNew) CreateApplicationNode;
-				public new function HRESULT(ref IDebugApplication64 self, in Guid riid, ref IUnknown punk) FireDebuggerEvent;
-				public new function HRESULT(ref IDebugApplication64 self, ref IActiveScriptErrorDebug pErrorDebug, ref IActiveScriptSite pScriptSite, out BREAKRESUME_ACTION pbra, out ERRORRESUMEACTION perra, out BOOL pfCallOnScriptError) HandleRuntimeError;
-				public new function BOOL(ref IDebugApplication64 self) FCanJitDebug;
-				public new function BOOL(ref IDebugApplication64 self) FIsAutoJitDebugEnabled;
-				public new function HRESULT(ref IDebugApplication64 self, ref IProvideExpressionContexts pdsfs, out uint64 pdwCookie) AddGlobalExpressionContextProvider;
-				public new function HRESULT(ref IDebugApplication64 self, uint64 dwCookie) RemoveGlobalExpressionContextProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, PWSTR pstrName) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self) StepOutComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, PWSTR pstr) DebugOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self) StartDebugSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, BREAKREASON br, out BREAKRESUME_ACTION pbra) HandleBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, out uint32 pabf, out IRemoteDebugApplicationThread* pprdatSteppingThread) GetBreakFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, out IDebugApplicationThread* pat) GetCurrentThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, ref IDebugSyncOperation psdo, out IDebugAsyncOperation* ppado) CreateAsyncDebugOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, ref IDebugStackFrameSniffer pdsfs, out uint32 pdwCookie) AddStackFrameSniffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, uint32 dwCookie) RemoveStackFrameSniffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self) QueryCurrentThreadIsDebuggerThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, ref IDebugThreadCall64 pptc, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallInDebuggerThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, out IDebugApplicationNode* ppdanNew) CreateApplicationNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, in Guid riid, ref IUnknown punk) FireDebuggerEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, ref IActiveScriptErrorDebug pErrorDebug, ref IActiveScriptSite pScriptSite, out BREAKRESUME_ACTION pbra, out ERRORRESUMEACTION perra, out BOOL pfCallOnScriptError) HandleRuntimeError;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDebugApplication64 self) FCanJitDebug;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IDebugApplication64 self) FIsAutoJitDebugEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, ref IProvideExpressionContexts pdsfs, out uint64 pdwCookie) AddGlobalExpressionContextProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication64 self, uint64 dwCookie) RemoveGlobalExpressionContextProvider;
 			}
 		}
 		[CRepr]
@@ -16449,16 +16449,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, ref IApplicationDebugger pad) OnConnectDebugger;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self) OnDisconnectDebugger;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, PWSTR pstrName) OnSetName;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, PWSTR pstr) OnDebugOutput;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self) OnClose;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnEnterBreakPoint;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnLeaveBreakPoint;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnCreateThread;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnDestroyThread;
-				public new function HRESULT(ref IRemoteDebugApplicationEvents self, uint32 abf, ref IRemoteDebugApplicationThread prdatSteppingThread) OnBreakFlagChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, ref IApplicationDebugger pad) OnConnectDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self) OnDisconnectDebugger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, PWSTR pstrName) OnSetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, PWSTR pstr) OnDebugOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self) OnClose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnEnterBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnLeaveBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnCreateThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, ref IRemoteDebugApplicationThread prdat) OnDestroyThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationEvents self, uint32 abf, ref IRemoteDebugApplicationThread prdatSteppingThread) OnBreakFlagChange;
 			}
 		}
 		[CRepr]
@@ -16478,12 +16478,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugDocumentProvider.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationNode self, out IEnumDebugApplicationNodes* pperddp) EnumChildren;
-				public new function HRESULT(ref IDebugApplicationNode self, out IDebugApplicationNode* pprddp) GetParent;
-				public new function HRESULT(ref IDebugApplicationNode self, ref IDebugDocumentProvider pddp) SetDocumentProvider;
-				public new function HRESULT(ref IDebugApplicationNode self) Close;
-				public new function HRESULT(ref IDebugApplicationNode self, ref IDebugApplicationNode pdanParent) Attach;
-				public new function HRESULT(ref IDebugApplicationNode self) Detach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self, out IEnumDebugApplicationNodes* pperddp) EnumChildren;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self, out IDebugApplicationNode* pprddp) GetParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self, ref IDebugDocumentProvider pddp) SetDocumentProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self, ref IDebugApplicationNode pdanParent) Attach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode self) Detach;
 			}
 		}
 		[CRepr]
@@ -16501,10 +16501,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) onAddChild;
-				public new function HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) onRemoveChild;
-				public new function HRESULT(ref IDebugApplicationNodeEvents self) onDetach;
-				public new function HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpParent) onAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) onAddChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) onRemoveChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNodeEvents self) onDetach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpParent) onAttach;
 			}
 		}
 		[CRepr]
@@ -16526,14 +16526,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) Begin_onAddChild;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onAddChild;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) Begin_onRemoveChild;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onRemoveChild;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self) Begin_onDetach;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onDetach;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpParent) Begin_onAttach;
-				public new function HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) Begin_onAddChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onAddChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpChild) Begin_onRemoveChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onRemoveChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self) Begin_onDetach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onDetach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self, ref IDebugApplicationNode prddpParent) Begin_onAttach;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIDebugApplicationNodeEvents self) Finish_onAttach;
 			}
 		}
 		[CRepr]
@@ -16548,7 +16548,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugThreadCall32 self, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) ThreadCallHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugThreadCall32 self, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) ThreadCallHandler;
 			}
 		}
 		[CRepr]
@@ -16563,7 +16563,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugThreadCall64 self, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) ThreadCallHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugThreadCall64 self, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) ThreadCallHandler;
 			}
 		}
 		[CRepr]
@@ -16586,15 +16586,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out uint32 dwThreadId) GetSystemThreadId;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out IRemoteDebugApplication* pprda) GetApplication;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out IEnumDebugStackFrames* ppedsf) EnumStackFrames;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out BSTR pbstrDescription, out BSTR pbstrState) GetDescription;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, ref IDebugStackFrame pStackFrame, ref IDebugCodeContext pCodeContext) SetNextStatement;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pState) GetState;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) Suspend;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) Resume;
-				public new function HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) GetSuspendCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out uint32 dwThreadId) GetSystemThreadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out IRemoteDebugApplication* pprda) GetApplication;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out IEnumDebugStackFrames* ppedsf) EnumStackFrames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out BSTR pbstrDescription, out BSTR pbstrState) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, ref IDebugStackFrame pStackFrame, ref IDebugCodeContext pCodeContext) SetNextStatement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pState) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) Suspend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplicationThread self, out uint32 pdwCount) GetSuspendCount;
 			}
 		}
 		[CRepr]
@@ -16613,11 +16613,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRemoteDebugApplicationThread.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationThread self, ref IDebugThreadCall32 pstcb, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallIntoThread32;
-				public new function HRESULT(ref IDebugApplicationThread self) QueryIsCurrentThread;
-				public new function HRESULT(ref IDebugApplicationThread self) QueryIsDebuggerThread;
-				public new function HRESULT(ref IDebugApplicationThread self, PWSTR pstrDescription) SetDescription;
-				public new function HRESULT(ref IDebugApplicationThread self, PWSTR pstrState) SetStateString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread self, ref IDebugThreadCall32 pstcb, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallIntoThread32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread self) QueryIsCurrentThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread self) QueryIsDebuggerThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread self, PWSTR pstrDescription) SetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread self, PWSTR pstrState) SetStateString;
 			}
 		}
 		[CRepr]
@@ -16632,7 +16632,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugApplicationThread.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationThread64 self, ref IDebugThreadCall64 pstcb, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallIntoThread64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread64 self, ref IDebugThreadCall64 pstcb, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallIntoThread64;
 			}
 		}
 		[CRepr]
@@ -16647,7 +16647,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugCookie self, uint32 dwDebugAppCookie) SetDebugCookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugCookie self, uint32 dwDebugAppCookie) SetDebugCookie;
 			}
 		}
 		[CRepr]
@@ -16665,10 +16665,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugApplicationNodes self, uint32 celt, out IDebugApplicationNode* pprddp, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumDebugApplicationNodes self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugApplicationNodes self) Reset;
-				public new function HRESULT(ref IEnumDebugApplicationNodes self, out IEnumDebugApplicationNodes* pperddp) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugApplicationNodes self, uint32 celt, out IDebugApplicationNode* pprddp, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugApplicationNodes self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugApplicationNodes self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugApplicationNodes self, out IEnumDebugApplicationNodes* pperddp) Clone;
 			}
 		}
 		[CRepr]
@@ -16686,10 +16686,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumRemoteDebugApplications self, uint32 celt, out IRemoteDebugApplication* ppda, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumRemoteDebugApplications self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumRemoteDebugApplications self) Reset;
-				public new function HRESULT(ref IEnumRemoteDebugApplications self, out IEnumRemoteDebugApplications* ppessd) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplications self, uint32 celt, out IRemoteDebugApplication* ppda, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplications self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplications self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplications self, out IEnumRemoteDebugApplications* ppessd) Clone;
 			}
 		}
 		[CRepr]
@@ -16707,10 +16707,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumRemoteDebugApplicationThreads self, uint32 celt, out IRemoteDebugApplicationThread* pprdat, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumRemoteDebugApplicationThreads self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumRemoteDebugApplicationThreads self) Reset;
-				public new function HRESULT(ref IEnumRemoteDebugApplicationThreads self, out IEnumRemoteDebugApplicationThreads* pperdat) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplicationThreads self, uint32 celt, out IRemoteDebugApplicationThread* pprdat, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplicationThreads self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplicationThreads self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRemoteDebugApplicationThreads self, out IEnumRemoteDebugApplicationThreads* pperdat) Clone;
 			}
 		}
 		[CRepr]
@@ -16727,9 +16727,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugFormatter self, ref VARIANT pvar, uint32 nRadix, out BSTR pbstrValue) GetStringForVariant;
-				public new function HRESULT(ref IDebugFormatter self, PWSTR pwstrValue, out VARIANT pvar) GetVariantForString;
-				public new function HRESULT(ref IDebugFormatter self, uint16 vt, ref TYPEDESC ptdescArrayType, out BSTR pbstr) GetStringForVarType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugFormatter self, ref VARIANT pvar, uint32 nRadix, out BSTR pbstrValue) GetStringForVariant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugFormatter self, PWSTR pwstrValue, out VARIANT pvar) GetVariantForString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugFormatter self, uint16 vt, ref TYPEDESC ptdescArrayType, out BSTR pbstr) GetStringForVarType;
 			}
 		}
 		[CRepr]
@@ -16747,10 +16747,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISimpleConnectionPoint self, out uint32 pulCount) GetEventCount;
-				public new function HRESULT(ref ISimpleConnectionPoint self, uint32 iEvent, uint32 cEvents, int32* prgid, BSTR* prgbstr, out uint32 pcEventsFetched) DescribeEvents;
-				public new function HRESULT(ref ISimpleConnectionPoint self, ref IDispatch pdisp, out uint32 pdwCookie) Advise;
-				public new function HRESULT(ref ISimpleConnectionPoint self, uint32 dwCookie) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISimpleConnectionPoint self, out uint32 pulCount) GetEventCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISimpleConnectionPoint self, uint32 iEvent, uint32 cEvents, int32* prgid, BSTR* prgbstr, out uint32 pcEventsFetched) DescribeEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISimpleConnectionPoint self, ref IDispatch pdisp, out uint32 pdwCookie) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISimpleConnectionPoint self, uint32 dwCookie) Unadvise;
 			}
 		}
 		[CRepr]
@@ -16767,9 +16767,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugHelper self, ref VARIANT pvar, PWSTR bstrName, ref IDebugApplicationThread pdat, out IDebugProperty* ppdob) CreatePropertyBrowser;
-				public new function HRESULT(ref IDebugHelper self, ref VARIANT pvar, PWSTR bstrName, ref IDebugApplicationThread pdat, ref IDebugFormatter pdf, out IDebugProperty* ppdob) CreatePropertyBrowserEx;
-				public new function HRESULT(ref IDebugHelper self, ref IDispatch pdisp, out ISimpleConnectionPoint* ppscp) CreateSimpleConnectionPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHelper self, ref VARIANT pvar, PWSTR bstrName, ref IDebugApplicationThread pdat, out IDebugProperty* ppdob) CreatePropertyBrowser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHelper self, ref VARIANT pvar, PWSTR bstrName, ref IDebugApplicationThread pdat, ref IDebugFormatter pdf, out IDebugProperty* ppdob) CreatePropertyBrowserEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugHelper self, ref IDispatch pdisp, out ISimpleConnectionPoint* ppscp) CreateSimpleConnectionPoint;
 			}
 		}
 		[CRepr]
@@ -16787,10 +16787,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDebugExpressionContexts self, uint32 celt, out IDebugExpressionContext* ppdec, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumDebugExpressionContexts self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumDebugExpressionContexts self) Reset;
-				public new function HRESULT(ref IEnumDebugExpressionContexts self, out IEnumDebugExpressionContexts* ppedec) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExpressionContexts self, uint32 celt, out IDebugExpressionContext* ppdec, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExpressionContexts self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExpressionContexts self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDebugExpressionContexts self, out IEnumDebugExpressionContexts* ppedec) Clone;
 			}
 		}
 		[CRepr]
@@ -16805,7 +16805,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProvideExpressionContexts self, out IEnumDebugExpressionContexts* ppedec) EnumExpressionContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideExpressionContexts self, out IEnumDebugExpressionContexts* ppedec) EnumExpressionContexts;
 			}
 		}
 		[CRepr]
@@ -16822,9 +16822,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerControl self, in Guid clsidProfilerObject, uint32 dwEventMask, uint32 dwContext) StartProfiling;
-				public new function HRESULT(ref IActiveScriptProfilerControl self, uint32 dwEventMask) SetProfilerEventMask;
-				public new function HRESULT(ref IActiveScriptProfilerControl self, HRESULT hrShutdownReason) StopProfiling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl self, in Guid clsidProfilerObject, uint32 dwEventMask, uint32 dwContext) StartProfiling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl self, uint32 dwEventMask) SetProfilerEventMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl self, HRESULT hrShutdownReason) StopProfiling;
 			}
 		}
 		[CRepr]
@@ -16840,8 +16840,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerControl.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerControl2 self) CompleteProfilerStart;
-				public new function HRESULT(ref IActiveScriptProfilerControl2 self) PrepareProfilerStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl2 self) CompleteProfilerStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl2 self) PrepareProfilerStop;
 			}
 		}
 		[CRepr]
@@ -16859,10 +16859,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerHeapEnum self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IActiveScriptProfilerHeapEnum self, ref PROFILER_HEAP_OBJECT heapObject, uint32 celt, PROFILER_HEAP_OBJECT_OPTIONAL_INFO* optionalInfo) GetOptionalInfo;
-				public new function HRESULT(ref IActiveScriptProfilerHeapEnum self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects) FreeObjectAndOptionalInfo;
-				public new function HRESULT(ref IActiveScriptProfilerHeapEnum self, PWSTR*** pNameList, out uint32 pcelt) GetNameIdMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerHeapEnum self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerHeapEnum self, ref PROFILER_HEAP_OBJECT heapObject, uint32 celt, PROFILER_HEAP_OBJECT_OPTIONAL_INFO* optionalInfo) GetOptionalInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerHeapEnum self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects) FreeObjectAndOptionalInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerHeapEnum self, PWSTR*** pNameList, out uint32 pcelt) GetNameIdMap;
 			}
 		}
 		[CRepr]
@@ -16877,7 +16877,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerControl2.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerControl3 self, out IActiveScriptProfilerHeapEnum* ppEnum) EnumHeap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl3 self, out IActiveScriptProfilerHeapEnum* ppEnum) EnumHeap;
 			}
 		}
 		[CRepr]
@@ -16892,7 +16892,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerControl3.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerControl4 self, out PROFILER_HEAP_SUMMARY heapSummary) SummarizeHeap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl4 self, out PROFILER_HEAP_SUMMARY heapSummary) SummarizeHeap;
 			}
 		}
 		[CRepr]
@@ -16907,7 +16907,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerControl4.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerControl5 self, PROFILER_HEAP_ENUM_FLAGS enumFlags, out IActiveScriptProfilerHeapEnum* ppEnum) EnumHeap2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerControl5 self, PROFILER_HEAP_ENUM_FLAGS enumFlags, out IActiveScriptProfilerHeapEnum* ppEnum) EnumHeap2;
 			}
 		}
 		[CRepr]
@@ -16927,12 +16927,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, uint32 dwContext) Initialize;
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, HRESULT hrReason) Shutdown;
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, PROFILER_SCRIPT_TYPE type, ref IUnknown pIDebugDocumentContext) ScriptCompiled;
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, int32 functionId, int32 scriptId, PWSTR pwszFunctionName, PWSTR pwszFunctionNameHint, ref IUnknown pIDebugDocumentContext) FunctionCompiled;
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, int32 functionId) OnFunctionEnter;
-				public new function HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, int32 functionId) OnFunctionExit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, uint32 dwContext) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, HRESULT hrReason) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, PROFILER_SCRIPT_TYPE type, ref IUnknown pIDebugDocumentContext) ScriptCompiled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, int32 functionId, int32 scriptId, PWSTR pwszFunctionName, PWSTR pwszFunctionNameHint, ref IUnknown pIDebugDocumentContext) FunctionCompiled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, int32 functionId) OnFunctionEnter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback self, int32 scriptId, int32 functionId) OnFunctionExit;
 			}
 		}
 		[CRepr]
@@ -16948,8 +16948,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerCallback.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerCallback2 self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionEnterByName;
-				public new function HRESULT(ref IActiveScriptProfilerCallback2 self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionExitByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback2 self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionEnterByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback2 self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionExitByName;
 			}
 		}
 		[CRepr]
@@ -16964,7 +16964,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptProfilerCallback2.VTable
 			{
-				public new function HRESULT(ref IActiveScriptProfilerCallback3 self, uint32 webWorkerId) SetWebWorkerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptProfilerCallback3 self, uint32 webWorkerId) SetWebWorkerId;
 			}
 		}
 		[CRepr]
@@ -16988,16 +16988,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IScriptNode self) Alive;
-				public new function HRESULT(ref IScriptNode self) Delete;
-				public new function HRESULT(ref IScriptNode self, out IScriptNode* ppsnParent) GetParent;
-				public new function HRESULT(ref IScriptNode self, out uint32 pisn) GetIndexInParent;
-				public new function HRESULT(ref IScriptNode self, out uint32 pdwCookie) GetCookie;
-				public new function HRESULT(ref IScriptNode self, out uint32 pcsn) GetNumberOfChildren;
-				public new function HRESULT(ref IScriptNode self, uint32 isn, out IScriptNode* ppsn) GetChild;
-				public new function HRESULT(ref IScriptNode self, out BSTR pbstr) GetLanguage;
-				public new function HRESULT(ref IScriptNode self, uint32 isn, uint32 dwCookie, PWSTR pszDelimiter, out IScriptEntry* ppse) CreateChildEntry;
-				public new function HRESULT(ref IScriptNode self, PWSTR pszDefaultName, PWSTR* prgpszNames, uint32 cpszNames, PWSTR pszEvent, PWSTR pszDelimiter, ref ITypeInfo ptiSignature, uint32 iMethodSignature, uint32 isn, uint32 dwCookie, out IScriptEntry* ppse) CreateChildHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self) Alive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, out IScriptNode* ppsnParent) GetParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, out uint32 pisn) GetIndexInParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, out uint32 pdwCookie) GetCookie;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, out uint32 pcsn) GetNumberOfChildren;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, uint32 isn, out IScriptNode* ppsn) GetChild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, out BSTR pbstr) GetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, uint32 isn, uint32 dwCookie, PWSTR pszDelimiter, out IScriptEntry* ppse) CreateChildEntry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptNode self, PWSTR pszDefaultName, PWSTR* prgpszNames, uint32 cpszNames, PWSTR pszEvent, PWSTR pszDelimiter, ref ITypeInfo ptiSignature, uint32 iMethodSignature, uint32 isn, uint32 dwCookie, out IScriptEntry* ppse) CreateChildHandler;
 			}
 		}
 		[CRepr]
@@ -17022,17 +17022,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IScriptNode.VTable
 			{
-				public new function HRESULT(ref IScriptEntry self, out BSTR pbstr) GetText;
-				public new function HRESULT(ref IScriptEntry self, PWSTR psz) SetText;
-				public new function HRESULT(ref IScriptEntry self, out BSTR pbstr) GetBody;
-				public new function HRESULT(ref IScriptEntry self, PWSTR psz) SetBody;
-				public new function HRESULT(ref IScriptEntry self, out BSTR pbstr) GetName;
-				public new function HRESULT(ref IScriptEntry self, PWSTR psz) SetName;
-				public new function HRESULT(ref IScriptEntry self, out BSTR pbstr) GetItemName;
-				public new function HRESULT(ref IScriptEntry self, PWSTR psz) SetItemName;
-				public new function HRESULT(ref IScriptEntry self, out ITypeInfo* ppti, out uint32 piMethod) GetSignature;
-				public new function HRESULT(ref IScriptEntry self, ref ITypeInfo pti, uint32 iMethod) SetSignature;
-				public new function HRESULT(ref IScriptEntry self, out uint32 pichMin, out uint32 pcch) GetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out BSTR pbstr) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, PWSTR psz) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out BSTR pbstr) GetBody;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, PWSTR psz) SetBody;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out BSTR pbstr) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, PWSTR psz) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out BSTR pbstr) GetItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, PWSTR psz) SetItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out ITypeInfo* ppti, out uint32 piMethod) GetSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, ref ITypeInfo pti, uint32 iMethod) SetSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptEntry self, out uint32 pichMin, out uint32 pcch) GetRange;
 			}
 		}
 		[CRepr]
@@ -17052,12 +17052,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IScriptEntry.VTable
 			{
-				public new function HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetSubItemName;
-				public new function HRESULT(ref IScriptScriptlet self, PWSTR psz) SetSubItemName;
-				public new function HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetEventName;
-				public new function HRESULT(ref IScriptScriptlet self, PWSTR psz) SetEventName;
-				public new function HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetSimpleEventName;
-				public new function HRESULT(ref IScriptScriptlet self, PWSTR psz) SetSimpleEventName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetSubItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, PWSTR psz) SetSubItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetEventName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, PWSTR psz) SetEventName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, out BSTR pbstr) GetSimpleEventName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptScriptlet self, PWSTR psz) SetSimpleEventName;
 			}
 		}
 		[CRepr]
@@ -17085,20 +17085,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptAuthor self, PWSTR pszName, uint32 dwFlags, ref IDispatch pdisp) AddNamedItem;
-				public new function HRESULT(ref IActiveScriptAuthor self, PWSTR pszDefaultName, PWSTR pszCode, PWSTR pszItemName, PWSTR pszSubItemName, PWSTR pszEventName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) AddScriptlet;
-				public new function HRESULT(ref IActiveScriptAuthor self, PWSTR pszCode, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) ParseScriptText;
-				public new function HRESULT(ref IActiveScriptAuthor self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-				public new function HRESULT(ref IActiveScriptAuthor self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-				public new function HRESULT(ref IActiveScriptAuthor self, out IScriptNode* ppsp) GetRoot;
-				public new function HRESULT(ref IActiveScriptAuthor self, out uint32 pgrfasa) GetLanguageFlags;
-				public new function HRESULT(ref IActiveScriptAuthor self, ref IDispatch pdisp, PWSTR pszItem, PWSTR pszSubItem, PWSTR pszEvent, out IScriptEntry* ppse) GetEventHandler;
-				public new function HRESULT(ref IActiveScriptAuthor self, PWSTR pszName) RemoveNamedItem;
-				public new function HRESULT(ref IActiveScriptAuthor self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
-				public new function HRESULT(ref IActiveScriptAuthor self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor) RemoveTypeLib;
-				public new function HRESULT(ref IActiveScriptAuthor self, uint32 fRequestedList, out BSTR pbstrChars) GetChars;
-				public new function HRESULT(ref IActiveScriptAuthor self, PWSTR pszCode, uint32 cchCode, uint32 ichCurrentPosition, uint32 dwListTypesRequested, out uint32 pdwListTypesProvided, out uint32 pichListAnchorPosition, out uint32 pichFuncAnchorPosition, out int32 pmemid, out int32 piCurrentParameter, out IUnknown* ppunk) GetInfoFromContext;
-				public new function HRESULT(ref IActiveScriptAuthor self, char16 ch, out BOOL pfcommit) IsCommitChar;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, PWSTR pszName, uint32 dwFlags, ref IDispatch pdisp) AddNamedItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, PWSTR pszDefaultName, PWSTR pszCode, PWSTR pszItemName, PWSTR pszSubItemName, PWSTR pszEventName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) AddScriptlet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, PWSTR pszCode, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) ParseScriptText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, out IScriptNode* ppsp) GetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, out uint32 pgrfasa) GetLanguageFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, ref IDispatch pdisp, PWSTR pszItem, PWSTR pszSubItem, PWSTR pszEvent, out IScriptEntry* ppse) GetEventHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, PWSTR pszName) RemoveNamedItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, in Guid rguidTypeLib, uint32 dwMajor, uint32 dwMinor) RemoveTypeLib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, uint32 fRequestedList, out BSTR pbstrChars) GetChars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, PWSTR pszCode, uint32 cchCode, uint32 ichCurrentPosition, uint32 dwListTypesRequested, out uint32 pdwListTypesProvided, out uint32 pichListAnchorPosition, out uint32 pichFuncAnchorPosition, out int32 pmemid, out int32 piCurrentParameter, out IUnknown* ppunk) GetInfoFromContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthor self, char16 ch, out BOOL pfcommit) IsCommitChar;
 			}
 		}
 		[CRepr]
@@ -17113,7 +17113,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptAuthorProcedure self, PWSTR pszCode, PWSTR pszFormalParams, PWSTR pszProcedureName, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags, ref IDispatch pdispFor) ParseProcedureText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptAuthorProcedure self, PWSTR pszCode, PWSTR pszFormalParams, PWSTR pszProcedureName, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags, ref IDispatch pdispFor) ParseProcedureText;
 			}
 		}
 		[CRepr]
@@ -17130,9 +17130,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationNode100 self, uint32 dwCookie, APPLICATION_NODE_EVENT_FILTER filter) SetFilterForEventSink;
-				public new function HRESULT(ref IDebugApplicationNode100 self, APPLICATION_NODE_EVENT_FILTER filter, out TEXT_DOCUMENT_ARRAY pDocuments) GetExcludedDocuments;
-				public new function HRESULT(ref IDebugApplicationNode100 self, ref IDebugDocument pSearchKey) QueryIsChildNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode100 self, uint32 dwCookie, APPLICATION_NODE_EVENT_FILTER filter) SetFilterForEventSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode100 self, APPLICATION_NODE_EVENT_FILTER filter, out TEXT_DOCUMENT_ARRAY pDocuments) GetExcludedDocuments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationNode100 self, ref IDebugDocument pSearchKey) QueryIsChildNode;
 			}
 		}
 		[CRepr]
@@ -17148,8 +17148,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebAppDiagnosticsSetup self, out int16 pRetVal) DiagnosticsSupported;
-				public new function HRESULT(ref IWebAppDiagnosticsSetup self, in Guid rclsid, uint32 dwClsContext, in Guid riid, uint hPassToObject) CreateObjectWithSiteAtWebApp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebAppDiagnosticsSetup self, out int16 pRetVal) DiagnosticsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebAppDiagnosticsSetup self, in Guid rclsid, uint32 dwClsContext, in Guid riid, uint hPassToObject) CreateObjectWithSiteAtWebApp;
 			}
 		}
 		[CRepr]
@@ -17166,9 +17166,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugApplication110 self, SCRIPT_DEBUGGER_OPTIONS mask, SCRIPT_DEBUGGER_OPTIONS value) SetDebuggerOptions;
-				public new function HRESULT(ref IRemoteDebugApplication110 self, out SCRIPT_DEBUGGER_OPTIONS pCurrentOptions) GetCurrentDebuggerOptions;
-				public new function HRESULT(ref IRemoteDebugApplication110 self, out IRemoteDebugApplicationThread* ppThread) GetMainThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication110 self, SCRIPT_DEBUGGER_OPTIONS mask, SCRIPT_DEBUGGER_OPTIONS value) SetDebuggerOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication110 self, out SCRIPT_DEBUGGER_OPTIONS pCurrentOptions) GetCurrentDebuggerOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugApplication110 self, out IRemoteDebugApplicationThread* ppThread) GetMainThread;
 			}
 		}
 		[CRepr]
@@ -17185,9 +17185,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRemoteDebugApplication110.VTable
 			{
-				public new function HRESULT(ref IDebugApplication11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
-				public new function HRESULT(ref IDebugApplication11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
-				public new function HRESULT(ref IDebugApplication11032 self, uint32 handleCount, HANDLE* pHandles, out uint32 pIndex) CallableWaitForHandles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11032 self, uint32 handleCount, HANDLE* pHandles, out uint32 pIndex) CallableWaitForHandles;
 			}
 		}
 		[CRepr]
@@ -17204,9 +17204,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IRemoteDebugApplication110.VTable
 			{
-				public new function HRESULT(ref IDebugApplication11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
-				public new function HRESULT(ref IDebugApplication11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
-				public new function HRESULT(ref IDebugApplication11064 self, uint32 handleCount, HANDLE* pHandles, out uint32 pIndex) CallableWaitForHandles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplication11064 self, uint32 handleCount, HANDLE* pHandles, out uint32 pIndex) CallableWaitForHandles;
 			}
 		}
 		[CRepr]
@@ -17221,7 +17221,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWebAppDiagnosticsObjectInitialization self, HANDLE_PTR hPassedHandle, ref IUnknown pDebugApplication) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebAppDiagnosticsObjectInitialization self, HANDLE_PTR hPassedHandle, ref IUnknown pDebugApplication) Initialize;
 			}
 		}
 		[CRepr]
@@ -17238,9 +17238,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IActiveScriptError.VTable
 			{
-				public new function HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR errorString) GetRestrictedErrorString;
-				public new function HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR referenceString) GetRestrictedErrorReference;
-				public new function HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR capabilitySid) GetCapabilitySid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR errorString) GetRestrictedErrorString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR referenceString) GetRestrictedErrorReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptWinRTErrorDebug self, out BSTR capabilitySid) GetCapabilitySid;
 			}
 		}
 		[CRepr]
@@ -17255,7 +17255,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveScriptErrorDebug110 self, out SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND pExceptionKind) GetExceptionThrownKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveScriptErrorDebug110 self, out SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND pExceptionKind) GetExceptionThrownKind;
 			}
 		}
 		[CRepr]
@@ -17273,10 +17273,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationThreadEvents110 self) OnSuspendForBreakPoint;
-				public new function HRESULT(ref IDebugApplicationThreadEvents110 self) OnResumeFromBreakPoint;
-				public new function HRESULT(ref IDebugApplicationThreadEvents110 self) OnThreadRequestComplete;
-				public new function HRESULT(ref IDebugApplicationThreadEvents110 self) OnBeginThreadRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThreadEvents110 self) OnSuspendForBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThreadEvents110 self) OnResumeFromBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThreadEvents110 self) OnThreadRequestComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThreadEvents110 self) OnBeginThreadRequest;
 			}
 		}
 		[CRepr]
@@ -17294,10 +17294,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationThread11032 self, out uint32 puiThreadRequests) GetActiveThreadRequestCount;
-				public new function HRESULT(ref IDebugApplicationThread11032 self, out BOOL pfIsSuspended) IsSuspendedForBreakPoint;
-				public new function HRESULT(ref IDebugApplicationThread11032 self, out BOOL pfIsCallable) IsThreadCallable;
-				public new function HRESULT(ref IDebugApplicationThread11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11032 self, out uint32 puiThreadRequests) GetActiveThreadRequestCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11032 self, out BOOL pfIsSuspended) IsSuspendedForBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11032 self, out BOOL pfIsCallable) IsThreadCallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11032 self, ref IDebugThreadCall32 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
 			}
 		}
 		[CRepr]
@@ -17315,10 +17315,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDebugApplicationThread11064 self, out uint32 puiThreadRequests) GetActiveThreadRequestCount;
-				public new function HRESULT(ref IDebugApplicationThread11064 self, out BOOL pfIsSuspended) IsSuspendedForBreakPoint;
-				public new function HRESULT(ref IDebugApplicationThread11064 self, out BOOL pfIsCallable) IsThreadCallable;
-				public new function HRESULT(ref IDebugApplicationThread11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11064 self, out uint32 puiThreadRequests) GetActiveThreadRequestCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11064 self, out BOOL pfIsSuspended) IsSuspendedForBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11064 self, out BOOL pfIsCallable) IsThreadCallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugApplicationThread11064 self, ref IDebugThreadCall64 pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
 			}
 		}
 		[CRepr]
@@ -17333,7 +17333,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugCriticalErrorEvent110 self, out BSTR pbstrSource, out int32 pMessageId, out BSTR pbstrMessage, out IDebugDocumentContext* ppLocation) GetErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugCriticalErrorEvent110 self, out BSTR pbstrSource, out int32 pMessageId, out BSTR pbstrMessage, out IDebugDocumentContext* ppLocation) GetErrorInfo;
 			}
 		}
 		[CRepr]
@@ -17350,9 +17350,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IScriptInvocationContext self, out SCRIPT_INVOCATION_CONTEXT_TYPE pInvocationContextType) GetContextType;
-				public new function HRESULT(ref IScriptInvocationContext self, out BSTR pDescription) GetContextDescription;
-				public new function HRESULT(ref IScriptInvocationContext self, out IUnknown* ppContextObject) GetContextObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptInvocationContext self, out SCRIPT_INVOCATION_CONTEXT_TYPE pInvocationContextType) GetContextType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptInvocationContext self, out BSTR pDescription) GetContextDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScriptInvocationContext self, out IUnknown* ppContextObject) GetContextObject;
 			}
 		}
 		[CRepr]
@@ -17368,8 +17368,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDebugStackFrame.VTable
 			{
-				public new function HRESULT(ref IDebugStackFrame110 self, out DEBUG_STACKFRAME_TYPE pStackFrameKind) GetStackFrameType;
-				public new function HRESULT(ref IDebugStackFrame110 self, out IScriptInvocationContext* ppInvocationContext) GetScriptInvocationContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame110 self, out DEBUG_STACKFRAME_TYPE pStackFrameKind) GetStackFrameType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDebugStackFrame110 self, out IScriptInvocationContext* ppInvocationContext) GetScriptInvocationContext;
 			}
 		}
 		[CRepr]
@@ -17384,7 +17384,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRemoteDebugInfoEvent110 self, out DEBUG_EVENT_INFO_TYPE pMessageType, out BSTR pbstrMessage, out BSTR pbstrUrl, out IDebugDocumentContext* ppLocation) GetEventInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteDebugInfoEvent110 self, out DEBUG_EVENT_INFO_TYPE pMessageType, out BSTR pbstrMessage, out BSTR pbstrUrl, out IDebugDocumentContext* ppLocation) GetEventInfo;
 			}
 		}
 		[CRepr]
@@ -17399,7 +17399,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebug self, uint32 processId, uint64 runtimeJsBaseAddress, ref IJsDebugDataTarget pDataTarget, out IJsDebugProcess* ppProcess) OpenVirtualProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebug self, uint32 processId, uint64 runtimeJsBaseAddress, ref IJsDebugDataTarget pDataTarget, out IJsDebugProcess* ppProcess) OpenVirtualProcess;
 			}
 		}
 		[CRepr]
@@ -17417,10 +17417,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugProcess self, uint32 threadId, out IJsDebugStackWalker* ppStackWalker) CreateStackWalker;
-				public new function HRESULT(ref IJsDebugProcess self, uint64 documentId, uint32 characterOffset, uint32 characterCount, BOOL isEnabled, out IJsDebugBreakPoint* ppDebugBreakPoint) CreateBreakPoint;
-				public new function HRESULT(ref IJsDebugProcess self, uint32 threadId) PerformAsyncBreak;
-				public new function HRESULT(ref IJsDebugProcess self, out uint64 pCodeAddress) GetExternalStepAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProcess self, uint32 threadId, out IJsDebugStackWalker* ppStackWalker) CreateStackWalker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProcess self, uint64 documentId, uint32 characterOffset, uint32 characterCount, BOOL isEnabled, out IJsDebugBreakPoint* ppDebugBreakPoint) CreateBreakPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProcess self, uint32 threadId) PerformAsyncBreak;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProcess self, out uint64 pCodeAddress) GetExternalStepAddress;
 			}
 		}
 		[CRepr]
@@ -17435,7 +17435,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugStackWalker self, out IJsDebugFrame* ppFrame) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugStackWalker self, out IJsDebugFrame* ppFrame) GetNext;
 			}
 		}
 		[CRepr]
@@ -17456,13 +17456,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugFrame self, out uint64 pStart, out uint64 pEnd) GetStackRange;
-				public new function HRESULT(ref IJsDebugFrame self, out BSTR pName) GetName;
-				public new function HRESULT(ref IJsDebugFrame self, out uint64 pDocumentId, out uint32 pCharacterOffset, out uint32 pStatementCharCount) GetDocumentPositionWithId;
-				public new function HRESULT(ref IJsDebugFrame self, out BSTR pDocumentName, out uint32 pLine, out uint32 pColumn) GetDocumentPositionWithName;
-				public new function HRESULT(ref IJsDebugFrame self, out IJsDebugProperty* ppDebugProperty) GetDebugProperty;
-				public new function HRESULT(ref IJsDebugFrame self, out uint64 pReturnAddress) GetReturnAddress;
-				public new function HRESULT(ref IJsDebugFrame self, PWSTR pExpressionText, out IJsDebugProperty* ppDebugProperty, out BSTR pError) Evaluate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out uint64 pStart, out uint64 pEnd) GetStackRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out BSTR pName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out uint64 pDocumentId, out uint32 pCharacterOffset, out uint32 pStatementCharCount) GetDocumentPositionWithId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out BSTR pDocumentName, out uint32 pLine, out uint32 pColumn) GetDocumentPositionWithName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out IJsDebugProperty* ppDebugProperty) GetDebugProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, out uint64 pReturnAddress) GetReturnAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugFrame self, PWSTR pExpressionText, out IJsDebugProperty* ppDebugProperty, out BSTR pError) Evaluate;
 			}
 		}
 		[CRepr]
@@ -17478,8 +17478,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugProperty self, uint32 nRadix, out JsDebugPropertyInfo pPropertyInfo) GetPropertyInfo;
-				public new function HRESULT(ref IJsDebugProperty self, JS_PROPERTY_MEMBERS members, out IJsEnumDebugProperty* ppEnum) GetMembers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProperty self, uint32 nRadix, out JsDebugPropertyInfo pPropertyInfo) GetPropertyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugProperty self, JS_PROPERTY_MEMBERS members, out IJsEnumDebugProperty* ppEnum) GetMembers;
 			}
 		}
 		[CRepr]
@@ -17495,8 +17495,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsEnumDebugProperty self, uint32 count, IJsDebugProperty** ppDebugProperty, out uint32 pActualCount) Next;
-				public new function HRESULT(ref IJsEnumDebugProperty self, out uint32 pCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsEnumDebugProperty self, uint32 count, IJsDebugProperty** ppDebugProperty, out uint32 pActualCount) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsEnumDebugProperty self, out uint32 pCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -17515,11 +17515,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugBreakPoint self, out BOOL pIsEnabled) IsEnabled;
-				public new function HRESULT(ref IJsDebugBreakPoint self) Enable;
-				public new function HRESULT(ref IJsDebugBreakPoint self) Disable;
-				public new function HRESULT(ref IJsDebugBreakPoint self) Delete;
-				public new function HRESULT(ref IJsDebugBreakPoint self, out uint64 pDocumentId, out uint32 pCharacterOffset, out uint32 pStatementCharCount) GetDocumentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugBreakPoint self, out BOOL pIsEnabled) IsEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugBreakPoint self) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugBreakPoint self) Disable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugBreakPoint self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugBreakPoint self, out uint64 pDocumentId, out uint32 pCharacterOffset, out uint32 pStatementCharCount) GetDocumentPosition;
 			}
 		}
 		[CRepr]
@@ -17535,8 +17535,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumJsStackFrames self, uint32 cFrameCount, __MIDL___MIDL_itf_jscript9diag_0000_0007_0001* pFrames, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumJsStackFrames self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumJsStackFrames self, uint32 cFrameCount, __MIDL___MIDL_itf_jscript9diag_0000_0007_0001* pFrames, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumJsStackFrames self) Reset;
 			}
 		}
 		[CRepr]
@@ -17559,15 +17559,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, JsDebugReadMemoryFlags flags, uint8* pBuffer, uint32 size, out uint32 pBytesRead) ReadMemory;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, uint8* pMemory, uint32 size) WriteMemory;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, uint32 size, uint32 allocationType, uint32 pageProtection, out uint64 pAllocatedAddress) AllocateVirtualMemory;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, uint32 size, uint32 freeType) FreeVirtualMemory;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint32 threadId, uint32 tlsIndex, out uint64 pValue) GetTlsValue;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, out BSTR pString) ReadBSTR;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint64 address, uint16 characterSize, uint32 maxCharacters, out BSTR pString) ReadNullTerminatedString;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint32 threadId, out IEnumJsStackFrames* ppEnumerator) CreateStackFrameEnumerator;
-				public new function HRESULT(ref IJsDebugDataTarget self, uint32 threadId, uint32 contextFlags, uint32 contextSize, void* pContext) GetThreadContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, JsDebugReadMemoryFlags flags, uint8* pBuffer, uint32 size, out uint32 pBytesRead) ReadMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, uint8* pMemory, uint32 size) WriteMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, uint32 size, uint32 allocationType, uint32 pageProtection, out uint64 pAllocatedAddress) AllocateVirtualMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, uint32 size, uint32 freeType) FreeVirtualMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint32 threadId, uint32 tlsIndex, out uint64 pValue) GetTlsValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, out BSTR pString) ReadBSTR;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint64 address, uint16 characterSize, uint32 maxCharacters, out BSTR pString) ReadNullTerminatedString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint32 threadId, out IEnumJsStackFrames* ppEnumerator) CreateStackFrameEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IJsDebugDataTarget self, uint32 threadId, uint32 contextFlags, uint32 contextSize, void* pContext) GetThreadContext;
 			}
 		}
 		[CRepr]
@@ -17583,8 +17583,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IObjectSafety self, in Guid riid, out uint32 pdwSupportedOptions, out uint32 pdwEnabledOptions) GetInterfaceSafetyOptions;
-				public new function HRESULT(ref IObjectSafety self, in Guid riid, uint32 dwOptionSetMask, uint32 dwEnabledOptions) SetInterfaceSafetyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectSafety self, in Guid riid, out uint32 pdwSupportedOptions, out uint32 pdwEnabledOptions) GetInterfaceSafetyOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectSafety self, in Guid riid, uint32 dwOptionSetMask, uint32 dwEnabledOptions) SetInterfaceSafetyOptions;
 			}
 		}
 		

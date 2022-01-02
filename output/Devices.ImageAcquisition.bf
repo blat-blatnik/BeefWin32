@@ -1452,15 +1452,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaDevMgr self, int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
-				public new function HRESULT(ref IWiaDevMgr self, BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) CreateDevice;
-				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) SelectDeviceDlg;
-				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
-				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, ref IWiaItem pItemRoot, BSTR bstrFilename, out Guid pguidFormat) GetImageDlg;
-				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
-				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
-				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
-				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lFlags) AddDeviceDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) SelectDeviceDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, ref IWiaItem pItemRoot, BSTR bstrFilename, out Guid pguidFormat) GetImageDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lFlags) AddDeviceDlg;
 			}
 		}
 		[CRepr]
@@ -1479,11 +1479,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumWIA_DEV_INFO self) Reset;
-				public new function HRESULT(ref IEnumWIA_DEV_INFO self, IEnumWIA_DEV_INFO** ppIEnum) Clone;
-				public new function HRESULT(ref IEnumWIA_DEV_INFO self, out uint32 celt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, IEnumWIA_DEV_INFO** ppIEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_INFO self, out uint32 celt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1498,7 +1498,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaEventCallback self, in Guid pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, out uint32 pulEventType, uint32 ulReserved) ImageEventCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaEventCallback self, in Guid pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, out uint32 pulEventType, uint32 ulReserved) ImageEventCallback;
 			}
 		}
 		[CRepr]
@@ -1513,7 +1513,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaDataCallback self, int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, out uint8 pbBuffer) BandedDataCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataCallback self, int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, out uint8 pbBuffer) BandedDataCallback;
 			}
 		}
 		[CRepr]
@@ -1532,11 +1532,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaDataTransfer self, out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) idtGetData;
-				public new function HRESULT(ref IWiaDataTransfer self, out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) idtGetBandedData;
-				public new function HRESULT(ref IWiaDataTransfer self, WIA_FORMAT_INFO* pfe) idtQueryGetData;
-				public new function HRESULT(ref IWiaDataTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) idtEnumWIA_FORMAT_INFO;
-				public new function HRESULT(ref IWiaDataTransfer self, out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) idtGetExtendedTransferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) idtGetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) idtGetBandedData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, WIA_FORMAT_INFO* pfe) idtQueryGetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) idtEnumWIA_FORMAT_INFO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDataTransfer self, out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) idtGetExtendedTransferInfo;
 			}
 		}
 		[CRepr]
@@ -1565,21 +1565,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaItem self, out int32 pItemType) GetItemType;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags) AnalyzeItem;
-				public new function HRESULT(ref IWiaItem self, IEnumWiaItem** ppIEnumWiaItem) EnumChildItems;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags) DeleteItem;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) CreateChildItem;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) FindItemByName;
-				public new function HRESULT(ref IWiaItem self, HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) DeviceDlg;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) DeviceCommand;
-				public new function HRESULT(ref IWiaItem self, IWiaItem** ppIWiaItem) GetRootItem;
-				public new function HRESULT(ref IWiaItem self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
-				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpItemData;
-				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpDrvItemData;
-				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpTreeItemData;
-				public new function HRESULT(ref IWiaItem self, uint32 ulSize, uint8* pBuffer) Diagnostic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, out int32 pItemType) GetItemType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags) AnalyzeItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, IEnumWiaItem** ppIEnumWiaItem) EnumChildItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) CreateChildItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) FindItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) DeviceDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) DeviceCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, IWiaItem** ppIWiaItem) GetRootItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpDrvItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, BSTR* bstrData) DumpTreeItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 			}
 		}
 		[CRepr]
@@ -1609,22 +1609,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, in PROPSPEC rgpspec, in PROPVARIANT rgpropvar, uint32 propidNameFirst) WriteMultiple;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 grfCommitFlags) Commit;
-				public new function HRESULT(ref IWiaPropertyStorage self) Revert;
-				public new function HRESULT(ref IWiaPropertyStorage self, IEnumSTATPROPSTG** ppenum) Enum;
-				public new function HRESULT(ref IWiaPropertyStorage self, in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) SetTimes;
-				public new function HRESULT(ref IWiaPropertyStorage self, in Guid clsid) SetClass;
-				public new function HRESULT(ref IWiaPropertyStorage self, out STATPROPSETSTG pstatpsstg) Stat;
-				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) GetPropertyAttributes;
-				public new function HRESULT(ref IWiaPropertyStorage self, out uint32 pulNumProps) GetCount;
-				public new function HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, IStream** ppIStream) GetPropertyStream;
-				public new function HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, ref IStream pIStream) SetPropertyStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, in PROPSPEC rgpspec, in PROPVARIANT rgpropvar, uint32 propidNameFirst) WriteMultiple;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 grfCommitFlags) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self) Revert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, IEnumSTATPROPSTG** ppenum) Enum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) SetTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, in Guid clsid) SetClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out STATPROPSETSTG pstatpsstg) Stat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) GetPropertyAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out uint32 pulNumProps) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, IStream** ppIStream) GetPropertyStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, ref IStream pIStream) SetPropertyStream;
 			}
 		}
 		[CRepr]
@@ -1643,11 +1643,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWiaItem self, uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumWiaItem self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumWiaItem self) Reset;
-				public new function HRESULT(ref IEnumWiaItem self, IEnumWiaItem** ppIEnum) Clone;
-				public new function HRESULT(ref IEnumWiaItem self, out uint32 celt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, IEnumWiaItem** ppIEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem self, out uint32 celt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1666,11 +1666,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumWIA_DEV_CAPS self) Reset;
-				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, IEnumWIA_DEV_CAPS** ppIEnum) Clone;
-				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, out uint32 pcelt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, IEnumWIA_DEV_CAPS** ppIEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_DEV_CAPS self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1689,11 +1689,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self) Reset;
-				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, IEnumWIA_FORMAT_INFO** ppIEnum) Clone;
-				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, out uint32 pcelt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, IEnumWIA_FORMAT_INFO** ppIEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWIA_FORMAT_INFO self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1710,9 +1710,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaLog self, int32 hInstance) InitializeLog;
-				public new function HRESULT(ref IWiaLog self, HRESULT hResult) hResult;
-				public new function HRESULT(ref IWiaLog self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLog self, int32 hInstance) InitializeLog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLog self, HRESULT hResult) hResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLog self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
 			}
 		}
 		[CRepr]
@@ -1731,11 +1731,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaLogEx self, ref uint8 hInstance) InitializeLogEx;
-				public new function HRESULT(ref IWiaLogEx self, HRESULT hResult) hResult;
-				public new function HRESULT(ref IWiaLogEx self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
-				public new function HRESULT(ref IWiaLogEx self, int32 lMethodId, HRESULT hResult) hResultEx;
-				public new function HRESULT(ref IWiaLogEx self, int32 lMethodId, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) LogEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLogEx self, ref uint8 hInstance) InitializeLogEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLogEx self, HRESULT hResult) hResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLogEx self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLogEx self, int32 lMethodId, HRESULT hResult) hResultEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaLogEx self, int32 lMethodId, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) LogEx;
 			}
 		}
 		[CRepr]
@@ -1750,7 +1750,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaNotifyDevMgr self) NewDeviceArrival;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaNotifyDevMgr self) NewDeviceArrival;
 			}
 		}
 		[CRepr]
@@ -1767,9 +1767,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaItemExtras self, BSTR* bstrErrorText) GetExtendedErrorInfo;
-				public new function HRESULT(ref IWiaItemExtras self, uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) Escape;
-				public new function HRESULT(ref IWiaItemExtras self) CancelPendingIO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self, BSTR* bstrErrorText) GetExtendedErrorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self, uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) Escape;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItemExtras self) CancelPendingIO;
 			}
 		}
 		[CRepr]
@@ -1785,8 +1785,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaAppErrorHandler self, HWND* phwnd) GetWindow;
-				public new function HRESULT(ref IWiaAppErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaAppErrorHandler self, HWND* phwnd) GetWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaAppErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
 			}
 		}
 		[CRepr]
@@ -1802,8 +1802,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaErrorHandler self, int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
-				public new function HRESULT(ref IWiaErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) GetStatusDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaErrorHandler self, int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) GetStatusDescription;
 			}
 		}
 		[CRepr]
@@ -1821,10 +1821,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaTransfer self, int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) Download;
-				public new function HRESULT(ref IWiaTransfer self, int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) Upload;
-				public new function HRESULT(ref IWiaTransfer self) Cancel;
-				public new function HRESULT(ref IWiaTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) EnumWIA_FORMAT_INFO;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) Download;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) Upload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) EnumWIA_FORMAT_INFO;
 			}
 		}
 		[CRepr]
@@ -1840,8 +1840,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) TransferCallback;
-				public new function HRESULT(ref IWiaTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppDestination) GetNextStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) TransferCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppDestination) GetNextStream;
 			}
 		}
 		[CRepr]
@@ -1856,7 +1856,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaSegmentationFilter self, int32 lFlags, IStream* pInputStream, IWiaItem2* pWiaItem2) DetectRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaSegmentationFilter self, int32 lFlags, IStream* pInputStream, IWiaItem2* pWiaItem2) DetectRegions;
 			}
 		}
 		[CRepr]
@@ -1874,10 +1874,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaImageFilter self, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) InitializeFilter;
-				public new function HRESULT(ref IWiaImageFilter self, IWiaTransferCallback* pWiaTransferCallback) SetNewCallback;
-				public new function HRESULT(ref IWiaImageFilter self, int32 lFlags, IWiaItem2* pWiaChildItem2, RECT InputImageExtents, IStream* pInputStream) FilterPreviewImage;
-				public new function HRESULT(ref IWiaImageFilter self, IWiaPropertyStorage* pWiaPropertyStorage) ApplyProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaImageFilter self, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) InitializeFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaImageFilter self, IWiaTransferCallback* pWiaTransferCallback) SetNewCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaImageFilter self, int32 lFlags, IWiaItem2* pWiaChildItem2, RECT InputImageExtents, IStream* pInputStream) FilterPreviewImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaImageFilter self, IWiaPropertyStorage* pWiaPropertyStorage) ApplyProperties;
 			}
 		}
 		[CRepr]
@@ -1895,10 +1895,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) GetNewPreview;
-				public new function HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pChildWiaItem2, IWiaTransferCallback* pWiaTransferCallback) UpdatePreview;
-				public new function HRESULT(ref IWiaPreview self, int32 lFlags) DetectRegions;
-				public new function HRESULT(ref IWiaPreview self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) GetNewPreview;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pChildWiaItem2, IWiaTransferCallback* pWiaTransferCallback) UpdatePreview;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPreview self, int32 lFlags) DetectRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaPreview self) Clear;
 			}
 		}
 		[CRepr]
@@ -1917,11 +1917,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWiaItem2 self, uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) Next;
-				public new function HRESULT(ref IEnumWiaItem2 self, uint32 cElt) Skip;
-				public new function HRESULT(ref IEnumWiaItem2 self) Reset;
-				public new function HRESULT(ref IEnumWiaItem2 self, IEnumWiaItem2** ppIEnum) Clone;
-				public new function HRESULT(ref IEnumWiaItem2 self, out uint32 cElt) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, uint32 cElt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, IEnumWiaItem2** ppIEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWiaItem2 self, out uint32 cElt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1951,22 +1951,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaItem2 self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) CreateChildItem;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags) DeleteItem;
-				public new function HRESULT(ref IWiaItem2 self, Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) EnumChildItems;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) FindItemByName;
-				public new function HRESULT(ref IWiaItem2 self, out Guid pItemCategoryGUID) GetItemCategory;
-				public new function HRESULT(ref IWiaItem2 self, out int32 pItemType) GetItemType;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) DeviceDlg;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) DeviceCommand;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) CheckExtension;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) GetExtension;
-				public new function HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetParentItem;
-				public new function HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetRootItem;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, out IWiaPreview* ppWiaPreview) GetPreviewComponent;
-				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
-				public new function HRESULT(ref IWiaItem2 self, uint32 ulSize, uint8* pBuffer) Diagnostic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) CreateChildItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags) DeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) EnumChildItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) FindItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out Guid pItemCategoryGUID) GetItemCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, out int32 pItemType) GetItemType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) DeviceDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) DeviceCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) CheckExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) GetExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetParentItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetRootItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, out IWiaPreview* ppWiaPreview) GetPreviewComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaItem2 self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 			}
 		}
 		[CRepr]
@@ -1988,14 +1988,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) CreateDevice;
-				public new function HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) SelectDeviceDlg;
-				public new function HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
-				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, out IWiaItem2* ppItem) GetImageDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) CreateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) SelectDeviceDlg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, out IWiaItem2* ppItem) GetImageDlg;
 			}
 		}
 		[CRepr]
@@ -2026,23 +2026,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) drvInitializeWia;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) drvAcquireItemData;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) drvInitItemProperties;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) drvValidateItemProperties;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, ref MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0023, out int32 __MIDL__IWiaMiniDrv0024) drvWriteItemProperties;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, in PROPSPEC __MIDL__IWiaMiniDrv0028, out int32 __MIDL__IWiaMiniDrv0029) drvReadItemProperties;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) drvLockWiaDevice;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) drvUnLockWiaDevice;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) drvAnalyzeItem;
-				public new function HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) drvDeleteItem;
-				public new function HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) drvFreeDrvItemContext;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
-				public new function HRESULT(ref IWiaMiniDrv self, in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) drvNotifyPnpEvent;
-				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0064) drvUnInitializeWia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) drvInitializeWia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) drvAcquireItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) drvInitItemProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) drvValidateItemProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, ref MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0023, out int32 __MIDL__IWiaMiniDrv0024) drvWriteItemProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, in PROPSPEC __MIDL__IWiaMiniDrv0028, out int32 __MIDL__IWiaMiniDrv0029) drvReadItemProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) drvLockWiaDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) drvUnLockWiaDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) drvAnalyzeItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) drvDeleteItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) drvFreeDrvItemContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) drvNotifyPnpEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0064) drvUnInitializeWia;
 			}
 		}
 		[CRepr]
@@ -2057,7 +2057,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaMiniDrvCallBack self, int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, ref MINIDRV_TRANSFER_CONTEXT pTranCtx, int32 lReserved) MiniDrvCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrvCallBack self, int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, ref MINIDRV_TRANSFER_CONTEXT pTranCtx, int32 lReserved) MiniDrvCallback;
 			}
 		}
 		[CRepr]
@@ -2073,8 +2073,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppIStream) GetNextStream;
-				public new function HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) SendMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppIStream) GetNextStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) SendMessage;
 			}
 		}
 		[CRepr]
@@ -2101,19 +2101,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaDrvItem self, out int32 __MIDL__IWiaDrvItem0000) GetItemFlags;
-				public new function HRESULT(ref IWiaDrvItem self, uint8** __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
-				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0002) GetFullItemName;
-				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0003) GetItemName;
-				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem* __MIDL__IWiaDrvItem0004) AddItemToFolder;
-				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0005) UnlinkItemTree;
-				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0006) RemoveItemFromFolder;
-				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) FindItemByName;
-				public new function HRESULT(ref IWiaDrvItem self, BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) FindChildItemByName;
-				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0012) GetParentItem;
-				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0013) GetFirstChildItem;
-				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
-				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0015) DumpItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, out int32 __MIDL__IWiaDrvItem0000) GetItemFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, uint8** __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0002) GetFullItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0003) GetItemName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem* __MIDL__IWiaDrvItem0004) AddItemToFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0005) UnlinkItemTree;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0006) RemoveItemFromFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) FindItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) FindChildItemByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0012) GetParentItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0013) GetFirstChildItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0015) DumpItemData;
 			}
 		}
 		[CRepr]
@@ -2140,19 +2140,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaVideo self, out BOOL pbPreviewVisible) get_PreviewVisible;
-				public new function HRESULT(ref IWiaVideo self, BOOL bPreviewVisible) put_PreviewVisible;
-				public new function HRESULT(ref IWiaVideo self, BSTR* pbstrImageDirectory) get_ImagesDirectory;
-				public new function HRESULT(ref IWiaVideo self, BSTR bstrImageDirectory) put_ImagesDirectory;
-				public new function HRESULT(ref IWiaVideo self, BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByWiaDevID;
-				public new function HRESULT(ref IWiaVideo self, uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByDevNum;
-				public new function HRESULT(ref IWiaVideo self, BSTR bstrFriendlyName, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByName;
-				public new function HRESULT(ref IWiaVideo self) DestroyVideo;
-				public new function HRESULT(ref IWiaVideo self) Play;
-				public new function HRESULT(ref IWiaVideo self) Pause;
-				public new function HRESULT(ref IWiaVideo self, BSTR* pbstrNewImageFilename) TakePicture;
-				public new function HRESULT(ref IWiaVideo self, BOOL bStretchToFitParent) ResizeVideo;
-				public new function HRESULT(ref IWiaVideo self, out WIAVIDEO_STATE pState) GetCurrentState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out BOOL pbPreviewVisible) get_PreviewVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BOOL bPreviewVisible) put_PreviewVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR* pbstrImageDirectory) get_ImagesDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR bstrImageDirectory) put_ImagesDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByWiaDevID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByDevNum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR bstrFriendlyName, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) DestroyVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) Play;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BSTR* pbstrNewImageFilename) TakePicture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, BOOL bStretchToFitParent) ResizeVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaVideo self, out WIAVIDEO_STATE pState) GetCurrentState;
 			}
 		}
 		[CRepr]
@@ -2168,8 +2168,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaUIExtension2 self, ref DEVICEDIALOGDATA2 pDeviceDialogData) DeviceDialog;
-				public new function HRESULT(ref IWiaUIExtension2 self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension2 self, ref DEVICEDIALOGDATA2 pDeviceDialogData) DeviceDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension2 self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
 			}
 		}
 		[CRepr]
@@ -2186,9 +2186,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWiaUIExtension self, ref DEVICEDIALOGDATA pDeviceDialogData) DeviceDialog;
-				public new function HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
-				public new function HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HBITMAP phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) GetDeviceBitmapLogo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension self, ref DEVICEDIALOGDATA pDeviceDialogData) DeviceDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HBITMAP phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) GetDeviceBitmapLogo;
 			}
 		}
 		

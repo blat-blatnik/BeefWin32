@@ -7133,7 +7133,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICreateDevEnum self, in Guid clsidDeviceClass, out IEnumMoniker* ppEnumMoniker, uint32 dwFlags) CreateClassEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDevEnum self, in Guid clsidDeviceClass, out IEnumMoniker* ppEnumMoniker, uint32 dwFlags) CreateClassEnumerator;
 			}
 		}
 		[CRepr]
@@ -7162,21 +7162,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPin self, ref IPin pReceivePin, AM_MEDIA_TYPE* pmt) Connect;
-				public new function HRESULT(ref IPin self, ref IPin pConnector, in AM_MEDIA_TYPE pmt) ReceiveConnection;
-				public new function HRESULT(ref IPin self) Disconnect;
-				public new function HRESULT(ref IPin self, out IPin* pPin) ConnectedTo;
-				public new function HRESULT(ref IPin self, out AM_MEDIA_TYPE pmt) ConnectionMediaType;
-				public new function HRESULT(ref IPin self, out PIN_INFO pInfo) QueryPinInfo;
-				public new function HRESULT(ref IPin self, out PIN_DIRECTION pPinDir) QueryDirection;
-				public new function HRESULT(ref IPin self, out PWSTR Id) QueryId;
-				public new function HRESULT(ref IPin self, in AM_MEDIA_TYPE pmt) QueryAccept;
-				public new function HRESULT(ref IPin self, out IEnumMediaTypes* ppEnum) EnumMediaTypes;
-				public new function HRESULT(ref IPin self, IPin** apPin, out uint32 nPin) QueryInternalConnections;
-				public new function HRESULT(ref IPin self) EndOfStream;
-				public new function HRESULT(ref IPin self) BeginFlush;
-				public new function HRESULT(ref IPin self) EndFlush;
-				public new function HRESULT(ref IPin self, int64 tStart, int64 tStop, double dRate) NewSegment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, ref IPin pReceivePin, AM_MEDIA_TYPE* pmt) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, ref IPin pConnector, in AM_MEDIA_TYPE pmt) ReceiveConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out IPin* pPin) ConnectedTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out AM_MEDIA_TYPE pmt) ConnectionMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out PIN_INFO pInfo) QueryPinInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out PIN_DIRECTION pPinDir) QueryDirection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out PWSTR Id) QueryId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, in AM_MEDIA_TYPE pmt) QueryAccept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, out IEnumMediaTypes* ppEnum) EnumMediaTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, IPin** apPin, out uint32 nPin) QueryInternalConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self) EndOfStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self) BeginFlush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self) EndFlush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPin self, int64 tStart, int64 tStop, double dRate) NewSegment;
 			}
 		}
 		[CRepr]
@@ -7194,10 +7194,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumPins self, uint32 cPins, IPin** ppPins, uint32* pcFetched) Next;
-				public new function HRESULT(ref IEnumPins self, uint32 cPins) Skip;
-				public new function HRESULT(ref IEnumPins self) Reset;
-				public new function HRESULT(ref IEnumPins self, out IEnumPins* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPins self, uint32 cPins, IPin** ppPins, uint32* pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPins self, uint32 cPins) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPins self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPins self, out IEnumPins* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7215,10 +7215,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumMediaTypes self, uint32 cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, uint32* pcFetched) Next;
-				public new function HRESULT(ref IEnumMediaTypes self, uint32 cMediaTypes) Skip;
-				public new function HRESULT(ref IEnumMediaTypes self) Reset;
-				public new function HRESULT(ref IEnumMediaTypes self, out IEnumMediaTypes* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMediaTypes self, uint32 cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, uint32* pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMediaTypes self, uint32 cMediaTypes) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMediaTypes self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMediaTypes self, out IEnumMediaTypes* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7240,14 +7240,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFilterGraph self, ref IBaseFilter pFilter, PWSTR pName) AddFilter;
-				public new function HRESULT(ref IFilterGraph self, ref IBaseFilter pFilter) RemoveFilter;
-				public new function HRESULT(ref IFilterGraph self, out IEnumFilters* ppEnum) EnumFilters;
-				public new function HRESULT(ref IFilterGraph self, PWSTR pName, out IBaseFilter* ppFilter) FindFilterByName;
-				public new function HRESULT(ref IFilterGraph self, ref IPin ppinOut, ref IPin ppinIn, AM_MEDIA_TYPE* pmt) ConnectDirect;
-				public new function HRESULT(ref IFilterGraph self, ref IPin ppin) Reconnect;
-				public new function HRESULT(ref IFilterGraph self, ref IPin ppin) Disconnect;
-				public new function HRESULT(ref IFilterGraph self) SetDefaultSyncSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, ref IBaseFilter pFilter, PWSTR pName) AddFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, ref IBaseFilter pFilter) RemoveFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, out IEnumFilters* ppEnum) EnumFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, PWSTR pName, out IBaseFilter* ppFilter) FindFilterByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, ref IPin ppinOut, ref IPin ppinIn, AM_MEDIA_TYPE* pmt) ConnectDirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, ref IPin ppin) Reconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self, ref IPin ppin) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph self) SetDefaultSyncSource;
 			}
 		}
 		[CRepr]
@@ -7265,10 +7265,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumFilters self, uint32 cFilters, IBaseFilter** ppFilter, uint32* pcFetched) Next;
-				public new function HRESULT(ref IEnumFilters self, uint32 cFilters) Skip;
-				public new function HRESULT(ref IEnumFilters self) Reset;
-				public new function HRESULT(ref IEnumFilters self, out IEnumFilters* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumFilters self, uint32 cFilters, IBaseFilter** ppFilter, uint32* pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumFilters self, uint32 cFilters) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumFilters self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumFilters self, out IEnumFilters* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7288,12 +7288,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(ref IMediaFilter self) Stop;
-				public new function HRESULT(ref IMediaFilter self) Pause;
-				public new function HRESULT(ref IMediaFilter self, int64 tStart) Run;
-				public new function HRESULT(ref IMediaFilter self, uint32 dwMilliSecsTimeout, out FILTER_STATE State) GetState;
-				public new function HRESULT(ref IMediaFilter self, IReferenceClock* pClock) SetSyncSource;
-				public new function HRESULT(ref IMediaFilter self, IReferenceClock** pClock) GetSyncSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self, int64 tStart) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self, uint32 dwMilliSecsTimeout, out FILTER_STATE State) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self, IReferenceClock* pClock) SetSyncSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaFilter self, IReferenceClock** pClock) GetSyncSource;
 			}
 		}
 		[CRepr]
@@ -7312,11 +7312,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaFilter.VTable
 			{
-				public new function HRESULT(ref IBaseFilter self, out IEnumPins* ppEnum) EnumPins;
-				public new function HRESULT(ref IBaseFilter self, PWSTR Id, out IPin* ppPin) FindPin;
-				public new function HRESULT(ref IBaseFilter self, out FILTER_INFO pInfo) QueryFilterInfo;
-				public new function HRESULT(ref IBaseFilter self, IFilterGraph* pGraph, PWSTR pName) JoinFilterGraph;
-				public new function HRESULT(ref IBaseFilter self, out PWSTR pVendorInfo) QueryVendorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseFilter self, out IEnumPins* ppEnum) EnumPins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseFilter self, PWSTR Id, out IPin* ppPin) FindPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseFilter self, out FILTER_INFO pInfo) QueryFilterInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseFilter self, IFilterGraph* pGraph, PWSTR pName) JoinFilterGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseFilter self, out PWSTR pVendorInfo) QueryVendorInfo;
 			}
 		}
 		[CRepr]
@@ -7346,22 +7346,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaSample self, out uint8* ppBuffer) GetPointer;
-				public new function int32(ref IMediaSample self) GetSize;
-				public new function HRESULT(ref IMediaSample self, out int64 pTimeStart, out int64 pTimeEnd) GetTime;
-				public new function HRESULT(ref IMediaSample self, int64* pTimeStart, int64* pTimeEnd) SetTime;
-				public new function HRESULT(ref IMediaSample self) IsSyncPoint;
-				public new function HRESULT(ref IMediaSample self, BOOL bIsSyncPoint) SetSyncPoint;
-				public new function HRESULT(ref IMediaSample self) IsPreroll;
-				public new function HRESULT(ref IMediaSample self, BOOL bIsPreroll) SetPreroll;
-				public new function int32(ref IMediaSample self) GetActualDataLength;
-				public new function HRESULT(ref IMediaSample self, int32 __MIDL__IMediaSample0000) SetActualDataLength;
-				public new function HRESULT(ref IMediaSample self, out AM_MEDIA_TYPE* ppMediaType) GetMediaType;
-				public new function HRESULT(ref IMediaSample self, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
-				public new function HRESULT(ref IMediaSample self) IsDiscontinuity;
-				public new function HRESULT(ref IMediaSample self, BOOL bDiscontinuity) SetDiscontinuity;
-				public new function HRESULT(ref IMediaSample self, out int64 pTimeStart, out int64 pTimeEnd) GetMediaTime;
-				public new function HRESULT(ref IMediaSample self, int64* pTimeStart, int64* pTimeEnd) SetMediaTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, out uint8* ppBuffer) GetPointer;
+				public new function [CallingConvention(.Stdcall)] int32(ref IMediaSample self) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, out int64 pTimeStart, out int64 pTimeEnd) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, int64* pTimeStart, int64* pTimeEnd) SetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self) IsSyncPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, BOOL bIsSyncPoint) SetSyncPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self) IsPreroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, BOOL bIsPreroll) SetPreroll;
+				public new function [CallingConvention(.Stdcall)] int32(ref IMediaSample self) GetActualDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, int32 __MIDL__IMediaSample0000) SetActualDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, out AM_MEDIA_TYPE* ppMediaType) GetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self) IsDiscontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, BOOL bDiscontinuity) SetDiscontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, out int64 pTimeStart, out int64 pTimeEnd) GetMediaTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample self, int64* pTimeStart, int64* pTimeEnd) SetMediaTime;
 			}
 		}
 		[CRepr]
@@ -7377,8 +7377,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaSample.VTable
 			{
-				public new function HRESULT(ref IMediaSample2 self, uint32 cbProperties, out uint8 pbProperties) GetProperties;
-				public new function HRESULT(ref IMediaSample2 self, uint32 cbProperties, in uint8 pbProperties) SetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample2 self, uint32 cbProperties, out uint8 pbProperties) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample2 self, uint32 cbProperties, in uint8 pbProperties) SetProperties;
 			}
 		}
 		[CRepr]
@@ -7393,7 +7393,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaSample2Config self, IUnknown** ppDirect3DSurface9) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSample2Config self, IUnknown** ppDirect3DSurface9) GetSurface;
 			}
 		}
 		[CRepr]
@@ -7413,12 +7413,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMemAllocator self, ref ALLOCATOR_PROPERTIES pRequest, out ALLOCATOR_PROPERTIES pActual) SetProperties;
-				public new function HRESULT(ref IMemAllocator self, out ALLOCATOR_PROPERTIES pProps) GetProperties;
-				public new function HRESULT(ref IMemAllocator self) Commit;
-				public new function HRESULT(ref IMemAllocator self) Decommit;
-				public new function HRESULT(ref IMemAllocator self, out IMediaSample* ppBuffer, int64* pStartTime, int64* pEndTime, uint32 dwFlags) GetBuffer;
-				public new function HRESULT(ref IMemAllocator self, ref IMediaSample pBuffer) ReleaseBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self, ref ALLOCATOR_PROPERTIES pRequest, out ALLOCATOR_PROPERTIES pActual) SetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self, out ALLOCATOR_PROPERTIES pProps) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self) Decommit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self, out IMediaSample* ppBuffer, int64* pStartTime, int64* pEndTime, uint32 dwFlags) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocator self, ref IMediaSample pBuffer) ReleaseBuffer;
 			}
 		}
 		[CRepr]
@@ -7434,8 +7434,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMemAllocator.VTable
 			{
-				public new function HRESULT(ref IMemAllocatorCallbackTemp self, ref IMemAllocatorNotifyCallbackTemp pNotify) SetNotify;
-				public new function HRESULT(ref IMemAllocatorCallbackTemp self, out int32 plBuffersFree) GetFreeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocatorCallbackTemp self, ref IMemAllocatorNotifyCallbackTemp pNotify) SetNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocatorCallbackTemp self, out int32 plBuffersFree) GetFreeCount;
 			}
 		}
 		[CRepr]
@@ -7450,7 +7450,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMemAllocatorNotifyCallbackTemp self) NotifyRelease;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemAllocatorNotifyCallbackTemp self) NotifyRelease;
 			}
 		}
 		[CRepr]
@@ -7470,12 +7470,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMemInputPin self, out IMemAllocator* ppAllocator) GetAllocator;
-				public new function HRESULT(ref IMemInputPin self, ref IMemAllocator pAllocator, BOOL bReadOnly) NotifyAllocator;
-				public new function HRESULT(ref IMemInputPin self, out ALLOCATOR_PROPERTIES pProps) GetAllocatorRequirements;
-				public new function HRESULT(ref IMemInputPin self, ref IMediaSample pSample) Receive;
-				public new function HRESULT(ref IMemInputPin self, IMediaSample** pSamples, int32 nSamples, out int32 nSamplesProcessed) ReceiveMultiple;
-				public new function HRESULT(ref IMemInputPin self) ReceiveCanBlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self, out IMemAllocator* ppAllocator) GetAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self, ref IMemAllocator pAllocator, BOOL bReadOnly) NotifyAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self, out ALLOCATOR_PROPERTIES pProps) GetAllocatorRequirements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self, ref IMediaSample pSample) Receive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self, IMediaSample** pSamples, int32 nSamples, out int32 nSamplesProcessed) ReceiveMultiple;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemInputPin self) ReceiveCanBlock;
 			}
 		}
 		[CRepr]
@@ -7491,8 +7491,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMovieSetup self) Register;
-				public new function HRESULT(ref IAMovieSetup self) Unregister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMovieSetup self) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMovieSetup self) Unregister;
 			}
 		}
 		[CRepr]
@@ -7523,23 +7523,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaSeeking self, out uint32 pCapabilities) GetCapabilities;
-				public new function HRESULT(ref IMediaSeeking self, out uint32 pCapabilities) CheckCapabilities;
-				public new function HRESULT(ref IMediaSeeking self, in Guid pFormat) IsFormatSupported;
-				public new function HRESULT(ref IMediaSeeking self, out Guid pFormat) QueryPreferredFormat;
-				public new function HRESULT(ref IMediaSeeking self, out Guid pFormat) GetTimeFormat;
-				public new function HRESULT(ref IMediaSeeking self, in Guid pFormat) IsUsingTimeFormat;
-				public new function HRESULT(ref IMediaSeeking self, in Guid pFormat) SetTimeFormat;
-				public new function HRESULT(ref IMediaSeeking self, out int64 pDuration) GetDuration;
-				public new function HRESULT(ref IMediaSeeking self, out int64 pStop) GetStopPosition;
-				public new function HRESULT(ref IMediaSeeking self, out int64 pCurrent) GetCurrentPosition;
-				public new function HRESULT(ref IMediaSeeking self, out int64 pTarget, Guid* pTargetFormat, int64 Source, Guid* pSourceFormat) ConvertTimeFormat;
-				public new function HRESULT(ref IMediaSeeking self, int64* pCurrent, uint32 dwCurrentFlags, int64* pStop, uint32 dwStopFlags) SetPositions;
-				public new function HRESULT(ref IMediaSeeking self, int64* pCurrent, int64* pStop) GetPositions;
-				public new function HRESULT(ref IMediaSeeking self, int64* pEarliest, int64* pLatest) GetAvailable;
-				public new function HRESULT(ref IMediaSeeking self, double dRate) SetRate;
-				public new function HRESULT(ref IMediaSeeking self, out double pdRate) GetRate;
-				public new function HRESULT(ref IMediaSeeking self, out int64 pllPreroll) GetPreroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out uint32 pCapabilities) GetCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out uint32 pCapabilities) CheckCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, in Guid pFormat) IsFormatSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out Guid pFormat) QueryPreferredFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out Guid pFormat) GetTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, in Guid pFormat) IsUsingTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, in Guid pFormat) SetTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out int64 pDuration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out int64 pStop) GetStopPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out int64 pCurrent) GetCurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out int64 pTarget, Guid* pTargetFormat, int64 Source, Guid* pSourceFormat) ConvertTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, int64* pCurrent, uint32 dwCurrentFlags, int64* pStop, uint32 dwStopFlags) SetPositions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, int64* pCurrent, int64* pStop) GetPositions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, int64* pEarliest, int64* pLatest) GetAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, double dRate) SetRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out double pdRate) GetRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaSeeking self, out int64 pllPreroll) GetPreroll;
 			}
 		}
 		[CRepr]
@@ -7557,10 +7557,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumRegFilters self, uint32 cFilters, REGFILTER** apRegFilter, uint32* pcFetched) Next;
-				public new function HRESULT(ref IEnumRegFilters self, uint32 cFilters) Skip;
-				public new function HRESULT(ref IEnumRegFilters self) Reset;
-				public new function HRESULT(ref IEnumRegFilters self, out IEnumRegFilters* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRegFilters self, uint32 cFilters, REGFILTER** apRegFilter, uint32* pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRegFilters self, uint32 cFilters) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRegFilters self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRegFilters self, out IEnumRegFilters* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7582,14 +7582,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFilterMapper self, Guid clsid, PWSTR Name, uint32 dwMerit) RegisterFilter;
-				public new function HRESULT(ref IFilterMapper self, Guid clsid, PWSTR Name, out Guid MRId) RegisterFilterInstance;
-				public new function HRESULT(ref IFilterMapper self, Guid Filter, PWSTR Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, Guid ConnectsToFilter, PWSTR ConnectsToPin) RegisterPin;
-				public new function HRESULT(ref IFilterMapper self, Guid clsFilter, PWSTR strName, Guid clsMajorType, Guid clsSubType) RegisterPinType;
-				public new function HRESULT(ref IFilterMapper self, Guid Filter) UnregisterFilter;
-				public new function HRESULT(ref IFilterMapper self, Guid MRId) UnregisterFilterInstance;
-				public new function HRESULT(ref IFilterMapper self, Guid Filter, PWSTR Name) UnregisterPin;
-				public new function HRESULT(ref IFilterMapper self, out IEnumRegFilters* ppEnum, uint32 dwMerit, BOOL bInputNeeded, Guid clsInMaj, Guid clsInSub, BOOL bRender, BOOL bOututNeeded, Guid clsOutMaj, Guid clsOutSub) EnumMatchingFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid clsid, PWSTR Name, uint32 dwMerit) RegisterFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid clsid, PWSTR Name, out Guid MRId) RegisterFilterInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid Filter, PWSTR Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, Guid ConnectsToFilter, PWSTR ConnectsToPin) RegisterPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid clsFilter, PWSTR strName, Guid clsMajorType, Guid clsSubType) RegisterPinType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid Filter) UnregisterFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid MRId) UnregisterFilterInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, Guid Filter, PWSTR Name) UnregisterPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper self, out IEnumRegFilters* ppEnum, uint32 dwMerit, BOOL bInputNeeded, Guid clsInMaj, Guid clsInSub, BOOL bRender, BOOL bOututNeeded, Guid clsOutMaj, Guid clsOutSub) EnumMatchingFilters;
 			}
 		}
 		[CRepr]
@@ -7607,10 +7607,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFilterMapper2 self, in Guid clsidCategory, uint32 dwCategoryMerit, PWSTR Description) CreateCategory;
-				public new function HRESULT(ref IFilterMapper2 self, in Guid pclsidCategory, PWSTR szInstance, in Guid Filter) UnregisterFilter;
-				public new function HRESULT(ref IFilterMapper2 self, in Guid clsidFilter, PWSTR Name, IMoniker** ppMoniker, in Guid pclsidCategory, PWSTR szInstance, in REGFILTER2 prf2) RegisterFilter;
-				public new function HRESULT(ref IFilterMapper2 self, out IEnumMoniker* ppEnum, uint32 dwFlags, BOOL bExactMatch, uint32 dwMerit, BOOL bInputNeeded, uint32 cInputTypes, Guid* pInputTypes, REGPINMEDIUM* pMedIn, Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, uint32 cOutputTypes, Guid* pOutputTypes, REGPINMEDIUM* pMedOut, Guid* pPinCategoryOut) EnumMatchingFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper2 self, in Guid clsidCategory, uint32 dwCategoryMerit, PWSTR Description) CreateCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper2 self, in Guid pclsidCategory, PWSTR szInstance, in Guid Filter) UnregisterFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper2 self, in Guid clsidFilter, PWSTR Name, IMoniker** ppMoniker, in Guid pclsidCategory, PWSTR szInstance, in REGFILTER2 prf2) RegisterFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper2 self, out IEnumMoniker* ppEnum, uint32 dwFlags, BOOL bExactMatch, uint32 dwMerit, BOOL bInputNeeded, uint32 cInputTypes, Guid* pInputTypes, REGPINMEDIUM* pMedIn, Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, uint32 cOutputTypes, Guid* pOutputTypes, REGPINMEDIUM* pMedOut, Guid* pPinCategoryOut) EnumMatchingFilters;
 			}
 		}
 		[CRepr]
@@ -7625,7 +7625,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IFilterMapper2.VTable
 			{
-				public new function HRESULT(ref IFilterMapper3 self, out ICreateDevEnum* ppEnum) GetICreateDevEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterMapper3 self, out ICreateDevEnum* ppEnum) GetICreateDevEnum;
 			}
 		}
 		[CRepr]
@@ -7641,8 +7641,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IQualityControl self, ref IBaseFilter pSelf, Quality q) Notify;
-				public new function HRESULT(ref IQualityControl self, ref IQualityControl piqc) SetSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualityControl self, ref IBaseFilter pSelf, Quality q) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualityControl self, ref IQualityControl piqc) SetSink;
 			}
 		}
 		[CRepr]
@@ -7660,10 +7660,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IOverlayNotify self, uint32 dwColors, in PALETTEENTRY pPalette) OnPaletteChange;
-				public new function HRESULT(ref IOverlayNotify self, in RECT pSourceRect, in RECT pDestinationRect, in RGNDATA pRgnData) OnClipChange;
-				public new function HRESULT(ref IOverlayNotify self, in COLORKEY pColorKey) OnColorKeyChange;
-				public new function HRESULT(ref IOverlayNotify self, in RECT pSourceRect, in RECT pDestinationRect) OnPositionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlayNotify self, uint32 dwColors, in PALETTEENTRY pPalette) OnPaletteChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlayNotify self, in RECT pSourceRect, in RECT pDestinationRect, in RGNDATA pRgnData) OnClipChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlayNotify self, in COLORKEY pColorKey) OnColorKeyChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlayNotify self, in RECT pSourceRect, in RECT pDestinationRect) OnPositionChange;
 			}
 		}
 		[CRepr]
@@ -7678,7 +7678,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IOverlayNotify.VTable
 			{
-				public new function HRESULT(ref IOverlayNotify2 self, HMONITOR hMonitor) OnDisplayChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlayNotify2 self, HMONITOR hMonitor) OnDisplayChange;
 			}
 		}
 		[CRepr]
@@ -7702,16 +7702,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IOverlay self, out uint32 pdwColors, PALETTEENTRY** ppPalette) GetPalette;
-				public new function HRESULT(ref IOverlay self, uint32 dwColors, PALETTEENTRY* pPalette) SetPalette;
-				public new function HRESULT(ref IOverlay self, out COLORKEY pColorKey) GetDefaultColorKey;
-				public new function HRESULT(ref IOverlay self, out COLORKEY pColorKey) GetColorKey;
-				public new function HRESULT(ref IOverlay self, out COLORKEY pColorKey) SetColorKey;
-				public new function HRESULT(ref IOverlay self, out HWND pHwnd) GetWindowHandle;
-				public new function HRESULT(ref IOverlay self, out RECT pSourceRect, out RECT pDestinationRect, out RGNDATA* ppRgnData) GetClipList;
-				public new function HRESULT(ref IOverlay self, out RECT pSourceRect, out RECT pDestinationRect) GetVideoPosition;
-				public new function HRESULT(ref IOverlay self, ref IOverlayNotify pOverlayNotify, uint32 dwInterests) Advise;
-				public new function HRESULT(ref IOverlay self) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out uint32 pdwColors, PALETTEENTRY** ppPalette) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, uint32 dwColors, PALETTEENTRY* pPalette) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out COLORKEY pColorKey) GetDefaultColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out COLORKEY pColorKey) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out COLORKEY pColorKey) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out HWND pHwnd) GetWindowHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out RECT pSourceRect, out RECT pDestinationRect, out RGNDATA* ppRgnData) GetClipList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, out RECT pSourceRect, out RECT pDestinationRect) GetVideoPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self, ref IOverlayNotify pOverlayNotify, uint32 dwInterests) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOverlay self) Unadvise;
 			}
 		}
 		[CRepr]
@@ -7726,7 +7726,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaEventSink self, int32 EventCode, int EventParam1, int EventParam2) Notify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEventSink self, int32 EventCode, int EventParam1, int EventParam2) Notify;
 			}
 		}
 		[CRepr]
@@ -7742,8 +7742,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFileSourceFilter self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) Load;
-				public new function HRESULT(ref IFileSourceFilter self, out PWSTR ppszFileName, AM_MEDIA_TYPE* pmt) GetCurFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSourceFilter self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSourceFilter self, out PWSTR ppszFileName, AM_MEDIA_TYPE* pmt) GetCurFile;
 			}
 		}
 		[CRepr]
@@ -7759,8 +7759,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFileSinkFilter self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) SetFileName;
-				public new function HRESULT(ref IFileSinkFilter self, out PWSTR ppszFileName, out AM_MEDIA_TYPE pmt) GetCurFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSinkFilter self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) SetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSinkFilter self, out PWSTR ppszFileName, out AM_MEDIA_TYPE pmt) GetCurFile;
 			}
 		}
 		[CRepr]
@@ -7776,8 +7776,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IFileSinkFilter.VTable
 			{
-				public new function HRESULT(ref IFileSinkFilter2 self, uint32 dwFlags) SetMode;
-				public new function HRESULT(ref IFileSinkFilter2 self, out uint32 pdwFlags) GetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSinkFilter2 self, uint32 dwFlags) SetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFileSinkFilter2 self, out uint32 pdwFlags) GetMode;
 			}
 		}
 		[CRepr]
@@ -7798,13 +7798,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IFilterGraph.VTable
 			{
-				public new function HRESULT(ref IGraphBuilder self, ref IPin ppinOut, ref IPin ppinIn) Connect;
-				public new function HRESULT(ref IGraphBuilder self, ref IPin ppinOut) Render;
-				public new function HRESULT(ref IGraphBuilder self, PWSTR lpcwstrFile, PWSTR lpcwstrPlayList) RenderFile;
-				public new function HRESULT(ref IGraphBuilder self, PWSTR lpcwstrFileName, PWSTR lpcwstrFilterName, out IBaseFilter* ppFilter) AddSourceFilter;
-				public new function HRESULT(ref IGraphBuilder self, uint hFile) SetLogFile;
-				public new function HRESULT(ref IGraphBuilder self) Abort;
-				public new function HRESULT(ref IGraphBuilder self) ShouldOperationContinue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self, ref IPin ppinOut, ref IPin ppinIn) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self, ref IPin ppinOut) Render;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self, PWSTR lpcwstrFile, PWSTR lpcwstrPlayList) RenderFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self, PWSTR lpcwstrFileName, PWSTR lpcwstrFilterName, out IBaseFilter* ppFilter) AddSourceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self, uint hFile) SetLogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphBuilder self) ShouldOperationContinue;
 			}
 		}
 		[CRepr]
@@ -7826,14 +7826,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICaptureGraphBuilder self, ref IGraphBuilder pfg) SetFiltergraph;
-				public new function HRESULT(ref ICaptureGraphBuilder self, out IGraphBuilder* ppfg) GetFiltergraph;
-				public new function HRESULT(ref ICaptureGraphBuilder self, in Guid pType, PWSTR lpstrFile, out IBaseFilter* ppf, out IFileSinkFilter* ppSink) SetOutputFileName;
-				public new function HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IBaseFilter pf, in Guid riid, void** ppint) FindInterface;
-				public new function HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IUnknown pSource, ref IBaseFilter pfCompressor, ref IBaseFilter pfRenderer) RenderStream;
-				public new function HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IBaseFilter pFilter, out int64 pstart, out int64 pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
-				public new function HRESULT(ref ICaptureGraphBuilder self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
-				public new function HRESULT(ref ICaptureGraphBuilder self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, ref IAMCopyCaptureFileProgress pCallback) CopyCaptureFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, ref IGraphBuilder pfg) SetFiltergraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, out IGraphBuilder* ppfg) GetFiltergraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, in Guid pType, PWSTR lpstrFile, out IBaseFilter* ppf, out IFileSinkFilter* ppSink) SetOutputFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IBaseFilter pf, in Guid riid, void** ppint) FindInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IUnknown pSource, ref IBaseFilter pfCompressor, ref IBaseFilter pfRenderer) RenderStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, Guid* pCategory, ref IBaseFilter pFilter, out int64 pstart, out int64 pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, ref IAMCopyCaptureFileProgress pCallback) CopyCaptureFile;
 			}
 		}
 		[CRepr]
@@ -7848,7 +7848,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMCopyCaptureFileProgress self, int32 iProgress) Progress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCopyCaptureFileProgress self, int32 iProgress) Progress;
 			}
 		}
 		[CRepr]
@@ -7871,15 +7871,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, ref IGraphBuilder pfg) SetFiltergraph;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, out IGraphBuilder* ppfg) GetFiltergraph;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, in Guid pType, PWSTR lpstrFile, out IBaseFilter* ppf, IFileSinkFilter** ppSink) SetOutputFileName;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, Guid* pCategory, Guid* pType, ref IBaseFilter pf, in Guid riid, void** ppint) FindInterface;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, Guid* pCategory, in Guid pType, ref IUnknown pSource, ref IBaseFilter pfCompressor, ref IBaseFilter pfRenderer) RenderStream;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, in Guid pCategory, in Guid pType, ref IBaseFilter pFilter, int64* pstart, int64* pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, ref IAMCopyCaptureFileProgress pCallback) CopyCaptureFile;
-				public new function HRESULT(ref ICaptureGraphBuilder2 self, ref IUnknown pSource, PIN_DIRECTION pindir, Guid* pCategory, Guid* pType, BOOL fUnconnected, int32 num, out IPin* ppPin) FindPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, ref IGraphBuilder pfg) SetFiltergraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, out IGraphBuilder* ppfg) GetFiltergraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, in Guid pType, PWSTR lpstrFile, out IBaseFilter* ppf, IFileSinkFilter** ppSink) SetOutputFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, Guid* pCategory, Guid* pType, ref IBaseFilter pf, in Guid riid, void** ppint) FindInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, Guid* pCategory, in Guid pType, ref IUnknown pSource, ref IBaseFilter pfCompressor, ref IBaseFilter pfRenderer) RenderStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, in Guid pCategory, in Guid pType, ref IBaseFilter pFilter, int64* pstart, int64* pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, ref IAMCopyCaptureFileProgress pCallback) CopyCaptureFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptureGraphBuilder2 self, ref IUnknown pSource, PIN_DIRECTION pindir, Guid* pCategory, Guid* pType, BOOL fUnconnected, int32 num, out IPin* ppPin) FindPin;
 			}
 		}
 		[CRepr]
@@ -7896,9 +7896,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IGraphBuilder.VTable
 			{
-				public new function HRESULT(ref IFilterGraph2 self, ref IMoniker pMoniker, ref IBindCtx pCtx, PWSTR lpcwstrFilterName, out IBaseFilter* ppFilter) AddSourceFilterForMoniker;
-				public new function HRESULT(ref IFilterGraph2 self, ref IPin ppin, AM_MEDIA_TYPE* pmt) ReconnectEx;
-				public new function HRESULT(ref IFilterGraph2 self, ref IPin pPinOut, uint32 dwFlags, out uint32 pvContext) RenderEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph2 self, ref IMoniker pMoniker, ref IBindCtx pCtx, PWSTR lpcwstrFilterName, out IBaseFilter* ppFilter) AddSourceFilterForMoniker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph2 self, ref IPin ppin, AM_MEDIA_TYPE* pmt) ReconnectEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph2 self, ref IPin pPinOut, uint32 dwFlags, out uint32 pvContext) RenderEx;
 			}
 		}
 		[CRepr]
@@ -7913,7 +7913,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IFilterGraph2.VTable
 			{
-				public new function HRESULT(ref IFilterGraph3 self, ref IReferenceClock pClockForMostOfFilterGraph, ref IReferenceClock pClockForFilter, ref IBaseFilter pFilter) SetSyncSourceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterGraph3 self, ref IReferenceClock pClockForMostOfFilterGraph, ref IReferenceClock pClockForFilter, ref IBaseFilter pFilter) SetSyncSourceEx;
 			}
 		}
 		[CRepr]
@@ -7929,8 +7929,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBuilder self, ref IPin ppinOut, ref IGraphBuilder pGraph) Render;
-				public new function HRESULT(ref IStreamBuilder self, ref IPin ppinOut, ref IGraphBuilder pGraph) Backout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBuilder self, ref IPin ppinOut, ref IGraphBuilder pGraph) Render;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBuilder self, ref IPin ppinOut, ref IGraphBuilder pGraph) Backout;
 			}
 		}
 		[CRepr]
@@ -7952,14 +7952,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAsyncReader self, ref IMemAllocator pPreferred, ref ALLOCATOR_PROPERTIES pProps, out IMemAllocator* ppActual) RequestAllocator;
-				public new function HRESULT(ref IAsyncReader self, ref IMediaSample pSample, uint dwUser) Request;
-				public new function HRESULT(ref IAsyncReader self, uint32 dwTimeout, IMediaSample** ppSample, out uint pdwUser) WaitForNext;
-				public new function HRESULT(ref IAsyncReader self, ref IMediaSample pSample) SyncReadAligned;
-				public new function HRESULT(ref IAsyncReader self, int64 llPosition, int32 lLength, out uint8 pBuffer) SyncRead;
-				public new function HRESULT(ref IAsyncReader self, out int64 pTotal, out int64 pAvailable) Length;
-				public new function HRESULT(ref IAsyncReader self) BeginFlush;
-				public new function HRESULT(ref IAsyncReader self) EndFlush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, ref IMemAllocator pPreferred, ref ALLOCATOR_PROPERTIES pProps, out IMemAllocator* ppActual) RequestAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, ref IMediaSample pSample, uint dwUser) Request;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, uint32 dwTimeout, IMediaSample** ppSample, out uint pdwUser) WaitForNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, ref IMediaSample pSample) SyncReadAligned;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, int64 llPosition, int32 lLength, out uint8 pBuffer) SyncRead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self, out int64 pTotal, out int64 pAvailable) Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self) BeginFlush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAsyncReader self) EndFlush;
 			}
 		}
 		[CRepr]
@@ -7974,7 +7974,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGraphVersion self, out int32 pVersion) QueryVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphVersion self, out int32 pVersion) QueryVersion;
 			}
 		}
 		[CRepr]
@@ -7990,8 +7990,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResourceConsumer self, int32 idResource) AcquireResource;
-				public new function HRESULT(ref IResourceConsumer self, int32 idResource) ReleaseResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceConsumer self, int32 idResource) AcquireResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceConsumer self, int32 idResource) ReleaseResource;
 			}
 		}
 		[CRepr]
@@ -8013,14 +8013,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IResourceManager self, PWSTR pName, int32 cResource, out int32 plToken) Register;
-				public new function HRESULT(ref IResourceManager self, PWSTR pName, int32 cResource, int32* palTokens, out int32 plToken) RegisterGroup;
-				public new function HRESULT(ref IResourceManager self, int32 idResource, ref IUnknown pFocusObject, ref IResourceConsumer pConsumer) RequestResource;
-				public new function HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer, HRESULT hr) NotifyAcquire;
-				public new function HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer, BOOL bStillWant) NotifyRelease;
-				public new function HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer) CancelRequest;
-				public new function HRESULT(ref IResourceManager self, ref IUnknown pFocusObject) SetFocus;
-				public new function HRESULT(ref IResourceManager self, ref IUnknown pFocusObject) ReleaseFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, PWSTR pName, int32 cResource, out int32 plToken) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, PWSTR pName, int32 cResource, int32* palTokens, out int32 plToken) RegisterGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, int32 idResource, ref IUnknown pFocusObject, ref IResourceConsumer pConsumer) RequestResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer, HRESULT hr) NotifyAcquire;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer, BOOL bStillWant) NotifyRelease;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, int32 idResource, ref IResourceConsumer pConsumer) CancelRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, ref IUnknown pFocusObject) SetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResourceManager self, ref IUnknown pFocusObject) ReleaseFocus;
 			}
 		}
 		[CRepr]
@@ -8039,11 +8039,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDistributorNotify self) Stop;
-				public new function HRESULT(ref IDistributorNotify self) Pause;
-				public new function HRESULT(ref IDistributorNotify self, int64 tStart) Run;
-				public new function HRESULT(ref IDistributorNotify self, ref IReferenceClock pClock) SetSyncSource;
-				public new function HRESULT(ref IDistributorNotify self) NotifyGraphChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDistributorNotify self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDistributorNotify self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDistributorNotify self, int64 tStart) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDistributorNotify self, ref IReferenceClock pClock) SetSyncSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDistributorNotify self) NotifyGraphChange;
 			}
 		}
 		[CRepr]
@@ -8060,9 +8060,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMStreamControl self, int64* ptStart, uint32 dwCookie) StartAt;
-				public new function HRESULT(ref IAMStreamControl self, int64* ptStop, BOOL bSendExtra, uint32 dwCookie) StopAt;
-				public new function HRESULT(ref IAMStreamControl self, out AM_STREAM_INFO pInfo) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamControl self, int64* ptStart, uint32 dwCookie) StartAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamControl self, int64* ptStop, BOOL bSendExtra, uint32 dwCookie) StopAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamControl self, out AM_STREAM_INFO pInfo) GetInfo;
 			}
 		}
 		[CRepr]
@@ -8077,7 +8077,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISeekingPassThru self, BOOL bSupportRendering, ref IPin pPin) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISeekingPassThru self, BOOL bSupportRendering, ref IPin pPin) Init;
 			}
 		}
 		[CRepr]
@@ -8095,10 +8095,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMStreamConfig self, out AM_MEDIA_TYPE pmt) SetFormat;
-				public new function HRESULT(ref IAMStreamConfig self, out AM_MEDIA_TYPE* ppmt) GetFormat;
-				public new function HRESULT(ref IAMStreamConfig self, out int32 piCount, out int32 piSize) GetNumberOfCapabilities;
-				public new function HRESULT(ref IAMStreamConfig self, int32 iIndex, out AM_MEDIA_TYPE* ppmt, out uint8 pSCC) GetStreamCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamConfig self, out AM_MEDIA_TYPE pmt) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamConfig self, out AM_MEDIA_TYPE* ppmt) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamConfig self, out int32 piCount, out int32 piSize) GetNumberOfCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamConfig self, int32 iIndex, out AM_MEDIA_TYPE* ppmt, out uint8 pSCC) GetStreamCaps;
 			}
 		}
 		[CRepr]
@@ -8116,10 +8116,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConfigInterleaving self, InterleavingMode mode) put_Mode;
-				public new function HRESULT(ref IConfigInterleaving self, out InterleavingMode pMode) get_Mode;
-				public new function HRESULT(ref IConfigInterleaving self, in int64 prtInterleave, in int64 prtPreroll) put_Interleaving;
-				public new function HRESULT(ref IConfigInterleaving self, out int64 prtInterleave, out int64 prtPreroll) get_Interleaving;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigInterleaving self, InterleavingMode mode) put_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigInterleaving self, out InterleavingMode pMode) get_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigInterleaving self, in int64 prtInterleave, in int64 prtPreroll) put_Interleaving;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigInterleaving self, out int64 prtInterleave, out int64 prtPreroll) get_Interleaving;
 			}
 		}
 		[CRepr]
@@ -8137,10 +8137,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConfigAviMux self, int32 iStream) SetMasterStream;
-				public new function HRESULT(ref IConfigAviMux self, out int32 pStream) GetMasterStream;
-				public new function HRESULT(ref IConfigAviMux self, BOOL fOldIndex) SetOutputCompatibilityIndex;
-				public new function HRESULT(ref IConfigAviMux self, out BOOL pfOldIndex) GetOutputCompatibilityIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAviMux self, int32 iStream) SetMasterStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAviMux self, out int32 pStream) GetMasterStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAviMux self, BOOL fOldIndex) SetOutputCompatibilityIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAviMux self, out BOOL pfOldIndex) GetOutputCompatibilityIndex;
 			}
 		}
 		[CRepr]
@@ -8165,17 +8165,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoCompression self, int32 KeyFrameRate) put_KeyFrameRate;
-				public new function HRESULT(ref IAMVideoCompression self, out int32 pKeyFrameRate) get_KeyFrameRate;
-				public new function HRESULT(ref IAMVideoCompression self, int32 PFramesPerKeyFrame) put_PFramesPerKeyFrame;
-				public new function HRESULT(ref IAMVideoCompression self, out int32 pPFramesPerKeyFrame) get_PFramesPerKeyFrame;
-				public new function HRESULT(ref IAMVideoCompression self, double Quality) put_Quality;
-				public new function HRESULT(ref IAMVideoCompression self, out double pQuality) get_Quality;
-				public new function HRESULT(ref IAMVideoCompression self, uint64 WindowSize) put_WindowSize;
-				public new function HRESULT(ref IAMVideoCompression self, out uint64 pWindowSize) get_WindowSize;
-				public new function HRESULT(ref IAMVideoCompression self, PWSTR pszVersion, int32* pcbVersion, PWSTR pszDescription, int32* pcbDescription, int32* pDefaultKeyFrameRate, int32* pDefaultPFramesPerKey, double* pDefaultQuality, int32* pCapabilities) GetInfo;
-				public new function HRESULT(ref IAMVideoCompression self, int32 FrameNumber) OverrideKeyFrame;
-				public new function HRESULT(ref IAMVideoCompression self, int32 FrameNumber, int32 Size) OverrideFrameSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, int32 KeyFrameRate) put_KeyFrameRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, out int32 pKeyFrameRate) get_KeyFrameRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, int32 PFramesPerKeyFrame) put_PFramesPerKeyFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, out int32 pPFramesPerKeyFrame) get_PFramesPerKeyFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, double Quality) put_Quality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, out double pQuality) get_Quality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, uint64 WindowSize) put_WindowSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, out uint64 pWindowSize) get_WindowSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, PWSTR pszVersion, int32* pcbVersion, PWSTR pszDescription, int32* pcbDescription, int32* pDefaultKeyFrameRate, int32* pDefaultPFramesPerKey, double* pDefaultQuality, int32* pCapabilities) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, int32 FrameNumber) OverrideKeyFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoCompression self, int32 FrameNumber, int32 Size) OverrideFrameSize;
 			}
 		}
 		[CRepr]
@@ -8192,9 +8192,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog) HasDialog;
-				public new function HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog, HWND hwnd) ShowDialog;
-				public new function HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog) HasDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog, HWND hwnd) ShowDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCaptureDialogs self, int32 iDialog, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
 			}
 		}
 		[CRepr]
@@ -8212,10 +8212,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVfwCompressDialogs self, int32 iDialog, HWND hwnd) ShowDialog;
-				public new function HRESULT(ref IAMVfwCompressDialogs self, void* pState, out int32 pcbState) GetState;
-				public new function HRESULT(ref IAMVfwCompressDialogs self, void* pState, int32 cbState) SetState;
-				public new function HRESULT(ref IAMVfwCompressDialogs self, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCompressDialogs self, int32 iDialog, HWND hwnd) ShowDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCompressDialogs self, void* pState, out int32 pcbState) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCompressDialogs self, void* pState, int32 cbState) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVfwCompressDialogs self, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
 			}
 		}
 		[CRepr]
@@ -8233,10 +8233,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDroppedFrames self, out int32 plDropped) GetNumDropped;
-				public new function HRESULT(ref IAMDroppedFrames self, out int32 plNotDropped) GetNumNotDropped;
-				public new function HRESULT(ref IAMDroppedFrames self, int32 lSize, out int32 plArray, out int32 plNumCopied) GetDroppedInfo;
-				public new function HRESULT(ref IAMDroppedFrames self, out int32 plAverageSize) GetAverageFrameSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDroppedFrames self, out int32 plDropped) GetNumDropped;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDroppedFrames self, out int32 plNotDropped) GetNumNotDropped;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDroppedFrames self, int32 lSize, out int32 plArray, out int32 plNumCopied) GetDroppedInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDroppedFrames self, out int32 plAverageSize) GetAverageFrameSize;
 			}
 		}
 		[CRepr]
@@ -8266,22 +8266,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMAudioInputMixer self, BOOL fEnable) put_Enable;
-				public new function HRESULT(ref IAMAudioInputMixer self, out BOOL pfEnable) get_Enable;
-				public new function HRESULT(ref IAMAudioInputMixer self, BOOL fMono) put_Mono;
-				public new function HRESULT(ref IAMAudioInputMixer self, out BOOL pfMono) get_Mono;
-				public new function HRESULT(ref IAMAudioInputMixer self, double Level) put_MixLevel;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pLevel) get_MixLevel;
-				public new function HRESULT(ref IAMAudioInputMixer self, double Pan) put_Pan;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pPan) get_Pan;
-				public new function HRESULT(ref IAMAudioInputMixer self, BOOL fLoudness) put_Loudness;
-				public new function HRESULT(ref IAMAudioInputMixer self, out BOOL pfLoudness) get_Loudness;
-				public new function HRESULT(ref IAMAudioInputMixer self, double Treble) put_Treble;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pTreble) get_Treble;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pRange) get_TrebleRange;
-				public new function HRESULT(ref IAMAudioInputMixer self, double Bass) put_Bass;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pBass) get_Bass;
-				public new function HRESULT(ref IAMAudioInputMixer self, out double pRange) get_BassRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, BOOL fEnable) put_Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out BOOL pfEnable) get_Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, BOOL fMono) put_Mono;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out BOOL pfMono) get_Mono;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, double Level) put_MixLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pLevel) get_MixLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, double Pan) put_Pan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pPan) get_Pan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, BOOL fLoudness) put_Loudness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out BOOL pfLoudness) get_Loudness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, double Treble) put_Treble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pTreble) get_Treble;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pRange) get_TrebleRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, double Bass) put_Bass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pBass) get_Bass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioInputMixer self, out double pRange) get_BassRange;
 			}
 		}
 		[CRepr]
@@ -8297,8 +8297,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMBufferNegotiation self, in ALLOCATOR_PROPERTIES pprop) SuggestAllocatorProperties;
-				public new function HRESULT(ref IAMBufferNegotiation self, out ALLOCATOR_PROPERTIES pprop) GetAllocatorProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMBufferNegotiation self, in ALLOCATOR_PROPERTIES pprop) SuggestAllocatorProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMBufferNegotiation self, out ALLOCATOR_PROPERTIES pprop) GetAllocatorProperties;
 			}
 		}
 		[CRepr]
@@ -8321,15 +8321,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, int32 lAnalogVideoStandard) put_TVFormat;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 plAnalogVideoStandard) get_TVFormat;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 plLocked) get_HorizontalLocked;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, int32 lVCRHorizontalLocking) put_VCRHorizontalLocking;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 plVCRHorizontalLocking) get_VCRHorizontalLocking;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 plNumberOfLines) get_NumberOfLines;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, int32 lOutputEnable) put_OutputEnable;
-				public new function HRESULT(ref IAMAnalogVideoDecoder self, out int32 plOutputEnable) get_OutputEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, int32 lAnalogVideoStandard) put_TVFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 plAnalogVideoStandard) get_TVFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 plLocked) get_HorizontalLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, int32 lVCRHorizontalLocking) put_VCRHorizontalLocking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 plVCRHorizontalLocking) get_VCRHorizontalLocking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 plNumberOfLines) get_NumberOfLines;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, int32 lOutputEnable) put_OutputEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoDecoder self, out int32 plOutputEnable) get_OutputEnable;
 			}
 		}
 		[CRepr]
@@ -8346,9 +8346,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoProcAmp self, int32 Property, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlags) GetRange;
-				public new function HRESULT(ref IAMVideoProcAmp self, int32 Property, int32 lValue, int32 Flags) Set;
-				public new function HRESULT(ref IAMVideoProcAmp self, int32 Property, out int32 lValue, out int32 Flags) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoProcAmp self, int32 Property, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlags) GetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoProcAmp self, int32 Property, int32 lValue, int32 Flags) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoProcAmp self, int32 Property, out int32 lValue, out int32 Flags) Get;
 			}
 		}
 		[CRepr]
@@ -8365,9 +8365,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMCameraControl self, int32 Property, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlags) GetRange;
-				public new function HRESULT(ref IAMCameraControl self, int32 Property, int32 lValue, int32 Flags) Set;
-				public new function HRESULT(ref IAMCameraControl self, int32 Property, out int32 lValue, out int32 Flags) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCameraControl self, int32 Property, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlags) GetRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCameraControl self, int32 Property, int32 lValue, int32 Flags) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCameraControl self, int32 Property, out int32 lValue, out int32 Flags) Get;
 			}
 		}
 		[CRepr]
@@ -8387,12 +8387,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, out int32 pCapsFlags) GetCaps;
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 Mode) SetMode;
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, out int32 Mode) GetMode;
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, out int64 ActualFrameRate) GetCurrentActualFrameRate;
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 iIndex, SIZE Dimensions, out int64 MaxAvailableFrameRate) GetMaxAvailableFrameRate;
-				public new function HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 iIndex, SIZE Dimensions, out int32 ListSize, out int64* FrameRates) GetFrameRateList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, out int32 pCapsFlags) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 Mode) SetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, out int32 Mode) GetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, out int64 ActualFrameRate) GetCurrentActualFrameRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 iIndex, SIZE Dimensions, out int64 MaxAvailableFrameRate) GetMaxAvailableFrameRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoControl self, ref IPin pPin, int32 iIndex, SIZE Dimensions, out int32 ListSize, out int64* FrameRates) GetFrameRateList;
 			}
 		}
 		[CRepr]
@@ -8411,11 +8411,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMCrossbar self, out int32 OutputPinCount, out int32 InputPinCount) get_PinCounts;
-				public new function HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, int32 InputPinIndex) CanRoute;
-				public new function HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, int32 InputPinIndex) Route;
-				public new function HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, out int32 InputPinIndex) get_IsRoutedTo;
-				public new function HRESULT(ref IAMCrossbar self, BOOL IsInputPin, int32 PinIndex, out int32 PinIndexRelated, out int32 PhysicalType) get_CrossbarPinInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCrossbar self, out int32 OutputPinCount, out int32 InputPinCount) get_PinCounts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, int32 InputPinIndex) CanRoute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, int32 InputPinIndex) Route;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCrossbar self, int32 OutputPinIndex, out int32 InputPinIndex) get_IsRoutedTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCrossbar self, BOOL IsInputPin, int32 PinIndex, out int32 PinIndexRelated, out int32 PhysicalType) get_CrossbarPinInfo;
 			}
 		}
 		[CRepr]
@@ -8444,21 +8444,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTuner self, int32 lChannel, int32 lVideoSubChannel, int32 lAudioSubChannel) put_Channel;
-				public new function HRESULT(ref IAMTuner self, out int32 plChannel, out int32 plVideoSubChannel, out int32 plAudioSubChannel) get_Channel;
-				public new function HRESULT(ref IAMTuner self, out int32 lChannelMin, out int32 lChannelMax) ChannelMinMax;
-				public new function HRESULT(ref IAMTuner self, int32 lCountryCode) put_CountryCode;
-				public new function HRESULT(ref IAMTuner self, out int32 plCountryCode) get_CountryCode;
-				public new function HRESULT(ref IAMTuner self, int32 lTuningSpace) put_TuningSpace;
-				public new function HRESULT(ref IAMTuner self, out int32 plTuningSpace) get_TuningSpace;
-				public new function HRESULT(ref IAMTuner self, HANDLE hCurrentUser) Logon;
-				public new function HRESULT(ref IAMTuner self) Logout;
-				public new function HRESULT(ref IAMTuner self, out int32 plSignalStrength) SignalPresent;
-				public new function HRESULT(ref IAMTuner self, AMTunerModeType lMode) put_Mode;
-				public new function HRESULT(ref IAMTuner self, out AMTunerModeType plMode) get_Mode;
-				public new function HRESULT(ref IAMTuner self, out int32 plModes) GetAvailableModes;
-				public new function HRESULT(ref IAMTuner self, ref IAMTunerNotification pNotify, int32 lEvents) RegisterNotificationCallBack;
-				public new function HRESULT(ref IAMTuner self, ref IAMTunerNotification pNotify) UnRegisterNotificationCallBack;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, int32 lChannel, int32 lVideoSubChannel, int32 lAudioSubChannel) put_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 plChannel, out int32 plVideoSubChannel, out int32 plAudioSubChannel) get_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 lChannelMin, out int32 lChannelMax) ChannelMinMax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, int32 lCountryCode) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 plCountryCode) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, int32 lTuningSpace) put_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 plTuningSpace) get_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, HANDLE hCurrentUser) Logon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self) Logout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 plSignalStrength) SignalPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, AMTunerModeType lMode) put_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out AMTunerModeType plMode) get_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, out int32 plModes) GetAvailableModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, ref IAMTunerNotification pNotify, int32 lEvents) RegisterNotificationCallBack;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTuner self, ref IAMTunerNotification pNotify) UnRegisterNotificationCallBack;
 			}
 		}
 		[CRepr]
@@ -8473,7 +8473,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTunerNotification self, AMTunerEventType Event) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTunerNotification self, AMTunerEventType Event) OnEvent;
 			}
 		}
 		[CRepr]
@@ -8498,17 +8498,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAMTuner.VTable
 			{
-				public new function HRESULT(ref IAMTVTuner self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
-				public new function HRESULT(ref IAMTVTuner self, out int32 plAnalogVideoStandard) get_TVFormat;
-				public new function HRESULT(ref IAMTVTuner self, int32 lChannel, out int32 plFoundSignal) AutoTune;
-				public new function HRESULT(ref IAMTVTuner self) StoreAutoTune;
-				public new function HRESULT(ref IAMTVTuner self, out int32 plNumInputConnections) get_NumInputConnections;
-				public new function HRESULT(ref IAMTVTuner self, int32 lIndex, TunerInputType InputType) put_InputType;
-				public new function HRESULT(ref IAMTVTuner self, int32 lIndex, out TunerInputType pInputType) get_InputType;
-				public new function HRESULT(ref IAMTVTuner self, int32 lIndex) put_ConnectInput;
-				public new function HRESULT(ref IAMTVTuner self, out int32 plIndex) get_ConnectInput;
-				public new function HRESULT(ref IAMTVTuner self, out int32 lFreq) get_VideoFrequency;
-				public new function HRESULT(ref IAMTVTuner self, out int32 lFreq) get_AudioFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 plAnalogVideoStandard) get_TVFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, int32 lChannel, out int32 plFoundSignal) AutoTune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self) StoreAutoTune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 plNumInputConnections) get_NumInputConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, int32 lIndex, TunerInputType InputType) put_InputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, int32 lIndex, out TunerInputType pInputType) get_InputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, int32 lIndex) put_ConnectInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 plIndex) get_ConnectInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 lFreq) get_VideoFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVTuner self, out int32 lFreq) get_AudioFrequency;
 			}
 		}
 		[CRepr]
@@ -8525,9 +8525,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAMTuner.VTable
 			{
-				public new function HRESULT(ref IBPCSatelliteTuner self, out int32 plDefaultVideoType, out int32 plDefaultAudioType) get_DefaultSubChannelTypes;
-				public new function HRESULT(ref IBPCSatelliteTuner self, int32 lDefaultVideoType, int32 lDefaultAudioType) put_DefaultSubChannelTypes;
-				public new function HRESULT(ref IBPCSatelliteTuner self) IsTapingPermitted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBPCSatelliteTuner self, out int32 plDefaultVideoType, out int32 plDefaultAudioType) get_DefaultSubChannelTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBPCSatelliteTuner self, int32 lDefaultVideoType, int32 lDefaultAudioType) put_DefaultSubChannelTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBPCSatelliteTuner self) IsTapingPermitted;
 			}
 		}
 		[CRepr]
@@ -8547,12 +8547,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTVAudio self, out int32 plModes) GetHardwareSupportedTVAudioModes;
-				public new function HRESULT(ref IAMTVAudio self, out int32 plModes) GetAvailableTVAudioModes;
-				public new function HRESULT(ref IAMTVAudio self, out int32 plMode) get_TVAudioMode;
-				public new function HRESULT(ref IAMTVAudio self, int32 lMode) put_TVAudioMode;
-				public new function HRESULT(ref IAMTVAudio self, ref IAMTunerNotification pNotify, int32 lEvents) RegisterNotificationCallBack;
-				public new function HRESULT(ref IAMTVAudio self, ref IAMTunerNotification pNotify) UnRegisterNotificationCallBack;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, out int32 plModes) GetHardwareSupportedTVAudioModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, out int32 plModes) GetAvailableTVAudioModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, out int32 plMode) get_TVAudioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, int32 lMode) put_TVAudioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, ref IAMTunerNotification pNotify, int32 lEvents) RegisterNotificationCallBack;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudio self, ref IAMTunerNotification pNotify) UnRegisterNotificationCallBack;
 			}
 		}
 		[CRepr]
@@ -8567,7 +8567,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTVAudioNotification self, AMTVAudioEventType Event) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTVAudioNotification self, AMTVAudioEventType Event) OnEvent;
 			}
 		}
 		[CRepr]
@@ -8588,13 +8588,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, int32 lAnalogVideoStandard) put_TVFormat;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, out int32 plAnalogVideoStandard) get_TVFormat;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, int32 lVideoCopyProtection) put_CopyProtection;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, out int32 lVideoCopyProtection) get_CopyProtection;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, int32 lCCEnable) put_CCEnable;
-				public new function HRESULT(ref IAMAnalogVideoEncoder self, out int32 lCCEnable) get_CCEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, out int32 lAnalogVideoStandard) get_AvailableTVFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, int32 lAnalogVideoStandard) put_TVFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, out int32 plAnalogVideoStandard) get_TVFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, int32 lVideoCopyProtection) put_CopyProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, out int32 lVideoCopyProtection) get_CopyProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, int32 lCCEnable) put_CCEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAnalogVideoEncoder self, out int32 lCCEnable) get_CCEnable;
 			}
 		}
 		[CRepr]
@@ -8609,7 +8609,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyBag.VTable
 			{
-				public new function HRESULT(ref IMediaPropertyBag self, uint32 iProperty, out VARIANT pvarPropertyName, out VARIANT pvarPropertyValue) EnumProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPropertyBag self, uint32 iProperty, out VARIANT pvarPropertyName, out VARIANT pvarPropertyValue) EnumProperty;
 			}
 		}
 		[CRepr]
@@ -8626,9 +8626,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(ref IPersistMediaPropertyBag self) InitNew;
-				public new function HRESULT(ref IPersistMediaPropertyBag self, ref IMediaPropertyBag pPropBag, ref IErrorLog pErrorLog) Load;
-				public new function HRESULT(ref IPersistMediaPropertyBag self, ref IMediaPropertyBag pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMediaPropertyBag self) InitNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMediaPropertyBag self, ref IMediaPropertyBag pPropBag, ref IErrorLog pErrorLog) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMediaPropertyBag self, ref IMediaPropertyBag pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties) Save;
 			}
 		}
 		[CRepr]
@@ -8643,7 +8643,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMPhysicalPinInfo self, out int32 pType, out PWSTR ppszType) GetPhysicalType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPhysicalPinInfo self, out int32 pType, out PWSTR ppszType) GetPhysicalType;
 			}
 		}
 		[CRepr]
@@ -8665,14 +8665,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMExtDevice self, int32 Capability, out int32 pValue, out double pdblValue) GetCapability;
-				public new function HRESULT(ref IAMExtDevice self, out PWSTR ppszData) get_ExternalDeviceID;
-				public new function HRESULT(ref IAMExtDevice self, out PWSTR ppszData) get_ExternalDeviceVersion;
-				public new function HRESULT(ref IAMExtDevice self, int32 PowerMode) put_DevicePower;
-				public new function HRESULT(ref IAMExtDevice self, out int32 pPowerMode) get_DevicePower;
-				public new function HRESULT(ref IAMExtDevice self, uint hEvent, int32 Mode, out int32 pStatus) Calibrate;
-				public new function HRESULT(ref IAMExtDevice self, int32 DevicePort) put_DevicePort;
-				public new function HRESULT(ref IAMExtDevice self, out int32 pDevicePort) get_DevicePort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, int32 Capability, out int32 pValue, out double pdblValue) GetCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, out PWSTR ppszData) get_ExternalDeviceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, out PWSTR ppszData) get_ExternalDeviceVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, int32 PowerMode) put_DevicePower;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, out int32 pPowerMode) get_DevicePower;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, uint hEvent, int32 Mode, out int32 pStatus) Calibrate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, int32 DevicePort) put_DevicePort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtDevice self, out int32 pDevicePort) get_DevicePort;
 			}
 		}
 		[CRepr]
@@ -8714,34 +8714,34 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMExtTransport self, int32 Capability, out int32 pValue, out double pdblValue) GetCapability;
-				public new function HRESULT(ref IAMExtTransport self, int32 State) put_MediaState;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pState) get_MediaState;
-				public new function HRESULT(ref IAMExtTransport self, int32 State) put_LocalControl;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pState) get_LocalControl;
-				public new function HRESULT(ref IAMExtTransport self, int32 StatusItem, out int32 pValue) GetStatus;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue, out PWSTR ppszData) GetTransportBasicParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, int32 Value, PWSTR pszData) SetTransportBasicParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue) GetTransportVideoParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, int32 Value) SetTransportVideoParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue) GetTransportAudioParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Param, int32 Value) SetTransportAudioParameters;
-				public new function HRESULT(ref IAMExtTransport self, int32 Mode) put_Mode;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pMode) get_Mode;
-				public new function HRESULT(ref IAMExtTransport self, double dblRate) put_Rate;
-				public new function HRESULT(ref IAMExtTransport self, out double pdblRate) get_Rate;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pEnabled, out int32 pOffset, out uint phEvent) GetChase;
-				public new function HRESULT(ref IAMExtTransport self, int32 Enable, int32 Offset, uint hEvent) SetChase;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pSpeed, out int32 pDuration) GetBump;
-				public new function HRESULT(ref IAMExtTransport self, int32 Speed, int32 Duration) SetBump;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pEnabled) get_AntiClogControl;
-				public new function HRESULT(ref IAMExtTransport self, int32 Enable) put_AntiClogControl;
-				public new function HRESULT(ref IAMExtTransport self, int32 EditID, out int32 pState) GetEditPropertySet;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pEditID, int32 State) SetEditPropertySet;
-				public new function HRESULT(ref IAMExtTransport self, int32 EditID, int32 Param, out int32 pValue) GetEditProperty;
-				public new function HRESULT(ref IAMExtTransport self, int32 EditID, int32 Param, int32 Value) SetEditProperty;
-				public new function HRESULT(ref IAMExtTransport self, out int32 pValue) get_EditStart;
-				public new function HRESULT(ref IAMExtTransport self, int32 Value) put_EditStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Capability, out int32 pValue, out double pdblValue) GetCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 State) put_MediaState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pState) get_MediaState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 State) put_LocalControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pState) get_LocalControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 StatusItem, out int32 pValue) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue, out PWSTR ppszData) GetTransportBasicParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, int32 Value, PWSTR pszData) SetTransportBasicParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue) GetTransportVideoParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, int32 Value) SetTransportVideoParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, out int32 pValue) GetTransportAudioParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Param, int32 Value) SetTransportAudioParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Mode) put_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pMode) get_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, double dblRate) put_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out double pdblRate) get_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pEnabled, out int32 pOffset, out uint phEvent) GetChase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Enable, int32 Offset, uint hEvent) SetChase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pSpeed, out int32 pDuration) GetBump;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Speed, int32 Duration) SetBump;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pEnabled) get_AntiClogControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Enable) put_AntiClogControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 EditID, out int32 pState) GetEditPropertySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pEditID, int32 State) SetEditPropertySet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 EditID, int32 Param, out int32 pValue) GetEditProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 EditID, int32 Param, int32 Value) SetEditProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, out int32 pValue) get_EditStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtTransport self, int32 Value) put_EditStart;
 			}
 		}
 		[CRepr]
@@ -8760,11 +8760,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTimecodeReader self, int32 Param, out int32 pValue) GetTCRMode;
-				public new function HRESULT(ref IAMTimecodeReader self, int32 Param, int32 Value) SetTCRMode;
-				public new function HRESULT(ref IAMTimecodeReader self, int32 Line) put_VITCLine;
-				public new function HRESULT(ref IAMTimecodeReader self, out int32 pLine) get_VITCLine;
-				public new function HRESULT(ref IAMTimecodeReader self, out TIMECODE_SAMPLE pTimecodeSample) GetTimecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeReader self, int32 Param, out int32 pValue) GetTCRMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeReader self, int32 Param, int32 Value) SetTCRMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeReader self, int32 Line) put_VITCLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeReader self, out int32 pLine) get_VITCLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeReader self, out TIMECODE_SAMPLE pTimecodeSample) GetTimecode;
 			}
 		}
 		[CRepr]
@@ -8784,12 +8784,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTimecodeGenerator self, int32 Param, out int32 pValue) GetTCGMode;
-				public new function HRESULT(ref IAMTimecodeGenerator self, int32 Param, int32 Value) SetTCGMode;
-				public new function HRESULT(ref IAMTimecodeGenerator self, int32 Line) put_VITCLine;
-				public new function HRESULT(ref IAMTimecodeGenerator self, out int32 pLine) get_VITCLine;
-				public new function HRESULT(ref IAMTimecodeGenerator self, out TIMECODE_SAMPLE pTimecodeSample) SetTimecode;
-				public new function HRESULT(ref IAMTimecodeGenerator self, out TIMECODE_SAMPLE pTimecodeSample) GetTimecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, int32 Param, out int32 pValue) GetTCGMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, int32 Param, int32 Value) SetTCGMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, int32 Line) put_VITCLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, out int32 pLine) get_VITCLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, out TIMECODE_SAMPLE pTimecodeSample) SetTimecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeGenerator self, out TIMECODE_SAMPLE pTimecodeSample) GetTimecode;
 			}
 		}
 		[CRepr]
@@ -8807,10 +8807,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMTimecodeDisplay self, out int32 pState) GetTCDisplayEnable;
-				public new function HRESULT(ref IAMTimecodeDisplay self, int32 State) SetTCDisplayEnable;
-				public new function HRESULT(ref IAMTimecodeDisplay self, int32 Param, out int32 pValue) GetTCDisplay;
-				public new function HRESULT(ref IAMTimecodeDisplay self, int32 Param, int32 Value) SetTCDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeDisplay self, out int32 pState) GetTCDisplayEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeDisplay self, int32 State) SetTCDisplayEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeDisplay self, int32 Param, out int32 pValue) GetTCDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMTimecodeDisplay self, int32 Param, int32 Value) SetTCDisplay;
 			}
 		}
 		[CRepr]
@@ -8829,11 +8829,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDevMemoryAllocator self, out uint32 pdwcbTotalFree, out uint32 pdwcbLargestFree, out uint32 pdwcbTotalMemory, out uint32 pdwcbMinimumChunk) GetInfo;
-				public new function HRESULT(ref IAMDevMemoryAllocator self, in uint8 pBuffer) CheckMemory;
-				public new function HRESULT(ref IAMDevMemoryAllocator self, out uint8* ppBuffer, out uint32 pdwcbBuffer) Alloc;
-				public new function HRESULT(ref IAMDevMemoryAllocator self, out uint8 pBuffer) Free;
-				public new function HRESULT(ref IAMDevMemoryAllocator self, out IUnknown* ppUnkInnner, ref IUnknown pUnkOuter) GetDevMemoryObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryAllocator self, out uint32 pdwcbTotalFree, out uint32 pdwcbLargestFree, out uint32 pdwcbTotalMemory, out uint32 pdwcbMinimumChunk) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryAllocator self, in uint8 pBuffer) CheckMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryAllocator self, out uint8* ppBuffer, out uint32 pdwcbBuffer) Alloc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryAllocator self, out uint8 pBuffer) Free;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryAllocator self, out IUnknown* ppUnkInnner, ref IUnknown pUnkOuter) GetDevMemoryObject;
 			}
 		}
 		[CRepr]
@@ -8850,9 +8850,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDevMemoryControl self) QueryWriteSync;
-				public new function HRESULT(ref IAMDevMemoryControl self) WriteSync;
-				public new function HRESULT(ref IAMDevMemoryControl self, out uint32 pdwDevId) GetDevId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryControl self) QueryWriteSync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryControl self) WriteSync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDevMemoryControl self, out uint32 pdwDevId) GetDevId;
 			}
 		}
 		[CRepr]
@@ -8869,9 +8869,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMStreamSelect self, out uint32 pcStreams) Count;
-				public new function HRESULT(ref IAMStreamSelect self, int32 lIndex, AM_MEDIA_TYPE** ppmt, uint32* pdwFlags, uint32* plcid, uint32* pdwGroup, PWSTR* ppszName, IUnknown** ppObject, IUnknown** ppUnk) Info;
-				public new function HRESULT(ref IAMStreamSelect self, int32 lIndex, uint32 dwFlags) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamSelect self, out uint32 pcStreams) Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamSelect self, int32 lIndex, AM_MEDIA_TYPE** ppmt, uint32* pdwFlags, uint32* plcid, uint32* pdwGroup, PWSTR* ppszName, IUnknown** ppObject, IUnknown** ppUnk) Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStreamSelect self, int32 lIndex, uint32 dwFlags) Enable;
 			}
 		}
 		[CRepr]
@@ -8886,7 +8886,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMResourceControl self, uint32 dwFlags, void* pvReserved) Reserve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMResourceControl self, uint32 dwFlags, void* pvReserved) Reserve;
 			}
 		}
 		[CRepr]
@@ -8901,7 +8901,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMClockAdjust self, int64 rtDelta) SetClockDelta;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMClockAdjust self, int64 rtDelta) SetClockDelta;
 			}
 		}
 		[CRepr]
@@ -8916,7 +8916,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(ref IAMFilterMiscFlags self) GetMiscFlags;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IAMFilterMiscFlags self) GetMiscFlags;
 			}
 		}
 		[CRepr]
@@ -8933,9 +8933,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDrawVideoImage self) DrawVideoImageBegin;
-				public new function HRESULT(ref IDrawVideoImage self) DrawVideoImageEnd;
-				public new function HRESULT(ref IDrawVideoImage self, HDC hdc, ref RECT lprcSrc, ref RECT lprcDst) DrawVideoImageDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDrawVideoImage self) DrawVideoImageBegin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDrawVideoImage self) DrawVideoImageEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDrawVideoImage self, HDC hdc, ref RECT lprcSrc, ref RECT lprcDst) DrawVideoImageDraw;
 			}
 		}
 		[CRepr]
@@ -8951,8 +8951,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDecimateVideoImage self, int32 lWidth, int32 lHeight) SetDecimationImageSize;
-				public new function HRESULT(ref IDecimateVideoImage self) ResetDecimationImageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDecimateVideoImage self, int32 lWidth, int32 lHeight) SetDecimationImageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDecimateVideoImage self) ResetDecimationImageSize;
 			}
 		}
 		[CRepr]
@@ -8968,8 +8968,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoDecimationProperties self, out DECIMATION_USAGE lpUsage) QueryDecimationUsage;
-				public new function HRESULT(ref IAMVideoDecimationProperties self, DECIMATION_USAGE Usage) SetDecimationUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoDecimationProperties self, out DECIMATION_USAGE lpUsage) QueryDecimationUsage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoDecimationProperties self, DECIMATION_USAGE Usage) SetDecimationUsage;
 			}
 		}
 		[CRepr]
@@ -8986,9 +8986,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVideoFrameStep self, uint32 dwFrames, IUnknown* pStepObject) Step;
-				public new function HRESULT(ref IVideoFrameStep self, int32 bMultiple, IUnknown* pStepObject) CanStep;
-				public new function HRESULT(ref IVideoFrameStep self) CancelStep;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameStep self, uint32 dwFrames, IUnknown* pStepObject) Step;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameStep self, int32 bMultiple, IUnknown* pStepObject) CanStep;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoFrameStep self) CancelStep;
 			}
 		}
 		[CRepr]
@@ -9003,7 +9003,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMLatency self, out int64 prtLatency) GetLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLatency self, out int64 prtLatency) GetLatency;
 			}
 		}
 		[CRepr]
@@ -9023,12 +9023,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAMLatency.VTable
 			{
-				public new function HRESULT(ref IAMPushSource self, out uint32 pFlags) GetPushSourceFlags;
-				public new function HRESULT(ref IAMPushSource self, uint32 Flags) SetPushSourceFlags;
-				public new function HRESULT(ref IAMPushSource self, int64 rtOffset) SetStreamOffset;
-				public new function HRESULT(ref IAMPushSource self, out int64 prtOffset) GetStreamOffset;
-				public new function HRESULT(ref IAMPushSource self, out int64 prtMaxOffset) GetMaxStreamOffset;
-				public new function HRESULT(ref IAMPushSource self, int64 rtMaxOffset) SetMaxStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, out uint32 pFlags) GetPushSourceFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, uint32 Flags) SetPushSourceFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, int64 rtOffset) SetStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, out int64 prtOffset) GetStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, out int64 prtMaxOffset) GetMaxStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPushSource self, int64 rtMaxOffset) SetMaxStreamOffset;
 			}
 		}
 		[CRepr]
@@ -9045,9 +9045,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDeviceRemoval self, out Guid pclsidInterfaceClass, out PWSTR pwszSymbolicLink) DeviceInfo;
-				public new function HRESULT(ref IAMDeviceRemoval self) Reassociate;
-				public new function HRESULT(ref IAMDeviceRemoval self) Disassociate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDeviceRemoval self, out Guid pclsidInterfaceClass, out PWSTR pwszSymbolicLink) DeviceInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDeviceRemoval self) Reassociate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDeviceRemoval self) Disassociate;
 			}
 		}
 		[CRepr]
@@ -9063,8 +9063,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVEnc self, out int32 VideoFormat, out int32 DVFormat, out int32 Resolution, uint8 fDVInfo, out DVINFO sDVInfo) get_IFormatResolution;
-				public new function HRESULT(ref IDVEnc self, int32 VideoFormat, int32 DVFormat, int32 Resolution, uint8 fDVInfo, ref DVINFO sDVInfo) put_IFormatResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVEnc self, out int32 VideoFormat, out int32 DVFormat, out int32 Resolution, uint8 fDVInfo, out DVINFO sDVInfo) get_IFormatResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVEnc self, int32 VideoFormat, int32 DVFormat, int32 Resolution, uint8 fDVInfo, ref DVINFO sDVInfo) put_IFormatResolution;
 			}
 		}
 		[CRepr]
@@ -9080,8 +9080,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIPDVDec self, out int32 displayPix) get_IPDisplay;
-				public new function HRESULT(ref IIPDVDec self, int32 displayPix) put_IPDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIPDVDec self, out int32 displayPix) get_IPDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIPDVDec self, int32 displayPix) put_IPDisplay;
 			}
 		}
 		[CRepr]
@@ -9096,7 +9096,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVRGB219 self, BOOL bState) SetRGB219;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVRGB219 self, BOOL bState) SetRGB219;
 			}
 		}
 		[CRepr]
@@ -9111,7 +9111,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVSplitter self, int32 nDiscard) DiscardAlternateVideoFrames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVSplitter self, int32 nDiscard) DiscardAlternateVideoFrames;
 			}
 		}
 		[CRepr]
@@ -9126,7 +9126,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMAudioRendererStats self, uint32 dwParam, out uint32 pdwParam1, out uint32 pdwParam2) GetStatParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAudioRendererStats self, uint32 dwParam, out uint32 pdwParam1, out uint32 pdwParam2) GetStatParam;
 			}
 		}
 		[CRepr]
@@ -9143,9 +9143,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMGraphStreams self, ref IPin pPin, in Guid riid, void** ppvInterface, uint32 dwFlags) FindUpstreamInterface;
-				public new function HRESULT(ref IAMGraphStreams self, BOOL bUseStreamOffset) SyncUsingStreamOffset;
-				public new function HRESULT(ref IAMGraphStreams self, int64 rtMaxGraphLatency) SetMaxGraphLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMGraphStreams self, ref IPin pPin, in Guid riid, void** ppvInterface, uint32 dwFlags) FindUpstreamInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMGraphStreams self, BOOL bUseStreamOffset) SyncUsingStreamOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMGraphStreams self, int64 rtMaxGraphLatency) SetMaxGraphLatency;
 			}
 		}
 		[CRepr]
@@ -9162,9 +9162,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMOverlayFX self, out uint32 lpdwOverlayFXCaps) QueryOverlayFXCaps;
-				public new function HRESULT(ref IAMOverlayFX self, uint32 dwOverlayFX) SetOverlayFX;
-				public new function HRESULT(ref IAMOverlayFX self, out uint32 lpdwOverlayFX) GetOverlayFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMOverlayFX self, out uint32 lpdwOverlayFXCaps) QueryOverlayFXCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMOverlayFX self, uint32 dwOverlayFX) SetOverlayFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMOverlayFX self, out uint32 lpdwOverlayFX) GetOverlayFX;
 			}
 		}
 		[CRepr]
@@ -9180,8 +9180,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMOpenProgress self, out int64 pllTotal, out int64 pllCurrent) QueryProgress;
-				public new function HRESULT(ref IAMOpenProgress self) AbortOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMOpenProgress self, out int64 pllTotal, out int64 pllCurrent) QueryProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMOpenProgress self) AbortOperation;
 			}
 		}
 		[CRepr]
@@ -9198,9 +9198,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMpeg2Demultiplexer self, out AM_MEDIA_TYPE pMediaType, PWSTR pszPinName, out IPin* ppIPin) CreateOutputPin;
-				public new function HRESULT(ref IMpeg2Demultiplexer self, PWSTR pszPinName, ref AM_MEDIA_TYPE pMediaType) SetOutputPinMediaType;
-				public new function HRESULT(ref IMpeg2Demultiplexer self, PWSTR pszPinName) DeleteOutputPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Demultiplexer self, out AM_MEDIA_TYPE pMediaType, PWSTR pszPinName, out IPin* ppIPin) CreateOutputPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Demultiplexer self, PWSTR pszPinName, ref AM_MEDIA_TYPE pMediaType) SetOutputPinMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Demultiplexer self, PWSTR pszPinName) DeleteOutputPin;
 			}
 		}
 		[CRepr]
@@ -9218,10 +9218,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumStreamIdMap self, uint32 cRequest, STREAM_ID_MAP* pStreamIdMap, uint32* pcReceived) Next;
-				public new function HRESULT(ref IEnumStreamIdMap self, uint32 cRecords) Skip;
-				public new function HRESULT(ref IEnumStreamIdMap self) Reset;
-				public new function HRESULT(ref IEnumStreamIdMap self, out IEnumStreamIdMap* ppIEnumStreamIdMap) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamIdMap self, uint32 cRequest, STREAM_ID_MAP* pStreamIdMap, uint32* pcReceived) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamIdMap self, uint32 cRecords) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamIdMap self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamIdMap self, out IEnumStreamIdMap* ppIEnumStreamIdMap) Clone;
 			}
 		}
 		[CRepr]
@@ -9238,9 +9238,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMPEG2StreamIdMap self, uint32 ulStreamId, uint32 MediaSampleContent, uint32 ulSubstreamFilterValue, int32 iDataOffset) MapStreamId;
-				public new function HRESULT(ref IMPEG2StreamIdMap self, uint32 culStreamId, uint32* pulStreamId) UnmapStreamId;
-				public new function HRESULT(ref IMPEG2StreamIdMap self, out IEnumStreamIdMap* ppIEnumStreamIdMap) EnumStreamIdMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2StreamIdMap self, uint32 ulStreamId, uint32 MediaSampleContent, uint32 ulSubstreamFilterValue, int32 iDataOffset) MapStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2StreamIdMap self, uint32 culStreamId, uint32* pulStreamId) UnmapStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2StreamIdMap self, out IEnumStreamIdMap* ppIEnumStreamIdMap) EnumStreamIdMap;
 			}
 		}
 		[CRepr]
@@ -9255,7 +9255,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRegisterServiceProvider self, in Guid guidService, ref IUnknown pUnkObject) RegisterService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisterServiceProvider self, in Guid guidService, ref IUnknown pUnkObject) RegisterService;
 			}
 		}
 		[CRepr]
@@ -9271,8 +9271,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMClockSlave self, uint32 dwTolerance) SetErrorTolerance;
-				public new function HRESULT(ref IAMClockSlave self, out uint32 pdwTolerance) GetErrorTolerance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMClockSlave self, uint32 dwTolerance) SetErrorTolerance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMClockSlave self, out uint32 pdwTolerance) GetErrorTolerance;
 			}
 		}
 		[CRepr]
@@ -9288,8 +9288,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMGraphBuilderCallback self, ref IMoniker pMon) SelectedFilter;
-				public new function HRESULT(ref IAMGraphBuilderCallback self, ref IBaseFilter pFil) CreatedFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMGraphBuilderCallback self, ref IMoniker pMon) SelectedFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMGraphBuilderCallback self, ref IBaseFilter pFil) CreatedFilter;
 			}
 		}
 		[CRepr]
@@ -9304,7 +9304,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMFilterGraphCallback self, ref IPin pPin) UnableToRender;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMFilterGraphCallback self, ref IPin pPin) UnableToRender;
 			}
 		}
 		[CRepr]
@@ -9319,7 +9319,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGetCapabilitiesKey self, out HKEY pHKey) GetCapabilitiesKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetCapabilitiesKey self, out HKEY pHKey) GetCapabilitiesKey;
 			}
 		}
 		[CRepr]
@@ -9340,13 +9340,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api) IsSupported;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api) IsAvailable;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT ValueMin, out VARIANT ValueMax, out VARIANT SteppingDelta) GetParameterRange;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api, VARIANT** Values, out uint32 ValuesCount) GetParameterValues;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT Value) GetDefaultValue;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT Value) GetValue;
-				public new function HRESULT(ref IEncoderAPI self, in Guid Api, ref VARIANT Value) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api) IsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api) IsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT ValueMin, out VARIANT ValueMax, out VARIANT SteppingDelta) GetParameterRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api, VARIANT** Values, out uint32 ValuesCount) GetParameterValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT Value) GetDefaultValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api, out VARIANT Value) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncoderAPI self, in Guid Api, ref VARIANT Value) SetValue;
 			}
 		}
 		[CRepr]
@@ -9374,7 +9374,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDecoderCaps self, uint32 dwCapIndex, out uint32 lpdwCap) GetDecoderCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDecoderCaps self, uint32 dwCapIndex, out uint32 lpdwCap) GetDecoderCaps;
 			}
 		}
 		[CRepr]
@@ -9392,10 +9392,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMCertifiedOutputProtection self, out Guid pRandom, out uint8* VarLenCertGH, out uint32 pdwLengthCertGH) KeyExchange;
-				public new function HRESULT(ref IAMCertifiedOutputProtection self, out AMCOPPSignature pSig) SessionSequenceStart;
-				public new function HRESULT(ref IAMCertifiedOutputProtection self, in AMCOPPCommand cmd) ProtectionCommand;
-				public new function HRESULT(ref IAMCertifiedOutputProtection self, in AMCOPPStatusInput pStatusInput, out AMCOPPStatusOutput pStatusOutput) ProtectionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCertifiedOutputProtection self, out Guid pRandom, out uint8* VarLenCertGH, out uint32 pdwLengthCertGH) KeyExchange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCertifiedOutputProtection self, out AMCOPPSignature pSig) SessionSequenceStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCertifiedOutputProtection self, in AMCOPPCommand cmd) ProtectionCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCertifiedOutputProtection self, in AMCOPPStatusInput pStatusInput, out AMCOPPStatusOutput pStatusOutput) ProtectionStatus;
 			}
 		}
 		[CRepr]
@@ -9411,8 +9411,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMAsyncReaderTimestampScaling self, out BOOL pfRaw) GetTimestampMode;
-				public new function HRESULT(ref IAMAsyncReaderTimestampScaling self, BOOL fRaw) SetTimestampMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAsyncReaderTimestampScaling self, out BOOL pfRaw) GetTimestampMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMAsyncReaderTimestampScaling self, BOOL fRaw) SetTimestampMode;
 			}
 		}
 		[CRepr]
@@ -9433,13 +9433,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMPluginControl self, in Guid subType, out Guid clsid) GetPreferredClsid;
-				public new function HRESULT(ref IAMPluginControl self, uint32 index, out Guid subType, out Guid clsid) GetPreferredClsidByIndex;
-				public new function HRESULT(ref IAMPluginControl self, in Guid subType, Guid* clsid) SetPreferredClsid;
-				public new function HRESULT(ref IAMPluginControl self, in Guid clsid) IsDisabled;
-				public new function HRESULT(ref IAMPluginControl self, uint32 index, out Guid clsid) GetDisabledByIndex;
-				public new function HRESULT(ref IAMPluginControl self, in Guid clsid, BOOL disabled) SetDisabled;
-				public new function HRESULT(ref IAMPluginControl self, PWSTR dllName) IsLegacyDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, in Guid subType, out Guid clsid) GetPreferredClsid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, uint32 index, out Guid subType, out Guid clsid) GetPreferredClsidByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, in Guid subType, Guid* clsid) SetPreferredClsid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, in Guid clsid) IsDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, uint32 index, out Guid clsid) GetDisabledByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, in Guid clsid, BOOL disabled) SetDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPluginControl self, PWSTR dllName) IsLegacyDisabled;
 			}
 		}
 		[CRepr]
@@ -9457,10 +9457,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPinConnection self, in AM_MEDIA_TYPE pmt) DynamicQueryAccept;
-				public new function HRESULT(ref IPinConnection self, HANDLE hNotifyEvent) NotifyEndOfStream;
-				public new function HRESULT(ref IPinConnection self) IsEndPin;
-				public new function HRESULT(ref IPinConnection self) DynamicDisconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinConnection self, in AM_MEDIA_TYPE pmt) DynamicQueryAccept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinConnection self, HANDLE hNotifyEvent) NotifyEndOfStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinConnection self) IsEndPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinConnection self) DynamicDisconnect;
 			}
 		}
 		[CRepr]
@@ -9475,7 +9475,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPinFlowControl self, uint32 dwBlockFlags, HANDLE hEvent) Block;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinFlowControl self, uint32 dwBlockFlags, HANDLE hEvent) Block;
 			}
 		}
 		[CRepr]
@@ -9499,16 +9499,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGraphConfig self, ref IPin pOutputPin, ref IPin pInputPin, in AM_MEDIA_TYPE pmtFirstConnection, ref IBaseFilter pUsingFilter, HANDLE hAbortEvent, uint32 dwFlags) Reconnect;
-				public new function HRESULT(ref IGraphConfig self, ref IGraphConfigCallback pCallback, void* pvContext, uint32 dwFlags, HANDLE hAbortEvent) Reconfigure;
-				public new function HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter) AddFilterToCache;
-				public new function HRESULT(ref IGraphConfig self, out IEnumFilters* pEnum) EnumCacheFilter;
-				public new function HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter) RemoveFilterFromCache;
-				public new function HRESULT(ref IGraphConfig self, out int64 prtStart) GetStartTime;
-				public new function HRESULT(ref IGraphConfig self, ref IPin pOutputPin, ref IPinConnection pConnection, HANDLE hEventAbort) PushThroughData;
-				public new function HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, uint32 dwFlags) SetFilterFlags;
-				public new function HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, out uint32 pdwFlags) GetFilterFlags;
-				public new function HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, uint32 Flags) RemoveFilterEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IPin pOutputPin, ref IPin pInputPin, in AM_MEDIA_TYPE pmtFirstConnection, ref IBaseFilter pUsingFilter, HANDLE hAbortEvent, uint32 dwFlags) Reconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IGraphConfigCallback pCallback, void* pvContext, uint32 dwFlags, HANDLE hAbortEvent) Reconfigure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter) AddFilterToCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, out IEnumFilters* pEnum) EnumCacheFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter) RemoveFilterFromCache;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, out int64 prtStart) GetStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IPin pOutputPin, ref IPinConnection pConnection, HANDLE hEventAbort) PushThroughData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, uint32 dwFlags) SetFilterFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, out uint32 pdwFlags) GetFilterFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfig self, ref IBaseFilter pFilter, uint32 Flags) RemoveFilterEx;
 			}
 		}
 		[CRepr]
@@ -9523,7 +9523,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGraphConfigCallback self, void* pvContext, uint32 dwFlags) Reconfigure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphConfigCallback self, void* pvContext, uint32 dwFlags) Reconfigure;
 			}
 		}
 		[CRepr]
@@ -9541,10 +9541,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) StartChain;
-				public new function HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) PauseChain;
-				public new function HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) StopChain;
-				public new function HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) RemoveChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) StartChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) PauseChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) StopChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterChain self, ref IBaseFilter pStartFilter, ref IBaseFilter pEndFilter) RemoveChain;
 			}
 		}
 		[CRepr]
@@ -9561,9 +9561,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImagePresenter self, uint dwUserID) StartPresenting;
-				public new function HRESULT(ref IVMRImagePresenter self, uint dwUserID) StopPresenting;
-				public new function HRESULT(ref IVMRImagePresenter self, uint dwUserID, out VMRPRESENTATIONINFO lpPresInfo) PresentImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter self, uint dwUserID) StartPresenting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter self, uint dwUserID) StopPresenting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter self, uint dwUserID, out VMRPRESENTATIONINFO lpPresInfo) PresentImage;
 			}
 		}
 		[CRepr]
@@ -9581,10 +9581,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurfaceAllocator self, uint dwUserID, out VMRALLOCATIONINFO lpAllocInfo, out uint32 lpdwActualBuffers, out IDirectDrawSurface7* lplpSurface) AllocateSurface;
-				public new function HRESULT(ref IVMRSurfaceAllocator self, uint dwID) FreeSurface;
-				public new function HRESULT(ref IVMRSurfaceAllocator self, uint dwUserID, ref IDirectDrawSurface7 lpSurface, uint32 dwSurfaceFlags) PrepareSurface;
-				public new function HRESULT(ref IVMRSurfaceAllocator self, ref IVMRSurfaceAllocatorNotify lpIVMRSurfAllocNotify) AdviseNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator self, uint dwUserID, out VMRALLOCATIONINFO lpAllocInfo, out uint32 lpdwActualBuffers, out IDirectDrawSurface7* lplpSurface) AllocateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator self, uint dwID) FreeSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator self, uint dwUserID, ref IDirectDrawSurface7 lpSurface, uint32 dwSurfaceFlags) PrepareSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator self, ref IVMRSurfaceAllocatorNotify lpIVMRSurfAllocNotify) AdviseNotify;
 			}
 		}
 		[CRepr]
@@ -9604,12 +9604,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self, uint dwUserID, ref IVMRSurfaceAllocator lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self, ref IDirectDraw7 lpDDrawDevice, HMONITOR hMonitor) SetDDrawDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self, ref IDirectDraw7 lpDDrawDevice, HMONITOR hMonitor) ChangeDDrawDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self) RestoreDDrawSurfaces;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self, int32 EventCode, int Param1, int Param2) NotifyEvent;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify self, uint32 clrBorder) SetBorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self, uint dwUserID, ref IVMRSurfaceAllocator lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self, ref IDirectDraw7 lpDDrawDevice, HMONITOR hMonitor) SetDDrawDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self, ref IDirectDraw7 lpDDrawDevice, HMONITOR hMonitor) ChangeDDrawDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self) RestoreDDrawSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self, int32 EventCode, int Param1, int Param2) NotifyEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify self, uint32 clrBorder) SetBorderColor;
 			}
 		}
 		[CRepr]
@@ -9638,21 +9638,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight, out int32 lpARWidth, out int32 lpARHeight) GetNativeVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight) GetMinIdealVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight) GetMaxIdealVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl self, in RECT lpSRCRect, in RECT lpDSTRect) SetVideoPosition;
-				public new function HRESULT(ref IVMRWindowlessControl self, out RECT lpSRCRect, out RECT lpDSTRect) GetVideoPosition;
-				public new function HRESULT(ref IVMRWindowlessControl self, out uint32 lpAspectRatioMode) GetAspectRatioMode;
-				public new function HRESULT(ref IVMRWindowlessControl self, uint32 AspectRatioMode) SetAspectRatioMode;
-				public new function HRESULT(ref IVMRWindowlessControl self, HWND hwnd) SetVideoClippingWindow;
-				public new function HRESULT(ref IVMRWindowlessControl self, HWND hwnd, HDC hdc) RepaintVideo;
-				public new function HRESULT(ref IVMRWindowlessControl self) DisplayModeChanged;
-				public new function HRESULT(ref IVMRWindowlessControl self, out uint8* lpDib) GetCurrentImage;
-				public new function HRESULT(ref IVMRWindowlessControl self, uint32 Clr) SetBorderColor;
-				public new function HRESULT(ref IVMRWindowlessControl self, out uint32 lpClr) GetBorderColor;
-				public new function HRESULT(ref IVMRWindowlessControl self, uint32 Clr) SetColorKey;
-				public new function HRESULT(ref IVMRWindowlessControl self, out uint32 lpClr) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight, out int32 lpARWidth, out int32 lpARHeight) GetNativeVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight) GetMinIdealVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out int32 lpWidth, out int32 lpHeight) GetMaxIdealVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, in RECT lpSRCRect, in RECT lpDSTRect) SetVideoPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out RECT lpSRCRect, out RECT lpDSTRect) GetVideoPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out uint32 lpAspectRatioMode) GetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, uint32 AspectRatioMode) SetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, HWND hwnd) SetVideoClippingWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, HWND hwnd, HDC hdc) RepaintVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self) DisplayModeChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out uint8* lpDib) GetCurrentImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, uint32 Clr) SetBorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out uint32 lpClr) GetBorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, uint32 Clr) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl self, out uint32 lpClr) GetColorKey;
 			}
 		}
 		[CRepr]
@@ -9676,16 +9676,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, float Alpha) SetAlpha;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out float pAlpha) GetAlpha;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out uint32 pZ) GetZOrder;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, in NORMALIZEDRECT pRect) SetOutputRect;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out NORMALIZEDRECT pRect) GetOutputRect;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 ClrBkg) SetBackgroundClr;
-				public new function HRESULT(ref IVMRMixerControl self, out uint32 lpClrBkg) GetBackgroundClr;
-				public new function HRESULT(ref IVMRMixerControl self, uint32 dwMixerPrefs) SetMixingPrefs;
-				public new function HRESULT(ref IVMRMixerControl self, out uint32 pdwMixerPrefs) GetMixingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, float Alpha) SetAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out float pAlpha) GetAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out uint32 pZ) GetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, in NORMALIZEDRECT pRect) SetOutputRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwStreamID, out NORMALIZEDRECT pRect) GetOutputRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 ClrBkg) SetBackgroundClr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, out uint32 lpClrBkg) GetBackgroundClr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, uint32 dwMixerPrefs) SetMixingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl self, out uint32 pdwMixerPrefs) GetMixingPrefs;
 			}
 		}
 		[CRepr]
@@ -9704,11 +9704,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMonitorConfig self, in VMRGUID pGUID) SetMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig self, out VMRGUID pGUID) GetMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig self, in VMRGUID pGUID) SetDefaultMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig self, out VMRGUID pGUID) GetDefaultMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig self, out VMRMONITORINFO pInfo, uint32 dwMaxInfoArraySize, out uint32 pdwNumDevices) GetAvailableMonitors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig self, in VMRGUID pGUID) SetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig self, out VMRGUID pGUID) GetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig self, in VMRGUID pGUID) SetDefaultMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig self, out VMRGUID pGUID) GetDefaultMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig self, out VMRMONITORINFO pInfo, uint32 dwMaxInfoArraySize, out uint32 pdwNumDevices) GetAvailableMonitors;
 			}
 		}
 		[CRepr]
@@ -9729,13 +9729,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRFilterConfig self, ref IVMRImageCompositor lpVMRImgCompositor) SetImageCompositor;
-				public new function HRESULT(ref IVMRFilterConfig self, uint32 dwMaxStreams) SetNumberOfStreams;
-				public new function HRESULT(ref IVMRFilterConfig self, out uint32 pdwMaxStreams) GetNumberOfStreams;
-				public new function HRESULT(ref IVMRFilterConfig self, uint32 dwRenderFlags) SetRenderingPrefs;
-				public new function HRESULT(ref IVMRFilterConfig self, out uint32 pdwRenderFlags) GetRenderingPrefs;
-				public new function HRESULT(ref IVMRFilterConfig self, uint32 Mode) SetRenderingMode;
-				public new function HRESULT(ref IVMRFilterConfig self, out uint32 pMode) GetRenderingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, ref IVMRImageCompositor lpVMRImgCompositor) SetImageCompositor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, uint32 dwMaxStreams) SetNumberOfStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, out uint32 pdwMaxStreams) GetNumberOfStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, uint32 dwRenderFlags) SetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, out uint32 pdwRenderFlags) GetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, uint32 Mode) SetRenderingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig self, out uint32 pMode) GetRenderingMode;
 			}
 		}
 		[CRepr]
@@ -9751,8 +9751,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRAspectRatioControl self, out uint32 lpdwARMode) GetAspectRatioMode;
-				public new function HRESULT(ref IVMRAspectRatioControl self, uint32 dwARMode) SetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRAspectRatioControl self, out uint32 lpdwARMode) GetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRAspectRatioControl self, uint32 dwARMode) SetAspectRatioMode;
 			}
 		}
 		[CRepr]
@@ -9773,13 +9773,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRDeinterlaceControl self, out VMRVideoDesc lpVideoDescription, out uint32 lpdwNumDeinterlaceModes, out Guid lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, out Guid lpDeinterlaceMode, out VMRVideoDesc lpVideoDescription, out VMRDeinterlaceCaps lpDeinterlaceCaps) GetDeinterlaceModeCaps;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetDeinterlaceMode;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) SetDeinterlaceMode;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, out uint32 lpdwDeinterlacePrefs) GetDeinterlacePrefs;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
-				public new function HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetActualDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, out VMRVideoDesc lpVideoDescription, out uint32 lpdwNumDeinterlaceModes, out Guid lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, out Guid lpDeinterlaceMode, out VMRVideoDesc lpVideoDescription, out VMRDeinterlaceCaps lpDeinterlaceCaps) GetDeinterlaceModeCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) SetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, out uint32 lpdwDeinterlacePrefs) GetDeinterlacePrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetActualDeinterlaceMode;
 			}
 		}
 		[CRepr]
@@ -9796,9 +9796,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMixerBitmap self, in VMRALPHABITMAP pBmpParms) SetAlphaBitmap;
-				public new function HRESULT(ref IVMRMixerBitmap self, out VMRALPHABITMAP pBmpParms) UpdateAlphaBitmapParameters;
-				public new function HRESULT(ref IVMRMixerBitmap self, out VMRALPHABITMAP pBmpParms) GetAlphaBitmapParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap self, in VMRALPHABITMAP pBmpParms) SetAlphaBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap self, out VMRALPHABITMAP pBmpParms) UpdateAlphaBitmapParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap self, out VMRALPHABITMAP pBmpParms) GetAlphaBitmapParameters;
 			}
 		}
 		[CRepr]
@@ -9816,10 +9816,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget) InitCompositionTarget;
-				public new function HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget) TermCompositionTarget;
-				public new function HRESULT(ref IVMRImageCompositor self, uint32 dwStrmID, out AM_MEDIA_TYPE pmt, BOOL fTexture) SetStreamMediaType;
-				public new function HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget, out AM_MEDIA_TYPE pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, out VMRVIDEOSTREAMINFO pVideoStreamInfo, uint32 cStreams) CompositeImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget) InitCompositionTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget) TermCompositionTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor self, uint32 dwStrmID, out AM_MEDIA_TYPE pmt, BOOL fTexture) SetStreamMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor self, ref IUnknown pD3DDevice, ref IDirectDrawSurface7 pddsRenderTarget, out AM_MEDIA_TYPE pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, out VMRVIDEOSTREAMINFO pVideoStreamInfo, uint32 cStreams) CompositeImage;
 			}
 		}
 		[CRepr]
@@ -9837,10 +9837,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRVideoStreamControl self, out DDCOLORKEY lpClrKey) SetColorKey;
-				public new function HRESULT(ref IVMRVideoStreamControl self, out DDCOLORKEY lpClrKey) GetColorKey;
-				public new function HRESULT(ref IVMRVideoStreamControl self, BOOL fActive) SetStreamActiveState;
-				public new function HRESULT(ref IVMRVideoStreamControl self, out BOOL lpfActive) GetStreamActiveState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl self, out DDCOLORKEY lpClrKey) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl self, out DDCOLORKEY lpClrKey) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl self, BOOL fActive) SetStreamActiveState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl self, out BOOL lpfActive) GetStreamActiveState;
 			}
 		}
 		[CRepr]
@@ -9858,10 +9858,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurface self) IsSurfaceLocked;
-				public new function HRESULT(ref IVMRSurface self, out uint8* lpSurface) LockSurface;
-				public new function HRESULT(ref IVMRSurface self) UnlockSurface;
-				public new function HRESULT(ref IVMRSurface self, out IDirectDrawSurface7* lplpSurface) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface self) IsSurfaceLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface self, out uint8* lpSurface) LockSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface self) UnlockSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface self, out IDirectDrawSurface7* lplpSurface) GetSurface;
 			}
 		}
 		[CRepr]
@@ -9877,8 +9877,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImagePresenterConfig self, uint32 dwRenderFlags) SetRenderingPrefs;
-				public new function HRESULT(ref IVMRImagePresenterConfig self, out uint32 dwRenderFlags) GetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterConfig self, uint32 dwRenderFlags) SetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterConfig self, out uint32 dwRenderFlags) GetRenderingPrefs;
 			}
 		}
 		[CRepr]
@@ -9894,8 +9894,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVMRImagePresenterConfig.VTable
 			{
-				public new function HRESULT(ref IVMRImagePresenterExclModeConfig self, ref IDirectDraw7 lpDDObj, ref IDirectDrawSurface7 lpPrimarySurf) SetXlcModeDDObjAndPrimarySurface;
-				public new function HRESULT(ref IVMRImagePresenterExclModeConfig self, out IDirectDraw7* lpDDObj, out IDirectDrawSurface7* lpPrimarySurf) GetXlcModeDDObjAndPrimarySurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterExclModeConfig self, ref IDirectDraw7 lpDDObj, ref IDirectDrawSurface7 lpPrimarySurf) SetXlcModeDDObjAndPrimarySurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterExclModeConfig self, out IDirectDraw7* lpDDObj, out IDirectDrawSurface7* lpPrimarySurf) GetXlcModeDDObjAndPrimarySurface;
 			}
 		}
 		[CRepr]
@@ -9911,8 +9911,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVPManager self, uint32 dwVideoPortIndex) SetVideoPortIndex;
-				public new function HRESULT(ref IVPManager self, out uint32 pdwVideoPortIndex) GetVideoPortIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPManager self, uint32 dwVideoPortIndex) SetVideoPortIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPManager self, out uint32 pdwVideoPortIndex) GetVideoPortIndex;
 			}
 		}
 		[CRepr]
@@ -9961,41 +9961,41 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdControl self, uint32 ulTitle) TitlePlay;
-				public new function HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 ulChapter) ChapterPlay;
-				public new function HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 bcdTime) TimePlay;
-				public new function HRESULT(ref IDvdControl self) StopForResume;
-				public new function HRESULT(ref IDvdControl self) GoUp;
-				public new function HRESULT(ref IDvdControl self, uint32 bcdTime) TimeSearch;
-				public new function HRESULT(ref IDvdControl self, uint32 ulChapter) ChapterSearch;
-				public new function HRESULT(ref IDvdControl self) PrevPGSearch;
-				public new function HRESULT(ref IDvdControl self) TopPGSearch;
-				public new function HRESULT(ref IDvdControl self) NextPGSearch;
-				public new function HRESULT(ref IDvdControl self, double dwSpeed) ForwardScan;
-				public new function HRESULT(ref IDvdControl self, double dwSpeed) BackwardScan;
-				public new function HRESULT(ref IDvdControl self, DVD_MENU_ID MenuID) MenuCall;
-				public new function HRESULT(ref IDvdControl self) Resume;
-				public new function HRESULT(ref IDvdControl self) UpperButtonSelect;
-				public new function HRESULT(ref IDvdControl self) LowerButtonSelect;
-				public new function HRESULT(ref IDvdControl self) LeftButtonSelect;
-				public new function HRESULT(ref IDvdControl self) RightButtonSelect;
-				public new function HRESULT(ref IDvdControl self) ButtonActivate;
-				public new function HRESULT(ref IDvdControl self, uint32 ulButton) ButtonSelectAndActivate;
-				public new function HRESULT(ref IDvdControl self) StillOff;
-				public new function HRESULT(ref IDvdControl self) PauseOn;
-				public new function HRESULT(ref IDvdControl self) PauseOff;
-				public new function HRESULT(ref IDvdControl self, uint32 Language) MenuLanguageSelect;
-				public new function HRESULT(ref IDvdControl self, uint32 ulAudio) AudioStreamChange;
-				public new function HRESULT(ref IDvdControl self, uint32 ulSubPicture, BOOL bDisplay) SubpictureStreamChange;
-				public new function HRESULT(ref IDvdControl self, uint32 ulAngle) AngleChange;
-				public new function HRESULT(ref IDvdControl self, uint32 ulParentalLevel) ParentalLevelSelect;
-				public new function HRESULT(ref IDvdControl self, uint16 wCountry) ParentalCountrySelect;
-				public new function HRESULT(ref IDvdControl self, uint32 ulMode) KaraokeAudioPresentationModeChange;
-				public new function HRESULT(ref IDvdControl self, uint32 ulPreferredDisplayMode) VideoModePreferrence;
-				public new function HRESULT(ref IDvdControl self, PWSTR pszPath) SetRoot;
-				public new function HRESULT(ref IDvdControl self, POINT point) MouseActivate;
-				public new function HRESULT(ref IDvdControl self, POINT point) MouseSelect;
-				public new function HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay) ChapterPlayAutoStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulTitle) TitlePlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 ulChapter) ChapterPlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 bcdTime) TimePlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) StopForResume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) GoUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 bcdTime) TimeSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulChapter) ChapterSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) PrevPGSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) TopPGSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) NextPGSearch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, double dwSpeed) ForwardScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, double dwSpeed) BackwardScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, DVD_MENU_ID MenuID) MenuCall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) UpperButtonSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) LowerButtonSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) LeftButtonSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) RightButtonSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) ButtonActivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulButton) ButtonSelectAndActivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) StillOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) PauseOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self) PauseOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 Language) MenuLanguageSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulAudio) AudioStreamChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulSubPicture, BOOL bDisplay) SubpictureStreamChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulAngle) AngleChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulParentalLevel) ParentalLevelSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint16 wCountry) ParentalCountrySelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulMode) KaraokeAudioPresentationModeChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulPreferredDisplayMode) VideoModePreferrence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, PWSTR pszPath) SetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, POINT point) MouseActivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, POINT point) MouseSelect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay) ChapterPlayAutoStop;
 			}
 		}
 		[CRepr]
@@ -10032,29 +10032,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdInfo self, out DVD_DOMAIN pDomain) GetCurrentDomain;
-				public new function HRESULT(ref IDvdInfo self, out DVD_PLAYBACK_LOCATION pLocation) GetCurrentLocation;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulTotalTime) GetTotalTitleTime;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulButtonsAvailable, out uint32 pulCurrentButton) GetCurrentButton;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulAnglesAvailable, out uint32 pulCurrentAngle) GetCurrentAngle;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream) GetCurrentAudio;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream, out BOOL pIsDisabled) GetCurrentSubpicture;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pUOP) GetCurrentUOPS;
-				public new function HRESULT(ref IDvdInfo self, out uint16* pRegisterArray) GetAllSPRMs;
-				public new function HRESULT(ref IDvdInfo self, out uint16* pRegisterArray) GetAllGPRMs;
-				public new function HRESULT(ref IDvdInfo self, uint32 ulStream, out uint32 pLanguage) GetAudioLanguage;
-				public new function HRESULT(ref IDvdInfo self, uint32 ulStream, out uint32 pLanguage) GetSubpictureLanguage;
-				public new function HRESULT(ref IDvdInfo self, uint32 ulTitle, out DVD_ATR pATR) GetTitleAttributes;
-				public new function HRESULT(ref IDvdInfo self, out DVD_ATR pATR) GetVMGAttributes;
-				public new function HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentVideoAttributes;
-				public new function HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentAudioAttributes;
-				public new function HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentSubpictureAttributes;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulNumOfVol, out uint32 pulThisVolNum, out DVD_DISC_SIDE pSide, out uint32 pulNumOfTitles) GetCurrentVolumeInfo;
-				public new function HRESULT(ref IDvdInfo self, out uint8 pTextManager, uint32 ulBufSize, out uint32 pulActualSize) GetDVDTextInfo;
-				public new function HRESULT(ref IDvdInfo self, out uint32 pulParentalLevel, out uint32 pulCountryCode) GetPlayerParentalLevel;
-				public new function HRESULT(ref IDvdInfo self, uint32 ulTitle, out uint32 pulNumberOfChapters) GetNumberOfChapters;
-				public new function HRESULT(ref IDvdInfo self, uint32 ulTitle, out uint32 pulParentalLevels) GetTitleParentalLevels;
-				public new function HRESULT(ref IDvdInfo self, uint8* pRoot, uint32 ulBufSize, out uint32 pulActualSize) GetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out DVD_DOMAIN pDomain) GetCurrentDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out DVD_PLAYBACK_LOCATION pLocation) GetCurrentLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulTotalTime) GetTotalTitleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulButtonsAvailable, out uint32 pulCurrentButton) GetCurrentButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulAnglesAvailable, out uint32 pulCurrentAngle) GetCurrentAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream) GetCurrentAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream, out BOOL pIsDisabled) GetCurrentSubpicture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pUOP) GetCurrentUOPS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint16* pRegisterArray) GetAllSPRMs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint16* pRegisterArray) GetAllGPRMs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint32 ulStream, out uint32 pLanguage) GetAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint32 ulStream, out uint32 pLanguage) GetSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint32 ulTitle, out DVD_ATR pATR) GetTitleAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out DVD_ATR pATR) GetVMGAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentVideoAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentAudioAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint8* pATR) GetCurrentSubpictureAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulNumOfVol, out uint32 pulThisVolNum, out DVD_DISC_SIDE pSide, out uint32 pulNumOfTitles) GetCurrentVolumeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint8 pTextManager, uint32 ulBufSize, out uint32 pulActualSize) GetDVDTextInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, out uint32 pulParentalLevel, out uint32 pulCountryCode) GetPlayerParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint32 ulTitle, out uint32 pulNumberOfChapters) GetNumberOfChapters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint32 ulTitle, out uint32 pulParentalLevels) GetTitleParentalLevels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo self, uint8* pRoot, uint32 ulBufSize, out uint32 pulActualSize) GetRoot;
 			}
 		}
 		[CRepr]
@@ -10070,8 +10070,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdCmd self) WaitForStart;
-				public new function HRESULT(ref IDvdCmd self) WaitForEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdCmd self) WaitForStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdCmd self) WaitForEnd;
 			}
 		}
 		[CRepr]
@@ -10087,8 +10087,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdState self, out uint64 pullUniqueID) GetDiscID;
-				public new function HRESULT(ref IDvdState self, out uint32 pulParentalLevel) GetParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdState self, out uint64 pullUniqueID) GetDiscID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdState self, out uint32 pulParentalLevel) GetParentalLevel;
 			}
 		}
 		[CRepr]
@@ -10142,46 +10142,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 dwFlags, out IDvdCmd* ppCmd) PlayTitle;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 ulChapter, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChapterInTitle;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulTitle, out DVD_HMSF_TIMECODE pStartTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayAtTimeInTitle;
-				public new function HRESULT(ref IDvdControl2 self) Stop;
-				public new function HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) ReturnFromSubmenu;
-				public new function HRESULT(ref IDvdControl2 self, out DVD_HMSF_TIMECODE pTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayAtTime;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulChapter, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChapter;
-				public new function HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) PlayPrevChapter;
-				public new function HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) ReplayChapter;
-				public new function HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) PlayNextChapter;
-				public new function HRESULT(ref IDvdControl2 self, double dSpeed, uint32 dwFlags, out IDvdCmd* ppCmd) PlayForwards;
-				public new function HRESULT(ref IDvdControl2 self, double dSpeed, uint32 dwFlags, out IDvdCmd* ppCmd) PlayBackwards;
-				public new function HRESULT(ref IDvdControl2 self, DVD_MENU_ID MenuID, uint32 dwFlags, out IDvdCmd* ppCmd) ShowMenu;
-				public new function HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) Resume;
-				public new function HRESULT(ref IDvdControl2 self, DVD_RELATIVE_BUTTON buttonDir) SelectRelativeButton;
-				public new function HRESULT(ref IDvdControl2 self) ActivateButton;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulButton) SelectButton;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulButton) SelectAndActivateButton;
-				public new function HRESULT(ref IDvdControl2 self) StillOff;
-				public new function HRESULT(ref IDvdControl2 self, BOOL bState) Pause;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulAudio, uint32 dwFlags, out IDvdCmd* ppCmd) SelectAudioStream;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulSubPicture, uint32 dwFlags, out IDvdCmd* ppCmd) SelectSubpictureStream;
-				public new function HRESULT(ref IDvdControl2 self, BOOL bState, uint32 dwFlags, out IDvdCmd* ppCmd) SetSubpictureState;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulAngle, uint32 dwFlags, out IDvdCmd* ppCmd) SelectAngle;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulParentalLevel) SelectParentalLevel;
-				public new function HRESULT(ref IDvdControl2 self, out uint8 bCountry) SelectParentalCountry;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulMode) SelectKaraokeAudioPresentationMode;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulPreferredDisplayMode) SelectVideoModePreference;
-				public new function HRESULT(ref IDvdControl2 self, PWSTR pszwPath) SetDVDDirectory;
-				public new function HRESULT(ref IDvdControl2 self, POINT point) ActivateAtPosition;
-				public new function HRESULT(ref IDvdControl2 self, POINT point) SelectAtPosition;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChaptersAutoStop;
-				public new function HRESULT(ref IDvdControl2 self, BOOL bAccept) AcceptParentalLevelChange;
-				public new function HRESULT(ref IDvdControl2 self, DVD_OPTION_FLAG flag, BOOL fState) SetOption;
-				public new function HRESULT(ref IDvdControl2 self, ref IDvdState pState, uint32 dwFlags, out IDvdCmd* ppCmd) SetState;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulTitle, out DVD_HMSF_TIMECODE pStartTime, out DVD_HMSF_TIMECODE pEndTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayPeriodInTitleAutoStop;
-				public new function HRESULT(ref IDvdControl2 self, uint32 ulIndex, uint16 wValue, uint32 dwFlags, out IDvdCmd* ppCmd) SetGPRM;
-				public new function HRESULT(ref IDvdControl2 self, uint32 Language) SelectDefaultMenuLanguage;
-				public new function HRESULT(ref IDvdControl2 self, uint32 Language, DVD_AUDIO_LANG_EXT audioExtension) SelectDefaultAudioLanguage;
-				public new function HRESULT(ref IDvdControl2 self, uint32 Language, DVD_SUBPICTURE_LANG_EXT subpictureExtension) SelectDefaultSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 dwFlags, out IDvdCmd* ppCmd) PlayTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 ulChapter, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChapterInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulTitle, out DVD_HMSF_TIMECODE pStartTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayAtTimeInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) ReturnFromSubmenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, out DVD_HMSF_TIMECODE pTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayAtTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulChapter, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) PlayPrevChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) ReplayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) PlayNextChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, double dSpeed, uint32 dwFlags, out IDvdCmd* ppCmd) PlayForwards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, double dSpeed, uint32 dwFlags, out IDvdCmd* ppCmd) PlayBackwards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, DVD_MENU_ID MenuID, uint32 dwFlags, out IDvdCmd* ppCmd) ShowMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 dwFlags, out IDvdCmd* ppCmd) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, DVD_RELATIVE_BUTTON buttonDir) SelectRelativeButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self) ActivateButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulButton) SelectButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulButton) SelectAndActivateButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self) StillOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, BOOL bState) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulAudio, uint32 dwFlags, out IDvdCmd* ppCmd) SelectAudioStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulSubPicture, uint32 dwFlags, out IDvdCmd* ppCmd) SelectSubpictureStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, BOOL bState, uint32 dwFlags, out IDvdCmd* ppCmd) SetSubpictureState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulAngle, uint32 dwFlags, out IDvdCmd* ppCmd) SelectAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulParentalLevel) SelectParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, out uint8 bCountry) SelectParentalCountry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulMode) SelectKaraokeAudioPresentationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulPreferredDisplayMode) SelectVideoModePreference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, PWSTR pszwPath) SetDVDDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, POINT point) ActivateAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, POINT point) SelectAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay, uint32 dwFlags, out IDvdCmd* ppCmd) PlayChaptersAutoStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, BOOL bAccept) AcceptParentalLevelChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, DVD_OPTION_FLAG flag, BOOL fState) SetOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, ref IDvdState pState, uint32 dwFlags, out IDvdCmd* ppCmd) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulTitle, out DVD_HMSF_TIMECODE pStartTime, out DVD_HMSF_TIMECODE pEndTime, uint32 dwFlags, out IDvdCmd* ppCmd) PlayPeriodInTitleAutoStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 ulIndex, uint16 wValue, uint32 dwFlags, out IDvdCmd* ppCmd) SetGPRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 Language) SelectDefaultMenuLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 Language, DVD_AUDIO_LANG_EXT audioExtension) SelectDefaultAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdControl2 self, uint32 Language, DVD_SUBPICTURE_LANG_EXT subpictureExtension) SelectDefaultSubpictureLanguage;
 			}
 		}
 		[CRepr]
@@ -10234,45 +10234,45 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_DOMAIN pDomain) GetCurrentDomain;
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_PLAYBACK_LOCATION2 pLocation) GetCurrentLocation;
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_HMSF_TIMECODE pTotalTime, out uint32 ulTimeCodeFlags) GetTotalTitleTime;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulButtonsAvailable, out uint32 pulCurrentButton) GetCurrentButton;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulAnglesAvailable, out uint32 pulCurrentAngle) GetCurrentAngle;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream) GetCurrentAudio;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream, out BOOL pbIsDisabled) GetCurrentSubpicture;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulUOPs) GetCurrentUOPS;
-				public new function HRESULT(ref IDvdInfo2 self, out uint16* pRegisterArray) GetAllSPRMs;
-				public new function HRESULT(ref IDvdInfo2 self, out uint16* pRegisterArray) GetAllGPRMs;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStream, out uint32 pLanguage) GetAudioLanguage;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStream, out uint32 pLanguage) GetSubpictureLanguage;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out DVD_MenuAttributes pMenu, out DVD_TitleAttributes pTitle) GetTitleAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_MenuAttributes pATR) GetVMGAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_VideoAttributes pATR) GetCurrentVideoAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_AudioAttributes pATR) GetAudioAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_KaraokeAttributes pAttributes) GetKaraokeAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_SubpictureAttributes pATR) GetSubpictureAttributes;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulNumOfVolumes, out uint32 pulVolume, out DVD_DISC_SIDE pSide, out uint32 pulNumOfTitles) GetDVDVolumeInfo;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulNumOfLangs) GetDVDTextNumberOfLanguages;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, out uint32 pulNumOfStrings, out uint32 pLangCode, out DVD_TextCharSet pbCharacterSet) GetDVDTextLanguageInfo;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, uint32 ulStringIndex, out uint8 pbBuffer, uint32 ulMaxBufferSize, out uint32 pulActualSize, out DVD_TextStringType pType) GetDVDTextStringAsNative;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, uint32 ulStringIndex, PWSTR pchwBuffer, uint32 ulMaxBufferSize, out uint32 pulActualSize, out DVD_TextStringType pType) GetDVDTextStringAsUnicode;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pulParentalLevel, out uint8 pbCountryCode) GetPlayerParentalLevel;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out uint32 pulNumOfChapters) GetNumberOfChapters;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out uint32 pulParentalLevels) GetTitleParentalLevels;
-				public new function HRESULT(ref IDvdInfo2 self, char16* pszwPath, uint32 ulMaxSize, out uint32 pulActualSize) GetDVDDirectory;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStreamNum, out BOOL pbEnabled) IsAudioStreamEnabled;
-				public new function HRESULT(ref IDvdInfo2 self, PWSTR pszwPath, out uint64 pullDiscID) GetDiscID;
-				public new function HRESULT(ref IDvdInfo2 self, out IDvdState* pStateData) GetState;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pLanguages, uint32 ulMaxLanguages, out uint32 pulActualLanguages) GetMenuLanguages;
-				public new function HRESULT(ref IDvdInfo2 self, POINT point, out uint32 pulButtonIndex) GetButtonAtPosition;
-				public new function HRESULT(ref IDvdInfo2 self, int lParam1, out IDvdCmd* pCmdObj) GetCmdFromEvent;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pLanguage) GetDefaultMenuLanguage;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pLanguage, out DVD_AUDIO_LANG_EXT pAudioExtension) GetDefaultAudioLanguage;
-				public new function HRESULT(ref IDvdInfo2 self, out uint32 pLanguage, out DVD_SUBPICTURE_LANG_EXT pSubpictureExtension) GetDefaultSubpictureLanguage;
-				public new function HRESULT(ref IDvdInfo2 self, out DVD_DECODER_CAPS pCaps) GetDecoderCaps;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulButton, out RECT pRect) GetButtonRect;
-				public new function HRESULT(ref IDvdInfo2 self, uint32 ulStreamNum, out BOOL pbEnabled) IsSubpictureStreamEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_DOMAIN pDomain) GetCurrentDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_PLAYBACK_LOCATION2 pLocation) GetCurrentLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_HMSF_TIMECODE pTotalTime, out uint32 ulTimeCodeFlags) GetTotalTitleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulButtonsAvailable, out uint32 pulCurrentButton) GetCurrentButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulAnglesAvailable, out uint32 pulCurrentAngle) GetCurrentAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream) GetCurrentAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulStreamsAvailable, out uint32 pulCurrentStream, out BOOL pbIsDisabled) GetCurrentSubpicture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulUOPs) GetCurrentUOPS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint16* pRegisterArray) GetAllSPRMs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint16* pRegisterArray) GetAllGPRMs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStream, out uint32 pLanguage) GetAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStream, out uint32 pLanguage) GetSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out DVD_MenuAttributes pMenu, out DVD_TitleAttributes pTitle) GetTitleAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_MenuAttributes pATR) GetVMGAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_VideoAttributes pATR) GetCurrentVideoAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_AudioAttributes pATR) GetAudioAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_KaraokeAttributes pAttributes) GetKaraokeAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStream, out DVD_SubpictureAttributes pATR) GetSubpictureAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulNumOfVolumes, out uint32 pulVolume, out DVD_DISC_SIDE pSide, out uint32 pulNumOfTitles) GetDVDVolumeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulNumOfLangs) GetDVDTextNumberOfLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, out uint32 pulNumOfStrings, out uint32 pLangCode, out DVD_TextCharSet pbCharacterSet) GetDVDTextLanguageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, uint32 ulStringIndex, out uint8 pbBuffer, uint32 ulMaxBufferSize, out uint32 pulActualSize, out DVD_TextStringType pType) GetDVDTextStringAsNative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulLangIndex, uint32 ulStringIndex, PWSTR pchwBuffer, uint32 ulMaxBufferSize, out uint32 pulActualSize, out DVD_TextStringType pType) GetDVDTextStringAsUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pulParentalLevel, out uint8 pbCountryCode) GetPlayerParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out uint32 pulNumOfChapters) GetNumberOfChapters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulTitle, out uint32 pulParentalLevels) GetTitleParentalLevels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, char16* pszwPath, uint32 ulMaxSize, out uint32 pulActualSize) GetDVDDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStreamNum, out BOOL pbEnabled) IsAudioStreamEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, PWSTR pszwPath, out uint64 pullDiscID) GetDiscID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out IDvdState* pStateData) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pLanguages, uint32 ulMaxLanguages, out uint32 pulActualLanguages) GetMenuLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, POINT point, out uint32 pulButtonIndex) GetButtonAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, int lParam1, out IDvdCmd* pCmdObj) GetCmdFromEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pLanguage) GetDefaultMenuLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pLanguage, out DVD_AUDIO_LANG_EXT pAudioExtension) GetDefaultAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out uint32 pLanguage, out DVD_SUBPICTURE_LANG_EXT pSubpictureExtension) GetDefaultSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, out DVD_DECODER_CAPS pCaps) GetDecoderCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulButton, out RECT pRect) GetButtonRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdInfo2 self, uint32 ulStreamNum, out BOOL pbEnabled) IsSubpictureStreamEnabled;
 			}
 		}
 		[CRepr]
@@ -10289,9 +10289,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvdGraphBuilder self, out IGraphBuilder* ppGB) GetFiltergraph;
-				public new function HRESULT(ref IDvdGraphBuilder self, in Guid riid, void** ppvIF) GetDvdInterface;
-				public new function HRESULT(ref IDvdGraphBuilder self, PWSTR lpcwszPathName, uint32 dwFlags, out AM_DVD_RENDERSTATUS pStatus) RenderDvdVideoVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdGraphBuilder self, out IGraphBuilder* ppGB) GetFiltergraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdGraphBuilder self, in Guid riid, void** ppvIF) GetDvdInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvdGraphBuilder self, PWSTR lpcwszPathName, uint32 dwFlags, out AM_DVD_RENDERSTATUS pStatus) RenderDvdVideoVolume;
 			}
 		}
 		[CRepr]
@@ -10312,13 +10312,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDDrawExclModeVideo self, ref IDirectDraw pDDrawObject) SetDDrawObject;
-				public new function HRESULT(ref IDDrawExclModeVideo self, out IDirectDraw* ppDDrawObject, out BOOL pbUsingExternal) GetDDrawObject;
-				public new function HRESULT(ref IDDrawExclModeVideo self, ref IDirectDrawSurface pDDrawSurface) SetDDrawSurface;
-				public new function HRESULT(ref IDDrawExclModeVideo self, out IDirectDrawSurface* ppDDrawSurface, out BOOL pbUsingExternal) GetDDrawSurface;
-				public new function HRESULT(ref IDDrawExclModeVideo self, in RECT prcSource, in RECT prcTarget) SetDrawParameters;
-				public new function HRESULT(ref IDDrawExclModeVideo self, out uint32 pdwVideoWidth, out uint32 pdwVideoHeight, out uint32 pdwPictAspectRatioX, out uint32 pdwPictAspectRatioY) GetNativeVideoProps;
-				public new function HRESULT(ref IDDrawExclModeVideo self, ref IDDrawExclModeVideoCallback pCallback, uint32 dwFlags) SetCallbackInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, ref IDirectDraw pDDrawObject) SetDDrawObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, out IDirectDraw* ppDDrawObject, out BOOL pbUsingExternal) GetDDrawObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, ref IDirectDrawSurface pDDrawSurface) SetDDrawSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, out IDirectDrawSurface* ppDDrawSurface, out BOOL pbUsingExternal) GetDDrawSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, in RECT prcSource, in RECT prcTarget) SetDrawParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, out uint32 pdwVideoWidth, out uint32 pdwVideoHeight, out uint32 pdwPictAspectRatioX, out uint32 pdwPictAspectRatioY) GetNativeVideoProps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideo self, ref IDDrawExclModeVideoCallback pCallback, uint32 dwFlags) SetCallbackInterface;
 			}
 		}
 		[CRepr]
@@ -10335,9 +10335,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDDrawExclModeVideoCallback self, BOOL bBefore, uint32 dwFlags, BOOL bOldVisible, in RECT prcOldSrc, in RECT prcOldDest, BOOL bNewVisible, in RECT prcNewSrc, in RECT prcNewDest) OnUpdateOverlay;
-				public new function HRESULT(ref IDDrawExclModeVideoCallback self, in COLORKEY pKey, uint32 dwColor) OnUpdateColorKey;
-				public new function HRESULT(ref IDDrawExclModeVideoCallback self, uint32 dwWidth, uint32 dwHeight, uint32 dwARWidth, uint32 dwARHeight) OnUpdateSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideoCallback self, BOOL bBefore, uint32 dwFlags, BOOL bOldVisible, in RECT prcOldSrc, in RECT prcOldDest, BOOL bNewVisible, in RECT prcNewSrc, in RECT prcNewDest) OnUpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideoCallback self, in COLORKEY pKey, uint32 dwColor) OnUpdateColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDrawExclModeVideoCallback self, uint32 dwWidth, uint32 dwHeight, uint32 dwARWidth, uint32 dwARHeight) OnUpdateSize;
 			}
 		}
 		[CRepr]
@@ -10358,13 +10358,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_NetworkProvider self, uint32 ulSignalSource) PutSignalSource;
-				public new function HRESULT(ref IBDA_NetworkProvider self, out uint32 pulSignalSource) GetSignalSource;
-				public new function HRESULT(ref IBDA_NetworkProvider self, out Guid pguidNetworkType) GetNetworkType;
-				public new function HRESULT(ref IBDA_NetworkProvider self, in Guid guidTuningSpace) PutTuningSpace;
-				public new function HRESULT(ref IBDA_NetworkProvider self, out Guid pguidTuingSpace) GetTuningSpace;
-				public new function HRESULT(ref IBDA_NetworkProvider self, ref IUnknown pUnkFilterControl, out uint32 ppvRegisitrationContext) RegisterDeviceFilter;
-				public new function HRESULT(ref IBDA_NetworkProvider self, uint32 pvRegistrationContext) UnRegisterDeviceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, uint32 ulSignalSource) PutSignalSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, out uint32 pulSignalSource) GetSignalSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, out Guid pguidNetworkType) GetNetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, in Guid guidTuningSpace) PutTuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, out Guid pguidTuingSpace) GetTuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, ref IUnknown pUnkFilterControl, out uint32 ppvRegisitrationContext) RegisterDeviceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NetworkProvider self, uint32 pvRegistrationContext) UnRegisterDeviceFilter;
 			}
 		}
 		[CRepr]
@@ -10383,11 +10383,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_EthernetFilter self, out uint32 pulcbAddresses) GetMulticastListSize;
-				public new function HRESULT(ref IBDA_EthernetFilter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
-				public new function HRESULT(ref IBDA_EthernetFilter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
-				public new function HRESULT(ref IBDA_EthernetFilter self, uint32 ulModeMask) PutMulticastMode;
-				public new function HRESULT(ref IBDA_EthernetFilter self, out uint32 pulModeMask) GetMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EthernetFilter self, out uint32 pulcbAddresses) GetMulticastListSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EthernetFilter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EthernetFilter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EthernetFilter self, uint32 ulModeMask) PutMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EthernetFilter self, out uint32 pulModeMask) GetMulticastMode;
 			}
 		}
 		[CRepr]
@@ -10406,11 +10406,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_IPV4Filter self, out uint32 pulcbAddresses) GetMulticastListSize;
-				public new function HRESULT(ref IBDA_IPV4Filter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
-				public new function HRESULT(ref IBDA_IPV4Filter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
-				public new function HRESULT(ref IBDA_IPV4Filter self, uint32 ulModeMask) PutMulticastMode;
-				public new function HRESULT(ref IBDA_IPV4Filter self, out uint32 pulModeMask) GetMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV4Filter self, out uint32 pulcbAddresses) GetMulticastListSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV4Filter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV4Filter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV4Filter self, uint32 ulModeMask) PutMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV4Filter self, out uint32 pulModeMask) GetMulticastMode;
 			}
 		}
 		[CRepr]
@@ -10429,11 +10429,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_IPV6Filter self, out uint32 pulcbAddresses) GetMulticastListSize;
-				public new function HRESULT(ref IBDA_IPV6Filter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
-				public new function HRESULT(ref IBDA_IPV6Filter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
-				public new function HRESULT(ref IBDA_IPV6Filter self, uint32 ulModeMask) PutMulticastMode;
-				public new function HRESULT(ref IBDA_IPV6Filter self, out uint32 pulModeMask) GetMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV6Filter self, out uint32 pulcbAddresses) GetMulticastListSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV6Filter self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV6Filter self, out uint32 pulcbAddresses, uint8* pAddressList) GetMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV6Filter self, uint32 ulModeMask) PutMulticastMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPV6Filter self, out uint32 pulModeMask) GetMulticastMode;
 			}
 		}
 		[CRepr]
@@ -10451,10 +10451,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DeviceControl self) StartChanges;
-				public new function HRESULT(ref IBDA_DeviceControl self) CheckChanges;
-				public new function HRESULT(ref IBDA_DeviceControl self) CommitChanges;
-				public new function HRESULT(ref IBDA_DeviceControl self, out uint32 pState) GetChangeState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DeviceControl self) StartChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DeviceControl self) CheckChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DeviceControl self) CommitChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DeviceControl self, out uint32 pState) GetChangeState;
 			}
 		}
 		[CRepr]
@@ -10471,9 +10471,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_PinControl self, out uint32 pulPinID) GetPinID;
-				public new function HRESULT(ref IBDA_PinControl self, out uint32 pulPinType) GetPinType;
-				public new function HRESULT(ref IBDA_PinControl self, out uint32 pulRegistrationCtx) RegistrationContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_PinControl self, out uint32 pulPinID) GetPinID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_PinControl self, out uint32 pulPinType) GetPinType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_PinControl self, out uint32 pulRegistrationCtx) RegistrationContext;
 			}
 		}
 		[CRepr]
@@ -10493,12 +10493,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_SignalProperties self, in Guid guidNetworkType) PutNetworkType;
-				public new function HRESULT(ref IBDA_SignalProperties self, out Guid pguidNetworkType) GetNetworkType;
-				public new function HRESULT(ref IBDA_SignalProperties self, uint32 ulSignalSource) PutSignalSource;
-				public new function HRESULT(ref IBDA_SignalProperties self, out uint32 pulSignalSource) GetSignalSource;
-				public new function HRESULT(ref IBDA_SignalProperties self, in Guid guidTuningSpace) PutTuningSpace;
-				public new function HRESULT(ref IBDA_SignalProperties self, out Guid pguidTuingSpace) GetTuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, in Guid guidNetworkType) PutNetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, out Guid pguidNetworkType) GetNetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, uint32 ulSignalSource) PutSignalSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, out uint32 pulSignalSource) GetSignalSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, in Guid guidTuningSpace) PutTuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalProperties self, out Guid pguidTuingSpace) GetTuningSpace;
 			}
 		}
 		[CRepr]
@@ -10522,16 +10522,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_SignalStatistics self, int32 lDbStrength) put_SignalStrength;
-				public new function HRESULT(ref IBDA_SignalStatistics self, out int32 plDbStrength) get_SignalStrength;
-				public new function HRESULT(ref IBDA_SignalStatistics self, int32 lPercentQuality) put_SignalQuality;
-				public new function HRESULT(ref IBDA_SignalStatistics self, out int32 plPercentQuality) get_SignalQuality;
-				public new function HRESULT(ref IBDA_SignalStatistics self, BOOLEAN fPresent) put_SignalPresent;
-				public new function HRESULT(ref IBDA_SignalStatistics self, out uint8 pfPresent) get_SignalPresent;
-				public new function HRESULT(ref IBDA_SignalStatistics self, BOOLEAN fLocked) put_SignalLocked;
-				public new function HRESULT(ref IBDA_SignalStatistics self, out uint8 pfLocked) get_SignalLocked;
-				public new function HRESULT(ref IBDA_SignalStatistics self, int32 lmsSampleTime) put_SampleTime;
-				public new function HRESULT(ref IBDA_SignalStatistics self, out int32 plmsSampleTime) get_SampleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, int32 lDbStrength) put_SignalStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, out int32 plDbStrength) get_SignalStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, int32 lPercentQuality) put_SignalQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, out int32 plPercentQuality) get_SignalQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, BOOLEAN fPresent) put_SignalPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, out uint8 pfPresent) get_SignalPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, BOOLEAN fLocked) put_SignalLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, out uint8 pfLocked) get_SignalLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, int32 lmsSampleTime) put_SampleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_SignalStatistics self, out int32 plmsSampleTime) get_SampleTime;
 			}
 		}
 		[CRepr]
@@ -10556,17 +10556,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_Topology self, out uint32 pulcNodeTypes, uint32 ulcNodeTypesMax, uint32* rgulNodeTypes) GetNodeTypes;
-				public new function HRESULT(ref IBDA_Topology self, out uint32 ulcNodeDescriptors, uint32 ulcNodeDescriptorsMax, BDANODE_DESCRIPTOR* rgNodeDescriptors) GetNodeDescriptors;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulNodeType, out uint32 pulcInterfaces, uint32 ulcInterfacesMax, Guid* rgguidInterfaces) GetNodeInterfaces;
-				public new function HRESULT(ref IBDA_Topology self, out uint32 pulcPinTypes, uint32 ulcPinTypesMax, uint32* rgulPinTypes) GetPinTypes;
-				public new function HRESULT(ref IBDA_Topology self, out uint32 pulcConnections, uint32 ulcConnectionsMax, BDA_TEMPLATE_CONNECTION* rgConnections) GetTemplateConnections;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulPinType, out uint32 pulPinId) CreatePin;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulPinId) DeletePin;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulPinId, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulPinId, ref REGPINMEDIUM pMedium) SetMedium;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulInputPinId, uint32 ulOutputPinId) CreateTopology;
-				public new function HRESULT(ref IBDA_Topology self, uint32 ulInputPinId, uint32 ulOutputPinId, uint32 ulNodeType, out IUnknown* ppControlNode) GetControlNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, out uint32 pulcNodeTypes, uint32 ulcNodeTypesMax, uint32* rgulNodeTypes) GetNodeTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, out uint32 ulcNodeDescriptors, uint32 ulcNodeDescriptorsMax, BDANODE_DESCRIPTOR* rgNodeDescriptors) GetNodeDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulNodeType, out uint32 pulcInterfaces, uint32 ulcInterfacesMax, Guid* rgguidInterfaces) GetNodeInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, out uint32 pulcPinTypes, uint32 ulcPinTypesMax, uint32* rgulPinTypes) GetPinTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, out uint32 pulcConnections, uint32 ulcConnectionsMax, BDA_TEMPLATE_CONNECTION* rgConnections) GetTemplateConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulPinType, out uint32 pulPinId) CreatePin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulPinId) DeletePin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulPinId, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulPinId, ref REGPINMEDIUM pMedium) SetMedium;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulInputPinId, uint32 ulOutputPinId) CreateTopology;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Topology self, uint32 ulInputPinId, uint32 ulOutputPinId, uint32 ulNodeType, out IUnknown* ppControlNode) GetControlNode;
 			}
 		}
 		[CRepr]
@@ -10582,8 +10582,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_VoidTransform self) Start;
-				public new function HRESULT(ref IBDA_VoidTransform self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_VoidTransform self) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_VoidTransform self) Stop;
 			}
 		}
 		[CRepr]
@@ -10599,8 +10599,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_NullTransform self) Start;
-				public new function HRESULT(ref IBDA_NullTransform self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NullTransform self) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NullTransform self) Stop;
 			}
 		}
 		[CRepr]
@@ -10626,18 +10626,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_FrequencyFilter self, uint32 ulTransponder) put_Autotune;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulTransponder) get_Autotune;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, uint32 ulFrequency) put_Frequency;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulFrequency) get_Frequency;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, Polarisation Polarity) put_Polarity;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out Polarisation pPolarity) get_Polarity;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, uint32 ulRange) put_Range;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulRange) get_Range;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, uint32 ulBandwidth) put_Bandwidth;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulBandwidth) get_Bandwidth;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, uint32 ulMultiplier) put_FrequencyMultiplier;
-				public new function HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulMultiplier) get_FrequencyMultiplier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, uint32 ulTransponder) put_Autotune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulTransponder) get_Autotune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, uint32 ulFrequency) put_Frequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulFrequency) get_Frequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, Polarisation Polarity) put_Polarity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out Polarisation pPolarity) get_Polarity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, uint32 ulRange) put_Range;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulRange) get_Range;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, uint32 ulBandwidth) put_Bandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulBandwidth) get_Bandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, uint32 ulMultiplier) put_FrequencyMultiplier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FrequencyFilter self, out uint32 pulMultiplier) get_FrequencyMultiplier;
 			}
 		}
 		[CRepr]
@@ -10657,12 +10657,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_LNBInfo self, uint32 ulLOFLow) put_LocalOscilatorFrequencyLowBand;
-				public new function HRESULT(ref IBDA_LNBInfo self, out uint32 pulLOFLow) get_LocalOscilatorFrequencyLowBand;
-				public new function HRESULT(ref IBDA_LNBInfo self, uint32 ulLOFHigh) put_LocalOscilatorFrequencyHighBand;
-				public new function HRESULT(ref IBDA_LNBInfo self, out uint32 pulLOFHigh) get_LocalOscilatorFrequencyHighBand;
-				public new function HRESULT(ref IBDA_LNBInfo self, uint32 ulSwitchFrequency) put_HighLowSwitchFrequency;
-				public new function HRESULT(ref IBDA_LNBInfo self, out uint32 pulSwitchFrequency) get_HighLowSwitchFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, uint32 ulLOFLow) put_LocalOscilatorFrequencyLowBand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, out uint32 pulLOFLow) get_LocalOscilatorFrequencyLowBand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, uint32 ulLOFHigh) put_LocalOscilatorFrequencyHighBand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, out uint32 pulLOFHigh) get_LocalOscilatorFrequencyHighBand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, uint32 ulSwitchFrequency) put_HighLowSwitchFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_LNBInfo self, out uint32 pulSwitchFrequency) get_HighLowSwitchFrequency;
 			}
 		}
 		[CRepr]
@@ -10682,12 +10682,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DiseqCommand self, BOOLEAN bEnable) put_EnableDiseqCommands;
-				public new function HRESULT(ref IBDA_DiseqCommand self, uint32 ulLNBSource) put_DiseqLNBSource;
-				public new function HRESULT(ref IBDA_DiseqCommand self, BOOLEAN bUseToneBurst) put_DiseqUseToneBurst;
-				public new function HRESULT(ref IBDA_DiseqCommand self, uint32 ulRepeats) put_DiseqRepeats;
-				public new function HRESULT(ref IBDA_DiseqCommand self, uint32 ulRequestId, uint32 ulcbCommandLen, uint8* pbCommand) put_DiseqSendCommand;
-				public new function HRESULT(ref IBDA_DiseqCommand self, uint32 ulRequestId, out uint32 pulcbResponseLen, uint8* pbResponse) get_DiseqResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, BOOLEAN bEnable) put_EnableDiseqCommands;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, uint32 ulLNBSource) put_DiseqLNBSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, BOOLEAN bUseToneBurst) put_DiseqUseToneBurst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, uint32 ulRepeats) put_DiseqRepeats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, uint32 ulRequestId, uint32 ulcbCommandLen, uint8* pbCommand) put_DiseqSendCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DiseqCommand self, uint32 ulRequestId, out uint32 pulcbResponseLen, uint8* pbResponse) get_DiseqResponse;
 			}
 		}
 		[CRepr]
@@ -10702,7 +10702,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_AutoDemodulate self) put_AutoDemodulate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AutoDemodulate self) put_AutoDemodulate;
 			}
 		}
 		[CRepr]
@@ -10719,9 +10719,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBDA_AutoDemodulate.VTable
 			{
-				public new function HRESULT(ref IBDA_AutoDemodulateEx self, uint32 ulcDeviceNodeTypesMax, out uint32 pulcDeviceNodeTypes, out Guid pguidDeviceNodeTypes) get_SupportedDeviceNodeTypes;
-				public new function HRESULT(ref IBDA_AutoDemodulateEx self, out uint32 pulAMTunerModeType, out uint32 pulAnalogVideoStandard) get_SupportedVideoFormats;
-				public new function HRESULT(ref IBDA_AutoDemodulateEx self, out uint32 pulCompositeCount, out uint32 pulSvideoCount) get_AuxInputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AutoDemodulateEx self, uint32 ulcDeviceNodeTypesMax, out uint32 pulcDeviceNodeTypes, out Guid pguidDeviceNodeTypes) get_SupportedDeviceNodeTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AutoDemodulateEx self, out uint32 pulAMTunerModeType, out uint32 pulAnalogVideoStandard) get_SupportedVideoFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AutoDemodulateEx self, out uint32 pulCompositeCount, out uint32 pulSvideoCount) get_AuxInputCount;
 			}
 		}
 		[CRepr]
@@ -10749,20 +10749,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref ModulationType pModulationType) put_ModulationType;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out ModulationType pModulationType) get_ModulationType;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref FECMethod pFECMethod) put_InnerFECMethod;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out FECMethod pFECMethod) get_InnerFECMethod;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref BinaryConvolutionCodeRate pFECRate) put_InnerFECRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out BinaryConvolutionCodeRate pFECRate) get_InnerFECRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref FECMethod pFECMethod) put_OuterFECMethod;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out FECMethod pFECMethod) get_OuterFECMethod;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref BinaryConvolutionCodeRate pFECRate) put_OuterFECRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out BinaryConvolutionCodeRate pFECRate) get_OuterFECRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref uint32 pSymbolRate) put_SymbolRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out uint32 pSymbolRate) get_SymbolRate;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, ref SpectralInversion pSpectralInversion) put_SpectralInversion;
-				public new function HRESULT(ref IBDA_DigitalDemodulator self, out SpectralInversion pSpectralInversion) get_SpectralInversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref ModulationType pModulationType) put_ModulationType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out ModulationType pModulationType) get_ModulationType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref FECMethod pFECMethod) put_InnerFECMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out FECMethod pFECMethod) get_InnerFECMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref BinaryConvolutionCodeRate pFECRate) put_InnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out BinaryConvolutionCodeRate pFECRate) get_InnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref FECMethod pFECMethod) put_OuterFECMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out FECMethod pFECMethod) get_OuterFECMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref BinaryConvolutionCodeRate pFECRate) put_OuterFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out BinaryConvolutionCodeRate pFECRate) get_OuterFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref uint32 pSymbolRate) put_SymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out uint32 pSymbolRate) get_SymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, ref SpectralInversion pSpectralInversion) put_SpectralInversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator self, out SpectralInversion pSpectralInversion) get_SpectralInversion;
 			}
 		}
 		[CRepr]
@@ -10784,14 +10784,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBDA_DigitalDemodulator.VTable
 			{
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, ref GuardInterval pGuardInterval) put_GuardInterval;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, out GuardInterval pGuardInterval) get_GuardInterval;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, ref TransmissionMode pTransmissionMode) put_TransmissionMode;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, out TransmissionMode pTransmissionMode) get_TransmissionMode;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, ref RollOff pRollOff) put_RollOff;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, out RollOff pRollOff) get_RollOff;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, ref Pilot pPilot) put_Pilot;
-				public new function HRESULT(ref IBDA_DigitalDemodulator2 self, out Pilot pPilot) get_Pilot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, ref GuardInterval pGuardInterval) put_GuardInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, out GuardInterval pGuardInterval) get_GuardInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, ref TransmissionMode pTransmissionMode) put_TransmissionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, out TransmissionMode pTransmissionMode) get_TransmissionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, ref RollOff pRollOff) put_RollOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, out RollOff pRollOff) get_RollOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, ref Pilot pPilot) put_Pilot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator2 self, out Pilot pPilot) get_Pilot;
 			}
 		}
 		[CRepr]
@@ -10809,10 +10809,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBDA_DigitalDemodulator2.VTable
 			{
-				public new function HRESULT(ref IBDA_DigitalDemodulator3 self, ref BDA_SIGNAL_TIMEOUTS pSignalTimeouts) put_SignalTimeouts;
-				public new function HRESULT(ref IBDA_DigitalDemodulator3 self, out BDA_SIGNAL_TIMEOUTS pSignalTimeouts) get_SignalTimeouts;
-				public new function HRESULT(ref IBDA_DigitalDemodulator3 self, ref uint32 pPLPNumber) put_PLPNumber;
-				public new function HRESULT(ref IBDA_DigitalDemodulator3 self, out uint32 pPLPNumber) get_PLPNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator3 self, ref BDA_SIGNAL_TIMEOUTS pSignalTimeouts) put_SignalTimeouts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator3 self, out BDA_SIGNAL_TIMEOUTS pSignalTimeouts) get_SignalTimeouts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator3 self, ref uint32 pPLPNumber) put_PLPNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DigitalDemodulator3 self, out uint32 pPLPNumber) get_PLPNumber;
 			}
 		}
 		[CRepr]
@@ -10828,8 +10828,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICCSubStreamFiltering self, out int32 pTypes) get_SubstreamTypes;
-				public new function HRESULT(ref ICCSubStreamFiltering self, int32 Types) put_SubstreamTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICCSubStreamFiltering self, out int32 pTypes) get_SubstreamTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICCSubStreamFiltering self, int32 Types) put_SubstreamTypes;
 			}
 		}
 		[CRepr]
@@ -10845,8 +10845,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_IPSinkControl self, out uint32 pulcbSize, out uint8* pbBuffer) GetMulticastList;
-				public new function HRESULT(ref IBDA_IPSinkControl self, out uint32 pulcbSize, out uint8* pbBuffer) GetAdapterIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPSinkControl self, out uint32 pulcbSize, out uint8* pbBuffer) GetMulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPSinkControl self, out uint32 pulcbSize, out uint8* pbBuffer) GetAdapterIPAddress;
 			}
 		}
 		[CRepr]
@@ -10863,9 +10863,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_IPSinkInfo self, out uint32 pulcbAddresses, uint8** ppbAddressList) get_MulticastList;
-				public new function HRESULT(ref IBDA_IPSinkInfo self, out BSTR pbstrBuffer) get_AdapterIPAddress;
-				public new function HRESULT(ref IBDA_IPSinkInfo self, out BSTR pbstrBuffer) get_AdapterDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPSinkInfo self, out uint32 pulcbAddresses, uint8** ppbAddressList) get_MulticastList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPSinkInfo self, out BSTR pbstrBuffer) get_AdapterIPAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_IPSinkInfo self, out BSTR pbstrBuffer) get_AdapterDescription;
 			}
 		}
 		[CRepr]
@@ -10883,10 +10883,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumPIDMap self, uint32 cRequest, PID_MAP* pPIDMap, out uint32 pcReceived) Next;
-				public new function HRESULT(ref IEnumPIDMap self, uint32 cRecords) Skip;
-				public new function HRESULT(ref IEnumPIDMap self) Reset;
-				public new function HRESULT(ref IEnumPIDMap self, out IEnumPIDMap* ppIEnumPIDMap) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPIDMap self, uint32 cRequest, PID_MAP* pPIDMap, out uint32 pcReceived) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPIDMap self, uint32 cRecords) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPIDMap self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumPIDMap self, out IEnumPIDMap* ppIEnumPIDMap) Clone;
 			}
 		}
 		[CRepr]
@@ -10903,9 +10903,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMPEG2PIDMap self, uint32 culPID, ref uint32 pulPID, MEDIA_SAMPLE_CONTENT MediaSampleContent) MapPID;
-				public new function HRESULT(ref IMPEG2PIDMap self, uint32 culPID, ref uint32 pulPID) UnmapPID;
-				public new function HRESULT(ref IMPEG2PIDMap self, out IEnumPIDMap* pIEnumPIDMap) EnumPIDMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2PIDMap self, uint32 culPID, ref uint32 pulPID, MEDIA_SAMPLE_CONTENT MediaSampleContent) MapPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2PIDMap self, uint32 culPID, ref uint32 pulPID) UnmapPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2PIDMap self, out IEnumPIDMap* pIEnumPIDMap) EnumPIDMap;
 			}
 		}
 		[CRepr]
@@ -10925,12 +10925,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFrequencyMap self, out uint32 ulCount, out uint32* ppulList) get_FrequencyMapping;
-				public new function HRESULT(ref IFrequencyMap self, uint32 ulCount, uint32* pList) put_FrequencyMapping;
-				public new function HRESULT(ref IFrequencyMap self, out uint32 pulCountryCode) get_CountryCode;
-				public new function HRESULT(ref IFrequencyMap self, uint32 ulCountryCode) put_CountryCode;
-				public new function HRESULT(ref IFrequencyMap self, uint32 ulCountryCode, out uint32 pulCount, out uint32* ppulList) get_DefaultFrequencyMapping;
-				public new function HRESULT(ref IFrequencyMap self, out uint32 pulCount, out uint32* ppulList) get_CountryCodeList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, out uint32 ulCount, out uint32* ppulList) get_FrequencyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, uint32 ulCount, uint32* pList) put_FrequencyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, out uint32 pulCountryCode) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, uint32 ulCountryCode) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, uint32 ulCountryCode, out uint32 pulCount, out uint32* ppulList) get_DefaultFrequencyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFrequencyMap self, out uint32 pulCount, out uint32* ppulList) get_CountryCodeList;
 			}
 		}
 		[CRepr]
@@ -10945,7 +10945,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_EasMessage self, uint32 ulEventID, out IUnknown* ppEASObject) get_EasMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EasMessage self, uint32 ulEventID, out IUnknown* ppEASObject) get_EasMessage;
 			}
 		}
 		[CRepr]
@@ -10960,7 +10960,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_TransportStreamInfo self, out uint32 pPatTickCount) get_PatTableTickCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_TransportStreamInfo self, out uint32 pPatTickCount) get_PatTableTickCount;
 			}
 		}
 		[CRepr]
@@ -10984,16 +10984,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_ConditionalAccess self, out SmartCardStatusType pCardStatus, out SmartCardAssociationType pCardAssociation, out BSTR pbstrCardError, out int16 pfOOBLocked) get_SmartCardStatus;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, out BSTR pbstrCardName, out BSTR pbstrCardManufacturer, out int16 pfDaylightSavings, out uint8 pbyRatingRegion, out int32 plTimeZoneOffsetMinutes, out BSTR pbstrLanguage, out EALocationCodeType pEALocationCode) get_SmartCardInfo;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, out uint32 pulcApplications, uint32 ulcApplicationsMax, SmartCardApplication* rgApplications) get_SmartCardApplications;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint16 usVirtualChannel, out EntitlementType pEntitlement) get_Entitlement;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint16 usVirtualChannel) TuneByChannel;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) SetProgram;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) AddProgram;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) RemoveProgram;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint8 byDialogNumber, out BSTR pbstrURL) GetModuleUI;
-				public new function HRESULT(ref IBDA_ConditionalAccess self, uint8 byDialogNumber, UICloseReasonType CloseReason) InformUIClosed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, out SmartCardStatusType pCardStatus, out SmartCardAssociationType pCardAssociation, out BSTR pbstrCardError, out int16 pfOOBLocked) get_SmartCardStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, out BSTR pbstrCardName, out BSTR pbstrCardManufacturer, out int16 pfDaylightSavings, out uint8 pbyRatingRegion, out int32 plTimeZoneOffsetMinutes, out BSTR pbstrLanguage, out EALocationCodeType pEALocationCode) get_SmartCardInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, out uint32 pulcApplications, uint32 ulcApplicationsMax, SmartCardApplication* rgApplications) get_SmartCardApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint16 usVirtualChannel, out EntitlementType pEntitlement) get_Entitlement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint16 usVirtualChannel) TuneByChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) SetProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) AddProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint16 usProgramNumber) RemoveProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint8 byDialogNumber, out BSTR pbstrURL) GetModuleUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccess self, uint8 byDialogNumber, UICloseReasonType CloseReason) InformUIClosed;
 			}
 		}
 		[CRepr]
@@ -11022,8 +11022,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DRM self, out uint32 pdwStatus, out HRESULT phError) GetDRMPairingStatus;
-				public new function HRESULT(ref IBDA_DRM self, BOOL fSync) PerformDRMPairing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRM self, out uint32 pdwStatus, out HRESULT phError) GetDRMPairingStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRM self, BOOL fSync) PerformDRMPairing;
 			}
 		}
 		[CRepr]
@@ -11040,9 +11040,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_NameValueService self, uint32 ulIndex, out BSTR pbstrName) GetValueNameByIndex;
-				public new function HRESULT(ref IBDA_NameValueService self, BSTR bstrName, BSTR bstrLanguage, out BSTR pbstrValue) GetValue;
-				public new function HRESULT(ref IBDA_NameValueService self, uint32 ulDialogRequest, BSTR bstrLanguage, BSTR bstrName, BSTR bstrValue, uint32 ulReserved) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NameValueService self, uint32 ulIndex, out BSTR pbstrName) GetValueNameByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NameValueService self, BSTR bstrName, BSTR bstrLanguage, out BSTR pbstrValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_NameValueService self, uint32 ulDialogRequest, BSTR bstrLanguage, BSTR bstrName, BSTR bstrValue, uint32 ulReserved) SetValue;
 			}
 		}
 		[CRepr]
@@ -11061,11 +11061,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, BDA_CONDITIONALACCESS_REQUESTTYPE RequestType, uint32 ulcbEntitlementTokenLen, uint8* pbEntitlementToken, out uint32 pulDescrambleStatus) CheckEntitlementToken;
-				public new function HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulcbCaptureTokenLen, uint8* pbCaptureToken) SetCaptureToken;
-				public new function HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 EventId) OpenBroadcastMmi;
-				public new function HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulDialogNumber, BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode, out uint32 pulSessionResult) CloseMmiDialog;
-				public new function HRESULT(ref IBDA_ConditionalAccessEx self, out uint32 pulDialogRequestNumber) CreateDialogRequestNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, BDA_CONDITIONALACCESS_REQUESTTYPE RequestType, uint32 ulcbEntitlementTokenLen, uint8* pbEntitlementToken, out uint32 pulDescrambleStatus) CheckEntitlementToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulcbCaptureTokenLen, uint8* pbCaptureToken) SetCaptureToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 EventId) OpenBroadcastMmi;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccessEx self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulDialogNumber, BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode, out uint32 pulSessionResult) CloseMmiDialog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ConditionalAccessEx self, out uint32 pulDialogRequestNumber) CreateDialogRequestNumber;
 			}
 		}
 		[CRepr]
@@ -11080,7 +11080,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_ISDBConditionalAccess self, uint32 ulRequestId, uint32 ulcbRequestBufferLen, uint8* pbRequestBuffer) SetIsdbCasRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_ISDBConditionalAccess self, uint32 ulRequestId, uint32 ulcbRequestBufferLen, uint8* pbRequestBuffer) SetIsdbCasRequest;
 			}
 		}
 		[CRepr]
@@ -11095,7 +11095,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_EventingService self, uint32 ulEventID, uint32 ulEventResult) CompleteEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_EventingService self, uint32 ulEventID, uint32 ulEventResult) CompleteEvent;
 			}
 		}
 		[CRepr]
@@ -11111,8 +11111,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_AUX self, out uint32 pdwNumAuxInputsBSTR) QueryCapabilities;
-				public new function HRESULT(ref IBDA_AUX self, uint32 dwIndex, out uint32 dwInputID, out Guid pConnectorType, out uint32 ConnTypeNum, out uint32 NumVideoStds, out uint64 AnalogStds) EnumCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AUX self, out uint32 pdwNumAuxInputsBSTR) QueryCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_AUX self, uint32 dwIndex, out uint32 dwInputID, out Guid pConnectorType, out uint32 ConnTypeNum, out uint32 NumVideoStds, out uint64 AnalogStds) EnumCapability;
 			}
 		}
 		[CRepr]
@@ -11131,11 +11131,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_Encoder self, out uint32 NumAudioFmts, out uint32 NumVideoFmts) QueryCapabilities;
-				public new function HRESULT(ref IBDA_Encoder self, uint32 FmtIndex, out uint32 MethodID, out uint32 AlgorithmType, out uint32 SamplingRate, out uint32 BitDepth, out uint32 NumChannels) EnumAudioCapability;
-				public new function HRESULT(ref IBDA_Encoder self, uint32 FmtIndex, out uint32 MethodID, out uint32 AlgorithmType, out uint32 VerticalSize, out uint32 HorizontalSize, out uint32 AspectRatio, out uint32 FrameRateCode, out uint32 ProgressiveSequence) EnumVideoCapability;
-				public new function HRESULT(ref IBDA_Encoder self, uint32 AudioBitrateMode, uint32 AudioBitrate, uint32 AudioMethodID, uint32 AudioProgram, uint32 VideoBitrateMode, uint32 VideoBitrate, uint32 VideoMethodID) SetParameters;
-				public new function HRESULT(ref IBDA_Encoder self, out uint32 AudioBitrateMax, out uint32 AudioBitrateMin, out uint32 AudioBitrateMode, out uint32 AudioBitrateStepping, out uint32 AudioBitrate, out uint32 AudioMethodID, out uint32 AvailableAudioPrograms, out uint32 AudioProgram, out uint32 VideoBitrateMax, out uint32 VideoBitrateMin, out uint32 VideoBitrateMode, out uint32 VideoBitrate, out uint32 VideoBitrateStepping, out uint32 VideoMethodID, out uint32 SignalSourceID, out uint64 SignalFormat, out BOOL SignalLock, out int32 SignalLevel, out uint32 SignalToNoiseRatio) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Encoder self, out uint32 NumAudioFmts, out uint32 NumVideoFmts) QueryCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Encoder self, uint32 FmtIndex, out uint32 MethodID, out uint32 AlgorithmType, out uint32 SamplingRate, out uint32 BitDepth, out uint32 NumChannels) EnumAudioCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Encoder self, uint32 FmtIndex, out uint32 MethodID, out uint32 AlgorithmType, out uint32 VerticalSize, out uint32 HorizontalSize, out uint32 AspectRatio, out uint32 FrameRateCode, out uint32 ProgressiveSequence) EnumVideoCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Encoder self, uint32 AudioBitrateMode, uint32 AudioBitrate, uint32 AudioMethodID, uint32 AudioProgram, uint32 VideoBitrateMode, uint32 VideoBitrate, uint32 VideoMethodID) SetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_Encoder self, out uint32 AudioBitrateMax, out uint32 AudioBitrateMin, out uint32 AudioBitrateMode, out uint32 AudioBitrateStepping, out uint32 AudioBitrate, out uint32 AudioMethodID, out uint32 AvailableAudioPrograms, out uint32 AudioProgram, out uint32 VideoBitrateMax, out uint32 VideoBitrateMin, out uint32 VideoBitrateMode, out uint32 VideoBitrate, out uint32 VideoBitrateStepping, out uint32 VideoMethodID, out uint32 SignalSourceID, out uint64 SignalFormat, out BOOL SignalLock, out int32 SignalLevel, out uint32 SignalToNoiseRatio) GetState;
 			}
 		}
 		[CRepr]
@@ -11156,13 +11156,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_FDC self, out uint32 CurrentBitrate, out BOOL CarrierLock, out uint32 CurrentFrequency, out BOOL CurrentSpectrumInversion, out BSTR CurrentPIDList, out BSTR CurrentTIDList, out BOOL Overflow) GetStatus;
-				public new function HRESULT(ref IBDA_FDC self, BSTR TableIDs) RequestTables;
-				public new function HRESULT(ref IBDA_FDC self, BSTR PidsToAdd, out uint32 RemainingFilterEntries) AddPid;
-				public new function HRESULT(ref IBDA_FDC self, BSTR PidsToRemove) RemovePid;
-				public new function HRESULT(ref IBDA_FDC self, BSTR TidsToAdd, out BSTR CurrentTidList) AddTid;
-				public new function HRESULT(ref IBDA_FDC self, BSTR TidsToRemove) RemoveTid;
-				public new function HRESULT(ref IBDA_FDC self, out uint32 Pid, uint32 MaxBufferSize, out uint32 ActualSize, out uint8 SecBuffer) GetTableSection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, out uint32 CurrentBitrate, out BOOL CarrierLock, out uint32 CurrentFrequency, out BOOL CurrentSpectrumInversion, out BSTR CurrentPIDList, out BSTR CurrentTIDList, out BOOL Overflow) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, BSTR TableIDs) RequestTables;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, BSTR PidsToAdd, out uint32 RemainingFilterEntries) AddPid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, BSTR PidsToRemove) RemovePid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, BSTR TidsToAdd, out BSTR CurrentTidList) AddTid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, BSTR TidsToRemove) RemoveTid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_FDC self, out uint32 Pid, uint32 MaxBufferSize, out uint32 ActualSize, out uint8 SecBuffer) GetTableSection;
 			}
 		}
 		[CRepr]
@@ -11182,12 +11182,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self, out Guid pguidDataType) GetGuideDataType;
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self, out uint32 pulcbBufferLen, out uint8 pbBuffer, out uint32 pulGuideDataPercentageProgress) GetGuideData;
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self) RequestGuideDataUpdate;
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self, uint64 ul64ServiceIdx, out BSTR pbstrTuneXml) GetTuneXmlFromServiceIdx;
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self, out uint32 pulcbBufferLen, out uint8 pbBuffer) GetServices;
-				public new function HRESULT(ref IBDA_GuideDataDeliveryService self, BSTR bstrTuneXml, out BSTR pbstrServiceDescription) GetServiceInfoFromTuneXml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self, out Guid pguidDataType) GetGuideDataType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self, out uint32 pulcbBufferLen, out uint8 pbBuffer, out uint32 pulGuideDataPercentageProgress) GetGuideData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self) RequestGuideDataUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self, uint64 ul64ServiceIdx, out BSTR pbstrTuneXml) GetTuneXmlFromServiceIdx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self, out uint32 pulcbBufferLen, out uint8 pbBuffer) GetServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_GuideDataDeliveryService self, BSTR bstrTuneXml, out BSTR pbstrServiceDescription) GetServiceInfoFromTuneXml;
 			}
 		}
 		[CRepr]
@@ -11203,8 +11203,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DRMService self, ref Guid puuidNewDrm) SetDRM;
-				public new function HRESULT(ref IBDA_DRMService self, out BSTR pbstrDrmUuidList, out Guid DrmUuid) GetDRMStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRMService self, ref Guid puuidNewDrm) SetDRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRMService self, out BSTR pbstrDrmUuidList, out Guid DrmUuid) GetDRMStatus;
 			}
 		}
 		[CRepr]
@@ -11226,14 +11226,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_WMDRMSession self, out uint32 MaxCaptureToken, out uint32 MaxStreamingPid, out uint32 MaxLicense, out uint32 MinSecurityLevel, out uint32 RevInfoSequenceNumber, out uint64 RevInfoIssuedTime, out uint32 RevInfoTTL, out uint32 RevListVersion, out uint32 ulState) GetStatus;
-				public new function HRESULT(ref IBDA_WMDRMSession self, uint32 ulRevInfoLen, uint8* pbRevInfo) SetRevInfo;
-				public new function HRESULT(ref IBDA_WMDRMSession self, uint32 ulCrlLen, uint8* pbCrlLen) SetCrl;
-				public new function HRESULT(ref IBDA_WMDRMSession self, uint32 ulcbRequest, uint8* pbRequest, out uint32 pulcbResponse, out uint8 pbResponse) TransactMessage;
-				public new function HRESULT(ref IBDA_WMDRMSession self, ref Guid uuidKey, out uint32 pulPackageLen, out uint8 pbPackage) GetLicense;
-				public new function HRESULT(ref IBDA_WMDRMSession self, ref Guid uuidKey) ReissueLicense;
-				public new function HRESULT(ref IBDA_WMDRMSession self, uint32 ulInXmrLicenseLen, uint8* pbInXmrLicense, uint32 ulEntitlementTokenLen, uint8* pbEntitlementToken, out uint32 pulDescrambleStatus, out uint32 pulOutXmrLicenseLen, out uint8 pbOutXmrLicense) RenewLicense;
-				public new function HRESULT(ref IBDA_WMDRMSession self, out uint32 pulKeyInfoLen, out uint8 pbKeyInfo) GetKeyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, out uint32 MaxCaptureToken, out uint32 MaxStreamingPid, out uint32 MaxLicense, out uint32 MinSecurityLevel, out uint32 RevInfoSequenceNumber, out uint64 RevInfoIssuedTime, out uint32 RevInfoTTL, out uint32 RevListVersion, out uint32 ulState) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, uint32 ulRevInfoLen, uint8* pbRevInfo) SetRevInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, uint32 ulCrlLen, uint8* pbCrlLen) SetCrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, uint32 ulcbRequest, uint8* pbRequest, out uint32 pulcbResponse, out uint8 pbResponse) TransactMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, ref Guid uuidKey, out uint32 pulPackageLen, out uint8 pbPackage) GetLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, ref Guid uuidKey) ReissueLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, uint32 ulInXmrLicenseLen, uint8* pbInXmrLicense, uint32 ulEntitlementTokenLen, uint8* pbEntitlementToken, out uint32 pulDescrambleStatus, out uint32 pulOutXmrLicenseLen, out uint8 pbOutXmrLicense) RenewLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMSession self, out uint32 pulKeyInfoLen, out uint8 pbKeyInfo) GetKeyInfo;
 			}
 		}
 		[CRepr]
@@ -11253,12 +11253,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_WMDRMTuner self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulPurchaseTokenLen, uint8* pbPurchaseToken, out uint32 pulDescrambleStatus, out uint32 pulCaptureTokenLen, out uint8 pbCaptureToken) PurchaseEntitlement;
-				public new function HRESULT(ref IBDA_WMDRMTuner self, uint32 ulCaptureTokenLen, uint8* pbCaptureToken) CancelCaptureToken;
-				public new function HRESULT(ref IBDA_WMDRMTuner self, uint32 ulPid, ref Guid uuidKey) SetPidProtection;
-				public new function HRESULT(ref IBDA_WMDRMTuner self, uint32 pulPid, out Guid uuidKey) GetPidProtection;
-				public new function HRESULT(ref IBDA_WMDRMTuner self, uint32 ulSyncValue) SetSyncValue;
-				public new function HRESULT(ref IBDA_WMDRMTuner self, out uint32 pulStartCodeProfileLen, out uint8 pbStartCodeProfile) GetStartCodeProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulPurchaseTokenLen, uint8* pbPurchaseToken, out uint32 pulDescrambleStatus, out uint32 pulCaptureTokenLen, out uint8 pbCaptureToken) PurchaseEntitlement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, uint32 ulCaptureTokenLen, uint8* pbCaptureToken) CancelCaptureToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, uint32 ulPid, ref Guid uuidKey) SetPidProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, uint32 pulPid, out Guid uuidKey) GetPidProtection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, uint32 ulSyncValue) SetSyncValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_WMDRMTuner self, out uint32 pulStartCodeProfileLen, out uint8 pbStartCodeProfile) GetStartCodeProfile;
 			}
 		}
 		[CRepr]
@@ -11275,9 +11275,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DRIDRMService self, BSTR bstrNewDrm) SetDRM;
-				public new function HRESULT(ref IBDA_DRIDRMService self, out BSTR pbstrDrmUuidList, out Guid DrmUuid) GetDRMStatus;
-				public new function HRESULT(ref IBDA_DRIDRMService self, out BDA_DrmPairingError penumPairingStatus) GetPairingStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIDRMService self, BSTR bstrNewDrm) SetDRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIDRMService self, out BSTR pbstrDrmUuidList, out Guid DrmUuid) GetDRMStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIDRMService self, out BDA_DrmPairingError penumPairingStatus) GetPairingStatus;
 			}
 		}
 		[CRepr]
@@ -11298,13 +11298,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, HRESULT hrLicenseAck) AcknowledgeLicense;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwcbLicenseMessage, uint8* pbLicenseMessage, out uint32 pdwcbLicenseResponse, out uint8* ppbLicenseResponse) ProcessLicenseChallenge;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwcbRegistrationMessage, uint8* pbRegistrationMessage, out uint32 pdwcbRegistrationResponse, out uint8* ppbRegistrationResponse) ProcessRegistrationChallenge;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwRevInfoLen, uint8* pbRevInfo, out uint32 pdwResponse) SetRevInfo;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwCrlLen, uint8* pbCrlLen, out uint32 pdwResponse) SetCrl;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self) GetHMSAssociationData;
-				public new function HRESULT(ref IBDA_DRIWMDRMSession self, out uint32 pdwError) GetLastCardeaError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, HRESULT hrLicenseAck) AcknowledgeLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwcbLicenseMessage, uint8* pbLicenseMessage, out uint32 pdwcbLicenseResponse, out uint8* ppbLicenseResponse) ProcessLicenseChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwcbRegistrationMessage, uint8* pbRegistrationMessage, out uint32 pdwcbRegistrationResponse, out uint8* ppbRegistrationResponse) ProcessRegistrationChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwRevInfoLen, uint8* pbRevInfo, out uint32 pdwResponse) SetRevInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, uint32 dwCrlLen, uint8* pbCrlLen, out uint32 pdwResponse) SetCrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self) GetHMSAssociationData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_DRIWMDRMSession self, out uint32 pdwError) GetLastCardeaError;
 			}
 		}
 		[CRepr]
@@ -11320,8 +11320,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_MUX self, uint32 ulPidListCount, BDA_MUX_PIDLISTITEM* pbPidListBuffer) SetPidList;
-				public new function HRESULT(ref IBDA_MUX self, out uint32 pulPidListCount, out BDA_MUX_PIDLISTITEM pbPidListBuffer) GetPidList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_MUX self, uint32 ulPidListCount, BDA_MUX_PIDLISTITEM* pbPidListBuffer) SetPidList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_MUX self, out uint32 pulPidListCount, out BDA_MUX_PIDLISTITEM pbPidListBuffer) GetPidList;
 			}
 		}
 		[CRepr]
@@ -11337,8 +11337,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_TransportStreamSelector self, uint16 usTSID) SetTSID;
-				public new function HRESULT(ref IBDA_TransportStreamSelector self, out uint32 pulTSInformationBufferLen, uint8* pbTSInformationBuffer) GetTSInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_TransportStreamSelector self, uint16 usTSID) SetTSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_TransportStreamSelector self, out uint32 pulTSInformationBufferLen, uint8* pbTSInformationBuffer) GetTSInformation;
 			}
 		}
 		[CRepr]
@@ -11355,9 +11355,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_UserActivityService self, uint32 dwUseReason) SetCurrentTunerUseReason;
-				public new function HRESULT(ref IBDA_UserActivityService self, out uint32 pdwActivityInterval) GetUserActivityInterval;
-				public new function HRESULT(ref IBDA_UserActivityService self) UserActivityDetected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_UserActivityService self, uint32 dwUseReason) SetCurrentTunerUseReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_UserActivityService self, out uint32 pdwActivityInterval) GetUserActivityInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_UserActivityService self) UserActivityDetected;
 			}
 		}
 		[CRepr]
@@ -11376,11 +11376,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IESEvent self, out uint32 pdwEventId) GetEventId;
-				public new function HRESULT(ref IESEvent self, out Guid pguidEventType) GetEventType;
-				public new function HRESULT(ref IESEvent self, uint32 dwResult) SetCompletionStatus;
-				public new function HRESULT(ref IESEvent self, out SAFEARRAY* pbData) GetData;
-				public new function HRESULT(ref IESEvent self, out BSTR pbstrData) GetStringData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvent self, out uint32 pdwEventId) GetEventId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvent self, out Guid pguidEventType) GetEventType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvent self, uint32 dwResult) SetCompletionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvent self, out SAFEARRAY* pbData) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvent self, out BSTR pbstrData) GetStringData;
 			}
 		}
 		[CRepr]
@@ -11395,7 +11395,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IESEvents self, Guid guidEventType, ref IESEvent pESEvent) OnESEventReceived;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEvents self, Guid guidEventType, ref IESEvent pESEvent) OnESEventReceived;
 			}
 		}
 		[CRepr]
@@ -11410,7 +11410,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBroadcastEvent self, Guid EventID) Fire;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBroadcastEvent self, Guid EventID) Fire;
 			}
 		}
 		[CRepr]
@@ -11425,7 +11425,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBroadcastEvent.VTable
 			{
-				public new function HRESULT(ref IBroadcastEventEx self, Guid EventID, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) FireEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBroadcastEventEx self, Guid EventID, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) FireEx;
 			}
 		}
 		[CRepr]
@@ -11461,28 +11461,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMNetShowConfig self, out double pBufferingTime) get_BufferingTime;
-				public new function HRESULT(ref IAMNetShowConfig self, double BufferingTime) put_BufferingTime;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pUseFixedUDPPort) get_UseFixedUDPPort;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 UseFixedUDPPort) put_UseFixedUDPPort;
-				public new function HRESULT(ref IAMNetShowConfig self, out int32 pFixedUDPPort) get_FixedUDPPort;
-				public new function HRESULT(ref IAMNetShowConfig self, int32 FixedUDPPort) put_FixedUDPPort;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pUseHTTPProxy) get_UseHTTPProxy;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 UseHTTPProxy) put_UseHTTPProxy;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pEnableAutoProxy) get_EnableAutoProxy;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 EnableAutoProxy) put_EnableAutoProxy;
-				public new function HRESULT(ref IAMNetShowConfig self, out BSTR pbstrHTTPProxyHost) get_HTTPProxyHost;
-				public new function HRESULT(ref IAMNetShowConfig self, BSTR bstrHTTPProxyHost) put_HTTPProxyHost;
-				public new function HRESULT(ref IAMNetShowConfig self, out int32 pHTTPProxyPort) get_HTTPProxyPort;
-				public new function HRESULT(ref IAMNetShowConfig self, int32 HTTPProxyPort) put_HTTPProxyPort;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pEnableMulticast) get_EnableMulticast;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 EnableMulticast) put_EnableMulticast;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pEnableUDP) get_EnableUDP;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 EnableUDP) put_EnableUDP;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pEnableTCP) get_EnableTCP;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 EnableTCP) put_EnableTCP;
-				public new function HRESULT(ref IAMNetShowConfig self, out int16 pEnableHTTP) get_EnableHTTP;
-				public new function HRESULT(ref IAMNetShowConfig self, int16 EnableHTTP) put_EnableHTTP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out double pBufferingTime) get_BufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, double BufferingTime) put_BufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pUseFixedUDPPort) get_UseFixedUDPPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 UseFixedUDPPort) put_UseFixedUDPPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int32 pFixedUDPPort) get_FixedUDPPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int32 FixedUDPPort) put_FixedUDPPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pUseHTTPProxy) get_UseHTTPProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 UseHTTPProxy) put_UseHTTPProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pEnableAutoProxy) get_EnableAutoProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 EnableAutoProxy) put_EnableAutoProxy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out BSTR pbstrHTTPProxyHost) get_HTTPProxyHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, BSTR bstrHTTPProxyHost) put_HTTPProxyHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int32 pHTTPProxyPort) get_HTTPProxyPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int32 HTTPProxyPort) put_HTTPProxyPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pEnableMulticast) get_EnableMulticast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 EnableMulticast) put_EnableMulticast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pEnableUDP) get_EnableUDP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 EnableUDP) put_EnableUDP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pEnableTCP) get_EnableTCP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 EnableTCP) put_EnableTCP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, out int16 pEnableHTTP) get_EnableHTTP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowConfig self, int16 EnableHTTP) put_EnableHTTP;
 			}
 		}
 		[CRepr]
@@ -11502,12 +11502,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelName) get_ChannelName;
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelDescription) get_ChannelDescription;
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelURL) get_ChannelURL;
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactAddress) get_ContactAddress;
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactPhone) get_ContactPhone;
-				public new function HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactEmail) get_ContactEmail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelName) get_ChannelName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelDescription) get_ChannelDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrChannelURL) get_ChannelURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactAddress) get_ContactAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactPhone) get_ContactPhone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMChannelInfo self, out BSTR pbstrContactEmail) get_ContactEmail;
 			}
 		}
 		[CRepr]
@@ -11528,13 +11528,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pReceivedPackets) get_ReceivedPackets;
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pRecoveredPackets) get_RecoveredPackets;
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pLostPackets) get_LostPackets;
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pReceptionQuality) get_ReceptionQuality;
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pBufferingCount) get_BufferingCount;
-				public new function HRESULT(ref IAMNetworkStatus self, out int16 pIsBroadcast) get_IsBroadcast;
-				public new function HRESULT(ref IAMNetworkStatus self, out int32 pBufferingProgress) get_BufferingProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pReceivedPackets) get_ReceivedPackets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pRecoveredPackets) get_RecoveredPackets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pLostPackets) get_LostPackets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pReceptionQuality) get_ReceptionQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pBufferingCount) get_BufferingCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int16 pIsBroadcast) get_IsBroadcast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetworkStatus self, out int32 pBufferingProgress) get_BufferingProgress;
 			}
 		}
 		[CRepr]
@@ -11555,13 +11555,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMExtendedSeeking self, out int32 pExCapabilities) get_ExSeekCapabilities;
-				public new function HRESULT(ref IAMExtendedSeeking self, out int32 pMarkerCount) get_MarkerCount;
-				public new function HRESULT(ref IAMExtendedSeeking self, out int32 pCurrentMarker) get_CurrentMarker;
-				public new function HRESULT(ref IAMExtendedSeeking self, int32 MarkerNum, out double pMarkerTime) GetMarkerTime;
-				public new function HRESULT(ref IAMExtendedSeeking self, int32 MarkerNum, out BSTR pbstrMarkerName) GetMarkerName;
-				public new function HRESULT(ref IAMExtendedSeeking self, double Speed) put_PlaybackSpeed;
-				public new function HRESULT(ref IAMExtendedSeeking self, out double pSpeed) get_PlaybackSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, out int32 pExCapabilities) get_ExSeekCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, out int32 pMarkerCount) get_MarkerCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, out int32 pCurrentMarker) get_CurrentMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, int32 MarkerNum, out double pMarkerTime) GetMarkerTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, int32 MarkerNum, out BSTR pbstrMarkerName) GetMarkerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, double Speed) put_PlaybackSpeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedSeeking self, out double pSpeed) get_PlaybackSpeed;
 			}
 		}
 		[CRepr]
@@ -11584,15 +11584,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMNetShowExProps self, out int32 pSourceProtocol) get_SourceProtocol;
-				public new function HRESULT(ref IAMNetShowExProps self, out int32 pBandwidth) get_Bandwidth;
-				public new function HRESULT(ref IAMNetShowExProps self, out BSTR pbstrErrorCorrection) get_ErrorCorrection;
-				public new function HRESULT(ref IAMNetShowExProps self, out int32 pCodecCount) get_CodecCount;
-				public new function HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out int16 pCodecInstalled) GetCodecInstalled;
-				public new function HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out BSTR pbstrCodecDescription) GetCodecDescription;
-				public new function HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out BSTR pbstrCodecURL) GetCodecURL;
-				public new function HRESULT(ref IAMNetShowExProps self, out double pCreationDate) get_CreationDate;
-				public new function HRESULT(ref IAMNetShowExProps self, out BSTR pbstrSourceLink) get_SourceLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out int32 pSourceProtocol) get_SourceProtocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out int32 pBandwidth) get_Bandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out BSTR pbstrErrorCorrection) get_ErrorCorrection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out int32 pCodecCount) get_CodecCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out int16 pCodecInstalled) GetCodecInstalled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out BSTR pbstrCodecDescription) GetCodecDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, int32 CodecNum, out BSTR pbstrCodecURL) GetCodecURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out double pCreationDate) get_CreationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowExProps self, out BSTR pbstrSourceLink) get_SourceLink;
 			}
 		}
 		[CRepr]
@@ -11609,9 +11609,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMExtendedErrorInfo self, out int16 pHasError) get_HasError;
-				public new function HRESULT(ref IAMExtendedErrorInfo self, out BSTR pbstrErrorDescription) get_ErrorDescription;
-				public new function HRESULT(ref IAMExtendedErrorInfo self, out int32 pErrorCode) get_ErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedErrorInfo self, out int16 pHasError) get_HasError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedErrorInfo self, out BSTR pbstrErrorDescription) get_ErrorDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMExtendedErrorInfo self, out int32 pErrorCode) get_ErrorCode;
 			}
 		}
 		[CRepr]
@@ -11638,19 +11638,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrAuthorName) get_AuthorName;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrTitle) get_Title;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrRating) get_Rating;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrDescription) get_Description;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrCopyright) get_Copyright;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrBaseURL) get_BaseURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrLogoURL) get_LogoURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrLogoURL) get_LogoIconURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrWatermarkURL) get_WatermarkURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoURL) get_MoreInfoURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoBannerImage) get_MoreInfoBannerImage;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoBannerURL) get_MoreInfoBannerURL;
-				public new function HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoText) get_MoreInfoText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrAuthorName) get_AuthorName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrTitle) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrRating) get_Rating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrCopyright) get_Copyright;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrBaseURL) get_BaseURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrLogoURL) get_LogoURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrLogoURL) get_LogoIconURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrWatermarkURL) get_WatermarkURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoURL) get_MoreInfoURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoBannerImage) get_MoreInfoBannerImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoBannerURL) get_MoreInfoBannerURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent self, out BSTR pbstrMoreInfoText) get_MoreInfoText;
 			}
 		}
 		[CRepr]
@@ -11667,9 +11667,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMMediaContent2 self, int32 EntryNum, BSTR bstrName, out BSTR pbstrValue) get_MediaParameter;
-				public new function HRESULT(ref IAMMediaContent2 self, int32 EntryNum, int32 Index, out BSTR pbstrName) get_MediaParameterName;
-				public new function HRESULT(ref IAMMediaContent2 self, out int32 pNumberEntries) get_PlaylistCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent2 self, int32 EntryNum, BSTR bstrName, out BSTR pbstrValue) get_MediaParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent2 self, int32 EntryNum, int32 Index, out BSTR pbstrName) get_MediaParameterName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaContent2 self, out int32 pNumberEntries) get_PlaylistCount;
 			}
 		}
 		[CRepr]
@@ -11685,8 +11685,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMNetShowPreroll self, int16 fPreroll) put_Preroll;
-				public new function HRESULT(ref IAMNetShowPreroll self, out int16 pfPreroll) get_Preroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowPreroll self, int16 fPreroll) put_Preroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMNetShowPreroll self, out int16 pfPreroll) get_Preroll;
 			}
 		}
 		[CRepr]
@@ -11702,8 +11702,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDShowPlugin self, out BSTR pURL) get_URL;
-				public new function HRESULT(ref IDShowPlugin self, out BSTR pUserAgent) get_UserAgent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDShowPlugin self, out BSTR pURL) get_URL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDShowPlugin self, out BSTR pUserAgent) get_UserAgent;
 			}
 		}
 		[CRepr]
@@ -11723,14 +11723,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMDirectSound self, out IDirectSound* lplpds) GetDirectSoundInterface;
-				public new function HRESULT(ref IAMDirectSound self, out IDirectSoundBuffer* lplpdsb) GetPrimaryBufferInterface;
-				public new function HRESULT(ref IAMDirectSound self, out IDirectSoundBuffer* lplpdsb) GetSecondaryBufferInterface;
-				public new function HRESULT(ref IAMDirectSound self, ref IDirectSound lpds) ReleaseDirectSoundInterface;
-				public new function HRESULT(ref IAMDirectSound self, ref IDirectSoundBuffer lpdsb) ReleasePrimaryBufferInterface;
-				public new function HRESULT(ref IAMDirectSound self, ref IDirectSoundBuffer lpdsb) ReleaseSecondaryBufferInterface;
-				public new function HRESULT(ref IAMDirectSound self, HWND param0, BOOL param1) SetFocusWindow;
-				public new function HRESULT(ref IAMDirectSound self, out HWND param0, out BOOL param1) GetFocusWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, out IDirectSound* lplpds) GetDirectSoundInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, out IDirectSoundBuffer* lplpdsb) GetPrimaryBufferInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, out IDirectSoundBuffer* lplpdsb) GetSecondaryBufferInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, ref IDirectSound lpds) ReleaseDirectSoundInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, ref IDirectSoundBuffer lpdsb) ReleasePrimaryBufferInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, ref IDirectSoundBuffer lpdsb) ReleaseSecondaryBufferInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, HWND param0, BOOL param1) SetFocusWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMDirectSound self, out HWND param0, out BOOL param1) GetFocusWindow;
 			}
 		}
 		[CRepr]
@@ -11755,19 +11755,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCLEVEL lpLevel) GetDecoderLevel;
-				public new function HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCSERVICE lpService) GetCurrentService;
-				public new function HRESULT(ref IAMLine21Decoder self, AM_LINE21_CCSERVICE Service) SetCurrentService;
-				public new function HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCSTATE lpState) GetServiceState;
-				public new function HRESULT(ref IAMLine21Decoder self, AM_LINE21_CCSTATE State) SetServiceState;
-				public new function HRESULT(ref IAMLine21Decoder self, out BITMAPINFOHEADER lpbmih) GetOutputFormat;
-				public new function HRESULT(ref IAMLine21Decoder self, out BITMAPINFO lpbmi) SetOutputFormat;
-				public new function HRESULT(ref IAMLine21Decoder self, out uint32 pdwPhysColor) GetBackgroundColor;
-				public new function HRESULT(ref IAMLine21Decoder self, uint32 dwPhysColor) SetBackgroundColor;
-				public new function HRESULT(ref IAMLine21Decoder self, out int32 lpbOption) GetRedrawAlways;
-				public new function HRESULT(ref IAMLine21Decoder self, BOOL bOption) SetRedrawAlways;
-				public new function HRESULT(ref IAMLine21Decoder self, out AM_LINE21_DRAWBGMODE lpMode) GetDrawBackgroundMode;
-				public new function HRESULT(ref IAMLine21Decoder self, AM_LINE21_DRAWBGMODE Mode) SetDrawBackgroundMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCLEVEL lpLevel) GetDecoderLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCSERVICE lpService) GetCurrentService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, AM_LINE21_CCSERVICE Service) SetCurrentService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out AM_LINE21_CCSTATE lpState) GetServiceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, AM_LINE21_CCSTATE State) SetServiceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out BITMAPINFOHEADER lpbmih) GetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out BITMAPINFO lpbmi) SetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out uint32 pdwPhysColor) GetBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, uint32 dwPhysColor) SetBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out int32 lpbOption) GetRedrawAlways;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, BOOL bOption) SetRedrawAlways;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, out AM_LINE21_DRAWBGMODE lpMode) GetDrawBackgroundMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMLine21Decoder self, AM_LINE21_DRAWBGMODE Mode) SetDrawBackgroundMode;
 			}
 		}
 		[CRepr]
@@ -11784,9 +11784,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMParse self, out int64 prtCurrent) GetParseTime;
-				public new function HRESULT(ref IAMParse self, int64 rtCurrent) SetParseTime;
-				public new function HRESULT(ref IAMParse self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMParse self, out int64 prtCurrent) GetParseTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMParse self, int64 rtCurrent) SetParseTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMParse self) Flush;
 			}
 		}
 		[CRepr]
@@ -11803,9 +11803,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMCollection self, out int32 plCount) get_Count;
-				public new function HRESULT(ref IAMCollection self, int32 lItem, IUnknown** ppUnk) Item;
-				public new function HRESULT(ref IAMCollection self, IUnknown** ppUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, int32 lItem, IUnknown** ppUnk) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMCollection self, IUnknown** ppUnk) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -11828,15 +11828,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMediaControl self) Run;
-				public new function HRESULT(ref IMediaControl self) Pause;
-				public new function HRESULT(ref IMediaControl self) Stop;
-				public new function HRESULT(ref IMediaControl self, int32 msTimeout, out int32 pfs) GetState;
-				public new function HRESULT(ref IMediaControl self, BSTR strFilename) RenderFile;
-				public new function HRESULT(ref IMediaControl self, BSTR strFilename, IDispatch** ppUnk) AddSourceFilter;
-				public new function HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_FilterCollection;
-				public new function HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_RegFilterCollection;
-				public new function HRESULT(ref IMediaControl self) StopWhenReady;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, int32 msTimeout, out int32 pfs) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, BSTR strFilename) RenderFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, BSTR strFilename, IDispatch** ppUnk) AddSourceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_FilterCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self, IDispatch** ppUnk) get_RegFilterCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaControl self) StopWhenReady;
 			}
 		}
 		[CRepr]
@@ -11856,12 +11856,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMediaEvent self, out int hEvent) GetEventHandle;
-				public new function HRESULT(ref IMediaEvent self, out int32 lEventCode, out int lParam1, out int lParam2, int32 msTimeout) GetEvent;
-				public new function HRESULT(ref IMediaEvent self, int32 msTimeout, out int32 pEvCode) WaitForCompletion;
-				public new function HRESULT(ref IMediaEvent self, int32 lEvCode) CancelDefaultHandling;
-				public new function HRESULT(ref IMediaEvent self, int32 lEvCode) RestoreDefaultHandling;
-				public new function HRESULT(ref IMediaEvent self, int32 lEvCode, int lParam1, int lParam2) FreeEventParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, out int hEvent) GetEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, out int32 lEventCode, out int lParam1, out int lParam2, int32 msTimeout) GetEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, int32 msTimeout, out int32 pEvCode) WaitForCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, int32 lEvCode) CancelDefaultHandling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, int32 lEvCode) RestoreDefaultHandling;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEvent self, int32 lEvCode, int lParam1, int lParam2) FreeEventParams;
 			}
 		}
 		[CRepr]
@@ -11878,9 +11878,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaEvent.VTable
 			{
-				public new function HRESULT(ref IMediaEventEx self, int hwnd, int32 lMsg, int lInstanceData) SetNotifyWindow;
-				public new function HRESULT(ref IMediaEventEx self, int32 lNoNotifyFlags) SetNotifyFlags;
-				public new function HRESULT(ref IMediaEventEx self, out int32 lplNoNotifyFlags) GetNotifyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEventEx self, int hwnd, int32 lMsg, int lInstanceData) SetNotifyWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEventEx self, int32 lNoNotifyFlags) SetNotifyFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaEventEx self, out int32 lplNoNotifyFlags) GetNotifyFlags;
 			}
 		}
 		[CRepr]
@@ -11905,17 +11905,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMediaPosition self, out double plength) get_Duration;
-				public new function HRESULT(ref IMediaPosition self, double llTime) put_CurrentPosition;
-				public new function HRESULT(ref IMediaPosition self, out double pllTime) get_CurrentPosition;
-				public new function HRESULT(ref IMediaPosition self, out double pllTime) get_StopTime;
-				public new function HRESULT(ref IMediaPosition self, double llTime) put_StopTime;
-				public new function HRESULT(ref IMediaPosition self, out double pllTime) get_PrerollTime;
-				public new function HRESULT(ref IMediaPosition self, double llTime) put_PrerollTime;
-				public new function HRESULT(ref IMediaPosition self, double dRate) put_Rate;
-				public new function HRESULT(ref IMediaPosition self, out double pdRate) get_Rate;
-				public new function HRESULT(ref IMediaPosition self, out int32 pCanSeekForward) CanSeekForward;
-				public new function HRESULT(ref IMediaPosition self, out int32 pCanSeekBackward) CanSeekBackward;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out double plength) get_Duration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, double llTime) put_CurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out double pllTime) get_CurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out double pllTime) get_StopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, double llTime) put_StopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out double pllTime) get_PrerollTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, double llTime) put_PrerollTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, double dRate) put_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out double pdRate) get_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out int32 pCanSeekForward) CanSeekForward;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaPosition self, out int32 pCanSeekBackward) CanSeekBackward;
 			}
 		}
 		[CRepr]
@@ -11933,10 +11933,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IBasicAudio self, int32 lVolume) put_Volume;
-				public new function HRESULT(ref IBasicAudio self, out int32 plVolume) get_Volume;
-				public new function HRESULT(ref IBasicAudio self, int32 lBalance) put_Balance;
-				public new function HRESULT(ref IBasicAudio self, out int32 plBalance) get_Balance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicAudio self, int32 lVolume) put_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicAudio self, out int32 plVolume) get_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicAudio self, int32 lBalance) put_Balance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicAudio self, out int32 plBalance) get_Balance;
 			}
 		}
 		[CRepr]
@@ -11989,45 +11989,45 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IVideoWindow self, BSTR strCaption) put_Caption;
-				public new function HRESULT(ref IVideoWindow self, BSTR* strCaption) get_Caption;
-				public new function HRESULT(ref IVideoWindow self, int32 WindowStyle) put_WindowStyle;
-				public new function HRESULT(ref IVideoWindow self, out int32 WindowStyle) get_WindowStyle;
-				public new function HRESULT(ref IVideoWindow self, int32 WindowStyleEx) put_WindowStyleEx;
-				public new function HRESULT(ref IVideoWindow self, out int32 WindowStyleEx) get_WindowStyleEx;
-				public new function HRESULT(ref IVideoWindow self, int32 AutoShow) put_AutoShow;
-				public new function HRESULT(ref IVideoWindow self, out int32 AutoShow) get_AutoShow;
-				public new function HRESULT(ref IVideoWindow self, int32 WindowState) put_WindowState;
-				public new function HRESULT(ref IVideoWindow self, out int32 WindowState) get_WindowState;
-				public new function HRESULT(ref IVideoWindow self, int32 BackgroundPalette) put_BackgroundPalette;
-				public new function HRESULT(ref IVideoWindow self, out int32 pBackgroundPalette) get_BackgroundPalette;
-				public new function HRESULT(ref IVideoWindow self, int32 Visible) put_Visible;
-				public new function HRESULT(ref IVideoWindow self, out int32 pVisible) get_Visible;
-				public new function HRESULT(ref IVideoWindow self, int32 Left) put_Left;
-				public new function HRESULT(ref IVideoWindow self, out int32 pLeft) get_Left;
-				public new function HRESULT(ref IVideoWindow self, int32 Width) put_Width;
-				public new function HRESULT(ref IVideoWindow self, out int32 pWidth) get_Width;
-				public new function HRESULT(ref IVideoWindow self, int32 Top) put_Top;
-				public new function HRESULT(ref IVideoWindow self, out int32 pTop) get_Top;
-				public new function HRESULT(ref IVideoWindow self, int32 Height) put_Height;
-				public new function HRESULT(ref IVideoWindow self, out int32 pHeight) get_Height;
-				public new function HRESULT(ref IVideoWindow self, int Owner) put_Owner;
-				public new function HRESULT(ref IVideoWindow self, out int Owner) get_Owner;
-				public new function HRESULT(ref IVideoWindow self, int Drain) put_MessageDrain;
-				public new function HRESULT(ref IVideoWindow self, out int Drain) get_MessageDrain;
-				public new function HRESULT(ref IVideoWindow self, out int32 Color) get_BorderColor;
-				public new function HRESULT(ref IVideoWindow self, int32 Color) put_BorderColor;
-				public new function HRESULT(ref IVideoWindow self, out int32 FullScreenMode) get_FullScreenMode;
-				public new function HRESULT(ref IVideoWindow self, int32 FullScreenMode) put_FullScreenMode;
-				public new function HRESULT(ref IVideoWindow self, int32 Focus) SetWindowForeground;
-				public new function HRESULT(ref IVideoWindow self, int hwnd, int32 uMsg, int wParam, int lParam) NotifyOwnerMessage;
-				public new function HRESULT(ref IVideoWindow self, int32 Left, int32 Top, int32 Width, int32 Height) SetWindowPosition;
-				public new function HRESULT(ref IVideoWindow self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetWindowPosition;
-				public new function HRESULT(ref IVideoWindow self, out int32 pWidth, out int32 pHeight) GetMinIdealImageSize;
-				public new function HRESULT(ref IVideoWindow self, out int32 pWidth, out int32 pHeight) GetMaxIdealImageSize;
-				public new function HRESULT(ref IVideoWindow self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetRestorePosition;
-				public new function HRESULT(ref IVideoWindow self, OA_BOOL HideCursor) HideCursor;
-				public new function HRESULT(ref IVideoWindow self, out int32 CursorHidden) IsCursorHidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, BSTR strCaption) put_Caption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, BSTR* strCaption) get_Caption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 WindowStyle) put_WindowStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 WindowStyle) get_WindowStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 WindowStyleEx) put_WindowStyleEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 WindowStyleEx) get_WindowStyleEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 AutoShow) put_AutoShow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 AutoShow) get_AutoShow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 WindowState) put_WindowState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 WindowState) get_WindowState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 BackgroundPalette) put_BackgroundPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pBackgroundPalette) get_BackgroundPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Visible) put_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pVisible) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Left) put_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pLeft) get_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Width) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pWidth) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Top) put_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pTop) get_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Height) put_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pHeight) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int Owner) put_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int Owner) get_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int Drain) put_MessageDrain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int Drain) get_MessageDrain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 Color) get_BorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Color) put_BorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 FullScreenMode) get_FullScreenMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 FullScreenMode) put_FullScreenMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Focus) SetWindowForeground;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int hwnd, int32 uMsg, int wParam, int lParam) NotifyOwnerMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, int32 Left, int32 Top, int32 Width, int32 Height) SetWindowPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetWindowPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pWidth, out int32 pHeight) GetMinIdealImageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pWidth, out int32 pHeight) GetMaxIdealImageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetRestorePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, OA_BOOL HideCursor) HideCursor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoWindow self, out int32 CursorHidden) IsCursorHidden;
 			}
 		}
 		[CRepr]
@@ -12073,38 +12073,38 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IBasicVideo self, out double pAvgTimePerFrame) get_AvgTimePerFrame;
-				public new function HRESULT(ref IBasicVideo self, out int32 pBitRate) get_BitRate;
-				public new function HRESULT(ref IBasicVideo self, out int32 pBitErrorRate) get_BitErrorRate;
-				public new function HRESULT(ref IBasicVideo self, out int32 pVideoWidth) get_VideoWidth;
-				public new function HRESULT(ref IBasicVideo self, out int32 pVideoHeight) get_VideoHeight;
-				public new function HRESULT(ref IBasicVideo self, int32 SourceLeft) put_SourceLeft;
-				public new function HRESULT(ref IBasicVideo self, out int32 pSourceLeft) get_SourceLeft;
-				public new function HRESULT(ref IBasicVideo self, int32 SourceWidth) put_SourceWidth;
-				public new function HRESULT(ref IBasicVideo self, out int32 pSourceWidth) get_SourceWidth;
-				public new function HRESULT(ref IBasicVideo self, int32 SourceTop) put_SourceTop;
-				public new function HRESULT(ref IBasicVideo self, out int32 pSourceTop) get_SourceTop;
-				public new function HRESULT(ref IBasicVideo self, int32 SourceHeight) put_SourceHeight;
-				public new function HRESULT(ref IBasicVideo self, out int32 pSourceHeight) get_SourceHeight;
-				public new function HRESULT(ref IBasicVideo self, int32 DestinationLeft) put_DestinationLeft;
-				public new function HRESULT(ref IBasicVideo self, out int32 pDestinationLeft) get_DestinationLeft;
-				public new function HRESULT(ref IBasicVideo self, int32 DestinationWidth) put_DestinationWidth;
-				public new function HRESULT(ref IBasicVideo self, out int32 pDestinationWidth) get_DestinationWidth;
-				public new function HRESULT(ref IBasicVideo self, int32 DestinationTop) put_DestinationTop;
-				public new function HRESULT(ref IBasicVideo self, out int32 pDestinationTop) get_DestinationTop;
-				public new function HRESULT(ref IBasicVideo self, int32 DestinationHeight) put_DestinationHeight;
-				public new function HRESULT(ref IBasicVideo self, out int32 pDestinationHeight) get_DestinationHeight;
-				public new function HRESULT(ref IBasicVideo self, int32 Left, int32 Top, int32 Width, int32 Height) SetSourcePosition;
-				public new function HRESULT(ref IBasicVideo self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetSourcePosition;
-				public new function HRESULT(ref IBasicVideo self) SetDefaultSourcePosition;
-				public new function HRESULT(ref IBasicVideo self, int32 Left, int32 Top, int32 Width, int32 Height) SetDestinationPosition;
-				public new function HRESULT(ref IBasicVideo self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetDestinationPosition;
-				public new function HRESULT(ref IBasicVideo self) SetDefaultDestinationPosition;
-				public new function HRESULT(ref IBasicVideo self, out int32 pWidth, out int32 pHeight) GetVideoSize;
-				public new function HRESULT(ref IBasicVideo self, int32 StartIndex, int32 Entries, out int32 pRetrieved, out int32 pPalette) GetVideoPaletteEntries;
-				public new function HRESULT(ref IBasicVideo self, out int32 pBufferSize, out int32 pDIBImage) GetCurrentImage;
-				public new function HRESULT(ref IBasicVideo self) IsUsingDefaultSource;
-				public new function HRESULT(ref IBasicVideo self) IsUsingDefaultDestination;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out double pAvgTimePerFrame) get_AvgTimePerFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pBitRate) get_BitRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pBitErrorRate) get_BitErrorRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pVideoWidth) get_VideoWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pVideoHeight) get_VideoHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 SourceLeft) put_SourceLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pSourceLeft) get_SourceLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 SourceWidth) put_SourceWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pSourceWidth) get_SourceWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 SourceTop) put_SourceTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pSourceTop) get_SourceTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 SourceHeight) put_SourceHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pSourceHeight) get_SourceHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 DestinationLeft) put_DestinationLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pDestinationLeft) get_DestinationLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 DestinationWidth) put_DestinationWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pDestinationWidth) get_DestinationWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 DestinationTop) put_DestinationTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pDestinationTop) get_DestinationTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 DestinationHeight) put_DestinationHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pDestinationHeight) get_DestinationHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 Left, int32 Top, int32 Width, int32 Height) SetSourcePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetSourcePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self) SetDefaultSourcePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 Left, int32 Top, int32 Width, int32 Height) SetDestinationPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pLeft, out int32 pTop, out int32 pWidth, out int32 pHeight) GetDestinationPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self) SetDefaultDestinationPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pWidth, out int32 pHeight) GetVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, int32 StartIndex, int32 Entries, out int32 pRetrieved, out int32 pPalette) GetVideoPaletteEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self, out int32 pBufferSize, out int32 pDIBImage) GetCurrentImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self) IsUsingDefaultSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo self) IsUsingDefaultDestination;
 			}
 		}
 		[CRepr]
@@ -12119,7 +12119,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBasicVideo.VTable
 			{
-				public new function HRESULT(ref IBasicVideo2 self, out int32 plAspectX, out int32 plAspectY) GetPreferredAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBasicVideo2 self, out int32 plAspectX, out int32 plAspectY) GetPreferredAspectRatio;
 			}
 		}
 		[CRepr]
@@ -12137,10 +12137,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDeferredCommand self) Cancel;
-				public new function HRESULT(ref IDeferredCommand self, out int32 pConfidence) Confidence;
-				public new function HRESULT(ref IDeferredCommand self, double newtime) Postpone;
-				public new function HRESULT(ref IDeferredCommand self, out HRESULT phrResult) GetHResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeferredCommand self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeferredCommand self, out int32 pConfidence) Confidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeferredCommand self, double newtime) Postpone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeferredCommand self, out HRESULT phrResult) GetHResult;
 			}
 		}
 		[CRepr]
@@ -12156,8 +12156,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtStreamTime;
-				public new function HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtPresentationTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtStreamTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQueueCommand self, IDeferredCommand** pCmd, double time, ref Guid iid, int32 dispidMethod, int16 wFlags, int32 cArgs, ref VARIANT pDispParams, out VARIANT pvarResult, out int16 puArgErr) InvokeAtPresentationTime;
 			}
 		}
 		[CRepr]
@@ -12179,14 +12179,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IFilterInfo self, BSTR strPinID, IDispatch** ppUnk) FindPin;
-				public new function HRESULT(ref IFilterInfo self, BSTR* strName) get_Name;
-				public new function HRESULT(ref IFilterInfo self, BSTR* strVendorInfo) get_VendorInfo;
-				public new function HRESULT(ref IFilterInfo self, IUnknown** ppUnk) get_Filter;
-				public new function HRESULT(ref IFilterInfo self, IDispatch** ppUnk) get_Pins;
-				public new function HRESULT(ref IFilterInfo self, out int32 pbIsSource) get_IsFileSource;
-				public new function HRESULT(ref IFilterInfo self, BSTR* pstrFilename) get_Filename;
-				public new function HRESULT(ref IFilterInfo self, BSTR strFilename) put_Filename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR strPinID, IDispatch** ppUnk) FindPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* strVendorInfo) get_VendorInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, IUnknown** ppUnk) get_Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, IDispatch** ppUnk) get_Pins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, out int32 pbIsSource) get_IsFileSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR* pstrFilename) get_Filename;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFilterInfo self, BSTR strFilename) put_Filename;
 			}
 		}
 		[CRepr]
@@ -12202,8 +12202,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRegFilterInfo self, BSTR* strName) get_Name;
-				public new function HRESULT(ref IRegFilterInfo self, IDispatch** ppUnk) Filter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, BSTR* strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegFilterInfo self, IDispatch** ppUnk) Filter;
 			}
 		}
 		[CRepr]
@@ -12219,8 +12219,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Type;
-				public new function HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Subtype;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaTypeInfo self, BSTR* strType) get_Subtype;
 			}
 		}
 		[CRepr]
@@ -12247,19 +12247,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPinInfo self, IUnknown** ppUnk) get_Pin;
-				public new function HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectedTo;
-				public new function HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectionMediaType;
-				public new function HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_FilterInfo;
-				public new function HRESULT(ref IPinInfo self, BSTR* ppUnk) get_Name;
-				public new function HRESULT(ref IPinInfo self, out int32 ppDirection) get_Direction;
-				public new function HRESULT(ref IPinInfo self, BSTR* strPinID) get_PinID;
-				public new function HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_MediaTypes;
-				public new function HRESULT(ref IPinInfo self, IUnknown* pPin) Connect;
-				public new function HRESULT(ref IPinInfo self, IUnknown* pPin) ConnectDirect;
-				public new function HRESULT(ref IPinInfo self, IUnknown* pPin, IDispatch* pMediaType) ConnectWithType;
-				public new function HRESULT(ref IPinInfo self) Disconnect;
-				public new function HRESULT(ref IPinInfo self) Render;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown** ppUnk) get_Pin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectedTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_ConnectionMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_FilterInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, BSTR* ppUnk) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, out int32 ppDirection) get_Direction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, BSTR* strPinID) get_PinID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IDispatch** ppUnk) get_MediaTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin) ConnectDirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self, IUnknown* pPin, IDispatch* pMediaType) ConnectWithType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPinInfo self) Render;
 			}
 		}
 		[CRepr]
@@ -12279,12 +12279,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAMStats self) Reset;
-				public new function HRESULT(ref IAMStats self, out int32 plCount) get_Count;
-				public new function HRESULT(ref IAMStats self, int32 lIndex, BSTR* szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByIndex;
-				public new function HRESULT(ref IAMStats self, BSTR szName, out int32 lIndex, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByName;
-				public new function HRESULT(ref IAMStats self, BSTR szName, int32 lCreate, out int32 plIndex) GetIndex;
-				public new function HRESULT(ref IAMStats self, int32 lIndex, double dValue) AddValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, out int32 plCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, int32 lIndex, BSTR* szName, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, BSTR szName, out int32 lIndex, out int32 lCount, out double dLast, out double dAverage, out double dStdDev, out double dMin, out double dMax) GetValueByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, BSTR szName, int32 lCreate, out int32 plIndex) GetIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMStats self, int32 lIndex, double dValue) AddValue;
 			}
 		}
 		[CRepr]
@@ -12301,9 +12301,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoAcceleratorNotify self, in Guid pGuid, out AMVAUncompBufferInfo pUncompBufferInfo) GetUncompSurfacesInfo;
-				public new function HRESULT(ref IAMVideoAcceleratorNotify self, uint32 dwActualUncompSurfacesAllocated) SetUncompSurfacesInfo;
-				public new function HRESULT(ref IAMVideoAcceleratorNotify self, in Guid pGuid, out uint32 pdwSizeMiscData, void** ppMiscData) GetCreateVideoAcceleratorData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAcceleratorNotify self, in Guid pGuid, out AMVAUncompBufferInfo pUncompBufferInfo) GetUncompSurfacesInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAcceleratorNotify self, uint32 dwActualUncompSurfacesAllocated) SetUncompSurfacesInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAcceleratorNotify self, in Guid pGuid, out uint32 pdwSizeMiscData, void** ppMiscData) GetCreateVideoAcceleratorData;
 			}
 		}
 		[CRepr]
@@ -12329,18 +12329,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMVideoAccelerator self, out uint32 pdwNumGuidsSupported, Guid* pGuidsSupported) GetVideoAcceleratorGUIDs;
-				public new function HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, out uint32 pdwNumFormatsSupported, DDPIXELFORMAT* pFormatsSupported) GetUncompFormatsSupported;
-				public new function HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, in AMVAUncompDataInfo pamvaUncompDataInfo, out AMVAInternalMemInfo pamvaInternalMemInfo) GetInternalMemInfo;
-				public new function HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, in AMVAUncompDataInfo pamvaUncompDataInfo, out uint32 pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetCompBufferInfo;
-				public new function HRESULT(ref IAMVideoAccelerator self, out uint32 pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetInternalCompBufferInfo;
-				public new function HRESULT(ref IAMVideoAccelerator self, in AMVABeginFrameInfo amvaBeginFrameInfo) BeginFrame;
-				public new function HRESULT(ref IAMVideoAccelerator self, in AMVAEndFrameInfo pEndFrameInfo) EndFrame;
-				public new function HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex, BOOL bReadOnly, void** ppBuffer, out int32 lpStride) GetBuffer;
-				public new function HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex) ReleaseBuffer;
-				public new function HRESULT(ref IAMVideoAccelerator self, uint32 dwFunction, void* lpPrivateInputData, uint32 cbPrivateInputData, void* lpPrivateOutputDat, uint32 cbPrivateOutputData, uint32 dwNumBuffers, AMVABUFFERINFO* pamvaBufferInfo) Execute;
-				public new function HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex, uint32 dwFlags) QueryRenderStatus;
-				public new function HRESULT(ref IAMVideoAccelerator self, uint32 dwFlipToIndex, ref IMediaSample pMediaSample) DisplayFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, out uint32 pdwNumGuidsSupported, Guid* pGuidsSupported) GetVideoAcceleratorGUIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, out uint32 pdwNumFormatsSupported, DDPIXELFORMAT* pFormatsSupported) GetUncompFormatsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, in AMVAUncompDataInfo pamvaUncompDataInfo, out AMVAInternalMemInfo pamvaInternalMemInfo) GetInternalMemInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, in Guid pGuid, in AMVAUncompDataInfo pamvaUncompDataInfo, out uint32 pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetCompBufferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, out uint32 pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetInternalCompBufferInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, in AMVABeginFrameInfo amvaBeginFrameInfo) BeginFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, in AMVAEndFrameInfo pEndFrameInfo) EndFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex, BOOL bReadOnly, void** ppBuffer, out int32 lpStride) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex) ReleaseBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, uint32 dwFunction, void* lpPrivateInputData, uint32 cbPrivateInputData, void* lpPrivateOutputDat, uint32 cbPrivateOutputData, uint32 dwNumBuffers, AMVABUFFERINFO* pamvaBufferInfo) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, uint32 dwTypeIndex, uint32 dwBufferIndex, uint32 dwFlags) QueryRenderStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMVideoAccelerator self, uint32 dwFlipToIndex, ref IMediaSample pMediaSample) DisplayFrame;
 			}
 		}
 		[CRepr]
@@ -12370,24 +12370,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMWstDecoder self, out AM_WST_LEVEL lpLevel) GetDecoderLevel;
-				public new function HRESULT(ref IAMWstDecoder self, out AM_WST_SERVICE lpService) GetCurrentService;
-				public new function HRESULT(ref IAMWstDecoder self, out AM_WST_STATE lpState) GetServiceState;
-				public new function HRESULT(ref IAMWstDecoder self, AM_WST_STATE State) SetServiceState;
-				public new function HRESULT(ref IAMWstDecoder self, out BITMAPINFOHEADER lpbmih) GetOutputFormat;
-				public new function HRESULT(ref IAMWstDecoder self, out BITMAPINFO lpbmi) SetOutputFormat;
-				public new function HRESULT(ref IAMWstDecoder self, out uint32 pdwPhysColor) GetBackgroundColor;
-				public new function HRESULT(ref IAMWstDecoder self, uint32 dwPhysColor) SetBackgroundColor;
-				public new function HRESULT(ref IAMWstDecoder self, out int32 lpbOption) GetRedrawAlways;
-				public new function HRESULT(ref IAMWstDecoder self, BOOL bOption) SetRedrawAlways;
-				public new function HRESULT(ref IAMWstDecoder self, out AM_WST_DRAWBGMODE lpMode) GetDrawBackgroundMode;
-				public new function HRESULT(ref IAMWstDecoder self, AM_WST_DRAWBGMODE Mode) SetDrawBackgroundMode;
-				public new function HRESULT(ref IAMWstDecoder self, BOOL bAnswer) SetAnswerMode;
-				public new function HRESULT(ref IAMWstDecoder self, out BOOL pbAnswer) GetAnswerMode;
-				public new function HRESULT(ref IAMWstDecoder self, BOOL bHoldPage) SetHoldPage;
-				public new function HRESULT(ref IAMWstDecoder self, out BOOL pbHoldPage) GetHoldPage;
-				public new function HRESULT(ref IAMWstDecoder self, out AM_WST_PAGE pWstPage) GetCurrentPage;
-				public new function HRESULT(ref IAMWstDecoder self, AM_WST_PAGE WstPage) SetCurrentPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out AM_WST_LEVEL lpLevel) GetDecoderLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out AM_WST_SERVICE lpService) GetCurrentService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out AM_WST_STATE lpState) GetServiceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, AM_WST_STATE State) SetServiceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out BITMAPINFOHEADER lpbmih) GetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out BITMAPINFO lpbmi) SetOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out uint32 pdwPhysColor) GetBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, uint32 dwPhysColor) SetBackgroundColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out int32 lpbOption) GetRedrawAlways;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, BOOL bOption) SetRedrawAlways;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out AM_WST_DRAWBGMODE lpMode) GetDrawBackgroundMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, AM_WST_DRAWBGMODE Mode) SetDrawBackgroundMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, BOOL bAnswer) SetAnswerMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out BOOL pbAnswer) GetAnswerMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, BOOL bHoldPage) SetHoldPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out BOOL pbHoldPage) GetHoldPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, out AM_WST_PAGE pWstPage) GetCurrentPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMWstDecoder self, AM_WST_PAGE WstPage) SetCurrentPage;
 			}
 		}
 		[CRepr]
@@ -12409,14 +12409,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumCategories) get_NumCategories;
-				public new function HRESULT(ref IKsTopologyInfo self, uint32 dwIndex, out Guid pCategory) get_Category;
-				public new function HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumConnections) get_NumConnections;
-				public new function HRESULT(ref IKsTopologyInfo self, uint32 dwIndex, out KSTOPOLOGY_CONNECTION pConnectionInfo) get_ConnectionInfo;
-				public new function HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, PWSTR pwchNodeName, uint32 dwBufSize, out uint32 pdwNameLen) get_NodeName;
-				public new function HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumNodes) get_NumNodes;
-				public new function HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, out Guid pNodeType) get_NodeType;
-				public new function HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, in Guid iid, void** ppvObject) CreateNodeInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumCategories) get_NumCategories;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, uint32 dwIndex, out Guid pCategory) get_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumConnections) get_NumConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, uint32 dwIndex, out KSTOPOLOGY_CONNECTION pConnectionInfo) get_ConnectionInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, PWSTR pwchNodeName, uint32 dwBufSize, out uint32 pdwNameLen) get_NodeName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, out uint32 pdwNumNodes) get_NumNodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, out Guid pNodeType) get_NodeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopologyInfo self, uint32 dwNodeId, in Guid iid, void** ppvObject) CreateNodeInstance;
 			}
 		}
 		[CRepr]
@@ -12433,9 +12433,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISelector self, out uint32 pdwNumSources) get_NumSources;
-				public new function HRESULT(ref ISelector self, out uint32 pdwPinId) get_SourceNodeId;
-				public new function HRESULT(ref ISelector self, uint32 dwPinId) put_SourceNodeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISelector self, out uint32 pdwNumSources) get_NumSources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISelector self, out uint32 pdwPinId) get_SourceNodeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISelector self, uint32 dwPinId) put_SourceNodeId;
 			}
 		}
 		[CRepr]
@@ -12500,57 +12500,57 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Exposure;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Exposure;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Exposure;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Focus;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Focus;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Focus;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Iris;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Iris;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Iris;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Zoom;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Zoom;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Zoom;
-				public new function HRESULT(ref ICameraControl self, out int32 plOcularFocalLength, out int32 plObjectiveFocalLengthMin, out int32 plObjectiveFocalLengthMax) get_FocalLengths;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Pan;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Pan;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Pan;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Tilt;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Tilt;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Tilt;
-				public new function HRESULT(ref ICameraControl self, out int32 pPanValue, out int32 pTiltValue, out int32 pFlags) get_PanTilt;
-				public new function HRESULT(ref ICameraControl self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTilt;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Roll;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Roll;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Roll;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ExposureRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ExposureRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ExposureRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_FocusRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_FocusRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_FocusRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_IrisRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_IrisRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_IrisRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ZoomRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ZoomRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ZoomRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_PanRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_PanRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_TiltRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_TiltRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_TiltRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pPanValue, out int32 pTiltValue, out int32 pFlags) get_PanTiltRelative;
-				public new function HRESULT(ref ICameraControl self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTiltRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_PanRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_RollRelative;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_RollRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_RollRelative;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ScanMode;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ScanMode;
-				public new function HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_PrivacyMode;
-				public new function HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_PrivacyMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Exposure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Exposure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Exposure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Focus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Focus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Focus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Iris;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Iris;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Iris;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Zoom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Zoom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Zoom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 plOcularFocalLength, out int32 plObjectiveFocalLengthMin, out int32 plObjectiveFocalLengthMax) get_FocalLengths;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Pan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Pan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Pan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Tilt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Tilt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Tilt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pPanValue, out int32 pTiltValue, out int32 pFlags) get_PanTilt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTilt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_Roll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_Roll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Roll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ExposureRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ExposureRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ExposureRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_FocusRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_FocusRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_FocusRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_IrisRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_IrisRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_IrisRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ZoomRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ZoomRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ZoomRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_PanRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_PanRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_TiltRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_TiltRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_TiltRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pPanValue, out int32 pTiltValue, out int32 pFlags) get_PanTiltRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTiltRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_PanRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_RollRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_RollRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_RollRelative;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_ScanMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_ScanMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, out int32 pValue, out int32 pFlags) get_PrivacyMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICameraControl self, int32 Value, int32 Flags) put_PrivacyMode;
 			}
 		}
 		[CRepr]
@@ -12603,45 +12603,45 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_BacklightCompensation;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_BacklightCompensation;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_BacklightCompensation;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Brightness;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Brightness;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Brightness;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_ColorEnable;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_ColorEnable;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ColorEnable;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Contrast;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Contrast;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Contrast;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Gamma;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Gamma;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Gamma;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Saturation;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Saturation;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Saturation;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Sharpness;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Sharpness;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Sharpness;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_WhiteBalance;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_WhiteBalance;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_WhiteBalance;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Gain;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Gain;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Gain;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Hue;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Hue;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Hue;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_DigitalMultiplier;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_DigitalMultiplier;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_DigitalMultiplier;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_PowerlineFrequency;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_PowerlineFrequency;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_PowerlineFrequency;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pValue1, out int32 pValue2, out int32 pFlags) get_WhiteBalanceComponent;
-				public new function HRESULT(ref IVideoProcAmp self, int32 Value1, int32 Value2, int32 Flags) put_WhiteBalanceComponent;
-				public new function HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_WhiteBalanceComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_BacklightCompensation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_BacklightCompensation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_BacklightCompensation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Brightness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Brightness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Brightness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_ColorEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_ColorEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_ColorEnable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Contrast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Contrast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Contrast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Gamma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Gamma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Gamma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Saturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Saturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Saturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Sharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Sharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Sharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_WhiteBalance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_WhiteBalance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_WhiteBalance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Gain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Gain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Gain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_Hue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_Hue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_Hue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_DigitalMultiplier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_DigitalMultiplier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_DigitalMultiplier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue, out int32 pFlags) get_PowerlineFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value, int32 Flags) put_PowerlineFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_PowerlineFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pValue1, out int32 pValue2, out int32 pFlags) get_WhiteBalanceComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, int32 Value1, int32 Value2, int32 Flags) put_WhiteBalanceComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVideoProcAmp self, out int32 pMin, out int32 pMax, out int32 pSteppingDelta, out int32 pDefault, out int32 pCapsFlag) getRange_WhiteBalanceComponent;
 			}
 		}
 		[CRepr]
@@ -12657,8 +12657,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsNodeControl self, uint32 dwNodeId) put_NodeId;
-				public new function HRESULT(ref IKsNodeControl self, void* pKsControl) put_KsControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsNodeControl self, uint32 dwNodeId) put_NodeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsNodeControl self, void* pKsControl) put_KsControl;
 			}
 		}
 		[CRepr]
@@ -12680,14 +12680,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IConfigAsfWriter self, uint32 dwProfileId) ConfigureFilterUsingProfileId;
-				public new function HRESULT(ref IConfigAsfWriter self, out uint32 pdwProfileId) GetCurrentProfileId;
-				public new function HRESULT(ref IConfigAsfWriter self, in Guid guidProfile) ConfigureFilterUsingProfileGuid;
-				public new function HRESULT(ref IConfigAsfWriter self, out Guid pProfileGuid) GetCurrentProfileGuid;
-				public new function HRESULT(ref IConfigAsfWriter self, ref IWMProfile pProfile) ConfigureFilterUsingProfile;
-				public new function HRESULT(ref IConfigAsfWriter self, out IWMProfile* ppProfile) GetCurrentProfile;
-				public new function HRESULT(ref IConfigAsfWriter self, BOOL bIndexFile) SetIndexMode;
-				public new function HRESULT(ref IConfigAsfWriter self, out BOOL pbIndexFile) GetIndexMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, uint32 dwProfileId) ConfigureFilterUsingProfileId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, out uint32 pdwProfileId) GetCurrentProfileId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, in Guid guidProfile) ConfigureFilterUsingProfileGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, out Guid pProfileGuid) GetCurrentProfileGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, ref IWMProfile pProfile) ConfigureFilterUsingProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, out IWMProfile* ppProfile) GetCurrentProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, BOOL bIndexFile) SetIndexMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter self, out BOOL pbIndexFile) GetIndexMode;
 			}
 		}
 		[CRepr]
@@ -12705,10 +12705,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IConfigAsfWriter.VTable
 			{
-				public new function HRESULT(ref IConfigAsfWriter2 self, ref IPin pPin, out uint16 pwStreamNum) StreamNumFromPin;
-				public new function HRESULT(ref IConfigAsfWriter2 self, uint32 dwParam, uint32 dwParam1, uint32 dwParam2) SetParam;
-				public new function HRESULT(ref IConfigAsfWriter2 self, uint32 dwParam, out uint32 pdwParam1, out uint32 pdwParam2) GetParam;
-				public new function HRESULT(ref IConfigAsfWriter2 self) ResetMultiPassState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter2 self, ref IPin pPin, out uint16 pwStreamNum) StreamNumFromPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter2 self, uint32 dwParam, uint32 dwParam1, uint32 dwParam2) SetParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter2 self, uint32 dwParam, out uint32 pdwParam1, out uint32 pdwParam2) GetParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IConfigAsfWriter2 self) ResetMultiPassState;
 			}
 		}
 		[CRepr]
@@ -12731,15 +12731,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMultiMediaStream self, out MMSSF_GET_INFORMATION_FLAGS pdwFlags, out STREAM_TYPE pStreamType) GetInformation;
-				public new function HRESULT(ref IMultiMediaStream self, ref Guid idPurpose, out IMediaStream* ppMediaStream) GetMediaStream;
-				public new function HRESULT(ref IMultiMediaStream self, int32 Index, out IMediaStream* ppMediaStream) EnumMediaStreams;
-				public new function HRESULT(ref IMultiMediaStream self, out STREAM_STATE pCurrentState) GetState;
-				public new function HRESULT(ref IMultiMediaStream self, STREAM_STATE NewState) SetState;
-				public new function HRESULT(ref IMultiMediaStream self, out int64 pCurrentTime) GetTime;
-				public new function HRESULT(ref IMultiMediaStream self, out int64 pDuration) GetDuration;
-				public new function HRESULT(ref IMultiMediaStream self, int64 SeekTime) Seek;
-				public new function HRESULT(ref IMultiMediaStream self, out HANDLE phEOS) GetEndOfStreamEventHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, out MMSSF_GET_INFORMATION_FLAGS pdwFlags, out STREAM_TYPE pStreamType) GetInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, ref Guid idPurpose, out IMediaStream* ppMediaStream) GetMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, int32 Index, out IMediaStream* ppMediaStream) EnumMediaStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, out STREAM_STATE pCurrentState) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, STREAM_STATE NewState) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, out int64 pCurrentTime) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, out int64 pDuration) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, int64 SeekTime) Seek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiMediaStream self, out HANDLE phEOS) GetEndOfStreamEventHandle;
 			}
 		}
 		[CRepr]
@@ -12759,12 +12759,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaStream self, out IMultiMediaStream* ppMultiMediaStream) GetMultiMediaStream;
-				public new function HRESULT(ref IMediaStream self, out Guid pPurposeId, out STREAM_TYPE pType) GetInformation;
-				public new function HRESULT(ref IMediaStream self, ref IMediaStream pStreamThatHasDesiredFormat, uint32 dwFlags) SetSameFormat;
-				public new function HRESULT(ref IMediaStream self, uint32 dwFlags, out IStreamSample* ppSample) AllocateSample;
-				public new function HRESULT(ref IMediaStream self, ref IStreamSample pExistingSample, uint32 dwFlags, out IStreamSample* ppNewSample) CreateSharedSample;
-				public new function HRESULT(ref IMediaStream self, uint32 dwFlags) SendEndOfStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, out IMultiMediaStream* ppMultiMediaStream) GetMultiMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, out Guid pPurposeId, out STREAM_TYPE pType) GetInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, ref IMediaStream pStreamThatHasDesiredFormat, uint32 dwFlags) SetSameFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, uint32 dwFlags, out IStreamSample* ppSample) AllocateSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, ref IStreamSample pExistingSample, uint32 dwFlags, out IStreamSample* ppNewSample) CreateSharedSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStream self, uint32 dwFlags) SendEndOfStream;
 			}
 		}
 		[CRepr]
@@ -12783,11 +12783,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamSample self, ref IMediaStream* ppMediaStream) GetMediaStream;
-				public new function HRESULT(ref IStreamSample self, out int64 pStartTime, out int64 pEndTime, out int64 pCurrentTime) GetSampleTimes;
-				public new function HRESULT(ref IStreamSample self, in int64 pStartTime, in int64 pEndTime) SetSampleTimes;
-				public new function HRESULT(ref IStreamSample self, uint32 dwFlags, HANDLE hEvent, PAPCFUNC pfnAPC, uint dwAPCData) Update;
-				public new function HRESULT(ref IStreamSample self, uint32 dwFlags, uint32 dwMilliseconds) CompletionStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamSample self, ref IMediaStream* ppMediaStream) GetMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamSample self, out int64 pStartTime, out int64 pEndTime, out int64 pCurrentTime) GetSampleTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamSample self, in int64 pStartTime, in int64 pEndTime) SetSampleTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamSample self, uint32 dwFlags, HANDLE hEvent, PAPCFUNC pfnAPC, uint dwAPCData) Update;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamSample self, uint32 dwFlags, uint32 dwMilliseconds) CompletionStatus;
 			}
 		}
 		[CRepr]
@@ -12807,12 +12807,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaStream.VTable
 			{
-				public new function HRESULT(ref IDirectDrawMediaStream self, out DDSURFACEDESC pDDSDCurrent, out IDirectDrawPalette* ppDirectDrawPalette, out DDSURFACEDESC pDDSDDesired, out uint32 pdwFlags) GetFormat;
-				public new function HRESULT(ref IDirectDrawMediaStream self, in DDSURFACEDESC pDDSurfaceDesc, ref IDirectDrawPalette pDirectDrawPalette) SetFormat;
-				public new function HRESULT(ref IDirectDrawMediaStream self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
-				public new function HRESULT(ref IDirectDrawMediaStream self, ref IDirectDraw pDirectDraw) SetDirectDraw;
-				public new function HRESULT(ref IDirectDrawMediaStream self, ref IDirectDrawSurface pSurface, in RECT pRect, uint32 dwFlags, out IDirectDrawStreamSample* ppSample) CreateSample;
-				public new function HRESULT(ref IDirectDrawMediaStream self, out int64 pFrameTime) GetTimePerFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, out DDSURFACEDESC pDDSDCurrent, out IDirectDrawPalette* ppDirectDrawPalette, out DDSURFACEDESC pDDSDDesired, out uint32 pdwFlags) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, in DDSURFACEDESC pDDSurfaceDesc, ref IDirectDrawPalette pDirectDrawPalette) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, ref IDirectDraw pDirectDraw) SetDirectDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, ref IDirectDrawSurface pSurface, in RECT pRect, uint32 dwFlags, out IDirectDrawStreamSample* ppSample) CreateSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaStream self, out int64 pFrameTime) GetTimePerFrame;
 			}
 		}
 		[CRepr]
@@ -12828,8 +12828,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamSample.VTable
 			{
-				public new function HRESULT(ref IDirectDrawStreamSample self, out IDirectDrawSurface* ppDirectDrawSurface, out RECT pRect) GetSurface;
-				public new function HRESULT(ref IDirectDrawStreamSample self, in RECT pRect) SetRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawStreamSample self, out IDirectDrawSurface* ppDirectDrawSurface, out RECT pRect) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawStreamSample self, in RECT pRect) SetRect;
 			}
 		}
 		[CRepr]
@@ -12846,9 +12846,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaStream.VTable
 			{
-				public new function HRESULT(ref IAudioMediaStream self, out WAVEFORMATEX pWaveFormatCurrent) GetFormat;
-				public new function HRESULT(ref IAudioMediaStream self, in WAVEFORMATEX lpWaveFormat) SetFormat;
-				public new function HRESULT(ref IAudioMediaStream self, ref IAudioData pAudioData, uint32 dwFlags, out IAudioStreamSample* ppSample) CreateSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioMediaStream self, out WAVEFORMATEX pWaveFormatCurrent) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioMediaStream self, in WAVEFORMATEX lpWaveFormat) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioMediaStream self, ref IAudioData pAudioData, uint32 dwFlags, out IAudioStreamSample* ppSample) CreateSample;
 			}
 		}
 		[CRepr]
@@ -12863,7 +12863,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamSample.VTable
 			{
-				public new function HRESULT(ref IAudioStreamSample self, out IAudioData* ppAudio) GetAudioData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioStreamSample self, out IAudioData* ppAudio) GetAudioData;
 			}
 		}
 		[CRepr]
@@ -12880,9 +12880,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMemoryData self, uint32 cbSize, ref uint8 pbData, uint32 dwFlags) SetBuffer;
-				public new function HRESULT(ref IMemoryData self, out uint32 pdwLength, out uint8* ppbData, out uint32 pcbActualData) GetInfo;
-				public new function HRESULT(ref IMemoryData self, uint32 cbDataValid) SetActual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemoryData self, uint32 cbSize, ref uint8 pbData, uint32 dwFlags) SetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemoryData self, out uint32 pdwLength, out uint8* ppbData, out uint32 pcbActualData) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMemoryData self, uint32 cbDataValid) SetActual;
 			}
 		}
 		[CRepr]
@@ -12898,8 +12898,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMemoryData.VTable
 			{
-				public new function HRESULT(ref IAudioData self, out WAVEFORMATEX pWaveFormatCurrent) GetFormat;
-				public new function HRESULT(ref IAudioData self, in WAVEFORMATEX lpWaveFormat) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioData self, out WAVEFORMATEX pWaveFormatCurrent) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioData self, in WAVEFORMATEX lpWaveFormat) SetFormat;
 			}
 		}
 		[CRepr]
@@ -12920,13 +12920,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMultiMediaStream.VTable
 			{
-				public new function HRESULT(ref IAMMultiMediaStream self, STREAM_TYPE StreamType, AMMSF_MMS_INIT_FLAGS dwFlags, ref IGraphBuilder pFilterGraph) Initialize;
-				public new function HRESULT(ref IAMMultiMediaStream self, out IGraphBuilder* ppGraphBuilder) GetFilterGraph;
-				public new function HRESULT(ref IAMMultiMediaStream self, out IMediaStreamFilter* ppFilter) GetFilter;
-				public new function HRESULT(ref IAMMultiMediaStream self, ref IUnknown pStreamObject, in Guid PurposeId, AMMSF_MS_FLAGS dwFlags, out IMediaStream* ppNewStream) AddMediaStream;
-				public new function HRESULT(ref IAMMultiMediaStream self, PWSTR pszFileName, uint32 dwFlags) OpenFile;
-				public new function HRESULT(ref IAMMultiMediaStream self, ref IBindCtx pCtx, ref IMoniker pMoniker, uint32 dwFlags) OpenMoniker;
-				public new function HRESULT(ref IAMMultiMediaStream self, uint32 dwFlags) Render;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, STREAM_TYPE StreamType, AMMSF_MMS_INIT_FLAGS dwFlags, ref IGraphBuilder pFilterGraph) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, out IGraphBuilder* ppGraphBuilder) GetFilterGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, out IMediaStreamFilter* ppFilter) GetFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, ref IUnknown pStreamObject, in Guid PurposeId, AMMSF_MS_FLAGS dwFlags, out IMediaStream* ppNewStream) AddMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, PWSTR pszFileName, uint32 dwFlags) OpenFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, ref IBindCtx pCtx, ref IMoniker pMoniker, uint32 dwFlags) OpenMoniker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMultiMediaStream self, uint32 dwFlags) Render;
 			}
 		}
 		[CRepr]
@@ -12945,11 +12945,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaStream.VTable
 			{
-				public new function HRESULT(ref IAMMediaStream self, ref IUnknown pSourceObject, uint32 dwFlags, ref Guid PurposeId, STREAM_TYPE StreamType) Initialize;
-				public new function HRESULT(ref IAMMediaStream self, FILTER_STATE State) SetState;
-				public new function HRESULT(ref IAMMediaStream self, ref IAMMultiMediaStream pAMMultiMediaStream) JoinAMMultiMediaStream;
-				public new function HRESULT(ref IAMMediaStream self, ref IMediaStreamFilter pMediaStreamFilter) JoinFilter;
-				public new function HRESULT(ref IAMMediaStream self, ref IFilterGraph pFilterGraph) JoinFilterGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaStream self, ref IUnknown pSourceObject, uint32 dwFlags, ref Guid PurposeId, STREAM_TYPE StreamType) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaStream self, FILTER_STATE State) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaStream self, ref IAMMultiMediaStream pAMMultiMediaStream) JoinAMMultiMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaStream self, ref IMediaStreamFilter pMediaStreamFilter) JoinFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaStream self, ref IFilterGraph pFilterGraph) JoinFilterGraph;
 			}
 		}
 		[CRepr]
@@ -12972,15 +12972,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IBaseFilter.VTable
 			{
-				public new function HRESULT(ref IMediaStreamFilter self, ref IAMMediaStream pAMMediaStream) AddMediaStream;
-				public new function HRESULT(ref IMediaStreamFilter self, ref Guid idPurpose, out IMediaStream* ppMediaStream) GetMediaStream;
-				public new function HRESULT(ref IMediaStreamFilter self, int32 Index, out IMediaStream* ppMediaStream) EnumMediaStreams;
-				public new function HRESULT(ref IMediaStreamFilter self, BOOL bRenderer) SupportSeeking;
-				public new function HRESULT(ref IMediaStreamFilter self, out int64 pTime) ReferenceTimeToStreamTime;
-				public new function HRESULT(ref IMediaStreamFilter self, out int64 pCurrentStreamTime) GetCurrentStreamTime;
-				public new function HRESULT(ref IMediaStreamFilter self, int64 WaitStreamTime) WaitUntil;
-				public new function HRESULT(ref IMediaStreamFilter self, BOOL bCancelEOS) Flush;
-				public new function HRESULT(ref IMediaStreamFilter self) EndOfStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, ref IAMMediaStream pAMMediaStream) AddMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, ref Guid idPurpose, out IMediaStream* ppMediaStream) GetMediaStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, int32 Index, out IMediaStream* ppMediaStream) EnumMediaStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, BOOL bRenderer) SupportSeeking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, out int64 pTime) ReferenceTimeToStreamTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, out int64 pCurrentStreamTime) GetCurrentStreamTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, int64 WaitStreamTime) WaitUntil;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self, BOOL bCancelEOS) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaStreamFilter self) EndOfStream;
 			}
 		}
 		[CRepr]
@@ -12995,7 +12995,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawMediaSampleAllocator self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaSampleAllocator self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
 			}
 		}
 		[CRepr]
@@ -13011,8 +13011,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawMediaSample self, out IDirectDrawSurface* ppDirectDrawSurface, out RECT pRect) GetSurfaceAndReleaseLock;
-				public new function HRESULT(ref IDirectDrawMediaSample self) LockMediaSamplePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaSample self, out IDirectDrawSurface* ppDirectDrawSurface, out RECT pRect) GetSurfaceAndReleaseLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawMediaSample self) LockMediaSamplePointer;
 			}
 		}
 		[CRepr]
@@ -13031,11 +13031,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMediaStream.VTable
 			{
-				public new function HRESULT(ref IAMMediaTypeStream self, out AM_MEDIA_TYPE pMediaType, uint32 dwFlags) GetFormat;
-				public new function HRESULT(ref IAMMediaTypeStream self, ref AM_MEDIA_TYPE pMediaType, uint32 dwFlags) SetFormat;
-				public new function HRESULT(ref IAMMediaTypeStream self, int32 lSampleSize, ref uint8 pbBuffer, uint32 dwFlags, ref IUnknown pUnkOuter, out IAMMediaTypeSample* ppAMMediaTypeSample) CreateSample;
-				public new function HRESULT(ref IAMMediaTypeStream self, out ALLOCATOR_PROPERTIES pProps) GetStreamAllocatorRequirements;
-				public new function HRESULT(ref IAMMediaTypeStream self, ref ALLOCATOR_PROPERTIES pProps) SetStreamAllocatorRequirements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeStream self, out AM_MEDIA_TYPE pMediaType, uint32 dwFlags) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeStream self, ref AM_MEDIA_TYPE pMediaType, uint32 dwFlags) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeStream self, int32 lSampleSize, ref uint8 pbBuffer, uint32 dwFlags, ref IUnknown pUnkOuter, out IAMMediaTypeSample* ppAMMediaTypeSample) CreateSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeStream self, out ALLOCATOR_PROPERTIES pProps) GetStreamAllocatorRequirements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeStream self, ref ALLOCATOR_PROPERTIES pProps) SetStreamAllocatorRequirements;
 			}
 		}
 		[CRepr]
@@ -13066,23 +13066,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamSample.VTable
 			{
-				public new function HRESULT(ref IAMMediaTypeSample self, uint8* pBuffer, int32 lSize) SetPointer;
-				public new function HRESULT(ref IAMMediaTypeSample self, out uint8* ppBuffer) GetPointer;
-				public new function int32(ref IAMMediaTypeSample self) GetSize;
-				public new function HRESULT(ref IAMMediaTypeSample self, out int64 pTimeStart, out int64 pTimeEnd) GetTime;
-				public new function HRESULT(ref IAMMediaTypeSample self, ref int64 pTimeStart, ref int64 pTimeEnd) SetTime;
-				public new function HRESULT(ref IAMMediaTypeSample self) IsSyncPoint;
-				public new function HRESULT(ref IAMMediaTypeSample self, BOOL bIsSyncPoint) SetSyncPoint;
-				public new function HRESULT(ref IAMMediaTypeSample self) IsPreroll;
-				public new function HRESULT(ref IAMMediaTypeSample self, BOOL bIsPreroll) SetPreroll;
-				public new function int32(ref IAMMediaTypeSample self) GetActualDataLength;
-				public new function HRESULT(ref IAMMediaTypeSample self, int32 __MIDL__IAMMediaTypeSample0000) SetActualDataLength;
-				public new function HRESULT(ref IAMMediaTypeSample self, out AM_MEDIA_TYPE* ppMediaType) GetMediaType;
-				public new function HRESULT(ref IAMMediaTypeSample self, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
-				public new function HRESULT(ref IAMMediaTypeSample self) IsDiscontinuity;
-				public new function HRESULT(ref IAMMediaTypeSample self, BOOL bDiscontinuity) SetDiscontinuity;
-				public new function HRESULT(ref IAMMediaTypeSample self, out int64 pTimeStart, out int64 pTimeEnd) GetMediaTime;
-				public new function HRESULT(ref IAMMediaTypeSample self, ref int64 pTimeStart, ref int64 pTimeEnd) SetMediaTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, uint8* pBuffer, int32 lSize) SetPointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, out uint8* ppBuffer) GetPointer;
+				public new function [CallingConvention(.Stdcall)] int32(ref IAMMediaTypeSample self) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, out int64 pTimeStart, out int64 pTimeEnd) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, ref int64 pTimeStart, ref int64 pTimeEnd) SetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self) IsSyncPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, BOOL bIsSyncPoint) SetSyncPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self) IsPreroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, BOOL bIsPreroll) SetPreroll;
+				public new function [CallingConvention(.Stdcall)] int32(ref IAMMediaTypeSample self) GetActualDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, int32 __MIDL__IAMMediaTypeSample0000) SetActualDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, out AM_MEDIA_TYPE* ppMediaType) GetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, ref AM_MEDIA_TYPE pMediaType) SetMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self) IsDiscontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, BOOL bDiscontinuity) SetDiscontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, out int64 pTimeStart, out int64 pTimeEnd) GetMediaTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMMediaTypeSample self, ref int64 pTimeStart, ref int64 pTimeEnd) SetMediaTime;
 			}
 		}
 		[CRepr]
@@ -13110,22 +13110,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawVideo self, out uint32 pSwitches) GetSwitches;
-				public new function HRESULT(ref IDirectDrawVideo self, uint32 Switches) SetSwitches;
-				public new function HRESULT(ref IDirectDrawVideo self, out DDCAPS_DX7 pCaps) GetCaps;
-				public new function HRESULT(ref IDirectDrawVideo self, out DDCAPS_DX7 pCaps) GetEmulatedCaps;
-				public new function HRESULT(ref IDirectDrawVideo self, out DDSURFACEDESC pSurfaceDesc) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawVideo self, out uint32 pCount, out uint32 pCodes) GetFourCCCodes;
-				public new function HRESULT(ref IDirectDrawVideo self, ref IDirectDraw pDirectDraw) SetDirectDraw;
-				public new function HRESULT(ref IDirectDrawVideo self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
-				public new function HRESULT(ref IDirectDrawVideo self, out uint32 pSurfaceType) GetSurfaceType;
-				public new function HRESULT(ref IDirectDrawVideo self) SetDefault;
-				public new function HRESULT(ref IDirectDrawVideo self, int32 UseScanLine) UseScanLine;
-				public new function HRESULT(ref IDirectDrawVideo self, out int32 UseScanLine) CanUseScanLine;
-				public new function HRESULT(ref IDirectDrawVideo self, int32 UseOverlayStretch) UseOverlayStretch;
-				public new function HRESULT(ref IDirectDrawVideo self, out int32 UseOverlayStretch) CanUseOverlayStretch;
-				public new function HRESULT(ref IDirectDrawVideo self, int32 UseWhenFullScreen) UseWhenFullScreen;
-				public new function HRESULT(ref IDirectDrawVideo self, out int32 UseWhenFullScreen) WillUseFullScreen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out uint32 pSwitches) GetSwitches;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, uint32 Switches) SetSwitches;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out DDCAPS_DX7 pCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out DDCAPS_DX7 pCaps) GetEmulatedCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out DDSURFACEDESC pSurfaceDesc) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out uint32 pCount, out uint32 pCodes) GetFourCCCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, ref IDirectDraw pDirectDraw) SetDirectDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out IDirectDraw* ppDirectDraw) GetDirectDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out uint32 pSurfaceType) GetSurfaceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self) SetDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, int32 UseScanLine) UseScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out int32 UseScanLine) CanUseScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, int32 UseOverlayStretch) UseOverlayStretch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out int32 UseOverlayStretch) CanUseOverlayStretch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, int32 UseWhenFullScreen) UseWhenFullScreen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideo self, out int32 UseWhenFullScreen) WillUseFullScreen;
 			}
 		}
 		[CRepr]
@@ -13143,12 +13143,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IQualProp self, out int32 pcFrames) get_FramesDroppedInRenderer;
-				public new function HRESULT(ref IQualProp self, out int32 pcFramesDrawn) get_FramesDrawn;
-				public new function HRESULT(ref IQualProp self, out int32 piAvgFrameRate) get_AvgFrameRate;
-				public new function HRESULT(ref IQualProp self, out int32 iJitter) get_Jitter;
-				public new function HRESULT(ref IQualProp self, out int32 piAvg) get_AvgSyncOffset;
-				public new function HRESULT(ref IQualProp self, out int32 piDev) get_DevSyncOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 pcFrames) get_FramesDroppedInRenderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 pcFramesDrawn) get_FramesDrawn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 piAvgFrameRate) get_AvgFrameRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 iJitter) get_Jitter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 piAvg) get_AvgSyncOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IQualProp self, out int32 piDev) get_DevSyncOffset;
 			}
 		}
 		[CRepr]
@@ -13177,23 +13177,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFullScreenVideo self, out int32 pModes) CountModes;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Mode, out int32 pWidth, out int32 pHeight, out int32 pDepth) GetModeInfo;
-				public new function HRESULT(ref IFullScreenVideo self, out int32 pMode) GetCurrentMode;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Mode) IsModeAvailable;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Mode) IsModeEnabled;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Mode, int32 bEnabled) SetEnabled;
-				public new function HRESULT(ref IFullScreenVideo self, out int32 pClipFactor) GetClipFactor;
-				public new function HRESULT(ref IFullScreenVideo self, int32 ClipFactor) SetClipFactor;
-				public new function HRESULT(ref IFullScreenVideo self, HWND hwnd) SetMessageDrain;
-				public new function HRESULT(ref IFullScreenVideo self, out HWND hwnd) GetMessageDrain;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Monitor) SetMonitor;
-				public new function HRESULT(ref IFullScreenVideo self, out int32 Monitor) GetMonitor;
-				public new function HRESULT(ref IFullScreenVideo self, int32 Hide) HideOnDeactivate;
-				public new function HRESULT(ref IFullScreenVideo self) IsHideOnDeactivate;
-				public new function HRESULT(ref IFullScreenVideo self, BSTR strCaption) SetCaption;
-				public new function HRESULT(ref IFullScreenVideo self, out BSTR pstrCaption) GetCaption;
-				public new function HRESULT(ref IFullScreenVideo self) SetDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out int32 pModes) CountModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Mode, out int32 pWidth, out int32 pHeight, out int32 pDepth) GetModeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out int32 pMode) GetCurrentMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Mode) IsModeAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Mode) IsModeEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Mode, int32 bEnabled) SetEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out int32 pClipFactor) GetClipFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 ClipFactor) SetClipFactor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, HWND hwnd) SetMessageDrain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out HWND hwnd) GetMessageDrain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Monitor) SetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out int32 Monitor) GetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, int32 Hide) HideOnDeactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self) IsHideOnDeactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, BSTR strCaption) SetCaption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self, out BSTR pstrCaption) GetCaption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideo self) SetDefault;
 			}
 		}
 		[CRepr]
@@ -13209,10 +13209,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IFullScreenVideo.VTable
 			{
-				public new function HRESULT(ref IFullScreenVideoEx self, HWND hwnd, HACCEL hAccel) SetAcceleratorTable;
-				public new function HRESULT(ref IFullScreenVideoEx self, out HWND phwnd, out HACCEL phAccel) GetAcceleratorTable;
-				public new function HRESULT(ref IFullScreenVideoEx self, int32 KeepAspect) KeepPixelAspectRatio;
-				public new function HRESULT(ref IFullScreenVideoEx self, out int32 pKeepAspect) IsKeepPixelAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideoEx self, HWND hwnd, HACCEL hAccel) SetAcceleratorTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideoEx self, out HWND phwnd, out HACCEL phAccel) GetAcceleratorTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideoEx self, int32 KeepAspect) KeepPixelAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFullScreenVideoEx self, out int32 pKeepAspect) IsKeepPixelAspectRatio;
 			}
 		}
 		[CRepr]
@@ -13231,13 +13231,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBaseVideoMixer self, int32 iPin) SetLeadPin;
-				public new function HRESULT(ref IBaseVideoMixer self, out int32 piPin) GetLeadPin;
-				public new function HRESULT(ref IBaseVideoMixer self, out int32 piPinCount) GetInputPinCount;
-				public new function HRESULT(ref IBaseVideoMixer self, out int32 pbValue) IsUsingClock;
-				public new function HRESULT(ref IBaseVideoMixer self, int32 bValue) SetUsingClock;
-				public new function HRESULT(ref IBaseVideoMixer self, out int32 pbValue) GetClockPeriod;
-				public new function HRESULT(ref IBaseVideoMixer self, int32 bValue) SetClockPeriod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, int32 iPin) SetLeadPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, out int32 piPin) GetLeadPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, out int32 piPinCount) GetInputPinCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, out int32 pbValue) IsUsingClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, int32 bValue) SetUsingClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, out int32 pbValue) GetClockPeriod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBaseVideoMixer self, int32 bValue) SetClockPeriod;
 			}
 		}
 		[CRepr]
@@ -13252,7 +13252,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDMOWrapperFilter self, in Guid clsidDMO, in Guid catDMO) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOWrapperFilter self, in Guid clsidDMO, in Guid catDMO) Init;
 			}
 		}
 		[CRepr]
@@ -13269,9 +13269,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMixerOCXNotify self, ref RECT lpcRect) OnInvalidateRect;
-				public new function HRESULT(ref IMixerOCXNotify self, uint32 ulStatusFlags) OnStatusChange;
-				public new function HRESULT(ref IMixerOCXNotify self, uint32 ulDataFlags) OnDataChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCXNotify self, ref RECT lpcRect) OnInvalidateRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCXNotify self, uint32 ulStatusFlags) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCXNotify self, uint32 ulDataFlags) OnDataChange;
 			}
 		}
 		[CRepr]
@@ -13293,14 +13293,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMixerOCX self, uint32 ulBitsPerPixel, uint32 ulScreenWidth, uint32 ulScreenHeight) OnDisplayChange;
-				public new function HRESULT(ref IMixerOCX self, out uint32 pdwPictAspectRatioX, out uint32 pdwPictAspectRatioY) GetAspectRatio;
-				public new function HRESULT(ref IMixerOCX self, out uint32 pdwVideoWidth, out uint32 pdwVideoHeight) GetVideoSize;
-				public new function HRESULT(ref IMixerOCX self, out uint32* pdwStatus) GetStatus;
-				public new function HRESULT(ref IMixerOCX self, HDC hdcDraw, ref RECT prcDraw) OnDraw;
-				public new function HRESULT(ref IMixerOCX self, ref POINT lpptTopLeftSC, ref RECT prcDrawCC, ref RECT lprcClip) SetDrawRegion;
-				public new function HRESULT(ref IMixerOCX self, ref IMixerOCXNotify pmdns) Advise;
-				public new function HRESULT(ref IMixerOCX self) UnAdvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, uint32 ulBitsPerPixel, uint32 ulScreenWidth, uint32 ulScreenHeight) OnDisplayChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, out uint32 pdwPictAspectRatioX, out uint32 pdwPictAspectRatioY) GetAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, out uint32 pdwVideoWidth, out uint32 pdwVideoHeight) GetVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, out uint32* pdwStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, HDC hdcDraw, ref RECT prcDraw) OnDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, ref POINT lpptTopLeftSC, ref RECT prcDrawCC, ref RECT lprcClip) SetDrawRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self, ref IMixerOCXNotify pmdns) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerOCX self) UnAdvise;
 			}
 		}
 		[CRepr]
@@ -13324,18 +13324,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMixerPinConfig self, uint32 dwLeft, uint32 dwTop, uint32 dwRight, uint32 dwBottom) SetRelativePosition;
-				public new function HRESULT(ref IMixerPinConfig self, out uint32 pdwLeft, out uint32 pdwTop, out uint32 pdwRight, out uint32 pdwBottom) GetRelativePosition;
-				public new function HRESULT(ref IMixerPinConfig self, uint32 dwZOrder) SetZOrder;
-				public new function HRESULT(ref IMixerPinConfig self, out uint32 pdwZOrder) GetZOrder;
-				public new function HRESULT(ref IMixerPinConfig self, out COLORKEY pColorKey) SetColorKey;
-				public new function HRESULT(ref IMixerPinConfig self, out COLORKEY pColorKey, out uint32 pColor) GetColorKey;
-				public new function HRESULT(ref IMixerPinConfig self, uint32 dwBlendingParameter) SetBlendingParameter;
-				public new function HRESULT(ref IMixerPinConfig self, out uint32 pdwBlendingParameter) GetBlendingParameter;
-				public new function HRESULT(ref IMixerPinConfig self, AM_ASPECT_RATIO_MODE amAspectRatioMode) SetAspectRatioMode;
-				public new function HRESULT(ref IMixerPinConfig self, out AM_ASPECT_RATIO_MODE pamAspectRatioMode) GetAspectRatioMode;
-				public new function HRESULT(ref IMixerPinConfig self, BOOL bStreamTransparent) SetStreamTransparent;
-				public new function HRESULT(ref IMixerPinConfig self, out BOOL pbStreamTransparent) GetStreamTransparent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, uint32 dwLeft, uint32 dwTop, uint32 dwRight, uint32 dwBottom) SetRelativePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out uint32 pdwLeft, out uint32 pdwTop, out uint32 pdwRight, out uint32 pdwBottom) GetRelativePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, uint32 dwZOrder) SetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out uint32 pdwZOrder) GetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out COLORKEY pColorKey) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out COLORKEY pColorKey, out uint32 pColor) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, uint32 dwBlendingParameter) SetBlendingParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out uint32 pdwBlendingParameter) GetBlendingParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, AM_ASPECT_RATIO_MODE amAspectRatioMode) SetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out AM_ASPECT_RATIO_MODE pamAspectRatioMode) GetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, BOOL bStreamTransparent) SetStreamTransparent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig self, out BOOL pbStreamTransparent) GetStreamTransparent;
 			}
 		}
 		[CRepr]
@@ -13349,8 +13349,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMixerPinConfig.VTable
 			{
-				public new function HRESULT(ref IMixerPinConfig2 self, out DDCOLORCONTROL pColorControl) SetOverlaySurfaceColorControls;
-				public new function HRESULT(ref IMixerPinConfig2 self, out DDCOLORCONTROL pColorControl) GetOverlaySurfaceColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig2 self, out DDCOLORCONTROL pColorControl) SetOverlaySurfaceColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMixerPinConfig2 self, out DDCOLORCONTROL pColorControl) GetOverlaySurfaceColorControls;
 			}
 		}
 		[CRepr]
@@ -13375,19 +13375,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pDivider) get_FrequencyDivider;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 Divider) put_FrequencyDivider;
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pAccuracy) get_DecoderAccuracy;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 Accuracy) put_DecoderAccuracy;
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pStereo) get_Stereo;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 Stereo) put_Stereo;
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pWordSize) get_DecoderWordSize;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 WordSize) put_DecoderWordSize;
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pIntDecode) get_IntegerDecode;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 IntDecode) put_IntegerDecode;
-				public new function HRESULT(ref IMpegAudioDecoder self, out uint32 pIntDecode) get_DualMode;
-				public new function HRESULT(ref IMpegAudioDecoder self, uint32 IntDecode) put_DualMode;
-				public new function HRESULT(ref IMpegAudioDecoder self, out MPEG1WAVEFORMAT lpFmt) get_AudioFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pDivider) get_FrequencyDivider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 Divider) put_FrequencyDivider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pAccuracy) get_DecoderAccuracy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 Accuracy) put_DecoderAccuracy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pStereo) get_Stereo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 Stereo) put_Stereo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pWordSize) get_DecoderWordSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 WordSize) put_DecoderWordSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pIntDecode) get_IntegerDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 IntDecode) put_IntegerDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out uint32 pIntDecode) get_DualMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, uint32 IntDecode) put_DualMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpegAudioDecoder self, out MPEG1WAVEFORMAT lpFmt) get_AudioFormat;
 			}
 		}
 		[CRepr]
@@ -13404,9 +13404,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImagePresenter9 self, uint dwUserID) StartPresenting;
-				public new function HRESULT(ref IVMRImagePresenter9 self, uint dwUserID) StopPresenting;
-				public new function HRESULT(ref IVMRImagePresenter9 self, uint dwUserID, ref VMR9PresentationInfo lpPresInfo) PresentImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter9 self, uint dwUserID) StartPresenting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter9 self, uint dwUserID) StopPresenting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenter9 self, uint dwUserID, ref VMR9PresentationInfo lpPresInfo) PresentImage;
 			}
 		}
 		[CRepr]
@@ -13424,10 +13424,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurfaceAllocator9 self, uint dwUserID, ref VMR9AllocationInfo lpAllocInfo, out uint32 lpNumBuffers) InitializeDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocator9 self, uint dwID) TerminateDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocator9 self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, out IDirect3DSurface9* lplpSurface) GetSurface;
-				public new function HRESULT(ref IVMRSurfaceAllocator9 self, ref IVMRSurfaceAllocatorNotify9 lpIVMRSurfAllocNotify) AdviseNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator9 self, uint dwUserID, ref VMR9AllocationInfo lpAllocInfo, out uint32 lpNumBuffers) InitializeDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator9 self, uint dwID) TerminateDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator9 self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, out IDirect3DSurface9* lplpSurface) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocator9 self, ref IVMRSurfaceAllocatorNotify9 lpIVMRSurfAllocNotify) AdviseNotify;
 			}
 		}
 		[CRepr]
@@ -13442,7 +13442,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVMRSurfaceAllocator9.VTable
 			{
-				public new function HRESULT(ref IVMRSurfaceAllocatorEx9 self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, out IDirect3DSurface9* lplpSurface, out RECT lprcDst) GetSurfaceEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorEx9 self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, out IDirect3DSurface9* lplpSurface, out RECT lprcDst) GetSurfaceEx;
 			}
 		}
 		[CRepr]
@@ -13461,11 +13461,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify9 self, uint dwUserID, ref IVMRSurfaceAllocator9 lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref IDirect3DDevice9 lpD3DDevice, HMONITOR hMonitor) SetD3DDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref IDirect3DDevice9 lpD3DDevice, HMONITOR hMonitor) ChangeD3DDevice;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref VMR9AllocationInfo lpAllocInfo, out uint32 lpNumBuffers, out IDirect3DSurface9* lplpSurface) AllocateSurfaceHelper;
-				public new function HRESULT(ref IVMRSurfaceAllocatorNotify9 self, int32 EventCode, int Param1, int Param2) NotifyEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify9 self, uint dwUserID, ref IVMRSurfaceAllocator9 lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref IDirect3DDevice9 lpD3DDevice, HMONITOR hMonitor) SetD3DDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref IDirect3DDevice9 lpD3DDevice, HMONITOR hMonitor) ChangeD3DDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify9 self, ref VMR9AllocationInfo lpAllocInfo, out uint32 lpNumBuffers, out IDirect3DSurface9* lplpSurface) AllocateSurfaceHelper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurfaceAllocatorNotify9 self, int32 EventCode, int Param1, int Param2) NotifyEvent;
 			}
 		}
 		[CRepr]
@@ -13492,19 +13492,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight, out int32 lpARWidth, out int32 lpARHeight) GetNativeVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight) GetMinIdealVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight) GetMaxIdealVideoSize;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, in RECT lpSRCRect, in RECT lpDSTRect) SetVideoPosition;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out RECT lpSRCRect, out RECT lpDSTRect) GetVideoPosition;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out uint32 lpAspectRatioMode) GetAspectRatioMode;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, uint32 AspectRatioMode) SetAspectRatioMode;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, HWND hwnd) SetVideoClippingWindow;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, HWND hwnd, HDC hdc) RepaintVideo;
-				public new function HRESULT(ref IVMRWindowlessControl9 self) DisplayModeChanged;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out uint8* lpDib) GetCurrentImage;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, uint32 Clr) SetBorderColor;
-				public new function HRESULT(ref IVMRWindowlessControl9 self, out uint32 lpClr) GetBorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight, out int32 lpARWidth, out int32 lpARHeight) GetNativeVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight) GetMinIdealVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out int32 lpWidth, out int32 lpHeight) GetMaxIdealVideoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, in RECT lpSRCRect, in RECT lpDSTRect) SetVideoPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out RECT lpSRCRect, out RECT lpDSTRect) GetVideoPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out uint32 lpAspectRatioMode) GetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, uint32 AspectRatioMode) SetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, HWND hwnd) SetVideoClippingWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, HWND hwnd, HDC hdc) RepaintVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self) DisplayModeChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out uint8* lpDib) GetCurrentImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, uint32 Clr) SetBorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRWindowlessControl9 self, out uint32 lpClr) GetBorderColor;
 			}
 		}
 		[CRepr]
@@ -13531,19 +13531,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, float Alpha) SetAlpha;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out float pAlpha) GetAlpha;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out uint32 pZ) GetZOrder;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, in VMR9NormalizedRect pRect) SetOutputRect;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9NormalizedRect pRect) GetOutputRect;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 ClrBkg) SetBackgroundClr;
-				public new function HRESULT(ref IVMRMixerControl9 self, ref uint32 lpClrBkg) GetBackgroundClr;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwMixerPrefs) SetMixingPrefs;
-				public new function HRESULT(ref IVMRMixerControl9 self, out uint32 pdwMixerPrefs) GetMixingPrefs;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, ref VMR9ProcAmpControl lpClrControl) SetProcAmpControl;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9ProcAmpControl lpClrControl) GetProcAmpControl;
-				public new function HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9ProcAmpControlRange lpClrControl) GetProcAmpControlRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, float Alpha) SetAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out float pAlpha) GetAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out uint32 pZ) GetZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, in VMR9NormalizedRect pRect) SetOutputRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9NormalizedRect pRect) GetOutputRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 ClrBkg) SetBackgroundClr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, ref uint32 lpClrBkg) GetBackgroundClr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwMixerPrefs) SetMixingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, out uint32 pdwMixerPrefs) GetMixingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, ref VMR9ProcAmpControl lpClrControl) SetProcAmpControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9ProcAmpControl lpClrControl) GetProcAmpControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerControl9 self, uint32 dwStreamID, out VMR9ProcAmpControlRange lpClrControl) GetProcAmpControlRange;
 			}
 		}
 		[CRepr]
@@ -13560,9 +13560,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMixerBitmap9 self, in VMR9AlphaBitmap pBmpParms) SetAlphaBitmap;
-				public new function HRESULT(ref IVMRMixerBitmap9 self, in VMR9AlphaBitmap pBmpParms) UpdateAlphaBitmapParameters;
-				public new function HRESULT(ref IVMRMixerBitmap9 self, out VMR9AlphaBitmap pBmpParms) GetAlphaBitmapParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap9 self, in VMR9AlphaBitmap pBmpParms) SetAlphaBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap9 self, in VMR9AlphaBitmap pBmpParms) UpdateAlphaBitmapParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMixerBitmap9 self, out VMR9AlphaBitmap pBmpParms) GetAlphaBitmapParameters;
 			}
 		}
 		[CRepr]
@@ -13580,10 +13580,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRSurface9 self) IsSurfaceLocked;
-				public new function HRESULT(ref IVMRSurface9 self, out uint8* lpSurface) LockSurface;
-				public new function HRESULT(ref IVMRSurface9 self) UnlockSurface;
-				public new function HRESULT(ref IVMRSurface9 self, out IDirect3DSurface9* lplpSurface) GetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface9 self) IsSurfaceLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface9 self, out uint8* lpSurface) LockSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface9 self) UnlockSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRSurface9 self, out IDirect3DSurface9* lplpSurface) GetSurface;
 			}
 		}
 		[CRepr]
@@ -13599,8 +13599,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImagePresenterConfig9 self, uint32 dwRenderFlags) SetRenderingPrefs;
-				public new function HRESULT(ref IVMRImagePresenterConfig9 self, out uint32 dwRenderFlags) GetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterConfig9 self, uint32 dwRenderFlags) SetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImagePresenterConfig9 self, out uint32 dwRenderFlags) GetRenderingPrefs;
 			}
 		}
 		[CRepr]
@@ -13616,8 +13616,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRVideoStreamControl9 self, BOOL fActive) SetStreamActiveState;
-				public new function HRESULT(ref IVMRVideoStreamControl9 self, out BOOL lpfActive) GetStreamActiveState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl9 self, BOOL fActive) SetStreamActiveState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRVideoStreamControl9 self, out BOOL lpfActive) GetStreamActiveState;
 			}
 		}
 		[CRepr]
@@ -13638,13 +13638,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRFilterConfig9 self, ref IVMRImageCompositor9 lpVMRImgCompositor) SetImageCompositor;
-				public new function HRESULT(ref IVMRFilterConfig9 self, uint32 dwMaxStreams) SetNumberOfStreams;
-				public new function HRESULT(ref IVMRFilterConfig9 self, out uint32 pdwMaxStreams) GetNumberOfStreams;
-				public new function HRESULT(ref IVMRFilterConfig9 self, uint32 dwRenderFlags) SetRenderingPrefs;
-				public new function HRESULT(ref IVMRFilterConfig9 self, out uint32 pdwRenderFlags) GetRenderingPrefs;
-				public new function HRESULT(ref IVMRFilterConfig9 self, uint32 Mode) SetRenderingMode;
-				public new function HRESULT(ref IVMRFilterConfig9 self, out uint32 pMode) GetRenderingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, ref IVMRImageCompositor9 lpVMRImgCompositor) SetImageCompositor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, uint32 dwMaxStreams) SetNumberOfStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, out uint32 pdwMaxStreams) GetNumberOfStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, uint32 dwRenderFlags) SetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, out uint32 pdwRenderFlags) GetRenderingPrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, uint32 Mode) SetRenderingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRFilterConfig9 self, out uint32 pMode) GetRenderingMode;
 			}
 		}
 		[CRepr]
@@ -13660,8 +13660,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRAspectRatioControl9 self, out uint32 lpdwARMode) GetAspectRatioMode;
-				public new function HRESULT(ref IVMRAspectRatioControl9 self, uint32 dwARMode) SetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRAspectRatioControl9 self, out uint32 lpdwARMode) GetAspectRatioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRAspectRatioControl9 self, uint32 dwARMode) SetAspectRatioMode;
 			}
 		}
 		[CRepr]
@@ -13680,11 +13680,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRMonitorConfig9 self, uint32 uDev) SetMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig9 self, out uint32 puDev) GetMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig9 self, uint32 uDev) SetDefaultMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig9 self, out uint32 puDev) GetDefaultMonitor;
-				public new function HRESULT(ref IVMRMonitorConfig9 self, VMR9MonitorInfo* pInfo, uint32 dwMaxInfoArraySize, out uint32 pdwNumDevices) GetAvailableMonitors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig9 self, uint32 uDev) SetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig9 self, out uint32 puDev) GetMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig9 self, uint32 uDev) SetDefaultMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig9 self, out uint32 puDev) GetDefaultMonitor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRMonitorConfig9 self, VMR9MonitorInfo* pInfo, uint32 dwMaxInfoArraySize, out uint32 pdwNumDevices) GetAvailableMonitors;
 			}
 		}
 		[CRepr]
@@ -13705,13 +13705,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, ref VMR9VideoDesc lpVideoDescription, out uint32 lpdwNumDeinterlaceModes, out Guid lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, ref Guid lpDeinterlaceMode, ref VMR9VideoDesc lpVideoDescription, out VMR9DeinterlaceCaps lpDeinterlaceCaps) GetDeinterlaceModeCaps;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetDeinterlaceMode;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, ref Guid lpDeinterlaceMode) SetDeinterlaceMode;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, out uint32 lpdwDeinterlacePrefs) GetDeinterlacePrefs;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
-				public new function HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetActualDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, ref VMR9VideoDesc lpVideoDescription, out uint32 lpdwNumDeinterlaceModes, out Guid lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, ref Guid lpDeinterlaceMode, ref VMR9VideoDesc lpVideoDescription, out VMR9DeinterlaceCaps lpDeinterlaceCaps) GetDeinterlaceModeCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, ref Guid lpDeinterlaceMode) SetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, out uint32 lpdwDeinterlacePrefs) GetDeinterlacePrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRDeinterlaceControl9 self, uint32 dwStreamID, out Guid lpDeinterlaceMode) GetActualDeinterlaceMode;
 			}
 		}
 		[CRepr]
@@ -13729,10 +13729,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice) InitCompositionDevice;
-				public new function HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice) TermCompositionDevice;
-				public new function HRESULT(ref IVMRImageCompositor9 self, uint32 dwStrmID, ref AM_MEDIA_TYPE pmt, BOOL fTexture) SetStreamMediaType;
-				public new function HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice, ref IDirect3DSurface9 pddsRenderTarget, ref AM_MEDIA_TYPE pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, ref VMR9VideoStreamInfo pVideoStreamInfo, uint32 cStreams) CompositeImage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice) InitCompositionDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice) TermCompositionDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor9 self, uint32 dwStrmID, ref AM_MEDIA_TYPE pmt, BOOL fTexture) SetStreamMediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVMRImageCompositor9 self, ref IUnknown pD3DDevice, ref IDirect3DSurface9 pddsRenderTarget, ref AM_MEDIA_TYPE pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, ref VMR9VideoStreamInfo pVideoStreamInfo, uint32 cStreams) CompositeImage;
 			}
 		}
 		[CRepr]
@@ -13757,19 +13757,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVPBaseConfig self, out uint32 pdwNumConnectInfo, DDVIDEOPORTCONNECT* pddVPConnectInfo) GetConnectInfo;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 dwChosenEntry) SetConnectInfo;
-				public new function HRESULT(ref IVPBaseConfig self, out AMVPDATAINFO pamvpDataInfo) GetVPDataInfo;
-				public new function HRESULT(ref IVPBaseConfig self, out AMVPSIZE pamvpSize, out uint32 pdwMaxPixelsPerSecond) GetMaxPixelRate;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 dwNumFormats, out DDPIXELFORMAT pDDPixelFormats) InformVPInputFormats;
-				public new function HRESULT(ref IVPBaseConfig self, out uint32 pdwNumFormats, DDPIXELFORMAT* pddPixelFormats) GetVideoFormats;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 dwChosenEntry) SetVideoFormat;
-				public new function HRESULT(ref IVPBaseConfig self) SetInvertPolarity;
-				public new function HRESULT(ref IVPBaseConfig self, out IDirectDrawSurface* ppddOverlaySurface) GetOverlaySurface;
-				public new function HRESULT(ref IVPBaseConfig self, uint dwDDKernelHandle) SetDirectDrawKernelHandle;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 dwVideoPortID) SetVideoPortID;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 cHandles, out uint rgDDKernelHandles) SetDDSurfaceKernelHandles;
-				public new function HRESULT(ref IVPBaseConfig self, uint32 dwPitch, uint32 dwXOrigin, uint32 dwYOrigin) SetSurfaceParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, out uint32 pdwNumConnectInfo, DDVIDEOPORTCONNECT* pddVPConnectInfo) GetConnectInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 dwChosenEntry) SetConnectInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, out AMVPDATAINFO pamvpDataInfo) GetVPDataInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, out AMVPSIZE pamvpSize, out uint32 pdwMaxPixelsPerSecond) GetMaxPixelRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 dwNumFormats, out DDPIXELFORMAT pDDPixelFormats) InformVPInputFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, out uint32 pdwNumFormats, DDPIXELFORMAT* pddPixelFormats) GetVideoFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 dwChosenEntry) SetVideoFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self) SetInvertPolarity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, out IDirectDrawSurface* ppddOverlaySurface) GetOverlaySurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint dwDDKernelHandle) SetDirectDrawKernelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 dwVideoPortID) SetVideoPortID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 cHandles, out uint rgDDKernelHandles) SetDDSurfaceKernelHandles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseConfig self, uint32 dwPitch, uint32 dwXOrigin, uint32 dwYOrigin) SetSurfaceParameters;
 			}
 		}
 		[CRepr]
@@ -13783,8 +13783,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVPBaseConfig.VTable
 			{
-				public new function HRESULT(ref IVPConfig self, out int32 pbIsDecimationAllowed) IsVPDecimationAllowed;
-				public new function HRESULT(ref IVPConfig self, out AMVPSIZE pamvpSize) SetScalingFactors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPConfig self, out int32 pbIsDecimationAllowed) IsVPDecimationAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPConfig self, out AMVPSIZE pamvpSize) SetScalingFactors;
 			}
 		}
 		[CRepr]
@@ -13808,7 +13808,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVPBaseNotify self) RenegotiateVPParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPBaseNotify self) RenegotiateVPParameters;
 			}
 		}
 		[CRepr]
@@ -13822,8 +13822,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVPBaseNotify.VTable
 			{
-				public new function HRESULT(ref IVPNotify self, AMVP_MODE mode) SetDeinterlaceMode;
-				public new function HRESULT(ref IVPNotify self, out AMVP_MODE pMode) GetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPNotify self, AMVP_MODE mode) SetDeinterlaceMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPNotify self, out AMVP_MODE pMode) GetDeinterlaceMode;
 			}
 		}
 		[CRepr]
@@ -13837,8 +13837,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVPNotify.VTable
 			{
-				public new function HRESULT(ref IVPNotify2 self, BOOL bVPSyncMaster) SetVPSyncMaster;
-				public new function HRESULT(ref IVPNotify2 self, out BOOL pbVPSyncMaster) GetVPSyncMaster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPNotify2 self, BOOL bVPSyncMaster) SetVPSyncMaster;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVPNotify2 self, out BOOL pbVPSyncMaster) GetVPSyncMaster;
 			}
 		}
 		[CRepr]
@@ -13869,12 +13869,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaParamInfo self, out uint32 pdwParams) GetParamCount;
-				public new function HRESULT(ref IMediaParamInfo self, uint32 dwParamIndex, out MP_PARAMINFO pInfo) GetParamInfo;
-				public new function HRESULT(ref IMediaParamInfo self, uint32 dwParamIndex, out uint16* ppwchText) GetParamText;
-				public new function HRESULT(ref IMediaParamInfo self, out uint32 pdwNumTimeFormats) GetNumTimeFormats;
-				public new function HRESULT(ref IMediaParamInfo self, uint32 dwFormatIndex, out Guid pguidTimeFormat) GetSupportedTimeFormat;
-				public new function HRESULT(ref IMediaParamInfo self, out Guid pguidTimeFormat, out uint32 pTimeData) GetCurrentTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, out uint32 pdwParams) GetParamCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, uint32 dwParamIndex, out MP_PARAMINFO pInfo) GetParamInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, uint32 dwParamIndex, out uint16* ppwchText) GetParamText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, out uint32 pdwNumTimeFormats) GetNumTimeFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, uint32 dwFormatIndex, out Guid pguidTimeFormat) GetSupportedTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParamInfo self, out Guid pguidTimeFormat, out uint32 pTimeData) GetCurrentTimeFormat;
 			}
 		}
 		[CRepr]
@@ -13893,11 +13893,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaParams self, uint32 dwParamIndex, out float pValue) GetParam;
-				public new function HRESULT(ref IMediaParams self, uint32 dwParamIndex, float value) SetParam;
-				public new function HRESULT(ref IMediaParams self, uint32 dwParamIndex, uint32 cSegments, ref MP_ENVELOPE_SEGMENT pEnvelopeSegments) AddEnvelope;
-				public new function HRESULT(ref IMediaParams self, uint32 dwParamIndex, int64 refTimeStart, int64 refTimeEnd) FlushEnvelope;
-				public new function HRESULT(ref IMediaParams self, Guid guidTimeFormat, uint32 mpTimeData) SetTimeFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParams self, uint32 dwParamIndex, out float pValue) GetParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParams self, uint32 dwParamIndex, float value) SetParam;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParams self, uint32 dwParamIndex, uint32 cSegments, ref MP_ENVELOPE_SEGMENT pEnvelopeSegments) AddEnvelope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParams self, uint32 dwParamIndex, int64 refTimeStart, int64 refTimeEnd) FlushEnvelope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaParams self, Guid guidTimeFormat, uint32 mpTimeData) SetTimeFormat;
 			}
 		}
 		[CRepr]
@@ -13922,17 +13922,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMPlayListItem self, out uint32 pdwFlags) ComGetFlags;
-				public new function HRESULT(ref IAMPlayListItem self, out uint32 pdwSources) GetSourceCount;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrURL) GetSourceURL;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtStart) GetSourceStart;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtDuration) GetSourceDuration;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceStartMarker;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceEndMarker;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrStartMarker) GetSourceStartMarkerName;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrEndMarker) GetSourceEndMarkerName;
-				public new function HRESULT(ref IAMPlayListItem self, BSTR* pbstrURL) GetLinkURL;
-				public new function HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtScanDuration) GetScanDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, out uint32 pdwFlags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, out uint32 pdwSources) GetSourceCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrURL) GetSourceURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtStart) GetSourceStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtDuration) GetSourceDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceStartMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out uint32 pdwMarker) GetSourceEndMarker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrStartMarker) GetSourceStartMarkerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, BSTR* pbstrEndMarker) GetSourceEndMarkerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, BSTR* pbstrURL) GetLinkURL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayListItem self, uint32 dwSourceIndex, out int64 prtScanDuration) GetScanDuration;
 			}
 		}
 		[CRepr]
@@ -13951,11 +13951,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMPlayList self, out uint32 pdwFlags) ComGetFlags;
-				public new function HRESULT(ref IAMPlayList self, out uint32 pdwItems) GetItemCount;
-				public new function HRESULT(ref IAMPlayList self, uint32 dwItemIndex, IAMPlayListItem** ppItem) GetItem;
-				public new function HRESULT(ref IAMPlayList self, PWSTR pwszEventName, uint32 dwItemIndex, IAMPlayListItem** ppItem, out uint32 pdwFlags) GetNamedEvent;
-				public new function HRESULT(ref IAMPlayList self, out uint32 pdwRepeatCount, out uint32 pdwRepeatStart, out uint32 pdwRepeatEnd) GetRepeatInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwFlags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwItems) GetItemCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, uint32 dwItemIndex, IAMPlayListItem** ppItem) GetItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, PWSTR pwszEventName, uint32 dwItemIndex, IAMPlayListItem** ppItem, out uint32 pdwFlags) GetNamedEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMPlayList self, out uint32 pdwRepeatCount, out uint32 pdwRepeatStart, out uint32 pdwRepeatEnd) GetRepeatInfo;
 			}
 		}
 		[CRepr]
@@ -13970,7 +13970,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpecifyParticularPages self, in Guid guidWhatPages, out CAUUID pPages) GetPages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpecifyParticularPages self, in Guid guidWhatPages, out CAUUID pPages) GetPages;
 			}
 		}
 		[CRepr]
@@ -13985,7 +13985,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAMRebuild self) RebuildNow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAMRebuild self) RebuildNow;
 			}
 		}
 		[CRepr]
@@ -14001,8 +14001,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBufferingTime self, out uint32 pdwMilliseconds) GetBufferingTime;
-				public new function HRESULT(ref IBufferingTime self, uint32 dwMilliseconds) SetBufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBufferingTime self, out uint32 pdwMilliseconds) GetBufferingTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBufferingTime self, uint32 dwMilliseconds) SetBufferingTime;
 			}
 		}
 		[CRepr]
@@ -14017,7 +14017,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICreatePropBagOnRegKey self, HKEY hkey, PWSTR subkey, uint32 ulOptions, uint32 samDesired, in Guid iid, void** ppBag) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreatePropBagOnRegKey self, HKEY hkey, PWSTR subkey, uint32 ulOptions, uint32 samDesired, in Guid iid, void** ppBag) Create;
 			}
 		}
 		[CRepr]
@@ -14035,10 +14035,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITuningSpaces self, out int32 Count) get_Count;
-				public new function HRESULT(ref ITuningSpaces self, out IEnumVARIANT* NewEnum) get__NewEnum;
-				public new function HRESULT(ref ITuningSpaces self, VARIANT varIndex, out ITuningSpace* TuningSpace) get_Item;
-				public new function HRESULT(ref ITuningSpaces self, out IEnumTuningSpaces* NewEnum) get_EnumTuningSpaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaces self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaces self, out IEnumVARIANT* NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaces self, VARIANT varIndex, out ITuningSpace* TuningSpace) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaces self, out IEnumTuningSpaces* NewEnum) get_EnumTuningSpaces;
 			}
 		}
 		[CRepr]
@@ -14065,19 +14065,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITuningSpaceContainer self, out int32 Count) get_Count;
-				public new function HRESULT(ref ITuningSpaceContainer self, out IEnumVARIANT* NewEnum) get__NewEnum;
-				public new function HRESULT(ref ITuningSpaceContainer self, VARIANT varIndex, out ITuningSpace* TuningSpace) get_Item;
-				public new function HRESULT(ref ITuningSpaceContainer self, VARIANT varIndex, ref ITuningSpace TuningSpace) put_Item;
-				public new function HRESULT(ref ITuningSpaceContainer self, BSTR SpaceCLSID, out ITuningSpaces* NewColl) TuningSpacesForCLSID;
-				public new function HRESULT(ref ITuningSpaceContainer self, in Guid SpaceCLSID, out ITuningSpaces* NewColl) _TuningSpacesForCLSID2;
-				public new function HRESULT(ref ITuningSpaceContainer self, BSTR Name, out ITuningSpaces* NewColl) TuningSpacesForName;
-				public new function HRESULT(ref ITuningSpaceContainer self, ref ITuningSpace TuningSpace, out int32 ID) FindID;
-				public new function HRESULT(ref ITuningSpaceContainer self, ref ITuningSpace TuningSpace, out VARIANT NewIndex) Add;
-				public new function HRESULT(ref ITuningSpaceContainer self, out IEnumTuningSpaces* ppEnum) get_EnumTuningSpaces;
-				public new function HRESULT(ref ITuningSpaceContainer self, VARIANT Index) Remove;
-				public new function HRESULT(ref ITuningSpaceContainer self, out int32 MaxCount) get_MaxCount;
-				public new function HRESULT(ref ITuningSpaceContainer self, int32 MaxCount) put_MaxCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, out IEnumVARIANT* NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, VARIANT varIndex, out ITuningSpace* TuningSpace) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, VARIANT varIndex, ref ITuningSpace TuningSpace) put_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, BSTR SpaceCLSID, out ITuningSpaces* NewColl) TuningSpacesForCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, in Guid SpaceCLSID, out ITuningSpaces* NewColl) _TuningSpacesForCLSID2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, BSTR Name, out ITuningSpaces* NewColl) TuningSpacesForName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, ref ITuningSpace TuningSpace, out int32 ID) FindID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, ref ITuningSpace TuningSpace, out VARIANT NewIndex) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, out IEnumTuningSpaces* ppEnum) get_EnumTuningSpaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, VARIANT Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, out int32 MaxCount) get_MaxCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpaceContainer self, int32 MaxCount) put_MaxCount;
 			}
 		}
 		[CRepr]
@@ -14110,25 +14110,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITuningSpace self, out BSTR Name) get_UniqueName;
-				public new function HRESULT(ref ITuningSpace self, BSTR Name) put_UniqueName;
-				public new function HRESULT(ref ITuningSpace self, out BSTR Name) get_FriendlyName;
-				public new function HRESULT(ref ITuningSpace self, BSTR Name) put_FriendlyName;
-				public new function HRESULT(ref ITuningSpace self, out BSTR SpaceCLSID) get_CLSID;
-				public new function HRESULT(ref ITuningSpace self, out BSTR NetworkTypeGuid) get_NetworkType;
-				public new function HRESULT(ref ITuningSpace self, BSTR NetworkTypeGuid) put_NetworkType;
-				public new function HRESULT(ref ITuningSpace self, out Guid NetworkTypeGuid) get__NetworkType;
-				public new function HRESULT(ref ITuningSpace self, in Guid NetworkTypeGuid) put__NetworkType;
-				public new function HRESULT(ref ITuningSpace self, out ITuneRequest* TuneRequest) CreateTuneRequest;
-				public new function HRESULT(ref ITuningSpace self, out IEnumGUID* ppEnum) EnumCategoryGUIDs;
-				public new function HRESULT(ref ITuningSpace self, out IEnumMoniker* ppEnum) EnumDeviceMonikers;
-				public new function HRESULT(ref ITuningSpace self, out IComponentTypes* ComponentTypes) get_DefaultPreferredComponentTypes;
-				public new function HRESULT(ref ITuningSpace self, ref IComponentTypes NewComponentTypes) put_DefaultPreferredComponentTypes;
-				public new function HRESULT(ref ITuningSpace self, out BSTR pMapping) get_FrequencyMapping;
-				public new function HRESULT(ref ITuningSpace self, BSTR Mapping) put_FrequencyMapping;
-				public new function HRESULT(ref ITuningSpace self, out ILocator* LocatorVal) get_DefaultLocator;
-				public new function HRESULT(ref ITuningSpace self, ref ILocator LocatorVal) put_DefaultLocator;
-				public new function HRESULT(ref ITuningSpace self, out ITuningSpace* NewTS) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out BSTR Name) get_UniqueName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, BSTR Name) put_UniqueName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out BSTR Name) get_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, BSTR Name) put_FriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out BSTR SpaceCLSID) get_CLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out BSTR NetworkTypeGuid) get_NetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, BSTR NetworkTypeGuid) put_NetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out Guid NetworkTypeGuid) get__NetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, in Guid NetworkTypeGuid) put__NetworkType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out ITuneRequest* TuneRequest) CreateTuneRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out IEnumGUID* ppEnum) EnumCategoryGUIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out IEnumMoniker* ppEnum) EnumDeviceMonikers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out IComponentTypes* ComponentTypes) get_DefaultPreferredComponentTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, ref IComponentTypes NewComponentTypes) put_DefaultPreferredComponentTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out BSTR pMapping) get_FrequencyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, BSTR Mapping) put_FrequencyMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out ILocator* LocatorVal) get_DefaultLocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, ref ILocator LocatorVal) put_DefaultLocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuningSpace self, out ITuningSpace* NewTS) Clone;
 			}
 		}
 		[CRepr]
@@ -14146,10 +14146,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTuningSpaces self, uint32 celt, ITuningSpace** rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumTuningSpaces self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumTuningSpaces self) Reset;
-				public new function HRESULT(ref IEnumTuningSpaces self, out IEnumTuningSpaces* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuningSpaces self, uint32 celt, ITuningSpace** rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuningSpaces self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuningSpaces self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuningSpaces self, out IEnumTuningSpaces* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -14165,8 +14165,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuningSpace.VTable
 			{
-				public new function HRESULT(ref IDVBTuningSpace self, out DVBSystemType SysType) get_SystemType;
-				public new function HRESULT(ref IDVBTuningSpace self, DVBSystemType SysType) put_SystemType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuningSpace self, out DVBSystemType SysType) get_SystemType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuningSpace self, DVBSystemType SysType) put_SystemType;
 			}
 		}
 		[CRepr]
@@ -14182,8 +14182,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVBTuningSpace.VTable
 			{
-				public new function HRESULT(ref IDVBTuningSpace2 self, out int32 NetworkID) get_NetworkID;
-				public new function HRESULT(ref IDVBTuningSpace2 self, int32 NetworkID) put_NetworkID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuningSpace2 self, out int32 NetworkID) get_NetworkID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuningSpace2 self, int32 NetworkID) put_NetworkID;
 			}
 		}
 		[CRepr]
@@ -14207,16 +14207,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVBTuningSpace2.VTable
 			{
-				public new function HRESULT(ref IDVBSTuningSpace self, out int32 LowOscillator) get_LowOscillator;
-				public new function HRESULT(ref IDVBSTuningSpace self, int32 LowOscillator) put_LowOscillator;
-				public new function HRESULT(ref IDVBSTuningSpace self, out int32 HighOscillator) get_HighOscillator;
-				public new function HRESULT(ref IDVBSTuningSpace self, int32 HighOscillator) put_HighOscillator;
-				public new function HRESULT(ref IDVBSTuningSpace self, out int32 LNBSwitch) get_LNBSwitch;
-				public new function HRESULT(ref IDVBSTuningSpace self, int32 LNBSwitch) put_LNBSwitch;
-				public new function HRESULT(ref IDVBSTuningSpace self, out BSTR InputRange) get_InputRange;
-				public new function HRESULT(ref IDVBSTuningSpace self, BSTR InputRange) put_InputRange;
-				public new function HRESULT(ref IDVBSTuningSpace self, out SpectralInversion SpectralInversionVal) get_SpectralInversion;
-				public new function HRESULT(ref IDVBSTuningSpace self, SpectralInversion SpectralInversionVal) put_SpectralInversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, out int32 LowOscillator) get_LowOscillator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, int32 LowOscillator) put_LowOscillator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, out int32 HighOscillator) get_HighOscillator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, int32 HighOscillator) put_HighOscillator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, out int32 LNBSwitch) get_LNBSwitch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, int32 LNBSwitch) put_LNBSwitch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, out BSTR InputRange) get_InputRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, BSTR InputRange) put_InputRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, out SpectralInversion SpectralInversionVal) get_SpectralInversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSTuningSpace self, SpectralInversion SpectralInversionVal) put_SpectralInversion;
 			}
 		}
 		[CRepr]
@@ -14245,8 +14245,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAuxInTuningSpace.VTable
 			{
-				public new function HRESULT(ref IAuxInTuningSpace2 self, out int32 CountryCodeVal) get_CountryCode;
-				public new function HRESULT(ref IAuxInTuningSpace2 self, int32 NewCountryCodeVal) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuxInTuningSpace2 self, out int32 CountryCodeVal) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAuxInTuningSpace2 self, int32 NewCountryCodeVal) put_CountryCode;
 			}
 		}
 		[CRepr]
@@ -14268,14 +14268,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuningSpace.VTable
 			{
-				public new function HRESULT(ref IAnalogTVTuningSpace self, out int32 MinChannelVal) get_MinChannel;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, int32 NewMinChannelVal) put_MinChannel;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, out int32 MaxChannelVal) get_MaxChannel;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, int32 NewMaxChannelVal) put_MaxChannel;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, out TunerInputType InputTypeVal) get_InputType;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, TunerInputType NewInputTypeVal) put_InputType;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, out int32 CountryCodeVal) get_CountryCode;
-				public new function HRESULT(ref IAnalogTVTuningSpace self, int32 NewCountryCodeVal) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, out int32 MinChannelVal) get_MinChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, int32 NewMinChannelVal) put_MinChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, out int32 MaxChannelVal) get_MaxChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, int32 NewMaxChannelVal) put_MaxChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, out TunerInputType InputTypeVal) get_InputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, TunerInputType NewInputTypeVal) put_InputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, out int32 CountryCodeVal) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogTVTuningSpace self, int32 NewCountryCodeVal) put_CountryCode;
 			}
 		}
 		[CRepr]
@@ -14297,14 +14297,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAnalogTVTuningSpace.VTable
 			{
-				public new function HRESULT(ref IATSCTuningSpace self, out int32 MinMinorChannelVal) get_MinMinorChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, int32 NewMinMinorChannelVal) put_MinMinorChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, out int32 MaxMinorChannelVal) get_MaxMinorChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, int32 NewMaxMinorChannelVal) put_MaxMinorChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, out int32 MinPhysicalChannelVal) get_MinPhysicalChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, int32 NewMinPhysicalChannelVal) put_MinPhysicalChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, out int32 MaxPhysicalChannelVal) get_MaxPhysicalChannel;
-				public new function HRESULT(ref IATSCTuningSpace self, int32 NewMaxPhysicalChannelVal) put_MaxPhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, out int32 MinMinorChannelVal) get_MinMinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, int32 NewMinMinorChannelVal) put_MinMinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, out int32 MaxMinorChannelVal) get_MaxMinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, int32 NewMaxMinorChannelVal) put_MaxMinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, out int32 MinPhysicalChannelVal) get_MinPhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, int32 NewMinPhysicalChannelVal) put_MinPhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, out int32 MaxPhysicalChannelVal) get_MaxPhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCTuningSpace self, int32 NewMaxPhysicalChannelVal) put_MaxPhysicalChannel;
 			}
 		}
 		[CRepr]
@@ -14326,14 +14326,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IATSCTuningSpace.VTable
 			{
-				public new function HRESULT(ref IDigitalCableTuningSpace self, out int32 MinMajorChannelVal) get_MinMajorChannel;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, int32 NewMinMajorChannelVal) put_MinMajorChannel;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, out int32 MaxMajorChannelVal) get_MaxMajorChannel;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, int32 NewMaxMajorChannelVal) put_MaxMajorChannel;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, out int32 MinSourceIDVal) get_MinSourceID;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, int32 NewMinSourceIDVal) put_MinSourceID;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, out int32 MaxSourceIDVal) get_MaxSourceID;
-				public new function HRESULT(ref IDigitalCableTuningSpace self, int32 NewMaxSourceIDVal) put_MaxSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, out int32 MinMajorChannelVal) get_MinMajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, int32 NewMinMajorChannelVal) put_MinMajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, out int32 MaxMajorChannelVal) get_MaxMajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, int32 NewMaxMajorChannelVal) put_MaxMajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, out int32 MinSourceIDVal) get_MinSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, int32 NewMinSourceIDVal) put_MinSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, out int32 MaxSourceIDVal) get_MaxSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuningSpace self, int32 NewMaxSourceIDVal) put_MaxSourceID;
 			}
 		}
 		[CRepr]
@@ -14353,12 +14353,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuningSpace.VTable
 			{
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, out int32 MinFrequencyVal) get_MinFrequency;
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, int32 NewMinFrequencyVal) put_MinFrequency;
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, out int32 MaxFrequencyVal) get_MaxFrequency;
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, int32 NewMaxFrequencyVal) put_MaxFrequency;
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, out int32 StepVal) get_Step;
-				public new function HRESULT(ref IAnalogRadioTuningSpace self, int32 NewStepVal) put_Step;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, out int32 MinFrequencyVal) get_MinFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, int32 NewMinFrequencyVal) put_MinFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, out int32 MaxFrequencyVal) get_MaxFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, int32 NewMaxFrequencyVal) put_MaxFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, out int32 StepVal) get_Step;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace self, int32 NewStepVal) put_Step;
 			}
 		}
 		[CRepr]
@@ -14374,8 +14374,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAnalogRadioTuningSpace.VTable
 			{
-				public new function HRESULT(ref IAnalogRadioTuningSpace2 self, out int32 CountryCodeVal) get_CountryCode;
-				public new function HRESULT(ref IAnalogRadioTuningSpace2 self, int32 NewCountryCodeVal) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace2 self, out int32 CountryCodeVal) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogRadioTuningSpace2 self, int32 NewCountryCodeVal) put_CountryCode;
 			}
 		}
 		[CRepr]
@@ -14394,11 +14394,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITuneRequest self, out ITuningSpace* TuningSpace) get_TuningSpace;
-				public new function HRESULT(ref ITuneRequest self, out IComponents* Components) get_Components;
-				public new function HRESULT(ref ITuneRequest self, out ITuneRequest* NewTuneRequest) Clone;
-				public new function HRESULT(ref ITuneRequest self, out ILocator* Locator) get_Locator;
-				public new function HRESULT(ref ITuneRequest self, ref ILocator Locator) put_Locator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequest self, out ITuningSpace* TuningSpace) get_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequest self, out IComponents* Components) get_Components;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequest self, out ITuneRequest* NewTuneRequest) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequest self, out ILocator* Locator) get_Locator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequest self, ref ILocator Locator) put_Locator;
 			}
 		}
 		[CRepr]
@@ -14414,8 +14414,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuneRequest.VTable
 			{
-				public new function HRESULT(ref IChannelIDTuneRequest self, out BSTR ChannelID) get_ChannelID;
-				public new function HRESULT(ref IChannelIDTuneRequest self, BSTR ChannelID) put_ChannelID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelIDTuneRequest self, out BSTR ChannelID) get_ChannelID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelIDTuneRequest self, BSTR ChannelID) put_ChannelID;
 			}
 		}
 		[CRepr]
@@ -14431,8 +14431,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuneRequest.VTable
 			{
-				public new function HRESULT(ref IChannelTuneRequest self, out int32 Channel) get_Channel;
-				public new function HRESULT(ref IChannelTuneRequest self, int32 Channel) put_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelTuneRequest self, out int32 Channel) get_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelTuneRequest self, int32 Channel) put_Channel;
 			}
 		}
 		[CRepr]
@@ -14448,8 +14448,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IChannelTuneRequest.VTable
 			{
-				public new function HRESULT(ref IATSCChannelTuneRequest self, out int32 MinorChannel) get_MinorChannel;
-				public new function HRESULT(ref IATSCChannelTuneRequest self, int32 MinorChannel) put_MinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCChannelTuneRequest self, out int32 MinorChannel) get_MinorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCChannelTuneRequest self, int32 MinorChannel) put_MinorChannel;
 			}
 		}
 		[CRepr]
@@ -14467,10 +14467,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IATSCChannelTuneRequest.VTable
 			{
-				public new function HRESULT(ref IDigitalCableTuneRequest self, out int32 pMajorChannel) get_MajorChannel;
-				public new function HRESULT(ref IDigitalCableTuneRequest self, int32 MajorChannel) put_MajorChannel;
-				public new function HRESULT(ref IDigitalCableTuneRequest self, out int32 pSourceID) get_SourceID;
-				public new function HRESULT(ref IDigitalCableTuneRequest self, int32 SourceID) put_SourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuneRequest self, out int32 pMajorChannel) get_MajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuneRequest self, int32 MajorChannel) put_MajorChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuneRequest self, out int32 pSourceID) get_SourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDigitalCableTuneRequest self, int32 SourceID) put_SourceID;
 			}
 		}
 		[CRepr]
@@ -14490,12 +14490,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuneRequest.VTable
 			{
-				public new function HRESULT(ref IDVBTuneRequest self, out int32 ONID) get_ONID;
-				public new function HRESULT(ref IDVBTuneRequest self, int32 ONID) put_ONID;
-				public new function HRESULT(ref IDVBTuneRequest self, out int32 TSID) get_TSID;
-				public new function HRESULT(ref IDVBTuneRequest self, int32 TSID) put_TSID;
-				public new function HRESULT(ref IDVBTuneRequest self, out int32 SID) get_SID;
-				public new function HRESULT(ref IDVBTuneRequest self, int32 SID) put_SID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, out int32 ONID) get_ONID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, int32 ONID) put_ONID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, out int32 TSID) get_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, int32 TSID) put_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, out int32 SID) get_SID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTuneRequest self, int32 SID) put_SID;
 			}
 		}
 		[CRepr]
@@ -14513,10 +14513,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuneRequest.VTable
 			{
-				public new function HRESULT(ref IMPEG2TuneRequest self, out int32 TSID) get_TSID;
-				public new function HRESULT(ref IMPEG2TuneRequest self, int32 TSID) put_TSID;
-				public new function HRESULT(ref IMPEG2TuneRequest self, out int32 ProgNo) get_ProgNo;
-				public new function HRESULT(ref IMPEG2TuneRequest self, int32 ProgNo) put_ProgNo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2TuneRequest self, out int32 TSID) get_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2TuneRequest self, int32 TSID) put_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2TuneRequest self, out int32 ProgNo) get_ProgNo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2TuneRequest self, int32 ProgNo) put_ProgNo;
 			}
 		}
 		[CRepr]
@@ -14531,7 +14531,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMPEG2TuneRequestFactory self, ref ITuningSpace TuningSpace, out IMPEG2TuneRequest* TuneRequest) CreateTuneRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2TuneRequestFactory self, ref ITuningSpace TuningSpace, out IMPEG2TuneRequest* TuneRequest) CreateTuneRequest;
 			}
 		}
 		[CRepr]
@@ -14561,9 +14561,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITunerCap self, uint32 ulcNetworkTypesMax, out uint32 pulcNetworkTypes, out Guid pguidNetworkTypes) get_SupportedNetworkTypes;
-				public new function HRESULT(ref ITunerCap self, out uint32 pulAMTunerModeType, out uint32 pulAnalogVideoStandard) get_SupportedVideoFormats;
-				public new function HRESULT(ref ITunerCap self, out uint32 pulCompositeCount, out uint32 pulSvideoCount) get_AuxInputCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITunerCap self, uint32 ulcNetworkTypesMax, out uint32 pulcNetworkTypes, out Guid pguidNetworkTypes) get_SupportedNetworkTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITunerCap self, out uint32 pulAMTunerModeType, out uint32 pulAnalogVideoStandard) get_SupportedVideoFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITunerCap self, out uint32 pulCompositeCount, out uint32 pulSvideoCount) get_AuxInputCount;
 			}
 		}
 		[CRepr]
@@ -14578,7 +14578,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITunerCapEx self, out int16 pbHasCaption) get_Has608_708Caption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITunerCapEx self, out int16 pbHasCaption) get_Has608_708Caption;
 			}
 		}
 		[CRepr]
@@ -14602,16 +14602,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITuner self, out ITuningSpace* TuningSpace) get_TuningSpace;
-				public new function HRESULT(ref ITuner self, ref ITuningSpace TuningSpace) put_TuningSpace;
-				public new function HRESULT(ref ITuner self, out IEnumTuningSpaces* ppEnum) EnumTuningSpaces;
-				public new function HRESULT(ref ITuner self, out ITuneRequest* TuneRequest) get_TuneRequest;
-				public new function HRESULT(ref ITuner self, ref ITuneRequest TuneRequest) put_TuneRequest;
-				public new function HRESULT(ref ITuner self, ref ITuneRequest TuneRequest) Validate;
-				public new function HRESULT(ref ITuner self, out IComponentTypes* ComponentTypes) get_PreferredComponentTypes;
-				public new function HRESULT(ref ITuner self, ref IComponentTypes ComponentTypes) put_PreferredComponentTypes;
-				public new function HRESULT(ref ITuner self, out int32 Strength) get_SignalStrength;
-				public new function HRESULT(ref ITuner self, int32 Interval) TriggerSignalEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, out ITuningSpace* TuningSpace) get_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, ref ITuningSpace TuningSpace) put_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, out IEnumTuningSpaces* ppEnum) EnumTuningSpaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, out ITuneRequest* TuneRequest) get_TuneRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, ref ITuneRequest TuneRequest) put_TuneRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, ref ITuneRequest TuneRequest) Validate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, out IComponentTypes* ComponentTypes) get_PreferredComponentTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, ref IComponentTypes ComponentTypes) put_PreferredComponentTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, out int32 Strength) get_SignalStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuner self, int32 Interval) TriggerSignalEvents;
 			}
 		}
 		[CRepr]
@@ -14630,11 +14630,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuner.VTable
 			{
-				public new function HRESULT(ref IScanningTuner self) SeekUp;
-				public new function HRESULT(ref IScanningTuner self) SeekDown;
-				public new function HRESULT(ref IScanningTuner self, int32 MillisecondsPause) ScanUp;
-				public new function HRESULT(ref IScanningTuner self, int32 MillisecondsPause) ScanDown;
-				public new function HRESULT(ref IScanningTuner self) AutoProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTuner self) SeekUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTuner self) SeekDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTuner self, int32 MillisecondsPause) ScanUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTuner self, int32 MillisecondsPause) ScanDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTuner self) AutoProgram;
 			}
 		}
 		[CRepr]
@@ -14656,14 +14656,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IScanningTuner.VTable
 			{
-				public new function HRESULT(ref IScanningTunerEx self, ILocator** pILocator) GetCurrentLocator;
-				public new function HRESULT(ref IScanningTunerEx self, int32 dwLowerFreq, int32 dwHigherFreq, int16 bFineTune, uint hEvent) PerformExhaustiveScan;
-				public new function HRESULT(ref IScanningTunerEx self, out int32 pcurrentFreq) TerminateCurrentScan;
-				public new function HRESULT(ref IScanningTunerEx self, uint hEvent) ResumeCurrentScan;
-				public new function HRESULT(ref IScanningTunerEx self, out int32 HardwareAssistedScanning, out int32 NumStandardsSupported, out Guid BroadcastStandards) GetTunerScanningCapability;
-				public new function HRESULT(ref IScanningTunerEx self, out int32 SecondsLeft, out int32 CurrentLockType, out int32 AutoDetect, out int32 CurrentFreq) GetTunerStatus;
-				public new function HRESULT(ref IScanningTunerEx self, Guid CurrentBroadcastStandard, out int32 SettlingTime, out int32 TvStandardsSupported) GetCurrentTunerStandardCapability;
-				public new function HRESULT(ref IScanningTunerEx self, int32 ScanModulationTypes, int32 AnalogVideoStandard) SetScanSignalTypeFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, ILocator** pILocator) GetCurrentLocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, int32 dwLowerFreq, int32 dwHigherFreq, int16 bFineTune, uint hEvent) PerformExhaustiveScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, out int32 pcurrentFreq) TerminateCurrentScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, uint hEvent) ResumeCurrentScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, out int32 HardwareAssistedScanning, out int32 NumStandardsSupported, out Guid BroadcastStandards) GetTunerScanningCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, out int32 SecondsLeft, out int32 CurrentLockType, out int32 AutoDetect, out int32 CurrentFreq) GetTunerStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, Guid CurrentBroadcastStandard, out int32 SettlingTime, out int32 TvStandardsSupported) GetCurrentTunerStandardCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScanningTunerEx self, int32 ScanModulationTypes, int32 AnalogVideoStandard) SetScanSignalTypeFilter;
 			}
 		}
 		[CRepr]
@@ -14694,23 +14694,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponentType self, out ComponentCategory Category) get_Category;
-				public new function HRESULT(ref IComponentType self, ComponentCategory Category) put_Category;
-				public new function HRESULT(ref IComponentType self, out BSTR MediaMajorType) get_MediaMajorType;
-				public new function HRESULT(ref IComponentType self, BSTR MediaMajorType) put_MediaMajorType;
-				public new function HRESULT(ref IComponentType self, out Guid MediaMajorTypeGuid) get__MediaMajorType;
-				public new function HRESULT(ref IComponentType self, in Guid MediaMajorTypeGuid) put__MediaMajorType;
-				public new function HRESULT(ref IComponentType self, out BSTR MediaSubType) get_MediaSubType;
-				public new function HRESULT(ref IComponentType self, BSTR MediaSubType) put_MediaSubType;
-				public new function HRESULT(ref IComponentType self, out Guid MediaSubTypeGuid) get__MediaSubType;
-				public new function HRESULT(ref IComponentType self, in Guid MediaSubTypeGuid) put__MediaSubType;
-				public new function HRESULT(ref IComponentType self, out BSTR MediaFormatType) get_MediaFormatType;
-				public new function HRESULT(ref IComponentType self, BSTR MediaFormatType) put_MediaFormatType;
-				public new function HRESULT(ref IComponentType self, out Guid MediaFormatTypeGuid) get__MediaFormatType;
-				public new function HRESULT(ref IComponentType self, in Guid MediaFormatTypeGuid) put__MediaFormatType;
-				public new function HRESULT(ref IComponentType self, out AM_MEDIA_TYPE MediaType) get_MediaType;
-				public new function HRESULT(ref IComponentType self, ref AM_MEDIA_TYPE MediaType) put_MediaType;
-				public new function HRESULT(ref IComponentType self, out IComponentType* NewCT) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out ComponentCategory Category) get_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, ComponentCategory Category) put_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out BSTR MediaMajorType) get_MediaMajorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, BSTR MediaMajorType) put_MediaMajorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out Guid MediaMajorTypeGuid) get__MediaMajorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, in Guid MediaMajorTypeGuid) put__MediaMajorType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out BSTR MediaSubType) get_MediaSubType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, BSTR MediaSubType) put_MediaSubType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out Guid MediaSubTypeGuid) get__MediaSubType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, in Guid MediaSubTypeGuid) put__MediaSubType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out BSTR MediaFormatType) get_MediaFormatType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, BSTR MediaFormatType) put_MediaFormatType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out Guid MediaFormatTypeGuid) get__MediaFormatType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, in Guid MediaFormatTypeGuid) put__MediaFormatType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out AM_MEDIA_TYPE MediaType) get_MediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, ref AM_MEDIA_TYPE MediaType) put_MediaType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentType self, out IComponentType* NewCT) Clone;
 			}
 		}
 		[CRepr]
@@ -14726,8 +14726,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IComponentType.VTable
 			{
-				public new function HRESULT(ref ILanguageComponentType self, out int32 LangID) get_LangID;
-				public new function HRESULT(ref ILanguageComponentType self, int32 LangID) put_LangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageComponentType self, out int32 LangID) get_LangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILanguageComponentType self, int32 LangID) put_LangID;
 			}
 		}
 		[CRepr]
@@ -14743,8 +14743,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ILanguageComponentType.VTable
 			{
-				public new function HRESULT(ref IMPEG2ComponentType self, out MPEG2StreamType MP2StreamType) get_StreamType;
-				public new function HRESULT(ref IMPEG2ComponentType self, MPEG2StreamType MP2StreamType) put_StreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2ComponentType self, out MPEG2StreamType MP2StreamType) get_StreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2ComponentType self, MPEG2StreamType MP2StreamType) put_StreamType;
 			}
 		}
 		[CRepr]
@@ -14760,8 +14760,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMPEG2ComponentType.VTable
 			{
-				public new function HRESULT(ref IATSCComponentType self, out int32 Flags) get_Flags;
-				public new function HRESULT(ref IATSCComponentType self, int32 flags) put_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCComponentType self, out int32 Flags) get_Flags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCComponentType self, int32 flags) put_Flags;
 			}
 		}
 		[CRepr]
@@ -14779,10 +14779,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumComponentTypes self, uint32 celt, IComponentType** rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumComponentTypes self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumComponentTypes self) Reset;
-				public new function HRESULT(ref IEnumComponentTypes self, out IEnumComponentTypes* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponentTypes self, uint32 celt, IComponentType** rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponentTypes self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponentTypes self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponentTypes self, out IEnumComponentTypes* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -14804,14 +14804,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponentTypes self, out int32 Count) get_Count;
-				public new function HRESULT(ref IComponentTypes self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
-				public new function HRESULT(ref IComponentTypes self, out IEnumComponentTypes* ppNewEnum) EnumComponentTypes;
-				public new function HRESULT(ref IComponentTypes self, VARIANT Index, out IComponentType* ComponentType) get_Item;
-				public new function HRESULT(ref IComponentTypes self, VARIANT Index, ref IComponentType ComponentType) put_Item;
-				public new function HRESULT(ref IComponentTypes self, ref IComponentType ComponentType, out VARIANT NewIndex) Add;
-				public new function HRESULT(ref IComponentTypes self, VARIANT Index) Remove;
-				public new function HRESULT(ref IComponentTypes self, out IComponentTypes* NewList) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, out IEnumComponentTypes* ppNewEnum) EnumComponentTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, VARIANT Index, out IComponentType* ComponentType) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, VARIANT Index, ref IComponentType ComponentType) put_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, ref IComponentType ComponentType, out VARIANT NewIndex) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, VARIANT Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentTypes self, out IComponentTypes* NewList) Clone;
 			}
 		}
 		[CRepr]
@@ -14834,15 +14834,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponent self, out IComponentType* CT) get_Type;
-				public new function HRESULT(ref IComponent self, ref IComponentType CT) put_Type;
-				public new function HRESULT(ref IComponent self, out int32 LangID) get_DescLangID;
-				public new function HRESULT(ref IComponent self, int32 LangID) put_DescLangID;
-				public new function HRESULT(ref IComponent self, out ComponentStatus Status) get_Status;
-				public new function HRESULT(ref IComponent self, ComponentStatus Status) put_Status;
-				public new function HRESULT(ref IComponent self, out BSTR Description) get_Description;
-				public new function HRESULT(ref IComponent self, BSTR Description) put_Description;
-				public new function HRESULT(ref IComponent self, out IComponent* NewComponent) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, out IComponentType* CT) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, ref IComponentType CT) put_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, out int32 LangID) get_DescLangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, int32 LangID) put_DescLangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, out ComponentStatus Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, ComponentStatus Status) put_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, out BSTR Description) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, BSTR Description) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponent self, out IComponent* NewComponent) Clone;
 			}
 		}
 		[CRepr]
@@ -14858,8 +14858,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IComponentType.VTable
 			{
-				public new function HRESULT(ref IAnalogAudioComponentType self, out TVAudioMode Mode) get_AnalogAudioMode;
-				public new function HRESULT(ref IAnalogAudioComponentType self, TVAudioMode Mode) put_AnalogAudioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogAudioComponentType self, out TVAudioMode Mode) get_AnalogAudioMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogAudioComponentType self, TVAudioMode Mode) put_AnalogAudioMode;
 			}
 		}
 		[CRepr]
@@ -14879,12 +14879,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IComponent.VTable
 			{
-				public new function HRESULT(ref IMPEG2Component self, out int32 PID) get_PID;
-				public new function HRESULT(ref IMPEG2Component self, int32 PID) put_PID;
-				public new function HRESULT(ref IMPEG2Component self, out int32 PCRPID) get_PCRPID;
-				public new function HRESULT(ref IMPEG2Component self, int32 PCRPID) put_PCRPID;
-				public new function HRESULT(ref IMPEG2Component self, out int32 ProgramNumber) get_ProgramNumber;
-				public new function HRESULT(ref IMPEG2Component self, int32 ProgramNumber) put_ProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, out int32 PID) get_PID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, int32 PID) put_PID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, out int32 PCRPID) get_PCRPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, int32 PCRPID) put_PCRPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, out int32 ProgramNumber) get_ProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2Component self, int32 ProgramNumber) put_ProgramNumber;
 			}
 		}
 		[CRepr]
@@ -14902,10 +14902,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumComponents self, uint32 celt, IComponent** rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumComponents self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumComponents self) Reset;
-				public new function HRESULT(ref IEnumComponents self, out IEnumComponents* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponents self, uint32 celt, IComponent** rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponents self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponents self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumComponents self, out IEnumComponents* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -14927,14 +14927,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponents self, out int32 Count) get_Count;
-				public new function HRESULT(ref IComponents self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
-				public new function HRESULT(ref IComponents self, out IEnumComponents* ppNewEnum) EnumComponents;
-				public new function HRESULT(ref IComponents self, VARIANT Index, out IComponent* ppComponent) get_Item;
-				public new function HRESULT(ref IComponents self, ref IComponent Component, out VARIANT NewIndex) Add;
-				public new function HRESULT(ref IComponents self, VARIANT Index) Remove;
-				public new function HRESULT(ref IComponents self, out IComponents* NewList) Clone;
-				public new function HRESULT(ref IComponents self, VARIANT Index, ref IComponent ppComponent) put_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, out IEnumComponents* ppNewEnum) EnumComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, VARIANT Index, out IComponent* ppComponent) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, ref IComponent Component, out VARIANT NewIndex) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, VARIANT Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, out IComponents* NewList) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponents self, VARIANT Index, ref IComponent ppComponent) put_Item;
 			}
 		}
 		[CRepr]
@@ -14955,13 +14955,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponentsOld self, out int32 Count) get_Count;
-				public new function HRESULT(ref IComponentsOld self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
-				public new function HRESULT(ref IComponentsOld self, out IEnumComponents* ppNewEnum) EnumComponents;
-				public new function HRESULT(ref IComponentsOld self, VARIANT Index, out IComponent* ppComponent) get_Item;
-				public new function HRESULT(ref IComponentsOld self, ref IComponent Component, out VARIANT NewIndex) Add;
-				public new function HRESULT(ref IComponentsOld self, VARIANT Index) Remove;
-				public new function HRESULT(ref IComponentsOld self, out IComponents* NewList) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, out IEnumVARIANT* ppNewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, out IEnumComponents* ppNewEnum) EnumComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, VARIANT Index, out IComponent* ppComponent) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, ref IComponent Component, out VARIANT NewIndex) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, VARIANT Index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentsOld self, out IComponents* NewList) Clone;
 			}
 		}
 		[CRepr]
@@ -14990,21 +14990,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ILocator self, out int32 Frequency) get_CarrierFrequency;
-				public new function HRESULT(ref ILocator self, int32 Frequency) put_CarrierFrequency;
-				public new function HRESULT(ref ILocator self, out FECMethod FEC) get_InnerFEC;
-				public new function HRESULT(ref ILocator self, FECMethod FEC) put_InnerFEC;
-				public new function HRESULT(ref ILocator self, out BinaryConvolutionCodeRate FEC) get_InnerFECRate;
-				public new function HRESULT(ref ILocator self, BinaryConvolutionCodeRate FEC) put_InnerFECRate;
-				public new function HRESULT(ref ILocator self, out FECMethod FEC) get_OuterFEC;
-				public new function HRESULT(ref ILocator self, FECMethod FEC) put_OuterFEC;
-				public new function HRESULT(ref ILocator self, out BinaryConvolutionCodeRate FEC) get_OuterFECRate;
-				public new function HRESULT(ref ILocator self, BinaryConvolutionCodeRate FEC) put_OuterFECRate;
-				public new function HRESULT(ref ILocator self, out ModulationType Modulation) get_Modulation;
-				public new function HRESULT(ref ILocator self, ModulationType Modulation) put_Modulation;
-				public new function HRESULT(ref ILocator self, out int32 Rate) get_SymbolRate;
-				public new function HRESULT(ref ILocator self, int32 Rate) put_SymbolRate;
-				public new function HRESULT(ref ILocator self, out ILocator* NewLocator) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out int32 Frequency) get_CarrierFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, int32 Frequency) put_CarrierFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out FECMethod FEC) get_InnerFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, FECMethod FEC) put_InnerFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out BinaryConvolutionCodeRate FEC) get_InnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, BinaryConvolutionCodeRate FEC) put_InnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out FECMethod FEC) get_OuterFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, FECMethod FEC) put_OuterFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out BinaryConvolutionCodeRate FEC) get_OuterFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, BinaryConvolutionCodeRate FEC) put_OuterFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out ModulationType Modulation) get_Modulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, ModulationType Modulation) put_Modulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out int32 Rate) get_SymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, int32 Rate) put_SymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILocator self, out ILocator* NewLocator) Clone;
 			}
 		}
 		[CRepr]
@@ -15020,8 +15020,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ILocator.VTable
 			{
-				public new function HRESULT(ref IAnalogLocator self, out AnalogVideoStandard AVS) get_VideoStandard;
-				public new function HRESULT(ref IAnalogLocator self, AnalogVideoStandard AVS) put_VideoStandard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogLocator self, out AnalogVideoStandard AVS) get_VideoStandard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAnalogLocator self, AnalogVideoStandard AVS) put_VideoStandard;
 			}
 		}
 		[CRepr]
@@ -15052,10 +15052,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDigitalLocator.VTable
 			{
-				public new function HRESULT(ref IATSCLocator self, out int32 PhysicalChannel) get_PhysicalChannel;
-				public new function HRESULT(ref IATSCLocator self, int32 PhysicalChannel) put_PhysicalChannel;
-				public new function HRESULT(ref IATSCLocator self, out int32 TSID) get_TSID;
-				public new function HRESULT(ref IATSCLocator self, int32 TSID) put_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator self, out int32 PhysicalChannel) get_PhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator self, int32 PhysicalChannel) put_PhysicalChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator self, out int32 TSID) get_TSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator self, int32 TSID) put_TSID;
 			}
 		}
 		[CRepr]
@@ -15071,8 +15071,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IATSCLocator.VTable
 			{
-				public new function HRESULT(ref IATSCLocator2 self, out int32 ProgramNumber) get_ProgramNumber;
-				public new function HRESULT(ref IATSCLocator2 self, int32 ProgramNumber) put_ProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator2 self, out int32 ProgramNumber) get_ProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSCLocator2 self, int32 ProgramNumber) put_ProgramNumber;
 			}
 		}
 		[CRepr]
@@ -15113,20 +15113,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDigitalLocator.VTable
 			{
-				public new function HRESULT(ref IDVBTLocator self, out int32 BandWidthVal) get_Bandwidth;
-				public new function HRESULT(ref IDVBTLocator self, int32 BandwidthVal) put_Bandwidth;
-				public new function HRESULT(ref IDVBTLocator self, out FECMethod FEC) get_LPInnerFEC;
-				public new function HRESULT(ref IDVBTLocator self, FECMethod FEC) put_LPInnerFEC;
-				public new function HRESULT(ref IDVBTLocator self, out BinaryConvolutionCodeRate FEC) get_LPInnerFECRate;
-				public new function HRESULT(ref IDVBTLocator self, BinaryConvolutionCodeRate FEC) put_LPInnerFECRate;
-				public new function HRESULT(ref IDVBTLocator self, out HierarchyAlpha Alpha) get_HAlpha;
-				public new function HRESULT(ref IDVBTLocator self, HierarchyAlpha Alpha) put_HAlpha;
-				public new function HRESULT(ref IDVBTLocator self, out GuardInterval GI) get_Guard;
-				public new function HRESULT(ref IDVBTLocator self, GuardInterval GI) put_Guard;
-				public new function HRESULT(ref IDVBTLocator self, out TransmissionMode mode) get_Mode;
-				public new function HRESULT(ref IDVBTLocator self, TransmissionMode mode) put_Mode;
-				public new function HRESULT(ref IDVBTLocator self, out int16 OtherFrequencyInUseVal) get_OtherFrequencyInUse;
-				public new function HRESULT(ref IDVBTLocator self, int16 OtherFrequencyInUseVal) put_OtherFrequencyInUse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out int32 BandWidthVal) get_Bandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, int32 BandwidthVal) put_Bandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out FECMethod FEC) get_LPInnerFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, FECMethod FEC) put_LPInnerFEC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out BinaryConvolutionCodeRate FEC) get_LPInnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, BinaryConvolutionCodeRate FEC) put_LPInnerFECRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out HierarchyAlpha Alpha) get_HAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, HierarchyAlpha Alpha) put_HAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out GuardInterval GI) get_Guard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, GuardInterval GI) put_Guard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out TransmissionMode mode) get_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, TransmissionMode mode) put_Mode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, out int16 OtherFrequencyInUseVal) get_OtherFrequencyInUse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator self, int16 OtherFrequencyInUseVal) put_OtherFrequencyInUse;
 			}
 		}
 		[CRepr]
@@ -15142,8 +15142,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVBTLocator.VTable
 			{
-				public new function HRESULT(ref IDVBTLocator2 self, out int32 PhysicalLayerPipeIdVal) get_PhysicalLayerPipeId;
-				public new function HRESULT(ref IDVBTLocator2 self, int32 PhysicalLayerPipeIdVal) put_PhysicalLayerPipeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator2 self, out int32 PhysicalLayerPipeIdVal) get_PhysicalLayerPipeId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBTLocator2 self, int32 PhysicalLayerPipeIdVal) put_PhysicalLayerPipeId;
 			}
 		}
 		[CRepr]
@@ -15167,16 +15167,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDigitalLocator.VTable
 			{
-				public new function HRESULT(ref IDVBSLocator self, out Polarisation PolarisationVal) get_SignalPolarisation;
-				public new function HRESULT(ref IDVBSLocator self, Polarisation PolarisationVal) put_SignalPolarisation;
-				public new function HRESULT(ref IDVBSLocator self, out int16 WestLongitude) get_WestPosition;
-				public new function HRESULT(ref IDVBSLocator self, int16 WestLongitude) put_WestPosition;
-				public new function HRESULT(ref IDVBSLocator self, out int32 longitude) get_OrbitalPosition;
-				public new function HRESULT(ref IDVBSLocator self, int32 longitude) put_OrbitalPosition;
-				public new function HRESULT(ref IDVBSLocator self, out int32 Azimuth) get_Azimuth;
-				public new function HRESULT(ref IDVBSLocator self, int32 Azimuth) put_Azimuth;
-				public new function HRESULT(ref IDVBSLocator self, out int32 Elevation) get_Elevation;
-				public new function HRESULT(ref IDVBSLocator self, int32 Elevation) put_Elevation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, out Polarisation PolarisationVal) get_SignalPolarisation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, Polarisation PolarisationVal) put_SignalPolarisation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, out int16 WestLongitude) get_WestPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, int16 WestLongitude) put_WestPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, out int32 longitude) get_OrbitalPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, int32 longitude) put_OrbitalPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, out int32 Azimuth) get_Azimuth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, int32 Azimuth) put_Azimuth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, out int32 Elevation) get_Elevation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator self, int32 Elevation) put_Elevation;
 			}
 		}
 		[CRepr]
@@ -15204,20 +15204,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVBSLocator.VTable
 			{
-				public new function HRESULT(ref IDVBSLocator2 self, out LNB_Source DiseqLNBSourceVal) get_DiseqLNBSource;
-				public new function HRESULT(ref IDVBSLocator2 self, LNB_Source DiseqLNBSourceVal) put_DiseqLNBSource;
-				public new function HRESULT(ref IDVBSLocator2 self, out int32 LocalOscillatorOverrideLowVal) get_LocalOscillatorOverrideLow;
-				public new function HRESULT(ref IDVBSLocator2 self, int32 LocalOscillatorOverrideLowVal) put_LocalOscillatorOverrideLow;
-				public new function HRESULT(ref IDVBSLocator2 self, out int32 LocalOscillatorOverrideHighVal) get_LocalOscillatorOverrideHigh;
-				public new function HRESULT(ref IDVBSLocator2 self, int32 LocalOscillatorOverrideHighVal) put_LocalOscillatorOverrideHigh;
-				public new function HRESULT(ref IDVBSLocator2 self, out int32 LocalLNBSwitchOverrideVal) get_LocalLNBSwitchOverride;
-				public new function HRESULT(ref IDVBSLocator2 self, int32 LocalLNBSwitchOverrideVal) put_LocalLNBSwitchOverride;
-				public new function HRESULT(ref IDVBSLocator2 self, out SpectralInversion LocalSpectralInversionOverrideVal) get_LocalSpectralInversionOverride;
-				public new function HRESULT(ref IDVBSLocator2 self, SpectralInversion LocalSpectralInversionOverrideVal) put_LocalSpectralInversionOverride;
-				public new function HRESULT(ref IDVBSLocator2 self, out RollOff RollOffVal) get_SignalRollOff;
-				public new function HRESULT(ref IDVBSLocator2 self, RollOff RollOffVal) put_SignalRollOff;
-				public new function HRESULT(ref IDVBSLocator2 self, out Pilot PilotVal) get_SignalPilot;
-				public new function HRESULT(ref IDVBSLocator2 self, Pilot PilotVal) put_SignalPilot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out LNB_Source DiseqLNBSourceVal) get_DiseqLNBSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, LNB_Source DiseqLNBSourceVal) put_DiseqLNBSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out int32 LocalOscillatorOverrideLowVal) get_LocalOscillatorOverrideLow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, int32 LocalOscillatorOverrideLowVal) put_LocalOscillatorOverrideLow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out int32 LocalOscillatorOverrideHighVal) get_LocalOscillatorOverrideHigh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, int32 LocalOscillatorOverrideHighVal) put_LocalOscillatorOverrideHigh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out int32 LocalLNBSwitchOverrideVal) get_LocalLNBSwitchOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, int32 LocalLNBSwitchOverrideVal) put_LocalLNBSwitchOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out SpectralInversion LocalSpectralInversionOverrideVal) get_LocalSpectralInversionOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, SpectralInversion LocalSpectralInversionOverrideVal) put_LocalSpectralInversionOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out RollOff RollOffVal) get_SignalRollOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, RollOff RollOffVal) put_SignalRollOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, out Pilot PilotVal) get_SignalPilot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVBSLocator2 self, Pilot PilotVal) put_SignalPilot;
 			}
 		}
 		[CRepr]
@@ -15261,10 +15261,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESOpenMmiEvent self, out uint32 pDialogRequest, out uint32 pDialogNumber) GetDialogNumber;
-				public new function HRESULT(ref IESOpenMmiEvent self, out Guid guidDialogType) GetDialogType;
-				public new function HRESULT(ref IESOpenMmiEvent self, out SAFEARRAY* pbData) GetDialogData;
-				public new function HRESULT(ref IESOpenMmiEvent self, out BSTR pbstrBaseUrl, out BSTR pbstrData) GetDialogStringData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESOpenMmiEvent self, out uint32 pDialogRequest, out uint32 pDialogNumber) GetDialogNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESOpenMmiEvent self, out Guid guidDialogType) GetDialogType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESOpenMmiEvent self, out SAFEARRAY* pbData) GetDialogData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESOpenMmiEvent self, out BSTR pbstrBaseUrl, out BSTR pbstrData) GetDialogStringData;
 			}
 		}
 		[CRepr]
@@ -15279,7 +15279,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESCloseMmiEvent self, out uint32 pDialogNumber) GetDialogNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESCloseMmiEvent self, out uint32 pDialogNumber) GetDialogNumber;
 			}
 		}
 		[CRepr]
@@ -15294,7 +15294,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESValueUpdatedEvent self, out SAFEARRAY* pbstrNames) GetValueNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESValueUpdatedEvent self, out SAFEARRAY* pbstrNames) GetValueNames;
 			}
 		}
 		[CRepr]
@@ -15312,10 +15312,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESRequestTunerEvent self, out uint8 pbyPriority) GetPriority;
-				public new function HRESULT(ref IESRequestTunerEvent self, out uint8 pbyReason) GetReason;
-				public new function HRESULT(ref IESRequestTunerEvent self, out uint8 pbyConsequences) GetConsequences;
-				public new function HRESULT(ref IESRequestTunerEvent self, out uint32 pdwEstimatedTime) GetEstimatedTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESRequestTunerEvent self, out uint8 pbyPriority) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESRequestTunerEvent self, out uint8 pbyReason) GetReason;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESRequestTunerEvent self, out uint8 pbyConsequences) GetConsequences;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESRequestTunerEvent self, out uint32 pdwEstimatedTime) GetEstimatedTime;
 			}
 		}
 		[CRepr]
@@ -15333,10 +15333,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pRequestId) GetRequestId;
-				public new function HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pStatus) GetStatus;
-				public new function HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pRequestLength) GetDataLength;
-				public new function HRESULT(ref IESIsdbCasResponseEvent self, out SAFEARRAY* pbData) GetResponseData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pRequestId) GetRequestId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESIsdbCasResponseEvent self, out uint32 pRequestLength) GetDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESIsdbCasResponseEvent self, out SAFEARRAY* pbData) GetResponseData;
 			}
 		}
 		[CRepr]
@@ -15351,7 +15351,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGpnvsCommonBase self, out BSTR pbstrName) GetValueUpdateName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGpnvsCommonBase self, out BSTR pbstrName) GetValueUpdateName;
 			}
 		}
 		[CRepr]
@@ -15366,7 +15366,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IESEventFactory self, ref IUnknown pServiceProvider, uint32 dwEventId, Guid guidEventType, uint32 dwEventDataLength, uint8* pEventData, BSTR bstrBaseUrl, ref IUnknown pInitContext, out IESEvent* ppESEvent) CreateESEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventFactory self, ref IUnknown pServiceProvider, uint32 dwEventId, Guid guidEventType, uint32 dwEventDataLength, uint8* pEventData, BSTR bstrBaseUrl, ref IUnknown pInitContext, out IESEvent* ppESEvent) CreateESEvent;
 			}
 		}
 		[CRepr]
@@ -15391,17 +15391,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwCallersId) GetCallersId;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out BSTR pbstrFilename) GetFileName;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out BOOL pfRenewalSuccessful) IsRenewalSuccessful;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out BOOL pfCheckEntTokenCallNeeded) IsCheckEntitlementCallRequired;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pDescrambledStatus) GetDescrambledStatus;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwRenewalResultCode) GetRenewalResultCode;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwCASFailureCode) GetCASFailureCode;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out HRESULT phr) GetRenewalHResult;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwLength) GetEntitlementTokenLength;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out SAFEARRAY* pbData) GetEntitlementToken;
-				public new function HRESULT(ref IESLicenseRenewalResultEvent self, out uint64 pqwExpiryDate) GetExpiryDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwCallersId) GetCallersId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out BSTR pbstrFilename) GetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out BOOL pfRenewalSuccessful) IsRenewalSuccessful;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out BOOL pfCheckEntTokenCallNeeded) IsCheckEntitlementCallRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pDescrambledStatus) GetDescrambledStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwRenewalResultCode) GetRenewalResultCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwCASFailureCode) GetCASFailureCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out HRESULT phr) GetRenewalHResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint32 pdwLength) GetEntitlementTokenLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out SAFEARRAY* pbData) GetEntitlementToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESLicenseRenewalResultEvent self, out uint64 pqwExpiryDate) GetExpiryDate;
 			}
 		}
 		[CRepr]
@@ -15421,12 +15421,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IESEvent.VTable
 			{
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out Guid pguidTunerId) GetTunerId;
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out uint64 pqwExpiryDate) GetExpiryDate;
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out uint64 pqwExpiryDate) GetFinalExpiryDate;
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out uint32 dwMaxRenewalCount) GetMaxRenewalCount;
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out BOOL pfEntTokenPresent) IsEntitlementTokenPresent;
-				public new function HRESULT(ref IESFileExpiryDateEvent self, out BOOL pfExpireAfterFirstUse) DoesExpireAfterFirstUse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out Guid pguidTunerId) GetTunerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out uint64 pqwExpiryDate) GetExpiryDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out uint64 pqwExpiryDate) GetFinalExpiryDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out uint32 dwMaxRenewalCount) GetMaxRenewalCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out BOOL pfEntTokenPresent) IsEntitlementTokenPresent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESFileExpiryDateEvent self, out BOOL pfExpireAfterFirstUse) DoesExpireAfterFirstUse;
 			}
 		}
 		[CRepr]
@@ -15441,7 +15441,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IESEventService self, IESEvent* pESEvent) FireESEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventService self, IESEvent* pESEvent) FireESEvent;
 			}
 		}
 		[CRepr]
@@ -15461,12 +15461,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IESEventServiceConfiguration self, IESEventService* pEventService) SetParent;
-				public new function HRESULT(ref IESEventServiceConfiguration self) RemoveParent;
-				public new function HRESULT(ref IESEventServiceConfiguration self, IESEvents* pESEvents) SetOwner;
-				public new function HRESULT(ref IESEventServiceConfiguration self) RemoveOwner;
-				public new function HRESULT(ref IESEventServiceConfiguration self, IFilterGraph* pGraph) SetGraph;
-				public new function HRESULT(ref IESEventServiceConfiguration self, IFilterGraph* pGraph) RemoveGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self, IESEventService* pEventService) SetParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self) RemoveParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self, IESEvents* pESEvents) SetOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self) RemoveOwner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self, IFilterGraph* pGraph) SetGraph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IESEventServiceConfiguration self, IFilterGraph* pGraph) RemoveGraph;
 			}
 		}
 		[CRepr]
@@ -15482,8 +15482,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRegisterTuner self, ref ITuner pTuner, ref IGraphBuilder pGraph) Register;
-				public new function HRESULT(ref IRegisterTuner self) Unregister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisterTuner self, ref ITuner pTuner, ref IGraphBuilder pGraph) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisterTuner self) Unregister;
 			}
 		}
 		[CRepr]
@@ -15503,12 +15503,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDAComparable self, ref IDispatch CompareTo, out int32 Result) CompareExact;
-				public new function HRESULT(ref IBDAComparable self, ref IDispatch CompareTo, uint32 dwFlags, out int32 Result) CompareEquivalent;
-				public new function HRESULT(ref IBDAComparable self, out int64 Result) HashExact;
-				public new function HRESULT(ref IBDAComparable self, int64 PartialResult, out int64 Result) HashExactIncremental;
-				public new function HRESULT(ref IBDAComparable self, uint32 dwFlags, out int64 Result) HashEquivalent;
-				public new function HRESULT(ref IBDAComparable self, int64 PartialResult, uint32 dwFlags, out int64 Result) HashEquivalentIncremental;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, ref IDispatch CompareTo, out int32 Result) CompareExact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, ref IDispatch CompareTo, uint32 dwFlags, out int32 Result) CompareEquivalent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, out int64 Result) HashExact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, int64 PartialResult, out int64 Result) HashExactIncremental;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, uint32 dwFlags, out int64 Result) HashEquivalent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDAComparable self, int64 PartialResult, uint32 dwFlags, out int64 Result) HashEquivalentIncremental;
 			}
 		}
 		[CRepr]
@@ -15525,9 +15525,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(ref IPersistTuneXml self) InitNew;
-				public new function HRESULT(ref IPersistTuneXml self, VARIANT varValue) Load;
-				public new function HRESULT(ref IPersistTuneXml self, out VARIANT pvarFragment) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistTuneXml self) InitNew;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistTuneXml self, VARIANT varValue) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistTuneXml self, out VARIANT pvarFragment) Save;
 			}
 		}
 		[CRepr]
@@ -15542,7 +15542,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPersistTuneXmlUtility self, VARIANT varValue, out IUnknown* ppObject) Deserialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistTuneXmlUtility self, VARIANT varValue, out IUnknown* ppObject) Deserialize;
 			}
 		}
 		[CRepr]
@@ -15557,7 +15557,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersistTuneXmlUtility.VTable
 			{
-				public new function HRESULT(ref IPersistTuneXmlUtility2 self, ref ITuneRequest piTuneRequest, out BSTR pString) Serialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistTuneXmlUtility2 self, ref ITuneRequest piTuneRequest, out BSTR pString) Serialize;
 			}
 		}
 		[CRepr]
@@ -15572,7 +15572,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDACreateTuneRequestEx self, in Guid TuneRequestIID, out ITuneRequest* TuneRequest) CreateTuneRequestEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDACreateTuneRequestEx self, in Guid TuneRequestIID, out ITuneRequest* TuneRequest) CreateTuneRequestEx;
 			}
 		}
 		[CRepr]
@@ -15588,8 +15588,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IETFilterConfig self, int32 LicenseId) InitLicense;
-				public new function HRESULT(ref IETFilterConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilterConfig self, int32 LicenseId) InitLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilterConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
 			}
 		}
 		[CRepr]
@@ -15604,7 +15604,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDTFilterConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilterConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
 			}
 		}
 		[CRepr]
@@ -15620,8 +15620,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXDSCodecConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
-				public new function HRESULT(ref IXDSCodecConfig self, uint32 dwPauseBufferTime) SetPauseBufferTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodecConfig self, out IUnknown* ppUnkDRMSecureChannel) GetSecureChannelObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodecConfig self, uint32 dwPauseBufferTime) SetPauseBufferTime;
 			}
 		}
 		[CRepr]
@@ -15636,7 +15636,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDTFilterLicenseRenewal self, out PWSTR ppwszFileName, out PWSTR ppwszExpiredKid, out PWSTR ppwszTunerId) GetLicenseRenewalData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilterLicenseRenewal self, out PWSTR ppwszFileName, out PWSTR ppwszExpiredKid, out PWSTR ppwszTunerId) GetLicenseRenewalData;
 			}
 		}
 		[CRepr]
@@ -15652,8 +15652,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPTFilterLicenseRenewal self, PWSTR wszFileName, PWSTR wszExpiredKid, uint32 dwCallersId, BOOL bHighPriority) RenewLicenses;
-				public new function HRESULT(ref IPTFilterLicenseRenewal self) CancelLicenseRenewal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPTFilterLicenseRenewal self, PWSTR wszFileName, PWSTR wszExpiredKid, uint32 dwCallersId, BOOL bHighPriority) RenewLicenses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPTFilterLicenseRenewal self) CancelLicenseRenewal;
 			}
 		}
 		[CRepr]
@@ -15668,7 +15668,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMceBurnerControl self) GetBurnerNoDecryption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMceBurnerControl self) GetBurnerNoDecryption;
 			}
 		}
 		[CRepr]
@@ -15687,11 +15687,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IETFilter self, out HRESULT pHrCoCreateRetVal) get_EvalRatObjOK;
-				public new function HRESULT(ref IETFilter self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 plbfEnAttr) GetCurrRating;
-				public new function HRESULT(ref IETFilter self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
-				public new function HRESULT(ref IETFilter self) GetLastErrorCode;
-				public new function HRESULT(ref IETFilter self, BOOL fRecState) SetRecordingOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilter self, out HRESULT pHrCoCreateRetVal) get_EvalRatObjOK;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilter self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 plbfEnAttr) GetCurrRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilter self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilter self) GetLastErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IETFilter self, BOOL fRecState) SetRecordingOn;
 			}
 		}
 		[CRepr]
@@ -15726,14 +15726,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDTFilter self, out HRESULT pHrCoCreateRetVal) get_EvalRatObjOK;
-				public new function HRESULT(ref IDTFilter self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 plbfEnAttr) GetCurrRating;
-				public new function HRESULT(ref IDTFilter self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, out int32 plbfEnAttr) get_BlockedRatingAttributes;
-				public new function HRESULT(ref IDTFilter self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
-				public new function HRESULT(ref IDTFilter self, out BOOL pfBlockUnRatedShows) get_BlockUnRated;
-				public new function HRESULT(ref IDTFilter self, BOOL fBlockUnRatedShows) put_BlockUnRated;
-				public new function HRESULT(ref IDTFilter self, out int32 pmsecsDelayBeforeBlock) get_BlockUnRatedDelay;
-				public new function HRESULT(ref IDTFilter self, int32 msecsDelayBeforeBlock) put_BlockUnRatedDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, out HRESULT pHrCoCreateRetVal) get_EvalRatObjOK;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 plbfEnAttr) GetCurrRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, out int32 plbfEnAttr) get_BlockedRatingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, out BOOL pfBlockUnRatedShows) get_BlockUnRated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, BOOL fBlockUnRatedShows) put_BlockUnRated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, out int32 pmsecsDelayBeforeBlock) get_BlockUnRatedDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter self, int32 msecsDelayBeforeBlock) put_BlockUnRatedDelay;
 			}
 		}
 		[CRepr]
@@ -15750,9 +15750,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDTFilter.VTable
 			{
-				public new function HRESULT(ref IDTFilter2 self, out BSTR pbstrChallengeUrl) get_ChallengeUrl;
-				public new function HRESULT(ref IDTFilter2 self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
-				public new function HRESULT(ref IDTFilter2 self) GetLastErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter2 self, out BSTR pbstrChallengeUrl) get_ChallengeUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter2 self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter2 self) GetLastErrorCode;
 			}
 		}
 		[CRepr]
@@ -15769,9 +15769,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDTFilter2.VTable
 			{
-				public new function HRESULT(ref IDTFilter3 self, out ProtType pProtectionType) GetProtectionType;
-				public new function HRESULT(ref IDTFilter3 self, out BOOL pfLicenseHasExpirationDate) LicenseHasExpirationDate;
-				public new function HRESULT(ref IDTFilter3 self, BSTR bstrRights) SetRights;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter3 self, out ProtType pProtectionType) GetProtectionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter3 self, out BOOL pfLicenseHasExpirationDate) LicenseHasExpirationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDTFilter3 self, BSTR bstrRights) SetRights;
 			}
 		}
 		[CRepr]
@@ -15805,13 +15805,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXDSCodec self, out HRESULT pHrCoCreateRetVal) get_XDSToRatObjOK;
-				public new function HRESULT(ref IXDSCodec self, int32 SubstreamMask) put_CCSubstreamService;
-				public new function HRESULT(ref IXDSCodec self, out int32 pSubstreamMask) get_CCSubstreamService;
-				public new function HRESULT(ref IXDSCodec self, out int32 pRat, out int32 pPktSeqID, out int32 pCallSeqID, out int64 pTimeStart, out int64 pTimeEnd) GetContentAdvisoryRating;
-				public new function HRESULT(ref IXDSCodec self, out int32 pXDSClassPkt, out int32 pXDSTypePkt, out BSTR pBstrXDSPkt, out int32 pPktSeqID, out int32 pCallSeqID, out int64 pTimeStart, out int64 pTimeEnd) GetXDSPacket;
-				public new function HRESULT(ref IXDSCodec self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
-				public new function HRESULT(ref IXDSCodec self) GetLastErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, out HRESULT pHrCoCreateRetVal) get_XDSToRatObjOK;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, int32 SubstreamMask) put_CCSubstreamService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, out int32 pSubstreamMask) get_CCSubstreamService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, out int32 pRat, out int32 pPktSeqID, out int32 pCallSeqID, out int64 pTimeStart, out int64 pTimeEnd) GetContentAdvisoryRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, out int32 pXDSClassPkt, out int32 pXDSTypePkt, out BSTR pBstrXDSPkt, out int32 pPktSeqID, out int32 pCallSeqID, out int64 pTimeStart, out int64 pTimeEnd) GetXDSPacket;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self, ref ProtType protType, out int32 lpDateTime) GetCurrLicenseExpDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSCodec self) GetLastErrorCode;
 			}
 		}
 		[CRepr]
@@ -15840,8 +15840,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IXDSToRat self) Init;
-				public new function HRESULT(ref IXDSToRat self, uint8 byte1, uint8 byte2, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnLevel, out int32 plBfEnAttributes) ParseXDSBytePair;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSToRat self) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXDSToRat self, uint8 byte1, uint8 byte2, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnLevel, out int32 plBfEnAttributes) ParseXDSBytePair;
 			}
 		}
 		[CRepr]
@@ -15861,12 +15861,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEvalRat self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, out int32 plbfAttrs) get_BlockedRatingAttributes;
-				public new function HRESULT(ref IEvalRat self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
-				public new function HRESULT(ref IEvalRat self, out BOOL pfBlockUnRatedShows) get_BlockUnRated;
-				public new function HRESULT(ref IEvalRat self, BOOL fBlockUnRatedShows) put_BlockUnRated;
-				public new function HRESULT(ref IEvalRat self, EnTvRat_System enSystem1, EnTvRat_GenericLevel enEnLevel1, int32 lbfEnAttr1, EnTvRat_System enSystem2, EnTvRat_GenericLevel enEnLevel2, int32 lbfEnAttr2, out EnTvRat_System penSystem, out EnTvRat_GenericLevel penEnLevel, out int32 plbfEnAttr) MostRestrictiveRating;
-				public new function HRESULT(ref IEvalRat self, EnTvRat_System enShowSystem, EnTvRat_GenericLevel enShowLevel, int32 lbfEnShowAttributes) TestRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, out int32 plbfAttrs) get_BlockedRatingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, out BOOL pfBlockUnRatedShows) get_BlockUnRated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, BOOL fBlockUnRatedShows) put_BlockUnRated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, EnTvRat_System enSystem1, EnTvRat_GenericLevel enEnLevel1, int32 lbfEnAttr1, EnTvRat_System enSystem2, EnTvRat_GenericLevel enEnLevel2, int32 lbfEnAttr2, out EnTvRat_System penSystem, out EnTvRat_GenericLevel penEnLevel, out int32 plbfEnAttr) MostRestrictiveRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEvalRat self, EnTvRat_System enShowSystem, EnTvRat_GenericLevel enShowLevel, int32 lbfEnShowAttributes) TestRating;
 			}
 		}
 		[CRepr]
@@ -15891,17 +15891,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidRect self, out int32 TopVal) get_Top;
-				public new function HRESULT(ref IMSVidRect self, int32 TopVal) put_Top;
-				public new function HRESULT(ref IMSVidRect self, out int32 LeftVal) get_Left;
-				public new function HRESULT(ref IMSVidRect self, int32 LeftVal) put_Left;
-				public new function HRESULT(ref IMSVidRect self, out int32 WidthVal) get_Width;
-				public new function HRESULT(ref IMSVidRect self, int32 WidthVal) put_Width;
-				public new function HRESULT(ref IMSVidRect self, out int32 HeightVal) get_Height;
-				public new function HRESULT(ref IMSVidRect self, int32 HeightVal) put_Height;
-				public new function HRESULT(ref IMSVidRect self, out HWND HWndVal) get_HWnd;
-				public new function HRESULT(ref IMSVidRect self, HWND HWndVal) put_HWnd;
-				public new function HRESULT(ref IMSVidRect self, ref IMSVidRect RectVal) put_Rect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, out int32 TopVal) get_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, int32 TopVal) put_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, out int32 LeftVal) get_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, int32 LeftVal) put_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, out int32 WidthVal) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, int32 WidthVal) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, out int32 HeightVal) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, int32 HeightVal) put_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, out HWND HWndVal) get_HWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, HWND HWndVal) put_HWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidRect self, ref IMSVidRect RectVal) put_Rect;
 			}
 		}
 		[CRepr]
@@ -15926,17 +15926,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IGraphBuilder* ppGraph) get_Graph;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppInput) get_Input;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppOutputs) get_Outputs;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppVR) get_VideoRenderer;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppAR) get_AudioRenderer;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppFeatures) get_Features;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppComposites) get_Composites;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, out IUnknown* ppContainer) get_ParentContainer;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self, IMSVidGraphSegment* pSegment) Decompose;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self) IsWindowless;
-				public new function HRESULT(ref IMSVidGraphSegmentContainer self) GetFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IGraphBuilder* ppGraph) get_Graph;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppInput) get_Input;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppOutputs) get_Outputs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppVR) get_VideoRenderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IMSVidGraphSegment* ppAR) get_AudioRenderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppFeatures) get_Features;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IEnumMSVidGraphSegment* ppComposites) get_Composites;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, out IUnknown* ppContainer) get_ParentContainer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self, IMSVidGraphSegment* pSegment) Decompose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self) IsWindowless;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentContainer self) GetFocus;
 			}
 		}
 		[CRepr]
@@ -15965,21 +15965,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(ref IMSVidGraphSegment self, out IUnknown* pInit) get_Init;
-				public new function HRESULT(ref IMSVidGraphSegment self, ref IUnknown pInit) put_Init;
-				public new function HRESULT(ref IMSVidGraphSegment self, out IEnumFilters* pNewEnum) EnumFilters;
-				public new function HRESULT(ref IMSVidGraphSegment self, out IMSVidGraphSegmentContainer* ppCtl) get_Container;
-				public new function HRESULT(ref IMSVidGraphSegment self, ref IMSVidGraphSegmentContainer pCtl) put_Container;
-				public new function HRESULT(ref IMSVidGraphSegment self, out MSVidSegmentType pType) get_Type;
-				public new function HRESULT(ref IMSVidGraphSegment self, out Guid pGuid) get_Category;
-				public new function HRESULT(ref IMSVidGraphSegment self) Build;
-				public new function HRESULT(ref IMSVidGraphSegment self) PostBuild;
-				public new function HRESULT(ref IMSVidGraphSegment self) PreRun;
-				public new function HRESULT(ref IMSVidGraphSegment self) PostRun;
-				public new function HRESULT(ref IMSVidGraphSegment self) PreStop;
-				public new function HRESULT(ref IMSVidGraphSegment self) PostStop;
-				public new function HRESULT(ref IMSVidGraphSegment self, int32 lEventCode, int lEventParm1, int lEventParm2) OnEventNotify;
-				public new function HRESULT(ref IMSVidGraphSegment self) Decompose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, out IUnknown* pInit) get_Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, ref IUnknown pInit) put_Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, out IEnumFilters* pNewEnum) EnumFilters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, out IMSVidGraphSegmentContainer* ppCtl) get_Container;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, ref IMSVidGraphSegmentContainer pCtl) put_Container;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, out MSVidSegmentType pType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, out Guid pGuid) get_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) Build;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) PostBuild;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) PreRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) PostRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) PreStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) PostStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self, int32 lEventCode, int lEventParm1, int lEventParm2) OnEventNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegment self) Decompose;
 			}
 		}
 		[CRepr]
@@ -16001,14 +16001,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self) Click;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self) DblClick;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyCode, int16 ShiftState) KeyDown;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyAscii) KeyPress;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyCode, int16 ShiftState) KeyUp;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseDown;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseMove;
-				public new function HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self) Click;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self) DblClick;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyCode, int16 ShiftState) KeyDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyAscii) KeyPress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, ref int16 KeyCode, int16 ShiftState) KeyUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseMove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGraphSegmentUserInput self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseUp;
 			}
 		}
 		[CRepr]
@@ -16025,9 +16025,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidGraphSegment.VTable
 			{
-				public new function HRESULT(ref IMSVidCompositionSegment self, ref IMSVidGraphSegment upstream, ref IMSVidGraphSegment downstream) Compose;
-				public new function HRESULT(ref IMSVidCompositionSegment self, out IMSVidGraphSegment* upstream) get_Up;
-				public new function HRESULT(ref IMSVidCompositionSegment self, out IMSVidGraphSegment* downstream) get_Down;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCompositionSegment self, ref IMSVidGraphSegment upstream, ref IMSVidGraphSegment downstream) Compose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCompositionSegment self, out IMSVidGraphSegment* upstream) get_Up;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCompositionSegment self, out IMSVidGraphSegment* downstream) get_Down;
 			}
 		}
 		[CRepr]
@@ -16045,10 +16045,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumMSVidGraphSegment self, uint32 celt, out IMSVidGraphSegment* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumMSVidGraphSegment self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumMSVidGraphSegment self) Reset;
-				public new function HRESULT(ref IEnumMSVidGraphSegment self, out IEnumMSVidGraphSegment* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMSVidGraphSegment self, uint32 celt, out IMSVidGraphSegment* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMSVidGraphSegment self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMSVidGraphSegment self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMSVidGraphSegment self, out IEnumMSVidGraphSegment* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -16083,27 +16083,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidGraphSegment.VTable
 			{
-				public new function HRESULT(ref IMSVidVRGraphSegment self, int32 dwMode) put__VMRendererMode;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, HWND Window) put_Owner;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out HWND Window) get_Owner;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out int16 UseOverlayVal) get_UseOverlay;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, int16 UseOverlayVal) put_UseOverlay;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out int16 Visible) get_Visible;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, int16 Visible) put_Visible;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out uint32 ColorKey) get_ColorKey;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, uint32 ColorKey) put_ColorKey;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out RECT r) get_Source;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, RECT r) put_Source;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out RECT r) get_Destination;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, RECT r) put_Destination;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out SIZE sizeval, out SIZE aspectratio) get_NativeSize;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out uint32 color) get_BorderColor;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, uint32 color) put_BorderColor;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, out int16 fMaintain) get_MaintainAspectRatio;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, int16 fMaintain) put_MaintainAspectRatio;
-				public new function HRESULT(ref IMSVidVRGraphSegment self) Refresh;
-				public new function HRESULT(ref IMSVidVRGraphSegment self) DisplayChange;
-				public new function HRESULT(ref IMSVidVRGraphSegment self, HDC hdc) RePaint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, int32 dwMode) put__VMRendererMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, HWND Window) put_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out HWND Window) get_Owner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out int16 UseOverlayVal) get_UseOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, int16 UseOverlayVal) put_UseOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out int16 Visible) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, int16 Visible) put_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out uint32 ColorKey) get_ColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, uint32 ColorKey) put_ColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out RECT r) get_Source;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, RECT r) put_Source;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out RECT r) get_Destination;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, RECT r) put_Destination;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out SIZE sizeval, out SIZE aspectratio) get_NativeSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out uint32 color) get_BorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, uint32 color) put_BorderColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, out int16 fMaintain) get_MaintainAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, int16 fMaintain) put_MaintainAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self) DisplayChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVRGraphSegment self, HDC hdc) RePaint;
 			}
 		}
 		[CRepr]
@@ -16126,15 +16126,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidDevice self, out BSTR Name) get_Name;
-				public new function HRESULT(ref IMSVidDevice self, out int32 Status) get_Status;
-				public new function HRESULT(ref IMSVidDevice self, int16 Power) put_Power;
-				public new function HRESULT(ref IMSVidDevice self, out int16 Power) get_Power;
-				public new function HRESULT(ref IMSVidDevice self, out BSTR Guid) get_Category;
-				public new function HRESULT(ref IMSVidDevice self, out BSTR Clsid) get_ClassID;
-				public new function HRESULT(ref IMSVidDevice self, out Guid Guid) get__Category;
-				public new function HRESULT(ref IMSVidDevice self, out Guid Clsid) get__ClassID;
-				public new function HRESULT(ref IMSVidDevice self, ref IMSVidDevice Device, out int16 IsEqual) IsEqualDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out BSTR Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out int32 Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, int16 Power) put_Power;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out int16 Power) get_Power;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out BSTR Guid) get_Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out BSTR Clsid) get_ClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out Guid Guid) get__Category;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, out Guid Clsid) get__ClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice self, ref IMSVidDevice Device, out int16 IsEqual) IsEqualDevice;
 			}
 		}
 		[CRepr]
@@ -16149,7 +16149,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSVidDevice2 self, out BSTR DevPath) get_DevicePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDevice2 self, out BSTR DevPath) get_DevicePath;
 			}
 		}
 		[CRepr]
@@ -16165,8 +16165,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidInputDevice self, ref VARIANT v, out int16 pfViewable) IsViewable;
-				public new function HRESULT(ref IMSVidInputDevice self, ref VARIANT v) View;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevice self, ref VARIANT v, out int16 pfViewable) IsViewable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevice self, ref VARIANT v) View;
 			}
 		}
 		[CRepr]
@@ -16181,7 +16181,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidDeviceEvent self, ref IMSVidDevice lpd, int32 oldState, int32 newState) StateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidDeviceEvent self, ref IMSVidDevice lpd, int32 oldState, int32 newState) StateChange;
 			}
 		}
 		[CRepr]
@@ -16235,20 +16235,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidInputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidPlayback self, out int16 pVal) get_EnableResetOnStop;
-				public new function HRESULT(ref IMSVidPlayback self, int16 newVal) put_EnableResetOnStop;
-				public new function HRESULT(ref IMSVidPlayback self) Run;
-				public new function HRESULT(ref IMSVidPlayback self) Pause;
-				public new function HRESULT(ref IMSVidPlayback self) Stop;
-				public new function HRESULT(ref IMSVidPlayback self, int16 fBackwards, out int16 pfCan) get_CanStep;
-				public new function HRESULT(ref IMSVidPlayback self, int32 lStep) Step;
-				public new function HRESULT(ref IMSVidPlayback self, double plRate) put_Rate;
-				public new function HRESULT(ref IMSVidPlayback self, out double plRate) get_Rate;
-				public new function HRESULT(ref IMSVidPlayback self, int32 lPosition) put_CurrentPosition;
-				public new function HRESULT(ref IMSVidPlayback self, out int32 lPosition) get_CurrentPosition;
-				public new function HRESULT(ref IMSVidPlayback self, PositionModeList lPositionMode) put_PositionMode;
-				public new function HRESULT(ref IMSVidPlayback self, out PositionModeList lPositionMode) get_PositionMode;
-				public new function HRESULT(ref IMSVidPlayback self, out int32 lLength) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, out int16 pVal) get_EnableResetOnStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, int16 newVal) put_EnableResetOnStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, int16 fBackwards, out int16 pfCan) get_CanStep;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, int32 lStep) Step;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, double plRate) put_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, out double plRate) get_Rate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, int32 lPosition) put_CurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, out int32 lPosition) get_CurrentPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, PositionModeList lPositionMode) put_PositionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, out PositionModeList lPositionMode) get_PositionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlayback self, out int32 lLength) get_Length;
 			}
 		}
 		[CRepr]
@@ -16263,7 +16263,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidInputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidPlaybackEvent self, ref IMSVidPlayback lpd) EndOfMedia;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidPlaybackEvent self, ref IMSVidPlayback lpd) EndOfMedia;
 			}
 		}
 		[CRepr]
@@ -16281,10 +16281,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidVideoInputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidTuner self, out ITuneRequest* ppTR) get_Tune;
-				public new function HRESULT(ref IMSVidTuner self, ref ITuneRequest pTR) put_Tune;
-				public new function HRESULT(ref IMSVidTuner self, out ITuningSpace* plTS) get_TuningSpace;
-				public new function HRESULT(ref IMSVidTuner self, ref ITuningSpace plTS) put_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidTuner self, out ITuneRequest* ppTR) get_Tune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidTuner self, ref ITuneRequest pTR) put_Tune;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidTuner self, out ITuningSpace* plTS) get_TuningSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidTuner self, ref ITuningSpace plTS) put_TuningSpace;
 			}
 		}
 		[CRepr]
@@ -16299,7 +16299,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidInputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidTunerEvent self, ref IMSVidTuner lpd) TuneChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidTunerEvent self, ref IMSVidTuner lpd) TuneChanged;
 			}
 		}
 		[CRepr]
@@ -16322,15 +16322,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidTuner.VTable
 			{
-				public new function HRESULT(ref IMSVidAnalogTuner self, out int32 Channel) get_Channel;
-				public new function HRESULT(ref IMSVidAnalogTuner self, int32 Channel) put_Channel;
-				public new function HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_VideoFrequency;
-				public new function HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_AudioFrequency;
-				public new function HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_CountryCode;
-				public new function HRESULT(ref IMSVidAnalogTuner self, int32 lcc) put_CountryCode;
-				public new function HRESULT(ref IMSVidAnalogTuner self, out int16 pfSapOn) get_SAP;
-				public new function HRESULT(ref IMSVidAnalogTuner self, int16 fSapOn) put_SAP;
-				public new function HRESULT(ref IMSVidAnalogTuner self, int32 nChannel, out int32 SignalStrength, out int16 fSignalPresent) ChannelAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, out int32 Channel) get_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, int32 Channel) put_Channel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_VideoFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_AudioFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, out int32 lcc) get_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, int32 lcc) put_CountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, out int16 pfSapOn) get_SAP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, int16 fSapOn) put_SAP;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner self, int32 nChannel, out int32 SignalStrength, out int16 fSignalPresent) ChannelAvailable;
 			}
 		}
 		[CRepr]
@@ -16347,9 +16347,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidAnalogTuner.VTable
 			{
-				public new function HRESULT(ref IMSVidAnalogTuner2 self, out int32 Formats) get_TVFormats;
-				public new function HRESULT(ref IMSVidAnalogTuner2 self, out int32 Modes) get_TunerModes;
-				public new function HRESULT(ref IMSVidAnalogTuner2 self, out int32 Inputs) get_NumAuxInputs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner2 self, out int32 Formats) get_TVFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner2 self, out int32 Modes) get_TunerModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAnalogTuner2 self, out int32 Inputs) get_NumAuxInputs;
 			}
 		}
 		[CRepr]
@@ -16378,8 +16378,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidPlayback.VTable
 			{
-				public new function HRESULT(ref IMSVidFilePlayback self, out BSTR FileName) get_FileName;
-				public new function HRESULT(ref IMSVidFilePlayback self, BSTR FileName) put_FileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFilePlayback self, out BSTR FileName) get_FileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFilePlayback self, BSTR FileName) put_FileName;
 			}
 		}
 		[CRepr]
@@ -16395,8 +16395,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFilePlayback.VTable
 			{
-				public new function HRESULT(ref IMSVidFilePlayback2 self, BSTR FileName) put__SourceFilter;
-				public new function HRESULT(ref IMSVidFilePlayback2 self, Guid FileName) put___SourceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFilePlayback2 self, BSTR FileName) put__SourceFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFilePlayback2 self, Guid FileName) put___SourceFilter;
 			}
 		}
 		[CRepr]
@@ -16518,101 +16518,101 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidPlayback.VTable
 			{
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lEvent, int lParam1, int lParam2) OnDVDEvent;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle) PlayTitle;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, int32 lChapter) PlayChapterInTitle;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lChapter) PlayChapter;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, int32 lstrChapter, int32 lChapterCount) PlayChaptersAutoStop;
-				public new function HRESULT(ref IMSVidWebDVD self, BSTR strTime) PlayAtTime;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, BSTR strTime) PlayAtTimeInTitle;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, BSTR strStartTime, BSTR strEndTime) PlayPeriodInTitleAutoStop;
-				public new function HRESULT(ref IMSVidWebDVD self) ReplayChapter;
-				public new function HRESULT(ref IMSVidWebDVD self) PlayPrevChapter;
-				public new function HRESULT(ref IMSVidWebDVD self) PlayNextChapter;
-				public new function HRESULT(ref IMSVidWebDVD self) StillOff;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lStream, int16 fFormat, out BSTR strAudioLang) get_AudioLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, DVDMenuIDConstants MenuID) ShowMenu;
-				public new function HRESULT(ref IMSVidWebDVD self) Resume;
-				public new function HRESULT(ref IMSVidWebDVD self) ReturnFromSubmenu;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_ButtonsAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentButton;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lButton) SelectAndActivateButton;
-				public new function HRESULT(ref IMSVidWebDVD self) ActivateButton;
-				public new function HRESULT(ref IMSVidWebDVD self) SelectRightButton;
-				public new function HRESULT(ref IMSVidWebDVD self) SelectLeftButton;
-				public new function HRESULT(ref IMSVidWebDVD self) SelectLowerButton;
-				public new function HRESULT(ref IMSVidWebDVD self) SelectUpperButton;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos) ActivateAtPosition;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos) SelectAtPosition;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos, out int32 plButton) get_ButtonAtPosition;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, out int32 pVal) get_NumberOfChapters;
-				public new function HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_TotalTitleTime;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_TitlesAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_VolumesAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentVolume;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentDiscSide;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentDomain;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentChapter;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentTitle;
-				public new function HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_CurrentTime;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 timeCode, out BSTR pTimeStr) DVDTimeCode2bstr;
-				public new function HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_DVDDirectory;
-				public new function HRESULT(ref IMSVidWebDVD self, BSTR newVal) put_DVDDirectory;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lstream, out int16 fEnabled) IsSubpictureStreamEnabled;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lstream, out int16 fEnabled) IsAudioStreamEnabled;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentSubpictureStream;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentSubpictureStream;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lStream, out BSTR strLanguage) get_SubpictureLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentAudioStream;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentAudioStream;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_AudioStreamsAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_AnglesAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentAngle;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentAngle;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_SubpictureStreamsAvailable;
-				public new function HRESULT(ref IMSVidWebDVD self, out int16 pVal) get_SubpictureOn;
-				public new function HRESULT(ref IMSVidWebDVD self, int16 newVal) put_SubpictureOn;
-				public new function HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_DVDUniqueID;
-				public new function HRESULT(ref IMSVidWebDVD self, int16 fAccept, BSTR strUserName, BSTR strPassword) AcceptParentalLevelChange;
-				public new function HRESULT(ref IMSVidWebDVD self, int16 newVal) NotifyParentalLevelChange;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lCountry, BSTR strUserName, BSTR strPassword) SelectParentalCountry;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lParentalLevel, BSTR strUserName, BSTR strPassword) SelectParentalLevel;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lTitle, out int32 plParentalLevels) get_TitleParentalLevels;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 plCountryCode) get_PlayerParentalCountry;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 plParentalLevel) get_PlayerParentalLevel;
-				public new function HRESULT(ref IMSVidWebDVD self) Eject;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lUOP, out int16 pfValid) UOPValid;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lIndex, out int16 psSPRM) get_SPRM;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lIndex, out int16 psSPRM) get_GPRM;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lIndex, int16 sValue) put_GPRM;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, int32 lStringIndex, out DVDTextStringType pType) get_DVDTextStringType;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, int32 lStringIndex, out BSTR pstrText) get_DVDTextString;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, out int32 plNumOfStrings) get_DVDTextNumberOfStrings;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 plNumOfLangs) get_DVDTextNumberOfLanguages;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, out int32 lcid) get_DVDTextLanguageLCID;
-				public new function HRESULT(ref IMSVidWebDVD self) RegionChange;
-				public new function HRESULT(ref IMSVidWebDVD self, out IDispatch* pVal) get_DVDAdm;
-				public new function HRESULT(ref IMSVidWebDVD self) DeleteBookmark;
-				public new function HRESULT(ref IMSVidWebDVD self) RestoreBookmark;
-				public new function HRESULT(ref IMSVidWebDVD self) SaveBookmark;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lang, int32 ext) SelectDefaultAudioLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lang, DVDSPExt ext) SelectDefaultSubpictureLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_PreferredSubpictureStream;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultMenuLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lang) put_DefaultMenuLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultSubpictureLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultAudioLanguage;
-				public new function HRESULT(ref IMSVidWebDVD self, out DVDSPExt ext) get_DefaultSubpictureLanguageExt;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 ext) get_DefaultAudioLanguageExt;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lcid, out BSTR lang) get_LanguageFromLCID;
-				public new function HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_KaraokeAudioPresentationMode;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 newVal) put_KaraokeAudioPresentationMode;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lStream, int32 lChan, out int32 lContent) get_KaraokeChannelContent;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lStream, out int32 lChannelAssignment) get_KaraokeChannelAssignment;
-				public new function HRESULT(ref IMSVidWebDVD self) RestorePreferredSettings;
-				public new function HRESULT(ref IMSVidWebDVD self, int32 lButton, out IMSVidRect* pRect) get_ButtonRect;
-				public new function HRESULT(ref IMSVidWebDVD self, out IMSVidRect* ppRect) get_DVDScreenInMouseCoordinates;
-				public new function HRESULT(ref IMSVidWebDVD self, ref IMSVidRect pRect) put_DVDScreenInMouseCoordinates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lEvent, int lParam1, int lParam2) OnDVDEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle) PlayTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, int32 lChapter) PlayChapterInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lChapter) PlayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, int32 lstrChapter, int32 lChapterCount) PlayChaptersAutoStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, BSTR strTime) PlayAtTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, BSTR strTime) PlayAtTimeInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, BSTR strStartTime, BSTR strEndTime) PlayPeriodInTitleAutoStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) ReplayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) PlayPrevChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) PlayNextChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) StillOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lStream, int16 fFormat, out BSTR strAudioLang) get_AudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, DVDMenuIDConstants MenuID) ShowMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) ReturnFromSubmenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_ButtonsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lButton) SelectAndActivateButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) ActivateButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) SelectRightButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) SelectLeftButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) SelectLowerButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) SelectUpperButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos) ActivateAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos) SelectAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 xPos, int32 yPos, out int32 plButton) get_ButtonAtPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, out int32 pVal) get_NumberOfChapters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_TotalTitleTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_TitlesAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_VolumesAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentDiscSide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_CurrentTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 timeCode, out BSTR pTimeStr) DVDTimeCode2bstr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_DVDDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, BSTR newVal) put_DVDDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lstream, out int16 fEnabled) IsSubpictureStreamEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lstream, out int16 fEnabled) IsAudioStreamEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentSubpictureStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentSubpictureStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lStream, out BSTR strLanguage) get_SubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentAudioStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentAudioStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_AudioStreamsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_AnglesAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_CurrentAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 newVal) put_CurrentAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_SubpictureStreamsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int16 pVal) get_SubpictureOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int16 newVal) put_SubpictureOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out BSTR pVal) get_DVDUniqueID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int16 fAccept, BSTR strUserName, BSTR strPassword) AcceptParentalLevelChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int16 newVal) NotifyParentalLevelChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lCountry, BSTR strUserName, BSTR strPassword) SelectParentalCountry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lParentalLevel, BSTR strUserName, BSTR strPassword) SelectParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lTitle, out int32 plParentalLevels) get_TitleParentalLevels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 plCountryCode) get_PlayerParentalCountry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 plParentalLevel) get_PlayerParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) Eject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lUOP, out int16 pfValid) UOPValid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lIndex, out int16 psSPRM) get_SPRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lIndex, out int16 psSPRM) get_GPRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lIndex, int16 sValue) put_GPRM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, int32 lStringIndex, out DVDTextStringType pType) get_DVDTextStringType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, int32 lStringIndex, out BSTR pstrText) get_DVDTextString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, out int32 plNumOfStrings) get_DVDTextNumberOfStrings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 plNumOfLangs) get_DVDTextNumberOfLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lLangIndex, out int32 lcid) get_DVDTextLanguageLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) RegionChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out IDispatch* pVal) get_DVDAdm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) DeleteBookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) RestoreBookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) SaveBookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lang, int32 ext) SelectDefaultAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lang, DVDSPExt ext) SelectDefaultSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_PreferredSubpictureStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultMenuLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lang) put_DefaultMenuLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultSubpictureLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 lang) get_DefaultAudioLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out DVDSPExt ext) get_DefaultSubpictureLanguageExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 ext) get_DefaultAudioLanguageExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lcid, out BSTR lang) get_LanguageFromLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out int32 pVal) get_KaraokeAudioPresentationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 newVal) put_KaraokeAudioPresentationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lStream, int32 lChan, out int32 lContent) get_KaraokeChannelContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lStream, out int32 lChannelAssignment) get_KaraokeChannelAssignment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self) RestorePreferredSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, int32 lButton, out IMSVidRect* pRect) get_ButtonRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, out IMSVidRect* ppRect) get_DVDScreenInMouseCoordinates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD self, ref IMSVidRect pRect) put_DVDScreenInMouseCoordinates;
 			}
 		}
 		[CRepr]
@@ -16628,8 +16628,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidWebDVD.VTable
 			{
-				public new function HRESULT(ref IMSVidWebDVD2 self, uint8** ppData, out uint32 pDataLength) get_Bookmark;
-				public new function HRESULT(ref IMSVidWebDVD2 self, ref uint8 pData, uint32 dwDataLength) put_Bookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD2 self, uint8** ppData, out uint32 pDataLength) get_Bookmark;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVD2 self, ref uint8 pData, uint32 dwDataLength) put_Bookmark;
 			}
 		}
 		[CRepr]
@@ -16666,29 +16666,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidPlaybackEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int32 lEventCode, VARIANT lParam1, VARIANT lParam2) DVDNotify;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayForwards;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayBackwards;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, DVDMenuIDConstants MenuID, int16 bEnabled) ShowMenu;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) Resume;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) SelectOrActivateButton;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) StillOff;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PauseOn;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentAudioStream;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentSubpictureStream;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentAngle;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayAtTimeInTitle;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayAtTime;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayChapterInTitle;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayChapter;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ReplayChapter;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayNextChapter;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) Stop;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ReturnFromSubmenu;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayTitle;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayPrevChapter;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeKaraokePresMode;
-				public new function HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeVideoPresMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int32 lEventCode, VARIANT lParam1, VARIANT lParam2) DVDNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayForwards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayBackwards;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, DVDMenuIDConstants MenuID, int16 bEnabled) ShowMenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) SelectOrActivateButton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) StillOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PauseOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentAudioStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentSubpictureStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeCurrentAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayAtTimeInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayAtTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayChapterInTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ReplayChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayNextChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ReturnFromSubmenu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) PlayPrevChapter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeKaraokePresMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDEvent self, int16 bEnabled) ChangeVideoPresMode;
 			}
 		}
 		[CRepr]
@@ -16716,20 +16716,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidWebDVDAdm self, BSTR strUserName, BSTR strOld, BSTR strNew) ChangePassword;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int32 level, BSTR strUserName, BSTR strPassword) SaveParentalLevel;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int32 country, BSTR strUserName, BSTR strPassword) SaveParentalCountry;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, BSTR strUserName, BSTR strPassword, out int16 pVal) ConfirmPassword;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int32 lLevel) GetParentalLevel;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int32 lCountry) GetParentalCountry;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultAudioLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultAudioLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultSubpictureLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultSubpictureLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultMenuLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultMenuLCID;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, out int16 pVal) get_BookmarkOnStop;
-				public new function HRESULT(ref IMSVidWebDVDAdm self, int16 newVal) put_BookmarkOnStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, BSTR strUserName, BSTR strOld, BSTR strNew) ChangePassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int32 level, BSTR strUserName, BSTR strPassword) SaveParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int32 country, BSTR strUserName, BSTR strPassword) SaveParentalCountry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, BSTR strUserName, BSTR strPassword, out int16 pVal) ConfirmPassword;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int32 lLevel) GetParentalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int32 lCountry) GetParentalCountry;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultAudioLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultAudioLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultSubpictureLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultSubpictureLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int32 pVal) get_DefaultMenuLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int32 newVal) put_DefaultMenuLCID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, out int16 pVal) get_BookmarkOnStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidWebDVDAdm self, int16 newVal) put_BookmarkOnStop;
 			}
 		}
 		[CRepr]
@@ -16797,8 +16797,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFeature.VTable
 			{
-				public new function HRESULT(ref IMSVidEncoder self, out IUnknown* ppEncInt) get_VideoEncoderInterface;
-				public new function HRESULT(ref IMSVidEncoder self, out IUnknown* ppEncInt) get_AudioEncoderInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEncoder self, out IUnknown* ppEncInt) get_VideoEncoderInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEncoder self, out IUnknown* ppEncInt) get_AudioEncoderInterface;
 			}
 		}
 		[CRepr]
@@ -16814,8 +16814,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFeature.VTable
 			{
-				public new function HRESULT(ref IMSVidClosedCaptioning self, out int16 On) get_Enable;
-				public new function HRESULT(ref IMSVidClosedCaptioning self, int16 On) put_Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidClosedCaptioning self, out int16 On) get_Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidClosedCaptioning self, int16 On) put_Enable;
 			}
 		}
 		[CRepr]
@@ -16831,8 +16831,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidClosedCaptioning.VTable
 			{
-				public new function HRESULT(ref IMSVidClosedCaptioning2 self, out MSVidCCService On) get_Service;
-				public new function HRESULT(ref IMSVidClosedCaptioning2 self, MSVidCCService On) put_Service;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidClosedCaptioning2 self, out MSVidCCService On) get_Service;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidClosedCaptioning2 self, MSVidCCService On) put_Service;
 			}
 		}
 		[CRepr]
@@ -16847,7 +16847,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidClosedCaptioning2.VTable
 			{
-				public new function HRESULT(ref IMSVidClosedCaptioning3 self, out IUnknown* punkTTFilter) get_TeleTextFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidClosedCaptioning3 self, out IUnknown* punkTTFilter) get_TeleTextFilter;
 			}
 		}
 		[CRepr]
@@ -16862,7 +16862,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFeature.VTable
 			{
-				public new function HRESULT(ref IMSVidXDS self, out IUnknown* punkCC) get_ChannelChangeInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidXDS self, out IUnknown* punkCC) get_ChannelChangeInterface;
 			}
 		}
 		[CRepr]
@@ -16877,7 +16877,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFeatureEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidXDSEvent self, EnTvRat_System PrevRatingSystem, EnTvRat_GenericLevel PrevLevel, BfEnTvRat_GenericAttributes PrevAttributes, EnTvRat_System NewRatingSystem, EnTvRat_GenericLevel NewLevel, BfEnTvRat_GenericAttributes NewAttributes) RatingChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidXDSEvent self, EnTvRat_System PrevRatingSystem, EnTvRat_GenericLevel PrevLevel, BfEnTvRat_GenericAttributes PrevAttributes, EnTvRat_System NewRatingSystem, EnTvRat_GenericLevel NewLevel, BfEnTvRat_GenericAttributes NewAttributes) RatingChange;
 			}
 		}
 		[CRepr]
@@ -16947,36 +16947,36 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidVideoRenderer self, out BSTR CompositorCLSID) get_CustomCompositorClass;
-				public new function HRESULT(ref IMSVidVideoRenderer self, BSTR CompositorCLSID) put_CustomCompositorClass;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out Guid CompositorCLSID) get__CustomCompositorClass;
-				public new function HRESULT(ref IMSVidVideoRenderer self, in Guid CompositorCLSID) put__CustomCompositorClass;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IVMRImageCompositor* Compositor) get__CustomCompositor;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref IVMRImageCompositor Compositor) put__CustomCompositor;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IPictureDisp* MixerPictureDisp) get_MixerBitmap;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IVMRMixerBitmap* MixerPicture) get__MixerBitmap;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref IPictureDisp MixerPictureDisp) put_MixerBitmap;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref VMRALPHABITMAP MixerPicture) put__MixerBitmap;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* rDest) get_MixerBitmapPositionRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref IMSVidRect rDest) put_MixerBitmapPositionRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out int32 opacity) get_MixerBitmapOpacity;
-				public new function HRESULT(ref IMSVidVideoRenderer self, int32 opacity) put_MixerBitmapOpacity;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref IPictureDisp MixerPictureDisp, int32 Opacity, ref IMSVidRect rDest) SetupMixerBitmap;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out SourceSizeList CurrentSize) get_SourceSize;
-				public new function HRESULT(ref IMSVidVideoRenderer self, SourceSizeList NewSize) put_SourceSize;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out int32 plPercent) get_OverScan;
-				public new function HRESULT(ref IMSVidVideoRenderer self, int32 lPercent) put_OverScan;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* pRect) get_AvailableSourceRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* ppVidRect) get_MaxVidRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* ppVidRect) get_MinVidRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* pRect) get_ClippedSourceRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, ref IMSVidRect pRect) put_ClippedSourceRect;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out int16 UseOverlayVal) get_UsingOverlay;
-				public new function HRESULT(ref IMSVidVideoRenderer self, int16 UseOverlayVal) put_UsingOverlay;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out IPictureDisp* currentImage) Capture;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out int32 pVal) get_FramesPerSecond;
-				public new function HRESULT(ref IMSVidVideoRenderer self, out int16 pDeci) get_DecimateInput;
-				public new function HRESULT(ref IMSVidVideoRenderer self, int16 pDeci) put_DecimateInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out BSTR CompositorCLSID) get_CustomCompositorClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, BSTR CompositorCLSID) put_CustomCompositorClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out Guid CompositorCLSID) get__CustomCompositorClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, in Guid CompositorCLSID) put__CustomCompositorClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IVMRImageCompositor* Compositor) get__CustomCompositor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref IVMRImageCompositor Compositor) put__CustomCompositor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IPictureDisp* MixerPictureDisp) get_MixerBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IVMRMixerBitmap* MixerPicture) get__MixerBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref IPictureDisp MixerPictureDisp) put_MixerBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref VMRALPHABITMAP MixerPicture) put__MixerBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* rDest) get_MixerBitmapPositionRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref IMSVidRect rDest) put_MixerBitmapPositionRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out int32 opacity) get_MixerBitmapOpacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, int32 opacity) put_MixerBitmapOpacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref IPictureDisp MixerPictureDisp, int32 Opacity, ref IMSVidRect rDest) SetupMixerBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out SourceSizeList CurrentSize) get_SourceSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, SourceSizeList NewSize) put_SourceSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out int32 plPercent) get_OverScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, int32 lPercent) put_OverScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* pRect) get_AvailableSourceRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* ppVidRect) get_MaxVidRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* ppVidRect) get_MinVidRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IMSVidRect* pRect) get_ClippedSourceRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, ref IMSVidRect pRect) put_ClippedSourceRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out int16 UseOverlayVal) get_UsingOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, int16 UseOverlayVal) put_UsingOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out IPictureDisp* currentImage) Capture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out int32 pVal) get_FramesPerSecond;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, out int16 pDeci) get_DecimateInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer self, int16 pDeci) put_DecimateInput;
 			}
 		}
 		[CRepr]
@@ -16991,7 +16991,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidVideoRendererEvent self) OverlayUnavailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererEvent self) OverlayUnavailable;
 			}
 		}
 		[CRepr]
@@ -17008,9 +17008,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidGenericSink self, BSTR bstrName) SetSinkFilter;
-				public new function HRESULT(ref IMSVidGenericSink self, out MSVidSinkStreams pStreams) get_SinkStreams;
-				public new function HRESULT(ref IMSVidGenericSink self, MSVidSinkStreams Streams) put_SinkStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGenericSink self, BSTR bstrName) SetSinkFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGenericSink self, out MSVidSinkStreams pStreams) get_SinkStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGenericSink self, MSVidSinkStreams Streams) put_SinkStreams;
 			}
 		}
 		[CRepr]
@@ -17026,8 +17026,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidGenericSink.VTable
 			{
-				public new function HRESULT(ref IMSVidGenericSink2 self, BSTR bstrName) AddFilter;
-				public new function HRESULT(ref IMSVidGenericSink2 self) ResetFilterList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGenericSink2 self, BSTR bstrName) AddFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidGenericSink2 self) ResetFilterList;
 			}
 		}
 		[CRepr]
@@ -17049,14 +17049,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out int32 rtStart) get_StartTime;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, int32 rtStart) put_StartTime;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out int32 rtStop) get_StopTime;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, int32 rtStop) put_StopTime;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out int16 phResult) get_RecordingStopped;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out int16 phResult) get_RecordingStarted;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out RecordingType dwType) get_RecordingType;
-				public new function HRESULT(ref IMSVidStreamBufferRecordingControl self, out IUnknown* pRecordingAttribute) get_RecordingAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out int32 rtStart) get_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, int32 rtStart) put_StartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out int32 rtStop) get_StopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, int32 rtStop) put_StopTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out int16 phResult) get_RecordingStopped;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out int16 phResult) get_RecordingStarted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out RecordingType dwType) get_RecordingType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferRecordingControl self, out IUnknown* pRecordingAttribute) get_RecordingAttribute;
 			}
 		}
 		[CRepr]
@@ -17076,12 +17076,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSink self, BSTR pszFilename, out IMSVidStreamBufferRecordingControl* pRecordingIUnknown) get_ContentRecorder;
-				public new function HRESULT(ref IMSVidStreamBufferSink self, BSTR pszFilename, out IMSVidStreamBufferRecordingControl* pRecordingIUnknown) get_ReferenceRecorder;
-				public new function HRESULT(ref IMSVidStreamBufferSink self, out BSTR pName) get_SinkName;
-				public new function HRESULT(ref IMSVidStreamBufferSink self, BSTR Name) put_SinkName;
-				public new function HRESULT(ref IMSVidStreamBufferSink self) NameSetLock;
-				public new function HRESULT(ref IMSVidStreamBufferSink self, out IUnknown* sbeConfig) get_SBESink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self, BSTR pszFilename, out IMSVidStreamBufferRecordingControl* pRecordingIUnknown) get_ContentRecorder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self, BSTR pszFilename, out IMSVidStreamBufferRecordingControl* pRecordingIUnknown) get_ReferenceRecorder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self, out BSTR pName) get_SinkName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self, BSTR Name) put_SinkName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self) NameSetLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink self, out IUnknown* sbeConfig) get_SBESink;
 			}
 		}
 		[CRepr]
@@ -17096,7 +17096,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSink.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSink2 self) UnlockProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink2 self) UnlockProfile;
 			}
 		}
 		[CRepr]
@@ -17128,24 +17128,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSink2.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out int32 pdwMin) SetMinSeek;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_AudioCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_VideoCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_CCCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_WSTCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_AudioAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_AudioAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__AudioAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__AudioAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_VideoAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_VideoAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__VideoAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__VideoAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_DataAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_DataAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__DataAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__DataAnalysisFilter;
-				public new function HRESULT(ref IMSVidStreamBufferSink3 self, out HRESULT hres) get_LicenseErrorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out int32 pdwMin) SetMinSeek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_AudioCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_VideoCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_CCCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out IUnknown* ppUnk) get_WSTCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_AudioAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_AudioAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__AudioAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__AudioAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_VideoAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_VideoAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__VideoAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__VideoAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, BSTR szCLSID) put_DataAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out BSTR pszCLSID) get_DataAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, Guid guid) put__DataAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out Guid pGuid) get__DataAnalysisFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSink3 self, out HRESULT hres) get_LicenseErrorCode;
 			}
 		}
 		[CRepr]
@@ -17162,9 +17162,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent self) CertificateFailure;
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent self) CertificateSuccess;
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent self) WriteFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent self) CertificateFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent self) CertificateSuccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent self) WriteFailure;
 			}
 		}
 		[CRepr]
@@ -17180,8 +17180,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSinkEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent2 self) EncryptionOn;
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent2 self) EncryptionOff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent2 self) EncryptionOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent2 self) EncryptionOff;
 			}
 		}
 		[CRepr]
@@ -17196,7 +17196,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSinkEvent2.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent3 self, int32 dwProt) LicenseChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent3 self, int32 dwProt) LicenseChange;
 			}
 		}
 		[CRepr]
@@ -17211,7 +17211,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSinkEvent3.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSinkEvent4 self) WriteFailureClear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSinkEvent4 self) WriteFailureClear;
 			}
 		}
 		[CRepr]
@@ -17232,13 +17232,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFilePlayback.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSource self, out int32 lStart) get_Start;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, out IUnknown* pRecordingAttribute) get_RecordingAttribute;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 pBfEnAttr) CurrentRatings;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, EnTvRat_System enSystem, EnTvRat_GenericLevel enRating, int32 lbfEnAttr) MaxRatingsLevel;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, int16 bBlock) put_BlockUnrated;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, int32 dwDelay) put_UnratedDelay;
-				public new function HRESULT(ref IMSVidStreamBufferSource self, out IUnknown* sbeFilter) get_SBESource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, out int32 lStart) get_Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, out IUnknown* pRecordingAttribute) get_RecordingAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, out EnTvRat_System pEnSystem, out EnTvRat_GenericLevel pEnRating, out int32 pBfEnAttr) CurrentRatings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, EnTvRat_System enSystem, EnTvRat_GenericLevel enRating, int32 lbfEnAttr) MaxRatingsLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, int16 bBlock) put_BlockUnrated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, int32 dwDelay) put_UnratedDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource self, out IUnknown* sbeFilter) get_SBESource;
 			}
 		}
 		[CRepr]
@@ -17257,11 +17257,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSource.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSource2 self, double dwRate, uint32 dwFramesPerSecond) put_RateEx;
-				public new function HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_AudioCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_VideoCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_CCCounter;
-				public new function HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_WSTCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource2 self, double dwRate, uint32 dwFramesPerSecond) put_RateEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_AudioCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_VideoCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_CCCounter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSource2 self, out IUnknown* ppUnk) get_WSTCounter;
 			}
 		}
 		[CRepr]
@@ -17284,15 +17284,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFilePlaybackEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) CertificateFailure;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) CertificateSuccess;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsBlocked;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsUnblocked;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsChanged;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) StaleDataRead;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) ContentBecomingStale;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent self) StaleFileDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) CertificateFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) CertificateSuccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsBlocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsUnblocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) RatingsChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) StaleDataRead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) ContentBecomingStale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent self) StaleFileDeleted;
 			}
 		}
 		[CRepr]
@@ -17307,7 +17307,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSourceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent2 self, double qwNewRate, double qwOldRate) RateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent2 self, double qwNewRate, double qwOldRate) RateChange;
 			}
 		}
 		[CRepr]
@@ -17326,11 +17326,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidStreamBufferSourceEvent2.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent3 self, BSTR Guid) BroadcastEvent;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent3 self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent3 self) COPPBlocked;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent3 self) COPPUnblocked;
-				public new function HRESULT(ref IMSVidStreamBufferSourceEvent3 self) ContentPrimarilyAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent3 self, BSTR Guid) BroadcastEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent3 self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent3 self) COPPBlocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent3 self) COPPUnblocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferSourceEvent3 self) ContentPrimarilyAudio;
 			}
 		}
 		[CRepr]
@@ -17353,15 +17353,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidFilePlaybackEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self) RatingsChanged;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self) StaleDataRead;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self) ContentBecomingStale;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self) StaleFileDeleted;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self, double qwNewRate, double qwOldRate) RateChange;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self, BSTR Guid) BroadcastEvent;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
-				public new function HRESULT(ref IMSVidStreamBufferV2SourceEvent self) ContentPrimarilyAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self) RatingsChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self) StaleDataRead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self) ContentBecomingStale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self) StaleFileDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self, double qwNewRate, double qwOldRate) RateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self, BSTR Guid) BroadcastEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidStreamBufferV2SourceEvent self) ContentPrimarilyAudio;
 			}
 		}
 		[CRepr]
@@ -17382,13 +17382,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidVideoRenderer.VTable
 			{
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, out IUnknown* AllocPresent) get_Allocator;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, out IVMRSurfaceAllocator* AllocPresent) get__Allocator;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, out int32 ID) get_Allocator_ID;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, ref IUnknown AllocPresent, int32 ID) SetAllocator;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, ref IVMRSurfaceAllocator AllocPresent, int32 ID) _SetAllocator2;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, int16 bSuppress) put_SuppressEffects;
-				public new function HRESULT(ref IMSVidVideoRenderer2 self, out int16 bSuppress) get_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, out IUnknown* AllocPresent) get_Allocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, out IVMRSurfaceAllocator* AllocPresent) get__Allocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, out int32 ID) get_Allocator_ID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, ref IUnknown AllocPresent, int32 ID) SetAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, ref IVMRSurfaceAllocator AllocPresent, int32 ID) _SetAllocator2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, int16 bSuppress) put_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRenderer2 self, out int16 bSuppress) get_SuppressEffects;
 			}
 		}
 		[CRepr]
@@ -17403,7 +17403,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidVideoRendererEvent2 self) OverlayUnavailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererEvent2 self) OverlayUnavailable;
 			}
 		}
 		[CRepr]
@@ -17422,11 +17422,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidVideoRenderer.VTable
 			{
-				public new function HRESULT(ref IMSVidVMR9 self, out int32 ID) get_Allocator_ID;
-				public new function HRESULT(ref IMSVidVMR9 self, ref IUnknown AllocPresent, int32 ID) SetAllocator;
-				public new function HRESULT(ref IMSVidVMR9 self, int16 bSuppress) put_SuppressEffects;
-				public new function HRESULT(ref IMSVidVMR9 self, out int16 bSuppress) get_SuppressEffects;
-				public new function HRESULT(ref IMSVidVMR9 self, out IUnknown* AllocPresent) get_Allocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVMR9 self, out int32 ID) get_Allocator_ID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVMR9 self, ref IUnknown AllocPresent, int32 ID) SetAllocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVMR9 self, int16 bSuppress) put_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVMR9 self, out int16 bSuppress) get_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVMR9 self, out IUnknown* AllocPresent) get_Allocator;
 			}
 		}
 		[CRepr]
@@ -17444,10 +17444,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidVideoRenderer.VTable
 			{
-				public new function HRESULT(ref IMSVidEVR self, out IMFVideoPresenter* ppAllocPresent) get_Presenter;
-				public new function HRESULT(ref IMSVidEVR self, ref IMFVideoPresenter pAllocPresent) put_Presenter;
-				public new function HRESULT(ref IMSVidEVR self, int16 bSuppress) put_SuppressEffects;
-				public new function HRESULT(ref IMSVidEVR self, out int16 bSuppress) get_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEVR self, out IMFVideoPresenter* ppAllocPresent) get_Presenter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEVR self, ref IMFVideoPresenter pAllocPresent) put_Presenter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEVR self, int16 bSuppress) put_SuppressEffects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEVR self, out int16 bSuppress) get_SuppressEffects;
 			}
 		}
 		[CRepr]
@@ -17462,7 +17462,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDeviceEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidEVREvent self, int32 lEventCode) OnUserEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidEVREvent self, int32 lEventCode) OnUserEvent;
 			}
 		}
 		[CRepr]
@@ -17480,10 +17480,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidOutputDevice.VTable
 			{
-				public new function HRESULT(ref IMSVidAudioRenderer self, int32 lVol) put_Volume;
-				public new function HRESULT(ref IMSVidAudioRenderer self, out int32 lVol) get_Volume;
-				public new function HRESULT(ref IMSVidAudioRenderer self, int32 lBal) put_Balance;
-				public new function HRESULT(ref IMSVidAudioRenderer self, out int32 lBal) get_Balance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRenderer self, int32 lVol) put_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRenderer self, out int32 lVol) get_Volume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRenderer self, int32 lBal) put_Balance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRenderer self, out int32 lBal) get_Balance;
 			}
 		}
 		[CRepr]
@@ -17518,14 +17518,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSVidAudioRendererEvent.VTable
 			{
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecAudioDualMono;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioSampleRate;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioChannelConfig;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioChannelCount;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonMeanBitRate;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVDDSurroundMode;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonInputFormat;
-				public new function HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonOutputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecAudioDualMono;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioSampleRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioChannelConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVAudioChannelCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonMeanBitRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVDDSurroundMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonInputFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererEvent2 self) AVDecCommonOutputFormat;
 			}
 		}
 		[CRepr]
@@ -17544,11 +17544,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidInputDevices self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IMSVidInputDevices self, out IEnumVARIANT* pD) get__NewEnum;
-				public new function HRESULT(ref IMSVidInputDevices self, VARIANT v, out IMSVidInputDevice* pDB) get_Item;
-				public new function HRESULT(ref IMSVidInputDevices self, ref IMSVidInputDevice pDB) Add;
-				public new function HRESULT(ref IMSVidInputDevices self, VARIANT v) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevices self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevices self, out IEnumVARIANT* pD) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevices self, VARIANT v, out IMSVidInputDevice* pDB) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevices self, ref IMSVidInputDevice pDB) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidInputDevices self, VARIANT v) Remove;
 			}
 		}
 		[CRepr]
@@ -17567,11 +17567,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidOutputDevices self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IMSVidOutputDevices self, out IEnumVARIANT* pD) get__NewEnum;
-				public new function HRESULT(ref IMSVidOutputDevices self, VARIANT v, out IMSVidOutputDevice* pDB) get_Item;
-				public new function HRESULT(ref IMSVidOutputDevices self, ref IMSVidOutputDevice pDB) Add;
-				public new function HRESULT(ref IMSVidOutputDevices self, VARIANT v) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidOutputDevices self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidOutputDevices self, out IEnumVARIANT* pD) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidOutputDevices self, VARIANT v, out IMSVidOutputDevice* pDB) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidOutputDevices self, ref IMSVidOutputDevice pDB) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidOutputDevices self, VARIANT v) Remove;
 			}
 		}
 		[CRepr]
@@ -17590,11 +17590,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidVideoRendererDevices self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IMSVidVideoRendererDevices self, out IEnumVARIANT* pD) get__NewEnum;
-				public new function HRESULT(ref IMSVidVideoRendererDevices self, VARIANT v, out IMSVidVideoRenderer* pDB) get_Item;
-				public new function HRESULT(ref IMSVidVideoRendererDevices self, ref IMSVidVideoRenderer pDB) Add;
-				public new function HRESULT(ref IMSVidVideoRendererDevices self, VARIANT v) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererDevices self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererDevices self, out IEnumVARIANT* pD) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererDevices self, VARIANT v, out IMSVidVideoRenderer* pDB) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererDevices self, ref IMSVidVideoRenderer pDB) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidVideoRendererDevices self, VARIANT v) Remove;
 			}
 		}
 		[CRepr]
@@ -17613,11 +17613,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidAudioRendererDevices self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IMSVidAudioRendererDevices self, out IEnumVARIANT* pD) get__NewEnum;
-				public new function HRESULT(ref IMSVidAudioRendererDevices self, VARIANT v, out IMSVidAudioRenderer* pDB) get_Item;
-				public new function HRESULT(ref IMSVidAudioRendererDevices self, ref IMSVidAudioRenderer pDB) Add;
-				public new function HRESULT(ref IMSVidAudioRendererDevices self, VARIANT v) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererDevices self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererDevices self, out IEnumVARIANT* pD) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererDevices self, VARIANT v, out IMSVidAudioRenderer* pDB) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererDevices self, ref IMSVidAudioRenderer pDB) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidAudioRendererDevices self, VARIANT v) Remove;
 			}
 		}
 		[CRepr]
@@ -17636,11 +17636,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidFeatures self, out int32 lCount) get_Count;
-				public new function HRESULT(ref IMSVidFeatures self, out IEnumVARIANT* pD) get__NewEnum;
-				public new function HRESULT(ref IMSVidFeatures self, VARIANT v, out IMSVidFeature* pDB) get_Item;
-				public new function HRESULT(ref IMSVidFeatures self, ref IMSVidFeature pDB) Add;
-				public new function HRESULT(ref IMSVidFeatures self, VARIANT v) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFeatures self, out int32 lCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFeatures self, out IEnumVARIANT* pD) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFeatures self, VARIANT v, out IMSVidFeature* pDB) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFeatures self, ref IMSVidFeature pDB) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidFeatures self, VARIANT v) Remove;
 			}
 		}
 		[CRepr]
@@ -17697,49 +17697,49 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSVidCtl self, out int16 pbool) get_AutoSize;
-				public new function HRESULT(ref IMSVidCtl self, int16 vbool) put_AutoSize;
-				public new function HRESULT(ref IMSVidCtl self, out uint32 backcolor) get_BackColor;
-				public new function HRESULT(ref IMSVidCtl self, uint32 backcolor) put_BackColor;
-				public new function HRESULT(ref IMSVidCtl self, out int16 pbool) get_Enabled;
-				public new function HRESULT(ref IMSVidCtl self, int16 vbool) put_Enabled;
-				public new function HRESULT(ref IMSVidCtl self, out int16 pbool) get_TabStop;
-				public new function HRESULT(ref IMSVidCtl self, int16 vbool) put_TabStop;
-				public new function HRESULT(ref IMSVidCtl self, out HWND phwnd) get_Window;
-				public new function HRESULT(ref IMSVidCtl self) Refresh;
-				public new function HRESULT(ref IMSVidCtl self, out DisplaySizeList CurrentValue) get_DisplaySize;
-				public new function HRESULT(ref IMSVidCtl self, DisplaySizeList NewValue) put_DisplaySize;
-				public new function HRESULT(ref IMSVidCtl self, out int16 CurrentValue) get_MaintainAspectRatio;
-				public new function HRESULT(ref IMSVidCtl self, int16 NewValue) put_MaintainAspectRatio;
-				public new function HRESULT(ref IMSVidCtl self, out uint32 CurrentValue) get_ColorKey;
-				public new function HRESULT(ref IMSVidCtl self, uint32 NewValue) put_ColorKey;
-				public new function HRESULT(ref IMSVidCtl self, BSTR CategoryGuid, out IMSVidInputDevices* pVal) get_InputsAvailable;
-				public new function HRESULT(ref IMSVidCtl self, BSTR CategoryGuid, out IMSVidOutputDevices* pVal) get_OutputsAvailable;
-				public new function HRESULT(ref IMSVidCtl self, in Guid CategoryGuid, out IMSVidInputDevices* pVal) get__InputsAvailable;
-				public new function HRESULT(ref IMSVidCtl self, in Guid CategoryGuid, out IMSVidOutputDevices* pVal) get__OutputsAvailable;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidVideoRendererDevices* pVal) get_VideoRenderersAvailable;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidAudioRendererDevices* pVal) get_AudioRenderersAvailable;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidFeatures* pVal) get_FeaturesAvailable;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidInputDevice* pVal) get_InputActive;
-				public new function HRESULT(ref IMSVidCtl self, ref IMSVidInputDevice pVal) put_InputActive;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidOutputDevices* pVal) get_OutputsActive;
-				public new function HRESULT(ref IMSVidCtl self, ref IMSVidOutputDevices pVal) put_OutputsActive;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidVideoRenderer* pVal) get_VideoRendererActive;
-				public new function HRESULT(ref IMSVidCtl self, ref IMSVidVideoRenderer pVal) put_VideoRendererActive;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidAudioRenderer* pVal) get_AudioRendererActive;
-				public new function HRESULT(ref IMSVidCtl self, ref IMSVidAudioRenderer pVal) put_AudioRendererActive;
-				public new function HRESULT(ref IMSVidCtl self, out IMSVidFeatures* pVal) get_FeaturesActive;
-				public new function HRESULT(ref IMSVidCtl self, ref IMSVidFeatures pVal) put_FeaturesActive;
-				public new function HRESULT(ref IMSVidCtl self, out MSVidCtlStateList lState) get_State;
-				public new function HRESULT(ref IMSVidCtl self, ref VARIANT v) View;
-				public new function HRESULT(ref IMSVidCtl self) Build;
-				public new function HRESULT(ref IMSVidCtl self) Pause;
-				public new function HRESULT(ref IMSVidCtl self) Run;
-				public new function HRESULT(ref IMSVidCtl self) Stop;
-				public new function HRESULT(ref IMSVidCtl self) Decompose;
-				public new function HRESULT(ref IMSVidCtl self) DisableVideo;
-				public new function HRESULT(ref IMSVidCtl self) DisableAudio;
-				public new function HRESULT(ref IMSVidCtl self, ref VARIANT v) ViewNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out int16 pbool) get_AutoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, int16 vbool) put_AutoSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out uint32 backcolor) get_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, uint32 backcolor) put_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out int16 pbool) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, int16 vbool) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out int16 pbool) get_TabStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, int16 vbool) put_TabStop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out HWND phwnd) get_Window;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out DisplaySizeList CurrentValue) get_DisplaySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, DisplaySizeList NewValue) put_DisplaySize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out int16 CurrentValue) get_MaintainAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, int16 NewValue) put_MaintainAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out uint32 CurrentValue) get_ColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, uint32 NewValue) put_ColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, BSTR CategoryGuid, out IMSVidInputDevices* pVal) get_InputsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, BSTR CategoryGuid, out IMSVidOutputDevices* pVal) get_OutputsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, in Guid CategoryGuid, out IMSVidInputDevices* pVal) get__InputsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, in Guid CategoryGuid, out IMSVidOutputDevices* pVal) get__OutputsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidVideoRendererDevices* pVal) get_VideoRenderersAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidAudioRendererDevices* pVal) get_AudioRenderersAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidFeatures* pVal) get_FeaturesAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidInputDevice* pVal) get_InputActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref IMSVidInputDevice pVal) put_InputActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidOutputDevices* pVal) get_OutputsActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref IMSVidOutputDevices pVal) put_OutputsActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidVideoRenderer* pVal) get_VideoRendererActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref IMSVidVideoRenderer pVal) put_VideoRendererActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidAudioRenderer* pVal) get_AudioRendererActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref IMSVidAudioRenderer pVal) put_AudioRendererActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out IMSVidFeatures* pVal) get_FeaturesActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref IMSVidFeatures pVal) put_FeaturesActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, out MSVidCtlStateList lState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref VARIANT v) View;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Build;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) Decompose;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) DisableVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self) DisableAudio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSVidCtl self, ref VARIANT v) ViewNext;
 			}
 		}
 		[CRepr]
@@ -17755,8 +17755,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSEventBinder self, ref IDispatch pEventObject, BSTR EventName, BSTR EventHandler, out int32 CancelID) Bind;
-				public new function HRESULT(ref IMSEventBinder self, uint32 CancelCookie) Unbind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSEventBinder self, ref IDispatch pEventObject, BSTR EventName, BSTR EventHandler, out int32 CancelID) Bind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSEventBinder self, uint32 CancelCookie) Unbind;
 			}
 		}
 		[CRepr]
@@ -17785,8 +17785,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferInitialize self, HKEY hkeyRoot) SetHKEY;
-				public new function HRESULT(ref IStreamBufferInitialize self, uint32 cSIDs, out PSID ppSID) SetSIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferInitialize self, HKEY hkeyRoot) SetHKEY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferInitialize self, uint32 cSIDs, out PSID ppSID) SetSIDs;
 			}
 		}
 		[CRepr]
@@ -17803,9 +17803,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferSink self, PWSTR pszStreamBufferFilename) LockProfile;
-				public new function HRESULT(ref IStreamBufferSink self, PWSTR pszFilename, uint32 dwRecordType, out IUnknown* pRecordingIUnknown) CreateRecorder;
-				public new function HRESULT(ref IStreamBufferSink self) IsProfileLocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSink self, PWSTR pszStreamBufferFilename) LockProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSink self, PWSTR pszFilename, uint32 dwRecordType, out IUnknown* pRecordingIUnknown) CreateRecorder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSink self) IsProfileLocked;
 			}
 		}
 		[CRepr]
@@ -17820,7 +17820,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamBufferSink.VTable
 			{
-				public new function HRESULT(ref IStreamBufferSink2 self) UnlockProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSink2 self) UnlockProfile;
 			}
 		}
 		[CRepr]
@@ -17835,7 +17835,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamBufferSink2.VTable
 			{
-				public new function HRESULT(ref IStreamBufferSink3 self, out int64 prtMin) SetAvailableFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSink3 self, out int64 prtMin) SetAvailableFilter;
 			}
 		}
 		[CRepr]
@@ -17850,7 +17850,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferSource self, ref IStreamBufferSink pIStreamBufferSink) SetStreamSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferSource self, ref IStreamBufferSink pIStreamBufferSink) SetStreamSink;
 			}
 		}
 		[CRepr]
@@ -17867,9 +17867,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferRecordControl self, out int64 prtStart) Start;
-				public new function HRESULT(ref IStreamBufferRecordControl self, int64 rtStop) Stop;
-				public new function HRESULT(ref IStreamBufferRecordControl self, out HRESULT phResult, out BOOL pbStarted, out BOOL pbStopped) GetRecordingStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordControl self, out int64 prtStart) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordControl self, int64 rtStop) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordControl self, out HRESULT phResult, out BOOL pbStarted, out BOOL pbStopped) GetRecordingStatus;
 			}
 		}
 		[CRepr]
@@ -17889,12 +17889,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferRecComp self, PWSTR pszTargetFilename, PWSTR pszSBRecProfileRef) Initialize;
-				public new function HRESULT(ref IStreamBufferRecComp self, PWSTR pszSBRecording) Append;
-				public new function HRESULT(ref IStreamBufferRecComp self, PWSTR pszSBRecording, int64 rtStart, int64 rtStop) AppendEx;
-				public new function HRESULT(ref IStreamBufferRecComp self, out uint32 pcSeconds) GetCurrentLength;
-				public new function HRESULT(ref IStreamBufferRecComp self) Close;
-				public new function HRESULT(ref IStreamBufferRecComp self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self, PWSTR pszTargetFilename, PWSTR pszSBRecProfileRef) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self, PWSTR pszSBRecording) Append;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self, PWSTR pszSBRecording, int64 rtStart, int64 rtStop) AppendEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self, out uint32 pcSeconds) GetCurrentLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecComp self) Cancel;
 			}
 		}
 		[CRepr]
@@ -17913,11 +17913,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferRecordingAttribute self, uint32 ulReserved, PWSTR pszAttributeName, STREAMBUFFER_ATTR_DATATYPE StreamBufferAttributeType, uint8* pbAttribute, uint16 cbAttributeLength) SetAttribute;
-				public new function HRESULT(ref IStreamBufferRecordingAttribute self, uint32 ulReserved, out uint16 pcAttributes) GetAttributeCount;
-				public new function HRESULT(ref IStreamBufferRecordingAttribute self, PWSTR pszAttributeName, ref uint32 pulReserved, out STREAMBUFFER_ATTR_DATATYPE pStreamBufferAttributeType, uint8* pbAttribute, out uint16 pcbLength) GetAttributeByName;
-				public new function HRESULT(ref IStreamBufferRecordingAttribute self, uint16 wIndex, ref uint32 pulReserved, PWSTR pszAttributeName, out uint16 pcchNameLength, out STREAMBUFFER_ATTR_DATATYPE pStreamBufferAttributeType, uint8* pbAttribute, out uint16 pcbLength) GetAttributeByIndex;
-				public new function HRESULT(ref IStreamBufferRecordingAttribute self, out IEnumStreamBufferRecordingAttrib* ppIEnumStreamBufferAttrib) EnumAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordingAttribute self, uint32 ulReserved, PWSTR pszAttributeName, STREAMBUFFER_ATTR_DATATYPE StreamBufferAttributeType, uint8* pbAttribute, uint16 cbAttributeLength) SetAttribute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordingAttribute self, uint32 ulReserved, out uint16 pcAttributes) GetAttributeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordingAttribute self, PWSTR pszAttributeName, ref uint32 pulReserved, out STREAMBUFFER_ATTR_DATATYPE pStreamBufferAttributeType, uint8* pbAttribute, out uint16 pcbLength) GetAttributeByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordingAttribute self, uint16 wIndex, ref uint32 pulReserved, PWSTR pszAttributeName, out uint16 pcchNameLength, out STREAMBUFFER_ATTR_DATATYPE pStreamBufferAttributeType, uint8* pbAttribute, out uint16 pcbLength) GetAttributeByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferRecordingAttribute self, out IEnumStreamBufferRecordingAttrib* ppIEnumStreamBufferAttrib) EnumAttributes;
 			}
 		}
 		[CRepr]
@@ -17935,10 +17935,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumStreamBufferRecordingAttrib self, uint32 cRequest, STREAMBUFFER_ATTRIBUTE* pStreamBufferAttribute, out uint32 pcReceived) Next;
-				public new function HRESULT(ref IEnumStreamBufferRecordingAttrib self, uint32 cRecords) Skip;
-				public new function HRESULT(ref IEnumStreamBufferRecordingAttrib self) Reset;
-				public new function HRESULT(ref IEnumStreamBufferRecordingAttrib self, out IEnumStreamBufferRecordingAttrib* ppIEnumStreamBufferAttrib) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamBufferRecordingAttrib self, uint32 cRequest, STREAMBUFFER_ATTRIBUTE* pStreamBufferAttribute, out uint32 pcReceived) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamBufferRecordingAttrib self, uint32 cRecords) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamBufferRecordingAttrib self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumStreamBufferRecordingAttrib self, out IEnumStreamBufferRecordingAttrib* ppIEnumStreamBufferAttrib) Clone;
 			}
 		}
 		[CRepr]
@@ -17958,12 +17958,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferConfigure self, PWSTR pszDirectoryName) SetDirectory;
-				public new function HRESULT(ref IStreamBufferConfigure self, out PWSTR ppszDirectoryName) GetDirectory;
-				public new function HRESULT(ref IStreamBufferConfigure self, uint32 dwMin, uint32 dwMax) SetBackingFileCount;
-				public new function HRESULT(ref IStreamBufferConfigure self, out uint32 pdwMin, out uint32 pdwMax) GetBackingFileCount;
-				public new function HRESULT(ref IStreamBufferConfigure self, uint32 dwSeconds) SetBackingFileDuration;
-				public new function HRESULT(ref IStreamBufferConfigure self, out uint32 pdwSeconds) GetBackingFileDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, PWSTR pszDirectoryName) SetDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, out PWSTR ppszDirectoryName) GetDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, uint32 dwMin, uint32 dwMax) SetBackingFileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, out uint32 pdwMin, out uint32 pdwMax) GetBackingFileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, uint32 dwSeconds) SetBackingFileDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure self, out uint32 pdwSeconds) GetBackingFileDuration;
 			}
 		}
 		[CRepr]
@@ -17981,10 +17981,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamBufferConfigure.VTable
 			{
-				public new function HRESULT(ref IStreamBufferConfigure2 self, uint32 cbBytesPerPacket) SetMultiplexedPacketSize;
-				public new function HRESULT(ref IStreamBufferConfigure2 self, out uint32 pcbBytesPerPacket) GetMultiplexedPacketSize;
-				public new function HRESULT(ref IStreamBufferConfigure2 self, uint32 dwMaxFullFrameRate, uint32 dwMaxNonSkippingRate) SetFFTransitionRates;
-				public new function HRESULT(ref IStreamBufferConfigure2 self, out uint32 pdwMaxFullFrameRate, out uint32 pdwMaxNonSkippingRate) GetFFTransitionRates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure2 self, uint32 cbBytesPerPacket) SetMultiplexedPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure2 self, out uint32 pcbBytesPerPacket) GetMultiplexedPacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure2 self, uint32 dwMaxFullFrameRate, uint32 dwMaxNonSkippingRate) SetFFTransitionRates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure2 self, out uint32 pdwMaxFullFrameRate, out uint32 pdwMaxNonSkippingRate) GetFFTransitionRates;
 			}
 		}
 		[CRepr]
@@ -18002,10 +18002,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamBufferConfigure2.VTable
 			{
-				public new function HRESULT(ref IStreamBufferConfigure3 self, BOOL fStartStopsCur) SetStartRecConfig;
-				public new function HRESULT(ref IStreamBufferConfigure3 self, out BOOL pfStartStopsCur) GetStartRecConfig;
-				public new function HRESULT(ref IStreamBufferConfigure3 self, PWSTR pszNamespace) SetNamespace;
-				public new function HRESULT(ref IStreamBufferConfigure3 self, out PWSTR ppszNamespace) GetNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure3 self, BOOL fStartStopsCur) SetStartRecConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure3 self, out BOOL pfStartStopsCur) GetStartRecConfig;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure3 self, PWSTR pszNamespace) SetNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferConfigure3 self, out PWSTR ppszNamespace) GetNamespace;
 			}
 		}
 		[CRepr]
@@ -18033,7 +18033,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IStreamBufferMediaSeeking.VTable
 			{
-				public new function HRESULT(ref IStreamBufferMediaSeeking2 self, double dRate, uint32 dwFramesPerSec) SetRateEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferMediaSeeking2 self, double dRate, uint32 dwFramesPerSec) SetRateEx;
 			}
 		}
 		[CRepr]
@@ -18049,8 +18049,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStreamBufferDataCounters self, out SBE_PIN_DATA pPinData) GetData;
-				public new function HRESULT(ref IStreamBufferDataCounters self) ResetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferDataCounters self, out SBE_PIN_DATA pPinData) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStreamBufferDataCounters self) ResetData;
 			}
 		}
 		[CRepr]
@@ -18065,7 +18065,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2GlobalEvent self, in Guid idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, out BOOL pSpanning, out uint32 pcb, out uint8 pb) GetEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2GlobalEvent self, in Guid idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, out BOOL pSpanning, out uint32 pcb, out uint8 pb) GetEvent;
 			}
 		}
 		[CRepr]
@@ -18080,7 +18080,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISBE2GlobalEvent.VTable
 			{
-				public new function HRESULT(ref ISBE2GlobalEvent2 self, in Guid idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, out BOOL pSpanning, out uint32 pcb, out uint8 pb, out int64 pStreamTime) GetEventEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2GlobalEvent2 self, in Guid idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, out BOOL pSpanning, out uint32 pcb, out uint8 pb, out int64 pStreamTime) GetEventEx;
 			}
 		}
 		[CRepr]
@@ -18095,7 +18095,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2SpanningEvent self, in Guid idEvt, uint32 streamId, out uint32 pcb, out uint8 pb) GetEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2SpanningEvent self, in Guid idEvt, uint32 streamId, out uint32 pcb, out uint8 pb) GetEvent;
 			}
 		}
 		[CRepr]
@@ -18113,10 +18113,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2Crossbar self, uint32 DefaultFlags) EnableDefaultMode;
-				public new function HRESULT(ref ISBE2Crossbar self, out ISBE2MediaTypeProfile* ppProfile) GetInitialProfile;
-				public new function HRESULT(ref ISBE2Crossbar self, ref ISBE2MediaTypeProfile pProfile, out uint32 pcOutputPins, out IPin* ppOutputPins) SetOutputProfile;
-				public new function HRESULT(ref ISBE2Crossbar self, out ISBE2EnumStream* ppStreams) EnumStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2Crossbar self, uint32 DefaultFlags) EnableDefaultMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2Crossbar self, out ISBE2MediaTypeProfile* ppProfile) GetInitialProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2Crossbar self, ref ISBE2MediaTypeProfile pProfile, out uint32 pcOutputPins, out IPin* ppOutputPins) SetOutputProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2Crossbar self, out ISBE2EnumStream* ppStreams) EnumStreams;
 			}
 		}
 		[CRepr]
@@ -18133,9 +18133,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2StreamMap self, uint32 Stream) MapStream;
-				public new function HRESULT(ref ISBE2StreamMap self, uint32 Stream) UnmapStream;
-				public new function HRESULT(ref ISBE2StreamMap self, out ISBE2EnumStream* ppStreams) EnumMappedStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2StreamMap self, uint32 Stream) MapStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2StreamMap self, uint32 Stream) UnmapStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2StreamMap self, out ISBE2EnumStream* ppStreams) EnumMappedStreams;
 			}
 		}
 		[CRepr]
@@ -18153,10 +18153,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2EnumStream self, uint32 cRequest, SBE2_STREAM_DESC* pStreamDesc, out uint32 pcReceived) Next;
-				public new function HRESULT(ref ISBE2EnumStream self, uint32 cRecords) Skip;
-				public new function HRESULT(ref ISBE2EnumStream self) Reset;
-				public new function HRESULT(ref ISBE2EnumStream self, out ISBE2EnumStream* ppIEnumStream) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2EnumStream self, uint32 cRequest, SBE2_STREAM_DESC* pStreamDesc, out uint32 pcReceived) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2EnumStream self, uint32 cRecords) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2EnumStream self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2EnumStream self, out ISBE2EnumStream* ppIEnumStream) Clone;
 			}
 		}
 		[CRepr]
@@ -18174,10 +18174,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2MediaTypeProfile self, out uint32 pCount) GetStreamCount;
-				public new function HRESULT(ref ISBE2MediaTypeProfile self, uint32 Index, out AM_MEDIA_TYPE* ppMediaType) GetStream;
-				public new function HRESULT(ref ISBE2MediaTypeProfile self, ref AM_MEDIA_TYPE pMediaType) AddStream;
-				public new function HRESULT(ref ISBE2MediaTypeProfile self, uint32 Index) DeleteStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2MediaTypeProfile self, out uint32 pCount) GetStreamCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2MediaTypeProfile self, uint32 Index, out AM_MEDIA_TYPE* ppMediaType) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2MediaTypeProfile self, ref AM_MEDIA_TYPE pMediaType) AddStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2MediaTypeProfile self, uint32 Index) DeleteStream;
 			}
 		}
 		[CRepr]
@@ -18192,7 +18192,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISBE2FileScan self, PWSTR filename) RepairFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISBE2FileScan self, PWSTR filename) RepairFile;
 			}
 		}
 		[CRepr]
@@ -18212,12 +18212,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p) AddPID;
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t) AddTable;
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t, uint16 e) AddExtension;
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p) RemovePID;
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t) RemoveTable;
-				public new function HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t, uint16 e) RemoveExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p) AddPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t) AddTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t, uint16 e) AddExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p) RemovePID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t) RemoveTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2TableFilter self, uint16 p, uint8 t, uint16 e) RemoveExtension;
 			}
 		}
 		[CRepr]
@@ -18234,9 +18234,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 dwTimeout, out ISectionList* ppSectionList) GetSection;
-				public new function HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 dwTimeout, out ISectionList* ppSectionList) GetTable;
-				public new function HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, HANDLE hDataReadyEvent, out IMpeg2Stream* ppMpegStream) GetStreamOfSections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 dwTimeout, out ISectionList* ppSectionList) GetSection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 dwTimeout, out ISectionList* ppSectionList) GetTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Data self, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, HANDLE hDataReadyEvent, out IMpeg2Stream* ppMpegStream) GetStreamOfSections;
 			}
 		}
 		[CRepr]
@@ -18257,13 +18257,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISectionList self, MPEG_REQUEST_TYPE requestType, ref IMpeg2Data pMpeg2Data, ref MPEG_CONTEXT pContext, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 timeout, HANDLE hDoneEvent) Initialize;
-				public new function HRESULT(ref ISectionList self, ref MPEG_PACKET_LIST pmplSections) InitializeWithRawSections;
-				public new function HRESULT(ref ISectionList self) CancelPendingRequest;
-				public new function HRESULT(ref ISectionList self, out uint16 pCount) GetNumberOfSections;
-				public new function HRESULT(ref ISectionList self, uint16 sectionNumber, out uint32 pdwRawPacketLength, out SECTION* ppSection) GetSectionData;
-				public new function HRESULT(ref ISectionList self, ref uint16 pPid) GetProgramIdentifier;
-				public new function HRESULT(ref ISectionList self, ref uint8 pTableId) GetTableIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, MPEG_REQUEST_TYPE requestType, ref IMpeg2Data pMpeg2Data, ref MPEG_CONTEXT pContext, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, uint32 timeout, HANDLE hDoneEvent) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, ref MPEG_PACKET_LIST pmplSections) InitializeWithRawSections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self) CancelPendingRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, out uint16 pCount) GetNumberOfSections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, uint16 sectionNumber, out uint32 pdwRawPacketLength, out SECTION* ppSection) GetSectionData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, ref uint16 pPid) GetProgramIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISectionList self, ref uint8 pTableId) GetTableIdentifier;
 			}
 		}
 		[CRepr]
@@ -18279,8 +18279,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMpeg2Stream self, MPEG_REQUEST_TYPE requestType, ref IMpeg2Data pMpeg2Data, ref MPEG_CONTEXT pContext, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, HANDLE hDataReadyEvent) Initialize;
-				public new function HRESULT(ref IMpeg2Stream self, ref MPEG_STREAM_BUFFER pStreamBuffer) SupplyDataBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Stream self, MPEG_REQUEST_TYPE requestType, ref IMpeg2Data pMpeg2Data, ref MPEG_CONTEXT pContext, uint16 pid, uint8 tid, ref MPEG2_FILTER pFilter, HANDLE hDataReadyEvent) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMpeg2Stream self, ref MPEG_STREAM_BUFFER pStreamBuffer) SupplyDataBuffer;
 			}
 		}
 		[CRepr]
@@ -18298,10 +18298,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGenericDescriptor self, ref uint8 pbDesc, int32 bCount) Initialize;
-				public new function HRESULT(ref IGenericDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IGenericDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IGenericDescriptor self, out uint8* ppbVal) GetBody;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor self, ref uint8 pbDesc, int32 bCount) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor self, out uint8* ppbVal) GetBody;
 			}
 		}
 		[CRepr]
@@ -18317,8 +18317,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IGenericDescriptor.VTable
 			{
-				public new function HRESULT(ref IGenericDescriptor2 self, ref uint8 pbDesc, uint16 wCount) Initialize;
-				public new function HRESULT(ref IGenericDescriptor2 self, out uint16 pwVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor2 self, ref uint8 pbDesc, uint16 wCount) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGenericDescriptor2 self, out uint16 pwVal) GetLength;
 			}
 		}
 		[CRepr]
@@ -18343,17 +18343,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IPAT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IPAT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IPAT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IPAT self, uint32 dwIndex, out uint16 pwVal) GetRecordProgramNumber;
-				public new function HRESULT(ref IPAT self, uint32 dwIndex, out uint16 pwVal) GetRecordProgramMapPid;
-				public new function HRESULT(ref IPAT self, uint16 wProgramNumber, out uint16 pwVal) FindRecordProgramMapPid;
-				public new function HRESULT(ref IPAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IPAT self, out IPAT* ppPAT) GetNextTable;
-				public new function HRESULT(ref IPAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IPAT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, uint32 dwIndex, out uint16 pwVal) GetRecordProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, uint32 dwIndex, out uint16 pwVal) GetRecordProgramMapPid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, uint16 wProgramNumber, out uint16 pwVal) FindRecordProgramMapPid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, out IPAT* ppPAT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPAT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -18376,15 +18376,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref ICAT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref ICAT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref ICAT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref ICAT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref ICAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref ICAT self, uint32 dwTimeout, out ICAT* ppCAT) GetNextTable;
-				public new function HRESULT(ref ICAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref ICAT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, uint32 dwTimeout, out ICAT* ppCAT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICAT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -18417,25 +18417,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IPMT self, out uint16 pwVal) GetProgramNumber;
-				public new function HRESULT(ref IPMT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IPMT self, out uint16 pPidVal) GetPcrPid;
-				public new function HRESULT(ref IPMT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IPMT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IPMT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IPMT self, out uint16 pwVal) GetCountOfRecords;
-				public new function HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordStreamType;
-				public new function HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint16 pPidVal) GetRecordElementaryPid;
-				public new function HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IPMT self, uint32 dwRecordIndex, uint32 dwDescIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IPMT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IPMT self, out DSMCC_ELEMENT* ppDSMCCList, out uint32 puiCount) QueryServiceGatewayInfo;
-				public new function HRESULT(ref IPMT self, out MPE_ELEMENT* ppMPEList, out uint32 puiCount) QueryMPEInfo;
-				public new function HRESULT(ref IPMT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IPMT self, out IPMT* ppPMT) GetNextTable;
-				public new function HRESULT(ref IPMT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IPMT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out uint16 pwVal) GetProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out uint16 pPidVal) GetPcrPid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out uint16 pwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordStreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint16 pPidVal) GetRecordElementaryPid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwRecordIndex, uint32 dwDescIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out DSMCC_ELEMENT* ppDSMCCList, out uint32 puiCount) QueryServiceGatewayInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out MPE_ELEMENT* ppMPEList, out uint32 puiCount) QueryMPEInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, out IPMT* ppPMT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -18458,15 +18458,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITSDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref ITSDT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref ITSDT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref ITSDT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref ITSDT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref ITSDT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref ITSDT self, out ITSDT* ppTSDT) GetNextTable;
-				public new function HRESULT(ref ITSDT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref ITSDT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, out ITSDT* ppTSDT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITSDT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -18481,7 +18481,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPSITables self, uint32 dwTSID, uint32 dwTID_PID, uint32 dwHashedVer, uint32 dwPara4, out IUnknown* ppIUnknown) GetTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPSITables self, uint32 dwTSID, uint32 dwTID_PID, uint32 dwHashedVer, uint32 dwPara4, out IUnknown* ppIUnknown) GetTable;
 			}
 		}
 		[CRepr]
@@ -18506,17 +18506,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAtscPsipParser self, IUnknown* punkMpeg2Data) Initialize;
-				public new function HRESULT(ref IAtscPsipParser self, IPAT** ppPAT) GetPAT;
-				public new function HRESULT(ref IAtscPsipParser self, uint32 dwTimeout, ICAT** ppCAT) GetCAT;
-				public new function HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwProgramNumber, IPMT** ppPMT) GetPMT;
-				public new function HRESULT(ref IAtscPsipParser self, ITSDT** ppTSDT) GetTSDT;
-				public new function HRESULT(ref IAtscPsipParser self, IATSC_MGT** ppMGT) GetMGT;
-				public new function HRESULT(ref IAtscPsipParser self, uint8 tableId, BOOL fGetNextTable, IATSC_VCT** ppVCT) GetVCT;
-				public new function HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, IATSC_EIT** ppEIT) GetEIT;
-				public new function HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, IATSC_ETT** ppETT) GetETT;
-				public new function HRESULT(ref IAtscPsipParser self, IATSC_STT** ppSTT) GetSTT;
-				public new function HRESULT(ref IAtscPsipParser self, uint16 pid, ISCTE_EAS** ppEAS) GetEAS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IUnknown* punkMpeg2Data) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IPAT** ppPAT) GetPAT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint32 dwTimeout, ICAT** ppCAT) GetCAT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwProgramNumber, IPMT** ppPMT) GetPMT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, ITSDT** ppTSDT) GetTSDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IATSC_MGT** ppMGT) GetMGT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint8 tableId, BOOL fGetNextTable, IATSC_VCT** ppVCT) GetVCT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 pwSourceId, uint32 dwTimeout, IATSC_EIT** ppEIT) GetEIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ref uint16 wSourceId, ref uint16 pwEventId, IATSC_ETT** ppETT) GetETT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, IATSC_STT** ppSTT) GetSTT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscPsipParser self, uint16 pid, ISCTE_EAS** ppEAS) GetEAS;
 			}
 		}
 		[CRepr]
@@ -18543,19 +18543,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IATSC_MGT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref IATSC_MGT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IATSC_MGT self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref IATSC_MGT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordType;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint16 ppidVal) GetRecordTypePid;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordVersionNumber;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IATSC_MGT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IATSC_MGT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IATSC_MGT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint16 ppidVal) GetRecordTypePid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_MGT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -18595,32 +18595,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IATSC_VCT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref IATSC_VCT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IATSC_VCT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IATSC_VCT self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref IATSC_VCT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, PWSTR* pwsName) GetRecordName;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMajorChannelNumber;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMinorChannelNumber;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordModulationMode;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCarrierFrequency;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordProgramNumber;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEtmLocation;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsAccessControlledBitSet;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsHiddenBitSet;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsPathSelectBitSet;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsOutOfBandBitSet;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsHideGuideBitSet;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordServiceType;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordSourceId;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IATSC_VCT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IATSC_VCT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IATSC_VCT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, PWSTR* pwsName) GetRecordName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMajorChannelNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordMinorChannelNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordModulationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCarrierFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordProgramNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEtmLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsAccessControlledBitSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsHiddenBitSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsPathSelectBitSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsOutOfBandBitSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordIsHideGuideBitSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordServiceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordSourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, ref uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_VCT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -18647,19 +18647,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IATSC_EIT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref IATSC_EIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IATSC_EIT self, out uint16 pwVal) GetSourceId;
-				public new function HRESULT(ref IATSC_EIT self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref IATSC_EIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEtmLocation;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwLength, uint8** ppText) GetRecordTitleText;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, out uint16 pwVal) GetSourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEtmLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwLength, uint8** ppText) GetRecordTitleText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -18678,11 +18678,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IATSC_ETT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref IATSC_ETT self, out uint32 pdwVal) GetEtmId;
-				public new function HRESULT(ref IATSC_ETT self, out uint32 pdwLength, uint8** ppText) GetExtendedMessageText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint32 pdwVal) GetEtmId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_ETT self, out uint32 pdwLength, uint8** ppText) GetExtendedMessageText;
 			}
 		}
 		[CRepr]
@@ -18704,14 +18704,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IATSC_STT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref IATSC_STT self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref IATSC_STT self, out MPEG_DATE_AND_TIME pmdtSystemTime) GetSystemTime;
-				public new function HRESULT(ref IATSC_STT self, out uint8 pbVal) GetGpsUtcOffset;
-				public new function HRESULT(ref IATSC_STT self, out uint16 pwVal) GetDaylightSavings;
-				public new function HRESULT(ref IATSC_STT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IATSC_STT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IATSC_STT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out MPEG_DATE_AND_TIME pmdtSystemTime) GetSystemTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint8 pbVal) GetGpsUtcOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint16 pwVal) GetDaylightSavings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IATSC_STT self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -18754,35 +18754,35 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISCTE_EAS self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetSequencyNumber;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetProtocolVersion;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetEASEventID;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetOriginatorCode;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetEASEventCodeLen;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetEASEventCode;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationTextLen;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationText;
-				public new function HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetNatureOfActivationText;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetTimeRemaining;
-				public new function HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetStartTime;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDuration;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetAlertPriority;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsOOBSourceID;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMajor;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMinor;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsAudioOOBSourceID;
-				public new function HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetAlertText;
-				public new function HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetRawAlertTextLen;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawAlertText;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetLocationCount;
-				public new function HRESULT(ref ISCTE_EAS self, uint8 bIndex, out uint8 pbState, out uint8 pbCountySubdivision, out uint16 pwCounty) GetLocationCodes;
-				public new function HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetExceptionCount;
-				public new function HRESULT(ref ISCTE_EAS self, uint8 bIndex, out uint8 pbIBRef, out uint16 pwFirst, out uint16 pwSecond) GetExceptionService;
-				public new function HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref ISCTE_EAS self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref ISCTE_EAS self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetSequencyNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetProtocolVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetEASEventID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetOriginatorCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetEASEventCodeLen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetEASEventCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationTextLen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawNatureOfActivationText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetNatureOfActivationText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetTimeRemaining;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetAlertPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsOOBSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMajor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsMinor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetDetailsAudioOOBSourceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, BSTR bstrIS0639code, BSTR* pbstrString) GetAlertText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint16 pwVal) GetRawAlertTextLen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetRawAlertText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetLocationCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bIndex, out uint8 pbState, out uint8 pbCountySubdivision, out uint16 pwCounty) GetLocationCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint8 pbVal) GetExceptionCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bIndex, out uint8 pbIBRef, out uint16 pwFirst, out uint16 pwSecond) GetExceptionService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISCTE_EAS self, uint8 bTag, out uint32 pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -18804,14 +18804,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetRatingRegionCount;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbVal) GetRecordRatingRegion;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbVal) GetRecordRatedDimensions;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingDimension;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingValue;
-				public new function HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbLength, uint8** ppText) GetRecordRatingDescriptionText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, out uint8 pbVal) GetRatingRegionCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbVal) GetRecordRatingRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbVal) GetRecordRatedDimensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingDimension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndexOuter, uint8 bIndexInner, out uint8 pbVal) GetRecordRatingValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAtscContentAdvisoryDescriptor self, uint8 bIndex, out uint8 pbLength, uint8** ppText) GetRecordRatingDescriptionText;
 			}
 		}
 		[CRepr]
@@ -18831,12 +18831,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICaptionServiceDescriptor self, out uint8 pbVal) GetNumberOfServices;
-				public new function HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, uint8* LangCode) GetLanguageCode;
-				public new function HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetCaptionServiceNumber;
-				public new function HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetCCType;
-				public new function HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetEasyReader;
-				public new function HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetWideAspectRatio;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, out uint8 pbVal) GetNumberOfServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, uint8* LangCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetCaptionServiceNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetCCType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetEasyReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICaptionServiceDescriptor self, uint8 bIndex, out uint8 pbVal) GetWideAspectRatio;
 			}
 		}
 		[CRepr]
@@ -18855,11 +18855,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IServiceLocationDescriptor self, out uint16 pwVal) GetPCR_PID;
-				public new function HRESULT(ref IServiceLocationDescriptor self, out uint8 pbVal) GetNumberOfElements;
-				public new function HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, out uint8 pbVal) GetElementStreamType;
-				public new function HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, out uint16 pwVal) GetElementPID;
-				public new function HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, uint8* LangCode) GetElementLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IServiceLocationDescriptor self, out uint16 pwVal) GetPCR_PID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IServiceLocationDescriptor self, out uint8 pbVal) GetNumberOfElements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, out uint8 pbVal) GetElementStreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, out uint16 pwVal) GetElementPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IServiceLocationDescriptor self, uint8 bIndex, uint8* LangCode) GetElementLanguageCode;
 			}
 		}
 		[CRepr]
@@ -18874,7 +18874,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAttributeSet self, Guid guidAttribute, ref uint8 pbAttribute, uint32 dwAttributeLength) SetAttrib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAttributeSet self, Guid guidAttribute, ref uint8 pbAttribute, uint32 dwAttributeLength) SetAttrib;
 			}
 		}
 		[CRepr]
@@ -18891,9 +18891,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAttributeGet self, out int32 plCount) GetCount;
-				public new function HRESULT(ref IAttributeGet self, int32 lIndex, out Guid pguidAttribute, out uint8 pbAttribute, out uint32 pdwAttributeLength) GetAttribIndexed;
-				public new function HRESULT(ref IAttributeGet self, Guid guidAttribute, out uint8 pbAttribute, out uint32 pdwAttributeLength) GetAttrib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAttributeGet self, out int32 plCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAttributeGet self, int32 lIndex, out Guid pguidAttribute, out uint8 pbAttribute, out uint32 pdwAttributeLength) GetAttribIndexed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAttributeGet self, Guid guidAttribute, out uint8 pbAttribute, out uint32 pdwAttributeLength) GetAttrib;
 			}
 		}
 		[CRepr]
@@ -18922,21 +18922,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbSiParser self, ref IUnknown punkMpeg2Data) Initialize;
-				public new function HRESULT(ref IDvbSiParser self, out IPAT* ppPAT) GetPAT;
-				public new function HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out ICAT* ppCAT) GetCAT;
-				public new function HRESULT(ref IDvbSiParser self, uint16 pid, uint16* pwProgramNumber, out IPMT* ppPMT) GetPMT;
-				public new function HRESULT(ref IDvbSiParser self, out ITSDT* ppTSDT) GetTSDT;
-				public new function HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwNetworkId, out IDVB_NIT* ppNIT) GetNIT;
-				public new function HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwTransportStreamId, out IDVB_SDT* ppSDT) GetSDT;
-				public new function HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwServiceId, out IDVB_EIT* ppEIT) GetEIT;
-				public new function HRESULT(ref IDvbSiParser self, uint16* pwBouquetId, out IDVB_BAT* ppBAT) GetBAT;
-				public new function HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_RST* ppRST) GetRST;
-				public new function HRESULT(ref IDvbSiParser self, uint16 pid, uint32 dwTimeout, out IDVB_ST* ppST) GetST;
-				public new function HRESULT(ref IDvbSiParser self, out IDVB_TDT* ppTDT) GetTDT;
-				public new function HRESULT(ref IDvbSiParser self, out IDVB_TOT* ppTOT) GetTOT;
-				public new function HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_DIT* ppDIT) GetDIT;
-				public new function HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_SIT* ppSIT) GetSIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, ref IUnknown punkMpeg2Data) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, out IPAT* ppPAT) GetPAT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out ICAT* ppCAT) GetCAT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint16 pid, uint16* pwProgramNumber, out IPMT* ppPMT) GetPMT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, out ITSDT* ppTSDT) GetTSDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwNetworkId, out IDVB_NIT* ppNIT) GetNIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwTransportStreamId, out IDVB_SDT* ppSDT) GetSDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint8 tableId, uint16* pwServiceId, out IDVB_EIT* ppEIT) GetEIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint16* pwBouquetId, out IDVB_BAT* ppBAT) GetBAT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_RST* ppRST) GetRST;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint16 pid, uint32 dwTimeout, out IDVB_ST* ppST) GetST;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, out IDVB_TDT* ppTDT) GetTDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, out IDVB_TOT* ppTOT) GetTOT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_DIT* ppDIT) GetDIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser self, uint32 dwTimeout, out IDVB_SIT* ppSIT) GetSIT;
 			}
 		}
 		[CRepr]
@@ -18951,7 +18951,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDvbSiParser.VTable
 			{
-				public new function HRESULT(ref IDvbSiParser2 self, uint8 tableId, uint16* pwServiceId, uint8* pbSegment, out IDVB_EIT2* ppEIT) GetEIT2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSiParser2 self, uint8 tableId, uint16* pwServiceId, uint8* pbSegment, out IDVB_EIT2* ppEIT) GetEIT2;
 			}
 		}
 		[CRepr]
@@ -18972,13 +18972,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDvbSiParser2.VTable
 			{
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwTransportStreamId, out IISDB_SDT* ppSDT) GetSDT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalNetworkId, out IISDB_BIT* ppBIT) GetBIT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalNetworkId, out IISDB_NBIT* ppNBIT) GetNBIT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalServiceId, out IISDB_LDT* ppLDT) GetLDT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwTableIdExt, out IISDB_SDTT* ppSDTT) GetSDTT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint8 bSectionNumber, uint16* pwDownloadDataId, out IISDB_CDT* ppCDT) GetCDT;
-				public new function HRESULT(ref IIsdbSiParser2 self, uint16 pid, uint16 wTableIdExt, out IISDB_EMM* ppEMM) GetEMM;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwTransportStreamId, out IISDB_SDT* ppSDT) GetSDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalNetworkId, out IISDB_BIT* ppBIT) GetBIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalNetworkId, out IISDB_NBIT* ppNBIT) GetNBIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwOriginalServiceId, out IISDB_LDT* ppLDT) GetLDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint16* pwTableIdExt, out IISDB_SDTT* ppSDTT) GetSDTT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint8 tableId, uint8 bSectionNumber, uint16* pwDownloadDataId, out IISDB_CDT* ppCDT) GetCDT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSiParser2 self, uint16 pid, uint16 wTableIdExt, out IISDB_EMM* ppEMM) GetEMM;
 			}
 		}
 		[CRepr]
@@ -19009,23 +19009,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_NIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IDVB_NIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IDVB_NIT self, out uint16 pwVal) GetNetworkId;
-				public new function HRESULT(ref IDVB_NIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IDVB_NIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IDVB_NIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IDVB_NIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IDVB_NIT self, out IDVB_NIT* ppNIT) GetNextTable;
-				public new function HRESULT(ref IDVB_NIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IDVB_NIT self) ConvertNextToCurrent;
-				public new function HRESULT(ref IDVB_NIT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out uint16 pwVal) GetNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out IDVB_NIT* ppNIT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_NIT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19057,24 +19057,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_SDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IDVB_SDT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IDVB_SDT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IDVB_SDT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IDVB_SDT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordEITScheduleFlag;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordEITPresentFollowingFlag;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordFreeCAMode;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IDVB_SDT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IDVB_SDT self, out IDVB_SDT* ppSDT) GetNextTable;
-				public new function HRESULT(ref IDVB_SDT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IDVB_SDT self) ConvertNextToCurrent;
-				public new function HRESULT(ref IDVB_SDT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordEITScheduleFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordEITPresentFollowingFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordFreeCAMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out IDVB_SDT* ppSDT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SDT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19089,7 +19089,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVB_SDT.VTable
 			{
-				public new function HRESULT(ref IISDB_SDT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEITUserDefinedFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordEITUserDefinedFlags;
 			}
 		}
 		[CRepr]
@@ -19124,27 +19124,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_EIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetServiceId;
-				public new function HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetSegmentLastSectionNumber;
-				public new function HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetLastTableId;
-				public new function HRESULT(ref IDVB_EIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordFreeCAMode;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IDVB_EIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IDVB_EIT self, out IDVB_EIT* ppEIT) GetNextTable;
-				public new function HRESULT(ref IDVB_EIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IDVB_EIT self) ConvertNextToCurrent;
-				public new function HRESULT(ref IDVB_EIT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetSegmentLastSectionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint8 pbVal) GetLastTableId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out BOOL pfVal) GetRecordFreeCAMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out IDVB_EIT* ppEIT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19160,8 +19160,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDVB_EIT.VTable
 			{
-				public new function HRESULT(ref IDVB_EIT2 self, out uint8 pbTid, out uint8 pbSegment) GetSegmentInfo;
-				public new function HRESULT(ref IDVB_EIT2 self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordSection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT2 self, out uint8 pbTid, out uint8 pbSegment) GetSegmentInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_EIT2 self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordSection;
 			}
 		}
 		[CRepr]
@@ -19191,22 +19191,22 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_BAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IDVB_BAT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IDVB_BAT self, out uint16 pwVal) GetBouquetId;
-				public new function HRESULT(ref IDVB_BAT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwIndex, ref IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IDVB_BAT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IDVB_BAT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IDVB_BAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IDVB_BAT self, out IDVB_BAT* ppBAT) GetNextTable;
-				public new function HRESULT(ref IDVB_BAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IDVB_BAT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, out uint16 pwVal) GetBouquetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwIndex, ref IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, out IDVB_BAT* ppBAT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_BAT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -19227,13 +19227,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_RST self, ref ISectionList pSectionList) Initialize;
-				public new function HRESULT(ref IDVB_RST self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
-				public new function HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
-				public new function HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
-				public new function HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, ref ISectionList pSectionList) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordEventId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_RST self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
 			}
 		}
 		[CRepr]
@@ -19250,9 +19250,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_ST self, ref ISectionList pSectionList) Initialize;
-				public new function HRESULT(ref IDVB_ST self, out uint16 pwVal) GetDataLength;
-				public new function HRESULT(ref IDVB_ST self, out uint8* ppData) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_ST self, ref ISectionList pSectionList) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_ST self, out uint16 pwVal) GetDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_ST self, out uint8* ppData) GetData;
 			}
 		}
 		[CRepr]
@@ -19268,8 +19268,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_TDT self, ref ISectionList pSectionList) Initialize;
-				public new function HRESULT(ref IDVB_TDT self, out MPEG_DATE_AND_TIME pmdtVal) GetUTCTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TDT self, ref ISectionList pSectionList) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TDT self, out MPEG_DATE_AND_TIME pmdtVal) GetUTCTime;
 			}
 		}
 		[CRepr]
@@ -19288,11 +19288,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_TOT self, ref ISectionList pSectionList) Initialize;
-				public new function HRESULT(ref IDVB_TOT self, out MPEG_DATE_AND_TIME pmdtVal) GetUTCTime;
-				public new function HRESULT(ref IDVB_TOT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IDVB_TOT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IDVB_TOT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TOT self, ref ISectionList pSectionList) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TOT self, out MPEG_DATE_AND_TIME pmdtVal) GetUTCTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TOT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TOT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_TOT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -19308,8 +19308,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_DIT self, ref ISectionList pSectionList) Initialize;
-				public new function HRESULT(ref IDVB_DIT self, out BOOL pfVal) GetTransitionFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_DIT self, ref ISectionList pSectionList) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_DIT self, out BOOL pfVal) GetTransitionFlag;
 			}
 		}
 		[CRepr]
@@ -19338,21 +19338,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDVB_SIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IDVB_SIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IDVB_SIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IDVB_SIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IDVB_SIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IDVB_SIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
-				public new function HRESULT(ref IDVB_SIT self, uint32 dwTimeout, out IDVB_SIT* ppSIT) GetNextTable;
-				public new function HRESULT(ref IDVB_SIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
-				public new function HRESULT(ref IDVB_SIT self) ConvertNextToCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordRunningStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, HANDLE hNextTableAvailable) RegisterForNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, uint32 dwTimeout, out IDVB_SIT* ppSIT) GetNextTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDVB_SIT self) ConvertNextToCurrent;
 			}
 		}
 		[CRepr]
@@ -19379,19 +19379,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_BIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IISDB_BIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_BIT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IISDB_BIT self, out uint8 pbVal) GetBroadcastViewPropriety;
-				public new function HRESULT(ref IISDB_BIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IISDB_BIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IISDB_BIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IISDB_BIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordBroadcasterId;
-				public new function HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IISDB_BIT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint8 pbVal) GetBroadcastViewPropriety;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordBroadcasterId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_BIT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19420,21 +19420,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_NBIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IISDB_NBIT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_NBIT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IISDB_NBIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordInformationId;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordInformationType;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordDescriptionBodyLocation;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordMessageSectionNumber;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordUserDefined;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordNumberOfKeys;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8* pbKeys) GetRecordKeys;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IISDB_NBIT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordInformationId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordInformationType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordDescriptionBodyLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordMessageSectionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordUserDefined;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordNumberOfKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint8* pbKeys) GetRecordKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_NBIT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19459,17 +19459,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_LDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IISDB_LDT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetOriginalServiceId;
-				public new function HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IISDB_LDT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordDescriptionId;
-				public new function HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IISDB_LDT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetOriginalServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordDescriptionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_LDT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19503,26 +19503,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_SDTT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IISDB_SDTT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetTableIdExt;
-				public new function HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetTransportStreamId;
-				public new function HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetServiceId;
-				public new function HRESULT(ref IISDB_SDTT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordGroup;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTargetVersion;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordNewVersion;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordDownloadLevel;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordVersionIndicator;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordScheduleTimeShiftInformation;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfSchedules;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTimeByIndex;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out MPEG_TIME pmdVal) GetRecordDurationByIndex;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
-				public new function HRESULT(ref IISDB_SDTT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetTableIdExt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetTransportStreamId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint16 pwVal) GetServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordTargetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint16 pwVal) GetRecordNewVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordDownloadLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordVersionIndicator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint8 pbVal) GetRecordScheduleTimeShiftInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfSchedules;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTimeByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out MPEG_TIME pmdVal) GetRecordDurationByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_SDTT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19548,18 +19548,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_CDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData, uint8 bSectionNumber) Initialize;
-				public new function HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_CDT self, out uint16 pwVal) GetDownloadDataId;
-				public new function HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetSectionNumber;
-				public new function HRESULT(ref IISDB_CDT self, out uint16 pwVal) GetOriginalNetworkId;
-				public new function HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetDataType;
-				public new function HRESULT(ref IISDB_CDT self, out uint32 pdwVal) GetCountOfTableDescriptors;
-				public new function HRESULT(ref IISDB_CDT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
-				public new function HRESULT(ref IISDB_CDT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
-				public new function HRESULT(ref IISDB_CDT self, out uint32 pdwVal) GetSizeOfDataModule;
-				public new function HRESULT(ref IISDB_CDT self, out uint8* pbData) GetDataModule;
-				public new function HRESULT(ref IISDB_CDT self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData, uint8 bSectionNumber) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint16 pwVal) GetDownloadDataId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetSectionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint16 pwVal) GetOriginalNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint8 pbVal) GetDataType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint32 pdwVal) GetCountOfTableDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, uint8 bTag, uint32* pdwCookie, out IGenericDescriptor* ppDescriptor) GetTableDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint32 pdwVal) GetSizeOfDataModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint8* pbData) GetDataModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_CDT self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19580,13 +19580,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IISDB_EMM self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
-				public new function HRESULT(ref IISDB_EMM self, out uint8 pbVal) GetVersionNumber;
-				public new function HRESULT(ref IISDB_EMM self, out uint16 pwVal) GetTableIdExtension;
-				public new function HRESULT(ref IISDB_EMM self, out uint16 pwBufferLength, out uint8 pbBuffer) GetDataBytes;
-				public new function HRESULT(ref IISDB_EMM self, out uint16 pwLength, out uint8* ppbMessage) GetSharedEmmMessage;
-				public new function HRESULT(ref IISDB_EMM self, ref IUnknown pUnknown, out uint16 pwLength, out uint8* ppbMessage) GetIndividualEmmMessage;
-				public new function HRESULT(ref IISDB_EMM self, out uint32 pdwVersionHash) GetVersionHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, ref ISectionList pSectionList, ref IMpeg2Data pMPEGData) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, out uint8 pbVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, out uint16 pwVal) GetTableIdExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, out uint16 pwBufferLength, out uint8 pbBuffer) GetDataBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, out uint16 pwLength, out uint8* ppbMessage) GetSharedEmmMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, ref IUnknown pUnknown, out uint16 pwLength, out uint8* ppbMessage) GetIndividualEmmMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IISDB_EMM self, out uint32 pdwVersionHash) GetVersionHash;
 			}
 		}
 		[CRepr]
@@ -19606,12 +19606,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out BOOL pfVal) GetRecordNumericSelectionFlag;
-				public new function HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out BOOL pfVal) GetRecordVisibleServiceFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out BOOL pfVal) GetRecordNumericSelectionFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceAttributeDescriptor self, uint8 bRecordIndex, out BOOL pfVal) GetRecordVisibleServiceFlag;
 			}
 		}
 		[CRepr]
@@ -19629,10 +19629,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbContentIdentifierDescriptor self, uint8 bRecordIndex, out uint8 pbType, out uint8 pbLocation, out uint8 pbLength, uint8** ppbBytes) GetRecordCrid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentIdentifierDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentIdentifierDescriptor self, uint8 bRecordIndex, out uint8 pbType, out uint8 pbLocation, out uint8 pbLength, uint8** ppbBytes) GetRecordCrid;
 			}
 		}
 		[CRepr]
@@ -19649,9 +19649,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbLength, uint8** ppbBytes) GetDefaultAuthority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDefaultAuthorityDescriptor self, out uint8 pbLength, uint8** ppbBytes) GetDefaultAuthority;
 			}
 		}
 		[CRepr]
@@ -19674,15 +19674,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint32 pdwVal) GetFrequency;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint16 pwVal) GetOrbitalPosition;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetWestEastFlag;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetPolarization;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetModulation;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint32 pdwVal) GetSymbolRate;
-				public new function HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetFECInner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint32 pdwVal) GetFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint16 pwVal) GetOrbitalPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetWestEastFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetPolarization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetModulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint32 pdwVal) GetSymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSatelliteDeliverySystemDescriptor self, out uint8 pbVal) GetFECInner;
 			}
 		}
 		[CRepr]
@@ -19703,13 +19703,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint32 pdwVal) GetFrequency;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetFECOuter;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetModulation;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint32 pdwVal) GetSymbolRate;
-				public new function HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetFECInner;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint32 pdwVal) GetFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetFECOuter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetModulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint32 pdwVal) GetSymbolRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbCableDeliverySystemDescriptor self, out uint8 pbVal) GetFECInner;
 			}
 		}
 		[CRepr]
@@ -19734,17 +19734,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint32 pdwVal) GetCentreFrequency;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetBandwidth;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetConstellation;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetHierarchyInformation;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCodeRateHPStream;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCodeRateLPStream;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
-				public new function HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetOtherFrequencyFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint32 pdwVal) GetCentreFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetConstellation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetHierarchyInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCodeRateHPStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCodeRateLPStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetOtherFrequencyFlag;
 			}
 		}
 		[CRepr]
@@ -19771,19 +19771,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTagExtension;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint32 pdwVal) GetCentreFrequency;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetPLPId;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint16 pwVal) GetT2SystemId;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetMultipleInputMode;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetBandwidth;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint16 pwVal) GetCellId;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetOtherFrequencyFlag;
-				public new function HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTFSFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTagExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint32 pdwVal) GetCentreFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetPLPId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint16 pwVal) GetT2SystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetMultipleInputMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetBandwidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint16 pwVal) GetCellId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetOtherFrequencyFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTerrestrial2DeliverySystemDescriptor self, out uint8 pbVal) GetTFSFlag;
 			}
 		}
 		[CRepr]
@@ -19802,11 +19802,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetCodingType;
-				public new function HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbFrequencyListDescriptor self, uint8 bRecordIndex, out uint32 pdwVal) GetRecordCentreFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetCodingType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbFrequencyListDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbFrequencyListDescriptor self, uint8 bRecordIndex, out uint32 pdwVal) GetRecordCentreFrequency;
 			}
 		}
 		[CRepr]
@@ -19823,9 +19823,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint32 pdwVal) GetPrivateDataSpecifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbPrivateDataSpecifierDescriptor self, out uint32 pdwVal) GetPrivateDataSpecifier;
 			}
 		}
 		[CRepr]
@@ -19844,11 +19844,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordLogicalChannelNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordLogicalChannelNumber;
 			}
 		}
 		[CRepr]
@@ -19863,7 +19863,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDvbLogicalChannelDescriptor.VTable
 			{
-				public new function HRESULT(ref IDvbLogicalChannelDescriptor2 self, uint8 bRecordIndex, out uint16 pwVal) GetRecordLogicalChannelAndVisibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannelDescriptor2 self, uint8 bRecordIndex, out uint16 pwVal) GetRecordLogicalChannelAndVisibility;
 			}
 		}
 		[CRepr]
@@ -19885,14 +19885,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDvbLogicalChannelDescriptor2.VTable
 			{
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, out uint8 pbVal) GetCountOfLists;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, out uint8 pbVal) GetListId;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetListNameW;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8* pszCode) GetListCountryCode;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bChannelListIndex, out uint8 pbVal) GetListCountOfRecords;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordServiceId;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordLogicalChannelNumber;
-				public new function HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordLogicalChannelAndVisibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, out uint8 pbVal) GetCountOfLists;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, out uint8 pbVal) GetListId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetListNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8* pszCode) GetListCountryCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bChannelListIndex, out uint8 pbVal) GetListCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordLogicalChannelNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLogicalChannel2Descriptor self, uint8 bListIndex, uint8 bRecordIndex, out uint16 pwVal) GetListRecordLogicalChannelAndVisibility;
 			}
 		}
 		[CRepr]
@@ -19923,10 +19923,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint16 pwVal) GetDataBroadcastID;
-				public new function HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbLen, out uint8 pbVal) GetIDSelectorBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint16 pwVal) GetDataBroadcastID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastIDDescriptor self, out uint8 pbLen, out uint8 pbVal) GetIDSelectorBytes;
 			}
 		}
 		[CRepr]
@@ -19949,15 +19949,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint16 pwVal) GetDataBroadcastID;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetComponentTag;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetSelectorLength;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbLen, out uint8 pbVal) GetSelectorBytes;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint32 pulVal) GetLangID;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetTextLength;
-				public new function HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbLen, out uint8 pbVal) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint16 pwVal) GetDataBroadcastID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetSelectorLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbLen, out uint8 pbVal) GetSelectorBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint32 pulVal) GetLangID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbVal) GetTextLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbDataBroadcastDescriptor self, out uint8 pbLen, out uint8 pbVal) GetText;
 			}
 		}
 		[CRepr]
@@ -19979,14 +19979,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetTSId;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetONId;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetServiceId;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetLinkageType;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetPrivateDataLength;
-				public new function HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbLen, out uint8 pbData) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetTSId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetONId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint16 pwVal) GetServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetLinkageType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbVal) GetPrivateDataLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbLinkageDescriptor self, out uint8 pbLen, out uint8 pbData) GetPrivateData;
 			}
 		}
 		[CRepr]
@@ -20007,13 +20007,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint32 pulVal) GetRecordLangId;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTeletextType;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordMagazineNumber;
-				public new function HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordPageNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint32 pulVal) GetRecordLangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTeletextType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordMagazineNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbTeletextDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordPageNumber;
 			}
 		}
 		[CRepr]
@@ -20034,13 +20034,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint32 pulVal) GetRecordLangId;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordSubtitlingType;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordCompositionPageID;
-				public new function HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordAncillaryPageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint32 pulVal) GetRecordLangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordSubtitlingType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordCompositionPageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbSubtitlingDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordAncillaryPageID;
 			}
 		}
 		[CRepr]
@@ -20062,14 +20062,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetServiceType;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out uint8* pszName) GetServiceProviderName;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetServiceProviderNameW;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out uint8* pszName) GetServiceName;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetProcessedServiceName;
-				public new function HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetServiceNameEmphasized;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out uint8 pbVal) GetServiceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out uint8* pszName) GetServiceProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetServiceProviderNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out uint8* pszName) GetServiceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetProcessedServiceName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor self, out BSTR pbstrName) GetServiceNameEmphasized;
 			}
 		}
 		[CRepr]
@@ -20085,8 +20085,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDvbServiceDescriptor.VTable
 			{
-				public new function HRESULT(ref IDvbServiceDescriptor2 self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetServiceProviderNameW;
-				public new function HRESULT(ref IDvbServiceDescriptor2 self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetServiceNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor2 self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetServiceProviderNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceDescriptor2 self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetServiceNameW;
 			}
 		}
 		[CRepr]
@@ -20105,11 +20105,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbServiceListDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
-				public new function HRESULT(ref IDvbServiceListDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordServiceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceListDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceListDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetRecordServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbServiceListDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordServiceType;
 			}
 		}
 		[CRepr]
@@ -20129,12 +20129,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, out uint32 ulVal) GetRecordLangId;
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetRecordServiceProviderNameW;
-				public new function HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetRecordServiceNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, out uint32 ulVal) GetRecordLangId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetRecordServiceProviderNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbMultilingualServiceNameDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetRecordServiceNameW;
 			}
 		}
 		[CRepr]
@@ -20152,10 +20152,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbNetworkNameDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbNetworkNameDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbNetworkNameDescriptor self, out uint8* pszName) GetNetworkName;
-				public new function HRESULT(ref IDvbNetworkNameDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetNetworkNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbNetworkNameDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbNetworkNameDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbNetworkNameDescriptor self, out uint8* pszName) GetNetworkName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbNetworkNameDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetNetworkNameW;
 			}
 		}
 		[CRepr]
@@ -20174,11 +20174,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbShortEventDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbShortEventDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbShortEventDescriptor self, uint8* pszCode) GetLanguageCode;
-				public new function HRESULT(ref IDvbShortEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetEventNameW;
-				public new function HRESULT(ref IDvbShortEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbShortEventDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbShortEventDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbShortEventDescriptor self, uint8* pszCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbShortEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetEventNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbShortEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
 			}
 		}
 		[CRepr]
@@ -20203,17 +20203,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetDescriptorNumber;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetLastDescriptorNumber;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, uint8* pszCode) GetLanguageCode;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrDesc, out BSTR pbstrItem) GetRecordItemW;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, ref IDvbExtendedEventDescriptor pFollowingDescriptor, DVB_STRCONV_MODE convMode, out BSTR pbstrDesc, out BSTR pbstrItem) GetConcatenatedItemW;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, ref IDvbExtendedEventDescriptor FollowingDescriptor, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetConcatenatedTextW;
-				public new function HRESULT(ref IDvbExtendedEventDescriptor self, uint8 bRecordIndex, out uint8* ppbRawItem, out uint8 pbItemLength) GetRecordItemRawBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetDescriptorNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetLastDescriptorNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, uint8* pszCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrDesc, out BSTR pbstrItem) GetRecordItemW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, ref IDvbExtendedEventDescriptor pFollowingDescriptor, DVB_STRCONV_MODE convMode, out BSTR pbstrDesc, out BSTR pbstrItem) GetConcatenatedItemW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, ref IDvbExtendedEventDescriptor FollowingDescriptor, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetConcatenatedTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbExtendedEventDescriptor self, uint8 bRecordIndex, out uint8* ppbRawItem, out uint8 pbItemLength) GetRecordItemRawBytes;
 			}
 		}
 		[CRepr]
@@ -20234,13 +20234,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetStreamContent;
-				public new function HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetComponentType;
-				public new function HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetComponentTag;
-				public new function HRESULT(ref IDvbComponentDescriptor self, uint8* pszCode) GetLanguageCode;
-				public new function HRESULT(ref IDvbComponentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetStreamContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetComponentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, out uint8 pbVal) GetComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, uint8* pszCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbComponentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
 			}
 		}
 		[CRepr]
@@ -20259,11 +20259,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbContentDescriptor self, uint8 bRecordIndex, out uint8 pbValLevel1, out uint8 pbValLevel2) GetRecordContentNibbles;
-				public new function HRESULT(ref IDvbContentDescriptor self, uint8 bRecordIndex, out uint8 pbVal1, out uint8 pbVal2) GetRecordUserNibbles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentDescriptor self, uint8 bRecordIndex, out uint8 pbValLevel1, out uint8 pbValLevel2) GetRecordContentNibbles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbContentDescriptor self, uint8 bRecordIndex, out uint8 pbVal1, out uint8 pbVal2) GetRecordUserNibbles;
 			}
 		}
 		[CRepr]
@@ -20281,10 +20281,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IDvbParentalRatingDescriptor self, uint8 bRecordIndex, uint8* pszCountryCode, out uint8 pbVal) GetRecordRating;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbParentalRatingDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDvbParentalRatingDescriptor self, uint8 bRecordIndex, uint8* pszCountryCode, out uint8 pbVal) GetRecordRating;
 			}
 		}
 		[CRepr]
@@ -20305,13 +20305,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint16 pwVal) GetAreaCode;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, uint8 bRecordIndex, out uint32 pdwVal) GetRecordFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint16 pwVal) GetAreaCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetGuardInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetTransmissionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTerrestrialDeliverySystemDescriptor self, uint8 bRecordIndex, out uint32 pdwVal) GetRecordFrequency;
 			}
 		}
 		[CRepr]
@@ -20333,14 +20333,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetRemoteControlKeyId;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetTSNameW;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTransmissionTypeInfo;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordNumberOfServices;
-				public new function HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, uint8 bServiceIndex, out uint16 pdwVal) GetRecordServiceIdByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetRemoteControlKeyId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetTSNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTransmissionTypeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordNumberOfServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbTSInformationDescriptor self, uint8 bRecordIndex, uint8 bServiceIndex, out uint16 pdwVal) GetRecordServiceIdByIndex;
 			}
 		}
 		[CRepr]
@@ -20359,11 +20359,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbDigitalRecordingControlData, out uint8 pbCopyControlType, out uint8 pbAPSControlData, out uint8 pbMaximumBitrate) GetCopyControl;
-				public new function HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbDigitalCopyControlDescriptor self, uint8 bRecordIndex, out uint8 pbComponentTag, out uint8 pbDigitalRecordingControlData, out uint8 pbCopyControlType, out uint8 pbAPSControlData, out uint8 pbMaximumBitrate) GetRecordCopyControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbDigitalRecordingControlData, out uint8 pbCopyControlType, out uint8 pbAPSControlData, out uint8 pbMaximumBitrate) GetCopyControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDigitalCopyControlDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDigitalCopyControlDescriptor self, uint8 bRecordIndex, out uint8 pbComponentTag, out uint8 pbDigitalRecordingControlData, out uint8 pbCopyControlType, out uint8 pbAPSControlData, out uint8 pbMaximumBitrate) GetRecordCopyControl;
 			}
 		}
 		[CRepr]
@@ -20391,20 +20391,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetStreamContent;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetComponentType;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetComponentTag;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetStreamType;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetSimulcastGroupTag;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out BOOL pfVal) GetESMultiLingualFlag;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out BOOL pfVal) GetMainComponentFlag;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetQualityIndicator;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetSamplingRate;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, uint8* pszCode) GetLanguageCode;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, uint8* pszCode) GetLanguageCode2;
-				public new function HRESULT(ref IIsdbAudioComponentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetStreamContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetComponentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetStreamType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetSimulcastGroupTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out BOOL pfVal) GetESMultiLingualFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out BOOL pfVal) GetMainComponentFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetQualityIndicator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, out uint8 pbVal) GetSamplingRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, uint8* pszCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, uint8* pszCode) GetLanguageCode2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbAudioComponentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
 			}
 		}
 		[CRepr]
@@ -20428,16 +20428,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint16 pwVal) GetDataComponentId;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetEntryComponent;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetSelectorLength;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, uint8 bBufLength, out uint8 pbBuf) GetSelectorBytes;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordComponentRef;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, uint8* pszCode) GetLanguageCode;
-				public new function HRESULT(ref IIsdbDataContentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint16 pwVal) GetDataComponentId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetEntryComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetSelectorLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, uint8 bBufLength, out uint8 pbBuf) GetSelectorBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordComponentRef;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, uint8* pszCode) GetLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDataContentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetTextW;
 			}
 		}
 		[CRepr]
@@ -20460,15 +20460,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint16 pwVal) GetCASystemId;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetCAUnitId;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordComponentTag;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetContractVerificationInfoLength;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, uint8 bBufLength, out uint8 pbBuf) GetContractVerificationInfo;
-				public new function HRESULT(ref IIsdbCAContractInformationDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetFeeNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint16 pwVal) GetCASystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetCAUnitId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, out uint8 pbVal) GetContractVerificationInfoLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, uint8 bBufLength, out uint8 pbBuf) GetContractVerificationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAContractInformationDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetFeeNameW;
 			}
 		}
 		[CRepr]
@@ -20489,13 +20489,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetGroupType;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, uint8 bRecordIndex, out uint16 pwServiceId, out uint16 pwEventId) GetRecordEvent;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetCountOfRefRecords;
-				public new function HRESULT(ref IIsdbEventGroupDescriptor self, uint8 bRecordIndex, out uint16 pwOriginalNetworkId, out uint16 pwTransportStreamId, out uint16 pwServiceId, out uint16 pwEventId) GetRefRecordEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetGroupType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, uint8 bRecordIndex, out uint16 pwServiceId, out uint16 pwEventId) GetRecordEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, out uint8 pbVal) GetCountOfRefRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEventGroupDescriptor self, uint8 bRecordIndex, out uint16 pwOriginalNetworkId, out uint16 pwTransportStreamId, out uint16 pwServiceId, out uint16 pwEventId) GetRefRecordEvent;
 			}
 		}
 		[CRepr]
@@ -20520,17 +20520,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetComponentGroupType;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordGroupId;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordNumberOfCAUnit;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, out uint8 pbVal) GetRecordCAUnitCAUnitId;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, out uint8 pbVal) GetRecordCAUnitNumberOfComponents;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, uint8 bComponentIndex, out uint8 pbVal) GetRecordCAUnitComponentTag;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTotalBitRate;
-				public new function HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetRecordTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetComponentGroupType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordGroupId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordNumberOfCAUnit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, out uint8 pbVal) GetRecordCAUnitCAUnitId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, out uint8 pbVal) GetRecordCAUnitNumberOfComponents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, uint8 bCAUnitIndex, uint8 bComponentIndex, out uint8 pbVal) GetRecordCAUnitComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetRecordTotalBitRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbComponentGroupDescriptor self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, out BSTR pbstrText) GetRecordTextW;
 			}
 		}
 		[CRepr]
@@ -20553,15 +20553,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetSeriesId;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetRepeatLabel;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetProgramPattern;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out BOOL pfValid, out MPEG_DATE_AND_TIME pmdtVal) GetExpireDate;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetEpisodeNumber;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetLastEpisodeNumber;
-				public new function HRESULT(ref IIsdbSeriesDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetSeriesNameW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetSeriesId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetRepeatLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint8 pbVal) GetProgramPattern;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out BOOL pfValid, out MPEG_DATE_AND_TIME pmdtVal) GetExpireDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetEpisodeNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, out uint16 pwVal) GetLastEpisodeNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSeriesDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetSeriesNameW;
 			}
 		}
 		[CRepr]
@@ -20592,23 +20592,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out BOOL pfReboot, out BOOL pfAddOn, out BOOL pfCompatibility, out BOOL pfModuleInfo, out BOOL pfTextInfo) ComGetFlags;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetComponentSize;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetDownloadId;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetTimeOutValueDII;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetLeakRate;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetComponentTag;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint16 pwLength) GetCompatiblityDescriptorLength;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8* ppbData) GetCompatiblityDescriptor;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, out uint16 pwVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint16 pwVal) GetRecordModuleId;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint32 pdwVal) GetRecordModuleSize;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint8 pbVal) GetRecordModuleInfoLength;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint8* ppbData) GetRecordModuleInfo;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, uint8* szCode) GetTextLanguageCode;
-				public new function HRESULT(ref IIsdbDownloadContentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetTextW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out BOOL pfReboot, out BOOL pfAddOn, out BOOL pfCompatibility, out BOOL pfModuleInfo, out BOOL pfTextInfo) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetComponentSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetDownloadId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetTimeOutValueDII;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint32 pdwVal) GetLeakRate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8 pbVal) GetComponentTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint16 pwLength) GetCompatiblityDescriptorLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint8* ppbData) GetCompatiblityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, out uint16 pwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint16 pwVal) GetRecordModuleId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint32 pdwVal) GetRecordModuleSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint8 pbVal) GetRecordModuleInfoLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, uint16 wRecordIndex, out uint8* ppbData) GetRecordModuleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, uint8* szCode) GetTextLanguageCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbDownloadContentDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrName) GetTextW;
 			}
 		}
 		[CRepr]
@@ -20629,13 +20629,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetLogoTransmissionType;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetLogoId;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetLogoVersion;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetDownloadDataId;
-				public new function HRESULT(ref IIsdbLogoTransmissionDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrChar) GetLogoCharW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint8 pbVal) GetLogoTransmissionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetLogoId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetLogoVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, out uint16 pwVal) GetDownloadDataId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbLogoTransmissionDescriptor self, DVB_STRCONV_MODE convMode, out BSTR pbstrChar) GetLogoCharW;
 			}
 		}
 		[CRepr]
@@ -20657,14 +20657,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetParameterVersion;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, out MPEG_DATE pVal) GetUpdateTime;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetRecordNumberOfTable;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetTableId;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetTableDescriptionLength;
-				public new function HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbBufferLength, out uint8 pbBuffer) GetTableDescriptionBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetParameterVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, out MPEG_DATE pVal) GetUpdateTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, out uint8 pbVal) GetRecordNumberOfTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetTableId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetTableDescriptionLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbSIParameterDescriptor self, uint8 bRecordIndex, out uint8 pbBufferLength, out uint8 pbBuffer) GetTableDescriptionBytes;
 			}
 		}
 		[CRepr]
@@ -20685,13 +20685,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetServiceId;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint8 pVal) GetStartEndFlag;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetSignalLevel;
-				public new function HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint16* ppwVal, out uint8 pbNumAreaCodes) GetAreaCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, out uint8 pbVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint16 pwVal) GetServiceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint8 pVal) GetStartEndFlag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint8 pbVal) GetSignalLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbEmergencyInformationDescriptor self, uint8 bRecordIndex, out uint16* ppwVal, out uint8 pbNumAreaCodes) GetAreaCode;
 			}
 		}
 		[CRepr]
@@ -20711,12 +20711,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint16 pwVal) GetCASystemId;
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetReservedBits;
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint16 pwVal) GetCAPID;
-				public new function HRESULT(ref IIsdbCADescriptor self, out uint8 pbBufferLength, out uint8 pbBuffer) GetPrivateDataBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint16 pwVal) GetCASystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint8 pbVal) GetReservedBits;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint16 pwVal) GetCAPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCADescriptor self, out uint8 pbBufferLength, out uint8 pbBuffer) GetPrivateDataBytes;
 			}
 		}
 		[CRepr]
@@ -20736,12 +20736,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint16 pwVal) GetCASystemId;
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetCABroadcasterGroupId;
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetMessageControl;
-				public new function HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbNumServiceIds, out uint16 pwServiceIds) GetServiceIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint16 pwVal) GetCASystemId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetCABroadcasterGroupId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbVal) GetMessageControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbCAServiceDescriptor self, out uint8 pbNumServiceIds, out uint16 pwServiceIds) GetServiceIds;
 			}
 		}
 		[CRepr]
@@ -20761,12 +20761,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetLength;
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetFutureUse1;
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetQualityLevel;
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetFutureUse2;
-				public new function HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint16 pwVal) GetReferencePid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetFutureUse1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetQualityLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint8 pbVal) GetFutureUse2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsdbHierarchicalTransmissionDescriptor self, out uint16 pwVal) GetReferencePid;
 			}
 		}
 		[CRepr]
@@ -20783,9 +20783,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPBDASiParser self, ref IUnknown punk) Initialize;
-				public new function HRESULT(ref IPBDASiParser self, uint32 dwSize, ref uint8 pBuffer, out IPBDA_EIT* ppEIT) GetEIT;
-				public new function HRESULT(ref IPBDASiParser self, uint32 dwSize, in uint8 pBuffer, out IPBDA_Services* ppServices) GetServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDASiParser self, ref IUnknown punk) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDASiParser self, uint32 dwSize, ref uint8 pBuffer, out IPBDA_EIT* ppEIT) GetEIT;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDASiParser self, uint32 dwSize, in uint8 pBuffer, out IPBDA_Services* ppServices) GetServices;
 			}
 		}
 		[CRepr]
@@ -20810,17 +20810,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPBDA_EIT self, uint32 size, in uint8 pBuffer) Initialize;
-				public new function HRESULT(ref IPBDA_EIT self, out uint8 pbVal) GetTableId;
-				public new function HRESULT(ref IPBDA_EIT self, out uint16 pwVal) GetVersionNumber;
-				public new function HRESULT(ref IPBDA_EIT self, out uint64 plwVal) GetServiceIdx;
-				public new function HRESULT(ref IPBDA_EIT self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out uint64 plwVal) GetRecordEventId;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
-				public new function HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 size, in uint8 pBuffer) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, out uint8 pbVal) GetTableId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, out uint16 pwVal) GetVersionNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, out uint64 plwVal) GetServiceIdx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out uint64 plwVal) GetRecordEventId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out MPEG_DATE_AND_TIME pmdtVal) GetRecordStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out MPEG_TIME pmdVal) GetRecordDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, out uint32 pdwVal) GetRecordCountOfDescriptors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, uint32 dwIndex, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_EIT self, uint32 dwRecordIndex, uint8 bTag, out uint32 pdwCookie, out IGenericDescriptor* ppDescriptor) GetRecordDescriptorByTag;
 			}
 		}
 		[CRepr]
@@ -20837,9 +20837,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPBDA_Services self, uint32 size, ref uint8 pBuffer) Initialize;
-				public new function HRESULT(ref IPBDA_Services self, out uint32 pdwVal) GetCountOfRecords;
-				public new function HRESULT(ref IPBDA_Services self, uint32 dwRecordIndex, out uint64 pul64ServiceIdx) GetRecordByIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_Services self, uint32 size, ref uint8 pBuffer) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_Services self, out uint32 pdwVal) GetCountOfRecords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDA_Services self, uint32 dwRecordIndex, out uint64 pul64ServiceIdx) GetRecordByIndex;
 			}
 		}
 		[CRepr]
@@ -20856,9 +20856,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPBDAEntitlementDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IPBDAEntitlementDescriptor self, out uint16 pwVal) GetLength;
-				public new function HRESULT(ref IPBDAEntitlementDescriptor self, out uint8* ppbTokenBuffer, out uint32 pdwTokenLength) GetToken;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAEntitlementDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAEntitlementDescriptor self, out uint16 pwVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAEntitlementDescriptor self, out uint8* ppbTokenBuffer, out uint32 pdwTokenLength) GetToken;
 			}
 		}
 		[CRepr]
@@ -20875,9 +20875,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPBDAAttributesDescriptor self, out uint8 pbVal) GetTag;
-				public new function HRESULT(ref IPBDAAttributesDescriptor self, out uint16 pwVal) GetLength;
-				public new function HRESULT(ref IPBDAAttributesDescriptor self, out uint8* ppbAttributeBuffer, out uint32 pdwAttributeLength) GetAttributePayload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAAttributesDescriptor self, out uint8 pbVal) GetTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAAttributesDescriptor self, out uint16 pwVal) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPBDAAttributesDescriptor self, out uint8* ppbAttributeBuffer, out uint32 pdwAttributeLength) GetAttributePayload;
 			}
 		}
 		[CRepr]
@@ -20893,8 +20893,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBDA_TIF_REGISTRATION self, ref IPin pTIFInputPin, out uint32 ppvRegistrationContext, out IUnknown* ppMpeg2DataControl) RegisterTIFEx;
-				public new function HRESULT(ref IBDA_TIF_REGISTRATION self, uint32 pvRegistrationContext) UnregisterTIF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_TIF_REGISTRATION self, ref IPin pTIFInputPin, out uint32 ppvRegistrationContext, out IUnknown* ppMpeg2DataControl) RegisterTIFEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBDA_TIF_REGISTRATION self, uint32 pvRegistrationContext) UnregisterTIF;
 			}
 		}
 		[CRepr]
@@ -20914,12 +20914,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, ref IUnknown pUnkTIF, out uint32 ppvRegistrationContext) RegisterTIF;
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 pvRegistrationContext) UnregisterTIF;
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 ulcPIDs, ref uint32 pulPIDs) AddPIDs;
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 ulcPIDs, ref uint32 pulPIDs) DeletePIDs;
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, out uint32 pulcPIDs) GetPIDCount;
-				public new function HRESULT(ref IMPEG2_TIF_CONTROL self, out uint32 pulcPIDs, out uint32 pulPIDs) GetPIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, ref IUnknown pUnkTIF, out uint32 ppvRegistrationContext) RegisterTIF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 pvRegistrationContext) UnregisterTIF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 ulcPIDs, ref uint32 pulPIDs) AddPIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, uint32 ulcPIDs, ref uint32 pulPIDs) DeletePIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, out uint32 pulcPIDs) GetPIDCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMPEG2_TIF_CONTROL self, out uint32 pulcPIDs, out uint32 pulPIDs) GetPIDs;
 			}
 		}
 		[CRepr]
@@ -20940,13 +20940,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest Request) GetLocatorData;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest) GetComponentData;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest) CreateComponentList;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetNextProgram;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetPreviousProgram;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetNextLocator;
-				public new function HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetPreviousLocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest Request) GetLocatorData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest) GetComponentData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest) CreateComponentList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetNextProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetPreviousProgram;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetNextLocator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfo self, ref ITuneRequest CurrentRequest, out ITuneRequest* TuneRequest) GetPreviousLocator;
 			}
 		}
 		[CRepr]
@@ -20961,7 +20961,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITuneRequestInfo.VTable
 			{
-				public new function HRESULT(ref ITuneRequestInfoEx self, ref ITuneRequest CurrentRequest, out IUnknown* ppCurPMT) CreateComponentListEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITuneRequestInfoEx self, ref ITuneRequest CurrentRequest, out IUnknown* ppCurPMT) CreateComponentListEx;
 			}
 		}
 		[CRepr]
@@ -20976,7 +20976,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISIInbandEPGEvent self, ref IDVB_EIT2 pIDVB_EIT, uint32 dwTable_ID, uint32 dwService_ID) SIObjectEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISIInbandEPGEvent self, ref IDVB_EIT2 pIDVB_EIT, uint32 dwTable_ID, uint32 dwService_ID) SIObjectEvent;
 			}
 		}
 		[CRepr]
@@ -20993,9 +20993,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISIInbandEPG self) StartSIEPGScan;
-				public new function HRESULT(ref ISIInbandEPG self) StopSIEPGScan;
-				public new function HRESULT(ref ISIInbandEPG self, out BOOL bRunning) IsSIEPGScanRunning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISIInbandEPG self) StartSIEPGScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISIInbandEPG self) StopSIEPGScan;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISIInbandEPG self, out BOOL bRunning) IsSIEPGScanRunning;
 			}
 		}
 		[CRepr]
@@ -21016,13 +21016,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGuideDataEvent self) GuideDataAcquired;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varProgramDescriptionID) ProgramChanged;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varServiceDescriptionID) ServiceChanged;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varScheduleEntryDescriptionID) ScheduleEntryChanged;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varProgramDescriptionID) ProgramDeleted;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varServiceDescriptionID) ServiceDeleted;
-				public new function HRESULT(ref IGuideDataEvent self, VARIANT varScheduleEntryDescriptionID) ScheduleDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self) GuideDataAcquired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varProgramDescriptionID) ProgramChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varServiceDescriptionID) ServiceChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varScheduleEntryDescriptionID) ScheduleEntryChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varProgramDescriptionID) ProgramDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varServiceDescriptionID) ServiceDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataEvent self, VARIANT varScheduleEntryDescriptionID) ScheduleDeleted;
 			}
 		}
 		[CRepr]
@@ -21039,9 +21039,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGuideDataProperty self, out BSTR pbstrName) get_Name;
-				public new function HRESULT(ref IGuideDataProperty self, out int32 idLang) get_Language;
-				public new function HRESULT(ref IGuideDataProperty self, out VARIANT pvar) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataProperty self, out BSTR pbstrName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataProperty self, out int32 idLang) get_Language;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataProperty self, out VARIANT pvar) get_Value;
 			}
 		}
 		[CRepr]
@@ -21059,10 +21059,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumGuideDataProperties self, uint32 celt, out IGuideDataProperty* ppprop, out uint32 pcelt) Next;
-				public new function HRESULT(ref IEnumGuideDataProperties self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumGuideDataProperties self) Reset;
-				public new function HRESULT(ref IEnumGuideDataProperties self, out IEnumGuideDataProperties* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumGuideDataProperties self, uint32 celt, out IGuideDataProperty* ppprop, out uint32 pcelt) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumGuideDataProperties self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumGuideDataProperties self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumGuideDataProperties self, out IEnumGuideDataProperties* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -21080,10 +21080,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumTuneRequests self, uint32 celt, out ITuneRequest* ppprop, out uint32 pcelt) Next;
-				public new function HRESULT(ref IEnumTuneRequests self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumTuneRequests self) Reset;
-				public new function HRESULT(ref IEnumTuneRequests self, out IEnumTuneRequests* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuneRequests self, uint32 celt, out ITuneRequest* ppprop, out uint32 pcelt) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuneRequests self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuneRequests self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumTuneRequests self, out IEnumTuneRequests* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -21103,12 +21103,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGuideData self, out IEnumTuneRequests* ppEnumTuneRequests) GetServices;
-				public new function HRESULT(ref IGuideData self, ref ITuneRequest pTuneRequest, out IEnumGuideDataProperties* ppEnumProperties) GetServiceProperties;
-				public new function HRESULT(ref IGuideData self, out IEnumVARIANT* pEnumPrograms) GetGuideProgramIDs;
-				public new function HRESULT(ref IGuideData self, VARIANT varProgramDescriptionID, out IEnumGuideDataProperties* ppEnumProperties) GetProgramProperties;
-				public new function HRESULT(ref IGuideData self, out IEnumVARIANT* pEnumScheduleEntries) GetScheduleEntryIDs;
-				public new function HRESULT(ref IGuideData self, VARIANT varScheduleEntryDescriptionID, out IEnumGuideDataProperties* ppEnumProperties) GetScheduleEntryProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, out IEnumTuneRequests* ppEnumTuneRequests) GetServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, ref ITuneRequest pTuneRequest, out IEnumGuideDataProperties* ppEnumProperties) GetServiceProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, out IEnumVARIANT* pEnumPrograms) GetGuideProgramIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, VARIANT varProgramDescriptionID, out IEnumGuideDataProperties* ppEnumProperties) GetProgramProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, out IEnumVARIANT* pEnumScheduleEntries) GetScheduleEntryIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideData self, VARIANT varScheduleEntryDescriptionID, out IEnumGuideDataProperties* ppEnumProperties) GetScheduleEntryProperties;
 			}
 		}
 		[CRepr]
@@ -21124,8 +21124,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGuideDataLoader self, ref IGuideData pGuideStore) Init;
-				public new function HRESULT(ref IGuideDataLoader self) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataLoader self, ref IGuideData pGuideStore) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataLoader self) Terminate;
 			}
 		}
 		

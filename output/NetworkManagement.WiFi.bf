@@ -3864,11 +3864,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocManager self, PWSTR Name, PWSTR Password, int32 GeographicalId, ref IDot11AdHocInterface pInterface, ref IDot11AdHocSecuritySettings pSecurity, ref Guid pContextGuid, out IDot11AdHocNetwork* pIAdHoc) CreateNetwork;
-				public new function HRESULT(ref IDot11AdHocManager self, ref IDot11AdHocNetwork pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) CommitCreatedNetwork;
-				public new function HRESULT(ref IDot11AdHocManager self, ref Guid pContextGuid, out IEnumDot11AdHocNetworks* ppEnum) GetIEnumDot11AdHocNetworks;
-				public new function HRESULT(ref IDot11AdHocManager self, out IEnumDot11AdHocInterfaces* ppEnum) GetIEnumDot11AdHocInterfaces;
-				public new function HRESULT(ref IDot11AdHocManager self, ref Guid NetworkSignature, out IDot11AdHocNetwork* pNetwork) GetNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManager self, PWSTR Name, PWSTR Password, int32 GeographicalId, ref IDot11AdHocInterface pInterface, ref IDot11AdHocSecuritySettings pSecurity, ref Guid pContextGuid, out IDot11AdHocNetwork* pIAdHoc) CreateNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManager self, ref IDot11AdHocNetwork pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) CommitCreatedNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManager self, ref Guid pContextGuid, out IEnumDot11AdHocNetworks* ppEnum) GetIEnumDot11AdHocNetworks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManager self, out IEnumDot11AdHocInterfaces* ppEnum) GetIEnumDot11AdHocInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManager self, ref Guid NetworkSignature, out IDot11AdHocNetwork* pNetwork) GetNetwork;
 			}
 		}
 		[CRepr]
@@ -3886,10 +3886,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocManagerNotificationSink self, ref IDot11AdHocNetwork pIAdHocNetwork) OnNetworkAdd;
-				public new function HRESULT(ref IDot11AdHocManagerNotificationSink self, ref Guid Signature) OnNetworkRemove;
-				public new function HRESULT(ref IDot11AdHocManagerNotificationSink self, ref IDot11AdHocInterface pIAdHocInterface) OnInterfaceAdd;
-				public new function HRESULT(ref IDot11AdHocManagerNotificationSink self, ref Guid Signature) OnInterfaceRemove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManagerNotificationSink self, ref IDot11AdHocNetwork pIAdHocNetwork) OnNetworkAdd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManagerNotificationSink self, ref Guid Signature) OnNetworkRemove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManagerNotificationSink self, ref IDot11AdHocInterface pIAdHocInterface) OnInterfaceAdd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocManagerNotificationSink self, ref Guid Signature) OnInterfaceRemove;
 			}
 		}
 		[CRepr]
@@ -3907,10 +3907,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDot11AdHocNetworks self, uint32 cElt, IDot11AdHocNetwork** rgElt, out uint32 pcEltFetched) Next;
-				public new function HRESULT(ref IEnumDot11AdHocNetworks self, uint32 cElt) Skip;
-				public new function HRESULT(ref IEnumDot11AdHocNetworks self) Reset;
-				public new function HRESULT(ref IEnumDot11AdHocNetworks self, out IEnumDot11AdHocNetworks* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocNetworks self, uint32 cElt, IDot11AdHocNetwork** rgElt, out uint32 pcEltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocNetworks self, uint32 cElt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocNetworks self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocNetworks self, out IEnumDot11AdHocNetworks* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -3936,18 +3936,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocNetwork self, out DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) GetStatus;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out PWSTR ppszwSSID) GetSSID;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out uint8 pf11d) HasProfile;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out PWSTR ppszwProfileName) GetProfileName;
-				public new function HRESULT(ref IDot11AdHocNetwork self) DeleteProfile;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out uint32 puStrengthValue, out uint32 puStrengthMax) GetSignalQuality;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out IDot11AdHocSecuritySettings* pAdHocSecuritySetting) GetSecuritySetting;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out Guid pContextGuid) GetContextGuid;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out Guid pSignature) GetSignature;
-				public new function HRESULT(ref IDot11AdHocNetwork self, out IDot11AdHocInterface* pAdHocInterface) GetInterface;
-				public new function HRESULT(ref IDot11AdHocNetwork self, PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) Connect;
-				public new function HRESULT(ref IDot11AdHocNetwork self) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out PWSTR ppszwSSID) GetSSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out uint8 pf11d) HasProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out PWSTR ppszwProfileName) GetProfileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self) DeleteProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out uint32 puStrengthValue, out uint32 puStrengthMax) GetSignalQuality;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out IDot11AdHocSecuritySettings* pAdHocSecuritySetting) GetSecuritySetting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out Guid pContextGuid) GetContextGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out Guid pSignature) GetSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, out IDot11AdHocInterface* pAdHocInterface) GetInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self, PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetwork self) Disconnect;
 			}
 		}
 		[CRepr]
@@ -3963,8 +3963,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocNetworkNotificationSink self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnStatusChange;
-				public new function HRESULT(ref IDot11AdHocNetworkNotificationSink self, DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) OnConnectFail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetworkNotificationSink self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocNetworkNotificationSink self, DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) OnConnectFail;
 			}
 		}
 		[CRepr]
@@ -3987,15 +3987,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocInterface self, out Guid pSignature) GetDeviceSignature;
-				public new function HRESULT(ref IDot11AdHocInterface self, out PWSTR ppszName) GetFriendlyName;
-				public new function HRESULT(ref IDot11AdHocInterface self, out uint8 pf11d) IsDot11d;
-				public new function HRESULT(ref IDot11AdHocInterface self, out uint8 pfAdHocCapable) IsAdHocCapable;
-				public new function HRESULT(ref IDot11AdHocInterface self, out uint8 pfIsRadioOn) IsRadioOn;
-				public new function HRESULT(ref IDot11AdHocInterface self, out IDot11AdHocNetwork* ppNetwork) GetActiveNetwork;
-				public new function HRESULT(ref IDot11AdHocInterface self, out IEnumDot11AdHocSecuritySettings* ppEnum) GetIEnumSecuritySettings;
-				public new function HRESULT(ref IDot11AdHocInterface self, ref Guid pFilterGuid, out IEnumDot11AdHocNetworks* ppEnum) GetIEnumDot11AdHocNetworks;
-				public new function HRESULT(ref IDot11AdHocInterface self, out DOT11_ADHOC_NETWORK_CONNECTION_STATUS pState) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out Guid pSignature) GetDeviceSignature;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out PWSTR ppszName) GetFriendlyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out uint8 pf11d) IsDot11d;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out uint8 pfAdHocCapable) IsAdHocCapable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out uint8 pfIsRadioOn) IsRadioOn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out IDot11AdHocNetwork* ppNetwork) GetActiveNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out IEnumDot11AdHocSecuritySettings* ppEnum) GetIEnumSecuritySettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, ref Guid pFilterGuid, out IEnumDot11AdHocNetworks* ppEnum) GetIEnumDot11AdHocNetworks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterface self, out DOT11_ADHOC_NETWORK_CONNECTION_STATUS pState) GetStatus;
 			}
 		}
 		[CRepr]
@@ -4013,10 +4013,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDot11AdHocInterfaces self, uint32 cElt, IDot11AdHocInterface** rgElt, out uint32 pcEltFetched) Next;
-				public new function HRESULT(ref IEnumDot11AdHocInterfaces self, uint32 cElt) Skip;
-				public new function HRESULT(ref IEnumDot11AdHocInterfaces self) Reset;
-				public new function HRESULT(ref IEnumDot11AdHocInterfaces self, out IEnumDot11AdHocInterfaces* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocInterfaces self, uint32 cElt, IDot11AdHocInterface** rgElt, out uint32 pcEltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocInterfaces self, uint32 cElt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocInterfaces self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocInterfaces self, out IEnumDot11AdHocInterfaces* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4034,10 +4034,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDot11AdHocSecuritySettings self, uint32 cElt, IDot11AdHocSecuritySettings** rgElt, out uint32 pcEltFetched) Next;
-				public new function HRESULT(ref IEnumDot11AdHocSecuritySettings self, uint32 cElt) Skip;
-				public new function HRESULT(ref IEnumDot11AdHocSecuritySettings self) Reset;
-				public new function HRESULT(ref IEnumDot11AdHocSecuritySettings self, out IEnumDot11AdHocSecuritySettings* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocSecuritySettings self, uint32 cElt, IDot11AdHocSecuritySettings** rgElt, out uint32 pcEltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocSecuritySettings self, uint32 cElt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocSecuritySettings self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDot11AdHocSecuritySettings self, out IEnumDot11AdHocSecuritySettings* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4053,8 +4053,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocSecuritySettings self, out DOT11_ADHOC_AUTH_ALGORITHM pAuth) GetDot11AuthAlgorithm;
-				public new function HRESULT(ref IDot11AdHocSecuritySettings self, out DOT11_ADHOC_CIPHER_ALGORITHM pCipher) GetDot11CipherAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocSecuritySettings self, out DOT11_ADHOC_AUTH_ALGORITHM pAuth) GetDot11AuthAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocSecuritySettings self, out DOT11_ADHOC_CIPHER_ALGORITHM pCipher) GetDot11CipherAlgorithm;
 			}
 		}
 		[CRepr]
@@ -4069,7 +4069,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDot11AdHocInterfaceNotificationSink self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterfaceNotificationSink self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
 			}
 		}
 		

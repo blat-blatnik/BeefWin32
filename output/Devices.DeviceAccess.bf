@@ -67,7 +67,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDeviceRequestCompletionCallback self, HRESULT requestResult, uint32 bytesReturned) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeviceRequestCompletionCallback self, HRESULT requestResult, uint32 bytesReturned) Invoke;
 			}
 		}
 		[CRepr]
@@ -84,9 +84,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDeviceIoControl self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, out uint32 bytesReturned) DeviceIoControlSync;
-				public new function HRESULT(ref IDeviceIoControl self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, ref IDeviceRequestCompletionCallback requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
-				public new function HRESULT(ref IDeviceIoControl self, uint cancelContext) CancelOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeviceIoControl self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, out uint32 bytesReturned) DeviceIoControlSync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeviceIoControl self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, ref IDeviceRequestCompletionCallback requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeviceIoControl self, uint cancelContext) CancelOperation;
 			}
 		}
 		[CRepr]
@@ -104,10 +104,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICreateDeviceAccessAsync self) Cancel;
-				public new function HRESULT(ref ICreateDeviceAccessAsync self, uint32 timeout) Wait;
-				public new function HRESULT(ref ICreateDeviceAccessAsync self) Close;
-				public new function HRESULT(ref ICreateDeviceAccessAsync self, in Guid riid, void** deviceAccess) GetResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDeviceAccessAsync self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDeviceAccessAsync self, uint32 timeout) Wait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDeviceAccessAsync self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDeviceAccessAsync self, in Guid riid, void** deviceAccess) GetResult;
 			}
 		}
 		

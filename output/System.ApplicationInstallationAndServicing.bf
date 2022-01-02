@@ -1767,13 +1767,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IValidate self, PWSTR szDatabase) OpenDatabase;
-				public new function HRESULT(ref IValidate self, PWSTR szCUBFile) OpenCUB;
-				public new function HRESULT(ref IValidate self) CloseDatabase;
-				public new function HRESULT(ref IValidate self) CloseCUB;
-				public new function HRESULT(ref IValidate self, LPDISPLAYVAL pDisplayFunction, void* pContext) SetDisplay;
-				public new function HRESULT(ref IValidate self, LPEVALCOMCALLBACK pStatusFunction, void* pContext) SetStatus;
-				public new function HRESULT(ref IValidate self, PWSTR wzICEs) Validate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self, PWSTR szDatabase) OpenDatabase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self, PWSTR szCUBFile) OpenCUB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self) CloseDatabase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self) CloseCUB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self, LPDISPLAYVAL pDisplayFunction, void* pContext) SetDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self, LPEVALCOMCALLBACK pStatusFunction, void* pContext) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IValidate self, PWSTR wzICEs) Validate;
 			}
 		}
 		[CRepr]
@@ -1791,10 +1791,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumMsmString self, uint32 cFetch, out BSTR rgbstrStrings, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumMsmString self, uint32 cSkip) Skip;
-				public new function HRESULT(ref IEnumMsmString self) Reset;
-				public new function HRESULT(ref IEnumMsmString self, out IEnumMsmString* pemsmStrings) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmString self, uint32 cFetch, out BSTR rgbstrStrings, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmString self, uint32 cSkip) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmString self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmString self, out IEnumMsmString* pemsmStrings) Clone;
 			}
 		}
 		[CRepr]
@@ -1811,9 +1811,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmStrings self, int32 Item, out BSTR Return) get_Item;
-				public new function HRESULT(ref IMsmStrings self, out int32 Count) get_Count;
-				public new function HRESULT(ref IMsmStrings self, out IUnknown* NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmStrings self, int32 Item, out BSTR Return) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmStrings self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmStrings self, out IUnknown* NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1834,13 +1834,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmError self, out msmErrorType ErrorType) get_Type;
-				public new function HRESULT(ref IMsmError self, out BSTR ErrorPath) get_Path;
-				public new function HRESULT(ref IMsmError self, out int16 ErrorLanguage) get_Language;
-				public new function HRESULT(ref IMsmError self, out BSTR ErrorTable) get_DatabaseTable;
-				public new function HRESULT(ref IMsmError self, out IMsmStrings* ErrorKeys) get_DatabaseKeys;
-				public new function HRESULT(ref IMsmError self, out BSTR ErrorTable) get_ModuleTable;
-				public new function HRESULT(ref IMsmError self, out IMsmStrings* ErrorKeys) get_ModuleKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out msmErrorType ErrorType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out BSTR ErrorPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out int16 ErrorLanguage) get_Language;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out BSTR ErrorTable) get_DatabaseTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out IMsmStrings* ErrorKeys) get_DatabaseKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out BSTR ErrorTable) get_ModuleTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmError self, out IMsmStrings* ErrorKeys) get_ModuleKeys;
 			}
 		}
 		[CRepr]
@@ -1858,10 +1858,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumMsmError self, uint32 cFetch, out IMsmError* rgmsmErrors, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumMsmError self, uint32 cSkip) Skip;
-				public new function HRESULT(ref IEnumMsmError self) Reset;
-				public new function HRESULT(ref IEnumMsmError self, out IEnumMsmError* pemsmErrors) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmError self, uint32 cFetch, out IMsmError* rgmsmErrors, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmError self, uint32 cSkip) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmError self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmError self, out IEnumMsmError* pemsmErrors) Clone;
 			}
 		}
 		[CRepr]
@@ -1878,9 +1878,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmErrors self, int32 Item, out IMsmError* Return) get_Item;
-				public new function HRESULT(ref IMsmErrors self, out int32 Count) get_Count;
-				public new function HRESULT(ref IMsmErrors self, out IUnknown* NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmErrors self, int32 Item, out IMsmError* Return) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmErrors self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmErrors self, out IUnknown* NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1897,9 +1897,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmDependency self, out BSTR Module) get_Module;
-				public new function HRESULT(ref IMsmDependency self, out int16 Language) get_Language;
-				public new function HRESULT(ref IMsmDependency self, out BSTR Version) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependency self, out BSTR Module) get_Module;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependency self, out int16 Language) get_Language;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependency self, out BSTR Version) get_Version;
 			}
 		}
 		[CRepr]
@@ -1917,10 +1917,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumMsmDependency self, uint32 cFetch, out IMsmDependency* rgmsmDependencies, out uint32 pcFetched) Next;
-				public new function HRESULT(ref IEnumMsmDependency self, uint32 cSkip) Skip;
-				public new function HRESULT(ref IEnumMsmDependency self) Reset;
-				public new function HRESULT(ref IEnumMsmDependency self, out IEnumMsmDependency* pemsmDependencies) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmDependency self, uint32 cFetch, out IMsmDependency* rgmsmDependencies, out uint32 pcFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmDependency self, uint32 cSkip) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmDependency self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumMsmDependency self, out IEnumMsmDependency* pemsmDependencies) Clone;
 			}
 		}
 		[CRepr]
@@ -1937,9 +1937,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmDependencies self, int32 Item, out IMsmDependency* Return) get_Item;
-				public new function HRESULT(ref IMsmDependencies self, out int32 Count) get_Count;
-				public new function HRESULT(ref IMsmDependencies self, out IUnknown* NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependencies self, int32 Item, out IMsmDependency* Return) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependencies self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmDependencies self, out IUnknown* NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1966,19 +1966,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmMerge self, BSTR Path) OpenDatabase;
-				public new function HRESULT(ref IMsmMerge self, BSTR Path, int16 Language) OpenModule;
-				public new function HRESULT(ref IMsmMerge self, int16 Commit) CloseDatabase;
-				public new function HRESULT(ref IMsmMerge self) CloseModule;
-				public new function HRESULT(ref IMsmMerge self, BSTR Path) OpenLog;
-				public new function HRESULT(ref IMsmMerge self) CloseLog;
-				public new function HRESULT(ref IMsmMerge self, BSTR Message) Log;
-				public new function HRESULT(ref IMsmMerge self, out IMsmErrors* Errors) get_Errors;
-				public new function HRESULT(ref IMsmMerge self, out IMsmDependencies* Dependencies) get_Dependencies;
-				public new function HRESULT(ref IMsmMerge self, BSTR Feature, BSTR RedirectDir) Merge;
-				public new function HRESULT(ref IMsmMerge self, BSTR Feature) Connect;
-				public new function HRESULT(ref IMsmMerge self, BSTR FileName) ExtractCAB;
-				public new function HRESULT(ref IMsmMerge self, BSTR Path) ExtractFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Path) OpenDatabase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Path, int16 Language) OpenModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, int16 Commit) CloseDatabase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self) CloseModule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Path) OpenLog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self) CloseLog;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Message) Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, out IMsmErrors* Errors) get_Errors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, out IMsmDependencies* Dependencies) get_Dependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Feature, BSTR RedirectDir) Merge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Feature) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR FileName) ExtractCAB;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmMerge self, BSTR Path) ExtractFiles;
 			}
 		}
 		[CRepr]
@@ -1993,7 +1993,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMsmGetFiles self, out IMsmStrings* Files) get_ModuleFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMsmGetFiles self, out IMsmStrings* Files) get_ModuleFiles;
 			}
 		}
 		[CRepr]
@@ -2016,15 +2016,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAssemblyName self, uint32 PropertyId, void* pvProperty, uint32 cbProperty) SetProperty;
-				public new function HRESULT(ref IAssemblyName self, uint32 PropertyId, void* pvProperty, out uint32 pcbProperty) GetProperty;
-				public new function HRESULT(ref IAssemblyName self) Finalize;
-				public new function HRESULT(ref IAssemblyName self, char16* szDisplayName, out uint32 pccDisplayName, uint32 dwDisplayFlags) GetDisplayName;
-				public new function HRESULT(ref IAssemblyName self, in Guid refIID, ref IUnknown pUnkReserved1, ref IUnknown pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) Reserved;
-				public new function HRESULT(ref IAssemblyName self, out uint32 lpcwBuffer, char16* pwzName) GetName;
-				public new function HRESULT(ref IAssemblyName self, out uint32 pdwVersionHi, out uint32 pdwVersionLow) GetVersion;
-				public new function HRESULT(ref IAssemblyName self, ref IAssemblyName pName, uint32 dwCmpFlags) IsEqual;
-				public new function HRESULT(ref IAssemblyName self, out IAssemblyName* pName) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, uint32 PropertyId, void* pvProperty, uint32 cbProperty) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, uint32 PropertyId, void* pvProperty, out uint32 pcbProperty) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self) Finalize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, char16* szDisplayName, out uint32 pccDisplayName, uint32 dwDisplayFlags) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, in Guid refIID, ref IUnknown pUnkReserved1, ref IUnknown pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) Reserved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, out uint32 lpcwBuffer, char16* pwzName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, out uint32 pdwVersionHi, out uint32 pdwVersionLow) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, ref IAssemblyName pName, uint32 dwCmpFlags) IsEqual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyName self, out IAssemblyName* pName) Clone;
 			}
 		}
 		[CRepr]
@@ -2041,9 +2041,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAssemblyCacheItem self, uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, out IStream* ppIStream, out ULARGE_INTEGER puliMaxSize) CreateStream;
-				public new function HRESULT(ref IAssemblyCacheItem self, uint32 dwFlags, out uint32 pulDisposition) Commit;
-				public new function HRESULT(ref IAssemblyCacheItem self) AbortItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCacheItem self, uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, out IStream* ppIStream, out ULARGE_INTEGER puliMaxSize) CreateStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCacheItem self, uint32 dwFlags, out uint32 pulDisposition) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCacheItem self) AbortItem;
 			}
 		}
 		[CRepr]
@@ -2062,11 +2062,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAssemblyCache self, uint32 dwFlags, PWSTR pszAssemblyName, out FUSION_INSTALL_REFERENCE pRefData, out IASSEMBLYCACHE_UNINSTALL_DISPOSITION pulDisposition) UninstallAssembly;
-				public new function HRESULT(ref IAssemblyCache self, QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, out ASSEMBLY_INFO pAsmInfo) QueryAssemblyInfo;
-				public new function HRESULT(ref IAssemblyCache self, uint32 dwFlags, void* pvReserved, out IAssemblyCacheItem* ppAsmItem, PWSTR pszAssemblyName) CreateAssemblyCacheItem;
-				public new function HRESULT(ref IAssemblyCache self, out IUnknown* ppUnk) Reserved;
-				public new function HRESULT(ref IAssemblyCache self, uint32 dwFlags, PWSTR pszManifestFilePath, out FUSION_INSTALL_REFERENCE pRefData) InstallAssembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCache self, uint32 dwFlags, PWSTR pszAssemblyName, out FUSION_INSTALL_REFERENCE pRefData, out IASSEMBLYCACHE_UNINSTALL_DISPOSITION pulDisposition) UninstallAssembly;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCache self, QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, out ASSEMBLY_INFO pAsmInfo) QueryAssemblyInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCache self, uint32 dwFlags, void* pvReserved, out IAssemblyCacheItem* ppAsmItem, PWSTR pszAssemblyName) CreateAssemblyCacheItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCache self, out IUnknown* ppUnk) Reserved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAssemblyCache self, uint32 dwFlags, PWSTR pszManifestFilePath, out FUSION_INSTALL_REFERENCE pRefData) InstallAssembly;
 			}
 		}
 		[CRepr]
@@ -2135,61 +2135,61 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMApplicationInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMApplicationInfo self, out Guid pInstanceID) get_InstanceID;
-				public new function HRESULT(ref IPMApplicationInfo self, out Guid pOfferID) get_OfferID;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pDefaultTask) get_DefaultTask;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pAppTitle) get_AppTitle;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pAppIconPath) get_IconPath;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsNotified) get_NotificationState;
-				public new function HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_INSTALL_TYPE pAppInstallType) get_AppInstallType;
-				public new function HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_STATE pState) get_State;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsRevoked) get_IsRevoked;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsUpdateAvailable) get_UpdateAvailable;
-				public new function HRESULT(ref IPMApplicationInfo self, out FILETIME pInstallDate) get_InstallDate;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsUninstallable) get_IsUninstallable;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsThemable) get_IsThemable;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsTrial) get_IsTrial;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pInstallPath) get_InstallPath;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pDataRoot) get_DataRoot;
-				public new function HRESULT(ref IPMApplicationInfo self, out PM_APP_GENRE pGenre) get_Genre;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pPublisher) get_Publisher;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pAuthor) get_Author;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pDescription) get_Description;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pVersion) get_Version;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public new function HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersion;
-				public new function HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersion;
-				public new function HRESULT(ref IPMApplicationInfo self, out Guid pPublisherID) get_PublisherID;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsMultiCore) get_IsMultiCore;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR* pSID) get_SID;
-				public new function HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersionLightUp;
-				public new function HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersionLightUp;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL IsUpdateAvailable) set_UpdateAvailable;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL IsNotified) set_NotificationState;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR AppIconPath) set_IconPath;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL IsUninstallable) set_UninstallableState;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsPinable) get_IsPinableOnKidZone;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsPreinstalled) get_IsOriginallyPreInstalled;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsInstallOnSD) get_IsInstallOnSD;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsOptoutOnSD) get_IsOptoutOnSD;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsOptoutBackupRestore) get_IsOptoutBackupRestore;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL IsDisabled) set_EnterpriseDisabled;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL IsUninstallable) set_EnterpriseUninstallable;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL IsDisabled) get_EnterpriseDisabled;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL IsUninstallable) get_EnterpriseUninstallable;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsVisible) get_IsVisibleOnAppList;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsInboxApp) get_IsInboxApp;
-				public new function HRESULT(ref IPMApplicationInfo self, out Guid pStorageID) get_StorageID;
-				public new function HRESULT(ref IPMApplicationInfo self, out PM_STARTAPPBLOB pBlob) get_StartAppBlob;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsMovable) get_IsMovable;
-				public new function HRESULT(ref IPMApplicationInfo self, out PM_TILE_HUBTYPE HubType) get_DeploymentAppEnumerationHubFilter;
-				public new function HRESULT(ref IPMApplicationInfo self, out FILETIME pModifiedDate) get_ModifiedDate;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pIsRestored) get_IsOriginallyRestored;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pfDeferMdilBind) get_ShouldDeferMdilBind;
-				public new function HRESULT(ref IPMApplicationInfo self, out BOOL pfIsFullyPreInstall) get_IsFullyPreInstall;
-				public new function HRESULT(ref IPMApplicationInfo self, BOOL fIsMdilMaintenanceNeeded) set_IsMdilMaintenanceNeeded;
-				public new function HRESULT(ref IPMApplicationInfo self, BSTR AppTitle) set_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pInstanceID) get_InstanceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pOfferID) get_OfferID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDefaultTask) get_DefaultTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAppTitle) get_AppTitle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAppIconPath) get_IconPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsNotified) get_NotificationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_INSTALL_TYPE pAppInstallType) get_AppInstallType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APPLICATION_STATE pState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsRevoked) get_IsRevoked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsUpdateAvailable) get_UpdateAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out FILETIME pInstallDate) get_InstallDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsUninstallable) get_IsUninstallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsThemable) get_IsThemable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsTrial) get_IsTrial;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pInstallPath) get_InstallPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDataRoot) get_DataRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_APP_GENRE pGenre) get_Genre;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pPublisher) get_Publisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pAuthor) get_Author;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pVersion) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pPublisherID) get_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsMultiCore) get_IsMultiCore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR* pSID) get_SID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMajorVer) get_AppPlatMajorVersionLightUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out uint8 pMinorVer) get_AppPlatMinorVersionLightUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsUpdateAvailable) set_UpdateAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsNotified) set_NotificationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR AppIconPath) set_IconPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsUninstallable) set_UninstallableState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsPinable) get_IsPinableOnKidZone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsPreinstalled) get_IsOriginallyPreInstalled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsInstallOnSD) get_IsInstallOnSD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsOptoutOnSD) get_IsOptoutOnSD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsOptoutBackupRestore) get_IsOptoutBackupRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsDisabled) set_EnterpriseDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL IsUninstallable) set_EnterpriseUninstallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL IsDisabled) get_EnterpriseDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL IsUninstallable) get_EnterpriseUninstallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsVisible) get_IsVisibleOnAppList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsInboxApp) get_IsInboxApp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out Guid pStorageID) get_StorageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_STARTAPPBLOB pBlob) get_StartAppBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsMovable) get_IsMovable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out PM_TILE_HUBTYPE HubType) get_DeploymentAppEnumerationHubFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out FILETIME pModifiedDate) get_ModifiedDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pIsRestored) get_IsOriginallyRestored;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pfDeferMdilBind) get_ShouldDeferMdilBind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, out BOOL pfIsFullyPreInstall) get_IsFullyPreInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BOOL fIsMdilMaintenanceNeeded) set_IsMdilMaintenanceNeeded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfo self, BSTR AppTitle) set_Title;
 			}
 		}
 		[CRepr]
@@ -2206,9 +2206,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTilePropertyInfo self, out uint32 pPropID) get_PropertyID;
-				public new function HRESULT(ref IPMTilePropertyInfo self, BSTR* pPropValue) get_PropertyValue;
-				public new function HRESULT(ref IPMTilePropertyInfo self, BSTR PropValue) set_Property;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, out uint32 pPropID) get_PropertyID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, BSTR* pPropValue) get_PropertyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyInfo self, BSTR PropValue) set_Property;
 			}
 		}
 		[CRepr]
@@ -2223,7 +2223,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTilePropertyEnumerator self, IPMTilePropertyInfo** ppPropInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTilePropertyEnumerator self, IPMTilePropertyInfo** ppPropInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2261,30 +2261,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTileInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMTileInfo self, BSTR* pTileID) get_TileID;
-				public new function HRESULT(ref IPMTileInfo self, out TILE_TEMPLATE_TYPE pTemplateType) get_TemplateType;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out BOOL pPinned) get_HubPinnedState;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out uint32 pPosition) get_HubPosition;
-				public new function HRESULT(ref IPMTileInfo self, out BOOL pIsNotified) get_IsNotified;
-				public new function HRESULT(ref IPMTileInfo self, out BOOL pIsDefault) get_IsDefault;
-				public new function HRESULT(ref IPMTileInfo self, BSTR* pTaskID) get_TaskID;
-				public new function HRESULT(ref IPMTileInfo self, out PM_STARTTILE_TYPE pStartTileType) get_TileType;
-				public new function HRESULT(ref IPMTileInfo self, out BOOL pIsThemable) get_IsThemable;
-				public new function HRESULT(ref IPMTileInfo self, uint32 PropID, IPMTilePropertyInfo** ppPropInfo) get_PropertyById;
-				public new function HRESULT(ref IPMTileInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public new function HRESULT(ref IPMTileInfo self, IPMTilePropertyEnumerator** ppTilePropEnum) get_PropertyEnum;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) get_HubTileSize;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, uint32 Position) set_HubPosition;
-				public new function HRESULT(ref IPMTileInfo self, BOOL Notified) set_NotifiedState;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, BOOL Pinned) set_HubPinnedState;
-				public new function HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) set_HubTileSize;
-				public new function HRESULT(ref IPMTileInfo self, BSTR TaskName, BSTR TaskParameters) set_InvocationInfo;
-				public new function HRESULT(ref IPMTileInfo self, out PM_STARTTILEBLOB pBlob) get_StartTileBlob;
-				public new function HRESULT(ref IPMTileInfo self, out BOOL pIsRestoring) get_IsRestoring;
-				public new function HRESULT(ref IPMTileInfo self, out BOOL pIsAutoRestoreDisabled) get_IsAutoRestoreDisabled;
-				public new function HRESULT(ref IPMTileInfo self, BOOL Restoring) set_IsRestoring;
-				public new function HRESULT(ref IPMTileInfo self, BOOL AutoRestoreDisabled) set_IsAutoRestoreDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pTileID) get_TileID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out TILE_TEMPLATE_TYPE pTemplateType) get_TemplateType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out BOOL pPinned) get_HubPinnedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out uint32 pPosition) get_HubPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsNotified) get_IsNotified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsDefault) get_IsDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pTaskID) get_TaskID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out PM_STARTTILE_TYPE pStartTileType) get_TileType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsThemable) get_IsThemable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, uint32 PropID, IPMTilePropertyInfo** ppPropInfo) get_PropertyById;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, IPMTilePropertyEnumerator** ppTilePropEnum) get_PropertyEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, out PM_TILE_SIZE pSize) get_HubTileSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, uint32 Position) set_HubPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BOOL Notified) set_NotifiedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, BOOL Pinned) set_HubPinnedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) set_HubTileSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BSTR TaskName, BSTR TaskParameters) set_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out PM_STARTTILEBLOB pBlob) get_StartTileBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsRestoring) get_IsRestoring;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, out BOOL pIsAutoRestoreDisabled) get_IsAutoRestoreDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BOOL Restoring) set_IsRestoring;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfo self, BOOL AutoRestoreDisabled) set_IsAutoRestoreDisabled;
 			}
 		}
 		[CRepr]
@@ -2299,7 +2299,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTileInfoEnumerator self, IPMTileInfo** ppTileInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTileInfoEnumerator self, IPMTileInfo** ppTileInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2314,7 +2314,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMApplicationInfoEnumerator self, IPMApplicationInfo** ppAppInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMApplicationInfoEnumerator self, IPMApplicationInfo** ppAppInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2352,30 +2352,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, BSTR* pTileID) get_TileID;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pNextSchedule) get_NextSchedule;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, FILETIME ftNextSchedule) set_NextSchedule;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pStartSchedule) get_StartSchedule;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, FILETIME ftStartSchedule) set_StartSchedule;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pIntervalDuration) get_IntervalDuration;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulIntervalDuration) set_IntervalDuration;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out BOOL IsRunForever) get_RunForever;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, BOOL fRunForever) set_RunForever;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pMaxRunCount) get_MaxRunCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulMaxRunCount) set_MaxRunCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pRunCount) get_RunCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulRunCount) set_RunCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pRecurrenceType) get_RecurrenceType;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulRecurrenceType) set_RecurrenceType;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint8** pTileXml, out uint32 pcbTileXml) get_TileXML;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint8* pTileXml, uint32 cbTileXml) set_TileXML;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint8** pUrlXML, out uint32 pcbUrlXML) get_UrlXML;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint8* pUrlXML, uint32 cbUrlXML) set_UrlXML;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pAttemptCount) get_AttemptCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulAttemptCount) set_AttemptCount;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, out uint32 pDownloadState) get_DownloadState;
-				public new function HRESULT(ref IPMLiveTileJobInfo self, uint32 ulDownloadState) set_DownloadState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, BSTR* pTileID) get_TileID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pNextSchedule) get_NextSchedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, FILETIME ftNextSchedule) set_NextSchedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out FILETIME pStartSchedule) get_StartSchedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, FILETIME ftStartSchedule) set_StartSchedule;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pIntervalDuration) get_IntervalDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulIntervalDuration) set_IntervalDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out BOOL IsRunForever) get_RunForever;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, BOOL fRunForever) set_RunForever;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pMaxRunCount) get_MaxRunCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulMaxRunCount) set_MaxRunCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pRunCount) get_RunCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulRunCount) set_RunCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pRecurrenceType) get_RecurrenceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulRecurrenceType) set_RecurrenceType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint8** pTileXml, out uint32 pcbTileXml) get_TileXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint8* pTileXml, uint32 cbTileXml) set_TileXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint8** pUrlXML, out uint32 pcbUrlXML) get_UrlXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint8* pUrlXML, uint32 cbUrlXML) set_UrlXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pAttemptCount) get_AttemptCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulAttemptCount) set_AttemptCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, out uint32 pDownloadState) get_DownloadState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfo self, uint32 ulDownloadState) set_DownloadState;
 			}
 		}
 		[CRepr]
@@ -2390,7 +2390,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMLiveTileJobInfoEnumerator self, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMLiveTileJobInfoEnumerator self, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2439,41 +2439,41 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID) ReportDownloadBegin;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID, uint16 usProgress) ReportDownloadProgress;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID, HRESULT hrResult) ReportDownloadComplete;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginInstall;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginUpdate;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginDeployPackage;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO_LEGACY pUpdateInfo) BeginUpdateDeployedPackageLegacy;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID) BeginUninstall;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginEnterpriseAppInstall;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginEnterpriseAppUpdate;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) BeginUpdateLicense;
-				public new function HRESULT(ref IPMDeploymentManager self, BSTR PackagePath, uint8** ppbChallenge, out uint32 pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallenge;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense) GetLicenseChallengeByProductID;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallengeByProductID2;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID) RevokeLicense;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, ref SAFEARRAY FileNames) RebindMdilBinaries;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, Guid InstanceID) RebindAllMdilBinaries;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, ref SAFEARRAY AssemblyPaths) RegenerateXbf;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID) GenerateXbfForCurrentLocale;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID, BSTR XMLpath) BeginProvision;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID) BeginDeprovision;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID) ReindexSQLCEDatabases;
-				public new function HRESULT(ref IPMDeploymentManager self, uint32 RequiredMaintenanceOperations, out uint32 pcApplications) SetApplicationsNeedMaintenance;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid ProductID) UpdateChamberProfile;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productId, PWSTR publisherName, out BOOL pIsAllowed) EnterprisePolicyIsApplicationAllowed;
-				public new function HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginUpdateDeployedPackage;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID) ReportRestoreCancelled;
-				public new function HRESULT(ref IPMDeploymentManager self, PWSTR resourceString, BSTR* pResolvedResourceString) ResolveResourceString;
-				public new function HRESULT(ref IPMDeploymentManager self) UpdateCapabilitiesForModernApps;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productId) ReportDownloadStatusUpdate;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID, uint32 removalOptions) BeginUninstallWithOptions;
-				public new function HRESULT(ref IPMDeploymentManager self) BindDeferredMdilBinaries;
-				public new function HRESULT(ref IPMDeploymentManager self, BSTR PackageFamilyName) GenerateXamlLightupXbfForCurrentLocale;
-				public new function HRESULT(ref IPMDeploymentManager self, Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) AddLicenseForAppx;
-				public new function HRESULT(ref IPMDeploymentManager self) FixJunctionsForAppsOnSDCard;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID) ReportDownloadBegin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, uint16 usProgress) ReportDownloadProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, HRESULT hrResult) ReportDownloadComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginDeployPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO_LEGACY pUpdateInfo) BeginUpdateDeployedPackageLegacy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID) BeginUninstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_INSTALLINFO pInstallInfo) BeginEnterpriseAppInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginEnterpriseAppUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) BeginUpdateLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, BSTR PackagePath, uint8** ppbChallenge, out uint32 pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense) GetLicenseChallengeByProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, uint8** ppbChallenge, out uint32 pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallengeByProductID2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID) RevokeLicense;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, ref SAFEARRAY FileNames) RebindMdilBinaries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, Guid InstanceID) RebindAllMdilBinaries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, ref SAFEARRAY AssemblyPaths) RegenerateXbf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID) GenerateXbfForCurrentLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID, BSTR XMLpath) BeginProvision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID) BeginDeprovision;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID) ReindexSQLCEDatabases;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, uint32 RequiredMaintenanceOperations, out uint32 pcApplications) SetApplicationsNeedMaintenance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid ProductID) UpdateChamberProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productId, PWSTR publisherName, out BOOL pIsAllowed) EnterprisePolicyIsApplicationAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, ref PM_UPDATEINFO pUpdateInfo) BeginUpdateDeployedPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID) ReportRestoreCancelled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, PWSTR resourceString, BSTR* pResolvedResourceString) ResolveResourceString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self) UpdateCapabilitiesForModernApps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productId) ReportDownloadStatusUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, uint32 removalOptions) BeginUninstallWithOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self) BindDeferredMdilBinaries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, BSTR PackageFamilyName) GenerateXamlLightupXbfForCurrentLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self, Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) AddLicenseForAppx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMDeploymentManager self) FixJunctionsForAppsOnSDCard;
 			}
 		}
 		[CRepr]
@@ -2505,24 +2505,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMEnumerationManager self, IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfo;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) get_TileInfo;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfo;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfoEx;
-				public new function HRESULT(ref IPMEnumerationManager self, uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) get_BackgroundServiceAgentInfo;
-				public new function HRESULT(ref IPMEnumerationManager self, IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) get_AllLiveTileJobs;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_LiveTileJob;
-				public new function HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoExternal;
-				public new function HRESULT(ref IPMEnumerationManager self, BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_FileHandlerGenericLogo;
-				public new function HRESULT(ref IPMEnumerationManager self, BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoFromAccessClaims;
-				public new function HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) get_StartTileEnumeratorBlob;
-				public new function HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) get_StartAppEnumeratorBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) get_TileInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfoEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) get_BackgroundServiceAgentInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) get_AllLiveTileJobs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_LiveTileJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoExternal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_FileHandlerGenericLogo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoFromAccessClaims;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcTiles, PM_STARTTILEBLOB** ppTileBlobs) get_StartTileEnumeratorBlob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMEnumerationManager self, PM_ENUM_FILTER Filter, out uint32 pcApps, PM_STARTAPPBLOB** ppAppBlobs) get_StartAppEnumeratorBlob;
 			}
 		}
 		[CRepr]
@@ -2557,27 +2557,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTaskInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pTaskID) get_TaskID;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pNavigationPage) get_NavigationPage;
-				public new function HRESULT(ref IPMTaskInfo self, out PM_TASK_TRANSITION pTaskTransition) get_TaskTransition;
-				public new function HRESULT(ref IPMTaskInfo self, out PACKMAN_RUNTIME pRuntimetype) get_RuntimeType;
-				public new function HRESULT(ref IPMTaskInfo self, out PM_ACTIVATION_POLICY pActivationPolicy) get_ActivationPolicy;
-				public new function HRESULT(ref IPMTaskInfo self, out PM_TASK_TYPE pTaskType) get_TaskType;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pImagePath) get_ImagePath;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pImageParams) get_ImageParams;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pInstallRootFolder) get_InstallRootFolder;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pDataRootFolder) get_DataRootFolder;
-				public new function HRESULT(ref IPMTaskInfo self, out BOOL pIsSingleInstanceHost) get_IsSingleInstanceHost;
-				public new function HRESULT(ref IPMTaskInfo self, out BOOL pIsInteropEnabled) get_IsInteropEnabled;
-				public new function HRESULT(ref IPMTaskInfo self, out PM_APPLICATION_STATE pApplicationState) get_ApplicationState;
-				public new function HRESULT(ref IPMTaskInfo self, out PM_APPLICATION_INSTALL_TYPE pInstallType) get_InstallType;
-				public new function HRESULT(ref IPMTaskInfo self, out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) get_Version;
-				public new function HRESULT(ref IPMTaskInfo self, out uint16 pBitsPerPixel) get_BitsPerPixel;
-				public new function HRESULT(ref IPMTaskInfo self, out BOOL pSuppressesDehydration) get_SuppressesDehydration;
-				public new function HRESULT(ref IPMTaskInfo self, BSTR* pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
-				public new function HRESULT(ref IPMTaskInfo self, out BOOL pIsOptedIn) get_IsOptedForExtendedMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pTaskID) get_TaskID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pNavigationPage) get_NavigationPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_TASK_TRANSITION pTaskTransition) get_TaskTransition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PACKMAN_RUNTIME pRuntimetype) get_RuntimeType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_ACTIVATION_POLICY pActivationPolicy) get_ActivationPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_TASK_TYPE pTaskType) get_TaskType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImagePath) get_ImagePath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pImageParams) get_ImageParams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pInstallRootFolder) get_InstallRootFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pDataRootFolder) get_DataRootFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsSingleInstanceHost) get_IsSingleInstanceHost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsInteropEnabled) get_IsInteropEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_APPLICATION_STATE pApplicationState) get_ApplicationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out PM_APPLICATION_INSTALL_TYPE pInstallType) get_InstallType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out uint8 pTargetMajorVersion, out uint8 pTargetMinorVersion) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out uint16 pBitsPerPixel) get_BitsPerPixel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pSuppressesDehydration) get_SuppressesDehydration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, BSTR* pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfo self, out BOOL pIsOptedIn) get_IsOptedForExtendedMem;
 			}
 		}
 		[CRepr]
@@ -2592,7 +2592,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMTaskInfoEnumerator self, IPMTaskInfo** ppTaskInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMTaskInfoEnumerator self, IPMTaskInfo** ppTaskInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2612,12 +2612,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionInfo self, out Guid pSupplierPID) get_SupplierPID;
-				public new function HRESULT(ref IPMExtensionInfo self, BSTR* pSupplierTID) get_SupplierTaskID;
-				public new function HRESULT(ref IPMExtensionInfo self, BSTR* pTitle) get_Title;
-				public new function HRESULT(ref IPMExtensionInfo self, BSTR* pIconPath) get_IconPath;
-				public new function HRESULT(ref IPMExtensionInfo self, BSTR* pFilePath) get_ExtraFile;
-				public new function HRESULT(ref IPMExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, out Guid pSupplierPID) get_SupplierPID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pSupplierTID) get_SupplierTaskID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pTitle) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pIconPath) get_IconPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pFilePath) get_ExtraFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2638,13 +2638,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pName) get_Name;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pDisplayName) get_DisplayName;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_Logo;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR FileType, BSTR* pContentType) get_ContentType;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR ContentType, BSTR* pFileType) get_FileType;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public new function HRESULT(ref IPMExtensionFileExtensionInfo self, out uint32 pcbTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pDisplayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_Logo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR FileType, BSTR* pContentType) get_ContentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR ContentType, BSTR* pFileType) get_FileType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileExtensionInfo self, out uint32 pcbTypes, BSTR** ppTypes) get_AllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2660,8 +2660,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pProtocol) get_Protocol;
-				public new function HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pProtocol) get_Protocol;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionProtocolInfo self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2678,9 +2678,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionShareTargetInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public new function HRESULT(ref IPMExtensionShareTargetInfo self, out uint32 pcDataFormats, BSTR** ppDataFormats) get_AllDataFormats;
-				public new function HRESULT(ref IPMExtensionShareTargetInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionShareTargetInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionShareTargetInfo self, out uint32 pcDataFormats, BSTR** ppDataFormats) get_AllDataFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionShareTargetInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2695,7 +2695,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionContractInfo self, BSTR* pAUMID, BSTR* pArgs) get_InvocationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionContractInfo self, BSTR* pAUMID, BSTR* pArgs) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2711,8 +2711,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionFileOpenPickerInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public new function HRESULT(ref IPMExtensionFileOpenPickerInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileOpenPickerInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileOpenPickerInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2728,8 +2728,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionFileSavePickerInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public new function HRESULT(ref IPMExtensionFileSavePickerInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileSavePickerInfo self, out uint32 pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionFileSavePickerInfo self, out BOOL pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2744,7 +2744,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionCachedFileUpdaterInfo self, out BOOL pSupportsUpdates) get_SupportsUpdates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionCachedFileUpdaterInfo self, out BOOL pSupportsUpdates) get_SupportsUpdates;
 			}
 		}
 		[CRepr]
@@ -2759,7 +2759,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMExtensionInfoEnumerator self, IPMExtensionInfo** ppExtensionInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMExtensionInfoEnumerator self, IPMExtensionInfo** ppExtensionInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2787,20 +2787,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pTaskID) get_TaskID;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out uint32 pBSAID) get_BSAID;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSpecifier) get_BGSpecifier;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGName) get_BGName;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSource) get_BGSource;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGType) get_BGType;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsPeriodic) get_IsPeriodic;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduled) get_IsScheduled;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduleAllowed) get_IsScheduleAllowed;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pDescription) get_Description;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pLaunchOnBoot) get_IsLaunchOnBoot;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduled) set_IsScheduled;
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduleAllowed) set_IsScheduleAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pTaskID) get_TaskID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out uint32 pBSAID) get_BSAID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSpecifier) get_BGSpecifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGName) get_BGName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGSource) get_BGSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pBGType) get_BGType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsPeriodic) get_IsPeriodic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduled) get_IsScheduled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pIsScheduleAllowed) get_IsScheduleAllowed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BSTR* pDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, out BOOL pLaunchOnBoot) get_IsLaunchOnBoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduled) set_IsScheduled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfo self, BOOL IsScheduleAllowed) set_IsScheduleAllowed;
 			}
 		}
 		[CRepr]
@@ -2820,12 +2820,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, out Guid pProductID) get_ProductID;
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pTaskID) get_TaskID;
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pBGName) get_BGName;
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pMaxStartupLatency) get_MaxStartupLatency;
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pExpectedRuntime) get_ExpectedRuntime;
-				public new function HRESULT(ref IPMBackgroundWorkerInfo self, out BOOL pIsBootWorker) get_IsBootWorker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out Guid pProductID) get_ProductID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pTaskID) get_TaskID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, BSTR* pBGName) get_BGName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pMaxStartupLatency) get_MaxStartupLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out uint32 pExpectedRuntime) get_ExpectedRuntime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfo self, out BOOL pIsBootWorker) get_IsBootWorker;
 			}
 		}
 		[CRepr]
@@ -2840,7 +2840,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMBackgroundServiceAgentInfoEnumerator self, IPMBackgroundServiceAgentInfo** ppBSAInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundServiceAgentInfoEnumerator self, IPMBackgroundServiceAgentInfo** ppBSAInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2855,7 +2855,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPMBackgroundWorkerInfoEnumerator self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfoEnumerator self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
 			}
 		}
 		

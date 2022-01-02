@@ -1930,7 +1930,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDialEventSink self, uint32 dwEvent, uint32 dwStatus) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEventSink self, uint32 dwEvent, uint32 dwStatus) OnEvent;
 			}
 		}
 		[CRepr]
@@ -1951,13 +1951,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDialEngine self, PWSTR pwzConnectoid, ref IDialEventSink pIDES) Initialize;
-				public new function HRESULT(ref IDialEngine self, PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) GetProperty;
-				public new function HRESULT(ref IDialEngine self, PWSTR pwzProperty, PWSTR pwzValue) SetProperty;
-				public new function HRESULT(ref IDialEngine self) Dial;
-				public new function HRESULT(ref IDialEngine self) HangUp;
-				public new function HRESULT(ref IDialEngine self, out uint32 pdwState) GetConnectedState;
-				public new function HRESULT(ref IDialEngine self, out uint pdwHandle) GetConnectHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self, PWSTR pwzConnectoid, ref IDialEventSink pIDES) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self, PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self, PWSTR pwzProperty, PWSTR pwzValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self) Dial;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self) HangUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self, out uint32 pdwState) GetConnectedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialEngine self, out uint pdwHandle) GetConnectHandle;
 			}
 		}
 		[CRepr]
@@ -1973,8 +1973,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDialBranding self, PWSTR pwzConnectoid) Initialize;
-				public new function HRESULT(ref IDialBranding self, uint32 dwIndex, out HBITMAP phBitmap) GetBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialBranding self, PWSTR pwzConnectoid) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDialBranding self, uint32 dwIndex, out HBITMAP phBitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -1989,7 +1989,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProofOfPossessionCookieInfoManager self, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoForUri;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProofOfPossessionCookieInfoManager self, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoForUri;
 			}
 		}
 		[CRepr]
@@ -2004,7 +2004,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProofOfPossessionCookieInfoManager2 self, ref IInspectable webAccount, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProofOfPossessionCookieInfoManager2 self, ref IInspectable webAccount, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
 			}
 		}
 		

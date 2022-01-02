@@ -248,9 +248,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITaskTrigger self, in TASK_TRIGGER pTrigger) SetTrigger;
-				public new function HRESULT(ref ITaskTrigger self, out TASK_TRIGGER pTrigger) GetTrigger;
-				public new function HRESULT(ref ITaskTrigger self, out PWSTR ppwszTrigger) GetTriggerString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskTrigger self, in TASK_TRIGGER pTrigger) SetTrigger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskTrigger self, out TASK_TRIGGER pTrigger) GetTrigger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskTrigger self, out PWSTR ppwszTrigger) GetTriggerString;
 			}
 		}
 		[CRepr]
@@ -293,35 +293,35 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 piNewTrigger, out ITaskTrigger* ppTrigger) CreateTrigger;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger) DeleteTrigger;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwCount) GetTriggerCount;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out ITaskTrigger* ppTrigger) GetTrigger;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out PWSTR ppwszTrigger) GetTriggerString;
-				public new function HRESULT(ref IScheduledWorkItem self, in SYSTEMTIME pstBegin, in SYSTEMTIME pstEnd, out uint16 pCount, out SYSTEMTIME* rgstTaskTimes) GetRunTimes;
-				public new function HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstNextRun) GetNextRunTime;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 wIdleMinutes, uint16 wDeadlineMinutes) SetIdleWait;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwIdleMinutes, out uint16 pwDeadlineMinutes) GetIdleWait;
-				public new function HRESULT(ref IScheduledWorkItem self) Run;
-				public new function HRESULT(ref IScheduledWorkItem self) Terminate;
-				public new function HRESULT(ref IScheduledWorkItem self, HWND hParent, uint32 dwReserved) EditWorkItem;
-				public new function HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstLastRun) GetMostRecentRunTime;
-				public new function HRESULT(ref IScheduledWorkItem self, out HRESULT phrStatus) GetStatus;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint32 pdwExitCode) GetExitCode;
-				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszComment) SetComment;
-				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszComment) GetComment;
-				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszCreator) SetCreator;
-				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszCreator) GetCreator;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 cbData, ref uint8 rgbData) SetWorkItemData;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pcbData, out uint8* prgbData) GetWorkItemData;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 wRetryCount) SetErrorRetryCount;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryCount) GetErrorRetryCount;
-				public new function HRESULT(ref IScheduledWorkItem self, uint16 wRetryInterval) SetErrorRetryInterval;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryInterval) GetErrorRetryInterval;
-				public new function HRESULT(ref IScheduledWorkItem self, uint32 dwFlags) SetFlags;
-				public new function HRESULT(ref IScheduledWorkItem self, out uint32 pdwFlags) ComGetFlags;
-				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszAccountName, PWSTR pwszPassword) SetAccountInformation;
-				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszAccountName) GetAccountInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 piNewTrigger, out ITaskTrigger* ppTrigger) CreateTrigger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 iTrigger) DeleteTrigger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 pwCount) GetTriggerCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out ITaskTrigger* ppTrigger) GetTrigger;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out PWSTR ppwszTrigger) GetTriggerString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, in SYSTEMTIME pstBegin, in SYSTEMTIME pstEnd, out uint16 pCount, out SYSTEMTIME* rgstTaskTimes) GetRunTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstNextRun) GetNextRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 wIdleMinutes, uint16 wDeadlineMinutes) SetIdleWait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 pwIdleMinutes, out uint16 pwDeadlineMinutes) GetIdleWait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, HWND hParent, uint32 dwReserved) EditWorkItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstLastRun) GetMostRecentRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out HRESULT phrStatus) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint32 pdwExitCode) GetExitCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, PWSTR pwszComment) SetComment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszComment) GetComment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, PWSTR pwszCreator) SetCreator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszCreator) GetCreator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 cbData, ref uint8 rgbData) SetWorkItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 pcbData, out uint8* prgbData) GetWorkItemData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 wRetryCount) SetErrorRetryCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryCount) GetErrorRetryCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint16 wRetryInterval) SetErrorRetryInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryInterval) GetErrorRetryInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, uint32 dwFlags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out uint32 pdwFlags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, PWSTR pwszAccountName, PWSTR pwszPassword) SetAccountInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszAccountName) GetAccountInformation;
 			}
 		}
 		[CRepr]
@@ -347,18 +347,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IScheduledWorkItem.VTable
 			{
-				public new function HRESULT(ref ITask self, PWSTR pwszApplicationName) SetApplicationName;
-				public new function HRESULT(ref ITask self, out PWSTR ppwszApplicationName) GetApplicationName;
-				public new function HRESULT(ref ITask self, PWSTR pwszParameters) SetParameters;
-				public new function HRESULT(ref ITask self, out PWSTR ppwszParameters) GetParameters;
-				public new function HRESULT(ref ITask self, PWSTR pwszWorkingDirectory) SetWorkingDirectory;
-				public new function HRESULT(ref ITask self, out PWSTR ppwszWorkingDirectory) GetWorkingDirectory;
-				public new function HRESULT(ref ITask self, uint32 dwPriority) SetPriority;
-				public new function HRESULT(ref ITask self, out uint32 pdwPriority) GetPriority;
-				public new function HRESULT(ref ITask self, uint32 dwFlags) SetTaskFlags;
-				public new function HRESULT(ref ITask self, out uint32 pdwFlags) GetTaskFlags;
-				public new function HRESULT(ref ITask self, uint32 dwMaxRunTimeMS) SetMaxRunTime;
-				public new function HRESULT(ref ITask self, out uint32 pdwMaxRunTimeMS) GetMaxRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, PWSTR pwszApplicationName) SetApplicationName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out PWSTR ppwszApplicationName) GetApplicationName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, PWSTR pwszParameters) SetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out PWSTR ppwszParameters) GetParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, PWSTR pwszWorkingDirectory) SetWorkingDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out PWSTR ppwszWorkingDirectory) GetWorkingDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, uint32 dwPriority) SetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out uint32 pdwPriority) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, uint32 dwFlags) SetTaskFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out uint32 pdwFlags) GetTaskFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, uint32 dwMaxRunTimeMS) SetMaxRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITask self, out uint32 pdwMaxRunTimeMS) GetMaxRunTime;
 			}
 		}
 		[CRepr]
@@ -376,10 +376,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWorkItems self, uint32 celt, out PWSTR* rgpwszNames, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IEnumWorkItems self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumWorkItems self) Reset;
-				public new function HRESULT(ref IEnumWorkItems self, out IEnumWorkItems* ppEnumWorkItems) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWorkItems self, uint32 celt, out PWSTR* rgpwszNames, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWorkItems self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWorkItems self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWorkItems self, out IEnumWorkItems* ppEnumWorkItems) Clone;
 			}
 		}
 		[CRepr]
@@ -401,14 +401,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszComputer) SetTargetComputer;
-				public new function HRESULT(ref ITaskScheduler self, out PWSTR ppwszComputer) GetTargetComputer;
-				public new function HRESULT(ref ITaskScheduler self, out IEnumWorkItems* ppEnumWorkItems) Enum;
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid, out IUnknown* ppUnk) Activate;
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName) Delete;
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, in Guid rclsid, in Guid riid, out IUnknown* ppUnk) NewWorkItem;
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, ref IScheduledWorkItem pWorkItem) AddWorkItem;
-				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid) IsOfType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszComputer) SetTargetComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, out PWSTR ppwszComputer) GetTargetComputer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, out IEnumWorkItems* ppEnumWorkItems) Enum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid, out IUnknown* ppUnk) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszName) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, in Guid rclsid, in Guid riid, out IUnknown* ppUnk) NewWorkItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, ref IScheduledWorkItem pWorkItem) AddWorkItem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid) IsOfType;
 			}
 		}
 		[CRepr]
@@ -423,7 +423,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProvideTaskPage self, TASKPAGE tpType, BOOL fPersistChanges, out HPROPSHEETPAGE phPage) GetPage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideTaskPage self, TASKPAGE tpType, BOOL fPersistChanges, out HPROPSHEETPAGE phPage) GetPage;
 			}
 		}
 		[CRepr]
@@ -440,9 +440,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskFolderCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref ITaskFolderCollection self, VARIANT index, ITaskFolder** ppFolder) get_Item;
-				public new function HRESULT(ref ITaskFolderCollection self, IUnknown** ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, VARIANT index, ITaskFolder** ppFolder) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolderCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -465,15 +465,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskService self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-				public new function HRESULT(ref ITaskService self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetRunningTasks;
-				public new function HRESULT(ref ITaskService self, uint32 flags, ITaskDefinition** ppDefinition) NewTask;
-				public new function HRESULT(ref ITaskService self, VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) Connect;
-				public new function HRESULT(ref ITaskService self, out int16 pConnected) get_Connected;
-				public new function HRESULT(ref ITaskService self, BSTR* pServer) get_TargetServer;
-				public new function HRESULT(ref ITaskService self, BSTR* pUser) get_ConnectedUser;
-				public new function HRESULT(ref ITaskService self, BSTR* pDomain) get_ConnectedDomain;
-				public new function HRESULT(ref ITaskService self, out uint32 pVersion) get_HighestVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR path, ITaskFolder** ppFolder) GetFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetRunningTasks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, uint32 flags, ITaskDefinition** ppDefinition) NewTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out int16 pConnected) get_Connected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pServer) get_TargetServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pUser) get_ConnectedUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, BSTR* pDomain) get_ConnectedDomain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskService self, out uint32 pVersion) get_HighestVersion;
 			}
 		}
 		[CRepr]
@@ -491,10 +491,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITaskHandler self, IUnknown* pHandlerServices, BSTR data) Start;
-				public new function HRESULT(ref ITaskHandler self, out HRESULT pRetCode) Stop;
-				public new function HRESULT(ref ITaskHandler self) Pause;
-				public new function HRESULT(ref ITaskHandler self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandler self, IUnknown* pHandlerServices, BSTR data) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandler self, out HRESULT pRetCode) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandler self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandler self) Resume;
 			}
 		}
 		[CRepr]
@@ -510,8 +510,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITaskHandlerStatus self, int16 percentComplete, BSTR statusMessage) UpdateStatus;
-				public new function HRESULT(ref ITaskHandlerStatus self, HRESULT taskErrCode) TaskCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandlerStatus self, int16 percentComplete, BSTR statusMessage) UpdateStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskHandlerStatus self, HRESULT taskErrCode) TaskCompleted;
 			}
 		}
 		[CRepr]
@@ -528,9 +528,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITaskVariables self, BSTR* pInput) GetInput;
-				public new function HRESULT(ref ITaskVariables self, BSTR input) SetOutput;
-				public new function HRESULT(ref ITaskVariables self, BSTR* pContext) GetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR* pInput) GetInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR input) SetOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskVariables self, BSTR* pContext) GetContext;
 			}
 		}
 		[CRepr]
@@ -548,10 +548,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskNamedValuePair self, out BSTR pName) get_Name;
-				public new function HRESULT(ref ITaskNamedValuePair self, BSTR name) put_Name;
-				public new function HRESULT(ref ITaskNamedValuePair self, out BSTR pValue) get_Value;
-				public new function HRESULT(ref ITaskNamedValuePair self, BSTR value) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValuePair self, out BSTR pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValuePair self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValuePair self, out BSTR pValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValuePair self, BSTR value) put_Value;
 			}
 		}
 		[CRepr]
@@ -571,12 +571,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskNamedValueCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref ITaskNamedValueCollection self, int32 index, out ITaskNamedValuePair* ppPair) get_Item;
-				public new function HRESULT(ref ITaskNamedValueCollection self, out IUnknown* ppEnum) get__NewEnum;
-				public new function HRESULT(ref ITaskNamedValueCollection self, BSTR name, BSTR value, out ITaskNamedValuePair* ppPair) Create;
-				public new function HRESULT(ref ITaskNamedValueCollection self, int32 index) Remove;
-				public new function HRESULT(ref ITaskNamedValueCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self, int32 index, out ITaskNamedValuePair* ppPair) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self, BSTR name, BSTR value, out ITaskNamedValuePair* ppPair) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self, int32 index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskNamedValueCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -598,14 +598,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRunningTask self, BSTR* pName) get_Name;
-				public new function HRESULT(ref IRunningTask self, BSTR* pGuid) get_InstanceGuid;
-				public new function HRESULT(ref IRunningTask self, BSTR* pPath) get_Path;
-				public new function HRESULT(ref IRunningTask self, out TASK_STATE pState) get_State;
-				public new function HRESULT(ref IRunningTask self, BSTR* pName) get_CurrentAction;
-				public new function HRESULT(ref IRunningTask self) Stop;
-				public new function HRESULT(ref IRunningTask self) Refresh;
-				public new function HRESULT(ref IRunningTask self, out uint32 pPID) get_EnginePID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pGuid) get_InstanceGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out TASK_STATE pState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, BSTR* pName) get_CurrentAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTask self, out uint32 pPID) get_EnginePID;
 			}
 		}
 		[CRepr]
@@ -622,9 +622,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRunningTaskCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref IRunningTaskCollection self, VARIANT index, IRunningTask** ppRunningTask) get_Item;
-				public new function HRESULT(ref IRunningTaskCollection self, IUnknown** ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, VARIANT index, IRunningTask** ppRunningTask) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRunningTaskCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -656,24 +656,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRegisteredTask self, BSTR* pName) get_Name;
-				public new function HRESULT(ref IRegisteredTask self, BSTR* pPath) get_Path;
-				public new function HRESULT(ref IRegisteredTask self, out TASK_STATE pState) get_State;
-				public new function HRESULT(ref IRegisteredTask self, out int16 pEnabled) get_Enabled;
-				public new function HRESULT(ref IRegisteredTask self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref IRegisteredTask self, VARIANT @params, IRunningTask** ppRunningTask) Run;
-				public new function HRESULT(ref IRegisteredTask self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) RunEx;
-				public new function HRESULT(ref IRegisteredTask self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetInstances;
-				public new function HRESULT(ref IRegisteredTask self, out double pLastRunTime) get_LastRunTime;
-				public new function HRESULT(ref IRegisteredTask self, out int32 pLastTaskResult) get_LastTaskResult;
-				public new function HRESULT(ref IRegisteredTask self, out int32 pNumberOfMissedRuns) get_NumberOfMissedRuns;
-				public new function HRESULT(ref IRegisteredTask self, out double pNextRunTime) get_NextRunTime;
-				public new function HRESULT(ref IRegisteredTask self, ITaskDefinition** ppDefinition) get_Definition;
-				public new function HRESULT(ref IRegisteredTask self, BSTR* pXml) get_Xml;
-				public new function HRESULT(ref IRegisteredTask self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
-				public new function HRESULT(ref IRegisteredTask self, BSTR sddl, int32 flags) SetSecurityDescriptor;
-				public new function HRESULT(ref IRegisteredTask self, int32 flags) Stop;
-				public new function HRESULT(ref IRegisteredTask self, in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) GetRunTimes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out TASK_STATE pState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int16 pEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, IRunningTask** ppRunningTask) Run;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) RunEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out double pLastRunTime) get_LastRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int32 pLastTaskResult) get_LastTaskResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out int32 pNumberOfMissedRuns) get_NumberOfMissedRuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, out double pNextRunTime) get_NextRunTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, ITaskDefinition** ppDefinition) get_Definition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR* pXml) get_Xml;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, BSTR sddl, int32 flags) SetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, int32 flags) Stop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTask self, in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) GetRunTimes;
 			}
 		}
 		[CRepr]
@@ -700,19 +700,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITrigger self, out TASK_TRIGGER_TYPE2 pType) get_Type;
-				public new function HRESULT(ref ITrigger self, out BSTR pId) get_Id;
-				public new function HRESULT(ref ITrigger self, BSTR id) put_Id;
-				public new function HRESULT(ref ITrigger self, out IRepetitionPattern* ppRepeat) get_Repetition;
-				public new function HRESULT(ref ITrigger self, ref IRepetitionPattern pRepeat) put_Repetition;
-				public new function HRESULT(ref ITrigger self, out BSTR pTimeLimit) get_ExecutionTimeLimit;
-				public new function HRESULT(ref ITrigger self, BSTR timelimit) put_ExecutionTimeLimit;
-				public new function HRESULT(ref ITrigger self, out BSTR pStart) get_StartBoundary;
-				public new function HRESULT(ref ITrigger self, BSTR start) put_StartBoundary;
-				public new function HRESULT(ref ITrigger self, out BSTR pEnd) get_EndBoundary;
-				public new function HRESULT(ref ITrigger self, BSTR end) put_EndBoundary;
-				public new function HRESULT(ref ITrigger self, out int16 pEnabled) get_Enabled;
-				public new function HRESULT(ref ITrigger self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out TASK_TRIGGER_TYPE2 pType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out BSTR pId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, BSTR id) put_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out IRepetitionPattern* ppRepeat) get_Repetition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, ref IRepetitionPattern pRepeat) put_Repetition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out BSTR pTimeLimit) get_ExecutionTimeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, BSTR timelimit) put_ExecutionTimeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out BSTR pStart) get_StartBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, BSTR start) put_StartBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out BSTR pEnd) get_EndBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, BSTR end) put_EndBoundary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, out int16 pEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITrigger self, int16 enabled) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -743,10 +743,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref ILogonTrigger self, out BSTR pDelay) get_Delay;
-				public new function HRESULT(ref ILogonTrigger self, BSTR delay) put_Delay;
-				public new function HRESULT(ref ILogonTrigger self, out BSTR pUser) get_UserId;
-				public new function HRESULT(ref ILogonTrigger self, BSTR user) put_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogonTrigger self, out BSTR pDelay) get_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogonTrigger self, BSTR delay) put_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogonTrigger self, out BSTR pUser) get_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILogonTrigger self, BSTR user) put_UserId;
 			}
 		}
 		[CRepr]
@@ -766,12 +766,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref ISessionStateChangeTrigger self, out BSTR pDelay) get_Delay;
-				public new function HRESULT(ref ISessionStateChangeTrigger self, BSTR delay) put_Delay;
-				public new function HRESULT(ref ISessionStateChangeTrigger self, out BSTR pUser) get_UserId;
-				public new function HRESULT(ref ISessionStateChangeTrigger self, BSTR user) put_UserId;
-				public new function HRESULT(ref ISessionStateChangeTrigger self, out TASK_SESSION_STATE_CHANGE_TYPE pType) get_StateChange;
-				public new function HRESULT(ref ISessionStateChangeTrigger self, TASK_SESSION_STATE_CHANGE_TYPE type) put_StateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, out BSTR pDelay) get_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, BSTR delay) put_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, out BSTR pUser) get_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, BSTR user) put_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, out TASK_SESSION_STATE_CHANGE_TYPE pType) get_StateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISessionStateChangeTrigger self, TASK_SESSION_STATE_CHANGE_TYPE type) put_StateChange;
 			}
 		}
 		[CRepr]
@@ -791,12 +791,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IEventTrigger self, out BSTR pQuery) get_Subscription;
-				public new function HRESULT(ref IEventTrigger self, BSTR query) put_Subscription;
-				public new function HRESULT(ref IEventTrigger self, out BSTR pDelay) get_Delay;
-				public new function HRESULT(ref IEventTrigger self, BSTR delay) put_Delay;
-				public new function HRESULT(ref IEventTrigger self, out ITaskNamedValueCollection* ppNamedXPaths) get_ValueQueries;
-				public new function HRESULT(ref IEventTrigger self, ref ITaskNamedValueCollection pNamedXPaths) put_ValueQueries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, out BSTR pQuery) get_Subscription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, BSTR query) put_Subscription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, out BSTR pDelay) get_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, BSTR delay) put_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, out ITaskNamedValueCollection* ppNamedXPaths) get_ValueQueries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventTrigger self, ref ITaskNamedValueCollection pNamedXPaths) put_ValueQueries;
 			}
 		}
 		[CRepr]
@@ -812,8 +812,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref ITimeTrigger self, out BSTR pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ref ITimeTrigger self, BSTR randomDelay) put_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITimeTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITimeTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -831,10 +831,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IDailyTrigger self, out int16 pDays) get_DaysInterval;
-				public new function HRESULT(ref IDailyTrigger self, int16 days) put_DaysInterval;
-				public new function HRESULT(ref IDailyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ref IDailyTrigger self, BSTR randomDelay) put_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDailyTrigger self, out int16 pDays) get_DaysInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDailyTrigger self, int16 days) put_DaysInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDailyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDailyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -854,12 +854,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IWeeklyTrigger self, out int16 pDays) get_DaysOfWeek;
-				public new function HRESULT(ref IWeeklyTrigger self, int16 days) put_DaysOfWeek;
-				public new function HRESULT(ref IWeeklyTrigger self, out int16 pWeeks) get_WeeksInterval;
-				public new function HRESULT(ref IWeeklyTrigger self, int16 weeks) put_WeeksInterval;
-				public new function HRESULT(ref IWeeklyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ref IWeeklyTrigger self, BSTR randomDelay) put_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, out int16 pDays) get_DaysOfWeek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, int16 days) put_DaysOfWeek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, out int16 pWeeks) get_WeeksInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, int16 weeks) put_WeeksInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWeeklyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -881,14 +881,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IMonthlyTrigger self, out int32 pDays) get_DaysOfMonth;
-				public new function HRESULT(ref IMonthlyTrigger self, int32 days) put_DaysOfMonth;
-				public new function HRESULT(ref IMonthlyTrigger self, out int16 pMonths) get_MonthsOfYear;
-				public new function HRESULT(ref IMonthlyTrigger self, int16 months) put_MonthsOfYear;
-				public new function HRESULT(ref IMonthlyTrigger self, out int16 pLastDay) get_RunOnLastDayOfMonth;
-				public new function HRESULT(ref IMonthlyTrigger self, int16 lastDay) put_RunOnLastDayOfMonth;
-				public new function HRESULT(ref IMonthlyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ref IMonthlyTrigger self, BSTR randomDelay) put_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, out int32 pDays) get_DaysOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, int32 days) put_DaysOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, out int16 pMonths) get_MonthsOfYear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, int16 months) put_MonthsOfYear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, out int16 pLastDay) get_RunOnLastDayOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, int16 lastDay) put_RunOnLastDayOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -912,16 +912,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pDays) get_DaysOfWeek;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 days) put_DaysOfWeek;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pWeeks) get_WeeksOfMonth;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 weeks) put_WeeksOfMonth;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pMonths) get_MonthsOfYear;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 months) put_MonthsOfYear;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pLastWeek) get_RunOnLastWeekOfMonth;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 lastWeek) put_RunOnLastWeekOfMonth;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, out BSTR pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ref IMonthlyDOWTrigger self, BSTR randomDelay) put_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, out int16 pDays) get_DaysOfWeek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, int16 days) put_DaysOfWeek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, out int16 pWeeks) get_WeeksOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, int16 weeks) put_WeeksOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, out int16 pMonths) get_MonthsOfYear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, int16 months) put_MonthsOfYear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, out int16 pLastWeek) get_RunOnLastWeekOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, int16 lastWeek) put_RunOnLastWeekOfMonth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonthlyDOWTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -937,8 +937,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IBootTrigger self, out BSTR pDelay) get_Delay;
-				public new function HRESULT(ref IBootTrigger self, BSTR delay) put_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBootTrigger self, out BSTR pDelay) get_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBootTrigger self, BSTR delay) put_Delay;
 			}
 		}
 		[CRepr]
@@ -954,8 +954,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ref IRegistrationTrigger self, out BSTR pDelay) get_Delay;
-				public new function HRESULT(ref IRegistrationTrigger self, BSTR delay) put_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationTrigger self, out BSTR pDelay) get_Delay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationTrigger self, BSTR delay) put_Delay;
 			}
 		}
 		[CRepr]
@@ -972,9 +972,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IAction self, out BSTR pId) get_Id;
-				public new function HRESULT(ref IAction self, BSTR Id) put_Id;
-				public new function HRESULT(ref IAction self, out TASK_ACTION_TYPE pType) get_Type;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAction self, out BSTR pId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAction self, BSTR Id) put_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAction self, out TASK_ACTION_TYPE pType) get_Type;
 			}
 		}
 		[CRepr]
@@ -994,12 +994,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(ref IExecAction self, out BSTR pPath) get_Path;
-				public new function HRESULT(ref IExecAction self, BSTR path) put_Path;
-				public new function HRESULT(ref IExecAction self, out BSTR pArgument) get_Arguments;
-				public new function HRESULT(ref IExecAction self, BSTR argument) put_Arguments;
-				public new function HRESULT(ref IExecAction self, out BSTR pWorkingDirectory) get_WorkingDirectory;
-				public new function HRESULT(ref IExecAction self, BSTR workingDirectory) put_WorkingDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, out BSTR pPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, BSTR path) put_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, out BSTR pArgument) get_Arguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, BSTR argument) put_Arguments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, out BSTR pWorkingDirectory) get_WorkingDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction self, BSTR workingDirectory) put_WorkingDirectory;
 			}
 		}
 		[CRepr]
@@ -1015,8 +1015,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IExecAction.VTable
 			{
-				public new function HRESULT(ref IExecAction2 self, out int16 pHideAppWindow) get_HideAppWindow;
-				public new function HRESULT(ref IExecAction2 self, int16 hideAppWindow) put_HideAppWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction2 self, out int16 pHideAppWindow) get_HideAppWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IExecAction2 self, int16 hideAppWindow) put_HideAppWindow;
 			}
 		}
 		[CRepr]
@@ -1034,10 +1034,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(ref IShowMessageAction self, out BSTR pTitle) get_Title;
-				public new function HRESULT(ref IShowMessageAction self, BSTR title) put_Title;
-				public new function HRESULT(ref IShowMessageAction self, out BSTR pMessageBody) get_MessageBody;
-				public new function HRESULT(ref IShowMessageAction self, BSTR messageBody) put_MessageBody;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShowMessageAction self, out BSTR pTitle) get_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShowMessageAction self, BSTR title) put_Title;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShowMessageAction self, out BSTR pMessageBody) get_MessageBody;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IShowMessageAction self, BSTR messageBody) put_MessageBody;
 			}
 		}
 		[CRepr]
@@ -1055,10 +1055,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(ref IComHandlerAction self, out BSTR pClsid) get_ClassId;
-				public new function HRESULT(ref IComHandlerAction self, BSTR clsid) put_ClassId;
-				public new function HRESULT(ref IComHandlerAction self, out BSTR pData) get_Data;
-				public new function HRESULT(ref IComHandlerAction self, BSTR data) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComHandlerAction self, out BSTR pClsid) get_ClassId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComHandlerAction self, BSTR clsid) put_ClassId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComHandlerAction self, out BSTR pData) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComHandlerAction self, BSTR data) put_Data;
 			}
 		}
 		[CRepr]
@@ -1092,26 +1092,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(ref IEmailAction self, out BSTR pServer) get_Server;
-				public new function HRESULT(ref IEmailAction self, BSTR server) put_Server;
-				public new function HRESULT(ref IEmailAction self, out BSTR pSubject) get_Subject;
-				public new function HRESULT(ref IEmailAction self, BSTR subject) put_Subject;
-				public new function HRESULT(ref IEmailAction self, out BSTR pTo) get_To;
-				public new function HRESULT(ref IEmailAction self, BSTR to) put_To;
-				public new function HRESULT(ref IEmailAction self, out BSTR pCc) get_Cc;
-				public new function HRESULT(ref IEmailAction self, BSTR cc) put_Cc;
-				public new function HRESULT(ref IEmailAction self, out BSTR pBcc) get_Bcc;
-				public new function HRESULT(ref IEmailAction self, BSTR bcc) put_Bcc;
-				public new function HRESULT(ref IEmailAction self, out BSTR pReplyTo) get_ReplyTo;
-				public new function HRESULT(ref IEmailAction self, BSTR replyTo) put_ReplyTo;
-				public new function HRESULT(ref IEmailAction self, out BSTR pFrom) get_From;
-				public new function HRESULT(ref IEmailAction self, BSTR from) put_From;
-				public new function HRESULT(ref IEmailAction self, out ITaskNamedValueCollection* ppHeaderFields) get_HeaderFields;
-				public new function HRESULT(ref IEmailAction self, ref ITaskNamedValueCollection pHeaderFields) put_HeaderFields;
-				public new function HRESULT(ref IEmailAction self, out BSTR pBody) get_Body;
-				public new function HRESULT(ref IEmailAction self, BSTR body) put_Body;
-				public new function HRESULT(ref IEmailAction self, out SAFEARRAY* pAttachements) get_Attachments;
-				public new function HRESULT(ref IEmailAction self, out SAFEARRAY pAttachements) put_Attachments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pServer) get_Server;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR server) put_Server;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pSubject) get_Subject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR subject) put_Subject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pTo) get_To;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR to) put_To;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pCc) get_Cc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR cc) put_Cc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pBcc) get_Bcc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR bcc) put_Bcc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pReplyTo) get_ReplyTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR replyTo) put_ReplyTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pFrom) get_From;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR from) put_From;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out ITaskNamedValueCollection* ppHeaderFields) get_HeaderFields;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, ref ITaskNamedValueCollection pHeaderFields) put_HeaderFields;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out BSTR pBody) get_Body;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, BSTR body) put_Body;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out SAFEARRAY* pAttachements) get_Attachments;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmailAction self, out SAFEARRAY pAttachements) put_Attachments;
 			}
 		}
 		[CRepr]
@@ -1131,12 +1131,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITriggerCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref ITriggerCollection self, int32 index, out ITrigger* ppTrigger) get_Item;
-				public new function HRESULT(ref ITriggerCollection self, out IUnknown* ppEnum) get__NewEnum;
-				public new function HRESULT(ref ITriggerCollection self, TASK_TRIGGER_TYPE2 type, out ITrigger* ppTrigger) Create;
-				public new function HRESULT(ref ITriggerCollection self, VARIANT index) Remove;
-				public new function HRESULT(ref ITriggerCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self, int32 index, out ITrigger* ppTrigger) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self, TASK_TRIGGER_TYPE2 type, out ITrigger* ppTrigger) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self, VARIANT index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITriggerCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -1160,16 +1160,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IActionCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref IActionCollection self, int32 index, out IAction* ppAction) get_Item;
-				public new function HRESULT(ref IActionCollection self, out IUnknown* ppEnum) get__NewEnum;
-				public new function HRESULT(ref IActionCollection self, out BSTR pText) get_XmlText;
-				public new function HRESULT(ref IActionCollection self, BSTR text) put_XmlText;
-				public new function HRESULT(ref IActionCollection self, TASK_ACTION_TYPE type, out IAction* ppAction) Create;
-				public new function HRESULT(ref IActionCollection self, VARIANT index) Remove;
-				public new function HRESULT(ref IActionCollection self) Clear;
-				public new function HRESULT(ref IActionCollection self, out BSTR pContext) get_Context;
-				public new function HRESULT(ref IActionCollection self, BSTR context) put_Context;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, int32 index, out IAction* ppAction) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, out BSTR pText) get_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, BSTR text) put_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, TASK_ACTION_TYPE type, out IAction* ppAction) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, VARIANT index) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, out BSTR pContext) get_Context;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActionCollection self, BSTR context) put_Context;
 			}
 		}
 		[CRepr]
@@ -1195,18 +1195,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPrincipal self, out BSTR pId) get_Id;
-				public new function HRESULT(ref IPrincipal self, BSTR Id) put_Id;
-				public new function HRESULT(ref IPrincipal self, out BSTR pName) get_DisplayName;
-				public new function HRESULT(ref IPrincipal self, BSTR name) put_DisplayName;
-				public new function HRESULT(ref IPrincipal self, out BSTR pUser) get_UserId;
-				public new function HRESULT(ref IPrincipal self, BSTR user) put_UserId;
-				public new function HRESULT(ref IPrincipal self, out TASK_LOGON_TYPE pLogon) get_LogonType;
-				public new function HRESULT(ref IPrincipal self, TASK_LOGON_TYPE logon) put_LogonType;
-				public new function HRESULT(ref IPrincipal self, out BSTR pGroup) get_GroupId;
-				public new function HRESULT(ref IPrincipal self, BSTR group) put_GroupId;
-				public new function HRESULT(ref IPrincipal self, out TASK_RUNLEVEL_TYPE pRunLevel) get_RunLevel;
-				public new function HRESULT(ref IPrincipal self, TASK_RUNLEVEL_TYPE runLevel) put_RunLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out BSTR pId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, BSTR Id) put_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out BSTR pName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, BSTR name) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out BSTR pUser) get_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, BSTR user) put_UserId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out TASK_LOGON_TYPE pLogon) get_LogonType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, TASK_LOGON_TYPE logon) put_LogonType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out BSTR pGroup) get_GroupId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, BSTR group) put_GroupId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, out TASK_RUNLEVEL_TYPE pRunLevel) get_RunLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal self, TASK_RUNLEVEL_TYPE runLevel) put_RunLevel;
 			}
 		}
 		[CRepr]
@@ -1225,11 +1225,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPrincipal2 self, out TASK_PROCESSTOKENSID_TYPE pProcessTokenSidType) get_ProcessTokenSidType;
-				public new function HRESULT(ref IPrincipal2 self, TASK_PROCESSTOKENSID_TYPE processTokenSidType) put_ProcessTokenSidType;
-				public new function HRESULT(ref IPrincipal2 self, out int32 pCount) get_RequiredPrivilegeCount;
-				public new function HRESULT(ref IPrincipal2 self, int32 index, out BSTR pPrivilege) get_RequiredPrivilege;
-				public new function HRESULT(ref IPrincipal2 self, BSTR privilege) AddRequiredPrivilege;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal2 self, out TASK_PROCESSTOKENSID_TYPE pProcessTokenSidType) get_ProcessTokenSidType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal2 self, TASK_PROCESSTOKENSID_TYPE processTokenSidType) put_ProcessTokenSidType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal2 self, out int32 pCount) get_RequiredPrivilegeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal2 self, int32 index, out BSTR pPrivilege) get_RequiredPrivilege;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrincipal2 self, BSTR privilege) AddRequiredPrivilege;
 			}
 		}
 		[CRepr]
@@ -1261,24 +1261,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDescription) get_Description;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR description) put_Description;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pAuthor) get_Author;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR author) put_Author;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pVersion) get_Version;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR version) put_Version;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDate) get_Date;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR date) put_Date;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDocumentation) get_Documentation;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR documentation) put_Documentation;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pText) get_XmlText;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR text) put_XmlText;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pUri) get_URI;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR uri) put_URI;
-				public new function HRESULT(ref IRegistrationInfo self, out VARIANT pSddl) get_SecurityDescriptor;
-				public new function HRESULT(ref IRegistrationInfo self, VARIANT sddl) put_SecurityDescriptor;
-				public new function HRESULT(ref IRegistrationInfo self, out BSTR pSource) get_Source;
-				public new function HRESULT(ref IRegistrationInfo self, BSTR source) put_Source;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR description) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pAuthor) get_Author;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR author) put_Author;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pVersion) get_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR version) put_Version;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pDate) get_Date;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR date) put_Date;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pDocumentation) get_Documentation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR documentation) put_Documentation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pText) get_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR text) put_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pUri) get_URI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR uri) put_URI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out VARIANT pSddl) get_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, VARIANT sddl) put_SecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, out BSTR pSource) get_Source;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegistrationInfo self, BSTR source) put_Source;
 			}
 		}
 		[CRepr]
@@ -1306,20 +1306,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskDefinition self, out IRegistrationInfo* ppRegistrationInfo) get_RegistrationInfo;
-				public new function HRESULT(ref ITaskDefinition self, ref IRegistrationInfo pRegistrationInfo) put_RegistrationInfo;
-				public new function HRESULT(ref ITaskDefinition self, out ITriggerCollection* ppTriggers) get_Triggers;
-				public new function HRESULT(ref ITaskDefinition self, ref ITriggerCollection pTriggers) put_Triggers;
-				public new function HRESULT(ref ITaskDefinition self, out ITaskSettings* ppSettings) get_Settings;
-				public new function HRESULT(ref ITaskDefinition self, ref ITaskSettings pSettings) put_Settings;
-				public new function HRESULT(ref ITaskDefinition self, out BSTR pData) get_Data;
-				public new function HRESULT(ref ITaskDefinition self, BSTR data) put_Data;
-				public new function HRESULT(ref ITaskDefinition self, out IPrincipal* ppPrincipal) get_Principal;
-				public new function HRESULT(ref ITaskDefinition self, ref IPrincipal pPrincipal) put_Principal;
-				public new function HRESULT(ref ITaskDefinition self, out IActionCollection* ppActions) get_Actions;
-				public new function HRESULT(ref ITaskDefinition self, ref IActionCollection pActions) put_Actions;
-				public new function HRESULT(ref ITaskDefinition self, out BSTR pXml) get_XmlText;
-				public new function HRESULT(ref ITaskDefinition self, BSTR xml) put_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out IRegistrationInfo* ppRegistrationInfo) get_RegistrationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, ref IRegistrationInfo pRegistrationInfo) put_RegistrationInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out ITriggerCollection* ppTriggers) get_Triggers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, ref ITriggerCollection pTriggers) put_Triggers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out ITaskSettings* ppSettings) get_Settings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, ref ITaskSettings pSettings) put_Settings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out BSTR pData) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, BSTR data) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out IPrincipal* ppPrincipal) get_Principal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, ref IPrincipal pPrincipal) put_Principal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out IActionCollection* ppActions) get_Actions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, ref IActionCollection pActions) put_Actions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, out BSTR pXml) get_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskDefinition self, BSTR xml) put_XmlText;
 			}
 		}
 		[CRepr]
@@ -1373,46 +1373,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskSettings self, out int16 pAllowDemandStart) get_AllowDemandStart;
-				public new function HRESULT(ref ITaskSettings self, int16 allowDemandStart) put_AllowDemandStart;
-				public new function HRESULT(ref ITaskSettings self, out BSTR pRestartInterval) get_RestartInterval;
-				public new function HRESULT(ref ITaskSettings self, BSTR restartInterval) put_RestartInterval;
-				public new function HRESULT(ref ITaskSettings self, out int32 pRestartCount) get_RestartCount;
-				public new function HRESULT(ref ITaskSettings self, int32 restartCount) put_RestartCount;
-				public new function HRESULT(ref ITaskSettings self, out TASK_INSTANCES_POLICY pPolicy) get_MultipleInstances;
-				public new function HRESULT(ref ITaskSettings self, TASK_INSTANCES_POLICY policy) put_MultipleInstances;
-				public new function HRESULT(ref ITaskSettings self, out int16 pStopIfOnBatteries) get_StopIfGoingOnBatteries;
-				public new function HRESULT(ref ITaskSettings self, int16 stopIfOnBatteries) put_StopIfGoingOnBatteries;
-				public new function HRESULT(ref ITaskSettings self, out int16 pDisallowStart) get_DisallowStartIfOnBatteries;
-				public new function HRESULT(ref ITaskSettings self, int16 disallowStart) put_DisallowStartIfOnBatteries;
-				public new function HRESULT(ref ITaskSettings self, out int16 pAllowHardTerminate) get_AllowHardTerminate;
-				public new function HRESULT(ref ITaskSettings self, int16 allowHardTerminate) put_AllowHardTerminate;
-				public new function HRESULT(ref ITaskSettings self, out int16 pStartWhenAvailable) get_StartWhenAvailable;
-				public new function HRESULT(ref ITaskSettings self, int16 startWhenAvailable) put_StartWhenAvailable;
-				public new function HRESULT(ref ITaskSettings self, out BSTR pText) get_XmlText;
-				public new function HRESULT(ref ITaskSettings self, BSTR text) put_XmlText;
-				public new function HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfNetworkAvailable) get_RunOnlyIfNetworkAvailable;
-				public new function HRESULT(ref ITaskSettings self, int16 runOnlyIfNetworkAvailable) put_RunOnlyIfNetworkAvailable;
-				public new function HRESULT(ref ITaskSettings self, out BSTR pExecutionTimeLimit) get_ExecutionTimeLimit;
-				public new function HRESULT(ref ITaskSettings self, BSTR executionTimeLimit) put_ExecutionTimeLimit;
-				public new function HRESULT(ref ITaskSettings self, out int16 pEnabled) get_Enabled;
-				public new function HRESULT(ref ITaskSettings self, int16 enabled) put_Enabled;
-				public new function HRESULT(ref ITaskSettings self, out BSTR pExpirationDelay) get_DeleteExpiredTaskAfter;
-				public new function HRESULT(ref ITaskSettings self, BSTR expirationDelay) put_DeleteExpiredTaskAfter;
-				public new function HRESULT(ref ITaskSettings self, out int32 pPriority) get_Priority;
-				public new function HRESULT(ref ITaskSettings self, int32 priority) put_Priority;
-				public new function HRESULT(ref ITaskSettings self, out TASK_COMPATIBILITY pCompatLevel) get_Compatibility;
-				public new function HRESULT(ref ITaskSettings self, TASK_COMPATIBILITY compatLevel) put_Compatibility;
-				public new function HRESULT(ref ITaskSettings self, out int16 pHidden) get_Hidden;
-				public new function HRESULT(ref ITaskSettings self, int16 hidden) put_Hidden;
-				public new function HRESULT(ref ITaskSettings self, out IIdleSettings* ppIdleSettings) get_IdleSettings;
-				public new function HRESULT(ref ITaskSettings self, ref IIdleSettings pIdleSettings) put_IdleSettings;
-				public new function HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfIdle) get_RunOnlyIfIdle;
-				public new function HRESULT(ref ITaskSettings self, int16 runOnlyIfIdle) put_RunOnlyIfIdle;
-				public new function HRESULT(ref ITaskSettings self, out int16 pWake) get_WakeToRun;
-				public new function HRESULT(ref ITaskSettings self, int16 wake) put_WakeToRun;
-				public new function HRESULT(ref ITaskSettings self, out INetworkSettings* ppNetworkSettings) get_NetworkSettings;
-				public new function HRESULT(ref ITaskSettings self, ref INetworkSettings pNetworkSettings) put_NetworkSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pAllowDemandStart) get_AllowDemandStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 allowDemandStart) put_AllowDemandStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out BSTR pRestartInterval) get_RestartInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, BSTR restartInterval) put_RestartInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int32 pRestartCount) get_RestartCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int32 restartCount) put_RestartCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out TASK_INSTANCES_POLICY pPolicy) get_MultipleInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, TASK_INSTANCES_POLICY policy) put_MultipleInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pStopIfOnBatteries) get_StopIfGoingOnBatteries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 stopIfOnBatteries) put_StopIfGoingOnBatteries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pDisallowStart) get_DisallowStartIfOnBatteries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 disallowStart) put_DisallowStartIfOnBatteries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pAllowHardTerminate) get_AllowHardTerminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 allowHardTerminate) put_AllowHardTerminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pStartWhenAvailable) get_StartWhenAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 startWhenAvailable) put_StartWhenAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out BSTR pText) get_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, BSTR text) put_XmlText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfNetworkAvailable) get_RunOnlyIfNetworkAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 runOnlyIfNetworkAvailable) put_RunOnlyIfNetworkAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out BSTR pExecutionTimeLimit) get_ExecutionTimeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, BSTR executionTimeLimit) put_ExecutionTimeLimit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 enabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out BSTR pExpirationDelay) get_DeleteExpiredTaskAfter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, BSTR expirationDelay) put_DeleteExpiredTaskAfter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int32 pPriority) get_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int32 priority) put_Priority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out TASK_COMPATIBILITY pCompatLevel) get_Compatibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, TASK_COMPATIBILITY compatLevel) put_Compatibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pHidden) get_Hidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 hidden) put_Hidden;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out IIdleSettings* ppIdleSettings) get_IdleSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, ref IIdleSettings pIdleSettings) put_IdleSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfIdle) get_RunOnlyIfIdle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 runOnlyIfIdle) put_RunOnlyIfIdle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out int16 pWake) get_WakeToRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, int16 wake) put_WakeToRun;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, out INetworkSettings* ppNetworkSettings) get_NetworkSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings self, ref INetworkSettings pNetworkSettings) put_NetworkSettings;
 			}
 		}
 		[CRepr]
@@ -1430,10 +1430,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskSettings2 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ref ITaskSettings2 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ref ITaskSettings2 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ref ITaskSettings2 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings2 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings2 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings2 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings2 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
 			}
 		}
 		[CRepr]
@@ -1456,15 +1456,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ITaskSettings.VTable
 			{
-				public new function HRESULT(ref ITaskSettings3 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ref ITaskSettings3 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ref ITaskSettings3 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ref ITaskSettings3 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) get_MaintenanceSettings;
-				public new function HRESULT(ref ITaskSettings3 self, ref IMaintenanceSettings pMaintenanceSettings) put_MaintenanceSettings;
-				public new function HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) CreateMaintenanceSettings;
-				public new function HRESULT(ref ITaskSettings3 self, out int16 pVolatile) get_Volatile;
-				public new function HRESULT(ref ITaskSettings3 self, int16 Volatile) put_Volatile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) get_MaintenanceSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, ref IMaintenanceSettings pMaintenanceSettings) put_MaintenanceSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) CreateMaintenanceSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, out int16 pVolatile) get_Volatile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskSettings3 self, int16 Volatile) put_Volatile;
 			}
 		}
 		[CRepr]
@@ -1484,12 +1484,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMaintenanceSettings self, BSTR value) put_Period;
-				public new function HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Period;
-				public new function HRESULT(ref IMaintenanceSettings self, BSTR value) put_Deadline;
-				public new function HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Deadline;
-				public new function HRESULT(ref IMaintenanceSettings self, int16 value) put_Exclusive;
-				public new function HRESULT(ref IMaintenanceSettings self, out int16 target) get_Exclusive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, BSTR value) put_Period;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Period;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, BSTR value) put_Deadline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Deadline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, int16 value) put_Exclusive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMaintenanceSettings self, out int16 target) get_Exclusive;
 			}
 		}
 		[CRepr]
@@ -1506,9 +1506,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRegisteredTaskCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref IRegisteredTaskCollection self, VARIANT index, IRegisteredTask** ppRegisteredTask) get_Item;
-				public new function HRESULT(ref IRegisteredTaskCollection self, IUnknown** ppEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, VARIANT index, IRegisteredTask** ppRegisteredTask) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRegisteredTaskCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1535,19 +1535,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ITaskFolder self, BSTR* pName) get_Name;
-				public new function HRESULT(ref ITaskFolder self, BSTR* pPath) get_Path;
-				public new function HRESULT(ref ITaskFolder self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-				public new function HRESULT(ref ITaskFolder self, int32 flags, ITaskFolderCollection** ppFolders) GetFolders;
-				public new function HRESULT(ref ITaskFolder self, BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) CreateFolder;
-				public new function HRESULT(ref ITaskFolder self, BSTR subFolderName, int32 flags) DeleteFolder;
-				public new function HRESULT(ref ITaskFolder self, BSTR path, IRegisteredTask** ppTask) GetTask;
-				public new function HRESULT(ref ITaskFolder self, int32 flags, IRegisteredTaskCollection** ppTasks) GetTasks;
-				public new function HRESULT(ref ITaskFolder self, BSTR name, int32 flags) DeleteTask;
-				public new function HRESULT(ref ITaskFolder self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTask;
-				public new function HRESULT(ref ITaskFolder self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTaskDefinition;
-				public new function HRESULT(ref ITaskFolder self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
-				public new function HRESULT(ref ITaskFolder self, BSTR sddl, int32 flags) SetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR* pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR* pPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, ITaskFolder** ppFolder) GetFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, ITaskFolderCollection** ppFolders) GetFolders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) CreateFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR subFolderName, int32 flags) DeleteFolder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, IRegisteredTask** ppTask) GetTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 flags, IRegisteredTaskCollection** ppTasks) GetTasks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR name, int32 flags) DeleteTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTaskDefinition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITaskFolder self, BSTR sddl, int32 flags) SetSecurityDescriptor;
 			}
 		}
 		[CRepr]
@@ -1569,14 +1569,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IIdleSettings self, out BSTR pDelay) get_IdleDuration;
-				public new function HRESULT(ref IIdleSettings self, BSTR delay) put_IdleDuration;
-				public new function HRESULT(ref IIdleSettings self, out BSTR pTimeout) get_WaitTimeout;
-				public new function HRESULT(ref IIdleSettings self, BSTR timeout) put_WaitTimeout;
-				public new function HRESULT(ref IIdleSettings self, out int16 pStop) get_StopOnIdleEnd;
-				public new function HRESULT(ref IIdleSettings self, int16 stop) put_StopOnIdleEnd;
-				public new function HRESULT(ref IIdleSettings self, out int16 pRestart) get_RestartOnIdle;
-				public new function HRESULT(ref IIdleSettings self, int16 restart) put_RestartOnIdle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, out BSTR pDelay) get_IdleDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, BSTR delay) put_IdleDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, out BSTR pTimeout) get_WaitTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, BSTR timeout) put_WaitTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, out int16 pStop) get_StopOnIdleEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, int16 stop) put_StopOnIdleEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, out int16 pRestart) get_RestartOnIdle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIdleSettings self, int16 restart) put_RestartOnIdle;
 			}
 		}
 		[CRepr]
@@ -1594,10 +1594,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetworkSettings self, out BSTR pName) get_Name;
-				public new function HRESULT(ref INetworkSettings self, BSTR name) put_Name;
-				public new function HRESULT(ref INetworkSettings self, out BSTR pId) get_Id;
-				public new function HRESULT(ref INetworkSettings self, BSTR id) put_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkSettings self, out BSTR pName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkSettings self, BSTR name) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkSettings self, out BSTR pId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkSettings self, BSTR id) put_Id;
 			}
 		}
 		[CRepr]
@@ -1617,12 +1617,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRepetitionPattern self, out BSTR pInterval) get_Interval;
-				public new function HRESULT(ref IRepetitionPattern self, BSTR interval) put_Interval;
-				public new function HRESULT(ref IRepetitionPattern self, out BSTR pDuration) get_Duration;
-				public new function HRESULT(ref IRepetitionPattern self, BSTR duration) put_Duration;
-				public new function HRESULT(ref IRepetitionPattern self, out int16 pStop) get_StopAtDurationEnd;
-				public new function HRESULT(ref IRepetitionPattern self, int16 stop) put_StopAtDurationEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, out BSTR pInterval) get_Interval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, BSTR interval) put_Interval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, out BSTR pDuration) get_Duration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, BSTR duration) put_Duration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, out int16 pStop) get_StopAtDurationEnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, int16 stop) put_StopAtDurationEnd;
 			}
 		}
 		

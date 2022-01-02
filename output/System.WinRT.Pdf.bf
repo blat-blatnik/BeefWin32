@@ -36,8 +36,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) RenderPageToSurface;
-				public new function HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) RenderPageToSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
 			}
 		}
 		

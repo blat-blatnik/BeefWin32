@@ -784,8 +784,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void*(ref ID3DBlob self) GetBufferPointer;
-				public new function uint(ref ID3DBlob self) GetBufferSize;
+				public new function [CallingConvention(.Stdcall)] void*(ref ID3DBlob self) GetBufferPointer;
+				public new function [CallingConvention(.Stdcall)] uint(ref ID3DBlob self) GetBufferSize;
 			}
 		}
 		[CRepr]
@@ -801,8 +801,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ID3DDestructionNotifier self, PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, out uint32 pCallbackID) RegisterDestructionCallback;
-				public new function HRESULT(ref ID3DDestructionNotifier self, uint32 callbackID) UnregisterDestructionCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DDestructionNotifier self, PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, out uint32 pCallbackID) RegisterDestructionCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DDestructionNotifier self, uint32 callbackID) UnregisterDestructionCallback;
 			}
 		}
 		[CRepr]
@@ -817,8 +817,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref ID3DInclude self, D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, out uint32 pBytes) Open;
-				public new function HRESULT(ref ID3DInclude self, void* pData) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DInclude self, D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, out uint32 pBytes) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DInclude self, void* pData) Close;
 			}
 		}
 		

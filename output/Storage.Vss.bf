@@ -522,10 +522,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssEnumObject self, uint32 celt, VSS_OBJECT_PROP* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IVssEnumObject self, uint32 celt) Skip;
-				public new function HRESULT(ref IVssEnumObject self) Reset;
-				public new function HRESULT(ref IVssEnumObject self, out IVssEnumObject* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumObject self, uint32 celt, VSS_OBJECT_PROP* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumObject self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumObject self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumObject self, out IVssEnumObject* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -542,9 +542,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssAsync self) Cancel;
-				public new function HRESULT(ref IVssAsync self, uint32 dwMilliseconds) Wait;
-				public new function HRESULT(ref IVssAsync self, out HRESULT pHrResult, out int32 pReserved) QueryStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAsync self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAsync self, uint32 dwMilliseconds) Wait;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAsync self, out HRESULT pHrResult, out int32 pReserved) QueryStatus;
 			}
 		}
 		[CRepr]
@@ -561,11 +561,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssWMFiledesc self, out BSTR pbstrPath) GetPath;
-				public new function HRESULT(ref IVssWMFiledesc self, out BSTR pbstrFilespec) GetFilespec;
-				public new function HRESULT(ref IVssWMFiledesc self, out Boolean pbRecursive) GetRecursive;
-				public new function HRESULT(ref IVssWMFiledesc self, out BSTR pbstrAlternateLocation) GetAlternateLocation;
-				public new function HRESULT(ref IVssWMFiledesc self, out uint32 pdwTypeMask) GetBackupTypeMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMFiledesc self, out BSTR pbstrPath) GetPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMFiledesc self, out BSTR pbstrFilespec) GetFilespec;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMFiledesc self, out Boolean pbRecursive) GetRecursive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMFiledesc self, out BSTR pbstrAlternateLocation) GetAlternateLocation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMFiledesc self, out uint32 pdwTypeMask) GetBackupTypeMask;
 			}
 		}
 		[CRepr]
@@ -580,9 +580,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssWMDependency self, out Guid pWriterId) GetWriterId;
-				public new function HRESULT(ref IVssWMDependency self, out BSTR pbstrLogicalPath) GetLogicalPath;
-				public new function HRESULT(ref IVssWMDependency self, out BSTR pbstrComponentName) GetComponentName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMDependency self, out Guid pWriterId) GetWriterId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMDependency self, out BSTR pbstrLogicalPath) GetLogicalPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWMDependency self, out BSTR pbstrComponentName) GetComponentName;
 			}
 		}
 		[CRepr]
@@ -634,44 +634,44 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrPath) GetLogicalPath;
-				public new function HRESULT(ref IVssComponent self, out VSS_COMPONENT_TYPE pct) GetComponentType;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrName) GetComponentName;
-				public new function HRESULT(ref IVssComponent self, out Boolean pbSucceeded) GetBackupSucceeded;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcMappings) GetAlternateLocationMappingCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iMapping, out IVssWMFiledesc* ppFiledesc) GetAlternateLocationMapping;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszData) SetBackupMetadata;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrData) GetBackupMetadata;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) AddPartialFile;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcPartialFiles) GetPartialFileCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iPartialFile, out BSTR pbstrPath, out BSTR pbstrFilename, out BSTR pbstrRange, out BSTR pbstrMetadata) GetPartialFile;
-				public new function HRESULT(ref IVssComponent self, out Boolean pbSelectedForRestore) IsSelectedForRestore;
-				public new function HRESULT(ref IVssComponent self, out Boolean pbAdditionalRestores) GetAdditionalRestores;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcNewTarget) GetNewTargetCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iNewTarget, out IVssWMFiledesc* ppFiledesc) GetNewTarget;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) AddDirectedTarget;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcDirectedTarget) GetDirectedTargetCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iDirectedTarget, out BSTR pbstrSourcePath, out BSTR pbstrSourceFileName, out BSTR pbstrSourceRangeList, out BSTR pbstrDestinationPath, out BSTR pbstrDestinationFilename, out BSTR pbstrDestinationRangeList) GetDirectedTarget;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszRestoreMetadata) SetRestoreMetadata;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrRestoreMetadata) GetRestoreMetadata;
-				public new function HRESULT(ref IVssComponent self, VSS_RESTORE_TARGET target) SetRestoreTarget;
-				public new function HRESULT(ref IVssComponent self, out VSS_RESTORE_TARGET pTarget) GetRestoreTarget;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszPreRestoreFailureMsg) SetPreRestoreFailureMsg;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrPreRestoreFailureMsg) GetPreRestoreFailureMsg;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszPostRestoreFailureMsg) SetPostRestoreFailureMsg;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrPostRestoreFailureMsg) GetPostRestoreFailureMsg;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszBackupStamp) SetBackupStamp;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrBackupStamp) GetBackupStamp;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrBackupStamp) GetPreviousBackupStamp;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrBackupOptions) GetBackupOptions;
-				public new function HRESULT(ref IVssComponent self, out BSTR pbstrRestoreOptions) GetRestoreOptions;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcRestoreSubcomponent) GetRestoreSubcomponentCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iComponent, out BSTR pbstrLogicalPath, out BSTR pbstrComponentName, out Boolean pbRepair) GetRestoreSubcomponent;
-				public new function HRESULT(ref IVssComponent self, out VSS_FILE_RESTORE_STATUS pStatus) GetFileRestoreStatus;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) AddDifferencedFilesByLastModifyTime;
-				public new function HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) AddDifferencedFilesByLastModifyLSN;
-				public new function HRESULT(ref IVssComponent self, out uint32 pcDifferencedFiles) GetDifferencedFilesCount;
-				public new function HRESULT(ref IVssComponent self, uint32 iDifferencedFile, out BSTR pbstrPath, out BSTR pbstrFilespec, out BOOL pbRecursive, out BSTR pbstrLsnString, out FILETIME pftLastModifyTime) GetDifferencedFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrPath) GetLogicalPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out VSS_COMPONENT_TYPE pct) GetComponentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrName) GetComponentName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out Boolean pbSucceeded) GetBackupSucceeded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcMappings) GetAlternateLocationMappingCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iMapping, out IVssWMFiledesc* ppFiledesc) GetAlternateLocationMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszData) SetBackupMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrData) GetBackupMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) AddPartialFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcPartialFiles) GetPartialFileCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iPartialFile, out BSTR pbstrPath, out BSTR pbstrFilename, out BSTR pbstrRange, out BSTR pbstrMetadata) GetPartialFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out Boolean pbSelectedForRestore) IsSelectedForRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out Boolean pbAdditionalRestores) GetAdditionalRestores;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcNewTarget) GetNewTargetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iNewTarget, out IVssWMFiledesc* ppFiledesc) GetNewTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) AddDirectedTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcDirectedTarget) GetDirectedTargetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iDirectedTarget, out BSTR pbstrSourcePath, out BSTR pbstrSourceFileName, out BSTR pbstrSourceRangeList, out BSTR pbstrDestinationPath, out BSTR pbstrDestinationFilename, out BSTR pbstrDestinationRangeList) GetDirectedTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszRestoreMetadata) SetRestoreMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrRestoreMetadata) GetRestoreMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, VSS_RESTORE_TARGET target) SetRestoreTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out VSS_RESTORE_TARGET pTarget) GetRestoreTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszPreRestoreFailureMsg) SetPreRestoreFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrPreRestoreFailureMsg) GetPreRestoreFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszPostRestoreFailureMsg) SetPostRestoreFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrPostRestoreFailureMsg) GetPostRestoreFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszBackupStamp) SetBackupStamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrBackupStamp) GetBackupStamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrBackupStamp) GetPreviousBackupStamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrBackupOptions) GetBackupOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out BSTR pbstrRestoreOptions) GetRestoreOptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcRestoreSubcomponent) GetRestoreSubcomponentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iComponent, out BSTR pbstrLogicalPath, out BSTR pbstrComponentName, out Boolean pbRepair) GetRestoreSubcomponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out VSS_FILE_RESTORE_STATUS pStatus) GetFileRestoreStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) AddDifferencedFilesByLastModifyTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) AddDifferencedFilesByLastModifyLSN;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, out uint32 pcDifferencedFiles) GetDifferencedFilesCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponent self, uint32 iDifferencedFile, out BSTR pbstrPath, out BSTR pbstrFilespec, out BOOL pbRecursive, out BSTR pbstrLsnString, out FILETIME pftLastModifyTime) GetDifferencedFile;
 			}
 		}
 		[CRepr]
@@ -687,9 +687,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref IVssWriterComponents self, out uint32 pcComponents) GetComponentCount;
-				public new function HRESULT(ref IVssWriterComponents self, out Guid pidInstance, out Guid pidWriter) GetWriterInfo;
-				public new function HRESULT(ref IVssWriterComponents self, uint32 iComponent, out IVssComponent* ppComponent) GetComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterComponents self, out uint32 pcComponents) GetComponentCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterComponents self, out Guid pidInstance, out Guid pidWriter) GetWriterInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterComponents self, uint32 iComponent, out IVssComponent* ppComponent) GetComponent;
 			}
 		}
 		[CRepr]
@@ -710,13 +710,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssComponent.VTable
 			{
-				public new function HRESULT(ref IVssComponentEx self, PWSTR wszFailureMsg) SetPrepareForBackupFailureMsg;
-				public new function HRESULT(ref IVssComponentEx self, PWSTR wszFailureMsg) SetPostSnapshotFailureMsg;
-				public new function HRESULT(ref IVssComponentEx self, BSTR* pbstrFailureMsg) GetPrepareForBackupFailureMsg;
-				public new function HRESULT(ref IVssComponentEx self, BSTR* pbstrFailureMsg) GetPostSnapshotFailureMsg;
-				public new function HRESULT(ref IVssComponentEx self, out Boolean pbAuth) GetAuthoritativeRestore;
-				public new function HRESULT(ref IVssComponentEx self, out VSS_ROLLFORWARD_TYPE pRollType, BSTR* pbstrPoint) GetRollForward;
-				public new function HRESULT(ref IVssComponentEx self, BSTR* pbstrName) GetRestoreName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, PWSTR wszFailureMsg) SetPrepareForBackupFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, PWSTR wszFailureMsg) SetPostSnapshotFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, BSTR* pbstrFailureMsg) GetPrepareForBackupFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, BSTR* pbstrFailureMsg) GetPostSnapshotFailureMsg;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, out Boolean pbAuth) GetAuthoritativeRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, out VSS_ROLLFORWARD_TYPE pRollType, BSTR* pbstrPoint) GetRollForward;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx self, BSTR* pbstrName) GetRestoreName;
 			}
 		}
 		[CRepr]
@@ -732,8 +732,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssComponentEx.VTable
 			{
-				public new function HRESULT(ref IVssComponentEx2 self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) SetFailure;
-				public new function HRESULT(ref IVssComponentEx2 self, out HRESULT phr, out HRESULT phrApplication, out BSTR pbstrApplicationMessage, out uint32 pdwReserved) GetFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx2 self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) SetFailure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssComponentEx2 self, out HRESULT phr, out HRESULT phrApplication, out BSTR pbstrApplicationMessage, out uint32 pdwReserved) GetFailure;
 			}
 		}
 		[CRepr]
@@ -758,18 +758,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) AddIncludeFiles;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseFiles;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseLogFiles;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) AddAlternateLocationMapping;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, uint32 dwSchemaMask) SetBackupSchema;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, out IXMLDOMDocument* pDoc) GetDocument;
-				public new function HRESULT(ref IVssCreateWriterMetadata self, out BSTR pbstrXML) SaveAsXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) AddIncludeFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseLogFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) AddAlternateLocationMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, uint32 dwSchemaMask) SetBackupSchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, out IXMLDOMDocument* pDoc) GetDocument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateWriterMetadata self, out BSTR pbstrXML) SaveAsXML;
 			}
 		}
 		[CRepr]
@@ -803,28 +803,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssWriterImpl self, Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) Initialize;
-				public new function HRESULT(ref IVssWriterImpl self, uint32 dwSubscribeTimeout, uint32 dwEventFlags) Subscribe;
-				public new function HRESULT(ref IVssWriterImpl self) Unsubscribe;
-				public new function void(ref IVssWriterImpl self) Uninitialize;
-				public new function PWSTR*(ref IVssWriterImpl self) GetCurrentVolumeArray;
-				public new function uint32(ref IVssWriterImpl self) GetCurrentVolumeCount;
-				public new function HRESULT(ref IVssWriterImpl self, PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) GetSnapshotDeviceName;
-				public new function Guid(ref IVssWriterImpl self) GetCurrentSnapshotSetId;
-				public new function int32(ref IVssWriterImpl self) GetContext;
-				public new function VSS_APPLICATION_LEVEL(ref IVssWriterImpl self) GetCurrentLevel;
-				public new function Boolean(ref IVssWriterImpl self, PWSTR wszPath) IsPathAffected;
-				public new function Boolean(ref IVssWriterImpl self) IsBootableSystemStateBackedUp;
-				public new function Boolean(ref IVssWriterImpl self) AreComponentsSelected;
-				public new function VSS_BACKUP_TYPE(ref IVssWriterImpl self) GetBackupType;
-				public new function VSS_RESTORE_TYPE(ref IVssWriterImpl self) GetRestoreType;
-				public new function HRESULT(ref IVssWriterImpl self, HRESULT hr) SetWriterFailure;
-				public new function Boolean(ref IVssWriterImpl self) IsPartialFileSupportEnabled;
-				public new function HRESULT(ref IVssWriterImpl self, Guid idWriter, Guid clsid) InstallAlternateWriter;
-				public new function IVssExamineWriterMetadata*(ref IVssWriterImpl self) GetIdentityInformation;
-				public new function HRESULT(ref IVssWriterImpl self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) SetWriterFailureEx;
-				public new function HRESULT(ref IVssWriterImpl self, out Guid idSession) GetSessionId;
-				public new function Boolean(ref IVssWriterImpl self) IsWriterShuttingDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, uint32 dwSubscribeTimeout, uint32 dwEventFlags) Subscribe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self) Unsubscribe;
+				public new function [CallingConvention(.Stdcall)] void(ref IVssWriterImpl self) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] PWSTR*(ref IVssWriterImpl self) GetCurrentVolumeArray;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IVssWriterImpl self) GetCurrentVolumeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) GetSnapshotDeviceName;
+				public new function [CallingConvention(.Stdcall)] Guid(ref IVssWriterImpl self) GetCurrentSnapshotSetId;
+				public new function [CallingConvention(.Stdcall)] int32(ref IVssWriterImpl self) GetContext;
+				public new function [CallingConvention(.Stdcall)] VSS_APPLICATION_LEVEL(ref IVssWriterImpl self) GetCurrentLevel;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IVssWriterImpl self, PWSTR wszPath) IsPathAffected;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IVssWriterImpl self) IsBootableSystemStateBackedUp;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IVssWriterImpl self) AreComponentsSelected;
+				public new function [CallingConvention(.Stdcall)] VSS_BACKUP_TYPE(ref IVssWriterImpl self) GetBackupType;
+				public new function [CallingConvention(.Stdcall)] VSS_RESTORE_TYPE(ref IVssWriterImpl self) GetRestoreType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, HRESULT hr) SetWriterFailure;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IVssWriterImpl self) IsPartialFileSupportEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, Guid idWriter, Guid clsid) InstallAlternateWriter;
+				public new function [CallingConvention(.Stdcall)] IVssExamineWriterMetadata*(ref IVssWriterImpl self) GetIdentityInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) SetWriterFailureEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssWriterImpl self, out Guid idSession) GetSessionId;
+				public new function [CallingConvention(.Stdcall)] Boolean(ref IVssWriterImpl self) IsWriterShuttingDown;
 			}
 		}
 		[CRepr]
@@ -845,13 +845,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, uint32 dwSchemaMask) SetBackupSchema;
-				public new function HRESULT(ref IVssCreateExpressWriterMetadata self, out BSTR pbstrXML) SaveAsXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, in uint8 pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, uint32 dwSchemaMask) SetBackupSchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssCreateExpressWriterMetadata self, out BSTR pbstrXML) SaveAsXML;
 			}
 		}
 		[CRepr]
@@ -869,10 +869,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssExpressWriter self, Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, out IVssCreateExpressWriterMetadata* ppMetadata) CreateMetadata;
-				public new function HRESULT(ref IVssExpressWriter self, PWSTR metadata, uint32 reserved) LoadMetadata;
-				public new function HRESULT(ref IVssExpressWriter self) Register;
-				public new function HRESULT(ref IVssExpressWriter self, Guid writerId) Unregister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssExpressWriter self, Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, out IVssCreateExpressWriterMetadata* ppMetadata) CreateMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssExpressWriter self, PWSTR metadata, uint32 reserved) LoadMetadata;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssExpressWriter self) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssExpressWriter self, Guid writerId) Unregister;
 			}
 		}
 		[CRepr]
@@ -889,9 +889,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssSnapshotMgmt self, Guid ProviderId, in Guid InterfaceId, out IUnknown* ppItf) GetProviderMgmtInterface;
-				public new function HRESULT(ref IVssSnapshotMgmt self, Guid ProviderId, int32 lContext, out IVssEnumMgmtObject* ppEnum) QueryVolumesSupportedForSnapshots;
-				public new function HRESULT(ref IVssSnapshotMgmt self, ref uint16 pwszVolumeName, Guid ProviderId, out IVssEnumObject* ppEnum) QuerySnapshotsByVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSnapshotMgmt self, Guid ProviderId, in Guid InterfaceId, out IUnknown* ppItf) GetProviderMgmtInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSnapshotMgmt self, Guid ProviderId, int32 lContext, out IVssEnumMgmtObject* ppEnum) QueryVolumesSupportedForSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSnapshotMgmt self, ref uint16 pwszVolumeName, Guid ProviderId, out IVssEnumObject* ppEnum) QuerySnapshotsByVolume;
 			}
 		}
 		[CRepr]
@@ -906,7 +906,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssSnapshotMgmt2 self, out int64 pllMinDiffAreaSize) GetMinDiffAreaSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSnapshotMgmt2 self, out int64 pllMinDiffAreaSize) GetMinDiffAreaSize;
 			}
 		}
 		[CRepr]
@@ -926,12 +926,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) AddDiffArea;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) ChangeDiffAreaMaximumSize;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszOriginalVolumeName, out IVssEnumMgmtObject* ppEnum) QueryVolumesSupportedForDiffAreas;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasForVolume;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasOnVolume;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, Guid SnapshotId, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasForSnapshot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) AddDiffArea;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) ChangeDiffAreaMaximumSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszOriginalVolumeName, out IVssEnumMgmtObject* ppEnum) QueryVolumesSupportedForDiffAreas;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasForVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, ref uint16 pwszVolumeName, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasOnVolume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt self, Guid SnapshotId, out IVssEnumMgmtObject* ppEnum) QueryDiffAreasForSnapshot;
 			}
 		}
 		[CRepr]
@@ -949,10 +949,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt.VTable
 			{
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) ChangeDiffAreaMaximumSizeEx;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, ref uint16 pwszNewDiffAreaVolumeName) MigrateDiffAreas;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, out IVssAsync* ppAsync) QueryMigrationStatus;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, Guid idSnapshot, uint8 priority) SetSnapshotPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) ChangeDiffAreaMaximumSizeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, ref uint16 pwszNewDiffAreaVolumeName) MigrateDiffAreas;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, ref uint16 pwszVolumeName, ref uint16 pwszDiffAreaVolumeName, out IVssAsync* ppAsync) QueryMigrationStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt2 self, Guid idSnapshot, uint8 priority) SetSnapshotPriority;
 			}
 		}
 		[CRepr]
@@ -971,11 +971,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt2.VTable
 			{
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) SetVolumeProtectLevel;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName, out VSS_VOLUME_PROTECTION_INFO protectionLevel) GetVolumeProtectLevel;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName) ClearVolumeProtectFault;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszDiffAreaVolumeName) DeleteUnusedDiffAreas;
-				public new function HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, Guid idSnapshotOlder, Guid idSnapshotYounger, out uint32 pcBlockSizePerBit, out uint32 pcBitmapLength, uint8** ppbBitmap) QuerySnapshotDeltaBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) SetVolumeProtectLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName, out VSS_VOLUME_PROTECTION_INFO protectionLevel) GetVolumeProtectLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszVolumeName) ClearVolumeProtectFault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, ref uint16 pwszDiffAreaVolumeName) DeleteUnusedDiffAreas;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssDifferentialSoftwareSnapshotMgmt3 self, Guid idSnapshotOlder, Guid idSnapshotYounger, out uint32 pcBlockSizePerBit, out uint32 pcBitmapLength, uint8** ppbBitmap) QuerySnapshotDeltaBitmap;
 			}
 		}
 		[CRepr]
@@ -993,10 +993,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssEnumMgmtObject self, uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, out uint32 pceltFetched) Next;
-				public new function HRESULT(ref IVssEnumMgmtObject self, uint32 celt) Skip;
-				public new function HRESULT(ref IVssEnumMgmtObject self) Reset;
-				public new function HRESULT(ref IVssEnumMgmtObject self, out IVssEnumMgmtObject* ppenum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumMgmtObject self, uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, out uint32 pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumMgmtObject self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumMgmtObject self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssEnumMgmtObject self, out IVssEnumMgmtObject* ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -1014,10 +1014,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssAdmin self, Guid pProviderId, Guid ClassId, ref uint16 pwszProviderName, VSS_PROVIDER_TYPE eProviderType, ref uint16 pwszProviderVersion, Guid ProviderVersionId) RegisterProvider;
-				public new function HRESULT(ref IVssAdmin self, Guid ProviderId) UnregisterProvider;
-				public new function HRESULT(ref IVssAdmin self, out IVssEnumObject* ppEnum) QueryProviders;
-				public new function HRESULT(ref IVssAdmin self) AbortAllSnapshotsInProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdmin self, Guid pProviderId, Guid ClassId, ref uint16 pwszProviderName, VSS_PROVIDER_TYPE eProviderType, ref uint16 pwszProviderVersion, Guid ProviderVersionId) RegisterProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdmin self, Guid ProviderId) UnregisterProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdmin self, out IVssEnumObject* ppEnum) QueryProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdmin self) AbortAllSnapshotsInProgress;
 			}
 		}
 		[CRepr]
@@ -1034,9 +1034,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssAdmin.VTable
 			{
-				public new function HRESULT(ref IVssAdminEx self, Guid pProviderId, out uint64 pllOriginalCapabilityMask) GetProviderCapability;
-				public new function HRESULT(ref IVssAdminEx self, Guid ProviderId, out int32 plContext) GetProviderContext;
-				public new function HRESULT(ref IVssAdminEx self, Guid ProviderId, int32 lContext) SetProviderContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdminEx self, Guid pProviderId, out uint64 pllOriginalCapabilityMask) GetProviderCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdminEx self, Guid ProviderId, out int32 plContext) GetProviderContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssAdminEx self, Guid ProviderId, int32 lContext) SetProviderContext;
 			}
 		}
 		[CRepr]
@@ -1060,16 +1060,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, int32 lContext) SetContext;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) GetSnapshotProperties;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) Query;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) DeleteSnapshots;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszVolumeName, int32 lNewContext) BeginPrepareSnapshot;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolumeName, out BOOL pbSupportedByThisProvider) IsVolumeSupported;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolumeName, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) IsVolumeSnapshotted;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId) RevertToSnapshot;
-				public new function HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolume, out IVssAsync* ppAsync) QueryRevertStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, int32 lContext) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) GetSnapshotProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) DeleteSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszVolumeName, int32 lNewContext) BeginPrepareSnapshot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolumeName, out BOOL pbSupportedByThisProvider) IsVolumeSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolumeName, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) IsVolumeSnapshotted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, Guid SnapshotId) RevertToSnapshot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssSoftwareSnapshotProvider self, ref uint16 pwszVolume, out IVssAsync* ppAsync) QueryRevertStatus;
 			}
 		}
 		[CRepr]
@@ -1090,13 +1090,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) EndPrepareSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PreCommitSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) CommitSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId, int32 lSnapshotsCount) PostCommitSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PreFinalCommitSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PostFinalCommitSnapshots;
-				public new function HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) AbortSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) EndPrepareSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PreCommitSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) CommitSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId, int32 lSnapshotsCount) PostCommitSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PreFinalCommitSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) PostFinalCommitSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderCreateSnapshotSet self, Guid SnapshotSetId) AbortSnapshots;
 			}
 		}
 		[CRepr]
@@ -1112,8 +1112,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssProviderNotifications self, ref IUnknown pCallback) OnLoad;
-				public new function HRESULT(ref IVssProviderNotifications self, BOOL bForceUnload) OnUnload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderNotifications self, ref IUnknown pCallback) OnLoad;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssProviderNotifications self, BOOL bForceUnload) OnUnload;
 			}
 		}
 		[CRepr]
@@ -1133,12 +1133,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, out BOOL pbIsSupported) AreLunsSupported;
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, ref uint16 wszDeviceName, out VDS_LUN_INFORMATION pLunInfo, out BOOL pbIsSupported) FillInLunInfo;
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) BeginPrepareSnapshot;
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) GetTargetLuns;
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) LocateLuns;
-				public new function HRESULT(ref IVssHardwareSnapshotProvider self, ref uint16 wszDeviceName, ref VDS_LUN_INFORMATION pInformation) OnLunEmpty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, out BOOL pbIsSupported) AreLunsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, ref uint16 wszDeviceName, out VDS_LUN_INFORMATION pLunInfo, out BOOL pbIsSupported) FillInLunInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) BeginPrepareSnapshot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) GetTargetLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) LocateLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProvider self, ref uint16 wszDeviceName, ref VDS_LUN_INFORMATION pInformation) OnLunEmpty;
 			}
 		}
 		[CRepr]
@@ -1156,10 +1156,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IVssHardwareSnapshotProvider.VTable
 			{
-				public new function HRESULT(ref IVssHardwareSnapshotProviderEx self, out uint64 pllOriginalCapabilityMask) GetProviderCapabilities;
-				public new function HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) OnLunStateChange;
-				public new function HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, out IVssAsync* ppAsync) ResyncLuns;
-				public new function HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) OnReuseLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProviderEx self, out uint64 pllOriginalCapabilityMask) GetProviderCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) OnLunStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, out IVssAsync* ppAsync) ResyncLuns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssHardwareSnapshotProviderEx self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) OnReuseLuns;
 			}
 		}
 		[CRepr]
@@ -1181,14 +1181,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, int32 lContext) SetContext;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) GetSnapshotProperties;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) Query;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) DeleteSnapshots;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszSharePath, int32 lNewContext, Guid ProviderId) BeginPrepareSnapshot;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, ref uint16 pwszSharePath, out BOOL pbSupportedByThisProvider) IsPathSupported;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, ref uint16 pwszSharePath, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) IsPathSnapshotted;
-				public new function HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, int32 lContext) SetContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotId, out VSS_SNAPSHOT_PROP pProp) GetSnapshotProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, out IVssEnumObject* ppEnum) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, out int32 plDeletedSnapshots, out Guid pNondeletedSnapshotID) DeleteSnapshots;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotSetId, Guid SnapshotId, ref uint16 pwszSharePath, int32 lNewContext, Guid ProviderId) BeginPrepareSnapshot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, ref uint16 pwszSharePath, out BOOL pbSupportedByThisProvider) IsPathSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, ref uint16 pwszSharePath, out BOOL pbSnapshotsPresent, out int32 plSnapshotCompatibility) IsPathSnapshotted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
 			}
 		}
 		

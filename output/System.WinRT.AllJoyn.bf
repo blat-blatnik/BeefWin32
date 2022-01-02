@@ -19,7 +19,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusAttachmentInterop self, out uint64 value) get_Win32Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusAttachmentInterop self, out uint64 value) get_Win32Handle;
 			}
 		}
 		[CRepr]
@@ -34,7 +34,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusAttachmentFactoryInterop self, uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) CreateFromWin32Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusAttachmentFactoryInterop self, uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) CreateFromWin32Handle;
 			}
 		}
 		[CRepr]
@@ -51,9 +51,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertyGetHandler;
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertySetHandler;
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, out uint64 value) get_Win32Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertyGetHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertySetHandler;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, out uint64 value) get_Win32Handle;
 			}
 		}
 		[CRepr]
@@ -68,7 +68,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectFactoryInterop self, uint64 win32handle, in Guid riid, void** ppv) CreateFromWin32Handle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusObjectFactoryInterop self, uint64 win32handle, in Guid riid, void** ppv) CreateFromWin32Handle;
 			}
 		}
 		

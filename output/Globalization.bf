@@ -4266,10 +4266,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellingError self, out uint32 value) get_StartIndex;
-				public new function HRESULT(ref ISpellingError self, out uint32 value) get_Length;
-				public new function HRESULT(ref ISpellingError self, out CORRECTIVE_ACTION value) get_CorrectiveAction;
-				public new function HRESULT(ref ISpellingError self, out PWSTR value) get_Replacement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellingError self, out uint32 value) get_StartIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellingError self, out uint32 value) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellingError self, out CORRECTIVE_ACTION value) get_CorrectiveAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellingError self, out PWSTR value) get_Replacement;
 			}
 		}
 		[CRepr]
@@ -4284,7 +4284,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumSpellingError self, out ISpellingError* value) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumSpellingError self, out ISpellingError* value) Next;
 			}
 		}
 		[CRepr]
@@ -4302,10 +4302,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IOptionDescription self, out PWSTR value) get_Id;
-				public new function HRESULT(ref IOptionDescription self, out PWSTR value) get_Heading;
-				public new function HRESULT(ref IOptionDescription self, out PWSTR value) get_Description;
-				public new function HRESULT(ref IOptionDescription self, out IEnumString* value) get_Labels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOptionDescription self, out PWSTR value) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOptionDescription self, out PWSTR value) get_Heading;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOptionDescription self, out PWSTR value) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOptionDescription self, out IEnumString* value) get_Labels;
 			}
 		}
 		[CRepr]
@@ -4320,7 +4320,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellCheckerChangedEventHandler self, ref ISpellChecker sender) Invoke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckerChangedEventHandler self, ref ISpellChecker sender) Invoke;
 			}
 		}
 		[CRepr]
@@ -4348,20 +4348,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellChecker self, out PWSTR value) get_LanguageTag;
-				public new function HRESULT(ref ISpellChecker self, PWSTR text, out IEnumSpellingError* value) Check;
-				public new function HRESULT(ref ISpellChecker self, PWSTR word, out IEnumString* value) Suggest;
-				public new function HRESULT(ref ISpellChecker self, PWSTR word) Add;
-				public new function HRESULT(ref ISpellChecker self, PWSTR word) Ignore;
-				public new function HRESULT(ref ISpellChecker self, PWSTR from, PWSTR to) AutoCorrect;
-				public new function HRESULT(ref ISpellChecker self, PWSTR optionId, out uint8 value) GetOptionValue;
-				public new function HRESULT(ref ISpellChecker self, out IEnumString* value) get_OptionIds;
-				public new function HRESULT(ref ISpellChecker self, out PWSTR value) get_Id;
-				public new function HRESULT(ref ISpellChecker self, out PWSTR value) get_LocalizedName;
-				public new function HRESULT(ref ISpellChecker self, ref ISpellCheckerChangedEventHandler handler, out uint32 eventCookie) add_SpellCheckerChanged;
-				public new function HRESULT(ref ISpellChecker self, uint32 eventCookie) remove_SpellCheckerChanged;
-				public new function HRESULT(ref ISpellChecker self, PWSTR optionId, out IOptionDescription* value) GetOptionDescription;
-				public new function HRESULT(ref ISpellChecker self, PWSTR text, out IEnumSpellingError* value) ComprehensiveCheck;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, out PWSTR value) get_LanguageTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR text, out IEnumSpellingError* value) Check;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR word, out IEnumString* value) Suggest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR word) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR word) Ignore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR from, PWSTR to) AutoCorrect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR optionId, out uint8 value) GetOptionValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, out IEnumString* value) get_OptionIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, out PWSTR value) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, out PWSTR value) get_LocalizedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, ref ISpellCheckerChangedEventHandler handler, out uint32 eventCookie) add_SpellCheckerChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, uint32 eventCookie) remove_SpellCheckerChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR optionId, out IOptionDescription* value) GetOptionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker self, PWSTR text, out IEnumSpellingError* value) ComprehensiveCheck;
 			}
 		}
 		[CRepr]
@@ -4376,7 +4376,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISpellChecker.VTable
 			{
-				public new function HRESULT(ref ISpellChecker2 self, PWSTR word) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellChecker2 self, PWSTR word) Remove;
 			}
 		}
 		[CRepr]
@@ -4393,9 +4393,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellCheckerFactory self, out IEnumString* value) get_SupportedLanguages;
-				public new function HRESULT(ref ISpellCheckerFactory self, PWSTR languageTag, out BOOL value) IsSupported;
-				public new function HRESULT(ref ISpellCheckerFactory self, PWSTR languageTag, out ISpellChecker* value) CreateSpellChecker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckerFactory self, out IEnumString* value) get_SupportedLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckerFactory self, PWSTR languageTag, out BOOL value) IsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckerFactory self, PWSTR languageTag, out ISpellChecker* value) CreateSpellChecker;
 			}
 		}
 		[CRepr]
@@ -4411,8 +4411,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUserDictionariesRegistrar self, PWSTR dictionaryPath, PWSTR languageTag) RegisterUserDictionary;
-				public new function HRESULT(ref IUserDictionariesRegistrar self, PWSTR dictionaryPath, PWSTR languageTag) UnregisterUserDictionary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserDictionariesRegistrar self, PWSTR dictionaryPath, PWSTR languageTag) RegisterUserDictionary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUserDictionariesRegistrar self, PWSTR dictionaryPath, PWSTR languageTag) UnregisterUserDictionary;
 			}
 		}
 		[CRepr]
@@ -4436,16 +4436,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_LanguageTag;
-				public new function HRESULT(ref ISpellCheckProvider self, PWSTR text, out IEnumSpellingError* value) Check;
-				public new function HRESULT(ref ISpellCheckProvider self, PWSTR word, out IEnumString* value) Suggest;
-				public new function HRESULT(ref ISpellCheckProvider self, PWSTR optionId, out uint8 value) GetOptionValue;
-				public new function HRESULT(ref ISpellCheckProvider self, PWSTR optionId, uint8 value) SetOptionValue;
-				public new function HRESULT(ref ISpellCheckProvider self, out IEnumString* value) get_OptionIds;
-				public new function HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_Id;
-				public new function HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_LocalizedName;
-				public new function HRESULT(ref ISpellCheckProvider self, PWSTR optionId, out IOptionDescription* value) GetOptionDescription;
-				public new function HRESULT(ref ISpellCheckProvider self, WORDLIST_TYPE wordlistType, ref IEnumString words) InitializeWordlist;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_LanguageTag;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, PWSTR text, out IEnumSpellingError* value) Check;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, PWSTR word, out IEnumString* value) Suggest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, PWSTR optionId, out uint8 value) GetOptionValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, PWSTR optionId, uint8 value) SetOptionValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, out IEnumString* value) get_OptionIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, out PWSTR value) get_LocalizedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, PWSTR optionId, out IOptionDescription* value) GetOptionDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProvider self, WORDLIST_TYPE wordlistType, ref IEnumString words) InitializeWordlist;
 			}
 		}
 		[CRepr]
@@ -4460,7 +4460,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IComprehensiveSpellCheckProvider self, PWSTR text, out IEnumSpellingError* value) ComprehensiveCheck;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComprehensiveSpellCheckProvider self, PWSTR text, out IEnumSpellingError* value) ComprehensiveCheck;
 			}
 		}
 		[CRepr]
@@ -4477,9 +4477,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISpellCheckProviderFactory self, out IEnumString* value) get_SupportedLanguages;
-				public new function HRESULT(ref ISpellCheckProviderFactory self, PWSTR languageTag, out BOOL value) IsSupported;
-				public new function HRESULT(ref ISpellCheckProviderFactory self, PWSTR languageTag, out ISpellCheckProvider* value) CreateSpellCheckProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProviderFactory self, out IEnumString* value) get_SupportedLanguages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProviderFactory self, PWSTR languageTag, out BOOL value) IsSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpellCheckProviderFactory self, PWSTR languageTag, out ISpellCheckProvider* value) CreateSpellCheckProvider;
 			}
 		}
 		[CRepr]
@@ -4498,11 +4498,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangStringBufW self, int32* plFlags, int32* pcchBuf) GetStatus;
-				public new function HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchMaxLock, out uint16* ppszBuf, int32* pcchBuf) LockBuf;
-				public new function HRESULT(ref IMLangStringBufW self, PWSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
-				public new function HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
-				public new function HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchDelete) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufW self, int32* plFlags, int32* pcchBuf) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchMaxLock, out uint16* ppszBuf, int32* pcchBuf) LockBuf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufW self, PWSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufW self, int32 cchOffset, int32 cchDelete) Delete;
 			}
 		}
 		[CRepr]
@@ -4521,11 +4521,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangStringBufA self, int32* plFlags, int32* pcchBuf) GetStatus;
-				public new function HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchMaxLock, out CHAR* ppszBuf, int32* pcchBuf) LockBuf;
-				public new function HRESULT(ref IMLangStringBufA self, PSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
-				public new function HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
-				public new function HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchDelete) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufA self, int32* plFlags, int32* pcchBuf) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchMaxLock, out CHAR* ppszBuf, int32* pcchBuf) LockBuf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufA self, PSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringBufA self, int32 cchOffset, int32 cchDelete) Delete;
 			}
 		}
 		[CRepr]
@@ -4543,10 +4543,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangString self, BOOL fNoAccess) Sync;
-				public new function HRESULT(ref IMLangString self, int32* plLen) GetLength;
-				public new function HRESULT(ref IMLangString self, int32 lDestPos, int32 lDestLen, ref IUnknown pSrcMLStr, int32 lSrcPos, int32 lSrcLen) SetMLStr;
-				public new function HRESULT(ref IMLangString self, int32 lSrcPos, int32 lSrcLen, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid piid, out IUnknown* ppDestMLStr, int32* plDestPos, int32* plDestLen) GetMLStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangString self, BOOL fNoAccess) Sync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangString self, int32* plLen) GetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangString self, int32 lDestPos, int32 lDestLen, ref IUnknown pSrcMLStr, int32 lSrcPos, int32 lSrcLen) SetMLStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangString self, int32 lSrcPos, int32 lSrcLen, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid piid, out IUnknown* ppDestMLStr, int32* plDestPos, int32* plDestLen) GetMLStr;
 			}
 		}
 		[CRepr]
@@ -4568,14 +4568,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMLangString.VTable
 			{
-				public new function HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetWStr;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, IMLangStringBufW* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufW;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcLen, char16* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetWStr;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcMaxLen, out IMLangStringBufW* ppDestBuf, int32* plDestLen) GetStrBufW;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, int32 cchRequest, PWSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockWStr;
-				public new function HRESULT(ref IMLangStringWStr self, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockWStr;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
-				public new function HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, IMLangStringBufW* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcLen, char16* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcMaxLen, out IMLangStringBufW* ppDestBuf, int32* plDestLen) GetStrBufW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, int32 cchRequest, PWSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockWStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringWStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
 			}
 		}
 		[CRepr]
@@ -4597,14 +4597,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMLangString.VTable
 			{
-				public new function HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetAStr;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, IMLangStringBufA* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufA;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcLen, uint32 uCodePageIn, out uint32 puCodePageOut, uint8* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetAStr;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* puDestCodePage, out IMLangStringBufA* ppDestBuf, int32* plDestLen) GetStrBufA;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, uint32 uCodePageIn, int32 cchRequest, uint32* puCodePageOut, PSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockAStr;
-				public new function HRESULT(ref IMLangStringAStr self, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockAStr;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
-				public new function HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetAStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, IMLangStringBufA* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcLen, uint32 uCodePageIn, out uint32 puCodePageOut, uint8* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetAStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* puDestCodePage, out IMLangStringBufA* ppDestBuf, int32* plDestLen) GetStrBufA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, uint32 uCodePageIn, int32 cchRequest, uint32* puCodePageOut, PSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockAStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockAStr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangStringAStr self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
 			}
 		}
 		[CRepr]
@@ -4621,9 +4621,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangLineBreakConsole self, ref IMLangString pSrcMLStr, int32 lSrcPos, int32 lSrcLen, int32 cMinColumns, int32 cMaxColumns, int32* plLineLen, int32* plSkipLen) BreakLineML;
-				public new function HRESULT(ref IMLangLineBreakConsole self, uint32 locale, char16* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineW;
-				public new function HRESULT(ref IMLangLineBreakConsole self, uint32 locale, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineA;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangLineBreakConsole self, ref IMLangString pSrcMLStr, int32 lSrcPos, int32 lSrcLen, int32 cMinColumns, int32 cMaxColumns, int32* plLineLen, int32* plSkipLen) BreakLineML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangLineBreakConsole self, uint32 locale, char16* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineW;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangLineBreakConsole self, uint32 locale, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineA;
 			}
 		}
 		[CRepr]
@@ -4641,10 +4641,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumCodePage self, out IEnumCodePage* ppEnum) Clone;
-				public new function HRESULT(ref IEnumCodePage self, uint32 celt, out MIMECPINFO rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumCodePage self) Reset;
-				public new function HRESULT(ref IEnumCodePage self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCodePage self, out IEnumCodePage* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCodePage self, uint32 celt, out MIMECPINFO rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCodePage self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumCodePage self, uint32 celt) Skip;
 			}
 		}
 		[CRepr]
@@ -4662,10 +4662,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumRfc1766 self, out IEnumRfc1766* ppEnum) Clone;
-				public new function HRESULT(ref IEnumRfc1766 self, uint32 celt, out RFC1766INFO rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumRfc1766 self) Reset;
-				public new function HRESULT(ref IEnumRfc1766 self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRfc1766 self, out IEnumRfc1766* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRfc1766 self, uint32 celt, out RFC1766INFO rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRfc1766 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumRfc1766 self, uint32 celt) Skip;
 			}
 		}
 		[CRepr]
@@ -4683,10 +4683,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumScript self, out IEnumScript* ppEnum) Clone;
-				public new function HRESULT(ref IEnumScript self, uint32 celt, out SCRIPTINFO rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumScript self) Reset;
-				public new function HRESULT(ref IEnumScript self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumScript self, out IEnumScript* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumScript self, uint32 celt, out SCRIPTINFO rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumScript self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumScript self, uint32 celt) Skip;
 			}
 		}
 		[CRepr]
@@ -4707,13 +4707,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangConvertCharset self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty) Initialize;
-				public new function HRESULT(ref IMLangConvertCharset self, out uint32 puiSrcCodePage) GetSourceCodePage;
-				public new function HRESULT(ref IMLangConvertCharset self, out uint32 puiDstCodePage) GetDestinationCodePage;
-				public new function HRESULT(ref IMLangConvertCharset self, out uint32 pdwProperty) GetProperty;
-				public new function HRESULT(ref IMLangConvertCharset self, ref uint8 pSrcStr, uint32* pcSrcSize, out uint8 pDstStr, uint32* pcDstSize) DoConversion;
-				public new function HRESULT(ref IMLangConvertCharset self, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) DoConversionToUnicode;
-				public new function HRESULT(ref IMLangConvertCharset self, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) DoConversionFromUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, out uint32 puiSrcCodePage) GetSourceCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, out uint32 puiDstCodePage) GetDestinationCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, out uint32 pdwProperty) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, ref uint8 pSrcStr, uint32* pcSrcSize, out uint8 pDstStr, uint32* pcDstSize) DoConversion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) DoConversionToUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangConvertCharset self, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) DoConversionFromUnicode;
 			}
 		}
 		[CRepr]
@@ -4742,21 +4742,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMultiLanguage self, out uint32 pcCodePage) GetNumberOfCodePageInfo;
-				public new function HRESULT(ref IMultiLanguage self, uint32 uiCodePage, out MIMECPINFO pCodePageInfo) GetCodePageInfo;
-				public new function HRESULT(ref IMultiLanguage self, uint32 uiCodePage, out uint32 puiFamilyCodePage) GetFamilyCodePage;
-				public new function HRESULT(ref IMultiLanguage self, uint32 grfFlags, out IEnumCodePage* ppEnumCodePage) EnumCodePages;
-				public new function HRESULT(ref IMultiLanguage self, BSTR Charset, out MIMECSETINFO pCharsetInfo) GetCharsetInfo;
-				public new function HRESULT(ref IMultiLanguage self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
-				public new function HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
-				public new function HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
-				public new function HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
-				public new function HRESULT(ref IMultiLanguage self) ConvertStringReset;
-				public new function HRESULT(ref IMultiLanguage self, uint32 Locale, out BSTR pbstrRfc1766) GetRfc1766FromLcid;
-				public new function HRESULT(ref IMultiLanguage self, out uint32 pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
-				public new function HRESULT(ref IMultiLanguage self, out IEnumRfc1766* ppEnumRfc1766) EnumRfc1766;
-				public new function HRESULT(ref IMultiLanguage self, uint32 Locale, out RFC1766INFO pRfc1766Info) GetRfc1766Info;
-				public new function HRESULT(ref IMultiLanguage self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) CreateConvertCharset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, out uint32 pcCodePage) GetNumberOfCodePageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 uiCodePage, out MIMECPINFO pCodePageInfo) GetCodePageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 uiCodePage, out uint32 puiFamilyCodePage) GetFamilyCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 grfFlags, out IEnumCodePage* ppEnumCodePage) EnumCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, BSTR Charset, out MIMECSETINFO pCharsetInfo) GetCharsetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self) ConvertStringReset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 Locale, out BSTR pbstrRfc1766) GetRfc1766FromLcid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, out uint32 pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, out IEnumRfc1766* ppEnumRfc1766) EnumRfc1766;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 Locale, out RFC1766INFO pRfc1766Info) GetRfc1766Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) CreateConvertCharset;
 			}
 		}
 		[CRepr]
@@ -4797,33 +4797,33 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMultiLanguage2 self, out uint32 pcCodePage) GetNumberOfCodePageInfo;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, uint16 LangId, out MIMECPINFO pCodePageInfo) GetCodePageInfo;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, out uint32 puiFamilyCodePage) GetFamilyCodePage;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 grfFlags, uint16 LangId, out IEnumCodePage* ppEnumCodePage) EnumCodePages;
-				public new function HRESULT(ref IMultiLanguage2 self, BSTR Charset, out MIMECSETINFO pCharsetInfo) GetCharsetInfo;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
-				public new function HRESULT(ref IMultiLanguage2 self) ConvertStringReset;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 Locale, out BSTR pbstrRfc1766) GetRfc1766FromLcid;
-				public new function HRESULT(ref IMultiLanguage2 self, out uint32 pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
-				public new function HRESULT(ref IMultiLanguage2 self, uint16 LangId, out IEnumRfc1766* ppEnumRfc1766) EnumRfc1766;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 Locale, uint16 LangId, out RFC1766INFO pRfc1766Info) GetRfc1766Info;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) CreateConvertCharset;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwFlag, PWSTR lpFallBack, uint32 dwSrcEncoding, uint32 dwDstEncoding, ref IStream pstmIn, ref IStream pstmOut) ConvertStringInIStream;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringToUnicodeEx;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringFromUnicodeEx;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 dwFlag, uint32 dwPrefWinCodePage, ref IStream pstmIn, out DetectEncodingInfo lpEncoding, out int32 pnScores) DetectCodepageInIStream;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 dwFlag, uint32 dwPrefWinCodePage, PSTR pSrcStr, out int32 pcSrcSize, out DetectEncodingInfo lpEncoding, out int32 pnScores) DetectInputCodepage;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, HWND hwnd) ValidateCodePage;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, uint32 lcid, char16* lpWideCharStr, int32 cchWideChar) GetCodePageDescription;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage) IsCodePageInstallable;
-				public new function HRESULT(ref IMultiLanguage2 self, MIMECONTF dwSource) SetMimeDBSource;
-				public new function HRESULT(ref IMultiLanguage2 self, out uint32 pnScripts) GetNumberOfScripts;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 dwFlags, uint16 LangId, out IEnumScript* ppEnumScript) EnumScripts;
-				public new function HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, HWND hwnd, uint32 dwfIODControl) ValidateCodePageEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, out uint32 pcCodePage) GetNumberOfCodePageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, uint16 LangId, out MIMECPINFO pCodePageInfo) GetCodePageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, out uint32 puiFamilyCodePage) GetFamilyCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 grfFlags, uint16 LangId, out IEnumCodePage* ppEnumCodePage) EnumCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, BSTR Charset, out MIMECSETINFO pCharsetInfo) GetCharsetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self) ConvertStringReset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 Locale, out BSTR pbstrRfc1766) GetRfc1766FromLcid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, out uint32 pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint16 LangId, out IEnumRfc1766* ppEnumRfc1766) EnumRfc1766;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 Locale, uint16 LangId, out RFC1766INFO pRfc1766Info) GetRfc1766Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, out IMLangConvertCharset* ppMLangConvertCharset) CreateConvertCharset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwFlag, PWSTR lpFallBack, uint32 dwSrcEncoding, uint32 dwDstEncoding, ref IStream pstmIn, ref IStream pstmOut) ConvertStringInIStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringToUnicodeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringFromUnicodeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 dwFlag, uint32 dwPrefWinCodePage, ref IStream pstmIn, out DetectEncodingInfo lpEncoding, out int32 pnScores) DetectCodepageInIStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 dwFlag, uint32 dwPrefWinCodePage, PSTR pSrcStr, out int32 pcSrcSize, out DetectEncodingInfo lpEncoding, out int32 pnScores) DetectInputCodepage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, HWND hwnd) ValidateCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, uint32 lcid, char16* lpWideCharStr, int32 cchWideChar) GetCodePageDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage) IsCodePageInstallable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, MIMECONTF dwSource) SetMimeDBSource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, out uint32 pnScripts) GetNumberOfScripts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 dwFlags, uint16 LangId, out IEnumScript* ppEnumScript) EnumScripts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage2 self, uint32 uiCodePage, HWND hwnd, uint32 dwfIODControl) ValidateCodePageEx;
 			}
 		}
 		[CRepr]
@@ -4841,10 +4841,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMLangCodePages self, char16 chSrc, out uint32 pdwCodePages) GetCharCodePages;
-				public new function HRESULT(ref IMLangCodePages self, char16* pszSrc, int32 cchSrc, uint32 dwPriorityCodePages, uint32* pdwCodePages, int32* pcchCodePages) GetStrCodePages;
-				public new function HRESULT(ref IMLangCodePages self, uint32 uCodePage, out uint32 pdwCodePages) CodePageToCodePages;
-				public new function HRESULT(ref IMLangCodePages self, uint32 dwCodePages, uint32 uDefaultCodePage, out uint32 puCodePage) CodePagesToCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangCodePages self, char16 chSrc, out uint32 pdwCodePages) GetCharCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangCodePages self, char16* pszSrc, int32 cchSrc, uint32 dwPriorityCodePages, uint32* pdwCodePages, int32* pcchCodePages) GetStrCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangCodePages self, uint32 uCodePage, out uint32 pdwCodePages) CodePageToCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangCodePages self, uint32 dwCodePages, uint32 uDefaultCodePage, out uint32 puCodePage) CodePagesToCodePage;
 			}
 		}
 		[CRepr]
@@ -4862,10 +4862,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMLangCodePages.VTable
 			{
-				public new function HRESULT(ref IMLangFontLink self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
-				public new function HRESULT(ref IMLangFontLink self, HDC hDC, uint32 dwCodePages, HFONT hSrcFont, HFONT* phDestFont) MapFont;
-				public new function HRESULT(ref IMLangFontLink self, HFONT hFont) ReleaseFont;
-				public new function HRESULT(ref IMLangFontLink self) ResetFontMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink self, HDC hDC, uint32 dwCodePages, HFONT hSrcFont, HFONT* phDestFont) MapFont;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink self, HFONT hFont) ReleaseFont;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink self) ResetFontMapping;
 			}
 		}
 		[CRepr]
@@ -4886,13 +4886,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMLangCodePages.VTable
 			{
-				public new function HRESULT(ref IMLangFontLink2 self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
-				public new function HRESULT(ref IMLangFontLink2 self, HFONT hFont) ReleaseFont;
-				public new function HRESULT(ref IMLangFontLink2 self) ResetFontMapping;
-				public new function HRESULT(ref IMLangFontLink2 self, HDC hDC, uint32 dwCodePages, char16 chSrc, HFONT* pFont) MapFont;
-				public new function HRESULT(ref IMLangFontLink2 self, HDC hDC, ref uint32 puiRanges, UNICODERANGE* pUranges) GetFontUnicodeRanges;
-				public new function HRESULT(ref IMLangFontLink2 self, uint8 sid, uint32 dwFlags, out uint32 puiFonts, tagSCRIPFONTINFO* pScriptFont) GetScriptFontInfo;
-				public new function HRESULT(ref IMLangFontLink2 self, uint32 uiCodePage, out uint8 pSid) CodePageToScriptID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, HFONT hFont) ReleaseFont;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self) ResetFontMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, HDC hDC, uint32 dwCodePages, char16 chSrc, HFONT* pFont) MapFont;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, HDC hDC, ref uint32 puiRanges, UNICODERANGE* pUranges) GetFontUnicodeRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, uint8 sid, uint32 dwFlags, out uint32 puiFonts, tagSCRIPFONTINFO* pScriptFont) GetScriptFontInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLangFontLink2 self, uint32 uiCodePage, out uint8 pSid) CodePageToScriptID;
 			}
 		}
 		[CRepr]
@@ -4908,8 +4908,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMultiLanguage2.VTable
 			{
-				public new function HRESULT(ref IMultiLanguage3 self, uint32 dwFlags, char16* lpWideCharStr, uint32 cchWideChar, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePage;
-				public new function HRESULT(ref IMultiLanguage3 self, uint32 dwFlags, ref IStream pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePageInIStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage3 self, uint32 dwFlags, char16* lpWideCharStr, uint32 cchWideChar, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage3 self, uint32 dwFlags, ref IStream pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePageInIStream;
 			}
 		}
 		

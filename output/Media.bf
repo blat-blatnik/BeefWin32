@@ -209,10 +209,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IReferenceClock self, out int64 pTime) GetTime;
-				public new function HRESULT(ref IReferenceClock self, int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) AdviseTime;
-				public new function HRESULT(ref IReferenceClock self, int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) AdvisePeriodic;
-				public new function HRESULT(ref IReferenceClock self, uint dwAdviseCookie) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClock self, out int64 pTime) GetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClock self, int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) AdviseTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClock self, int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) AdvisePeriodic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClock self, uint dwAdviseCookie) Unadvise;
 			}
 		}
 		[CRepr]
@@ -228,8 +228,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IReferenceClockTimerControl self, int64 timerResolution) SetDefaultTimerResolution;
-				public new function HRESULT(ref IReferenceClockTimerControl self, out int64 pTimerResolution) GetDefaultTimerResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClockTimerControl self, int64 timerResolution) SetDefaultTimerResolution;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReferenceClockTimerControl self, out int64 pTimerResolution) GetDefaultTimerResolution;
 			}
 		}
 		[CRepr]

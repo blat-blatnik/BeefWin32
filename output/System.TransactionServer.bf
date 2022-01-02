@@ -92,10 +92,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICatalog self, BSTR bstrCollName, out IDispatch* ppCatalogCollection) GetCollection;
-				public new function HRESULT(ref ICatalog self, BSTR bstrConnectString, out IDispatch* ppCatalogCollection) Connect;
-				public new function HRESULT(ref ICatalog self, out int32 retval) get_MajorVersion;
-				public new function HRESULT(ref ICatalog self, out int32 retval) get_MinorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalog self, BSTR bstrCollName, out IDispatch* ppCatalogCollection) GetCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalog self, BSTR bstrConnectString, out IDispatch* ppCatalogCollection) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalog self, out int32 retval) get_MajorVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalog self, out int32 retval) get_MinorVersion;
 			}
 		}
 		[CRepr]
@@ -113,10 +113,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
-				public new function HRESULT(ref IComponentUtil self, BSTR bstrCLSID) ImportComponent;
-				public new function HRESULT(ref IComponentUtil self, BSTR bstrProgID) ImportComponentByName;
-				public new function HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) GetCLSIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentUtil self, BSTR bstrCLSID) ImportComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentUtil self, BSTR bstrProgID) ImportComponentByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) GetCLSIDs;
 			}
 		}
 		[CRepr]
@@ -133,9 +133,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
-				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
-				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageID) ShutdownPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPackageUtil self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPackageUtil self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPackageUtil self, BSTR bstrPackageID) ShutdownPackage;
 			}
 		}
 		[CRepr]
@@ -151,8 +151,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
-				public new function HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
 			}
 		}
 		[CRepr]
@@ -168,8 +168,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleID) AssociateRole;
-				public new function HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleName) AssociateRoleByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleID) AssociateRole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleName) AssociateRoleByName;
 			}
 		}
 		

@@ -33,8 +33,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDeviceProperty self, out BSTR name) get_Name;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDeviceProperty self, out VARIANT value) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDeviceProperty self, out BSTR name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDeviceProperty self, out VARIANT value) get_Value;
 			}
 		}
 		[CRepr]
@@ -51,9 +51,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, int32 index, out IWindowsMediaLibrarySharingDeviceProperty* property) get_Item;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, out int32 count) get_Count;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, BSTR name, out IWindowsMediaLibrarySharingDeviceProperty* property) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, int32 index, out IWindowsMediaLibrarySharingDeviceProperty* property) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDeviceProperties self, BSTR name, out IWindowsMediaLibrarySharingDeviceProperty* property) GetProperty;
 			}
 		}
 		[CRepr]
@@ -71,10 +71,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevice self, out BSTR deviceID) get_DeviceID;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevice self, out WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) get_Authorization;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevice self, WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) put_Authorization;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevice self, out IWindowsMediaLibrarySharingDeviceProperties* deviceProperties) get_Properties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevice self, out BSTR deviceID) get_DeviceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevice self, out WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) get_Authorization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevice self, WindowsMediaLibrarySharingDeviceAuthorizationStatus authorization) put_Authorization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevice self, out IWindowsMediaLibrarySharingDeviceProperties* deviceProperties) get_Properties;
 			}
 		}
 		[CRepr]
@@ -91,9 +91,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevices self, int32 index, out IWindowsMediaLibrarySharingDevice* device) get_Item;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevices self, out int32 count) get_Count;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingDevices self, BSTR deviceID, out IWindowsMediaLibrarySharingDevice* device) GetDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevices self, int32 index, out IWindowsMediaLibrarySharingDevice* device) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevices self, out int32 count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingDevices self, BSTR deviceID, out IWindowsMediaLibrarySharingDevice* device) GetDevice;
 			}
 		}
 		[CRepr]
@@ -126,25 +126,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR device) showShareMediaCPL;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_userHomeMediaSharingState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_userHomeMediaSharingState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out BSTR libraryName) get_userHomeMediaSharingLibraryName;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR libraryName) put_userHomeMediaSharingLibraryName;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingAllowed) get_computerHomeMediaSharingAllowedState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingAllowed) put_computerHomeMediaSharingAllowedState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_userInternetMediaSharingState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_userInternetMediaSharingState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingAllowed) get_computerInternetMediaSharingAllowedState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingAllowed) put_computerInternetMediaSharingAllowedState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out BSTR securityGroup) get_internetMediaSharingSecurityGroup;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR securityGroup) put_internetMediaSharingSecurityGroup;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_allowSharingToAllDevices;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_allowSharingToAllDevices;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR MACAddresses, BSTR friendlyName, int16 authorization) setDefaultAuthorization;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR MACAddress, int16 authorizationState) setAuthorizationState;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out IWindowsMediaLibrarySharingDevices* devices) getAllDevices;
-				public new function HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 customSettingsApplied) get_customSettingsApplied;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR device) showShareMediaCPL;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_userHomeMediaSharingState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_userHomeMediaSharingState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out BSTR libraryName) get_userHomeMediaSharingLibraryName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR libraryName) put_userHomeMediaSharingLibraryName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingAllowed) get_computerHomeMediaSharingAllowedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingAllowed) put_computerHomeMediaSharingAllowedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_userInternetMediaSharingState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_userInternetMediaSharingState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingAllowed) get_computerInternetMediaSharingAllowedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingAllowed) put_computerInternetMediaSharingAllowedState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out BSTR securityGroup) get_internetMediaSharingSecurityGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR securityGroup) put_internetMediaSharingSecurityGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 sharingEnabled) get_allowSharingToAllDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, int16 sharingEnabled) put_allowSharingToAllDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR MACAddresses, BSTR friendlyName, int16 authorization) setDefaultAuthorization;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, BSTR MACAddress, int16 authorizationState) setAuthorizationState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out IWindowsMediaLibrarySharingDevices* devices) getAllDevices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 customSettingsApplied) get_customSettingsApplied;
 			}
 		}
 		

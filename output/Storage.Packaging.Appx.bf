@@ -355,11 +355,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxFactory self, ref IStream outputStream, ref APPX_PACKAGE_SETTINGS settings, out IAppxPackageWriter* packageWriter) CreatePackageWriter;
-				public new function HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxPackageReader* packageReader) CreatePackageReader;
-				public new function HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxManifestReader* manifestReader) CreateManifestReader;
-				public new function HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxBlockMapReader* blockMapReader) CreateBlockMapReader;
-				public new function HRESULT(ref IAppxFactory self, ref IStream blockMapStream, PWSTR signatureFileName, out IAppxBlockMapReader* blockMapReader) CreateValidatedBlockMapReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory self, ref IStream outputStream, ref APPX_PACKAGE_SETTINGS settings, out IAppxPackageWriter* packageWriter) CreatePackageWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxPackageReader* packageReader) CreatePackageReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxManifestReader* manifestReader) CreateManifestReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory self, ref IStream inputStream, out IAppxBlockMapReader* blockMapReader) CreateBlockMapReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory self, ref IStream blockMapStream, PWSTR signatureFileName, out IAppxBlockMapReader* blockMapReader) CreateValidatedBlockMapReader;
 			}
 		}
 		[CRepr]
@@ -376,9 +376,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxFactory2 self, ref IStream inputStream, out IAppxContentGroupMapReader* contentGroupMapReader) CreateContentGroupMapReader;
-				public new function HRESULT(ref IAppxFactory2 self, ref IStream inputStream, out IAppxSourceContentGroupMapReader* reader) CreateSourceContentGroupMapReader;
-				public new function HRESULT(ref IAppxFactory2 self, ref IStream stream, out IAppxContentGroupMapWriter* contentGroupMapWriter) CreateContentGroupMapWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory2 self, ref IStream inputStream, out IAppxContentGroupMapReader* contentGroupMapReader) CreateContentGroupMapReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory2 self, ref IStream inputStream, out IAppxSourceContentGroupMapReader* reader) CreateSourceContentGroupMapReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFactory2 self, ref IStream stream, out IAppxContentGroupMapWriter* contentGroupMapWriter) CreateContentGroupMapWriter;
 			}
 		}
 		[CRepr]
@@ -397,11 +397,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackageReader self, out IAppxBlockMapReader* blockMapReader) GetBlockMap;
-				public new function HRESULT(ref IAppxPackageReader self, APPX_FOOTPRINT_FILE_TYPE type, out IAppxFile* file) GetFootprintFile;
-				public new function HRESULT(ref IAppxPackageReader self, PWSTR fileName, out IAppxFile* file) GetPayloadFile;
-				public new function HRESULT(ref IAppxPackageReader self, out IAppxFilesEnumerator* filesEnumerator) GetPayloadFiles;
-				public new function HRESULT(ref IAppxPackageReader self, out IAppxManifestReader* manifestReader) GetManifest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageReader self, out IAppxBlockMapReader* blockMapReader) GetBlockMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageReader self, APPX_FOOTPRINT_FILE_TYPE type, out IAppxFile* file) GetFootprintFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageReader self, PWSTR fileName, out IAppxFile* file) GetPayloadFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageReader self, out IAppxFilesEnumerator* filesEnumerator) GetPayloadFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageReader self, out IAppxManifestReader* manifestReader) GetManifest;
 			}
 		}
 		[CRepr]
@@ -417,8 +417,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackageWriter self, PWSTR fileName, PWSTR contentType, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) AddPayloadFile;
-				public new function HRESULT(ref IAppxPackageWriter self, ref IStream manifest) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageWriter self, PWSTR fileName, PWSTR contentType, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) AddPayloadFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageWriter self, ref IStream manifest) Close;
 			}
 		}
 		[CRepr]
@@ -433,7 +433,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackageWriter2 self, ref IStream manifest, ref IStream contentGroupMap) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageWriter2 self, ref IStream manifest, ref IStream contentGroupMap) Close;
 			}
 		}
 		[CRepr]
@@ -448,7 +448,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackageWriter3 self, uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) AddPayloadFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageWriter3 self, uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) AddPayloadFiles;
 			}
 		}
 		[CRepr]
@@ -467,11 +467,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxFile self, out APPX_COMPRESSION_OPTION compressionOption) GetCompressionOption;
-				public new function HRESULT(ref IAppxFile self, out PWSTR contentType) GetContentType;
-				public new function HRESULT(ref IAppxFile self, out PWSTR fileName) GetName;
-				public new function HRESULT(ref IAppxFile self, out uint64 size) GetSize;
-				public new function HRESULT(ref IAppxFile self, out IStream* stream) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFile self, out APPX_COMPRESSION_OPTION compressionOption) GetCompressionOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFile self, out PWSTR contentType) GetContentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFile self, out PWSTR fileName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFile self, out uint64 size) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFile self, out IStream* stream) GetStream;
 			}
 		}
 		[CRepr]
@@ -488,9 +488,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxFilesEnumerator self, out IAppxFile* file) GetCurrent;
-				public new function HRESULT(ref IAppxFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxFilesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFilesEnumerator self, out IAppxFile* file) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxFilesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -508,10 +508,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBlockMapReader self, PWSTR filename, out IAppxBlockMapFile* file) GetFile;
-				public new function HRESULT(ref IAppxBlockMapReader self, out IAppxBlockMapFilesEnumerator* enumerator) GetFiles;
-				public new function HRESULT(ref IAppxBlockMapReader self, out IUri* hashMethod) GetHashMethod;
-				public new function HRESULT(ref IAppxBlockMapReader self, out IStream* blockMapStream) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapReader self, PWSTR filename, out IAppxBlockMapFile* file) GetFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapReader self, out IAppxBlockMapFilesEnumerator* enumerator) GetFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapReader self, out IUri* hashMethod) GetHashMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapReader self, out IStream* blockMapStream) GetStream;
 			}
 		}
 		[CRepr]
@@ -530,11 +530,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBlockMapFile self, out IAppxBlockMapBlocksEnumerator* blocks) GetBlocks;
-				public new function HRESULT(ref IAppxBlockMapFile self, out uint32 lfhSize) GetLocalFileHeaderSize;
-				public new function HRESULT(ref IAppxBlockMapFile self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxBlockMapFile self, out uint64 size) GetUncompressedSize;
-				public new function HRESULT(ref IAppxBlockMapFile self, ref IStream fileStream, out BOOL isValid) ValidateFileHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFile self, out IAppxBlockMapBlocksEnumerator* blocks) GetBlocks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFile self, out uint32 lfhSize) GetLocalFileHeaderSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFile self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFile self, out uint64 size) GetUncompressedSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFile self, ref IStream fileStream, out BOOL isValid) ValidateFileHash;
 			}
 		}
 		[CRepr]
@@ -551,9 +551,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBlockMapFilesEnumerator self, out IAppxBlockMapFile* file) GetCurrent;
-				public new function HRESULT(ref IAppxBlockMapFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxBlockMapFilesEnumerator self, out BOOL hasCurrent) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFilesEnumerator self, out IAppxBlockMapFile* file) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapFilesEnumerator self, out BOOL hasCurrent) MoveNext;
 			}
 		}
 		[CRepr]
@@ -569,8 +569,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBlockMapBlock self, out uint32 bufferSize, out uint8* buffer) GetHash;
-				public new function HRESULT(ref IAppxBlockMapBlock self, out uint32 size) GetCompressedSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapBlock self, out uint32 bufferSize, out uint8* buffer) GetHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapBlock self, out uint32 size) GetCompressedSize;
 			}
 		}
 		[CRepr]
@@ -587,9 +587,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBlockMapBlocksEnumerator self, out IAppxBlockMapBlock* block) GetCurrent;
-				public new function HRESULT(ref IAppxBlockMapBlocksEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxBlockMapBlocksEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapBlocksEnumerator self, out IAppxBlockMapBlock* block) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapBlocksEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBlockMapBlocksEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -612,15 +612,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestPackageId* packageId) GetPackageId;
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestProperties* packageProperties) GetProperties;
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestPackageDependenciesEnumerator* dependencies) GetPackageDependencies;
-				public new function HRESULT(ref IAppxManifestReader self, out APPX_CAPABILITIES capabilities) GetCapabilities;
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestResourcesEnumerator* resources) GetResources;
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestDeviceCapabilitiesEnumerator* deviceCapabilities) GetDeviceCapabilities;
-				public new function HRESULT(ref IAppxManifestReader self, PWSTR name, out uint64 value) GetPrerequisite;
-				public new function HRESULT(ref IAppxManifestReader self, out IAppxManifestApplicationsEnumerator* applications) GetApplications;
-				public new function HRESULT(ref IAppxManifestReader self, out IStream* manifestStream) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestPackageId* packageId) GetPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestProperties* packageProperties) GetProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestPackageDependenciesEnumerator* dependencies) GetPackageDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out APPX_CAPABILITIES capabilities) GetCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestResourcesEnumerator* resources) GetResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestDeviceCapabilitiesEnumerator* deviceCapabilities) GetDeviceCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, PWSTR name, out uint64 value) GetPrerequisite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IAppxManifestApplicationsEnumerator* applications) GetApplications;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader self, out IStream* manifestStream) GetStream;
 			}
 		}
 		[CRepr]
@@ -635,7 +635,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAppxManifestReader.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader2 self, out IAppxManifestQualifiedResourcesEnumerator* resources) GetQualifiedResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader2 self, out IAppxManifestQualifiedResourcesEnumerator* resources) GetQualifiedResources;
 			}
 		}
 		[CRepr]
@@ -651,8 +651,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAppxManifestReader2.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader3 self, APPX_CAPABILITY_CLASS_TYPE capabilityClass, out IAppxManifestCapabilitiesEnumerator* capabilities) GetCapabilitiesByCapabilityClass;
-				public new function HRESULT(ref IAppxManifestReader3 self, out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) GetTargetDeviceFamilies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader3 self, APPX_CAPABILITY_CLASS_TYPE capabilityClass, out IAppxManifestCapabilitiesEnumerator* capabilities) GetCapabilitiesByCapabilityClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader3 self, out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) GetTargetDeviceFamilies;
 			}
 		}
 		[CRepr]
@@ -667,7 +667,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAppxManifestReader3.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader4 self, out IAppxManifestOptionalPackageInfo* optionalPackageInfo) GetOptionalPackageInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader4 self, out IAppxManifestOptionalPackageInfo* optionalPackageInfo) GetOptionalPackageInfo;
 			}
 		}
 		[CRepr]
@@ -682,7 +682,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader5 self, out IAppxManifestMainPackageDependenciesEnumerator* mainPackageDependencies) GetMainPackageDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader5 self, out IAppxManifestMainPackageDependenciesEnumerator* mainPackageDependencies) GetMainPackageDependencies;
 			}
 		}
 		[CRepr]
@@ -697,7 +697,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader6 self, out BOOL isNonQualifiedResourcePackage) GetIsNonQualifiedResourcePackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader6 self, out BOOL isNonQualifiedResourcePackage) GetIsNonQualifiedResourcePackage;
 			}
 		}
 		[CRepr]
@@ -714,9 +714,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestReader7 self, out IAppxManifestDriverDependenciesEnumerator* driverDependencies) GetDriverDependencies;
-				public new function HRESULT(ref IAppxManifestReader7 self, out IAppxManifestOSPackageDependenciesEnumerator* osPackageDependencies) GetOSPackageDependencies;
-				public new function HRESULT(ref IAppxManifestReader7 self, out IAppxManifestHostRuntimeDependenciesEnumerator* hostRuntimeDependencies) GetHostRuntimeDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader7 self, out IAppxManifestDriverDependenciesEnumerator* driverDependencies) GetDriverDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader7 self, out IAppxManifestOSPackageDependenciesEnumerator* osPackageDependencies) GetOSPackageDependencies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestReader7 self, out IAppxManifestHostRuntimeDependenciesEnumerator* hostRuntimeDependencies) GetHostRuntimeDependencies;
 			}
 		}
 		[CRepr]
@@ -733,9 +733,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out IAppxManifestDriverDependency* driverDependency) GetCurrent;
-				public new function HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out IAppxManifestDriverDependency* driverDependency) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverDependenciesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -750,7 +750,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestDriverDependency self, out IAppxManifestDriverConstraintsEnumerator* driverConstraints) GetDriverConstraints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverDependency self, out IAppxManifestDriverConstraintsEnumerator* driverConstraints) GetDriverConstraints;
 			}
 		}
 		[CRepr]
@@ -767,9 +767,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out IAppxManifestDriverConstraint* driverConstraint) GetCurrent;
-				public new function HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out IAppxManifestDriverConstraint* driverConstraint) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraintsEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -786,9 +786,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestDriverConstraint self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestDriverConstraint self, out uint64 minVersion) GetMinVersion;
-				public new function HRESULT(ref IAppxManifestDriverConstraint self, out PWSTR minDate) GetMinDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraint self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraint self, out uint64 minVersion) GetMinVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDriverConstraint self, out PWSTR minDate) GetMinDate;
 			}
 		}
 		[CRepr]
@@ -805,9 +805,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out IAppxManifestOSPackageDependency* osPackageDependency) GetCurrent;
-				public new function HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out IAppxManifestOSPackageDependency* osPackageDependency) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOSPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -823,8 +823,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestOSPackageDependency self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestOSPackageDependency self, out uint64 version) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOSPackageDependency self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOSPackageDependency self, out uint64 version) GetVersion;
 			}
 		}
 		[CRepr]
@@ -841,9 +841,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out IAppxManifestHostRuntimeDependency* hostRuntimeDependency) GetCurrent;
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out IAppxManifestHostRuntimeDependency* hostRuntimeDependency) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependenciesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -860,9 +860,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependency self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependency self, out PWSTR publisher) GetPublisher;
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependency self, out uint64 minVersion) GetMinVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependency self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependency self, out PWSTR publisher) GetPublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependency self, out uint64 minVersion) GetMinVersion;
 			}
 		}
 		[CRepr]
@@ -877,7 +877,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestHostRuntimeDependency2 self, out PWSTR packageFamilyName) GetPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestHostRuntimeDependency2 self, out PWSTR packageFamilyName) GetPackageFamilyName;
 			}
 		}
 		[CRepr]
@@ -893,8 +893,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestOptionalPackageInfo self, out BOOL isOptionalPackage) GetIsOptionalPackage;
-				public new function HRESULT(ref IAppxManifestOptionalPackageInfo self, out PWSTR mainPackageName) GetMainPackageName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOptionalPackageInfo self, out BOOL isOptionalPackage) GetIsOptionalPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestOptionalPackageInfo self, out PWSTR mainPackageName) GetMainPackageName;
 			}
 		}
 		[CRepr]
@@ -911,9 +911,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out IAppxManifestMainPackageDependency* mainPackageDependency) GetCurrent;
-				public new function HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out IAppxManifestMainPackageDependency* mainPackageDependency) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -930,9 +930,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR publisher) GetPublisher;
-				public new function HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR packageFamilyName) GetPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR publisher) GetPublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestMainPackageDependency self, out PWSTR packageFamilyName) GetPackageFamilyName;
 			}
 		}
 		[CRepr]
@@ -954,14 +954,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageId self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestPackageId self, out APPX_PACKAGE_ARCHITECTURE architecture) GetArchitecture;
-				public new function HRESULT(ref IAppxManifestPackageId self, out PWSTR publisher) GetPublisher;
-				public new function HRESULT(ref IAppxManifestPackageId self, out uint64 packageVersion) GetVersion;
-				public new function HRESULT(ref IAppxManifestPackageId self, out PWSTR resourceId) GetResourceId;
-				public new function HRESULT(ref IAppxManifestPackageId self, PWSTR other, out BOOL isSame) ComparePublisher;
-				public new function HRESULT(ref IAppxManifestPackageId self, out PWSTR packageFullName) GetPackageFullName;
-				public new function HRESULT(ref IAppxManifestPackageId self, out PWSTR packageFamilyName) GetPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out APPX_PACKAGE_ARCHITECTURE architecture) GetArchitecture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out PWSTR publisher) GetPublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out uint64 packageVersion) GetVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out PWSTR resourceId) GetResourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, PWSTR other, out BOOL isSame) ComparePublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out PWSTR packageFullName) GetPackageFullName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId self, out PWSTR packageFamilyName) GetPackageFamilyName;
 			}
 		}
 		[CRepr]
@@ -976,7 +976,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAppxManifestPackageId.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageId2 self, out APPX_PACKAGE_ARCHITECTURE2 architecture) GetArchitecture2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageId2 self, out APPX_PACKAGE_ARCHITECTURE2 architecture) GetArchitecture2;
 			}
 		}
 		[CRepr]
@@ -992,8 +992,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestProperties self, PWSTR name, out BOOL value) GetBoolValue;
-				public new function HRESULT(ref IAppxManifestProperties self, PWSTR name, out PWSTR value) GetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestProperties self, PWSTR name, out BOOL value) GetBoolValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestProperties self, PWSTR name, out PWSTR value) GetStringValue;
 			}
 		}
 		[CRepr]
@@ -1010,9 +1010,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out IAppxManifestTargetDeviceFamily* targetDeviceFamily) GetCurrent;
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out IAppxManifestTargetDeviceFamily* targetDeviceFamily) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamiliesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1029,9 +1029,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamily self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamily self, out uint64 minVersion) GetMinVersion;
-				public new function HRESULT(ref IAppxManifestTargetDeviceFamily self, out uint64 maxVersionTested) GetMaxVersionTested;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamily self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamily self, out uint64 minVersion) GetMinVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestTargetDeviceFamily self, out uint64 maxVersionTested) GetMaxVersionTested;
 			}
 		}
 		[CRepr]
@@ -1048,9 +1048,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out IAppxManifestPackageDependency* dependency) GetCurrent;
-				public new function HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out IAppxManifestPackageDependency* dependency) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependenciesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1067,9 +1067,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageDependency self, out PWSTR name) GetName;
-				public new function HRESULT(ref IAppxManifestPackageDependency self, out PWSTR publisher) GetPublisher;
-				public new function HRESULT(ref IAppxManifestPackageDependency self, out uint64 minVersion) GetMinVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependency self, out PWSTR name) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependency self, out PWSTR publisher) GetPublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependency self, out uint64 minVersion) GetMinVersion;
 			}
 		}
 		[CRepr]
@@ -1084,7 +1084,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IAppxManifestPackageDependency.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageDependency2 self, out uint16 maxMajorVersionTested) GetMaxMajorVersionTested;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependency2 self, out uint16 maxMajorVersionTested) GetMaxMajorVersionTested;
 			}
 		}
 		[CRepr]
@@ -1099,7 +1099,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestPackageDependency3 self, out BOOL isOptional) GetIsOptional;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestPackageDependency3 self, out BOOL isOptional) GetIsOptional;
 			}
 		}
 		[CRepr]
@@ -1116,9 +1116,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestResourcesEnumerator self, out PWSTR resource) GetCurrent;
-				public new function HRESULT(ref IAppxManifestResourcesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestResourcesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestResourcesEnumerator self, out PWSTR resource) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestResourcesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestResourcesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1135,9 +1135,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out PWSTR deviceCapability) GetCurrent;
-				public new function HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out PWSTR deviceCapability) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestDeviceCapabilitiesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1154,9 +1154,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out PWSTR capability) GetCurrent;
-				public new function HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out PWSTR capability) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestCapabilitiesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1173,9 +1173,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestApplicationsEnumerator self, out IAppxManifestApplication* application) GetCurrent;
-				public new function HRESULT(ref IAppxManifestApplicationsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestApplicationsEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestApplicationsEnumerator self, out IAppxManifestApplication* application) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestApplicationsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestApplicationsEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1191,8 +1191,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestApplication self, PWSTR name, out PWSTR value) GetStringValue;
-				public new function HRESULT(ref IAppxManifestApplication self, out PWSTR appUserModelId) GetAppUserModelId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestApplication self, PWSTR name, out PWSTR value) GetStringValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestApplication self, out PWSTR appUserModelId) GetAppUserModelId;
 			}
 		}
 		[CRepr]
@@ -1209,9 +1209,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out IAppxManifestQualifiedResource* resource) GetCurrent;
-				public new function HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out IAppxManifestQualifiedResource* resource) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResourcesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1228,9 +1228,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxManifestQualifiedResource self, out PWSTR language) GetLanguage;
-				public new function HRESULT(ref IAppxManifestQualifiedResource self, out uint32 scale) GetScale;
-				public new function HRESULT(ref IAppxManifestQualifiedResource self, out DX_FEATURE_LEVEL dxFeatureLevel) GetDXFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResource self, out PWSTR language) GetLanguage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResource self, out uint32 scale) GetScale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxManifestQualifiedResource self, out DX_FEATURE_LEVEL dxFeatureLevel) GetDXFeatureLevel;
 			}
 		}
 		[CRepr]
@@ -1247,9 +1247,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleFactory self, ref IStream outputStream, uint64 bundleVersion, out IAppxBundleWriter* bundleWriter) CreateBundleWriter;
-				public new function HRESULT(ref IAppxBundleFactory self, ref IStream inputStream, out IAppxBundleReader* bundleReader) CreateBundleReader;
-				public new function HRESULT(ref IAppxBundleFactory self, ref IStream inputStream, out IAppxBundleManifestReader* manifestReader) CreateBundleManifestReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleFactory self, ref IStream outputStream, uint64 bundleVersion, out IAppxBundleWriter* bundleWriter) CreateBundleWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleFactory self, ref IStream inputStream, out IAppxBundleReader* bundleReader) CreateBundleReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleFactory self, ref IStream inputStream, out IAppxBundleManifestReader* manifestReader) CreateBundleManifestReader;
 			}
 		}
 		[CRepr]
@@ -1265,8 +1265,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleWriter self, PWSTR fileName, ref IStream packageStream) AddPayloadPackage;
-				public new function HRESULT(ref IAppxBundleWriter self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter self, PWSTR fileName, ref IStream packageStream) AddPayloadPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter self) Close;
 			}
 		}
 		[CRepr]
@@ -1281,7 +1281,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleWriter2 self, PWSTR fileName, ref IStream inputStream) AddExternalPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter2 self, PWSTR fileName, ref IStream inputStream) AddExternalPackageReference;
 			}
 		}
 		[CRepr]
@@ -1297,8 +1297,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleWriter3 self, PWSTR fileName, ref IStream inputStream) AddPackageReference;
-				public new function HRESULT(ref IAppxBundleWriter3 self, PWSTR hashMethodString) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter3 self, PWSTR fileName, ref IStream inputStream) AddPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter3 self, PWSTR hashMethodString) Close;
 			}
 		}
 		[CRepr]
@@ -1315,9 +1315,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) AddPayloadPackage;
-				public new function HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddPackageReference;
-				public new function HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddExternalPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) AddPayloadPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleWriter4 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddExternalPackageReference;
 			}
 		}
 		[CRepr]
@@ -1336,11 +1336,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleReader self, APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, out IAppxFile* footprintFile) GetFootprintFile;
-				public new function HRESULT(ref IAppxBundleReader self, out IAppxBlockMapReader* blockMapReader) GetBlockMap;
-				public new function HRESULT(ref IAppxBundleReader self, out IAppxBundleManifestReader* manifestReader) GetManifest;
-				public new function HRESULT(ref IAppxBundleReader self, out IAppxFilesEnumerator* payloadPackages) GetPayloadPackages;
-				public new function HRESULT(ref IAppxBundleReader self, PWSTR fileName, out IAppxFile* payloadPackage) GetPayloadPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleReader self, APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, out IAppxFile* footprintFile) GetFootprintFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleReader self, out IAppxBlockMapReader* blockMapReader) GetBlockMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleReader self, out IAppxBundleManifestReader* manifestReader) GetManifest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleReader self, out IAppxFilesEnumerator* payloadPackages) GetPayloadPackages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleReader self, PWSTR fileName, out IAppxFile* payloadPackage) GetPayloadPackage;
 			}
 		}
 		[CRepr]
@@ -1357,9 +1357,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestReader self, out IAppxManifestPackageId* packageId) GetPackageId;
-				public new function HRESULT(ref IAppxBundleManifestReader self, out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) GetPackageInfoItems;
-				public new function HRESULT(ref IAppxBundleManifestReader self, out IStream* manifestStream) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestReader self, out IAppxManifestPackageId* packageId) GetPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestReader self, out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) GetPackageInfoItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestReader self, out IStream* manifestStream) GetStream;
 			}
 		}
 		[CRepr]
@@ -1374,7 +1374,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestReader2 self, out IAppxBundleManifestOptionalBundleInfoEnumerator* optionalBundles) GetOptionalBundles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestReader2 self, out IAppxBundleManifestOptionalBundleInfoEnumerator* optionalBundles) GetOptionalBundles;
 			}
 		}
 		[CRepr]
@@ -1391,9 +1391,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out IAppxBundleManifestPackageInfo* packageInfo) GetCurrent;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out IAppxBundleManifestPackageInfo* packageInfo) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfoEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1413,12 +1413,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE packageType) GetPackageType;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out IAppxManifestPackageId* packageId) GetPackageId;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out PWSTR fileName) GetFileName;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out uint64 offset) GetOffset;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out uint64 size) GetSize;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo self, out IAppxManifestQualifiedResourcesEnumerator* resources) GetResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE packageType) GetPackageType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out IAppxManifestPackageId* packageId) GetPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out PWSTR fileName) GetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out uint64 offset) GetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out uint64 size) GetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo self, out IAppxManifestQualifiedResourcesEnumerator* resources) GetResources;
 			}
 		}
 		[CRepr]
@@ -1435,9 +1435,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isPackageReference) GetIsPackageReference;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isNonQualifiedResourcePackage) GetIsNonQualifiedResourcePackage;
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isDefaultApplicablePackage) GetIsDefaultApplicablePackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isPackageReference) GetIsPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isNonQualifiedResourcePackage) GetIsNonQualifiedResourcePackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo2 self, out BOOL isDefaultApplicablePackage) GetIsDefaultApplicablePackage;
 			}
 		}
 		[CRepr]
@@ -1452,7 +1452,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo3 self, out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) GetTargetDeviceFamilies;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo3 self, out IAppxManifestTargetDeviceFamiliesEnumerator* targetDeviceFamilies) GetTargetDeviceFamilies;
 			}
 		}
 		[CRepr]
@@ -1467,7 +1467,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestPackageInfo4 self, out BOOL isStub) GetIsStub;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestPackageInfo4 self, out BOOL isStub) GetIsStub;
 			}
 		}
 		[CRepr]
@@ -1484,9 +1484,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out IAppxBundleManifestOptionalBundleInfo* optionalBundle) GetCurrent;
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out IAppxBundleManifestOptionalBundleInfo* optionalBundle) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfoEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1503,9 +1503,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out IAppxManifestPackageId* packageId) GetPackageId;
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out PWSTR fileName) GetFileName;
-				public new function HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) GetPackageInfoItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out IAppxManifestPackageId* packageId) GetPackageId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out PWSTR fileName) GetFileName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxBundleManifestOptionalBundleInfo self, out IAppxBundleManifestPackageInfoEnumerator* packageInfoItems) GetPackageInfoItems;
 			}
 		}
 		[CRepr]
@@ -1522,9 +1522,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxContentGroupFilesEnumerator self, out PWSTR file) GetCurrent;
-				public new function HRESULT(ref IAppxContentGroupFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxContentGroupFilesEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupFilesEnumerator self, out PWSTR file) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupFilesEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupFilesEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1540,8 +1540,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxContentGroup self, out PWSTR groupName) GetName;
-				public new function HRESULT(ref IAppxContentGroup self, out IAppxContentGroupFilesEnumerator* enumerator) GetFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroup self, out PWSTR groupName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroup self, out IAppxContentGroupFilesEnumerator* enumerator) GetFiles;
 			}
 		}
 		[CRepr]
@@ -1558,9 +1558,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxContentGroupsEnumerator self, out IAppxContentGroup* stream) GetCurrent;
-				public new function HRESULT(ref IAppxContentGroupsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
-				public new function HRESULT(ref IAppxContentGroupsEnumerator self, out BOOL hasNext) MoveNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupsEnumerator self, out IAppxContentGroup* stream) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupsEnumerator self, out BOOL hasCurrent) GetHasCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupsEnumerator self, out BOOL hasNext) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1576,8 +1576,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxContentGroupMapReader self, out IAppxContentGroup* requiredGroup) GetRequiredGroup;
-				public new function HRESULT(ref IAppxContentGroupMapReader self, out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) GetAutomaticGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupMapReader self, out IAppxContentGroup* requiredGroup) GetRequiredGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupMapReader self, out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) GetAutomaticGroups;
 			}
 		}
 		[CRepr]
@@ -1593,8 +1593,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxSourceContentGroupMapReader self, out IAppxContentGroup* requiredGroup) GetRequiredGroup;
-				public new function HRESULT(ref IAppxSourceContentGroupMapReader self, out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) GetAutomaticGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxSourceContentGroupMapReader self, out IAppxContentGroup* requiredGroup) GetRequiredGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxSourceContentGroupMapReader self, out IAppxContentGroupsEnumerator* automaticGroupsEnumerator) GetAutomaticGroups;
 			}
 		}
 		[CRepr]
@@ -1611,9 +1611,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxContentGroupMapWriter self, PWSTR groupName) AddAutomaticGroup;
-				public new function HRESULT(ref IAppxContentGroupMapWriter self, PWSTR fileName) AddAutomaticFile;
-				public new function HRESULT(ref IAppxContentGroupMapWriter self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupMapWriter self, PWSTR groupName) AddAutomaticGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupMapWriter self, PWSTR fileName) AddAutomaticFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxContentGroupMapWriter self) Close;
 			}
 		}
 		[CRepr]
@@ -1629,8 +1629,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackagingDiagnosticEventSink self, APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, int32 contextId, PSTR contextName, PWSTR contextMessage, PWSTR detailsMessage) ReportContextChange;
-				public new function HRESULT(ref IAppxPackagingDiagnosticEventSink self, PWSTR errorMessage) ReportError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackagingDiagnosticEventSink self, APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, int32 contextId, PSTR contextName, PWSTR contextMessage, PWSTR detailsMessage) ReportContextChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackagingDiagnosticEventSink self, PWSTR errorMessage) ReportError;
 			}
 		}
 		[CRepr]
@@ -1645,7 +1645,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackagingDiagnosticEventSinkManager self, ref IAppxPackagingDiagnosticEventSink sink) SetSinkForProcess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackagingDiagnosticEventSinkManager self, ref IAppxPackagingDiagnosticEventSink sink) SetSinkForProcess;
 			}
 		}
 		[CRepr]
@@ -1667,14 +1667,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptPackage;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) DecryptPackage;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream outputStream, ref IStream manifestStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxPackageReader* packageReader) CreateEncryptedPackageReader;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptBundle;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) DecryptBundle;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) CreateEncryptedBundleWriter;
-				public new function HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxBundleReader* bundleReader) CreateEncryptedBundleReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) DecryptPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream outputStream, ref IStream manifestStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxPackageReader* packageReader) CreateEncryptedPackageReader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptBundle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, ref IStream outputStream, in APPX_KEY_INFO keyInfo) DecryptBundle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) CreateEncryptedBundleWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory self, ref IStream inputStream, in APPX_KEY_INFO keyInfo, out IAppxBundleReader* bundleReader) CreateEncryptedBundleReader;
 			}
 		}
 		[CRepr]
@@ -1689,7 +1689,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptionFactory2 self, ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory2 self, ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
 			}
 		}
 		[CRepr]
@@ -1707,10 +1707,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptionFactory3 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptPackage;
-				public new function HRESULT(ref IAppxEncryptionFactory3 self, ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
-				public new function HRESULT(ref IAppxEncryptionFactory3 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptBundle;
-				public new function HRESULT(ref IAppxEncryptionFactory3 self, ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) CreateEncryptedBundleWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory3 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory3 self, ref IStream outputStream, ref IStream manifestStream, ref IStream contentGroupMapStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedPackageWriter* packageWriter) CreateEncryptedPackageWriter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory3 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles) EncryptBundle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory3 self, ref IStream outputStream, uint64 bundleVersion, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, out IAppxEncryptedBundleWriter* bundleWriter) CreateEncryptedBundleWriter;
 			}
 		}
 		[CRepr]
@@ -1725,7 +1725,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptionFactory4 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, uint64 memoryLimit) EncryptPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptionFactory4 self, ref IStream inputStream, ref IStream outputStream, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo, in APPX_ENCRYPTED_EXEMPTIONS exemptedFiles, uint64 memoryLimit) EncryptPackage;
 			}
 		}
 		[CRepr]
@@ -1741,8 +1741,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptedPackageWriter self, PWSTR fileName, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) AddPayloadFileEncrypted;
-				public new function HRESULT(ref IAppxEncryptedPackageWriter self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedPackageWriter self, PWSTR fileName, APPX_COMPRESSION_OPTION compressionOption, ref IStream inputStream) AddPayloadFileEncrypted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedPackageWriter self) Close;
 			}
 		}
 		[CRepr]
@@ -1757,7 +1757,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptedPackageWriter2 self, uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) AddPayloadFilesEncrypted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedPackageWriter2 self, uint32 fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, uint64 memoryLimit) AddPayloadFilesEncrypted;
 			}
 		}
 		[CRepr]
@@ -1773,8 +1773,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptedBundleWriter self, PWSTR fileName, ref IStream packageStream) AddPayloadPackageEncrypted;
-				public new function HRESULT(ref IAppxEncryptedBundleWriter self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedBundleWriter self, PWSTR fileName, ref IStream packageStream) AddPayloadPackageEncrypted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedBundleWriter self) Close;
 			}
 		}
 		[CRepr]
@@ -1789,7 +1789,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptedBundleWriter2 self, PWSTR fileName, ref IStream inputStream) AddExternalPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedBundleWriter2 self, PWSTR fileName, ref IStream inputStream) AddExternalPackageReference;
 			}
 		}
 		[CRepr]
@@ -1805,8 +1805,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxEncryptedBundleWriter3 self, PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) AddPayloadPackageEncrypted;
-				public new function HRESULT(ref IAppxEncryptedBundleWriter3 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddExternalPackageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedBundleWriter3 self, PWSTR fileName, ref IStream packageStream, BOOL isDefaultApplicablePackage) AddPayloadPackageEncrypted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxEncryptedBundleWriter3 self, PWSTR fileName, ref IStream inputStream, BOOL isDefaultApplicablePackage) AddExternalPackageReference;
 			}
 		}
 		[CRepr]
@@ -1826,12 +1826,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAppxPackageEditor self, PWSTR workingDirectory) SetWorkingDirectory;
-				public new function HRESULT(ref IAppxPackageEditor self, ref IStream updatedPackageStream, ref IStream baselinePackageStream, ref IStream deltaPackageStream) CreateDeltaPackage;
-				public new function HRESULT(ref IAppxPackageEditor self, ref IStream updatedPackageStream, ref IStream baselineBlockMapStream, PWSTR baselinePackageFullName, ref IStream deltaPackageStream) CreateDeltaPackageUsingBaselineBlockMap;
-				public new function HRESULT(ref IAppxPackageEditor self, ref IStream baselinePackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption) UpdatePackage;
-				public new function HRESULT(ref IAppxPackageEditor self, ref IStream baselineEncryptedPackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo) UpdateEncryptedPackage;
-				public new function HRESULT(ref IAppxPackageEditor self, ref IStream packageStream, ref IStream updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options) UpdatePackageManifest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, PWSTR workingDirectory) SetWorkingDirectory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream updatedPackageStream, ref IStream baselinePackageStream, ref IStream deltaPackageStream) CreateDeltaPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream updatedPackageStream, ref IStream baselineBlockMapStream, PWSTR baselinePackageFullName, ref IStream deltaPackageStream) CreateDeltaPackageUsingBaselineBlockMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream baselinePackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption) UpdatePackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream baselineEncryptedPackageStream, ref IStream deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, in APPX_ENCRYPTED_PACKAGE_SETTINGS2 settings, in APPX_KEY_INFO keyInfo) UpdateEncryptedPackage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream packageStream, ref IStream updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options) UpdatePackageManifest;
 			}
 		}
 		

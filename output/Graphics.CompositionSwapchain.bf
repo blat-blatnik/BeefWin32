@@ -71,8 +71,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPresentationBuffer self, out HANDLE availableEventHandle) GetAvailableEvent;
-				public new function HRESULT(ref IPresentationBuffer self, out uint8 isAvailable) IsAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationBuffer self, out HANDLE availableEventHandle) GetAvailableEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationBuffer self, out uint8 isAvailable) IsAvailable;
 			}
 		}
 		[CRepr]
@@ -87,7 +87,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ref IPresentationContent self, uint tag) SetTag;
+				public new function [CallingConvention(.Stdcall)] void(ref IPresentationContent self, uint tag) SetTag;
 			}
 		}
 		[CRepr]
@@ -109,14 +109,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPresentationContent.VTable
 			{
-				public new function HRESULT(ref IPresentationSurface self, ref IPresentationBuffer presentationBuffer) SetBuffer;
-				public new function HRESULT(ref IPresentationSurface self, DXGI_COLOR_SPACE_TYPE colorSpace) SetColorSpace;
-				public new function HRESULT(ref IPresentationSurface self, DXGI_ALPHA_MODE alphaMode) SetAlphaMode;
-				public new function HRESULT(ref IPresentationSurface self, in RECT sourceRect) SetSourceRect;
-				public new function HRESULT(ref IPresentationSurface self, ref PresentationTransform transform) SetTransform;
-				public new function HRESULT(ref IPresentationSurface self, ref IUnknown output) RestrictToOutput;
-				public new function HRESULT(ref IPresentationSurface self, uint8 value) SetDisableReadback;
-				public new function HRESULT(ref IPresentationSurface self, float leftLetterboxSize, float topLetterboxSize, float rightLetterboxSize, float bottomLetterboxSize) SetLetterboxingMargins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, ref IPresentationBuffer presentationBuffer) SetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, DXGI_COLOR_SPACE_TYPE colorSpace) SetColorSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, DXGI_ALPHA_MODE alphaMode) SetAlphaMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, in RECT sourceRect) SetSourceRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, ref PresentationTransform transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, ref IUnknown output) RestrictToOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, uint8 value) SetDisableReadback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationSurface self, float leftLetterboxSize, float topLetterboxSize, float rightLetterboxSize, float bottomLetterboxSize) SetLetterboxingMargins;
 			}
 		}
 		[CRepr]
@@ -132,8 +132,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint64(ref IPresentStatistics self) GetPresentId;
-				public new function PresentStatisticsKind(ref IPresentStatistics self) GetKind;
+				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatistics self) GetPresentId;
+				public new function [CallingConvention(.Stdcall)] PresentStatisticsKind(ref IPresentStatistics self) GetKind;
 			}
 		}
 		[CRepr]
@@ -160,19 +160,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPresentationManager self, ref IUnknown resource, out IPresentationBuffer* presentationBuffer) AddBufferFromResource;
-				public new function HRESULT(ref IPresentationManager self, HANDLE compositionSurfaceHandle, out IPresentationSurface* presentationSurface) CreatePresentationSurface;
-				public new function uint64(ref IPresentationManager self) GetNextPresentId;
-				public new function HRESULT(ref IPresentationManager self, SystemInterruptTime targetTime) SetTargetTime;
-				public new function HRESULT(ref IPresentationManager self, SystemInterruptTime preferredDuration, SystemInterruptTime deviationTolerance) SetPreferredPresentDuration;
-				public new function HRESULT(ref IPresentationManager self, uint8 forceVsyncInterrupt) ForceVSyncInterrupt;
-				public new function HRESULT(ref IPresentationManager self) Present;
-				public new function HRESULT(ref IPresentationManager self, in Guid riid, void** fence) GetPresentRetiringFence;
-				public new function HRESULT(ref IPresentationManager self, uint64 presentIdToCancelFrom) CancelPresentsFrom;
-				public new function HRESULT(ref IPresentationManager self, out HANDLE lostEventHandle) GetLostEvent;
-				public new function HRESULT(ref IPresentationManager self, out HANDLE presentStatisticsAvailableEventHandle) GetPresentStatisticsAvailableEvent;
-				public new function HRESULT(ref IPresentationManager self, PresentStatisticsKind presentStatisticsKind, uint8 enabled) EnablePresentStatisticsKind;
-				public new function HRESULT(ref IPresentationManager self, out IPresentStatistics* nextPresentStatistics) GetNextPresentStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, ref IUnknown resource, out IPresentationBuffer* presentationBuffer) AddBufferFromResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, HANDLE compositionSurfaceHandle, out IPresentationSurface* presentationSurface) CreatePresentationSurface;
+				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentationManager self) GetNextPresentId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, SystemInterruptTime targetTime) SetTargetTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, SystemInterruptTime preferredDuration, SystemInterruptTime deviationTolerance) SetPreferredPresentDuration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, uint8 forceVsyncInterrupt) ForceVSyncInterrupt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self) Present;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, in Guid riid, void** fence) GetPresentRetiringFence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, uint64 presentIdToCancelFrom) CancelPresentsFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, out HANDLE lostEventHandle) GetLostEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, out HANDLE presentStatisticsAvailableEventHandle) GetPresentStatisticsAvailableEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, PresentStatisticsKind presentStatisticsKind, uint8 enabled) EnablePresentStatisticsKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationManager self, out IPresentStatistics* nextPresentStatistics) GetNextPresentStatistics;
 			}
 		}
 		[CRepr]
@@ -189,9 +189,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint8(ref IPresentationFactory self) IsPresentationSupported;
-				public new function uint8(ref IPresentationFactory self) IsPresentationSupportedWithIndependentFlip;
-				public new function HRESULT(ref IPresentationFactory self, out IPresentationManager* ppPresentationManager) CreatePresentationManager;
+				public new function [CallingConvention(.Stdcall)] uint8(ref IPresentationFactory self) IsPresentationSupported;
+				public new function [CallingConvention(.Stdcall)] uint8(ref IPresentationFactory self) IsPresentationSupportedWithIndependentFlip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPresentationFactory self, out IPresentationManager* ppPresentationManager) CreatePresentationManager;
 			}
 		}
 		[CRepr]
@@ -207,8 +207,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
-				public new function uint64(ref IPresentStatusPresentStatistics self) GetCompositionFrameId;
-				public new function PresentStatus(ref IPresentStatusPresentStatistics self) GetPresentStatus;
+				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatusPresentStatistics self) GetCompositionFrameId;
+				public new function [CallingConvention(.Stdcall)] PresentStatus(ref IPresentStatusPresentStatistics self) GetPresentStatus;
 			}
 		}
 		[CRepr]
@@ -225,9 +225,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
-				public new function uint(ref ICompositionFramePresentStatistics self) GetContentTag;
-				public new function uint64(ref ICompositionFramePresentStatistics self) GetCompositionFrameId;
-				public new function void(ref ICompositionFramePresentStatistics self, out uint32 displayInstanceArrayCount, out CompositionFrameDisplayInstance* displayInstanceArray) GetDisplayInstanceArray;
+				public new function [CallingConvention(.Stdcall)] uint(ref ICompositionFramePresentStatistics self) GetContentTag;
+				public new function [CallingConvention(.Stdcall)] uint64(ref ICompositionFramePresentStatistics self) GetCompositionFrameId;
+				public new function [CallingConvention(.Stdcall)] void(ref ICompositionFramePresentStatistics self, out uint32 displayInstanceArrayCount, out CompositionFrameDisplayInstance* displayInstanceArray) GetDisplayInstanceArray;
 			}
 		}
 		[CRepr]
@@ -246,11 +246,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
-				public new function LUID(ref IIndependentFlipFramePresentStatistics self) GetOutputAdapterLUID;
-				public new function uint32(ref IIndependentFlipFramePresentStatistics self) GetOutputVidPnSourceId;
-				public new function uint(ref IIndependentFlipFramePresentStatistics self) GetContentTag;
-				public new function SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetDisplayedTime;
-				public new function SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetPresentDuration;
+				public new function [CallingConvention(.Stdcall)] LUID(ref IIndependentFlipFramePresentStatistics self) GetOutputAdapterLUID;
+				public new function [CallingConvention(.Stdcall)] uint32(ref IIndependentFlipFramePresentStatistics self) GetOutputVidPnSourceId;
+				public new function [CallingConvention(.Stdcall)] uint(ref IIndependentFlipFramePresentStatistics self) GetContentTag;
+				public new function [CallingConvention(.Stdcall)] SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetDisplayedTime;
+				public new function [CallingConvention(.Stdcall)] SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetPresentDuration;
 			}
 		}
 		

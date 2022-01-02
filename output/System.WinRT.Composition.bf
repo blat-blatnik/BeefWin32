@@ -24,12 +24,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self, RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) BeginDraw;
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self) EndDraw;
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self, SIZE sizePixels) Resize;
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self, RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) Scroll;
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self) ResumeDraw;
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop self) SuspendDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self, RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) BeginDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self) EndDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self, SIZE sizePixels) Resize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self, RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) Scroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self) ResumeDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop self) SuspendDraw;
 			}
 		}
 		[CRepr]
@@ -44,7 +44,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ICompositionDrawingSurfaceInterop.VTable
 			{
-				public new function HRESULT(ref ICompositionDrawingSurfaceInterop2 self, ref IUnknown destinationResource, int32 destinationOffsetX, int32 destinationOffsetY, RECT* sourceRectangle) CopySurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionDrawingSurfaceInterop2 self, ref IUnknown destinationResource, int32 destinationOffsetX, int32 destinationOffsetY, RECT* sourceRectangle) CopySurface;
 			}
 		}
 		[CRepr]
@@ -60,8 +60,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICompositionGraphicsDeviceInterop self, out IUnknown* value) GetRenderingDevice;
-				public new function HRESULT(ref ICompositionGraphicsDeviceInterop self, ref IUnknown value) SetRenderingDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionGraphicsDeviceInterop self, out IUnknown* value) GetRenderingDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionGraphicsDeviceInterop self, ref IUnknown value) SetRenderingDevice;
 			}
 		}
 		[CRepr]
@@ -78,9 +78,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICompositorInterop self, HANDLE swapChain, void* result) CreateCompositionSurfaceForHandle;
-				public new function HRESULT(ref ICompositorInterop self, ref IUnknown swapChain, void* result) CreateCompositionSurfaceForSwapChain;
-				public new function HRESULT(ref ICompositorInterop self, ref IUnknown renderingDevice, void* result) CreateGraphicsDevice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositorInterop self, HANDLE swapChain, void* result) CreateCompositionSurfaceForHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositorInterop self, ref IUnknown swapChain, void* result) CreateCompositionSurfaceForSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositorInterop self, ref IUnknown renderingDevice, void* result) CreateGraphicsDevice;
 			}
 		}
 		[CRepr]
@@ -95,7 +95,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISwapChainInterop self, ref IUnknown swapChain) SetSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISwapChainInterop self, ref IUnknown swapChain) SetSwapChain;
 			}
 		}
 		[CRepr]
@@ -110,7 +110,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IVisualInteractionSourceInterop self, in POINTER_INFO pointerInfo) TryRedirectForManipulation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVisualInteractionSourceInterop self, in POINTER_INFO pointerInfo) TryRedirectForManipulation;
 			}
 		}
 		[CRepr]
@@ -125,7 +125,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ICompositionCapabilitiesInteropFactory self, HWND hwnd, void* result) GetForWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositionCapabilitiesInteropFactory self, HWND hwnd, void* result) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -141,8 +141,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICompositorDesktopInterop self, HWND hwndTarget, BOOL isTopmost, void* result) CreateDesktopWindowTarget;
-				public new function HRESULT(ref ICompositorDesktopInterop self, uint32 threadId) EnsureOnThread;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositorDesktopInterop self, HWND hwndTarget, BOOL isTopmost, void* result) CreateDesktopWindowTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICompositorDesktopInterop self, uint32 threadId) EnsureOnThread;
 			}
 		}
 		[CRepr]
@@ -157,7 +157,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDesktopWindowTargetInterop self, out HWND value) get_Hwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDesktopWindowTargetInterop self, out HWND value) get_Hwnd;
 			}
 		}
 		

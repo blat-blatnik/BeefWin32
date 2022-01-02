@@ -23,7 +23,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ISoftwareBitmapNative self, in Guid riid, void** ppv) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftwareBitmapNative self, in Guid riid, void** ppv) GetData;
 			}
 		}
 		[CRepr]
@@ -39,8 +39,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref ISoftwareBitmapNativeFactory self, ref IWICBitmap data, BOOL forceReadOnly, in Guid riid, void** ppv) CreateFromWICBitmap;
-				public new function HRESULT(ref ISoftwareBitmapNativeFactory self, ref IMF2DBuffer2 data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, in Guid riid, void** ppv) CreateFromMF2DBuffer2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftwareBitmapNativeFactory self, ref IWICBitmap data, BOOL forceReadOnly, in Guid riid, void** ppv) CreateFromWICBitmap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftwareBitmapNativeFactory self, ref IMF2DBuffer2 data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, in Guid riid, void** ppv) CreateFromMF2DBuffer2;
 			}
 		}
 		

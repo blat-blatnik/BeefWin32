@@ -361,7 +361,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInitializeWithFile self, PWSTR pszFilePath, uint32 grfMode) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInitializeWithFile self, PWSTR pszFilePath, uint32 grfMode) Initialize;
 			}
 		}
 		[CRepr]
@@ -376,7 +376,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInitializeWithStream self, ref IStream pstream, uint32 grfMode) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInitializeWithStream self, ref IStream pstream, uint32 grfMode) Initialize;
 			}
 		}
 		[CRepr]
@@ -395,11 +395,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyStore self, out uint32 cProps) GetCount;
-				public new function HRESULT(ref IPropertyStore self, uint32 iProp, out PROPERTYKEY pkey) GetAt;
-				public new function HRESULT(ref IPropertyStore self, in PROPERTYKEY key, out PROPVARIANT pv) GetValue;
-				public new function HRESULT(ref IPropertyStore self, in PROPERTYKEY key, in PROPVARIANT propvar) SetValue;
-				public new function HRESULT(ref IPropertyStore self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStore self, out uint32 cProps) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStore self, uint32 iProp, out PROPERTYKEY pkey) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStore self, in PROPERTYKEY key, out PROPVARIANT pv) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStore self, in PROPERTYKEY key, in PROPVARIANT propvar) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStore self) Commit;
 			}
 		}
 		[CRepr]
@@ -417,10 +417,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INamedPropertyStore self, PWSTR pszName, out PROPVARIANT ppropvar) GetNamedValue;
-				public new function HRESULT(ref INamedPropertyStore self, PWSTR pszName, in PROPVARIANT propvar) SetNamedValue;
-				public new function HRESULT(ref INamedPropertyStore self, out uint32 pdwCount) GetNameCount;
-				public new function HRESULT(ref INamedPropertyStore self, uint32 iProp, out BSTR pbstrName) GetNameAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INamedPropertyStore self, PWSTR pszName, out PROPVARIANT ppropvar) GetNamedValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INamedPropertyStore self, PWSTR pszName, in PROPVARIANT propvar) SetNamedValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INamedPropertyStore self, out uint32 pdwCount) GetNameCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INamedPropertyStore self, uint32 iProp, out BSTR pbstrName) GetNameAt;
 			}
 		}
 		[CRepr]
@@ -436,8 +436,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IObjectWithPropertyKey self, in PROPERTYKEY key) SetPropertyKey;
-				public new function HRESULT(ref IObjectWithPropertyKey self, out PROPERTYKEY pkey) GetPropertyKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectWithPropertyKey self, in PROPERTYKEY key) SetPropertyKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectWithPropertyKey self, out PROPERTYKEY pkey) GetPropertyKey;
 			}
 		}
 		[CRepr]
@@ -452,7 +452,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IObjectWithPropertyKey.VTable
 			{
-				public new function HRESULT(ref IPropertyChange self, in PROPVARIANT propvarIn, out PROPVARIANT ppropvarOut) ApplyToPropVariant;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChange self, in PROPVARIANT propvarIn, out PROPVARIANT ppropvarOut) ApplyToPropVariant;
 			}
 		}
 		[CRepr]
@@ -473,13 +473,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyChangeArray self, out uint32 pcOperations) GetCount;
-				public new function HRESULT(ref IPropertyChangeArray self, uint32 iIndex, in Guid riid, void** ppv) GetAt;
-				public new function HRESULT(ref IPropertyChangeArray self, uint32 iIndex, ref IPropertyChange ppropChange) InsertAt;
-				public new function HRESULT(ref IPropertyChangeArray self, ref IPropertyChange ppropChange) Append;
-				public new function HRESULT(ref IPropertyChangeArray self, ref IPropertyChange ppropChange) AppendOrReplace;
-				public new function HRESULT(ref IPropertyChangeArray self, uint32 iIndex) RemoveAt;
-				public new function HRESULT(ref IPropertyChangeArray self, in PROPERTYKEY key) IsKeyInArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, out uint32 pcOperations) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, uint32 iIndex, in Guid riid, void** ppv) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, uint32 iIndex, ref IPropertyChange ppropChange) InsertAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, ref IPropertyChange ppropChange) Append;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, ref IPropertyChange ppropChange) AppendOrReplace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, uint32 iIndex) RemoveAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyChangeArray self, in PROPERTYKEY key) IsKeyInArray;
 			}
 		}
 		[CRepr]
@@ -494,7 +494,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyStoreCapabilities self, in PROPERTYKEY key) IsPropertyWritable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCapabilities self, in PROPERTYKEY key) IsPropertyWritable;
 			}
 		}
 		[CRepr]
@@ -512,10 +512,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyStore.VTable
 			{
-				public new function HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, out PSC_STATE pstate) GetState;
-				public new function HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, out PROPVARIANT ppropvar, out PSC_STATE pstate) GetValueAndState;
-				public new function HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, PSC_STATE state) SetState;
-				public new function HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, in PROPVARIANT ppropvar, PSC_STATE state) SetValueAndState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, out PSC_STATE pstate) GetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, out PROPVARIANT ppropvar, out PSC_STATE pstate) GetValueAndState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, PSC_STATE state) SetState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCache self, in PROPERTYKEY key, in PROPVARIANT ppropvar, PSC_STATE state) SetValueAndState;
 			}
 		}
 		[CRepr]
@@ -534,11 +534,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyEnumType self, out PROPENUMTYPE penumtype) GetEnumType;
-				public new function HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvar) GetValue;
-				public new function HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvarMin) GetRangeMinValue;
-				public new function HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvarSet) GetRangeSetValue;
-				public new function HRESULT(ref IPropertyEnumType self, out PWSTR ppszDisplay) GetDisplayText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType self, out PROPENUMTYPE penumtype) GetEnumType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvar) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvarMin) GetRangeMinValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType self, out PROPVARIANT ppropvarSet) GetRangeSetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType self, out PWSTR ppszDisplay) GetDisplayText;
 			}
 		}
 		[CRepr]
@@ -553,7 +553,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyEnumType.VTable
 			{
-				public new function HRESULT(ref IPropertyEnumType2 self, out PWSTR ppszImageRes) GetImageReference;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumType2 self, out PWSTR ppszImageRes) GetImageReference;
 			}
 		}
 		[CRepr]
@@ -571,10 +571,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyEnumTypeList self, out uint32 pctypes) GetCount;
-				public new function HRESULT(ref IPropertyEnumTypeList self, uint32 itype, in Guid riid, void** ppv) GetAt;
-				public new function HRESULT(ref IPropertyEnumTypeList self, uint32 nIndex, in Guid riid, void** ppv) GetConditionAt;
-				public new function HRESULT(ref IPropertyEnumTypeList self, in PROPVARIANT propvarCmp, out uint32 pnIndex) FindMatchingIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumTypeList self, out uint32 pctypes) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumTypeList self, uint32 itype, in Guid riid, void** ppv) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumTypeList self, uint32 nIndex, in Guid riid, void** ppv) GetConditionAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyEnumTypeList self, in PROPVARIANT propvarCmp, out uint32 pnIndex) FindMatchingIndex;
 			}
 		}
 		[CRepr]
@@ -609,27 +609,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyDescription self, out PROPERTYKEY pkey) GetPropertyKey;
-				public new function HRESULT(ref IPropertyDescription self, out PWSTR ppszName) GetCanonicalName;
-				public new function HRESULT(ref IPropertyDescription self, out uint16 pvartype) GetPropertyType;
-				public new function HRESULT(ref IPropertyDescription self, out PWSTR ppszName) GetDisplayName;
-				public new function HRESULT(ref IPropertyDescription self, out PWSTR ppszInvite) GetEditInvitation;
-				public new function HRESULT(ref IPropertyDescription self, PROPDESC_TYPE_FLAGS mask, out PROPDESC_TYPE_FLAGS ppdtFlags) GetTypeFlags;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_VIEW_FLAGS ppdvFlags) GetViewFlags;
-				public new function HRESULT(ref IPropertyDescription self, out uint32 pcxChars) GetDefaultColumnWidth;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_DISPLAYTYPE pdisplaytype) GetDisplayType;
-				public new function HRESULT(ref IPropertyDescription self, out uint32 pcsFlags) GetColumnState;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_GROUPING_RANGE pgr) GetGroupingRange;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_RELATIVEDESCRIPTION_TYPE prdt) GetRelativeDescriptionType;
-				public new function HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar1, in PROPVARIANT propvar2, out PWSTR ppszDesc1, out PWSTR ppszDesc2) GetRelativeDescription;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_SORTDESCRIPTION psd) GetSortDescription;
-				public new function HRESULT(ref IPropertyDescription self, BOOL fDescending, out PWSTR ppszDescription) GetSortDescriptionLabel;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_AGGREGATION_TYPE paggtype) GetAggregationType;
-				public new function HRESULT(ref IPropertyDescription self, out PROPDESC_CONDITION_TYPE pcontype, out CONDITION_OPERATION popDefault) GetConditionType;
-				public new function HRESULT(ref IPropertyDescription self, in Guid riid, void** ppv) GetEnumTypeList;
-				public new function HRESULT(ref IPropertyDescription self, out PROPVARIANT ppropvar) CoerceToCanonicalValue;
-				public new function HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdfFlags, out PWSTR ppszDisplay) FormatForDisplay;
-				public new function HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar) IsValueCanonical;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPERTYKEY pkey) GetPropertyKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PWSTR ppszName) GetCanonicalName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out uint16 pvartype) GetPropertyType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PWSTR ppszName) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PWSTR ppszInvite) GetEditInvitation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, PROPDESC_TYPE_FLAGS mask, out PROPDESC_TYPE_FLAGS ppdtFlags) GetTypeFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_VIEW_FLAGS ppdvFlags) GetViewFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out uint32 pcxChars) GetDefaultColumnWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_DISPLAYTYPE pdisplaytype) GetDisplayType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out uint32 pcsFlags) GetColumnState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_GROUPING_RANGE pgr) GetGroupingRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_RELATIVEDESCRIPTION_TYPE prdt) GetRelativeDescriptionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar1, in PROPVARIANT propvar2, out PWSTR ppszDesc1, out PWSTR ppszDesc2) GetRelativeDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_SORTDESCRIPTION psd) GetSortDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, BOOL fDescending, out PWSTR ppszDescription) GetSortDescriptionLabel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_AGGREGATION_TYPE paggtype) GetAggregationType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPDESC_CONDITION_TYPE pcontype, out CONDITION_OPERATION popDefault) GetConditionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, in Guid riid, void** ppv) GetEnumTypeList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, out PROPVARIANT ppropvar) CoerceToCanonicalValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdfFlags, out PWSTR ppszDisplay) FormatForDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription self, in PROPVARIANT propvar) IsValueCanonical;
 			}
 		}
 		[CRepr]
@@ -644,7 +644,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public new function HRESULT(ref IPropertyDescription2 self, in PROPVARIANT propvar, out PWSTR ppszImageRes) GetImageReferenceForValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescription2 self, in PROPVARIANT propvar, out PWSTR ppszImageRes) GetImageReferenceForValue;
 			}
 		}
 		[CRepr]
@@ -660,8 +660,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public new function HRESULT(ref IPropertyDescriptionAliasInfo self, in Guid riid, void** ppv) GetSortByAlias;
-				public new function HRESULT(ref IPropertyDescriptionAliasInfo self, in Guid riid, void** ppv) GetAdditionalSortByAliases;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionAliasInfo self, in Guid riid, void** ppv) GetSortByAlias;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionAliasInfo self, in Guid riid, void** ppv) GetAdditionalSortByAliases;
 			}
 		}
 		[CRepr]
@@ -679,10 +679,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public new function HRESULT(ref IPropertyDescriptionSearchInfo self, out PROPDESC_SEARCHINFO_FLAGS ppdsiFlags) GetSearchInfoFlags;
-				public new function HRESULT(ref IPropertyDescriptionSearchInfo self, out PROPDESC_COLUMNINDEX_TYPE ppdciType) GetColumnIndexType;
-				public new function HRESULT(ref IPropertyDescriptionSearchInfo self, out PWSTR ppszProjection) GetProjectionString;
-				public new function HRESULT(ref IPropertyDescriptionSearchInfo self, out uint32 pcbMaxSize) GetMaxSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionSearchInfo self, out PROPDESC_SEARCHINFO_FLAGS ppdsiFlags) GetSearchInfoFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionSearchInfo self, out PROPDESC_COLUMNINDEX_TYPE ppdciType) GetColumnIndexType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionSearchInfo self, out PWSTR ppszProjection) GetProjectionString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionSearchInfo self, out uint32 pcbMaxSize) GetMaxSize;
 			}
 		}
 		[CRepr]
@@ -697,7 +697,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public new function HRESULT(ref IPropertyDescriptionRelatedPropertyInfo self, PWSTR pszRelationshipName, in Guid riid, void** ppv) GetRelatedProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionRelatedPropertyInfo self, PWSTR pszRelationshipName, in Guid riid, void** ppv) GetRelatedProperty;
 			}
 		}
 		[CRepr]
@@ -720,15 +720,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertySystem self, in PROPERTYKEY propkey, in Guid riid, void** ppv) GetPropertyDescription;
-				public new function HRESULT(ref IPropertySystem self, PWSTR pszCanonicalName, in Guid riid, void** ppv) GetPropertyDescriptionByName;
-				public new function HRESULT(ref IPropertySystem self, PWSTR pszPropList, in Guid riid, void** ppv) GetPropertyDescriptionListFromString;
-				public new function HRESULT(ref IPropertySystem self, PROPDESC_ENUMFILTER filterOn, in Guid riid, void** ppv) EnumeratePropertyDescriptions;
-				public new function HRESULT(ref IPropertySystem self, in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) FormatForDisplay;
-				public new function HRESULT(ref IPropertySystem self, in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, out PWSTR ppszDisplay) FormatForDisplayAlloc;
-				public new function HRESULT(ref IPropertySystem self, PWSTR pszPath) RegisterPropertySchema;
-				public new function HRESULT(ref IPropertySystem self, PWSTR pszPath) UnregisterPropertySchema;
-				public new function HRESULT(ref IPropertySystem self) RefreshPropertySchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, in PROPERTYKEY propkey, in Guid riid, void** ppv) GetPropertyDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, PWSTR pszCanonicalName, in Guid riid, void** ppv) GetPropertyDescriptionByName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, PWSTR pszPropList, in Guid riid, void** ppv) GetPropertyDescriptionListFromString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, PROPDESC_ENUMFILTER filterOn, in Guid riid, void** ppv) EnumeratePropertyDescriptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) FormatForDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, in PROPERTYKEY key, in PROPVARIANT propvar, PROPDESC_FORMAT_FLAGS pdff, out PWSTR ppszDisplay) FormatForDisplayAlloc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, PWSTR pszPath) RegisterPropertySchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self, PWSTR pszPath) UnregisterPropertySchema;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystem self) RefreshPropertySchema;
 			}
 		}
 		[CRepr]
@@ -744,8 +744,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyDescriptionList self, out uint32 pcElem) GetCount;
-				public new function HRESULT(ref IPropertyDescriptionList self, uint32 iElem, in Guid riid, void** ppv) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionList self, out uint32 pcElem) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyDescriptionList self, uint32 iElem, in Guid riid, void** ppv) GetAt;
 			}
 		}
 		[CRepr]
@@ -761,8 +761,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyStoreFactory self, GETPROPERTYSTOREFLAGS flags, ref IUnknown pUnkFactory, in Guid riid, void** ppv) GetPropertyStore;
-				public new function HRESULT(ref IPropertyStoreFactory self, in PROPERTYKEY rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) GetPropertyStoreForKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreFactory self, GETPROPERTYSTOREFLAGS flags, ref IUnknown pUnkFactory, in Guid riid, void** ppv) GetPropertyStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreFactory self, in PROPERTYKEY rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, in Guid riid, void** ppv) GetPropertyStoreForKeys;
 			}
 		}
 		[CRepr]
@@ -777,7 +777,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPropertyStoreFactory.VTable
 			{
-				public new function HRESULT(ref IDelayedPropertyStoreFactory self, GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, in Guid riid, void** ppv) GetDelayedPropertyStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDelayedPropertyStoreFactory self, GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, in Guid riid, void** ppv) GetDelayedPropertyStore;
 			}
 		}
 		[CRepr]
@@ -794,9 +794,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPersistSerializedPropStorage self, int32 flags) SetFlags;
-				public new function HRESULT(ref IPersistSerializedPropStorage self, ref SERIALIZEDPROPSTORAGE psps, uint32 cb) SetPropertyStorage;
-				public new function HRESULT(ref IPersistSerializedPropStorage self, out SERIALIZEDPROPSTORAGE* ppsps, out uint32 pcb) GetPropertyStorage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistSerializedPropStorage self, int32 flags) SetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistSerializedPropStorage self, ref SERIALIZEDPROPSTORAGE psps, uint32 cb) SetPropertyStorage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistSerializedPropStorage self, out SERIALIZEDPROPSTORAGE* ppsps, out uint32 pcb) GetPropertyStorage;
 			}
 		}
 		[CRepr]
@@ -812,8 +812,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersistSerializedPropStorage.VTable
 			{
-				public new function HRESULT(ref IPersistSerializedPropStorage2 self, out uint32 pcb) GetPropertyStorageSize;
-				public new function HRESULT(ref IPersistSerializedPropStorage2 self, out SERIALIZEDPROPSTORAGE psps, uint32 cb, out uint32 pcbWritten) GetPropertyStorageBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistSerializedPropStorage2 self, out uint32 pcb) GetPropertyStorageSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistSerializedPropStorage2 self, out SERIALIZEDPROPSTORAGE psps, uint32 cb, out uint32 pcbWritten) GetPropertyStorageBuffer;
 			}
 		}
 		[CRepr]
@@ -828,7 +828,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertySystemChangeNotify self) SchemaRefreshed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertySystemChangeNotify self) SchemaRefreshed;
 			}
 		}
 		[CRepr]
@@ -843,7 +843,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICreateObject self, in Guid clsid, ref IUnknown pUnkOuter, in Guid riid, void** ppv) CreateObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateObject self, in Guid clsid, ref IUnknown pUnkOuter, in Guid riid, void** ppv) CreateObject;
 			}
 		}
 		[CRepr]
@@ -865,14 +865,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyUI self, PWSTR pszName, out Guid pfmtid, out uint32 ppid, out uint32 pchEaten) ParsePropertyName;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetCannonicalName;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) GetDisplayName;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetPropertyDescription;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, out uint32 pcxChars) GetDefaultWidth;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, out PROPERTYUI_FLAGS pflags) ComGetFlags;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, in PROPVARIANT ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) FormatForDisplay;
-				public new function HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, out uint32 puHelpID) GetHelpInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, PWSTR pszName, out Guid pfmtid, out uint32 ppid, out uint32 pchEaten) ParsePropertyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetCannonicalName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) GetDisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetPropertyDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, out uint32 pcxChars) GetDefaultWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, out PROPERTYUI_FLAGS pflags) ComGetFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, in PROPVARIANT ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) FormatForDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, out uint32 puHelpID) GetHelpInfo;
 			}
 		}
 		

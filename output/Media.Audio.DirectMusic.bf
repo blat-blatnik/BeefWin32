@@ -750,15 +750,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusic self, uint32 dwIndex, out DMUS_PORTCAPS pPortCaps) EnumPort;
-				public new function HRESULT(ref IDirectMusic self, out DMUS_BUFFERDESC pBufferDesc, out IDirectMusicBuffer* ppBuffer, ref IUnknown pUnkOuter) CreateMusicBuffer;
-				public new function HRESULT(ref IDirectMusic self, in Guid rclsidPort, out DMUS_PORTPARAMS8 pPortParams, out IDirectMusicPort* ppPort, ref IUnknown pUnkOuter) CreatePort;
-				public new function HRESULT(ref IDirectMusic self, uint32 dwIndex, out DMUS_CLOCKINFO8 lpClockInfo) EnumMasterClock;
-				public new function HRESULT(ref IDirectMusic self, out Guid pguidClock, out IReferenceClock* ppReferenceClock) GetMasterClock;
-				public new function HRESULT(ref IDirectMusic self, in Guid rguidClock) SetMasterClock;
-				public new function HRESULT(ref IDirectMusic self, BOOL fEnable) Activate;
-				public new function HRESULT(ref IDirectMusic self, out Guid pguidPort) GetDefaultPort;
-				public new function HRESULT(ref IDirectMusic self, ref IDirectSound pDirectSound, HWND hWnd) SetDirectSound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, uint32 dwIndex, out DMUS_PORTCAPS pPortCaps) EnumPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, out DMUS_BUFFERDESC pBufferDesc, out IDirectMusicBuffer* ppBuffer, ref IUnknown pUnkOuter) CreateMusicBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, in Guid rclsidPort, out DMUS_PORTPARAMS8 pPortParams, out IDirectMusicPort* ppPort, ref IUnknown pUnkOuter) CreatePort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, uint32 dwIndex, out DMUS_CLOCKINFO8 lpClockInfo) EnumMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, out Guid pguidClock, out IReferenceClock* ppReferenceClock) GetMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, in Guid rguidClock) SetMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, BOOL fEnable) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, out Guid pguidPort) GetDefaultPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic self, ref IDirectSound pDirectSound, HWND hWnd) SetDirectSound;
 			}
 		}
 		[CRepr]
@@ -773,7 +773,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirectMusic.VTable
 			{
-				public new function HRESULT(ref IDirectMusic8 self, ref IReferenceClock pClock) SetExternalMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusic8 self, ref IReferenceClock pClock) SetExternalMasterClock;
 			}
 		}
 		[CRepr]
@@ -800,19 +800,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicBuffer self) Flush;
-				public new function HRESULT(ref IDirectMusicBuffer self, out int64 prtTime) TotalTime;
-				public new function HRESULT(ref IDirectMusicBuffer self, int64 rt, uint32 dwChannelGroup, uint32 dwChannelMessage) PackStructured;
-				public new function HRESULT(ref IDirectMusicBuffer self, int64 rt, uint32 dwChannelGroup, uint32 cb, out uint8 lpb) PackUnstructured;
-				public new function HRESULT(ref IDirectMusicBuffer self) ResetReadPtr;
-				public new function HRESULT(ref IDirectMusicBuffer self, out int64 prt, out uint32 pdwChannelGroup, out uint32 pdwLength, out uint8* ppData) GetNextEvent;
-				public new function HRESULT(ref IDirectMusicBuffer self, out uint8* ppData) GetRawBufferPtr;
-				public new function HRESULT(ref IDirectMusicBuffer self, out int64 prt) GetStartTime;
-				public new function HRESULT(ref IDirectMusicBuffer self, out uint32 pcb) GetUsedBytes;
-				public new function HRESULT(ref IDirectMusicBuffer self, out uint32 pcb) GetMaxBytes;
-				public new function HRESULT(ref IDirectMusicBuffer self, out Guid pGuidFormat) GetBufferFormat;
-				public new function HRESULT(ref IDirectMusicBuffer self, int64 rt) SetStartTime;
-				public new function HRESULT(ref IDirectMusicBuffer self, uint32 cb) SetUsedBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out int64 prtTime) TotalTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, int64 rt, uint32 dwChannelGroup, uint32 dwChannelMessage) PackStructured;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, int64 rt, uint32 dwChannelGroup, uint32 cb, out uint8 lpb) PackUnstructured;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self) ResetReadPtr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out int64 prt, out uint32 pdwChannelGroup, out uint32 pdwLength, out uint8* ppData) GetNextEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out uint8* ppData) GetRawBufferPtr;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out int64 prt) GetStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out uint32 pcb) GetUsedBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out uint32 pcb) GetMaxBytes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, out Guid pGuidFormat) GetBufferFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, int64 rt) SetStartTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicBuffer self, uint32 cb) SetUsedBytes;
 			}
 		}
 		[CRepr]
@@ -828,8 +828,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicInstrument self, out uint32 pdwPatch) GetPatch;
-				public new function HRESULT(ref IDirectMusicInstrument self, uint32 dwPatch) SetPatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicInstrument self, out uint32 pdwPatch) GetPatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicInstrument self, uint32 dwPatch) SetPatch;
 			}
 		}
 		[CRepr]
@@ -858,8 +858,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicCollection self, uint32 dwPatch, out IDirectMusicInstrument* ppInstrument) GetInstrument;
-				public new function HRESULT(ref IDirectMusicCollection self, uint32 dwIndex, out uint32 pdwPatch, PWSTR pwszName, uint32 dwNameLen) EnumInstrument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicCollection self, uint32 dwPatch, out IDirectMusicInstrument* ppInstrument) GetInstrument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicCollection self, uint32 dwIndex, out uint32 pdwPatch, PWSTR pwszName, uint32 dwNameLen) EnumInstrument;
 			}
 		}
 		[CRepr]
@@ -874,7 +874,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicDownload self, void** ppvBuffer, out uint32 pdwSize) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicDownload self, void** ppvBuffer, out uint32 pdwSize) GetBuffer;
 			}
 		}
 		[CRepr]
@@ -894,12 +894,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicPortDownload self, uint32 dwDLId, out IDirectMusicDownload* ppIDMDownload) GetBuffer;
-				public new function HRESULT(ref IDirectMusicPortDownload self, uint32 dwSize, out IDirectMusicDownload* ppIDMDownload) AllocateBuffer;
-				public new function HRESULT(ref IDirectMusicPortDownload self, out uint32 pdwStartDLId, uint32 dwCount) GetDLId;
-				public new function HRESULT(ref IDirectMusicPortDownload self, out uint32 pdwAppend) GetAppend;
-				public new function HRESULT(ref IDirectMusicPortDownload self, ref IDirectMusicDownload pIDMDownload) Download;
-				public new function HRESULT(ref IDirectMusicPortDownload self, ref IDirectMusicDownload pIDMDownload) Unload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, uint32 dwDLId, out IDirectMusicDownload* ppIDMDownload) GetBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, uint32 dwSize, out IDirectMusicDownload* ppIDMDownload) AllocateBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, out uint32 pdwStartDLId, uint32 dwCount) GetDLId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, out uint32 pdwAppend) GetAppend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, ref IDirectMusicDownload pIDMDownload) Download;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPortDownload self, ref IDirectMusicDownload pIDMDownload) Unload;
 			}
 		}
 		[CRepr]
@@ -930,23 +930,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicPort self, ref IDirectMusicBuffer pBuffer) PlayBuffer;
-				public new function HRESULT(ref IDirectMusicPort self, HANDLE hEvent) SetReadNotificationHandle;
-				public new function HRESULT(ref IDirectMusicPort self, ref IDirectMusicBuffer pBuffer) Read;
-				public new function HRESULT(ref IDirectMusicPort self, ref IDirectMusicInstrument pInstrument, out IDirectMusicDownloadedInstrument* ppDownloadedInstrument, out DMUS_NOTERANGE pNoteRanges, uint32 dwNumNoteRanges) DownloadInstrument;
-				public new function HRESULT(ref IDirectMusicPort self, ref IDirectMusicDownloadedInstrument pDownloadedInstrument) UnloadInstrument;
-				public new function HRESULT(ref IDirectMusicPort self, out IReferenceClock* ppClock) GetLatencyClock;
-				public new function HRESULT(ref IDirectMusicPort self, out DMUS_SYNTHSTATS pStats) GetRunningStats;
-				public new function HRESULT(ref IDirectMusicPort self) Compact;
-				public new function HRESULT(ref IDirectMusicPort self, out DMUS_PORTCAPS pPortCaps) GetCaps;
-				public new function HRESULT(ref IDirectMusicPort self, uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, out uint32 lpBytesReturned, out OVERLAPPED lpOverlapped) DeviceIoControl;
-				public new function HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroups) SetNumChannelGroups;
-				public new function HRESULT(ref IDirectMusicPort self, out uint32 pdwChannelGroups) GetNumChannelGroups;
-				public new function HRESULT(ref IDirectMusicPort self, BOOL fActive) Activate;
-				public new function HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
-				public new function HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwPriority) GetChannelPriority;
-				public new function HRESULT(ref IDirectMusicPort self, ref IDirectSound pDirectSound, ref IDirectSoundBuffer pDirectSoundBuffer) SetDirectSound;
-				public new function HRESULT(ref IDirectMusicPort self, out WAVEFORMATEX pWaveFormatEx, out uint32 pdwWaveFormatExSize, out uint32 pdwBufferSize) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, ref IDirectMusicBuffer pBuffer) PlayBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, HANDLE hEvent) SetReadNotificationHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, ref IDirectMusicBuffer pBuffer) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, ref IDirectMusicInstrument pInstrument, out IDirectMusicDownloadedInstrument* ppDownloadedInstrument, out DMUS_NOTERANGE pNoteRanges, uint32 dwNumNoteRanges) DownloadInstrument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, ref IDirectMusicDownloadedInstrument pDownloadedInstrument) UnloadInstrument;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, out IReferenceClock* ppClock) GetLatencyClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, out DMUS_SYNTHSTATS pStats) GetRunningStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, out DMUS_PORTCAPS pPortCaps) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, out uint32 lpBytesReturned, out OVERLAPPED lpOverlapped) DeviceIoControl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroups) SetNumChannelGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, out uint32 pdwChannelGroups) GetNumChannelGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, BOOL fActive) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwPriority) GetChannelPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, ref IDirectSound pDirectSound, ref IDirectSoundBuffer pDirectSoundBuffer) SetDirectSound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicPort self, out WAVEFORMATEX pWaveFormatEx, out uint32 pdwWaveFormatExSize, out uint32 pdwBufferSize) GetFormat;
 			}
 		}
 		[CRepr]
@@ -961,7 +961,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicThru self, uint32 dwSourceChannelGroup, uint32 dwSourceChannel, uint32 dwDestinationChannelGroup, uint32 dwDestinationChannel, ref IDirectMusicPort pDestinationPort) ThruChannel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicThru self, uint32 dwSourceChannelGroup, uint32 dwSourceChannel, uint32 dwDestinationChannelGroup, uint32 dwDestinationChannel, ref IDirectMusicPort pDestinationPort) ThruChannel;
 			}
 		}
 		[CRepr]
@@ -992,23 +992,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicSynth self, out DMUS_PORTPARAMS8 pPortParams) Open;
-				public new function HRESULT(ref IDirectMusicSynth self) Close;
-				public new function HRESULT(ref IDirectMusicSynth self, uint32 dwGroups) SetNumChannelGroups;
-				public new function HRESULT(ref IDirectMusicSynth self, out HANDLE phDownload, void* pvData, out int32 pbFree) Download;
-				public new function HRESULT(ref IDirectMusicSynth self, HANDLE hDownload, int lpFreeHandle, HANDLE hUserData) Unload;
-				public new function HRESULT(ref IDirectMusicSynth self, int64 rt, out uint8 pbBuffer, uint32 cbBuffer) PlayBuffer;
-				public new function HRESULT(ref IDirectMusicSynth self, out DMUS_SYNTHSTATS pStats) GetRunningStats;
-				public new function HRESULT(ref IDirectMusicSynth self, out DMUS_PORTCAPS pCaps) GetPortCaps;
-				public new function HRESULT(ref IDirectMusicSynth self, ref IReferenceClock pClock) SetMasterClock;
-				public new function HRESULT(ref IDirectMusicSynth self, out IReferenceClock* ppClock) GetLatencyClock;
-				public new function HRESULT(ref IDirectMusicSynth self, BOOL fEnable) Activate;
-				public new function HRESULT(ref IDirectMusicSynth self, ref IDirectMusicSynthSink pSynthSink) SetSynthSink;
-				public new function HRESULT(ref IDirectMusicSynth self, out int16 pBuffer, uint32 dwLength, int64 llPosition) Render;
-				public new function HRESULT(ref IDirectMusicSynth self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
-				public new function HRESULT(ref IDirectMusicSynth self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwPriority) GetChannelPriority;
-				public new function HRESULT(ref IDirectMusicSynth self, out WAVEFORMATEX pWaveFormatEx, out uint32 pdwWaveFormatExSize) GetFormat;
-				public new function HRESULT(ref IDirectMusicSynth self, out uint32 pdwAppend) GetAppend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out DMUS_PORTPARAMS8 pPortParams) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, uint32 dwGroups) SetNumChannelGroups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out HANDLE phDownload, void* pvData, out int32 pbFree) Download;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, HANDLE hDownload, int lpFreeHandle, HANDLE hUserData) Unload;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, int64 rt, out uint8 pbBuffer, uint32 cbBuffer) PlayBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out DMUS_SYNTHSTATS pStats) GetRunningStats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out DMUS_PORTCAPS pCaps) GetPortCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, ref IReferenceClock pClock) SetMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out IReferenceClock* ppClock) GetLatencyClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, BOOL fEnable) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, ref IDirectMusicSynthSink pSynthSink) SetSynthSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out int16 pBuffer, uint32 dwLength, int64 llPosition) Render;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwPriority) GetChannelPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out WAVEFORMATEX pWaveFormatEx, out uint32 pdwWaveFormatExSize) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth self, out uint32 pdwAppend) GetAppend;
 			}
 		}
 		[CRepr]
@@ -1027,11 +1027,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDirectMusicSynth.VTable
 			{
-				public new function HRESULT(ref IDirectMusicSynth8 self, int64 rt, uint32 dwVoiceId, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwDLId, int32 prPitch, int32 vrVolume, uint64 stVoiceStart, uint64 stLoopStart, uint64 stLoopEnd) PlayVoice;
-				public new function HRESULT(ref IDirectMusicSynth8 self, int64 rt, uint32 dwVoiceId) StopVoice;
-				public new function HRESULT(ref IDirectMusicSynth8 self, out uint32 dwVoice, uint32 cbVoice, out DMUS_VOICE_STATE dwVoiceState) GetVoiceState;
-				public new function HRESULT(ref IDirectMusicSynth8 self, uint32 dwDownloadID, uint32 dwFlags) Refresh;
-				public new function HRESULT(ref IDirectMusicSynth8 self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwBuses, uint32 cBuses) AssignChannelToBuses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth8 self, int64 rt, uint32 dwVoiceId, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwDLId, int32 prPitch, int32 vrVolume, uint64 stVoiceStart, uint64 stLoopStart, uint64 stLoopEnd) PlayVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth8 self, int64 rt, uint32 dwVoiceId) StopVoice;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth8 self, out uint32 dwVoice, uint32 cbVoice, out DMUS_VOICE_STATE dwVoiceState) GetVoiceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth8 self, uint32 dwDownloadID, uint32 dwFlags) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynth8 self, uint32 dwChannelGroup, uint32 dwChannel, out uint32 pdwBuses, uint32 cBuses) AssignChannelToBuses;
 			}
 		}
 		[CRepr]
@@ -1053,14 +1053,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectMusicSynthSink self, ref IDirectMusicSynth pSynth) Init;
-				public new function HRESULT(ref IDirectMusicSynthSink self, ref IReferenceClock pClock) SetMasterClock;
-				public new function HRESULT(ref IDirectMusicSynthSink self, out IReferenceClock* ppClock) GetLatencyClock;
-				public new function HRESULT(ref IDirectMusicSynthSink self, BOOL fEnable) Activate;
-				public new function HRESULT(ref IDirectMusicSynthSink self, int64 llSampleTime, out int64 prfTime) SampleToRefTime;
-				public new function HRESULT(ref IDirectMusicSynthSink self, int64 rfTime, out int64 pllSampleTime) RefTimeToSample;
-				public new function HRESULT(ref IDirectMusicSynthSink self, ref IDirectSound pDirectSound, ref IDirectSoundBuffer pDirectSoundBuffer) SetDirectSound;
-				public new function HRESULT(ref IDirectMusicSynthSink self, out uint32 pdwBufferSizeInSamples) GetDesiredBufferSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, ref IDirectMusicSynth pSynth) Init;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, ref IReferenceClock pClock) SetMasterClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, out IReferenceClock* ppClock) GetLatencyClock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, BOOL fEnable) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, int64 llSampleTime, out int64 prfTime) SampleToRefTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, int64 rfTime, out int64 pllSampleTime) RefTimeToSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, ref IDirectSound pDirectSound, ref IDirectSoundBuffer pDirectSoundBuffer) SetDirectSound;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, out uint32 pdwBufferSizeInSamples) GetDesiredBufferSize;
 			}
 		}
 		

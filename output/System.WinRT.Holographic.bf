@@ -23,11 +23,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IHolographicCameraInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12BackBufferResource;
-				public new function HRESULT(ref IHolographicCameraInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12HardwareProtectedBackBufferResource;
-				public new function HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) AcquireDirect3D12BufferResource;
-				public new function HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) AcquireDirect3D12BufferResourceWithTimeout;
-				public new function HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToUnacquire) UnacquireDirect3D12BufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12BackBufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12HardwareProtectedBackBufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) AcquireDirect3D12BufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) AcquireDirect3D12BufferResourceWithTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraInterop self, ref ID3D12Resource pResourceToUnacquire) UnacquireDirect3D12BufferResource;
 			}
 		}
 		[CRepr]
@@ -43,8 +43,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IHolographicCameraRenderingParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) CommitDirect3D12Resource;
-				public new function HRESULT(ref IHolographicCameraRenderingParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue, ref ID3D12Resource pDepthResourceToCommit, ref ID3D12Fence pDepthResourceFence, uint64 depthResourceFenceSignalValue) CommitDirect3D12ResourceWithDepthData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraRenderingParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) CommitDirect3D12Resource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicCameraRenderingParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue, ref ID3D12Resource pDepthResourceToCommit, ref ID3D12Fence pDepthResourceFence, uint64 depthResourceFenceSignalValue) CommitDirect3D12ResourceWithDepthData;
 			}
 		}
 		[CRepr]
@@ -63,11 +63,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppTexture2DResource) CreateDirect3D12ContentBufferResource;
-				public new function HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12HardwareProtectedContentBufferResource;
-				public new function HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) AcquireDirect3D12BufferResource;
-				public new function HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) AcquireDirect3D12BufferResourceWithTimeout;
-				public new function HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToUnacquire) UnacquireDirect3D12BufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, out ID3D12Resource* ppTexture2DResource) CreateDirect3D12ContentBufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Device pDevice, ref D3D12_RESOURCE_DESC pTexture2DDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ID3D12Resource* ppCreatedTexture2DResource) CreateDirect3D12HardwareProtectedContentBufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue) AcquireDirect3D12BufferResource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToAcquire, ref ID3D12CommandQueue pCommandQueue, uint64 duration) AcquireDirect3D12BufferResourceWithTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerInterop self, ref ID3D12Resource pResourceToUnacquire) UnacquireDirect3D12BufferResource;
 			}
 		}
 		[CRepr]
@@ -82,7 +82,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ref IHolographicQuadLayerUpdateParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) CommitDirect3D12Resource;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerUpdateParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) CommitDirect3D12Resource;
 			}
 		}
 		

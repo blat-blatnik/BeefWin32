@@ -56,7 +56,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRandomAccessStreamFileAccessMode self, out uint32 fileAccessMode) GetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRandomAccessStreamFileAccessMode self, out uint32 fileAccessMode) GetMode;
 			}
 		}
 		[CRepr]
@@ -71,7 +71,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUnbufferedFileHandleOplockCallback self) OnBrokenCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUnbufferedFileHandleOplockCallback self) OnBrokenCallback;
 			}
 		}
 		[CRepr]
@@ -87,8 +87,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUnbufferedFileHandleProvider self, ref IUnbufferedFileHandleOplockCallback oplockBreakCallback, out uint fileHandle) OpenUnbufferedFileHandle;
-				public new function HRESULT(ref IUnbufferedFileHandleProvider self) CloseUnbufferedFileHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUnbufferedFileHandleProvider self, ref IUnbufferedFileHandleOplockCallback oplockBreakCallback, out uint fileHandle) OpenUnbufferedFileHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUnbufferedFileHandleProvider self) CloseUnbufferedFileHandle;
 			}
 		}
 		[CRepr]
@@ -103,7 +103,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IOplockBreakingHandler self) OplockBreaking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOplockBreakingHandler self) OplockBreaking;
 			}
 		}
 		[CRepr]
@@ -118,7 +118,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStorageItemHandleAccess self, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageItemHandleAccess self, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
 			}
 		}
 		[CRepr]
@@ -133,7 +133,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStorageFolderHandleAccess self, PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageFolderHandleAccess self, PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
 			}
 		}
 		

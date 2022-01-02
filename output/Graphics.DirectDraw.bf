@@ -4818,26 +4818,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDraw self) Compact;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
-				public new function HRESULT(ref IDirectDraw self, out DDSURFACEDESC param0, out IDirectDrawSurface* param1, ref IUnknown param2) CreateSurface;
-				public new function HRESULT(ref IDirectDraw self, ref IDirectDrawSurface param0, out IDirectDrawSurface* param1) DuplicateSurface;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
-				public new function HRESULT(ref IDirectDraw self) FlipToGDISurface;
-				public new function HRESULT(ref IDirectDraw self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
-				public new function HRESULT(ref IDirectDraw self, out DDSURFACEDESC param0) GetDisplayMode;
-				public new function HRESULT(ref IDirectDraw self, out uint32 param0, out uint32 param1) GetFourCCCodes;
-				public new function HRESULT(ref IDirectDraw self, out IDirectDrawSurface* param0) GetGDISurface;
-				public new function HRESULT(ref IDirectDraw self, out uint32 param0) GetMonitorFrequency;
-				public new function HRESULT(ref IDirectDraw self, out uint32 param0) GetScanLine;
-				public new function HRESULT(ref IDirectDraw self, out int32 param0) GetVerticalBlankStatus;
-				public new function HRESULT(ref IDirectDraw self, out Guid param0) Initialize;
-				public new function HRESULT(ref IDirectDraw self) RestoreDisplayMode;
-				public new function HRESULT(ref IDirectDraw self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, uint32 param1, uint32 param2) SetDisplayMode;
-				public new function HRESULT(ref IDirectDraw self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out DDSURFACEDESC param0, out IDirectDrawSurface* param1, ref IUnknown param2) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, ref IDirectDrawSurface param0, out IDirectDrawSurface* param1) DuplicateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self) FlipToGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out DDSURFACEDESC param0) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out uint32 param0, out uint32 param1) GetFourCCCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out IDirectDrawSurface* param0) GetGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out uint32 param0) GetMonitorFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out uint32 param0) GetScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out int32 param0) GetVerticalBlankStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, out Guid param0) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self) RestoreDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, uint32 param1, uint32 param2) SetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
 			}
 		}
 		[CRepr]
@@ -4872,27 +4872,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDraw2 self) Compact;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
-				public new function HRESULT(ref IDirectDraw2 self, out DDSURFACEDESC param0, out IDirectDrawSurface* param1, ref IUnknown param2) CreateSurface;
-				public new function HRESULT(ref IDirectDraw2 self, ref IDirectDrawSurface param0, out IDirectDrawSurface* param1) DuplicateSurface;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
-				public new function HRESULT(ref IDirectDraw2 self) FlipToGDISurface;
-				public new function HRESULT(ref IDirectDraw2 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
-				public new function HRESULT(ref IDirectDraw2 self, out DDSURFACEDESC param0) GetDisplayMode;
-				public new function HRESULT(ref IDirectDraw2 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
-				public new function HRESULT(ref IDirectDraw2 self, out IDirectDrawSurface* param0) GetGDISurface;
-				public new function HRESULT(ref IDirectDraw2 self, out uint32 param0) GetMonitorFrequency;
-				public new function HRESULT(ref IDirectDraw2 self, out uint32 param0) GetScanLine;
-				public new function HRESULT(ref IDirectDraw2 self, out int32 param0) GetVerticalBlankStatus;
-				public new function HRESULT(ref IDirectDraw2 self, out Guid param0) Initialize;
-				public new function HRESULT(ref IDirectDraw2 self) RestoreDisplayMode;
-				public new function HRESULT(ref IDirectDraw2 self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-				public new function HRESULT(ref IDirectDraw2 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-				public new function HRESULT(ref IDirectDraw2 self, out DDSCAPS param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out DDSURFACEDESC param0, out IDirectDrawSurface* param1, ref IUnknown param2) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, ref IDirectDrawSurface param0, out IDirectDrawSurface* param1) DuplicateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, out DDSURFACEDESC param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self) FlipToGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out DDSURFACEDESC param0) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out IDirectDrawSurface* param0) GetGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out uint32 param0) GetMonitorFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out uint32 param0) GetScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out int32 param0) GetVerticalBlankStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out Guid param0) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self) RestoreDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw2 self, out DDSCAPS param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
 			}
 		}
 		[CRepr]
@@ -4931,31 +4931,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDraw4 self) Compact;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
-				public new function HRESULT(ref IDirectDraw4 self, out DDSURFACEDESC2 param0, out IDirectDrawSurface4* param1, ref IUnknown param2) CreateSurface;
-				public new function HRESULT(ref IDirectDraw4 self, ref IDirectDrawSurface4 param0, out IDirectDrawSurface4* param1) DuplicateSurface;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMSURFACESCALLBACK2 param3) EnumSurfaces;
-				public new function HRESULT(ref IDirectDraw4 self) FlipToGDISurface;
-				public new function HRESULT(ref IDirectDraw4 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
-				public new function HRESULT(ref IDirectDraw4 self, out DDSURFACEDESC2 param0) GetDisplayMode;
-				public new function HRESULT(ref IDirectDraw4 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
-				public new function HRESULT(ref IDirectDraw4 self, out IDirectDrawSurface4* param0) GetGDISurface;
-				public new function HRESULT(ref IDirectDraw4 self, out uint32 param0) GetMonitorFrequency;
-				public new function HRESULT(ref IDirectDraw4 self, out uint32 param0) GetScanLine;
-				public new function HRESULT(ref IDirectDraw4 self, out int32 param0) GetVerticalBlankStatus;
-				public new function HRESULT(ref IDirectDraw4 self, out Guid param0) Initialize;
-				public new function HRESULT(ref IDirectDraw4 self) RestoreDisplayMode;
-				public new function HRESULT(ref IDirectDraw4 self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-				public new function HRESULT(ref IDirectDraw4 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-				public new function HRESULT(ref IDirectDraw4 self, out DDSCAPS2 param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
-				public new function HRESULT(ref IDirectDraw4 self, HDC param0, out IDirectDrawSurface4* param1) GetSurfaceFromDC;
-				public new function HRESULT(ref IDirectDraw4 self) RestoreAllSurfaces;
-				public new function HRESULT(ref IDirectDraw4 self) TestCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw4 self, out DDDEVICEIDENTIFIER param0, uint32 param1) GetDeviceIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out DDSURFACEDESC2 param0, out IDirectDrawSurface4* param1, ref IUnknown param2) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, ref IDirectDrawSurface4 param0, out IDirectDrawSurface4* param1) DuplicateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMSURFACESCALLBACK2 param3) EnumSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self) FlipToGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out DDSURFACEDESC2 param0) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out IDirectDrawSurface4* param0) GetGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out uint32 param0) GetMonitorFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out uint32 param0) GetScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out int32 param0) GetVerticalBlankStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out Guid param0) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self) RestoreDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out DDSCAPS2 param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, HDC param0, out IDirectDrawSurface4* param1) GetSurfaceFromDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self) RestoreAllSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self) TestCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw4 self, out DDDEVICEIDENTIFIER param0, uint32 param1) GetDeviceIdentifier;
 			}
 		}
 		[CRepr]
@@ -4996,33 +4996,33 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDraw7 self) Compact;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
-				public new function HRESULT(ref IDirectDraw7 self, out DDSURFACEDESC2 param0, out IDirectDrawSurface7* param1, ref IUnknown param2) CreateSurface;
-				public new function HRESULT(ref IDirectDraw7 self, ref IDirectDrawSurface7 param0, out IDirectDrawSurface7* param1) DuplicateSurface;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMSURFACESCALLBACK7 param3) EnumSurfaces;
-				public new function HRESULT(ref IDirectDraw7 self) FlipToGDISurface;
-				public new function HRESULT(ref IDirectDraw7 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
-				public new function HRESULT(ref IDirectDraw7 self, out DDSURFACEDESC2 param0) GetDisplayMode;
-				public new function HRESULT(ref IDirectDraw7 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
-				public new function HRESULT(ref IDirectDraw7 self, out IDirectDrawSurface7* param0) GetGDISurface;
-				public new function HRESULT(ref IDirectDraw7 self, out uint32 param0) GetMonitorFrequency;
-				public new function HRESULT(ref IDirectDraw7 self, out uint32 param0) GetScanLine;
-				public new function HRESULT(ref IDirectDraw7 self, out int32 param0) GetVerticalBlankStatus;
-				public new function HRESULT(ref IDirectDraw7 self, out Guid param0) Initialize;
-				public new function HRESULT(ref IDirectDraw7 self) RestoreDisplayMode;
-				public new function HRESULT(ref IDirectDraw7 self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-				public new function HRESULT(ref IDirectDraw7 self, out DDSCAPS2 param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
-				public new function HRESULT(ref IDirectDraw7 self, HDC param0, out IDirectDrawSurface7* param1) GetSurfaceFromDC;
-				public new function HRESULT(ref IDirectDraw7 self) RestoreAllSurfaces;
-				public new function HRESULT(ref IDirectDraw7 self) TestCooperativeLevel;
-				public new function HRESULT(ref IDirectDraw7 self, out DDDEVICEIDENTIFIER2 param0, uint32 param1) GetDeviceIdentifier;
-				public new function HRESULT(ref IDirectDraw7 self, out SIZE param0, uint32 param1, uint32 param2) StartModeTest;
-				public new function HRESULT(ref IDirectDraw7 self, uint32 param0, out uint32 param1) EvaluateMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self) Compact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, out IDirectDrawClipper* param1, ref IUnknown param2) CreateClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, out PALETTEENTRY param1, out IDirectDrawPalette* param2, ref IUnknown param3) CreatePalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out DDSURFACEDESC2 param0, out IDirectDrawSurface7* param1, ref IUnknown param2) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, ref IDirectDrawSurface7 param0, out IDirectDrawSurface7* param1) DuplicateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, out DDSURFACEDESC2 param1, void* param2, LPDDENUMSURFACESCALLBACK7 param3) EnumSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self) FlipToGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out DDCAPS_DX7 param0, out DDCAPS_DX7 param1) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out DDSURFACEDESC2 param0) GetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out uint32 param0, out uint32 param1) GetFourCCCodes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out IDirectDrawSurface7* param0) GetGDISurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out uint32 param0) GetMonitorFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out uint32 param0) GetScanLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out int32 param0) GetVerticalBlankStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out Guid param0) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self) RestoreDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out DDSCAPS2 param0, out uint32 param1, out uint32 param2) GetAvailableVidMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, HDC param0, out IDirectDrawSurface7* param1) GetSurfaceFromDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self) RestoreAllSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self) TestCooperativeLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out DDDEVICEIDENTIFIER2 param0, uint32 param1) GetDeviceIdentifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, out SIZE param0, uint32 param1, uint32 param2) StartModeTest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDraw7 self, uint32 param0, out uint32 param1) EvaluateMode;
 			}
 		}
 		[CRepr]
@@ -5040,10 +5040,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawPalette self, out uint32 param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawPalette self, uint32 param0, uint32 param1, uint32 param2, out PALETTEENTRY param3) GetEntries;
-				public new function HRESULT(ref IDirectDrawPalette self, ref IDirectDraw param0, uint32 param1, out PALETTEENTRY param2) Initialize;
-				public new function HRESULT(ref IDirectDrawPalette self, uint32 param0, uint32 param1, uint32 param2, out PALETTEENTRY param3) SetEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawPalette self, out uint32 param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawPalette self, uint32 param0, uint32 param1, uint32 param2, out PALETTEENTRY param3) GetEntries;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawPalette self, ref IDirectDraw param0, uint32 param1, out PALETTEENTRY param2) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawPalette self, uint32 param0, uint32 param1, uint32 param2, out PALETTEENTRY param3) SetEntries;
 			}
 		}
 		[CRepr]
@@ -5063,12 +5063,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawClipper self, out RECT param0, out RGNDATA param1, out uint32 param2) GetClipList;
-				public new function HRESULT(ref IDirectDrawClipper self, out HWND param0) GetHWnd;
-				public new function HRESULT(ref IDirectDrawClipper self, ref IDirectDraw param0, uint32 param1) Initialize;
-				public new function HRESULT(ref IDirectDrawClipper self, out BOOL param0) IsClipListChanged;
-				public new function HRESULT(ref IDirectDrawClipper self, out RGNDATA param0, uint32 param1) SetClipList;
-				public new function HRESULT(ref IDirectDrawClipper self, uint32 param0, HWND param1) SetHWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, out RECT param0, out RGNDATA param1, out uint32 param2) GetClipList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, out HWND param0) GetHWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, ref IDirectDraw param0, uint32 param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, out BOOL param0) IsClipListChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, out RGNDATA param0, uint32 param1) SetClipList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawClipper self, uint32 param0, HWND param1) SetHWnd;
 			}
 		}
 		[CRepr]
@@ -5115,39 +5115,39 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurface self, ref IDirectDrawSurface param0) AddAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface self, out RECT param0) AddOverlayDirtyRect;
-				public new function HRESULT(ref IDirectDrawSurface self, out RECT param0, ref IDirectDrawSurface param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
-				public new function HRESULT(ref IDirectDrawSurface self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, uint32 param1, ref IDirectDrawSurface param2, out RECT param3, uint32 param4) BltFast;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, ref IDirectDrawSurface param1) DeleteAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-				public new function HRESULT(ref IDirectDrawSurface self, ref IDirectDrawSurface param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawSurface self, out DDSCAPS param0, out IDirectDrawSurface* param1) GetAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0) GetBltStatus;
-				public new function HRESULT(ref IDirectDrawSurface self, out DDSCAPS param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawSurface self, out IDirectDrawClipper* param0) GetClipper;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface self, out HDC param0) GetDC;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0) GetFlipStatus;
-				public new function HRESULT(ref IDirectDrawSurface self, out int32 param0, out int32 param1) GetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface self, out IDirectDrawPalette* param0) GetPalette;
-				public new function HRESULT(ref IDirectDrawSurface self, out DDPIXELFORMAT param0) GetPixelFormat;
-				public new function HRESULT(ref IDirectDrawSurface self, out DDSURFACEDESC param0) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
-				public new function HRESULT(ref IDirectDrawSurface self) IsLost;
-				public new function HRESULT(ref IDirectDrawSurface self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
-				public new function HRESULT(ref IDirectDrawSurface self, HDC param0) ReleaseDC;
-				public new function HRESULT(ref IDirectDrawSurface self) Restore;
-				public new function HRESULT(ref IDirectDrawSurface self, ref IDirectDrawClipper param0) SetClipper;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface self, int32 param0, int32 param1) SetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface self, ref IDirectDrawPalette param0) SetPalette;
-				public new function HRESULT(ref IDirectDrawSurface self, void* param0) Unlock;
-				public new function HRESULT(ref IDirectDrawSurface self, out RECT param0, ref IDirectDrawSurface param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0) UpdateOverlayDisplay;
-				public new function HRESULT(ref IDirectDrawSurface self, uint32 param0, ref IDirectDrawSurface param1) UpdateOverlayZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, ref IDirectDrawSurface param0) AddAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out RECT param0) AddOverlayDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out RECT param0, ref IDirectDrawSurface param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, uint32 param1, ref IDirectDrawSurface param2, out RECT param3, uint32 param4) BltFast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, ref IDirectDrawSurface param1) DeleteAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, ref IDirectDrawSurface param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out DDSCAPS param0, out IDirectDrawSurface* param1) GetAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0) GetBltStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out DDSCAPS param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out IDirectDrawClipper* param0) GetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out HDC param0) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0) GetFlipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out int32 param0, out int32 param1) GetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out IDirectDrawPalette* param0) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out DDPIXELFORMAT param0) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out DDSURFACEDESC param0) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self) IsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, HDC param0) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, ref IDirectDrawClipper param0) SetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, int32 param0, int32 param1) SetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, ref IDirectDrawPalette param0) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, void* param0) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, out RECT param0, ref IDirectDrawSurface param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0) UpdateOverlayDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface self, uint32 param0, ref IDirectDrawSurface param1) UpdateOverlayZOrder;
 			}
 		}
 		[CRepr]
@@ -5197,42 +5197,42 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawSurface2 param0) AddAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out RECT param0) AddOverlayDirtyRect;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out RECT param0, ref IDirectDrawSurface2 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, uint32 param1, ref IDirectDrawSurface2 param2, out RECT param3, uint32 param4) BltFast;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, ref IDirectDrawSurface2 param1) DeleteAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface2 self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-				public new function HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawSurface2 param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out DDSCAPS param0, out IDirectDrawSurface2* param1) GetAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0) GetBltStatus;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out DDSCAPS param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out IDirectDrawClipper* param0) GetClipper;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out HDC param0) GetDC;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0) GetFlipStatus;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out int32 param0, out int32 param1) GetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out IDirectDrawPalette* param0) GetPalette;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out DDPIXELFORMAT param0) GetPixelFormat;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out DDSURFACEDESC param0) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface2 self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
-				public new function HRESULT(ref IDirectDrawSurface2 self) IsLost;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
-				public new function HRESULT(ref IDirectDrawSurface2 self, HDC param0) ReleaseDC;
-				public new function HRESULT(ref IDirectDrawSurface2 self) Restore;
-				public new function HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawClipper param0) SetClipper;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface2 self, int32 param0, int32 param1) SetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawPalette param0) SetPalette;
-				public new function HRESULT(ref IDirectDrawSurface2 self, void* param0) Unlock;
-				public new function HRESULT(ref IDirectDrawSurface2 self, out RECT param0, ref IDirectDrawSurface2 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0) UpdateOverlayDisplay;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0, ref IDirectDrawSurface2 param1) UpdateOverlayZOrder;
-				public new function HRESULT(ref IDirectDrawSurface2 self, void** param0) GetDDInterface;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0) PageLock;
-				public new function HRESULT(ref IDirectDrawSurface2 self, uint32 param0) PageUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawSurface2 param0) AddAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out RECT param0) AddOverlayDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out RECT param0, ref IDirectDrawSurface2 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, uint32 param1, ref IDirectDrawSurface2 param2, out RECT param3, uint32 param4) BltFast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, ref IDirectDrawSurface2 param1) DeleteAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawSurface2 param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out DDSCAPS param0, out IDirectDrawSurface2* param1) GetAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0) GetBltStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out DDSCAPS param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out IDirectDrawClipper* param0) GetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out HDC param0) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0) GetFlipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out int32 param0, out int32 param1) GetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out IDirectDrawPalette* param0) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out DDPIXELFORMAT param0) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out DDSURFACEDESC param0) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self) IsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, HDC param0) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawClipper param0) SetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, int32 param0, int32 param1) SetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, ref IDirectDrawPalette param0) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, void* param0) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, out RECT param0, ref IDirectDrawSurface2 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0) UpdateOverlayDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0, ref IDirectDrawSurface2 param1) UpdateOverlayZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, void** param0) GetDDInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0) PageLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface2 self, uint32 param0) PageUnlock;
 			}
 		}
 		[CRepr]
@@ -5283,43 +5283,43 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawSurface3 param0) AddAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out RECT param0) AddOverlayDirtyRect;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out RECT param0, ref IDirectDrawSurface3 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, uint32 param1, ref IDirectDrawSurface3 param2, out RECT param3, uint32 param4) BltFast;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, ref IDirectDrawSurface3 param1) DeleteAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface3 self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-				public new function HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawSurface3 param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDSCAPS param0, out IDirectDrawSurface3* param1) GetAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0) GetBltStatus;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDSCAPS param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out IDirectDrawClipper* param0) GetClipper;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out HDC param0) GetDC;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0) GetFlipStatus;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out int32 param0, out int32 param1) GetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out IDirectDrawPalette* param0) GetPalette;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDPIXELFORMAT param0) GetPixelFormat;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDSURFACEDESC param0) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface3 self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
-				public new function HRESULT(ref IDirectDrawSurface3 self) IsLost;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
-				public new function HRESULT(ref IDirectDrawSurface3 self, HDC param0) ReleaseDC;
-				public new function HRESULT(ref IDirectDrawSurface3 self) Restore;
-				public new function HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawClipper param0) SetClipper;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface3 self, int32 param0, int32 param1) SetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawPalette param0) SetPalette;
-				public new function HRESULT(ref IDirectDrawSurface3 self, void* param0) Unlock;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out RECT param0, ref IDirectDrawSurface3 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0) UpdateOverlayDisplay;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0, ref IDirectDrawSurface3 param1) UpdateOverlayZOrder;
-				public new function HRESULT(ref IDirectDrawSurface3 self, void** param0) GetDDInterface;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0) PageLock;
-				public new function HRESULT(ref IDirectDrawSurface3 self, uint32 param0) PageUnlock;
-				public new function HRESULT(ref IDirectDrawSurface3 self, out DDSURFACEDESC param0, uint32 param1) SetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawSurface3 param0) AddAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out RECT param0) AddOverlayDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out RECT param0, ref IDirectDrawSurface3 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, uint32 param1, ref IDirectDrawSurface3 param2, out RECT param3, uint32 param4) BltFast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, ref IDirectDrawSurface3 param1) DeleteAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawSurface3 param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDSCAPS param0, out IDirectDrawSurface3* param1) GetAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0) GetBltStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDSCAPS param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out IDirectDrawClipper* param0) GetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out HDC param0) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0) GetFlipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out int32 param0, out int32 param1) GetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out IDirectDrawPalette* param0) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDPIXELFORMAT param0) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDSURFACEDESC param0) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, ref IDirectDraw param0, out DDSURFACEDESC param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self) IsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out RECT param0, out DDSURFACEDESC param1, uint32 param2, HANDLE param3) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, HDC param0) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawClipper param0) SetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, int32 param0, int32 param1) SetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, ref IDirectDrawPalette param0) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, void* param0) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out RECT param0, ref IDirectDrawSurface3 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0) UpdateOverlayDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0, ref IDirectDrawSurface3 param1) UpdateOverlayZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, void** param0) GetDDInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0) PageLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, uint32 param0) PageUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface3 self, out DDSURFACEDESC param0, uint32 param1) SetSurfaceDesc;
 			}
 		}
 		[CRepr]
@@ -5375,48 +5375,48 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawSurface4 param0) AddAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out RECT param0) AddOverlayDirtyRect;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out RECT param0, ref IDirectDrawSurface4 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, uint32 param1, ref IDirectDrawSurface4 param2, out RECT param3, uint32 param4) BltFast;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, ref IDirectDrawSurface4 param1) DeleteAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface4 self, void* param0, LPDDENUMSURFACESCALLBACK2 param1) EnumAttachedSurfaces;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK2 param2) EnumOverlayZOrders;
-				public new function HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawSurface4 param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDSCAPS2 param0, out IDirectDrawSurface4* param1) GetAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0) GetBltStatus;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDSCAPS2 param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out IDirectDrawClipper* param0) GetClipper;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out HDC param0) GetDC;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0) GetFlipStatus;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out int32 param0, out int32 param1) GetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out IDirectDrawPalette* param0) GetPalette;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDPIXELFORMAT param0) GetPixelFormat;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDSURFACEDESC2 param0) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface4 self, ref IDirectDraw param0, out DDSURFACEDESC2 param1) Initialize;
-				public new function HRESULT(ref IDirectDrawSurface4 self) IsLost;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out RECT param0, out DDSURFACEDESC2 param1, uint32 param2, HANDLE param3) Lock;
-				public new function HRESULT(ref IDirectDrawSurface4 self, HDC param0) ReleaseDC;
-				public new function HRESULT(ref IDirectDrawSurface4 self) Restore;
-				public new function HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawClipper param0) SetClipper;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface4 self, int32 param0, int32 param1) SetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawPalette param0) SetPalette;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out RECT param0) Unlock;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out RECT param0, ref IDirectDrawSurface4 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0) UpdateOverlayDisplay;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0, ref IDirectDrawSurface4 param1) UpdateOverlayZOrder;
-				public new function HRESULT(ref IDirectDrawSurface4 self, void** param0) GetDDInterface;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0) PageLock;
-				public new function HRESULT(ref IDirectDrawSurface4 self, uint32 param0) PageUnlock;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out DDSURFACEDESC2 param0, uint32 param1) SetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface4 self, in Guid param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
-				public new function HRESULT(ref IDirectDrawSurface4 self, in Guid param0, void* param1, out uint32 param2) GetPrivateData;
-				public new function HRESULT(ref IDirectDrawSurface4 self, in Guid param0) FreePrivateData;
-				public new function HRESULT(ref IDirectDrawSurface4 self, out uint32 param0) GetUniquenessValue;
-				public new function HRESULT(ref IDirectDrawSurface4 self) ChangeUniquenessValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawSurface4 param0) AddAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out RECT param0) AddOverlayDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out RECT param0, ref IDirectDrawSurface4 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, uint32 param1, ref IDirectDrawSurface4 param2, out RECT param3, uint32 param4) BltFast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, ref IDirectDrawSurface4 param1) DeleteAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, void* param0, LPDDENUMSURFACESCALLBACK2 param1) EnumAttachedSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK2 param2) EnumOverlayZOrders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawSurface4 param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDSCAPS2 param0, out IDirectDrawSurface4* param1) GetAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0) GetBltStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDSCAPS2 param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out IDirectDrawClipper* param0) GetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out HDC param0) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0) GetFlipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out int32 param0, out int32 param1) GetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out IDirectDrawPalette* param0) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDPIXELFORMAT param0) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDSURFACEDESC2 param0) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, ref IDirectDraw param0, out DDSURFACEDESC2 param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self) IsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out RECT param0, out DDSURFACEDESC2 param1, uint32 param2, HANDLE param3) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, HDC param0) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawClipper param0) SetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, int32 param0, int32 param1) SetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, ref IDirectDrawPalette param0) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out RECT param0) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out RECT param0, ref IDirectDrawSurface4 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0) UpdateOverlayDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0, ref IDirectDrawSurface4 param1) UpdateOverlayZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, void** param0) GetDDInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0) PageLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, uint32 param0) PageUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out DDSURFACEDESC2 param0, uint32 param1) SetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, in Guid param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, in Guid param0, void* param1, out uint32 param2) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, in Guid param0) FreePrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self, out uint32 param0) GetUniquenessValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface4 self) ChangeUniquenessValue;
 			}
 		}
 		[CRepr]
@@ -5476,52 +5476,52 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawSurface7 param0) AddAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out RECT param0) AddOverlayDirtyRect;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out RECT param0, ref IDirectDrawSurface7 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, uint32 param1, ref IDirectDrawSurface7 param2, out RECT param3, uint32 param4) BltFast;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, ref IDirectDrawSurface7 param1) DeleteAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface7 self, void* param0, LPDDENUMSURFACESCALLBACK7 param1) EnumAttachedSurfaces;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK7 param2) EnumOverlayZOrders;
-				public new function HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawSurface7 param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDSCAPS2 param0, out IDirectDrawSurface7* param1) GetAttachedSurface;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) GetBltStatus;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDSCAPS2 param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out IDirectDrawClipper* param0) GetClipper;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out HDC param0) GetDC;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) GetFlipStatus;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out int32 param0, out int32 param1) GetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out IDirectDrawPalette* param0) GetPalette;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDPIXELFORMAT param0) GetPixelFormat;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDSURFACEDESC2 param0) GetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface7 self, ref IDirectDraw param0, out DDSURFACEDESC2 param1) Initialize;
-				public new function HRESULT(ref IDirectDrawSurface7 self) IsLost;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out RECT param0, out DDSURFACEDESC2 param1, uint32 param2, HANDLE param3) Lock;
-				public new function HRESULT(ref IDirectDrawSurface7 self, HDC param0) ReleaseDC;
-				public new function HRESULT(ref IDirectDrawSurface7 self) Restore;
-				public new function HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawClipper param0) SetClipper;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
-				public new function HRESULT(ref IDirectDrawSurface7 self, int32 param0, int32 param1) SetOverlayPosition;
-				public new function HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawPalette param0) SetPalette;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out RECT param0) Unlock;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out RECT param0, ref IDirectDrawSurface7 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) UpdateOverlayDisplay;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0, ref IDirectDrawSurface7 param1) UpdateOverlayZOrder;
-				public new function HRESULT(ref IDirectDrawSurface7 self, void** param0) GetDDInterface;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) PageLock;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) PageUnlock;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out DDSURFACEDESC2 param0, uint32 param1) SetSurfaceDesc;
-				public new function HRESULT(ref IDirectDrawSurface7 self, in Guid param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
-				public new function HRESULT(ref IDirectDrawSurface7 self, in Guid param0, void* param1, out uint32 param2) GetPrivateData;
-				public new function HRESULT(ref IDirectDrawSurface7 self, in Guid param0) FreePrivateData;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetUniquenessValue;
-				public new function HRESULT(ref IDirectDrawSurface7 self) ChangeUniquenessValue;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) SetPriority;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetPriority;
-				public new function HRESULT(ref IDirectDrawSurface7 self, uint32 param0) SetLOD;
-				public new function HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetLOD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawSurface7 param0) AddAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out RECT param0) AddOverlayDirtyRect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out RECT param0, ref IDirectDrawSurface7 param1, out RECT param2, uint32 param3, out DDBLTFX param4) Blt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDBLTBATCH param0, uint32 param1, uint32 param2) BltBatch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, uint32 param1, ref IDirectDrawSurface7 param2, out RECT param3, uint32 param4) BltFast;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, ref IDirectDrawSurface7 param1) DeleteAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, void* param0, LPDDENUMSURFACESCALLBACK7 param1) EnumAttachedSurfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK7 param2) EnumOverlayZOrders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawSurface7 param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDSCAPS2 param0, out IDirectDrawSurface7* param1) GetAttachedSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) GetBltStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDSCAPS2 param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out IDirectDrawClipper* param0) GetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, out DDCOLORKEY param1) GetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out HDC param0) GetDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) GetFlipStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out int32 param0, out int32 param1) GetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out IDirectDrawPalette* param0) GetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDPIXELFORMAT param0) GetPixelFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDSURFACEDESC2 param0) GetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, ref IDirectDraw param0, out DDSURFACEDESC2 param1) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self) IsLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out RECT param0, out DDSURFACEDESC2 param1, uint32 param2, HANDLE param3) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, HDC param0) ReleaseDC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawClipper param0) SetClipper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, out DDCOLORKEY param1) SetColorKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, int32 param0, int32 param1) SetOverlayPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, ref IDirectDrawPalette param0) SetPalette;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out RECT param0) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out RECT param0, ref IDirectDrawSurface7 param1, out RECT param2, uint32 param3, out DDOVERLAYFX param4) UpdateOverlay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) UpdateOverlayDisplay;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0, ref IDirectDrawSurface7 param1) UpdateOverlayZOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, void** param0) GetDDInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) PageLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) PageUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out DDSURFACEDESC2 param0, uint32 param1) SetSurfaceDesc;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, in Guid param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, in Guid param0, void* param1, out uint32 param2) GetPrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, in Guid param0) FreePrivateData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetUniquenessValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self) ChangeUniquenessValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) SetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, uint32 param0) SetLOD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurface7 self, out uint32 param0) GetLOD;
 			}
 		}
 		[CRepr]
@@ -5537,8 +5537,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawColorControl self, out DDCOLORCONTROL param0) GetColorControls;
-				public new function HRESULT(ref IDirectDrawColorControl self, out DDCOLORCONTROL param0) SetColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawColorControl self, out DDCOLORCONTROL param0) GetColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawColorControl self, out DDCOLORCONTROL param0) SetColorControls;
 			}
 		}
 		[CRepr]
@@ -5554,8 +5554,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawGammaControl self, uint32 param0, out DDGAMMARAMP param1) GetGammaRamp;
-				public new function HRESULT(ref IDirectDrawGammaControl self, uint32 param0, out DDGAMMARAMP param1) SetGammaRamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawGammaControl self, uint32 param0, out DDGAMMARAMP param1) GetGammaRamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawGammaControl self, uint32 param0, out DDGAMMARAMP param1) SetGammaRamp;
 			}
 		}
 		[CRepr]
@@ -5573,10 +5573,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTDESC param1, out IDirectDrawVideoPort* param2, ref IUnknown param3) CreateVideoPort;
-				public new function HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTCAPS param1, void* param2, LPDDENUMVIDEOCALLBACK param3) EnumVideoPorts;
-				public new function HRESULT(ref IDDVideoPortContainer self, uint32 param0, out uint32 pcInfo, DDVIDEOPORTCONNECT* param2) GetVideoPortConnectInfo;
-				public new function HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTSTATUS param1) QueryVideoPortStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTDESC param1, out IDirectDrawVideoPort* param2, ref IUnknown param3) CreateVideoPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTCAPS param1, void* param2, LPDDENUMVIDEOCALLBACK param3) EnumVideoPorts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDVideoPortContainer self, uint32 param0, out uint32 pcInfo, DDVIDEOPORTCONNECT* param2) GetVideoPortConnectInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDVideoPortContainer self, uint32 param0, out DDVIDEOPORTSTATUS param1) QueryVideoPortStatus;
 			}
 		}
 		[CRepr]
@@ -5604,20 +5604,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawVideoPort self, ref IDirectDrawSurface param0, uint32 param1) Flip;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDPIXELFORMAT param0, uint32 param1, uint32 param2, uint32 param3, out DDVIDEOPORTBANDWIDTH param4) GetBandwidthInfo;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDCOLORCONTROL param0) GetColorControls;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out uint32 lpNumFormats, DDPIXELFORMAT* param1, uint32 param2) GetInputFormats;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDPIXELFORMAT param0, out uint32 lpNumFormats, DDPIXELFORMAT* param2, uint32 param3) GetOutputFormats;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out int32 param0) GetFieldPolarity;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out uint32 param0) GetVideoLine;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out uint32 param0) GetVideoSignalStatus;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDCOLORCONTROL param0) SetColorControls;
-				public new function HRESULT(ref IDirectDrawVideoPort self, ref IDirectDrawSurface param0, uint32 param1) SetTargetSurface;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDVIDEOPORTINFO param0) StartVideo;
-				public new function HRESULT(ref IDirectDrawVideoPort self) StopVideo;
-				public new function HRESULT(ref IDirectDrawVideoPort self, out DDVIDEOPORTINFO param0) UpdateVideo;
-				public new function HRESULT(ref IDirectDrawVideoPort self, uint32 param0, uint32 param1, uint32 param2) WaitForSync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, ref IDirectDrawSurface param0, uint32 param1) Flip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDPIXELFORMAT param0, uint32 param1, uint32 param2, uint32 param3, out DDVIDEOPORTBANDWIDTH param4) GetBandwidthInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDCOLORCONTROL param0) GetColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out uint32 lpNumFormats, DDPIXELFORMAT* param1, uint32 param2) GetInputFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDPIXELFORMAT param0, out uint32 lpNumFormats, DDPIXELFORMAT* param2, uint32 param3) GetOutputFormats;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out int32 param0) GetFieldPolarity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out uint32 param0) GetVideoLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out uint32 param0) GetVideoSignalStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDCOLORCONTROL param0) SetColorControls;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, ref IDirectDrawSurface param0, uint32 param1) SetTargetSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDVIDEOPORTINFO param0) StartVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self) StopVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, out DDVIDEOPORTINFO param0) UpdateVideo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPort self, uint32 param0, uint32 param1, uint32 param2) WaitForSync;
 			}
 		}
 		[CRepr]
@@ -5633,8 +5633,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawVideoPortNotify self, out HANDLE param0, out DDVIDEOPORTNOTIFY param1) AcquireNotification;
-				public new function HRESULT(ref IDirectDrawVideoPortNotify self, HANDLE param0) ReleaseNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPortNotify self, out HANDLE param0, out DDVIDEOPORTNOTIFY param1) AcquireNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawVideoPortNotify self, HANDLE param0) ReleaseNotification;
 			}
 		}
 		[CRepr]
@@ -5651,9 +5651,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawKernel self, out DDKERNELCAPS param0) GetCaps;
-				public new function HRESULT(ref IDirectDrawKernel self, out uint param0) GetKernelHandle;
-				public new function HRESULT(ref IDirectDrawKernel self) ReleaseKernelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawKernel self, out DDKERNELCAPS param0) GetCaps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawKernel self, out uint param0) GetKernelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawKernel self) ReleaseKernelHandle;
 			}
 		}
 		[CRepr]
@@ -5669,8 +5669,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDirectDrawSurfaceKernel self, out uint param0) GetKernelHandle;
-				public new function HRESULT(ref IDirectDrawSurfaceKernel self) ReleaseKernelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurfaceKernel self, out uint param0) GetKernelHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurfaceKernel self) ReleaseKernelHandle;
 			}
 		}
 		

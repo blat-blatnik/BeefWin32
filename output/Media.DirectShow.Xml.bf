@@ -25,9 +25,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, ref IXMLElement pxml) BuildFromXML;
-				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, out BSTR pbstrxml) SaveToXML;
-				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) BuildFromXMLFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, ref IXMLElement pxml) BuildFromXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, out BSTR pbstrxml) SaveToXML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) BuildFromXMLFile;
 			}
 		}
 		

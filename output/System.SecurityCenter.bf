@@ -77,13 +77,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductName;
-				public new function HRESULT(ref IWscProduct self, out WSC_SECURITY_PRODUCT_STATE pVal) get_ProductState;
-				public new function HRESULT(ref IWscProduct self, out WSC_SECURITY_SIGNATURE_STATUS pVal) get_SignatureStatus;
-				public new function HRESULT(ref IWscProduct self, BSTR* pVal) get_RemediationPath;
-				public new function HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductStateTimestamp;
-				public new function HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductGuid;
-				public new function HRESULT(ref IWscProduct self, out BOOL pVal) get_ProductIsDefault;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out WSC_SECURITY_PRODUCT_STATE pVal) get_ProductState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out WSC_SECURITY_SIGNATURE_STATUS pVal) get_SignatureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_RemediationPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductStateTimestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, BSTR* pVal) get_ProductGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct self, out BOOL pVal) get_ProductIsDefault;
 			}
 		}
 		[CRepr]
@@ -103,12 +103,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWscProduct.VTable
 			{
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusScanSubstatus;
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusSettingsSubstatus;
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusProtectionUpdateSubstatus;
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallDomainProfileSubstatus;
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallPrivateProfileSubstatus;
-				public new function HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallPublicProfileSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusScanSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusSettingsSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_AntivirusProtectionUpdateSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallDomainProfileSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallPrivateProfileSubstatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct2 self, out WSC_SECURITY_PRODUCT_SUBSTATUS peStatus) get_FirewallPublicProfileSubstatus;
 			}
 		}
 		[CRepr]
@@ -123,7 +123,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWscProduct2.VTable
 			{
-				public new function HRESULT(ref IWscProduct3 self, out uint32 pdwDays) get_AntivirusDaysUntilExpired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWscProduct3 self, out uint32 pdwDays) get_AntivirusDaysUntilExpired;
 			}
 		}
 		[CRepr]
@@ -140,9 +140,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWSCProductList self, WSC_SECURITY_PROVIDER provider) Initialize;
-				public new function HRESULT(ref IWSCProductList self, out int32 pVal) get_Count;
-				public new function HRESULT(ref IWSCProductList self, uint32 index, IWscProduct** pVal) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, WSC_SECURITY_PROVIDER provider) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCProductList self, uint32 index, IWscProduct** pVal) get_Item;
 			}
 		}
 		[CRepr]
@@ -157,7 +157,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWSCDefaultProduct self, SECURITY_PRODUCT_TYPE eType, BSTR pGuid) SetDefaultProduct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCDefaultProduct self, SECURITY_PRODUCT_TYPE eType, BSTR pGuid) SetDefaultProduct;
 			}
 		}
 		

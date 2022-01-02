@@ -70,7 +70,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISequentialStream.VTable
 			{
-				public new function HRESULT(ref IXpsPrintJobStream self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsPrintJobStream self) Close;
 			}
 		}
 		[CRepr]
@@ -86,8 +86,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IXpsPrintJob self) Cancel;
-				public new function HRESULT(ref IXpsPrintJob self, out XPS_JOB_STATUS jobStatus) GetJobStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsPrintJob self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsPrintJob self, out XPS_JOB_STATUS jobStatus) GetJobStatus;
 			}
 		}
 		[CRepr]
@@ -104,9 +104,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintDocumentPackageTarget self, out uint32 targetCount, Guid** targetTypes) GetPackageTargetTypes;
-				public new function HRESULT(ref IPrintDocumentPackageTarget self, in Guid guidTargetType, in Guid riid, void** ppvTarget) GetPackageTarget;
-				public new function HRESULT(ref IPrintDocumentPackageTarget self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDocumentPackageTarget self, out uint32 targetCount, Guid** targetTypes) GetPackageTargetTypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDocumentPackageTarget self, in Guid guidTargetType, in Guid riid, void** ppvTarget) GetPackageTarget;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDocumentPackageTarget self) Cancel;
 			}
 		}
 		[CRepr]
@@ -121,7 +121,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPrintDocumentPackageStatusEvent self, ref PrintDocumentPackageStatus packageStatus) PackageStatusUpdated;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDocumentPackageStatusEvent self, ref PrintDocumentPackageStatus packageStatus) PackageStatusUpdated;
 			}
 		}
 		[CRepr]
@@ -136,7 +136,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPrintDocumentPackageTargetFactory self, PWSTR printerName, PWSTR jobName, ref IStream jobOutputStream, ref IStream jobPrintTicketStream, out IPrintDocumentPackageTarget* docPackageTarget) CreateDocumentPackageTargetForPrintJob;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDocumentPackageTargetFactory self, PWSTR printerName, PWSTR jobName, ref IStream jobOutputStream, ref IStream jobPrintTicketStream, out IPrintDocumentPackageTarget* docPackageTarget) CreateDocumentPackageTargetForPrintJob;
 			}
 		}
 		

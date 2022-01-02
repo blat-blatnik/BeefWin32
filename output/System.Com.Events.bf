@@ -55,12 +55,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out int32 errorIndex, out IUnknown* ppInterface) Query;
-				public new function HRESULT(ref IEventSystem self, BSTR ProgID, ref IUnknown pInterface) Store;
-				public new function HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out int32 errorIndex) Remove;
-				public new function HRESULT(ref IEventSystem self, out BSTR pbstrEventClassID) get_EventObjectChangeEventClassID;
-				public new function HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out IUnknown* ppInterface) QueryS;
-				public new function HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria) RemoveS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out int32 errorIndex, out IUnknown* ppInterface) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, BSTR ProgID, ref IUnknown pInterface) Store;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out int32 errorIndex) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, out BSTR pbstrEventClassID) get_EventObjectChangeEventClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria, out IUnknown* ppInterface) QueryS;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSystem self, BSTR progID, BSTR queryCriteria) RemoveS;
 			}
 		}
 		[CRepr]
@@ -88,20 +88,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherID) get_PublisherID;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPublisherID) put_PublisherID;
-				public new function HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherName) get_PublisherName;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPublisherName) put_PublisherName;
-				public new function HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherType) get_PublisherType;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPublisherType) put_PublisherType;
-				public new function HRESULT(ref IEventPublisher self, out BSTR pbstrOwnerSID) get_OwnerSID;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrOwnerSID) put_OwnerSID;
-				public new function HRESULT(ref IEventPublisher self, out BSTR pbstrDescription) get_Description;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPropertyName, out VARIANT propertyValue) GetDefaultProperty;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutDefaultProperty;
-				public new function HRESULT(ref IEventPublisher self, BSTR bstrPropertyName) RemoveDefaultProperty;
-				public new function HRESULT(ref IEventPublisher self, out IEventObjectCollection* collection) GetDefaultPropertyCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherID) get_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPublisherID) put_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherName) get_PublisherName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPublisherName) put_PublisherName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out BSTR pbstrPublisherType) get_PublisherType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPublisherType) put_PublisherType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out BSTR pbstrOwnerSID) get_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrOwnerSID) put_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out BSTR pbstrDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPropertyName, out VARIANT propertyValue) GetDefaultProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutDefaultProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, BSTR bstrPropertyName) RemoveDefaultProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventPublisher self, out IEventObjectCollection* collection) GetDefaultPropertyCollection;
 			}
 		}
 		[CRepr]
@@ -129,20 +129,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrEventClassID) get_EventClassID;
-				public new function HRESULT(ref IEventClass self, BSTR bstrEventClassID) put_EventClassID;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrEventClassName) get_EventClassName;
-				public new function HRESULT(ref IEventClass self, BSTR bstrEventClassName) put_EventClassName;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrOwnerSID) get_OwnerSID;
-				public new function HRESULT(ref IEventClass self, BSTR bstrOwnerSID) put_OwnerSID;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrFiringInterfaceID) get_FiringInterfaceID;
-				public new function HRESULT(ref IEventClass self, BSTR bstrFiringInterfaceID) put_FiringInterfaceID;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrDescription) get_Description;
-				public new function HRESULT(ref IEventClass self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrCustomConfigCLSID) get_CustomConfigCLSID;
-				public new function HRESULT(ref IEventClass self, BSTR bstrCustomConfigCLSID) put_CustomConfigCLSID;
-				public new function HRESULT(ref IEventClass self, out BSTR pbstrTypeLib) get_TypeLib;
-				public new function HRESULT(ref IEventClass self, BSTR bstrTypeLib) put_TypeLib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrEventClassID) get_EventClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrEventClassID) put_EventClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrEventClassName) get_EventClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrEventClassName) put_EventClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrOwnerSID) get_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrOwnerSID) put_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrFiringInterfaceID) get_FiringInterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrFiringInterfaceID) put_FiringInterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrCustomConfigCLSID) get_CustomConfigCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrCustomConfigCLSID) put_CustomConfigCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, out BSTR pbstrTypeLib) get_TypeLib;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass self, BSTR bstrTypeLib) put_TypeLib;
 			}
 		}
 		[CRepr]
@@ -164,14 +164,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEventClass.VTable
 			{
-				public new function HRESULT(ref IEventClass2 self, out BSTR pbstrPublisherID) get_PublisherID;
-				public new function HRESULT(ref IEventClass2 self, BSTR bstrPublisherID) put_PublisherID;
-				public new function HRESULT(ref IEventClass2 self, out BSTR pbstrPubFilCLSID) get_MultiInterfacePublisherFilterCLSID;
-				public new function HRESULT(ref IEventClass2 self, BSTR bstrPubFilCLSID) put_MultiInterfacePublisherFilterCLSID;
-				public new function HRESULT(ref IEventClass2 self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
-				public new function HRESULT(ref IEventClass2 self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
-				public new function HRESULT(ref IEventClass2 self, out BOOL pfFireInParallel) get_FireInParallel;
-				public new function HRESULT(ref IEventClass2 self, BOOL fFireInParallel) put_FireInParallel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, out BSTR pbstrPublisherID) get_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, BSTR bstrPublisherID) put_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, out BSTR pbstrPubFilCLSID) get_MultiInterfacePublisherFilterCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, BSTR bstrPubFilCLSID) put_MultiInterfacePublisherFilterCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, out BOOL pfFireInParallel) get_FireInParallel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventClass2 self, BOOL fFireInParallel) put_FireInParallel;
 			}
 		}
 		[CRepr]
@@ -219,40 +219,40 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriptionID) get_SubscriptionID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrSubscriptionID) put_SubscriptionID;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriptionName) get_SubscriptionName;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrSubscriptionName) put_SubscriptionName;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrPublisherID) get_PublisherID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPublisherID) put_PublisherID;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrEventClassID) get_EventClassID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrEventClassID) put_EventClassID;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrMethodName) get_MethodName;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrMethodName) put_MethodName;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriberCLSID) get_SubscriberCLSID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrSubscriberCLSID) put_SubscriberCLSID;
-				public new function HRESULT(ref IEventSubscription self, out IUnknown* ppSubscriberInterface) get_SubscriberInterface;
-				public new function HRESULT(ref IEventSubscription self, ref IUnknown pSubscriberInterface) put_SubscriberInterface;
-				public new function HRESULT(ref IEventSubscription self, out BOOL pfPerUser) get_PerUser;
-				public new function HRESULT(ref IEventSubscription self, BOOL fPerUser) put_PerUser;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrOwnerSID) get_OwnerSID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrOwnerSID) put_OwnerSID;
-				public new function HRESULT(ref IEventSubscription self, out BOOL pfEnabled) get_Enabled;
-				public new function HRESULT(ref IEventSubscription self, BOOL fEnabled) put_Enabled;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrDescription) get_Description;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrMachineName) get_MachineName;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrMachineName) put_MachineName;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, out VARIANT propertyValue) GetPublisherProperty;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutPublisherProperty;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName) RemovePublisherProperty;
-				public new function HRESULT(ref IEventSubscription self, out IEventObjectCollection* collection) GetPublisherPropertyCollection;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, out VARIANT propertyValue) GetSubscriberProperty;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutSubscriberProperty;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrPropertyName) RemoveSubscriberProperty;
-				public new function HRESULT(ref IEventSubscription self, out IEventObjectCollection* collection) GetSubscriberPropertyCollection;
-				public new function HRESULT(ref IEventSubscription self, out BSTR pbstrInterfaceID) get_InterfaceID;
-				public new function HRESULT(ref IEventSubscription self, BSTR bstrInterfaceID) put_InterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriptionID) get_SubscriptionID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrSubscriptionID) put_SubscriptionID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriptionName) get_SubscriptionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrSubscriptionName) put_SubscriptionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrPublisherID) get_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPublisherID) put_PublisherID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrEventClassID) get_EventClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrEventClassID) put_EventClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrMethodName) get_MethodName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrMethodName) put_MethodName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrSubscriberCLSID) get_SubscriberCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrSubscriberCLSID) put_SubscriberCLSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out IUnknown* ppSubscriberInterface) get_SubscriberInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, ref IUnknown pSubscriberInterface) put_SubscriberInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BOOL pfPerUser) get_PerUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BOOL fPerUser) put_PerUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrOwnerSID) get_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrOwnerSID) put_OwnerSID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BOOL pfEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BOOL fEnabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrDescription) get_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrDescription) put_Description;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrMachineName) get_MachineName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrMachineName) put_MachineName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, out VARIANT propertyValue) GetPublisherProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutPublisherProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName) RemovePublisherProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out IEventObjectCollection* collection) GetPublisherPropertyCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, out VARIANT propertyValue) GetSubscriberProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName, ref VARIANT propertyValue) PutSubscriberProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrPropertyName) RemoveSubscriberProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out IEventObjectCollection* collection) GetSubscriberPropertyCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, out BSTR pbstrInterfaceID) get_InterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventSubscription self, BSTR bstrInterfaceID) put_InterfaceID;
 			}
 		}
 		[CRepr]
@@ -267,7 +267,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IFiringControl self, ref IEventSubscription subscription) FireSubscription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFiringControl self, ref IEventSubscription subscription) FireSubscription;
 			}
 		}
 		[CRepr]
@@ -283,8 +283,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPublisherFilter self, BSTR methodName, ref IDispatch dispUserDefined) Initialize;
-				public new function HRESULT(ref IPublisherFilter self, BSTR methodName, ref IFiringControl firingControl) PrepareToFire;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPublisherFilter self, BSTR methodName, ref IDispatch dispUserDefined) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPublisherFilter self, BSTR methodName, ref IFiringControl firingControl) PrepareToFire;
 			}
 		}
 		[CRepr]
@@ -300,8 +300,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMultiInterfacePublisherFilter self, ref IMultiInterfaceEventControl pEIC) Initialize;
-				public new function HRESULT(ref IMultiInterfacePublisherFilter self, in Guid iid, BSTR methodName, ref IFiringControl firingControl) PrepareToFire;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfacePublisherFilter self, ref IMultiInterfaceEventControl pEIC) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfacePublisherFilter self, in Guid iid, BSTR methodName, ref IFiringControl firingControl) PrepareToFire;
 			}
 		}
 		[CRepr]
@@ -318,9 +318,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrSubscriptionID) ChangedSubscription;
-				public new function HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrEventClassID) ChangedEventClass;
-				public new function HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrPublisherID) ChangedPublisher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrSubscriptionID) ChangedSubscription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrEventClassID) ChangedEventClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectChange self, EOC_ChangeType changeType, BSTR bstrPublisherID) ChangedPublisher;
 			}
 		}
 		[CRepr]
@@ -336,8 +336,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEventObjectChange2 self, ref COMEVENTSYSCHANGEINFO pInfo) ChangedSubscription;
-				public new function HRESULT(ref IEventObjectChange2 self, ref COMEVENTSYSCHANGEINFO pInfo) ChangedEventClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectChange2 self, ref COMEVENTSYSCHANGEINFO pInfo) ChangedSubscription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectChange2 self, ref COMEVENTSYSCHANGEINFO pInfo) ChangedEventClass;
 			}
 		}
 		[CRepr]
@@ -355,10 +355,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumEventObject self, out IEnumEventObject* ppInterface) Clone;
-				public new function HRESULT(ref IEnumEventObject self, uint32 cReqElem, IUnknown** ppInterface, out uint32 cRetElem) Next;
-				public new function HRESULT(ref IEnumEventObject self) Reset;
-				public new function HRESULT(ref IEnumEventObject self, uint32 cSkipElem) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEventObject self, out IEnumEventObject* ppInterface) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEventObject self, uint32 cReqElem, IUnknown** ppInterface, out uint32 cRetElem) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEventObject self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumEventObject self, uint32 cSkipElem) Skip;
 			}
 		}
 		[CRepr]
@@ -378,12 +378,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventObjectCollection self, out IUnknown* ppUnkEnum) get__NewEnum;
-				public new function HRESULT(ref IEventObjectCollection self, BSTR objectID, out VARIANT pItem) get_Item;
-				public new function HRESULT(ref IEventObjectCollection self, out IEnumEventObject* ppEnum) get_NewEnum;
-				public new function HRESULT(ref IEventObjectCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref IEventObjectCollection self, ref VARIANT item, BSTR objectID) Add;
-				public new function HRESULT(ref IEventObjectCollection self, BSTR objectID) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, out IUnknown* ppUnkEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, BSTR objectID, out VARIANT pItem) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, out IEnumEventObject* ppEnum) get_NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, ref VARIANT item, BSTR objectID) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventObjectCollection self, BSTR objectID) Remove;
 			}
 		}
 		[CRepr]
@@ -401,10 +401,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventProperty self, out BSTR propertyName) get_Name;
-				public new function HRESULT(ref IEventProperty self, BSTR propertyName) put_Name;
-				public new function HRESULT(ref IEventProperty self, out VARIANT propertyValue) get_Value;
-				public new function HRESULT(ref IEventProperty self, ref VARIANT propertyValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventProperty self, out BSTR propertyName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventProperty self, BSTR propertyName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventProperty self, out VARIANT propertyValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventProperty self, ref VARIANT propertyValue) put_Value;
 			}
 		}
 		[CRepr]
@@ -423,11 +423,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEventControl self, BSTR methodName, ref IPublisherFilter pPublisherFilter) SetPublisherFilter;
-				public new function HRESULT(ref IEventControl self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
-				public new function HRESULT(ref IEventControl self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
-				public new function HRESULT(ref IEventControl self, BSTR methodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) GetSubscriptions;
-				public new function HRESULT(ref IEventControl self, BSTR methodName, BSTR criteria, out int32 errorIndex) SetDefaultQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventControl self, BSTR methodName, ref IPublisherFilter pPublisherFilter) SetPublisherFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventControl self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventControl self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventControl self, BSTR methodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) GetSubscriptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEventControl self, BSTR methodName, BSTR criteria, out int32 errorIndex) SetDefaultQuery;
 			}
 		}
 		[CRepr]
@@ -448,13 +448,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMultiInterfaceEventControl self, ref IMultiInterfacePublisherFilter classFilter) SetMultiInterfacePublisherFilter;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, in Guid eventIID, BSTR bstrMethodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) GetSubscriptions;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, in Guid eventIID, BSTR bstrMethodName, BSTR bstrCriteria, out int32 errorIndex) SetDefaultQuery;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, out BOOL pfFireInParallel) get_FireInParallel;
-				public new function HRESULT(ref IMultiInterfaceEventControl self, BOOL fFireInParallel) put_FireInParallel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, ref IMultiInterfacePublisherFilter classFilter) SetMultiInterfacePublisherFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, in Guid eventIID, BSTR bstrMethodName, BSTR optionalCriteria, ref int32 optionalErrorIndex, out IEventObjectCollection* ppCollection) GetSubscriptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, in Guid eventIID, BSTR bstrMethodName, BSTR bstrCriteria, out int32 errorIndex) SetDefaultQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, out BOOL pfAllowInprocActivation) get_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, BOOL fAllowInprocActivation) put_AllowInprocActivation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, out BOOL pfFireInParallel) get_FireInParallel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiInterfaceEventControl self, BOOL fFireInParallel) put_FireInParallel;
 			}
 		}
 		[CRepr]

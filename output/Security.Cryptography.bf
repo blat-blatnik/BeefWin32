@@ -5677,18 +5677,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ProviderName;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ProviderName;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out int32 pVal) get_Length;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, int32 lVal) put_Length;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out int16 pVal) get_Existing;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, int16 bVal) put_Existing;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ContainerName;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ContainerName;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_HashAlgorithm;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_HashAlgorithm;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out VARIANT pVal) get_ExistingCACertificate;
-				public new function HRESULT(ref ICertSrvSetupKeyInformation self, VARIANT varVal) put_ExistingCACertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out int32 pVal) get_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, int32 lVal) put_Length;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out int16 pVal) get_Existing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, int16 bVal) put_Existing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ContainerName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_HashAlgorithm;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, out VARIANT pVal) get_ExistingCACertificate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformation self, VARIANT varVal) put_ExistingCACertificate;
 			}
 		}
 		[CRepr]
@@ -5706,10 +5706,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, out IUnknown* ppVal) get__NewEnum;
-				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, int32 Index, out VARIANT pVal) get_Item;
-				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, out int32 pVal) get_Count;
-				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, ref ICertSrvSetupKeyInformation pIKeyInformation) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformationCollection self, out IUnknown* ppVal) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformationCollection self, int32 Index, out VARIANT pVal) get_Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformationCollection self, out int32 pVal) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetupKeyInformationCollection self, ref ICertSrvSetupKeyInformation pIKeyInformation) Add;
 			}
 		}
 		[CRepr]
@@ -5743,26 +5743,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertSrvSetup self, out int32 pVal) get_CAErrorId;
-				public new function HRESULT(ref ICertSrvSetup self, out BSTR pVal) get_CAErrorString;
-				public new function HRESULT(ref ICertSrvSetup self, int16 bServer, int16 bClient) InitializeDefaults;
-				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out VARIANT pPropertyValue) GetCASetupProperty;
-				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, ref VARIANT pPropertyValue) SetCASetupProperty;
-				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out int16 pbEditable) IsPropertyEditable;
-				public new function HRESULT(ref ICertSrvSetup self, out VARIANT pCATypes) GetSupportedCATypes;
-				public new function HRESULT(ref ICertSrvSetup self, out VARIANT pVal) GetProviderNameList;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetHashAlgorithmList;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetPrivateKeyContainerList;
-				public new function HRESULT(ref ICertSrvSetup self, out ICertSrvSetupKeyInformationCollection* ppVal) GetExistingCACertificates;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) CAImportPFX;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetParentCAInformation;
-				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetWebCAInformation;
-				public new function HRESULT(ref ICertSrvSetup self) Install;
-				public new function HRESULT(ref ICertSrvSetup self, int16 bClientOnly) PreUnInstall;
-				public new function HRESULT(ref ICertSrvSetup self) PostUnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, out int32 pVal) get_CAErrorId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, out BSTR pVal) get_CAErrorString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, int16 bServer, int16 bClient) InitializeDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out VARIANT pPropertyValue) GetCASetupProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, ref VARIANT pPropertyValue) SetCASetupProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out int16 pbEditable) IsPropertyEditable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, out VARIANT pCATypes) GetSupportedCATypes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, out VARIANT pVal) GetProviderNameList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetHashAlgorithmList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetPrivateKeyContainerList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, out ICertSrvSetupKeyInformationCollection* ppVal) GetExistingCACertificates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) CAImportPFX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetParentCAInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetWebCAInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self, int16 bClientOnly) PreUnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertSrvSetup self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5788,18 +5788,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMSCEPSetup self, out int32 pVal) get_MSCEPErrorId;
-				public new function HRESULT(ref IMSCEPSetup self, out BSTR pVal) get_MSCEPErrorString;
-				public new function HRESULT(ref IMSCEPSetup self) InitializeDefaults;
-				public new function HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, out VARIANT pVal) GetMSCEPSetupProperty;
-				public new function HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetMSCEPSetupProperty;
-				public new function HRESULT(ref IMSCEPSetup self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
-				public new function HRESULT(ref IMSCEPSetup self, out int16 pbEmpty) IsMSCEPStoreEmpty;
-				public new function HRESULT(ref IMSCEPSetup self, int16 bExchange, out VARIANT pVal) GetProviderNameList;
-				public new function HRESULT(ref IMSCEPSetup self, int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
-				public new function HRESULT(ref IMSCEPSetup self) Install;
-				public new function HRESULT(ref IMSCEPSetup self) PreUnInstall;
-				public new function HRESULT(ref IMSCEPSetup self) PostUnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, out int32 pVal) get_MSCEPErrorId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, out BSTR pVal) get_MSCEPErrorString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self) InitializeDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, out VARIANT pVal) GetMSCEPSetupProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetMSCEPSetupProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, out int16 pbEmpty) IsMSCEPStoreEmpty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, int16 bExchange, out VARIANT pVal) GetProviderNameList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self, int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self) PreUnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSCEPSetup self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5820,13 +5820,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, out BSTR pVal) get_ErrorString;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self) InitializeInstallDefaults;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self) Install;
-				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, ref VARIANT pCAConfig, ref VARIANT pAuthentication) UnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self, out BSTR pVal) get_ErrorString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self) InitializeInstallDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentServerSetup self, ref VARIANT pCAConfig, ref VARIANT pAuthentication) UnInstall;
 			}
 		}
 		[CRepr]
@@ -5846,12 +5846,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, out BSTR pVal) get_ErrorString;
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) InitializeInstallDefaults;
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) Install;
-				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, ref VARIANT pAuthKeyBasedRenewal) UnInstall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, out BSTR pVal) get_ErrorString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) InitializeInstallDefaults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) Install;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, ref VARIANT pAuthKeyBasedRenewal) UnInstall;
 			}
 		}
 		

@@ -137,9 +137,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaBuffer self, uint32 cbLength) SetLength;
-				public new function HRESULT(ref IMediaBuffer self, out uint32 pcbMaxLength) GetMaxLength;
-				public new function HRESULT(ref IMediaBuffer self, uint8** ppBuffer, uint32* pcbLength) GetBufferAndLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaBuffer self, uint32 cbLength) SetLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaBuffer self, out uint32 pcbMaxLength) GetMaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaBuffer self, uint8** ppBuffer, uint32* pcbLength) GetBufferAndLength;
 			}
 		}
 		[CRepr]
@@ -174,27 +174,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaObject self, out uint32 pcInputStreams, out uint32 pcOutputStreams) GetStreamCount;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 pdwFlags) GetInputStreamInfo;
-				public new function HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out uint32 pdwFlags) GetOutputStreamInfo;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetInputType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetOutputType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetInputType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetOutputType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out DMO_MEDIA_TYPE pmt) GetInputCurrentType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out DMO_MEDIA_TYPE pmt) GetOutputCurrentType;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 pcbSize, out uint32 pcbMaxLookahead, out uint32 pcbAlignment) GetInputSizeInfo;
-				public new function HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out uint32 pcbSize, out uint32 pcbAlignment) GetOutputSizeInfo;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out int64 prtMaxLatency) GetInputMaxLatency;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, int64 rtMaxLatency) SetInputMaxLatency;
-				public new function HRESULT(ref IMediaObject self) Flush;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex) Discontinuity;
-				public new function HRESULT(ref IMediaObject self) AllocateStreamingResources;
-				public new function HRESULT(ref IMediaObject self) FreeStreamingResources;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 dwFlags) GetInputStatus;
-				public new function HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, ref IMediaBuffer pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) ProcessInput;
-				public new function HRESULT(ref IMediaObject self, uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, out uint32 pdwStatus) ProcessOutput;
-				public new function HRESULT(ref IMediaObject self, int32 bLock) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, out uint32 pcInputStreams, out uint32 pcOutputStreams) GetStreamCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 pdwFlags) GetInputStreamInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out uint32 pdwFlags) GetOutputStreamInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetInputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetOutputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetInputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetOutputType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out DMO_MEDIA_TYPE pmt) GetInputCurrentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out DMO_MEDIA_TYPE pmt) GetOutputCurrentType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 pcbSize, out uint32 pcbMaxLookahead, out uint32 pcbAlignment) GetInputSizeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwOutputStreamIndex, out uint32 pcbSize, out uint32 pcbAlignment) GetOutputSizeInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out int64 prtMaxLatency) GetInputMaxLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, int64 rtMaxLatency) SetInputMaxLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex) Discontinuity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self) AllocateStreamingResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self) FreeStreamingResources;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, out uint32 dwFlags) GetInputStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwInputStreamIndex, ref IMediaBuffer pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) ProcessInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, out uint32 pdwStatus) ProcessOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObject self, int32 bLock) Lock;
 			}
 		}
 		[CRepr]
@@ -212,10 +212,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumDMO self, uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, out uint32 pcItemsFetched) Next;
-				public new function HRESULT(ref IEnumDMO self, uint32 cItemsToSkip) Skip;
-				public new function HRESULT(ref IEnumDMO self) Reset;
-				public new function HRESULT(ref IEnumDMO self, out IEnumDMO* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDMO self, uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, out uint32 pcItemsFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDMO self, uint32 cItemsToSkip) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDMO self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumDMO self, out IEnumDMO* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -232,9 +232,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMediaObjectInPlace self, uint32 ulSize, out uint8 pData, int64 refTimeStart, uint32 dwFlags) Process;
-				public new function HRESULT(ref IMediaObjectInPlace self, out IMediaObjectInPlace* ppMediaObject) Clone;
-				public new function HRESULT(ref IMediaObjectInPlace self, out int64 pLatencyTime) GetLatency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObjectInPlace self, uint32 ulSize, out uint8 pData, int64 refTimeStart, uint32 dwFlags) Process;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObjectInPlace self, out IMediaObjectInPlace* ppMediaObject) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaObjectInPlace self, out int64 pLatencyTime) GetLatency;
 			}
 		}
 		[CRepr]
@@ -251,9 +251,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDMOQualityControl self, int64 rtNow) SetNow;
-				public new function HRESULT(ref IDMOQualityControl self, uint32 dwFlags) SetStatus;
-				public new function HRESULT(ref IDMOQualityControl self, out uint32 pdwFlags) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOQualityControl self, int64 rtNow) SetNow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOQualityControl self, uint32 dwFlags) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOQualityControl self, out uint32 pdwFlags) GetStatus;
 			}
 		}
 		[CRepr]
@@ -271,10 +271,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwRequestedCapabilities) QueryOperationModePreferences;
-				public new function HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) SetOperationMode;
-				public new function HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwEnabledFeatures) GetCurrentOperationMode;
-				public new function HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwRequestedFeatures) GetCurrentSampleRequirements;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwRequestedCapabilities) QueryOperationModePreferences;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) SetOperationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwEnabledFeatures) GetCurrentOperationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwRequestedFeatures) GetCurrentSampleRequirements;
 			}
 		}
 		

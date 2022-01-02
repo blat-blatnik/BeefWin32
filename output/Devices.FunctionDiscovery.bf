@@ -108,9 +108,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscoveryNotification self, QueryUpdateAction enumQueryUpdateAction, uint64 fdqcQueryContext, ref IFunctionInstance pIFunctionInstance) OnUpdate;
-				public new function HRESULT(ref IFunctionDiscoveryNotification self, HRESULT hr, uint64 fdqcQueryContext, PWSTR pszProvider) OnError;
-				public new function HRESULT(ref IFunctionDiscoveryNotification self, uint32 dwEventID, uint64 fdqcQueryContext, PWSTR pszProvider) OnEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryNotification self, QueryUpdateAction enumQueryUpdateAction, uint64 fdqcQueryContext, ref IFunctionInstance pIFunctionInstance) OnUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryNotification self, HRESULT hr, uint64 fdqcQueryContext, PWSTR pszProvider) OnError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryNotification self, uint32 dwEventID, uint64 fdqcQueryContext, PWSTR pszProvider) OnEvent;
 			}
 		}
 		[CRepr]
@@ -130,12 +130,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscovery self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) GetInstanceCollection;
-				public new function HRESULT(ref IFunctionDiscovery self, PWSTR pszFunctionInstanceIdentity, out IFunctionInstance* ppIFunctionInstance) GetInstance;
-				public new function HRESULT(ref IFunctionDiscovery self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, out uint64 pfdqcQueryContext, out IFunctionInstanceCollectionQuery* ppIFunctionInstanceCollectionQuery) CreateInstanceCollectionQuery;
-				public new function HRESULT(ref IFunctionDiscovery self, PWSTR pszFunctionInstanceIdentity, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, out uint64 pfdqcQueryContext, out IFunctionInstanceQuery* ppIFunctionInstanceQuery) CreateInstanceQuery;
-				public new function HRESULT(ref IFunctionDiscovery self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity, out IFunctionInstance* ppIFunctionInstance) AddInstance;
-				public new function HRESULT(ref IFunctionDiscovery self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity) RemoveInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) GetInstanceCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, PWSTR pszFunctionInstanceIdentity, out IFunctionInstance* ppIFunctionInstance) GetInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, out uint64 pfdqcQueryContext, out IFunctionInstanceCollectionQuery* ppIFunctionInstanceCollectionQuery) CreateInstanceCollectionQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, PWSTR pszFunctionInstanceIdentity, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, out uint64 pfdqcQueryContext, out IFunctionInstanceQuery* ppIFunctionInstanceQuery) CreateInstanceQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity, out IFunctionInstance* ppIFunctionInstance) AddInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscovery self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity) RemoveInstance;
 			}
 		}
 		[CRepr]
@@ -153,10 +153,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{
-				public new function HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemIdentity) GetID;
-				public new function HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemProviderInstanceIdentity) GetProviderInstanceID;
-				public new function HRESULT(ref IFunctionInstance self, uint32 dwStgAccess, out IPropertyStore* ppIPropertyStore) OpenPropertyStore;
-				public new function HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemCategory, out uint16* ppszCoMemSubCategory) GetCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemIdentity) GetID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemProviderInstanceIdentity) GetProviderInstanceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstance self, uint32 dwStgAccess, out IPropertyStore* ppIPropertyStore) OpenPropertyStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstance self, out uint16* ppszCoMemCategory, out uint16* ppszCoMemSubCategory) GetCategory;
 			}
 		}
 		[CRepr]
@@ -177,13 +177,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionInstanceCollection self, out uint32 pdwCount) GetCount;
-				public new function HRESULT(ref IFunctionInstanceCollection self, PWSTR pszInstanceIdentity, out uint32 pdwIndex, out IFunctionInstance* ppIFunctionInstance) Get;
-				public new function HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex, out IFunctionInstance* ppIFunctionInstance) Item;
-				public new function HRESULT(ref IFunctionInstanceCollection self, ref IFunctionInstance pIFunctionInstance) Add;
-				public new function HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex, out IFunctionInstance* ppIFunctionInstance) Remove;
-				public new function HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex) Delete;
-				public new function HRESULT(ref IFunctionInstanceCollection self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, out uint32 pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, PWSTR pszInstanceIdentity, out uint32 pdwIndex, out IFunctionInstance* ppIFunctionInstance) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex, out IFunctionInstance* ppIFunctionInstance) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, ref IFunctionInstance pIFunctionInstance) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex, out IFunctionInstance* ppIFunctionInstance) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self, uint32 dwIndex) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollection self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -204,13 +204,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPropertyStoreCollection self, out uint32 pdwCount) GetCount;
-				public new function HRESULT(ref IPropertyStoreCollection self, PWSTR pszInstanceIdentity, out uint32 pdwIndex, out IPropertyStore* ppIPropertyStore) Get;
-				public new function HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex, out IPropertyStore* ppIPropertyStore) Item;
-				public new function HRESULT(ref IPropertyStoreCollection self, ref IPropertyStore pIPropertyStore) Add;
-				public new function HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex, out IPropertyStore* pIPropertyStore) Remove;
-				public new function HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex) Delete;
-				public new function HRESULT(ref IPropertyStoreCollection self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, out uint32 pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, PWSTR pszInstanceIdentity, out uint32 pdwIndex, out IPropertyStore* ppIPropertyStore) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex, out IPropertyStore* ppIPropertyStore) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, ref IPropertyStore pIPropertyStore) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex, out IPropertyStore* pIPropertyStore) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self, uint32 dwIndex) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyStoreCollection self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -225,7 +225,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionInstanceQuery self, out IFunctionInstance* ppIFunctionInstance) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceQuery self, out IFunctionInstance* ppIFunctionInstance) Execute;
 			}
 		}
 		[CRepr]
@@ -242,9 +242,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionInstanceCollectionQuery self, PWSTR pszConstraintName, PWSTR pszConstraintValue) AddQueryConstraint;
-				public new function HRESULT(ref IFunctionInstanceCollectionQuery self, in PROPERTYKEY Key, in PROPVARIANT pv, PropertyConstraint enumPropertyConstraint) AddPropertyConstraint;
-				public new function HRESULT(ref IFunctionInstanceCollectionQuery self, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) Execute;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollectionQuery self, PWSTR pszConstraintName, PWSTR pszConstraintValue) AddQueryConstraint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollectionQuery self, in PROPERTYKEY Key, in PROPVARIANT pv, PropertyConstraint enumPropertyConstraint) AddPropertyConstraint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionInstanceCollectionQuery self, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) Execute;
 			}
 		}
 		[CRepr]
@@ -266,14 +266,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionDiscoveryProviderFactory pIFunctionDiscoveryProviderFactory, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, uint32 lcidUserDefault, out uint32 pdwStgAccessCapabilities) Initialize;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionDiscoveryProviderQuery pIFunctionDiscoveryProviderQuery, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) Query;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self) EndQuery;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess) InstancePropertyStoreValidateAccess;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess, out IPropertyStore* ppIPropertyStore) InstancePropertyStoreOpen;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext) InstancePropertyStoreFlush;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in Guid guidService, in Guid riid, out IUnknown* ppIUnknown) InstanceQueryService;
-				public new function HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext) InstanceReleased;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionDiscoveryProviderFactory pIFunctionDiscoveryProviderFactory, ref IFunctionDiscoveryNotification pIFunctionDiscoveryNotification, uint32 lcidUserDefault, out uint32 pdwStgAccessCapabilities) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionDiscoveryProviderQuery pIFunctionDiscoveryProviderQuery, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) Query;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self) EndQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess) InstancePropertyStoreValidateAccess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess, out IPropertyStore* ppIPropertyStore) InstancePropertyStoreOpen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext) InstancePropertyStoreFlush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in Guid guidService, in Guid riid, out IUnknown* ppIUnknown) InstanceQueryService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProvider self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext) InstanceReleased;
 			}
 		}
 		[CRepr]
@@ -291,10 +291,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, out uint32 pdwCount) GetCount;
-				public new function HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwIndex, out PROPERTYKEY pKey) GetAt;
-				public new function HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in PROPERTYKEY Key, out PROPVARIANT ppropVar) GetValue;
-				public new function HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in PROPERTYKEY Key, in PROPVARIANT ppropVar) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, out uint32 pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, uint32 dwIndex, out PROPERTYKEY pKey) GetAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in PROPERTYKEY Key, out PROPVARIANT ppropVar) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderProperties self, ref IFunctionInstance pIFunctionInstance, int iProviderInstanceContext, in PROPERTYKEY Key, in PROPVARIANT ppropVar) SetValue;
 			}
 		}
 		[CRepr]
@@ -310,8 +310,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProviderPublishing self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, out IFunctionInstance* ppIFunctionInstance) CreateInstance;
-				public new function HRESULT(ref IProviderPublishing self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity) RemoveInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPublishing self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, out IFunctionInstance* ppIFunctionInstance) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPublishing self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity) RemoveInstance;
 			}
 		}
 		[CRepr]
@@ -328,9 +328,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscoveryProviderFactory self, out IPropertyStore* ppIPropertyStore) CreatePropertyStore;
-				public new function HRESULT(ref IFunctionDiscoveryProviderFactory self, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, int iProviderInstanceContext, ref IPropertyStore pIPropertyStore, ref IFunctionDiscoveryProvider pIFunctionDiscoveryProvider, out IFunctionInstance* ppIFunctionInstance) CreateInstance;
-				public new function HRESULT(ref IFunctionDiscoveryProviderFactory self, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) CreateFunctionInstanceCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderFactory self, out IPropertyStore* ppIPropertyStore) CreatePropertyStore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderFactory self, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, int iProviderInstanceContext, ref IPropertyStore pIPropertyStore, ref IFunctionDiscoveryProvider pIFunctionDiscoveryProvider, out IFunctionInstance* ppIFunctionInstance) CreateInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderFactory self, out IFunctionInstanceCollection* ppIFunctionInstanceCollection) CreateFunctionInstanceCollection;
 			}
 		}
 		[CRepr]
@@ -348,10 +348,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscoveryProviderQuery self, out BOOL pisInstanceQuery, out uint16* ppszConstraintValue) IsInstanceQuery;
-				public new function HRESULT(ref IFunctionDiscoveryProviderQuery self, out BOOL pisSubcategoryQuery, out uint16* ppszConstraintValue) IsSubcategoryQuery;
-				public new function HRESULT(ref IFunctionDiscoveryProviderQuery self, out IProviderQueryConstraintCollection* ppIProviderQueryConstraints) GetQueryConstraints;
-				public new function HRESULT(ref IFunctionDiscoveryProviderQuery self, out IProviderPropertyConstraintCollection* ppIProviderPropertyConstraints) GetPropertyConstraints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderQuery self, out BOOL pisInstanceQuery, out uint16* ppszConstraintValue) IsInstanceQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderQuery self, out BOOL pisSubcategoryQuery, out uint16* ppszConstraintValue) IsSubcategoryQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderQuery self, out IProviderQueryConstraintCollection* ppIProviderQueryConstraints) GetQueryConstraints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryProviderQuery self, out IProviderPropertyConstraintCollection* ppIProviderPropertyConstraints) GetPropertyConstraints;
 			}
 		}
 		[CRepr]
@@ -371,12 +371,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProviderQueryConstraintCollection self, out uint32 pdwCount) GetCount;
-				public new function HRESULT(ref IProviderQueryConstraintCollection self, PWSTR pszConstraintName, out uint16* ppszConstraintValue) Get;
-				public new function HRESULT(ref IProviderQueryConstraintCollection self, uint32 dwIndex, out uint16* ppszConstraintName, out uint16* ppszConstraintValue) Item;
-				public new function HRESULT(ref IProviderQueryConstraintCollection self, out uint16* ppszConstraintName, out uint16* ppszConstraintValue) Next;
-				public new function HRESULT(ref IProviderQueryConstraintCollection self) Skip;
-				public new function HRESULT(ref IProviderQueryConstraintCollection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self, out uint32 pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self, PWSTR pszConstraintName, out uint16* ppszConstraintValue) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self, uint32 dwIndex, out uint16* ppszConstraintName, out uint16* ppszConstraintValue) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self, out uint16* ppszConstraintName, out uint16* ppszConstraintValue) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderQueryConstraintCollection self) Reset;
 			}
 		}
 		[CRepr]
@@ -396,12 +396,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self, out uint32 pdwCount) GetCount;
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self, in PROPERTYKEY Key, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Get;
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self, uint32 dwIndex, out PROPERTYKEY pKey, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Item;
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self, out PROPERTYKEY pKey, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Next;
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self) Skip;
-				public new function HRESULT(ref IProviderPropertyConstraintCollection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self, out uint32 pdwCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self, in PROPERTYKEY Key, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self, uint32 dwIndex, out PROPERTYKEY pKey, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self, out PROPERTYKEY pKey, out PROPVARIANT pPropVar, out uint32 pdwPropertyConstraint) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProviderPropertyConstraintCollection self) Reset;
 			}
 		}
 		[CRepr]
@@ -416,7 +416,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFunctionDiscoveryServiceProvider self, ref IFunctionInstance pIFunctionInstance, in Guid riid, void** ppv) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFunctionDiscoveryServiceProvider self, ref IFunctionInstance pIFunctionInstance, in Guid riid, void** ppv) Initialize;
 			}
 		}
 		[CRepr]
@@ -433,9 +433,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Associate;
-				public new function HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Unassociate;
-				public new function HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Associate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Unassociate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXAssociation self, PWSTR pszSubcategory) Delete;
 			}
 		}
 		[CRepr]
@@ -452,9 +452,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Associate;
-				public new function HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Unassociate;
-				public new function HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Associate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Unassociate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Delete;
 			}
 		}
 		

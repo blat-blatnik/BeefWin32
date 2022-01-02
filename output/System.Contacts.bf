@@ -62,12 +62,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactManager self, PWSTR pszAppName, PWSTR pszAppVersion) Initialize;
-				public new function HRESULT(ref IContactManager self, PWSTR pszContactID, out IContact* ppContact) Load;
-				public new function HRESULT(ref IContactManager self, PWSTR pszNewContactID, PWSTR pszOldContactID) MergeContactIDs;
-				public new function HRESULT(ref IContactManager self, out IContact* ppMeContact) GetMeContact;
-				public new function HRESULT(ref IContactManager self, ref IContact pMeContact) SetMeContact;
-				public new function HRESULT(ref IContactManager self, out IContactCollection* ppContactCollection) GetContactCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, PWSTR pszAppName, PWSTR pszAppVersion) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, PWSTR pszContactID, out IContact* ppContact) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, PWSTR pszNewContactID, PWSTR pszOldContactID) MergeContactIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, out IContact* ppMeContact) GetMeContact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, ref IContact pMeContact) SetMeContact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactManager self, out IContactCollection* ppContactCollection) GetContactCollection;
 			}
 		}
 		[CRepr]
@@ -84,9 +84,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactCollection self) Reset;
-				public new function HRESULT(ref IContactCollection self) Next;
-				public new function HRESULT(ref IContactCollection self, out IContact* ppContact) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactCollection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactCollection self) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactCollection self, out IContact* ppContact) GetCurrent;
 			}
 		}
 		[CRepr]
@@ -113,19 +113,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, char16* pszValue, uint32 cchValue, out uint32 pdwcchPropertyValueRequired) GetString;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, out FILETIME pftDateTime) GetDate;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, char16* pszContentType, uint32 cchContentType, out uint32 pdwcchContentTypeRequired, out IStream* ppStream) GetBinary;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags, char16* pszLabels, uint32 cchLabels, out uint32 pdwcchLabelsRequired) GetLabels;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszValue) SetString;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, FILETIME ftDateTime) SetDate;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszContentType, ref IStream pStream) SetBinary;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags, uint32 dwLabelCount, PWSTR* ppszLabels) SetLabels;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszArrayName, uint32 dwFlags, BOOL fAppend, char16* pszNewArrayElementName, uint32 cchNewArrayElementName, out uint32 pdwcchNewArrayElementNameRequired) CreateArrayNode;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags) DeleteProperty;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags) DeleteArrayNode;
-				public new function HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags) DeleteLabels;
-				public new function HRESULT(ref IContactProperties self, out IContactPropertyCollection* ppPropertyCollection, uint32 dwFlags, PWSTR pszMultiValueName, uint32 dwLabelCount, PWSTR* ppszLabels, BOOL fAnyLabelMatches) GetPropertyCollection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, char16* pszValue, uint32 cchValue, out uint32 pdwcchPropertyValueRequired) GetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, out FILETIME pftDateTime) GetDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, char16* pszContentType, uint32 cchContentType, out uint32 pdwcchContentTypeRequired, out IStream* ppStream) GetBinary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags, char16* pszLabels, uint32 cchLabels, out uint32 pdwcchLabelsRequired) GetLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszValue) SetString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, FILETIME ftDateTime) SetDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags, PWSTR pszContentType, ref IStream pStream) SetBinary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags, uint32 dwLabelCount, PWSTR* ppszLabels) SetLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszArrayName, uint32 dwFlags, BOOL fAppend, char16* pszNewArrayElementName, uint32 cchNewArrayElementName, out uint32 pdwcchNewArrayElementNameRequired) CreateArrayNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszPropertyName, uint32 dwFlags) DeleteProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags) DeleteArrayNode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, PWSTR pszArrayElementName, uint32 dwFlags) DeleteLabels;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactProperties self, out IContactPropertyCollection* ppPropertyCollection, uint32 dwFlags, PWSTR pszMultiValueName, uint32 dwLabelCount, PWSTR* ppszLabels, BOOL fAnyLabelMatches) GetPropertyCollection;
 			}
 		}
 		[CRepr]
@@ -142,9 +142,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContact self, char16* pszContactID, uint32 cchContactID, out uint32 pdwcchContactIDRequired) GetContactID;
-				public new function HRESULT(ref IContact self, char16* pszPath, uint32 cchPath, out uint32 pdwcchPathRequired) GetPath;
-				public new function HRESULT(ref IContact self, uint32 dwCommitFlags) CommitChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContact self, char16* pszContactID, uint32 cchContactID, out uint32 pdwcchContactIDRequired) GetContactID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContact self, char16* pszPath, uint32 cchPath, out uint32 pdwcchPathRequired) GetPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContact self, uint32 dwCommitFlags) CommitChanges;
 			}
 		}
 		[CRepr]
@@ -165,13 +165,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactPropertyCollection self) Reset;
-				public new function HRESULT(ref IContactPropertyCollection self) Next;
-				public new function HRESULT(ref IContactPropertyCollection self, char16* pszPropertyName, uint32 cchPropertyName, out uint32 pdwcchPropertyNameRequired) GetPropertyName;
-				public new function HRESULT(ref IContactPropertyCollection self, out uint32 pdwType) GetPropertyType;
-				public new function HRESULT(ref IContactPropertyCollection self, out uint32 pdwVersion) GetPropertyVersion;
-				public new function HRESULT(ref IContactPropertyCollection self, out FILETIME pftModificationDate) GetPropertyModificationDate;
-				public new function HRESULT(ref IContactPropertyCollection self, char16* pszArrayElementID, uint32 cchArrayElementID, out uint32 pdwcchArrayElementIDRequired) GetPropertyArrayElementID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self, char16* pszPropertyName, uint32 cchPropertyName, out uint32 pdwcchPropertyNameRequired) GetPropertyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self, out uint32 pdwType) GetPropertyType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self, out uint32 pdwVersion) GetPropertyVersion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self, out FILETIME pftModificationDate) GetPropertyModificationDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactPropertyCollection self, char16* pszArrayElementID, uint32 cchArrayElementID, out uint32 pdwcchArrayElementIDRequired) GetPropertyArrayElementID;
 			}
 		}
 		[CRepr]
@@ -200,21 +200,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationManager self, out int32 plMajorVersion, out int32 plMinorVersion) GetVersionInfo;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pGroupName, CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS options, out BOOL pCreatedGroup, out IContactAggregationGroup* ppGroup) CreateOrOpenGroup;
-				public new function HRESULT(ref IContactAggregationManager self, out IContactAggregationContact* ppItem) CreateExternalContact;
-				public new function HRESULT(ref IContactAggregationManager self, out IContactAggregationServerPerson* ppServerPerson) CreateServerPerson;
-				public new function HRESULT(ref IContactAggregationManager self, out IContactAggregationLink* ppServerContactLink) CreateServerContactLink;
-				public new function HRESULT(ref IContactAggregationManager self) Flush;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationAggregate* ppItem) OpenAggregateContact;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationContact* ppItem) OpenContact;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationLink* ppItem) OpenServerContactLink;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationServerPerson* ppItem) OpenServerPerson;
-				public new function HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationContactCollection* ppItems) get_Contacts;
-				public new function HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationAggregateCollection* ppAggregates) get_AggregateContacts;
-				public new function HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) get_Groups;
-				public new function HRESULT(ref IContactAggregationManager self, out IContactAggregationServerPersonCollection* ppServerPersonCollection) get_ServerPersons;
-				public new function HRESULT(ref IContactAggregationManager self, PWSTR pPersonItemId, out IContactAggregationLinkCollection* ppServerContactLinkCollection) get_ServerContactLinks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, out int32 plMajorVersion, out int32 plMinorVersion) GetVersionInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pGroupName, CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS options, out BOOL pCreatedGroup, out IContactAggregationGroup* ppGroup) CreateOrOpenGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, out IContactAggregationContact* ppItem) CreateExternalContact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, out IContactAggregationServerPerson* ppServerPerson) CreateServerPerson;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, out IContactAggregationLink* ppServerContactLink) CreateServerContactLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self) Flush;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationAggregate* ppItem) OpenAggregateContact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationContact* ppItem) OpenContact;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationLink* ppItem) OpenServerContactLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pItemId, out IContactAggregationServerPerson* ppItem) OpenServerPerson;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationContactCollection* ppItems) get_Contacts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationAggregateCollection* ppAggregates) get_AggregateContacts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) get_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, out IContactAggregationServerPersonCollection* ppServerPersonCollection) get_ServerPersons;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationManager self, PWSTR pPersonItemId, out IContactAggregationLinkCollection* ppServerContactLinkCollection) get_ServerContactLinks;
 			}
 		}
 		[CRepr]
@@ -246,24 +246,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationContact self) Delete;
-				public new function HRESULT(ref IContactAggregationContact self) Save;
-				public new function HRESULT(ref IContactAggregationContact self, PWSTR pAggregateId) MoveToAggregate;
-				public new function HRESULT(ref IContactAggregationContact self) Unlink;
-				public new function HRESULT(ref IContactAggregationContact self, out PWSTR ppAccountId) get_AccountId;
-				public new function HRESULT(ref IContactAggregationContact self, PWSTR pAccountId) put_AccountId;
-				public new function HRESULT(ref IContactAggregationContact self, out PWSTR ppAggregateId) get_AggregateId;
-				public new function HRESULT(ref IContactAggregationContact self, out PWSTR ppItemId) get_Id;
-				public new function HRESULT(ref IContactAggregationContact self, out BOOL pIsMe) get_IsMe;
-				public new function HRESULT(ref IContactAggregationContact self, out BOOL pIsExternal) get_IsExternal;
-				public new function HRESULT(ref IContactAggregationContact self, out uint32 pNetworkSourceId) get_NetworkSourceId;
-				public new function HRESULT(ref IContactAggregationContact self, uint32 networkSourceId) put_NetworkSourceId;
-				public new function HRESULT(ref IContactAggregationContact self, out PWSTR ppNetworkSourceId) get_NetworkSourceIdString;
-				public new function HRESULT(ref IContactAggregationContact self, PWSTR pNetworkSourceId) put_NetworkSourceIdString;
-				public new function HRESULT(ref IContactAggregationContact self, out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) get_RemoteObjectId;
-				public new function HRESULT(ref IContactAggregationContact self, in CONTACT_AGGREGATION_BLOB pRemoteObjectId) put_RemoteObjectId;
-				public new function HRESULT(ref IContactAggregationContact self, out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) get_SyncIdentityHash;
-				public new function HRESULT(ref IContactAggregationContact self, in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) put_SyncIdentityHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, PWSTR pAggregateId) MoveToAggregate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self) Unlink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out PWSTR ppAccountId) get_AccountId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, PWSTR pAccountId) put_AccountId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out PWSTR ppAggregateId) get_AggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out PWSTR ppItemId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out BOOL pIsMe) get_IsMe;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out BOOL pIsExternal) get_IsExternal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out uint32 pNetworkSourceId) get_NetworkSourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, uint32 networkSourceId) put_NetworkSourceId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out PWSTR ppNetworkSourceId) get_NetworkSourceIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, PWSTR pNetworkSourceId) put_NetworkSourceIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) get_RemoteObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, in CONTACT_AGGREGATION_BLOB pRemoteObjectId) put_RemoteObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) get_SyncIdentityHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContact self, in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) put_SyncIdentityHash;
 			}
 		}
 		[CRepr]
@@ -282,11 +282,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationContactCollection self, out IContactAggregationContact* ppItem) FindFirst;
-				public new function HRESULT(ref IContactAggregationContactCollection self, out IContactAggregationContact* ppItem) FindNext;
-				public new function HRESULT(ref IContactAggregationContactCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pIdentityHash, out IContactAggregationContact* ppItem) FindFirstByIdentityHash;
-				public new function HRESULT(ref IContactAggregationContactCollection self, out int32 pCount) get_Count;
-				public new function HRESULT(ref IContactAggregationContactCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteObjectId, out IContactAggregationContact* ppItem) FindFirstByRemoteId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContactCollection self, out IContactAggregationContact* ppItem) FindFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContactCollection self, out IContactAggregationContact* ppItem) FindNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContactCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pIdentityHash, out IContactAggregationContact* ppItem) FindFirstByIdentityHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContactCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationContactCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteObjectId, out IContactAggregationContact* ppItem) FindFirstByRemoteId;
 			}
 		}
 		[CRepr]
@@ -309,15 +309,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationAggregate self) Save;
-				public new function HRESULT(ref IContactAggregationAggregate self, out IContactAggregationContactCollection* pComponentItems) GetComponentItems;
-				public new function HRESULT(ref IContactAggregationAggregate self, PWSTR pAggregateId) Link;
-				public new function HRESULT(ref IContactAggregationAggregate self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) get_Groups;
-				public new function HRESULT(ref IContactAggregationAggregate self, out PWSTR ppAntiLink) get_AntiLink;
-				public new function HRESULT(ref IContactAggregationAggregate self, PWSTR pAntiLink) put_AntiLink;
-				public new function HRESULT(ref IContactAggregationAggregate self, out uint32 pFavoriteOrder) get_FavoriteOrder;
-				public new function HRESULT(ref IContactAggregationAggregate self, uint32 favoriteOrder) put_FavoriteOrder;
-				public new function HRESULT(ref IContactAggregationAggregate self, out PWSTR ppItemId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, out IContactAggregationContactCollection* pComponentItems) GetComponentItems;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, PWSTR pAggregateId) Link;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, CONTACT_AGGREGATION_COLLECTION_OPTIONS options, out IContactAggregationGroupCollection* ppGroups) get_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, out PWSTR ppAntiLink) get_AntiLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, PWSTR pAntiLink) put_AntiLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, out uint32 pFavoriteOrder) get_FavoriteOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, uint32 favoriteOrder) put_FavoriteOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregate self, out PWSTR ppItemId) get_Id;
 			}
 		}
 		[CRepr]
@@ -335,10 +335,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationAggregateCollection self, out IContactAggregationAggregate* ppAggregate) FindFirst;
-				public new function HRESULT(ref IContactAggregationAggregateCollection self, PWSTR pAntiLinkId, out IContactAggregationAggregate* ppAggregate) FindFirstByAntiLinkId;
-				public new function HRESULT(ref IContactAggregationAggregateCollection self, out IContactAggregationAggregate* ppAggregate) FindNext;
-				public new function HRESULT(ref IContactAggregationAggregateCollection self, out int32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregateCollection self, out IContactAggregationAggregate* ppAggregate) FindFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregateCollection self, PWSTR pAntiLinkId, out IContactAggregationAggregate* ppAggregate) FindFirstByAntiLinkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregateCollection self, out IContactAggregationAggregate* ppAggregate) FindNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationAggregateCollection self, out int32 pCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -362,16 +362,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationGroup self) Delete;
-				public new function HRESULT(ref IContactAggregationGroup self) Save;
-				public new function HRESULT(ref IContactAggregationGroup self, PWSTR pAggregateId) Add;
-				public new function HRESULT(ref IContactAggregationGroup self, PWSTR pAggregateId) Remove;
-				public new function HRESULT(ref IContactAggregationGroup self, out IContactAggregationAggregateCollection* ppAggregateContactCollection) get_Members;
-				public new function HRESULT(ref IContactAggregationGroup self, out Guid pGlobalObjectId) get_GlobalObjectId;
-				public new function HRESULT(ref IContactAggregationGroup self, in Guid pGlobalObjectId) put_GlobalObjectId;
-				public new function HRESULT(ref IContactAggregationGroup self, out PWSTR ppItemId) get_Id;
-				public new function HRESULT(ref IContactAggregationGroup self, out PWSTR ppName) get_Name;
-				public new function HRESULT(ref IContactAggregationGroup self, PWSTR pName) put_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, PWSTR pAggregateId) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, PWSTR pAggregateId) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, out IContactAggregationAggregateCollection* ppAggregateContactCollection) get_Members;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, out Guid pGlobalObjectId) get_GlobalObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, in Guid pGlobalObjectId) put_GlobalObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, out PWSTR ppItemId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, out PWSTR ppName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroup self, PWSTR pName) put_Name;
 			}
 		}
 		[CRepr]
@@ -389,10 +389,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationGroupCollection self, out IContactAggregationGroup* ppGroup) FindFirst;
-				public new function HRESULT(ref IContactAggregationGroupCollection self, in Guid pGlobalObjectId, out IContactAggregationGroup* ppGroup) FindFirstByGlobalObjectId;
-				public new function HRESULT(ref IContactAggregationGroupCollection self, out IContactAggregationGroup* ppGroup) FindNext;
-				public new function HRESULT(ref IContactAggregationGroupCollection self, out uint32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroupCollection self, out IContactAggregationGroup* ppGroup) FindFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroupCollection self, in Guid pGlobalObjectId, out IContactAggregationGroup* ppGroup) FindFirstByGlobalObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroupCollection self, out IContactAggregationGroup* ppGroup) FindNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationGroupCollection self, out uint32 pCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -423,23 +423,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationLink self) Delete;
-				public new function HRESULT(ref IContactAggregationLink self) Save;
-				public new function HRESULT(ref IContactAggregationLink self, out PWSTR ppAccountId) get_AccountId;
-				public new function HRESULT(ref IContactAggregationLink self, PWSTR pAccountId) put_AccountId;
-				public new function HRESULT(ref IContactAggregationLink self, out PWSTR ppItemId) get_Id;
-				public new function HRESULT(ref IContactAggregationLink self, out BOOL pIsLinkResolved) get_IsLinkResolved;
-				public new function HRESULT(ref IContactAggregationLink self, BOOL isLinkResolved) put_IsLinkResolved;
-				public new function HRESULT(ref IContactAggregationLink self, out PWSTR ppNetworkSourceId) get_NetworkSourceIdString;
-				public new function HRESULT(ref IContactAggregationLink self, PWSTR pNetworkSourceId) put_NetworkSourceIdString;
-				public new function HRESULT(ref IContactAggregationLink self, out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) get_RemoteObjectId;
-				public new function HRESULT(ref IContactAggregationLink self, in CONTACT_AGGREGATION_BLOB pRemoteObjectId) put_RemoteObjectId;
-				public new function HRESULT(ref IContactAggregationLink self, out PWSTR ppServerPersonId) get_ServerPerson;
-				public new function HRESULT(ref IContactAggregationLink self, PWSTR pServerPersonId) put_ServerPerson;
-				public new function HRESULT(ref IContactAggregationLink self, out PWSTR ppServerPersonId) get_ServerPersonBaseline;
-				public new function HRESULT(ref IContactAggregationLink self, PWSTR pServerPersonId) put_ServerPersonBaseline;
-				public new function HRESULT(ref IContactAggregationLink self, out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) get_SyncIdentityHash;
-				public new function HRESULT(ref IContactAggregationLink self, in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) put_SyncIdentityHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out PWSTR ppAccountId) get_AccountId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, PWSTR pAccountId) put_AccountId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out PWSTR ppItemId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out BOOL pIsLinkResolved) get_IsLinkResolved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, BOOL isLinkResolved) put_IsLinkResolved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out PWSTR ppNetworkSourceId) get_NetworkSourceIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, PWSTR pNetworkSourceId) put_NetworkSourceIdString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out CONTACT_AGGREGATION_BLOB* ppRemoteObjectId) get_RemoteObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, in CONTACT_AGGREGATION_BLOB pRemoteObjectId) put_RemoteObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out PWSTR ppServerPersonId) get_ServerPerson;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, PWSTR pServerPersonId) put_ServerPerson;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out PWSTR ppServerPersonId) get_ServerPersonBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, PWSTR pServerPersonId) put_ServerPersonBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, out CONTACT_AGGREGATION_BLOB* ppSyncIdentityHash) get_SyncIdentityHash;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLink self, in CONTACT_AGGREGATION_BLOB pSyncIdentityHash) put_SyncIdentityHash;
 			}
 		}
 		[CRepr]
@@ -457,10 +457,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationLinkCollection self, out IContactAggregationLink* ppServerContactLink) FindFirst;
-				public new function HRESULT(ref IContactAggregationLinkCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteId, out IContactAggregationLink* ppServerContactLink) FindFirstByRemoteId;
-				public new function HRESULT(ref IContactAggregationLinkCollection self, out IContactAggregationLink* ppServerContactLink) FindNext;
-				public new function HRESULT(ref IContactAggregationLinkCollection self, out uint32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLinkCollection self, out IContactAggregationLink* ppServerContactLink) FindFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLinkCollection self, PWSTR pSourceType, PWSTR pAccountId, in CONTACT_AGGREGATION_BLOB pRemoteId, out IContactAggregationLink* ppServerContactLink) FindFirstByRemoteId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLinkCollection self, out IContactAggregationLink* ppServerContactLink) FindNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationLinkCollection self, out uint32 pCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -497,29 +497,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationServerPerson self) Delete;
-				public new function HRESULT(ref IContactAggregationServerPerson self) Save;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAggregateId) get_AggregateId;
-				public new function HRESULT(ref IContactAggregationServerPerson self, PWSTR pAggregateId) put_AggregateId;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAntiLink) get_AntiLink;
-				public new function HRESULT(ref IContactAggregationServerPerson self, PWSTR pAntiLink) put_AntiLink;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAntiLink) get_AntiLinkBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, PWSTR pAntiLink) put_AntiLinkBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out uint32 pFavoriteOrder) get_FavoriteOrder;
-				public new function HRESULT(ref IContactAggregationServerPerson self, uint32 favoriteOrder) put_FavoriteOrder;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out uint32 pFavoriteOrder) get_FavoriteOrderBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, uint32 favoriteOrder) put_FavoriteOrderBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out CONTACT_AGGREGATION_BLOB* pGroups) get_Groups;
-				public new function HRESULT(ref IContactAggregationServerPerson self, in CONTACT_AGGREGATION_BLOB pGroups) put_Groups;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out CONTACT_AGGREGATION_BLOB* ppGroups) get_GroupsBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, in CONTACT_AGGREGATION_BLOB pGroups) put_GroupsBaseline;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppId) get_Id;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out BOOL pIsTombstone) get_IsTombstone;
-				public new function HRESULT(ref IContactAggregationServerPerson self, BOOL isTombstone) put_IsTombstone;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppLinkedAggregateId) get_LinkedAggregateId;
-				public new function HRESULT(ref IContactAggregationServerPerson self, PWSTR pLinkedAggregateId) put_LinkedAggregateId;
-				public new function HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppObjectId) get_ObjectId;
-				public new function HRESULT(ref IContactAggregationServerPerson self, PWSTR pObjectId) put_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAggregateId) get_AggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, PWSTR pAggregateId) put_AggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAntiLink) get_AntiLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, PWSTR pAntiLink) put_AntiLink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppAntiLink) get_AntiLinkBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, PWSTR pAntiLink) put_AntiLinkBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out uint32 pFavoriteOrder) get_FavoriteOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, uint32 favoriteOrder) put_FavoriteOrder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out uint32 pFavoriteOrder) get_FavoriteOrderBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, uint32 favoriteOrder) put_FavoriteOrderBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out CONTACT_AGGREGATION_BLOB* pGroups) get_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, in CONTACT_AGGREGATION_BLOB pGroups) put_Groups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out CONTACT_AGGREGATION_BLOB* ppGroups) get_GroupsBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, in CONTACT_AGGREGATION_BLOB pGroups) put_GroupsBaseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out BOOL pIsTombstone) get_IsTombstone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, BOOL isTombstone) put_IsTombstone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppLinkedAggregateId) get_LinkedAggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, PWSTR pLinkedAggregateId) put_LinkedAggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, out PWSTR ppObjectId) get_ObjectId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPerson self, PWSTR pObjectId) put_ObjectId;
 			}
 		}
 		[CRepr]
@@ -539,12 +539,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, out IContactAggregationServerPerson* ppServerPerson) FindFirst;
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pServerId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByServerId;
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByAggregateId;
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByLinkedAggregateId;
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, out IContactAggregationServerPerson* ppServerPerson) FindNext;
-				public new function HRESULT(ref IContactAggregationServerPersonCollection self, out uint32 pCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, out IContactAggregationServerPerson* ppServerPerson) FindFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pServerId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByServerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByAggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, PWSTR pAggregateId, out IContactAggregationServerPerson* ppServerPerson) FindFirstByLinkedAggregateId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, out IContactAggregationServerPerson* ppServerPerson) FindNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, out uint32 pCount) get_Count;
 			}
 		}
 		

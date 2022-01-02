@@ -5154,7 +5154,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICcgDomainAuthCredentials self, PWSTR pluginInput, out PWSTR domainName, out PWSTR username, out PWSTR password) GetPasswordCredentials;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICcgDomainAuthCredentials self, PWSTR pluginInput, out PWSTR domainName, out PWSTR username, out PWSTR password) GetPasswordCredentials;
 			}
 		}
 		

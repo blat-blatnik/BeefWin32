@@ -130,12 +130,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionAnimation self) Reset;
-				public new function HRESULT(ref IDCompositionAnimation self, LARGE_INTEGER beginTime) SetAbsoluteBeginTime;
-				public new function HRESULT(ref IDCompositionAnimation self, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) AddCubic;
-				public new function HRESULT(ref IDCompositionAnimation self, double beginOffset, float bias, float amplitude, float frequency, float phase) AddSinusoidal;
-				public new function HRESULT(ref IDCompositionAnimation self, double beginOffset, double durationToRepeat) AddRepeat;
-				public new function HRESULT(ref IDCompositionAnimation self, double endOffset, float endValue) End;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self, LARGE_INTEGER beginTime) SetAbsoluteBeginTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self, double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient) AddCubic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self, double beginOffset, float bias, float amplitude, float frequency, float phase) AddSinusoidal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self, double beginOffset, double durationToRepeat) AddRepeat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAnimation self, double endOffset, float endValue) End;
 			}
 		}
 		[CRepr]
@@ -173,30 +173,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionDevice self) Commit;
-				public new function HRESULT(ref IDCompositionDevice self) WaitForCommitCompletion;
-				public new function HRESULT(ref IDCompositionDevice self, out DCOMPOSITION_FRAME_STATISTICS statistics) GetFrameStatistics;
-				public new function HRESULT(ref IDCompositionDevice self, HWND hwnd, BOOL topmost, out IDCompositionTarget* target) CreateTargetForHwnd;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionVisual* visual) CreateVisual;
-				public new function HRESULT(ref IDCompositionDevice self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
-				public new function HRESULT(ref IDCompositionDevice self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
-				public new function HRESULT(ref IDCompositionDevice self, HANDLE handle, out IUnknown* surface) CreateSurfaceFromHandle;
-				public new function HRESULT(ref IDCompositionDevice self, HWND hwnd, out IUnknown* surface) CreateSurfaceFromHwnd;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionTranslateTransform* translateTransform) CreateTranslateTransform;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionScaleTransform* scaleTransform) CreateScaleTransform;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionRotateTransform* rotateTransform) CreateRotateTransform;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionSkewTransform* skewTransform) CreateSkewTransform;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionMatrixTransform* matrixTransform) CreateMatrixTransform;
-				public new function HRESULT(ref IDCompositionDevice self, IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) CreateTransformGroup;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionTranslateTransform3D* translateTransform3D) CreateTranslateTransform3D;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionScaleTransform3D* scaleTransform3D) CreateScaleTransform3D;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionRotateTransform3D* rotateTransform3D) CreateRotateTransform3D;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionMatrixTransform3D* matrixTransform3D) CreateMatrixTransform3D;
-				public new function HRESULT(ref IDCompositionDevice self, IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) CreateTransform3DGroup;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionEffectGroup* effectGroup) CreateEffectGroup;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionRectangleClip* clip) CreateRectangleClip;
-				public new function HRESULT(ref IDCompositionDevice self, out IDCompositionAnimation* animation) CreateAnimation;
-				public new function HRESULT(ref IDCompositionDevice self, out BOOL pfValid) CheckDeviceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self) WaitForCommitCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out DCOMPOSITION_FRAME_STATISTICS statistics) GetFrameStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, HWND hwnd, BOOL topmost, out IDCompositionTarget* target) CreateTargetForHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionVisual* visual) CreateVisual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, HANDLE handle, out IUnknown* surface) CreateSurfaceFromHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, HWND hwnd, out IUnknown* surface) CreateSurfaceFromHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionTranslateTransform* translateTransform) CreateTranslateTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionScaleTransform* scaleTransform) CreateScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionRotateTransform* rotateTransform) CreateRotateTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionSkewTransform* skewTransform) CreateSkewTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionMatrixTransform* matrixTransform) CreateMatrixTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) CreateTransformGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionTranslateTransform3D* translateTransform3D) CreateTranslateTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionScaleTransform3D* scaleTransform3D) CreateScaleTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionRotateTransform3D* rotateTransform3D) CreateRotateTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionMatrixTransform3D* matrixTransform3D) CreateMatrixTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) CreateTransform3DGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionEffectGroup* effectGroup) CreateEffectGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionRectangleClip* clip) CreateRectangleClip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out IDCompositionAnimation* animation) CreateAnimation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice self, out BOOL pfValid) CheckDeviceState;
 			}
 		}
 		[CRepr]
@@ -211,7 +211,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionTarget self, IDCompositionVisual* visual) SetRoot;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTarget self, IDCompositionVisual* visual) SetRoot;
 			}
 		}
 		[CRepr]
@@ -242,23 +242,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionVisual self, ref IDCompositionAnimation animation) SetOffsetX;
-				public new function HRESULT(ref IDCompositionVisual self, float offsetX) SetOffsetX2;
-				public new function HRESULT(ref IDCompositionVisual self, ref IDCompositionAnimation animation) SetOffsetY;
-				public new function HRESULT(ref IDCompositionVisual self, float offsetY) SetOffsetY2;
-				public new function HRESULT(ref IDCompositionVisual self, IDCompositionTransform* transform) SetTransform;
-				public new function HRESULT(ref IDCompositionVisual self, in D2D_MATRIX_3X2_F matrix) SetTransform2;
-				public new function HRESULT(ref IDCompositionVisual self, IDCompositionVisual* visual) SetTransformParent;
-				public new function HRESULT(ref IDCompositionVisual self, IDCompositionEffect* effect) SetEffect;
-				public new function HRESULT(ref IDCompositionVisual self, DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode) SetBitmapInterpolationMode;
-				public new function HRESULT(ref IDCompositionVisual self, DCOMPOSITION_BORDER_MODE borderMode) SetBorderMode;
-				public new function HRESULT(ref IDCompositionVisual self, IDCompositionClip* clip) SetClip;
-				public new function HRESULT(ref IDCompositionVisual self, in D2D_RECT_F rect) SetClip2;
-				public new function HRESULT(ref IDCompositionVisual self, IUnknown* content) SetContent;
-				public new function HRESULT(ref IDCompositionVisual self, ref IDCompositionVisual visual, BOOL insertAbove, IDCompositionVisual* referenceVisual) AddVisual;
-				public new function HRESULT(ref IDCompositionVisual self, ref IDCompositionVisual visual) RemoveVisual;
-				public new function HRESULT(ref IDCompositionVisual self) RemoveAllVisuals;
-				public new function HRESULT(ref IDCompositionVisual self, DCOMPOSITION_COMPOSITE_MODE compositeMode) SetCompositeMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, ref IDCompositionAnimation animation) SetOffsetX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, float offsetX) SetOffsetX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, ref IDCompositionAnimation animation) SetOffsetY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, float offsetY) SetOffsetY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, IDCompositionTransform* transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, in D2D_MATRIX_3X2_F matrix) SetTransform2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, IDCompositionVisual* visual) SetTransformParent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, IDCompositionEffect* effect) SetEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode) SetBitmapInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, DCOMPOSITION_BORDER_MODE borderMode) SetBorderMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, IDCompositionClip* clip) SetClip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, in D2D_RECT_F rect) SetClip2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, IUnknown* content) SetContent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, ref IDCompositionVisual visual, BOOL insertAbove, IDCompositionVisual* referenceVisual) AddVisual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, ref IDCompositionVisual visual) RemoveVisual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self) RemoveAllVisuals;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual self, DCOMPOSITION_COMPOSITE_MODE compositeMode) SetCompositeMode;
 			}
 		}
 		[CRepr]
@@ -315,10 +315,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
-				public new function HRESULT(ref IDCompositionTranslateTransform self, ref IDCompositionAnimation animation) SetOffsetX;
-				public new function HRESULT(ref IDCompositionTranslateTransform self, float offsetX) SetOffsetX2;
-				public new function HRESULT(ref IDCompositionTranslateTransform self, ref IDCompositionAnimation animation) SetOffsetY;
-				public new function HRESULT(ref IDCompositionTranslateTransform self, float offsetY) SetOffsetY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform self, ref IDCompositionAnimation animation) SetOffsetX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform self, float offsetX) SetOffsetX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform self, ref IDCompositionAnimation animation) SetOffsetY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform self, float offsetY) SetOffsetY2;
 			}
 		}
 		[CRepr]
@@ -340,14 +340,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
-				public new function HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetScaleX;
-				public new function HRESULT(ref IDCompositionScaleTransform self, float scaleX) SetScaleX2;
-				public new function HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetScaleY;
-				public new function HRESULT(ref IDCompositionScaleTransform self, float scaleY) SetScaleY2;
-				public new function HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetCenterX;
-				public new function HRESULT(ref IDCompositionScaleTransform self, float centerX) SetCenterX2;
-				public new function HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetCenterY;
-				public new function HRESULT(ref IDCompositionScaleTransform self, float centerY) SetCenterY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetScaleX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, float scaleX) SetScaleX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetScaleY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, float scaleY) SetScaleY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetCenterX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, float centerX) SetCenterX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, ref IDCompositionAnimation animation) SetCenterY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform self, float centerY) SetCenterY2;
 			}
 		}
 		[CRepr]
@@ -367,12 +367,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
-				public new function HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetAngle;
-				public new function HRESULT(ref IDCompositionRotateTransform self, float angle) SetAngle2;
-				public new function HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetCenterX;
-				public new function HRESULT(ref IDCompositionRotateTransform self, float centerX) SetCenterX2;
-				public new function HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetCenterY;
-				public new function HRESULT(ref IDCompositionRotateTransform self, float centerY) SetCenterY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, float angle) SetAngle2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetCenterX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, float centerX) SetCenterX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, ref IDCompositionAnimation animation) SetCenterY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform self, float centerY) SetCenterY2;
 			}
 		}
 		[CRepr]
@@ -394,14 +394,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
-				public new function HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetAngleX;
-				public new function HRESULT(ref IDCompositionSkewTransform self, float angleX) SetAngleX2;
-				public new function HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetAngleY;
-				public new function HRESULT(ref IDCompositionSkewTransform self, float angleY) SetAngleY2;
-				public new function HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetCenterX;
-				public new function HRESULT(ref IDCompositionSkewTransform self, float centerX) SetCenterX2;
-				public new function HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetCenterY;
-				public new function HRESULT(ref IDCompositionSkewTransform self, float centerY) SetCenterY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetAngleX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, float angleX) SetAngleX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetAngleY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, float angleY) SetAngleY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetCenterX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, float centerX) SetCenterX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, ref IDCompositionAnimation animation) SetCenterY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSkewTransform self, float centerY) SetCenterY2;
 			}
 		}
 		[CRepr]
@@ -418,9 +418,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform.VTable
 			{
-				public new function HRESULT(ref IDCompositionMatrixTransform self, in D2D_MATRIX_3X2_F matrix) SetMatrix;
-				public new function HRESULT(ref IDCompositionMatrixTransform self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
-				public new function HRESULT(ref IDCompositionMatrixTransform self, int32 row, int32 column, float value) SetMatrixElement2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform self, in D2D_MATRIX_3X2_F matrix) SetMatrix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform self, int32 row, int32 column, float value) SetMatrixElement2;
 			}
 		}
 		[CRepr]
@@ -437,9 +437,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionEffectGroup self, ref IDCompositionAnimation animation) SetOpacity;
-				public new function HRESULT(ref IDCompositionEffectGroup self, float opacity) SetOpacity2;
-				public new function HRESULT(ref IDCompositionEffectGroup self, IDCompositionTransform3D* transform3D) SetTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionEffectGroup self, ref IDCompositionAnimation animation) SetOpacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionEffectGroup self, float opacity) SetOpacity2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionEffectGroup self, IDCompositionTransform3D* transform3D) SetTransform3D;
 			}
 		}
 		[CRepr]
@@ -459,12 +459,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetX;
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, float offsetX) SetOffsetX2;
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetY;
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, float offsetY) SetOffsetY2;
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetZ;
-				public new function HRESULT(ref IDCompositionTranslateTransform3D self, float offsetZ) SetOffsetZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, float offsetX) SetOffsetX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, float offsetY) SetOffsetY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, ref IDCompositionAnimation animation) SetOffsetZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTranslateTransform3D self, float offsetZ) SetOffsetZ2;
 			}
 		}
 		[CRepr]
@@ -490,18 +490,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleX;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float scaleX) SetScaleX2;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleY;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float scaleY) SetScaleY2;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleZ;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float scaleZ) SetScaleZ2;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterX;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float centerX) SetCenterX2;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterY;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float centerY) SetCenterY2;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterZ;
-				public new function HRESULT(ref IDCompositionScaleTransform3D self, float centerZ) SetCenterZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float scaleX) SetScaleX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float scaleY) SetScaleY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetScaleZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float scaleZ) SetScaleZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float centerX) SetCenterX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float centerY) SetCenterY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, ref IDCompositionAnimation animation) SetCenterZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionScaleTransform3D self, float centerZ) SetCenterZ2;
 			}
 		}
 		[CRepr]
@@ -529,20 +529,20 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAngle;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float angle) SetAngle2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisX;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float axisX) SetAxisX2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisY;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float axisY) SetAxisY2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisZ;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float axisZ) SetAxisZ2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterX;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float centerX) SetCenterX2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterY;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float centerY) SetCenterY2;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterZ;
-				public new function HRESULT(ref IDCompositionRotateTransform3D self, float centerZ) SetCenterZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float angle) SetAngle2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float axisX) SetAxisX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float axisY) SetAxisY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetAxisZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float axisZ) SetAxisZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float centerX) SetCenterX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float centerY) SetCenterY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, ref IDCompositionAnimation animation) SetCenterZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRotateTransform3D self, float centerZ) SetCenterZ2;
 			}
 		}
 		[CRepr]
@@ -559,9 +559,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionTransform3D.VTable
 			{
-				public new function HRESULT(ref IDCompositionMatrixTransform3D self, in D3DMATRIX matrix) SetMatrix;
-				public new function HRESULT(ref IDCompositionMatrixTransform3D self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
-				public new function HRESULT(ref IDCompositionMatrixTransform3D self, int32 row, int32 column, float value) SetMatrixElement2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform3D self, in D3DMATRIX matrix) SetMatrix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform3D self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionMatrixTransform3D self, int32 row, int32 column, float value) SetMatrixElement2;
 			}
 		}
 		[CRepr]
@@ -612,30 +612,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionClip.VTable
 			{
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetLeft;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float left) SetLeft2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTop;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float top) SetTop2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetRight;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float right) SetRight2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottom;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float bottom) SetBottom2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopLeftRadiusX;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopLeftRadiusX2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopLeftRadiusY;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopLeftRadiusY2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopRightRadiusX;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopRightRadiusX2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopRightRadiusY;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopRightRadiusY2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomLeftRadiusX;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomLeftRadiusX2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomLeftRadiusY;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomLeftRadiusY2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomRightRadiusX;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomRightRadiusX2;
-				public new function HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomRightRadiusY;
-				public new function HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomRightRadiusY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetLeft;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float left) SetLeft2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTop;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float top) SetTop2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetRight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float right) SetRight2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float bottom) SetBottom2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopLeftRadiusX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopLeftRadiusX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopLeftRadiusY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopLeftRadiusY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopRightRadiusX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopRightRadiusX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetTopRightRadiusY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetTopRightRadiusY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomLeftRadiusX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomLeftRadiusX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomLeftRadiusY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomLeftRadiusY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomRightRadiusX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomRightRadiusX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, ref IDCompositionAnimation animation) SetBottomRightRadiusY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionRectangleClip self, float radius) SetBottomRightRadiusY2;
 			}
 		}
 		[CRepr]
@@ -654,11 +654,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionSurface self, RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) BeginDraw;
-				public new function HRESULT(ref IDCompositionSurface self) EndDraw;
-				public new function HRESULT(ref IDCompositionSurface self) SuspendDraw;
-				public new function HRESULT(ref IDCompositionSurface self) ResumeDraw;
-				public new function HRESULT(ref IDCompositionSurface self, RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) Scroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurface self, RECT* updateRect, in Guid iid, void** updateObject, out POINT updateOffset) BeginDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurface self) EndDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurface self) SuspendDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurface self) ResumeDraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurface self, RECT* scrollRect, RECT* clipRect, int32 offsetX, int32 offsetY) Scroll;
 			}
 		}
 		[CRepr]
@@ -674,8 +674,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionSurface.VTable
 			{
-				public new function HRESULT(ref IDCompositionVirtualSurface self, uint32 width, uint32 height) Resize;
-				public new function HRESULT(ref IDCompositionVirtualSurface self, RECT* rectangles, uint32 count) Trim;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVirtualSurface self, uint32 width, uint32 height) Resize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVirtualSurface self, RECT* rectangles, uint32 count) Trim;
 			}
 		}
 		[CRepr]
@@ -710,27 +710,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionDevice2 self) Commit;
-				public new function HRESULT(ref IDCompositionDevice2 self) WaitForCommitCompletion;
-				public new function HRESULT(ref IDCompositionDevice2 self, out DCOMPOSITION_FRAME_STATISTICS statistics) GetFrameStatistics;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionVisual2* visual) CreateVisual;
-				public new function HRESULT(ref IDCompositionDevice2 self, ref IUnknown renderingDevice, out IDCompositionSurfaceFactory* surfaceFactory) CreateSurfaceFactory;
-				public new function HRESULT(ref IDCompositionDevice2 self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
-				public new function HRESULT(ref IDCompositionDevice2 self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionTranslateTransform* translateTransform) CreateTranslateTransform;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionScaleTransform* scaleTransform) CreateScaleTransform;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionRotateTransform* rotateTransform) CreateRotateTransform;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionSkewTransform* skewTransform) CreateSkewTransform;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionMatrixTransform* matrixTransform) CreateMatrixTransform;
-				public new function HRESULT(ref IDCompositionDevice2 self, IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) CreateTransformGroup;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionTranslateTransform3D* translateTransform3D) CreateTranslateTransform3D;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionScaleTransform3D* scaleTransform3D) CreateScaleTransform3D;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionRotateTransform3D* rotateTransform3D) CreateRotateTransform3D;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionMatrixTransform3D* matrixTransform3D) CreateMatrixTransform3D;
-				public new function HRESULT(ref IDCompositionDevice2 self, IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) CreateTransform3DGroup;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionEffectGroup* effectGroup) CreateEffectGroup;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionRectangleClip* clip) CreateRectangleClip;
-				public new function HRESULT(ref IDCompositionDevice2 self, out IDCompositionAnimation* animation) CreateAnimation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self) Commit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self) WaitForCommitCompletion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out DCOMPOSITION_FRAME_STATISTICS statistics) GetFrameStatistics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionVisual2* visual) CreateVisual;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, ref IUnknown renderingDevice, out IDCompositionSurfaceFactory* surfaceFactory) CreateSurfaceFactory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionTranslateTransform* translateTransform) CreateTranslateTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionScaleTransform* scaleTransform) CreateScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionRotateTransform* rotateTransform) CreateRotateTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionSkewTransform* skewTransform) CreateSkewTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionMatrixTransform* matrixTransform) CreateMatrixTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, IDCompositionTransform** transforms, uint32 elements, out IDCompositionTransform* transformGroup) CreateTransformGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionTranslateTransform3D* translateTransform3D) CreateTranslateTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionScaleTransform3D* scaleTransform3D) CreateScaleTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionRotateTransform3D* rotateTransform3D) CreateRotateTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionMatrixTransform3D* matrixTransform3D) CreateMatrixTransform3D;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, IDCompositionTransform3D** transforms3D, uint32 elements, out IDCompositionTransform3D* transform3DGroup) CreateTransform3DGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionEffectGroup* effectGroup) CreateEffectGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionRectangleClip* clip) CreateRectangleClip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice2 self, out IDCompositionAnimation* animation) CreateAnimation;
 			}
 		}
 		[CRepr]
@@ -747,9 +747,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionDevice2.VTable
 			{
-				public new function HRESULT(ref IDCompositionDesktopDevice self, HWND hwnd, BOOL topmost, out IDCompositionTarget* target) CreateTargetForHwnd;
-				public new function HRESULT(ref IDCompositionDesktopDevice self, HANDLE handle, out IUnknown* surface) CreateSurfaceFromHandle;
-				public new function HRESULT(ref IDCompositionDesktopDevice self, HWND hwnd, out IUnknown* surface) CreateSurfaceFromHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDesktopDevice self, HWND hwnd, BOOL topmost, out IDCompositionTarget* target) CreateTargetForHwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDesktopDevice self, HANDLE handle, out IUnknown* surface) CreateSurfaceFromHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDesktopDevice self, HWND hwnd, out IUnknown* surface) CreateSurfaceFromHwnd;
 			}
 		}
 		[CRepr]
@@ -765,8 +765,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionDeviceDebug self) EnableDebugCounters;
-				public new function HRESULT(ref IDCompositionDeviceDebug self) DisableDebugCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDeviceDebug self) EnableDebugCounters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDeviceDebug self) DisableDebugCounters;
 			}
 		}
 		[CRepr]
@@ -782,8 +782,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionSurfaceFactory self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
-				public new function HRESULT(ref IDCompositionSurfaceFactory self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurfaceFactory self, uint32 width, uint32 height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionSurface* surface) CreateSurface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSurfaceFactory self, uint32 initialWidth, uint32 initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, out IDCompositionVirtualSurface* virtualSurface) CreateVirtualSurface;
 			}
 		}
 		[CRepr]
@@ -799,8 +799,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionVisual.VTable
 			{
-				public new function HRESULT(ref IDCompositionVisual2 self, DCOMPOSITION_OPACITY_MODE mode) SetOpacityMode;
-				public new function HRESULT(ref IDCompositionVisual2 self, DCOMPOSITION_BACKFACE_VISIBILITY visibility) SetBackFaceVisibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual2 self, DCOMPOSITION_OPACITY_MODE mode) SetOpacityMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual2 self, DCOMPOSITION_BACKFACE_VISIBILITY visibility) SetBackFaceVisibility;
 			}
 		}
 		[CRepr]
@@ -818,10 +818,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionVisual2.VTable
 			{
-				public new function HRESULT(ref IDCompositionVisualDebug self, in D2D1_COLOR_F color) EnableHeatMap;
-				public new function HRESULT(ref IDCompositionVisualDebug self) DisableHeatMap;
-				public new function HRESULT(ref IDCompositionVisualDebug self) EnableRedrawRegions;
-				public new function HRESULT(ref IDCompositionVisualDebug self) DisableRedrawRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisualDebug self, in D2D1_COLOR_F color) EnableHeatMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisualDebug self) DisableHeatMap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisualDebug self) EnableRedrawRegions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisualDebug self) DisableRedrawRegions;
 			}
 		}
 		[CRepr]
@@ -843,14 +843,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionVisualDebug.VTable
 			{
-				public new function HRESULT(ref IDCompositionVisual3 self, DCOMPOSITION_DEPTH_MODE mode) SetDepthMode;
-				public new function HRESULT(ref IDCompositionVisual3 self, ref IDCompositionAnimation animation) SetOffsetZ;
-				public new function HRESULT(ref IDCompositionVisual3 self, float offsetZ) SetOffsetZ2;
-				public new function HRESULT(ref IDCompositionVisual3 self, ref IDCompositionAnimation animation) SetOpacity;
-				public new function HRESULT(ref IDCompositionVisual3 self, float opacity) SetOpacity2;
-				public new function HRESULT(ref IDCompositionVisual3 self, IDCompositionTransform3D* transform) SetTransform;
-				public new function HRESULT(ref IDCompositionVisual3 self, in D2D_MATRIX_4X4_F matrix) SetTransform2;
-				public new function HRESULT(ref IDCompositionVisual3 self, BOOL visible) SetVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, DCOMPOSITION_DEPTH_MODE mode) SetDepthMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, ref IDCompositionAnimation animation) SetOffsetZ;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, float offsetZ) SetOffsetZ2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, ref IDCompositionAnimation animation) SetOpacity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, float opacity) SetOpacity2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, IDCompositionTransform3D* transform) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, in D2D_MATRIX_4X4_F matrix) SetTransform2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionVisual3 self, BOOL visible) SetVisible;
 			}
 		}
 		[CRepr]
@@ -877,19 +877,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionDevice2.VTable
 			{
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionGaussianBlurEffect* gaussianBlurEffect) CreateGaussianBlurEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionBrightnessEffect* brightnessEffect) CreateBrightnessEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionColorMatrixEffect* colorMatrixEffect) CreateColorMatrixEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionShadowEffect* shadowEffect) CreateShadowEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionHueRotationEffect* hueRotationEffect) CreateHueRotationEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionSaturationEffect* saturationEffect) CreateSaturationEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionTurbulenceEffect* turbulenceEffect) CreateTurbulenceEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionLinearTransferEffect* linearTransferEffect) CreateLinearTransferEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionTableTransferEffect* tableTransferEffect) CreateTableTransferEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionCompositeEffect* compositeEffect) CreateCompositeEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionBlendEffect* blendEffect) CreateBlendEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionArithmeticCompositeEffect* arithmeticCompositeEffect) CreateArithmeticCompositeEffect;
-				public new function HRESULT(ref IDCompositionDevice3 self, out IDCompositionAffineTransform2DEffect* affineTransform2dEffect) CreateAffineTransform2DEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionGaussianBlurEffect* gaussianBlurEffect) CreateGaussianBlurEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionBrightnessEffect* brightnessEffect) CreateBrightnessEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionColorMatrixEffect* colorMatrixEffect) CreateColorMatrixEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionShadowEffect* shadowEffect) CreateShadowEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionHueRotationEffect* hueRotationEffect) CreateHueRotationEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionSaturationEffect* saturationEffect) CreateSaturationEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionTurbulenceEffect* turbulenceEffect) CreateTurbulenceEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionLinearTransferEffect* linearTransferEffect) CreateLinearTransferEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionTableTransferEffect* tableTransferEffect) CreateTableTransferEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionCompositeEffect* compositeEffect) CreateCompositeEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionBlendEffect* blendEffect) CreateBlendEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionArithmeticCompositeEffect* arithmeticCompositeEffect) CreateArithmeticCompositeEffect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDevice3 self, out IDCompositionAffineTransform2DEffect* affineTransform2dEffect) CreateAffineTransform2DEffect;
 			}
 		}
 		[CRepr]
@@ -904,7 +904,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionFilterEffect self, uint32 index, IUnknown* input, uint32 flags) SetInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionFilterEffect self, uint32 index, IUnknown* input, uint32 flags) SetInput;
 			}
 		}
 		[CRepr]
@@ -921,9 +921,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionGaussianBlurEffect self, ref IDCompositionAnimation animation) SetStandardDeviation;
-				public new function HRESULT(ref IDCompositionGaussianBlurEffect self, float amount) SetStandardDeviation2;
-				public new function HRESULT(ref IDCompositionGaussianBlurEffect self, D2D1_BORDER_MODE mode) SetBorderMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionGaussianBlurEffect self, ref IDCompositionAnimation animation) SetStandardDeviation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionGaussianBlurEffect self, float amount) SetStandardDeviation2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionGaussianBlurEffect self, D2D1_BORDER_MODE mode) SetBorderMode;
 			}
 		}
 		[CRepr]
@@ -947,16 +947,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, in D2D_VECTOR_2F whitePoint) SetWhitePoint;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, in D2D_VECTOR_2F blackPoint) SetBlackPoint;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetWhitePointX;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, float whitePointX) SetWhitePointX2;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetWhitePointY;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, float whitePointY) SetWhitePointY2;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetBlackPointX;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, float blackPointX) SetBlackPointX2;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetBlackPointY;
-				public new function HRESULT(ref IDCompositionBrightnessEffect self, float blackPointY) SetBlackPointY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, in D2D_VECTOR_2F whitePoint) SetWhitePoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, in D2D_VECTOR_2F blackPoint) SetBlackPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetWhitePointX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, float whitePointX) SetWhitePointX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetWhitePointY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, float whitePointY) SetWhitePointY2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetBlackPointX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, float blackPointX) SetBlackPointX2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, ref IDCompositionAnimation animation) SetBlackPointY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBrightnessEffect self, float blackPointY) SetBlackPointY2;
 			}
 		}
 		[CRepr]
@@ -975,11 +975,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionColorMatrixEffect self, in D2D_MATRIX_5X4_F matrix) SetMatrix;
-				public new function HRESULT(ref IDCompositionColorMatrixEffect self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
-				public new function HRESULT(ref IDCompositionColorMatrixEffect self, int32 row, int32 column, float value) SetMatrixElement2;
-				public new function HRESULT(ref IDCompositionColorMatrixEffect self, D2D1_COLORMATRIX_ALPHA_MODE mode) SetAlphaMode;
-				public new function HRESULT(ref IDCompositionColorMatrixEffect self, BOOL clamp) SetClampOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionColorMatrixEffect self, in D2D_MATRIX_5X4_F matrix) SetMatrix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionColorMatrixEffect self, int32 row, int32 column, ref IDCompositionAnimation animation) SetMatrixElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionColorMatrixEffect self, int32 row, int32 column, float value) SetMatrixElement2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionColorMatrixEffect self, D2D1_COLORMATRIX_ALPHA_MODE mode) SetAlphaMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionColorMatrixEffect self, BOOL clamp) SetClampOutput;
 			}
 		}
 		[CRepr]
@@ -1004,17 +1004,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetStandardDeviation;
-				public new function HRESULT(ref IDCompositionShadowEffect self, float amount) SetStandardDeviation2;
-				public new function HRESULT(ref IDCompositionShadowEffect self, in D2D_VECTOR_4F color) SetColor;
-				public new function HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetRed;
-				public new function HRESULT(ref IDCompositionShadowEffect self, float amount) SetRed2;
-				public new function HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetGreen;
-				public new function HRESULT(ref IDCompositionShadowEffect self, float amount) SetGreen2;
-				public new function HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetBlue;
-				public new function HRESULT(ref IDCompositionShadowEffect self, float amount) SetBlue2;
-				public new function HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetAlpha;
-				public new function HRESULT(ref IDCompositionShadowEffect self, float amount) SetAlpha2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetStandardDeviation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, float amount) SetStandardDeviation2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, in D2D_VECTOR_4F color) SetColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetRed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, float amount) SetRed2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetGreen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, float amount) SetGreen2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetBlue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, float amount) SetBlue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, ref IDCompositionAnimation animation) SetAlpha;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionShadowEffect self, float amount) SetAlpha2;
 			}
 		}
 		[CRepr]
@@ -1030,8 +1030,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionHueRotationEffect self, ref IDCompositionAnimation animation) SetAngle;
-				public new function HRESULT(ref IDCompositionHueRotationEffect self, float amountDegrees) SetAngle2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionHueRotationEffect self, ref IDCompositionAnimation animation) SetAngle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionHueRotationEffect self, float amountDegrees) SetAngle2;
 			}
 		}
 		[CRepr]
@@ -1047,8 +1047,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionSaturationEffect self, ref IDCompositionAnimation animation) SetSaturation;
-				public new function HRESULT(ref IDCompositionSaturationEffect self, float ratio) SetSaturation2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSaturationEffect self, ref IDCompositionAnimation animation) SetSaturation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionSaturationEffect self, float ratio) SetSaturation2;
 			}
 		}
 		[CRepr]
@@ -1069,13 +1069,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F offset) SetOffset;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F frequency) SetBaseFrequency;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F size) SetSize;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, uint32 numOctaves) SetNumOctaves;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, uint32 seed) SetSeed;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, D2D1_TURBULENCE_NOISE noise) SetNoise;
-				public new function HRESULT(ref IDCompositionTurbulenceEffect self, BOOL stitchable) SetStitchable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F offset) SetOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F frequency) SetBaseFrequency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, in D2D_VECTOR_2F size) SetSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, uint32 numOctaves) SetNumOctaves;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, uint32 seed) SetSeed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, D2D1_TURBULENCE_NOISE noise) SetNoise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTurbulenceEffect self, BOOL stitchable) SetStitchable;
 			}
 		}
 		[CRepr]
@@ -1110,27 +1110,27 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetRedYIntercept;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float redYIntercept) SetRedYIntercept2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetRedSlope;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float redSlope) SetRedSlope2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, BOOL redDisable) SetRedDisable;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetGreenYIntercept;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float greenYIntercept) SetGreenYIntercept2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetGreenSlope;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float greenSlope) SetGreenSlope2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, BOOL greenDisable) SetGreenDisable;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetBlueYIntercept;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float blueYIntercept) SetBlueYIntercept2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetBlueSlope;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float blueSlope) SetBlueSlope2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, BOOL blueDisable) SetBlueDisable;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetAlphaYIntercept;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float alphaYIntercept) SetAlphaYIntercept2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetAlphaSlope;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, float alphaSlope) SetAlphaSlope2;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, BOOL alphaDisable) SetAlphaDisable;
-				public new function HRESULT(ref IDCompositionLinearTransferEffect self, BOOL clampOutput) SetClampOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetRedYIntercept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float redYIntercept) SetRedYIntercept2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetRedSlope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float redSlope) SetRedSlope2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, BOOL redDisable) SetRedDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetGreenYIntercept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float greenYIntercept) SetGreenYIntercept2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetGreenSlope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float greenSlope) SetGreenSlope2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, BOOL greenDisable) SetGreenDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetBlueYIntercept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float blueYIntercept) SetBlueYIntercept2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetBlueSlope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float blueSlope) SetBlueSlope2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, BOOL blueDisable) SetBlueDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetAlphaYIntercept;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float alphaYIntercept) SetAlphaYIntercept2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, ref IDCompositionAnimation animation) SetAlphaSlope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, float alphaSlope) SetAlphaSlope2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, BOOL alphaDisable) SetAlphaDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionLinearTransferEffect self, BOOL clampOutput) SetClampOutput;
 			}
 		}
 		[CRepr]
@@ -1161,23 +1161,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetRedTable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetGreenTable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetBlueTable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetAlphaTable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, BOOL redDisable) SetRedDisable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, BOOL greenDisable) SetGreenDisable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, BOOL blueDisable) SetBlueDisable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, BOOL alphaDisable) SetAlphaDisable;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, BOOL clampOutput) SetClampOutput;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetRedTableValue;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetRedTableValue2;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetGreenTableValue;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetGreenTableValue2;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetBlueTableValue;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetBlueTableValue2;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetAlphaTableValue;
-				public new function HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetAlphaTableValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetRedTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetGreenTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetBlueTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, float* tableValues, uint32 count) SetAlphaTable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, BOOL redDisable) SetRedDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, BOOL greenDisable) SetGreenDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, BOOL blueDisable) SetBlueDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, BOOL alphaDisable) SetAlphaDisable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, BOOL clampOutput) SetClampOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetRedTableValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetRedTableValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetGreenTableValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetGreenTableValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetBlueTableValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetBlueTableValue2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, ref IDCompositionAnimation animation) SetAlphaTableValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionTableTransferEffect self, uint32 index, float value) SetAlphaTableValue2;
 			}
 		}
 		[CRepr]
@@ -1192,7 +1192,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionCompositeEffect self, D2D1_COMPOSITE_MODE mode) SetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionCompositeEffect self, D2D1_COMPOSITE_MODE mode) SetMode;
 			}
 		}
 		[CRepr]
@@ -1207,7 +1207,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionBlendEffect self, D2D1_BLEND_MODE mode) SetMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionBlendEffect self, D2D1_BLEND_MODE mode) SetMode;
 			}
 		}
 		[CRepr]
@@ -1231,16 +1231,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, in D2D_VECTOR_4F coefficients) SetCoefficients;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, BOOL clampoutput) SetClampOutput;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient1;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coeffcient1) SetCoefficient12;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient2;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient2) SetCoefficient22;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient3;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient3) SetCoefficient32;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient4;
-				public new function HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient4) SetCoefficient42;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, in D2D_VECTOR_4F coefficients) SetCoefficients;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, BOOL clampoutput) SetClampOutput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coeffcient1) SetCoefficient12;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient2) SetCoefficient22;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient3) SetCoefficient32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, ref IDCompositionAnimation animation) SetCoefficient4;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionArithmeticCompositeEffect self, float Coefficient4) SetCoefficient42;
 			}
 		}
 		[CRepr]
@@ -1261,13 +1261,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDCompositionFilterEffect.VTable
 			{
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, D2D1_BORDER_MODE borderMode) SetBorderMode;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, in D2D_MATRIX_3X2_F transformMatrix) SetTransformMatrix;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, int32 row, int32 column, ref IDCompositionAnimation animation) SetTransformMatrixElement;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, int32 row, int32 column, float value) SetTransformMatrixElement2;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, ref IDCompositionAnimation animation) SetSharpness;
-				public new function HRESULT(ref IDCompositionAffineTransform2DEffect self, float sharpness) SetSharpness2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, D2D1_BORDER_MODE borderMode) SetBorderMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, in D2D_MATRIX_3X2_F transformMatrix) SetTransformMatrix;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, int32 row, int32 column, ref IDCompositionAnimation animation) SetTransformMatrixElement;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, int32 row, int32 column, float value) SetTransformMatrixElement2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, ref IDCompositionAnimation animation) SetSharpness;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionAffineTransform2DEffect self, float sharpness) SetSharpness2;
 			}
 		}
 		[CRepr]
@@ -1285,10 +1285,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionDelegatedInkTrail self, DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, out uint32 generationId) AddTrailPoints;
-				public new function HRESULT(ref IDCompositionDelegatedInkTrail self, DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, DCompositionInkTrailPoint* predictedInkPoints, uint32 predictedInkPointsCount, out uint32 generationId) AddTrailPointsWithPrediction;
-				public new function HRESULT(ref IDCompositionDelegatedInkTrail self, uint32 generationId) RemoveTrailPoints;
-				public new function HRESULT(ref IDCompositionDelegatedInkTrail self, in D2D1_COLOR_F color) StartNewTrail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDelegatedInkTrail self, DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, out uint32 generationId) AddTrailPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDelegatedInkTrail self, DCompositionInkTrailPoint* inkPoints, uint32 inkPointsCount, DCompositionInkTrailPoint* predictedInkPoints, uint32 predictedInkPointsCount, out uint32 generationId) AddTrailPointsWithPrediction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDelegatedInkTrail self, uint32 generationId) RemoveTrailPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionDelegatedInkTrail self, in D2D1_COLOR_F color) StartNewTrail;
 			}
 		}
 		[CRepr]
@@ -1304,8 +1304,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDCompositionInkTrailDevice self, out IDCompositionDelegatedInkTrail* inkTrail) CreateDelegatedInkTrail;
-				public new function HRESULT(ref IDCompositionInkTrailDevice self, ref IUnknown swapChain, out IDCompositionDelegatedInkTrail* inkTrail) CreateDelegatedInkTrailForSwapChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionInkTrailDevice self, out IDCompositionDelegatedInkTrail* inkTrail) CreateDelegatedInkTrail;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionInkTrailDevice self, ref IUnknown swapChain, out IDCompositionDelegatedInkTrail* inkTrail) CreateDelegatedInkTrailForSwapChain;
 			}
 		}
 		

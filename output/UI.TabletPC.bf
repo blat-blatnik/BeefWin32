@@ -1716,18 +1716,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Top;
-				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Top;
-				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Left;
-				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Left;
-				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Bottom;
-				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Bottom;
-				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Right;
-				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Right;
-				public new function HRESULT(ref IInkRectangle self, out RECT Rect) get_Data;
-				public new function HRESULT(ref IInkRectangle self, RECT Rect) put_Data;
-				public new function HRESULT(ref IInkRectangle self, out int32 Top, out int32 Left, out int32 Bottom, out int32 Right) GetRectangle;
-				public new function HRESULT(ref IInkRectangle self, int32 Top, int32 Left, int32 Bottom, int32 Right) SetRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out int32 Units) get_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, int32 Units) put_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out int32 Units) get_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, int32 Units) put_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out int32 Units) get_Bottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, int32 Units) put_Bottom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out int32 Units) get_Right;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, int32 Units) put_Right;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out RECT Rect) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, RECT Rect) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, out int32 Top, out int32 Left, out int32 Bottom, out int32 Right) GetRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRectangle self, int32 Top, int32 Left, int32 Bottom, int32 Right) SetRectangle;
 			}
 		}
 		[CRepr]
@@ -1744,9 +1744,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkExtendedProperty self, BSTR* Guid) get_Guid;
-				public new function HRESULT(ref IInkExtendedProperty self, out VARIANT Data) get_Data;
-				public new function HRESULT(ref IInkExtendedProperty self, VARIANT Data) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperty self, BSTR* Guid) get_Guid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperty self, out VARIANT Data) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperty self, VARIANT Data) put_Data;
 			}
 		}
 		[CRepr]
@@ -1767,13 +1767,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkExtendedProperties self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkExtendedProperties self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkExtendedProperties self, VARIANT Identifier, IInkExtendedProperty** Item) Item;
-				public new function HRESULT(ref IInkExtendedProperties self, BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) Add;
-				public new function HRESULT(ref IInkExtendedProperties self, VARIANT Identifier) Remove;
-				public new function HRESULT(ref IInkExtendedProperties self) Clear;
-				public new function HRESULT(ref IInkExtendedProperties self, BSTR Guid, out int16 DoesPropertyExist) DoesPropertyExist;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, VARIANT Identifier, IInkExtendedProperty** Item) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, VARIANT Identifier) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkExtendedProperties self, BSTR Guid, out int16 DoesPropertyExist) DoesPropertyExist;
 			}
 		}
 		[CRepr]
@@ -1807,26 +1807,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDrawingAttributes self, out int32 CurrentColor) get_Color;
-				public new function HRESULT(ref IInkDrawingAttributes self, int32 NewColor) put_Color;
-				public new function HRESULT(ref IInkDrawingAttributes self, out float CurrentWidth) get_Width;
-				public new function HRESULT(ref IInkDrawingAttributes self, float NewWidth) put_Width;
-				public new function HRESULT(ref IInkDrawingAttributes self, out float CurrentHeight) get_Height;
-				public new function HRESULT(ref IInkDrawingAttributes self, float NewHeight) put_Height;
-				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_FitToCurve;
-				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_FitToCurve;
-				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_IgnorePressure;
-				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_IgnorePressure;
-				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_AntiAliased;
-				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_AntiAliased;
-				public new function HRESULT(ref IInkDrawingAttributes self, out int32 CurrentTransparency) get_Transparency;
-				public new function HRESULT(ref IInkDrawingAttributes self, int32 NewTransparency) put_Transparency;
-				public new function HRESULT(ref IInkDrawingAttributes self, out InkRasterOperation CurrentRasterOperation) get_RasterOperation;
-				public new function HRESULT(ref IInkDrawingAttributes self, InkRasterOperation NewRasterOperation) put_RasterOperation;
-				public new function HRESULT(ref IInkDrawingAttributes self, out InkPenTip CurrentPenTip) get_PenTip;
-				public new function HRESULT(ref IInkDrawingAttributes self, InkPenTip NewPenTip) put_PenTip;
-				public new function HRESULT(ref IInkDrawingAttributes self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(ref IInkDrawingAttributes self, IInkDrawingAttributes** DrawingAttributes) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out int32 CurrentColor) get_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, int32 NewColor) put_Color;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out float CurrentWidth) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, float NewWidth) put_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out float CurrentHeight) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, float NewHeight) put_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_FitToCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_FitToCurve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_IgnorePressure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_IgnorePressure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_AntiAliased;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_AntiAliased;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out int32 CurrentTransparency) get_Transparency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, int32 NewTransparency) put_Transparency;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out InkRasterOperation CurrentRasterOperation) get_RasterOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, InkRasterOperation NewRasterOperation) put_RasterOperation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, out InkPenTip CurrentPenTip) get_PenTip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, InkPenTip NewPenTip) put_PenTip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDrawingAttributes self, IInkDrawingAttributes** DrawingAttributes) Clone;
 			}
 		}
 		[CRepr]
@@ -1862,28 +1862,28 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkTransform self) Reset;
-				public new function HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Translate;
-				public new function HRESULT(ref IInkTransform self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(ref IInkTransform self, int16 Horizontally, int16 Vertically) Reflect;
-				public new function HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Shear;
-				public new function HRESULT(ref IInkTransform self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
-				public new function HRESULT(ref IInkTransform self, out float eM11, out float eM12, out float eM21, out float eM22, out float eDx, out float eDy) GetTransform;
-				public new function HRESULT(ref IInkTransform self, float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) SetTransform;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eM11;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eM11;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eM12;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eM12;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eM21;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eM21;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eM22;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eM22;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eDx;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eDx;
-				public new function HRESULT(ref IInkTransform self, out float Value) get_eDy;
-				public new function HRESULT(ref IInkTransform self, float Value) put_eDy;
-				public new function HRESULT(ref IInkTransform self, out XFORM XForm) get_Data;
-				public new function HRESULT(ref IInkTransform self, XFORM XForm) put_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Translate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Degrees, float x, float y) Rotate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, int16 Horizontally, int16 Vertically) Reflect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Shear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float eM11, out float eM12, out float eM21, out float eM22, out float eDx, out float eDy) GetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) SetTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eM11;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eM11;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eM12;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eM12;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eM21;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eM21;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eM22;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eM22;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eDx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eDx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out float Value) get_eDy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, float Value) put_eDy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, out XFORM XForm) get_Data;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTransform self, XFORM XForm) put_Data;
 			}
 		}
 		[CRepr]
@@ -1900,9 +1900,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkGesture self, out InkRecognitionConfidence Confidence) get_Confidence;
-				public new function HRESULT(ref IInkGesture self, out InkApplicationGesture Id) get_Id;
-				public new function HRESULT(ref IInkGesture self, out int32 X, out int32 Y) GetHotPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkGesture self, out InkRecognitionConfidence Confidence) get_Confidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkGesture self, out InkApplicationGesture Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkGesture self, out int32 X, out int32 Y) GetHotPoint;
 			}
 		}
 		[CRepr]
@@ -1923,13 +1923,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCursor self, BSTR* Name) get_Name;
-				public new function HRESULT(ref IInkCursor self, out int32 Id) get_Id;
-				public new function HRESULT(ref IInkCursor self, out int16 Status) get_Inverted;
-				public new function HRESULT(ref IInkCursor self, IInkDrawingAttributes** Attributes) get_DrawingAttributes;
-				public new function HRESULT(ref IInkCursor self, IInkDrawingAttributes* Attributes) putref_DrawingAttributes;
-				public new function HRESULT(ref IInkCursor self, IInkTablet** Tablet) get_Tablet;
-				public new function HRESULT(ref IInkCursor self, IInkCursorButtons** Buttons) get_Buttons;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, out int32 Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, out int16 Status) get_Inverted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, IInkDrawingAttributes** Attributes) get_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, IInkDrawingAttributes* Attributes) putref_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, IInkTablet** Tablet) get_Tablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursor self, IInkCursorButtons** Buttons) get_Buttons;
 			}
 		}
 		[CRepr]
@@ -1946,9 +1946,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCursors self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkCursors self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkCursors self, int32 Index, IInkCursor** Cursor) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursors self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursors self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursors self, int32 Index, IInkCursor** Cursor) Item;
 			}
 		}
 		[CRepr]
@@ -1965,9 +1965,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCursorButton self, BSTR* Name) get_Name;
-				public new function HRESULT(ref IInkCursorButton self, BSTR* Id) get_Id;
-				public new function HRESULT(ref IInkCursorButton self, out InkCursorButtonState CurrentState) get_State;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButton self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButton self, BSTR* Id) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButton self, out InkCursorButtonState CurrentState) get_State;
 			}
 		}
 		[CRepr]
@@ -1984,9 +1984,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCursorButtons self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkCursorButtons self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkCursorButtons self, VARIANT Identifier, IInkCursorButton** Button) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButtons self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButtons self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCursorButtons self, VARIANT Identifier, IInkCursorButton** Button) Item;
 			}
 		}
 		[CRepr]
@@ -2006,12 +2006,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkTablet self, BSTR* Name) get_Name;
-				public new function HRESULT(ref IInkTablet self, BSTR* Id) get_PlugAndPlayId;
-				public new function HRESULT(ref IInkTablet self, IInkRectangle** Rectangle) get_MaximumInputRectangle;
-				public new function HRESULT(ref IInkTablet self, out TabletHardwareCapabilities Capabilities) get_HardwareCapabilities;
-				public new function HRESULT(ref IInkTablet self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
-				public new function HRESULT(ref IInkTablet self, BSTR propertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPropertyMetrics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, BSTR* Id) get_PlugAndPlayId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, IInkRectangle** Rectangle) get_MaximumInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, out TabletHardwareCapabilities Capabilities) get_HardwareCapabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet self, BSTR propertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPropertyMetrics;
 			}
 		}
 		[CRepr]
@@ -2026,7 +2026,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkTablet2 self, out TabletDeviceKind Kind) get_DeviceKind;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet2 self, out TabletDeviceKind Kind) get_DeviceKind;
 			}
 		}
 		[CRepr]
@@ -2042,8 +2042,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkTablet3 self, out int16 pIsMultiTouch) get_IsMultiTouch;
-				public new function HRESULT(ref IInkTablet3 self, out uint32 pMaximumCursors) get_MaximumCursors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet3 self, out int16 pIsMultiTouch) get_IsMultiTouch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablet3 self, out uint32 pMaximumCursors) get_MaximumCursors;
 			}
 		}
 		[CRepr]
@@ -2062,11 +2062,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkTablets self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkTablets self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkTablets self, IInkTablet** DefaultTablet) get_DefaultTablet;
-				public new function HRESULT(ref IInkTablets self, int32 Index, IInkTablet** Tablet) Item;
-				public new function HRESULT(ref IInkTablets self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablets self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablets self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablets self, IInkTablet** DefaultTablet) get_DefaultTablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablets self, int32 Index, IInkTablet** Tablet) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkTablets self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
 			}
 		}
 		[CRepr]
@@ -2113,39 +2113,39 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkStrokeDisp self, out int32 ID) get_ID;
-				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Points) get_BezierPoints;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes** DrawAttrs) get_DrawingAttributes;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes* DrawAttrs) putref_DrawingAttributes;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_PolylineCusps;
-				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_BezierCusps;
-				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Intersections) get_SelfIntersections;
-				public new function HRESULT(ref IInkStrokeDisp self, out int32 plCount) get_PacketCount;
-				public new function HRESULT(ref IInkStrokeDisp self, out int32 plSize) get_PacketSize;
-				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT PacketDescription) get_PacketDescription;
-				public new function HRESULT(ref IInkStrokeDisp self, out int16 Deleted) get_Deleted;
-				public new function HRESULT(ref IInkStrokeDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkStrokes* Strokes, out VARIANT Intersections) FindIntersections;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle, out VARIANT Intersections) GetRectangleIntersections;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, float Radius, out int16 Intersects) HitTestCircle;
-				public new function HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, out float Distance, out float Point) NearestPoint;
-				public new function HRESULT(ref IInkStrokeDisp self, float SplitAt, IInkStrokeDisp** NewStroke) Split;
-				public new function HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPacketDescriptionPropertyMetrics;
-				public new function HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT Points) GetPoints;
-				public new function HRESULT(ref IInkStrokeDisp self, VARIANT Points, int32 Index, int32 Count, out int32 NumberOfPointsSet) SetPoints;
-				public new function HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT PacketData) GetPacketData;
-				public new function HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, int32 Index, int32 Count, out VARIANT PacketValues) GetPacketValuesByProperty;
-				public new function HRESULT(ref IInkStrokeDisp self, BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, out int32 NumberOfPacketsSet) SetPacketValuesByProperty;
-				public new function HRESULT(ref IInkStrokeDisp self, int32 FittingError, out VARIANT FlattenedBezierPoints) GetFlattenedBezierPoints;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
-				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) ScaleToRectangle;
-				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(ref IInkStrokeDisp self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
-				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out int32 ID) get_ID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out VARIANT Points) get_BezierPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes** DrawAttrs) get_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes* DrawAttrs) putref_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkDisp** Ink) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_PolylineCusps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_BezierCusps;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out VARIANT Intersections) get_SelfIntersections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out int32 plCount) get_PacketCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out int32 plSize) get_PacketSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out VARIANT PacketDescription) get_PacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, out int16 Deleted) get_Deleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkStrokes* Strokes, out VARIANT Intersections) FindIntersections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle, out VARIANT Intersections) GetRectangleIntersections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) Clip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, float Radius, out int16 Intersects) HitTestCircle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, out float Distance, out float Point) NearestPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, float SplitAt, IInkStrokeDisp** NewStroke) Split;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPacketDescriptionPropertyMetrics;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT Points) GetPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, VARIANT Points, int32 Index, int32 Count, out int32 NumberOfPointsSet) SetPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT PacketData) GetPacketData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, int32 Index, int32 Count, out VARIANT PacketValues) GetPacketValuesByProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, out int32 NumberOfPacketsSet) SetPacketValuesByProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, int32 FittingError, out VARIANT FlattenedBezierPoints) GetFlattenedBezierPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) ScaleToRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, float Degrees, float x, float y) Rotate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
 			}
 		}
 		[CRepr]
@@ -2179,26 +2179,26 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkStrokes self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkStrokes self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkStrokes self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(ref IInkStrokes self, IInkRecognitionResult** RecognitionResult) get_RecognitionResult;
-				public new function HRESULT(ref IInkStrokes self, BSTR* ToString) ComToString;
-				public new function HRESULT(ref IInkStrokes self, int32 Index, IInkStrokeDisp** Stroke) Item;
-				public new function HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Add;
-				public new function HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) AddStrokes;
-				public new function HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Remove;
-				public new function HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) RemoveStrokes;
-				public new function HRESULT(ref IInkStrokes self, IInkDrawingAttributes* DrawAttrs) ModifyDrawingAttributes;
-				public new function HRESULT(ref IInkStrokes self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) GetBoundingBox;
-				public new function HRESULT(ref IInkStrokes self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
-				public new function HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) ScaleToRectangle;
-				public new function HRESULT(ref IInkStrokes self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(ref IInkStrokes self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
-				public new function HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
-				public new function HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(ref IInkStrokes self) RemoveRecognitionResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkDisp** Ink) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkRecognitionResult** RecognitionResult) get_RecognitionResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, BSTR* ToString) ComToString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, int32 Index, IInkStrokeDisp** Stroke) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) AddStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) RemoveStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkDrawingAttributes* DrawAttrs) ModifyDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) GetBoundingBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) ScaleToRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, float Degrees, float x, float y) Rotate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) Clip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkStrokes self) RemoveRecognitionResult;
 			}
 		}
 		[CRepr]
@@ -2218,12 +2218,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCustomStrokes self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkCustomStrokes self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkCustomStrokes self, VARIANT Identifier, IInkStrokes** Strokes) Item;
-				public new function HRESULT(ref IInkCustomStrokes self, BSTR Name, IInkStrokes* Strokes) Add;
-				public new function HRESULT(ref IInkCustomStrokes self, VARIANT Identifier) Remove;
-				public new function HRESULT(ref IInkCustomStrokes self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self, VARIANT Identifier, IInkStrokes** Strokes) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self, BSTR Name, IInkStrokes* Strokes) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self, VARIANT Identifier) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCustomStrokes self) Clear;
 			}
 		}
 		[CRepr]
@@ -2275,31 +2275,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDisp self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(ref IInkDisp self, out int16 Dirty) get_Dirty;
-				public new function HRESULT(ref IInkDisp self, int16 Dirty) put_Dirty;
-				public new function HRESULT(ref IInkDisp self, IInkCustomStrokes** ppunkInkCustomStrokes) get_CustomStrokes;
-				public new function HRESULT(ref IInkDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
-				public new function HRESULT(ref IInkDisp self, IInkStrokes* Strokes) DeleteStrokes;
-				public new function HRESULT(ref IInkDisp self, IInkStrokeDisp* Stroke) DeleteStroke;
-				public new function HRESULT(ref IInkDisp self, IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) ExtractStrokes;
-				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) ExtractWithRectangle;
-				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(ref IInkDisp self, IInkDisp** NewInk) Clone;
-				public new function HRESULT(ref IInkDisp self, int32 X, int32 Y, float radius, IInkStrokes** Strokes) HitTestCircle;
-				public new function HRESULT(ref IInkDisp self, IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) HitTestWithRectangle;
-				public new function HRESULT(ref IInkDisp self, VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) HitTestWithLasso;
-				public new function HRESULT(ref IInkDisp self, int32 X, int32 Y, out float PointOnStroke, out float DistanceFromPacket, IInkStrokeDisp** Stroke) NearestPoint;
-				public new function HRESULT(ref IInkDisp self, VARIANT StrokeIds, IInkStrokes** Strokes) CreateStrokes;
-				public new function HRESULT(ref IInkDisp self, IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) AddStrokesAtRectangle;
-				public new function HRESULT(ref IInkDisp self, InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, out VARIANT Data) Save;
-				public new function HRESULT(ref IInkDisp self, VARIANT Data) Load;
-				public new function HRESULT(ref IInkDisp self, VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) CreateStroke;
-				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopyWithRectangle;
-				public new function HRESULT(ref IInkDisp self, IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopy;
-				public new function HRESULT(ref IInkDisp self, IDataObject* DataObject, out int16 CanPaste) CanPaste;
-				public new function HRESULT(ref IInkDisp self, int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) ClipboardPaste;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, out int16 Dirty) get_Dirty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, int16 Dirty) put_Dirty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkCustomStrokes** ppunkInkCustomStrokes) get_CustomStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokes* Strokes) DeleteStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokeDisp* Stroke) DeleteStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) ExtractStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) ExtractWithRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkRectangle* Rectangle) Clip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkDisp** NewInk) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, int32 X, int32 Y, float radius, IInkStrokes** Strokes) HitTestCircle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) HitTestWithRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) HitTestWithLasso;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, int32 X, int32 Y, out float PointOnStroke, out float DistanceFromPacket, IInkStrokeDisp** Stroke) NearestPoint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, VARIANT StrokeIds, IInkStrokes** Strokes) CreateStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) AddStrokesAtRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, out VARIANT Data) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, VARIANT Data) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) CreateStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopyWithRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, IDataObject* DataObject, out int16 CanPaste) CanPaste;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDisp self, int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) ClipboardPaste;
 			}
 		}
 		[CRepr]
@@ -2341,21 +2341,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) GetViewTransform;
-				public new function HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) SetViewTransform;
-				public new function HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) GetObjectTransform;
-				public new function HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) SetObjectTransform;
-				public new function HRESULT(ref IInkRenderer self, int hDC, IInkStrokes* Strokes) Draw;
-				public new function HRESULT(ref IInkRenderer self, int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) DrawStroke;
-				public new function HRESULT(ref IInkRenderer self, int hDC, out int32 x, out int32 y) PixelToInkSpace;
-				public new function HRESULT(ref IInkRenderer self, int hdcDisplay, out int32 x, out int32 y) InkSpaceToPixel;
-				public new function HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) PixelToInkSpaceFromPoints;
-				public new function HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) InkSpaceToPixelFromPoints;
-				public new function HRESULT(ref IInkRenderer self, IInkStrokes* Strokes, IInkRectangle** Rectangle) Measure;
-				public new function HRESULT(ref IInkRenderer self, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) MeasureStroke;
-				public new function HRESULT(ref IInkRenderer self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(ref IInkRenderer self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(ref IInkRenderer self, float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) ScaleTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) GetViewTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) SetViewTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) GetObjectTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) SetObjectTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hDC, IInkStrokes* Strokes) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) DrawStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hDC, out int32 x, out int32 y) PixelToInkSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hdcDisplay, out int32 x, out int32 y) InkSpaceToPixel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) PixelToInkSpaceFromPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) InkSpaceToPixelFromPoints;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkStrokes* Strokes, IInkRectangle** Rectangle) Measure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) MeasureStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, float Degrees, float x, float y) Rotate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRenderer self, float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) ScaleTransform;
 			}
 		}
 		[CRepr]
@@ -2409,46 +2409,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkCollector self, out int CurrentWindow) get_hWnd;
-				public new function HRESULT(ref IInkCollector self, int NewWindow) put_hWnd;
-				public new function HRESULT(ref IInkCollector self, out int16 Collecting) get_Enabled;
-				public new function HRESULT(ref IInkCollector self, int16 Collecting) put_Enabled;
-				public new function HRESULT(ref IInkCollector self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkCollector self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkCollector self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(ref IInkCollector self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(ref IInkCollector self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(ref IInkCollector self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(ref IInkCollector self, out int16 AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(ref IInkCollector self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(ref IInkCollector self, out int16 Collecting) get_CollectingInk;
-				public new function HRESULT(ref IInkCollector self, out InkCollectionMode Mode) get_CollectionMode;
-				public new function HRESULT(ref IInkCollector self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(ref IInkCollector self, out int16 Enabled) get_DynamicRendering;
-				public new function HRESULT(ref IInkCollector self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(ref IInkCollector self, out VARIANT PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(ref IInkCollector self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(ref IInkCollector self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(ref IInkCollector self, out InkMousePointer MousePointer) get_MousePointer;
-				public new function HRESULT(ref IInkCollector self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(ref IInkCollector self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(ref IInkCollector self, out int32 MarginX) get_MarginX;
-				public new function HRESULT(ref IInkCollector self, int32 MarginX) put_MarginX;
-				public new function HRESULT(ref IInkCollector self, out int32 MarginY) get_MarginY;
-				public new function HRESULT(ref IInkCollector self, int32 MarginY) put_MarginY;
-				public new function HRESULT(ref IInkCollector self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(ref IInkCollector self, out int16 Support) get_SupportHighContrastInk;
-				public new function HRESULT(ref IInkCollector self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
-				public new function HRESULT(ref IInkCollector self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(ref IInkCollector self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(ref IInkCollector self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(ref IInkCollector self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
-				public new function HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int CurrentWindow) get_hWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int NewWindow) put_hWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int16 Collecting) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int16 Collecting) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkDisp** Ink) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkDisp* NewInk) putref_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int16 AutoRedraw) put_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int16 Collecting) get_CollectingInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkCollectionMode Mode) put_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int16 Enabled) get_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int16 Enabled) put_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkMousePointer MousePointer) put_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkCursors** Cursors) get_Cursors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int32 MarginX) get_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int32 MarginX) put_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int32 MarginY) get_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int32 MarginY) put_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkTablet** SingleTablet) get_Tablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, out int16 Support) get_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int16 Support) put_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
 			}
 		}
 		[CRepr]
@@ -2529,60 +2529,60 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkOverlay self, out int CurrentWindow) get_hWnd;
-				public new function HRESULT(ref IInkOverlay self, int NewWindow) put_hWnd;
-				public new function HRESULT(ref IInkOverlay self, out int16 Collecting) get_Enabled;
-				public new function HRESULT(ref IInkOverlay self, int16 Collecting) put_Enabled;
-				public new function HRESULT(ref IInkOverlay self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkOverlay self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkOverlay self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(ref IInkOverlay self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(ref IInkOverlay self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(ref IInkOverlay self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(ref IInkOverlay self, out int16 AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(ref IInkOverlay self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(ref IInkOverlay self, out int16 Collecting) get_CollectingInk;
-				public new function HRESULT(ref IInkOverlay self, out InkCollectionMode Mode) get_CollectionMode;
-				public new function HRESULT(ref IInkOverlay self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(ref IInkOverlay self, out int16 Enabled) get_DynamicRendering;
-				public new function HRESULT(ref IInkOverlay self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(ref IInkOverlay self, out VARIANT PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(ref IInkOverlay self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(ref IInkOverlay self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(ref IInkOverlay self, out InkMousePointer MousePointer) get_MousePointer;
-				public new function HRESULT(ref IInkOverlay self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(ref IInkOverlay self, out InkOverlayEditingMode EditingMode) get_EditingMode;
-				public new function HRESULT(ref IInkOverlay self, InkOverlayEditingMode EditingMode) put_EditingMode;
-				public new function HRESULT(ref IInkOverlay self, IInkStrokes** Selection) get_Selection;
-				public new function HRESULT(ref IInkOverlay self, IInkStrokes* Selection) put_Selection;
-				public new function HRESULT(ref IInkOverlay self, out InkOverlayEraserMode EraserMode) get_EraserMode;
-				public new function HRESULT(ref IInkOverlay self, InkOverlayEraserMode EraserMode) put_EraserMode;
-				public new function HRESULT(ref IInkOverlay self, out int32 EraserWidth) get_EraserWidth;
-				public new function HRESULT(ref IInkOverlay self, int32 newEraserWidth) put_EraserWidth;
-				public new function HRESULT(ref IInkOverlay self, out InkOverlayAttachMode AttachMode) get_AttachMode;
-				public new function HRESULT(ref IInkOverlay self, InkOverlayAttachMode AttachMode) put_AttachMode;
-				public new function HRESULT(ref IInkOverlay self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(ref IInkOverlay self, out int32 MarginX) get_MarginX;
-				public new function HRESULT(ref IInkOverlay self, int32 MarginX) put_MarginX;
-				public new function HRESULT(ref IInkOverlay self, out int32 MarginY) get_MarginY;
-				public new function HRESULT(ref IInkOverlay self, int32 MarginY) put_MarginY;
-				public new function HRESULT(ref IInkOverlay self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastInk;
-				public new function HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastSelectionUI;
-				public new function HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastSelectionUI;
-				public new function HRESULT(ref IInkOverlay self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
-				public new function HRESULT(ref IInkOverlay self, IInkRectangle* Rect) Draw;
-				public new function HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
-				public new function HRESULT(ref IInkOverlay self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(ref IInkOverlay self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(ref IInkOverlay self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(ref IInkOverlay self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
-				public new function HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int CurrentWindow) get_hWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int NewWindow) put_hWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 Collecting) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 Collecting) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkDisp** Ink) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkDisp* NewInk) putref_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 AutoRedraw) put_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 Collecting) get_CollectingInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkCollectionMode Mode) put_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 Enabled) get_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 Enabled) put_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkMousePointer MousePointer) put_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out InkOverlayEditingMode EditingMode) get_EditingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkOverlayEditingMode EditingMode) put_EditingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkStrokes** Selection) get_Selection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkStrokes* Selection) put_Selection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out InkOverlayEraserMode EraserMode) get_EraserMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkOverlayEraserMode EraserMode) put_EraserMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int32 EraserWidth) get_EraserWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int32 newEraserWidth) put_EraserWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out InkOverlayAttachMode AttachMode) get_AttachMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkOverlayAttachMode AttachMode) put_AttachMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkCursors** Cursors) get_Cursors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int32 MarginX) get_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int32 MarginX) put_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int32 MarginY) get_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int32 MarginY) put_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkTablet** SingleTablet) get_Tablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastSelectionUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastSelectionUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkRectangle* Rect) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
 			}
 		}
 		[CRepr]
@@ -2668,65 +2668,65 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkPicture self, out int CurrentWindow) get_hWnd;
-				public new function HRESULT(ref IInkPicture self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkPicture self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(ref IInkPicture self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(ref IInkPicture self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(ref IInkPicture self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(ref IInkPicture self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(ref IInkPicture self, out int16 AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(ref IInkPicture self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(ref IInkPicture self, out int16 Collecting) get_CollectingInk;
-				public new function HRESULT(ref IInkPicture self, out InkCollectionMode Mode) get_CollectionMode;
-				public new function HRESULT(ref IInkPicture self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(ref IInkPicture self, out int16 Enabled) get_DynamicRendering;
-				public new function HRESULT(ref IInkPicture self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(ref IInkPicture self, out VARIANT PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(ref IInkPicture self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(ref IInkPicture self, out InkMousePointer MousePointer) get_MousePointer;
-				public new function HRESULT(ref IInkPicture self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(ref IInkPicture self, out InkOverlayEditingMode EditingMode) get_EditingMode;
-				public new function HRESULT(ref IInkPicture self, InkOverlayEditingMode EditingMode) put_EditingMode;
-				public new function HRESULT(ref IInkPicture self, IInkStrokes** Selection) get_Selection;
-				public new function HRESULT(ref IInkPicture self, IInkStrokes* Selection) put_Selection;
-				public new function HRESULT(ref IInkPicture self, out InkOverlayEraserMode EraserMode) get_EraserMode;
-				public new function HRESULT(ref IInkPicture self, InkOverlayEraserMode EraserMode) put_EraserMode;
-				public new function HRESULT(ref IInkPicture self, out int32 EraserWidth) get_EraserWidth;
-				public new function HRESULT(ref IInkPicture self, int32 newEraserWidth) put_EraserWidth;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp* pPicture) putref_Picture;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp* pPicture) put_Picture;
-				public new function HRESULT(ref IInkPicture self, IPictureDisp** ppPicture) get_Picture;
-				public new function HRESULT(ref IInkPicture self, InkPictureSizeMode smNewSizeMode) put_SizeMode;
-				public new function HRESULT(ref IInkPicture self, out InkPictureSizeMode smSizeMode) get_SizeMode;
-				public new function HRESULT(ref IInkPicture self, uint32 newColor) put_BackColor;
-				public new function HRESULT(ref IInkPicture self, out uint32 pColor) get_BackColor;
-				public new function HRESULT(ref IInkPicture self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(ref IInkPicture self, out int32 MarginX) get_MarginX;
-				public new function HRESULT(ref IInkPicture self, int32 MarginX) put_MarginX;
-				public new function HRESULT(ref IInkPicture self, out int32 MarginY) get_MarginY;
-				public new function HRESULT(ref IInkPicture self, int32 MarginY) put_MarginY;
-				public new function HRESULT(ref IInkPicture self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastInk;
-				public new function HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastSelectionUI;
-				public new function HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastSelectionUI;
-				public new function HRESULT(ref IInkPicture self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
-				public new function HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
-				public new function HRESULT(ref IInkPicture self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(ref IInkPicture self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(ref IInkPicture self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(ref IInkPicture self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
-				public new function HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
-				public new function HRESULT(ref IInkPicture self, out int16 Collecting) get_InkEnabled;
-				public new function HRESULT(ref IInkPicture self, int16 Collecting) put_InkEnabled;
-				public new function HRESULT(ref IInkPicture self, out int16 pbool) get_Enabled;
-				public new function HRESULT(ref IInkPicture self, int16 vbool) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int CurrentWindow) get_hWnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkDisp** Ink) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkDisp* NewInk) putref_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 AutoRedraw) put_AutoRedraw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 Collecting) get_CollectingInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkCollectionMode Mode) put_CollectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 Enabled) get_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 Enabled) put_DynamicRendering;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkMousePointer MousePointer) put_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out InkOverlayEditingMode EditingMode) get_EditingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkOverlayEditingMode EditingMode) put_EditingMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkStrokes** Selection) get_Selection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkStrokes* Selection) put_Selection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out InkOverlayEraserMode EraserMode) get_EraserMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkOverlayEraserMode EraserMode) put_EraserMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int32 EraserWidth) get_EraserWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int32 newEraserWidth) put_EraserWidth;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp* pPicture) putref_Picture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp* pPicture) put_Picture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IPictureDisp** ppPicture) get_Picture;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkPictureSizeMode smNewSizeMode) put_SizeMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out InkPictureSizeMode smSizeMode) get_SizeMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, uint32 newColor) put_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out uint32 pColor) get_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkCursors** Cursors) get_Cursors;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int32 MarginX) get_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int32 MarginX) put_MarginX;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int32 MarginY) get_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int32 MarginY) put_MarginY;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkTablet** SingleTablet) get_Tablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastSelectionUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastSelectionUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 Collecting) get_InkEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 Collecting) put_InkEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, out int16 pbool) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkPicture self, int16 vbool) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -2760,13 +2760,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizer self, BSTR* Name) get_Name;
-				public new function HRESULT(ref IInkRecognizer self, BSTR* Vendor) get_Vendor;
-				public new function HRESULT(ref IInkRecognizer self, out InkRecognizerCapabilities CapabilitiesFlags) get_Capabilities;
-				public new function HRESULT(ref IInkRecognizer self, out VARIANT Languages) get_Languages;
-				public new function HRESULT(ref IInkRecognizer self, out VARIANT SupportedProperties) get_SupportedProperties;
-				public new function HRESULT(ref IInkRecognizer self, out VARIANT PreferredPacketDescription) get_PreferredPacketDescription;
-				public new function HRESULT(ref IInkRecognizer self, IInkRecognizerContext** Context) CreateRecognizerContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, BSTR* Name) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, BSTR* Vendor) get_Vendor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, out InkRecognizerCapabilities CapabilitiesFlags) get_Capabilities;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, out VARIANT Languages) get_Languages;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, out VARIANT SupportedProperties) get_SupportedProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, out VARIANT PreferredPacketDescription) get_PreferredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer self, IInkRecognizerContext** Context) CreateRecognizerContext;
 			}
 		}
 		[CRepr]
@@ -2782,8 +2782,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizer2 self, BSTR* pbstrId) get_Id;
-				public new function HRESULT(ref IInkRecognizer2 self, out VARIANT UnicodeRanges) get_UnicodeRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer2 self, BSTR* pbstrId) get_Id;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizer2 self, out VARIANT UnicodeRanges) get_UnicodeRanges;
 			}
 		}
 		[CRepr]
@@ -2801,10 +2801,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizers self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkRecognizers self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkRecognizers self, int32 lcid, IInkRecognizer** DefaultRecognizer) GetDefaultRecognizer;
-				public new function HRESULT(ref IInkRecognizers self, int32 Index, IInkRecognizer** InkRecognizer) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizers self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizers self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizers self, int32 lcid, IInkRecognizer** DefaultRecognizer) GetDefaultRecognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizers self, int32 Index, IInkRecognizer** InkRecognizer) Item;
 			}
 		}
 		[CRepr]
@@ -2855,30 +2855,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizerContext self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkStrokes* Strokes) putref_Strokes;
-				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognizerCharacterAutoCompletionMode Mode) get_CharacterAutoCompletionMode;
-				public new function HRESULT(ref IInkRecognizerContext self, InkRecognizerCharacterAutoCompletionMode Mode) put_CharacterAutoCompletionMode;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Factoid) get_Factoid;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR factoid) put_Factoid;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide** RecognizerGuide) get_Guide;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide* RecognizerGuide) putref_Guide;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Prefix) get_PrefixText;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR Prefix) put_PrefixText;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Suffix) get_SuffixText;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR Suffix) put_SuffixText;
-				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognitionModes Modes) get_RecognitionFlags;
-				public new function HRESULT(ref IInkRecognizerContext self, InkRecognitionModes Modes) put_RecognitionFlags;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkWordList** WordList) get_WordList;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkWordList* WordList) putref_WordList;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizer** Recognizer) get_Recognizer;
-				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognitionStatus RecognitionStatus, IInkRecognitionResult** RecognitionResult) Recognize;
-				public new function HRESULT(ref IInkRecognizerContext self) StopBackgroundRecognition;
-				public new function HRESULT(ref IInkRecognizerContext self) EndInkInput;
-				public new function HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognize;
-				public new function HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognizeWithAlternates;
-				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerContext** RecoContext) Clone;
-				public new function HRESULT(ref IInkRecognizerContext self, BSTR String, out int16 Supported) IsStringSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkStrokes* Strokes) putref_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, out InkRecognizerCharacterAutoCompletionMode Mode) get_CharacterAutoCompletionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, InkRecognizerCharacterAutoCompletionMode Mode) put_CharacterAutoCompletionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR* Factoid) get_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR factoid) put_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide** RecognizerGuide) get_Guide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide* RecognizerGuide) putref_Guide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR* Prefix) get_PrefixText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR Prefix) put_PrefixText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR* Suffix) get_SuffixText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR Suffix) put_SuffixText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, out InkRecognitionModes Modes) get_RecognitionFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, InkRecognitionModes Modes) put_RecognitionFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkWordList** WordList) get_WordList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkWordList* WordList) putref_WordList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkRecognizer** Recognizer) get_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, out InkRecognitionStatus RecognitionStatus, IInkRecognitionResult** RecognitionResult) Recognize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self) StopBackgroundRecognition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self) EndInkInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognizeWithAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, IInkRecognizerContext** RecoContext) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext self, BSTR String, out int16 Supported) IsStringSupported;
 			}
 		}
 		[CRepr]
@@ -2894,8 +2894,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizerContext2 self, out VARIANT UnicodeRanges) get_EnabledUnicodeRanges;
-				public new function HRESULT(ref IInkRecognizerContext2 self, VARIANT UnicodeRanges) put_EnabledUnicodeRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext2 self, out VARIANT UnicodeRanges) get_EnabledUnicodeRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerContext2 self, VARIANT UnicodeRanges) put_EnabledUnicodeRanges;
 			}
 		}
 		[CRepr]
@@ -2916,13 +2916,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognitionResult self, BSTR* TopString) get_TopString;
-				public new function HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate** TopAlternate) get_TopAlternate;
-				public new function HRESULT(ref IInkRecognitionResult self, out InkRecognitionConfidence TopConfidence) get_TopConfidence;
-				public new function HRESULT(ref IInkRecognitionResult self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkRecognitionResult self, int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) AlternatesFromSelection;
-				public new function HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate* Alternate) ModifyTopAlternate;
-				public new function HRESULT(ref IInkRecognitionResult self) SetResultOnStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, BSTR* TopString) get_TopString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate** TopAlternate) get_TopAlternate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, out InkRecognitionConfidence TopConfidence) get_TopConfidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) AlternatesFromSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate* Alternate) ModifyTopAlternate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionResult self) SetResultOnStrokes;
 			}
 		}
 		[CRepr]
@@ -2951,21 +2951,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR* RecoString) get_String;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out InkRecognitionConfidence Confidence) get_Confidence;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Baseline) get_Baseline;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Midline) get_Midline;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Ascender) get_Ascender;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Descender) get_Descender;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out int32 LineNumber) get_LineNumber;
-				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** LineAlternates) get_LineAlternates;
-				public new function HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** ConfidenceAlternates) get_ConfidenceAlternates;
-				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) GetStrokesFromStrokeRanges;
-				public new function HRESULT(ref IInkRecognitionAlternate self, out int32 selectionStart, out int32 selectionLength, IInkStrokes** GetStrokesFromTextRange) GetStrokesFromTextRange;
-				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, out int32 selectionStart, out int32 selectionLength) GetTextRangeFromStrokes;
-				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) AlternatesWithConstantPropertyValues;
-				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, out VARIANT PropertyValue) GetPropertyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, BSTR* RecoString) get_String;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out InkRecognitionConfidence Confidence) get_Confidence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out VARIANT Baseline) get_Baseline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out VARIANT Midline) get_Midline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out VARIANT Ascender) get_Ascender;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out VARIANT Descender) get_Descender;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out int32 LineNumber) get_LineNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** LineAlternates) get_LineAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** ConfidenceAlternates) get_ConfidenceAlternates;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) GetStrokesFromStrokeRanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, out int32 selectionStart, out int32 selectionLength, IInkStrokes** GetStrokesFromTextRange) GetStrokesFromTextRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, out int32 selectionStart, out int32 selectionLength) GetTextRangeFromStrokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) AlternatesWithConstantPropertyValues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, out VARIANT PropertyValue) GetPropertyValue;
 			}
 		}
 		[CRepr]
@@ -2983,10 +2983,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognitionAlternates self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkRecognitionAlternates self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkRecognitionAlternates self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkRecognitionAlternates self, int32 Index, IInkRecognitionAlternate** InkRecoAlternate) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternates self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternates self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternates self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognitionAlternates self, int32 Index, IInkRecognitionAlternate** InkRecoAlternate) Item;
 			}
 		}
 		[CRepr]
@@ -3012,18 +3012,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_WritingBox;
-				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_WritingBox;
-				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_DrawnBox;
-				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_DrawnBox;
-				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Rows;
-				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Rows;
-				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Columns;
-				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Columns;
-				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Midline;
-				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Midline;
-				public new function HRESULT(ref IInkRecognizerGuide self, out InkRecoGuide pRecoGuide) get_GuideData;
-				public new function HRESULT(ref IInkRecognizerGuide self, InkRecoGuide recoGuide) put_GuideData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_WritingBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_WritingBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_DrawnBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_DrawnBox;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Rows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Rows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Columns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Columns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Midline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Midline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, out InkRecoGuide pRecoGuide) get_GuideData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkRecognizerGuide self, InkRecoGuide recoGuide) put_GuideData;
 			}
 		}
 		[CRepr]
@@ -3040,9 +3040,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkWordList self, BSTR NewWord) AddWord;
-				public new function HRESULT(ref IInkWordList self, BSTR RemoveWord) RemoveWord;
-				public new function HRESULT(ref IInkWordList self, IInkWordList* MergeWordList) Merge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkWordList self, BSTR NewWord) AddWord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkWordList self, BSTR RemoveWord) RemoveWord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkWordList self, IInkWordList* MergeWordList) Merge;
 			}
 		}
 		[CRepr]
@@ -3057,7 +3057,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkWordList2 self, BSTR NewWords) AddWords;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkWordList2 self, BSTR NewWords) AddWords;
 			}
 		}
 		[CRepr]
@@ -3090,12 +3090,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) SetFormat;
-				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) GetFormat;
-				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim, ref uint32 pnWidth) GetInkExtent;
-				public new function HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR pwcRecogWord, ref uint32 pcwcRecogWord, uint32 dwFlags) GetCandidate;
-				public new function HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR strRecogWord) SetCandidate;
-				public new function HRESULT(ref IInkLineInfo self) Recognize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) GetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self, ref INKMETRIC pim, ref uint32 pnWidth) GetInkExtent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR pwcRecogWord, ref uint32 pcwcRecogWord, uint32 dwFlags) GetCandidate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR strRecogWord) SetCandidate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkLineInfo self) Recognize;
 			}
 		}
 		[CRepr]
@@ -3129,13 +3129,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDivider self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkDivider self, IInkStrokes* Strokes) putref_Strokes;
-				public new function HRESULT(ref IInkDivider self, IInkRecognizerContext** RecognizerContext) get_RecognizerContext;
-				public new function HRESULT(ref IInkDivider self, IInkRecognizerContext* RecognizerContext) putref_RecognizerContext;
-				public new function HRESULT(ref IInkDivider self, out int32 LineHeight) get_LineHeight;
-				public new function HRESULT(ref IInkDivider self, int32 LineHeight) put_LineHeight;
-				public new function HRESULT(ref IInkDivider self, IInkDivisionResult** InkDivisionResult) Divide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, IInkStrokes* Strokes) putref_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, IInkRecognizerContext** RecognizerContext) get_RecognizerContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, IInkRecognizerContext* RecognizerContext) putref_RecognizerContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, out int32 LineHeight) get_LineHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, int32 LineHeight) put_LineHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivider self, IInkDivisionResult** InkDivisionResult) Divide;
 			}
 		}
 		[CRepr]
@@ -3151,8 +3151,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDivisionResult self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkDivisionResult self, InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) ResultByType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionResult self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionResult self, InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) ResultByType;
 			}
 		}
 		[CRepr]
@@ -3170,10 +3170,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDivisionUnit self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(ref IInkDivisionUnit self, out InkDivisionType divisionType) get_DivisionType;
-				public new function HRESULT(ref IInkDivisionUnit self, BSTR* RecoString) get_RecognizedString;
-				public new function HRESULT(ref IInkDivisionUnit self, IInkTransform** RotationTransform) get_RotationTransform;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnit self, IInkStrokes** Strokes) get_Strokes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnit self, out InkDivisionType divisionType) get_DivisionType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnit self, BSTR* RecoString) get_RecognizedString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnit self, IInkTransform** RotationTransform) get_RotationTransform;
 			}
 		}
 		[CRepr]
@@ -3190,9 +3190,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkDivisionUnits self, out int32 Count) get_Count;
-				public new function HRESULT(ref IInkDivisionUnits self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(ref IInkDivisionUnits self, int32 Index, IInkDivisionUnit** InkDivisionUnit) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnits self, out int32 Count) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnits self, IUnknown** _NewEnum) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkDivisionUnits self, int32 Index, IInkDivisionUnit** InkDivisionUnit) Item;
 			}
 		}
 		[CRepr]
@@ -3231,31 +3231,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IPenInputPanel self, out int16 Busy) get_Busy;
-				public new function HRESULT(ref IPenInputPanel self, BSTR* Factoid) get_Factoid;
-				public new function HRESULT(ref IPenInputPanel self, BSTR Factoid) put_Factoid;
-				public new function HRESULT(ref IPenInputPanel self, out int32 AttachedEditWindow) get_AttachedEditWindow;
-				public new function HRESULT(ref IPenInputPanel self, int32 AttachedEditWindow) put_AttachedEditWindow;
-				public new function HRESULT(ref IPenInputPanel self, out PanelType CurrentPanel) get_CurrentPanel;
-				public new function HRESULT(ref IPenInputPanel self, PanelType CurrentPanel) put_CurrentPanel;
-				public new function HRESULT(ref IPenInputPanel self, out PanelType pDefaultPanel) get_DefaultPanel;
-				public new function HRESULT(ref IPenInputPanel self, PanelType DefaultPanel) put_DefaultPanel;
-				public new function HRESULT(ref IPenInputPanel self, out int16 Visible) get_Visible;
-				public new function HRESULT(ref IPenInputPanel self, int16 Visible) put_Visible;
-				public new function HRESULT(ref IPenInputPanel self, out int32 Top) get_Top;
-				public new function HRESULT(ref IPenInputPanel self, out int32 Left) get_Left;
-				public new function HRESULT(ref IPenInputPanel self, out int32 Width) get_Width;
-				public new function HRESULT(ref IPenInputPanel self, out int32 Height) get_Height;
-				public new function HRESULT(ref IPenInputPanel self, out int32 VerticalOffset) get_VerticalOffset;
-				public new function HRESULT(ref IPenInputPanel self, int32 VerticalOffset) put_VerticalOffset;
-				public new function HRESULT(ref IPenInputPanel self, out int32 HorizontalOffset) get_HorizontalOffset;
-				public new function HRESULT(ref IPenInputPanel self, int32 HorizontalOffset) put_HorizontalOffset;
-				public new function HRESULT(ref IPenInputPanel self, out int16 pAutoShow) get_AutoShow;
-				public new function HRESULT(ref IPenInputPanel self, int16 AutoShow) put_AutoShow;
-				public new function HRESULT(ref IPenInputPanel self, int32 Left, int32 Top) MoveTo;
-				public new function HRESULT(ref IPenInputPanel self) CommitPendingInput;
-				public new function HRESULT(ref IPenInputPanel self) Refresh;
-				public new function HRESULT(ref IPenInputPanel self, int16 Enable) EnableTsf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int16 Busy) get_Busy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, BSTR* Factoid) get_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, BSTR Factoid) put_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 AttachedEditWindow) get_AttachedEditWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int32 AttachedEditWindow) put_AttachedEditWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out PanelType CurrentPanel) get_CurrentPanel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, PanelType CurrentPanel) put_CurrentPanel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out PanelType pDefaultPanel) get_DefaultPanel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, PanelType DefaultPanel) put_DefaultPanel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int16 Visible) get_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int16 Visible) put_Visible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 Top) get_Top;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 Left) get_Left;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 Width) get_Width;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 Height) get_Height;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 VerticalOffset) get_VerticalOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int32 VerticalOffset) put_VerticalOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int32 HorizontalOffset) get_HorizontalOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int32 HorizontalOffset) put_HorizontalOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, out int16 pAutoShow) get_AutoShow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int16 AutoShow) put_AutoShow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int32 Left, int32 Top) MoveTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self) CommitPendingInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPenInputPanel self, int16 Enable) EnableTsf;
 			}
 		}
 		[CRepr]
@@ -3284,8 +3284,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IHandwrittenTextInsertion self, ref SAFEARRAY psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertRecognitionResultsArray;
-				public new function HRESULT(ref IHandwrittenTextInsertion self, IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertInkRecognitionResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHandwrittenTextInsertion self, ref SAFEARRAY psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertRecognitionResultsArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHandwrittenTextInsertion self, IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertInkRecognitionResult;
 			}
 		}
 		[CRepr]
@@ -3311,18 +3311,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanging;
-				public new function HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanged;
-				public new function HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanging;
-				public new function HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanged;
-				public new function HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanging;
-				public new function HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanged;
-				public new function HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanging;
-				public new function HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanged;
-				public new function HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanging;
-				public new function HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanged;
-				public new function HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserting;
-				public new function HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanging;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserting;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserted;
 			}
 		}
 		[CRepr]
@@ -3361,31 +3361,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextInputPanel self, HWND* AttachedEditWindow) get_AttachedEditWindow;
-				public new function HRESULT(ref ITextInputPanel self, HWND AttachedEditWindow) put_AttachedEditWindow;
-				public new function HRESULT(ref ITextInputPanel self, out InteractionMode CurrentInteractionMode) get_CurrentInteractionMode;
-				public new function HRESULT(ref ITextInputPanel self, out InPlaceState State) get_DefaultInPlaceState;
-				public new function HRESULT(ref ITextInputPanel self, InPlaceState State) put_DefaultInPlaceState;
-				public new function HRESULT(ref ITextInputPanel self, out InPlaceState State) get_CurrentInPlaceState;
-				public new function HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_DefaultInputArea;
-				public new function HRESULT(ref ITextInputPanel self, PanelInputArea Area) put_DefaultInputArea;
-				public new function HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_CurrentInputArea;
-				public new function HRESULT(ref ITextInputPanel self, out CorrectionMode Mode) get_CurrentCorrectionMode;
-				public new function HRESULT(ref ITextInputPanel self, out InPlaceDirection Direction) get_PreferredInPlaceDirection;
-				public new function HRESULT(ref ITextInputPanel self, InPlaceDirection Direction) put_PreferredInPlaceDirection;
-				public new function HRESULT(ref ITextInputPanel self, out BOOL Expand) get_ExpandPostInsertionCorrection;
-				public new function HRESULT(ref ITextInputPanel self, BOOL Expand) put_ExpandPostInsertionCorrection;
-				public new function HRESULT(ref ITextInputPanel self, out BOOL Visible) get_InPlaceVisibleOnFocus;
-				public new function HRESULT(ref ITextInputPanel self, BOOL Visible) put_InPlaceVisibleOnFocus;
-				public new function HRESULT(ref ITextInputPanel self, out RECT BoundingRectangle) get_InPlaceBoundingRectangle;
-				public new function HRESULT(ref ITextInputPanel self, out int32 Height) get_PopUpCorrectionHeight;
-				public new function HRESULT(ref ITextInputPanel self, out int32 Height) get_PopDownCorrectionHeight;
-				public new function HRESULT(ref ITextInputPanel self) CommitPendingInput;
-				public new function HRESULT(ref ITextInputPanel self, BOOL Visible) SetInPlaceVisibility;
-				public new function HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition, CorrectionPosition position) SetInPlacePosition;
-				public new function HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition) SetInPlaceHoverTargetPosition;
-				public new function HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink, uint32 EventMask) Advise;
-				public new function HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink) Unadvise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, HWND* AttachedEditWindow) get_AttachedEditWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, HWND AttachedEditWindow) put_AttachedEditWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out InteractionMode CurrentInteractionMode) get_CurrentInteractionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out InPlaceState State) get_DefaultInPlaceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, InPlaceState State) put_DefaultInPlaceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out InPlaceState State) get_CurrentInPlaceState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_DefaultInputArea;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, PanelInputArea Area) put_DefaultInputArea;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_CurrentInputArea;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out CorrectionMode Mode) get_CurrentCorrectionMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out InPlaceDirection Direction) get_PreferredInPlaceDirection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, InPlaceDirection Direction) put_PreferredInPlaceDirection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out BOOL Expand) get_ExpandPostInsertionCorrection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, BOOL Expand) put_ExpandPostInsertionCorrection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out BOOL Visible) get_InPlaceVisibleOnFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, BOOL Visible) put_InPlaceVisibleOnFocus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out RECT BoundingRectangle) get_InPlaceBoundingRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out int32 Height) get_PopUpCorrectionHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, out int32 Height) get_PopDownCorrectionHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self) CommitPendingInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, BOOL Visible) SetInPlaceVisibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition, CorrectionPosition position) SetInPlacePosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition) SetInPlaceHoverTargetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink, uint32 EventMask) Advise;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink) Unadvise;
 			}
 		}
 		[CRepr]
@@ -3403,10 +3403,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInputPanelWindowHandle self, out int32 AttachedEditWindow) get_AttachedEditWindow32;
-				public new function HRESULT(ref IInputPanelWindowHandle self, int32 AttachedEditWindow) put_AttachedEditWindow32;
-				public new function HRESULT(ref IInputPanelWindowHandle self, out int64 AttachedEditWindow) get_AttachedEditWindow64;
-				public new function HRESULT(ref IInputPanelWindowHandle self, int64 AttachedEditWindow) put_AttachedEditWindow64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPanelWindowHandle self, out int32 AttachedEditWindow) get_AttachedEditWindow32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPanelWindowHandle self, int32 AttachedEditWindow) put_AttachedEditWindow32;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPanelWindowHandle self, out int64 AttachedEditWindow) get_AttachedEditWindow64;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPanelWindowHandle self, int64 AttachedEditWindow) put_AttachedEditWindow64;
 			}
 		}
 		[CRepr]
@@ -3421,7 +3421,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITextInputPanelRunInfo self, out BOOL pfRunning) IsTipRunning;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextInputPanelRunInfo self, out BOOL pfRunning) IsTipRunning;
 			}
 		}
 		[CRepr]
@@ -3512,83 +3512,83 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IInkEdit self, out InkEditStatus pStatus) get_Status;
-				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_UseMouseForInput;
-				public new function HRESULT(ref IInkEdit self, int16 newVal) put_UseMouseForInput;
-				public new function HRESULT(ref IInkEdit self, out InkMode pVal) get_InkMode;
-				public new function HRESULT(ref IInkEdit self, InkMode newVal) put_InkMode;
-				public new function HRESULT(ref IInkEdit self, out InkInsertMode pVal) get_InkInsertMode;
-				public new function HRESULT(ref IInkEdit self, InkInsertMode newVal) put_InkInsertMode;
-				public new function HRESULT(ref IInkEdit self, IInkDrawingAttributes** pVal) get_DrawingAttributes;
-				public new function HRESULT(ref IInkEdit self, IInkDrawingAttributes* newVal) putref_DrawingAttributes;
-				public new function HRESULT(ref IInkEdit self, out int32 pVal) get_RecognitionTimeout;
-				public new function HRESULT(ref IInkEdit self, int32 newVal) put_RecognitionTimeout;
-				public new function HRESULT(ref IInkEdit self, IInkRecognizer** pVal) get_Recognizer;
-				public new function HRESULT(ref IInkEdit self, IInkRecognizer* newVal) putref_Recognizer;
-				public new function HRESULT(ref IInkEdit self, BSTR* pVal) get_Factoid;
-				public new function HRESULT(ref IInkEdit self, BSTR newVal) put_Factoid;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pSelInk) get_SelInks;
-				public new function HRESULT(ref IInkEdit self, VARIANT SelInk) put_SelInks;
-				public new function HRESULT(ref IInkEdit self, out InkDisplayMode pInkDisplayMode) get_SelInksDisplayMode;
-				public new function HRESULT(ref IInkEdit self, InkDisplayMode InkDisplayMode) put_SelInksDisplayMode;
-				public new function HRESULT(ref IInkEdit self) Recognize;
-				public new function HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, out int16 pListen) GetGestureStatus;
-				public new function HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(ref IInkEdit self, uint32 clr) put_BackColor;
-				public new function HRESULT(ref IInkEdit self, out uint32 pclr) get_BackColor;
-				public new function HRESULT(ref IInkEdit self, out AppearanceConstants pAppearance) get_Appearance;
-				public new function HRESULT(ref IInkEdit self, AppearanceConstants pAppearance) put_Appearance;
-				public new function HRESULT(ref IInkEdit self, out BorderStyleConstants pBorderStyle) get_BorderStyle;
-				public new function HRESULT(ref IInkEdit self, BorderStyleConstants pBorderStyle) put_BorderStyle;
-				public new function HRESULT(ref IInkEdit self, out uint32 pohHwnd) get_Hwnd;
-				public new function HRESULT(ref IInkEdit self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(ref IInkEdit self, IFontDisp* ppFont) putref_Font;
-				public new function HRESULT(ref IInkEdit self, BSTR* pbstrText) get_Text;
-				public new function HRESULT(ref IInkEdit self, BSTR pbstrText) put_Text;
-				public new function HRESULT(ref IInkEdit self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(ref IInkEdit self, out InkMousePointer MousePointer) get_MousePointer;
-				public new function HRESULT(ref IInkEdit self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_Locked;
-				public new function HRESULT(ref IInkEdit self, int16 newVal) put_Locked;
-				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_Enabled;
-				public new function HRESULT(ref IInkEdit self, int16 newVal) put_Enabled;
-				public new function HRESULT(ref IInkEdit self, out int32 plMaxLength) get_MaxLength;
-				public new function HRESULT(ref IInkEdit self, int32 lMaxLength) put_MaxLength;
-				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_MultiLine;
-				public new function HRESULT(ref IInkEdit self, int16 newVal) put_MultiLine;
-				public new function HRESULT(ref IInkEdit self, out ScrollBarsConstants pVal) get_ScrollBars;
-				public new function HRESULT(ref IInkEdit self, ScrollBarsConstants newVal) put_ScrollBars;
-				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_DisableNoScroll;
-				public new function HRESULT(ref IInkEdit self, int16 newVal) put_DisableNoScroll;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelAlignment) get_SelAlignment;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelAlignment) put_SelAlignment;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelBold) get_SelBold;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelBold) put_SelBold;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelItalic) get_SelItalic;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelItalic) put_SelItalic;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelUnderline) get_SelUnderline;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelUnderline) put_SelUnderline;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelColor) get_SelColor;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelColor) put_SelColor;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelFontName) get_SelFontName;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelFontName) put_SelFontName;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelFontSize) get_SelFontSize;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelFontSize) put_SelFontSize;
-				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelCharOffset) get_SelCharOffset;
-				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelCharOffset) put_SelCharOffset;
-				public new function HRESULT(ref IInkEdit self, BSTR* pbstrTextRTF) get_TextRTF;
-				public new function HRESULT(ref IInkEdit self, BSTR pbstrTextRTF) put_TextRTF;
-				public new function HRESULT(ref IInkEdit self, out int32 plSelStart) get_SelStart;
-				public new function HRESULT(ref IInkEdit self, int32 plSelStart) put_SelStart;
-				public new function HRESULT(ref IInkEdit self, out int32 plSelLength) get_SelLength;
-				public new function HRESULT(ref IInkEdit self, int32 plSelLength) put_SelLength;
-				public new function HRESULT(ref IInkEdit self, BSTR* pbstrSelText) get_SelText;
-				public new function HRESULT(ref IInkEdit self, BSTR pbstrSelText) put_SelText;
-				public new function HRESULT(ref IInkEdit self, BSTR* pbstrSelRTF) get_SelRTF;
-				public new function HRESULT(ref IInkEdit self, BSTR pbstrSelRTF) put_SelRTF;
-				public new function HRESULT(ref IInkEdit self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out InkEditStatus pStatus) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int16 pVal) get_UseMouseForInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int16 newVal) put_UseMouseForInput;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out InkMode pVal) get_InkMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkMode newVal) put_InkMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out InkInsertMode pVal) get_InkInsertMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkInsertMode newVal) put_InkInsertMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IInkDrawingAttributes** pVal) get_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IInkDrawingAttributes* newVal) putref_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int32 pVal) get_RecognitionTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int32 newVal) put_RecognitionTimeout;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IInkRecognizer** pVal) get_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IInkRecognizer* newVal) putref_Recognizer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR* pVal) get_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR newVal) put_Factoid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pSelInk) get_SelInks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT SelInk) put_SelInks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out InkDisplayMode pInkDisplayMode) get_SelInksDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkDisplayMode InkDisplayMode) put_SelInksDisplayMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self) Recognize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, out int16 pListen) GetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, uint32 clr) put_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out uint32 pclr) get_BackColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out AppearanceConstants pAppearance) get_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, AppearanceConstants pAppearance) put_Appearance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out BorderStyleConstants pBorderStyle) get_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BorderStyleConstants pBorderStyle) put_BorderStyle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out uint32 pohHwnd) get_Hwnd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IFontDisp** ppFont) get_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IFontDisp* ppFont) putref_Font;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR* pbstrText) get_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR pbstrText) put_Text;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, InkMousePointer MousePointer) put_MousePointer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int16 pVal) get_Locked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int16 newVal) put_Locked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int16 pVal) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int16 newVal) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int32 plMaxLength) get_MaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int32 lMaxLength) put_MaxLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int16 pVal) get_MultiLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int16 newVal) put_MultiLine;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out ScrollBarsConstants pVal) get_ScrollBars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, ScrollBarsConstants newVal) put_ScrollBars;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int16 pVal) get_DisableNoScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int16 newVal) put_DisableNoScroll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelAlignment) get_SelAlignment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelAlignment) put_SelAlignment;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelBold) get_SelBold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelBold) put_SelBold;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelItalic) get_SelItalic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelItalic) put_SelItalic;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelUnderline) get_SelUnderline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelUnderline) put_SelUnderline;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelColor) get_SelColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelColor) put_SelColor;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelFontName) get_SelFontName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelFontName) put_SelFontName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelFontSize) get_SelFontSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelFontSize) put_SelFontSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out VARIANT pvarSelCharOffset) get_SelCharOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, VARIANT pvarSelCharOffset) put_SelCharOffset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR* pbstrTextRTF) get_TextRTF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR pbstrTextRTF) put_TextRTF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int32 plSelStart) get_SelStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int32 plSelStart) put_SelStart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, out int32 plSelLength) get_SelLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, int32 plSelLength) put_SelLength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR* pbstrSelText) get_SelText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR pbstrSelText) put_SelText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR* pbstrSelRTF) get_SelRTF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self, BSTR pbstrSelRTF) put_SelRTF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkEdit self) Refresh;
 			}
 		}
 		[CRepr]
@@ -3632,23 +3632,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IMathInputControl self) Show;
-				public new function HRESULT(ref IMathInputControl self) Hide;
-				public new function HRESULT(ref IMathInputControl self, out int16 pvbShown) IsVisible;
-				public new function HRESULT(ref IMathInputControl self, out int32 Left, out int32 Top, out int32 Right, out int32 Bottom) GetPosition;
-				public new function HRESULT(ref IMathInputControl self, int32 Left, int32 Top, int32 Right, int32 Bottom) SetPosition;
-				public new function HRESULT(ref IMathInputControl self) Clear;
-				public new function HRESULT(ref IMathInputControl self, int32 Element, int16 Paint) SetCustomPaint;
-				public new function HRESULT(ref IMathInputControl self, BSTR CaptionText) SetCaptionText;
-				public new function HRESULT(ref IMathInputControl self, IInkDisp* Ink) LoadInk;
-				public new function HRESULT(ref IMathInputControl self, int OwnerWindow) SetOwnerWindow;
-				public new function HRESULT(ref IMathInputControl self, int16 Extended) EnableExtendedButtons;
-				public new function HRESULT(ref IMathInputControl self, out int32 Height) GetPreviewHeight;
-				public new function HRESULT(ref IMathInputControl self, int32 Height) SetPreviewHeight;
-				public new function HRESULT(ref IMathInputControl self, int16 AutoGrow) EnableAutoGrow;
-				public new function HRESULT(ref IMathInputControl self, BSTR FunctionName) AddFunctionName;
-				public new function HRESULT(ref IMathInputControl self, BSTR FunctionName) RemoveFunctionName;
-				public new function HRESULT(ref IMathInputControl self, IPictureDisp** HoverImage) GetHoverIcon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self) Hide;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, out int16 pvbShown) IsVisible;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, out int32 Left, out int32 Top, out int32 Right, out int32 Bottom) GetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int32 Left, int32 Top, int32 Right, int32 Bottom) SetPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int32 Element, int16 Paint) SetCustomPaint;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, BSTR CaptionText) SetCaptionText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, IInkDisp* Ink) LoadInk;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int OwnerWindow) SetOwnerWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int16 Extended) EnableExtendedButtons;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, out int32 Height) GetPreviewHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int32 Height) SetPreviewHeight;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, int16 AutoGrow) EnableAutoGrow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, BSTR FunctionName) AddFunctionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, BSTR FunctionName) RemoveFunctionName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMathInputControl self, IPictureDisp** HoverImage) GetHoverIcon;
 			}
 		}
 		[CRepr]
@@ -3706,37 +3706,37 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRealTimeStylus self, out BOOL pfEnable) get_Enabled;
-				public new function HRESULT(ref IRealTimeStylus self, BOOL fEnable) put_Enabled;
-				public new function HRESULT(ref IRealTimeStylus self, out HANDLE_PTR phwnd) get_HWND;
-				public new function HRESULT(ref IRealTimeStylus self, HANDLE_PTR hwnd) put_HWND;
-				public new function HRESULT(ref IRealTimeStylus self, out RECT prcWndInputRect) get_WindowInputRectangle;
-				public new function HRESULT(ref IRealTimeStylus self, in RECT prcWndInputRect) put_WindowInputRectangle;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin* piPlugin) AddStylusSyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) RemoveStylusSyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self) RemoveAllStylusSyncPlugins;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) GetStylusSyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusSyncPluginCount;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin* piPlugin) AddStylusAsyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) RemoveStylusAsyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self) RemoveAllStylusAsyncPlugins;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) GetStylusAsyncPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusAsyncPluginCount;
-				public new function HRESULT(ref IRealTimeStylus self, IRealTimeStylus** ppiRTS) get_ChildRealTimeStylusPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, IRealTimeStylus* piRTS) putref_ChildRealTimeStylusPlugin;
-				public new function HRESULT(ref IRealTimeStylus self, StylusQueue sq, in Guid pGuidId, uint32 cbData, uint8* pbData) AddCustomStylusDataToQueue;
-				public new function HRESULT(ref IRealTimeStylus self) ClearStylusQueues;
-				public new function HRESULT(ref IRealTimeStylus self, BOOL fUseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet) SetSingleTabletMode;
-				public new function HRESULT(ref IRealTimeStylus self, IInkTablet** ppiSingleTablet) GetTablet;
-				public new function HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet, out uint32 ptcid) GetTabletContextIdFromTablet;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 tcid, IInkTablet** ppiTablet) GetTabletFromTabletContextId;
-				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcTcidCount, uint32** ppTcids) GetAllTabletContextIds;
-				public new function HRESULT(ref IRealTimeStylus self, IInkCursors** ppiInkCursors) GetStyluses;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 sid, IInkCursor** ppiInkCursor) GetStylusForId;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 cProperties, Guid* pPropertyGuids) SetDesiredPacketDescription;
-				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcProperties, Guid** ppPropertyGuids) GetDesiredPacketDescription;
-				public new function HRESULT(ref IRealTimeStylus self, uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, out uint32 pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) GetPacketDescriptionData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out BOOL pfEnable) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, BOOL fEnable) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out HANDLE_PTR phwnd) get_HWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, HANDLE_PTR hwnd) put_HWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out RECT prcWndInputRect) get_WindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, in RECT prcWndInputRect) put_WindowInputRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin* piPlugin) AddStylusSyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) RemoveStylusSyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self) RemoveAllStylusSyncPlugins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) GetStylusSyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusSyncPluginCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin* piPlugin) AddStylusAsyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) RemoveStylusAsyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self) RemoveAllStylusAsyncPlugins;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) GetStylusAsyncPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusAsyncPluginCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IRealTimeStylus** ppiRTS) get_ChildRealTimeStylusPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IRealTimeStylus* piRTS) putref_ChildRealTimeStylusPlugin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, StylusQueue sq, in Guid pGuidId, uint32 cbData, uint8* pbData) AddCustomStylusDataToQueue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self) ClearStylusQueues;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, BOOL fUseMouseForInput) SetAllTabletsMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet) SetSingleTabletMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IInkTablet** ppiSingleTablet) GetTablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet, out uint32 ptcid) GetTabletContextIdFromTablet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 tcid, IInkTablet** ppiTablet) GetTabletFromTabletContextId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out uint32 pcTcidCount, uint32** ppTcids) GetAllTabletContextIds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, IInkCursors** ppiInkCursors) GetStyluses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 sid, IInkCursor** ppiInkCursor) GetStylusForId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 cProperties, Guid* pPropertyGuids) SetDesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, out uint32 pcProperties, Guid** ppPropertyGuids) GetDesiredPacketDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus self, uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, out uint32 pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) GetPacketDescriptionData;
 			}
 		}
 		[CRepr]
@@ -3752,8 +3752,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRealTimeStylus2 self, out BOOL pfEnable) get_FlicksEnabled;
-				public new function HRESULT(ref IRealTimeStylus2 self, BOOL fEnable) put_FlicksEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus2 self, out BOOL pfEnable) get_FlicksEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus2 self, BOOL fEnable) put_FlicksEnabled;
 			}
 		}
 		[CRepr]
@@ -3769,8 +3769,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRealTimeStylus3 self, out BOOL pfEnable) get_MultiTouchEnabled;
-				public new function HRESULT(ref IRealTimeStylus3 self, BOOL fEnable) put_MultiTouchEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus3 self, out BOOL pfEnable) get_MultiTouchEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylus3 self, BOOL fEnable) put_MultiTouchEnabled;
 			}
 		}
 		[CRepr]
@@ -3786,8 +3786,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) AcquireLock;
-				public new function HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) ReleaseLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) AcquireLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) ReleaseLock;
 			}
 		}
 		[CRepr]
@@ -3807,12 +3807,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStrokeBuilder self, uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) CreateStroke;
-				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, in int32 pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) BeginStroke;
-				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) AppendPackets;
-				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, out RECT pDirtyRect) EndStroke;
-				public new function HRESULT(ref IStrokeBuilder self, IInkDisp** ppiInkObj) get_Ink;
-				public new function HRESULT(ref IStrokeBuilder self, IInkDisp* piInkObj) putref_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) CreateStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, in int32 pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) BeginStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) AppendPackets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, out RECT pDirtyRect) EndStroke;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, IInkDisp** ppiInkObj) get_Ink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStrokeBuilder self, IInkDisp* piInkObj) putref_Ink;
 			}
 		}
 		[CRepr]
@@ -3843,23 +3843,23 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusEnabled;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusDisabled;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusInRange;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusOutOfRange;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusDown;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusUp;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonDown;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonUp;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) InAirPackets;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) Packets;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in Guid pGuidId, uint32 cbData, uint8* pbData) CustomStylusDataAdded;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) SystemEvent;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) TabletAdded;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, int32 iTabletIndex) TabletRemoved;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, out int lptrKey) Error;
-				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc) UpdateMapping;
-				public new function HRESULT(ref IStylusPlugin self, out RealTimeStylusDataInterest pDataInterest) DataInterest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusDisabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusInRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusOutOfRange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonDown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonUp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) InAirPackets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) Packets;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in Guid pGuidId, uint32 cbData, uint8* pbData) CustomStylusDataAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) SystemEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) TabletAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, int32 iTabletIndex) TabletRemoved;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, out int lptrKey) Error;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc) UpdateMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStylusPlugin self, out RealTimeStylusDataInterest pDataInterest) DataInterest;
 			}
 		}
 		[CRepr]
@@ -3914,21 +3914,21 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDynamicRenderer self, out BOOL bEnabled) get_Enabled;
-				public new function HRESULT(ref IDynamicRenderer self, BOOL bEnabled) put_Enabled;
-				public new function HRESULT(ref IDynamicRenderer self, out HANDLE_PTR hwnd) get_HWND;
-				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hwnd) put_HWND;
-				public new function HRESULT(ref IDynamicRenderer self, out RECT prcClipRect) get_ClipRectangle;
-				public new function HRESULT(ref IDynamicRenderer self, in RECT prcClipRect) put_ClipRectangle;
-				public new function HRESULT(ref IDynamicRenderer self, out HANDLE_PTR phClipRgn) get_ClipRegion;
-				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hClipRgn) put_ClipRegion;
-				public new function HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes** ppiDA) get_DrawingAttributes;
-				public new function HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes* piDA) putref_DrawingAttributes;
-				public new function HRESULT(ref IDynamicRenderer self, out BOOL pfCacheData) get_DataCacheEnabled;
-				public new function HRESULT(ref IDynamicRenderer self, BOOL fCacheData) put_DataCacheEnabled;
-				public new function HRESULT(ref IDynamicRenderer self, uint32 strokeId) ReleaseCachedData;
-				public new function HRESULT(ref IDynamicRenderer self) Refresh;
-				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hDC) Draw;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, out BOOL bEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, BOOL bEnabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, out HANDLE_PTR hwnd) get_HWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, HANDLE_PTR hwnd) put_HWND;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, out RECT prcClipRect) get_ClipRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, in RECT prcClipRect) put_ClipRectangle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, out HANDLE_PTR phClipRgn) get_ClipRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, HANDLE_PTR hClipRgn) put_ClipRegion;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes** ppiDA) get_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes* piDA) putref_DrawingAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, out BOOL pfCacheData) get_DataCacheEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, BOOL fCacheData) put_DataCacheEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, uint32 strokeId) ReleaseCachedData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDynamicRenderer self, HANDLE_PTR hDC) Draw;
 			}
 		}
 		[CRepr]
@@ -3948,12 +3948,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGestureRecognizer self, out BOOL pfEnabled) get_Enabled;
-				public new function HRESULT(ref IGestureRecognizer self, BOOL fEnabled) put_Enabled;
-				public new function HRESULT(ref IGestureRecognizer self, out int32 pcStrokes) get_MaxStrokeCount;
-				public new function HRESULT(ref IGestureRecognizer self, int32 cStrokes) put_MaxStrokeCount;
-				public new function HRESULT(ref IGestureRecognizer self, uint32 cGestures, int32* pGestures) EnableGestures;
-				public new function HRESULT(ref IGestureRecognizer self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self, out BOOL pfEnabled) get_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self, BOOL fEnabled) put_Enabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self, out int32 pcStrokes) get_MaxStrokeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self, int32 cStrokes) put_MaxStrokeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self, uint32 cGestures, int32* pGestures) EnableGestures;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGestureRecognizer self) Reset;
 			}
 		}
 		[CRepr]
@@ -3969,8 +3969,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITipAutoCompleteProvider self, BSTR bstrPendingText) UpdatePendingText;
-				public new function HRESULT(ref ITipAutoCompleteProvider self, BOOL fShow) Show;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteProvider self, BSTR bstrPendingText) UpdatePendingText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteProvider self, BOOL fShow) Show;
 			}
 		}
 		[CRepr]
@@ -3989,11 +3989,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) AdviseProvider;
-				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) UnadviseProvider;
-				public new function HRESULT(ref ITipAutoCompleteClient self) UserSelection;
-				public new function HRESULT(ref ITipAutoCompleteClient self, ref RECT prcACList, ref RECT prcField, out RECT prcModifiedACList, out BOOL pfShownAboveTip) PreferredRects;
-				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndList, out BOOL pfAllowShowing) RequestShowUI;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) AdviseProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) UnadviseProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self) UserSelection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self, ref RECT prcACList, ref RECT prcField, out RECT prcModifiedACList, out BOOL pfShownAboveTip) PreferredRects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self, HWND hWndList, out BOOL pfAllowShowing) RequestShowUI;
 			}
 		}
 		

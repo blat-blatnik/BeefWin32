@@ -56,8 +56,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEmptyVolumeCacheCallBack self, uint64 dwlSpaceUsed, uint32 dwFlags, PWSTR pcwszStatus) ScanProgress;
-				public new function HRESULT(ref IEmptyVolumeCacheCallBack self, uint64 dwlSpaceFreed, uint64 dwlSpaceToFree, uint32 dwFlags, PWSTR pcwszStatus) PurgeProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCacheCallBack self, uint64 dwlSpaceUsed, uint32 dwFlags, PWSTR pcwszStatus) ScanProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCacheCallBack self, uint64 dwlSpaceFreed, uint64 dwlSpaceToFree, uint32 dwFlags, PWSTR pcwszStatus) PurgeProgress;
 			}
 		}
 		[CRepr]
@@ -76,11 +76,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEmptyVolumeCache self, HKEY hkRegKey, PWSTR pcwszVolume, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out uint32 pdwFlags) Initialize;
-				public new function HRESULT(ref IEmptyVolumeCache self, out uint64 pdwlSpaceUsed, ref IEmptyVolumeCacheCallBack picb) GetSpaceUsed;
-				public new function HRESULT(ref IEmptyVolumeCache self, uint64 dwlSpaceToFree, ref IEmptyVolumeCacheCallBack picb) Purge;
-				public new function HRESULT(ref IEmptyVolumeCache self, HWND hwnd) ShowProperties;
-				public new function HRESULT(ref IEmptyVolumeCache self, out uint32 pdwFlags) Deactivate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache self, HKEY hkRegKey, PWSTR pcwszVolume, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out uint32 pdwFlags) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache self, out uint64 pdwlSpaceUsed, ref IEmptyVolumeCacheCallBack picb) GetSpaceUsed;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache self, uint64 dwlSpaceToFree, ref IEmptyVolumeCacheCallBack picb) Purge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache self, HWND hwnd) ShowProperties;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache self, out uint32 pdwFlags) Deactivate;
 			}
 		}
 		[CRepr]
@@ -95,7 +95,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IEmptyVolumeCache.VTable
 			{
-				public new function HRESULT(ref IEmptyVolumeCache2 self, HKEY hkRegKey, PWSTR pcwszVolume, PWSTR pcwszKeyName, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out PWSTR ppwszBtnText, out uint32 pdwFlags) InitializeEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEmptyVolumeCache2 self, HKEY hkRegKey, PWSTR pcwszVolume, PWSTR pcwszKeyName, out PWSTR ppwszDisplayName, out PWSTR ppwszDescription, out PWSTR ppwszBtnText, out uint32 pdwFlags) InitializeEx;
 			}
 		}
 		[CRepr]
@@ -111,8 +111,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IReconcileInitiator self, IUnknown* punkForAbort) SetAbortCallback;
-				public new function HRESULT(ref IReconcileInitiator self, uint32 ulProgress, uint32 ulProgressMax) SetProgressFeedback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcileInitiator self, IUnknown* punkForAbort) SetAbortCallback;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcileInitiator self, uint32 ulProgress, uint32 ulProgressMax) SetProgressFeedback;
 			}
 		}
 		[CRepr]
@@ -128,8 +128,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IReconcilableObject self, out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) Reconcile;
-				public new function HRESULT(ref IReconcilableObject self, out uint32 pulProgressMax) GetProgressFeedbackMaxEstimate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcilableObject self, out IReconcileInitiator pInitiator, uint32 dwFlags, HWND hwndOwner, HWND hwndProgressFeedback, uint32 ulcInput, IMoniker** rgpmkOtherInput, out int32 plOutIndex, out IStorage pstgNewResidues, void* pvReserved) Reconcile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IReconcilableObject self, out uint32 pulProgressMax) GetProgressFeedbackMaxEstimate;
 			}
 		}
 		[CRepr]
@@ -144,7 +144,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBriefcaseInitiator self, out IMoniker pmk) IsMonikerInBriefcase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBriefcaseInitiator self, out IMoniker pmk) IsMonikerInBriefcase;
 			}
 		}
 		[CRepr]
@@ -162,10 +162,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IActiveDesktopP self, uint32 dwFlags) SetSafeMode;
-				public new function HRESULT(ref IActiveDesktopP self) EnsureUpdateHTML;
-				public new function HRESULT(ref IActiveDesktopP self, PWSTR pwszSchemeName, uint32 dwFlags) SetScheme;
-				public new function HRESULT(ref IActiveDesktopP self, char16* pwszSchemeName, out uint32 pdwcchBuffer, uint32 dwFlags) GetScheme;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveDesktopP self, uint32 dwFlags) SetSafeMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveDesktopP self) EnsureUpdateHTML;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveDesktopP self, PWSTR pwszSchemeName, uint32 dwFlags) SetScheme;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveDesktopP self, char16* pwszSchemeName, out uint32 pdwcchBuffer, uint32 dwFlags) GetScheme;
 			}
 		}
 		[CRepr]
@@ -183,10 +183,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IADesktopP2 self) ReReadWallpaper;
-				public new function HRESULT(ref IADesktopP2 self, out uint32 pdwFlags, uint32 dwMask) GetADObjectFlags;
-				public new function HRESULT(ref IADesktopP2 self) UpdateAllDesktopSubscriptions;
-				public new function HRESULT(ref IADesktopP2 self, ref IOleObject pOleObj) MakeDynamicChanges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADesktopP2 self) ReReadWallpaper;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADesktopP2 self, out uint32 pdwFlags, uint32 dwMask) GetADObjectFlags;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADesktopP2 self) UpdateAllDesktopSubscriptions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADesktopP2 self, ref IOleObject pOleObj) MakeDynamicChanges;
 			}
 		}
 		

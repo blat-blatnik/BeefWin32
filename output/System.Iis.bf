@@ -1386,7 +1386,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpProviderConstruct self, ref SAFEARRAY configurationEntries) Construct;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpProviderConstruct self, ref SAFEARRAY configurationEntries) Construct;
 			}
 		}
 		[CRepr]
@@ -1401,7 +1401,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) AuthenticateUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) AuthenticateUser;
 			}
 		}
 		[CRepr]
@@ -1417,8 +1417,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) Begin_AuthenticateUser;
-				public new function HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) Finish_AuthenticateUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) Begin_AuthenticateUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthenticationProvider self, PWSTR* ppszCanonicalUserName, out BOOL pfAuthenticated) Finish_AuthenticateUser;
 			}
 		}
 		[CRepr]
@@ -1433,7 +1433,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpRoleProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole, out BOOL pfIsInRole) IsUserInRole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpRoleProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole, out BOOL pfIsInRole) IsUserInRole;
 			}
 		}
 		[CRepr]
@@ -1449,8 +1449,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpRoleProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole) Begin_IsUserInRole;
-				public new function HRESULT(ref AsyncIFtpRoleProvider self, out BOOL pfIsInRole) Finish_IsUserInRole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpRoleProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole) Begin_IsUserInRole;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpRoleProvider self, out BOOL pfIsInRole) Finish_IsUserInRole;
 			}
 		}
 		[CRepr]
@@ -1465,7 +1465,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) GetUserHomeDirectoryData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) GetUserHomeDirectoryData;
 			}
 		}
 		[CRepr]
@@ -1481,8 +1481,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) Begin_GetUserHomeDirectoryData;
-				public new function HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR* ppszHomeDirectoryData) Finish_GetUserHomeDirectoryData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) Begin_GetUserHomeDirectoryData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpHomeDirectoryProvider self, PWSTR* ppszHomeDirectoryData) Finish_GetUserHomeDirectoryData;
 			}
 		}
 		[CRepr]
@@ -1497,7 +1497,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpLogProvider self, in LOGGING_PARAMETERS pLoggingParameters) Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpLogProvider self, in LOGGING_PARAMETERS pLoggingParameters) Log;
 			}
 		}
 		[CRepr]
@@ -1513,8 +1513,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpLogProvider self, in LOGGING_PARAMETERS pLoggingParameters) Begin_Log;
-				public new function HRESULT(ref AsyncIFtpLogProvider self) Finish_Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpLogProvider self, in LOGGING_PARAMETERS pLoggingParameters) Begin_Log;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpLogProvider self) Finish_Log;
 			}
 		}
 		[CRepr]
@@ -1529,7 +1529,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpAuthorizationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName, out FTP_ACCESS pFtpAccess) GetUserAccessPermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpAuthorizationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName, out FTP_ACCESS pFtpAccess) GetUserAccessPermission;
 			}
 		}
 		[CRepr]
@@ -1545,8 +1545,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpAuthorizationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName) Begin_GetUserAccessPermission;
-				public new function HRESULT(ref AsyncIFtpAuthorizationProvider self, out FTP_ACCESS pFtpAccess) Finish_GetUserAccessPermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthorizationProvider self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName) Begin_GetUserAccessPermission;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpAuthorizationProvider self, out FTP_ACCESS pFtpAccess) Finish_GetUserAccessPermission;
 			}
 		}
 		[CRepr]
@@ -1561,7 +1561,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpPreprocessProvider self, in PRE_PROCESS_PARAMETERS pPreProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) HandlePreprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpPreprocessProvider self, in PRE_PROCESS_PARAMETERS pPreProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) HandlePreprocess;
 			}
 		}
 		[CRepr]
@@ -1577,8 +1577,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpPreprocessProvider self, in PRE_PROCESS_PARAMETERS pPreProcessParameters) Begin_HandlePreprocess;
-				public new function HRESULT(ref AsyncIFtpPreprocessProvider self, out FTP_PROCESS_STATUS pFtpProcessStatus) Finish_HandlePreprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpPreprocessProvider self, in PRE_PROCESS_PARAMETERS pPreProcessParameters) Begin_HandlePreprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpPreprocessProvider self, out FTP_PROCESS_STATUS pFtpProcessStatus) Finish_HandlePreprocess;
 			}
 		}
 		[CRepr]
@@ -1593,7 +1593,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IFtpPostprocessProvider self, in POST_PROCESS_PARAMETERS pPostProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) HandlePostprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFtpPostprocessProvider self, in POST_PROCESS_PARAMETERS pPostProcessParameters, out FTP_PROCESS_STATUS pFtpProcessStatus) HandlePostprocess;
 			}
 		}
 		[CRepr]
@@ -1609,8 +1609,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIFtpPostprocessProvider self, in POST_PROCESS_PARAMETERS pPostProcessParameters) Begin_HandlePostprocess;
-				public new function HRESULT(ref AsyncIFtpPostprocessProvider self, out FTP_PROCESS_STATUS pFtpProcessStatus) Finish_HandlePostprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpPostprocessProvider self, in POST_PROCESS_PARAMETERS pPostProcessParameters) Begin_HandlePostprocess;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIFtpPostprocessProvider self, out FTP_PROCESS_STATUS pFtpProcessStatus) Finish_HandlePostprocess;
 			}
 		}
 		[CRepr]
@@ -1627,9 +1627,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IADMEXT self) Initialize;
-				public new function HRESULT(ref IADMEXT self, out Guid pclsidDcom, uint32 dwEnumIndex) EnumDcomCLSIDs;
-				public new function HRESULT(ref IADMEXT self) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADMEXT self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADMEXT self, out Guid pclsidDcom, uint32 dwEnumIndex) EnumDcomCLSIDs;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADMEXT self) Terminate;
 			}
 		}
 		[CRepr]
@@ -1674,37 +1674,37 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) AddKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) DeleteKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) DeleteChildKeys;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, char16* pszMDName, uint32 dwMDEnumObjectIndex) EnumKeys;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, BOOL bMDOverwriteFlag, BOOL bMDCopyFlag) CopyKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, PWSTR pszMDNewName) RenameKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData) SetData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, out uint32 pdwMDRequiredDataLen) GetData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType) DeleteData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, uint32 dwMDEnumDataIndex, out uint32 pdwMDRequiredDataLen) EnumData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, out uint32 pdwMDNumDataEntries, out uint32 pdwMDDataSetNumber, uint32 dwMDBufferSize, out uint8 pbMDBuffer, out uint32 pdwMDRequiredBufferSize) GetAllData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDUserType, uint32 dwMDDataType) DeleteAllData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, BOOL bMDCopyFlag) CopyData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) GetDataPaths;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAccessRequested, uint32 dwMDTimeOut, out uint32 phMDNewHandle) OpenKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle) CloseKey;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, uint32 dwMDTimeOut, uint32 dwMDAccessRequested) ChangePermissions;
-				public new function HRESULT(ref IMSAdminBaseW self) SaveData;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, out METADATA_HANDLE_INFO pmdhiInfo) GetHandleInfo;
-				public new function HRESULT(ref IMSAdminBaseW self, out uint32 pdwSystemChangeNumber) GetSystemChangeNumber;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out uint32 pdwMDDataSetNumber) GetDataSetNumber;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, ref FILETIME pftMDLastChangeTime, BOOL bLocalTime) SetLastChangeTime;
-				public new function HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out FILETIME pftMDLastChangeTime, BOOL bLocalTime) GetLastChangeTime;
-				public new function HRESULT(ref IMSAdminBaseW self) KeyExchangePhase1;
-				public new function HRESULT(ref IMSAdminBaseW self) KeyExchangePhase2;
-				public new function HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Backup;
-				public new function HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Restore;
-				public new function HRESULT(ref IMSAdminBaseW self, char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) EnumBackups;
-				public new function HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion) DeleteBackup;
-				public new function HRESULT(ref IMSAdminBaseW self, IMSAdminBaseW** piadmbwInterface) UnmarshalInterface;
-				public new function HRESULT(ref IMSAdminBaseW self) GetServerGuid;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) AddKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) DeleteKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath) DeleteChildKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, char16* pszMDName, uint32 dwMDEnumObjectIndex) EnumKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, BOOL bMDOverwriteFlag, BOOL bMDCopyFlag) CopyKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, PWSTR pszMDNewName) RenameKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData) SetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, out uint32 pdwMDRequiredDataLen) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType) DeleteData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out METADATA_RECORD pmdrMDData, uint32 dwMDEnumDataIndex, out uint32 pdwMDRequiredDataLen) EnumData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, out uint32 pdwMDNumDataEntries, out uint32 pdwMDDataSetNumber, uint32 dwMDBufferSize, out uint8 pbMDBuffer, out uint32 pdwMDRequiredBufferSize) GetAllData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDUserType, uint32 dwMDDataType) DeleteAllData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, BOOL bMDCopyFlag) CopyData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) GetDataPaths;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAccessRequested, uint32 dwMDTimeOut, out uint32 phMDNewHandle) OpenKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle) CloseKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, uint32 dwMDTimeOut, uint32 dwMDAccessRequested) ChangePermissions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self) SaveData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, out METADATA_HANDLE_INFO pmdhiInfo) GetHandleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, out uint32 pdwSystemChangeNumber) GetSystemChangeNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out uint32 pdwMDDataSetNumber) GetDataSetNumber;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, ref FILETIME pftMDLastChangeTime, BOOL bLocalTime) SetLastChangeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, uint32 hMDHandle, PWSTR pszMDPath, out FILETIME pftMDLastChangeTime, BOOL bLocalTime) GetLastChangeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self) KeyExchangePhase1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self) KeyExchangePhase2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Backup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, char16* pszMDBackupLocation, out uint32 pdwMDVersion, out FILETIME pftMDBackupTime, uint32 dwMDEnumIndex) EnumBackups;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, PWSTR pszMDBackupLocation, uint32 dwMDVersion) DeleteBackup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self, IMSAdminBaseW** piadmbwInterface) UnmarshalInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseW self) GetServerGuid;
 			}
 		}
 		[CRepr]
@@ -1724,12 +1724,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSAdminBaseW.VTable
 			{
-				public new function HRESULT(ref IMSAdminBase2W self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) BackupWithPasswd;
-				public new function HRESULT(ref IMSAdminBase2W self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) RestoreWithPasswd;
-				public new function HRESULT(ref IMSAdminBase2W self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, uint32 dwMDFlags) Export;
-				public new function HRESULT(ref IMSAdminBase2W self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, PWSTR pszDestPath, uint32 dwMDFlags) Import;
-				public new function HRESULT(ref IMSAdminBase2W self, PWSTR pszMDHistoryLocation, uint32 dwMDMajorVersion, uint32 dwMDMinorVersion, uint32 dwMDFlags) RestoreHistory;
-				public new function HRESULT(ref IMSAdminBase2W self, char16* pszMDHistoryLocation, out uint32 pdwMDMajorVersion, out uint32 pdwMDMinorVersion, out FILETIME pftMDHistoryTime, uint32 dwMDEnumIndex) EnumHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) BackupWithPasswd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) RestoreWithPasswd;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, uint32 dwMDFlags) Export;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, PWSTR pszDestPath, uint32 dwMDFlags) Import;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, PWSTR pszMDHistoryLocation, uint32 dwMDMajorVersion, uint32 dwMDMinorVersion, uint32 dwMDFlags) RestoreHistory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase2W self, char16* pszMDHistoryLocation, out uint32 pdwMDMajorVersion, out uint32 pdwMDMinorVersion, out FILETIME pftMDHistoryTime, uint32 dwMDEnumIndex) EnumHistory;
 			}
 		}
 		[CRepr]
@@ -1744,7 +1744,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IMSAdminBase2W.VTable
 			{
-				public new function HRESULT(ref IMSAdminBase3W self, uint32 hMDHandle, PWSTR pszMDPath, uint32 cchMDBufferSize, char16* pszBuffer, uint32* pcchMDRequiredBufferSize) GetChildPaths;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBase3W self, uint32 hMDHandle, PWSTR pszMDPath, uint32 cchMDBufferSize, char16* pszBuffer, uint32* pcchMDRequiredBufferSize) GetChildPaths;
 			}
 		}
 		[CRepr]
@@ -1759,7 +1759,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSImpExpHelpW self, PWSTR pszFileName, PWSTR pszKeyType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) EnumeratePathsInFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSImpExpHelpW self, PWSTR pszFileName, PWSTR pszKeyType, uint32 dwMDBufferSize, char16* pszBuffer, out uint32 pdwMDRequiredBufferSize) EnumeratePathsInFile;
 			}
 		}
 		[CRepr]
@@ -1775,8 +1775,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMSAdminBaseSinkW self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) SinkNotify;
-				public new function HRESULT(ref IMSAdminBaseSinkW self) ShutdownNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseSinkW self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) SinkNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSAdminBaseSinkW self) ShutdownNotify;
 			}
 		}
 		[CRepr]
@@ -1794,10 +1794,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref AsyncIMSAdminBaseSinkW self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) Begin_SinkNotify;
-				public new function HRESULT(ref AsyncIMSAdminBaseSinkW self) Finish_SinkNotify;
-				public new function HRESULT(ref AsyncIMSAdminBaseSinkW self) Begin_ShutdownNotify;
-				public new function HRESULT(ref AsyncIMSAdminBaseSinkW self) Finish_ShutdownNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIMSAdminBaseSinkW self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) Begin_SinkNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIMSAdminBaseSinkW self) Finish_SinkNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIMSAdminBaseSinkW self) Begin_ShutdownNotify;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIMSAdminBaseSinkW self) Finish_ShutdownNotify;
 			}
 		}
 		

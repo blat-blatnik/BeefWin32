@@ -5601,9 +5601,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) KsProperty;
-				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) KsMethod;
-				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) KsEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsControl self, ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) KsProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsControl self, ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) KsMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsControl self, ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) KsEvent;
 			}
 		}
 		[CRepr]
@@ -5619,8 +5619,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) IsFormatSupported;
-				public new function HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT* ppKsFormat) GetDevicePreferredFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) IsFormatSupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT* ppKsFormat) GetDevicePreferredFormat;
 			}
 		}
 		[CRepr]
@@ -5636,8 +5636,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsJackDescription self, out uint32 pcJacks) GetJackCount;
-				public new function HRESULT(ref IKsJackDescription self, uint32 nJack, out KSJACK_DESCRIPTION pDescription) GetJackDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackDescription self, out uint32 pcJacks) GetJackCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackDescription self, uint32 nJack, out KSJACK_DESCRIPTION pDescription) GetJackDescription;
 			}
 		}
 		[CRepr]
@@ -5653,8 +5653,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsJackDescription2 self, out uint32 pcJacks) GetJackCount;
-				public new function HRESULT(ref IKsJackDescription2 self, uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) GetJackDescription2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackDescription2 self, out uint32 pcJacks) GetJackCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackDescription2 self, uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) GetJackDescription2;
 			}
 		}
 		[CRepr]
@@ -5669,7 +5669,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsJackSinkInformation self, out KSJACK_SINK_INFORMATION pJackSinkInformation) GetJackSinkInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackSinkInformation self, out KSJACK_SINK_INFORMATION pJackSinkInformation) GetJackSinkInformation;
 			}
 		}
 		[CRepr]
@@ -5684,7 +5684,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsJackContainerId self, out Guid pJackContainerId) GetJackContainerId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsJackContainerId self, out Guid pJackContainerId) GetJackContainerId;
 			}
 		}
 		[CRepr]
@@ -5701,9 +5701,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
-				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) Get;
-				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, out uint32 TypeSupport) QuerySupported;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, out uint32 TypeSupport) QuerySupported;
 			}
 		}
 		[CRepr]
@@ -5719,8 +5719,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsAddAggregate;
-				public new function HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsRemoveAggregate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsAddAggregate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsRemoveAggregate;
 			}
 		}
 		[CRepr]
@@ -5735,7 +5735,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IKsTopology self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) CreateNodeInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopology self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) CreateNodeInstance;
 			}
 		}
 		

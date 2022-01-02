@@ -143,9 +143,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupReadFileCallback self, BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, out uint32 ReturnedSize, uint32 Flags) ReadBackupFile;
-				public new function HRESULT(ref IDedupReadFileCallback self, uint32 NumberOfContainers, BSTR* ContainerPaths, out uint32 ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) OrderContainersRestore;
-				public new function HRESULT(ref IDedupReadFileCallback self, BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) PreviewContainerRead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupReadFileCallback self, BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, out uint32 ReturnedSize, uint32 Flags) ReadBackupFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupReadFileCallback self, uint32 NumberOfContainers, BSTR* ContainerPaths, out uint32 ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) OrderContainersRestore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupReadFileCallback self, BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) PreviewContainerRead;
 			}
 		}
 		[CRepr]
@@ -160,7 +160,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupBackupSupport self, uint32 NumberOfFiles, BSTR* FileFullPaths, ref IDedupReadFileCallback Store, uint32 Flags, HRESULT* FileResults) RestoreFiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupBackupSupport self, uint32 NumberOfFiles, BSTR* FileFullPaths, ref IDedupReadFileCallback Store, uint32 Flags, HRESULT* FileResults) RestoreFiles;
 			}
 		}
 		[CRepr]
@@ -178,10 +178,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupChunkLibrary self) InitializeForPushBuffers;
-				public new function HRESULT(ref IDedupChunkLibrary self) Uninitialize;
-				public new function HRESULT(ref IDedupChunkLibrary self, uint32 dwParamType, VARIANT vParamValue) SetParameter;
-				public new function HRESULT(ref IDedupChunkLibrary self, Guid iidIteratorInterfaceID, out IUnknown* ppChunksEnum) StartChunking;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupChunkLibrary self) InitializeForPushBuffers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupChunkLibrary self) Uninitialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupChunkLibrary self, uint32 dwParamType, VARIANT vParamValue) SetParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupChunkLibrary self, Guid iidIteratorInterfaceID, out IUnknown* ppChunksEnum) StartChunking;
 			}
 		}
 		[CRepr]
@@ -199,10 +199,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupIterateChunksHash32 self, uint8* pBuffer, uint32 ulBufferLength) PushBuffer;
-				public new function HRESULT(ref IDedupIterateChunksHash32 self, uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, out uint32 pulFetched) Next;
-				public new function HRESULT(ref IDedupIterateChunksHash32 self) Drain;
-				public new function HRESULT(ref IDedupIterateChunksHash32 self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupIterateChunksHash32 self, uint8* pBuffer, uint32 ulBufferLength) PushBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupIterateChunksHash32 self, uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, out uint32 pulFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupIterateChunksHash32 self) Drain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupIterateChunksHash32 self) Reset;
 			}
 		}
 		[CRepr]
@@ -228,18 +228,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupDataPort self, out DedupDataPortVolumeStatus pStatus, out uint32 pDataHeadroomMb) GetStatus;
-				public new function HRESULT(ref IDedupDataPort self, uint32 Count, DedupHash* pHashes, out Guid pRequestId) LookupChunks;
-				public new function HRESULT(ref IDedupDataPort self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, out Guid pRequestId) InsertChunks;
-				public new function HRESULT(ref IDedupDataPort self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, ref IStream pChunkDataStream, out Guid pRequestId) InsertChunksWithStream;
-				public new function HRESULT(ref IDedupDataPort self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, out Guid pRequestId) CommitStreams;
-				public new function HRESULT(ref IDedupDataPort self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, ref IStream pEntriesStream, out Guid pRequestId) CommitStreamsWithStream;
-				public new function HRESULT(ref IDedupDataPort self, uint32 StreamCount, BSTR* pStreamPaths, out Guid pRequestId) GetStreams;
-				public new function HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, out uint32 pStreamCount, DedupStream** ppStreams, out uint32 pEntryCount, DedupStreamEntry** ppEntries, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetStreamsResults;
-				public new function HRESULT(ref IDedupDataPort self, uint32 Count, DedupHash* pHashes, out Guid pRequestId) GetChunks;
-				public new function HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, out uint32 pChunkCount, DedupChunk** ppChunkMetadata, out uint32 pDataByteCount, uint8** ppChunkData, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetChunksResults;
-				public new function HRESULT(ref IDedupDataPort self, Guid RequestId, out DedupDataPortRequestStatus pStatus) GetRequestStatus;
-				public new function HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, out HRESULT pBatchResult, out uint32 pBatchCount, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetRequestResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, out DedupDataPortVolumeStatus pStatus, out uint32 pDataHeadroomMb) GetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 Count, DedupHash* pHashes, out Guid pRequestId) LookupChunks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, out Guid pRequestId) InsertChunks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, ref IStream pChunkDataStream, out Guid pRequestId) InsertChunksWithStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, out Guid pRequestId) CommitStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, ref IStream pEntriesStream, out Guid pRequestId) CommitStreamsWithStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 StreamCount, BSTR* pStreamPaths, out Guid pRequestId) GetStreams;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, out uint32 pStreamCount, DedupStream** ppStreams, out uint32 pEntryCount, DedupStreamEntry** ppEntries, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetStreamsResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, uint32 Count, DedupHash* pHashes, out Guid pRequestId) GetChunks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, out uint32 pChunkCount, DedupChunk** ppChunkMetadata, out uint32 pDataByteCount, uint8** ppChunkData, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetChunksResults;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, Guid RequestId, out DedupDataPortRequestStatus pStatus) GetRequestStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPort self, Guid RequestId, uint32 MaxWaitMs, out HRESULT pBatchResult, out uint32 pBatchCount, out DedupDataPortRequestStatus pStatus, HRESULT** ppItemResults) GetRequestResults;
 			}
 		}
 		[CRepr]
@@ -256,9 +256,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDedupDataPortManager self, out uint32 pMinChunkSize, out uint32 pMaxChunkSize, out DedupChunkingAlgorithm pChunkingAlgorithm, out DedupHashingAlgorithm pHashingAlgorithm, out DedupCompressionAlgorithm pCompressionAlgorithm) GetConfiguration;
-				public new function HRESULT(ref IDedupDataPortManager self, uint32 Options, BSTR Path, out DedupDataPortVolumeStatus pStatus) GetVolumeStatus;
-				public new function HRESULT(ref IDedupDataPortManager self, uint32 Options, BSTR Path, out IDedupDataPort* ppDataPort) GetVolumeDataPort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPortManager self, out uint32 pMinChunkSize, out uint32 pMaxChunkSize, out DedupChunkingAlgorithm pChunkingAlgorithm, out DedupHashingAlgorithm pHashingAlgorithm, out DedupCompressionAlgorithm pCompressionAlgorithm) GetConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPortManager self, uint32 Options, BSTR Path, out DedupDataPortVolumeStatus pStatus) GetVolumeStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPortManager self, uint32 Options, BSTR Path, out IDedupDataPort* ppDataPort) GetVolumeDataPort;
 			}
 		}
 		

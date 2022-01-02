@@ -2616,16 +2616,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemPathKeyList self, out uint32 puKeyCount) GetCount;
-				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) SetKey;
-				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, ref VARIANT pKeyVal) SetKey2;
-				public new function HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out uint32 puKeyValBufSize, void* pKeyVal, out uint32 puApparentCimType) GetKey;
-				public new function HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out VARIANT pKeyValue, out uint32 puApparentCimType) GetKey2;
-				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags) RemoveKey;
-				public new function HRESULT(ref IWbemPathKeyList self, uint32 uFlags) RemoveAllKeys;
-				public new function HRESULT(ref IWbemPathKeyList self, uint8 bSet) MakeSingleton;
-				public new function HRESULT(ref IWbemPathKeyList self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
-				public new function HRESULT(ref IWbemPathKeyList self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, out uint32 puKeyCount) GetCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) SetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, ref VARIANT pKeyVal) SetKey2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out uint32 puKeyValBufSize, void* pKeyVal, out uint32 puApparentCimType) GetKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out VARIANT pKeyValue, out uint32 puApparentCimType) GetKey2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags) RemoveKey;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, uint32 uFlags) RemoveAllKeys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, uint8 bSet) MakeSingleton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPathKeyList self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
 			}
 		}
 		[CRepr]
@@ -2665,32 +2665,32 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemPath self, uint32 uMode, PWSTR pszPath) SetText;
-				public new function HRESULT(ref IWbemPath self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
-				public new function HRESULT(ref IWbemPath self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
-				public new function HRESULT(ref IWbemPath self, PWSTR Name) SetServer;
-				public new function HRESULT(ref IWbemPath self, out uint32 puNameBufLength, char16* pName) GetServer;
-				public new function HRESULT(ref IWbemPath self, out uint32 puCount) GetNamespaceCount;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszName) SetNamespaceAt;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puNameBufLength, char16* pName) GetNamespaceAt;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex) RemoveNamespaceAt;
-				public new function HRESULT(ref IWbemPath self) RemoveAllNamespaces;
-				public new function HRESULT(ref IWbemPath self, out uint32 puCount) GetScopeCount;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszClass) SetScope;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszText) SetScopeFromText;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puClassNameBufSize, char16* pszClass, out IWbemPathKeyList* pKeyList) GetScope;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puTextBufSize, char16* pszText) GetScopeAsText;
-				public new function HRESULT(ref IWbemPath self, uint32 uIndex) RemoveScope;
-				public new function HRESULT(ref IWbemPath self) RemoveAllScopes;
-				public new function HRESULT(ref IWbemPath self, PWSTR Name) SetClassName;
-				public new function HRESULT(ref IWbemPath self, out uint32 puBuffLength, char16* pszName) GetClassName;
-				public new function HRESULT(ref IWbemPath self, out IWbemPathKeyList* pOut) GetKeyList;
-				public new function HRESULT(ref IWbemPath self, int32 lFlags, PWSTR Name) CreateClassPart;
-				public new function HRESULT(ref IWbemPath self, int32 lFlags) DeleteClassPart;
-				public new function BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace) IsRelative;
-				public new function BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) IsRelativeOrChild;
-				public new function BOOL(ref IWbemPath self, PWSTR wszMachine) IsLocal;
-				public new function BOOL(ref IWbemPath self, PWSTR wszClass) IsSameClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uMode, PWSTR pszPath) SetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, PWSTR Name) SetServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, out uint32 puNameBufLength, char16* pName) GetServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, out uint32 puCount) GetNamespaceCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszName) SetNamespaceAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puNameBufLength, char16* pName) GetNamespaceAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex) RemoveNamespaceAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self) RemoveAllNamespaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, out uint32 puCount) GetScopeCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszClass) SetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszText) SetScopeFromText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puClassNameBufSize, char16* pszClass, out IWbemPathKeyList* pKeyList) GetScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puTextBufSize, char16* pszText) GetScopeAsText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, uint32 uIndex) RemoveScope;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self) RemoveAllScopes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, PWSTR Name) SetClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, out uint32 puBuffLength, char16* pszName) GetClassName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, out IWbemPathKeyList* pOut) GetKeyList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, int32 lFlags, PWSTR Name) CreateClassPart;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPath self, int32 lFlags) DeleteClassPart;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace) IsRelative;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) IsRelativeOrChild;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IWbemPath self, PWSTR wszMachine) IsLocal;
+				public new function [CallingConvention(.Stdcall)] BOOL(ref IWbemPath self, PWSTR wszClass) IsSameClassName;
 			}
 		}
 		[CRepr]
@@ -2711,13 +2711,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemQuery self) Empty;
-				public new function HRESULT(ref IWbemQuery self, uint32 uFlags, uint32 uArraySize, ref uint32 puFeatures) SetLanguageFeatures;
-				public new function HRESULT(ref IWbemQuery self, uint32 uFlags, out uint32 uArraySize, out uint32 puFeatures) TestLanguageFeatures;
-				public new function HRESULT(ref IWbemQuery self, PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) Parse;
-				public new function HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) GetAnalysis;
-				public new function HRESULT(ref IWbemQuery self, void* pMem) FreeMemory;
-				public new function HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) GetQueryInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self) Empty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, uint32 uFlags, uint32 uArraySize, ref uint32 puFeatures) SetLanguageFeatures;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, uint32 uFlags, out uint32 uArraySize, out uint32 puFeatures) TestLanguageFeatures;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) Parse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) GetAnalysis;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, void* pMem) FreeMemory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) GetQueryInfo;
 			}
 		}
 		[CRepr]
@@ -2755,30 +2755,30 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemClassObject self, out IWbemQualifierSet* ppQualSet) GetQualifierSet;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 pType, out int32 plFlavor) Get;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref VARIANT pVal, int32 Type) Put;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName) Delete;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszQualifierName, int32 lFlags, ref VARIANT pQualifierVal, out SAFEARRAY* pNames) GetNames;
-				public new function HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginEnumeration;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR strName, out VARIANT pVal, out int32 pType, out int32 plFlavor) Next;
-				public new function HRESULT(ref IWbemClassObject self) EndEnumeration;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszProperty, out IWbemQualifierSet* ppQualSet) GetPropertyQualifierSet;
-				public new function HRESULT(ref IWbemClassObject self, out IWbemClassObject* ppCopy) Clone;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrObjectText) GetObjectText;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewClass) SpawnDerivedClass;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewInstance) SpawnInstance;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, ref IWbemClassObject pCompareTo) CompareTo;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, out BSTR pstrClassName) GetPropertyOrigin;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR strAncestor) InheritsFrom;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) GetMethod;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref IWbemClassObject pInSignature, ref IWbemClassObject pOutSignature) PutMethod;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName) DeleteMethod;
-				public new function HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginMethodEnumeration;
-				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrName, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) NextMethod;
-				public new function HRESULT(ref IWbemClassObject self) EndMethodEnumeration;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszMethod, out IWbemQualifierSet* ppQualSet) GetMethodQualifierSet;
-				public new function HRESULT(ref IWbemClassObject self, PWSTR wszMethodName, out BSTR pstrClassName) GetMethodOrigin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, out IWbemQualifierSet* ppQualSet) GetQualifierSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 pType, out int32 plFlavor) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref VARIANT pVal, int32 Type) Put;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszQualifierName, int32 lFlags, ref VARIANT pQualifierVal, out SAFEARRAY* pNames) GetNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR strName, out VARIANT pVal, out int32 pType, out int32 plFlavor) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self) EndEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszProperty, out IWbemQualifierSet* ppQualSet) GetPropertyQualifierSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, out IWbemClassObject* ppCopy) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrObjectText) GetObjectText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewClass) SpawnDerivedClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewInstance) SpawnInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, ref IWbemClassObject pCompareTo) CompareTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName, out BSTR pstrClassName) GetPropertyOrigin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR strAncestor) InheritsFrom;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) GetMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref IWbemClassObject pInSignature, ref IWbemClassObject pOutSignature) PutMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszName) DeleteMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginMethodEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrName, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) NextMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self) EndMethodEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszMethod, out IWbemQualifierSet* ppQualSet) GetMethodQualifierSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClassObject self, PWSTR wszMethodName, out BSTR pstrClassName) GetMethodOrigin;
 			}
 		}
 		[CRepr]
@@ -2802,16 +2802,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWbemClassObject.VTable
 			{
-				public new function HRESULT(ref IWbemObjectAccess self, PWSTR wszPropertyName, out int32 pType, out int32 plHandle) GetPropertyHandle;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lNumBytes, uint8* aData) WritePropertyValue;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lBufferSize, out int32 plNumBytes, uint8* aData) ReadPropertyValue;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint32 pdw) ReadDWORD;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint32 dw) WriteDWORD;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint64 pqw) ReadQWORD;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint64 pw) WriteQWORD;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out BSTR pstrName, out int32 pType) GetPropertyInfoByHandle;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lFlags) Lock;
-				public new function HRESULT(ref IWbemObjectAccess self, int32 lFlags) Unlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, PWSTR wszPropertyName, out int32 pType, out int32 plHandle) GetPropertyHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lNumBytes, uint8* aData) WritePropertyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lBufferSize, out int32 plNumBytes, uint8* aData) ReadPropertyValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint32 pdw) ReadDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint32 dw) WriteDWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint64 pqw) ReadQWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint64 pw) WriteQWORD;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lHandle, out BSTR pstrName, out int32 pType) GetPropertyInfoByHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lFlags) Lock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectAccess self, int32 lFlags) Unlock;
 			}
 		}
 		[CRepr]
@@ -2832,13 +2832,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 plFlavor) Get;
-				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName, ref VARIANT pVal, int32 lFlavor) Put;
-				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName) Delete;
-				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
-				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags) BeginEnumeration;
-				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags, out BSTR pstrName, out VARIANT pVal, out int32 plFlavor) Next;
-				public new function HRESULT(ref IWbemQualifierSet self) EndEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 plFlavor) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, PWSTR wszName, ref VARIANT pVal, int32 lFlavor) Put;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, PWSTR wszName) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, int32 lFlags) BeginEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self, int32 lFlags, out BSTR pstrName, out VARIANT pVal, out int32 plFlavor) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemQualifierSet self) EndEnumeration;
 			}
 		}
 		[CRepr]
@@ -2875,29 +2875,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemServices self, BSTR strNamespace, int32 lFlags, ref IWbemContext pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) OpenNamespace;
-				public new function HRESULT(ref IWbemServices self, ref IWbemObjectSink pSink) CancelAsyncCall;
-				public new function HRESULT(ref IWbemServices self, int32 lFlags, out IWbemObjectSink* ppResponseHandler) QueryObjectSink;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) GetObject;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) GetObjectAsync;
-				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutClass;
-				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutClassAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteClass;
-				public new function HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteClassAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateClassEnum;
-				public new function HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateClassEnumAsync;
-				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutInstance;
-				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutInstanceAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteInstance;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteInstanceAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateInstanceEnum;
-				public new function HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateInstanceEnumAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecQuery;
-				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecQueryAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecNotificationQuery;
-				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecNotificationQueryAsync;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) ExecMethod;
-				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, ref IWbemObjectSink pResponseHandler) ExecMethodAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strNamespace, int32 lFlags, ref IWbemContext pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) OpenNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, ref IWbemObjectSink pSink) CancelAsyncCall;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, int32 lFlags, out IWbemObjectSink* ppResponseHandler) QueryObjectSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) GetObjectAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutClassAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteClassAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateClassEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateClassEnumAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutInstanceAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteInstanceAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateInstanceEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateInstanceEnumAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecQueryAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecNotificationQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecNotificationQueryAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) ExecMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, ref IWbemObjectSink pResponseHandler) ExecMethodAsync;
 			}
 		}
 		[CRepr]
@@ -2912,7 +2912,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemLocator self, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemLocator self, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
 			}
 		}
 		[CRepr]
@@ -2928,8 +2928,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemObjectSink self, int32 lObjectCount, IWbemClassObject** apObjArray) Indicate;
-				public new function HRESULT(ref IWbemObjectSink self, int32 lFlags, HRESULT hResult, BSTR strParam, ref IWbemClassObject pObjParam) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSink self, int32 lObjectCount, IWbemClassObject** apObjArray) Indicate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSink self, int32 lFlags, HRESULT hResult, BSTR strParam, ref IWbemClassObject pObjParam) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2948,11 +2948,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEnumWbemClassObject self) Reset;
-				public new function HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, out uint32 puReturned) Next;
-				public new function HRESULT(ref IEnumWbemClassObject self, uint32 uCount, ref IWbemObjectSink pSink) NextAsync;
-				public new function HRESULT(ref IEnumWbemClassObject self, out IEnumWbemClassObject* ppEnum) Clone;
-				public new function HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 nCount) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWbemClassObject self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, out uint32 puReturned) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWbemClassObject self, uint32 uCount, ref IWbemObjectSink pSink) NextAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWbemClassObject self, out IEnumWbemClassObject* ppEnum) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 nCount) Skip;
 			}
 		}
 		[CRepr]
@@ -2970,10 +2970,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemClassObject* ppResultObject) GetResultObject;
-				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out BSTR pstrResultString) GetResultString;
-				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemServices* ppServices) GetResultServices;
-				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out int32 plStatus) GetCallStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemClassObject* ppResultObject) GetResultObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemCallResult self, int32 lTimeout, out BSTR pstrResultString) GetResultString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemServices* ppServices) GetResultServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemCallResult self, int32 lTimeout, out int32 plStatus) GetCallStatus;
 			}
 		}
 		[CRepr]
@@ -2996,15 +2996,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemContext self, out IWbemContext* ppNewCopy) Clone;
-				public new function HRESULT(ref IWbemContext self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
-				public new function HRESULT(ref IWbemContext self, int32 lFlags) BeginEnumeration;
-				public new function HRESULT(ref IWbemContext self, int32 lFlags, out BSTR pstrName, out VARIANT pValue) Next;
-				public new function HRESULT(ref IWbemContext self) EndEnumeration;
-				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, ref VARIANT pValue) SetValue;
-				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, out VARIANT pValue) GetValue;
-				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags) DeleteValue;
-				public new function HRESULT(ref IWbemContext self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, out IWbemContext* ppNewCopy) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, int32 lFlags) BeginEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, int32 lFlags, out BSTR pstrName, out VARIANT pValue) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self) EndEnumeration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, ref VARIANT pValue) SetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, out VARIANT pValue) GetValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags) DeleteValue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemContext self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -3019,7 +3019,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUnsecuredApartment self, ref IUnknown pObject, out IUnknown* ppStub) CreateObjectStub;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUnsecuredApartment self, ref IUnknown pObject, out IUnknown* ppStub) CreateObjectStub;
 			}
 		}
 		[CRepr]
@@ -3034,7 +3034,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnsecuredApartment.VTable
 			{
-				public new function HRESULT(ref IWbemUnsecuredApartment self, ref IWbemObjectSink pSink, uint32 dwFlags, PWSTR wszReserved, out IWbemObjectSink* ppStub) CreateSinkStub;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemUnsecuredApartment self, ref IWbemObjectSink pSink, uint32 dwFlags, PWSTR wszReserved, out IWbemObjectSink* ppStub) CreateSinkStub;
 			}
 		}
 		[CRepr]
@@ -3050,8 +3050,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetErrorCodeText;
-				public new function HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetFacilityCodeText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetErrorCodeText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetFacilityCodeText;
 			}
 		}
 		[CRepr]
@@ -3067,8 +3067,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemBackupRestore self, PWSTR strBackupToFile, int32 lFlags) Backup;
-				public new function HRESULT(ref IWbemBackupRestore self, PWSTR strRestoreFromFile, int32 lFlags) Restore;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemBackupRestore self, PWSTR strBackupToFile, int32 lFlags) Backup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemBackupRestore self, PWSTR strRestoreFromFile, int32 lFlags) Restore;
 			}
 		}
 		[CRepr]
@@ -3084,8 +3084,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWbemBackupRestore.VTable
 			{
-				public new function HRESULT(ref IWbemBackupRestoreEx self) Pause;
-				public new function HRESULT(ref IWbemBackupRestoreEx self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemBackupRestoreEx self) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemBackupRestoreEx self) Resume;
 			}
 		}
 		[CRepr]
@@ -3100,7 +3100,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemRefresher self, int32 lFlags) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemRefresher self, int32 lFlags) Refresh;
 			}
 		}
 		[CRepr]
@@ -3118,10 +3118,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) AddObjects;
-				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds) RemoveObjects;
-				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, out uint32 puReturned) GetObjects;
-				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags) RemoveAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) AddObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds) RemoveObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, out uint32 puReturned) GetObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfEnum self, int32 lFlags) RemoveAll;
 			}
 		}
 		[CRepr]
@@ -3140,11 +3140,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszPath, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByPath;
-				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, ref IWbemClassObject pTemplate, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByTemplate;
-				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemRefresher pRefresher, int32 lFlags, out int32 plId) AddRefresher;
-				public new function HRESULT(ref IWbemConfigureRefresher self, int32 lId, int32 lFlags) Remove;
-				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszClassName, int32 lFlags, ref IWbemContext pContext, out IWbemHiPerfEnum* ppEnum, out int32 plId) AddEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszPath, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, ref IWbemClassObject pTemplate, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByTemplate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConfigureRefresher self, ref IWbemRefresher pRefresher, int32 lFlags, out int32 plId) AddRefresher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConfigureRefresher self, int32 lId, int32 lFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszClassName, int32 lFlags, ref IWbemContext pContext, out IWbemHiPerfEnum* ppEnum, out int32 plId) AddEnum;
 			}
 		}
 		[CRepr]
@@ -3163,11 +3163,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWbemObjectSink.VTable
 			{
-				public new function HRESULT(ref IWbemObjectSinkEx self, uint32 uChannel, BSTR strMessage) WriteMessage;
-				public new function HRESULT(ref IWbemObjectSinkEx self, ref IWbemClassObject pObjError, out uint8 puReturned) WriteError;
-				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strMessage, uint8 uPromptType, out uint8 puReturned) PromptUser;
-				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) WriteProgress;
-				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strName, ref VARIANT vtValue, uint32 ulType, uint32 ulFlags) WriteStreamParameter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSinkEx self, uint32 uChannel, BSTR strMessage) WriteMessage;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSinkEx self, ref IWbemClassObject pObjError, out uint8 puReturned) WriteError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSinkEx self, BSTR strMessage, uint8 uPromptType, out uint8 puReturned) PromptUser;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSinkEx self, BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) WriteProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectSinkEx self, BSTR strName, ref VARIANT vtValue, uint32 ulType, uint32 ulFlags) WriteStreamParameter;
 			}
 		}
 		[CRepr]
@@ -3182,7 +3182,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemShutdown self, int32 uReason, uint32 uMaxMilliseconds, ref IWbemContext pCtx) Shutdown;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemShutdown self, int32 uReason, uint32 uMaxMilliseconds, ref IWbemContext pCtx) Shutdown;
 			}
 		}
 		[CRepr]
@@ -3198,8 +3198,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, ref IWbemClassObject pObj, uint32 uObjTextFormat, ref IWbemContext pCtx, out BSTR strText) GetText;
-				public new function HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, BSTR strText, uint32 uObjTextFormat, ref IWbemContext pCtx, out IWbemClassObject* pNewObj) CreateFromText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, ref IWbemClassObject pObj, uint32 uObjTextFormat, ref IWbemContext pCtx, out BSTR strText) GetText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, BSTR strText, uint32 uObjTextFormat, ref IWbemContext pCtx, out IWbemClassObject* pNewObj) CreateFromText;
 			}
 		}
 		[CRepr]
@@ -3216,9 +3216,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMofCompiler self, PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileFile;
-				public new function HRESULT(ref IMofCompiler self, int32 BuffSize, ref uint8 pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileBuffer;
-				public new function HRESULT(ref IMofCompiler self, PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CreateBMOF;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMofCompiler self, PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMofCompiler self, int32 BuffSize, ref uint8 pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileBuffer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMofCompiler self, PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CreateBMOF;
 			}
 		}
 		[CRepr]
@@ -3234,8 +3234,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, out VARIANT pvValue) GetProperty;
-				public new function HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, in VARIANT pvValue) PutProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, out VARIANT pvValue) GetProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, in VARIANT pvValue) PutProperty;
 			}
 		}
 		[CRepr]
@@ -3250,7 +3250,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemUnboundObjectSink self, ref IWbemClassObject pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) IndicateToConsumer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemUnboundObjectSink self, ref IWbemClassObject pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) IndicateToConsumer;
 			}
 		}
 		[CRepr]
@@ -3265,7 +3265,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemEventProvider self, ref IWbemObjectSink pSink, int32 lFlags) ProvideEvents;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventProvider self, ref IWbemObjectSink pSink, int32 lFlags) ProvideEvents;
 			}
 		}
 		[CRepr]
@@ -3281,8 +3281,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId, ref uint16 wszQueryLanguage, ref uint16 wszQuery) NewQuery;
-				public new function HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId) CancelQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId, ref uint16 wszQueryLanguage, ref uint16 wszQuery) NewQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId) CancelQuery;
 			}
 		}
 		[CRepr]
@@ -3297,7 +3297,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemEventProviderSecurity self, ref uint16 wszQueryLanguage, ref uint16 wszQuery, int32 lSidLength, uint8* pSid) AccessCheck;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventProviderSecurity self, ref uint16 wszQueryLanguage, ref uint16 wszQuery, int32 lSidLength, uint8* pSid) AccessCheck;
 			}
 		}
 		[CRepr]
@@ -3312,7 +3312,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemEventConsumerProvider self, ref IWbemClassObject pLogicalConsumer, out IWbemUnboundObjectSink* ppConsumer) FindConsumer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventConsumerProvider self, ref IWbemClassObject pLogicalConsumer, out IWbemUnboundObjectSink* ppConsumer) FindConsumer;
 			}
 		}
 		[CRepr]
@@ -3327,7 +3327,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemProviderInitSink self, int32 lStatus, int32 lFlags) SetStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemProviderInitSink self, int32 lStatus, int32 lFlags) SetStatus;
 			}
 		}
 		[CRepr]
@@ -3342,7 +3342,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemProviderInit self, PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, ref IWbemServices pNamespace, ref IWbemContext pCtx, ref IWbemProviderInitSink pInitSink) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemProviderInit self, PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, ref IWbemServices pNamespace, ref IWbemContext pCtx, ref IWbemProviderInitSink pInitSink) Initialize;
 			}
 		}
 		[CRepr]
@@ -3362,12 +3362,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) QueryInstances;
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) CreateRefresher;
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) CreateRefreshableObject;
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) StopRefreshing;
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, ref IWbemHiPerfEnum pHiPerfEnum, out int32 plId) CreateRefreshableEnum;
-				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, ref IWbemContext pContext) GetObjects;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) QueryInstances;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) CreateRefresher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) CreateRefreshableObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) StopRefreshing;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, ref IWbemHiPerfEnum pHiPerfEnum, out int32 plId) CreateRefreshableEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, ref IWbemContext pContext) GetObjects;
 			}
 		}
 		[CRepr]
@@ -3383,8 +3383,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemDecoupledRegistrar self, int32 a_Flags, ref IWbemContext a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, ref IUnknown pIUnknown) Register;
-				public new function HRESULT(ref IWbemDecoupledRegistrar self) UnRegister;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemDecoupledRegistrar self, int32 a_Flags, ref IWbemContext a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, ref IUnknown pIUnknown) Register;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemDecoupledRegistrar self) UnRegister;
 			}
 		}
 		[CRepr]
@@ -3399,7 +3399,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemProviderIdentity self, int32 lFlags, ref IWbemClassObject pProvReg) SetRegistrationObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemProviderIdentity self, int32 lFlags, ref IWbemClassObject pProvReg) SetRegistrationObject;
 			}
 		}
 		[CRepr]
@@ -3415,8 +3415,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWbemDecoupledRegistrar.VTable
 			{
-				public new function HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemObjectSink* a_Sink) GetSink;
-				public new function HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemServices* a_Service) GetService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemObjectSink* a_Sink) GetSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemServices* a_Service) GetService;
 			}
 		}
 		[CRepr]
@@ -3434,10 +3434,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWbemObjectSink.VTable
 			{
-				public new function HRESULT(ref IWbemEventSink self, int32 lSDLength, uint8* pSD) SetSinkSecurity;
-				public new function HRESULT(ref IWbemEventSink self) IsActive;
-				public new function HRESULT(ref IWbemEventSink self, int32 lNumQueries, PWSTR* awszQueries, ref IUnknown pCallback, out IWbemEventSink* ppSink) GetRestrictedSink;
-				public new function HRESULT(ref IWbemEventSink self, int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) SetBatchingParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventSink self, int32 lSDLength, uint8* pSD) SetSinkSecurity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventSink self) IsActive;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventSink self, int32 lNumQueries, PWSTR* awszQueries, ref IUnknown pCallback, out IWbemEventSink* ppSink) GetRestrictedSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemEventSink self, int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) SetBatchingParameters;
 			}
 		}
 		[CRepr]
@@ -3470,25 +3470,25 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemObject) Get;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) GetAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) InstancesOf;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesOfAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) SubclassesOf;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesOfAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ExecQuery;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecQueryAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) AssociatorsOf;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsOfAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ReferencesTo;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesToAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemEventSource* objWbemEventSource) ExecNotificationQuery;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecNotificationQueryAsync;
-				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod;
-				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync;
-				public new function HRESULT(ref ISWbemServices self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemObject) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) GetAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) InstancesOf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesOfAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) SubclassesOf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesOfAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ExecQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecQueryAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) AssociatorsOf;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsOfAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ReferencesTo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesToAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemEventSource* objWbemEventSource) ExecNotificationQuery;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecNotificationQueryAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServices self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -3504,8 +3504,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemLocator self, BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, ref IDispatch objWbemNamedValueSet, out ISWbemServices* objWbemServices) ConnectServer;
-				public new function HRESULT(ref ISWbemLocator self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemLocator self, BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, ref IDispatch objWbemNamedValueSet, out ISWbemServices* objWbemServices) ConnectServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemLocator self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -3544,31 +3544,31 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Instances_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesAsync_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Subclasses_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesAsync_;
-				public new function HRESULT(ref ISWbemObject self, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Associators_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsAsync_;
-				public new function HRESULT(ref ISWbemObject self, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) References_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesAsync_;
-				public new function HRESULT(ref ISWbemObject self, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemObject* objWbemObject) Clone_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out BSTR strObjectText) GetObjectText_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnDerivedClass_;
-				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnInstance_;
-				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemObject, int32 iFlags, out int16 bResult) CompareTo_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemPropertySet* objWbemPropertySet) get_Properties_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemMethodSet* objWbemMethodSet) get_Methods_;
-				public new function HRESULT(ref ISWbemObject self, out VARIANT strClassNameArray) get_Derivation_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemObjectPath* objWbemObjectPath) get_Path_;
-				public new function HRESULT(ref ISWbemObject self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Instances_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Subclasses_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Associators_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) References_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemObject* objWbemObject) Clone_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, out BSTR strObjectText) GetObjectText_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnDerivedClass_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnInstance_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, ref IDispatch objWbemObject, int32 iFlags, out int16 bResult) CompareTo_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemPropertySet* objWbemPropertySet) get_Properties_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemMethodSet* objWbemMethodSet) get_Methods_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out VARIANT strClassNameArray) get_Derivation_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemObjectPath* objWbemObjectPath) get_Path_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObject self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -3587,11 +3587,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemObjectSet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemObjectSet self, BSTR strObjectPath, int32 iFlags, out ISWbemObject* objWbemObject) Item;
-				public new function HRESULT(ref ISWbemObjectSet self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemObjectSet self, out ISWbemSecurity* objWbemSecurity) get_Security_;
-				public new function HRESULT(ref ISWbemObjectSet self, int32 lIndex, out ISWbemObject* objWbemObject) ItemIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectSet self, BSTR strObjectPath, int32 iFlags, out ISWbemObject* objWbemObject) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectSet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectSet self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectSet self, int32 lIndex, out ISWbemObject* objWbemObject) ItemIndex;
 			}
 		}
 		[CRepr]
@@ -3608,9 +3608,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemNamedValue self, out VARIANT varValue) get_Value;
-				public new function HRESULT(ref ISWbemNamedValue self, ref VARIANT varValue) put_Value;
-				public new function HRESULT(ref ISWbemNamedValue self, out BSTR strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValue self, out VARIANT varValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValue self, ref VARIANT varValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValue self, out BSTR strName) get_Name;
 			}
 		}
 		[CRepr]
@@ -3631,13 +3631,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemNamedValueSet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Item;
-				public new function HRESULT(ref ISWbemNamedValueSet self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, ref VARIANT varValue, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Add;
-				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags) Remove;
-				public new function HRESULT(ref ISWbemNamedValueSet self, out ISWbemNamedValueSet* objWbemNamedValueSet) Clone;
-				public new function HRESULT(ref ISWbemNamedValueSet self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, BSTR strName, ref VARIANT varValue, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self, out ISWbemNamedValueSet* objWbemNamedValueSet) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemNamedValueSet self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -3662,17 +3662,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemQualifier self, out VARIANT varValue) get_Value;
-				public new function HRESULT(ref ISWbemQualifier self, ref VARIANT varValue) put_Value;
-				public new function HRESULT(ref ISWbemQualifier self, out BSTR strName) get_Name;
-				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsLocal) get_IsLocal;
-				public new function HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToSubclass) get_PropagatesToSubclass;
-				public new function HRESULT(ref ISWbemQualifier self, int16 bPropagatesToSubclass) put_PropagatesToSubclass;
-				public new function HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToInstance) get_PropagatesToInstance;
-				public new function HRESULT(ref ISWbemQualifier self, int16 bPropagatesToInstance) put_PropagatesToInstance;
-				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsOverridable) get_IsOverridable;
-				public new function HRESULT(ref ISWbemQualifier self, int16 bIsOverridable) put_IsOverridable;
-				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsAmended) get_IsAmended;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out VARIANT varValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, ref VARIANT varValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out BSTR strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out int16 bIsLocal) get_IsLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToSubclass) get_PropagatesToSubclass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, int16 bPropagatesToSubclass) put_PropagatesToSubclass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToInstance) get_PropagatesToInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, int16 bPropagatesToInstance) put_PropagatesToInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out int16 bIsOverridable) get_IsOverridable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, int16 bIsOverridable) put_IsOverridable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifier self, out int16 bIsAmended) get_IsAmended;
 			}
 		}
 		[CRepr]
@@ -3691,11 +3691,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemQualifierSet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemQualifierSet self, BSTR name, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Item;
-				public new function HRESULT(ref ISWbemQualifierSet self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemQualifierSet self, BSTR strName, ref VARIANT varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Add;
-				public new function HRESULT(ref ISWbemQualifierSet self, BSTR strName, int32 iFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifierSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifierSet self, BSTR name, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifierSet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifierSet self, BSTR strName, ref VARIANT varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemQualifierSet self, BSTR strName, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -3717,14 +3717,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemProperty self, out VARIANT varValue) get_Value;
-				public new function HRESULT(ref ISWbemProperty self, ref VARIANT varValue) put_Value;
-				public new function HRESULT(ref ISWbemProperty self, out BSTR strName) get_Name;
-				public new function HRESULT(ref ISWbemProperty self, out int16 bIsLocal) get_IsLocal;
-				public new function HRESULT(ref ISWbemProperty self, out BSTR strOrigin) get_Origin;
-				public new function HRESULT(ref ISWbemProperty self, out WbemCimtypeEnum iCimType) get_CIMType;
-				public new function HRESULT(ref ISWbemProperty self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
-				public new function HRESULT(ref ISWbemProperty self, out int16 bIsArray) get_IsArray;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out VARIANT varValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, ref VARIANT varValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out BSTR strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out int16 bIsLocal) get_IsLocal;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out BSTR strOrigin) get_Origin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out WbemCimtypeEnum iCimType) get_CIMType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemProperty self, out int16 bIsArray) get_IsArray;
 			}
 		}
 		[CRepr]
@@ -3743,11 +3743,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemPropertySet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags, out ISWbemProperty* objWbemProperty) Item;
-				public new function HRESULT(ref ISWbemPropertySet self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, out ISWbemProperty* objWbemProperty) Add;
-				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPropertySet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags, out ISWbemProperty* objWbemProperty) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPropertySet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPropertySet self, BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, out ISWbemProperty* objWbemProperty) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -3766,11 +3766,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemMethod self, out BSTR strName) get_Name;
-				public new function HRESULT(ref ISWbemMethod self, out BSTR strOrigin) get_Origin;
-				public new function HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemInParameters) get_InParameters;
-				public new function HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemOutParameters) get_OutParameters;
-				public new function HRESULT(ref ISWbemMethod self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethod self, out BSTR strName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethod self, out BSTR strOrigin) get_Origin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemInParameters) get_InParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemOutParameters) get_OutParameters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethod self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
 			}
 		}
 		[CRepr]
@@ -3787,9 +3787,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemMethodSet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemMethodSet self, BSTR strName, int32 iFlags, out ISWbemMethod* objWbemMethod) Item;
-				public new function HRESULT(ref ISWbemMethodSet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethodSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethodSet self, BSTR strName, int32 iFlags, out ISWbemMethod* objWbemMethod) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemMethodSet self, out int32 iCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -3805,8 +3805,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemEventSource self, int32 iTimeoutMs, out ISWbemObject* objWbemObject) NextEvent;
-				public new function HRESULT(ref ISWbemEventSource self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemEventSource self, int32 iTimeoutMs, out ISWbemObject* objWbemObject) NextEvent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemEventSource self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -3843,29 +3843,29 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strPath) get_Path;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strPath) put_Path;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strRelPath) get_RelPath;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strRelPath) put_RelPath;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strServer) get_Server;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strServer) put_Server;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strNamespace) get_Namespace;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strNamespace) put_Namespace;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strParentNamespace) get_ParentNamespace;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strDisplayName) get_DisplayName;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strDisplayName) put_DisplayName;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strClass) get_Class;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strClass) put_Class;
-				public new function HRESULT(ref ISWbemObjectPath self, out int16 bIsClass) get_IsClass;
-				public new function HRESULT(ref ISWbemObjectPath self) SetAsClass;
-				public new function HRESULT(ref ISWbemObjectPath self, out int16 bIsSingleton) get_IsSingleton;
-				public new function HRESULT(ref ISWbemObjectPath self) SetAsSingleton;
-				public new function HRESULT(ref ISWbemObjectPath self, out ISWbemNamedValueSet* objWbemNamedValueSet) get_Keys;
-				public new function HRESULT(ref ISWbemObjectPath self, out ISWbemSecurity* objWbemSecurity) get_Security_;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strLocale) get_Locale;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strLocale) put_Locale;
-				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strAuthority) get_Authority;
-				public new function HRESULT(ref ISWbemObjectPath self, BSTR strAuthority) put_Authority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strPath) get_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strPath) put_Path;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strRelPath) get_RelPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strRelPath) put_RelPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strServer) get_Server;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strServer) put_Server;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strNamespace) get_Namespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strNamespace) put_Namespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strParentNamespace) get_ParentNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strDisplayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strDisplayName) put_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strClass) get_Class;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strClass) put_Class;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out int16 bIsClass) get_IsClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self) SetAsClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out int16 bIsSingleton) get_IsSingleton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self) SetAsSingleton;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out ISWbemNamedValueSet* objWbemNamedValueSet) get_Keys;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strLocale) get_Locale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strLocale) put_Locale;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, out BSTR strAuthority) get_Authority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectPath self, BSTR strAuthority) put_Authority;
 			}
 		}
 		[CRepr]
@@ -3906,7 +3906,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemSink self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSink self) Cancel;
 			}
 		}
 		[CRepr]
@@ -3925,11 +3925,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemSecurity self, out WbemImpersonationLevelEnum iImpersonationLevel) get_ImpersonationLevel;
-				public new function HRESULT(ref ISWbemSecurity self, WbemImpersonationLevelEnum iImpersonationLevel) put_ImpersonationLevel;
-				public new function HRESULT(ref ISWbemSecurity self, out WbemAuthenticationLevelEnum iAuthenticationLevel) get_AuthenticationLevel;
-				public new function HRESULT(ref ISWbemSecurity self, WbemAuthenticationLevelEnum iAuthenticationLevel) put_AuthenticationLevel;
-				public new function HRESULT(ref ISWbemSecurity self, out ISWbemPrivilegeSet* objWbemPrivilegeSet) get_Privileges;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSecurity self, out WbemImpersonationLevelEnum iImpersonationLevel) get_ImpersonationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSecurity self, WbemImpersonationLevelEnum iImpersonationLevel) put_ImpersonationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSecurity self, out WbemAuthenticationLevelEnum iAuthenticationLevel) get_AuthenticationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSecurity self, WbemAuthenticationLevelEnum iAuthenticationLevel) put_AuthenticationLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemSecurity self, out ISWbemPrivilegeSet* objWbemPrivilegeSet) get_Privileges;
 			}
 		}
 		[CRepr]
@@ -3948,11 +3948,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemPrivilege self, out int16 bIsEnabled) get_IsEnabled;
-				public new function HRESULT(ref ISWbemPrivilege self, int16 bIsEnabled) put_IsEnabled;
-				public new function HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_Name;
-				public new function HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_DisplayName;
-				public new function HRESULT(ref ISWbemPrivilege self, out WbemPrivilegeEnum iPrivilege) get_Identifier;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilege self, out int16 bIsEnabled) get_IsEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilege self, int16 bIsEnabled) put_IsEnabled;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_Name;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_DisplayName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilege self, out WbemPrivilegeEnum iPrivilege) get_Identifier;
 			}
 		}
 		[CRepr]
@@ -3973,13 +3973,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemPrivilegeSet self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, out ISWbemPrivilege* objWbemPrivilege) Item;
-				public new function HRESULT(ref ISWbemPrivilegeSet self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) Add;
-				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege) Remove;
-				public new function HRESULT(ref ISWbemPrivilegeSet self) DeleteAll;
-				public new function HRESULT(ref ISWbemPrivilegeSet self, BSTR strPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) AddAsString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, out ISWbemPrivilege* objWbemPrivilege) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemPrivilegeSet self, BSTR strPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) AddAsString;
 			}
 		}
 		[CRepr]
@@ -3995,8 +3995,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISWbemServices.VTable
 			{
-				public new function HRESULT(ref ISWbemServicesEx self, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put;
-				public new function HRESULT(ref ISWbemServicesEx self, ref ISWbemSink objWbemSink, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServicesEx self, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemServicesEx self, ref ISWbemSink objWbemSink, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync;
 			}
 		}
 		[CRepr]
@@ -4014,10 +4014,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ISWbemObject.VTable
 			{
-				public new function HRESULT(ref ISWbemObjectEx self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Refresh_;
-				public new function HRESULT(ref ISWbemObjectEx self, out ISWbemPropertySet* objWbemPropertySet) get_SystemProperties_;
-				public new function HRESULT(ref ISWbemObjectEx self, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet, out BSTR bsText) GetText_;
-				public new function HRESULT(ref ISWbemObjectEx self, BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet) SetFromText_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectEx self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Refresh_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectEx self, out ISWbemPropertySet* objWbemPropertySet) get_SystemProperties_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectEx self, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet, out BSTR bsText) GetText_;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemObjectEx self, BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet) SetFromText_;
 			}
 		}
 		[CRepr]
@@ -4071,46 +4071,46 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemDateTime self, out BSTR strValue) get_Value;
-				public new function HRESULT(ref ISWbemDateTime self, BSTR strValue) put_Value;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iYear) get_Year;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iYear) put_Year;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bYearSpecified) get_YearSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bYearSpecified) put_YearSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iMonth) get_Month;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iMonth) put_Month;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bMonthSpecified) get_MonthSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bMonthSpecified) put_MonthSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iDay) get_Day;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iDay) put_Day;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bDaySpecified) get_DaySpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bDaySpecified) put_DaySpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iHours) get_Hours;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iHours) put_Hours;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bHoursSpecified) get_HoursSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bHoursSpecified) put_HoursSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iMinutes) get_Minutes;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iMinutes) put_Minutes;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bMinutesSpecified) get_MinutesSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bMinutesSpecified) put_MinutesSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iSeconds) get_Seconds;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iSeconds) put_Seconds;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bSecondsSpecified) get_SecondsSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bSecondsSpecified) put_SecondsSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iMicroseconds) get_Microseconds;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iMicroseconds) put_Microseconds;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bMicrosecondsSpecified) get_MicrosecondsSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bMicrosecondsSpecified) put_MicrosecondsSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int32 iUTC) get_UTC;
-				public new function HRESULT(ref ISWbemDateTime self, int32 iUTC) put_UTC;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bUTCSpecified) get_UTCSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bUTCSpecified) put_UTCSpecified;
-				public new function HRESULT(ref ISWbemDateTime self, out int16 bIsInterval) get_IsInterval;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bIsInterval) put_IsInterval;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out double dVarDate) GetVarDate;
-				public new function HRESULT(ref ISWbemDateTime self, double dVarDate, int16 bIsLocal) SetVarDate;
-				public new function HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out BSTR strFileTime) GetFileTime;
-				public new function HRESULT(ref ISWbemDateTime self, BSTR strFileTime, int16 bIsLocal) SetFileTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out BSTR strValue) get_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, BSTR strValue) put_Value;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iYear) get_Year;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iYear) put_Year;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bYearSpecified) get_YearSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bYearSpecified) put_YearSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iMonth) get_Month;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iMonth) put_Month;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bMonthSpecified) get_MonthSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bMonthSpecified) put_MonthSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iDay) get_Day;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iDay) put_Day;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bDaySpecified) get_DaySpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bDaySpecified) put_DaySpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iHours) get_Hours;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iHours) put_Hours;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bHoursSpecified) get_HoursSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bHoursSpecified) put_HoursSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iMinutes) get_Minutes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iMinutes) put_Minutes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bMinutesSpecified) get_MinutesSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bMinutesSpecified) put_MinutesSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iSeconds) get_Seconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iSeconds) put_Seconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bSecondsSpecified) get_SecondsSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bSecondsSpecified) put_SecondsSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iMicroseconds) get_Microseconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iMicroseconds) put_Microseconds;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bMicrosecondsSpecified) get_MicrosecondsSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bMicrosecondsSpecified) put_MicrosecondsSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int32 iUTC) get_UTC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int32 iUTC) put_UTC;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bUTCSpecified) get_UTCSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bUTCSpecified) put_UTCSpecified;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, out int16 bIsInterval) get_IsInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bIsInterval) put_IsInterval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out double dVarDate) GetVarDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, double dVarDate, int16 bIsLocal) SetVarDate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out BSTR strFileTime) GetFileTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemDateTime self, BSTR strFileTime, int16 bIsLocal) SetFileTime;
 			}
 		}
 		[CRepr]
@@ -4134,16 +4134,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemRefresher self, out IUnknown* pUnk) get__NewEnum;
-				public new function HRESULT(ref ISWbemRefresher self, int32 iIndex, out ISWbemRefreshableItem* objWbemRefreshableItem) Item;
-				public new function HRESULT(ref ISWbemRefresher self, out int32 iCount) get_Count;
-				public new function HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsInstancePath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) Add;
-				public new function HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsClassName, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) AddEnum;
-				public new function HRESULT(ref ISWbemRefresher self, int32 iIndex, int32 iFlags) Remove;
-				public new function HRESULT(ref ISWbemRefresher self, int32 iFlags) Refresh;
-				public new function HRESULT(ref ISWbemRefresher self, out int16 bCount) get_AutoReconnect;
-				public new function HRESULT(ref ISWbemRefresher self, int16 bCount) put_AutoReconnect;
-				public new function HRESULT(ref ISWbemRefresher self) DeleteAll;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, out IUnknown* pUnk) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, int32 iIndex, out ISWbemRefreshableItem* objWbemRefreshableItem) Item;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, out int32 iCount) get_Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsInstancePath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsClassName, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) AddEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, int32 iIndex, int32 iFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, int32 iFlags) Refresh;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, out int16 bCount) get_AutoReconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self, int16 bCount) put_AutoReconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefresher self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -4163,12 +4163,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISWbemRefreshableItem self, out int32 iIndex) get_Index;
-				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemRefresher* objWbemRefresher) get_Refresher;
-				public new function HRESULT(ref ISWbemRefreshableItem self, out int16 bIsSet) get_IsSet;
-				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectEx* objWbemObject) get_Object;
-				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectSet* objWbemObjectSet) get_ObjectSet;
-				public new function HRESULT(ref ISWbemRefreshableItem self, int32 iFlags) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, out int32 iIndex) get_Index;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, out ISWbemRefresher* objWbemRefresher) get_Refresher;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, out int16 bIsSet) get_IsSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectEx* objWbemObject) get_Object;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectSet* objWbemObjectSet) get_ObjectSet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISWbemRefreshableItem self, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -4185,9 +4185,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IWMIExtension self, out BSTR strWMIObjectPath) get_WMIObjectPath;
-				public new function HRESULT(ref IWMIExtension self, out ISWbemObject* objWMIObject) GetWMIObject;
-				public new function HRESULT(ref IWMIExtension self, out ISWbemServices* objWMIServices) GetWMIServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIExtension self, out BSTR strWMIObjectPath) get_WMIObjectPath;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIExtension self, out ISWbemObject* objWMIObject) GetWMIObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMIExtension self, out ISWbemServices* objWMIServices) GetWMIServices;
 			}
 		}
 		[CRepr]
@@ -4202,7 +4202,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemTransport self) Initialize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemTransport self) Initialize;
 			}
 		}
 		[CRepr]
@@ -4220,10 +4220,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszLocaleList, uint32 dwNumLocales, out uint32 reserved) EstablishPosition;
-				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszUser, out uint8 Nonce) RequestChallenge;
-				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszPreferredLocale, ref uint8 AccessToken, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) WBEMLogin;
-				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) NTLMLogin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemLevel1Login self, PWSTR wszLocaleList, uint32 dwNumLocales, out uint32 reserved) EstablishPosition;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszUser, out uint8 Nonce) RequestChallenge;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemLevel1Login self, PWSTR wszPreferredLocale, ref uint8 AccessToken, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) WBEMLogin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) NTLMLogin;
 			}
 		}
 		[CRepr]
@@ -4238,7 +4238,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemConnectorLogin self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface) ConnectorLogin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConnectorLogin self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface) ConnectorLogin;
 			}
 		}
 		[CRepr]
@@ -4253,7 +4253,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemAddressResolution self, PWSTR wszNamespacePath, PWSTR wszAddressType, out uint32 pdwAddressLength, out uint8* pabBinaryAddress) Resolve;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemAddressResolution self, PWSTR wszNamespacePath, PWSTR wszAddressType, out uint32 pdwAddressLength, out uint8* pabBinaryAddress) Resolve;
 			}
 		}
 		[CRepr]
@@ -4268,7 +4268,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemClientTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClientTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
 			}
 		}
 		[CRepr]
@@ -4285,9 +4285,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface, out IWbemCallResult* pCallRes) Open;
-				public new function HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, ref IWbemObjectSink pResponseHandler) OpenAsync;
-				public new function HRESULT(ref IWbemClientConnectionTransport self, int32 lFlags, ref IWbemObjectSink pHandler) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface, out IWbemCallResult* pCallRes) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, ref IWbemObjectSink pResponseHandler) OpenAsync;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemClientConnectionTransport self, int32 lFlags, ref IWbemObjectSink pHandler) Cancel;
 			}
 		}
 		[CRepr]
@@ -4305,10 +4305,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWbemConstructClassObject self, int32 lNumAntecedents, ref PWSTR awszAntecedents) SetInheritanceChain;
-				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszPropertyName, int32 lOriginIndex) SetPropertyOrigin;
-				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszMethodName, int32 lOriginIndex) SetMethodOrigin;
-				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConstructClassObject self, int32 lNumAntecedents, ref PWSTR awszAntecedents) SetInheritanceChain;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConstructClassObject self, PWSTR wszPropertyName, int32 lOriginIndex) SetPropertyOrigin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConstructClassObject self, PWSTR wszMethodName, int32 lOriginIndex) SetMethodOrigin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConstructClassObject self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
 			}
 		}
 		

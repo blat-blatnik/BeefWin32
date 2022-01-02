@@ -528,8 +528,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWPCProviderState self) Enable;
-				public new function HRESULT(ref IWPCProviderState self) Disable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderState self) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderState self) Disable;
 			}
 		}
 		[CRepr]
@@ -546,9 +546,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWPCProviderConfig self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
-				public new function HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrSID) Configure;
-				public new function HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrSID) Configure;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderConfig self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
 			}
 		}
 		[CRepr]
@@ -565,9 +565,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWPCSettings self, out BOOL pfRequired) IsLoggingRequired;
-				public new function HRESULT(ref IWPCSettings self, out SYSTEMTIME pTime) GetLastSettingsChangeTime;
-				public new function HRESULT(ref IWPCSettings self, out WPCFLAG_RESTRICTION pdwRestrictions) GetRestrictions;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCSettings self, out BOOL pfRequired) IsLoggingRequired;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCSettings self, out SYSTEMTIME pTime) GetLastSettingsChangeTime;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCSettings self, out WPCFLAG_RESTRICTION pdwRestrictions) GetRestrictions;
 			}
 		}
 		[CRepr]
@@ -582,7 +582,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
-				public new function HRESULT(ref IWPCGamesSettings self, Guid guidAppID, out uint32 pdwReasons) IsBlocked;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCGamesSettings self, Guid guidAppID, out uint32 pdwReasons) IsBlocked;
 			}
 		}
 		[CRepr]
@@ -598,8 +598,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
-				public new function HRESULT(ref IWPCWebSettings self, out WPCFLAG_WEB_SETTING pdwSettings) GetSettings;
-				public new function HRESULT(ref IWPCWebSettings self, HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, out BOOL pfChanged) RequestURLOverride;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCWebSettings self, out WPCFLAG_WEB_SETTING pdwSettings) GetSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCWebSettings self, HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, out BOOL pfChanged) RequestURLOverride;
 			}
 		}
 		[CRepr]
@@ -617,10 +617,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWindowsParentalControlsCore self, out WPCFLAG_VISIBILITY peVisibility) GetVisibility;
-				public new function HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
-				public new function HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
-				public new function HRESULT(ref IWindowsParentalControlsCore self, out Guid pguidID, PWSTR* ppszName) GetWebFilterInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, out WPCFLAG_VISIBILITY peVisibility) GetVisibility;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControlsCore self, out Guid pguidID, PWSTR* ppszName) GetWebFilterInfo;
 			}
 		}
 		[CRepr]
@@ -635,7 +635,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowsParentalControlsCore.VTable
 			{
-				public new function HRESULT(ref IWindowsParentalControls self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsParentalControls self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
 			}
 		}
 		[CRepr]
@@ -650,7 +650,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWPCProviderSupport self, out Guid pguidProvider) GetCurrent;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderSupport self, out Guid pguidProvider) GetCurrent;
 			}
 		}
 		

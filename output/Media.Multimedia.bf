@@ -6229,17 +6229,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAVIStream self, LPARAM lParam1, LPARAM lParam2) Create;
-				public new function HRESULT(ref IAVIStream self, out AVISTREAMINFOW psi, int32 lSize) Info;
-				public new function int32(ref IAVIStream self, int32 lPos, int32 lFlags) FindSample;
-				public new function HRESULT(ref IAVIStream self, int32 lPos, void* lpFormat, out int32 lpcbFormat) ReadFormat;
-				public new function HRESULT(ref IAVIStream self, int32 lPos, void* lpFormat, int32 cbFormat) SetFormat;
-				public new function HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) Read;
-				public new function HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) Write;
-				public new function HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples) Delete;
-				public new function HRESULT(ref IAVIStream self, uint32 fcc, void* lp, out int32 lpcb) ReadData;
-				public new function HRESULT(ref IAVIStream self, uint32 fcc, void* lp, int32 cb) WriteData;
-				public new function HRESULT(ref IAVIStream self, ref AVISTREAMINFOW lpInfo, int32 cbInfo) SetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, LPARAM lParam1, LPARAM lParam2) Create;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, out AVISTREAMINFOW psi, int32 lSize) Info;
+				public new function [CallingConvention(.Stdcall)] int32(ref IAVIStream self, int32 lPos, int32 lFlags) FindSample;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, int32 lPos, void* lpFormat, out int32 lpcbFormat) ReadFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, int32 lPos, void* lpFormat, int32 cbFormat) SetFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) Write;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, int32 lStart, int32 lSamples) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, uint32 fcc, void* lp, out int32 lpcb) ReadData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, uint32 fcc, void* lp, int32 cb) WriteData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStream self, ref AVISTREAMINFOW lpInfo, int32 cbInfo) SetInfo;
 			}
 		}
 		[CRepr]
@@ -6255,8 +6255,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAVIStreaming self, int32 lStart, int32 lEnd, int32 lRate) Begin;
-				public new function HRESULT(ref IAVIStreaming self) End;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStreaming self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIStreaming self) End;
 			}
 		}
 		[CRepr]
@@ -6275,11 +6275,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Cut;
-				public new function HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Copy;
-				public new function HRESULT(ref IAVIEditStream self, out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) Paste;
-				public new function HRESULT(ref IAVIEditStream self, out IAVIStream* ppResult) Clone;
-				public new function HRESULT(ref IAVIEditStream self, ref AVISTREAMINFOW lpInfo, int32 cbInfo) SetInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Cut;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plStart, out int32 plLength, out IAVIStream* ppResult) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out int32 plPos, out int32 plLength, out IAVIStream pstream, int32 lStart, int32 lEnd) Paste;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, out IAVIStream* ppResult) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIEditStream self, ref AVISTREAMINFOW lpInfo, int32 cbInfo) SetInfo;
 			}
 		}
 		[CRepr]
@@ -6294,7 +6294,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersistFile.VTable
 			{
-				public new function HRESULT(ref IAVIPersistFile self) Reserved1;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIPersistFile self) Reserved1;
 			}
 		}
 		[CRepr]
@@ -6315,13 +6315,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IAVIFile self, out AVIFILEINFOW pfi, int32 lSize) Info;
-				public new function HRESULT(ref IAVIFile self, out IAVIStream* ppStream, uint32 fccType, int32 lParam) GetStream;
-				public new function HRESULT(ref IAVIFile self, out IAVIStream* ppStream, ref AVISTREAMINFOW psi) CreateStream;
-				public new function HRESULT(ref IAVIFile self, uint32 ckid, void* lpData, int32 cbData) WriteData;
-				public new function HRESULT(ref IAVIFile self, uint32 ckid, void* lpData, out int32 lpcbData) ReadData;
-				public new function HRESULT(ref IAVIFile self) EndRecord;
-				public new function HRESULT(ref IAVIFile self, uint32 fccType, int32 lParam) DeleteStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, out AVIFILEINFOW pfi, int32 lSize) Info;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, out IAVIStream* ppStream, uint32 fccType, int32 lParam) GetStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, out IAVIStream* ppStream, ref AVISTREAMINFOW psi) CreateStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, uint32 ckid, void* lpData, int32 cbData) WriteData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, uint32 ckid, void* lpData, out int32 lpcbData) ReadData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self) EndRecord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAVIFile self, uint32 fccType, int32 lParam) DeleteStream;
 			}
 		}
 		[CRepr]
@@ -6339,10 +6339,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void*(ref IGetFrame self, int32 lPos) GetFrame;
-				public new function HRESULT(ref IGetFrame self, int32 lStart, int32 lEnd, int32 lRate) Begin;
-				public new function HRESULT(ref IGetFrame self) End;
-				public new function HRESULT(ref IGetFrame self, ref BITMAPINFOHEADER lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
+				public new function [CallingConvention(.Stdcall)] void*(ref IGetFrame self, int32 lPos) GetFrame;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetFrame self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetFrame self) End;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetFrame self, ref BITMAPINFOHEADER lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
 			}
 		}
 		

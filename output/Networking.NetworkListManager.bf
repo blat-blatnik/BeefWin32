@@ -138,15 +138,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetworkListManager self, NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) GetNetworks;
-				public new function HRESULT(ref INetworkListManager self, Guid gdNetworkId, out INetwork* ppNetwork) GetNetwork;
-				public new function HRESULT(ref INetworkListManager self, out IEnumNetworkConnections* ppEnum) GetNetworkConnections;
-				public new function HRESULT(ref INetworkListManager self, Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) GetNetworkConnection;
-				public new function HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnected;
-				public new function HRESULT(ref INetworkListManager self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
-				public new function HRESULT(ref INetworkListManager self, ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) SetSimulatedProfileInfo;
-				public new function HRESULT(ref INetworkListManager self) ClearSimulatedProfileInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) GetNetworks;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, Guid gdNetworkId, out INetwork* ppNetwork) GetNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, out IEnumNetworkConnections* ppEnum) GetNetworkConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) GetNetworkConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self, ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) SetSimulatedProfileInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManager self) ClearSimulatedProfileInfo;
 			}
 		}
 		[CRepr]
@@ -161,7 +161,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkListManagerEvents self, NLM_CONNECTIVITY newConnectivity) ConnectivityChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkListManagerEvents self, NLM_CONNECTIVITY newConnectivity) ConnectivityChanged;
 			}
 		}
 		[CRepr]
@@ -188,19 +188,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetwork self, out BSTR pszNetworkName) GetName;
-				public new function HRESULT(ref INetwork self, BSTR szNetworkNewName) SetName;
-				public new function HRESULT(ref INetwork self, out BSTR pszDescription) GetDescription;
-				public new function HRESULT(ref INetwork self, BSTR szDescription) SetDescription;
-				public new function HRESULT(ref INetwork self, out Guid pgdGuidNetworkId) GetNetworkId;
-				public new function HRESULT(ref INetwork self, out NLM_DOMAIN_TYPE pNetworkType) GetDomainType;
-				public new function HRESULT(ref INetwork self, out IEnumNetworkConnections* ppEnumNetworkConnection) GetNetworkConnections;
-				public new function HRESULT(ref INetwork self, out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) GetTimeCreatedAndConnected;
-				public new function HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnected;
-				public new function HRESULT(ref INetwork self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
-				public new function HRESULT(ref INetwork self, out NLM_NETWORK_CATEGORY pCategory) GetCategory;
-				public new function HRESULT(ref INetwork self, NLM_NETWORK_CATEGORY NewCategory) SetCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out BSTR pszNetworkName) GetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, BSTR szNetworkNewName) SetName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out BSTR pszDescription) GetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, BSTR szDescription) SetDescription;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out Guid pgdGuidNetworkId) GetNetworkId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out NLM_DOMAIN_TYPE pNetworkType) GetDomainType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out IEnumNetworkConnections* ppEnumNetworkConnection) GetNetworkConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) GetTimeCreatedAndConnected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, out NLM_NETWORK_CATEGORY pCategory) GetCategory;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetwork self, NLM_NETWORK_CATEGORY NewCategory) SetCategory;
 			}
 		}
 		[CRepr]
@@ -219,11 +219,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumNetworks self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
-				public new function HRESULT(ref IEnumNetworks self, uint32 celt, INetwork** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetworks self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetworks self) Reset;
-				public new function HRESULT(ref IEnumNetworks self, out IEnumNetworks* ppEnumNetwork) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworks self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworks self, uint32 celt, INetwork** rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworks self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworks self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworks self, out IEnumNetworks* ppEnumNetwork) Clone;
 			}
 		}
 		[CRepr]
@@ -241,10 +241,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkEvents self, Guid networkId) NetworkAdded;
-				public new function HRESULT(ref INetworkEvents self, Guid networkId) NetworkDeleted;
-				public new function HRESULT(ref INetworkEvents self, Guid networkId, NLM_CONNECTIVITY newConnectivity) NetworkConnectivityChanged;
-				public new function HRESULT(ref INetworkEvents self, Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) NetworkPropertyChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkEvents self, Guid networkId) NetworkAdded;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkEvents self, Guid networkId) NetworkDeleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkEvents self, Guid networkId, NLM_CONNECTIVITY newConnectivity) NetworkConnectivityChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkEvents self, Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) NetworkPropertyChanged;
 			}
 		}
 		[CRepr]
@@ -265,13 +265,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref INetworkConnection self, out INetwork* ppNetwork) GetNetwork;
-				public new function HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnected;
-				public new function HRESULT(ref INetworkConnection self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
-				public new function HRESULT(ref INetworkConnection self, out Guid pgdConnectionId) GetConnectionId;
-				public new function HRESULT(ref INetworkConnection self, out Guid pgdAdapterId) GetAdapterId;
-				public new function HRESULT(ref INetworkConnection self, out NLM_DOMAIN_TYPE pDomainType) GetDomainType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out INetwork* ppNetwork) GetNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnected;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out Guid pgdConnectionId) GetConnectionId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out Guid pgdAdapterId) GetAdapterId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnection self, out NLM_DOMAIN_TYPE pDomainType) GetDomainType;
 			}
 		}
 		[CRepr]
@@ -290,11 +290,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref IEnumNetworkConnections self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
-				public new function HRESULT(ref IEnumNetworkConnections self, uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(ref IEnumNetworkConnections self, uint32 celt) Skip;
-				public new function HRESULT(ref IEnumNetworkConnections self) Reset;
-				public new function HRESULT(ref IEnumNetworkConnections self, out IEnumNetworkConnections* ppEnumNetwork) Clone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworkConnections self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworkConnections self, uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) Next;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworkConnections self, uint32 celt) Skip;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworkConnections self) Reset;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnumNetworkConnections self, out IEnumNetworkConnections* ppEnumNetwork) Clone;
 			}
 		}
 		[CRepr]
@@ -310,8 +310,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTIVITY newConnectivity) NetworkConnectionConnectivityChanged;
-				public new function HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) NetworkConnectionPropertyChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTIVITY newConnectivity) NetworkConnectionConnectivityChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) NetworkConnectionPropertyChanged;
 			}
 		}
 		[CRepr]
@@ -328,9 +328,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkCostManager self, out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) GetCost;
-				public new function HRESULT(ref INetworkCostManager self, out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) GetDataPlanStatus;
-				public new function HRESULT(ref INetworkCostManager self, uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) SetDestinationAddresses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkCostManager self, out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) GetCost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkCostManager self, out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) GetDataPlanStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkCostManager self, uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) SetDestinationAddresses;
 			}
 		}
 		[CRepr]
@@ -346,8 +346,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkCostManagerEvents self, uint32 newCost, ref NLM_SOCKADDR pDestAddr) CostChanged;
-				public new function HRESULT(ref INetworkCostManagerEvents self, ref NLM_SOCKADDR pDestAddr) DataPlanStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkCostManagerEvents self, uint32 newCost, ref NLM_SOCKADDR pDestAddr) CostChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkCostManagerEvents self, ref NLM_SOCKADDR pDestAddr) DataPlanStatusChanged;
 			}
 		}
 		[CRepr]
@@ -363,8 +363,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkConnectionCost self, out uint32 pCost) GetCost;
-				public new function HRESULT(ref INetworkConnectionCost self, out NLM_DATAPLAN_STATUS pDataPlanStatus) GetDataPlanStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionCost self, out uint32 pCost) GetCost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionCost self, out NLM_DATAPLAN_STATUS pDataPlanStatus) GetDataPlanStatus;
 			}
 		}
 		[CRepr]
@@ -380,8 +380,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId, uint32 newCost) ConnectionCostChanged;
-				public new function HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId) ConnectionDataPlanStatusChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId, uint32 newCost) ConnectionCostChanged;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId) ConnectionDataPlanStatusChanged;
 			}
 		}
 		

@@ -69,11 +69,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISensNetwork self, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) ConnectionMade;
-				public new function HRESULT(ref ISensNetwork self, BSTR bstrConnection, uint32 ulType) ConnectionMadeNoQOCInfo;
-				public new function HRESULT(ref ISensNetwork self, BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) ConnectionLost;
-				public new function HRESULT(ref ISensNetwork self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) DestinationReachable;
-				public new function HRESULT(ref ISensNetwork self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) DestinationReachableNoQOCInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensNetwork self, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) ConnectionMade;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensNetwork self, BSTR bstrConnection, uint32 ulType) ConnectionMadeNoQOCInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensNetwork self, BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) ConnectionLost;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensNetwork self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, ref SENS_QOCINFO lpQOCInfo) DestinationReachable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensNetwork self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) DestinationReachableNoQOCInfo;
 			}
 		}
 		[CRepr]
@@ -90,9 +90,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISensOnNow self) OnACPower;
-				public new function HRESULT(ref ISensOnNow self, uint32 dwBatteryLifePercent) OnBatteryPower;
-				public new function HRESULT(ref ISensOnNow self, uint32 dwBatteryLifePercent) BatteryLow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensOnNow self) OnACPower;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensOnNow self, uint32 dwBatteryLifePercent) OnBatteryPower;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensOnNow self, uint32 dwBatteryLifePercent) BatteryLow;
 			}
 		}
 		[CRepr]
@@ -113,13 +113,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) Logon;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) Logoff;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) StartShell;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) DisplayLock;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) DisplayUnlock;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) StartScreenSaver;
-				public new function HRESULT(ref ISensLogon self, BSTR bstrUserName) StopScreenSaver;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) Logon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) Logoff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) StartShell;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) DisplayLock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) DisplayUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) StartScreenSaver;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon self, BSTR bstrUserName) StopScreenSaver;
 			}
 		}
 		[CRepr]
@@ -138,11 +138,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) Logon;
-				public new function HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) Logoff;
-				public new function HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) SessionDisconnect;
-				public new function HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) SessionReconnect;
-				public new function HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) PostShell;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) Logon;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) Logoff;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) SessionDisconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) SessionReconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) PostShell;
 			}
 		}
 		

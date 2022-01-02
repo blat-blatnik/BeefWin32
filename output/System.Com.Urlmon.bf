@@ -921,12 +921,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IPersistMoniker self, out Guid pClassID) GetClassID;
-				public new function HRESULT(ref IPersistMoniker self) IsDirty;
-				public new function HRESULT(ref IPersistMoniker self, BOOL fFullyAvailable, ref IMoniker pimkName, ref IBindCtx pibc, uint32 grfMode) Load;
-				public new function HRESULT(ref IPersistMoniker self, ref IMoniker pimkName, ref IBindCtx pbc, BOOL fRemember) Save;
-				public new function HRESULT(ref IPersistMoniker self, ref IMoniker pimkName, ref IBindCtx pibc) SaveCompleted;
-				public new function HRESULT(ref IPersistMoniker self, out IMoniker* ppimkName) GetCurMoniker;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self, out Guid pClassID) GetClassID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self) IsDirty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self, BOOL fFullyAvailable, ref IMoniker pimkName, ref IBindCtx pibc, uint32 grfMode) Load;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self, ref IMoniker pimkName, ref IBindCtx pbc, BOOL fRemember) Save;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self, ref IMoniker pimkName, ref IBindCtx pibc) SaveCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistMoniker self, out IMoniker* ppimkName) GetCurMoniker;
 			}
 		}
 		[CRepr]
@@ -941,7 +941,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMonikerProp self, MONIKERPROPERTY mkp, PWSTR val) PutProperty;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMonikerProp self, MONIKERPROPERTY mkp, PWSTR val) PutProperty;
 			}
 		}
 		[CRepr]
@@ -956,7 +956,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBindProtocol self, PWSTR szUrl, ref IBindCtx pbc, out IBinding* ppb) CreateBinding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBindProtocol self, PWSTR szUrl, ref IBindCtx pbc, out IBinding* ppb) CreateBinding;
 			}
 		}
 		[CRepr]
@@ -972,8 +972,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IHttpNegotiate self, PWSTR szURL, PWSTR szHeaders, uint32 dwReserved, out PWSTR pszAdditionalHeaders) BeginningTransaction;
-				public new function HRESULT(ref IHttpNegotiate self, uint32 dwResponseCode, PWSTR szResponseHeaders, PWSTR szRequestHeaders, out PWSTR pszAdditionalRequestHeaders) OnResponse;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHttpNegotiate self, PWSTR szURL, PWSTR szHeaders, uint32 dwReserved, out PWSTR pszAdditionalHeaders) BeginningTransaction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHttpNegotiate self, uint32 dwResponseCode, PWSTR szResponseHeaders, PWSTR szRequestHeaders, out PWSTR pszAdditionalRequestHeaders) OnResponse;
 			}
 		}
 		[CRepr]
@@ -988,7 +988,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IHttpNegotiate.VTable
 			{
-				public new function HRESULT(ref IHttpNegotiate2 self, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetRootSecurityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHttpNegotiate2 self, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetRootSecurityId;
 			}
 		}
 		[CRepr]
@@ -1003,7 +1003,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IHttpNegotiate2.VTable
 			{
-				public new function HRESULT(ref IHttpNegotiate3 self, uint8** ppbCert, out uint32 pcbCert) GetSerializedClientCertContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHttpNegotiate3 self, uint8** ppbCert, out uint32 pcbCert) GetSerializedClientCertContext;
 			}
 		}
 		[CRepr]
@@ -1019,8 +1019,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWinInetFileStream self, uint hWinInetLockHandle, uint dwReserved) SetHandleForUnlock;
-				public new function HRESULT(ref IWinInetFileStream self, uint dwReserved) SetDeleteFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetFileStream self, uint hWinInetLockHandle, uint dwReserved) SetHandleForUnlock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetFileStream self, uint dwReserved) SetDeleteFile;
 			}
 		}
 		[CRepr]
@@ -1035,7 +1035,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWindowForBindingUI self, in Guid rguidReason, out HWND phwnd) GetWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowForBindingUI self, in Guid rguidReason, out HWND phwnd) GetWindow;
 			}
 		}
 		[CRepr]
@@ -1050,7 +1050,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowForBindingUI.VTable
 			{
-				public new function HRESULT(ref ICodeInstall self, uint32 ulStatusCode, PWSTR szDestination, PWSTR szSource, uint32 dwReserved) OnCodeInstallProblem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICodeInstall self, uint32 ulStatusCode, PWSTR szDestination, PWSTR szSource, uint32 dwReserved) OnCodeInstallProblem;
 			}
 		}
 		[CRepr]
@@ -1065,7 +1065,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUriContainer self, out IUri* ppIUri) GetIUri;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUriContainer self, out IUri* ppIUri) GetIUri;
 			}
 		}
 		[CRepr]
@@ -1081,8 +1081,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IUriBuilderFactory self, uint32 dwFlags, uint dwReserved, out IUriBuilder* ppIUriBuilder) CreateIUriBuilder;
-				public new function HRESULT(ref IUriBuilderFactory self, uint32 dwFlags, uint dwReserved, out IUriBuilder* ppIUriBuilder) CreateInitializedIUriBuilder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUriBuilderFactory self, uint32 dwFlags, uint dwReserved, out IUriBuilder* ppIUriBuilder) CreateIUriBuilder;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUriBuilderFactory self, uint32 dwFlags, uint dwReserved, out IUriBuilder* ppIUriBuilder) CreateInitializedIUriBuilder;
 			}
 		}
 		[CRepr]
@@ -1097,7 +1097,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWinInetInfo self, uint32 dwOption, void* pBuffer, out uint32 pcbBuf) QueryOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetInfo self, uint32 dwOption, void* pBuffer, out uint32 pcbBuf) QueryOption;
 			}
 		}
 		[CRepr]
@@ -1112,7 +1112,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWindowForBindingUI.VTable
 			{
-				public new function HRESULT(ref IHttpSecurity self, uint32 dwProblem) OnSecurityProblem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHttpSecurity self, uint32 dwProblem) OnSecurityProblem;
 			}
 		}
 		[CRepr]
@@ -1127,7 +1127,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWinInetInfo.VTable
 			{
-				public new function HRESULT(ref IWinInetHttpInfo self, uint32 dwOption, void* pBuffer, out uint32 pcbBuf, out uint32 pdwFlags, out uint32 pdwReserved) QueryInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetHttpInfo self, uint32 dwOption, void* pBuffer, out uint32 pcbBuf, out uint32 pdwFlags, out uint32 pdwReserved) QueryInfo;
 			}
 		}
 		[CRepr]
@@ -1142,7 +1142,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWinInetHttpTimeouts self, out uint32 pdwConnectTimeout, out uint32 pdwSendTimeout, out uint32 pdwReceiveTimeout) GetRequestTimeouts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetHttpTimeouts self, out uint32 pdwConnectTimeout, out uint32 pdwSendTimeout, out uint32 pdwReceiveTimeout) GetRequestTimeouts;
 			}
 		}
 		[CRepr]
@@ -1157,7 +1157,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWinInetCacheHints self, PWSTR pwzExt, void* pszCacheFile, out uint32 pcbCacheFile, out uint32 pdwWinInetError, out uint32 pdwReserved) SetCacheExtension;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetCacheHints self, PWSTR pwzExt, void* pszCacheFile, out uint32 pcbCacheFile, out uint32 pdwWinInetError, out uint32 pdwReserved) SetCacheExtension;
 			}
 		}
 		[CRepr]
@@ -1172,7 +1172,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IWinInetCacheHints.VTable
 			{
-				public new function HRESULT(ref IWinInetCacheHints2 self, PWSTR pwzExt, PWSTR pwzCacheFile, out uint32 pcchCacheFile, out uint32 pdwWinInetError, out uint32 pdwReserved) SetCacheExtension2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWinInetCacheHints2 self, PWSTR pwzExt, PWSTR pwzCacheFile, out uint32 pcchCacheFile, out uint32 pdwWinInetError, out uint32 pdwReserved) SetCacheExtension2;
 			}
 		}
 		[CRepr]
@@ -1201,8 +1201,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetBindInfo self, out uint32 grfBINDF, out BINDINFO pbindinfo) GetBindInfo;
-				public new function HRESULT(ref IInternetBindInfo self, uint32 ulStringType, out PWSTR ppwzStr, uint32 cEl, out uint32 pcElFetched) GetBindString;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetBindInfo self, out uint32 grfBINDF, out BINDINFO pbindinfo) GetBindInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetBindInfo self, uint32 ulStringType, out PWSTR ppwzStr, uint32 cEl, out uint32 pcElFetched) GetBindString;
 			}
 		}
 		[CRepr]
@@ -1217,7 +1217,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetBindInfo.VTable
 			{
-				public new function HRESULT(ref IInternetBindInfoEx self, out uint32 grfBINDF, out BINDINFO pbindinfo, out uint32 grfBINDF2, out uint32 pdwReserved) GetBindInfoEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetBindInfoEx self, out uint32 grfBINDF, out BINDINFO pbindinfo, out uint32 grfBINDF2, out uint32 pdwReserved) GetBindInfoEx;
 			}
 		}
 		[CRepr]
@@ -1237,12 +1237,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetProtocolRoot self, PWSTR szUrl, ref IInternetProtocolSink pOIProtSink, ref IInternetBindInfo pOIBindInfo, uint32 grfPI, HANDLE_PTR dwReserved) Start;
-				public new function HRESULT(ref IInternetProtocolRoot self, ref PROTOCOLDATA pProtocolData) Continue;
-				public new function HRESULT(ref IInternetProtocolRoot self, HRESULT hrReason, uint32 dwOptions) Abort;
-				public new function HRESULT(ref IInternetProtocolRoot self, uint32 dwOptions) Terminate;
-				public new function HRESULT(ref IInternetProtocolRoot self) Suspend;
-				public new function HRESULT(ref IInternetProtocolRoot self) Resume;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self, PWSTR szUrl, ref IInternetProtocolSink pOIProtSink, ref IInternetBindInfo pOIBindInfo, uint32 grfPI, HANDLE_PTR dwReserved) Start;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self, ref PROTOCOLDATA pProtocolData) Continue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self, HRESULT hrReason, uint32 dwOptions) Abort;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self, uint32 dwOptions) Terminate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self) Suspend;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolRoot self) Resume;
 			}
 		}
 		[CRepr]
@@ -1260,10 +1260,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetProtocolRoot.VTable
 			{
-				public new function HRESULT(ref IInternetProtocol self, void* pv, uint32 cb, out uint32 pcbRead) Read;
-				public new function HRESULT(ref IInternetProtocol self, LARGE_INTEGER dlibMove, uint32 dwOrigin, out ULARGE_INTEGER plibNewPosition) Seek;
-				public new function HRESULT(ref IInternetProtocol self, uint32 dwOptions) LockRequest;
-				public new function HRESULT(ref IInternetProtocol self) UnlockRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocol self, void* pv, uint32 cb, out uint32 pcbRead) Read;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocol self, LARGE_INTEGER dlibMove, uint32 dwOrigin, out ULARGE_INTEGER plibNewPosition) Seek;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocol self, uint32 dwOptions) LockRequest;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocol self) UnlockRequest;
 			}
 		}
 		[CRepr]
@@ -1278,7 +1278,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetProtocol.VTable
 			{
-				public new function HRESULT(ref IInternetProtocolEx self, ref IUri pUri, ref IInternetProtocolSink pOIProtSink, ref IInternetBindInfo pOIBindInfo, uint32 grfPI, HANDLE_PTR dwReserved) StartEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolEx self, ref IUri pUri, ref IInternetProtocolSink pOIProtSink, ref IInternetBindInfo pOIBindInfo, uint32 grfPI, HANDLE_PTR dwReserved) StartEx;
 			}
 		}
 		[CRepr]
@@ -1296,10 +1296,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetProtocolSink self, ref PROTOCOLDATA pProtocolData) Switch;
-				public new function HRESULT(ref IInternetProtocolSink self, uint32 ulStatusCode, PWSTR szStatusText) ReportProgress;
-				public new function HRESULT(ref IInternetProtocolSink self, uint32 grfBSCF, uint32 ulProgress, uint32 ulProgressMax) ReportData;
-				public new function HRESULT(ref IInternetProtocolSink self, HRESULT hrResult, uint32 dwError, PWSTR szResult) ReportResult;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSink self, ref PROTOCOLDATA pProtocolData) Switch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSink self, uint32 ulStatusCode, PWSTR szStatusText) ReportProgress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSink self, uint32 grfBSCF, uint32 ulProgress, uint32 ulProgressMax) ReportData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSink self, HRESULT hrResult, uint32 dwError, PWSTR szResult) ReportResult;
 			}
 		}
 		[CRepr]
@@ -1316,9 +1316,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetProtocolSinkStackable self, ref IInternetProtocolSink pOIProtSink) SwitchSink;
-				public new function HRESULT(ref IInternetProtocolSinkStackable self) CommitSwitch;
-				public new function HRESULT(ref IInternetProtocolSinkStackable self) RollbackSwitch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSinkStackable self, ref IInternetProtocolSink pOIProtSink) SwitchSink;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSinkStackable self) CommitSwitch;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolSinkStackable self) RollbackSwitch;
 			}
 		}
 		[CRepr]
@@ -1339,13 +1339,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetSession self, ref IClassFactory pCF, in Guid rclsid, PWSTR pwzProtocol, uint32 cPatterns, in PWSTR ppwzPatterns, uint32 dwReserved) RegisterNameSpace;
-				public new function HRESULT(ref IInternetSession self, ref IClassFactory pCF, PWSTR pszProtocol) UnregisterNameSpace;
-				public new function HRESULT(ref IInternetSession self, ref IClassFactory pCF, in Guid rclsid, PWSTR pwzType) RegisterMimeFilter;
-				public new function HRESULT(ref IInternetSession self, ref IClassFactory pCF, PWSTR pwzType) UnregisterMimeFilter;
-				public new function HRESULT(ref IInternetSession self, ref IBindCtx pBC, PWSTR szUrl, ref IUnknown pUnkOuter, out IUnknown* ppUnk, out IInternetProtocol* ppOInetProt, uint32 dwOption) CreateBinding;
-				public new function HRESULT(ref IInternetSession self, uint32 dwOption, void* pBuffer, uint32 dwBufferLength, uint32 dwReserved) SetSessionOption;
-				public new function HRESULT(ref IInternetSession self, uint32 dwOption, void* pBuffer, out uint32 pdwBufferLength, uint32 dwReserved) GetSessionOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, ref IClassFactory pCF, in Guid rclsid, PWSTR pwzProtocol, uint32 cPatterns, in PWSTR ppwzPatterns, uint32 dwReserved) RegisterNameSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, ref IClassFactory pCF, PWSTR pszProtocol) UnregisterNameSpace;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, ref IClassFactory pCF, in Guid rclsid, PWSTR pwzType) RegisterMimeFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, ref IClassFactory pCF, PWSTR pwzType) UnregisterMimeFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, ref IBindCtx pBC, PWSTR szUrl, ref IUnknown pUnkOuter, out IUnknown* ppUnk, out IInternetProtocol* ppOInetProt, uint32 dwOption) CreateBinding;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, uint32 dwOption, void* pBuffer, uint32 dwBufferLength, uint32 dwReserved) SetSessionOption;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSession self, uint32 dwOption, void* pBuffer, out uint32 pdwBufferLength, uint32 dwReserved) GetSessionOption;
 			}
 		}
 		[CRepr]
@@ -1361,8 +1361,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetThreadSwitch self) Prepare;
-				public new function HRESULT(ref IInternetThreadSwitch self) Continue;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetThreadSwitch self) Prepare;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetThreadSwitch self) Continue;
 			}
 		}
 		[CRepr]
@@ -1378,8 +1378,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetPriority self, int32 nPriority) SetPriority;
-				public new function HRESULT(ref IInternetPriority self, out int32 pnPriority) GetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetPriority self, int32 nPriority) SetPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetPriority self, out int32 pnPriority) GetPriority;
 			}
 		}
 		[CRepr]
@@ -1397,10 +1397,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl, PARSEACTION ParseAction, uint32 dwParseFlags, PWSTR pwzResult, uint32 cchResult, out uint32 pcchResult, uint32 dwReserved) ParseUrl;
-				public new function HRESULT(ref IInternetProtocolInfo self, PWSTR pwzBaseUrl, PWSTR pwzRelativeUrl, uint32 dwCombineFlags, PWSTR pwzResult, uint32 cchResult, out uint32 pcchResult, uint32 dwReserved) CombineUrl;
-				public new function HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl1, PWSTR pwzUrl2, uint32 dwCompareFlags) CompareUrl;
-				public new function HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl, QUERYOPTION OueryOption, uint32 dwQueryFlags, void* pBuffer, uint32 cbBuffer, out uint32 pcbBuf, uint32 dwReserved) QueryInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl, PARSEACTION ParseAction, uint32 dwParseFlags, PWSTR pwzResult, uint32 cchResult, out uint32 pcchResult, uint32 dwReserved) ParseUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolInfo self, PWSTR pwzBaseUrl, PWSTR pwzRelativeUrl, uint32 dwCombineFlags, PWSTR pwzResult, uint32 cchResult, out uint32 pcchResult, uint32 dwReserved) CombineUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl1, PWSTR pwzUrl2, uint32 dwCompareFlags) CompareUrl;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetProtocolInfo self, PWSTR pwzUrl, QUERYOPTION OueryOption, uint32 dwQueryFlags, void* pBuffer, uint32 cbBuffer, out uint32 pcbBuf, uint32 dwReserved) QueryInfo;
 			}
 		}
 		[CRepr]
@@ -1416,8 +1416,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetSecurityMgrSite self, out HWND phwnd) GetWindow;
-				public new function HRESULT(ref IInternetSecurityMgrSite self, BOOL fEnable) EnableModeless;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityMgrSite self, out HWND phwnd) GetWindow;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityMgrSite self, BOOL fEnable) EnableModeless;
 			}
 		}
 		[CRepr]
@@ -1439,14 +1439,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetSecurityManager self, ref IInternetSecurityMgrSite pSite) SetSecuritySite;
-				public new function HRESULT(ref IInternetSecurityManager self, out IInternetSecurityMgrSite* ppSite) GetSecuritySite;
-				public new function HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, out uint32 pdwZone, uint32 dwFlags) MapUrlToZone;
-				public new function HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityId;
-				public new function HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved) ProcessUrlAction;
-				public new function HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwReserved) QueryCustomPolicy;
-				public new function HRESULT(ref IInternetSecurityManager self, uint32 dwZone, PWSTR lpszPattern, uint32 dwFlags) SetZoneMapping;
-				public new function HRESULT(ref IInternetSecurityManager self, uint32 dwZone, out IEnumString* ppenumString, uint32 dwFlags) GetZoneMappings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, ref IInternetSecurityMgrSite pSite) SetSecuritySite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, out IInternetSecurityMgrSite* ppSite) GetSecuritySite;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, out uint32 pdwZone, uint32 dwFlags) MapUrlToZone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved) ProcessUrlAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, PWSTR pwszUrl, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwReserved) QueryCustomPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, uint32 dwZone, PWSTR lpszPattern, uint32 dwFlags) SetZoneMapping;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManager self, uint32 dwZone, out IEnumString* ppenumString, uint32 dwFlags) GetZoneMappings;
 			}
 		}
 		[CRepr]
@@ -1461,7 +1461,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetSecurityManager.VTable
 			{
-				public new function HRESULT(ref IInternetSecurityManagerEx self, PWSTR pwszUrl, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved, out uint32 pdwOutFlags) ProcessUrlActionEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManagerEx self, PWSTR pwszUrl, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved, out uint32 pdwOutFlags) ProcessUrlActionEx;
 			}
 		}
 		[CRepr]
@@ -1479,10 +1479,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetSecurityManagerEx.VTable
 			{
-				public new function HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, out uint32 pdwZone, uint32 dwFlags, PWSTR* ppwszMappedUrl, uint32* pdwOutFlags) MapUrlToZoneEx2;
-				public new function HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint dwReserved, out uint32 pdwOutFlags) ProcessUrlActionEx2;
-				public new function HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityIdEx2;
-				public new function HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, ref uint8 pContext, uint32 cbContext, uint dwReserved) QueryCustomPolicyEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, out uint32 pdwZone, uint32 dwFlags, PWSTR* ppwszMappedUrl, uint32* pdwOutFlags) MapUrlToZoneEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, ref uint8 pContext, uint32 cbContext, uint32 dwFlags, uint dwReserved, out uint32 pdwOutFlags) ProcessUrlActionEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityIdEx2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetSecurityManagerEx2 self, ref IUri pUri, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, ref uint8 pContext, uint32 cbContext, uint dwReserved) QueryCustomPolicyEx2;
 			}
 		}
 		[CRepr]
@@ -1499,9 +1499,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IZoneIdentifier self, out uint32 pdwZone) GetId;
-				public new function HRESULT(ref IZoneIdentifier self, uint32 dwZone) SetId;
-				public new function HRESULT(ref IZoneIdentifier self) Remove;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier self, out uint32 pdwZone) GetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier self, uint32 dwZone) SetId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier self) Remove;
 			}
 		}
 		[CRepr]
@@ -1521,12 +1521,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IZoneIdentifier.VTable
 			{
-				public new function HRESULT(ref IZoneIdentifier2 self, out PWSTR packageFamilyName) GetLastWriterPackageFamilyName;
-				public new function HRESULT(ref IZoneIdentifier2 self, PWSTR packageFamilyName) SetLastWriterPackageFamilyName;
-				public new function HRESULT(ref IZoneIdentifier2 self) RemoveLastWriterPackageFamilyName;
-				public new function HRESULT(ref IZoneIdentifier2 self, out uint32 zone) GetAppZoneId;
-				public new function HRESULT(ref IZoneIdentifier2 self, uint32 zone) SetAppZoneId;
-				public new function HRESULT(ref IZoneIdentifier2 self) RemoveAppZoneId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self, out PWSTR packageFamilyName) GetLastWriterPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self, PWSTR packageFamilyName) SetLastWriterPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self) RemoveLastWriterPackageFamilyName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self, out uint32 zone) GetAppZoneId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self, uint32 zone) SetAppZoneId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IZoneIdentifier2 self) RemoveAppZoneId;
 			}
 		}
 		[CRepr]
@@ -1543,9 +1543,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetHostSecurityManager self, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityId;
-				public new function HRESULT(ref IInternetHostSecurityManager self, uint32 dwAction, out uint8 pPolicy, uint32 cbPolicy, uint8* pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved) ProcessUrlAction;
-				public new function HRESULT(ref IInternetHostSecurityManager self, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, uint8* pContext, uint32 cbContext, uint32 dwReserved) QueryCustomPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetHostSecurityManager self, uint8* pbSecurityId, out uint32 pcbSecurityId, uint dwReserved) GetSecurityId;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetHostSecurityManager self, uint32 dwAction, out uint8 pPolicy, uint32 cbPolicy, uint8* pContext, uint32 cbContext, uint32 dwFlags, uint32 dwReserved) ProcessUrlAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetHostSecurityManager self, in Guid guidKey, uint8** ppPolicy, out uint32 pcbPolicy, uint8* pContext, uint32 cbContext, uint32 dwReserved) QueryCustomPolicy;
 			}
 		}
 		[CRepr]
@@ -1571,18 +1571,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, out ZONEATTRIBUTES pZoneAttributes) GetZoneAttributes;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, ref ZONEATTRIBUTES pZoneAttributes) SetZoneAttributes;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, in Guid guidKey, out uint8* ppPolicy, out uint32 pcbPolicy, URLZONEREG urlZoneReg) GetZoneCustomPolicy;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, in Guid guidKey, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) SetZoneCustomPolicy;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) GetZoneActionPolicy;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) SetZoneActionPolicy;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwAction, HWND hwndParent, PWSTR pwszUrl, PWSTR pwszText, uint32 dwPromptFlags) PromptAction;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwAction, PWSTR pwszUrl, PWSTR pwszText, uint32 dwLogFlags) LogAction;
-				public new function HRESULT(ref IInternetZoneManager self, out uint32 pdwEnum, out uint32 pdwCount, uint32 dwFlags) CreateZoneEnumerator;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwEnum, uint32 dwIndex, out uint32 pdwZone) GetZoneAt;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwEnum) DestroyZoneEnumerator;
-				public new function HRESULT(ref IInternetZoneManager self, uint32 dwTemplate, uint32 dwZone, uint32 dwReserved) CopyTemplatePoliciesToZone;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, out ZONEATTRIBUTES pZoneAttributes) GetZoneAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, ref ZONEATTRIBUTES pZoneAttributes) SetZoneAttributes;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, in Guid guidKey, out uint8* ppPolicy, out uint32 pcbPolicy, URLZONEREG urlZoneReg) GetZoneCustomPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, in Guid guidKey, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) SetZoneCustomPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) GetZoneActionPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg) SetZoneActionPolicy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwAction, HWND hwndParent, PWSTR pwszUrl, PWSTR pwszText, uint32 dwPromptFlags) PromptAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwAction, PWSTR pwszUrl, PWSTR pwszText, uint32 dwLogFlags) LogAction;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, out uint32 pdwEnum, out uint32 pdwCount, uint32 dwFlags) CreateZoneEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwEnum, uint32 dwIndex, out uint32 pdwZone) GetZoneAt;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwEnum) DestroyZoneEnumerator;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManager self, uint32 dwTemplate, uint32 dwZone, uint32 dwReserved) CopyTemplatePoliciesToZone;
 			}
 		}
 		[CRepr]
@@ -1598,8 +1598,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetZoneManager.VTable
 			{
-				public new function HRESULT(ref IInternetZoneManagerEx self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg, uint32 dwFlags) GetZoneActionPolicyEx;
-				public new function HRESULT(ref IInternetZoneManagerEx self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg, uint32 dwFlags) SetZoneActionPolicyEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg, uint32 dwFlags) GetZoneActionPolicyEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx self, uint32 dwZone, uint32 dwAction, uint8* pPolicy, uint32 cbPolicy, URLZONEREG urlZoneReg, uint32 dwFlags) SetZoneActionPolicyEx;
 			}
 		}
 		[CRepr]
@@ -1617,10 +1617,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IInternetZoneManagerEx.VTable
 			{
-				public new function HRESULT(ref IInternetZoneManagerEx2 self, uint32 dwZone, out ZONEATTRIBUTES pZoneAttributes, uint32 dwFlags) GetZoneAttributesEx;
-				public new function HRESULT(ref IInternetZoneManagerEx2 self, uint32 dwZoneIndex, BOOL fRespectPolicy, out uint32 pdwState, out BOOL pfPolicyEncountered) GetZoneSecurityState;
-				public new function HRESULT(ref IInternetZoneManagerEx2 self, BOOL fRespectPolicy, out uint32 pdwState, out BOOL pfPolicyEncountered, BOOL fNoCache) GetIESecurityState;
-				public new function HRESULT(ref IInternetZoneManagerEx2 self) FixUnsecureSettings;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx2 self, uint32 dwZone, out ZONEATTRIBUTES pZoneAttributes, uint32 dwFlags) GetZoneAttributesEx;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx2 self, uint32 dwZoneIndex, BOOL fRespectPolicy, out uint32 pdwState, out BOOL pfPolicyEncountered) GetZoneSecurityState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx2 self, BOOL fRespectPolicy, out uint32 pdwState, out BOOL pfPolicyEncountered, BOOL fNoCache) GetIESecurityState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInternetZoneManagerEx2 self) FixUnsecureSettings;
 			}
 		}
 		[CRepr]
@@ -1638,10 +1638,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ISoftDistExt self, PWSTR szCDFURL, ref IXMLElement pSoftDistElement, out SOFTDISTINFO lpsdi) ProcessSoftDist;
-				public new function HRESULT(ref ISoftDistExt self, ref PWSTR szCodeBase, ref uint32 dwMaxSize) GetFirstCodeBase;
-				public new function HRESULT(ref ISoftDistExt self, ref PWSTR szCodeBase, ref uint32 dwMaxSize) GetNextCodeBase;
-				public new function HRESULT(ref ISoftDistExt self, ref IBindCtx pbc, void* pvReserved, uint32 flags, ref CODEBASEHOLD lpcbh) AsyncInstallDistributionUnit;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftDistExt self, PWSTR szCDFURL, ref IXMLElement pSoftDistElement, out SOFTDISTINFO lpsdi) ProcessSoftDist;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftDistExt self, ref PWSTR szCodeBase, ref uint32 dwMaxSize) GetFirstCodeBase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftDistExt self, ref PWSTR szCodeBase, ref uint32 dwMaxSize) GetNextCodeBase;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftDistExt self, ref IBindCtx pbc, void* pvReserved, uint32 flags, ref CODEBASEHOLD lpcbh) AsyncInstallDistributionUnit;
 			}
 		}
 		[CRepr]
@@ -1657,8 +1657,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref ICatalogFileInfo self, out PSTR ppszCatalogFile) GetCatalogFile;
-				public new function HRESULT(ref ICatalogFileInfo self, void** ppJavaTrust) GetJavaTrust;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalogFileInfo self, out PSTR ppszCatalogFile) GetCatalogFile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICatalogFileInfo self, void** ppJavaTrust) GetJavaTrust;
 			}
 		}
 		[CRepr]
@@ -1675,9 +1675,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IDataFilter self, uint32 dwFlags, int32 lInBufferSize, uint8* pbInBuffer, int32 lOutBufferSize, uint8* pbOutBuffer, int32 lInBytesAvailable, out int32 plInBytesRead, out int32 plOutBytesWritten, uint32 dwReserved) DoEncode;
-				public new function HRESULT(ref IDataFilter self, uint32 dwFlags, int32 lInBufferSize, uint8* pbInBuffer, int32 lOutBufferSize, uint8* pbOutBuffer, int32 lInBytesAvailable, out int32 plInBytesRead, out int32 plOutBytesWritten, uint32 dwReserved) DoDecode;
-				public new function HRESULT(ref IDataFilter self, uint32 dwEncLevel) SetEncodingLevel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataFilter self, uint32 dwFlags, int32 lInBufferSize, uint8* pbInBuffer, int32 lOutBufferSize, uint8* pbOutBuffer, int32 lInBytesAvailable, out int32 plInBytesRead, out int32 plOutBytesWritten, uint32 dwReserved) DoEncode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataFilter self, uint32 dwFlags, int32 lInBufferSize, uint8* pbInBuffer, int32 lOutBufferSize, uint8* pbOutBuffer, int32 lInBytesAvailable, out int32 plInBytesRead, out int32 plOutBytesWritten, uint32 dwReserved) DoDecode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataFilter self, uint32 dwEncLevel) SetEncodingLevel;
 			}
 		}
 		[CRepr]
@@ -1693,8 +1693,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IEncodingFilterFactory self, PWSTR pwzCodeIn, PWSTR pwzCodeOut, DATAINFO info, out IDataFilter* ppDF) FindBestFilter;
-				public new function HRESULT(ref IEncodingFilterFactory self, PWSTR pwzCodeIn, PWSTR pwzCodeOut, out IDataFilter* ppDF) GetDefaultFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncodingFilterFactory self, PWSTR pwzCodeIn, PWSTR pwzCodeOut, DATAINFO info, out IDataFilter* ppDF) FindBestFilter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEncodingFilterFactory self, PWSTR pwzCodeIn, PWSTR pwzCodeOut, out IDataFilter* ppDF) GetDefaultFilter;
 			}
 		}
 		[CRepr]
@@ -1709,7 +1709,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWrappedProtocol self, out int32 pnCode, uint dwReserved) GetWrapperCode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWrappedProtocol self, out int32 pnCode, uint dwReserved) GetWrapperCode;
 			}
 		}
 		[CRepr]
@@ -1724,7 +1724,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IGetBindHandle self, BINDHANDLETYPES enumRequestedHandle, out HANDLE pRetHandle) GetBindHandle;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetBindHandle self, BINDHANDLETYPES enumRequestedHandle, out HANDLE pRetHandle) GetBindHandle;
 			}
 		}
 		[CRepr]
@@ -1739,7 +1739,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBindCallbackRedirect self, PWSTR lpcUrl, out int16 vbCancel) Redirect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBindCallbackRedirect self, PWSTR lpcUrl, out int16 vbCancel) Redirect;
 			}
 		}
 		[CRepr]
@@ -1754,7 +1754,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IBindHttpSecurity self, out uint32 pdwIgnoreCertMask) GetIgnoreCertMask;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBindHttpSecurity self, out uint32 pdwIgnoreCertMask) GetIgnoreCertMask;
 			}
 		}
 		

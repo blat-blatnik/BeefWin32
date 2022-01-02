@@ -443,13 +443,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnection self, BSTR* ConnectionID) get_ConnectionID;
-				public new function HRESULT(ref IMbnConnection self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(ref IMbnConnection self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) Connect;
-				public new function HRESULT(ref IMbnConnection self, out uint32 requestID) Disconnect;
-				public new function HRESULT(ref IMbnConnection self, out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) GetConnectionState;
-				public new function HRESULT(ref IMbnConnection self, out MBN_VOICE_CALL_STATE voiceCallState) GetVoiceCallState;
-				public new function HRESULT(ref IMbnConnection self, out uint32 networkError) GetActivationNetworkError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, BSTR* ConnectionID) get_ConnectionID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, BSTR* InterfaceID) get_InterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) Connect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out uint32 requestID) Disconnect;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) GetConnectionState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out MBN_VOICE_CALL_STATE voiceCallState) GetVoiceCallState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnection self, out uint32 networkError) GetActivationNetworkError;
 			}
 		}
 		[CRepr]
@@ -467,10 +467,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnConnectComplete;
-				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnDisconnectComplete;
-				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnConnectStateChange;
-				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnVoiceCallStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnConnectComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnDisconnectComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnConnectStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnVoiceCallStateChange;
 			}
 		}
 		[CRepr]
@@ -495,17 +495,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnInterface self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(ref IMbnInterface self, out MBN_INTERFACE_CAPS interfaceCaps) GetInterfaceCapability;
-				public new function HRESULT(ref IMbnInterface self, out IMbnSubscriberInformation* subscriberInformation) GetSubscriberInformation;
-				public new function HRESULT(ref IMbnInterface self, out MBN_READY_STATE readyState) GetReadyState;
-				public new function HRESULT(ref IMbnInterface self, out int16 emergencyMode) InEmergencyMode;
-				public new function HRESULT(ref IMbnInterface self, out MBN_PROVIDER homeProvider) GetHomeProvider;
-				public new function HRESULT(ref IMbnInterface self, SAFEARRAY** preferredProviders) GetPreferredProviders;
-				public new function HRESULT(ref IMbnInterface self, ref SAFEARRAY preferredProviders, out uint32 requestID) SetPreferredProviders;
-				public new function HRESULT(ref IMbnInterface self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
-				public new function HRESULT(ref IMbnInterface self, out uint32 requestID) ScanNetwork;
-				public new function HRESULT(ref IMbnInterface self, out IMbnConnection* mbnConnection) GetConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, BSTR* InterfaceID) get_InterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_INTERFACE_CAPS interfaceCaps) GetInterfaceCapability;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out IMbnSubscriberInformation* subscriberInformation) GetSubscriberInformation;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_READY_STATE readyState) GetReadyState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out int16 emergencyMode) InEmergencyMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out MBN_PROVIDER homeProvider) GetHomeProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, SAFEARRAY** preferredProviders) GetPreferredProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, ref SAFEARRAY preferredProviders, out uint32 requestID) SetPreferredProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out uint32 requestID) ScanNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterface self, out IMbnConnection* mbnConnection) GetConnection;
 			}
 		}
 		[CRepr]
@@ -527,14 +527,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnInterfaceCapabilityAvailable;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnSubscriberInformationChange;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnReadyStateChange;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnEmergencyModeChange;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnHomeProviderAvailable;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnPreferredProvidersChange;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnSetPreferredProvidersComplete;
-				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnInterfaceCapabilityAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnSubscriberInformationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnReadyStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnEmergencyModeChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnHomeProviderAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnPreferredProvidersChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnSetPreferredProvidersComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
 			}
 		}
 		[CRepr]
@@ -550,8 +550,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnInterfaceManager self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
-				public new function HRESULT(ref IMbnInterfaceManager self, SAFEARRAY** mbnInterfaces) GetInterfaces;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManager self, SAFEARRAY** mbnInterfaces) GetInterfaces;
 			}
 		}
 		[CRepr]
@@ -567,8 +567,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface newInterface) OnInterfaceArrival;
-				public new function HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface oldInterface) OnInterfaceRemoval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface newInterface) OnInterfaceArrival;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface oldInterface) OnInterfaceRemoval;
 			}
 		}
 		[CRepr]
@@ -592,16 +592,16 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnRegistration self, out MBN_REGISTER_STATE registerState) GetRegisterState;
-				public new function HRESULT(ref IMbnRegistration self, out MBN_REGISTER_MODE registerMode) GetRegisterMode;
-				public new function HRESULT(ref IMbnRegistration self, BSTR* providerID) GetProviderID;
-				public new function HRESULT(ref IMbnRegistration self, BSTR* providerName) GetProviderName;
-				public new function HRESULT(ref IMbnRegistration self, BSTR* roamingText) GetRoamingText;
-				public new function HRESULT(ref IMbnRegistration self, out uint32 availableDataClasses) GetAvailableDataClasses;
-				public new function HRESULT(ref IMbnRegistration self, out uint32 currentDataClass) GetCurrentDataClass;
-				public new function HRESULT(ref IMbnRegistration self, out uint32 registrationNetworkError) GetRegistrationNetworkError;
-				public new function HRESULT(ref IMbnRegistration self, out uint32 packetAttachNetworkError) GetPacketAttachNetworkError;
-				public new function HRESULT(ref IMbnRegistration self, MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, out uint32 requestID) SetRegisterMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out MBN_REGISTER_STATE registerState) GetRegisterState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out MBN_REGISTER_MODE registerMode) GetRegisterMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* providerID) GetProviderID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* providerName) GetProviderName;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, BSTR* roamingText) GetRoamingText;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 availableDataClasses) GetAvailableDataClasses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 currentDataClass) GetCurrentDataClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 registrationNetworkError) GetRegistrationNetworkError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, out uint32 packetAttachNetworkError) GetPacketAttachNetworkError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistration self, MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, out uint32 requestID) SetRegisterMode;
 			}
 		}
 		[CRepr]
@@ -619,10 +619,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterModeAvailable;
-				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterStateChange;
-				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnPacketServiceStateChange;
-				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface, uint32 requestID, HRESULT status) OnSetRegisterModeComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterModeAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnPacketServiceStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface, uint32 requestID, HRESULT status) OnSetRegisterModeComplete;
 			}
 		}
 		[CRepr]
@@ -638,8 +638,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionManager self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
-				public new function HRESULT(ref IMbnConnectionManager self, SAFEARRAY** mbnConnections) GetConnections;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManager self, SAFEARRAY** mbnConnections) GetConnections;
 			}
 		}
 		[CRepr]
@@ -655,8 +655,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection newConnection) OnConnectionArrival;
-				public new function HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection oldConnection) OnConnectionRemoval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection newConnection) OnConnectionArrival;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection oldConnection) OnConnectionRemoval;
 			}
 		}
 		[CRepr]
@@ -673,9 +673,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnPinManager self, SAFEARRAY** pinList) GetPinList;
-				public new function HRESULT(ref IMbnPinManager self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
-				public new function HRESULT(ref IMbnPinManager self, out uint32 requestID) GetPinState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, SAFEARRAY** pinList) GetPinList;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManager self, out uint32 requestID) GetPinState;
 			}
 		}
 		[CRepr]
@@ -691,8 +691,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager) OnPinListAvailable;
-				public new function HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnGetPinStateComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager) OnPinListAvailable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnGetPinStateComplete;
 			}
 		}
 		[CRepr]
@@ -711,11 +711,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnableComplete;
-				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnDisableComplete;
-				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnterComplete;
-				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnChangeComplete;
-				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnUnblockComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnableComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnDisableComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnterComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnChangeComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnUnblockComplete;
 			}
 		}
 		[CRepr]
@@ -732,9 +732,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSubscriberInformation self, BSTR* SubscriberID) get_SubscriberID;
-				public new function HRESULT(ref IMbnSubscriberInformation self, BSTR* SimIccID) get_SimIccID;
-				public new function HRESULT(ref IMbnSubscriberInformation self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, BSTR* SubscriberID) get_SubscriberID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, BSTR* SimIccID) get_SimIccID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSubscriberInformation self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
 			}
 		}
 		[CRepr]
@@ -750,8 +750,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSignal self, out uint32 signalStrength) GetSignalStrength;
-				public new function HRESULT(ref IMbnSignal self, out uint32 signalError) GetSignalError;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSignal self, out uint32 signalStrength) GetSignalStrength;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSignal self, out uint32 signalError) GetSignalError;
 			}
 		}
 		[CRepr]
@@ -766,7 +766,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSignalEvents self, ref IMbnSignal newInterface) OnSignalStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSignalEvents self, ref IMbnSignal newInterface) OnSignalStateChange;
 			}
 		}
 		[CRepr]
@@ -782,8 +782,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionContext self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
-				public new function HRESULT(ref IMbnConnectionContext self, MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) SetProvisionedContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContext self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContext self, MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) SetProvisionedContext;
 			}
 		}
 		[CRepr]
@@ -799,8 +799,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface) OnProvisionedContextListChange;
-				public new function HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface, uint32 requestID, HRESULT status) OnSetProvisionedContextComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface) OnProvisionedContextListChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface, uint32 requestID, HRESULT status) OnSetProvisionedContextComplete;
 			}
 		}
 		[CRepr]
@@ -817,9 +817,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
-				public new function HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
-				public new function HRESULT(ref IMbnConnectionProfileManager self, PWSTR xmlProfile) CreateConnectionProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManager self, PWSTR xmlProfile) CreateConnectionProfile;
 			}
 		}
 		[CRepr]
@@ -836,9 +836,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionProfile self, BSTR* profileData) GetProfileXmlData;
-				public new function HRESULT(ref IMbnConnectionProfile self, PWSTR strProfile) UpdateProfile;
-				public new function HRESULT(ref IMbnConnectionProfile self) Delete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self, BSTR* profileData) GetProfileXmlData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self, PWSTR strProfile) UpdateProfile;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfile self) Delete;
 			}
 		}
 		[CRepr]
@@ -853,7 +853,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionProfileEvents self, ref IMbnConnectionProfile newProfile) OnProfileUpdate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileEvents self, ref IMbnConnectionProfile newProfile) OnProfileUpdate;
 			}
 		}
 		[CRepr]
@@ -873,12 +873,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSmsConfiguration self, BSTR* scAddress) get_ServiceCenterAddress;
-				public new function HRESULT(ref IMbnSmsConfiguration self, PWSTR scAddress) put_ServiceCenterAddress;
-				public new function HRESULT(ref IMbnSmsConfiguration self, out uint32 index) get_MaxMessageIndex;
-				public new function HRESULT(ref IMbnSmsConfiguration self, out uint32 shortMsgSize) get_CdmaShortMsgSize;
-				public new function HRESULT(ref IMbnSmsConfiguration self, out MBN_SMS_FORMAT smsFormat) get_SmsFormat;
-				public new function HRESULT(ref IMbnSmsConfiguration self, MBN_SMS_FORMAT smsFormat) put_SmsFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, BSTR* scAddress) get_ServiceCenterAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, PWSTR scAddress) put_ServiceCenterAddress;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out uint32 index) get_MaxMessageIndex;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out uint32 shortMsgSize) get_CdmaShortMsgSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, out MBN_SMS_FORMAT smsFormat) get_SmsFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsConfiguration self, MBN_SMS_FORMAT smsFormat) put_SmsFormat;
 			}
 		}
 		[CRepr]
@@ -896,10 +896,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSmsReadMsgPdu self, out uint32 Index) get_Index;
-				public new function HRESULT(ref IMbnSmsReadMsgPdu self, out MBN_MSG_STATUS Status) get_Status;
-				public new function HRESULT(ref IMbnSmsReadMsgPdu self, BSTR* PduData) get_PduData;
-				public new function HRESULT(ref IMbnSmsReadMsgPdu self, SAFEARRAY** Message) get_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out uint32 Index) get_Index;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, out MBN_MSG_STATUS Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, BSTR* PduData) get_PduData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgPdu self, SAFEARRAY** Message) get_Message;
 			}
 		}
 		[CRepr]
@@ -921,14 +921,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 Index) get_Index;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_MSG_STATUS Status) get_Status;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Address) get_Address;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Timestamp) get_Timestamp;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_ENCODING EncodingID) get_EncodingID;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_LANG LanguageID) get_LanguageID;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 SizeInCharacters) get_SizeInCharacters;
-				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, SAFEARRAY** Message) get_Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 Index) get_Index;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_MSG_STATUS Status) get_Status;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Address) get_Address;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Timestamp) get_Timestamp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_ENCODING EncodingID) get_EncodingID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_LANG LanguageID) get_LanguageID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 SizeInCharacters) get_SizeInCharacters;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsReadMsgTextCdma self, SAFEARRAY** Message) get_Message;
 			}
 		}
 		[CRepr]
@@ -950,14 +950,14 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSms self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
-				public new function HRESULT(ref IMbnSms self, ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) SetSmsConfiguration;
-				public new function HRESULT(ref IMbnSms self, PWSTR pduData, uint8 size, out uint32 requestID) SmsSendPdu;
-				public new function HRESULT(ref IMbnSms self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) SmsSendCdma;
-				public new function HRESULT(ref IMbnSms self, ref SAFEARRAY message, out uint32 requestID) SmsSendCdmaPdu;
-				public new function HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, MBN_SMS_FORMAT smsFormat, out uint32 requestID) SmsRead;
-				public new function HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, out uint32 requestID) SmsDelete;
-				public new function HRESULT(ref IMbnSms self, out MBN_SMS_STATUS_INFO smsStatusInfo) GetSmsStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) SetSmsConfiguration;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, PWSTR pduData, uint8 size, out uint32 requestID) SmsSendPdu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) SmsSendCdma;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, ref SAFEARRAY message, out uint32 requestID) SmsSendCdmaPdu;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, MBN_SMS_FORMAT smsFormat, out uint32 requestID) SmsRead;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, out uint32 requestID) SmsDelete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSms self, out MBN_SMS_STATUS_INFO smsStatusInfo) GetSmsStatus;
 			}
 		}
 		[CRepr]
@@ -978,13 +978,13 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsConfigurationChange;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSetSmsConfigurationComplete;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsSendComplete;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) OnSmsReadComplete;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs) OnSmsNewClass0Message;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsDeleteComplete;
-				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsStatusChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsConfigurationChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSetSmsConfigurationComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsSendComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) OnSmsReadComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs) OnSmsNewClass0Message;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsDeleteComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsStatusChange;
 			}
 		}
 		[CRepr]
@@ -999,7 +999,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnServiceActivation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) Activate;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnServiceActivation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) Activate;
 			}
 		}
 		[CRepr]
@@ -1014,7 +1014,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnServiceActivationEvents self, ref IMbnServiceActivation serviceActivation, ref SAFEARRAY vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) OnActivationComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnServiceActivationEvents self, ref IMbnServiceActivation serviceActivation, ref SAFEARRAY vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) OnActivationComplete;
 			}
 		}
 		[CRepr]
@@ -1029,7 +1029,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnVendorSpecificOperation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) SetVendorSpecific;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnVendorSpecificOperation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) SetVendorSpecific;
 			}
 		}
 		[CRepr]
@@ -1045,8 +1045,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData) OnEventNotification;
-				public new function HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData, uint32 requestID) OnSetVendorSpecificComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData) OnEventNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData, uint32 requestID) OnSetVendorSpecificComplete;
 			}
 		}
 		[CRepr]
@@ -1062,8 +1062,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile newConnectionProfile) OnConnectionProfileArrival;
-				public new function HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile oldConnectionProfile) OnConnectionProfileRemoval;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile newConnectionProfile) OnConnectionProfileArrival;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile oldConnectionProfile) OnConnectionProfileRemoval;
 			}
 		}
 		[CRepr]
@@ -1080,9 +1080,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnRadio self, out MBN_RADIO SoftwareRadioState) get_SoftwareRadioState;
-				public new function HRESULT(ref IMbnRadio self, out MBN_RADIO HardwareRadioState) get_HardwareRadioState;
-				public new function HRESULT(ref IMbnRadio self, MBN_RADIO radioState, out uint32 requestID) SetSoftwareRadioState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRadio self, out MBN_RADIO SoftwareRadioState) get_SoftwareRadioState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRadio self, out MBN_RADIO HardwareRadioState) get_HardwareRadioState;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRadio self, MBN_RADIO radioState, out uint32 requestID) SetSoftwareRadioState;
 			}
 		}
 		[CRepr]
@@ -1098,8 +1098,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface) OnRadioStateChange;
-				public new function HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface, uint32 requestID, HRESULT status) OnSetSoftwareRadioStateComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface) OnRadioStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface, uint32 requestID, HRESULT status) OnSetSoftwareRadioStateComplete;
 			}
 		}
 		[CRepr]
@@ -1119,12 +1119,12 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnMultiCarrier self, ref MBN_PROVIDER2 homeProvider, out uint32 requestID) SetHomeProvider;
-				public new function HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
-				public new function HRESULT(ref IMbnMultiCarrier self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
-				public new function HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
-				public new function HRESULT(ref IMbnMultiCarrier self, out MBN_CELLULAR_CLASS currentCellularClass) GetCurrentCellularClass;
-				public new function HRESULT(ref IMbnMultiCarrier self, out uint32 requestID) ScanNetwork;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, ref MBN_PROVIDER2 homeProvider, out uint32 requestID) SetHomeProvider;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out MBN_CELLULAR_CLASS currentCellularClass) GetCurrentCellularClass;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrier self, out uint32 requestID) ScanNetwork;
 			}
 		}
 		[CRepr]
@@ -1143,11 +1143,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnSetHomeProviderComplete;
-				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnCurrentCellularClassChange;
-				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnPreferredProvidersChange;
-				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
-				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnInterfaceCapabilityChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnSetHomeProviderComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnCurrentCellularClassChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnPreferredProvidersChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnInterfaceCapabilityChange;
 			}
 		}
 		[CRepr]
@@ -1162,7 +1162,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnDeviceServiceStateEvents self, BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) OnSessionsStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServiceStateEvents self, BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) OnSessionsStateChange;
 			}
 		}
 		[CRepr]
@@ -1177,7 +1177,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnDeviceServicesManager self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesManager self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
 			}
 		}
 		[CRepr]
@@ -1195,10 +1195,10 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnDeviceServicesContext self, out SAFEARRAY* deviceServices) EnumerateDeviceServices;
-				public new function HRESULT(ref IMbnDeviceServicesContext self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
-				public new function HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxCommandSize) get_MaxCommandSize;
-				public new function HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxDataSize) get_MaxDataSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out SAFEARRAY* deviceServices) EnumerateDeviceServices;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxCommandSize) get_MaxCommandSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxDataSize) get_MaxDataSize;
 			}
 		}
 		[CRepr]
@@ -1223,17 +1223,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY commandIDList, HRESULT status, uint32 requestID) OnQuerySupportedCommandsComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenCommandSessionComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseCommandSessionComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnSetCommandComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnQueryCommandComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 eventID, ref SAFEARRAY deviceServiceData) OnEventNotification;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenDataSessionComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseDataSessionComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnWriteDataComplete;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY deviceServiceData) OnReadData;
-				public new function HRESULT(ref IMbnDeviceServicesEvents self, BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) OnInterfaceStateChange;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY commandIDList, HRESULT status, uint32 requestID) OnQuerySupportedCommandsComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenCommandSessionComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseCommandSessionComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnSetCommandComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnQueryCommandComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 eventID, ref SAFEARRAY deviceServiceData) OnEventNotification;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenDataSessionComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseDataSessionComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnWriteDataComplete;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY deviceServiceData) OnReadData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceServicesEvents self, BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) OnInterfaceStateChange;
 			}
 		}
 		[CRepr]
@@ -1259,18 +1259,18 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) QuerySupportedCommands;
-				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenCommandSession;
-				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseCommandSession;
-				public new function HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) SetCommand;
-				public new function HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) QueryCommand;
-				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenDataSession;
-				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseDataSession;
-				public new function HRESULT(ref IMbnDeviceService self, ref SAFEARRAY deviceServiceData, out uint32 requestID) WriteData;
-				public new function HRESULT(ref IMbnDeviceService self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(ref IMbnDeviceService self, BSTR* DeviceServiceID) get_DeviceServiceID;
-				public new function HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsCommandSessionOpen;
-				public new function HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsDataSessionOpen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) QuerySupportedCommands;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenCommandSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseCommandSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) SetCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) QueryCommand;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenDataSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseDataSession;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, ref SAFEARRAY deviceServiceData, out uint32 requestID) WriteData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, BSTR* InterfaceID) get_InterfaceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, BSTR* DeviceServiceID) get_DeviceServiceID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsCommandSessionOpen;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsDataSessionOpen;
 			}
 		}
 		[CRepr]
@@ -1295,17 +1295,17 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IMbnPin self, out MBN_PIN_TYPE PinType) get_PinType;
-				public new function HRESULT(ref IMbnPin self, out MBN_PIN_FORMAT PinFormat) get_PinFormat;
-				public new function HRESULT(ref IMbnPin self, out uint32 PinLengthMin) get_PinLengthMin;
-				public new function HRESULT(ref IMbnPin self, out uint32 PinLengthMax) get_PinLengthMax;
-				public new function HRESULT(ref IMbnPin self, out MBN_PIN_MODE PinMode) get_PinMode;
-				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enable;
-				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Disable;
-				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enter;
-				public new function HRESULT(ref IMbnPin self, PWSTR pin, PWSTR newPin, out uint32 requestID) Change;
-				public new function HRESULT(ref IMbnPin self, PWSTR puk, PWSTR newPin, out uint32 requestID) Unblock;
-				public new function HRESULT(ref IMbnPin self, IMbnPinManager** pinManager) GetPinManager;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out MBN_PIN_TYPE PinType) get_PinType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out MBN_PIN_FORMAT PinFormat) get_PinFormat;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out uint32 PinLengthMin) get_PinLengthMin;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out uint32 PinLengthMax) get_PinLengthMax;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, out MBN_PIN_MODE PinMode) get_PinMode;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Disable;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enter;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR pin, PWSTR newPin, out uint32 requestID) Change;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, PWSTR puk, PWSTR newPin, out uint32 requestID) Unblock;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, IMbnPinManager** pinManager) GetPinManager;
 			}
 		}
 		

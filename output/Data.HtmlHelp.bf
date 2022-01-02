@@ -501,24 +501,24 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPersistStreamInit.VTable
 			{
-				public new function HRESULT(ref IITPropList self, uint32 PropID, PWSTR lpszwString, uint32 dwOperation) Set;
-				public new function HRESULT(ref IITPropList self, uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) Set2;
-				public new function HRESULT(ref IITPropList self, uint32 PropID, uint32 dwData, uint32 dwOperation) Set3;
-				public new function HRESULT(ref IITPropList self, out CProperty Prop) Add;
-				public new function HRESULT(ref IITPropList self, uint32 PropID, out CProperty Property) Get;
-				public new function HRESULT(ref IITPropList self) Clear;
-				public new function HRESULT(ref IITPropList self, BOOL fPersist) SetPersist;
-				public new function HRESULT(ref IITPropList self, uint32 PropID, BOOL fPersist) SetPersist2;
-				public new function HRESULT(ref IITPropList self, out CProperty Property) GetFirst;
-				public new function HRESULT(ref IITPropList self, out CProperty Property) GetNext;
-				public new function HRESULT(ref IITPropList self, out int32 cProp) GetPropCount;
-				public new function HRESULT(ref IITPropList self, void* lpvData, uint32 dwHdrSize) SaveHeader;
-				public new function HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, void* lpvData, uint32 dwBufSize) SaveData;
-				public new function HRESULT(ref IITPropList self, out uint32 dwHdrSize) GetHeaderSize;
-				public new function HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, out uint32 dwDataSize) GetDataSize;
-				public new function HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, ref IStream pStream) SaveDataToStream;
-				public new function HRESULT(ref IITPropList self, void* lpvData, uint32 dwBufSize) LoadFromMem;
-				public new function HRESULT(ref IITPropList self, void* lpvData, uint32 dwBufSize) SaveToMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, uint32 PropID, PWSTR lpszwString, uint32 dwOperation) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) Set2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, uint32 PropID, uint32 dwData, uint32 dwOperation) Set3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, out CProperty Prop) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, uint32 PropID, out CProperty Property) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, BOOL fPersist) SetPersist;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, uint32 PropID, BOOL fPersist) SetPersist2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, out CProperty Property) GetFirst;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, out CProperty Property) GetNext;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, out int32 cProp) GetPropCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvData, uint32 dwHdrSize) SaveHeader;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, void* lpvData, uint32 dwBufSize) SaveData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, out uint32 dwHdrSize) GetHeaderSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, out uint32 dwDataSize) GetDataSize;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvHeader, uint32 dwHdrSize, ref IStream pStream) SaveDataToStream;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvData, uint32 dwBufSize) LoadFromMem;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITPropList self, void* lpvData, uint32 dwBufSize) SaveToMem;
 			}
 		}
 		[CRepr]
@@ -537,11 +537,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IITDatabase self, PWSTR lpszHost, PWSTR lpszMoniker, uint32 dwFlags) Open;
-				public new function HRESULT(ref IITDatabase self) Close;
-				public new function HRESULT(ref IITDatabase self, in Guid rclsid, out uint32 pdwObjInstance) CreateObject;
-				public new function HRESULT(ref IITDatabase self, uint32 dwObjInstance, in Guid riid, void** ppvObj) GetObject;
-				public new function HRESULT(ref IITDatabase self, PWSTR lpwszObject, uint32 dwObjInstance, void** ppvPersistence, BOOL fStream) GetObjectPersistence;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITDatabase self, PWSTR lpszHost, PWSTR lpszMoniker, uint32 dwFlags) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITDatabase self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITDatabase self, in Guid rclsid, out uint32 pdwObjInstance) CreateObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITDatabase self, uint32 dwObjInstance, in Guid riid, void** ppvObj) GetObject;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITDatabase self, PWSTR lpwszObject, uint32 dwObjInstance, void** ppvPersistence, BOOL fStream) GetObjectPersistence;
 			}
 		}
 		[CRepr]
@@ -568,19 +568,19 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IITWordWheel self, ref IITDatabase lpITDB, PWSTR lpszMoniker, WORD_WHEEL_OPEN_FLAGS dwFlags) Open;
-				public new function HRESULT(ref IITWordWheel self) Close;
-				public new function HRESULT(ref IITWordWheel self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
-				public new function HRESULT(ref IITWordWheel self, out uint32 pdwObjInstance) GetSorterInstance;
-				public new function HRESULT(ref IITWordWheel self, out int32 pcEntries) Count;
-				public new function HRESULT(ref IITWordWheel self, void* lpcvPrefix, BOOL fExactMatch, out int32 plEntry) Lookup;
-				public new function HRESULT(ref IITWordWheel self, int32 lEntry, ref IITResultSet lpITResult, int32 cEntries) Lookup2;
-				public new function HRESULT(ref IITWordWheel self, int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) Lookup3;
-				public new function HRESULT(ref IITWordWheel self, out IITGroup piitGroup) SetGroup;
-				public new function HRESULT(ref IITWordWheel self, out IITGroup* ppiitGroup) GetGroup;
-				public new function HRESULT(ref IITWordWheel self, int32 lEntry, out uint32 pdwCount) GetDataCount;
-				public new function HRESULT(ref IITWordWheel self, int32 lEntry, ref IITResultSet lpITResult) GetData;
-				public new function HRESULT(ref IITWordWheel self, ref IITResultSet pRS) GetDataColumns;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, ref IITDatabase lpITDB, PWSTR lpszMoniker, WORD_WHEEL_OPEN_FLAGS dwFlags) Open;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self) Close;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, out uint32 pdwObjInstance) GetSorterInstance;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, out int32 pcEntries) Count;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, void* lpcvPrefix, BOOL fExactMatch, out int32 plEntry) Lookup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, int32 lEntry, ref IITResultSet lpITResult, int32 cEntries) Lookup2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) Lookup3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, out IITGroup piitGroup) SetGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, out IITGroup* ppiitGroup) GetGroup;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, int32 lEntry, out uint32 pdwCount) GetDataCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, int32 lEntry, ref IITResultSet lpITResult) GetData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITWordWheel self, ref IITResultSet pRS) GetDataColumns;
 			}
 		}
 		[CRepr]
@@ -596,8 +596,8 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStemSink self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
-				public new function HRESULT(ref IStemSink self, PWSTR pwcInBuf, uint32 cwc) PutWord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemSink self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemSink self, PWSTR pwcInBuf, uint32 cwc) PutWord;
 			}
 		}
 		[CRepr]
@@ -616,11 +616,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IStemmerConfig self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
-				public new function HRESULT(ref IStemmerConfig self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
-				public new function HRESULT(ref IStemmerConfig self, uint32 grfStemFlags, uint32 dwReserved) SetControlInfo;
-				public new function HRESULT(ref IStemmerConfig self, out uint32 pgrfStemFlags, out uint32 pdwReserved) GetControlInfo;
-				public new function HRESULT(ref IStemmerConfig self, ref IStream pStream, uint32 dwExtDataType) LoadExternalStemmerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemmerConfig self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemmerConfig self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemmerConfig self, uint32 grfStemFlags, uint32 dwReserved) SetControlInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemmerConfig self, out uint32 pgrfStemFlags, out uint32 pdwReserved) GetControlInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStemmerConfig self, ref IStream pStream, uint32 dwExtDataType) LoadExternalStemmerData;
 			}
 		}
 		[CRepr]
@@ -643,15 +643,15 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IWordBreakerConfig self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
-				public new function HRESULT(ref IWordBreakerConfig self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
-				public new function HRESULT(ref IWordBreakerConfig self, uint32 dwBreakWordType) SetBreakWordType;
-				public new function HRESULT(ref IWordBreakerConfig self, out uint32 pdwBreakWordType) GetBreakWordType;
-				public new function HRESULT(ref IWordBreakerConfig self, uint32 grfBreakFlags, uint32 dwReserved) SetControlInfo;
-				public new function HRESULT(ref IWordBreakerConfig self, out uint32 pgrfBreakFlags, out uint32 pdwReserved) GetControlInfo;
-				public new function HRESULT(ref IWordBreakerConfig self, ref IStream pStream, uint32 dwExtDataType) LoadExternalBreakerData;
-				public new function HRESULT(ref IWordBreakerConfig self, in Guid rclsid, ref IStemmer pStemmer) SetWordStemmer;
-				public new function HRESULT(ref IWordBreakerConfig self, out IStemmer* ppStemmer) GetWordStemmer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, out uint32 pdwCodePageID, out uint32 plcid) GetLocaleInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, uint32 dwBreakWordType) SetBreakWordType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, out uint32 pdwBreakWordType) GetBreakWordType;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, uint32 grfBreakFlags, uint32 dwReserved) SetControlInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, out uint32 pgrfBreakFlags, out uint32 pdwReserved) GetControlInfo;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, ref IStream pStream, uint32 dwExtDataType) LoadExternalBreakerData;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, in Guid rclsid, ref IStemmer pStemmer) SetWordStemmer;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWordBreakerConfig self, out IStemmer* ppStemmer) GetWordStemmer;
 			}
 		}
 		[CRepr]
@@ -695,36 +695,36 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ref IITResultSet self, int32 lColumnIndex, PRIORITY ColumnPriority) SetColumnPriority;
-				public new function HRESULT(ref IITResultSet self, int32 lColumnIndex, void* lpvHeap, PFNCOLHEAPFREE pfnColHeapFree) SetColumnHeap;
-				public new function HRESULT(ref IITResultSet self, uint32 PropID) SetKeyProp;
-				public new function HRESULT(ref IITResultSet self, uint32 PropID, uint32 dwDefaultData, PRIORITY Priority) Add;
-				public new function HRESULT(ref IITResultSet self, uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) Add2;
-				public new function HRESULT(ref IITResultSet self, uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) Add3;
-				public new function HRESULT(ref IITResultSet self, void* lpvHdr) Add4;
-				public new function HRESULT(ref IITResultSet self, void* lpvHdr, void* lpvData) Append;
-				public new function HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, void* lpvData, uint32 cbData) Set;
-				public new function HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) Set2;
-				public new function HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, uint dwData) Set3;
-				public new function HRESULT(ref IITResultSet self, int32 lRowIndex, void* lpvHdr, void* lpvData) Set4;
-				public new function HRESULT(ref IITResultSet self, ref IITResultSet pRSCopy) Copy;
-				public new function HRESULT(ref IITResultSet self, ref IITResultSet pResSrc, int32 lRowSrcFirst, int32 cSrcRows, out int32 lRowFirstDest) AppendRows;
-				public new function HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, out CProperty Prop) Get;
-				public new function HRESULT(ref IITResultSet self, out uint32 KeyPropID) GetKeyProp;
-				public new function HRESULT(ref IITResultSet self, int32 lColumnIndex, out PRIORITY ColumnPriority) GetColumnPriority;
-				public new function HRESULT(ref IITResultSet self, out int32 lNumberOfRows) GetRowCount;
-				public new function HRESULT(ref IITResultSet self, out int32 lNumberOfColumns) GetColumnCount;
-				public new function HRESULT(ref IITResultSet self, int32 lColumnIndex, out uint32 PropID, out uint32 dwType, void** lpvDefaultValue, out uint32 cbSize, out PRIORITY ColumnPriority) GetColumn;
-				public new function HRESULT(ref IITResultSet self, int32 lColumnIndex, out uint32 PropID) GetColumn2;
-				public new function HRESULT(ref IITResultSet self, uint32 PropID, out int32 lColumnIndex) GetColumnFromPropID;
-				public new function HRESULT(ref IITResultSet self) Clear;
-				public new function HRESULT(ref IITResultSet self) ClearRows;
-				public new function HRESULT(ref IITResultSet self) Free;
-				public new function HRESULT(ref IITResultSet self) IsCompleted;
-				public new function HRESULT(ref IITResultSet self) Cancel;
-				public new function HRESULT(ref IITResultSet self, BOOL fPause) Pause;
-				public new function HRESULT(ref IITResultSet self, int32 lRowFirst, int32 cRows, out ROWSTATUS lpRowStatus) GetRowStatus;
-				public new function HRESULT(ref IITResultSet self, out COLUMNSTATUS lpColStatus) GetColumnStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lColumnIndex, PRIORITY ColumnPriority) SetColumnPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lColumnIndex, void* lpvHeap, PFNCOLHEAPFREE pfnColHeapFree) SetColumnHeap;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, uint32 PropID) SetKeyProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, uint32 PropID, uint32 dwDefaultData, PRIORITY Priority) Add;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) Add2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) Add3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, void* lpvHdr) Add4;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, void* lpvHdr, void* lpvData) Append;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, void* lpvData, uint32 cbData) Set;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) Set2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, uint dwData) Set3;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowIndex, void* lpvHdr, void* lpvData) Set4;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, ref IITResultSet pRSCopy) Copy;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, ref IITResultSet pResSrc, int32 lRowSrcFirst, int32 cSrcRows, out int32 lRowFirstDest) AppendRows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowIndex, int32 lColumnIndex, out CProperty Prop) Get;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, out uint32 KeyPropID) GetKeyProp;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lColumnIndex, out PRIORITY ColumnPriority) GetColumnPriority;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, out int32 lNumberOfRows) GetRowCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, out int32 lNumberOfColumns) GetColumnCount;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lColumnIndex, out uint32 PropID, out uint32 dwType, void** lpvDefaultValue, out uint32 cbSize, out PRIORITY ColumnPriority) GetColumn;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lColumnIndex, out uint32 PropID) GetColumn2;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, uint32 PropID, out int32 lColumnIndex) GetColumnFromPropID;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self) Clear;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self) ClearRows;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self) Free;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self) IsCompleted;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self) Cancel;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, BOOL fPause) Pause;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, int32 lRowFirst, int32 cRows, out ROWSTATUS lpRowStatus) GetRowStatus;
+				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, out COLUMNSTATUS lpColStatus) GetColumnStatus;
 			}
 		}
 		
