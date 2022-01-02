@@ -3219,6 +3219,5 @@ namespace Win32
 		public static extern RPC_STATUS RpcCertGeneratePrincipalNameW(in CERT_CONTEXT Context, uint32 Flags, out uint16* pBuffer);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern RPC_STATUS RpcCertGeneratePrincipalNameA(in CERT_CONTEXT Context, uint32 Flags, out uint8* pBuffer);
-		
 	}
 }

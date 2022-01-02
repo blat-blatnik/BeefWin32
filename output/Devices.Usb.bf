@@ -2277,6 +2277,5 @@ namespace Win32
 		public static extern BOOL WinUsb_GetCurrentFrameNumberAndQpc(void* InterfaceHandle, ref USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION FrameQpcInfo);
 		[Import("winusb.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WinUsb_StopTrackingForTimeSync(void* InterfaceHandle, ref USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION StopTrackingInfo);
-		
 	}
 }

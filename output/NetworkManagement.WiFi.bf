@@ -4197,6 +4197,5 @@ namespace Win32
 		public static extern uint32 WFDCloseSession(HANDLE hSessionHandle);
 		[Import("wlanapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WFDUpdateDeviceVisibility(ref uint8* pDeviceAddress);
-		
 	}
 }

@@ -5051,6 +5051,5 @@ namespace Win32
 		public static extern BOOL OleUIUpdateLinksW(ref IOleUILinkContainerW lpOleUILinkCntr, HWND hwndParent, PWSTR lpszTitle, int32 cLinks);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL OleUIUpdateLinksA(ref IOleUILinkContainerA lpOleUILinkCntr, HWND hwndParent, PSTR lpszTitle, int32 cLinks);
-		
 	}
 }

@@ -2071,6 +2071,5 @@ namespace Win32
 		public static extern HRESULT WldpQueryDynamicCodeTrust(HANDLE fileHandle, void* baseImage, uint32 imageSize);
 		[Import("wldp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WldpQueryDeviceSecurityInformation(WLDP_DEVICE_SECURITY_INFORMATION* information, uint32 informationLength, out uint32 returnLength);
-		
 	}
 }

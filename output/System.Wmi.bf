@@ -4308,6 +4308,5 @@ namespace Win32
 		
 		[Import("mi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern MI_Result MI_Application_InitializeV1(uint32 flags, uint16* applicationID, MI_Instance** extendedError, out MI_Application application);
-		
 	}
 }

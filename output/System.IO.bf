@@ -66,6 +66,5 @@ namespace Win32
 		public static extern BOOL CancelSynchronousIo(HANDLE hThread);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BindIoCompletionCallback(HANDLE FileHandle, LPOVERLAPPED_COMPLETION_ROUTINE Function, uint32 Flags);
-		
 	}
 }

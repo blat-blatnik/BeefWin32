@@ -285,6 +285,5 @@ namespace Win32
 		public static extern HRESULT DwmShowContact(uint32 dwPointerID, DWM_SHOWCONTACT eShowContact);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, out DWM_TAB_WINDOW_REQUIREMENTS value);
-		
 	}
 }

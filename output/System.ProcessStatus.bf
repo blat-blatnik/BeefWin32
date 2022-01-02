@@ -207,6 +207,5 @@ namespace Win32
 		public static extern uint32 K32GetProcessImageFileNameA(HANDLE hProcess, uint8* lpImageFileName, uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 K32GetProcessImageFileNameW(HANDLE hProcess, char16* lpImageFileName, uint32 nSize);
-		
 	}
 }

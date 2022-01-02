@@ -33,6 +33,5 @@ namespace Win32
 		public static extern HRESULT ApplicationRecoveryInProgress(out BOOL pbCancelled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void ApplicationRecoveryFinished(BOOL bSuccess);
-		
 	}
 }

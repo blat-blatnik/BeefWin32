@@ -310,6 +310,5 @@ namespace Win32
 		public static extern uint8* HPALETTE_UserUnmarshal64(ref uint32 param0, uint8* param1, out HPALETTE param2);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HPALETTE_UserFree64(ref uint32 param0, ref HPALETTE param1);
-		
 	}
 }

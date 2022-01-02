@@ -200,6 +200,5 @@ namespace Win32
 		public static extern HRESULT DdqSetTranscriptConfiguration(HDIAGNOSTIC_DATA_QUERY_SESSION hSession, in DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION desiredConfig);
 		[Import("diagnosticdataquery.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DdqGetTranscriptConfiguration(HDIAGNOSTIC_DATA_QUERY_SESSION hSession, out DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION currentConfig);
-		
 	}
 }

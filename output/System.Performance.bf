@@ -2793,6 +2793,5 @@ namespace Win32
 		public static extern int32 PdhGetLogSetGUID(int hLog, Guid* pGuid, int32* pRunId);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhSetLogSetRunID(int hLog, int32 RunId);
-		
 	}
 }

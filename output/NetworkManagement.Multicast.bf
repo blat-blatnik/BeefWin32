@@ -79,6 +79,5 @@ namespace Win32
 		public static extern uint32 McastRenewAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pRenewRequest, out MCAST_LEASE_RESPONSE pRenewResponse);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 McastReleaseAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pReleaseRequest);
-		
 	}
 }

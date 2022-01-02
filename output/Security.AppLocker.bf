@@ -190,6 +190,5 @@ namespace Win32
 		public static extern BOOL SaferRecordEventLogEntry(SAFER_LEVEL_HANDLE hLevel, PWSTR szTargetPath, void* lpReserved);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SaferiIsExecutableFileType(PWSTR szFullPathname, BOOLEAN bFromShellExecute);
-		
 	}
 }

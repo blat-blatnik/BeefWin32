@@ -394,6 +394,5 @@ namespace Win32
 		public static extern HRESULT FilterReplyMessage(HANDLE hPort, ref FILTER_REPLY_HEADER lpReplyBuffer, uint32 dwReplyBufferSize);
 		[Import("fltlib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FilterGetDosName(PWSTR lpVolumeName, char16* lpDosName, uint32 dwDosNameBufferSize);
-		
 	}
 }

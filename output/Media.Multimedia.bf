@@ -6688,6 +6688,5 @@ namespace Win32
 		public static extern void mmTaskYield();
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 mmGetCurrentTask();
-		
 	}
 }

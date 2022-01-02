@@ -236,6 +236,5 @@ namespace Win32
 		public static extern HRESULT FhServiceBlockBackup(FH_SERVICE_PIPE_HANDLE Pipe);
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FhServiceUnblockBackup(FH_SERVICE_PIPE_HANDLE Pipe);
-		
 	}
 }

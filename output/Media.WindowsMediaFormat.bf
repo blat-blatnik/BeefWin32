@@ -3470,6 +3470,5 @@ namespace Win32
 		public static extern HRESULT WMCreateWriterNetworkSink(out IWMWriterNetworkSink* ppSink);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WMCreateWriterPushSink(out IWMWriterPushSink* ppSink);
-		
 	}
 }

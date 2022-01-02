@@ -480,6 +480,5 @@ namespace Win32
 		public static extern HANDLE OpenJobObjectA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CreateJobSet(uint32 NumJob, JOB_SET_ARRAY* UserJobSet, uint32 Flags);
-		
 	}
 }

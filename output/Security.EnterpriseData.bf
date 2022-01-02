@@ -135,6 +135,5 @@ namespace Win32
 		public static extern HRESULT ProtectFileToEnterpriseIdentity(PWSTR fileOrFolderPath, PWSTR identity);
 		[Import("efswrt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnprotectFile(PWSTR fileOrFolderPath, FILE_UNPROTECT_OPTIONS* options);
-		
 	}
 }

@@ -4728,6 +4728,5 @@ namespace Win32
 		public static extern uint32 DsGetDcNextA(HANDLE GetDcContextHandle, uint32* SockAddressCount, SOCKET_ADDRESS** SockAddresses, PSTR* DnsHostName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsGetDcCloseW(GetDcContextHandle GetDcContextHandle);
-		
 	}
 }

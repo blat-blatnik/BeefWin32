@@ -1228,6 +1228,5 @@ namespace Win32
 		public static extern BOOL LogonUserExW(PWSTR lpszUsername, PWSTR lpszDomain, PWSTR lpszPassword, LOGON32_LOGON dwLogonType, LOGON32_PROVIDER dwLogonProvider, HANDLE* phToken, PSID* ppLogonSid, void** ppProfileBuffer, uint32* pdwProfileLength, QUOTA_LIMITS* pQuotaLimits);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS RtlConvertSidToUnicodeString(out UNICODE_STRING UnicodeString, PSID Sid, BOOLEAN AllocateDestinationString);
-		
 	}
 }

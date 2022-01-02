@@ -4967,6 +4967,5 @@ namespace Win32
 		public static extern uint32 FwpmvSwitchEventsGetSecurityInfo0(HANDLE engineHandle, uint32 securityInfo, PSID* sidOwner, PSID* sidGroup, ACL** dacl, ACL** sacl, out SECURITY_DESCRIPTOR* securityDescriptor);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 FwpmvSwitchEventsSetSecurityInfo0(HANDLE engineHandle, uint32 securityInfo, SID* sidOwner, SID* sidGroup, ACL* dacl, ACL* sacl);
-		
 	}
 }

@@ -3418,6 +3418,5 @@ namespace Win32
 		public static extern uint32 SendToFaxRecipient(SendToMode sndMode, PWSTR lpFileName);
 		[Import("sti.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StiCreateInstanceW(HINSTANCE hinst, uint32 dwVer, out IStillImageW* ppSti, ref IUnknown punkOuter);
-		
 	}
 }

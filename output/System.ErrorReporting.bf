@@ -467,6 +467,5 @@ namespace Win32
 		public static extern BOOL AddERExcludedApplicationW(PWSTR wszApplication);
 		[Import("faultrep.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WerReportHang(HWND hwndHungApp, PWSTR pwzHungApplicationName);
-		
 	}
 }

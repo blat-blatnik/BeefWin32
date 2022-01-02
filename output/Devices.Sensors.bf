@@ -597,6 +597,5 @@ namespace Win32
 		public static extern BOOLEAN IsSensorSubscribed(ref SENSOR_COLLECTION_LIST subscriptionList, Guid currentType);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN IsGUIDPresentInList(Guid* guidArray, uint32 arrayLength, in Guid guidElem);
-		
 	}
 }

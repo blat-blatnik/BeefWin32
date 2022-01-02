@@ -1450,6 +1450,5 @@ namespace Win32
 		public static extern HRESULT WinBioAcquireFocus();
 		[Import("winbio.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WinBioReleaseFocus();
-		
 	}
 }

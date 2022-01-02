@@ -7255,6 +7255,5 @@ namespace Win32
 		public static extern int32 lstrlenW(PWSTR lpString);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsTextUnicode(void* lpv, int32 iSize, IS_TEXT_UNICODE_RESULT* lpiResult);
-		
 	}
 }

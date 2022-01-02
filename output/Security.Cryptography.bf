@@ -6651,6 +6651,5 @@ namespace Win32
 		public static extern HRESULT GenerateDerivedKey(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbLabel, ref uint8 pLabel, uint32 cbNonce, ref uint8 pNonce, uint32 derivedKeyLength, uint32 offset, PWSTR algId, out uint32 pcbKey, out uint8* ppKey);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetBrowserToken(uint32 dwParamType, void* pParam, uint32* pcbToken, uint8** ppToken);
-		
 	}
 }

@@ -1391,6 +1391,5 @@ namespace Win32
 		public static extern uint32 ReportRadiusServerListW(out uint32 BufferSizeInChar, char16* Buffer);
 		[Import("iscsidsc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ReportRadiusServerListA(out uint32 BufferSizeInChar, uint8* Buffer);
-		
 	}
 }

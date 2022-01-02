@@ -16526,6 +16526,5 @@ namespace Win32
 		public static extern uint32 RegisterAppConstrainedChangeNotification(PAPPCONSTRAIN_CHANGE_ROUTINE Routine, void* Context, out _APPCONSTRAIN_REGISTRATION* Registration);
 		[Import("api-ms-win-core-psm-appnotify-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void UnregisterAppConstrainedChangeNotification(out _APPCONSTRAIN_REGISTRATION Registration);
-		
 	}
 }

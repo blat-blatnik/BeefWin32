@@ -711,6 +711,5 @@ namespace Win32
 		public static extern BOOL OpenPersonalTrustDBDialog(HWND hwndParent);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);
-		
 	}
 }

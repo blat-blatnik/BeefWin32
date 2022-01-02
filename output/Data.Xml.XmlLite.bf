@@ -404,6 +404,5 @@ namespace Win32
 		public static extern HRESULT CreateXmlWriterOutputWithEncodingCodePage(ref IUnknown pOutputStream, IMalloc* pMalloc, uint32 nEncodingCodePage, out IUnknown* ppOutput);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateXmlWriterOutputWithEncodingName(ref IUnknown pOutputStream, IMalloc* pMalloc, PWSTR pwszEncodingName, out IUnknown* ppOutput);
-		
 	}
 }

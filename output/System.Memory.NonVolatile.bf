@@ -30,6 +30,5 @@ namespace Win32
 		public static extern uint32 RtlFillNonVolatileMemory(void* NvToken, void* NvDestination, uint Size, uint8 Value, uint32 Flags);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtlFlushNonVolatileMemoryRanges(void* NvToken, NV_MEMORY_RANGE* NvRanges, uint NumRanges, uint32 Flags);
-		
 	}
 }

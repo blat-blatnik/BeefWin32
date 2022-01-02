@@ -251,6 +251,5 @@ namespace Win32
 		public static extern HRESULT HcsGetLayerVhdMountPath(HANDLE vhdHandle, out PWSTR mountPath);
 		[Import("computestorage.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsSetupBaseOSVolume(PWSTR layerPath, PWSTR volumePath, PWSTR options);
-		
 	}
 }

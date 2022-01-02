@@ -73,6 +73,5 @@ namespace Win32
 		public static extern BOOL ResetDecompressor(int DecompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CloseDecompressor(int DecompressorHandle);
-		
 	}
 }

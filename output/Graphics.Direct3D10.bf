@@ -3480,6 +3480,5 @@ namespace Win32
 		public static extern HRESULT D3D10CreateDevice1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HINSTANCE Software, uint32 Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint32 SDKVersion, ID3D10Device1** ppDevice);
 		[Import("d3d10_1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D10CreateDeviceAndSwapChain1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HINSTANCE Software, uint32 Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint32 SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device1** ppDevice);
-		
 	}
 }

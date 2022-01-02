@@ -78,6 +78,5 @@ namespace Win32
 		
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D11On12CreateDevice(ref IUnknown pDevice, uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, IUnknown** ppCommandQueues, uint32 NumQueues, uint32 NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
-		
 	}
 }

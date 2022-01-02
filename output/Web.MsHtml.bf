@@ -34007,6 +34007,5 @@ namespace Win32
 		public static extern HRESULT DecodeImageEx(ref IStream pStream, ref IMapMIMEToCLSID pMap, ref IUnknown pEventSink, PWSTR pszMIMETypeParam);
 		[Import("shdocvw.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, PWSTR pszUrl, ref IEnumPrivacyRecords pPrivacyEnum, BOOL fReportAllSites);
-		
 	}
 }

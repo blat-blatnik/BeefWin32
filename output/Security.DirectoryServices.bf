@@ -34,6 +34,5 @@ namespace Win32
 		public static extern HRESULT DSCreateSecurityPage(PWSTR pwszObjectPath, PWSTR pwszObjectClass, uint32 dwFlags, out HPROPSHEETPAGE phPage, PFNREADOBJECTSECURITY pfnReadSD, PFNWRITEOBJECTSECURITY pfnWriteSD, LPARAM lpContext);
 		[Import("dssec.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DSEditSecurity(HWND hwndOwner, PWSTR pwszObjectPath, PWSTR pwszObjectClass, uint32 dwFlags, PWSTR pwszCaption, PFNREADOBJECTSECURITY pfnReadSD, PFNWRITEOBJECTSECURITY pfnWriteSD, LPARAM lpContext);
-		
 	}
 }

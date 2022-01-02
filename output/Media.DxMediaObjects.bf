@@ -302,6 +302,5 @@ namespace Win32
 		public static extern HRESULT MoDeleteMediaType(out DMO_MEDIA_TYPE pmt);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MoDuplicateMediaType(out DMO_MEDIA_TYPE* ppmtDest, in DMO_MEDIA_TYPE pmtSrc);
-		
 	}
 }

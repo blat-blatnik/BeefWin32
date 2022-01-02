@@ -32,6 +32,5 @@ namespace Win32
 		public static extern int32 ComDBReleasePort(HCOMDB HComDB, uint32 ComNumber);
 		[Import("msports.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ComDBResizeDatabase(HCOMDB HComDB, uint32 NewSize);
-		
 	}
 }

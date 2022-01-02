@@ -310,6 +310,5 @@ namespace Win32
 		public static extern int32 PrjFileNameCompare(PWSTR fileName1, PWSTR fileName2);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN PrjDoesNameContainWildCards(PWSTR fileName);
-		
 	}
 }

@@ -4350,6 +4350,5 @@ namespace Win32
 		public static extern BOOL GetMonitorInfoW(HMONITOR hMonitor, out MONITORINFO lpmi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EnumDisplayMonitors(HDC hdc, RECT* lprcClip, MONITORENUMPROC lpfnEnum, LPARAM dwData);
-		
 	}
 }

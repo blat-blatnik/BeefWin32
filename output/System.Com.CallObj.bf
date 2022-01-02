@@ -234,6 +234,5 @@ namespace Win32
 		public static extern HRESULT CoGetInterceptor(in Guid iidIntercepted, ref IUnknown punkOuter, in Guid iid, void** ppv);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoGetInterceptorFromTypeInfo(in Guid iidIntercepted, ref IUnknown punkOuter, ref ITypeInfo typeInfo, in Guid iid, void** ppv);
-		
 	}
 }

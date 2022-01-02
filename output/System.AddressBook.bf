@@ -1542,6 +1542,5 @@ namespace Win32
 		public static extern int32 ScInitMapiUtil(uint32 ulFlags);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DeinitMapiUtil();
-		
 	}
 }

@@ -71,6 +71,5 @@ namespace Win32
 		public static extern BOOL LocalFileTimeToLocalSystemTime(TIME_ZONE_INFORMATION* timeZoneInformation, in FILETIME localFileTime, out SYSTEMTIME localSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL LocalSystemTimeToLocalFileTime(TIME_ZONE_INFORMATION* timeZoneInformation, in SYSTEMTIME localSystemTime, out FILETIME localFileTime);
-		
 	}
 }

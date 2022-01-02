@@ -2119,6 +2119,5 @@ namespace Win32
 		public static extern HRESULT WICSerializeMetadataContent(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint32 dwPersistOptions, ref IStream pIStream);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WICGetMetadataContentSize(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, out ULARGE_INTEGER pcbSize);
-		
 	}
 }

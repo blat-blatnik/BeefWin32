@@ -304,6 +304,5 @@ namespace Win32
 		public static extern HRESULT InitializeXamlDiagnostic(PWSTR endPointName, uint32 pid, PWSTR wszDllXamlDiagnostics, PWSTR wszTAPDllName, Guid tapClsid);
 		[Import("windows.ui.xaml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT InitializeXamlDiagnosticsEx(PWSTR endPointName, uint32 pid, PWSTR wszDllXamlDiagnostics, PWSTR wszTAPDllName, Guid tapClsid, PWSTR wszInitializationData);
-		
 	}
 }

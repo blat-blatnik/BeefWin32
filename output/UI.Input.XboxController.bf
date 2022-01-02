@@ -163,6 +163,5 @@ namespace Win32
 		public static extern uint32 XInputGetBatteryInformation(uint32 dwUserIndex, uint8 devType, out XINPUT_BATTERY_INFORMATION pBatteryInformation);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 XInputGetKeystroke(uint32 dwUserIndex, uint32 dwReserved, out XINPUT_KEYSTROKE pKeystroke);
-		
 	}
 }

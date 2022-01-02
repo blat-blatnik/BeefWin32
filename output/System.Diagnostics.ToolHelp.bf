@@ -155,6 +155,5 @@ namespace Win32
 		public static extern BOOL Module32First(HANDLE hSnapshot, out MODULEENTRY32 lpme);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL Module32Next(HANDLE hSnapshot, out MODULEENTRY32 lpme);
-		
 	}
 }

@@ -556,6 +556,5 @@ namespace Win32
 		public static extern BOOL AddSecureMemoryCacheCallback(PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RemoveSecureMemoryCacheCallback(PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack);
-		
 	}
 }

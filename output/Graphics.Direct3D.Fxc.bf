@@ -151,6 +151,5 @@ namespace Win32
 		public static extern HRESULT D3DDecompressShaders(void* pSrcData, uint SrcDataSize, uint32 uNumShaders, uint32 uStartIndex, uint32* pIndices, uint32 uFlags, ID3DBlob** ppShaders, uint32* pTotalShaders);
 		[Import("d3dcompiler_47.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3DDisassemble10Effect(ref ID3D10Effect pEffect, uint32 Flags, out ID3DBlob* ppDisassembly);
-		
 	}
 }

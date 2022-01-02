@@ -1321,6 +1321,5 @@ namespace Win32
 		public static extern HRESULT DCompositionBoostCompositorClock(BOOL enable);
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DCompositionWaitForCompositorClock(uint32 count, HANDLE* handles, uint32 timeoutInMs);
-		
 	}
 }

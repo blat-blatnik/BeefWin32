@@ -497,6 +497,5 @@ namespace Win32
 		public static extern LSTATUS RegSaveKeyExW(HKEY hKey, PWSTR lpFile, SECURITY_ATTRIBUTES* lpSecurityAttributes, REG_SAVE_FORMAT Flags);
 		[Import("api-ms-win-core-state-helpers-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern LSTATUS GetRegistryValueWithFallbackW(HKEY hkeyPrimary, PWSTR pwszPrimarySubKey, HKEY hkeyFallback, PWSTR pwszFallbackSubKey, PWSTR pwszValue, uint32 dwFlags, uint32* pdwType, void* pvData, uint32 cbDataIn, uint32* pcbDataOut);
-		
 	}
 }

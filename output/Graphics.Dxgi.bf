@@ -1910,6 +1910,5 @@ namespace Win32
 		public static extern HRESULT DXGIGetDebugInterface1(uint32 Flags, in Guid riid, void** pDebug);
 		[Import("dxgi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
-		
 	}
 }

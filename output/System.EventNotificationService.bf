@@ -154,6 +154,5 @@ namespace Win32
 		public static extern BOOL IsDestinationReachableW(PWSTR lpszDestination, out QOCINFO lpQOCInfo);
 		[Import("sensapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsNetworkAlive(out uint32 lpdwFlags);
-		
 	}
 }

@@ -15,6 +15,5 @@ namespace Win32
 		public static extern BOOL GetMailslotInfo(HANDLE hMailslot, uint32* lpMaxMessageSize, uint32* lpNextSize, uint32* lpMessageCount, uint32* lpReadTimeout);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetMailslotInfo(HANDLE hMailslot, uint32 lReadTimeout);
-		
 	}
 }

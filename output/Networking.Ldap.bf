@@ -904,6 +904,5 @@ namespace Win32
 		public static extern int32 ber_printf(out berelement pBerElement, PSTR fmt);
 		[Import("wldap32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ber_scanf(out berelement pBerElement, PSTR fmt);
-		
 	}
 }

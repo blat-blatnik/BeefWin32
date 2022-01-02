@@ -1790,6 +1790,5 @@ namespace Win32
 		public static extern HRESULT ImportRSoPData(PWSTR lpNameSpace, PWSTR lpFileName);
 		[Import("gpedit.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ExportRSoPData(PWSTR lpNameSpace, PWSTR lpFileName);
-		
 	}
 }

@@ -129,6 +129,5 @@ namespace Win32
 		public static extern uint32 RmRemoveFilter(uint32 dwSessionHandle, PWSTR strModuleName, RM_UNIQUE_PROCESS* pProcess, PWSTR strServiceShortName);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmGetFilterList(uint32 dwSessionHandle, uint8* pbFilterBuf, uint32 cbFilterBuf, out uint32 cbFilterBufNeeded);
-		
 	}
 }

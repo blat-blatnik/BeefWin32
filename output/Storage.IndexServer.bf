@@ -319,6 +319,5 @@ namespace Win32
 		public static extern HRESULT BindIFilterFromStorage(ref IStorage pStg, ref IUnknown pUnkOuter, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT BindIFilterFromStream(ref IStream pStm, ref IUnknown pUnkOuter, void** ppIUnk);
-		
 	}
 }

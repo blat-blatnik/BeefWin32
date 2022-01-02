@@ -1293,6 +1293,5 @@ namespace Win32
 		public static extern NTSTATUS NtQueryInformationThread(HANDLE ThreadHandle, THREADINFOCLASS ThreadInformationClass, void* ThreadInformation, uint32 ThreadInformationLength, out uint32 ReturnLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS NtSetInformationThread(HANDLE ThreadHandle, THREADINFOCLASS ThreadInformationClass, void* ThreadInformation, uint32 ThreadInformationLength);
-		
 	}
 }

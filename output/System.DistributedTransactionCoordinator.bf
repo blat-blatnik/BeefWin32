@@ -1593,6 +1593,5 @@ namespace Win32
 		public static extern HRESULT DtcGetTransactionManagerExA(PSTR i_pszHost, PSTR i_pszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
 		[Import("xolehlp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DtcGetTransactionManagerExW(PWSTR i_pwszHost, PWSTR i_pwszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
-		
 	}
 }

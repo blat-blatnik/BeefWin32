@@ -694,6 +694,5 @@ namespace Win32
 		public static extern uint32 GetSharedServiceRegistryStateKey(SC_HANDLE ServiceHandle, SERVICE_SHARED_REGISTRY_STATE_TYPE StateType, uint32 AccessMask, out HKEY ServiceStateKey);
 		[Import("api-ms-win-service-core-l1-1-5.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSharedServiceDirectory(SC_HANDLE ServiceHandle, SERVICE_SHARED_DIRECTORY_TYPE DirectoryType, char16* PathBuffer, uint32 PathBufferLength, out uint32 RequiredBufferLength);
-		
 	}
 }

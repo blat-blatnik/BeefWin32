@@ -32,6 +32,5 @@ namespace Win32
 		public static extern uint32 RtlExtendCorrelationVector(out CORRELATION_VECTOR CorrelationVector);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtlValidateCorrelationVector(ref CORRELATION_VECTOR Vector);
-		
 	}
 }

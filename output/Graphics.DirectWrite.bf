@@ -3272,6 +3272,5 @@ namespace Win32
 		
 		[Import("dwrite.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, in Guid iid, out IUnknown* factory);
-		
 	}
 }

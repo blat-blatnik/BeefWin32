@@ -814,6 +814,5 @@ namespace Win32
 		public static extern HRESULT CreateAudioReverb(out IUnknown* ppApo);
 		[Import("hrtfapo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateHrtfApo(in HrtfApoInit init, out IXAPO* xApo);
-		
 	}
 }

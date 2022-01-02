@@ -131,6 +131,5 @@ namespace Win32
 		public static extern void WebSocketDeleteHandle(WEB_SOCKET_HANDLE hWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketGetGlobalProperty(WEB_SOCKET_PROPERTY_TYPE eType, void* pvValue, out uint32 ulSize);
-		
 	}
 }

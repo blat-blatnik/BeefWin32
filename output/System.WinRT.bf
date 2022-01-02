@@ -877,6 +877,5 @@ namespace Win32
 		public static extern HRESULT CreateRandomAccessStreamOverStream(ref IStream stream, BSOS_OPTIONS options, in Guid riid, void** ppv);
 		[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateStreamOverRandomAccessStream(ref IUnknown randomAccessStream, in Guid riid, void** ppv);
-		
 	}
 }

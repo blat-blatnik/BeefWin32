@@ -3288,6 +3288,5 @@ namespace Win32
 		public static extern uint32 PfGetInterfaceStatistics(void* pInterface, out PF_INTERFACE_STATS ppfStats, out uint32 pdwBufferSize, BOOL fResetCounters);
 		[Import("iphlpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PfTestPacket(void* pInInterface, void* pOutInterface, uint32 cBytes, out uint8 pbPacket, out PFFORWARD_ACTION ppAction);
-		
 	}
 }

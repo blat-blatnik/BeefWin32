@@ -209,6 +209,5 @@ namespace Win32
 		public static extern BOOL GetCurrentInputMessageSource(out INPUT_MESSAGE_SOURCE inputMessageSource);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetCIMSSM(out INPUT_MESSAGE_SOURCE inputMessageSource);
-		
 	}
 }

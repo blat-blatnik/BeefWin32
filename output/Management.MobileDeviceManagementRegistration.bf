@@ -137,6 +137,5 @@ namespace Win32
 		public static extern HRESULT ApplyLocalManagementSyncML(PWSTR syncMLRequest, PWSTR* syncMLResult);
 		[Import("mdmlocalmanagement.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnregisterDeviceWithLocalManagement();
-		
 	}
 }

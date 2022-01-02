@@ -202,6 +202,5 @@ namespace Win32
 		
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint8 Netbios(out NCB pncb);
-		
 	}
 }

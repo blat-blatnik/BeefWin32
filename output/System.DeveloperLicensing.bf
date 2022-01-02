@@ -13,6 +13,5 @@ namespace Win32
 		public static extern HRESULT AcquireDeveloperLicense(HWND hwndParent, out FILETIME pExpiration);
 		[Import("wsclient.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RemoveDeveloperLicense(HWND hwndParent);
-		
 	}
 }

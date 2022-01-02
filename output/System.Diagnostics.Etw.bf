@@ -2200,6 +2200,5 @@ namespace Win32
 		public static extern uint32 TdhGetManifestEventInformation(ref Guid ProviderGuid, ref EVENT_DESCRIPTOR EventDescriptor, TRACE_EVENT_INFO* Buffer, out uint32 BufferSize);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CveEventWrite(PWSTR CveId, PWSTR AdditionalDetails);
-		
 	}
 }

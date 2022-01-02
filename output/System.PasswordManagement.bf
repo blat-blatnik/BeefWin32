@@ -34,6 +34,5 @@ namespace Win32
 		public static extern uint32 MSChapSrvChangePassword(PWSTR ServerName, PWSTR UserName, BOOLEAN LmOldPresent, ref LM_OWF_PASSWORD LmOldOwfPassword, ref LM_OWF_PASSWORD LmNewOwfPassword, ref LM_OWF_PASSWORD NtOldOwfPassword, ref LM_OWF_PASSWORD NtNewOwfPassword);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MSChapSrvChangePassword2(PWSTR ServerName, PWSTR UserName, ref SAMPR_ENCRYPTED_USER_PASSWORD NewPasswordEncryptedWithOldNt, ref ENCRYPTED_LM_OWF_PASSWORD OldNtOwfPasswordEncryptedWithNewNt, BOOLEAN LmPresent, ref SAMPR_ENCRYPTED_USER_PASSWORD NewPasswordEncryptedWithOldLm, ref ENCRYPTED_LM_OWF_PASSWORD OldLmOwfPasswordEncryptedWithNewLmOrNt);
-		
 	}
 }

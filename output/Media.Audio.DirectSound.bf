@@ -1110,6 +1110,5 @@ namespace Win32
 		public static extern HRESULT DirectSoundFullDuplexCreate(Guid* pcGuidCaptureDevice, Guid* pcGuidRenderDevice, ref DSCBUFFERDESC pcDSCBufferDesc, ref DSBUFFERDESC pcDSBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundFullDuplex* ppDSFD, out IDirectSoundCaptureBuffer8* ppDSCBuffer8, out IDirectSoundBuffer8* ppDSBuffer8, ref IUnknown pUnkOuter);
 		[Import("dsound.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDeviceID(Guid* pGuidSrc, out Guid pGuidDest);
-		
 	}
 }

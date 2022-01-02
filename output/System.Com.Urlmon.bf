@@ -1903,6 +1903,5 @@ namespace Win32
 		public static extern BOOL IsLoggingEnabledW(PWSTR pwszUrl);
 		[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WriteHitLogging(ref HIT_LOGGING_INFO lpLogginginfo);
-		
 	}
 }

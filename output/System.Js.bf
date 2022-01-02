@@ -258,6 +258,5 @@ namespace Win32
 		public static extern JsErrorCode JsEnumerateHeap(out IActiveScriptProfilerHeapEnum* enumerator);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIsEnumeratingHeap(out Boolean isEnumeratingHeap);
-		
 	}
 }

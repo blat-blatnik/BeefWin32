@@ -5463,6 +5463,5 @@ namespace Win32
 		public static extern uint32 MprSetupProtocolEnum(uint32 dwTransportId, out uint8* lplpBuffer, out uint32 lpdwEntriesRead);
 		[Import("rtutils.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MprSetupProtocolFree(void* lpBuffer);
-		
 	}
 }

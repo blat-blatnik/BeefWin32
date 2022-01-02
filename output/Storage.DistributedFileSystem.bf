@@ -369,6 +369,5 @@ namespace Win32
 		public static extern uint32 NetDfsSetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetDfsGetSupportedNamespaceVersion(DFS_NAMESPACE_VERSION_ORIGIN Origin, PWSTR pName, out DFS_SUPPORTED_NAMESPACE_VERSION_INFO* ppVersionInfo);
-		
 	}
 }

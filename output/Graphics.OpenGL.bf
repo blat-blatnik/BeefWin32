@@ -1663,6 +1663,5 @@ namespace Win32
 		public static extern void gluNextContour(out GLUtesselator tess, uint32 type);
 		[Import("glu32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void gluEndPolygon(out GLUtesselator tess);
-		
 	}
 }

@@ -4143,6 +4143,5 @@ namespace Win32
 		public static extern HRESULT InitLocalMsCtfMonitor(uint32 dwFlags);
 		[Import("msctfmonitor.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UninitLocalMsCtfMonitor();
-		
 	}
 }

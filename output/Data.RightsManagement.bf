@@ -356,6 +356,5 @@ namespace Win32
 		public static extern HRESULT DRMIsWindowProtected(HWND hwnd, out BOOL pfProtected);
 		[Import("msdrm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DRMAcquireIssuanceLicenseTemplate(uint32 hClient, uint32 uFlags, void* pvReserved, uint32 cTemplates, PWSTR* pwszTemplateIds, PWSTR wszUrl, void* pvContext);
-		
 	}
 }

@@ -18197,6 +18197,5 @@ namespace Win32
 		public static extern BOOL SymGetSymNext(HANDLE hProcess, out IMAGEHLP_SYMBOL Symbol);
 		[Import("dbghelp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SymGetSymPrev(HANDLE hProcess, out IMAGEHLP_SYMBOL Symbol);
-		
 	}
 }

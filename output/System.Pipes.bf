@@ -75,6 +75,5 @@ namespace Win32
 		public static extern BOOL GetNamedPipeServerProcessId(HANDLE Pipe, out uint32 ServerProcessId);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetNamedPipeServerSessionId(HANDLE Pipe, out uint32 ServerSessionId);
-		
 	}
 }

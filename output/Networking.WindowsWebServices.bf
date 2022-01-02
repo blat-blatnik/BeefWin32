@@ -3812,6 +3812,5 @@ namespace Win32
 		public static extern PWSTR WebAuthNGetErrorName(HRESULT hr);
 		[Import("webauthn.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebAuthNGetW3CExceptionDOMError(HRESULT hr);
-		
 	}
 }

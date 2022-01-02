@@ -1103,6 +1103,5 @@ namespace Win32
 		public static extern BOOL SetSystemPowerState(BOOL fSuspend, BOOL fForce);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetSystemPowerStatus(out SYSTEM_POWER_STATUS lpSystemPowerStatus);
-		
 	}
 }

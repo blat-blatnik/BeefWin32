@@ -597,6 +597,5 @@ namespace Win32
 		public static extern BOOL CryptUIWizExport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, ref CRYPTUI_WIZ_EXPORT_INFO pExportInfo, void* pvoid);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUIWizImport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, CRYPTUI_WIZ_IMPORT_SRC_INFO* pImportSrc, void* hDestCertStore);
-		
 	}
 }

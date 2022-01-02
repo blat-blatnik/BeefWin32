@@ -1309,6 +1309,5 @@ namespace Win32
 		public static extern uint32 BluetoothSetLocalServiceInfo(HANDLE hRadioIn, in Guid pClassGuid, uint32 ulInstance, in BLUETOOTH_LOCAL_SERVICE_INFO pServiceInfoIn);
 		[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BluetoothIsVersionAvailable(uint8 MajorVersion, uint8 MinorVersion);
-		
 	}
 }

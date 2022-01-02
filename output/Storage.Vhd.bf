@@ -862,6 +862,5 @@ namespace Win32
 		public static extern uint32 ForkVirtualDisk(HANDLE VirtualDiskHandle, FORK_VIRTUAL_DISK_FLAG Flags, in FORK_VIRTUAL_DISK_PARAMETERS Parameters, out OVERLAPPED Overlapped);
 		[Import("virtdisk.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CompleteForkVirtualDisk(HANDLE VirtualDiskHandle);
-		
 	}
 }

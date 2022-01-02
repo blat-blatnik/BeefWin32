@@ -5262,6 +5262,5 @@ namespace Win32
 		public static extern uint32 ResetAllAppInstanceVersions();
 		[Import("ntlanman.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SetAppInstanceCsvFlags(HANDLE ProcessHandle, uint32 Mask, uint32 Flags);
-		
 	}
 }

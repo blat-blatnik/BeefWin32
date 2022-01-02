@@ -1457,6 +1457,5 @@ namespace Win32
 		public static extern uint32 TcDeleteFilter(HANDLE FilterHandle);
 		[Import("traffic.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 TcEnumerateFlows(HANDLE IfcHandle, out HANDLE pEnumHandle, out uint32 pFlowCount, out uint32 pBufSize, out ENUMERATION_BUFFER Buffer);
-		
 	}
 }

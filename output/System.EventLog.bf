@@ -498,6 +498,5 @@ namespace Win32
 		public static extern BOOL ReportEventW(HANDLE hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PWSTR* lpStrings, void* lpRawData);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetEventLogInformation(HANDLE hEventLog, uint32 dwInfoLevel, void* lpBuffer, uint32 cbBufSize, out uint32 pcbBytesNeeded);
-		
 	}
 }

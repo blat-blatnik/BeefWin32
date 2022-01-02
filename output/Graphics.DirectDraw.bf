@@ -5644,6 +5644,5 @@ namespace Win32
 		public static extern HRESULT DirectDrawCreateEx(out Guid lpGuid, void** lplpDD, in Guid iid, ref IUnknown pUnkOuter);
 		[Import("ddraw.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DirectDrawCreateClipper(uint32 dwFlags, out IDirectDrawClipper* lplpDDClipper, ref IUnknown pUnkOuter);
-		
 	}
 }

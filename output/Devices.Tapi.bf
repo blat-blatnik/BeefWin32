@@ -6497,6 +6497,5 @@ namespace Win32
 		public static extern HRESULT OpenTnefStreamEx(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, ref IAddrBook lpAdressBook, out ITnef* lppTNEF);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetTnefStreamCodepage(ref IStream lpStream, out uint32 lpulCodepage, out uint32 lpulSubCodepage);
-		
 	}
 }

@@ -194,6 +194,5 @@ namespace Win32
 		public static extern BOOL GetPointerDeviceCursors(HANDLE device, out uint32 cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetRawPointerDeviceData(uint32 pointerId, uint32 historyCount, uint32 propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, out int32 pValues);
-		
 	}
 }

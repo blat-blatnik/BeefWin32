@@ -3246,6 +3246,5 @@ namespace Win32
 		public static extern BOOL GetDisplayAutoRotationPreferences(out ORIENTATION_PREFERENCE pOrientation);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
-		
 	}
 }

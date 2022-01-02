@@ -2602,6 +2602,5 @@ namespace Win32
 		public static extern BOOL HttpWebSocketQueryCloseStatus(void* hWebSocket, out uint16 pusStatus, void* pvReason, uint32 dwReasonLength, out uint32 pdwReasonLengthConsumed);
 		[Import("wininet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 InternetConvertUrlFromWireToWideChar(uint8* pcszUrl, uint32 cchUrl, PWSTR pcwszBaseUrl, uint32 dwCodePageHost, uint32 dwCodePagePath, BOOL fEncodePathExtra, uint32 dwCodePageExtra, out PWSTR ppwszConvertedUrl);
-		
 	}
 }

@@ -5751,6 +5751,5 @@ namespace Win32
 		public static extern HRESULT KsCreatePin2(HANDLE FilterHandle, ref KSPIN_CONNECT Connect, uint32 DesiredAccess, out HANDLE ConnectionHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT KsCreateTopologyNode2(HANDLE ParentHandle, ref KSNODE_CREATE NodeCreate, uint32 DesiredAccess, out HANDLE NodeHandle);
-		
 	}
 }

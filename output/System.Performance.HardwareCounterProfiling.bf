@@ -46,6 +46,5 @@ namespace Win32
 		public static extern uint32 QueryThreadProfiling(HANDLE ThreadHandle, out BOOLEAN Enabled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ReadThreadProfilingData(HANDLE PerformanceDataHandle, uint32 Flags, out PERFORMANCE_DATA PerformanceData);
-		
 	}
 }

@@ -2176,6 +2176,5 @@ namespace Win32
 		public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorA(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorW(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PWSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
-		
 	}
 }

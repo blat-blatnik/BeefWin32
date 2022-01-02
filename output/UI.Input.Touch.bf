@@ -317,6 +317,5 @@ namespace Win32
 		public static extern BOOL SetGestureConfig(HWND hwnd, uint32 dwReserved, uint32 cIDs, GESTURECONFIG* pGestureConfig, uint32 cbSize);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetGestureConfig(HWND hwnd, uint32 dwReserved, uint32 dwFlags, ref uint32 pcIDs, GESTURECONFIG* pGestureConfig, uint32 cbSize);
-		
 	}
 }

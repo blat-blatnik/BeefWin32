@@ -919,6 +919,5 @@ namespace Win32
 		public static extern int32 SCardListReadersWithDeviceInstanceIdW(uint hContext, PWSTR szDeviceInstanceId, PWSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardAudit(uint hContext, uint32 dwEvent);
-		
 	}
 }

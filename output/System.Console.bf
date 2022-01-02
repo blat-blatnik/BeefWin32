@@ -452,6 +452,5 @@ namespace Win32
 		public static extern BOOL SetStdHandle(STD_HANDLE nStdHandle, HANDLE hHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetStdHandleEx(STD_HANDLE nStdHandle, HANDLE hHandle, HANDLE* phPrevValue);
-		
 	}
 }

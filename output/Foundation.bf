@@ -10008,6 +10008,5 @@ namespace Win32
 		public static extern void SetLastErrorEx(WIN32_ERROR dwErrCode, uint32 dwType);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtlNtStatusToDosError(NTSTATUS Status);
-		
 	}
 }

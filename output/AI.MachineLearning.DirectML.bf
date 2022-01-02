@@ -1979,6 +1979,5 @@ namespace Win32
 		public static extern HRESULT DMLCreateDevice(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, in Guid riid, void** ppv);
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMLCreateDevice1(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, in Guid riid, void** ppv);
-		
 	}
 }

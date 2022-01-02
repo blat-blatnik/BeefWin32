@@ -45,6 +45,5 @@ namespace Win32
 		
 		[Import("windows.data.pdf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PdfCreateRenderer(ref IDXGIDevice pDevice, out IPdfRendererNative* ppRenderer);
-		
 	}
 }

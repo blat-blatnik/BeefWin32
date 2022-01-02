@@ -1140,6 +1140,5 @@ namespace Win32
 		public static extern uint32 EapHostPeerGetEncryptedPassword(uint32 dwSizeofPassword, PWSTR szPassword, out PWSTR ppszEncPassword);
 		[Import("eappprxy.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EapHostPeerFreeRuntimeMemory(out uint8 pData);
-		
 	}
 }

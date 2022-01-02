@@ -274,6 +274,5 @@ namespace Win32
 		public static extern BOOL EditSecurity(HWND hwndOwner, ref ISecurityInformation psi);
 		[Import("aclui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EditSecurityAdvanced(HWND hwndOwner, ref ISecurityInformation psi, SI_PAGE_TYPE uSIPage);
-		
 	}
 }

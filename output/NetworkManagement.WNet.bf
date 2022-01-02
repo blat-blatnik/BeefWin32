@@ -475,6 +475,5 @@ namespace Win32
 		public static extern void WNetSetLastErrorA(uint32 err, PSTR lpError, PSTR lpProviders);
 		[Import("mpr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WNetSetLastErrorW(uint32 err, PWSTR lpError, PWSTR lpProviders);
-		
 	}
 }

@@ -175,6 +175,5 @@ namespace Win32
 		public static extern HRESULT WscQueryAntiMalwareUri();
 		[Import("wscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WscGetAntiMalwareUri(out PWSTR ppszUri);
-		
 	}
 }

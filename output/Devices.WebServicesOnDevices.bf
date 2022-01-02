@@ -1430,6 +1430,5 @@ namespace Win32
 		public static extern HRESULT WSDUriEncode(char16* source, uint32 cchSource, PWSTR* destOut, uint32* cchDestOut);
 		[Import("wsdapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WSDUriDecode(char16* source, uint32 cchSource, PWSTR* destOut, uint32* cchDestOut);
-		
 	}
 }

@@ -4419,6 +4419,5 @@ namespace Win32
 		public static extern BOOLEAN CreateSymbolicLinkTransactedW(PWSTR lpSymlinkFileName, PWSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags, HANDLE hTransaction);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS NtCreateFile(out HANDLE FileHandle, uint32 DesiredAccess, out OBJECT_ATTRIBUTES ObjectAttributes, out IO_STATUS_BLOCK IoStatusBlock, out LARGE_INTEGER AllocationSize, uint32 FileAttributes, FILE_SHARE_MODE ShareAccess, NT_CREATE_FILE_DISPOSITION CreateDisposition, uint32 CreateOptions, void* EaBuffer, uint32 EaLength);
-		
 	}
 }

@@ -338,6 +338,5 @@ namespace Win32
 		public static extern uint32 PssWalkMarkerSetPosition(HPSSWALK WalkMarkerHandle, uint Position);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PssWalkMarkerSeekToBeginning(HPSSWALK WalkMarkerHandle);
-		
 	}
 }

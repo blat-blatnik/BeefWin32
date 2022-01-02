@@ -167,6 +167,5 @@ namespace Win32
 		public static extern void DevFreeObjectProperties(uint32 cPropertyCount, DEVPROPERTY* pProperties);
 		[Import("api-ms-win-devices-query-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern DEVPROPERTY* DevFindProperty(in DEVPROPKEY pKey, DEVPROPSTORE Store, PWSTR pszLocaleName, uint32 cProperties, DEVPROPERTY* pProperties);
-		
 	}
 }

@@ -4047,6 +4047,5 @@ namespace Win32
 		public static extern HRESULT MrmCreateConfigInMemory(MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, out uint8* outputXmlData, out uint32 outputXmlSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmGetPriFileContentChecksum(PWSTR priFile, out uint32 checksum);
-		
 	}
 }

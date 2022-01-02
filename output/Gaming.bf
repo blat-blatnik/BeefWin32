@@ -351,6 +351,5 @@ namespace Win32
 		public static extern HRESULT ShowUserSettingsUI(GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowUserSettingsUIForUser(ref IInspectable user, GameUICompletionRoutine completionRoutine, void* context);
-		
 	}
 }

@@ -21054,6 +21054,5 @@ namespace Win32
 		public static extern uint32 AMGetErrorTextA(HRESULT hr, uint8* pbuffer, uint32 MaxLen);
 		[Import("quartz.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 AMGetErrorTextW(HRESULT hr, char16* pbuffer, uint32 MaxLen);
-		
 	}
 }

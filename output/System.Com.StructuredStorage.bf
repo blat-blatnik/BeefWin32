@@ -903,6 +903,5 @@ namespace Win32
 		public static extern HRESULT StgSerializePropVariant(in PROPVARIANT ppropvar, out SERIALIZEDPROPERTYVALUE* ppProp, out uint32 pcb);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgDeserializePropVariant(in SERIALIZEDPROPERTYVALUE pprop, uint32 cbMax, out PROPVARIANT ppropvar);
-		
 	}
 }

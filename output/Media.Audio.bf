@@ -3652,6 +3652,5 @@ namespace Win32
 		public static extern uint32 acmStreamPrepareHeader(HACMSTREAM has, out ACMSTREAMHEADER pash, uint32 fdwPrepare);
 		[Import("msacm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 acmStreamUnprepareHeader(HACMSTREAM has, out ACMSTREAMHEADER pash, uint32 fdwUnprepare);
-		
 	}
 }

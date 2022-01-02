@@ -2129,6 +2129,5 @@ namespace Win32
 		public static extern HIMCC ImmReSizeIMCC(HIMCC param0, uint32 param1);
 		[Import("imm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ImmGetIMCCSize(HIMCC param0);
-		
 	}
 }

@@ -167,6 +167,5 @@ namespace Win32
 		public static extern BOOL EcRetrySubscription(PWSTR SubscriptionName, PWSTR EventSourceName, uint32 Flags);
 		[Import("wecapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EcClose(int Object);
-		
 	}
 }

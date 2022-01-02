@@ -680,6 +680,5 @@ namespace Win32
 		public static extern HRESULT WinMLCreateRuntime(out IWinMLRuntime* runtime);
 		[Import("windows.ai.machinelearning.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MLCreateOperatorRegistry(out IMLOperatorRegistry* registry);
-		
 	}
 }

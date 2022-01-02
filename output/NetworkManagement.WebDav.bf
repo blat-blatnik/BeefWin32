@@ -79,6 +79,5 @@ namespace Win32
 		public static extern uint32 DavRegisterAuthCallback(PFNDAVAUTHCALLBACK CallBack, uint32 Version);
 		[Import("davclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DavUnregisterAuthCallback(uint32 hCallback);
-		
 	}
 }

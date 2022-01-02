@@ -1487,6 +1487,5 @@ namespace Win32
 		public static extern int32 sqlite3_rtree_geometry_callback(out sqlite3 db, PSTR zGeom, int xGeom, void* pContext);
 		[Import("winsqlite3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 sqlite3_rtree_query_callback(out sqlite3 db, PSTR zQueryFunc, int xQueryFunc, void* pContext, int xDestructor);
-		
 	}
 }

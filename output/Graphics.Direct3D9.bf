@@ -2534,6 +2534,5 @@ namespace Win32
 		public static extern uint32 D3DPERF_GetStatus();
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT Direct3DCreate9Ex(uint32 SDKVersion, out IDirect3D9Ex* param1);
-		
 	}
 }

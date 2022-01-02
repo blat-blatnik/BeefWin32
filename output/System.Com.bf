@@ -3794,6 +3794,5 @@ namespace Win32
 		public static extern HRESULT SetErrorInfo(uint32 dwReserved, IErrorInfo* perrinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetErrorInfo(uint32 dwReserved, out IErrorInfo* pperrinfo);
-		
 	}
 }

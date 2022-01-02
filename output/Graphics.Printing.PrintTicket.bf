@@ -53,6 +53,5 @@ namespace Win32
 		public static extern HRESULT PTConvertPrintTicketToDevMode(HPTPROVIDER hProvider, ref IStream pPrintTicket, EDefaultDevmodeType baseDevmodeType, EPrintTicketScope @scope, out uint32 pcbDevmode, out DEVMODEA* ppDevmode, BSTR* pbstrErrorMessage);
 		[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PTConvertDevModeToPrintTicket(HPTPROVIDER hProvider, uint32 cbDevmode, ref DEVMODEA pDevmode, EPrintTicketScope @scope, out IStream pPrintTicket);
-		
 	}
 }

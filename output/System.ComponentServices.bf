@@ -3346,6 +3346,5 @@ namespace Win32
 		public static extern HRESULT MTSCreateActivity(in Guid riid, void** ppobj);
 		[Import("mtxdm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDispenserManager(out IDispenserManager* param0);
-		
 	}
 }

@@ -4098,6 +4098,5 @@ namespace Win32
 		public static extern BOOL ProcessIdToSessionId(uint32 dwProcessId, out uint32 pSessionId);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WTSGetActiveConsoleSessionId();
-		
 	}
 }

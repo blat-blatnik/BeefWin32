@@ -156,6 +156,5 @@ namespace Win32
 		public static extern HRESULT GetInterfaceContextTableForHostName(PWSTR HostName, PWSTR ProxyName, uint32 Flags, uint8* ConnectionProfileFilterRawData, uint32 ConnectionProfileFilterRawDataSize, out NET_INTERFACE_CONTEXT_TABLE* InterfaceContextTable);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void FreeInterfaceContextTable(ref NET_INTERFACE_CONTEXT_TABLE InterfaceContextTable);
-		
 	}
 }

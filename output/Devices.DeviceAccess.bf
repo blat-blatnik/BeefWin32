@@ -115,6 +115,5 @@ namespace Win32
 		
 		[Import("deviceaccess.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDeviceAccessInstance(PWSTR deviceInterfacePath, uint32 desiredAccess, out ICreateDeviceAccessAsync* createAsync);
-		
 	}
 }

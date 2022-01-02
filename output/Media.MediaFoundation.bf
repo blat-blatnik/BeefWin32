@@ -16570,6 +16570,5 @@ namespace Win32
 		public static extern HRESULT OPMXboxGetHDCPStatus(out OPM_HDCP_STATUS pHDCPStatus);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OPMXboxGetHDCPStatusAndType(out OPM_HDCP_STATUS pHDCPStatus, out OPM_HDCP_TYPE pHDCPType);
-		
 	}
 }

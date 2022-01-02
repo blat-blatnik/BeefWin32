@@ -147,6 +147,5 @@ namespace Win32
 		public static extern HRESULT HcnEnumerateGuestNetworkPortReservations(out uint32 ReturnCount, out HCN_PORT_RANGE_ENTRY* PortEntries);
 		[Import("computenetwork.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HcnFreeGuestNetworkPortReservations(HCN_PORT_RANGE_ENTRY* PortEntries);
-		
 	}
 }

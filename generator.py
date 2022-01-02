@@ -608,8 +608,6 @@ for filename in filenames:
 
                 for function in functions:
                     name = replace_name(function['Name'])
-                    if name == 'CoCreateInstance':
-                        x = 123
                     import_name = function['DllImport'].lower()
                     if import_name in USE_LIB_INSTEAD_OF_DLL:
                         import_name += '.lib'
@@ -626,8 +624,6 @@ for filename in filenames:
                         if i < len(parameters) - 1:
                             output.write(f', ')
                     output.write(f');\n')
-                
-                output.write(f'{indent}\n')
             
             indent = indent[:-1]
             output.write(f'{indent}}}\n')

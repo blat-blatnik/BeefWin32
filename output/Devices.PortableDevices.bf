@@ -1416,6 +1416,5 @@ namespace Win32
 		
 		[Import("dmprocessxmlfiltered.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMProcessConfigXMLFiltered(PWSTR pszXmlIn, PWSTR* rgszAllowedCspNodes, uint32 dwNumAllowedCspNodes, out BSTR pbstrXmlOut);
-		
 	}
 }

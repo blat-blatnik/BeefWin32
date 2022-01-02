@@ -644,6 +644,5 @@ namespace Win32
 		public static extern HRESULT SwDeviceInterfaceSetState(HSWDEVICE hSwDevice, PWSTR pszDeviceInterfaceId, BOOL fEnabled);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SwDeviceInterfacePropertySet(HSWDEVICE hSwDevice, PWSTR pszDeviceInterfaceId, uint32 cPropertyCount, DEVPROPERTY* pProperties);
-		
 	}
 }

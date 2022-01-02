@@ -138,6 +138,5 @@ namespace Win32
 		public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, char16* pwszBuff, out uint32 pcchBuff);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
-		
 	}
 }

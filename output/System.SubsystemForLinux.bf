@@ -31,6 +31,5 @@ namespace Win32
 		public static extern HRESULT WslLaunchInteractive(PWSTR distributionName, PWSTR command, BOOL useCurrentWorkingDirectory, out uint32 exitCode);
 		[Import("api-ms-win-wsl-api-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WslLaunch(PWSTR distributionName, PWSTR command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut, HANDLE stdErr, out HANDLE process);
-		
 	}
 }

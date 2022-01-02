@@ -177,6 +177,5 @@ namespace Win32
 		public static extern BOOL CryptSIPGetCaps(ref SIP_SUBJECTINFO pSubjInfo, out SIP_CAP_SET_V3 pCaps);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSIPGetSealedDigest(ref SIP_SUBJECTINFO pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, out uint32 pcbDigest);
-		
 	}
 }

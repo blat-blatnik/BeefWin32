@@ -2648,6 +2648,5 @@ namespace Win32
 		public static extern int32 JetSetSessionParameter(JET_SESID sesid, uint32 sesparamid, void* pvParam, uint32 cbParam);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetSessionParameter(JET_SESID sesid, uint32 sesparamid, void* pvParam, uint32 cbParamMax, uint32* pcbParamActual);
-		
 	}
 }

@@ -58,6 +58,5 @@ namespace Win32
 		public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName(PSID psidAppContainerSid, PWSTR pszRestrictedAppContainerName, out PSID ppsidRestrictedAppContainerSid);
 		[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DeriveAppContainerSidFromAppContainerName(PWSTR pszAppContainerName, out PSID ppsidAppContainerSid);
-		
 	}
 }

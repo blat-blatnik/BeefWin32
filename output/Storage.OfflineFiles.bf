@@ -1046,6 +1046,5 @@ namespace Win32
 		public static extern uint32 OfflineFilesQueryStatus(BOOL* pbActive, BOOL* pbEnabled);
 		[Import("cscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OfflineFilesQueryStatusEx(BOOL* pbActive, BOOL* pbEnabled, BOOL* pbAvailable);
-		
 	}
 }

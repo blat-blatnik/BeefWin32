@@ -1314,6 +1314,5 @@ namespace Win32
 		public static extern uint32 HttpQueryServiceConfiguration(HANDLE ServiceHandle, HTTP_SERVICE_CONFIG_ID ConfigId, void* pInput, uint32 InputLength, void* pOutput, uint32 OutputLength, uint32* pReturnLength, out OVERLAPPED pOverlapped);
 		[Import("httpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 HttpGetExtension(HTTPAPI_VERSION Version, uint32 Extension, void* Buffer, uint32 BufferSize);
-		
 	}
 }

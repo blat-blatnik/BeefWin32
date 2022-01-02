@@ -1297,6 +1297,5 @@ namespace Win32
 		public static extern uint32 WdsBpAddOption(HANDLE hHandle, uint32 uOption, uint32 uValueLen, void* pValue);
 		[Import("wdsbp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WdsBpGetOptionBuffer(HANDLE hHandle, uint32 uBufferLen, void* pBuffer, out uint32 puBytes);
-		
 	}
 }

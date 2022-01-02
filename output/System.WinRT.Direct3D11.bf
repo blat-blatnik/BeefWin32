@@ -29,6 +29,5 @@ namespace Win32
 		public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(ref IDXGIDevice dxgiDevice, out IInspectable* graphicsDevice);
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(ref IDXGISurface dgxiSurface, out IInspectable* graphicsSurface);
-		
 	}
 }

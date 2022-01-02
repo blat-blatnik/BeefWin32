@@ -2275,6 +2275,5 @@ namespace Win32
 		public static extern HRESULT ScanMemoryForDosImages(void* vmSavedStateDumpHandle, uint32 vpId, uint64 startAddress, uint64 endAddress, void* callbackContext, FOUND_IMAGE_CALLBACK foundImageCallback, ref uint64 standaloneAddress, uint32 standaloneAddressCount);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CallStackUnwind(void* vmSavedStateDumpHandle, uint32 vpId, ref MODULE_INFO imageInfo, uint32 imageInfoCount, uint32 frameCount, out PWSTR callStack);
-		
 	}
 }

@@ -297,6 +297,5 @@ namespace Win32
 		public static extern HRESULT StopInteractionContext(HINTERACTIONCONTEXT interactionContext);
 		[Import("ninput.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetPivotInteractionContext(HINTERACTIONCONTEXT interactionContext, float x, float y, float radius);
-		
 	}
 }

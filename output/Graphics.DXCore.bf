@@ -182,6 +182,5 @@ namespace Win32
 		
 		[Import("dxcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DXCoreCreateAdapterFactory(in Guid riid, void** ppvFactory);
-		
 	}
 }

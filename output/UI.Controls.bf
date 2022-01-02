@@ -5941,6 +5941,5 @@ namespace Win32
 		public static extern uint32 GetListBoxInfo(HWND hwnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
-		
 	}
 }

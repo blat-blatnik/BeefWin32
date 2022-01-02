@@ -1427,6 +1427,5 @@ namespace Win32
 		public static extern uint32 PeerDistServerOpenContentInformationEx(int hPeerDist, uint32 cbContentIdentifier, ref uint8 pContentIdentifier, uint64 ullContentOffset, uint64 cbContentLength, ref PEERDIST_RETRIEVAL_OPTIONS pRetrievalOptions, HANDLE hCompletionPort, uint ulCompletionKey, out int phContentInfo);
 		[Import("peerdist.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PeerDistClientGetInformationByHandle(int hPeerDist, int hContentHandle, PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS PeerDistClientInfoClass, uint32 dwBufferSize, void* lpInformation);
-		
 	}
 }

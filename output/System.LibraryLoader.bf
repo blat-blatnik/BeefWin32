@@ -177,6 +177,5 @@ namespace Win32
 		public static extern uint32 GetDllDirectoryA(uint32 nBufferLength, uint8* lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetDllDirectoryW(uint32 nBufferLength, char16* lpBuffer);
-		
 	}
 }

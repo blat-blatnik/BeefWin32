@@ -5993,6 +5993,5 @@ namespace Win32
 		public static extern HRESULT UpdatePrintDeviceObject(HANDLE hPrinter, HANDLE hDeviceObject);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RemovePrintDeviceObject(HANDLE hDeviceObject);
-		
 	}
 }

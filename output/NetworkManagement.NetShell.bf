@@ -193,6 +193,5 @@ namespace Win32
 		public static extern uint32 RegisterContext(in NS_CONTEXT_ATTRIBUTES pChildContext);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RegisterHelper(in Guid pguidParentContext, in NS_HELPER_ATTRIBUTES pfnRegisterSubContext);
-		
 	}
 }

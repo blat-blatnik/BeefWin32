@@ -2393,6 +2393,5 @@ namespace Win32
 		public static extern HRESULT SetAttribIMsgOnIStg(void* lpObject, out SPropTagArray lpPropTags, out SPropAttrArray lpPropAttrs, out SPropProblemArray* lppPropProblems);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 MapStorageSCode(int32 StgSCode);
-		
 	}
 }

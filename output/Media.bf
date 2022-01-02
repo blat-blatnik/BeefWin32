@@ -259,6 +259,5 @@ namespace Win32
 		public static extern uint32 timeSetEvent(uint32 uDelay, uint32 uResolution, LPTIMECALLBACK fptc, uint dwUser, uint32 fuEvent);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 timeKillEvent(uint32 uTimerID);
-		
 	}
 }

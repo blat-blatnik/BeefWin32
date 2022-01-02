@@ -522,6 +522,5 @@ namespace Win32
 		public static extern uint32 GetAtomNameA(uint16 nAtom, uint8* lpBuffer, int32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetAtomNameW(uint16 nAtom, char16* lpBuffer, int32 nSize);
-		
 	}
 }

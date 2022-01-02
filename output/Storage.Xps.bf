@@ -2474,6 +2474,5 @@ namespace Win32
 		public static extern int32 SetAbortProc(HDC hdc, ABORTPROC proc);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, PRINT_WINDOW_FLAGS nFlags);
-		
 	}
 }

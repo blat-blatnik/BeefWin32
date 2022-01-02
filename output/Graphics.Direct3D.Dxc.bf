@@ -638,6 +638,5 @@ namespace Win32
 		public static extern HRESULT DxcCreateInstance(in Guid rclsid, in Guid riid, void** ppv);
 		[Import("dxcompiler.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DxcCreateInstance2(ref IMalloc pMalloc, in Guid rclsid, in Guid riid, void** ppv);
-		
 	}
 }

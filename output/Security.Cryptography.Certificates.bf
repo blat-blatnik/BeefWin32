@@ -6273,6 +6273,5 @@ namespace Win32
 		public static extern NTSTATUS PstMapCertificate(in CERT_CONTEXT pCert, out LSA_TOKEN_INFORMATION_TYPE pTokenInformationType, void** ppTokenInformation);
 		[Import("certpoleng.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS PstGetUserNameForCertificate(in CERT_CONTEXT pCertContext, out UNICODE_STRING UserName);
-		
 	}
 }

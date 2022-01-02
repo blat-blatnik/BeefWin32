@@ -3324,6 +3324,5 @@ namespace Win32
 		public static extern uint32 RtmDeleteRouteList(int RtmRegHandle, int RouteListHandle);
 		[Import("rtm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtmReferenceHandles(int RtmRegHandle, uint32 NumHandles, out HANDLE RtmHandles);
-		
 	}
 }

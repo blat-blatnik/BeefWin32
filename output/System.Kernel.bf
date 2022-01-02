@@ -302,6 +302,5 @@ namespace Win32
 		public static extern SLIST_ENTRY* RtlInterlockedFlushSList(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint16 RtlQueryDepthSList(ref SLIST_HEADER ListHead);
-		
 	}
 }

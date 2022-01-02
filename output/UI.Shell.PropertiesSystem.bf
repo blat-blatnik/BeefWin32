@@ -1330,6 +1330,5 @@ namespace Win32
 		public static extern HRESULT SHPropStgWriteMultiple(ref IPropertyStorage pps, uint32* puCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar, uint32 propidNameFirst);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SHGetPropertyStoreForWindow(HWND hwnd, in Guid riid, void** ppv);
-		
 	}
 }

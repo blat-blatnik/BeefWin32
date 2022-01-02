@@ -479,6 +479,5 @@ namespace Win32
 		public static extern uint32 SnmpDecodeMsg(int session, out int srcEntity, out int dstEntity, out int context, out int pdu, out smiOCTETS msgBufDesc);
 		[Import("wsnmp32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SnmpFreeDescriptor(uint32 syntax, out smiOCTETS descriptor);
-		
 	}
 }

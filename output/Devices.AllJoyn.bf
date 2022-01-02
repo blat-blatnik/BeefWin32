@@ -1861,6 +1861,5 @@ namespace Win32
 		public static extern void alljoyn_securityapplicationproxy_digest_destroy(out uint8 digest);
 		[Import("msajapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern QStatus alljoyn_securityapplicationproxy_setmanifestsignature(out int8 unsignedManifestXml, out int8 identityCertificatePem, in uint8 signature, uint signatureSize, out int8* signedManifestXml);
-		
 	}
 }

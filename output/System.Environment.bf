@@ -248,6 +248,5 @@ namespace Win32
 		public static extern HRESULT EnclaveUnsealData(void* ProtectedBlob, uint32 ProtectedBlobSize, void* DecryptedData, uint32 BufferSize, out uint32 DecryptedDataSize, ENCLAVE_IDENTITY* SealingIdentity, uint32* UnsealingFlags);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EnclaveGetEnclaveInformation(uint32 InformationSize, out ENCLAVE_INFORMATION EnclaveInformation);
-		
 	}
 }

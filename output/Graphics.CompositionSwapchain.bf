@@ -258,6 +258,5 @@ namespace Win32
 		
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreatePresentationFactory(ref IUnknown d3dDevice, in Guid riid, void** presentationFactory);
-		
 	}
 }

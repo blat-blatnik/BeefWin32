@@ -817,6 +817,5 @@ namespace Win32
 		public static extern HRESULT CfReportProviderProgress(CF_CONNECTION_KEY ConnectionKey, LARGE_INTEGER TransferKey, LARGE_INTEGER ProviderProgressTotal, LARGE_INTEGER ProviderProgressCompleted);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfReportProviderProgress2(CF_CONNECTION_KEY ConnectionKey, LARGE_INTEGER TransferKey, LARGE_INTEGER RequestKey, LARGE_INTEGER ProviderProgressTotal, LARGE_INTEGER ProviderProgressCompleted, uint32 TargetSessionId);
-		
 	}
 }

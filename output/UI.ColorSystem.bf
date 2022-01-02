@@ -868,6 +868,5 @@ namespace Win32
 		public static extern HRESULT ColorProfileGetDisplayDefault(WCS_PROFILE_MANAGEMENT_SCOPE @scope, LUID targetAdapterID, uint32 sourceID, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, out PWSTR profileName);
 		[Import("mscms.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ColorProfileGetDisplayUserScope(LUID targetAdapterID, uint32 sourceID, out WCS_PROFILE_MANAGEMENT_SCOPE @scope);
-		
 	}
 }

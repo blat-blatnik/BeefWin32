@@ -167,6 +167,5 @@ namespace Win32
 		
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MAPIFreeBuffer(void* pv);
-		
 	}
 }

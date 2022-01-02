@@ -3944,6 +3944,5 @@ namespace Win32
 		public static extern int32 WSCWriteNameSpaceOrder(out Guid lpProviderId, uint32 dwNumberOfEntries);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSCWriteNameSpaceOrder32(out Guid lpProviderId, uint32 dwNumberOfEntries);
-		
 	}
 }

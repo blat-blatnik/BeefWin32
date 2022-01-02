@@ -4335,6 +4335,5 @@ namespace Win32
 		public static extern BOOLEAN HidD_GetSerialNumberString(HANDLE HidDeviceObject, void* Buffer, uint32 BufferLength);
 		[Import("hid.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN HidD_GetMsGenreDescriptor(HANDLE HidDeviceObject, void* Buffer, uint32 BufferLength);
-		
 	}
 }

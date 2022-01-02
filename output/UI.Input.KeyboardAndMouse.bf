@@ -827,6 +827,5 @@ namespace Win32
 		public static extern HWND SetActiveWindow(HWND hWnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BlockInput(BOOL fBlockIt);
-		
 	}
 }

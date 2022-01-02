@@ -17,6 +17,5 @@ namespace Win32
 		public static extern BOOL RegisterWaitUntilOOBECompleted(OOBE_COMPLETED_CALLBACK OOBECompletedCallback, void* CallbackContext, void** WaitHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnregisterWaitUntilOOBECompleted(void* WaitHandle);
-		
 	}
 }

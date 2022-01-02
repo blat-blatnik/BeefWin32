@@ -27,6 +27,5 @@ namespace Win32
 		public static extern HRESULT UalInstrument(ref UAL_DATA_BLOB Data);
 		[Import("ualapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UalRegisterProduct(PWSTR wszProductName, PWSTR wszRoleName, PWSTR wszGuid);
-		
 	}
 }

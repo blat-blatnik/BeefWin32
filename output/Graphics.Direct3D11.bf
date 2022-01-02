@@ -6798,6 +6798,5 @@ namespace Win32
 		public static extern HRESULT D3DX11CreateFFT3DReal(ref ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, out D3DX11_FFT_BUFFER_INFO pBufferInfo, out ID3DX11FFT* ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3DX11CreateFFT3DComplex(ref ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, out D3DX11_FFT_BUFFER_INFO pBufferInfo, out ID3DX11FFT* ppFFT);
-		
 	}
 }

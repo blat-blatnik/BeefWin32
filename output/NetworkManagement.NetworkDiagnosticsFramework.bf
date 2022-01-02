@@ -384,6 +384,5 @@ namespace Win32
 		public static extern HRESULT NdfCancelIncident(void* Handle);
 		[Import("ndfapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT NdfGetTraceFile(void* Handle, out PWSTR TraceFileLocation);
-		
 	}
 }

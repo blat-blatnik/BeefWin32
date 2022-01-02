@@ -814,6 +814,5 @@ namespace Win32
 		public static extern BOOL VerifyVersionInfoA(out OSVERSIONINFOEXA lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL VerifyVersionInfoW(out OSVERSIONINFOEXW lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
-		
 	}
 }

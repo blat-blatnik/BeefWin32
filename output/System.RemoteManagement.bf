@@ -1313,6 +1313,5 @@ namespace Win32
 		public static extern uint32 WSManPluginAuthzOperationComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, void* userAuthorizationContext, uint32 errorCode, PWSTR extendedErrorInformation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManPluginAuthzQueryQuotaComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, WSMAN_AUTHZ_QUOTA* quota, uint32 errorCode, PWSTR extendedErrorInformation);
-		
 	}
 }

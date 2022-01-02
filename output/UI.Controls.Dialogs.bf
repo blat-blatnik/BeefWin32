@@ -750,6 +750,5 @@ namespace Win32
 		public static extern BOOL PageSetupDlgA(out PAGESETUPDLGA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PageSetupDlgW(out PAGESETUPDLGW param0);
-		
 	}
 }

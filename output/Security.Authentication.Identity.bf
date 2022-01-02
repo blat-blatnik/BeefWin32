@@ -5580,6 +5580,5 @@ namespace Win32
 		public static extern HRESULT SLGetGenuineInformation(in Guid pQueryId, PWSTR pwszValueName, SLDATATYPE* peDataType, out uint32 pcbValue, out uint8* ppbValue);
 		[Import("api-ms-win-core-slapi-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SLQueryLicenseValueFromApp(PWSTR valueName, uint32* valueType, void* dataBuffer, uint32 dataSize, out uint32 resultDataSize);
-		
 	}
 }

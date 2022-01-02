@@ -1521,6 +1521,5 @@ namespace Win32
 		public static extern int32 DnsStartMulticastQuery(ref MDNS_QUERY_REQUEST pQueryRequest, out MDNS_QUERY_HANDLE pHandle);
 		[Import("dnsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DnsStopMulticastQuery(out MDNS_QUERY_HANDLE pHandle);
-		
 	}
 }

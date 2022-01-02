@@ -976,6 +976,5 @@ namespace Win32
 		public static extern uint32 WinHttpWebSocketClose(void* hWebSocket, uint16 usStatus, void* pvReason, uint32 dwReasonLength);
 		[Import("winhttp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WinHttpWebSocketQueryCloseStatus(void* hWebSocket, out uint16 pusStatus, void* pvReason, uint32 dwReasonLength, out uint32 pdwReasonLengthConsumed);
-		
 	}
 }

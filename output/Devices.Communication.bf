@@ -369,6 +369,5 @@ namespace Win32
 		public static extern BOOL SetDefaultCommConfigA(PSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDefaultCommConfigW(PWSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
-		
 	}
 }

@@ -3447,6 +3447,5 @@ namespace Win32
 		public static extern BOOL DiRollbackDriver(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, HWND hwndParent, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiShowUpdateDriver(HWND hwndParent, PWSTR FilePath, uint32 Flags, BOOL* NeedReboot);
-		
 	}
 }

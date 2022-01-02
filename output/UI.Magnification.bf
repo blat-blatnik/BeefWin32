@@ -80,6 +80,5 @@ namespace Win32
 		public static extern BOOL MagGetInputTransform(out BOOL pfEnabled, out RECT pRectSource, out RECT pRectDest);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagShowSystemCursor(BOOL fShowCursor);
-		
 	}
 }

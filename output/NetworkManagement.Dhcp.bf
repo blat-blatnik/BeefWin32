@@ -2226,6 +2226,5 @@ namespace Win32
 		public static extern uint32 DhcpV4SetPolicyEx(PWSTR ServerIpAddress, uint32 FieldsModified, BOOL GlobalPolicy, uint32 SubnetAddress, PWSTR PolicyName, ref DHCP_POLICY_EX Policy);
 		[Import("dhcpsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DhcpV4EnumPoliciesEx(PWSTR ServerIpAddress, out uint32 ResumeHandle, uint32 PreferredMaximum, BOOL GlobalPolicy, uint32 SubnetAddress, out DHCP_POLICY_EX_ARRAY* EnumInfo, out uint32 ElementsRead, out uint32 ElementsTotal);
-		
 	}
 }

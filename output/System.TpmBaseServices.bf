@@ -123,6 +123,5 @@ namespace Win32
 		public static extern uint32 Tbsi_Create_Windows_Key(uint32 keyHandle);
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 Tbsi_Get_TCG_Log_Ex(uint32 logType, uint8* pbOutput, out uint32 pcbOutput);
-		
 	}
 }

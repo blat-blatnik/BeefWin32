@@ -1963,6 +1963,5 @@ namespace Win32
 		public static extern PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__* GetCurrentPackageVirtualizationContext();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetProcessesInVirtualizationContext(PWSTR packageFamilyName, out uint32 count, out HANDLE* processes);
-		
 	}
 }

@@ -1539,6 +1539,5 @@ namespace Win32
 		public static extern uint32 NetworkIsolationSetAppContainerConfig(uint32 dwNumPublicAppCs, SID_AND_ATTRIBUTES* appContainerSids);
 		[Import("api-ms-win-net-isolation-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetworkIsolationDiagnoseConnectFailureAndGetInfo(PWSTR wszServerName, out NETISO_ERROR_TYPE netIsoError);
-		
 	}
 }

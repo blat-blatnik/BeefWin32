@@ -9,6 +9,5 @@ namespace Win32
 		
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CeipIsOptedIn();
-		
 	}
 }

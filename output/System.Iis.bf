@@ -1809,6 +1809,5 @@ namespace Win32
 		public static extern uint32 HttpFilterProc(out HTTP_FILTER_CONTEXT pfc, uint32 NotificationType, void* pvNotification);
 		[Import("rpcproxy.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetFilterVersion(out HTTP_FILTER_VERSION pVer);
-		
 	}
 }

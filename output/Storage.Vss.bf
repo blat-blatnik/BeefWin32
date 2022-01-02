@@ -1194,6 +1194,5 @@ namespace Win32
 		
 		[Import("vssapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateVssExpressWriterInternal(out IVssExpressWriter* ppWriter);
-		
 	}
 }

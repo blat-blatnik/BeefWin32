@@ -185,6 +185,5 @@ namespace Win32
 		public static extern BOOL CryptCATAdminResolveCatalogPath(int hCatAdmin, PWSTR pwszCatalogFile, out CATALOG_INFO psCatInfo, uint32 dwFlags);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptCATAdminPauseServiceForBackup(uint32 dwFlags, BOOL fResume);
-		
 	}
 }

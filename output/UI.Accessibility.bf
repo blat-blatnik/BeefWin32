@@ -5240,6 +5240,5 @@ namespace Win32
 		public static extern BOOL IsWinEventHookInstalled(uint32 event);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnhookWinEvent(HWINEVENTHOOK hWinEventHook);
-		
 	}
 }

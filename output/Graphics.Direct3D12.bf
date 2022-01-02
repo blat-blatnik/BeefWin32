@@ -6372,6 +6372,5 @@ namespace Win32
 		public static extern HRESULT D3D12EnableExperimentalFeatures(uint32 NumFeatures, Guid* pIIDs, void* pConfigurationStructs, uint32* pConfigurationStructSizes);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12GetInterface(in Guid rclsid, in Guid riid, void** ppvDebug);
-		
 	}
 }

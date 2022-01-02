@@ -4014,6 +4014,5 @@ namespace Win32
 		public static extern HRESULT GetAllRecognizers(out Guid* recognizerClsids, out uint32 count);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT LoadCachedAttributes(Guid clsid, out RECO_ATTRS pRecoAttributes);
-		
 	}
 }

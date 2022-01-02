@@ -219,6 +219,5 @@ namespace Win32
 		public static extern BOOL FDIDestroy(void* hfdi);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FDITruncateCabinet(void* hfdi, PSTR pszCabinetName, uint16 iFolderToDelete);
-		
 	}
 }
