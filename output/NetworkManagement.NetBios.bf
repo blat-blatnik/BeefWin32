@@ -93,8 +93,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NCB
-		{
+		public struct NCB		{
 			public uint8 ncb_command;
 			public uint8 ncb_retcode;
 			public uint8 ncb_lsn;
@@ -112,8 +111,7 @@ namespace Win32
 			public HANDLE ncb_event;
 		}
 		[CRepr]
-		public struct ADAPTER_STATUS
-		{
+		public struct ADAPTER_STATUS		{
 			public uint8[6] adapter_address;
 			public uint8 rev_major;
 			public uint8 reserved0;
@@ -143,23 +141,20 @@ namespace Win32
 			public uint16 name_count;
 		}
 		[CRepr]
-		public struct NAME_BUFFER
-		{
+		public struct NAME_BUFFER		{
 			public uint8[16] name;
 			public uint8 name_num;
 			public uint8 name_flags;
 		}
 		[CRepr]
-		public struct SESSION_HEADER
-		{
+		public struct SESSION_HEADER		{
 			public uint8 sess_name;
 			public uint8 num_sess;
 			public uint8 rcv_dg_outstanding;
 			public uint8 rcv_any_outstanding;
 		}
 		[CRepr]
-		public struct SESSION_BUFFER
-		{
+		public struct SESSION_BUFFER		{
 			public uint8 lsn;
 			public uint8 state;
 			public uint8[16] local_name;
@@ -168,21 +163,18 @@ namespace Win32
 			public uint8 sends_outstanding;
 		}
 		[CRepr]
-		public struct LANA_ENUM
-		{
+		public struct LANA_ENUM		{
 			public uint8 length;
 			public uint8[255] lana;
 		}
 		[CRepr]
-		public struct FIND_NAME_HEADER
-		{
+		public struct FIND_NAME_HEADER		{
 			public uint16 node_count;
 			public uint8 reserved;
 			public uint8 unique_group;
 		}
 		[CRepr]
-		public struct FIND_NAME_BUFFER
-		{
+		public struct FIND_NAME_BUFFER		{
 			public uint8 length;
 			public uint8 access_control;
 			public uint8 frame_control;
@@ -191,8 +183,7 @@ namespace Win32
 			public uint8[18] routing_info;
 		}
 		[CRepr]
-		public struct ACTION_HEADER
-		{
+		public struct ACTION_HEADER		{
 			public uint32 transport_id;
 			public uint16 action_code;
 			public uint16 reserved;

@@ -63,16 +63,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DXCoreHardwareID
-		{
+		public struct DXCoreHardwareID		{
 			public uint32 vendorID;
 			public uint32 deviceID;
 			public uint32 subSysID;
 			public uint32 revision;
 		}
 		[CRepr]
-		public struct DXCoreHardwareIDParts
-		{
+		public struct DXCoreHardwareIDParts		{
 			public uint32 vendorID;
 			public uint32 deviceID;
 			public uint32 subSystemID;
@@ -80,14 +78,12 @@ namespace Win32
 			public uint32 revisionID;
 		}
 		[CRepr]
-		public struct DXCoreAdapterMemoryBudgetNodeSegmentGroup
-		{
+		public struct DXCoreAdapterMemoryBudgetNodeSegmentGroup		{
 			public uint32 nodeIndex;
 			public DXCoreSegmentGroup segmentGroup;
 		}
 		[CRepr]
-		public struct DXCoreAdapterMemoryBudget
-		{
+		public struct DXCoreAdapterMemoryBudget		{
 			public uint64 budget;
 			public uint64 currentUsage;
 			public uint64 availableForReservation;

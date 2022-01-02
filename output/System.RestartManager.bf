@@ -72,14 +72,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RM_UNIQUE_PROCESS
-		{
+		public struct RM_UNIQUE_PROCESS		{
 			public uint32 dwProcessId;
 			public FILETIME ProcessStartTime;
 		}
 		[CRepr]
-		public struct RM_PROCESS_INFO
-		{
+		public struct RM_PROCESS_INFO		{
 			public RM_UNIQUE_PROCESS Process;
 			public char16[256] strAppName;
 			public char16[64] strServiceShortName;
@@ -89,16 +87,14 @@ namespace Win32
 			public BOOL bRestartable;
 		}
 		[CRepr]
-		public struct RM_FILTER_INFO
-		{
+		public struct RM_FILTER_INFO		{
 			public RM_FILTER_ACTION FilterAction;
 			public RM_FILTER_TRIGGER FilterTrigger;
 			public uint32 cbNextOffset;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR strFilename;
 				public RM_UNIQUE_PROCESS Process;
 				public PWSTR strServiceShortName;

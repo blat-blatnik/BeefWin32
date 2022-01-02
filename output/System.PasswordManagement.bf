@@ -8,23 +8,19 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CYPHER_BLOCK
-		{
+		public struct CYPHER_BLOCK		{
 			public CHAR[8] data;
 		}
 		[CRepr]
-		public struct LM_OWF_PASSWORD
-		{
+		public struct LM_OWF_PASSWORD		{
 			public CYPHER_BLOCK[2] data;
 		}
 		[CRepr]
-		public struct SAMPR_ENCRYPTED_USER_PASSWORD
-		{
+		public struct SAMPR_ENCRYPTED_USER_PASSWORD		{
 			public uint8[516] Buffer;
 		}
 		[CRepr]
-		public struct ENCRYPTED_LM_OWF_PASSWORD
-		{
+		public struct ENCRYPTED_LM_OWF_PASSWORD		{
 			public CYPHER_BLOCK[2] data;
 		}
 		

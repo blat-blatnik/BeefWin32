@@ -588,8 +588,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TRANSPORT_SETTING
-		{
+		public struct TRANSPORT_SETTING		{
 			public TRANSPORT_SETTING_ID SettingId;
 			public uint32* Length;
 			public uint8* Value;
@@ -2098,11 +2097,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct ITransportSettingsInternal : IUnknown

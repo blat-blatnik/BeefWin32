@@ -705,23 +705,18 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct _MSGSESS
-		{
-		}
+		public struct _MSGSESS {}
 		[CRepr]
-		public struct SPropAttrArray
-		{
+		public struct SPropAttrArray		{
 			public uint32 cValues;
 			public uint32[0] aPropAttr;
 		}
 		[CRepr]
-		public struct IMMP_MPV_STORE_DRIVER_HANDLE
-		{
+		public struct IMMP_MPV_STORE_DRIVER_HANDLE		{
 			public Guid guidSignature;
 		}
 		[CRepr]
-		public struct tagIMMPID_GUIDLIST_ITEM
-		{
+		public struct tagIMMPID_GUIDLIST_ITEM		{
 			public Guid* pguid;
 			public uint32 dwStart;
 			public uint32 dwLast;

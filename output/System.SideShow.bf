@@ -59,29 +59,25 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SCF_EVENT_HEADER
-		{
+		public struct SCF_EVENT_HEADER		{
 			public uint32 PreviousPage;
 			public uint32 TargetPage;
 		}
 		[CRepr]
-		public struct SCF_NAVIGATION_EVENT
-		{
+		public struct SCF_NAVIGATION_EVENT		{
 			public uint32 PreviousPage;
 			public uint32 TargetPage;
 			public uint32 Button;
 		}
 		[CRepr]
-		public struct SCF_MENUACTION_EVENT
-		{
+		public struct SCF_MENUACTION_EVENT		{
 			public uint32 PreviousPage;
 			public uint32 TargetPage;
 			public uint32 Button;
 			public uint32 ItemId;
 		}
 		[CRepr]
-		public struct SCF_CONTEXTMENU_EVENT
-		{
+		public struct SCF_CONTEXTMENU_EVENT		{
 			public uint32 PreviousPage;
 			public uint32 TargetPage;
 			public uint32 PreviousItemId;
@@ -89,16 +85,14 @@ namespace Win32
 			public uint32 MenuItemId;
 		}
 		[CRepr]
-		public struct CONTENT_MISSING_EVENT_DATA
-		{
+		public struct CONTENT_MISSING_EVENT_DATA		{
 			public uint32 cbContentMissingEventData;
 			public Guid ApplicationId;
 			public Guid EndpointId;
 			public uint32 ContentId;
 		}
 		[CRepr]
-		public struct APPLICATION_EVENT_DATA
-		{
+		public struct APPLICATION_EVENT_DATA		{
 			public uint32 cbApplicationEventData;
 			public Guid ApplicationId;
 			public Guid EndpointId;
@@ -107,20 +101,17 @@ namespace Win32
 			public uint8[0] bEventData;
 		}
 		[CRepr]
-		public struct DEVICE_USER_CHANGE_EVENT_DATA
-		{
+		public struct DEVICE_USER_CHANGE_EVENT_DATA		{
 			public uint32 cbDeviceUserChangeEventData;
 			public char16 wszUser;
 		}
 		[CRepr]
-		public struct NEW_EVENT_DATA_AVAILABLE
-		{
+		public struct NEW_EVENT_DATA_AVAILABLE		{
 			public uint32 cbNewEventDataAvailable;
 			public uint32 dwVersion;
 		}
 		[CRepr]
-		public struct EVENT_DATA_HEADER
-		{
+		public struct EVENT_DATA_HEADER		{
 			public uint32 cbEventDataHeader;
 			public Guid guidEventType;
 			public uint32 dwVersion;

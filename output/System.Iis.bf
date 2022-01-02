@@ -953,14 +953,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CONFIGURATION_ENTRY
-		{
+		public struct CONFIGURATION_ENTRY		{
 			public BSTR bstrKey;
 			public BSTR bstrValue;
 		}
 		[CRepr]
-		public struct LOGGING_PARAMETERS
-		{
+		public struct LOGGING_PARAMETERS		{
 			public PWSTR pszSessionId;
 			public PWSTR pszSiteName;
 			public PWSTR pszUserName;
@@ -981,8 +979,7 @@ namespace Win32
 			public PWSTR pszInformation;
 		}
 		[CRepr]
-		public struct PRE_PROCESS_PARAMETERS
-		{
+		public struct PRE_PROCESS_PARAMETERS		{
 			public PWSTR pszSessionId;
 			public PWSTR pszSiteName;
 			public PWSTR pszUserName;
@@ -998,8 +995,7 @@ namespace Win32
 			public uint64 BytesReceivedPerSession;
 		}
 		[CRepr]
-		public struct POST_PROCESS_PARAMETERS
-		{
+		public struct POST_PROCESS_PARAMETERS		{
 			public PWSTR pszSessionId;
 			public PWSTR pszSiteName;
 			public PWSTR pszUserName;
@@ -1022,8 +1018,7 @@ namespace Win32
 			public uint64 BytesReceivedPerSession;
 		}
 		[CRepr]
-		public struct METADATA_RECORD
-		{
+		public struct METADATA_RECORD		{
 			public uint32 dwMDIdentifier;
 			public uint32 dwMDAttributes;
 			public uint32 dwMDUserType;
@@ -1033,8 +1028,7 @@ namespace Win32
 			public uint32 dwMDDataTag;
 		}
 		[CRepr]
-		public struct METADATA_GETALL_RECORD
-		{
+		public struct METADATA_GETALL_RECORD		{
 			public uint32 dwMDIdentifier;
 			public uint32 dwMDAttributes;
 			public uint32 dwMDUserType;
@@ -1044,8 +1038,7 @@ namespace Win32
 			public uint32 dwMDDataTag;
 		}
 		[CRepr]
-		public struct METADATA_GETALL_INTERNAL_RECORD
-		{
+		public struct METADATA_GETALL_INTERNAL_RECORD		{
 			public uint32 dwMDIdentifier;
 			public uint32 dwMDAttributes;
 			public uint32 dwMDUserType;
@@ -1055,39 +1048,32 @@ namespace Win32
 			public uint32 dwMDDataTag;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint dwMDDataOffset;
 				public uint8* pbMDData;
 			}
 		}
 		[CRepr]
-		public struct METADATA_HANDLE_INFO
-		{
+		public struct METADATA_HANDLE_INFO		{
 			public uint32 dwMDPermissions;
 			public uint32 dwMDSystemChangeNumber;
 		}
 		[CRepr]
-		public struct MD_CHANGE_OBJECT_W
-		{
+		public struct MD_CHANGE_OBJECT_W		{
 			public PWSTR pszMDPath;
 			public uint32 dwMDChangeType;
 			public uint32 dwMDNumDataIDs;
 			public uint32* pdwMDDataIDs;
 		}
 		[CRepr]
-		public struct _IIS_CRYPTO_BLOB
-		{
-		}
+		public struct _IIS_CRYPTO_BLOB {}
 		[CRepr]
-		public struct HSE_VERSION_INFO
-		{
+		public struct HSE_VERSION_INFO		{
 			public uint32 dwExtensionVersion;
 			public CHAR[256] lpszExtensionDesc;
 		}
 		[CRepr]
-		public struct EXTENSION_CONTROL_BLOCK
-		{
+		public struct EXTENSION_CONTROL_BLOCK		{
 			public uint32 cbSize;
 			public uint32 dwVersion;
 			public void* ConnID;
@@ -1107,8 +1093,7 @@ namespace Win32
 			public int ServerSupportFunction;
 		}
 		[CRepr]
-		public struct HSE_URL_MAPEX_INFO
-		{
+		public struct HSE_URL_MAPEX_INFO		{
 			public CHAR[260] lpszPath;
 			public uint32 dwFlags;
 			public uint32 cchMatchingPath;
@@ -1117,16 +1102,14 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct HSE_UNICODE_URL_MAPEX_INFO
-		{
+		public struct HSE_UNICODE_URL_MAPEX_INFO		{
 			public char16[260] lpszPath;
 			public uint32 dwFlags;
 			public uint32 cchMatchingPath;
 			public uint32 cchMatchingURL;
 		}
 		[CRepr]
-		public struct HSE_TF_INFO
-		{
+		public struct HSE_TF_INFO		{
 			public PFN_HSE_IO_COMPLETION pfnHseIO;
 			public void* pContext;
 			public HANDLE hFile;
@@ -1140,8 +1123,7 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct HSE_SEND_HEADER_EX_INFO
-		{
+		public struct HSE_SEND_HEADER_EX_INFO		{
 			public PSTR pszStatus;
 			public PSTR pszHeader;
 			public uint32 cchStatus;
@@ -1149,28 +1131,24 @@ namespace Win32
 			public BOOL fKeepConn;
 		}
 		[CRepr]
-		public struct HSE_EXEC_URL_USER_INFO
-		{
+		public struct HSE_EXEC_URL_USER_INFO		{
 			public HANDLE hImpersonationToken;
 			public PSTR pszCustomUserName;
 			public PSTR pszCustomAuthType;
 		}
 		[CRepr]
-		public struct HSE_EXEC_URL_ENTITY_INFO
-		{
+		public struct HSE_EXEC_URL_ENTITY_INFO		{
 			public uint32 cbAvailable;
 			public void* lpbData;
 		}
 		[CRepr]
-		public struct HSE_EXEC_URL_STATUS
-		{
+		public struct HSE_EXEC_URL_STATUS		{
 			public uint16 uHttpStatusCode;
 			public uint16 uHttpSubStatus;
 			public uint32 dwWin32Error;
 		}
 		[CRepr]
-		public struct HSE_EXEC_URL_INFO
-		{
+		public struct HSE_EXEC_URL_INFO		{
 			public PSTR pszUrl;
 			public PSTR pszMethod;
 			public PSTR pszChildHeaders;
@@ -1179,15 +1157,13 @@ namespace Win32
 			public uint32 dwExecUrlFlags;
 		}
 		[CRepr]
-		public struct HSE_EXEC_UNICODE_URL_USER_INFO
-		{
+		public struct HSE_EXEC_UNICODE_URL_USER_INFO		{
 			public HANDLE hImpersonationToken;
 			public PWSTR pszCustomUserName;
 			public PSTR pszCustomAuthType;
 		}
 		[CRepr]
-		public struct HSE_EXEC_UNICODE_URL_INFO
-		{
+		public struct HSE_EXEC_UNICODE_URL_INFO		{
 			public PWSTR pszUrl;
 			public PSTR pszMethod;
 			public PSTR pszChildHeaders;
@@ -1196,23 +1172,20 @@ namespace Win32
 			public uint32 dwExecUrlFlags;
 		}
 		[CRepr]
-		public struct HSE_CUSTOM_ERROR_INFO
-		{
+		public struct HSE_CUSTOM_ERROR_INFO		{
 			public PSTR pszStatus;
 			public uint16 uHttpSubError;
 			public BOOL fAsync;
 		}
 		[CRepr]
-		public struct HSE_VECTOR_ELEMENT
-		{
+		public struct HSE_VECTOR_ELEMENT		{
 			public uint32 ElementType;
 			public void* pvContext;
 			public uint64 cbOffset;
 			public uint64 cbSize;
 		}
 		[CRepr]
-		public struct HSE_RESPONSE_VECTOR
-		{
+		public struct HSE_RESPONSE_VECTOR		{
 			public uint32 dwFlags;
 			public PSTR pszStatus;
 			public PSTR pszHeaders;
@@ -1220,23 +1193,20 @@ namespace Win32
 			public HSE_VECTOR_ELEMENT* lpElementArray;
 		}
 		[CRepr]
-		public struct CERT_CONTEXT_EX
-		{
+		public struct CERT_CONTEXT_EX		{
 			public CERT_CONTEXT CertContext;
 			public uint32 cbAllocated;
 			public uint32 dwCertificateFlags;
 		}
 		[CRepr]
-		public struct HSE_TRACE_INFO
-		{
+		public struct HSE_TRACE_INFO		{
 			public BOOL fTraceRequest;
 			public uint8[16] TraceContextId;
 			public uint32 dwReserved1;
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_CONTEXT
-		{
+		public struct HTTP_FILTER_CONTEXT		{
 			public uint32 cbSize;
 			public uint32 Revision;
 			public void* ServerContext;
@@ -1250,16 +1220,14 @@ namespace Win32
 			public int ServerSupportFunction;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_RAW_DATA
-		{
+		public struct HTTP_FILTER_RAW_DATA		{
 			public void* pvInData;
 			public uint32 cbInData;
 			public uint32 cbInBuffer;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_PREPROC_HEADERS
-		{
+		public struct HTTP_FILTER_PREPROC_HEADERS		{
 			public int GetHeader;
 			public int SetHeader;
 			public int AddHeader;
@@ -1267,23 +1235,20 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_AUTHENT
-		{
+		public struct HTTP_FILTER_AUTHENT		{
 			public PSTR pszUser;
 			public uint32 cbUserBuff;
 			public PSTR pszPassword;
 			public uint32 cbPasswordBuff;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_URL_MAP
-		{
+		public struct HTTP_FILTER_URL_MAP		{
 			public PSTR pszURL;
 			public PSTR pszPhysicalPath;
 			public uint32 cbPathBuff;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_URL_MAP_EX
-		{
+		public struct HTTP_FILTER_URL_MAP_EX		{
 			public PSTR pszURL;
 			public PSTR pszPhysicalPath;
 			public uint32 cbPathBuff;
@@ -1293,15 +1258,13 @@ namespace Win32
 			public PSTR pszScriptMapEntry;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_ACCESS_DENIED
-		{
+		public struct HTTP_FILTER_ACCESS_DENIED		{
 			public PSTR pszURL;
 			public PSTR pszPhysicalPath;
 			public uint32 dwReason;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_LOG
-		{
+		public struct HTTP_FILTER_LOG		{
 			public PSTR pszClientHostName;
 			public PSTR pszClientUserName;
 			public PSTR pszServerName;
@@ -1315,8 +1278,7 @@ namespace Win32
 			public uint32 msTimeForProcessing;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_AUTH_COMPLETE_INFO
-		{
+		public struct HTTP_FILTER_AUTH_COMPLETE_INFO		{
 			public int GetHeader;
 			public int SetHeader;
 			public int AddHeader;
@@ -1326,16 +1288,14 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct HTTP_FILTER_VERSION
-		{
+		public struct HTTP_FILTER_VERSION		{
 			public uint32 dwServerFilterVersion;
 			public uint32 dwFilterVersion;
 			public CHAR[257] lpszFilterDesc;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct HTTP_TRACE_EVENT
-		{
+		public struct HTTP_TRACE_EVENT		{
 			public Guid* pProviderGuid;
 			public uint32 dwArea;
 			public Guid* pAreaGuid;
@@ -1351,8 +1311,7 @@ namespace Win32
 			public HTTP_TRACE_EVENT_ITEM* pEventItems;
 		}
 		[CRepr]
-		public struct HTTP_TRACE_EVENT_ITEM
-		{
+		public struct HTTP_TRACE_EVENT_ITEM		{
 			public PWSTR pszName;
 			public HTTP_TRACE_TYPE dwDataType;
 			public uint8* pbData;
@@ -1360,8 +1319,7 @@ namespace Win32
 			public PWSTR pszDataDescription;
 		}
 		[CRepr]
-		public struct HTTP_TRACE_CONFIGURATION
-		{
+		public struct HTTP_TRACE_CONFIGURATION		{
 			public Guid* pProviderGuid;
 			public uint32 dwAreas;
 			public uint32 dwVerbosity;

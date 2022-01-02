@@ -59,8 +59,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CRYPTCATSTORE
-		{
+		public struct CRYPTCATSTORE		{
 			public uint32 cbStruct;
 			public uint32 dwPublicVersion;
 			public PWSTR pwszP7File;
@@ -73,8 +72,7 @@ namespace Win32
 			public HANDLE hSorted;
 		}
 		[CRepr]
-		public struct CRYPTCATMEMBER
-		{
+		public struct CRYPTCATMEMBER		{
 			public uint32 cbStruct;
 			public PWSTR pwszReferenceTag;
 			public PWSTR pwszFileName;
@@ -88,8 +86,7 @@ namespace Win32
 			public CRYPTOAPI_BLOB sEncodedMemberInfo;
 		}
 		[CRepr]
-		public struct CRYPTCATATTRIBUTE
-		{
+		public struct CRYPTCATATTRIBUTE		{
 			public uint32 cbStruct;
 			public PWSTR pwszReferenceTag;
 			public uint32 dwAttrTypeAndAction;
@@ -98,8 +95,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct CRYPTCATCDF
-		{
+		public struct CRYPTCATCDF		{
 			public uint32 cbStruct;
 			public HANDLE hFile;
 			public uint32 dwCurFilePos;
@@ -109,8 +105,7 @@ namespace Win32
 			public HANDLE hCATStore;
 		}
 		[CRepr]
-		public struct CATALOG_INFO
-		{
+		public struct CATALOG_INFO		{
 			public uint32 cbStruct;
 			public char16[260] wszCatalogFile;
 		}

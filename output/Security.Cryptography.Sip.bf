@@ -42,8 +42,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SIP_SUBJECTINFO
-		{
+		public struct SIP_SUBJECTINFO		{
 			public uint32 cbSize;
 			public Guid* pgSubjectType;
 			public HANDLE hFile;
@@ -64,29 +63,25 @@ namespace Win32
 			public void* pClientData;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public MS_ADDINFO_FLAT* psFlat;
 				public MS_ADDINFO_CATALOGMEMBER* psCatMember;
 				public MS_ADDINFO_BLOB* psBlob;
 			}
 		}
 		[CRepr]
-		public struct MS_ADDINFO_FLAT
-		{
+		public struct MS_ADDINFO_FLAT		{
 			public uint32 cbStruct;
 			public SIP_INDIRECT_DATA* pIndirectData;
 		}
 		[CRepr]
-		public struct MS_ADDINFO_CATALOGMEMBER
-		{
+		public struct MS_ADDINFO_CATALOGMEMBER		{
 			public uint32 cbStruct;
 			public CRYPTCATSTORE* pStore;
 			public CRYPTCATMEMBER* pMember;
 		}
 		[CRepr]
-		public struct MS_ADDINFO_BLOB
-		{
+		public struct MS_ADDINFO_BLOB		{
 			public uint32 cbStruct;
 			public uint32 cbMemObject;
 			public uint8* pbMemObject;
@@ -94,38 +89,33 @@ namespace Win32
 			public uint8* pbMemSignedMsg;
 		}
 		[CRepr]
-		public struct SIP_CAP_SET_V2
-		{
+		public struct SIP_CAP_SET_V2		{
 			public uint32 cbSize;
 			public uint32 dwVersion;
 			public BOOL isMultiSign;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct SIP_CAP_SET_V3
-		{
+		public struct SIP_CAP_SET_V3		{
 			public uint32 cbSize;
 			public uint32 dwVersion;
 			public BOOL isMultiSign;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 dwFlags;
 				public uint32 dwReserved;
 			}
 		}
 		[CRepr]
-		public struct SIP_INDIRECT_DATA
-		{
+		public struct SIP_INDIRECT_DATA		{
 			public CRYPT_ATTRIBUTE_TYPE_VALUE Data;
 			public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 			public CRYPTOAPI_BLOB Digest;
 		}
 		[CRepr]
-		public struct SIP_DISPATCH_INFO
-		{
+		public struct SIP_DISPATCH_INFO		{
 			public uint32 cbSize;
 			public HANDLE hSIP;
 			public pCryptSIPGetSignedDataMsg pfGet;
@@ -135,8 +125,7 @@ namespace Win32
 			public pCryptSIPRemoveSignedDataMsg pfRemove;
 		}
 		[CRepr]
-		public struct SIP_ADD_NEWPROVIDER
-		{
+		public struct SIP_ADD_NEWPROVIDER		{
 			public uint32 cbStruct;
 			public Guid* pgSubject;
 			public PWSTR pwszDLLFileName;

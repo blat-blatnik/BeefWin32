@@ -143,8 +143,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WINTRUST_DATA
-		{
+		public struct WINTRUST_DATA		{
 			public uint32 cbStruct;
 			public void* pPolicyCallbackData;
 			public void* pSIPClientData;
@@ -160,8 +159,7 @@ namespace Win32
 			public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public WINTRUST_FILE_INFO* pFile;
 				public WINTRUST_CATALOG_INFO* pCatalog;
 				public WINTRUST_BLOB_INFO* pBlob;
@@ -170,8 +168,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINTRUST_SIGNATURE_SETTINGS
-		{
+		public struct WINTRUST_SIGNATURE_SETTINGS		{
 			public uint32 cbStruct;
 			public uint32 dwIndex;
 			public WINTRUST_SIGNATURE_SETTINGS_FLAGS dwFlags;
@@ -180,16 +177,14 @@ namespace Win32
 			public CERT_STRONG_SIGN_PARA* pCryptoPolicy;
 		}
 		[CRepr]
-		public struct WINTRUST_FILE_INFO
-		{
+		public struct WINTRUST_FILE_INFO		{
 			public uint32 cbStruct;
 			public PWSTR pcwszFilePath;
 			public HANDLE hFile;
 			public Guid* pgKnownSubject;
 		}
 		[CRepr]
-		public struct WINTRUST_CATALOG_INFO
-		{
+		public struct WINTRUST_CATALOG_INFO		{
 			public uint32 cbStruct;
 			public uint32 dwCatalogVersion;
 			public PWSTR pcwszCatalogFilePath;
@@ -202,8 +197,7 @@ namespace Win32
 			public int hCatAdmin;
 		}
 		[CRepr]
-		public struct WINTRUST_BLOB_INFO
-		{
+		public struct WINTRUST_BLOB_INFO		{
 			public uint32 cbStruct;
 			public Guid gSubject;
 			public PWSTR pcwszDisplayName;
@@ -213,8 +207,7 @@ namespace Win32
 			public uint8* pbMemSignedMsg;
 		}
 		[CRepr]
-		public struct WINTRUST_SGNR_INFO
-		{
+		public struct WINTRUST_SGNR_INFO		{
 			public uint32 cbStruct;
 			public PWSTR pcwszDisplayName;
 			public CMSG_SIGNER_INFO* psSignerInfo;
@@ -222,8 +215,7 @@ namespace Win32
 			public void** pahStores;
 		}
 		[CRepr]
-		public struct WINTRUST_CERT_INFO
-		{
+		public struct WINTRUST_CERT_INFO		{
 			public uint32 cbStruct;
 			public PWSTR pcwszDisplayName;
 			public CERT_CONTEXT* psCertContext;
@@ -233,8 +225,7 @@ namespace Win32
 			public FILETIME* psftVerifyAsOf;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_DATA
-		{
+		public struct CRYPT_PROVIDER_DATA		{
 			public uint32 cbStruct;
 			public WINTRUST_DATA* pWintrustData;
 			public BOOL fOpenedFile;
@@ -270,14 +261,12 @@ namespace Win32
 			public WINTRUST_SIGNATURE_SETTINGS* pSigSettings;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PROVDATA_SIP* pPDSip;
 			}
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_SIGSTATE
-		{
+		public struct CRYPT_PROVIDER_SIGSTATE		{
 			public uint32 cbStruct;
 			public void** rhSecondarySigs;
 			public void* hPrimarySig;
@@ -292,8 +281,7 @@ namespace Win32
 			public SEALING_SIGNATURE_ATTRIBUTE* pSealingSignature;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_FUNCTIONS
-		{
+		public struct CRYPT_PROVIDER_FUNCTIONS		{
 			public uint32 cbStruct;
 			public PFN_CPD_MEM_ALLOC pfnAlloc;
 			public PFN_CPD_MEM_FREE pfnFree;
@@ -312,8 +300,7 @@ namespace Win32
 			public PFN_PROVIDER_CLEANUP_CALL pfnCleanupPolicy;
 		}
 		[CRepr]
-		public struct CRYPT_PROVUI_FUNCS
-		{
+		public struct CRYPT_PROVUI_FUNCS		{
 			public uint32 cbStruct;
 			public CRYPT_PROVUI_DATA* psUIData;
 			public PFN_PROVUI_CALL pfnOnMoreInfoClick;
@@ -322,8 +309,7 @@ namespace Win32
 			public PFN_PROVUI_CALL pfnOnAdvancedClickDefault;
 		}
 		[CRepr]
-		public struct CRYPT_PROVUI_DATA
-		{
+		public struct CRYPT_PROVUI_DATA		{
 			public uint32 cbStruct;
 			public uint32 dwFinalError;
 			public PWSTR pYesButtonText;
@@ -335,8 +321,7 @@ namespace Win32
 			public PWSTR pCopyActionTextNotSigned;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_SGNR
-		{
+		public struct CRYPT_PROVIDER_SGNR		{
 			public uint32 cbStruct;
 			public FILETIME sftVerifyAsOf;
 			public uint32 csCertChain;
@@ -349,8 +334,7 @@ namespace Win32
 			public CERT_CHAIN_CONTEXT* pChainContext;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_CERT
-		{
+		public struct CRYPT_PROVIDER_CERT		{
 			public uint32 cbStruct;
 			public CERT_CONTEXT* pCert;
 			public BOOL fCommercial;
@@ -368,16 +352,14 @@ namespace Win32
 			public CERT_CHAIN_ELEMENT* pChainElement;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_PRIVDATA
-		{
+		public struct CRYPT_PROVIDER_PRIVDATA		{
 			public uint32 cbStruct;
 			public Guid gProviderID;
 			public uint32 cbProvData;
 			public void* pvProvData;
 		}
 		[CRepr]
-		public struct PROVDATA_SIP
-		{
+		public struct PROVDATA_SIP		{
 			public uint32 cbStruct;
 			public Guid gSubject;
 			public SIP_DISPATCH_INFO* pSip;
@@ -387,15 +369,13 @@ namespace Win32
 			public SIP_INDIRECT_DATA* psIndirectData;
 		}
 		[CRepr]
-		public struct CRYPT_TRUST_REG_ENTRY
-		{
+		public struct CRYPT_TRUST_REG_ENTRY		{
 			public uint32 cbStruct;
 			public PWSTR pwszDLLName;
 			public PWSTR pwszFunctionName;
 		}
 		[CRepr]
-		public struct CRYPT_REGISTER_ACTIONID
-		{
+		public struct CRYPT_REGISTER_ACTIONID		{
 			public uint32 cbStruct;
 			public CRYPT_TRUST_REG_ENTRY sInitProvider;
 			public CRYPT_TRUST_REG_ENTRY sObjectProvider;
@@ -407,8 +387,7 @@ namespace Win32
 			public CRYPT_TRUST_REG_ENTRY sCleanupProvider;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_REGDEFUSAGE
-		{
+		public struct CRYPT_PROVIDER_REGDEFUSAGE		{
 			public uint32 cbStruct;
 			public Guid* pgActionID;
 			public PWSTR pwszDllName;
@@ -416,22 +395,19 @@ namespace Win32
 			public PSTR pwszFreeCallbackDataFunctionName;
 		}
 		[CRepr]
-		public struct CRYPT_PROVIDER_DEFUSAGE
-		{
+		public struct CRYPT_PROVIDER_DEFUSAGE		{
 			public uint32 cbStruct;
 			public Guid gActionID;
 			public void* pDefPolicyCallbackData;
 			public void* pDefSIPClientData;
 		}
 		[CRepr]
-		public struct SPC_SERIALIZED_OBJECT
-		{
+		public struct SPC_SERIALIZED_OBJECT		{
 			public uint8[16] ClassId;
 			public CRYPTOAPI_BLOB SerializedData;
 		}
 		[CRepr]
-		public struct SPC_SIGINFO
-		{
+		public struct SPC_SIGINFO		{
 			public uint32 dwSipVersion;
 			public Guid gSIPGuid;
 			public uint32 dwReserved1;
@@ -441,41 +417,35 @@ namespace Win32
 			public uint32 dwReserved5;
 		}
 		[CRepr]
-		public struct SPC_LINK
-		{
+		public struct SPC_LINK		{
 			public uint32 dwLinkChoice;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR pwszUrl;
 				public SPC_SERIALIZED_OBJECT Moniker;
 				public PWSTR pwszFile;
 			}
 		}
 		[CRepr]
-		public struct SPC_PE_IMAGE_DATA
-		{
+		public struct SPC_PE_IMAGE_DATA		{
 			public CRYPT_BIT_BLOB Flags;
 			public SPC_LINK* pFile;
 		}
 		[CRepr]
-		public struct SPC_INDIRECT_DATA_CONTENT
-		{
+		public struct SPC_INDIRECT_DATA_CONTENT		{
 			public CRYPT_ATTRIBUTE_TYPE_VALUE Data;
 			public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 			public CRYPTOAPI_BLOB Digest;
 		}
 		[CRepr]
-		public struct SPC_FINANCIAL_CRITERIA
-		{
+		public struct SPC_FINANCIAL_CRITERIA		{
 			public BOOL fFinancialInfoAvailable;
 			public BOOL fMeetsCriteria;
 		}
 		[CRepr]
-		public struct SPC_IMAGE
-		{
+		public struct SPC_IMAGE		{
 			public SPC_LINK* pImageLink;
 			public CRYPTOAPI_BLOB Bitmap;
 			public CRYPTOAPI_BLOB Metafile;
@@ -483,109 +453,93 @@ namespace Win32
 			public CRYPTOAPI_BLOB GifFile;
 		}
 		[CRepr]
-		public struct SPC_SP_AGENCY_INFO
-		{
+		public struct SPC_SP_AGENCY_INFO		{
 			public SPC_LINK* pPolicyInformation;
 			public PWSTR pwszPolicyDisplayText;
 			public SPC_IMAGE* pLogoImage;
 			public SPC_LINK* pLogoLink;
 		}
 		[CRepr]
-		public struct SPC_STATEMENT_TYPE
-		{
+		public struct SPC_STATEMENT_TYPE		{
 			public uint32 cKeyPurposeId;
 			public PSTR* rgpszKeyPurposeId;
 		}
 		[CRepr]
-		public struct SPC_SP_OPUS_INFO
-		{
+		public struct SPC_SP_OPUS_INFO		{
 			public PWSTR pwszProgramName;
 			public SPC_LINK* pMoreInfo;
 			public SPC_LINK* pPublisherInfo;
 		}
 		[CRepr]
-		public struct CAT_NAMEVALUE
-		{
+		public struct CAT_NAMEVALUE		{
 			public PWSTR pwszTag;
 			public uint32 fdwFlags;
 			public CRYPTOAPI_BLOB Value;
 		}
 		[CRepr]
-		public struct CAT_MEMBERINFO
-		{
+		public struct CAT_MEMBERINFO		{
 			public PWSTR pwszSubjGuid;
 			public uint32 dwCertVersion;
 		}
 		[CRepr]
-		public struct CAT_MEMBERINFO2
-		{
+		public struct CAT_MEMBERINFO2		{
 			public Guid SubjectGuid;
 			public uint32 dwCertVersion;
 		}
 		[CRepr]
-		public struct INTENT_TO_SEAL_ATTRIBUTE
-		{
+		public struct INTENT_TO_SEAL_ATTRIBUTE		{
 			public uint32 version;
 			public BOOLEAN seal;
 		}
 		[CRepr]
-		public struct SEALING_SIGNATURE_ATTRIBUTE
-		{
+		public struct SEALING_SIGNATURE_ATTRIBUTE		{
 			public uint32 version;
 			public uint32 signerIndex;
 			public CRYPT_ALGORITHM_IDENTIFIER signatureAlgorithm;
 			public CRYPTOAPI_BLOB encryptedDigest;
 		}
 		[CRepr]
-		public struct SEALING_TIMESTAMP_ATTRIBUTE
-		{
+		public struct SEALING_TIMESTAMP_ATTRIBUTE		{
 			public uint32 version;
 			public uint32 signerIndex;
 			public CRYPTOAPI_BLOB sealTimeStampToken;
 		}
 		[CRepr]
-		public struct WIN_CERTIFICATE
-		{
+		public struct WIN_CERTIFICATE		{
 			public uint32 dwLength;
 			public uint16 wRevision;
 			public uint16 wCertificateType;
 			public uint8[0] bCertificate;
 		}
 		[CRepr]
-		public struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT
-		{
+		public struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT		{
 			public HANDLE hClientToken;
 			public Guid* SubjectType;
 			public void* Subject;
 		}
 		[CRepr]
-		public struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
-		{
+		public struct WIN_TRUST_ACTDATA_SUBJECT_ONLY		{
 			public Guid* SubjectType;
 			public void* Subject;
 		}
 		[CRepr]
-		public struct WIN_TRUST_SUBJECT_FILE
-		{
+		public struct WIN_TRUST_SUBJECT_FILE		{
 			public HANDLE hFile;
 			public PWSTR lpPath;
 		}
 		[CRepr]
-		public struct WIN_TRUST_SUBJECT_FILE_AND_DISPLAY
-		{
+		public struct WIN_TRUST_SUBJECT_FILE_AND_DISPLAY		{
 			public HANDLE hFile;
 			public PWSTR lpPath;
 			public PWSTR lpDisplayName;
 		}
 		[CRepr]
-		public struct WIN_SPUB_TRUSTED_PUBLISHER_DATA
-		{
+		public struct WIN_SPUB_TRUSTED_PUBLISHER_DATA		{
 			public HANDLE hClientToken;
 			public WIN_CERTIFICATE* lpCertificate;
 		}
 		[CRepr]
-		public struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
-		{
+		public struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO		{
 			public _Anonymous_e__Union Anonymous;
 			public CERT_CHAIN_CONTEXT* pChainContext;
 			public uint32 dwSignerType;
@@ -595,15 +549,13 @@ namespace Win32
 			public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cbStruct;
 				public uint32 cbSize;
 			}
 		}
 		[CRepr]
-		public struct WTD_GENERIC_CHAIN_POLICY_CREATE_INFO
-		{
+		public struct WTD_GENERIC_CHAIN_POLICY_CREATE_INFO		{
 			public _Anonymous_e__Union Anonymous;
 			public HCERTCHAINENGINE hChainEngine;
 			public CERT_CHAIN_PARA* pChainPara;
@@ -611,15 +563,13 @@ namespace Win32
 			public void* pvReserved;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cbStruct;
 				public uint32 cbSize;
 			}
 		}
 		[CRepr]
-		public struct WTD_GENERIC_CHAIN_POLICY_DATA
-		{
+		public struct WTD_GENERIC_CHAIN_POLICY_DATA		{
 			public _Anonymous_e__Union Anonymous;
 			public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pSignerChainInfo;
 			public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
@@ -627,21 +577,18 @@ namespace Win32
 			public void* pvPolicyArg;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cbStruct;
 				public uint32 cbSize;
 			}
 		}
 		[CRepr]
-		public struct DRIVER_VER_MAJORMINOR
-		{
+		public struct DRIVER_VER_MAJORMINOR		{
 			public uint32 dwMajor;
 			public uint32 dwMinor;
 		}
 		[CRepr]
-		public struct DRIVER_VER_INFO
-		{
+		public struct DRIVER_VER_INFO		{
 			public uint32 cbStruct;
 			public uint dwReserved1;
 			public uint dwReserved2;
@@ -656,16 +603,14 @@ namespace Win32
 			public uint32 dwBuildNumberHigh;
 		}
 		[CRepr]
-		public struct CONFIG_CI_PROV_INFO_RESULT
-		{
+		public struct CONFIG_CI_PROV_INFO_RESULT		{
 			public HRESULT hr;
 			public uint32 dwResult;
 			public uint32 dwPolicyIndex;
 			public BOOLEAN fIsExplicitDeny;
 		}
 		[CRepr]
-		public struct CONFIG_CI_PROV_INFO
-		{
+		public struct CONFIG_CI_PROV_INFO		{
 			public uint32 cbSize;
 			public uint32 dwPolicies;
 			public CRYPTOAPI_BLOB* pPolicies;

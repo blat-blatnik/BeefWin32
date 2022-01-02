@@ -984,29 +984,25 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RASIPADDR
-		{
+		public struct RASIPADDR		{
 			public uint8 a;
 			public uint8 b;
 			public uint8 c;
 			public uint8 d;
 		}
 		[CRepr]
-		public struct RASTUNNELENDPOINT
-		{
+		public struct RASTUNNELENDPOINT		{
 			public uint32 dwType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IN_ADDR ipv4;
 				public IN6_ADDR ipv6;
 			}
 		}
 		[CRepr]
-		public struct RASCONNW
-		{
+		public struct RASCONNW		{
 			public uint32 dwSize;
 			public HRASCONN hrasconn;
 			public char16[257] szEntryName;
@@ -1020,8 +1016,7 @@ namespace Win32
 			public Guid guidCorrelationId;
 		}
 		[CRepr]
-		public struct RASCONNA
-		{
+		public struct RASCONNA		{
 			public uint32 dwSize;
 			public HRASCONN hrasconn;
 			public CHAR[257] szEntryName;
@@ -1035,8 +1030,7 @@ namespace Win32
 			public Guid guidCorrelationId;
 		}
 		[CRepr]
-		public struct RASCONNSTATUSW
-		{
+		public struct RASCONNSTATUSW		{
 			public uint32 dwSize;
 			public RASCONNSTATE rasconnstate;
 			public uint32 dwError;
@@ -1048,8 +1042,7 @@ namespace Win32
 			public RASCONNSUBSTATE rasconnsubstate;
 		}
 		[CRepr]
-		public struct RASCONNSTATUSA
-		{
+		public struct RASCONNSTATUSA		{
 			public uint32 dwSize;
 			public RASCONNSTATE rasconnstate;
 			public uint32 dwError;
@@ -1061,8 +1054,7 @@ namespace Win32
 			public RASCONNSUBSTATE rasconnsubstate;
 		}
 		[CRepr]
-		public struct RASDIALPARAMSW
-		{
+		public struct RASDIALPARAMSW		{
 			public uint32 dwSize;
 			public char16[257] szEntryName;
 			public char16[129] szPhoneNumber;
@@ -1076,8 +1068,7 @@ namespace Win32
 			public PWSTR szEncPassword;
 		}
 		[CRepr]
-		public struct RASDIALPARAMSA
-		{
+		public struct RASDIALPARAMSA		{
 			public uint32 dwSize;
 			public CHAR[257] szEntryName;
 			public CHAR[129] szPhoneNumber;
@@ -1091,20 +1082,17 @@ namespace Win32
 			public PSTR szEncPassword;
 		}
 		[CRepr]
-		public struct RASEAPINFO
-		{
+		public struct RASEAPINFO		{
 			public uint32 dwSizeofEapInfo;
 			public uint8* pbEapInfo;
 		}
 		[CRepr]
-		public struct RASDEVSPECIFICINFO
-		{
+		public struct RASDEVSPECIFICINFO		{
 			public uint32 dwSize;
 			public uint8* pbDevSpecificInfo;
 		}
 		[CRepr]
-		public struct RASDIALEXTENSIONS
-		{
+		public struct RASDIALEXTENSIONS		{
 			public uint32 dwSize;
 			public uint32 dwfOptions;
 			public HWND hwndParent;
@@ -1115,40 +1103,35 @@ namespace Win32
 			public RASDEVSPECIFICINFO RasDevSpecificInfo;
 		}
 		[CRepr]
-		public struct RASENTRYNAMEW
-		{
+		public struct RASENTRYNAMEW		{
 			public uint32 dwSize;
 			public char16[257] szEntryName;
 			public uint32 dwFlags;
 			public char16[261] szPhonebookPath;
 		}
 		[CRepr]
-		public struct RASENTRYNAMEA
-		{
+		public struct RASENTRYNAMEA		{
 			public uint32 dwSize;
 			public CHAR[257] szEntryName;
 			public uint32 dwFlags;
 			public CHAR[261] szPhonebookPath;
 		}
 		[CRepr]
-		public struct RASAMBW
-		{
+		public struct RASAMBW		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public char16[17] szNetBiosError;
 			public uint8 bLana;
 		}
 		[CRepr]
-		public struct RASAMBA
-		{
+		public struct RASAMBA		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public CHAR[17] szNetBiosError;
 			public uint8 bLana;
 		}
 		[CRepr]
-		public struct RASPPPNBFW
-		{
+		public struct RASPPPNBFW		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public uint32 dwNetBiosError;
@@ -1157,8 +1140,7 @@ namespace Win32
 			public uint8 bLana;
 		}
 		[CRepr]
-		public struct RASPPPNBFA
-		{
+		public struct RASPPPNBFA		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public uint32 dwNetBiosError;
@@ -1167,22 +1149,19 @@ namespace Win32
 			public uint8 bLana;
 		}
 		[CRepr]
-		public struct RASIPXW
-		{
+		public struct RASIPXW		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public char16[22] szIpxAddress;
 		}
 		[CRepr]
-		public struct RASPPPIPXA
-		{
+		public struct RASPPPIPXA		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public CHAR[22] szIpxAddress;
 		}
 		[CRepr]
-		public struct RASPPPIPW
-		{
+		public struct RASPPPIPW		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public char16[16] szIpAddress;
@@ -1191,8 +1170,7 @@ namespace Win32
 			public uint32 dwServerOptions;
 		}
 		[CRepr]
-		public struct RASPPPIPA
-		{
+		public struct RASPPPIPA		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public CHAR[16] szIpAddress;
@@ -1201,8 +1179,7 @@ namespace Win32
 			public uint32 dwServerOptions;
 		}
 		[CRepr]
-		public struct RASPPPIPV6
-		{
+		public struct RASPPPIPV6		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public uint8[8] bLocalInterfaceIdentifier;
@@ -1211,8 +1188,7 @@ namespace Win32
 			public uint8[2] bPeerCompressionProtocol;
 		}
 		[CRepr]
-		public struct RASPPPLCPW
-		{
+		public struct RASPPPLCPW		{
 			public uint32 dwSize;
 			public BOOL fBundled;
 			public uint32 dwError;
@@ -1230,8 +1206,7 @@ namespace Win32
 			public uint32 dwServerOptions;
 		}
 		[CRepr]
-		public struct RASPPPLCPA
-		{
+		public struct RASPPPLCPA		{
 			public uint32 dwSize;
 			public BOOL fBundled;
 			public uint32 dwError;
@@ -1249,8 +1224,7 @@ namespace Win32
 			public uint32 dwServerOptions;
 		}
 		[CRepr]
-		public struct RASPPPCCP
-		{
+		public struct RASPPPCCP		{
 			public uint32 dwSize;
 			public uint32 dwError;
 			public uint32 dwCompressionAlgorithm;
@@ -1259,8 +1233,7 @@ namespace Win32
 			public uint32 dwServerOptions;
 		}
 		[CRepr]
-		public struct RASPPP_PROJECTION_INFO
-		{
+		public struct RASPPP_PROJECTION_INFO		{
 			public uint32 dwIPv4NegotiationError;
 			public IN_ADDR ipv4Address;
 			public IN_ADDR ipv4ServerAddress;
@@ -1286,8 +1259,7 @@ namespace Win32
 			public uint32 dwCcpServerOptions;
 		}
 		[CRepr]
-		public struct RASIKEV2_PROJECTION_INFO
-		{
+		public struct RASIKEV2_PROJECTION_INFO		{
 			public uint32 dwIPv4NegotiationError;
 			public IN_ADDR ipv4Address;
 			public IN_ADDR ipv4ServerAddress;
@@ -1305,36 +1277,31 @@ namespace Win32
 			public IN6_ADDR* ipv6ServerAddresses;
 		}
 		[CRepr]
-		public struct RAS_PROJECTION_INFO
-		{
+		public struct RAS_PROJECTION_INFO		{
 			public RASAPIVERSION version;
 			public RASPROJECTION_INFO_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public RASPPP_PROJECTION_INFO ppp;
 				public RASIKEV2_PROJECTION_INFO ikev2;
 			}
 		}
 		[CRepr]
-		public struct RASDEVINFOW
-		{
+		public struct RASDEVINFOW		{
 			public uint32 dwSize;
 			public char16[17] szDeviceType;
 			public char16[129] szDeviceName;
 		}
 		[CRepr]
-		public struct RASDEVINFOA
-		{
+		public struct RASDEVINFOA		{
 			public uint32 dwSize;
 			public CHAR[17] szDeviceType;
 			public CHAR[129] szDeviceName;
 		}
 		[CRepr]
-		public struct RASCTRYINFO
-		{
+		public struct RASCTRYINFO		{
 			public uint32 dwSize;
 			public uint32 dwCountryID;
 			public uint32 dwNextCountryID;
@@ -1342,8 +1309,7 @@ namespace Win32
 			public uint32 dwCountryNameOffset;
 		}
 		[CRepr]
-		public struct RASENTRYA
-		{
+		public struct RASENTRYA		{
 			public uint32 dwSize;
 			public uint32 dwfOptions;
 			public uint32 dwCountryID;
@@ -1407,8 +1373,7 @@ namespace Win32
 			public BOOL fDisableIKEv2Fragmentation;
 		}
 		[CRepr]
-		public struct RASENTRYW
-		{
+		public struct RASENTRYW		{
 			public uint32 dwSize;
 			public uint32 dwfOptions;
 			public uint32 dwCountryID;
@@ -1472,8 +1437,7 @@ namespace Win32
 			public BOOL fDisableIKEv2Fragmentation;
 		}
 		[CRepr]
-		public struct RASADPARAMS
-		{
+		public struct RASADPARAMS		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1481,8 +1445,7 @@ namespace Win32
 			public int32 yDlg;
 		}
 		[CRepr]
-		public struct RASSUBENTRYA
-		{
+		public struct RASSUBENTRYA		{
 			public uint32 dwSize;
 			public uint32 dwfFlags;
 			public CHAR[17] szDeviceType;
@@ -1491,8 +1454,7 @@ namespace Win32
 			public uint32 dwAlternateOffset;
 		}
 		[CRepr]
-		public struct RASSUBENTRYW
-		{
+		public struct RASSUBENTRYW		{
 			public uint32 dwSize;
 			public uint32 dwfFlags;
 			public char16[17] szDeviceType;
@@ -1501,8 +1463,7 @@ namespace Win32
 			public uint32 dwAlternateOffset;
 		}
 		[CRepr]
-		public struct RASCREDENTIALSA
-		{
+		public struct RASCREDENTIALSA		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public CHAR[257] szUserName;
@@ -1510,8 +1471,7 @@ namespace Win32
 			public CHAR[16] szDomain;
 		}
 		[CRepr]
-		public struct RASCREDENTIALSW
-		{
+		public struct RASCREDENTIALSW		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public char16[257] szUserName;
@@ -1519,38 +1479,33 @@ namespace Win32
 			public char16[16] szDomain;
 		}
 		[CRepr]
-		public struct RASAUTODIALENTRYA
-		{
+		public struct RASAUTODIALENTRYA		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDialingLocation;
 			public CHAR[257] szEntry;
 		}
 		[CRepr]
-		public struct RASAUTODIALENTRYW
-		{
+		public struct RASAUTODIALENTRYW		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDialingLocation;
 			public char16[257] szEntry;
 		}
 		[CRepr]
-		public struct RASEAPUSERIDENTITYA
-		{
+		public struct RASEAPUSERIDENTITYA		{
 			public CHAR[257] szUserName;
 			public uint32 dwSizeofEapInfo;
 			public uint8[0] pbEapInfo;
 		}
 		[CRepr]
-		public struct RASEAPUSERIDENTITYW
-		{
+		public struct RASEAPUSERIDENTITYW		{
 			public char16[257] szUserName;
 			public uint32 dwSizeofEapInfo;
 			public uint8[0] pbEapInfo;
 		}
 		[CRepr]
-		public struct RASCOMMSETTINGS
-		{
+		public struct RASCOMMSETTINGS		{
 			public uint32 dwSize;
 			public uint8 bParity;
 			public uint8 bStop;
@@ -1558,14 +1513,12 @@ namespace Win32
 			public uint8 bAlign;
 		}
 		[CRepr]
-		public struct RASCUSTOMSCRIPTEXTENSIONS
-		{
+		public struct RASCUSTOMSCRIPTEXTENSIONS		{
 			public uint32 dwSize;
 			public PFNRASSETCOMMSETTINGS pfnRasSetCommSettings;
 		}
 		[CRepr]
-		public struct RAS_STATS
-		{
+		public struct RAS_STATS		{
 			public uint32 dwSize;
 			public uint32 dwBytesXmited;
 			public uint32 dwBytesRcved;
@@ -1583,8 +1536,7 @@ namespace Win32
 			public uint32 dwConnectDuration;
 		}
 		[CRepr]
-		public struct RASUPDATECONN
-		{
+		public struct RASUPDATECONN		{
 			public RASAPIVERSION version;
 			public uint32 dwSize;
 			public uint32 dwFlags;
@@ -1593,8 +1545,7 @@ namespace Win32
 			public RASTUNNELENDPOINT remoteEndPoint;
 		}
 		[CRepr]
-		public struct RASNOUSERW
-		{
+		public struct RASNOUSERW		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwTimeoutMs;
@@ -1603,8 +1554,7 @@ namespace Win32
 			public char16[16] szDomain;
 		}
 		[CRepr]
-		public struct RASNOUSERA
-		{
+		public struct RASNOUSERA		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwTimeoutMs;
@@ -1613,8 +1563,7 @@ namespace Win32
 			public CHAR[16] szDomain;
 		}
 		[CRepr]
-		public struct RASPBDLGW
-		{
+		public struct RASPBDLGW		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1627,8 +1576,7 @@ namespace Win32
 			public uint reserved2;
 		}
 		[CRepr]
-		public struct RASPBDLGA
-		{
+		public struct RASPBDLGA		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1641,8 +1589,7 @@ namespace Win32
 			public uint reserved2;
 		}
 		[CRepr]
-		public struct RASENTRYDLGW
-		{
+		public struct RASENTRYDLGW		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1654,8 +1601,7 @@ namespace Win32
 			public uint reserved2;
 		}
 		[CRepr]
-		public struct RASENTRYDLGA
-		{
+		public struct RASENTRYDLGA		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1667,8 +1613,7 @@ namespace Win32
 			public uint reserved2;
 		}
 		[CRepr]
-		public struct RASDIALDLG
-		{
+		public struct RASDIALDLG		{
 			public uint32 dwSize;
 			public HWND hwndOwner;
 			public uint32 dwFlags;
@@ -1680,8 +1625,7 @@ namespace Win32
 			public uint reserved2;
 		}
 		[CRepr]
-		public struct MPR_INTERFACE_0
-		{
+		public struct MPR_INTERFACE_0		{
 			public char16[257] wszInterfaceName;
 			public HANDLE hInterface;
 			public BOOL fEnabled;
@@ -1691,14 +1635,12 @@ namespace Win32
 			public uint32 dwLastError;
 		}
 		[CRepr]
-		public struct MPR_IPINIP_INTERFACE_0
-		{
+		public struct MPR_IPINIP_INTERFACE_0		{
 			public char16[257] wszFriendlyName;
 			public Guid Guid;
 		}
 		[CRepr]
-		public struct MPR_INTERFACE_1
-		{
+		public struct MPR_INTERFACE_1		{
 			public char16[257] wszInterfaceName;
 			public HANDLE hInterface;
 			public BOOL fEnabled;
@@ -1709,8 +1651,7 @@ namespace Win32
 			public PWSTR lpwsDialoutHoursRestriction;
 		}
 		[CRepr]
-		public struct MPR_INTERFACE_2
-		{
+		public struct MPR_INTERFACE_2		{
 			public char16[257] wszInterfaceName;
 			public HANDLE hInterface;
 			public BOOL fEnabled;
@@ -1750,8 +1691,7 @@ namespace Win32
 			public MPR_VS dwVpnStrategy;
 		}
 		[CRepr]
-		public struct MPR_INTERFACE_3
-		{
+		public struct MPR_INTERFACE_3		{
 			public char16[257] wszInterfaceName;
 			public HANDLE hInterface;
 			public BOOL fEnabled;
@@ -1795,64 +1735,55 @@ namespace Win32
 			public IN6_ADDR* ipv6addr;
 		}
 		[CRepr]
-		public struct MPR_DEVICE_0
-		{
+		public struct MPR_DEVICE_0		{
 			public char16[17] szDeviceType;
 			public char16[129] szDeviceName;
 		}
 		[CRepr]
-		public struct MPR_DEVICE_1
-		{
+		public struct MPR_DEVICE_1		{
 			public char16[17] szDeviceType;
 			public char16[129] szDeviceName;
 			public char16[129] szLocalPhoneNumber;
 			public PWSTR szAlternates;
 		}
 		[CRepr]
-		public struct MPR_CREDENTIALSEX_0
-		{
+		public struct MPR_CREDENTIALSEX_0		{
 			public uint32 dwSize;
 			public uint8* lpbCredentialsInfo;
 		}
 		[CRepr]
-		public struct MPR_CREDENTIALSEX_1
-		{
+		public struct MPR_CREDENTIALSEX_1		{
 			public uint32 dwSize;
 			public uint8* lpbCredentialsInfo;
 		}
 		[CRepr]
-		public struct MPR_TRANSPORT_0
-		{
+		public struct MPR_TRANSPORT_0		{
 			public uint32 dwTransportId;
 			public HANDLE hTransport;
 			public char16[41] wszTransportName;
 		}
 		[CRepr]
-		public struct MPR_IFTRANSPORT_0
-		{
+		public struct MPR_IFTRANSPORT_0		{
 			public uint32 dwTransportId;
 			public HANDLE hIfTransport;
 			public char16[41] wszIfTransportName;
 		}
 		[CRepr]
-		public struct MPR_SERVER_0
-		{
+		public struct MPR_SERVER_0		{
 			public BOOL fLanOnlyMode;
 			public uint32 dwUpTime;
 			public uint32 dwTotalPorts;
 			public uint32 dwPortsInUse;
 		}
 		[CRepr]
-		public struct MPR_SERVER_1
-		{
+		public struct MPR_SERVER_1		{
 			public uint32 dwNumPptpPorts;
 			public uint32 dwPptpPortFlags;
 			public uint32 dwNumL2tpPorts;
 			public uint32 dwL2tpPortFlags;
 		}
 		[CRepr]
-		public struct MPR_SERVER_2
-		{
+		public struct MPR_SERVER_2		{
 			public uint32 dwNumPptpPorts;
 			public uint32 dwPptpPortFlags;
 			public uint32 dwNumL2tpPorts;
@@ -1861,8 +1792,7 @@ namespace Win32
 			public uint32 dwSstpPortFlags;
 		}
 		[CRepr]
-		public struct RAS_PORT_0
-		{
+		public struct RAS_PORT_0		{
 			public HANDLE hPort;
 			public HANDLE hConnection;
 			public RAS_PORT_CONDITION dwPortCondition;
@@ -1874,8 +1804,7 @@ namespace Win32
 			public char16[17] wszDeviceType;
 		}
 		[CRepr]
-		public struct RAS_PORT_1
-		{
+		public struct RAS_PORT_1		{
 			public HANDLE hPort;
 			public HANDLE hConnection;
 			public RAS_HARDWARE_CONDITION dwHardwareCondition;
@@ -1894,8 +1823,7 @@ namespace Win32
 			public uint32 dwCompressionRatioOut;
 		}
 		[CRepr]
-		public struct RAS_PORT_2
-		{
+		public struct RAS_PORT_2		{
 			public HANDLE hPort;
 			public HANDLE hConnection;
 			public uint32 dwConn_State;
@@ -1925,21 +1853,18 @@ namespace Win32
 			public uint64 ullBytesRcvCompressed;
 		}
 		[CRepr]
-		public struct PPP_NBFCP_INFO
-		{
+		public struct PPP_NBFCP_INFO		{
 			public uint32 dwError;
 			public char16[17] wszWksta;
 		}
 		[CRepr]
-		public struct PPP_IPCP_INFO
-		{
+		public struct PPP_IPCP_INFO		{
 			public uint32 dwError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
 		}
 		[CRepr]
-		public struct PPP_IPCP_INFO2
-		{
+		public struct PPP_IPCP_INFO2		{
 			public uint32 dwError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
@@ -1947,20 +1872,17 @@ namespace Win32
 			public uint32 dwRemoteOptions;
 		}
 		[CRepr]
-		public struct PPP_IPXCP_INFO
-		{
+		public struct PPP_IPXCP_INFO		{
 			public uint32 dwError;
 			public char16[23] wszAddress;
 		}
 		[CRepr]
-		public struct PPP_ATCP_INFO
-		{
+		public struct PPP_ATCP_INFO		{
 			public uint32 dwError;
 			public char16[33] wszAddress;
 		}
 		[CRepr]
-		public struct PPP_IPV6_CP_INFO
-		{
+		public struct PPP_IPV6_CP_INFO		{
 			public uint32 dwVersion;
 			public uint32 dwSize;
 			public uint32 dwError;
@@ -1972,16 +1894,14 @@ namespace Win32
 			public uint32 dwPrefixLength;
 		}
 		[CRepr]
-		public struct PPP_INFO
-		{
+		public struct PPP_INFO		{
 			public PPP_NBFCP_INFO nbf;
 			public PPP_IPCP_INFO ip;
 			public PPP_IPXCP_INFO ipx;
 			public PPP_ATCP_INFO at;
 		}
 		[CRepr]
-		public struct PPP_CCP_INFO
-		{
+		public struct PPP_CCP_INFO		{
 			public uint32 dwError;
 			public uint32 dwCompressionAlgorithm;
 			public uint32 dwOptions;
@@ -1989,8 +1909,7 @@ namespace Win32
 			public uint32 dwRemoteOptions;
 		}
 		[CRepr]
-		public struct PPP_LCP_INFO
-		{
+		public struct PPP_LCP_INFO		{
 			public uint32 dwError;
 			public PPP_LCP dwAuthenticationProtocol;
 			public PPP_LCP_INFO_AUTH_DATA dwAuthenticationData;
@@ -2004,8 +1923,7 @@ namespace Win32
 			public uint32 dwRemoteEapTypeId;
 		}
 		[CRepr]
-		public struct PPP_INFO_2
-		{
+		public struct PPP_INFO_2		{
 			public PPP_NBFCP_INFO nbf;
 			public PPP_IPCP_INFO2 ip;
 			public PPP_IPXCP_INFO ipx;
@@ -2014,8 +1932,7 @@ namespace Win32
 			public PPP_LCP_INFO lcp;
 		}
 		[CRepr]
-		public struct PPP_INFO_3
-		{
+		public struct PPP_INFO_3		{
 			public PPP_NBFCP_INFO nbf;
 			public PPP_IPCP_INFO2 ip;
 			public PPP_IPV6_CP_INFO ipv6;
@@ -2023,8 +1940,7 @@ namespace Win32
 			public PPP_LCP_INFO lcp;
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_0
-		{
+		public struct RAS_CONNECTION_0		{
 			public HANDLE hConnection;
 			public HANDLE hInterface;
 			public uint32 dwConnectDuration;
@@ -2036,8 +1952,7 @@ namespace Win32
 			public char16[17] wszRemoteComputer;
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_1
-		{
+		public struct RAS_CONNECTION_1		{
 			public HANDLE hConnection;
 			public HANDLE hInterface;
 			public PPP_INFO PppInfo;
@@ -2055,8 +1970,7 @@ namespace Win32
 			public uint32 dwCompressionRatioOut;
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_2
-		{
+		public struct RAS_CONNECTION_2		{
 			public HANDLE hConnection;
 			public char16[257] wszUserName;
 			public ROUTER_INTERFACE_TYPE dwInterfaceType;
@@ -2064,8 +1978,7 @@ namespace Win32
 			public PPP_INFO_2 PppInfo2;
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_3
-		{
+		public struct RAS_CONNECTION_3		{
 			public uint32 dwVersion;
 			public uint32 dwSize;
 			public HANDLE hConnection;
@@ -2077,33 +1990,28 @@ namespace Win32
 			public FILETIME timer;
 		}
 		[CRepr]
-		public struct RAS_USER_0
-		{
+		public struct RAS_USER_0		{
 			public uint8 bfPrivilege;
 			public char16[129] wszPhoneNumber;
 		}
 		[CRepr]
-		public struct RAS_USER_1
-		{
+		public struct RAS_USER_1		{
 			public uint8 bfPrivilege;
 			public char16[129] wszPhoneNumber;
 			public uint8 bfPrivilege2;
 		}
 		[CRepr]
-		public struct MPR_FILTER_0
-		{
+		public struct MPR_FILTER_0		{
 			public BOOL fEnable;
 		}
 		[CRepr]
-		public struct MPRAPI_OBJECT_HEADER
-		{
+		public struct MPRAPI_OBJECT_HEADER		{
 			public uint8 revision;
 			public uint8 type;
 			public uint16 size;
 		}
 		[CRepr]
-		public struct PPP_PROJECTION_INFO
-		{
+		public struct PPP_PROJECTION_INFO		{
 			public uint32 dwIPv4NegotiationError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
@@ -2134,8 +2042,7 @@ namespace Win32
 			public uint32 dwCcpRemoteOptions;
 		}
 		[CRepr]
-		public struct PPP_PROJECTION_INFO2
-		{
+		public struct PPP_PROJECTION_INFO2		{
 			public uint32 dwIPv4NegotiationError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
@@ -2167,8 +2074,7 @@ namespace Win32
 			public uint32 dwCcpRemoteOptions;
 		}
 		[CRepr]
-		public struct IKEV2_PROJECTION_INFO
-		{
+		public struct IKEV2_PROJECTION_INFO		{
 			public uint32 dwIPv4NegotiationError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
@@ -2186,8 +2092,7 @@ namespace Win32
 			public uint32 dwEncryptionMethod;
 		}
 		[CRepr]
-		public struct IKEV2_PROJECTION_INFO2
-		{
+		public struct IKEV2_PROJECTION_INFO2		{
 			public uint32 dwIPv4NegotiationError;
 			public char16[16] wszAddress;
 			public char16[16] wszRemoteAddress;
@@ -2206,34 +2111,29 @@ namespace Win32
 			public uint32 dwEncryptionMethod;
 		}
 		[CRepr]
-		public struct PROJECTION_INFO
-		{
+		public struct PROJECTION_INFO		{
 			public uint8 projectionInfoType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PPP_PROJECTION_INFO PppProjectionInfo;
 				public IKEV2_PROJECTION_INFO Ikev2ProjectionInfo;
 			}
 		}
 		[CRepr]
-		public struct PROJECTION_INFO2
-		{
+		public struct PROJECTION_INFO2		{
 			public uint8 projectionInfoType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PPP_PROJECTION_INFO2 PppProjectionInfo;
 				public IKEV2_PROJECTION_INFO2 Ikev2ProjectionInfo;
 			}
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_EX
-		{
+		public struct RAS_CONNECTION_EX		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 dwConnectDuration;
 			public ROUTER_INTERFACE_TYPE dwInterfaceType;
@@ -2265,8 +2165,7 @@ namespace Win32
 			public HANDLE hInterface;
 		}
 		[CRepr]
-		public struct RAS_CONNECTION_4
-		{
+		public struct RAS_CONNECTION_4		{
 			public uint32 dwConnectDuration;
 			public ROUTER_INTERFACE_TYPE dwInterfaceType;
 			public RAS_FLAGS dwConnectionFlags;
@@ -2299,8 +2198,7 @@ namespace Win32
 			public uint32 dwDeviceType;
 		}
 		[CRepr]
-		public struct ROUTER_CUSTOM_IKEv2_POLICY0
-		{
+		public struct ROUTER_CUSTOM_IKEv2_POLICY0		{
 			public uint32 dwIntegrityMethod;
 			public uint32 dwEncryptionMethod;
 			public uint32 dwCipherTransformConstant;
@@ -2309,43 +2207,37 @@ namespace Win32
 			public uint32 dwDhGroup;
 		}
 		[CRepr]
-		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG0
-		{
+		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG0		{
 			public uint32 dwSaLifeTime;
 			public uint32 dwSaDataSize;
 			public CRYPTOAPI_BLOB certificateName;
 			public ROUTER_CUSTOM_IKEv2_POLICY0* customPolicy;
 		}
 		[CRepr]
-		public struct MPR_IF_CUSTOMINFOEX0
-		{
+		public struct MPR_IF_CUSTOMINFOEX0		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 dwFlags;
 			public ROUTER_IKEv2_IF_CUSTOM_CONFIG0 customIkev2Config;
 		}
 		[CRepr]
-		public struct MPR_CERT_EKU
-		{
+		public struct MPR_CERT_EKU		{
 			public uint32 dwSize;
 			public BOOL IsEKUOID;
 			public PWSTR pwszEKU;
 		}
 		[CRepr]
-		public struct VPN_TS_IP_ADDRESS
-		{
+		public struct VPN_TS_IP_ADDRESS		{
 			public uint16 Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IN_ADDR v4;
 				public IN6_ADDR v6;
 			}
 		}
 		[CRepr]
-		public struct _MPR_VPN_SELECTOR
-		{
+		public struct _MPR_VPN_SELECTOR		{
 			public MPR_VPN_TS_TYPE type;
 			public uint8 protocolId;
 			public uint16 portStart;
@@ -2355,16 +2247,14 @@ namespace Win32
 			public VPN_TS_IP_ADDRESS addrEnd;
 		}
 		[CRepr]
-		public struct MPR_VPN_TRAFFIC_SELECTORS
-		{
+		public struct MPR_VPN_TRAFFIC_SELECTORS		{
 			public uint32 numTsi;
 			public uint32 numTsr;
 			public _MPR_VPN_SELECTOR* tsI;
 			public _MPR_VPN_SELECTOR* tsR;
 		}
 		[CRepr]
-		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2
-		{
+		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2		{
 			public uint32 dwSaLifeTime;
 			public uint32 dwSaDataSize;
 			public CRYPTOAPI_BLOB certificateName;
@@ -2374,15 +2264,13 @@ namespace Win32
 			public MPR_VPN_TRAFFIC_SELECTORS vpnTrafficSelectors;
 		}
 		[CRepr]
-		public struct MPR_IF_CUSTOMINFOEX2
-		{
+		public struct MPR_IF_CUSTOMINFOEX2		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 dwFlags;
 			public ROUTER_IKEv2_IF_CUSTOM_CONFIG2 customIkev2Config;
 		}
 		[CRepr]
-		public struct IKEV2_TUNNEL_CONFIG_PARAMS4
-		{
+		public struct IKEV2_TUNNEL_CONFIG_PARAMS4		{
 			public uint32 dwIdleTimeout;
 			public uint32 dwNetworkBlackoutTime;
 			public uint32 dwSaLifeTime;
@@ -2399,8 +2287,7 @@ namespace Win32
 			public uint32 dwMmSaLifeTime;
 		}
 		[CRepr]
-		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1
-		{
+		public struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1		{
 			public uint32 dwSaLifeTime;
 			public uint32 dwSaDataSize;
 			public CRYPTOAPI_BLOB certificateName;
@@ -2408,15 +2295,13 @@ namespace Win32
 			public CRYPTOAPI_BLOB certificateHash;
 		}
 		[CRepr]
-		public struct MPR_IF_CUSTOMINFOEX1
-		{
+		public struct MPR_IF_CUSTOMINFOEX1		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 dwFlags;
 			public ROUTER_IKEv2_IF_CUSTOM_CONFIG1 customIkev2Config;
 		}
 		[CRepr]
-		public struct IKEV2_TUNNEL_CONFIG_PARAMS3
-		{
+		public struct IKEV2_TUNNEL_CONFIG_PARAMS3		{
 			public uint32 dwIdleTimeout;
 			public uint32 dwNetworkBlackoutTime;
 			public uint32 dwSaLifeTime;
@@ -2432,8 +2317,7 @@ namespace Win32
 			public CRYPTOAPI_BLOB machineCertificateHash;
 		}
 		[CRepr]
-		public struct IKEV2_TUNNEL_CONFIG_PARAMS2
-		{
+		public struct IKEV2_TUNNEL_CONFIG_PARAMS2		{
 			public uint32 dwIdleTimeout;
 			public uint32 dwNetworkBlackoutTime;
 			public uint32 dwSaLifeTime;
@@ -2446,8 +2330,7 @@ namespace Win32
 			public ROUTER_CUSTOM_IKEv2_POLICY0* customPolicy;
 		}
 		[CRepr]
-		public struct L2TP_TUNNEL_CONFIG_PARAMS2
-		{
+		public struct L2TP_TUNNEL_CONFIG_PARAMS2		{
 			public uint32 dwIdleTimeout;
 			public uint32 dwEncryptionType;
 			public uint32 dwSaLifeTime;
@@ -2456,8 +2339,7 @@ namespace Win32
 			public uint32 dwMmSaLifeTime;
 		}
 		[CRepr]
-		public struct L2TP_TUNNEL_CONFIG_PARAMS1
-		{
+		public struct L2TP_TUNNEL_CONFIG_PARAMS1		{
 			public uint32 dwIdleTimeout;
 			public uint32 dwEncryptionType;
 			public uint32 dwSaLifeTime;
@@ -2465,48 +2347,41 @@ namespace Win32
 			public ROUTER_CUSTOM_IKEv2_POLICY0* customPolicy;
 		}
 		[CRepr]
-		public struct IKEV2_CONFIG_PARAMS
-		{
+		public struct IKEV2_CONFIG_PARAMS		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 			public uint32 dwTunnelConfigParamFlags;
 			public IKEV2_TUNNEL_CONFIG_PARAMS4 TunnelConfigParams;
 		}
 		[CRepr]
-		public struct PPTP_CONFIG_PARAMS
-		{
+		public struct PPTP_CONFIG_PARAMS		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 		}
 		[CRepr]
-		public struct L2TP_CONFIG_PARAMS1
-		{
+		public struct L2TP_CONFIG_PARAMS1		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 			public uint32 dwTunnelConfigParamFlags;
 			public L2TP_TUNNEL_CONFIG_PARAMS2 TunnelConfigParams;
 		}
 		[CRepr]
-		public struct GRE_CONFIG_PARAMS0
-		{
+		public struct GRE_CONFIG_PARAMS0		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 		}
 		[CRepr]
-		public struct L2TP_CONFIG_PARAMS0
-		{
+		public struct L2TP_CONFIG_PARAMS0		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 		}
 		[CRepr]
-		public struct SSTP_CERT_INFO
-		{
+		public struct SSTP_CERT_INFO		{
 			public BOOL isDefault;
 			public CRYPTOAPI_BLOB certBlob;
 		}
 		[CRepr]
-		public struct SSTP_CONFIG_PARAMS
-		{
+		public struct SSTP_CONFIG_PARAMS		{
 			public uint32 dwNumPorts;
 			public uint32 dwPortFlags;
 			public BOOL isUseHttps;
@@ -2514,16 +2389,14 @@ namespace Win32
 			public SSTP_CERT_INFO sstpCertDetails;
 		}
 		[CRepr]
-		public struct MPRAPI_TUNNEL_CONFIG_PARAMS0
-		{
+		public struct MPRAPI_TUNNEL_CONFIG_PARAMS0		{
 			public IKEV2_CONFIG_PARAMS IkeConfigParams;
 			public PPTP_CONFIG_PARAMS PptpConfigParams;
 			public L2TP_CONFIG_PARAMS1 L2tpConfigParams;
 			public SSTP_CONFIG_PARAMS SstpConfigParams;
 		}
 		[CRepr]
-		public struct MPRAPI_TUNNEL_CONFIG_PARAMS1
-		{
+		public struct MPRAPI_TUNNEL_CONFIG_PARAMS1		{
 			public IKEV2_CONFIG_PARAMS IkeConfigParams;
 			public PPTP_CONFIG_PARAMS PptpConfigParams;
 			public L2TP_CONFIG_PARAMS1 L2tpConfigParams;
@@ -2531,8 +2404,7 @@ namespace Win32
 			public GRE_CONFIG_PARAMS0 GREConfigParams;
 		}
 		[CRepr]
-		public struct MPR_SERVER_EX0
-		{
+		public struct MPR_SERVER_EX0		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 fLanOnlyMode;
 			public uint32 dwUpTime;
@@ -2542,8 +2414,7 @@ namespace Win32
 			public MPRAPI_TUNNEL_CONFIG_PARAMS0 ConfigParams;
 		}
 		[CRepr]
-		public struct MPR_SERVER_EX1
-		{
+		public struct MPR_SERVER_EX1		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 fLanOnlyMode;
 			public uint32 dwUpTime;
@@ -2553,22 +2424,19 @@ namespace Win32
 			public MPRAPI_TUNNEL_CONFIG_PARAMS1 ConfigParams;
 		}
 		[CRepr]
-		public struct MPR_SERVER_SET_CONFIG_EX0
-		{
+		public struct MPR_SERVER_SET_CONFIG_EX0		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 setConfigForProtocols;
 			public MPRAPI_TUNNEL_CONFIG_PARAMS0 ConfigParams;
 		}
 		[CRepr]
-		public struct MPR_SERVER_SET_CONFIG_EX1
-		{
+		public struct MPR_SERVER_SET_CONFIG_EX1		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 setConfigForProtocols;
 			public MPRAPI_TUNNEL_CONFIG_PARAMS1 ConfigParams;
 		}
 		[CRepr]
-		public struct AUTH_VALIDATION_EX
-		{
+		public struct AUTH_VALIDATION_EX		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public HANDLE hRasConnection;
 			public char16[257] wszUserName;
@@ -2577,16 +2445,14 @@ namespace Win32
 			public uint8[0] AuthInfo;
 		}
 		[CRepr]
-		public struct RAS_UPDATE_CONNECTION
-		{
+		public struct RAS_UPDATE_CONNECTION		{
 			public MPRAPI_OBJECT_HEADER Header;
 			public uint32 dwIfIndex;
 			public char16[65] wszLocalEndpointAddress;
 			public char16[65] wszRemoteEndpointAddress;
 		}
 		[CRepr]
-		public struct MPRAPI_ADMIN_DLL_CALLBACKS
-		{
+		public struct MPRAPI_ADMIN_DLL_CALLBACKS		{
 			public uint8 revision;
 			public PMPRADMINGETIPADDRESSFORUSER lpfnMprAdminGetIpAddressForUser;
 			public PMPRADMINRELEASEIPADRESS lpfnMprAdminReleaseIpAddress;
@@ -2602,8 +2468,7 @@ namespace Win32
 			public PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX lpfnRASValidatePreAuthenticatedConnectionEx;
 		}
 		[CRepr]
-		public struct SECURITY_MESSAGE
-		{
+		public struct SECURITY_MESSAGE		{
 			public SECURITY_MESSAGE_MSG_ID dwMsgId;
 			public int hPort;
 			public uint32 dwError;
@@ -2611,23 +2476,20 @@ namespace Win32
 			public CHAR[16] Domain;
 		}
 		[CRepr]
-		public struct RAS_SECURITY_INFO
-		{
+		public struct RAS_SECURITY_INFO		{
 			public uint32 LastError;
 			public uint32 BytesReceived;
 			public CHAR[129] DeviceName;
 		}
 		[CRepr]
-		public struct MGM_IF_ENTRY
-		{
+		public struct MGM_IF_ENTRY		{
 			public uint32 dwIfIndex;
 			public uint32 dwIfNextHopAddr;
 			public BOOL bIGMP;
 			public BOOL bIsEnabled;
 		}
 		[CRepr]
-		public struct ROUTING_PROTOCOL_CONFIG
-		{
+		public struct ROUTING_PROTOCOL_CONFIG		{
 			public uint32 dwCallbackFlags;
 			public PMGM_RPF_CALLBACK pfnRpfCallback;
 			public PMGM_CREATION_ALERT_CALLBACK pfnCreationAlertCallback;
@@ -2640,43 +2502,37 @@ namespace Win32
 			public PMGM_ENABLE_IGMP_CALLBACK pfnEnableIgmpCallback;
 		}
 		[CRepr]
-		public struct SOURCE_GROUP_ENTRY
-		{
+		public struct SOURCE_GROUP_ENTRY		{
 			public uint32 dwSourceAddr;
 			public uint32 dwSourceMask;
 			public uint32 dwGroupAddr;
 			public uint32 dwGroupMask;
 		}
 		[CRepr]
-		public struct RTM_REGN_PROFILE
-		{
+		public struct RTM_REGN_PROFILE		{
 			public uint32 MaxNextHopsInRoute;
 			public uint32 MaxHandlesInEnum;
 			public uint32 ViewsSupported;
 			public uint32 NumberOfViews;
 		}
 		[CRepr]
-		public struct RTM_NET_ADDRESS
-		{
+		public struct RTM_NET_ADDRESS		{
 			public uint16 AddressFamily;
 			public uint16 NumBits;
 			public uint8[16] AddrBits;
 		}
 		[CRepr]
-		public struct RTM_PREF_INFO
-		{
+		public struct RTM_PREF_INFO		{
 			public uint32 Metric;
 			public uint32 Preference;
 		}
 		[CRepr]
-		public struct RTM_NEXTHOP_LIST
-		{
+		public struct RTM_NEXTHOP_LIST		{
 			public uint16 NumNextHops;
 			public int[0] NextHops;
 		}
 		[CRepr]
-		public struct RTM_DEST_INFO
-		{
+		public struct RTM_DEST_INFO		{
 			public int DestHandle;
 			public RTM_NET_ADDRESS DestAddress;
 			public FILETIME LastChanged;
@@ -2685,8 +2541,7 @@ namespace Win32
 			public _Anonymous_e__Struct[0] ViewInfo;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public int32 ViewId;
 				public uint32 NumRoutes;
 				public int Route;
@@ -2696,8 +2551,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct RTM_ROUTE_INFO
-		{
+		public struct RTM_ROUTE_INFO		{
 			public int DestHandle;
 			public int RouteOwner;
 			public int Neighbour;
@@ -2710,8 +2564,7 @@ namespace Win32
 			public RTM_NEXTHOP_LIST NextHopsList;
 		}
 		[CRepr]
-		public struct RTM_NEXTHOP_INFO
-		{
+		public struct RTM_NEXTHOP_INFO		{
 			public RTM_NET_ADDRESS NextHopAddress;
 			public int NextHopOwner;
 			public uint32 InterfaceIndex;
@@ -2721,49 +2574,42 @@ namespace Win32
 			public int RemoteNextHop;
 		}
 		[CRepr]
-		public struct RTM_ENTITY_ID
-		{
+		public struct RTM_ENTITY_ID		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 EntityId;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 EntityProtocolId;
 					public uint32 EntityInstanceId;
 				}
 			}
 		}
 		[CRepr]
-		public struct RTM_ENTITY_INFO
-		{
+		public struct RTM_ENTITY_INFO		{
 			public uint16 RtmInstanceId;
 			public uint16 AddressFamily;
 			public RTM_ENTITY_ID EntityId;
 		}
 		[CRepr]
-		public struct RTM_ENTITY_METHOD_INPUT
-		{
+		public struct RTM_ENTITY_METHOD_INPUT		{
 			public uint32 MethodType;
 			public uint32 InputSize;
 			public uint8[0] InputData;
 		}
 		[CRepr]
-		public struct RTM_ENTITY_METHOD_OUTPUT
-		{
+		public struct RTM_ENTITY_METHOD_OUTPUT		{
 			public uint32 MethodType;
 			public uint32 MethodStatus;
 			public uint32 OutputSize;
 			public uint8[0] OutputData;
 		}
 		[CRepr]
-		public struct RTM_ENTITY_EXPORT_METHODS
-		{
+		public struct RTM_ENTITY_EXPORT_METHODS		{
 			public uint32 NumMethods;
 			public RTM_ENTITY_EXPORT_METHOD[0] Methods;
 		}

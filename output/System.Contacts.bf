@@ -32,8 +32,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CONTACT_AGGREGATION_BLOB
-		{
+		public struct CONTACT_AGGREGATION_BLOB		{
 			public uint32 dwCount;
 			public uint8* lpb;
 		}

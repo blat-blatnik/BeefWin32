@@ -62,97 +62,82 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CountedString
-		{
+		public struct CountedString		{
 			public uint16 length;
 			public PWSTR string;
 		}
 		[CRepr]
-		public struct IsolationInfo
-		{
+		public struct IsolationInfo		{
 			public IsolationState isolationState;
 			public FILETIME probEndTime;
 			public CountedString failureUrl;
 		}
 		[CRepr]
-		public struct IsolationInfoEx
-		{
+		public struct IsolationInfoEx		{
 			public IsolationState isolationState;
 			public ExtendedIsolationState extendedIsolationState;
 			public FILETIME probEndTime;
 			public CountedString failureUrl;
 		}
 		[CRepr]
-		public struct FailureCategoryMapping
-		{
+		public struct FailureCategoryMapping		{
 			public BOOL[5] mappingCompliance;
 		}
 		[CRepr]
-		public struct CorrelationId
-		{
+		public struct CorrelationId		{
 			public Guid connId;
 			public FILETIME timeStamp;
 		}
 		[CRepr]
-		public struct ResultCodes
-		{
+		public struct ResultCodes		{
 			public uint16 count;
 			public HRESULT* results;
 		}
 		[CRepr]
-		public struct Ipv4Address
-		{
+		public struct Ipv4Address		{
 			public uint8[4] addr;
 		}
 		[CRepr]
-		public struct Ipv6Address
-		{
+		public struct Ipv6Address		{
 			public uint8[16] addr;
 		}
 		[CRepr]
-		public struct FixupInfo
-		{
+		public struct FixupInfo		{
 			public FixupState state;
 			public uint8 percentage;
 			public ResultCodes resultCodes;
 			public uint32 fixupMsgId;
 		}
 		[CRepr]
-		public struct SystemHealthAgentState
-		{
+		public struct SystemHealthAgentState		{
 			public uint32 id;
 			public ResultCodes shaResultCodes;
 			public FailureCategory failureCategory;
 			public FixupInfo fixupInfo;
 		}
 		[CRepr]
-		public struct SoHAttribute
-		{
+		public struct SoHAttribute		{
 			public uint16 type;
 			public uint16 size;
 			public uint8* value;
 		}
 		[CRepr]
-		public struct SoH
-		{
+		public struct SoH		{
 			public uint16 count;
 			public SoHAttribute* attributes;
 		}
 		[CRepr]
-		public struct NetworkSoH
-		{
+		public struct NetworkSoH		{
 			public uint16 size;
 			public uint8* data;
 		}
 		[CRepr]
-		public struct PrivateData
-		{
+		public struct PrivateData		{
 			public uint16 size;
 			public uint8* data;
 		}
 		[CRepr]
-		public struct NapComponentRegistrationInfo
-		{
+		public struct NapComponentRegistrationInfo		{
 			public uint32 id;
 			public CountedString friendlyName;
 			public CountedString description;

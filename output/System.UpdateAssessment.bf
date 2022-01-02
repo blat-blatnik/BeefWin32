@@ -33,15 +33,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct UpdateAssessment
-		{
+		public struct UpdateAssessment		{
 			public UpdateAssessmentStatus status;
 			public UpdateImpactLevel impact;
 			public uint32 daysOutOfDate;
 		}
 		[CRepr]
-		public struct OSUpdateAssessment
-		{
+		public struct OSUpdateAssessment		{
 			public BOOL isEndOfSupport;
 			public UpdateAssessment assessmentForCurrent;
 			public UpdateAssessment assessmentForUpToDate;

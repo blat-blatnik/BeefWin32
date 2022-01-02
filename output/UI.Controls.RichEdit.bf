@@ -1380,14 +1380,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct IMECOMPTEXT
-		{
+		public struct IMECOMPTEXT		{
 			public int32 cb;
 			public IMECOMPTEXT_FLAGS flags;
 		}
 		[CRepr]
-		public struct TABLEROWPARMS
-		{
+		public struct TABLEROWPARMS		{
 			public uint8 cbRow;
 			public uint8 cbCell;
 			public uint8 cCell;
@@ -1401,8 +1399,7 @@ namespace Win32
 			public uint8 iCell;
 		}
 		[CRepr]
-		public struct TABLECELLPARMS
-		{
+		public struct TABLECELLPARMS		{
 			public int32 dxWidth;
 			public uint16 _bitfield;
 			public uint16 wShading;
@@ -1418,8 +1415,7 @@ namespace Win32
 			public uint32 crForePat;
 		}
 		[CRepr]
-		public struct RICHEDIT_IMAGE_PARAMETERS
-		{
+		public struct RICHEDIT_IMAGE_PARAMETERS		{
 			public int32 xWidth;
 			public int32 yHeight;
 			public int32 Ascent;
@@ -1428,14 +1424,12 @@ namespace Win32
 			public IStream* pIStream;
 		}
 		[CRepr]
-		public struct ENDCOMPOSITIONNOTIFY
-		{
+		public struct ENDCOMPOSITIONNOTIFY		{
 			public NMHDR nmhdr;
 			public ENDCOMPOSITIONNOTIFY_CODE dwCode;
 		}
 		[CRepr]
-		public struct CHARFORMATA
-		{
+		public struct CHARFORMATA		{
 			public uint32 cbSize;
 			public CFM_MASK dwMask;
 			public CFE_EFFECTS dwEffects;
@@ -1447,8 +1441,7 @@ namespace Win32
 			public CHAR[32] szFaceName;
 		}
 		[CRepr]
-		public struct CHARFORMATW
-		{
+		public struct CHARFORMATW		{
 			public uint32 cbSize;
 			public CFM_MASK dwMask;
 			public CFE_EFFECTS dwEffects;
@@ -1460,8 +1453,7 @@ namespace Win32
 			public char16[32] szFaceName;
 		}
 		[CRepr]
-		public struct CHARFORMAT2W
-		{
+		public struct CHARFORMAT2W		{
 			public CHARFORMATW __AnonymousBase_richedit_L711_C23;
 			public uint16 wWeight;
 			public int16 sSpacing;
@@ -1476,15 +1468,13 @@ namespace Win32
 			public uint8 bUnderlineColor;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 dwReserved;
 				public uint32 dwCookie;
 			}
 		}
 		[CRepr]
-		public struct CHARFORMAT2A
-		{
+		public struct CHARFORMAT2A		{
 			public CHARFORMATA __AnonymousBase_richedit_L736_C23;
 			public uint16 wWeight;
 			public int16 sSpacing;
@@ -1499,66 +1489,56 @@ namespace Win32
 			public uint8 bUnderlineColor;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 dwReserved;
 				public uint32 dwCookie;
 			}
 		}
 		[CRepr]
-		public struct CHARRANGE
-		{
+		public struct CHARRANGE		{
 			public int32 cpMin;
 			public int32 cpMax;
 		}
 		[CRepr]
-		public struct TEXTRANGEA
-		{
+		public struct TEXTRANGEA		{
 			public CHARRANGE chrg;
 			public PSTR lpstrText;
 		}
 		[CRepr]
-		public struct TEXTRANGEW
-		{
+		public struct TEXTRANGEW		{
 			public CHARRANGE chrg;
 			public PWSTR lpstrText;
 		}
 		[CRepr]
-		public struct EDITSTREAM
-		{
+		public struct EDITSTREAM		{
 			public uint dwCookie;
 			public uint32 dwError;
 			public EDITSTREAMCALLBACK pfnCallback;
 		}
 		[CRepr]
-		public struct FINDTEXTA
-		{
+		public struct FINDTEXTA		{
 			public CHARRANGE chrg;
 			public PSTR lpstrText;
 		}
 		[CRepr]
-		public struct FINDTEXTW
-		{
+		public struct FINDTEXTW		{
 			public CHARRANGE chrg;
 			public PWSTR lpstrText;
 		}
 		[CRepr]
-		public struct FINDTEXTEXA
-		{
+		public struct FINDTEXTEXA		{
 			public CHARRANGE chrg;
 			public PSTR lpstrText;
 			public CHARRANGE chrgText;
 		}
 		[CRepr]
-		public struct FINDTEXTEXW
-		{
+		public struct FINDTEXTEXW		{
 			public CHARRANGE chrg;
 			public PWSTR lpstrText;
 			public CHARRANGE chrgText;
 		}
 		[CRepr]
-		public struct FORMATRANGE
-		{
+		public struct FORMATRANGE		{
 			public HDC hdc;
 			public HDC hdcTarget;
 			public RECT rc;
@@ -1566,8 +1546,7 @@ namespace Win32
 			public CHARRANGE chrg;
 		}
 		[CRepr]
-		public struct PARAFORMAT
-		{
+		public struct PARAFORMAT		{
 			public uint32 cbSize;
 			public PARAFORMAT_MASK dwMask;
 			public uint16 wNumbering;
@@ -1580,15 +1559,13 @@ namespace Win32
 			public uint32[32] rgxTabs;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint16 wReserved;
 				public uint16 wEffects;
 			}
 		}
 		[CRepr]
-		public struct PARAFORMAT2
-		{
+		public struct PARAFORMAT2		{
 			public PARAFORMAT __AnonymousBase_richedit_L1149_C22;
 			public int32 dySpaceBefore;
 			public int32 dySpaceAfter;
@@ -1606,57 +1583,49 @@ namespace Win32
 			public PARAFORMAT_BORDERS wBorders;
 		}
 		[CRepr]
-		public struct MSGFILTER
-		{
+		public struct MSGFILTER		{
 			public NMHDR nmhdr;
 			public uint32 msg;
 			public WPARAM wParam;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct REQRESIZE
-		{
+		public struct REQRESIZE		{
 			public NMHDR nmhdr;
 			public RECT rc;
 		}
 		[CRepr]
-		public struct SELCHANGE
-		{
+		public struct SELCHANGE		{
 			public NMHDR nmhdr;
 			public CHARRANGE chrg;
 			public RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltyp;
 		}
 		[CRepr]
-		public struct _grouptypingchange
-		{
+		public struct _grouptypingchange		{
 			public NMHDR nmhdr;
 			public BOOL fGroupTyping;
 		}
 		[CRepr]
-		public struct CLIPBOARDFORMAT
-		{
+		public struct CLIPBOARDFORMAT		{
 			public NMHDR nmhdr;
 			public uint16 cf;
 		}
 		[CRepr]
-		public struct GETCONTEXTMENUEX
-		{
+		public struct GETCONTEXTMENUEX		{
 			public CHARRANGE chrg;
 			public uint32 dwFlags;
 			public POINT pt;
 			public void* pvReserved;
 		}
 		[CRepr]
-		public struct ENDROPFILES
-		{
+		public struct ENDROPFILES		{
 			public NMHDR nmhdr;
 			public HANDLE hDrop;
 			public int32 cp;
 			public BOOL fProtected;
 		}
 		[CRepr]
-		public struct ENPROTECTED
-		{
+		public struct ENPROTECTED		{
 			public NMHDR nmhdr;
 			public uint32 msg;
 			public WPARAM wParam;
@@ -1664,30 +1633,26 @@ namespace Win32
 			public CHARRANGE chrg;
 		}
 		[CRepr]
-		public struct ENSAVECLIPBOARD
-		{
+		public struct ENSAVECLIPBOARD		{
 			public NMHDR nmhdr;
 			public int32 cObjectCount;
 			public int32 cch;
 		}
 		[CRepr]
-		public struct ENOLEOPFAILED
-		{
+		public struct ENOLEOPFAILED		{
 			public NMHDR nmhdr;
 			public int32 iob;
 			public int32 lOper;
 			public HRESULT hr;
 		}
 		[CRepr]
-		public struct OBJECTPOSITIONS
-		{
+		public struct OBJECTPOSITIONS		{
 			public NMHDR nmhdr;
 			public int32 cObjectCount;
 			public int32* pcpPositions;
 		}
 		[CRepr]
-		public struct ENLINK
-		{
+		public struct ENLINK		{
 			public NMHDR nmhdr;
 			public uint32 msg;
 			public WPARAM wParam;
@@ -1695,46 +1660,39 @@ namespace Win32
 			public CHARRANGE chrg;
 		}
 		[CRepr]
-		public struct ENLOWFIRTF
-		{
+		public struct ENLOWFIRTF		{
 			public NMHDR nmhdr;
 			public PSTR szControl;
 		}
 		[CRepr]
-		public struct ENCORRECTTEXT
-		{
+		public struct ENCORRECTTEXT		{
 			public NMHDR nmhdr;
 			public CHARRANGE chrg;
 			public RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltyp;
 		}
 		[CRepr]
-		public struct PUNCTUATION
-		{
+		public struct PUNCTUATION		{
 			public uint32 iSize;
 			public PSTR szPunctuation;
 		}
 		[CRepr]
-		public struct COMPCOLOR
-		{
+		public struct COMPCOLOR		{
 			public uint32 crText;
 			public uint32 crBackground;
 			public uint32 dwEffects;
 		}
 		[CRepr]
-		public struct REPASTESPECIAL
-		{
+		public struct REPASTESPECIAL		{
 			public DVASPECT dwAspect;
 			public uint dwParam;
 		}
 		[CRepr]
-		public struct SETTEXTEX
-		{
+		public struct SETTEXTEX		{
 			public uint32 flags;
 			public uint32 codepage;
 		}
 		[CRepr]
-		public struct GETTEXTEX
-		{
+		public struct GETTEXTEX		{
 			public uint32 cb;
 			public GETTEXTEX_FLAGS flags;
 			public uint32 codepage;
@@ -1742,47 +1700,40 @@ namespace Win32
 			public int32* lpUsedDefChar;
 		}
 		[CRepr]
-		public struct GETTEXTLENGTHEX
-		{
+		public struct GETTEXTLENGTHEX		{
 			public GETTEXTLENGTHEX_FLAGS flags;
 			public uint32 codepage;
 		}
 		[CRepr]
-		public struct BIDIOPTIONS
-		{
+		public struct BIDIOPTIONS		{
 			public uint32 cbSize;
 			public uint16 wMask;
 			public uint16 wEffects;
 		}
 		[CRepr]
-		public struct hyphresult
-		{
+		public struct hyphresult		{
 			public KHYPH khyph;
 			public int32 ichHyph;
 			public char16 chHyph;
 		}
 		[CRepr]
-		public struct HYPHENATEINFO
-		{
+		public struct HYPHENATEINFO		{
 			public int16 cbSize;
 			public int16 dxHyphenateZone;
 			public int pfnHyphenate;
 		}
 		[CRepr]
-		public struct CHANGENOTIFY
-		{
+		public struct CHANGENOTIFY		{
 			public CHANGETYPE dwChangeType;
 			public void* pvCookieData;
 		}
 		[CRepr, Union]
-		public struct CARET_INFO
-		{
+		public struct CARET_INFO		{
 			public HBITMAP hbitmap;
 			public CARET_FLAGS caretFlags;
 		}
 		[CRepr]
-		public struct REOBJECT
-		{
+		public struct REOBJECT		{
 			public uint32 cbStruct;
 			public int32 cp;
 			public Guid clsid;
@@ -2725,11 +2676,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : ITextRange2.VTable
-			{
-			}
+			public struct VTable : ITextRange2.VTable {}
 		}
 		[CRepr]
 		public struct ITextFont2 : ITextFont
@@ -3092,11 +3040,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct ITextDocument2Old : ITextDocument

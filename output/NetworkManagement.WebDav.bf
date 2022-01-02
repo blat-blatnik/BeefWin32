@@ -32,23 +32,20 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DAV_CALLBACK_AUTH_BLOB
-		{
+		public struct DAV_CALLBACK_AUTH_BLOB		{
 			public void* pBuffer;
 			public uint32 ulSize;
 			public uint32 ulType;
 		}
 		[CRepr]
-		public struct DAV_CALLBACK_AUTH_UNP
-		{
+		public struct DAV_CALLBACK_AUTH_UNP		{
 			public PWSTR pszUserName;
 			public uint32 ulUserNameLength;
 			public PWSTR pszPassword;
 			public uint32 ulPasswordLength;
 		}
 		[CRepr]
-		public struct DAV_CALLBACK_CRED
-		{
+		public struct DAV_CALLBACK_CRED		{
 			public DAV_CALLBACK_AUTH_BLOB AuthBlob;
 			public DAV_CALLBACK_AUTH_UNP UNPBlob;
 			public BOOL bAuthBlobValid;

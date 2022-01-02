@@ -1463,8 +1463,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SYSTEM_EVENT_DATA
-		{
+		public struct SYSTEM_EVENT_DATA		{
 			public uint8 bModifier;
 			public char16 wKey;
 			public int32 xPos;
@@ -1473,28 +1472,24 @@ namespace Win32
 			public uint32 dwButtonState;
 		}
 		[CRepr]
-		public struct STROKE_RANGE
-		{
+		public struct STROKE_RANGE		{
 			public uint32 iStrokeBegin;
 			public uint32 iStrokeEnd;
 		}
 		[CRepr]
-		public struct PROPERTY_METRICS
-		{
+		public struct PROPERTY_METRICS		{
 			public int32 nLogicalMin;
 			public int32 nLogicalMax;
 			public PROPERTY_UNITS Units;
 			public float fResolution;
 		}
 		[CRepr]
-		public struct PACKET_PROPERTY
-		{
+		public struct PACKET_PROPERTY		{
 			public Guid guid;
 			public PROPERTY_METRICS PropertyMetrics;
 		}
 		[CRepr]
-		public struct PACKET_DESCRIPTION
-		{
+		public struct PACKET_DESCRIPTION		{
 			public uint32 cbPacketSize;
 			public uint32 cPacketProperties;
 			public PACKET_PROPERTY* pPacketProperties;
@@ -1502,8 +1497,7 @@ namespace Win32
 			public Guid* pguidButtons;
 		}
 		[CRepr]
-		public struct INKMETRIC
-		{
+		public struct INKMETRIC		{
 			public int32 iHeight;
 			public int32 iFontAscent;
 			public int32 iFontDescent;
@@ -1511,8 +1505,7 @@ namespace Win32
 			public uint32 color;
 		}
 		[CRepr]
-		public struct InkRecoGuide
-		{
+		public struct InkRecoGuide		{
 			public RECT rectWritingBox;
 			public RECT rectDrawnBox;
 			public int32 cRows;
@@ -1520,59 +1513,50 @@ namespace Win32
 			public int32 midline;
 		}
 		[CRepr]
-		public struct FLICK_POINT
-		{
+		public struct FLICK_POINT		{
 			public int32 _bitfield;
 		}
 		[CRepr]
-		public struct FLICK_DATA
-		{
+		public struct FLICK_DATA		{
 			public int32 _bitfield;
 		}
 		[CRepr]
-		public struct IEC_STROKEINFO
-		{
+		public struct IEC_STROKEINFO		{
 			public NMHDR nmhdr;
 			public IInkCursor* Cursor;
 			public IInkStrokeDisp* Stroke;
 		}
 		[CRepr]
-		public struct IEC_GESTUREINFO
-		{
+		public struct IEC_GESTUREINFO		{
 			public NMHDR nmhdr;
 			public IInkCursor* Cursor;
 			public IInkStrokes* Strokes;
 			public VARIANT Gestures;
 		}
 		[CRepr]
-		public struct IEC_RECOGNITIONRESULTINFO
-		{
+		public struct IEC_RECOGNITIONRESULTINFO		{
 			public NMHDR nmhdr;
 			public IInkRecognitionResult* RecognitionResult;
 		}
 		[CRepr]
-		public struct StylusInfo
-		{
+		public struct StylusInfo		{
 			public uint32 tcid;
 			public uint32 cid;
 			public BOOL bIsInvertedCursor;
 		}
 		[CRepr]
-		public struct GESTURE_DATA
-		{
+		public struct GESTURE_DATA		{
 			public int32 gestureId;
 			public int32 recoConfidence;
 			public int32 strokeCount;
 		}
 		[CRepr]
-		public struct DYNAMIC_RENDERER_CACHED_DATA
-		{
+		public struct DYNAMIC_RENDERER_CACHED_DATA		{
 			public int32 strokeId;
 			public IDynamicRenderer* dynamicRenderer;
 		}
 		[CRepr]
-		public struct RECO_GUIDE
-		{
+		public struct RECO_GUIDE		{
 			public int32 xOrigin;
 			public int32 yOrigin;
 			public int32 cxBox;
@@ -1584,47 +1568,40 @@ namespace Win32
 			public int32 cyMid;
 		}
 		[CRepr]
-		public struct RECO_ATTRS
-		{
+		public struct RECO_ATTRS		{
 			public uint32 dwRecoCapabilityFlags;
 			public char16[32] awcVendorName;
 			public char16[64] awcFriendlyName;
 			public uint16[64] awLanguageId;
 		}
 		[CRepr]
-		public struct RECO_RANGE
-		{
+		public struct RECO_RANGE		{
 			public uint32 iwcBegin;
 			public uint32 cCount;
 		}
 		[CRepr]
-		public struct LINE_SEGMENT
-		{
+		public struct LINE_SEGMENT		{
 			public POINT PtA;
 			public POINT PtB;
 		}
 		[CRepr]
-		public struct LATTICE_METRICS
-		{
+		public struct LATTICE_METRICS		{
 			public LINE_SEGMENT lsBaseline;
 			public int16 iMidlineOffset;
 		}
 		[CRepr]
-		public struct RECO_LATTICE_PROPERTY
-		{
+		public struct RECO_LATTICE_PROPERTY		{
 			public Guid guidProperty;
 			public uint16 cbPropertyValue;
 			public uint8* pPropertyValue;
 		}
 		[CRepr]
-		public struct RECO_LATTICE_PROPERTIES
-		{
+		public struct RECO_LATTICE_PROPERTIES		{
 			public uint32 cProperties;
 			public RECO_LATTICE_PROPERTY** apProps;
 		}
 		[CRepr]
-		public struct RECO_LATTICE_ELEMENT
-		{
+		public struct RECO_LATTICE_ELEMENT		{
 			public int32 score;
 			public uint16 type;
 			public uint8* pData;
@@ -1633,8 +1610,7 @@ namespace Win32
 			public RECO_LATTICE_PROPERTIES epProp;
 		}
 		[CRepr]
-		public struct RECO_LATTICE_COLUMN
-		{
+		public struct RECO_LATTICE_COLUMN		{
 			public uint32 key;
 			public RECO_LATTICE_PROPERTIES cpProp;
 			public uint32 cStrokes;
@@ -1643,8 +1619,7 @@ namespace Win32
 			public RECO_LATTICE_ELEMENT* pLatticeElements;
 		}
 		[CRepr]
-		public struct RECO_LATTICE
-		{
+		public struct RECO_LATTICE		{
 			public uint32 ulColumnCount;
 			public RECO_LATTICE_COLUMN* pLatticeColumns;
 			public uint32 ulPropertyCount;
@@ -1654,8 +1629,7 @@ namespace Win32
 			public uint32* pulBestResultIndexes;
 		}
 		[CRepr]
-		public struct CHARACTER_RANGE
-		{
+		public struct CHARACTER_RANGE		{
 			public char16 wcLow;
 			public uint16 cChars;
 		}
@@ -2233,11 +2207,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkDisp : IDispatch
@@ -2309,11 +2280,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkRenderer : IDispatch
@@ -2458,11 +2426,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkOverlay : IDispatch
@@ -2592,11 +2557,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkPicture : IDispatch
@@ -2736,11 +2698,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkRecognizer : IDispatch
@@ -2814,11 +2773,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkRecognizerContext : IDispatch
@@ -3067,11 +3023,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkLineInfo : IUnknown
@@ -3105,11 +3058,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IInkDivider : IDispatch
@@ -3265,11 +3215,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IHandwrittenTextInsertion : IUnknown
@@ -3598,11 +3545,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IMathInputControl : IDispatch
@@ -3658,11 +3602,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IRealTimeStylus : IUnknown
@@ -3869,11 +3810,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IStylusPlugin.VTable
-			{
-			}
+			public struct VTable : IStylusPlugin.VTable {}
 		}
 		[CRepr]
 		public struct IStylusAsyncPlugin : IStylusPlugin
@@ -3882,11 +3820,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IStylusPlugin.VTable
-			{
-			}
+			public struct VTable : IStylusPlugin.VTable {}
 		}
 		[CRepr]
 		public struct IDynamicRenderer : IUnknown

@@ -56,15 +56,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct AVRF_BACKTRACE_INFORMATION
-		{
+		public struct AVRF_BACKTRACE_INFORMATION		{
 			public uint32 Depth;
 			public uint32 Index;
 			public uint64[32] ReturnAddresses;
 		}
 		[CRepr]
-		public struct AVRF_HEAP_ALLOCATION
-		{
+		public struct AVRF_HEAP_ALLOCATION		{
 			public uint64 HeapHandle;
 			public uint64 UserAllocation;
 			public uint64 UserAllocationSize;
@@ -76,8 +74,7 @@ namespace Win32
 			public AVRF_BACKTRACE_INFORMATION* BackTraceInformation;
 		}
 		[CRepr]
-		public struct AVRF_HANDLE_OPERATION
-		{
+		public struct AVRF_HANDLE_OPERATION		{
 			public uint64 Handle;
 			public uint32 ProcessId;
 			public uint32 ThreadId;

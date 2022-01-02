@@ -804,8 +804,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct XML_ERROR
-		{
+		public struct XML_ERROR		{
 			public uint32 _nLine;
 			public BSTR _pchBuf;
 			public uint32 _cchBuf;
@@ -816,8 +815,7 @@ namespace Win32
 			public uint32 _reserved2;
 		}
 		[CRepr]
-		public struct __msxml6_ReferenceRemainingTypes__
-		{
+		public struct __msxml6_ReferenceRemainingTypes__		{
 			public DOMNodeType __tagDomNodeType__;
 			public DOMNodeType __domNodeType__;
 			public SERVERXMLHTTP_OPTION __serverXmlHttpOptionEnum__;
@@ -842,8 +840,7 @@ namespace Win32
 			public SCHEMATYPEVARIETY __schemaTypeVariety__;
 		}
 		[CRepr]
-		public struct XHR_COOKIE
-		{
+		public struct XHR_COOKIE		{
 			public PWSTR pwszUrl;
 			public PWSTR pwszName;
 			public PWSTR pwszValue;
@@ -852,8 +849,7 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct XHR_CERT
-		{
+		public struct XHR_CERT		{
 			public uint32 cbCert;
 			public uint8* pbCert;
 		}
@@ -987,11 +983,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IXMLDOMNode.VTable
-			{
-			}
+			public struct VTable : IXMLDOMNode.VTable {}
 		}
 		[CRepr]
 		public struct IXMLDOMDocument : IXMLDOMNode
@@ -1229,11 +1222,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IXMLDOMCharacterData.VTable
-			{
-			}
+			public struct VTable : IXMLDOMCharacterData.VTable {}
 		}
 		[CRepr]
 		public struct IXMLDOMProcessingInstruction : IXMLDOMNode
@@ -1261,11 +1251,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IXMLDOMText.VTable
-			{
-			}
+			public struct VTable : IXMLDOMText.VTable {}
 		}
 		[CRepr]
 		public struct IXMLDOMDocumentType : IXMLDOMNode
@@ -1329,11 +1316,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IXMLDOMNode.VTable
-			{
-			}
+			public struct VTable : IXMLDOMNode.VTable {}
 		}
 		[CRepr]
 		public struct IXMLDOMParseError : IDispatch
@@ -1400,11 +1384,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IXMLHttpRequest : IDispatch

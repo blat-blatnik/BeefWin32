@@ -4447,29 +4447,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct _APPSTATE_REGISTRATION
-		{
-		}
+		public struct _APPSTATE_REGISTRATION {}
 		[CRepr]
-		public struct _APPCONSTRAIN_REGISTRATION
-		{
-		}
+		public struct _APPCONSTRAIN_REGISTRATION {}
 		[CRepr]
-		public struct APPCATEGORYINFO
-		{
+		public struct APPCATEGORYINFO		{
 			public uint32 Locale;
 			public PWSTR pszDescription;
 			public Guid AppCategoryId;
 		}
 		[CRepr]
-		public struct APPCATEGORYINFOLIST
-		{
+		public struct APPCATEGORYINFOLIST		{
 			public uint32 cCategory;
 			public APPCATEGORYINFO* pCategoryInfo;
 		}
 		[CRepr]
-		public struct HELPINFO
-		{
+		public struct HELPINFO		{
 			public uint32 cbSize;
 			public int32 iContextType;
 			public int32 iCtrlId;
@@ -4478,22 +4471,19 @@ namespace Win32
 			public POINT MousePos;
 		}
 		[CRepr]
-		public struct MULTIKEYHELPA
-		{
+		public struct MULTIKEYHELPA		{
 			public uint32 mkSize;
 			public CHAR mkKeylist;
 			public CHAR[0] szKeyphrase;
 		}
 		[CRepr]
-		public struct MULTIKEYHELPW
-		{
+		public struct MULTIKEYHELPW		{
 			public uint32 mkSize;
 			public char16 mkKeylist;
 			public char16[0] szKeyphrase;
 		}
 		[CRepr]
-		public struct HELPWININFOA
-		{
+		public struct HELPWININFOA		{
 			public int32 wStructSize;
 			public int32 x;
 			public int32 y;
@@ -4503,8 +4493,7 @@ namespace Win32
 			public CHAR[2] rgchMember;
 		}
 		[CRepr]
-		public struct HELPWININFOW
-		{
+		public struct HELPWININFOW		{
 			public int32 wStructSize;
 			public int32 x;
 			public int32 y;
@@ -4514,8 +4503,7 @@ namespace Win32
 			public char16[2] rgchMember;
 		}
 		[CRepr]
-		public struct CMINVOKECOMMANDINFO
-		{
+		public struct CMINVOKECOMMANDINFO		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -4527,8 +4515,7 @@ namespace Win32
 			public HANDLE hIcon;
 		}
 		[CRepr]
-		public struct CMINVOKECOMMANDINFOEX
-		{
+		public struct CMINVOKECOMMANDINFOEX		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -4546,8 +4533,7 @@ namespace Win32
 			public POINT ptInvoke;
 		}
 		[CRepr]
-		public struct CMINVOKECOMMANDINFOEX_REMOTE
-		{
+		public struct CMINVOKECOMMANDINFOEX_REMOTE		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -4566,8 +4552,7 @@ namespace Win32
 			public uint32 lpVerbWInt;
 		}
 		[CRepr]
-		public struct PERSIST_FOLDER_TARGET_INFO
-		{
+		public struct PERSIST_FOLDER_TARGET_INFO		{
 			public ITEMIDLIST* pidlTargetFolder;
 			public char16[260] szTargetParsingName;
 			public char16[260] szNetworkProvider;
@@ -4575,21 +4560,18 @@ namespace Win32
 			public int32 csidl;
 		}
 		[CRepr]
-		public struct EXTRASEARCH
-		{
+		public struct EXTRASEARCH		{
 			public Guid guidSearch;
 			public char16[80] wszFriendlyName;
 			public char16[2084] wszUrl;
 		}
 		[CRepr]
-		public struct FOLDERSETTINGS
-		{
+		public struct FOLDERSETTINGS		{
 			public uint32 ViewMode;
 			public uint32 fFlags;
 		}
 		[CRepr]
-		public struct SV2CVW2_PARAMS
-		{
+		public struct SV2CVW2_PARAMS		{
 			public uint32 cbSize;
 			public IShellView* psvPrev;
 			public FOLDERSETTINGS* pfs;
@@ -4599,14 +4581,12 @@ namespace Win32
 			public HWND hwndView;
 		}
 		[CRepr]
-		public struct SORTCOLUMN
-		{
+		public struct SORTCOLUMN		{
 			public PROPERTYKEY propkey;
 			public SORTDIRECTION direction;
 		}
 		[CRepr]
-		public struct CM_COLUMNINFO
-		{
+		public struct CM_COLUMNINFO		{
 			public uint32 cbSize;
 			public uint32 dwMask;
 			public uint32 dwState;
@@ -4616,28 +4596,24 @@ namespace Win32
 			public char16[80] wszName;
 		}
 		[CRepr]
-		public struct SHELL_ITEM_RESOURCE
-		{
+		public struct SHELL_ITEM_RESOURCE		{
 			public Guid guidType;
 			public char16[260] szName;
 		}
 		[CRepr]
-		public struct CATEGORY_INFO
-		{
+		public struct CATEGORY_INFO		{
 			public CATEGORYINFO_FLAGS cif;
 			public char16[260] wszName;
 		}
 		[CRepr]
-		public struct SHDRAGIMAGE
-		{
+		public struct SHDRAGIMAGE		{
 			public SIZE sizeDragImage;
 			public POINT ptOffset;
 			public HBITMAP hbmpDragImage;
 			public uint32 crColorKey;
 		}
 		[CRepr]
-		public struct DESKBANDINFO
-		{
+		public struct DESKBANDINFO		{
 			public uint32 dwMask;
 			public POINTL ptMinSize;
 			public POINTL ptMaxSize;
@@ -4648,8 +4624,7 @@ namespace Win32
 			public uint32 crBkgnd;
 		}
 		[CRepr]
-		public struct THUMBBUTTON
-		{
+		public struct THUMBBUTTON		{
 			public THUMBBUTTONMASK dwMask;
 			public uint32 iId;
 			public uint32 iBitmap;
@@ -4658,23 +4633,20 @@ namespace Win32
 			public THUMBBUTTONFLAGS dwFlags;
 		}
 		[CRepr]
-		public struct BANDSITEINFO
-		{
+		public struct BANDSITEINFO		{
 			public uint32 dwMask;
 			public uint32 dwState;
 			public uint32 dwStyle;
 		}
 		[CRepr]
-		public struct DELEGATEITEMID
-		{
+		public struct DELEGATEITEMID		{
 			public uint16 cbSize;
 			public uint16 wOuter;
 			public uint16 cbInner;
 			public uint8[0] rgb;
 		}
 		[CRepr]
-		public struct SMDATA
-		{
+		public struct SMDATA		{
 			public uint32 dwMask;
 			public uint32 dwFlags;
 			public HMENU hmenu;
@@ -4689,23 +4661,20 @@ namespace Win32
 			public void* pvUserData;
 		}
 		[CRepr]
-		public struct SMINFO
-		{
+		public struct SMINFO		{
 			public uint32 dwMask;
 			public uint32 dwType;
 			public uint32 dwFlags;
 			public int32 iIcon;
 		}
 		[CRepr]
-		public struct SMCSHCHANGENOTIFYSTRUCT
-		{
+		public struct SMCSHCHANGENOTIFYSTRUCT		{
 			public int32 lEvent;
 			public ITEMIDLIST* pidl1;
 			public ITEMIDLIST* pidl2;
 		}
 		[CRepr]
-		public struct KNOWNFOLDER_DEFINITION
-		{
+		public struct KNOWNFOLDER_DEFINITION		{
 			public KF_CATEGORY category;
 			public PWSTR pszName;
 			public PWSTR pszDescription;
@@ -4721,21 +4690,18 @@ namespace Win32
 			public Guid ftidType;
 		}
 		[CRepr]
-		public struct PREVIEWHANDLERFRAMEINFO
-		{
+		public struct PREVIEWHANDLERFRAMEINFO		{
 			public HACCEL haccel;
 			public uint32 cAccelEntries;
 		}
 		[CRepr]
-		public struct BANNER_NOTIFICATION
-		{
+		public struct BANNER_NOTIFICATION		{
 			public BANNER_NOTIFICATION_EVENT event;
 			public PWSTR providerIdentity;
 			public PWSTR contentId;
 		}
 		[CRepr]
-		public struct NSTCCUSTOMDRAW
-		{
+		public struct NSTCCUSTOMDRAW		{
 			public IShellItem* psi;
 			public uint32 uItemState;
 			public uint32 nstcis;
@@ -4746,14 +4712,12 @@ namespace Win32
 			public int32 iIndent;
 		}
 		[CRepr]
-		public struct DATABLOCK_HEADER
-		{
+		public struct DATABLOCK_HEADER		{
 			public uint32 cbSize;
 			public uint32 dwSignature;
 		}
 		[CRepr]
-		public struct NT_CONSOLE_PROPS
-		{
+		public struct NT_CONSOLE_PROPS		{
 			public DATABLOCK_HEADER dbh;
 			public uint16 wFillAttribute;
 			public uint16 wPopupFillAttribute;
@@ -4777,44 +4741,38 @@ namespace Win32
 			public uint32[16] ColorTable;
 		}
 		[CRepr]
-		public struct NT_FE_CONSOLE_PROPS
-		{
+		public struct NT_FE_CONSOLE_PROPS		{
 			public DATABLOCK_HEADER dbh;
 			public uint32 uCodePage;
 		}
 		[CRepr]
-		public struct EXP_DARWIN_LINK
-		{
+		public struct EXP_DARWIN_LINK		{
 			public DATABLOCK_HEADER dbh;
 			public CHAR[260] szDarwinID;
 			public char16[260] szwDarwinID;
 		}
 		[CRepr]
-		public struct EXP_SPECIAL_FOLDER
-		{
+		public struct EXP_SPECIAL_FOLDER		{
 			public uint32 cbSize;
 			public uint32 dwSignature;
 			public uint32 idSpecialFolder;
 			public uint32 cbOffset;
 		}
 		[CRepr]
-		public struct EXP_SZ_LINK
-		{
+		public struct EXP_SZ_LINK		{
 			public uint32 cbSize;
 			public uint32 dwSignature;
 			public CHAR[260] szTarget;
 			public char16[260] swzTarget;
 		}
 		[CRepr]
-		public struct EXP_PROPERTYSTORAGE
-		{
+		public struct EXP_PROPERTYSTORAGE		{
 			public uint32 cbSize;
 			public uint32 dwSignature;
 			public uint8[0] abPropertyStorage;
 		}
 		[CRepr]
-		public struct SHFOLDERCUSTOMSETTINGS
-		{
+		public struct SHFOLDERCUSTOMSETTINGS		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public Guid* pvid;
@@ -4832,8 +4790,7 @@ namespace Win32
 			public uint32 cchLogo;
 		}
 		[CRepr]
-		public struct BROWSEINFOA
-		{
+		public struct BROWSEINFOA		{
 			public HWND hwndOwner;
 			public ITEMIDLIST* pidlRoot;
 			public PSTR pszDisplayName;
@@ -4844,8 +4801,7 @@ namespace Win32
 			public int32 iImage;
 		}
 		[CRepr]
-		public struct BROWSEINFOW
-		{
+		public struct BROWSEINFOW		{
 			public HWND hwndOwner;
 			public ITEMIDLIST* pidlRoot;
 			public PWSTR pszDisplayName;
@@ -4856,20 +4812,17 @@ namespace Win32
 			public int32 iImage;
 		}
 		[CRepr]
-		public struct NRESARRAY
-		{
+		public struct NRESARRAY		{
 			public uint32 cItems;
 			public NETRESOURCEA[0] nr;
 		}
 		[CRepr]
-		public struct CIDA
-		{
+		public struct CIDA		{
 			public uint32 cidl;
 			public uint32[0] aoffset;
 		}
 		[CRepr]
-		public struct FILEDESCRIPTORA
-		{
+		public struct FILEDESCRIPTORA		{
 			public uint32 dwFlags;
 			public Guid clsid;
 			public SIZE sizel;
@@ -4883,8 +4836,7 @@ namespace Win32
 			public CHAR[260] cFileName;
 		}
 		[CRepr]
-		public struct FILEDESCRIPTORW
-		{
+		public struct FILEDESCRIPTORW		{
 			public uint32 dwFlags;
 			public Guid clsid;
 			public SIZE sizel;
@@ -4898,75 +4850,64 @@ namespace Win32
 			public char16[260] cFileName;
 		}
 		[CRepr]
-		public struct FILEGROUPDESCRIPTORA
-		{
+		public struct FILEGROUPDESCRIPTORA		{
 			public uint32 cItems;
 			public FILEDESCRIPTORA[0] fgd;
 		}
 		[CRepr]
-		public struct FILEGROUPDESCRIPTORW
-		{
+		public struct FILEGROUPDESCRIPTORW		{
 			public uint32 cItems;
 			public FILEDESCRIPTORW[0] fgd;
 		}
 		[CRepr]
-		public struct DROPFILES
-		{
+		public struct DROPFILES		{
 			public uint32 pFiles;
 			public POINT pt;
 			public BOOL fNC;
 			public BOOL fWide;
 		}
 		[CRepr]
-		public struct FILE_ATTRIBUTES_ARRAY
-		{
+		public struct FILE_ATTRIBUTES_ARRAY		{
 			public uint32 cItems;
 			public uint32 dwSumFileAttributes;
 			public uint32 dwProductFileAttributes;
 			public uint32[0] rgdwFileAttributes;
 		}
 		[CRepr]
-		public struct DROPDESCRIPTION
-		{
+		public struct DROPDESCRIPTION		{
 			public DROPIMAGETYPE type;
 			public char16[260] szMessage;
 			public char16[260] szInsert;
 		}
 		[CRepr]
-		public struct SHChangeNotifyEntry
-		{
+		public struct SHChangeNotifyEntry		{
 			public ITEMIDLIST* pidl;
 			public BOOL fRecursive;
 		}
 		[CRepr]
-		public struct SHARDAPPIDINFO
-		{
+		public struct SHARDAPPIDINFO		{
 			public IShellItem* psi;
 			public PWSTR pszAppID;
 		}
 		[CRepr]
-		public struct SHARDAPPIDINFOIDLIST
-		{
+		public struct SHARDAPPIDINFOIDLIST		{
 			public ITEMIDLIST* pidl;
 			public PWSTR pszAppID;
 		}
 		[CRepr]
-		public struct SHARDAPPIDINFOLINK
-		{
+		public struct SHARDAPPIDINFOLINK		{
 			public IShellLinkA* psl;
 			public PWSTR pszAppID;
 		}
 		[CRepr]
-		public struct SHChangeDWORDAsIDList
-		{
+		public struct SHChangeDWORDAsIDList		{
 			public uint16 cb;
 			public uint32 dwItem1;
 			public uint32 dwItem2;
 			public uint16 cbZero;
 		}
 		[CRepr]
-		public struct SHChangeUpdateImageIDList
-		{
+		public struct SHChangeUpdateImageIDList		{
 			public uint16 cb;
 			public int32 iIconIndex;
 			public int32 iCurIndex;
@@ -4976,14 +4917,12 @@ namespace Win32
 			public uint16 cbZero;
 		}
 		[CRepr]
-		public struct SHDESCRIPTIONID
-		{
+		public struct SHDESCRIPTIONID		{
 			public SHDID_ID dwDescriptionId;
 			public Guid clsid;
 		}
 		[CRepr]
-		public struct AUTO_SCROLL_DATA
-		{
+		public struct AUTO_SCROLL_DATA		{
 			public int32 iNextSample;
 			public uint32 dwLastScroll;
 			public BOOL bFull;
@@ -4991,35 +4930,30 @@ namespace Win32
 			public uint32[3] dwTimes;
 		}
 		[CRepr]
-		public struct CABINETSTATE
-		{
+		public struct CABINETSTATE		{
 			public uint16 cLength;
 			public uint16 nVersion;
 			public int32 _bitfield;
 			public uint32 fMenuEnumFilter;
 		}
 		[CRepr]
-		public struct OPENASINFO
-		{
+		public struct OPENASINFO		{
 			public PWSTR pcszFile;
 			public PWSTR pcszClass;
 			public OPEN_AS_INFO_FLAGS oaifInFlags;
 		}
 		[CRepr]
-		public struct QCMINFO_IDMAP_PLACEMENT
-		{
+		public struct QCMINFO_IDMAP_PLACEMENT		{
 			public uint32 id;
 			public uint32 fFlags;
 		}
 		[CRepr]
-		public struct QCMINFO_IDMAP
-		{
+		public struct QCMINFO_IDMAP		{
 			public uint32 nMaxIds;
 			public QCMINFO_IDMAP_PLACEMENT[0] pIdList;
 		}
 		[CRepr]
-		public struct QCMINFO
-		{
+		public struct QCMINFO		{
 			public HMENU hmenu;
 			public uint32 indexMenu;
 			public uint32 idCmdFirst;
@@ -5027,8 +4961,7 @@ namespace Win32
 			public QCMINFO_IDMAP* pIdMap;
 		}
 		[CRepr]
-		public struct DETAILSINFO
-		{
+		public struct DETAILSINFO		{
 			public ITEMIDLIST* pidl;
 			public int32 fmt;
 			public int32 cxChar;
@@ -5036,37 +4969,32 @@ namespace Win32
 			public int32 iImage;
 		}
 		[CRepr]
-		public struct SFVM_PROPPAGE_DATA
-		{
+		public struct SFVM_PROPPAGE_DATA		{
 			public uint32 dwReserved;
 			public LPFNSVADDPROPSHEETPAGE pfn;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct SFVM_HELPTOPIC_DATA
-		{
+		public struct SFVM_HELPTOPIC_DATA		{
 			public char16[260] wszHelpFile;
 			public char16[260] wszHelpTopic;
 		}
 		[CRepr]
-		public struct ITEMSPACING
-		{
+		public struct ITEMSPACING		{
 			public int32 cxSmall;
 			public int32 cySmall;
 			public int32 cxLarge;
 			public int32 cyLarge;
 		}
 		[CRepr]
-		public struct SFV_CREATE
-		{
+		public struct SFV_CREATE		{
 			public uint32 cbSize;
 			public IShellFolder* pshf;
 			public IShellView* psvOuter;
 			public IShellFolderViewCB* psfvcb;
 		}
 		[CRepr]
-		public struct DEFCONTEXTMENU
-		{
+		public struct DEFCONTEXTMENU		{
 			public HWND hwnd;
 			public IContextMenuCB* pcmcb;
 			public ITEMIDLIST* pidlFolder;
@@ -5078,8 +5006,7 @@ namespace Win32
 			public HKEY* aKeys;
 		}
 		[CRepr]
-		public struct DFMICS
-		{
+		public struct DFMICS		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public LPARAM lParam;
@@ -5089,8 +5016,7 @@ namespace Win32
 			public IUnknown* punkSite;
 		}
 		[CRepr]
-		public struct CSFV
-		{
+		public struct CSFV		{
 			public uint32 cbSize;
 			public IShellFolder* pshf;
 			public IShellView* psvOuter;
@@ -5100,8 +5026,7 @@ namespace Win32
 			public FOLDERVIEWMODE fvm;
 		}
 		[CRepr]
-		public struct SHELLSTATEA
-		{
+		public struct SHELLSTATEA		{
 			public int32 _bitfield1;
 			public uint32 dwWin95Unused;
 			public uint32 uWin95Unused;
@@ -5112,8 +5037,7 @@ namespace Win32
 			public int32 _bitfield2;
 		}
 		[CRepr]
-		public struct SHELLSTATEW
-		{
+		public struct SHELLSTATEW		{
 			public int32 _bitfield1;
 			public uint32 dwWin95Unused;
 			public uint32 uWin95Unused;
@@ -5124,13 +5048,11 @@ namespace Win32
 			public int32 _bitfield2;
 		}
 		[CRepr]
-		public struct SHELLFLAGSTATE
-		{
+		public struct SHELLFLAGSTATE		{
 			public int32 _bitfield;
 		}
 		[CRepr]
-		public struct BANDINFOSFB
-		{
+		public struct BANDINFOSFB		{
 			public uint32 dwMask;
 			public uint32 dwStateMask;
 			public uint32 dwState;
@@ -5143,8 +5065,7 @@ namespace Win32
 			public ITEMIDLIST* pidl;
 		}
 		[CRepr]
-		public struct SHCOLUMNINFO
-		{
+		public struct SHCOLUMNINFO		{
 			public PROPERTYKEY scid;
 			public uint16 vt;
 			public uint32 fmt;
@@ -5154,15 +5075,13 @@ namespace Win32
 			public char16[128] wszDescription;
 		}
 		[CRepr]
-		public struct SHCOLUMNINIT
-		{
+		public struct SHCOLUMNINIT		{
 			public uint32 dwFlags;
 			public uint32 dwReserved;
 			public char16[260] wszFolder;
 		}
 		[CRepr]
-		public struct SHCOLUMNDATA
-		{
+		public struct SHCOLUMNDATA		{
 			public uint32 dwFlags;
 			public uint32 dwFileAttributes;
 			public uint32 dwReserved;
@@ -5170,34 +5089,29 @@ namespace Win32
 			public char16[260] wszFile;
 		}
 		[CRepr]
-		public struct SHChangeProductKeyAsIDList
-		{
+		public struct SHChangeProductKeyAsIDList		{
 			public uint16 cb;
 			public char16[39] wszProductKey;
 			public uint16 cbZero;
 		}
 		[CRepr]
-		public struct TBINFO
-		{
+		public struct TBINFO		{
 			public uint32 cbuttons;
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct SFV_SETITEMPOS
-		{
+		public struct SFV_SETITEMPOS		{
 			public ITEMIDLIST* pidl;
 			public POINT pt;
 		}
 		[CRepr]
-		public struct AASHELLMENUFILENAME
-		{
+		public struct AASHELLMENUFILENAME		{
 			public int16 cbTotal;
 			public uint8[12] rgbReserved;
 			public char16[0] szFileName;
 		}
 		[CRepr]
-		public struct AASHELLMENUITEM
-		{
+		public struct AASHELLMENUITEM		{
 			public void* lpReserved1;
 			public int32 iReserved;
 			public uint32 uiReserved;
@@ -5205,8 +5119,7 @@ namespace Win32
 			public PWSTR psz;
 		}
 		[CRepr]
-		public struct DRAGINFOA
-		{
+		public struct DRAGINFOA		{
 			public uint32 uSize;
 			public POINT pt;
 			public BOOL fNC;
@@ -5214,8 +5127,7 @@ namespace Win32
 			public uint32 grfKeyState;
 		}
 		[CRepr]
-		public struct DRAGINFOW
-		{
+		public struct DRAGINFOW		{
 			public uint32 uSize;
 			public POINT pt;
 			public BOOL fNC;
@@ -5223,8 +5135,7 @@ namespace Win32
 			public uint32 grfKeyState;
 		}
 		[CRepr]
-		public struct APPBARDATA
-		{
+		public struct APPBARDATA		{
 			public uint32 cbSize;
 			public HWND hWnd;
 			public uint32 uCallbackMessage;
@@ -5233,8 +5144,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct SHFILEOPSTRUCTA
-		{
+		public struct SHFILEOPSTRUCTA		{
 			public HWND hwnd;
 			public uint32 wFunc;
 			public int8* pFrom;
@@ -5245,8 +5155,7 @@ namespace Win32
 			public PSTR lpszProgressTitle;
 		}
 		[CRepr]
-		public struct SHFILEOPSTRUCTW
-		{
+		public struct SHFILEOPSTRUCTW		{
 			public HWND hwnd;
 			public uint32 wFunc;
 			public PWSTR pFrom;
@@ -5257,24 +5166,21 @@ namespace Win32
 			public PWSTR lpszProgressTitle;
 		}
 		[CRepr]
-		public struct SHNAMEMAPPINGA
-		{
+		public struct SHNAMEMAPPINGA		{
 			public PSTR pszOldPath;
 			public PSTR pszNewPath;
 			public int32 cchOldPath;
 			public int32 cchNewPath;
 		}
 		[CRepr]
-		public struct SHNAMEMAPPINGW
-		{
+		public struct SHNAMEMAPPINGW		{
 			public PWSTR pszOldPath;
 			public PWSTR pszNewPath;
 			public int32 cchOldPath;
 			public int32 cchNewPath;
 		}
 		[CRepr]
-		public struct SHELLEXECUTEINFOA
-		{
+		public struct SHELLEXECUTEINFOA		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -5292,15 +5198,13 @@ namespace Win32
 			public HANDLE hProcess;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public HANDLE hIcon;
 				public HANDLE hMonitor;
 			}
 		}
 		[CRepr]
-		public struct SHELLEXECUTEINFOW
-		{
+		public struct SHELLEXECUTEINFOW		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -5318,15 +5222,13 @@ namespace Win32
 			public HANDLE hProcess;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public HANDLE hIcon;
 				public HANDLE hMonitor;
 			}
 		}
 		[CRepr]
-		public struct SHCREATEPROCESSINFOW
-		{
+		public struct SHCREATEPROCESSINFOW		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HWND hwnd;
@@ -5342,22 +5244,19 @@ namespace Win32
 			public PROCESS_INFORMATION* lpProcessInformation;
 		}
 		[CRepr]
-		public struct ASSOCIATIONELEMENT
-		{
+		public struct ASSOCIATIONELEMENT		{
 			public ASSOCCLASS ac;
 			public HKEY hkClass;
 			public PWSTR pszClass;
 		}
 		[CRepr]
-		public struct SHQUERYRBINFO
-		{
+		public struct SHQUERYRBINFO		{
 			public uint32 cbSize;
 			public int64 i64Size;
 			public int64 i64NumItems;
 		}
 		[CRepr]
-		public struct NOTIFYICONDATAA
-		{
+		public struct NOTIFYICONDATAA		{
 			public uint32 cbSize;
 			public HWND hWnd;
 			public uint32 uID;
@@ -5375,15 +5274,13 @@ namespace Win32
 			public HICON hBalloonIcon;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 uTimeout;
 				public uint32 uVersion;
 			}
 		}
 		[CRepr]
-		public struct NOTIFYICONDATAW
-		{
+		public struct NOTIFYICONDATAW		{
 			public uint32 cbSize;
 			public HWND hWnd;
 			public uint32 uID;
@@ -5401,23 +5298,20 @@ namespace Win32
 			public HICON hBalloonIcon;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 uTimeout;
 				public uint32 uVersion;
 			}
 		}
 		[CRepr]
-		public struct NOTIFYICONIDENTIFIER
-		{
+		public struct NOTIFYICONIDENTIFIER		{
 			public uint32 cbSize;
 			public HWND hWnd;
 			public uint32 uID;
 			public Guid guidItem;
 		}
 		[CRepr]
-		public struct SHFILEINFOA
-		{
+		public struct SHFILEINFOA		{
 			public HICON hIcon;
 			public int32 iIcon;
 			public uint32 dwAttributes;
@@ -5425,8 +5319,7 @@ namespace Win32
 			public CHAR[80] szTypeName;
 		}
 		[CRepr]
-		public struct SHFILEINFOW
-		{
+		public struct SHFILEINFOW		{
 			public HICON hIcon;
 			public int32 iIcon;
 			public uint32 dwAttributes;
@@ -5434,8 +5327,7 @@ namespace Win32
 			public char16[80] szTypeName;
 		}
 		[CRepr]
-		public struct SHSTOCKICONINFO
-		{
+		public struct SHSTOCKICONINFO		{
 			public uint32 cbSize;
 			public HICON hIcon;
 			public int32 iSysImageIndex;
@@ -5443,8 +5335,7 @@ namespace Win32
 			public char16[260] szPath;
 		}
 		[CRepr]
-		public struct OPEN_PRINTER_PROPS_INFOA
-		{
+		public struct OPEN_PRINTER_PROPS_INFOA		{
 			public uint32 dwSize;
 			public PSTR pszSheetName;
 			public uint32 uSheetIndex;
@@ -5452,8 +5343,7 @@ namespace Win32
 			public BOOL bModal;
 		}
 		[CRepr]
-		public struct OPEN_PRINTER_PROPS_INFOW
-		{
+		public struct OPEN_PRINTER_PROPS_INFOW		{
 			public uint32 dwSize;
 			public PWSTR pszSheetName;
 			public uint32 uSheetIndex;
@@ -5461,20 +5351,16 @@ namespace Win32
 			public BOOL bModal;
 		}
 		[CRepr]
-		public struct NC_ADDRESS
-		{
+		public struct NC_ADDRESS		{
 			public NET_ADDRESS_INFO* pAddrInfo;
 			public uint16 PortNumber;
 			public uint8 PrefixLength;
 			
 			[CRepr]
-			public struct NET_ADDRESS_INFO
-			{
-			}
+			public struct NET_ADDRESS_INFO {}
 		}
 		[CRepr]
-		public struct PARSEDURLA
-		{
+		public struct PARSEDURLA		{
 			public uint32 cbSize;
 			public PSTR pszProtocol;
 			public uint32 cchProtocol;
@@ -5483,8 +5369,7 @@ namespace Win32
 			public uint32 nScheme;
 		}
 		[CRepr]
-		public struct PARSEDURLW
-		{
+		public struct PARSEDURLW		{
 			public uint32 cbSize;
 			public PWSTR pszProtocol;
 			public uint32 cchProtocol;
@@ -5493,14 +5378,12 @@ namespace Win32
 			public uint32 nScheme;
 		}
 		[CRepr]
-		public struct QITAB
-		{
+		public struct QITAB		{
 			public Guid* piid;
 			public uint32 dwOffset;
 		}
 		[CRepr]
-		public struct DLLVERSIONINFO
-		{
+		public struct DLLVERSIONINFO		{
 			public uint32 cbSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -5508,15 +5391,13 @@ namespace Win32
 			public uint32 dwPlatformID;
 		}
 		[CRepr]
-		public struct DLLVERSIONINFO2
-		{
+		public struct DLLVERSIONINFO2		{
 			public DLLVERSIONINFO info1;
 			public uint32 dwFlags;
 			public uint64 ullVersion;
 		}
 		[CRepr]
-		public struct APPINFODATA
-		{
+		public struct APPINFODATA		{
 			public uint32 cbSize;
 			public uint32 dwMask;
 			public PWSTR pszDisplayName;
@@ -5539,16 +5420,14 @@ namespace Win32
 			public PWSTR pszUpdateInfoUrl;
 		}
 		[CRepr]
-		public struct SLOWAPPINFO
-		{
+		public struct SLOWAPPINFO		{
 			public uint64 ullSize;
 			public FILETIME ftLastUsed;
 			public int32 iTimesUsed;
 			public PWSTR pszImage;
 		}
 		[CRepr]
-		public struct PUBAPPINFO
-		{
+		public struct PUBAPPINFO		{
 			public uint32 cbSize;
 			public uint32 dwMask;
 			public PWSTR pszSource;
@@ -5558,30 +5437,26 @@ namespace Win32
 			public SYSTEMTIME stExpire;
 		}
 		[CRepr]
-		public struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR
-		{
+		public struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR		{
 			public uint32 dwFieldID;
 			public CREDENTIAL_PROVIDER_FIELD_TYPE cpft;
 			public PWSTR pszLabel;
 			public Guid guidFieldType;
 		}
 		[CRepr]
-		public struct CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION
-		{
+		public struct CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION		{
 			public uint32 ulAuthenticationPackage;
 			public Guid clsidCredentialProvider;
 			public uint32 cbSerialization;
 			public uint8* rgbSerialization;
 		}
 		[CRepr]
-		public struct SYNCMGR_CONFLICT_ID_INFO
-		{
+		public struct SYNCMGR_CONFLICT_ID_INFO		{
 			public BYTE_BLOB* pblobID;
 			public BYTE_BLOB* pblobExtra;
 		}
 		[CRepr]
-		public struct CONFIRM_CONFLICT_ITEM
-		{
+		public struct CONFIRM_CONFLICT_ITEM		{
 			public IShellItem2* pShellItem;
 			public PWSTR pszOriginalName;
 			public PWSTR pszAlternateName;
@@ -5590,19 +5465,16 @@ namespace Win32
 			public SYNCMGR_CONFLICT_ITEM_TYPE nType;
 		}
 		[CRepr]
-		public struct CONFIRM_CONFLICT_RESULT_INFO
-		{
+		public struct CONFIRM_CONFLICT_RESULT_INFO		{
 			public PWSTR pszNewName;
 			public uint32 iItemIndex;
 		}
 		[CRepr]
-		public struct WTS_THUMBNAILID
-		{
+		public struct WTS_THUMBNAILID		{
 			public uint8[16] rgbKey;
 		}
 		[CRepr]
-		public struct SYNCMGRPROGRESSITEM
-		{
+		public struct SYNCMGRPROGRESSITEM		{
 			public uint32 cbSize;
 			public uint32 mask;
 			public PWSTR lpcStatusText;
@@ -5611,8 +5483,7 @@ namespace Win32
 			public int32 iMaxValue;
 		}
 		[CRepr]
-		public struct SYNCMGRLOGERRORINFO
-		{
+		public struct SYNCMGRLOGERRORINFO		{
 			public uint32 cbSize;
 			public uint32 mask;
 			public uint32 dwSyncMgrErrorFlags;
@@ -5620,8 +5491,7 @@ namespace Win32
 			public Guid ItemID;
 		}
 		[CRepr]
-		public struct SYNCMGRITEM
-		{
+		public struct SYNCMGRITEM		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public Guid ItemID;
@@ -5631,16 +5501,14 @@ namespace Win32
 			public FILETIME ftLastUpdate;
 		}
 		[CRepr]
-		public struct SYNCMGRHANDLERINFO
-		{
+		public struct SYNCMGRHANDLERINFO		{
 			public uint32 cbSize;
 			public HICON hIcon;
 			public uint32 SyncMgrHandlerFlags;
 			public char16[32] wszHandlerName;
 		}
 		[CRepr]
-		public struct WINDOWDATA
-		{
+		public struct WINDOWDATA		{
 			public uint32 dwWindowID;
 			public uint32 uiCP;
 			public ITEMIDLIST* pidl;
@@ -5649,20 +5517,17 @@ namespace Win32
 			public PWSTR lpszTitle;
 		}
 		[CRepr]
-		public struct HLITEM
-		{
+		public struct HLITEM		{
 			public uint32 uHLID;
 			public PWSTR pwzFriendlyName;
 		}
 		[CRepr]
-		public struct HLTBINFO
-		{
+		public struct HLTBINFO		{
 			public uint32 uDockType;
 			public RECT rcTbPos;
 		}
 		[CRepr]
-		public struct HLBWINFO
-		{
+		public struct HLBWINFO		{
 			public uint32 cbSize;
 			public uint32 grfHLBWIF;
 			public RECT rcFramePos;
@@ -5670,8 +5535,7 @@ namespace Win32
 			public HLTBINFO hltbinfo;
 		}
 		[CRepr]
-		public struct BASEBROWSERDATAXP
-		{
+		public struct BASEBROWSERDATAXP		{
 			public HWND _hwnd;
 			public ITravelLog* _ptl;
 			public IHlinkFrame* _phlf;
@@ -5700,8 +5564,7 @@ namespace Win32
 			public HWND _hwndFrame;
 		}
 		[CRepr]
-		public struct BASEBROWSERDATALH
-		{
+		public struct BASEBROWSERDATALH		{
 			public HWND _hwnd;
 			public ITravelLog* _ptl;
 			public IHlinkFrame* _phlf;
@@ -5731,15 +5594,13 @@ namespace Win32
 			public int32 _lPhishingFilterStatus;
 		}
 		[CRepr]
-		public struct FOLDERSETDATA
-		{
+		public struct FOLDERSETDATA		{
 			public FOLDERSETTINGS _fs;
 			public Guid _vidRestore;
 			public uint32 _dwViewPriority;
 		}
 		[CRepr]
-		public struct TOOLBARITEM
-		{
+		public struct TOOLBARITEM		{
 			public IDockingWindow* ptbar;
 			public RECT rcBorderTool;
 			public PWSTR pwszItem;
@@ -5747,16 +5608,14 @@ namespace Win32
 			public HMONITOR hMon;
 		}
 		[CRepr]
-		public struct CPLINFO
-		{
+		public struct CPLINFO		{
 			public int32 idIcon;
 			public int32 idName;
 			public int32 idInfo;
 			public int lData;
 		}
 		[CRepr]
-		public struct NEWCPLINFOA
-		{
+		public struct NEWCPLINFOA		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwHelpContext;
@@ -5767,8 +5626,7 @@ namespace Win32
 			public CHAR[128] szHelpFile;
 		}
 		[CRepr]
-		public struct NEWCPLINFOW
-		{
+		public struct NEWCPLINFOW		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwHelpContext;
@@ -5779,8 +5637,7 @@ namespace Win32
 			public char16[128] szHelpFile;
 		}
 		[CRepr]
-		public struct PROFILEINFOA
-		{
+		public struct PROFILEINFOA		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PSTR lpUserName;
@@ -5791,8 +5648,7 @@ namespace Win32
 			public HANDLE hProfile;
 		}
 		[CRepr]
-		public struct PROFILEINFOW
-		{
+		public struct PROFILEINFOW		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public PWSTR lpUserName;
@@ -5803,16 +5659,14 @@ namespace Win32
 			public HANDLE hProfile;
 		}
 		[CRepr]
-		public struct urlinvokecommandinfoA
-		{
+		public struct urlinvokecommandinfoA		{
 			public uint32 dwcbSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
 			public PSTR pcszVerb;
 		}
 		[CRepr]
-		public struct urlinvokecommandinfoW
-		{
+		public struct urlinvokecommandinfoW		{
 			public uint32 dwcbSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
@@ -8650,11 +8504,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct IDelegateItem : IRelatedItem
@@ -8663,11 +8514,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct ICurrentItem : IRelatedItem
@@ -8676,11 +8524,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct ITransferMediumItem : IRelatedItem
@@ -8689,11 +8534,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct IDisplayItem : IRelatedItem
@@ -8702,11 +8544,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct IViewStateIdentityItem : IRelatedItem
@@ -8715,11 +8554,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct IPreviewItem : IRelatedItem
@@ -8728,11 +8564,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct IDestinationStreamFactory : IUnknown
@@ -10761,11 +10594,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IRelatedItem.VTable
-			{
-			}
+			public struct VTable : IRelatedItem.VTable {}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControl2 : INameSpaceTreeControl
@@ -11112,11 +10942,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IWebBrowserApp : IWebBrowser
@@ -11229,11 +11056,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct DShellWindowsEvents : IDispatch
@@ -11242,11 +11066,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IShellWindows : IDispatch
@@ -11603,11 +11424,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IShellFavoritesNameSpace : IDispatch
@@ -11766,11 +11584,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct DFConstraint : IDispatch

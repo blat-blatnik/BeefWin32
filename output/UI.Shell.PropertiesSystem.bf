@@ -310,8 +310,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PROPERTYKEY
-		{
+		public struct PROPERTYKEY		{
 			public Guid fmtid;
 			public uint32 pid;
 			public this(Guid fmtid, uint32 pid)
@@ -321,12 +320,9 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SERIALIZEDPROPSTORAGE
-		{
-		}
+		public struct SERIALIZEDPROPSTORAGE {}
 		[CRepr]
-		public struct PROPPRG
-		{
+		public struct PROPPRG		{
 			public uint16 flPrg;
 			public uint16 flPrgInit;
 			public CHAR[30] achTitle;

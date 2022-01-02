@@ -1429,55 +1429,47 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D2D1_BITMAP_PROPERTIES
-		{
+		public struct D2D1_BITMAP_PROPERTIES		{
 			public D2D1_PIXEL_FORMAT pixelFormat;
 			public float dpiX;
 			public float dpiY;
 		}
 		[CRepr]
-		public struct D2D1_GRADIENT_STOP
-		{
+		public struct D2D1_GRADIENT_STOP		{
 			public float position;
 			public D2D1_COLOR_F color;
 		}
 		[CRepr]
-		public struct D2D1_BRUSH_PROPERTIES
-		{
+		public struct D2D1_BRUSH_PROPERTIES		{
 			public float opacity;
 			public D2D_MATRIX_3X2_F transform;
 		}
 		[CRepr]
-		public struct D2D1_BITMAP_BRUSH_PROPERTIES
-		{
+		public struct D2D1_BITMAP_BRUSH_PROPERTIES		{
 			public D2D1_EXTEND_MODE extendModeX;
 			public D2D1_EXTEND_MODE extendModeY;
 			public D2D1_BITMAP_INTERPOLATION_MODE interpolationMode;
 		}
 		[CRepr]
-		public struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
-		{
+		public struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES		{
 			public D2D_POINT_2F startPoint;
 			public D2D_POINT_2F endPoint;
 		}
 		[CRepr]
-		public struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
-		{
+		public struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES		{
 			public D2D_POINT_2F center;
 			public D2D_POINT_2F gradientOriginOffset;
 			public float radiusX;
 			public float radiusY;
 		}
 		[CRepr]
-		public struct D2D1_TRIANGLE
-		{
+		public struct D2D1_TRIANGLE		{
 			public D2D_POINT_2F point1;
 			public D2D_POINT_2F point2;
 			public D2D_POINT_2F point3;
 		}
 		[CRepr]
-		public struct D2D1_ARC_SEGMENT
-		{
+		public struct D2D1_ARC_SEGMENT		{
 			public D2D_POINT_2F point;
 			public D2D_SIZE_F size;
 			public float rotationAngle;
@@ -1485,28 +1477,24 @@ namespace Win32
 			public D2D1_ARC_SIZE arcSize;
 		}
 		[CRepr]
-		public struct D2D1_QUADRATIC_BEZIER_SEGMENT
-		{
+		public struct D2D1_QUADRATIC_BEZIER_SEGMENT		{
 			public D2D_POINT_2F point1;
 			public D2D_POINT_2F point2;
 		}
 		[CRepr]
-		public struct D2D1_ELLIPSE
-		{
+		public struct D2D1_ELLIPSE		{
 			public D2D_POINT_2F point;
 			public float radiusX;
 			public float radiusY;
 		}
 		[CRepr]
-		public struct D2D1_ROUNDED_RECT
-		{
+		public struct D2D1_ROUNDED_RECT		{
 			public D2D_RECT_F rect;
 			public float radiusX;
 			public float radiusY;
 		}
 		[CRepr]
-		public struct D2D1_STROKE_STYLE_PROPERTIES
-		{
+		public struct D2D1_STROKE_STYLE_PROPERTIES		{
 			public D2D1_CAP_STYLE startCap;
 			public D2D1_CAP_STYLE endCap;
 			public D2D1_CAP_STYLE dashCap;
@@ -1516,8 +1504,7 @@ namespace Win32
 			public float dashOffset;
 		}
 		[CRepr]
-		public struct D2D1_LAYER_PARAMETERS
-		{
+		public struct D2D1_LAYER_PARAMETERS		{
 			public D2D_RECT_F contentBounds;
 			public ID2D1Geometry* geometricMask;
 			public D2D1_ANTIALIAS_MODE maskAntialiasMode;
@@ -1527,8 +1514,7 @@ namespace Win32
 			public D2D1_LAYER_OPTIONS layerOptions;
 		}
 		[CRepr]
-		public struct D2D1_RENDER_TARGET_PROPERTIES
-		{
+		public struct D2D1_RENDER_TARGET_PROPERTIES		{
 			public D2D1_RENDER_TARGET_TYPE type;
 			public D2D1_PIXEL_FORMAT pixelFormat;
 			public float dpiX;
@@ -1537,15 +1523,13 @@ namespace Win32
 			public D2D1_FEATURE_LEVEL minLevel;
 		}
 		[CRepr]
-		public struct D2D1_HWND_RENDER_TARGET_PROPERTIES
-		{
+		public struct D2D1_HWND_RENDER_TARGET_PROPERTIES		{
 			public HWND hwnd;
 			public D2D_SIZE_U pixelSize;
 			public D2D1_PRESENT_OPTIONS presentOptions;
 		}
 		[CRepr]
-		public struct D2D1_DRAWING_STATE_DESCRIPTION
-		{
+		public struct D2D1_DRAWING_STATE_DESCRIPTION		{
 			public D2D1_ANTIALIAS_MODE antialiasMode;
 			public D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
 			public uint64 tag1;
@@ -1553,13 +1537,11 @@ namespace Win32
 			public D2D_MATRIX_3X2_F transform;
 		}
 		[CRepr]
-		public struct D2D1_FACTORY_OPTIONS
-		{
+		public struct D2D1_FACTORY_OPTIONS		{
 			public D2D1_DEBUG_LEVEL debugLevel;
 		}
 		[CRepr]
-		public struct D2D1_BITMAP_PROPERTIES1
-		{
+		public struct D2D1_BITMAP_PROPERTIES1		{
 			public D2D1_PIXEL_FORMAT pixelFormat;
 			public float dpiX;
 			public float dpiY;
@@ -1567,27 +1549,23 @@ namespace Win32
 			public ID2D1ColorContext* colorContext;
 		}
 		[CRepr]
-		public struct D2D1_MAPPED_RECT
-		{
+		public struct D2D1_MAPPED_RECT		{
 			public uint32 pitch;
 			public uint8* bits;
 		}
 		[CRepr]
-		public struct D2D1_RENDERING_CONTROLS
-		{
+		public struct D2D1_RENDERING_CONTROLS		{
 			public D2D1_BUFFER_PRECISION bufferPrecision;
 			public D2D_SIZE_U tileSize;
 		}
 		[CRepr]
-		public struct D2D1_EFFECT_INPUT_DESCRIPTION
-		{
+		public struct D2D1_EFFECT_INPUT_DESCRIPTION		{
 			public ID2D1Effect* effect;
 			public uint32 inputIndex;
 			public D2D_RECT_F inputRectangle;
 		}
 		[CRepr]
-		public struct D2D1_POINT_DESCRIPTION
-		{
+		public struct D2D1_POINT_DESCRIPTION		{
 			public D2D_POINT_2F point;
 			public D2D_POINT_2F unitTangentVector;
 			public uint32 endSegment;
@@ -1595,23 +1573,20 @@ namespace Win32
 			public float lengthToEndSegment;
 		}
 		[CRepr]
-		public struct D2D1_IMAGE_BRUSH_PROPERTIES
-		{
+		public struct D2D1_IMAGE_BRUSH_PROPERTIES		{
 			public D2D_RECT_F sourceRectangle;
 			public D2D1_EXTEND_MODE extendModeX;
 			public D2D1_EXTEND_MODE extendModeY;
 			public D2D1_INTERPOLATION_MODE interpolationMode;
 		}
 		[CRepr]
-		public struct D2D1_BITMAP_BRUSH_PROPERTIES1
-		{
+		public struct D2D1_BITMAP_BRUSH_PROPERTIES1		{
 			public D2D1_EXTEND_MODE extendModeX;
 			public D2D1_EXTEND_MODE extendModeY;
 			public D2D1_INTERPOLATION_MODE interpolationMode;
 		}
 		[CRepr]
-		public struct D2D1_STROKE_STYLE_PROPERTIES1
-		{
+		public struct D2D1_STROKE_STYLE_PROPERTIES1		{
 			public D2D1_CAP_STYLE startCap;
 			public D2D1_CAP_STYLE endCap;
 			public D2D1_CAP_STYLE dashCap;
@@ -1622,8 +1597,7 @@ namespace Win32
 			public D2D1_STROKE_TRANSFORM_TYPE transformType;
 		}
 		[CRepr]
-		public struct D2D1_LAYER_PARAMETERS1
-		{
+		public struct D2D1_LAYER_PARAMETERS1		{
 			public D2D_RECT_F contentBounds;
 			public ID2D1Geometry* geometricMask;
 			public D2D1_ANTIALIAS_MODE maskAntialiasMode;
@@ -1633,8 +1607,7 @@ namespace Win32
 			public D2D1_LAYER_OPTIONS1 layerOptions;
 		}
 		[CRepr]
-		public struct D2D1_DRAWING_STATE_DESCRIPTION1
-		{
+		public struct D2D1_DRAWING_STATE_DESCRIPTION1		{
 			public D2D1_ANTIALIAS_MODE antialiasMode;
 			public D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
 			public uint64 tag1;
@@ -1644,44 +1617,37 @@ namespace Win32
 			public D2D1_UNIT_MODE unitMode;
 		}
 		[CRepr]
-		public struct D2D1_PRINT_CONTROL_PROPERTIES
-		{
+		public struct D2D1_PRINT_CONTROL_PROPERTIES		{
 			public D2D1_PRINT_FONT_SUBSET_MODE fontSubset;
 			public float rasterDPI;
 			public D2D1_COLOR_SPACE colorSpace;
 		}
 		[CRepr]
-		public struct D2D1_CREATION_PROPERTIES
-		{
+		public struct D2D1_CREATION_PROPERTIES		{
 			public D2D1_THREADING_MODE threadingMode;
 			public D2D1_DEBUG_LEVEL debugLevel;
 			public D2D1_DEVICE_CONTEXT_OPTIONS options;
 		}
 		[CRepr]
-		public struct Matrix4x3F
-		{
+		public struct Matrix4x3F		{
 			public D2D_MATRIX_4X3_F __AnonymousBase_d2d1_1helper_L45_C31;
 		}
 		[CRepr]
-		public struct Matrix4x4F
-		{
+		public struct Matrix4x4F		{
 			public D2D_MATRIX_4X4_F __AnonymousBase_d2d1_1helper_L97_C31;
 		}
 		[CRepr]
-		public struct Matrix5x4F
-		{
+		public struct Matrix5x4F		{
 			public D2D_MATRIX_5X4_F __AnonymousBase_d2d1_1helper_L472_C31;
 		}
 		[CRepr]
-		public struct D2D1_PROPERTY_BINDING
-		{
+		public struct D2D1_PROPERTY_BINDING		{
 			public PWSTR propertyName;
 			public PD2D1_PROPERTY_SET_FUNCTION setFunction;
 			public PD2D1_PROPERTY_GET_FUNCTION getFunction;
 		}
 		[CRepr]
-		public struct D2D1_RESOURCE_TEXTURE_PROPERTIES
-		{
+		public struct D2D1_RESOURCE_TEXTURE_PROPERTIES		{
 			public uint32* extents;
 			public uint32 dimensions;
 			public D2D1_BUFFER_PRECISION bufferPrecision;
@@ -1690,8 +1656,7 @@ namespace Win32
 			public D2D1_EXTEND_MODE* extendModes;
 		}
 		[CRepr]
-		public struct D2D1_INPUT_ELEMENT_DESC
-		{
+		public struct D2D1_INPUT_ELEMENT_DESC		{
 			public PSTR semanticName;
 			public uint32 semanticIndex;
 			public DXGI_FORMAT format;
@@ -1699,16 +1664,14 @@ namespace Win32
 			public uint32 alignedByteOffset;
 		}
 		[CRepr]
-		public struct D2D1_VERTEX_BUFFER_PROPERTIES
-		{
+		public struct D2D1_VERTEX_BUFFER_PROPERTIES		{
 			public uint32 inputCount;
 			public D2D1_VERTEX_USAGE usage;
 			public uint8* data;
 			public uint32 byteWidth;
 		}
 		[CRepr]
-		public struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES
-		{
+		public struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES		{
 			public uint8* shaderBufferWithInputSignature;
 			public uint32 shaderBufferSize;
 			public D2D1_INPUT_ELEMENT_DESC* inputElements;
@@ -1716,14 +1679,12 @@ namespace Win32
 			public uint32 stride;
 		}
 		[CRepr]
-		public struct D2D1_VERTEX_RANGE
-		{
+		public struct D2D1_VERTEX_RANGE		{
 			public uint32 startVertex;
 			public uint32 vertexCount;
 		}
 		[CRepr]
-		public struct D2D1_BLEND_DESCRIPTION
-		{
+		public struct D2D1_BLEND_DESCRIPTION		{
 			public D2D1_BLEND sourceBlend;
 			public D2D1_BLEND destinationBlend;
 			public D2D1_BLEND_OPERATION blendOperation;
@@ -1733,45 +1694,38 @@ namespace Win32
 			public float[4] blendFactor;
 		}
 		[CRepr]
-		public struct D2D1_INPUT_DESCRIPTION
-		{
+		public struct D2D1_INPUT_DESCRIPTION		{
 			public D2D1_FILTER filter;
 			public uint32 levelOfDetailCount;
 		}
 		[CRepr]
-		public struct D2D1_FEATURE_DATA_DOUBLES
-		{
+		public struct D2D1_FEATURE_DATA_DOUBLES		{
 			public BOOL doublePrecisionFloatShaderOps;
 		}
 		[CRepr]
-		public struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
-		{
+		public struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS		{
 			public BOOL computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
 		}
 		[CRepr]
-		public struct D2D1_SVG_LENGTH
-		{
+		public struct D2D1_SVG_LENGTH		{
 			public float value;
 			public D2D1_SVG_LENGTH_UNITS units;
 		}
 		[CRepr]
-		public struct D2D1_SVG_PRESERVE_ASPECT_RATIO
-		{
+		public struct D2D1_SVG_PRESERVE_ASPECT_RATIO		{
 			public BOOL @defer;
 			public D2D1_SVG_ASPECT_ALIGN align;
 			public D2D1_SVG_ASPECT_SCALING meetOrSlice;
 		}
 		[CRepr]
-		public struct D2D1_SVG_VIEWBOX
-		{
+		public struct D2D1_SVG_VIEWBOX		{
 			public float x;
 			public float y;
 			public float width;
 			public float height;
 		}
 		[CRepr]
-		public struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
-		{
+		public struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES		{
 			public D2D1_ORIENTATION orientation;
 			public float scaleX;
 			public float scaleY;
@@ -1779,28 +1733,24 @@ namespace Win32
 			public D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS options;
 		}
 		[CRepr]
-		public struct D2D1_INK_POINT
-		{
+		public struct D2D1_INK_POINT		{
 			public float x;
 			public float y;
 			public float radius;
 		}
 		[CRepr]
-		public struct D2D1_INK_BEZIER_SEGMENT
-		{
+		public struct D2D1_INK_BEZIER_SEGMENT		{
 			public D2D1_INK_POINT point1;
 			public D2D1_INK_POINT point2;
 			public D2D1_INK_POINT point3;
 		}
 		[CRepr]
-		public struct D2D1_INK_STYLE_PROPERTIES
-		{
+		public struct D2D1_INK_STYLE_PROPERTIES		{
 			public D2D1_INK_NIB_SHAPE nibShape;
 			public D2D_MATRIX_3X2_F nibTransform;
 		}
 		[CRepr]
-		public struct D2D1_GRADIENT_MESH_PATCH
-		{
+		public struct D2D1_GRADIENT_MESH_PATCH		{
 			public D2D_POINT_2F point00;
 			public D2D_POINT_2F point01;
 			public D2D_POINT_2F point02;
@@ -1827,8 +1777,7 @@ namespace Win32
 			public D2D1_PATCH_EDGE_MODE rightEdgeMode;
 		}
 		[CRepr]
-		public struct D2D1_SIMPLE_COLOR_PROFILE
-		{
+		public struct D2D1_SIMPLE_COLOR_PROFILE		{
 			public D2D_POINT_2F redPrimary;
 			public D2D_POINT_2F greenPrimary;
 			public D2D_POINT_2F bluePrimary;
@@ -1860,11 +1809,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : ID2D1Resource.VTable
-			{
-			}
+			public struct VTable : ID2D1Resource.VTable {}
 		}
 		[CRepr]
 		public struct ID2D1Bitmap : ID2D1Image
@@ -3425,11 +3371,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : ID2D1Resource.VTable
-			{
-			}
+			public struct VTable : ID2D1Resource.VTable {}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext1 : ID2D1DeviceContext
@@ -3859,11 +3802,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : ID2D1Resource.VTable
-			{
-			}
+			public struct VTable : ID2D1Resource.VTable {}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext2 : ID2D1DeviceContext1

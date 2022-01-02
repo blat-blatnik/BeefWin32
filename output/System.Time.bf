@@ -15,8 +15,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TIME_ZONE_INFORMATION
-		{
+		public struct TIME_ZONE_INFORMATION		{
 			public int32 Bias;
 			public char16[32] StandardName;
 			public SYSTEMTIME StandardDate;
@@ -26,8 +25,7 @@ namespace Win32
 			public int32 DaylightBias;
 		}
 		[CRepr]
-		public struct DYNAMIC_TIME_ZONE_INFORMATION
-		{
+		public struct DYNAMIC_TIME_ZONE_INFORMATION		{
 			public int32 Bias;
 			public char16[32] StandardName;
 			public SYSTEMTIME StandardDate;

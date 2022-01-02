@@ -291,8 +291,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct OPENFILENAME_NT4A
-		{
+		public struct OPENFILENAME_NT4A		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -315,8 +314,7 @@ namespace Win32
 			public PSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct OPENFILENAME_NT4W
-		{
+		public struct OPENFILENAME_NT4W		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -339,8 +337,7 @@ namespace Win32
 			public PWSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct OPENFILENAMEA
-		{
+		public struct OPENFILENAMEA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -366,8 +363,7 @@ namespace Win32
 			public OPEN_FILENAME_FLAGS_EX FlagsEx;
 		}
 		[CRepr]
-		public struct OPENFILENAMEW
-		{
+		public struct OPENFILENAMEW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -393,38 +389,33 @@ namespace Win32
 			public OPEN_FILENAME_FLAGS_EX FlagsEx;
 		}
 		[CRepr]
-		public struct OFNOTIFYA
-		{
+		public struct OFNOTIFYA		{
 			public NMHDR hdr;
 			public OPENFILENAMEA* lpOFN;
 			public PSTR pszFile;
 		}
 		[CRepr]
-		public struct OFNOTIFYW
-		{
+		public struct OFNOTIFYW		{
 			public NMHDR hdr;
 			public OPENFILENAMEW* lpOFN;
 			public PWSTR pszFile;
 		}
 		[CRepr]
-		public struct OFNOTIFYEXA
-		{
+		public struct OFNOTIFYEXA		{
 			public NMHDR hdr;
 			public OPENFILENAMEA* lpOFN;
 			public void* psf;
 			public void* pidl;
 		}
 		[CRepr]
-		public struct OFNOTIFYEXW
-		{
+		public struct OFNOTIFYEXW		{
 			public NMHDR hdr;
 			public OPENFILENAMEW* lpOFN;
 			public void* psf;
 			public void* pidl;
 		}
 		[CRepr]
-		public struct CHOOSECOLORA
-		{
+		public struct CHOOSECOLORA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HWND hInstance;
@@ -436,8 +427,7 @@ namespace Win32
 			public PSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct CHOOSECOLORW
-		{
+		public struct CHOOSECOLORW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HWND hInstance;
@@ -449,8 +439,7 @@ namespace Win32
 			public PWSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct FINDREPLACEA
-		{
+		public struct FINDREPLACEA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -464,8 +453,7 @@ namespace Win32
 			public PSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct FINDREPLACEW
-		{
+		public struct FINDREPLACEW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HINSTANCE hInstance;
@@ -479,8 +467,7 @@ namespace Win32
 			public PWSTR lpTemplateName;
 		}
 		[CRepr]
-		public struct CHOOSEFONTA
-		{
+		public struct CHOOSEFONTA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HDC hDC;
@@ -499,8 +486,7 @@ namespace Win32
 			public int32 nSizeMax;
 		}
 		[CRepr]
-		public struct CHOOSEFONTW
-		{
+		public struct CHOOSEFONTW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public HDC hDC;
@@ -519,8 +505,7 @@ namespace Win32
 			public int32 nSizeMax;
 		}
 		[CRepr]
-		public struct PRINTDLGA
-		{
+		public struct PRINTDLGA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;
@@ -542,8 +527,7 @@ namespace Win32
 			public int hSetupTemplate;
 		}
 		[CRepr]
-		public struct PRINTDLGW
-		{
+		public struct PRINTDLGW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;
@@ -565,14 +549,12 @@ namespace Win32
 			public int hSetupTemplate;
 		}
 		[CRepr]
-		public struct PRINTPAGERANGE
-		{
+		public struct PRINTPAGERANGE		{
 			public uint32 nFromPage;
 			public uint32 nToPage;
 		}
 		[CRepr]
-		public struct PRINTDLGEXA
-		{
+		public struct PRINTDLGEXA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;
@@ -596,8 +578,7 @@ namespace Win32
 			public uint32 dwResultAction;
 		}
 		[CRepr]
-		public struct PRINTDLGEXW
-		{
+		public struct PRINTDLGEXW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;
@@ -621,16 +602,14 @@ namespace Win32
 			public uint32 dwResultAction;
 		}
 		[CRepr]
-		public struct DEVNAMES
-		{
+		public struct DEVNAMES		{
 			public uint16 wDriverOffset;
 			public uint16 wDeviceOffset;
 			public uint16 wOutputOffset;
 			public uint16 wDefault;
 		}
 		[CRepr]
-		public struct PAGESETUPDLGA
-		{
+		public struct PAGESETUPDLGA		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;
@@ -647,8 +626,7 @@ namespace Win32
 			public int hPageSetupTemplate;
 		}
 		[CRepr]
-		public struct PAGESETUPDLGW
-		{
+		public struct PAGESETUPDLGW		{
 			public uint32 lStructSize;
 			public HWND hwndOwner;
 			public int hDevMode;

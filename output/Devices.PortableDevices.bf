@@ -558,8 +558,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WPD_COMMAND_ACCESS_LOOKUP_ENTRY
-		{
+		public struct WPD_COMMAND_ACCESS_LOOKUP_ENTRY		{
 			public PROPERTYKEY Command;
 			public uint32 AccessType;
 			public PROPERTYKEY AccessProperty;

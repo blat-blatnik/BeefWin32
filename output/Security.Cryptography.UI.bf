@@ -220,8 +220,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CERT_SELECT_STRUCT_A
-		{
+		public struct CERT_SELECT_STRUCT_A		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public HINSTANCE hInstance;
@@ -241,8 +240,7 @@ namespace Win32
 			public uint hprov;
 		}
 		[CRepr]
-		public struct CERT_SELECT_STRUCT_W
-		{
+		public struct CERT_SELECT_STRUCT_W		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public HINSTANCE hInstance;
@@ -262,8 +260,7 @@ namespace Win32
 			public uint hprov;
 		}
 		[CRepr]
-		public struct CERT_VIEWPROPERTIES_STRUCT_A
-		{
+		public struct CERT_VIEWPROPERTIES_STRUCT_A		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public HINSTANCE hInstance;
@@ -288,8 +285,7 @@ namespace Win32
 			public PROPSHEETPAGEA* arrayPropSheetPages;
 		}
 		[CRepr]
-		public struct CERT_VIEWPROPERTIES_STRUCT_W
-		{
+		public struct CERT_VIEWPROPERTIES_STRUCT_W		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public HINSTANCE hInstance;
@@ -314,24 +310,21 @@ namespace Win32
 			public PROPSHEETPAGEA* arrayPropSheetPages;
 		}
 		[CRepr]
-		public struct CMOID
-		{
+		public struct CMOID		{
 			public PSTR szExtensionOID;
 			public uint32 dwTestOperation;
 			public uint8* pbTestData;
 			public uint32 cbTestData;
 		}
 		[CRepr]
-		public struct CMFLTR
-		{
+		public struct CMFLTR		{
 			public uint32 dwSize;
 			public uint32 cExtensionChecks;
 			public CMOID* arrayExtensionChecks;
 			public uint32 dwCheckingFlags;
 		}
 		[CRepr]
-		public struct CERT_VERIFY_CERTIFICATE_TRUST
-		{
+		public struct CERT_VERIFY_CERTIFICATE_TRUST		{
 			public uint32 cbSize;
 			public CERT_CONTEXT* pccert;
 			public uint32 dwFlags;
@@ -353,22 +346,19 @@ namespace Win32
 			public CRYPTOAPI_BLOB** prgpbTrustInfo;
 		}
 		[CRepr]
-		public struct CTL_MODIFY_REQUEST
-		{
+		public struct CTL_MODIFY_REQUEST		{
 			public CERT_CONTEXT* pccert;
 			public CTL_MODIFY_REQUEST_OPERATION dwOperation;
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct CERT_SELECTUI_INPUT
-		{
+		public struct CERT_SELECTUI_INPUT		{
 			public void* hStore;
 			public CERT_CHAIN_CONTEXT** prgpChain;
 			public uint32 cChain;
 		}
 		[CRepr]
-		public struct CRYPTUI_CERT_MGR_STRUCT
-		{
+		public struct CRYPTUI_CERT_MGR_STRUCT		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public uint32 dwFlags;
@@ -376,8 +366,7 @@ namespace Win32
 			public PSTR pszInitUsageOID;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO		{
 			public uint32 dwSize;
 			public Guid* pGuidSubject;
 			public uint32 cbBlob;
@@ -385,8 +374,7 @@ namespace Win32
 			public PWSTR pwszDisplayName;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO		{
 			public uint32 dwSize;
 			public uint32 cCertStore;
 			public void** rghCertStore;
@@ -394,31 +382,27 @@ namespace Win32
 			public void* pvCallbackData;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO		{
 			public uint32 dwSize;
 			public PWSTR pwszPvkFileName;
 			public PWSTR pwszProvName;
 			public uint32 dwProvType;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO		{
 			public uint32 dwSize;
 			public PWSTR pwszSigningCertFileName;
 			public CRYPTUI_WIZ_DIGITAL_SIGN_PVK_OPTION dwPvkChoice;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO* pPvkFileInfo;
 				public CRYPT_KEY_PROV_INFO* pPvkProvInfo;
 			}
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO		{
 			public uint32 dwSize;
 			public CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE dwAttrFlags;
 			public PWSTR pwszDescription;
@@ -430,8 +414,7 @@ namespace Win32
 			public CRYPT_ATTRIBUTES* psUnauthenticated;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_INFO
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_INFO		{
 			public uint32 dwSize;
 			public CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT dwSubjectChoice;
 			public _Anonymous1_e__Union Anonymous1;
@@ -442,35 +425,30 @@ namespace Win32
 			public CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO* pSignExtInfo;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public CERT_CONTEXT* pSigningCertContext;
 				public CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO* pSigningCertStore;
 				public CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO* pSigningCertPvkInfo;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pwszFileName;
 				public CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO* pSignBlobInfo;
 			}
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT
-		{
+		public struct CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT		{
 			public uint32 dwSize;
 			public uint32 cbBlob;
 			public uint8* pbBlob;
 		}
 		[CRepr]
-		public struct CRYPTUI_INITDIALOG_STRUCT
-		{
+		public struct CRYPTUI_INITDIALOG_STRUCT		{
 			public LPARAM lParam;
 			public CERT_CONTEXT* pCertContext;
 		}
 		[CRepr]
-		public struct CRYPTUI_VIEWCERTIFICATE_STRUCTW
-		{
+		public struct CRYPTUI_VIEWCERTIFICATE_STRUCTW		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public CRYPTUI_VIEWCERTIFICATE_FLAGS dwFlags;
@@ -491,15 +469,13 @@ namespace Win32
 			public uint32 nStartPage;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public CRYPT_PROVIDER_DATA* pCryptProviderData;
 				public HANDLE hWVTStateData;
 			}
 		}
 		[CRepr]
-		public struct CRYPTUI_VIEWCERTIFICATE_STRUCTA
-		{
+		public struct CRYPTUI_VIEWCERTIFICATE_STRUCTA		{
 			public uint32 dwSize;
 			public HWND hwndParent;
 			public CRYPTUI_VIEWCERTIFICATE_FLAGS dwFlags;
@@ -520,15 +496,13 @@ namespace Win32
 			public uint32 nStartPage;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public CRYPT_PROVIDER_DATA* pCryptProviderData;
 				public HANDLE hWVTStateData;
 			}
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_EXPORT_INFO
-		{
+		public struct CRYPTUI_WIZ_EXPORT_INFO		{
 			public uint32 dwSize;
 			public PWSTR pwszExportFileName;
 			public CRYPTUI_WIZ_EXPORT_SUBJECT dwSubjectChoice;
@@ -537,8 +511,7 @@ namespace Win32
 			public void** rghStores;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public CERT_CONTEXT* pCertContext;
 				public CTL_CONTEXT* pCTLContext;
 				public CRL_CONTEXT* pCRLContext;
@@ -546,8 +519,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_EXPORT_CERTCONTEXT_INFO
-		{
+		public struct CRYPTUI_WIZ_EXPORT_CERTCONTEXT_INFO		{
 			public uint32 dwSize;
 			public CRYPTUI_WIZ_EXPORT_FORMAT dwExportFormat;
 			public BOOL fExportChain;
@@ -556,8 +528,7 @@ namespace Win32
 			public BOOL fStrongEncryption;
 		}
 		[CRepr]
-		public struct CRYPTUI_WIZ_IMPORT_SRC_INFO
-		{
+		public struct CRYPTUI_WIZ_IMPORT_SRC_INFO		{
 			public uint32 dwSize;
 			public CRYPTUI_WIZ_IMPORT_SUBJECT_OPTION dwSubjectChoice;
 			public _Anonymous_e__Union Anonymous;
@@ -565,8 +536,7 @@ namespace Win32
 			public PWSTR pwszPassword;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR pwszFileName;
 				public CERT_CONTEXT* pCertContext;
 				public CTL_CONTEXT* pCTLContext;

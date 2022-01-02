@@ -818,16 +818,14 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DWRITE_COLOR_F
-		{
+		public struct DWRITE_COLOR_F		{
 			public float r;
 			public float g;
 			public float b;
 			public float a;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_METRICS
-		{
+		public struct DWRITE_FONT_METRICS		{
 			public uint16 designUnitsPerEm;
 			public uint16 ascent;
 			public uint16 descent;
@@ -840,8 +838,7 @@ namespace Win32
 			public uint16 strikethroughThickness;
 		}
 		[CRepr]
-		public struct DWRITE_GLYPH_METRICS
-		{
+		public struct DWRITE_GLYPH_METRICS		{
 			public int32 leftSideBearing;
 			public uint32 advanceWidth;
 			public int32 rightSideBearing;
@@ -851,14 +848,12 @@ namespace Win32
 			public int32 verticalOriginY;
 		}
 		[CRepr]
-		public struct DWRITE_GLYPH_OFFSET
-		{
+		public struct DWRITE_GLYPH_OFFSET		{
 			public float advanceOffset;
 			public float ascenderOffset;
 		}
 		[CRepr]
-		public struct DWRITE_MATRIX
-		{
+		public struct DWRITE_MATRIX		{
 			public float m11;
 			public float m12;
 			public float m21;
@@ -867,54 +862,45 @@ namespace Win32
 			public float dy;
 		}
 		[CRepr]
-		public struct DWRITE_TEXT_RANGE
-		{
+		public struct DWRITE_TEXT_RANGE		{
 			public uint32 startPosition;
 			public uint32 length;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_FEATURE
-		{
+		public struct DWRITE_FONT_FEATURE		{
 			public DWRITE_FONT_FEATURE_TAG nameTag;
 			public uint32 parameter;
 		}
 		[CRepr]
-		public struct DWRITE_TYPOGRAPHIC_FEATURES
-		{
+		public struct DWRITE_TYPOGRAPHIC_FEATURES		{
 			public DWRITE_FONT_FEATURE* features;
 			public uint32 featureCount;
 		}
 		[CRepr]
-		public struct DWRITE_TRIMMING
-		{
+		public struct DWRITE_TRIMMING		{
 			public DWRITE_TRIMMING_GRANULARITY granularity;
 			public uint32 delimiter;
 			public uint32 delimiterCount;
 		}
 		[CRepr]
-		public struct DWRITE_SCRIPT_ANALYSIS
-		{
+		public struct DWRITE_SCRIPT_ANALYSIS		{
 			public uint16 script;
 			public DWRITE_SCRIPT_SHAPES shapes;
 		}
 		[CRepr]
-		public struct DWRITE_LINE_BREAKPOINT
-		{
+		public struct DWRITE_LINE_BREAKPOINT		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_SHAPING_TEXT_PROPERTIES
-		{
+		public struct DWRITE_SHAPING_TEXT_PROPERTIES		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_SHAPING_GLYPH_PROPERTIES
-		{
+		public struct DWRITE_SHAPING_GLYPH_PROPERTIES		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_GLYPH_RUN
-		{
+		public struct DWRITE_GLYPH_RUN		{
 			public IDWriteFontFace* fontFace;
 			public float fontEmSize;
 			public uint32 glyphCount;
@@ -925,8 +911,7 @@ namespace Win32
 			public uint32 bidiLevel;
 		}
 		[CRepr]
-		public struct DWRITE_GLYPH_RUN_DESCRIPTION
-		{
+		public struct DWRITE_GLYPH_RUN_DESCRIPTION		{
 			public PWSTR localeName;
 			public PWSTR string;
 			public uint32 stringLength;
@@ -934,8 +919,7 @@ namespace Win32
 			public uint32 textPosition;
 		}
 		[CRepr]
-		public struct DWRITE_UNDERLINE
-		{
+		public struct DWRITE_UNDERLINE		{
 			public float width;
 			public float thickness;
 			public float offset;
@@ -946,8 +930,7 @@ namespace Win32
 			public DWRITE_MEASURING_MODE measuringMode;
 		}
 		[CRepr]
-		public struct DWRITE_STRIKETHROUGH
-		{
+		public struct DWRITE_STRIKETHROUGH		{
 			public float width;
 			public float thickness;
 			public float offset;
@@ -957,8 +940,7 @@ namespace Win32
 			public DWRITE_MEASURING_MODE measuringMode;
 		}
 		[CRepr]
-		public struct DWRITE_LINE_METRICS
-		{
+		public struct DWRITE_LINE_METRICS		{
 			public uint32 length;
 			public uint32 trailingWhitespaceLength;
 			public uint32 newlineLength;
@@ -967,15 +949,13 @@ namespace Win32
 			public BOOL isTrimmed;
 		}
 		[CRepr]
-		public struct DWRITE_CLUSTER_METRICS
-		{
+		public struct DWRITE_CLUSTER_METRICS		{
 			public float width;
 			public uint16 length;
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_TEXT_METRICS
-		{
+		public struct DWRITE_TEXT_METRICS		{
 			public float left;
 			public float top;
 			public float width;
@@ -987,24 +967,21 @@ namespace Win32
 			public uint32 lineCount;
 		}
 		[CRepr]
-		public struct DWRITE_INLINE_OBJECT_METRICS
-		{
+		public struct DWRITE_INLINE_OBJECT_METRICS		{
 			public float width;
 			public float height;
 			public float baseline;
 			public BOOL supportsSideways;
 		}
 		[CRepr]
-		public struct DWRITE_OVERHANG_METRICS
-		{
+		public struct DWRITE_OVERHANG_METRICS		{
 			public float left;
 			public float top;
 			public float right;
 			public float bottom;
 		}
 		[CRepr]
-		public struct DWRITE_HIT_TEST_METRICS
-		{
+		public struct DWRITE_HIT_TEST_METRICS		{
 			public uint32 textPosition;
 			public uint32 length;
 			public float left;
@@ -1016,8 +993,7 @@ namespace Win32
 			public BOOL isTrimmed;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_METRICS1
-		{
+		public struct DWRITE_FONT_METRICS1		{
 			public DWRITE_FONT_METRICS __AnonymousBase_DWrite_1_L627_C38;
 			public int16 glyphBoxLeft;
 			public int16 glyphBoxTop;
@@ -1034,15 +1010,13 @@ namespace Win32
 			public BOOL hasTypographicMetrics;
 		}
 		[CRepr]
-		public struct DWRITE_CARET_METRICS
-		{
+		public struct DWRITE_CARET_METRICS		{
 			public int16 slopeRise;
 			public int16 slopeRun;
 			public int16 offset;
 		}
 		[CRepr, Union]
-		public struct DWRITE_PANOSE
-		{
+		public struct DWRITE_PANOSE		{
 			public uint8[10] values;
 			public uint8 familyKind;
 			public _text_e__Struct text;
@@ -1051,8 +1025,7 @@ namespace Win32
 			public _symbol_e__Struct symbol;
 			
 			[CRepr]
-			public struct _decorative_e__Struct
-			{
+			public struct _decorative_e__Struct			{
 				public uint8 familyKind;
 				public uint8 decorativeClass;
 				public uint8 weight;
@@ -1065,8 +1038,7 @@ namespace Win32
 				public uint8 characterRange;
 			}
 			[CRepr]
-			public struct _text_e__Struct
-			{
+			public struct _text_e__Struct			{
 				public uint8 familyKind;
 				public uint8 serifStyle;
 				public uint8 weight;
@@ -1079,8 +1051,7 @@ namespace Win32
 				public uint8 xHeight;
 			}
 			[CRepr]
-			public struct _symbol_e__Struct
-			{
+			public struct _symbol_e__Struct			{
 				public uint8 familyKind;
 				public uint8 symbolKind;
 				public uint8 weight;
@@ -1093,8 +1064,7 @@ namespace Win32
 				public uint8 aspectRatio211;
 			}
 			[CRepr]
-			public struct _script_e__Struct
-			{
+			public struct _script_e__Struct			{
 				public uint8 familyKind;
 				public uint8 toolKind;
 				public uint8 weight;
@@ -1108,14 +1078,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DWRITE_UNICODE_RANGE
-		{
+		public struct DWRITE_UNICODE_RANGE		{
 			public uint32 first;
 			public uint32 last;
 		}
 		[CRepr]
-		public struct DWRITE_SCRIPT_PROPERTIES
-		{
+		public struct DWRITE_SCRIPT_PROPERTIES		{
 			public uint32 isoScriptCode;
 			public uint32 isoScriptNumber;
 			public uint32 clusterLookahead;
@@ -1123,22 +1091,19 @@ namespace Win32
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_JUSTIFICATION_OPPORTUNITY
-		{
+		public struct DWRITE_JUSTIFICATION_OPPORTUNITY		{
 			public float expansionMinimum;
 			public float expansionMaximum;
 			public float compressionMaximum;
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct DWRITE_TEXT_METRICS1
-		{
+		public struct DWRITE_TEXT_METRICS1		{
 			public DWRITE_TEXT_METRICS Base;
 			public float heightIncludingTrailingWhitespace;
 		}
 		[CRepr]
-		public struct DWRITE_COLOR_GLYPH_RUN
-		{
+		public struct DWRITE_COLOR_GLYPH_RUN		{
 			public DWRITE_GLYPH_RUN glyphRun;
 			public DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription;
 			public float baselineOriginX;
@@ -1147,22 +1112,19 @@ namespace Win32
 			public uint16 paletteIndex;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_PROPERTY
-		{
+		public struct DWRITE_FONT_PROPERTY		{
 			public DWRITE_FONT_PROPERTY_ID propertyId;
 			public PWSTR propertyValue;
 			public PWSTR localeName;
 		}
 		[CRepr]
-		public struct DWRITE_LINE_METRICS1
-		{
+		public struct DWRITE_LINE_METRICS1		{
 			public DWRITE_LINE_METRICS Base;
 			public float leadingBefore;
 			public float leadingAfter;
 		}
 		[CRepr]
-		public struct DWRITE_LINE_SPACING
-		{
+		public struct DWRITE_LINE_SPACING		{
 			public DWRITE_LINE_SPACING_METHOD method;
 			public float height;
 			public float baseline;
@@ -1170,15 +1132,13 @@ namespace Win32
 			public DWRITE_FONT_LINE_GAP_USAGE fontLineGapUsage;
 		}
 		[CRepr]
-		public struct DWRITE_COLOR_GLYPH_RUN1
-		{
+		public struct DWRITE_COLOR_GLYPH_RUN1		{
 			public DWRITE_COLOR_GLYPH_RUN Base;
 			public DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat;
 			public DWRITE_MEASURING_MODE measuringMode;
 		}
 		[CRepr]
-		public struct DWRITE_GLYPH_IMAGE_DATA
-		{
+		public struct DWRITE_GLYPH_IMAGE_DATA		{
 			public void* imageData;
 			public uint32 imageDataSize;
 			public uint32 uniqueDataId;
@@ -1190,20 +1150,17 @@ namespace Win32
 			public POINT verticalBottomOrigin;
 		}
 		[CRepr]
-		public struct DWRITE_FILE_FRAGMENT
-		{
+		public struct DWRITE_FILE_FRAGMENT		{
 			public uint64 fileOffset;
 			public uint64 fragmentSize;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_AXIS_VALUE
-		{
+		public struct DWRITE_FONT_AXIS_VALUE		{
 			public DWRITE_FONT_AXIS_TAG axisTag;
 			public float value;
 		}
 		[CRepr]
-		public struct DWRITE_FONT_AXIS_RANGE
-		{
+		public struct DWRITE_FONT_AXIS_RANGE		{
 			public DWRITE_FONT_AXIS_TAG axisTag;
 			public float minValue;
 			public float maxValue;
@@ -1591,11 +1548,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalysisSource : IUnknown

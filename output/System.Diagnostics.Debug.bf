@@ -3322,8 +3322,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CONTEXT
-		{
+		public struct CONTEXT		{
 			public uint32 ContextFlags;
 			public uint32 Cpsr;
 			public _Anonymous_e__Union Anonymous;
@@ -3338,14 +3337,12 @@ namespace Win32
 			public uint64[2] Wvr;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[31] X;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint64 X0;
 					public uint64 X1;
 					public uint64 X2;
@@ -3381,8 +3378,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DISPATCHER_CONTEXT
-		{
+		public struct DISPATCHER_CONTEXT		{
 			public uint ControlPc;
 			public uint ImageBase;
 			public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
@@ -3397,8 +3393,7 @@ namespace Win32
 			public uint8* NonVolatileRegisters;
 		}
 		[CRepr]
-		public struct KNONVOLATILE_CONTEXT_POINTERS_ARM64
-		{
+		public struct KNONVOLATILE_CONTEXT_POINTERS_ARM64		{
 			public uint64* X19;
 			public uint64* X20;
 			public uint64* X21;
@@ -3421,14 +3416,12 @@ namespace Win32
 			public uint64* D15;
 		}
 		[CRepr]
-		public struct UNWIND_HISTORY_TABLE_ENTRY
-		{
+		public struct UNWIND_HISTORY_TABLE_ENTRY		{
 			public uint ImageBase;
 			public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_CALLBACK
-		{
+		public struct MINIDUMP_THREAD_CALLBACK		{
 			public uint32 ThreadId;
 			public HANDLE ThreadHandle;
 			public uint32 Pad;
@@ -3438,8 +3431,7 @@ namespace Win32
 			public uint64 StackEnd;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_EX_CALLBACK
-		{
+		public struct MINIDUMP_THREAD_EX_CALLBACK		{
 			public uint32 ThreadId;
 			public HANDLE ThreadHandle;
 			public uint32 Pad;
@@ -3451,21 +3443,18 @@ namespace Win32
 			public uint64 BackingStoreEnd;
 		}
 		[CRepr]
-		public struct EXCEPTION_DEBUG_INFO
-		{
+		public struct EXCEPTION_DEBUG_INFO		{
 			public EXCEPTION_RECORD ExceptionRecord;
 			public uint32 dwFirstChance;
 		}
 		[CRepr]
-		public struct CREATE_THREAD_DEBUG_INFO
-		{
+		public struct CREATE_THREAD_DEBUG_INFO		{
 			public HANDLE hThread;
 			public void* lpThreadLocalBase;
 			public LPTHREAD_START_ROUTINE lpStartAddress;
 		}
 		[CRepr]
-		public struct CREATE_PROCESS_DEBUG_INFO
-		{
+		public struct CREATE_PROCESS_DEBUG_INFO		{
 			public HANDLE hFile;
 			public HANDLE hProcess;
 			public HANDLE hThread;
@@ -3478,18 +3467,15 @@ namespace Win32
 			public uint16 fUnicode;
 		}
 		[CRepr]
-		public struct EXIT_THREAD_DEBUG_INFO
-		{
+		public struct EXIT_THREAD_DEBUG_INFO		{
 			public uint32 dwExitCode;
 		}
 		[CRepr]
-		public struct EXIT_PROCESS_DEBUG_INFO
-		{
+		public struct EXIT_PROCESS_DEBUG_INFO		{
 			public uint32 dwExitCode;
 		}
 		[CRepr]
-		public struct LOAD_DLL_DEBUG_INFO
-		{
+		public struct LOAD_DLL_DEBUG_INFO		{
 			public HANDLE hFile;
 			public void* lpBaseOfDll;
 			public uint32 dwDebugInfoFileOffset;
@@ -3498,34 +3484,29 @@ namespace Win32
 			public uint16 fUnicode;
 		}
 		[CRepr]
-		public struct UNLOAD_DLL_DEBUG_INFO
-		{
+		public struct UNLOAD_DLL_DEBUG_INFO		{
 			public void* lpBaseOfDll;
 		}
 		[CRepr]
-		public struct OUTPUT_DEBUG_STRING_INFO
-		{
+		public struct OUTPUT_DEBUG_STRING_INFO		{
 			public PSTR lpDebugStringData;
 			public uint16 fUnicode;
 			public uint16 nDebugStringLength;
 		}
 		[CRepr]
-		public struct RIP_INFO
-		{
+		public struct RIP_INFO		{
 			public uint32 dwError;
 			public RIP_INFO_TYPE dwType;
 		}
 		[CRepr]
-		public struct DEBUG_EVENT
-		{
+		public struct DEBUG_EVENT		{
 			public DEBUG_EVENT_CODE dwDebugEventCode;
 			public uint32 dwProcessId;
 			public uint32 dwThreadId;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public EXCEPTION_DEBUG_INFO Exception;
 				public CREATE_THREAD_DEBUG_INFO CreateThread;
 				public CREATE_PROCESS_DEBUG_INFO CreateProcessInfo;
@@ -3538,14 +3519,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DEBUG_OFFSET_REGION
-		{
+		public struct DEBUG_OFFSET_REGION		{
 			public uint64 Base;
 			public uint64 Size;
 		}
 		[CRepr]
-		public struct DEBUG_READ_USER_MINIDUMP_STREAM
-		{
+		public struct DEBUG_READ_USER_MINIDUMP_STREAM		{
 			public uint32 StreamType;
 			public uint32 Flags;
 			public uint64 Offset;
@@ -3554,15 +3533,13 @@ namespace Win32
 			public uint32 BufferUsed;
 		}
 		[CRepr]
-		public struct DEBUG_GET_TEXT_COMPLETIONS_IN
-		{
+		public struct DEBUG_GET_TEXT_COMPLETIONS_IN		{
 			public uint32 Flags;
 			public uint32 MatchCountLimit;
 			public uint64[3] Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_GET_TEXT_COMPLETIONS_OUT
-		{
+		public struct DEBUG_GET_TEXT_COMPLETIONS_OUT		{
 			public uint32 Flags;
 			public uint32 ReplaceIndex;
 			public uint32 MatchCount;
@@ -3570,8 +3547,7 @@ namespace Win32
 			public uint64[2] Reserved2;
 		}
 		[CRepr]
-		public struct DEBUG_CACHED_SYMBOL_INFO
-		{
+		public struct DEBUG_CACHED_SYMBOL_INFO		{
 			public uint64 ModBase;
 			public uint64 Arg1;
 			public uint64 Arg2;
@@ -3579,16 +3555,14 @@ namespace Win32
 			public uint32 Arg3;
 		}
 		[CRepr]
-		public struct PROCESS_NAME_ENTRY
-		{
+		public struct PROCESS_NAME_ENTRY		{
 			public uint32 ProcessId;
 			public uint32 NameOffset;
 			public uint32 NameSize;
 			public uint32 NextEntry;
 		}
 		[CRepr]
-		public struct DEBUG_THREAD_BASIC_INFORMATION
-		{
+		public struct DEBUG_THREAD_BASIC_INFORMATION		{
 			public uint32 Valid;
 			public uint32 ExitStatus;
 			public uint32 PriorityClass;
@@ -3601,8 +3575,7 @@ namespace Win32
 			public uint64 Affinity;
 		}
 		[CRepr]
-		public struct SYMBOL_INFO_EX
-		{
+		public struct SYMBOL_INFO_EX		{
 			public uint32 SizeOfStruct;
 			public uint32 TypeOfInfo;
 			public uint64 Offset;
@@ -3611,8 +3584,7 @@ namespace Win32
 			public uint32[4] Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_BREAKPOINT_PARAMETERS
-		{
+		public struct DEBUG_BREAKPOINT_PARAMETERS		{
 			public uint64 Offset;
 			public uint32 Id;
 			public uint32 BreakType;
@@ -3627,22 +3599,19 @@ namespace Win32
 			public uint32 OffsetExpressionSize;
 		}
 		[CRepr]
-		public struct DEBUG_CREATE_PROCESS_OPTIONS
-		{
+		public struct DEBUG_CREATE_PROCESS_OPTIONS		{
 			public uint32 CreateFlags;
 			public uint32 EngCreateFlags;
 			public uint32 VerifierFlags;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_CLIENT_CONTEXT
-		{
+		public struct DEBUG_CLIENT_CONTEXT		{
 			public uint32 cbSize;
 			public uint32 eClient;
 		}
 		[CRepr]
-		public struct DEBUG_STACK_FRAME
-		{
+		public struct DEBUG_STACK_FRAME		{
 			public uint64 InstructionOffset;
 			public uint64 ReturnOffset;
 			public uint64 FrameOffset;
@@ -3654,8 +3623,7 @@ namespace Win32
 			public uint32 FrameNumber;
 		}
 		[CRepr]
-		public struct DEBUG_STACK_FRAME_EX
-		{
+		public struct DEBUG_STACK_FRAME_EX		{
 			public uint64 InstructionOffset;
 			public uint64 ReturnOffset;
 			public uint64 FrameOffset;
@@ -3669,22 +3637,19 @@ namespace Win32
 			public uint32 Reserved1;
 		}
 		[CRepr, Union]
-		public struct INLINE_FRAME_CONTEXT
-		{
+		public struct INLINE_FRAME_CONTEXT		{
 			public uint32 ContextValue;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 FrameId;
 				public uint8 FrameType;
 				public uint16 FrameSignature;
 			}
 		}
 		[CRepr]
-		public struct STACK_SRC_INFO
-		{
+		public struct STACK_SRC_INFO		{
 			public PWSTR ImagePath;
 			public PWSTR ModuleName;
 			public PWSTR Function;
@@ -3693,14 +3658,12 @@ namespace Win32
 			public uint32 Column;
 		}
 		[CRepr]
-		public struct STACK_SYM_FRAME_INFO
-		{
+		public struct STACK_SYM_FRAME_INFO		{
 			public DEBUG_STACK_FRAME_EX StackFrameEx;
 			public STACK_SRC_INFO SrcInfo;
 		}
 		[CRepr]
-		public struct DEBUG_SPECIFIC_FILTER_PARAMETERS
-		{
+		public struct DEBUG_SPECIFIC_FILTER_PARAMETERS		{
 			public uint32 ExecutionOption;
 			public uint32 ContinueOption;
 			public uint32 TextSize;
@@ -3708,8 +3671,7 @@ namespace Win32
 			public uint32 ArgumentSize;
 		}
 		[CRepr]
-		public struct DEBUG_EXCEPTION_FILTER_PARAMETERS
-		{
+		public struct DEBUG_EXCEPTION_FILTER_PARAMETERS		{
 			public uint32 ExecutionOption;
 			public uint32 ContinueOption;
 			public uint32 TextSize;
@@ -3718,59 +3680,49 @@ namespace Win32
 			public uint32 ExceptionCode;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_BREAKPOINT
-		{
+		public struct DEBUG_LAST_EVENT_INFO_BREAKPOINT		{
 			public uint32 Id;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_EXCEPTION
-		{
+		public struct DEBUG_LAST_EVENT_INFO_EXCEPTION		{
 			public EXCEPTION_RECORD64 ExceptionRecord;
 			public uint32 FirstChance;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_EXIT_THREAD
-		{
+		public struct DEBUG_LAST_EVENT_INFO_EXIT_THREAD		{
 			public uint32 ExitCode;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_EXIT_PROCESS
-		{
+		public struct DEBUG_LAST_EVENT_INFO_EXIT_PROCESS		{
 			public uint32 ExitCode;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_LOAD_MODULE
-		{
+		public struct DEBUG_LAST_EVENT_INFO_LOAD_MODULE		{
 			public uint64 Base;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_UNLOAD_MODULE
-		{
+		public struct DEBUG_LAST_EVENT_INFO_UNLOAD_MODULE		{
 			public uint64 Base;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_SYSTEM_ERROR
-		{
+		public struct DEBUG_LAST_EVENT_INFO_SYSTEM_ERROR		{
 			public uint32 Error;
 			public uint32 Level;
 		}
 		[CRepr]
-		public struct DEBUG_LAST_EVENT_INFO_SERVICE_EXCEPTION
-		{
+		public struct DEBUG_LAST_EVENT_INFO_SERVICE_EXCEPTION		{
 			public uint32 Kind;
 			public uint32 DataSize;
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct DEBUG_VALUE
-		{
+		public struct DEBUG_VALUE		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 TailOfRawBytes;
 			public uint32 Type;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 I8;
 				public uint16 I16;
 				public uint32 I32;
@@ -3791,42 +3743,36 @@ namespace Win32
 				public uint8[24] RawBytes;
 				
 				[CRepr]
-				public struct _I64Parts32_e__Struct
-				{
+				public struct _I64Parts32_e__Struct				{
 					public uint32 LowPart;
 					public uint32 HighPart;
 				}
 				[CRepr]
-				public struct _F128Parts64_e__Struct
-				{
+				public struct _F128Parts64_e__Struct				{
 					public uint64 LowPart;
 					public int64 HighPart;
 				}
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint64 I64;
 					public BOOL Nat;
 				}
 			}
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_ALPHA
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_ALPHA		{
 			public uint32 Type;
 			public uint32 Revision;
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_AMD64
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_AMD64		{
 			public uint32 Family;
 			public uint32 Model;
 			public uint32 Stepping;
 			public CHAR[16] VendorString;
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_IA64
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_IA64		{
 			public uint32 Model;
 			public uint32 Revision;
 			public uint32 Family;
@@ -3834,30 +3780,26 @@ namespace Win32
 			public CHAR[16] VendorString;
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_X86
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_X86		{
 			public uint32 Family;
 			public uint32 Model;
 			public uint32 Stepping;
 			public CHAR[16] VendorString;
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_ARM
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_ARM		{
 			public uint32 Model;
 			public uint32 Revision;
 			public CHAR[16] VendorString;
 		}
 		[CRepr]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_ARM64
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_ARM64		{
 			public uint32 Model;
 			public uint32 Revision;
 			public CHAR[16] VendorString;
 		}
 		[CRepr, Union]
-		public struct DEBUG_PROCESSOR_IDENTIFICATION_ALL
-		{
+		public struct DEBUG_PROCESSOR_IDENTIFICATION_ALL		{
 			public DEBUG_PROCESSOR_IDENTIFICATION_ALPHA Alpha;
 			public DEBUG_PROCESSOR_IDENTIFICATION_AMD64 Amd64;
 			public DEBUG_PROCESSOR_IDENTIFICATION_IA64 Ia64;
@@ -3866,8 +3808,7 @@ namespace Win32
 			public DEBUG_PROCESSOR_IDENTIFICATION_ARM64 Arm64;
 		}
 		[CRepr]
-		public struct DEBUG_HANDLE_DATA_BASIC
-		{
+		public struct DEBUG_HANDLE_DATA_BASIC		{
 			public uint32 TypeNameSize;
 			public uint32 ObjectNameSize;
 			public uint32 Attributes;
@@ -3876,16 +3817,14 @@ namespace Win32
 			public uint32 PointerCount;
 		}
 		[CRepr]
-		public struct DEBUG_EVENT_CONTEXT
-		{
+		public struct DEBUG_EVENT_CONTEXT		{
 			public uint32 Size;
 			public uint32 ProcessEngineId;
 			public uint32 ThreadEngineId;
 			public uint32 FrameEngineId;
 		}
 		[CRepr]
-		public struct DEBUG_REGISTER_DESCRIPTION
-		{
+		public struct DEBUG_REGISTER_DESCRIPTION		{
 			public uint32 Type;
 			public uint32 Flags;
 			public uint32 SubregMaster;
@@ -3895,8 +3834,7 @@ namespace Win32
 			public uint32 Reserved0;
 		}
 		[CRepr]
-		public struct DEBUG_SYMBOL_PARAMETERS
-		{
+		public struct DEBUG_SYMBOL_PARAMETERS		{
 			public uint64 Module;
 			public uint32 TypeId;
 			public uint32 ParentSymbol;
@@ -3905,8 +3843,7 @@ namespace Win32
 			public uint64 Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_SYMBOL_ENTRY
-		{
+		public struct DEBUG_SYMBOL_ENTRY		{
 			public uint64 ModuleBase;
 			public uint64 Offset;
 			public uint64 Id;
@@ -3921,8 +3858,7 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_MODULE_PARAMETERS
-		{
+		public struct DEBUG_MODULE_PARAMETERS		{
 			public uint64 Base;
 			public uint32 Size;
 			public uint32 TimeDateStamp;
@@ -3937,14 +3873,12 @@ namespace Win32
 			public uint64[2] Reserved;
 		}
 		[CRepr]
-		public struct DEBUG_MODULE_AND_ID
-		{
+		public struct DEBUG_MODULE_AND_ID		{
 			public uint64 ModuleBase;
 			public uint64 Id;
 		}
 		[CRepr]
-		public struct DEBUG_SYMBOL_SOURCE_ENTRY
-		{
+		public struct DEBUG_SYMBOL_SOURCE_ENTRY		{
 			public uint64 ModuleBase;
 			public uint64 Offset;
 			public uint64 FileNameId;
@@ -3959,77 +3893,66 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct Location
-		{
+		public struct Location		{
 			public uint64 HostDefined;
 			public uint64 Offset;
 		}
 		[CRepr]
-		public struct ArrayDimension
-		{
+		public struct ArrayDimension		{
 			public int64 LowerBound;
 			public uint64 Length;
 			public uint64 Stride;
 		}
 		[CRepr]
-		public struct ScriptDebugPosition
-		{
+		public struct ScriptDebugPosition		{
 			public uint32 Line;
 			public uint32 Column;
 		}
 		[CRepr]
-		public struct ScriptDebugEventInformation
-		{
+		public struct ScriptDebugEventInformation		{
 			public ScriptDebugEvent DebugEvent;
 			public ScriptDebugPosition EventPosition;
 			public ScriptDebugPosition EventSpanEnd;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public _ExceptionInformation_e__Struct ExceptionInformation;
 				public _BreakpointInformation_e__Struct BreakpointInformation;
 				
 				[CRepr]
-				public struct _ExceptionInformation_e__Struct
-				{
+				public struct _ExceptionInformation_e__Struct				{
 					public Boolean IsUncaught;
 				}
 				[CRepr]
-				public struct _BreakpointInformation_e__Struct
-				{
+				public struct _BreakpointInformation_e__Struct				{
 					public uint64 BreakpointId;
 				}
 			}
 		}
 		[CRepr]
-		public struct EXTSTACKTRACE
-		{
+		public struct EXTSTACKTRACE		{
 			public uint32 FramePointer;
 			public uint32 ProgramCounter;
 			public uint32 ReturnAddress;
 			public uint32[4] Args;
 		}
 		[CRepr]
-		public struct EXTSTACKTRACE32
-		{
+		public struct EXTSTACKTRACE32		{
 			public uint32 FramePointer;
 			public uint32 ProgramCounter;
 			public uint32 ReturnAddress;
 			public uint32[4] Args;
 		}
 		[CRepr]
-		public struct EXTSTACKTRACE64
-		{
+		public struct EXTSTACKTRACE64		{
 			public uint64 FramePointer;
 			public uint64 ProgramCounter;
 			public uint64 ReturnAddress;
 			public uint64[4] Args;
 		}
 		[CRepr]
-		public struct WINDBG_EXTENSION_APIS
-		{
+		public struct WINDBG_EXTENSION_APIS		{
 			public uint32 nSize;
 			public PWINDBG_OUTPUT_ROUTINE lpOutputRoutine;
 			public PWINDBG_GET_EXPRESSION lpGetExpressionRoutine;
@@ -4044,8 +3967,7 @@ namespace Win32
 			public PWINDBG_STACKTRACE_ROUTINE lpStackTraceRoutine;
 		}
 		[CRepr]
-		public struct WINDBG_EXTENSION_APIS32
-		{
+		public struct WINDBG_EXTENSION_APIS32		{
 			public uint32 nSize;
 			public PWINDBG_OUTPUT_ROUTINE lpOutputRoutine;
 			public PWINDBG_GET_EXPRESSION32 lpGetExpressionRoutine;
@@ -4060,8 +3982,7 @@ namespace Win32
 			public PWINDBG_STACKTRACE_ROUTINE32 lpStackTraceRoutine;
 		}
 		[CRepr]
-		public struct WINDBG_EXTENSION_APIS64
-		{
+		public struct WINDBG_EXTENSION_APIS64		{
 			public uint32 nSize;
 			public PWINDBG_OUTPUT_ROUTINE lpOutputRoutine;
 			public PWINDBG_GET_EXPRESSION64 lpGetExpressionRoutine;
@@ -4076,8 +3997,7 @@ namespace Win32
 			public PWINDBG_STACKTRACE_ROUTINE64 lpStackTraceRoutine;
 		}
 		[CRepr]
-		public struct WINDBG_OLD_EXTENSION_APIS
-		{
+		public struct WINDBG_OLD_EXTENSION_APIS		{
 			public uint32 nSize;
 			public PWINDBG_OUTPUT_ROUTINE lpOutputRoutine;
 			public PWINDBG_GET_EXPRESSION lpGetExpressionRoutine;
@@ -4086,8 +4006,7 @@ namespace Win32
 			public PWINDBG_CHECK_CONTROL_C lpCheckControlCRoutine;
 		}
 		[CRepr]
-		public struct WINDBG_OLDKD_EXTENSION_APIS
-		{
+		public struct WINDBG_OLDKD_EXTENSION_APIS		{
 			public uint32 nSize;
 			public PWINDBG_OUTPUT_ROUTINE lpOutputRoutine;
 			public PWINDBG_GET_EXPRESSION32 lpGetExpressionRoutine;
@@ -4100,67 +4019,58 @@ namespace Win32
 			public PWINDBG_OLDKD_WRITE_PHYSICAL_MEMORY lpWritePhysicalMemRoutine;
 		}
 		[CRepr]
-		public struct EXT_API_VERSION
-		{
+		public struct EXT_API_VERSION		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 			public uint16 Revision;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct PROCESSORINFO
-		{
+		public struct PROCESSORINFO		{
 			public uint16 Processor;
 			public uint16 NumberProcessors;
 		}
 		[CRepr]
-		public struct READCONTROLSPACE
-		{
+		public struct READCONTROLSPACE		{
 			public uint16 Processor;
 			public uint32 Address;
 			public uint32 BufLen;
 			public uint8[0] Buf;
 		}
 		[CRepr]
-		public struct READCONTROLSPACE32
-		{
+		public struct READCONTROLSPACE32		{
 			public uint16 Processor;
 			public uint32 Address;
 			public uint32 BufLen;
 			public uint8[0] Buf;
 		}
 		[CRepr]
-		public struct READCONTROLSPACE64
-		{
+		public struct READCONTROLSPACE64		{
 			public uint16 Processor;
 			public uint64 Address;
 			public uint32 BufLen;
 			public uint8[0] Buf;
 		}
 		[CRepr]
-		public struct IOSPACE
-		{
+		public struct IOSPACE		{
 			public uint32 Address;
 			public uint32 Length;
 			public uint32 Data;
 		}
 		[CRepr]
-		public struct IOSPACE32
-		{
+		public struct IOSPACE32		{
 			public uint32 Address;
 			public uint32 Length;
 			public uint32 Data;
 		}
 		[CRepr]
-		public struct IOSPACE64
-		{
+		public struct IOSPACE64		{
 			public uint64 Address;
 			public uint32 Length;
 			public uint32 Data;
 		}
 		[CRepr]
-		public struct IOSPACE_EX
-		{
+		public struct IOSPACE_EX		{
 			public uint32 Address;
 			public uint32 Length;
 			public uint32 Data;
@@ -4169,8 +4079,7 @@ namespace Win32
 			public uint32 AddressSpace;
 		}
 		[CRepr]
-		public struct IOSPACE_EX32
-		{
+		public struct IOSPACE_EX32		{
 			public uint32 Address;
 			public uint32 Length;
 			public uint32 Data;
@@ -4179,8 +4088,7 @@ namespace Win32
 			public uint32 AddressSpace;
 		}
 		[CRepr]
-		public struct IOSPACE_EX64
-		{
+		public struct IOSPACE_EX64		{
 			public uint64 Address;
 			public uint32 Length;
 			public uint32 Data;
@@ -4189,8 +4097,7 @@ namespace Win32
 			public uint32 AddressSpace;
 		}
 		[CRepr]
-		public struct _GETSETBUSDATA
-		{
+		public struct _GETSETBUSDATA		{
 			public uint32 BusDataType;
 			public uint32 BusNumber;
 			public uint32 SlotNumber;
@@ -4199,8 +4106,7 @@ namespace Win32
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct SEARCHMEMORY
-		{
+		public struct SEARCHMEMORY		{
 			public uint64 SearchAddress;
 			public uint64 SearchLength;
 			public uint64 FoundAddress;
@@ -4208,81 +4114,69 @@ namespace Win32
 			public void* Pattern;
 		}
 		[CRepr]
-		public struct PHYSICAL
-		{
+		public struct PHYSICAL		{
 			public uint64 Address;
 			public uint32 BufLen;
 			public uint8[0] Buf;
 		}
 		[CRepr]
-		public struct PHYSICAL_WITH_FLAGS
-		{
+		public struct PHYSICAL_WITH_FLAGS		{
 			public uint64 Address;
 			public uint32 BufLen;
 			public uint32 Flags;
 			public uint8[0] Buf;
 		}
 		[CRepr]
-		public struct READ_WRITE_MSR
-		{
+		public struct READ_WRITE_MSR		{
 			public uint32 Msr;
 			public int64 Value;
 		}
 		[CRepr]
-		public struct GET_SET_SYMPATH
-		{
+		public struct GET_SET_SYMPATH		{
 			public PSTR Args;
 			public PSTR Result;
 			public int32 Length;
 		}
 		[CRepr]
-		public struct GET_TEB_ADDRESS
-		{
+		public struct GET_TEB_ADDRESS		{
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct GET_PEB_ADDRESS
-		{
+		public struct GET_PEB_ADDRESS		{
 			public uint64 CurrentThread;
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct GET_CURRENT_THREAD_ADDRESS
-		{
+		public struct GET_CURRENT_THREAD_ADDRESS		{
 			public uint32 Processor;
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct GET_CURRENT_PROCESS_ADDRESS
-		{
+		public struct GET_CURRENT_PROCESS_ADDRESS		{
 			public uint32 Processor;
 			public uint64 CurrentThread;
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct GET_INPUT_LINE
-		{
+		public struct GET_INPUT_LINE		{
 			public PSTR Prompt;
 			public PSTR Buffer;
 			public uint32 BufferSize;
 			public uint32 InputSize;
 		}
 		[CRepr]
-		public struct GET_EXPRESSION_EX
-		{
+		public struct GET_EXPRESSION_EX		{
 			public PSTR Expression;
 			public PSTR Remainder;
 			public uint64 Value;
 		}
 		[CRepr]
-		public struct TRANSLATE_VIRTUAL_TO_PHYSICAL
-		{
+		public struct TRANSLATE_VIRTUAL_TO_PHYSICAL		{
 			public uint64 Virtual;
 			public uint64 Physical;
 		}
 		[CRepr]
-		public struct VIRTUAL_TO_PHYSICAL
-		{
+		public struct VIRTUAL_TO_PHYSICAL		{
 			public uint32 Status;
 			public uint32 Size;
 			public uint64 PdeAddress;
@@ -4290,22 +4184,19 @@ namespace Win32
 			public uint64 Physical;
 		}
 		[CRepr]
-		public struct PHYSICAL_TO_VIRTUAL
-		{
+		public struct PHYSICAL_TO_VIRTUAL		{
 			public uint32 Status;
 			public uint32 Size;
 			public uint64 PdeAddress;
 		}
 		[CRepr]
-		public struct GET_CONTEXT_EX
-		{
+		public struct GET_CONTEXT_EX		{
 			public uint32 Status;
 			public uint32 ContextSize;
 			public void* pContext;
 		}
 		[CRepr]
-		public struct POINTER_SEARCH_PHYSICAL
-		{
+		public struct POINTER_SEARCH_PHYSICAL		{
 			public uint64 Offset;
 			public uint64 Length;
 			public uint64 PointerMin;
@@ -4316,8 +4207,7 @@ namespace Win32
 			public uint32 MatchOffsetsCount;
 		}
 		[CRepr]
-		public struct WDBGEXTS_THREAD_OS_INFO
-		{
+		public struct WDBGEXTS_THREAD_OS_INFO		{
 			public uint32 ThreadId;
 			public uint32 ExitStatus;
 			public uint32 PriorityClass;
@@ -4330,21 +4220,18 @@ namespace Win32
 			public uint64 Affinity;
 		}
 		[CRepr]
-		public struct WDBGEXTS_CLR_DATA_INTERFACE
-		{
+		public struct WDBGEXTS_CLR_DATA_INTERFACE		{
 			public Guid* Iid;
 			public void* Iface;
 		}
 		[CRepr]
-		public struct EXT_MATCH_PATTERN_A
-		{
+		public struct EXT_MATCH_PATTERN_A		{
 			public PSTR Str;
 			public PSTR Pattern;
 			public uint32 CaseSensitive;
 		}
 		[CRepr]
-		public struct EXT_FIND_FILE
-		{
+		public struct EXT_FIND_FILE		{
 			public PWSTR FileName;
 			public uint64 IndexedSize;
 			public uint32 ImageTimeDateStamp;
@@ -4359,8 +4246,7 @@ namespace Win32
 			public uint32 FoundFileNameChars;
 		}
 		[CRepr]
-		public struct DEBUG_TYPED_DATA
-		{
+		public struct DEBUG_TYPED_DATA		{
 			public uint64 ModBase;
 			public uint64 Offset;
 			public uint64 EngineHandle;
@@ -4374,8 +4260,7 @@ namespace Win32
 			public uint64[9] Internal;
 		}
 		[CRepr]
-		public struct EXT_TYPED_DATA
-		{
+		public struct EXT_TYPED_DATA		{
 			public EXT_TDOP Operation;
 			public uint32 Flags;
 			public DEBUG_TYPED_DATA InData;
@@ -4395,14 +4280,12 @@ namespace Win32
 			public uint64[8] Reserved;
 		}
 		[CRepr]
-		public struct WDBGEXTS_QUERY_INTERFACE
-		{
+		public struct WDBGEXTS_QUERY_INTERFACE		{
 			public Guid* Iid;
 			public void* Iface;
 		}
 		[CRepr]
-		public struct WDBGEXTS_DISASSEMBLE_BUFFER
-		{
+		public struct WDBGEXTS_DISASSEMBLE_BUFFER		{
 			public uint64 InOffset;
 			public uint64 OutOffset;
 			public uint32 AddrFlags;
@@ -4414,16 +4297,14 @@ namespace Win32
 			public uint64[3] Reserved0;
 		}
 		[CRepr]
-		public struct WDBGEXTS_MODULE_IN_RANGE
-		{
+		public struct WDBGEXTS_MODULE_IN_RANGE		{
 			public uint64 Start;
 			public uint64 End;
 			public uint64 FoundModBase;
 			public uint32 FoundModSize;
 		}
 		[CRepr]
-		public struct DBGKD_GET_VERSION32
-		{
+		public struct DBGKD_GET_VERSION32		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 			public uint16 ProtocolVersion;
@@ -4440,15 +4321,13 @@ namespace Win32
 			public uint32 DebuggerDataList;
 		}
 		[CRepr]
-		public struct DBGKD_DEBUG_DATA_HEADER32
-		{
+		public struct DBGKD_DEBUG_DATA_HEADER32		{
 			public LIST_ENTRY32 List;
 			public uint32 OwnerTag;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct KDDEBUGGER_DATA32
-		{
+		public struct KDDEBUGGER_DATA32		{
 			public DBGKD_DEBUG_DATA_HEADER32 Header;
 			public uint32 KernBase;
 			public uint32 BreakpointWithStatus;
@@ -4517,8 +4396,7 @@ namespace Win32
 			public uint32 MmLoadedUserImageList;
 		}
 		[CRepr]
-		public struct DBGKD_GET_VERSION64
-		{
+		public struct DBGKD_GET_VERSION64		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 			public uint8 ProtocolVersion;
@@ -4535,15 +4413,13 @@ namespace Win32
 			public uint64 DebuggerDataList;
 		}
 		[CRepr]
-		public struct DBGKD_DEBUG_DATA_HEADER64
-		{
+		public struct DBGKD_DEBUG_DATA_HEADER64		{
 			public LIST_ENTRY64 List;
 			public uint32 OwnerTag;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct KDDEBUGGER_DATA64
-		{
+		public struct KDDEBUGGER_DATA64		{
 			public DBGKD_DEBUG_DATA_HEADER64 Header;
 			public uint64 KernBase;
 			public uint64 BreakpointWithStatus;
@@ -4704,8 +4580,7 @@ namespace Win32
 			public uint16 OffsetEProcessMmHotPatchContext;
 		}
 		[CRepr]
-		public struct FIELD_INFO
-		{
+		public struct FIELD_INFO		{
 			public uint8* fName;
 			public uint8* printName;
 			public uint32 size;
@@ -4719,21 +4594,18 @@ namespace Win32
 			public uint32 _bitfield;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* fieldCallBack;
 				public void* pBuffer;
 			}
 			[CRepr]
-			public struct _BitField
-			{
+			public struct _BitField			{
 				public uint16 Position;
 				public uint16 Size;
 			}
 		}
 		[CRepr]
-		public struct SYM_DUMP_PARAM
-		{
+		public struct SYM_DUMP_PARAM		{
 			public uint32 size;
 			public uint8* sName;
 			public uint32 Options;
@@ -4750,21 +4622,18 @@ namespace Win32
 			public uint32 _bitfield;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* Context;
 				public void* pBuffer;
 			}
 		}
 		[CRepr]
-		public struct M128A
-		{
+		public struct M128A		{
 			public uint64 Low;
 			public int64 High;
 		}
 		[CRepr]
-		public struct XSAVE_FORMAT
-		{
+		public struct XSAVE_FORMAT		{
 			public uint16 ControlWord;
 			public uint16 StatusWord;
 			public uint8 TagWord;
@@ -4783,21 +4652,18 @@ namespace Win32
 			public uint8[96] Reserved4;
 		}
 		[CRepr]
-		public struct XSAVE_AREA_HEADER
-		{
+		public struct XSAVE_AREA_HEADER		{
 			public uint64 Mask;
 			public uint64 CompactionMask;
 			public uint64[6] Reserved2;
 		}
 		[CRepr]
-		public struct XSAVE_AREA
-		{
+		public struct XSAVE_AREA		{
 			public XSAVE_FORMAT LegacyState;
 			public XSAVE_AREA_HEADER Header;
 		}
 		[CRepr]
-		public struct XSTATE_CONTEXT
-		{
+		public struct XSTATE_CONTEXT		{
 			public uint64 Mask;
 			public uint32 Length;
 			public uint32 Reserved1;
@@ -4805,20 +4671,17 @@ namespace Win32
 			public void* Buffer;
 		}
 		[CRepr]
-		public struct KNONVOLATILE_CONTEXT_POINTERS
-		{
+		public struct KNONVOLATILE_CONTEXT_POINTERS		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint64*[16] IntegerContext;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint64* Rax;
 					public uint64* Rcx;
 					public uint64* Rdx;
@@ -4838,14 +4701,12 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public M128A*[16] FloatingContext;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public M128A* Xmm0;
 					public M128A* Xmm1;
 					public M128A* Xmm2;
@@ -4866,8 +4727,7 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct ARM64_NT_NEON128
-		{
+		public struct ARM64_NT_NEON128		{
 			public _Anonymous_e__Struct Anonymous;
 			public double[2] D;
 			public float[4] S;
@@ -4875,15 +4735,13 @@ namespace Win32
 			public uint8[16] B;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint64 Low;
 				public int64 High;
 			}
 		}
 		[CRepr]
-		public struct ARM64_NT_CONTEXT
-		{
+		public struct ARM64_NT_CONTEXT		{
 			public uint32 ContextFlags;
 			public uint32 Cpsr;
 			public _Anonymous_e__Union Anonymous;
@@ -4898,14 +4756,12 @@ namespace Win32
 			public uint64[2] Wvr;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[31] X;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint64 X0;
 					public uint64 X1;
 					public uint64 X2;
@@ -4941,8 +4797,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DISPATCHER_CONTEXT_ARM64
-		{
+		public struct DISPATCHER_CONTEXT_ARM64		{
 			public uint ControlPc;
 			public uint ImageBase;
 			public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
@@ -4957,36 +4812,31 @@ namespace Win32
 			public uint8* NonVolatileRegisters;
 		}
 		[CRepr]
-		public struct LDT_ENTRY
-		{
+		public struct LDT_ENTRY		{
 			public uint16 LimitLow;
 			public uint16 BaseLow;
 			public _HighWord_e__Union HighWord;
 			
 			[CRepr, Union]
-			public struct _HighWord_e__Union
-			{
+			public struct _HighWord_e__Union			{
 				public _Bytes_e__Struct Bytes;
 				public _Bits_e__Struct Bits;
 				
 				[CRepr]
-				public struct _Bytes_e__Struct
-				{
+				public struct _Bytes_e__Struct				{
 					public uint8 BaseMid;
 					public uint8 Flags1;
 					public uint8 Flags2;
 					public uint8 BaseHi;
 				}
 				[CRepr]
-				public struct _Bits_e__Struct
-				{
+				public struct _Bits_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct WOW64_FLOATING_SAVE_AREA
-		{
+		public struct WOW64_FLOATING_SAVE_AREA		{
 			public uint32 ControlWord;
 			public uint32 StatusWord;
 			public uint32 TagWord;
@@ -4998,8 +4848,7 @@ namespace Win32
 			public uint32 Cr0NpxState;
 		}
 		[CRepr]
-		public struct WOW64_CONTEXT
-		{
+		public struct WOW64_CONTEXT		{
 			public uint32 ContextFlags;
 			public uint32 Dr0;
 			public uint32 Dr1;
@@ -5027,42 +4876,36 @@ namespace Win32
 			public uint8[512] ExtendedRegisters;
 		}
 		[CRepr]
-		public struct WOW64_LDT_ENTRY
-		{
+		public struct WOW64_LDT_ENTRY		{
 			public uint16 LimitLow;
 			public uint16 BaseLow;
 			public _HighWord_e__Union HighWord;
 			
 			[CRepr, Union]
-			public struct _HighWord_e__Union
-			{
+			public struct _HighWord_e__Union			{
 				public _Bytes_e__Struct Bytes;
 				public _Bits_e__Struct Bits;
 				
 				[CRepr]
-				public struct _Bytes_e__Struct
-				{
+				public struct _Bytes_e__Struct				{
 					public uint8 BaseMid;
 					public uint8 Flags1;
 					public uint8 Flags2;
 					public uint8 BaseHi;
 				}
 				[CRepr]
-				public struct _Bits_e__Struct
-				{
+				public struct _Bits_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct WOW64_DESCRIPTOR_TABLE_ENTRY
-		{
+		public struct WOW64_DESCRIPTOR_TABLE_ENTRY		{
 			public uint32 Selector;
 			public WOW64_LDT_ENTRY Descriptor;
 		}
 		[CRepr]
-		public struct EXCEPTION_RECORD
-		{
+		public struct EXCEPTION_RECORD		{
 			public NTSTATUS ExceptionCode;
 			public uint32 ExceptionFlags;
 			public EXCEPTION_RECORD* ExceptionRecord;
@@ -5071,8 +4914,7 @@ namespace Win32
 			public uint[15] ExceptionInformation;
 		}
 		[CRepr]
-		public struct EXCEPTION_RECORD32
-		{
+		public struct EXCEPTION_RECORD32		{
 			public NTSTATUS ExceptionCode;
 			public uint32 ExceptionFlags;
 			public uint32 ExceptionRecord;
@@ -5081,8 +4923,7 @@ namespace Win32
 			public uint32[15] ExceptionInformation;
 		}
 		[CRepr]
-		public struct EXCEPTION_RECORD64
-		{
+		public struct EXCEPTION_RECORD64		{
 			public NTSTATUS ExceptionCode;
 			public uint32 ExceptionFlags;
 			public uint64 ExceptionRecord;
@@ -5092,20 +4933,17 @@ namespace Win32
 			public uint64[15] ExceptionInformation;
 		}
 		[CRepr]
-		public struct EXCEPTION_POINTERS
-		{
+		public struct EXCEPTION_POINTERS		{
 			public EXCEPTION_RECORD* ExceptionRecord;
 			public CONTEXT* ContextRecord;
 		}
 		[CRepr]
-		public struct XSTATE_FEATURE
-		{
+		public struct XSTATE_FEATURE		{
 			public uint32 Offset;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct XSTATE_CONFIGURATION
-		{
+		public struct XSTATE_CONFIGURATION		{
 			public uint64 EnabledFeatures;
 			public uint64 EnabledVolatileFeatures;
 			public uint32 Size;
@@ -5121,21 +4959,18 @@ namespace Win32
 			public uint32 Spare;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 ControlFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_FILE_HEADER
-		{
+		public struct IMAGE_FILE_HEADER		{
 			public IMAGE_FILE_MACHINE Machine;
 			public uint16 NumberOfSections;
 			public uint32 TimeDateStamp;
@@ -5145,14 +4980,12 @@ namespace Win32
 			public IMAGE_FILE_CHARACTERISTICS Characteristics;
 		}
 		[CRepr]
-		public struct IMAGE_DATA_DIRECTORY
-		{
+		public struct IMAGE_DATA_DIRECTORY		{
 			public uint32 VirtualAddress;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct IMAGE_OPTIONAL_HEADER32
-		{
+		public struct IMAGE_OPTIONAL_HEADER32		{
 			public IMAGE_OPTIONAL_HEADER_MAGIC Magic;
 			public uint8 MajorLinkerVersion;
 			public uint8 MinorLinkerVersion;
@@ -5186,8 +5019,7 @@ namespace Win32
 			public IMAGE_DATA_DIRECTORY[16] DataDirectory;
 		}
 		[CRepr]
-		public struct IMAGE_ROM_OPTIONAL_HEADER
-		{
+		public struct IMAGE_ROM_OPTIONAL_HEADER		{
 			public uint16 Magic;
 			public uint8 MajorLinkerVersion;
 			public uint8 MinorLinkerVersion;
@@ -5203,8 +5035,7 @@ namespace Win32
 			public uint32 GpValue;
 		}
 		[CRepr]
-		public struct IMAGE_OPTIONAL_HEADER64
-		{
+		public struct IMAGE_OPTIONAL_HEADER64		{
 			public IMAGE_OPTIONAL_HEADER_MAGIC Magic;
 			public uint8 MajorLinkerVersion;
 			public uint8 MinorLinkerVersion;
@@ -5237,28 +5068,24 @@ namespace Win32
 			public IMAGE_DATA_DIRECTORY[16] DataDirectory;
 		}
 		[CRepr]
-		public struct IMAGE_NT_HEADERS64
-		{
+		public struct IMAGE_NT_HEADERS64		{
 			public uint32 Signature;
 			public IMAGE_FILE_HEADER FileHeader;
 			public IMAGE_OPTIONAL_HEADER64 OptionalHeader;
 		}
 		[CRepr]
-		public struct IMAGE_NT_HEADERS32
-		{
+		public struct IMAGE_NT_HEADERS32		{
 			public uint32 Signature;
 			public IMAGE_FILE_HEADER FileHeader;
 			public IMAGE_OPTIONAL_HEADER32 OptionalHeader;
 		}
 		[CRepr]
-		public struct IMAGE_ROM_HEADERS
-		{
+		public struct IMAGE_ROM_HEADERS		{
 			public IMAGE_FILE_HEADER FileHeader;
 			public IMAGE_ROM_OPTIONAL_HEADER OptionalHeader;
 		}
 		[CRepr]
-		public struct IMAGE_SECTION_HEADER
-		{
+		public struct IMAGE_SECTION_HEADER		{
 			public uint8[8] Name;
 			public _Misc_e__Union Misc;
 			public uint32 VirtualAddress;
@@ -5271,23 +5098,20 @@ namespace Win32
 			public IMAGE_SECTION_CHARACTERISTICS Characteristics;
 			
 			[CRepr, Union]
-			public struct _Misc_e__Union
-			{
+			public struct _Misc_e__Union			{
 				public uint32 PhysicalAddress;
 				public uint32 VirtualSize;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY
-		{
+		public struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY		{
 			public uint16 Flags;
 			public uint16 Catalog;
 			public uint32 CatalogOffset;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct IMAGE_LOAD_CONFIG_DIRECTORY32
-		{
+		public struct IMAGE_LOAD_CONFIG_DIRECTORY32		{
 			public uint32 Size;
 			public uint32 TimeDateStamp;
 			public uint16 MajorVersion;
@@ -5338,8 +5162,7 @@ namespace Win32
 			public uint32 CastGuardOsDeterminedFailureMode;
 		}
 		[CRepr]
-		public struct IMAGE_LOAD_CONFIG_DIRECTORY64
-		{
+		public struct IMAGE_LOAD_CONFIG_DIRECTORY64		{
 			public uint32 Size;
 			public uint32 TimeDateStamp;
 			public uint16 MajorVersion;
@@ -5390,41 +5213,35 @@ namespace Win32
 			public uint64 CastGuardOsDeterminedFailureMode;
 		}
 		[CRepr]
-		public struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
-		{
+		public struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY		{
 			public uint32 BeginAddress;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 UnwindData;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IMAGE_RUNTIME_FUNCTION_ENTRY
-		{
+		public struct IMAGE_RUNTIME_FUNCTION_ENTRY		{
 			public uint32 BeginAddress;
 			public uint32 EndAddress;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 UnwindInfoAddress;
 				public uint32 UnwindData;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_DEBUG_DIRECTORY
-		{
+		public struct IMAGE_DEBUG_DIRECTORY		{
 			public uint32 Characteristics;
 			public uint32 TimeDateStamp;
 			public uint16 MajorVersion;
@@ -5435,8 +5252,7 @@ namespace Win32
 			public uint32 PointerToRawData;
 		}
 		[CRepr]
-		public struct IMAGE_COFF_SYMBOLS_HEADER
-		{
+		public struct IMAGE_COFF_SYMBOLS_HEADER		{
 			public uint32 NumberOfSymbols;
 			public uint32 LvaToFirstSymbol;
 			public uint32 NumberOfLinenumbers;
@@ -5447,8 +5263,7 @@ namespace Win32
 			public uint32 RvaToLastByteOfData;
 		}
 		[CRepr]
-		public struct FPO_DATA
-		{
+		public struct FPO_DATA		{
 			public uint32 ulOffStart;
 			public uint32 cbProcSize;
 			public uint32 cdwLocals;
@@ -5456,29 +5271,25 @@ namespace Win32
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct IMAGE_FUNCTION_ENTRY
-		{
+		public struct IMAGE_FUNCTION_ENTRY		{
 			public uint32 StartingAddress;
 			public uint32 EndingAddress;
 			public uint32 EndOfPrologue;
 		}
 		[CRepr]
-		public struct IMAGE_FUNCTION_ENTRY64
-		{
+		public struct IMAGE_FUNCTION_ENTRY64		{
 			public uint64 StartingAddress;
 			public uint64 EndingAddress;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint64 EndOfPrologue;
 				public uint64 UnwindInfoAddress;
 			}
 		}
 		[CRepr]
-		public struct IMAGE_COR20_HEADER
-		{
+		public struct IMAGE_COR20_HEADER		{
 			public uint32 cb;
 			public uint16 MajorRuntimeVersion;
 			public uint16 MinorRuntimeVersion;
@@ -5493,15 +5304,13 @@ namespace Win32
 			public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 EntryPointToken;
 				public uint32 EntryPointRVA;
 			}
 		}
 		[CRepr]
-		public struct UNWIND_HISTORY_TABLE
-		{
+		public struct UNWIND_HISTORY_TABLE		{
 			public uint32 Count;
 			public uint8 LocalHint;
 			public uint8 GlobalHint;
@@ -5512,28 +5321,24 @@ namespace Win32
 			public UNWIND_HISTORY_TABLE_ENTRY[12] Entry;
 		}
 		[CRepr]
-		public struct WAITCHAIN_NODE_INFO
-		{
+		public struct WAITCHAIN_NODE_INFO		{
 			public WCT_OBJECT_TYPE ObjectType;
 			public WCT_OBJECT_STATUS ObjectStatus;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _LockObject_e__Struct LockObject;
 				public _ThreadObject_e__Struct ThreadObject;
 				
 				[CRepr]
-				public struct _LockObject_e__Struct
-				{
+				public struct _LockObject_e__Struct				{
 					public char16[128] ObjectName;
 					public LARGE_INTEGER Timeout;
 					public BOOL Alertable;
 				}
 				[CRepr]
-				public struct _ThreadObject_e__Struct
-				{
+				public struct _ThreadObject_e__Struct				{
 					public uint32 ProcessId;
 					public uint32 ThreadId;
 					public uint32 WaitTime;
@@ -5542,32 +5347,27 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_LOCATION_DESCRIPTOR
-		{
+		public struct MINIDUMP_LOCATION_DESCRIPTOR		{
 			public uint32 DataSize;
 			public uint32 Rva;
 		}
 		[CRepr]
-		public struct MINIDUMP_LOCATION_DESCRIPTOR64
-		{
+		public struct MINIDUMP_LOCATION_DESCRIPTOR64		{
 			public uint64 DataSize;
 			public uint64 Rva;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY_DESCRIPTOR
-		{
+		public struct MINIDUMP_MEMORY_DESCRIPTOR		{
 			public uint64 StartOfMemoryRange;
 			public MINIDUMP_LOCATION_DESCRIPTOR Memory;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY_DESCRIPTOR64
-		{
+		public struct MINIDUMP_MEMORY_DESCRIPTOR64		{
 			public uint64 StartOfMemoryRange;
 			public uint64 DataSize;
 		}
 		[CRepr]
-		public struct MINIDUMP_HEADER
-		{
+		public struct MINIDUMP_HEADER		{
 			public uint32 Signature;
 			public uint32 Version;
 			public uint32 NumberOfStreams;
@@ -5577,47 +5377,40 @@ namespace Win32
 			public uint64 Flags;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 Reserved;
 				public uint32 TimeDateStamp;
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_DIRECTORY
-		{
+		public struct MINIDUMP_DIRECTORY		{
 			public uint32 StreamType;
 			public MINIDUMP_LOCATION_DESCRIPTOR Location;
 		}
 		[CRepr]
-		public struct MINIDUMP_STRING
-		{
+		public struct MINIDUMP_STRING		{
 			public uint32 Length;
 			public char16[0] Buffer;
 		}
 		[CRepr, Union]
-		public struct CPU_INFORMATION
-		{
+		public struct CPU_INFORMATION		{
 			public _X86CpuInfo_e__Struct X86CpuInfo;
 			public _OtherCpuInfo_e__Struct OtherCpuInfo;
 			
 			[CRepr]
-			public struct _X86CpuInfo_e__Struct
-			{
+			public struct _X86CpuInfo_e__Struct			{
 				public uint32[3] VendorId;
 				public uint32 VersionInformation;
 				public uint32 FeatureInformation;
 				public uint32 AMDExtendedCpuFeatures;
 			}
 			[CRepr]
-			public struct _OtherCpuInfo_e__Struct
-			{
+			public struct _OtherCpuInfo_e__Struct			{
 				public uint64[2] ProcessorFeatures;
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_INFO
-		{
+		public struct MINIDUMP_SYSTEM_INFO		{
 			public PROCESSOR_ARCHITECTURE ProcessorArchitecture;
 			public uint16 ProcessorLevel;
 			public uint16 ProcessorRevision;
@@ -5631,35 +5424,30 @@ namespace Win32
 			public CPU_INFORMATION Cpu;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 Reserved1;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 SuiteMask;
 					public uint16 Reserved2;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint16 Reserved0;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 NumberOfProcessors;
 					public uint8 ProductType;
 				}
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD
-		{
+		public struct MINIDUMP_THREAD		{
 			public uint32 ThreadId;
 			public uint32 SuspendCount;
 			public uint32 PriorityClass;
@@ -5669,14 +5457,12 @@ namespace Win32
 			public MINIDUMP_LOCATION_DESCRIPTOR ThreadContext;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_LIST
-		{
+		public struct MINIDUMP_THREAD_LIST		{
 			public uint32 NumberOfThreads;
 			public MINIDUMP_THREAD[0] Threads;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_EX
-		{
+		public struct MINIDUMP_THREAD_EX		{
 			public uint32 ThreadId;
 			public uint32 SuspendCount;
 			public uint32 PriorityClass;
@@ -5687,14 +5473,12 @@ namespace Win32
 			public MINIDUMP_MEMORY_DESCRIPTOR BackingStore;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_EX_LIST
-		{
+		public struct MINIDUMP_THREAD_EX_LIST		{
 			public uint32 NumberOfThreads;
 			public MINIDUMP_THREAD_EX[0] Threads;
 		}
 		[CRepr]
-		public struct MINIDUMP_EXCEPTION
-		{
+		public struct MINIDUMP_EXCEPTION		{
 			public uint32 ExceptionCode;
 			public uint32 ExceptionFlags;
 			public uint64 ExceptionRecord;
@@ -5704,16 +5488,14 @@ namespace Win32
 			public uint64[15] ExceptionInformation;
 		}
 		[CRepr]
-		public struct MINIDUMP_EXCEPTION_STREAM
-		{
+		public struct MINIDUMP_EXCEPTION_STREAM		{
 			public uint32 ThreadId;
 			public uint32 __alignment;
 			public MINIDUMP_EXCEPTION ExceptionRecord;
 			public MINIDUMP_LOCATION_DESCRIPTOR ThreadContext;
 		}
 		[CRepr]
-		public struct MINIDUMP_MODULE
-		{
+		public struct MINIDUMP_MODULE		{
 			public uint64 BaseOfImage;
 			public uint32 SizeOfImage;
 			public uint32 CheckSum;
@@ -5726,49 +5508,42 @@ namespace Win32
 			public uint64 Reserved1;
 		}
 		[CRepr]
-		public struct MINIDUMP_MODULE_LIST
-		{
+		public struct MINIDUMP_MODULE_LIST		{
 			public uint32 NumberOfModules;
 			public MINIDUMP_MODULE[0] Modules;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY_LIST
-		{
+		public struct MINIDUMP_MEMORY_LIST		{
 			public uint32 NumberOfMemoryRanges;
 			public MINIDUMP_MEMORY_DESCRIPTOR[0] MemoryRanges;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY64_LIST
-		{
+		public struct MINIDUMP_MEMORY64_LIST		{
 			public uint64 NumberOfMemoryRanges;
 			public uint64 BaseRva;
 			public MINIDUMP_MEMORY_DESCRIPTOR64[0] MemoryRanges;
 		}
 		[CRepr]
-		public struct MINIDUMP_EXCEPTION_INFORMATION
-		{
+		public struct MINIDUMP_EXCEPTION_INFORMATION		{
 			public uint32 ThreadId;
 			public EXCEPTION_POINTERS* ExceptionPointers;
 			public BOOL ClientPointers;
 		}
 		[CRepr]
-		public struct MINIDUMP_EXCEPTION_INFORMATION64
-		{
+		public struct MINIDUMP_EXCEPTION_INFORMATION64		{
 			public uint32 ThreadId;
 			public uint64 ExceptionRecord;
 			public uint64 ContextRecord;
 			public BOOL ClientPointers;
 		}
 		[CRepr]
-		public struct MINIDUMP_HANDLE_OBJECT_INFORMATION
-		{
+		public struct MINIDUMP_HANDLE_OBJECT_INFORMATION		{
 			public uint32 NextInfoRva;
 			public uint32 InfoType;
 			public uint32 SizeOfInfo;
 		}
 		[CRepr]
-		public struct MINIDUMP_HANDLE_DESCRIPTOR
-		{
+		public struct MINIDUMP_HANDLE_DESCRIPTOR		{
 			public uint64 Handle;
 			public uint32 TypeNameRva;
 			public uint32 ObjectNameRva;
@@ -5778,8 +5553,7 @@ namespace Win32
 			public uint32 PointerCount;
 		}
 		[CRepr]
-		public struct MINIDUMP_HANDLE_DESCRIPTOR_2
-		{
+		public struct MINIDUMP_HANDLE_DESCRIPTOR_2		{
 			public uint64 Handle;
 			public uint32 TypeNameRva;
 			public uint32 ObjectNameRva;
@@ -5791,24 +5565,21 @@ namespace Win32
 			public uint32 Reserved0;
 		}
 		[CRepr]
-		public struct MINIDUMP_HANDLE_DATA_STREAM
-		{
+		public struct MINIDUMP_HANDLE_DATA_STREAM		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfDescriptor;
 			public uint32 NumberOfDescriptors;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct MINIDUMP_HANDLE_OPERATION_LIST
-		{
+		public struct MINIDUMP_HANDLE_OPERATION_LIST		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfEntry;
 			public uint32 NumberOfEntries;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct MINIDUMP_FUNCTION_TABLE_DESCRIPTOR
-		{
+		public struct MINIDUMP_FUNCTION_TABLE_DESCRIPTOR		{
 			public uint64 MinimumAddress;
 			public uint64 MaximumAddress;
 			public uint64 BaseAddress;
@@ -5816,8 +5587,7 @@ namespace Win32
 			public uint32 SizeOfAlignPad;
 		}
 		[CRepr]
-		public struct MINIDUMP_FUNCTION_TABLE_STREAM
-		{
+		public struct MINIDUMP_FUNCTION_TABLE_STREAM		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfDescriptor;
 			public uint32 SizeOfNativeDescriptor;
@@ -5826,8 +5596,7 @@ namespace Win32
 			public uint32 SizeOfAlignPad;
 		}
 		[CRepr]
-		public struct MINIDUMP_UNLOADED_MODULE
-		{
+		public struct MINIDUMP_UNLOADED_MODULE		{
 			public uint64 BaseOfImage;
 			public uint32 SizeOfImage;
 			public uint32 CheckSum;
@@ -5835,23 +5604,20 @@ namespace Win32
 			public uint32 ModuleNameRva;
 		}
 		[CRepr]
-		public struct MINIDUMP_UNLOADED_MODULE_LIST
-		{
+		public struct MINIDUMP_UNLOADED_MODULE_LIST		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfEntry;
 			public uint32 NumberOfEntries;
 		}
 		[CRepr]
-		public struct XSTATE_CONFIG_FEATURE_MSC_INFO
-		{
+		public struct XSTATE_CONFIG_FEATURE_MSC_INFO		{
 			public uint32 SizeOfInfo;
 			public uint32 ContextSize;
 			public uint64 EnabledFeatures;
 			public XSTATE_FEATURE[64] Features;
 		}
 		[CRepr]
-		public struct MINIDUMP_MISC_INFO
-		{
+		public struct MINIDUMP_MISC_INFO		{
 			public uint32 SizeOfInfo;
 			public MINIDUMP_MISC_INFO_FLAGS Flags1;
 			public uint32 ProcessId;
@@ -5860,8 +5626,7 @@ namespace Win32
 			public uint32 ProcessKernelTime;
 		}
 		[CRepr]
-		public struct MINIDUMP_MISC_INFO_2
-		{
+		public struct MINIDUMP_MISC_INFO_2		{
 			public uint32 SizeOfInfo;
 			public uint32 Flags1;
 			public uint32 ProcessId;
@@ -5875,8 +5640,7 @@ namespace Win32
 			public uint32 ProcessorCurrentIdleState;
 		}
 		[CRepr]
-		public struct MINIDUMP_MISC_INFO_3
-		{
+		public struct MINIDUMP_MISC_INFO_3		{
 			public uint32 SizeOfInfo;
 			public uint32 Flags1;
 			public uint32 ProcessId;
@@ -5895,8 +5659,7 @@ namespace Win32
 			public TIME_ZONE_INFORMATION TimeZone;
 		}
 		[CRepr]
-		public struct MINIDUMP_MISC_INFO_4
-		{
+		public struct MINIDUMP_MISC_INFO_4		{
 			public uint32 SizeOfInfo;
 			public uint32 Flags1;
 			public uint32 ProcessId;
@@ -5917,8 +5680,7 @@ namespace Win32
 			public char16[40] DbgBldStr;
 		}
 		[CRepr]
-		public struct MINIDUMP_MISC_INFO_5
-		{
+		public struct MINIDUMP_MISC_INFO_5		{
 			public uint32 SizeOfInfo;
 			public uint32 Flags1;
 			public uint32 ProcessId;
@@ -5941,8 +5703,7 @@ namespace Win32
 			public uint32 ProcessCookie;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY_INFO
-		{
+		public struct MINIDUMP_MEMORY_INFO		{
 			public uint64 BaseAddress;
 			public uint64 AllocationBase;
 			public uint32 AllocationProtect;
@@ -5954,27 +5715,23 @@ namespace Win32
 			public uint32 __alignment2;
 		}
 		[CRepr]
-		public struct MINIDUMP_MEMORY_INFO_LIST
-		{
+		public struct MINIDUMP_MEMORY_INFO_LIST		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfEntry;
 			public uint64 NumberOfEntries;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_NAME
-		{
+		public struct MINIDUMP_THREAD_NAME		{
 			public uint32 ThreadId;
 			public uint64 RvaOfThreadName;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_NAME_LIST
-		{
+		public struct MINIDUMP_THREAD_NAME_LIST		{
 			public uint32 NumberOfThreadNames;
 			public MINIDUMP_THREAD_NAME[0] ThreadNames;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_INFO
-		{
+		public struct MINIDUMP_THREAD_INFO		{
 			public uint32 ThreadId;
 			public MINIDUMP_THREAD_INFO_DUMP_FLAGS DumpFlags;
 			public uint32 DumpError;
@@ -5987,30 +5744,26 @@ namespace Win32
 			public uint64 Affinity;
 		}
 		[CRepr]
-		public struct MINIDUMP_THREAD_INFO_LIST
-		{
+		public struct MINIDUMP_THREAD_INFO_LIST		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfEntry;
 			public uint32 NumberOfEntries;
 		}
 		[CRepr]
-		public struct MINIDUMP_TOKEN_INFO_HEADER
-		{
+		public struct MINIDUMP_TOKEN_INFO_HEADER		{
 			public uint32 TokenSize;
 			public uint32 TokenId;
 			public uint64 TokenHandle;
 		}
 		[CRepr]
-		public struct MINIDUMP_TOKEN_INFO_LIST
-		{
+		public struct MINIDUMP_TOKEN_INFO_LIST		{
 			public uint32 TokenListSize;
 			public uint32 TokenListEntries;
 			public uint32 ListHeaderSize;
 			public uint32 ElementHeaderSize;
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_BASIC_INFORMATION
-		{
+		public struct MINIDUMP_SYSTEM_BASIC_INFORMATION		{
 			public uint32 TimerResolution;
 			public uint32 PageSize;
 			public uint32 NumberOfPhysicalPages;
@@ -6023,8 +5776,7 @@ namespace Win32
 			public uint32 NumberOfProcessors;
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_FILECACHE_INFORMATION
-		{
+		public struct MINIDUMP_SYSTEM_FILECACHE_INFORMATION		{
 			public uint64 CurrentSize;
 			public uint64 PeakSize;
 			public uint32 PageFaultCount;
@@ -6036,16 +5788,14 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_BASIC_PERFORMANCE_INFORMATION
-		{
+		public struct MINIDUMP_SYSTEM_BASIC_PERFORMANCE_INFORMATION		{
 			public uint64 AvailablePages;
 			public uint64 CommittedPages;
 			public uint64 CommitLimit;
 			public uint64 PeakCommitment;
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION
-		{
+		public struct MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION		{
 			public uint64 IdleProcessTime;
 			public uint64 IoReadTransferCount;
 			public uint64 IoWriteTransferCount;
@@ -6126,8 +5876,7 @@ namespace Win32
 			public uint64 SharedCommittedPages;
 		}
 		[CRepr]
-		public struct MINIDUMP_SYSTEM_MEMORY_INFO_1
-		{
+		public struct MINIDUMP_SYSTEM_MEMORY_INFO_1		{
 			public uint16 Revision;
 			public uint16 Flags;
 			public MINIDUMP_SYSTEM_BASIC_INFORMATION BasicInfo;
@@ -6136,8 +5885,7 @@ namespace Win32
 			public MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION PerfInfo;
 		}
 		[CRepr]
-		public struct MINIDUMP_PROCESS_VM_COUNTERS_1
-		{
+		public struct MINIDUMP_PROCESS_VM_COUNTERS_1		{
 			public uint16 Revision;
 			public uint32 PageFaultCount;
 			public uint64 PeakWorkingSetSize;
@@ -6151,8 +5899,7 @@ namespace Win32
 			public uint64 PrivateUsage;
 		}
 		[CRepr]
-		public struct MINIDUMP_PROCESS_VM_COUNTERS_2
-		{
+		public struct MINIDUMP_PROCESS_VM_COUNTERS_2		{
 			public uint16 Revision;
 			public uint16 Flags;
 			public uint32 PageFaultCount;
@@ -6176,32 +5923,27 @@ namespace Win32
 			public uint64 JobTotalCommitLimit;
 		}
 		[CRepr]
-		public struct MINIDUMP_USER_RECORD
-		{
+		public struct MINIDUMP_USER_RECORD		{
 			public uint32 Type;
 			public MINIDUMP_LOCATION_DESCRIPTOR Memory;
 		}
 		[CRepr]
-		public struct MINIDUMP_USER_STREAM
-		{
+		public struct MINIDUMP_USER_STREAM		{
 			public uint32 Type;
 			public uint32 BufferSize;
 			public void* Buffer;
 		}
 		[CRepr]
-		public struct MINIDUMP_USER_STREAM_INFORMATION
-		{
+		public struct MINIDUMP_USER_STREAM_INFORMATION		{
 			public uint32 UserStreamCount;
 			public MINIDUMP_USER_STREAM* UserStreamArray;
 		}
 		[CRepr]
-		public struct MINIDUMP_INCLUDE_THREAD_CALLBACK
-		{
+		public struct MINIDUMP_INCLUDE_THREAD_CALLBACK		{
 			public uint32 ThreadId;
 		}
 		[CRepr]
-		public struct MINIDUMP_MODULE_CALLBACK
-		{
+		public struct MINIDUMP_MODULE_CALLBACK		{
 			public PWSTR FullPath;
 			public uint64 BaseOfImage;
 			public uint32 SizeOfImage;
@@ -6214,40 +5956,34 @@ namespace Win32
 			public uint32 SizeOfMiscRecord;
 		}
 		[CRepr]
-		public struct MINIDUMP_INCLUDE_MODULE_CALLBACK
-		{
+		public struct MINIDUMP_INCLUDE_MODULE_CALLBACK		{
 			public uint64 BaseOfImage;
 		}
 		[CRepr]
-		public struct MINIDUMP_IO_CALLBACK
-		{
+		public struct MINIDUMP_IO_CALLBACK		{
 			public HANDLE Handle;
 			public uint64 Offset;
 			public void* Buffer;
 			public uint32 BufferBytes;
 		}
 		[CRepr]
-		public struct MINIDUMP_READ_MEMORY_FAILURE_CALLBACK
-		{
+		public struct MINIDUMP_READ_MEMORY_FAILURE_CALLBACK		{
 			public uint64 Offset;
 			public uint32 Bytes;
 			public HRESULT FailureStatus;
 		}
 		[CRepr]
-		public struct MINIDUMP_VM_QUERY_CALLBACK
-		{
+		public struct MINIDUMP_VM_QUERY_CALLBACK		{
 			public uint64 Offset;
 		}
 		[CRepr]
-		public struct MINIDUMP_VM_PRE_READ_CALLBACK
-		{
+		public struct MINIDUMP_VM_PRE_READ_CALLBACK		{
 			public uint64 Offset;
 			public void* Buffer;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct MINIDUMP_VM_POST_READ_CALLBACK
-		{
+		public struct MINIDUMP_VM_POST_READ_CALLBACK		{
 			public uint64 Offset;
 			public void* Buffer;
 			public uint32 Size;
@@ -6255,16 +5991,14 @@ namespace Win32
 			public HRESULT Status;
 		}
 		[CRepr]
-		public struct MINIDUMP_CALLBACK_INPUT
-		{
+		public struct MINIDUMP_CALLBACK_INPUT		{
 			public uint32 ProcessId;
 			public HANDLE ProcessHandle;
 			public uint32 CallbackType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public HRESULT Status;
 				public MINIDUMP_THREAD_CALLBACK Thread;
 				public MINIDUMP_THREAD_EX_CALLBACK ThreadEx;
@@ -6280,13 +6014,11 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_CALLBACK_OUTPUT
-		{
+		public struct MINIDUMP_CALLBACK_OUTPUT		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 ModuleWriteFlags;
 				public uint32 ThreadWriteFlags;
 				public uint32 SecondaryFlags;
@@ -6299,46 +6031,39 @@ namespace Win32
 				public HRESULT Status;
 				
 				[CRepr]
-				public struct _Anonymous4_e__Struct
-				{
+				public struct _Anonymous4_e__Struct				{
 					public HRESULT VmQueryStatus;
 					public MINIDUMP_MEMORY_INFO VmQueryResult;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public BOOL CheckCancel;
 					public BOOL Cancel;
 				}
 				[CRepr]
-				public struct _Anonymous5_e__Struct
-				{
+				public struct _Anonymous5_e__Struct				{
 					public HRESULT VmReadStatus;
 					public uint32 VmReadBytesCompleted;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public uint64 MemoryBase;
 					public uint32 MemorySize;
 				}
 				[CRepr]
-				public struct _Anonymous3_e__Struct
-				{
+				public struct _Anonymous3_e__Struct				{
 					public MINIDUMP_MEMORY_INFO VmRegion;
 					public BOOL Continue;
 				}
 			}
 		}
 		[CRepr]
-		public struct MINIDUMP_CALLBACK_INFORMATION
-		{
+		public struct MINIDUMP_CALLBACK_INFORMATION		{
 			public MINIDUMP_CALLBACK_ROUTINE CallbackRoutine;
 			public void* CallbackParam;
 		}
 		[CRepr]
-		public struct DebugPropertyInfo
-		{
+		public struct DebugPropertyInfo		{
 			public uint32 m_dwValidFields;
 			public BSTR m_bstrName;
 			public BSTR m_bstrType;
@@ -6348,8 +6073,7 @@ namespace Win32
 			public IDebugProperty* m_pDebugProp;
 		}
 		[CRepr]
-		public struct ExtendedDebugPropertyInfo
-		{
+		public struct ExtendedDebugPropertyInfo		{
 			public uint32 dwValidFields;
 			public PWSTR pszName;
 			public PWSTR pszType;
@@ -6364,8 +6088,7 @@ namespace Win32
 			public IDebugExtendedProperty* pDebugExtProp;
 		}
 		[CRepr]
-		public struct DebugStackFrameDescriptor
-		{
+		public struct DebugStackFrameDescriptor		{
 			public IDebugStackFrame* pdsf;
 			public uint32 dwMin;
 			public uint32 dwLim;
@@ -6373,8 +6096,7 @@ namespace Win32
 			public IUnknown* punkFinal;
 		}
 		[CRepr]
-		public struct DebugStackFrameDescriptor64
-		{
+		public struct DebugStackFrameDescriptor64		{
 			public IDebugStackFrame* pdsf;
 			public uint64 dwMin;
 			public uint64 dwLim;
@@ -6382,27 +6104,23 @@ namespace Win32
 			public IUnknown* punkFinal;
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_OBJECT_SCOPE_LIST
-		{
+		public struct PROFILER_HEAP_OBJECT_SCOPE_LIST		{
 			public uint32 count;
 			public uint[0] scopes;
 		}
 		[CRepr]
-		public struct PROFILER_PROPERTY_TYPE_SUBSTRING_INFO
-		{
+		public struct PROFILER_PROPERTY_TYPE_SUBSTRING_INFO		{
 			public uint32 length;
 			public PWSTR value;
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_OBJECT_RELATIONSHIP
-		{
+		public struct PROFILER_HEAP_OBJECT_RELATIONSHIP		{
 			public uint32 relationshipId;
 			public PROFILER_RELATIONSHIP_INFO relationshipInfo;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public double numberValue;
 				public PWSTR stringValue;
 				public BSTR bstrValue;
@@ -6412,20 +6130,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST
-		{
+		public struct PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST		{
 			public uint32 count;
 			public PROFILER_HEAP_OBJECT_RELATIONSHIP[0] elements;
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_OBJECT_OPTIONAL_INFO
-		{
+		public struct PROFILER_HEAP_OBJECT_OPTIONAL_INFO		{
 			public PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE infoType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint prototype;
 				public PWSTR functionName;
 				public uint32 elementAttributesSize;
@@ -6442,8 +6157,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_OBJECT
-		{
+		public struct PROFILER_HEAP_OBJECT		{
 			public uint32 size;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 typeNameId;
@@ -6452,21 +6166,18 @@ namespace Win32
 			public uint16 optionalInfoCount;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint objectId;
 				public void* externalObjectAddress;
 			}
 		}
 		[CRepr]
-		public struct PROFILER_HEAP_SUMMARY
-		{
+		public struct PROFILER_HEAP_SUMMARY		{
 			public PROFILER_HEAP_SUMMARY_VERSION version;
 			public uint32 totalHeapSize;
 		}
 		[CRepr]
-		public struct LOADED_IMAGE
-		{
+		public struct LOADED_IMAGE		{
 			public PSTR ModuleName;
 			public HANDLE hFile;
 			public uint8* MappedAddress;
@@ -6483,8 +6194,7 @@ namespace Win32
 			public uint32 SizeOfImage;
 		}
 		[CRepr]
-		public struct MODLOAD_DATA
-		{
+		public struct MODLOAD_DATA		{
 			public uint32 ssize;
 			public MODLOAD_DATA_TYPE ssig;
 			public void* data;
@@ -6492,8 +6202,7 @@ namespace Win32
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct MODLOAD_CVMISC
-		{
+		public struct MODLOAD_CVMISC		{
 			public uint32 oCV;
 			public uint cCV;
 			public uint32 oMisc;
@@ -6502,21 +6211,18 @@ namespace Win32
 			public uint32 cImage;
 		}
 		[CRepr]
-		public struct MODLOAD_PDBGUID_PDBAGE
-		{
+		public struct MODLOAD_PDBGUID_PDBAGE		{
 			public Guid PdbGuid;
 			public uint32 PdbAge;
 		}
 		[CRepr]
-		public struct ADDRESS64
-		{
+		public struct ADDRESS64		{
 			public uint64 Offset;
 			public uint16 Segment;
 			public ADDRESS_MODE Mode;
 		}
 		[CRepr]
-		public struct KDHELP64
-		{
+		public struct KDHELP64		{
 			public uint64 Thread;
 			public uint32 ThCallbackStack;
 			public uint32 ThCallbackBStore;
@@ -6536,8 +6242,7 @@ namespace Win32
 			public uint64[2] Reserved0;
 		}
 		[CRepr]
-		public struct STACKFRAME64
-		{
+		public struct STACKFRAME64		{
 			public ADDRESS64 AddrPC;
 			public ADDRESS64 AddrReturn;
 			public ADDRESS64 AddrFrame;
@@ -6551,8 +6256,7 @@ namespace Win32
 			public KDHELP64 KdHelp;
 		}
 		[CRepr]
-		public struct STACKFRAME_EX
-		{
+		public struct STACKFRAME_EX		{
 			public ADDRESS64 AddrPC;
 			public ADDRESS64 AddrReturn;
 			public ADDRESS64 AddrFrame;
@@ -6568,16 +6272,14 @@ namespace Win32
 			public uint32 InlineFrameContext;
 		}
 		[CRepr]
-		public struct API_VERSION
-		{
+		public struct API_VERSION		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 			public uint16 Revision;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOL64
-		{
+		public struct IMAGEHLP_SYMBOL64		{
 			public uint32 SizeOfStruct;
 			public uint64 Address;
 			public uint32 Size;
@@ -6586,14 +6288,12 @@ namespace Win32
 			public CHAR[0] Name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOL64_PACKAGE
-		{
+		public struct IMAGEHLP_SYMBOL64_PACKAGE		{
 			public IMAGEHLP_SYMBOL64 sym;
 			public CHAR[2001] name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOLW64
-		{
+		public struct IMAGEHLP_SYMBOLW64		{
 			public uint32 SizeOfStruct;
 			public uint64 Address;
 			public uint32 Size;
@@ -6602,14 +6302,12 @@ namespace Win32
 			public char16[0] Name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOLW64_PACKAGE
-		{
+		public struct IMAGEHLP_SYMBOLW64_PACKAGE		{
 			public IMAGEHLP_SYMBOLW64 sym;
 			public char16[2001] name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULE64
-		{
+		public struct IMAGEHLP_MODULE64		{
 			public uint32 SizeOfStruct;
 			public uint64 BaseOfImage;
 			public uint32 ImageSize;
@@ -6637,14 +6335,12 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULE64_EX
-		{
+		public struct IMAGEHLP_MODULE64_EX		{
 			public IMAGEHLP_MODULE64 Module;
 			public uint32 RegionFlags;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULEW64
-		{
+		public struct IMAGEHLP_MODULEW64		{
 			public uint32 SizeOfStruct;
 			public uint64 BaseOfImage;
 			public uint32 ImageSize;
@@ -6672,14 +6368,12 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULEW64_EX
-		{
+		public struct IMAGEHLP_MODULEW64_EX		{
 			public IMAGEHLP_MODULEW64 Module;
 			public uint32 RegionFlags;
 		}
 		[CRepr]
-		public struct IMAGEHLP_LINE64
-		{
+		public struct IMAGEHLP_LINE64		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint32 LineNumber;
@@ -6687,8 +6381,7 @@ namespace Win32
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct IMAGEHLP_LINEW64
-		{
+		public struct IMAGEHLP_LINEW64		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint32 LineNumber;
@@ -6696,44 +6389,38 @@ namespace Win32
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct SOURCEFILE
-		{
+		public struct SOURCEFILE		{
 			public uint64 ModBase;
 			public PSTR FileName;
 		}
 		[CRepr]
-		public struct SOURCEFILEW
-		{
+		public struct SOURCEFILEW		{
 			public uint64 ModBase;
 			public PWSTR FileName;
 		}
 		[CRepr]
-		public struct IMAGEHLP_CBA_READ_MEMORY
-		{
+		public struct IMAGEHLP_CBA_READ_MEMORY		{
 			public uint64 addr;
 			public void* buf;
 			public uint32 bytes;
 			public uint32* bytesread;
 		}
 		[CRepr]
-		public struct IMAGEHLP_CBA_EVENT
-		{
+		public struct IMAGEHLP_CBA_EVENT		{
 			public IMAGEHLP_CBA_EVENT_SEVERITY severity;
 			public uint32 code;
 			public PSTR desc;
 			public void* object;
 		}
 		[CRepr]
-		public struct IMAGEHLP_CBA_EVENTW
-		{
+		public struct IMAGEHLP_CBA_EVENTW		{
 			public IMAGEHLP_CBA_EVENT_SEVERITY severity;
 			public uint32 code;
 			public PWSTR desc;
 			public void* object;
 		}
 		[CRepr]
-		public struct IMAGEHLP_DEFERRED_SYMBOL_LOAD64
-		{
+		public struct IMAGEHLP_DEFERRED_SYMBOL_LOAD64		{
 			public uint32 SizeOfStruct;
 			public uint64 BaseOfImage;
 			public uint32 CheckSum;
@@ -6744,8 +6431,7 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
-		{
+		public struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64		{
 			public uint32 SizeOfStruct;
 			public uint64 BaseOfImage;
 			public uint32 CheckSum;
@@ -6756,29 +6442,25 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct IMAGEHLP_DUPLICATE_SYMBOL64
-		{
+		public struct IMAGEHLP_DUPLICATE_SYMBOL64		{
 			public uint32 SizeOfStruct;
 			public uint32 NumberOfDups;
 			public IMAGEHLP_SYMBOL64* Symbol;
 			public uint32 SelectedSymbol;
 		}
 		[CRepr]
-		public struct _IMAGEHLP_JIT_SYMBOL_MAP
-		{
+		public struct _IMAGEHLP_JIT_SYMBOL_MAP		{
 			public uint32 SizeOfStruct;
 			public uint64 Address;
 			public uint64 BaseOfImage;
 		}
 		[CRepr]
-		public struct OMAP
-		{
+		public struct OMAP		{
 			public uint32 rva;
 			public uint32 rvaTo;
 		}
 		[CRepr]
-		public struct SRCCODEINFO
-		{
+		public struct SRCCODEINFO		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint64 ModBase;
@@ -6788,8 +6470,7 @@ namespace Win32
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct SRCCODEINFOW
-		{
+		public struct SRCCODEINFOW		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint64 ModBase;
@@ -6799,22 +6480,19 @@ namespace Win32
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOL_SRC
-		{
+		public struct IMAGEHLP_SYMBOL_SRC		{
 			public uint32 sizeofstruct;
 			public uint32 type;
 			public CHAR[260] file;
 		}
 		[CRepr]
-		public struct MODULE_TYPE_INFO
-		{
+		public struct MODULE_TYPE_INFO		{
 			public uint16 dataLength;
 			public uint16 leaf;
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct SYMBOL_INFO
-		{
+		public struct SYMBOL_INFO		{
 			public uint32 SizeOfStruct;
 			public uint32 TypeIndex;
 			public uint64[2] Reserved;
@@ -6832,14 +6510,12 @@ namespace Win32
 			public CHAR[0] Name;
 		}
 		[CRepr]
-		public struct SYMBOL_INFO_PACKAGE
-		{
+		public struct SYMBOL_INFO_PACKAGE		{
 			public SYMBOL_INFO si;
 			public CHAR[2001] name;
 		}
 		[CRepr]
-		public struct SYMBOL_INFOW
-		{
+		public struct SYMBOL_INFOW		{
 			public uint32 SizeOfStruct;
 			public uint32 TypeIndex;
 			public uint64[2] Reserved;
@@ -6857,14 +6533,12 @@ namespace Win32
 			public char16[0] Name;
 		}
 		[CRepr]
-		public struct SYMBOL_INFO_PACKAGEW
-		{
+		public struct SYMBOL_INFO_PACKAGEW		{
 			public SYMBOL_INFOW si;
 			public char16[2001] name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_STACK_FRAME
-		{
+		public struct IMAGEHLP_STACK_FRAME		{
 			public uint64 InstructionOffset;
 			public uint64 ReturnOffset;
 			public uint64 FrameOffset;
@@ -6877,15 +6551,13 @@ namespace Win32
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct TI_FINDCHILDREN_PARAMS
-		{
+		public struct TI_FINDCHILDREN_PARAMS		{
 			public uint32 Count;
 			public uint32 Start;
 			public uint32[0] ChildId;
 		}
 		[CRepr]
-		public struct IMAGEHLP_GET_TYPE_INFO_PARAMS
-		{
+		public struct IMAGEHLP_GET_TYPE_INFO_PARAMS		{
 			public uint32 SizeOfStruct;
 			public IMAGEHLP_GET_TYPE_INFO_FLAGS Flags;
 			public uint32 NumIds;
@@ -6906,8 +6578,7 @@ namespace Win32
 			public uint64* ReqsValid;
 		}
 		[CRepr]
-		public struct SYMSRV_INDEX_INFO
-		{
+		public struct SYMSRV_INDEX_INFO		{
 			public uint32 sizeofstruct;
 			public CHAR[261] file;
 			public BOOL stripped;
@@ -6920,8 +6591,7 @@ namespace Win32
 			public uint32 age;
 		}
 		[CRepr]
-		public struct SYMSRV_INDEX_INFOW
-		{
+		public struct SYMSRV_INDEX_INFOW		{
 			public uint32 sizeofstruct;
 			public char16[261] file;
 			public BOOL stripped;
@@ -6934,27 +6604,23 @@ namespace Win32
 			public uint32 age;
 		}
 		[CRepr]
-		public struct SYMSRV_EXTENDED_OUTPUT_DATA
-		{
+		public struct SYMSRV_EXTENDED_OUTPUT_DATA		{
 			public uint32 sizeOfStruct;
 			public uint32 version;
 			public char16[261] filePtrMsg;
 		}
 		[CRepr]
-		public struct DBGHELP_DATA_REPORT_STRUCT
-		{
+		public struct DBGHELP_DATA_REPORT_STRUCT		{
 			public PWSTR pBinPathNonExist;
 			public PWSTR pSymbolPathNonExist;
 		}
 		[CRepr]
-		public struct TEXT_DOCUMENT_ARRAY
-		{
+		public struct TEXT_DOCUMENT_ARRAY		{
 			public uint32 dwCount;
 			public IDebugDocumentText** Members;
 		}
 		[CRepr]
-		public struct JsDebugPropertyInfo
-		{
+		public struct JsDebugPropertyInfo		{
 			public BSTR name;
 			public BSTR type;
 			public BSTR value;
@@ -6962,54 +6628,46 @@ namespace Win32
 			public JS_PROPERTY_ATTRIBUTES attr;
 		}
 		[CRepr]
-		public struct __MIDL___MIDL_itf_jscript9diag_0000_0007_0001
-		{
+		public struct __MIDL___MIDL_itf_jscript9diag_0000_0007_0001		{
 			public uint64 InstructionOffset;
 			public uint64 ReturnOffset;
 			public uint64 FrameOffset;
 			public uint64 StackOffset;
 		}
 		[CRepr]
-		public struct PHYSICAL_MEMORY_RUN32
-		{
+		public struct PHYSICAL_MEMORY_RUN32		{
 			public uint32 BasePage;
 			public uint32 PageCount;
 		}
 		[CRepr]
-		public struct PHYSICAL_MEMORY_DESCRIPTOR32
-		{
+		public struct PHYSICAL_MEMORY_DESCRIPTOR32		{
 			public uint32 NumberOfRuns;
 			public uint32 NumberOfPages;
 			public PHYSICAL_MEMORY_RUN32[0] Run;
 		}
 		[CRepr]
-		public struct PHYSICAL_MEMORY_RUN64
-		{
+		public struct PHYSICAL_MEMORY_RUN64		{
 			public uint64 BasePage;
 			public uint64 PageCount;
 		}
 		[CRepr]
-		public struct PHYSICAL_MEMORY_DESCRIPTOR64
-		{
+		public struct PHYSICAL_MEMORY_DESCRIPTOR64		{
 			public uint32 NumberOfRuns;
 			public uint64 NumberOfPages;
 			public PHYSICAL_MEMORY_RUN64[0] Run;
 		}
 		[CRepr, Union]
-		public struct DUMP_FILE_ATTRIBUTES
-		{
+		public struct DUMP_FILE_ATTRIBUTES		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 Attributes;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct DUMP_HEADER32
-		{
+		public struct DUMP_HEADER32		{
 			public uint32 Signature;
 			public uint32 ValidDump;
 			public uint32 MajorVersion;
@@ -7050,15 +6708,13 @@ namespace Win32
 			public uint8[56] _reserved3;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PHYSICAL_MEMORY_DESCRIPTOR32 PhysicalMemoryBlock;
 				public uint8[700] PhysicalMemoryBlockBuffer;
 			}
 		}
 		[CRepr]
-		public struct DUMP_HEADER64
-		{
+		public struct DUMP_HEADER64		{
 			public uint32 Signature;
 			public uint32 ValidDump;
 			public uint32 MajorVersion;
@@ -7097,22 +6753,19 @@ namespace Win32
 			public uint8[4008] _reserved0;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PHYSICAL_MEMORY_DESCRIPTOR64 PhysicalMemoryBlock;
 				public uint8[700] PhysicalMemoryBlockBuffer;
 			}
 		}
 		[CRepr]
-		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DD
-		{
+		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DD		{
 			public WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER Initialize;
 			public WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER Uninitialize;
 			public WHEA_ERROR_SOURCE_CORRECT_DEVICE_DRIVER Correct;
 		}
 		[CRepr]
-		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1
-		{
+		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1		{
 			public uint32 Version;
 			public Guid SourceGuid;
 			public uint16 LogTag;
@@ -7121,8 +6774,7 @@ namespace Win32
 			public WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER Uninitialize;
 		}
 		[CRepr]
-		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER
-		{
+		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER		{
 			public uint32 Version;
 			public Guid SourceGuid;
 			public uint16 LogTag;
@@ -7135,8 +6787,7 @@ namespace Win32
 			public Guid PartitionId;
 		}
 		[CRepr]
-		public struct WHEA_DRIVER_BUFFER_SET
-		{
+		public struct WHEA_DRIVER_BUFFER_SET		{
 			public uint32 Version;
 			public uint8* Data;
 			public uint32 DataSize;
@@ -7145,88 +6796,74 @@ namespace Win32
 			public uint8* Flags;
 		}
 		[CRepr, Union]
-		public struct WHEA_NOTIFICATION_FLAGS
-		{
+		public struct WHEA_NOTIFICATION_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct XPF_MC_BANK_FLAGS
-		{
+		public struct XPF_MC_BANK_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint8 AsUCHAR;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct XPF_MCE_FLAGS
-		{
+		public struct XPF_MCE_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsULONG;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct AER_ROOTPORT_DESCRIPTOR_FLAGS
-		{
+		public struct AER_ROOTPORT_DESCRIPTOR_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct AER_ENDPOINT_DESCRIPTOR_FLAGS
-		{
+		public struct AER_ENDPOINT_DESCRIPTOR_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct AER_BRIDGE_DESCRIPTOR_FLAGS
-		{
+		public struct AER_BRIDGE_DESCRIPTOR_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct WHEA_NOTIFICATION_DESCRIPTOR
-		{
+		public struct WHEA_NOTIFICATION_DESCRIPTOR		{
 			public uint8 Type;
 			public uint8 Length;
 			public WHEA_NOTIFICATION_FLAGS Flags;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public _Polled_e__Struct Polled;
 				public _Interrupt_e__Struct Interrupt;
 				public _LocalInterrupt_e__Struct LocalInterrupt;
@@ -7237,8 +6874,7 @@ namespace Win32
 				public _Gsiv_e__Struct Gsiv;
 				
 				[CRepr]
-				public struct _Sei_e__Struct
-				{
+				public struct _Sei_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7247,8 +6883,7 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _Nmi_e__Struct
-				{
+				public struct _Nmi_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7257,8 +6892,7 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _LocalInterrupt_e__Struct
-				{
+				public struct _LocalInterrupt_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7267,13 +6901,11 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _Polled_e__Struct
-				{
+				public struct _Polled_e__Struct				{
 					public uint32 PollInterval;
 				}
 				[CRepr]
-				public struct _Sea_e__Struct
-				{
+				public struct _Sea_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7282,8 +6914,7 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _Interrupt_e__Struct
-				{
+				public struct _Interrupt_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7292,8 +6923,7 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _Sci_e__Struct
-				{
+				public struct _Sci_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7302,8 +6932,7 @@ namespace Win32
 					public uint32 ErrorThresholdWindow;
 				}
 				[CRepr]
-				public struct _Gsiv_e__Struct
-				{
+				public struct _Gsiv_e__Struct				{
 					public uint32 PollInterval;
 					public uint32 Vector;
 					public uint32 SwitchToPollingThreshold;
@@ -7314,8 +6943,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WHEA_XPF_MC_BANK_DESCRIPTOR
-		{
+		public struct WHEA_XPF_MC_BANK_DESCRIPTOR		{
 			public uint8 BankNumber;
 			public BOOLEAN ClearOnInitialization;
 			public uint8 StatusDataFormat;
@@ -7327,8 +6955,7 @@ namespace Win32
 			public uint64 ControlData;
 		}
 		[CRepr]
-		public struct WHEA_XPF_MCE_DESCRIPTOR
-		{
+		public struct WHEA_XPF_MCE_DESCRIPTOR		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 NumberOfBanks;
@@ -7338,8 +6965,7 @@ namespace Win32
 			public WHEA_XPF_MC_BANK_DESCRIPTOR[32] Banks;
 		}
 		[CRepr]
-		public struct WHEA_XPF_CMC_DESCRIPTOR
-		{
+		public struct WHEA_XPF_CMC_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 			public uint8 NumberOfBanks;
@@ -7348,32 +6974,27 @@ namespace Win32
 			public WHEA_XPF_MC_BANK_DESCRIPTOR[32] Banks;
 		}
 		[CRepr]
-		public struct WHEA_PCI_SLOT_NUMBER
-		{
+		public struct WHEA_PCI_SLOT_NUMBER		{
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public _bits_e__Struct bits;
 				public uint32 AsULONG;
 				
 				[CRepr]
-				public struct _bits_e__Struct
-				{
+				public struct _bits_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct WHEA_XPF_NMI_DESCRIPTOR
-		{
+		public struct WHEA_XPF_NMI_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 		}
 		[CRepr]
-		public struct WHEA_AER_ROOTPORT_DESCRIPTOR
-		{
+		public struct WHEA_AER_ROOTPORT_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 			public uint8 Reserved;
@@ -7388,8 +7009,7 @@ namespace Win32
 			public uint32 RootErrorCommand;
 		}
 		[CRepr]
-		public struct WHEA_AER_ENDPOINT_DESCRIPTOR
-		{
+		public struct WHEA_AER_ENDPOINT_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 			public uint8 Reserved;
@@ -7403,8 +7023,7 @@ namespace Win32
 			public uint32 AdvancedCapsAndControl;
 		}
 		[CRepr]
-		public struct WHEA_AER_BRIDGE_DESCRIPTOR
-		{
+		public struct WHEA_AER_BRIDGE_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 			public uint8 Reserved;
@@ -7421,8 +7040,7 @@ namespace Win32
 			public uint32 SecondaryCapsAndControl;
 		}
 		[CRepr]
-		public struct WHEA_GENERIC_ERROR_DESCRIPTOR
-		{
+		public struct WHEA_GENERIC_ERROR_DESCRIPTOR		{
 			public uint16 Type;
 			public uint8 Reserved;
 			public uint8 Enabled;
@@ -7436,8 +7054,7 @@ namespace Win32
 			public WHEA_NOTIFICATION_DESCRIPTOR Notify;
 		}
 		[CRepr]
-		public struct WHEA_GENERIC_ERROR_DESCRIPTOR_V2
-		{
+		public struct WHEA_GENERIC_ERROR_DESCRIPTOR_V2		{
 			public uint16 Type;
 			public uint8 Reserved;
 			public uint8 Enabled;
@@ -7458,8 +7075,7 @@ namespace Win32
 			public uint64 ReadAckWriteMask;
 		}
 		[CRepr]
-		public struct WHEA_DEVICE_DRIVER_DESCRIPTOR
-		{
+		public struct WHEA_DEVICE_DRIVER_DESCRIPTOR		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 			public uint8 Reserved;
@@ -7478,29 +7094,25 @@ namespace Win32
 			public int32 OpenHandles;
 		}
 		[CRepr]
-		public struct WHEA_IPF_MCA_DESCRIPTOR
-		{
+		public struct WHEA_IPF_MCA_DESCRIPTOR		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct WHEA_IPF_CMC_DESCRIPTOR
-		{
+		public struct WHEA_IPF_CMC_DESCRIPTOR		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct WHEA_IPF_CPE_DESCRIPTOR
-		{
+		public struct WHEA_IPF_CPE_DESCRIPTOR		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct WHEA_ERROR_SOURCE_DESCRIPTOR
-		{
+		public struct WHEA_ERROR_SOURCE_DESCRIPTOR		{
 			public uint32 Length;
 			public uint32 Version;
 			public WHEA_ERROR_SOURCE_TYPE Type;
@@ -7514,8 +7126,7 @@ namespace Win32
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public WHEA_XPF_MCE_DESCRIPTOR XpfMceDescriptor;
 				public WHEA_XPF_CMC_DESCRIPTOR XpfCmcDescriptor;
 				public WHEA_XPF_NMI_DESCRIPTOR XpfNmiDescriptor;
@@ -7531,8 +7142,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IPMI_OS_SEL_RECORD
-		{
+		public struct IPMI_OS_SEL_RECORD		{
 			public uint32 Signature;
 			public uint32 Version;
 			public uint32 Length;
@@ -7541,8 +7151,7 @@ namespace Win32
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct IMAGE_DEBUG_INFORMATION
-		{
+		public struct IMAGE_DEBUG_INFORMATION		{
 			public LIST_ENTRY List;
 			public uint32 ReservedSize;
 			public void* ReservedMappedBase;
@@ -7576,15 +7185,13 @@ namespace Win32
 			public uint32[2] Reserved;
 		}
 		[CRepr]
-		public struct ADDRESS
-		{
+		public struct ADDRESS		{
 			public uint32 Offset;
 			public uint16 Segment;
 			public ADDRESS_MODE Mode;
 		}
 		[CRepr]
-		public struct KDHELP
-		{
+		public struct KDHELP		{
 			public uint32 Thread;
 			public uint32 ThCallbackStack;
 			public uint32 NextCallback;
@@ -7599,8 +7206,7 @@ namespace Win32
 			public uint32[5] Reserved;
 		}
 		[CRepr]
-		public struct STACKFRAME
-		{
+		public struct STACKFRAME		{
 			public ADDRESS AddrPC;
 			public ADDRESS AddrReturn;
 			public ADDRESS AddrFrame;
@@ -7614,8 +7220,7 @@ namespace Win32
 			public ADDRESS AddrBStore;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOL
-		{
+		public struct IMAGEHLP_SYMBOL		{
 			public uint32 SizeOfStruct;
 			public uint32 Address;
 			public uint32 Size;
@@ -7624,14 +7229,12 @@ namespace Win32
 			public CHAR[0] Name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOL_PACKAGE
-		{
+		public struct IMAGEHLP_SYMBOL_PACKAGE		{
 			public IMAGEHLP_SYMBOL sym;
 			public CHAR[2001] name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOLW
-		{
+		public struct IMAGEHLP_SYMBOLW		{
 			public uint32 SizeOfStruct;
 			public uint32 Address;
 			public uint32 Size;
@@ -7640,14 +7243,12 @@ namespace Win32
 			public char16[0] Name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_SYMBOLW_PACKAGE
-		{
+		public struct IMAGEHLP_SYMBOLW_PACKAGE		{
 			public IMAGEHLP_SYMBOLW sym;
 			public char16[2001] name;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULE
-		{
+		public struct IMAGEHLP_MODULE		{
 			public uint32 SizeOfStruct;
 			public uint32 BaseOfImage;
 			public uint32 ImageSize;
@@ -7660,8 +7261,7 @@ namespace Win32
 			public CHAR[256] LoadedImageName;
 		}
 		[CRepr]
-		public struct IMAGEHLP_MODULEW
-		{
+		public struct IMAGEHLP_MODULEW		{
 			public uint32 SizeOfStruct;
 			public uint32 BaseOfImage;
 			public uint32 ImageSize;
@@ -7674,8 +7274,7 @@ namespace Win32
 			public char16[256] LoadedImageName;
 		}
 		[CRepr]
-		public struct IMAGEHLP_LINE
-		{
+		public struct IMAGEHLP_LINE		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint32 LineNumber;
@@ -7683,8 +7282,7 @@ namespace Win32
 			public uint32 Address;
 		}
 		[CRepr]
-		public struct IMAGEHLP_LINEW
-		{
+		public struct IMAGEHLP_LINEW		{
 			public uint32 SizeOfStruct;
 			public void* Key;
 			public uint32 LineNumber;
@@ -7692,8 +7290,7 @@ namespace Win32
 			public uint64 Address;
 		}
 		[CRepr]
-		public struct IMAGEHLP_DEFERRED_SYMBOL_LOAD
-		{
+		public struct IMAGEHLP_DEFERRED_SYMBOL_LOAD		{
 			public uint32 SizeOfStruct;
 			public uint32 BaseOfImage;
 			public uint32 CheckSum;
@@ -7703,8 +7300,7 @@ namespace Win32
 			public HANDLE hFile;
 		}
 		[CRepr]
-		public struct IMAGEHLP_DUPLICATE_SYMBOL
-		{
+		public struct IMAGEHLP_DUPLICATE_SYMBOL		{
 			public uint32 SizeOfStruct;
 			public uint32 NumberOfDups;
 			public IMAGEHLP_SYMBOL* Symbol;
@@ -13531,22 +13127,16 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugEventCallbacks.VTable
-			{
-			}
+			public struct VTable : IDebugEventCallbacks.VTable {}
 		}
 		[CRepr]
 		public struct DebugBaseEventCallbacksWide : IDebugEventCallbacksWide
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugEventCallbacksWide.VTable
-			{
-			}
+			public struct VTable : IDebugEventCallbacksWide.VTable {}
 		}
 		[CRepr]
 		public struct IHostDataModelAccess : IUnknown
@@ -15118,11 +14708,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IActiveScriptParseProcedure32.VTable
-			{
-			}
+			public struct VTable : IActiveScriptParseProcedure32.VTable {}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedure2_64 : IActiveScriptParseProcedure64
@@ -15131,11 +14718,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IActiveScriptParseProcedure64.VTable
-			{
-			}
+			public struct VTable : IActiveScriptParseProcedure64.VTable {}
 		}
 		[CRepr]
 		public struct IActiveScriptEncode : IUnknown
@@ -15443,11 +15027,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugPropertyEnumType_All.VTable
-			{
-			}
+			public struct VTable : IDebugPropertyEnumType_All.VTable {}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_Arguments : IDebugPropertyEnumType_All
@@ -15456,11 +15037,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugPropertyEnumType_All.VTable
-			{
-			}
+			public struct VTable : IDebugPropertyEnumType_All.VTable {}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_LocalsPlusArgs : IDebugPropertyEnumType_All
@@ -15469,11 +15047,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugPropertyEnumType_All.VTable
-			{
-			}
+			public struct VTable : IDebugPropertyEnumType_All.VTable {}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_Registers : IDebugPropertyEnumType_All
@@ -15482,11 +15057,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugPropertyEnumType_All.VTable
-			{
-			}
+			public struct VTable : IDebugPropertyEnumType_All.VTable {}
 		}
 		[CRepr]
 		public struct IActiveScriptDebug32 : IUnknown
@@ -15893,11 +15465,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDebugDocumentInfo.VTable
-			{
-			}
+			public struct VTable : IDebugDocumentInfo.VTable {}
 		}
 		[CRepr]
 		public struct IDebugDocumentText : IDebugDocument

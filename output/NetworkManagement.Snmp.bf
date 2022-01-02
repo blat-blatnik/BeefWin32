@@ -217,27 +217,23 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct AsnOctetString
-		{
+		public struct AsnOctetString		{
 			public uint8* stream;
 			public uint32 length;
 			public BOOL dynamic;
 		}
 		[CRepr]
-		public struct AsnObjectIdentifier
-		{
+		public struct AsnObjectIdentifier		{
 			public uint32 idLength;
 			public uint32* ids;
 		}
 		[CRepr]
-		public struct AsnAny
-		{
+		public struct AsnAny		{
 			public uint8 asnType;
 			public _asnValue_e__Union asnValue;
 			
 			[CRepr, Union]
-			public struct _asnValue_e__Union
-			{
+			public struct _asnValue_e__Union			{
 				public int32 number;
 				public uint32 unsigned32;
 				public ULARGE_INTEGER counter64;
@@ -253,44 +249,37 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SnmpVarBind
-		{
+		public struct SnmpVarBind		{
 			public AsnObjectIdentifier name;
 			public AsnAny value;
 		}
 		[CRepr]
-		public struct SnmpVarBindList
-		{
+		public struct SnmpVarBindList		{
 			public SnmpVarBind* list;
 			public uint32 len;
 		}
 		[CRepr]
-		public struct smiOCTETS
-		{
+		public struct smiOCTETS		{
 			public uint32 len;
 			public uint8* ptr;
 		}
 		[CRepr]
-		public struct smiOID
-		{
+		public struct smiOID		{
 			public uint32 len;
 			public uint32* ptr;
 		}
 		[CRepr]
-		public struct smiCNTR64
-		{
+		public struct smiCNTR64		{
 			public uint32 hipart;
 			public uint32 lopart;
 		}
 		[CRepr]
-		public struct smiVALUE
-		{
+		public struct smiVALUE		{
 			public uint32 syntax;
 			public _value_e__Union value;
 			
 			[CRepr, Union]
-			public struct _value_e__Union
-			{
+			public struct _value_e__Union			{
 				public int32 sNumber;
 				public uint32 uNumber;
 				public smiCNTR64 hNumber;
@@ -300,8 +289,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct smiVENDORINFO
-		{
+		public struct smiVENDORINFO		{
 			public CHAR[64] vendorName;
 			public CHAR[64] vendorContact;
 			public CHAR[32] vendorVersionId;

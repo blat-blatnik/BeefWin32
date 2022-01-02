@@ -88,36 +88,31 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TOKEN_VALUE
-		{
+		public struct TOKEN_VALUE		{
 			public PWSTR pwszToken;
 			public uint32 dwValue;
 		}
 		[CRepr]
-		public struct NS_HELPER_ATTRIBUTES
-		{
+		public struct NS_HELPER_ATTRIBUTES		{
 			public _Anonymous_e__Union Anonymous;
 			public Guid guidHelper;
 			public PNS_HELPER_START_FN pfnStart;
 			public PNS_HELPER_STOP_FN pfnStop;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 _ullAlign;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 dwVersion;
 					public uint32 dwReserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct CMD_ENTRY
-		{
+		public struct CMD_ENTRY		{
 			public PWSTR pwszCmdToken;
 			public PFN_HANDLE_CMD pfnCmdHandler;
 			public uint32 dwShortCmdHelpToken;
@@ -126,8 +121,7 @@ namespace Win32
 			public PNS_OSVERSIONCHECK pOsVersionCheck;
 		}
 		[CRepr]
-		public struct CMD_GROUP_ENTRY
-		{
+		public struct CMD_GROUP_ENTRY		{
 			public PWSTR pwszCmdGroupToken;
 			public uint32 dwShortCmdHelpToken;
 			public uint32 ulCmdGroupSize;
@@ -136,8 +130,7 @@ namespace Win32
 			public PNS_OSVERSIONCHECK pOsVersionCheck;
 		}
 		[CRepr]
-		public struct NS_CONTEXT_ATTRIBUTES
-		{
+		public struct NS_CONTEXT_ATTRIBUTES		{
 			public _Anonymous_e__Union Anonymous;
 			public PWSTR pwszContext;
 			public Guid guidHelper;
@@ -154,22 +147,19 @@ namespace Win32
 			public PNS_OSVERSIONCHECK pfnOsVersionCheck;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 _ullAlign;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 dwVersion;
 					public uint32 dwReserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct TAG_TYPE
-		{
+		public struct TAG_TYPE		{
 			public PWSTR pwszTag;
 			public uint32 dwRequired;
 			public BOOL bPresent;

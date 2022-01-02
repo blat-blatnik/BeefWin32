@@ -355,14 +355,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CF_FS_METADATA
-		{
+		public struct CF_FS_METADATA		{
 			public FILE_BASIC_INFO BasicInfo;
 			public LARGE_INTEGER FileSize;
 		}
 		[CRepr]
-		public struct CF_PLACEHOLDER_CREATE_INFO
-		{
+		public struct CF_PLACEHOLDER_CREATE_INFO		{
 			public PWSTR RelativeFileName;
 			public CF_FS_METADATA FsMetadata;
 			public void* FileIdentity;
@@ -372,8 +370,7 @@ namespace Win32
 			public int64 CreateUsn;
 		}
 		[CRepr]
-		public struct CF_PROCESS_INFO
-		{
+		public struct CF_PROCESS_INFO		{
 			public uint32 StructSize;
 			public uint32 ProcessId;
 			public PWSTR ImagePath;
@@ -383,47 +380,39 @@ namespace Win32
 			public uint32 SessionId;
 		}
 		[CRepr]
-		public struct CF_PLATFORM_INFO
-		{
+		public struct CF_PLATFORM_INFO		{
 			public uint32 BuildNumber;
 			public uint32 RevisionNumber;
 			public uint32 IntegrationNumber;
 		}
 		[CRepr]
-		public struct CF_HYDRATION_POLICY_PRIMARY_USHORT
-		{
+		public struct CF_HYDRATION_POLICY_PRIMARY_USHORT		{
 			public uint16 us;
 		}
 		[CRepr]
-		public struct CF_HYDRATION_POLICY_MODIFIER_USHORT
-		{
+		public struct CF_HYDRATION_POLICY_MODIFIER_USHORT		{
 			public uint16 us;
 		}
 		[CRepr]
-		public struct CF_HYDRATION_POLICY
-		{
+		public struct CF_HYDRATION_POLICY		{
 			public CF_HYDRATION_POLICY_PRIMARY_USHORT Primary;
 			public CF_HYDRATION_POLICY_MODIFIER_USHORT Modifier;
 		}
 		[CRepr]
-		public struct CF_POPULATION_POLICY_PRIMARY_USHORT
-		{
+		public struct CF_POPULATION_POLICY_PRIMARY_USHORT		{
 			public uint16 us;
 		}
 		[CRepr]
-		public struct CF_POPULATION_POLICY_MODIFIER_USHORT
-		{
+		public struct CF_POPULATION_POLICY_MODIFIER_USHORT		{
 			public uint16 us;
 		}
 		[CRepr]
-		public struct CF_POPULATION_POLICY
-		{
+		public struct CF_POPULATION_POLICY		{
 			public CF_POPULATION_POLICY_PRIMARY_USHORT Primary;
 			public CF_POPULATION_POLICY_MODIFIER_USHORT Modifier;
 		}
 		[CRepr]
-		public struct CF_SYNC_POLICIES
-		{
+		public struct CF_SYNC_POLICIES		{
 			public uint32 StructSize;
 			public CF_HYDRATION_POLICY Hydration;
 			public CF_POPULATION_POLICY Population;
@@ -432,8 +421,7 @@ namespace Win32
 			public CF_PLACEHOLDER_MANAGEMENT_POLICY PlaceholderManagement;
 		}
 		[CRepr]
-		public struct CF_SYNC_REGISTRATION
-		{
+		public struct CF_SYNC_REGISTRATION		{
 			public uint32 StructSize;
 			public PWSTR ProviderName;
 			public PWSTR ProviderVersion;
@@ -444,8 +432,7 @@ namespace Win32
 			public Guid ProviderId;
 		}
 		[CRepr]
-		public struct CF_CALLBACK_INFO
-		{
+		public struct CF_CALLBACK_INFO		{
 			public uint32 StructSize;
 			public CF_CONNECTION_KEY ConnectionKey;
 			public void* CallbackContext;
@@ -467,14 +454,12 @@ namespace Win32
 			public LARGE_INTEGER RequestKey;
 		}
 		[CRepr]
-		public struct CF_CALLBACK_PARAMETERS
-		{
+		public struct CF_CALLBACK_PARAMETERS		{
 			public uint32 ParamSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Cancel_e__Struct Cancel;
 				public _FetchData_e__Struct FetchData;
 				public _ValidateData_e__Struct ValidateData;
@@ -489,79 +474,66 @@ namespace Win32
 				public _RenameCompletion_e__Struct RenameCompletion;
 				
 				[CRepr]
-				public struct _Rename_e__Struct
-				{
+				public struct _Rename_e__Struct				{
 					public CF_CALLBACK_RENAME_FLAGS Flags;
 					public PWSTR TargetPath;
 				}
 				[CRepr]
-				public struct _Delete_e__Struct
-				{
+				public struct _Delete_e__Struct				{
 					public CF_CALLBACK_DELETE_FLAGS Flags;
 				}
 				[CRepr]
-				public struct _Dehydrate_e__Struct
-				{
+				public struct _Dehydrate_e__Struct				{
 					public CF_CALLBACK_DEHYDRATE_FLAGS Flags;
 					public CF_CALLBACK_DEHYDRATION_REASON Reason;
 				}
 				[CRepr]
-				public struct _OpenCompletion_e__Struct
-				{
+				public struct _OpenCompletion_e__Struct				{
 					public CF_CALLBACK_OPEN_COMPLETION_FLAGS Flags;
 				}
 				[CRepr]
-				public struct _ValidateData_e__Struct
-				{
+				public struct _ValidateData_e__Struct				{
 					public CF_CALLBACK_VALIDATE_DATA_FLAGS Flags;
 					public LARGE_INTEGER RequiredFileOffset;
 					public LARGE_INTEGER RequiredLength;
 				}
 				[CRepr]
-				public struct _Cancel_e__Struct
-				{
+				public struct _Cancel_e__Struct				{
 					public CF_CALLBACK_CANCEL_FLAGS Flags;
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union
-					{
+					public struct _Anonymous_e__Union					{
 						public _FetchData_e__Struct FetchData;
 						
 						[CRepr]
-						public struct _FetchData_e__Struct
-						{
+						public struct _FetchData_e__Struct						{
 							public LARGE_INTEGER FileOffset;
 							public LARGE_INTEGER Length;
 						}
 					}
 				}
 				[CRepr]
-				public struct _RenameCompletion_e__Struct
-				{
+				public struct _RenameCompletion_e__Struct				{
 					public CF_CALLBACK_RENAME_COMPLETION_FLAGS Flags;
 					public PWSTR SourcePath;
 				}
 				[CRepr]
-				public struct _DehydrateCompletion_e__Struct
-				{
+				public struct _DehydrateCompletion_e__Struct				{
 					public CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS Flags;
 					public CF_CALLBACK_DEHYDRATION_REASON Reason;
 				}
 				[CRepr]
-				public struct _FetchPlaceholders_e__Struct
-				{
+				public struct _FetchPlaceholders_e__Struct				{
 					public CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS Flags;
 					public PWSTR Pattern;
 				}
 				[CRepr]
-				public struct _DeleteCompletion_e__Struct
-				{
+				public struct _DeleteCompletion_e__Struct				{
 					public CF_CALLBACK_DELETE_COMPLETION_FLAGS Flags;
 				}
 				[CRepr]
-				public struct _FetchData_e__Struct
-				{
+				public struct _FetchData_e__Struct				{
 					public CF_CALLBACK_FETCH_DATA_FLAGS Flags;
 					public LARGE_INTEGER RequiredFileOffset;
 					public LARGE_INTEGER RequiredLength;
@@ -571,21 +543,18 @@ namespace Win32
 					public CF_CALLBACK_DEHYDRATION_REASON LastDehydrationReason;
 				}
 				[CRepr]
-				public struct _CloseCompletion_e__Struct
-				{
+				public struct _CloseCompletion_e__Struct				{
 					public CF_CALLBACK_CLOSE_COMPLETION_FLAGS Flags;
 				}
 			}
 		}
 		[CRepr]
-		public struct CF_CALLBACK_REGISTRATION
-		{
+		public struct CF_CALLBACK_REGISTRATION		{
 			public CF_CALLBACK_TYPE Type;
 			public CF_CALLBACK Callback;
 		}
 		[CRepr]
-		public struct CF_SYNC_STATUS
-		{
+		public struct CF_SYNC_STATUS		{
 			public uint32 StructSize;
 			public uint32 Code;
 			public uint32 DescriptionOffset;
@@ -594,8 +563,7 @@ namespace Win32
 			public uint32 DeviceIdLength;
 		}
 		[CRepr]
-		public struct CF_OPERATION_INFO
-		{
+		public struct CF_OPERATION_INFO		{
 			public uint32 StructSize;
 			public CF_OPERATION_TYPE Type;
 			public CF_CONNECTION_KEY ConnectionKey;
@@ -605,14 +573,12 @@ namespace Win32
 			public LARGE_INTEGER RequestKey;
 		}
 		[CRepr]
-		public struct CF_OPERATION_PARAMETERS
-		{
+		public struct CF_OPERATION_PARAMETERS		{
 			public uint32 ParamSize;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _TransferData_e__Struct TransferData;
 				public _RetrieveData_e__Struct RetrieveData;
 				public _AckData_e__Struct AckData;
@@ -623,14 +589,12 @@ namespace Win32
 				public _AckDelete_e__Struct AckDelete;
 				
 				[CRepr]
-				public struct _AckRename_e__Struct
-				{
+				public struct _AckRename_e__Struct				{
 					public CF_OPERATION_ACK_RENAME_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 				}
 				[CRepr]
-				public struct _TransferPlaceholders_e__Struct
-				{
+				public struct _TransferPlaceholders_e__Struct				{
 					public CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 					public LARGE_INTEGER PlaceholderTotalCount;
@@ -639,16 +603,14 @@ namespace Win32
 					public uint32 EntriesProcessed;
 				}
 				[CRepr]
-				public struct _AckData_e__Struct
-				{
+				public struct _AckData_e__Struct				{
 					public CF_OPERATION_ACK_DATA_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 					public LARGE_INTEGER Offset;
 					public LARGE_INTEGER Length;
 				}
 				[CRepr]
-				public struct _TransferData_e__Struct
-				{
+				public struct _TransferData_e__Struct				{
 					public CF_OPERATION_TRANSFER_DATA_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 					public void* Buffer;
@@ -656,30 +618,26 @@ namespace Win32
 					public LARGE_INTEGER Length;
 				}
 				[CRepr]
-				public struct _AckDelete_e__Struct
-				{
+				public struct _AckDelete_e__Struct				{
 					public CF_OPERATION_ACK_DELETE_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 				}
 				[CRepr]
-				public struct _RestartHydration_e__Struct
-				{
+				public struct _RestartHydration_e__Struct				{
 					public CF_OPERATION_RESTART_HYDRATION_FLAGS Flags;
 					public CF_FS_METADATA* FsMetadata;
 					public void* FileIdentity;
 					public uint32 FileIdentityLength;
 				}
 				[CRepr]
-				public struct _AckDehydrate_e__Struct
-				{
+				public struct _AckDehydrate_e__Struct				{
 					public CF_OPERATION_ACK_DEHYDRATE_FLAGS Flags;
 					public NTSTATUS CompletionStatus;
 					public void* FileIdentity;
 					public uint32 FileIdentityLength;
 				}
 				[CRepr]
-				public struct _RetrieveData_e__Struct
-				{
+				public struct _RetrieveData_e__Struct				{
 					public CF_OPERATION_RETRIEVE_DATA_FLAGS Flags;
 					public void* Buffer;
 					public LARGE_INTEGER Offset;
@@ -689,14 +647,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CF_FILE_RANGE
-		{
+		public struct CF_FILE_RANGE		{
 			public LARGE_INTEGER StartingOffset;
 			public LARGE_INTEGER Length;
 		}
 		[CRepr]
-		public struct CF_PLACEHOLDER_BASIC_INFO
-		{
+		public struct CF_PLACEHOLDER_BASIC_INFO		{
 			public CF_PIN_STATE PinState;
 			public CF_IN_SYNC_STATE InSyncState;
 			public LARGE_INTEGER FileId;
@@ -705,8 +661,7 @@ namespace Win32
 			public uint8[0] FileIdentity;
 		}
 		[CRepr]
-		public struct CF_PLACEHOLDER_STANDARD_INFO
-		{
+		public struct CF_PLACEHOLDER_STANDARD_INFO		{
 			public LARGE_INTEGER OnDiskDataSize;
 			public LARGE_INTEGER ValidatedDataSize;
 			public LARGE_INTEGER ModifiedDataSize;
@@ -719,20 +674,17 @@ namespace Win32
 			public uint8[0] FileIdentity;
 		}
 		[CRepr]
-		public struct CF_SYNC_ROOT_BASIC_INFO
-		{
+		public struct CF_SYNC_ROOT_BASIC_INFO		{
 			public LARGE_INTEGER SyncRootFileId;
 		}
 		[CRepr]
-		public struct CF_SYNC_ROOT_PROVIDER_INFO
-		{
+		public struct CF_SYNC_ROOT_PROVIDER_INFO		{
 			public CF_SYNC_PROVIDER_STATUS ProviderStatus;
 			public char16[256] ProviderName;
 			public char16[256] ProviderVersion;
 		}
 		[CRepr]
-		public struct CF_SYNC_ROOT_STANDARD_INFO
-		{
+		public struct CF_SYNC_ROOT_STANDARD_INFO		{
 			public LARGE_INTEGER SyncRootFileId;
 			public CF_HYDRATION_POLICY HydrationPolicy;
 			public CF_POPULATION_POLICY PopulationPolicy;

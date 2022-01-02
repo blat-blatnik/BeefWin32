@@ -114,15 +114,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct EC_VARIANT
-		{
+		public struct EC_VARIANT		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Count;
 			public uint32 Type;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public BOOL BooleanVal;
 				public uint32 UInt32Val;
 				public uint64 DateTimeVal;

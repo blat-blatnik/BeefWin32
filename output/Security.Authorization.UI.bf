@@ -84,8 +84,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SI_OBJECT_INFO
-		{
+		public struct SI_OBJECT_INFO		{
 			public SI_OBJECT_INFO_FLAGS dwFlags;
 			public HINSTANCE hInstance;
 			public PWSTR pszServerName;
@@ -94,37 +93,32 @@ namespace Win32
 			public Guid guidObjectType;
 		}
 		[CRepr]
-		public struct SI_ACCESS
-		{
+		public struct SI_ACCESS		{
 			public Guid* pguid;
 			public uint32 mask;
 			public PWSTR pszName;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct SI_INHERIT_TYPE
-		{
+		public struct SI_INHERIT_TYPE		{
 			public Guid* pguid;
 			public ACE_FLAGS dwFlags;
 			public PWSTR pszName;
 		}
 		[CRepr]
-		public struct SID_INFO
-		{
+		public struct SID_INFO		{
 			public PSID pSid;
 			public PWSTR pwzCommonName;
 			public PWSTR pwzClass;
 			public PWSTR pwzUPN;
 		}
 		[CRepr]
-		public struct SID_INFO_LIST
-		{
+		public struct SID_INFO_LIST		{
 			public uint32 cItems;
 			public SID_INFO[0] aSidInfo;
 		}
 		[CRepr]
-		public struct SECURITY_OBJECT
-		{
+		public struct SECURITY_OBJECT		{
 			public PWSTR pwszName;
 			public void* pData;
 			public uint32 cbData;
@@ -134,8 +128,7 @@ namespace Win32
 			public BOOLEAN fWellKnown;
 		}
 		[CRepr]
-		public struct EFFPERM_RESULT_LIST
-		{
+		public struct EFFPERM_RESULT_LIST		{
 			public BOOLEAN fEvaluated;
 			public uint32 cObjectTypeListLength;
 			public OBJECT_TYPE_LIST* pObjectTypeList;

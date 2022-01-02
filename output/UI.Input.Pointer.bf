@@ -53,8 +53,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct POINTER_INFO
-		{
+		public struct POINTER_INFO		{
 			public POINTER_INPUT_TYPE pointerType;
 			public uint32 pointerId;
 			public uint32 frameId;
@@ -73,8 +72,7 @@ namespace Win32
 			public POINTER_BUTTON_CHANGE_TYPE ButtonChangeType;
 		}
 		[CRepr]
-		public struct POINTER_TOUCH_INFO
-		{
+		public struct POINTER_TOUCH_INFO		{
 			public POINTER_INFO pointerInfo;
 			public uint32 touchFlags;
 			public uint32 touchMask;
@@ -84,8 +82,7 @@ namespace Win32
 			public uint32 pressure;
 		}
 		[CRepr]
-		public struct POINTER_PEN_INFO
-		{
+		public struct POINTER_PEN_INFO		{
 			public POINTER_INFO pointerInfo;
 			public uint32 penFlags;
 			public uint32 penMask;
@@ -95,27 +92,23 @@ namespace Win32
 			public int32 tiltY;
 		}
 		[CRepr]
-		public struct INPUT_INJECTION_VALUE
-		{
+		public struct INPUT_INJECTION_VALUE		{
 			public uint16 page;
 			public uint16 usage;
 			public int32 value;
 			public uint16 index;
 		}
 		[CRepr]
-		public struct INPUT_TRANSFORM
-		{
+		public struct INPUT_TRANSFORM		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public float[16] m;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _13;

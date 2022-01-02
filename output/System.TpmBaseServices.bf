@@ -57,38 +57,32 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TBS_CONTEXT_PARAMS
-		{
+		public struct TBS_CONTEXT_PARAMS		{
 			public uint32 version;
 		}
 		[CRepr]
-		public struct TBS_CONTEXT_PARAMS2
-		{
+		public struct TBS_CONTEXT_PARAMS2		{
 			public uint32 version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 asUINT32;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct tdTPM_WNF_PROVISIONING
-		{
+		public struct tdTPM_WNF_PROVISIONING		{
 			public uint32 status;
 			public uint8[28] message;
 		}
 		[CRepr]
-		public struct TPM_DEVICE_INFO
-		{
+		public struct TPM_DEVICE_INFO		{
 			public uint32 structVersion;
 			public uint32 tpmVersion;
 			public uint32 tpmInterfaceType;

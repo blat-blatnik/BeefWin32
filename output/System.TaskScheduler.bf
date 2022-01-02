@@ -173,40 +173,34 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DAILY
-		{
+		public struct DAILY		{
 			public uint16 DaysInterval;
 		}
 		[CRepr]
-		public struct WEEKLY
-		{
+		public struct WEEKLY		{
 			public uint16 WeeksInterval;
 			public uint16 rgfDaysOfTheWeek;
 		}
 		[CRepr]
-		public struct MONTHLYDATE
-		{
+		public struct MONTHLYDATE		{
 			public uint32 rgfDays;
 			public uint16 rgfMonths;
 		}
 		[CRepr]
-		public struct MONTHLYDOW
-		{
+		public struct MONTHLYDOW		{
 			public uint16 wWhichWeek;
 			public uint16 rgfDaysOfTheWeek;
 			public uint16 rgfMonths;
 		}
 		[CRepr, Union]
-		public struct TRIGGER_TYPE_UNION
-		{
+		public struct TRIGGER_TYPE_UNION		{
 			public DAILY Daily;
 			public WEEKLY Weekly;
 			public MONTHLYDATE MonthlyDate;
 			public MONTHLYDOW MonthlyDOW;
 		}
 		[CRepr]
-		public struct TASK_TRIGGER
-		{
+		public struct TASK_TRIGGER		{
 			public uint16 cbTriggerSize;
 			public uint16 Reserved1;
 			public uint16 wBeginYear;
@@ -722,11 +716,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : ITrigger.VTable
-			{
-			}
+			public struct VTable : ITrigger.VTable {}
 		}
 		[CRepr]
 		public struct ILogonTrigger : ITrigger

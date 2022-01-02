@@ -27,14 +27,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR
-		{
+		public struct WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR		{
 			public PWSTR m_wszObStatusEntryPairValue;
 			public WSB_OB_STATUS_ENTRY_PAIR_TYPE m_ObStatusEntryPairType;
 		}
 		[CRepr]
-		public struct WSB_OB_STATUS_ENTRY
-		{
+		public struct WSB_OB_STATUS_ENTRY		{
 			public uint32 m_dwIcon;
 			public uint32 m_dwStatusEntryName;
 			public uint32 m_dwStatusEntryValue;
@@ -42,15 +40,13 @@ namespace Win32
 			public WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR* m_rgValueTypePair;
 		}
 		[CRepr]
-		public struct WSB_OB_STATUS_INFO
-		{
+		public struct WSB_OB_STATUS_INFO		{
 			public Guid m_guidSnapinId;
 			public uint32 m_cStatusEntry;
 			public WSB_OB_STATUS_ENTRY* m_rgStatusEntry;
 		}
 		[CRepr]
-		public struct WSB_OB_REGISTRATION_INFO
-		{
+		public struct WSB_OB_REGISTRATION_INFO		{
 			public PWSTR m_wszResourceDLL;
 			public Guid m_guidSnapinId;
 			public uint32 m_dwProviderName;

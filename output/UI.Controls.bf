@@ -3023,8 +3023,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PROPSHEETPAGEA_V1
-		{
+		public struct PROPSHEETPAGEA_V1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3037,21 +3036,18 @@ namespace Win32
 			public uint32* pcRefParent;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEA_V2
-		{
+		public struct PROPSHEETPAGEA_V2		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3066,21 +3062,18 @@ namespace Win32
 			public PSTR pszHeaderSubTitle;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEA_V3
-		{
+		public struct PROPSHEETPAGEA_V3		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3096,21 +3089,18 @@ namespace Win32
 			public HANDLE hActCtx;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEA
-		{
+		public struct PROPSHEETPAGEA		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3127,27 +3117,23 @@ namespace Win32
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public HBITMAP hbmHeader;
 				public PSTR pszbmHeader;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEW_V1
-		{
+		public struct PROPSHEETPAGEW_V1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3160,21 +3146,18 @@ namespace Win32
 			public uint32* pcRefParent;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEW_V2
-		{
+		public struct PROPSHEETPAGEW_V2		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3189,21 +3172,18 @@ namespace Win32
 			public PWSTR pszHeaderSubTitle;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEW_V3
-		{
+		public struct PROPSHEETPAGEW_V3		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3219,21 +3199,18 @@ namespace Win32
 			public HANDLE hActCtx;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETPAGEW
-		{
+		public struct PROPSHEETPAGEW		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -3250,27 +3227,23 @@ namespace Win32
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pszTemplate;
 				public DLGTEMPLATE* pResource;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public HBITMAP hbmHeader;
 				public PWSTR pszbmHeader;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETHEADERA_V1
-		{
+		public struct PROPSHEETHEADERA_V1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
@@ -3283,27 +3256,23 @@ namespace Win32
 			public PFNPROPSHEETCALLBACK pfnCallback;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public PROPSHEETPAGEA* ppsp;
 				public HPROPSHEETPAGE* phpage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 nStartPage;
 				public PSTR pStartPage;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETHEADERA_V2
-		{
+		public struct PROPSHEETHEADERA_V2		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
@@ -3319,39 +3288,33 @@ namespace Win32
 			public _Anonymous5_e__Union Anonymous5;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union
-			{
+			public struct _Anonymous4_e__Union			{
 				public HBITMAP hbmWatermark;
 				public PSTR pszbmWatermark;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 nStartPage;
 				public PSTR pStartPage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public PROPSHEETPAGEA* ppsp;
 				public HPROPSHEETPAGE* phpage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public HICON hIcon;
 				public PSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous5_e__Union
-			{
+			public struct _Anonymous5_e__Union			{
 				public HBITMAP hbmHeader;
 				public PSTR pszbmHeader;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETHEADERW_V1
-		{
+		public struct PROPSHEETHEADERW_V1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
@@ -3364,27 +3327,23 @@ namespace Win32
 			public PFNPROPSHEETCALLBACK pfnCallback;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public PROPSHEETPAGEW* ppsp;
 				public HPROPSHEETPAGE* phpage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 nStartPage;
 				public PWSTR pStartPage;
 			}
 		}
 		[CRepr]
-		public struct PROPSHEETHEADERW_V2
-		{
+		public struct PROPSHEETHEADERW_V2		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HWND hwndParent;
@@ -3400,64 +3359,54 @@ namespace Win32
 			public _Anonymous5_e__Union Anonymous5;
 			
 			[CRepr, Union]
-			public struct _Anonymous4_e__Union
-			{
+			public struct _Anonymous4_e__Union			{
 				public HBITMAP hbmWatermark;
 				public PWSTR pszbmWatermark;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 nStartPage;
 				public PWSTR pStartPage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public PROPSHEETPAGEW* ppsp;
 				public HPROPSHEETPAGE* phpage;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public HICON hIcon;
 				public PWSTR pszIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous5_e__Union
-			{
+			public struct _Anonymous5_e__Union			{
 				public HBITMAP hbmHeader;
 				public PWSTR pszbmHeader;
 			}
 		}
 		[CRepr]
-		public struct PSHNOTIFY
-		{
+		public struct PSHNOTIFY		{
 			public NMHDR hdr;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct INITCOMMONCONTROLSEX
-		{
+		public struct INITCOMMONCONTROLSEX		{
 			public uint32 dwSize;
 			public INITCOMMONCONTROLSEX_ICC dwICC;
 		}
 		[CRepr]
-		public struct COLORSCHEME
-		{
+		public struct COLORSCHEME		{
 			public uint32 dwSize;
 			public uint32 clrBtnHighlight;
 			public uint32 clrBtnShadow;
 		}
 		[CRepr]
-		public struct NMTOOLTIPSCREATED
-		{
+		public struct NMTOOLTIPSCREATED		{
 			public NMHDR hdr;
 			public HWND hwndToolTips;
 		}
 		[CRepr]
-		public struct NMMOUSE
-		{
+		public struct NMMOUSE		{
 			public NMHDR hdr;
 			public uint dwItemSpec;
 			public uint dwItemData;
@@ -3465,8 +3414,7 @@ namespace Win32
 			public LPARAM dwHitInfo;
 		}
 		[CRepr]
-		public struct NMOBJECTNOTIFY
-		{
+		public struct NMOBJECTNOTIFY		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public Guid* piid;
@@ -3475,23 +3423,20 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct NMKEY
-		{
+		public struct NMKEY		{
 			public NMHDR hdr;
 			public uint32 nVKey;
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct NMCHAR
-		{
+		public struct NMCHAR		{
 			public NMHDR hdr;
 			public uint32 ch;
 			public uint32 dwItemPrev;
 			public uint32 dwItemNext;
 		}
 		[CRepr]
-		public struct NMCUSTOMTEXT
-		{
+		public struct NMCUSTOMTEXT		{
 			public NMHDR hdr;
 			public HDC hDC;
 			public PWSTR lpString;
@@ -3501,8 +3446,7 @@ namespace Win32
 			public BOOL fLink;
 		}
 		[CRepr]
-		public struct NMCUSTOMDRAW
-		{
+		public struct NMCUSTOMDRAW		{
 			public NMHDR hdr;
 			public NMCUSTOMDRAW_DRAW_STAGE dwDrawStage;
 			public HDC hdc;
@@ -3512,22 +3456,19 @@ namespace Win32
 			public LPARAM lItemlParam;
 		}
 		[CRepr]
-		public struct NMTTCUSTOMDRAW
-		{
+		public struct NMTTCUSTOMDRAW		{
 			public NMCUSTOMDRAW nmcd;
 			public uint32 uDrawFlags;
 		}
 		[CRepr]
-		public struct NMCUSTOMSPLITRECTINFO
-		{
+		public struct NMCUSTOMSPLITRECTINFO		{
 			public NMHDR hdr;
 			public RECT rcClient;
 			public RECT rcButton;
 			public RECT rcSplit;
 		}
 		[CRepr]
-		public struct IMAGELISTDRAWPARAMS
-		{
+		public struct IMAGELISTDRAWPARAMS		{
 			public uint32 cbSize;
 			public HIMAGELIST himl;
 			public int32 i;
@@ -3547,8 +3488,7 @@ namespace Win32
 			public uint32 crEffect;
 		}
 		[CRepr]
-		public struct IMAGEINFO
-		{
+		public struct IMAGEINFO		{
 			public HBITMAP hbmImage;
 			public HBITMAP hbmMask;
 			public int32 Unused1;
@@ -3556,20 +3496,17 @@ namespace Win32
 			public RECT rcImage;
 		}
 		[CRepr]
-		public struct HD_TEXTFILTERA
-		{
+		public struct HD_TEXTFILTERA		{
 			public PSTR pszText;
 			public int32 cchTextMax;
 		}
 		[CRepr]
-		public struct HD_TEXTFILTERW
-		{
+		public struct HD_TEXTFILTERW		{
 			public PWSTR pszText;
 			public int32 cchTextMax;
 		}
 		[CRepr]
-		public struct HDITEMA
-		{
+		public struct HDITEMA		{
 			public HDI_MASK mask;
 			public int32 cxy;
 			public PSTR pszText;
@@ -3584,8 +3521,7 @@ namespace Win32
 			public uint32 state;
 		}
 		[CRepr]
-		public struct HDITEMW
-		{
+		public struct HDITEMW		{
 			public HDI_MASK mask;
 			public int32 cxy;
 			public PWSTR pszText;
@@ -3600,37 +3536,32 @@ namespace Win32
 			public uint32 state;
 		}
 		[CRepr]
-		public struct HDLAYOUT
-		{
+		public struct HDLAYOUT		{
 			public RECT* prc;
 			public WINDOWPOS* pwpos;
 		}
 		[CRepr]
-		public struct HDHITTESTINFO
-		{
+		public struct HDHITTESTINFO		{
 			public POINT pt;
 			public uint32 flags;
 			public int32 iItem;
 		}
 		[CRepr]
-		public struct NMHEADERA
-		{
+		public struct NMHEADERA		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public HEADER_CONTROL_NOTIFICATION_BUTTON iButton;
 			public HDITEMA* pitem;
 		}
 		[CRepr]
-		public struct NMHEADERW
-		{
+		public struct NMHEADERW		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public HEADER_CONTROL_NOTIFICATION_BUTTON iButton;
 			public HDITEMW* pitem;
 		}
 		[CRepr]
-		public struct NMHDDISPINFOW
-		{
+		public struct NMHDDISPINFOW		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public HDI_MASK mask;
@@ -3640,8 +3571,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMHDDISPINFOA
-		{
+		public struct NMHDDISPINFOA		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public HDI_MASK mask;
@@ -3651,15 +3581,13 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMHDFILTERBTNCLICK
-		{
+		public struct NMHDFILTERBTNCLICK		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public RECT rc;
 		}
 		[CRepr]
-		public struct TBBUTTON
-		{
+		public struct TBBUTTON		{
 			public int32 iBitmap;
 			public int32 idCommand;
 			public uint8 fsState;
@@ -3669,14 +3597,12 @@ namespace Win32
 			public int iString;
 		}
 		[CRepr]
-		public struct COLORMAP
-		{
+		public struct COLORMAP		{
 			public uint32 from;
 			public uint32 to;
 		}
 		[CRepr]
-		public struct NMTBCUSTOMDRAW
-		{
+		public struct NMTBCUSTOMDRAW		{
 			public NMCUSTOMDRAW nmcd;
 			public HBRUSH hbrMonoDither;
 			public HBRUSH hbrLines;
@@ -3693,34 +3619,29 @@ namespace Win32
 			public int32 iListGap;
 		}
 		[CRepr]
-		public struct TBADDBITMAP
-		{
+		public struct TBADDBITMAP		{
 			public HINSTANCE hInst;
 			public uint nID;
 		}
 		[CRepr]
-		public struct TBSAVEPARAMSA
-		{
+		public struct TBSAVEPARAMSA		{
 			public HKEY hkr;
 			public PSTR pszSubKey;
 			public PSTR pszValueName;
 		}
 		[CRepr]
-		public struct TBSAVEPARAMSW
-		{
+		public struct TBSAVEPARAMSW		{
 			public HKEY hkr;
 			public PWSTR pszSubKey;
 			public PWSTR pszValueName;
 		}
 		[CRepr]
-		public struct TBINSERTMARK
-		{
+		public struct TBINSERTMARK		{
 			public int32 iButton;
 			public TBINSERTMARK_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct TBREPLACEBITMAP
-		{
+		public struct TBREPLACEBITMAP		{
 			public HINSTANCE hInstOld;
 			public uint nIDOld;
 			public HINSTANCE hInstNew;
@@ -3728,8 +3649,7 @@ namespace Win32
 			public int32 nButtons;
 		}
 		[CRepr]
-		public struct TBBUTTONINFOA
-		{
+		public struct TBBUTTONINFOA		{
 			public uint32 cbSize;
 			public TBBUTTONINFOW_MASK dwMask;
 			public int32 idCommand;
@@ -3742,8 +3662,7 @@ namespace Win32
 			public int32 cchText;
 		}
 		[CRepr]
-		public struct TBBUTTONINFOW
-		{
+		public struct TBBUTTONINFOW		{
 			public uint32 cbSize;
 			public TBBUTTONINFOW_MASK dwMask;
 			public int32 idCommand;
@@ -3756,8 +3675,7 @@ namespace Win32
 			public int32 cchText;
 		}
 		[CRepr]
-		public struct TBMETRICS
-		{
+		public struct TBMETRICS		{
 			public uint32 cbSize;
 			public uint32 dwMask;
 			public int32 cxPad;
@@ -3768,16 +3686,14 @@ namespace Win32
 			public int32 cyButtonSpacing;
 		}
 		[CRepr]
-		public struct NMTBHOTITEM
-		{
+		public struct NMTBHOTITEM		{
 			public NMHDR hdr;
 			public int32 idOld;
 			public int32 idNew;
 			public NMTBHOTITEM_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct NMTBSAVE
-		{
+		public struct NMTBSAVE		{
 			public NMHDR hdr;
 			public uint32* pData;
 			public uint32* pCurrent;
@@ -3787,8 +3703,7 @@ namespace Win32
 			public TBBUTTON tbButton;
 		}
 		[CRepr]
-		public struct NMTBRESTORE
-		{
+		public struct NMTBRESTORE		{
 			public NMHDR hdr;
 			public uint32* pData;
 			public uint32* pCurrent;
@@ -3799,8 +3714,7 @@ namespace Win32
 			public TBBUTTON tbButton;
 		}
 		[CRepr]
-		public struct NMTBGETINFOTIPA
-		{
+		public struct NMTBGETINFOTIPA		{
 			public NMHDR hdr;
 			public PSTR pszText;
 			public int32 cchTextMax;
@@ -3808,8 +3722,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTBGETINFOTIPW
-		{
+		public struct NMTBGETINFOTIPW		{
 			public NMHDR hdr;
 			public PWSTR pszText;
 			public int32 cchTextMax;
@@ -3817,8 +3730,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTBDISPINFOA
-		{
+		public struct NMTBDISPINFOA		{
 			public NMHDR hdr;
 			public NMTBDISPINFOW_MASK dwMask;
 			public int32 idCommand;
@@ -3828,8 +3740,7 @@ namespace Win32
 			public int32 cchText;
 		}
 		[CRepr]
-		public struct NMTBDISPINFOW
-		{
+		public struct NMTBDISPINFOW		{
 			public NMHDR hdr;
 			public NMTBDISPINFOW_MASK dwMask;
 			public int32 idCommand;
@@ -3839,8 +3750,7 @@ namespace Win32
 			public int32 cchText;
 		}
 		[CRepr]
-		public struct NMTOOLBARA
-		{
+		public struct NMTOOLBARA		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public TBBUTTON tbButton;
@@ -3849,8 +3759,7 @@ namespace Win32
 			public RECT rcButton;
 		}
 		[CRepr]
-		public struct NMTOOLBARW
-		{
+		public struct NMTOOLBARW		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public TBBUTTON tbButton;
@@ -3859,15 +3768,13 @@ namespace Win32
 			public RECT rcButton;
 		}
 		[CRepr]
-		public struct REBARINFO
-		{
+		public struct REBARINFO		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public HIMAGELIST himl;
 		}
 		[CRepr]
-		public struct REBARBANDINFOA
-		{
+		public struct REBARBANDINFOA		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public uint32 fStyle;
@@ -3892,8 +3799,7 @@ namespace Win32
 			public uint32 uChevronState;
 		}
 		[CRepr]
-		public struct REBARBANDINFOW
-		{
+		public struct REBARBANDINFOW		{
 			public uint32 cbSize;
 			public uint32 fMask;
 			public uint32 fStyle;
@@ -3918,8 +3824,7 @@ namespace Win32
 			public uint32 uChevronState;
 		}
 		[CRepr]
-		public struct NMREBARCHILDSIZE
-		{
+		public struct NMREBARCHILDSIZE		{
 			public NMHDR hdr;
 			public uint32 uBand;
 			public uint32 wID;
@@ -3927,8 +3832,7 @@ namespace Win32
 			public RECT rcBand;
 		}
 		[CRepr]
-		public struct NMREBAR
-		{
+		public struct NMREBAR		{
 			public NMHDR hdr;
 			public NMREBAR_MASK_FLAGS dwMask;
 			public uint32 uBand;
@@ -3937,16 +3841,14 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMRBAUTOSIZE
-		{
+		public struct NMRBAUTOSIZE		{
 			public NMHDR hdr;
 			public BOOL fChanged;
 			public RECT rcTarget;
 			public RECT rcActual;
 		}
 		[CRepr]
-		public struct NMREBARCHEVRON
-		{
+		public struct NMREBARCHEVRON		{
 			public NMHDR hdr;
 			public uint32 uBand;
 			public uint32 wID;
@@ -3955,14 +3857,12 @@ namespace Win32
 			public LPARAM lParamNM;
 		}
 		[CRepr]
-		public struct NMREBARSPLITTER
-		{
+		public struct NMREBARSPLITTER		{
 			public NMHDR hdr;
 			public RECT rcSizing;
 		}
 		[CRepr]
-		public struct NMREBARAUTOBREAK
-		{
+		public struct NMREBARAUTOBREAK		{
 			public NMHDR hdr;
 			public uint32 uBand;
 			public uint32 wID;
@@ -3972,15 +3872,13 @@ namespace Win32
 			public BOOL fAutoBreak;
 		}
 		[CRepr]
-		public struct RBHITTESTINFO
-		{
+		public struct RBHITTESTINFO		{
 			public POINT pt;
 			public uint32 flags;
 			public int32 iBand;
 		}
 		[CRepr]
-		public struct TTTOOLINFOA
-		{
+		public struct TTTOOLINFOA		{
 			public uint32 cbSize;
 			public TTTOOLINFO_FLAGS uFlags;
 			public HWND hwnd;
@@ -3992,8 +3890,7 @@ namespace Win32
 			public void* lpReserved;
 		}
 		[CRepr]
-		public struct TTTOOLINFOW
-		{
+		public struct TTTOOLINFOW		{
 			public uint32 cbSize;
 			public TTTOOLINFO_FLAGS uFlags;
 			public HWND hwnd;
@@ -4005,30 +3902,26 @@ namespace Win32
 			public void* lpReserved;
 		}
 		[CRepr]
-		public struct TTGETTITLE
-		{
+		public struct TTGETTITLE		{
 			public uint32 dwSize;
 			public uint32 uTitleBitmap;
 			public uint32 cch;
 			public PWSTR pszTitle;
 		}
 		[CRepr]
-		public struct TTHITTESTINFOA
-		{
+		public struct TTHITTESTINFOA		{
 			public HWND hwnd;
 			public POINT pt;
 			public TTTOOLINFOA ti;
 		}
 		[CRepr]
-		public struct TTHITTESTINFOW
-		{
+		public struct TTHITTESTINFOW		{
 			public HWND hwnd;
 			public POINT pt;
 			public TTTOOLINFOW ti;
 		}
 		[CRepr]
-		public struct NMTTDISPINFOA
-		{
+		public struct NMTTDISPINFOA		{
 			public NMHDR hdr;
 			public PSTR lpszText;
 			public CHAR[80] szText;
@@ -4037,8 +3930,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTTDISPINFOW
-		{
+		public struct NMTTDISPINFOW		{
 			public NMHDR hdr;
 			public PWSTR lpszText;
 			public char16[80] szText;
@@ -4047,41 +3939,35 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTRBTHUMBPOSCHANGING
-		{
+		public struct NMTRBTHUMBPOSCHANGING		{
 			public NMHDR hdr;
 			public uint32 dwPos;
 			public int32 nReason;
 		}
 		[CRepr]
-		public struct DRAGLISTINFO
-		{
+		public struct DRAGLISTINFO		{
 			public DRAGLISTINFO_NOTIFICATION_FLAGS uNotification;
 			public HWND hWnd;
 			public POINT ptCursor;
 		}
 		[CRepr]
-		public struct UDACCEL
-		{
+		public struct UDACCEL		{
 			public uint32 nSec;
 			public uint32 nInc;
 		}
 		[CRepr]
-		public struct NMUPDOWN
-		{
+		public struct NMUPDOWN		{
 			public NMHDR hdr;
 			public int32 iPos;
 			public int32 iDelta;
 		}
 		[CRepr]
-		public struct PBRANGE
-		{
+		public struct PBRANGE		{
 			public int32 iLow;
 			public int32 iHigh;
 		}
 		[CRepr]
-		public struct LITEM
-		{
+		public struct LITEM		{
 			public uint32 mask;
 			public int32 iLink;
 			public uint32 state;
@@ -4090,20 +3976,17 @@ namespace Win32
 			public char16[2084] szUrl;
 		}
 		[CRepr]
-		public struct LHITTESTINFO
-		{
+		public struct LHITTESTINFO		{
 			public POINT pt;
 			public LITEM item;
 		}
 		[CRepr]
-		public struct NMLINK
-		{
+		public struct NMLINK		{
 			public NMHDR hdr;
 			public LITEM item;
 		}
 		[CRepr]
-		public struct LVITEMA
-		{
+		public struct LVITEMA		{
 			public uint32 mask;
 			public int32 iItem;
 			public int32 iSubItem;
@@ -4121,8 +4004,7 @@ namespace Win32
 			public int32 iGroup;
 		}
 		[CRepr]
-		public struct LVITEMW
-		{
+		public struct LVITEMW		{
 			public uint32 mask;
 			public int32 iItem;
 			public int32 iSubItem;
@@ -4140,8 +4022,7 @@ namespace Win32
 			public int32 iGroup;
 		}
 		[CRepr]
-		public struct LVFINDINFOA
-		{
+		public struct LVFINDINFOA		{
 			public LVFINDINFOW_FLAGS flags;
 			public PSTR psz;
 			public LPARAM lParam;
@@ -4149,8 +4030,7 @@ namespace Win32
 			public uint32 vkDirection;
 		}
 		[CRepr]
-		public struct LVFINDINFOW
-		{
+		public struct LVFINDINFOW		{
 			public LVFINDINFOW_FLAGS flags;
 			public PWSTR psz;
 			public LPARAM lParam;
@@ -4158,8 +4038,7 @@ namespace Win32
 			public uint32 vkDirection;
 		}
 		[CRepr]
-		public struct LVHITTESTINFO
-		{
+		public struct LVHITTESTINFO		{
 			public POINT pt;
 			public LVHITTESTINFO_FLAGS flags;
 			public int32 iItem;
@@ -4167,8 +4046,7 @@ namespace Win32
 			public int32 iGroup;
 		}
 		[CRepr]
-		public struct LVCOLUMNA
-		{
+		public struct LVCOLUMNA		{
 			public LVCOLUMNW_MASK mask;
 			public LVCOLUMNW_FORMAT fmt;
 			public int32 cx;
@@ -4182,8 +4060,7 @@ namespace Win32
 			public int32 cxIdeal;
 		}
 		[CRepr]
-		public struct LVCOLUMNW
-		{
+		public struct LVCOLUMNW		{
 			public LVCOLUMNW_MASK mask;
 			public LVCOLUMNW_FORMAT fmt;
 			public int32 cx;
@@ -4197,8 +4074,7 @@ namespace Win32
 			public int32 cxIdeal;
 		}
 		[CRepr]
-		public struct LVBKIMAGEA
-		{
+		public struct LVBKIMAGEA		{
 			public uint32 ulFlags;
 			public HBITMAP hbm;
 			public PSTR pszImage;
@@ -4207,8 +4083,7 @@ namespace Win32
 			public int32 yOffsetPercent;
 		}
 		[CRepr]
-		public struct LVBKIMAGEW
-		{
+		public struct LVBKIMAGEW		{
 			public uint32 ulFlags;
 			public HBITMAP hbm;
 			public PWSTR pszImage;
@@ -4217,8 +4092,7 @@ namespace Win32
 			public int32 yOffsetPercent;
 		}
 		[CRepr]
-		public struct LVGROUP
-		{
+		public struct LVGROUP		{
 			public uint32 cbSize;
 			public LVGROUP_MASK mask;
 			public PWSTR pszHeader;
@@ -4245,8 +4119,7 @@ namespace Win32
 			public uint32 cchSubsetTitle;
 		}
 		[CRepr]
-		public struct LVGROUPMETRICS
-		{
+		public struct LVGROUPMETRICS		{
 			public uint32 cbSize;
 			public uint32 mask;
 			public uint32 Left;
@@ -4261,15 +4134,13 @@ namespace Win32
 			public uint32 crFooter;
 		}
 		[CRepr]
-		public struct LVINSERTGROUPSORTED
-		{
+		public struct LVINSERTGROUPSORTED		{
 			public PFNLVGROUPCOMPARE pfnGroupCompare;
 			public void* pvData;
 			public LVGROUP lvGroup;
 		}
 		[CRepr]
-		public struct LVTILEVIEWINFO
-		{
+		public struct LVTILEVIEWINFO		{
 			public uint32 cbSize;
 			public uint32 dwMask;
 			public LVTILEVIEWINFO_FLAGS dwFlags;
@@ -4278,8 +4149,7 @@ namespace Win32
 			public RECT rcLabelMargin;
 		}
 		[CRepr]
-		public struct LVTILEINFO
-		{
+		public struct LVTILEINFO		{
 			public uint32 cbSize;
 			public int32 iItem;
 			public uint32 cColumns;
@@ -4287,16 +4157,14 @@ namespace Win32
 			public int32* piColFmt;
 		}
 		[CRepr]
-		public struct LVINSERTMARK
-		{
+		public struct LVINSERTMARK		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public int32 iItem;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct LVSETINFOTIP
-		{
+		public struct LVSETINFOTIP		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public PWSTR pszText;
@@ -4304,16 +4172,14 @@ namespace Win32
 			public int32 iSubItem;
 		}
 		[CRepr]
-		public struct LVFOOTERINFO
-		{
+		public struct LVFOOTERINFO		{
 			public uint32 mask;
 			public PWSTR pszText;
 			public int32 cchTextMax;
 			public uint32 cItems;
 		}
 		[CRepr]
-		public struct LVFOOTERITEM
-		{
+		public struct LVFOOTERITEM		{
 			public LVFOOTERITEM_MASK mask;
 			public int32 iItem;
 			public PWSTR pszText;
@@ -4322,14 +4188,12 @@ namespace Win32
 			public uint32 stateMask;
 		}
 		[CRepr]
-		public struct LVITEMINDEX
-		{
+		public struct LVITEMINDEX		{
 			public int32 iItem;
 			public int32 iGroup;
 		}
 		[CRepr]
-		public struct NMLISTVIEW
-		{
+		public struct NMLISTVIEW		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public int32 iSubItem;
@@ -4340,8 +4204,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMITEMACTIVATE
-		{
+		public struct NMITEMACTIVATE		{
 			public NMHDR hdr;
 			public int32 iItem;
 			public int32 iSubItem;
@@ -4353,8 +4216,7 @@ namespace Win32
 			public uint32 uKeyFlags;
 		}
 		[CRepr]
-		public struct NMLVCUSTOMDRAW
-		{
+		public struct NMLVCUSTOMDRAW		{
 			public NMCUSTOMDRAW nmcd;
 			public uint32 clrText;
 			public uint32 clrTextBk;
@@ -4369,29 +4231,25 @@ namespace Win32
 			public NMLVCUSTOMDRAW_ALIGN uAlign;
 		}
 		[CRepr]
-		public struct NMLVCACHEHINT
-		{
+		public struct NMLVCACHEHINT		{
 			public NMHDR hdr;
 			public int32 iFrom;
 			public int32 iTo;
 		}
 		[CRepr]
-		public struct NMLVFINDITEMA
-		{
+		public struct NMLVFINDITEMA		{
 			public NMHDR hdr;
 			public int32 iStart;
 			public LVFINDINFOA lvfi;
 		}
 		[CRepr]
-		public struct NMLVFINDITEMW
-		{
+		public struct NMLVFINDITEMW		{
 			public NMHDR hdr;
 			public int32 iStart;
 			public LVFINDINFOW lvfi;
 		}
 		[CRepr]
-		public struct NMLVODSTATECHANGE
-		{
+		public struct NMLVODSTATECHANGE		{
 			public NMHDR hdr;
 			public int32 iFrom;
 			public int32 iTo;
@@ -4399,35 +4257,30 @@ namespace Win32
 			public uint32 uOldState;
 		}
 		[CRepr]
-		public struct NMLVDISPINFOA
-		{
+		public struct NMLVDISPINFOA		{
 			public NMHDR hdr;
 			public LVITEMA item;
 		}
 		[CRepr]
-		public struct NMLVDISPINFOW
-		{
+		public struct NMLVDISPINFOW		{
 			public NMHDR hdr;
 			public LVITEMW item;
 		}
 		[CRepr]
-		public struct NMLVKEYDOWN
-		{
+		public struct NMLVKEYDOWN		{
 			public NMHDR hdr;
 			public uint16 wVKey;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct NMLVLINK
-		{
+		public struct NMLVLINK		{
 			public NMHDR hdr;
 			public LITEM link;
 			public int32 iItem;
 			public int32 iSubItem;
 		}
 		[CRepr]
-		public struct NMLVGETINFOTIPA
-		{
+		public struct NMLVGETINFOTIPA		{
 			public NMHDR hdr;
 			public uint32 dwFlags;
 			public PSTR pszText;
@@ -4437,8 +4290,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMLVGETINFOTIPW
-		{
+		public struct NMLVGETINFOTIPW		{
 			public NMHDR hdr;
 			public uint32 dwFlags;
 			public PWSTR pszText;
@@ -4448,30 +4300,26 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMLVSCROLL
-		{
+		public struct NMLVSCROLL		{
 			public NMHDR hdr;
 			public int32 dx;
 			public int32 dy;
 		}
 		[CRepr]
-		public struct NMLVEMPTYMARKUP
-		{
+		public struct NMLVEMPTYMARKUP		{
 			public NMHDR hdr;
 			public NMLVEMPTYMARKUP_FLAGS dwFlags;
 			public char16[2084] szMarkup;
 		}
 		[CRepr]
-		public struct NMTVSTATEIMAGECHANGING
-		{
+		public struct NMTVSTATEIMAGECHANGING		{
 			public NMHDR hdr;
 			public HTREEITEM hti;
 			public int32 iOldStateImageIndex;
 			public int32 iNewStateImageIndex;
 		}
 		[CRepr]
-		public struct TVITEMA
-		{
+		public struct TVITEMA		{
 			public TVITEM_MASK mask;
 			public HTREEITEM hItem;
 			public uint32 state;
@@ -4484,8 +4332,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct TVITEMW
-		{
+		public struct TVITEMW		{
 			public TVITEM_MASK mask;
 			public HTREEITEM hItem;
 			public uint32 state;
@@ -4498,8 +4345,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct TVITEMEXA
-		{
+		public struct TVITEMEXA		{
 			public TVITEM_MASK mask;
 			public HTREEITEM hItem;
 			public uint32 state;
@@ -4517,8 +4363,7 @@ namespace Win32
 			public int32 iReserved;
 		}
 		[CRepr]
-		public struct TVITEMEXW
-		{
+		public struct TVITEMEXW		{
 			public TVITEM_MASK mask;
 			public HTREEITEM hItem;
 			public uint32 state;
@@ -4536,57 +4381,49 @@ namespace Win32
 			public int32 iReserved;
 		}
 		[CRepr]
-		public struct TVINSERTSTRUCTA
-		{
+		public struct TVINSERTSTRUCTA		{
 			public HTREEITEM hParent;
 			public HTREEITEM hInsertAfter;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public TVITEMEXA itemex;
 				public TVITEMA item;
 			}
 		}
 		[CRepr]
-		public struct TVINSERTSTRUCTW
-		{
+		public struct TVINSERTSTRUCTW		{
 			public HTREEITEM hParent;
 			public HTREEITEM hInsertAfter;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public TVITEMEXW itemex;
 				public TVITEMW item;
 			}
 		}
 		[CRepr]
-		public struct TVHITTESTINFO
-		{
+		public struct TVHITTESTINFO		{
 			public POINT pt;
 			public TVHITTESTINFO_FLAGS flags;
 			public HTREEITEM hItem;
 		}
 		[CRepr]
-		public struct TVGETITEMPARTRECTINFO
-		{
+		public struct TVGETITEMPARTRECTINFO		{
 			public HTREEITEM hti;
 			public RECT* prc;
 			public TVITEMPART partID;
 		}
 		[CRepr]
-		public struct TVSORTCB
-		{
+		public struct TVSORTCB		{
 			public HTREEITEM hParent;
 			public PFNTVCOMPARE lpfnCompare;
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTREEVIEWA
-		{
+		public struct NMTREEVIEWA		{
 			public NMHDR hdr;
 			public uint32 action;
 			public TVITEMA itemOld;
@@ -4594,8 +4431,7 @@ namespace Win32
 			public POINT ptDrag;
 		}
 		[CRepr]
-		public struct NMTREEVIEWW
-		{
+		public struct NMTREEVIEWW		{
 			public NMHDR hdr;
 			public uint32 action;
 			public TVITEMW itemOld;
@@ -4603,47 +4439,40 @@ namespace Win32
 			public POINT ptDrag;
 		}
 		[CRepr]
-		public struct NMTVDISPINFOA
-		{
+		public struct NMTVDISPINFOA		{
 			public NMHDR hdr;
 			public TVITEMA item;
 		}
 		[CRepr]
-		public struct NMTVDISPINFOW
-		{
+		public struct NMTVDISPINFOW		{
 			public NMHDR hdr;
 			public TVITEMW item;
 		}
 		[CRepr]
-		public struct NMTVDISPINFOEXA
-		{
+		public struct NMTVDISPINFOEXA		{
 			public NMHDR hdr;
 			public TVITEMEXA item;
 		}
 		[CRepr]
-		public struct NMTVDISPINFOEXW
-		{
+		public struct NMTVDISPINFOEXW		{
 			public NMHDR hdr;
 			public TVITEMEXW item;
 		}
 		[CRepr]
-		public struct NMTVKEYDOWN
-		{
+		public struct NMTVKEYDOWN		{
 			public NMHDR hdr;
 			public uint16 wVKey;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct NMTVCUSTOMDRAW
-		{
+		public struct NMTVCUSTOMDRAW		{
 			public NMCUSTOMDRAW nmcd;
 			public uint32 clrText;
 			public uint32 clrTextBk;
 			public int32 iLevel;
 		}
 		[CRepr]
-		public struct NMTVGETINFOTIPA
-		{
+		public struct NMTVGETINFOTIPA		{
 			public NMHDR hdr;
 			public PSTR pszText;
 			public int32 cchTextMax;
@@ -4651,8 +4480,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTVGETINFOTIPW
-		{
+		public struct NMTVGETINFOTIPW		{
 			public NMHDR hdr;
 			public PWSTR pszText;
 			public int32 cchTextMax;
@@ -4660,8 +4488,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTVITEMCHANGE
-		{
+		public struct NMTVITEMCHANGE		{
 			public NMHDR hdr;
 			public uint32 uChanged;
 			public HTREEITEM hItem;
@@ -4670,8 +4497,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMTVASYNCDRAW
-		{
+		public struct NMTVASYNCDRAW		{
 			public NMHDR hdr;
 			public IMAGELISTDRAWPARAMS* pimldp;
 			public HRESULT hr;
@@ -4681,8 +4507,7 @@ namespace Win32
 			public int32 iRetImageIndex;
 		}
 		[CRepr]
-		public struct COMBOBOXEXITEMA
-		{
+		public struct COMBOBOXEXITEMA		{
 			public COMBOBOX_EX_ITEM_FLAGS mask;
 			public int iItem;
 			public PSTR pszText;
@@ -4694,8 +4519,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct COMBOBOXEXITEMW
-		{
+		public struct COMBOBOXEXITEMW		{
 			public COMBOBOX_EX_ITEM_FLAGS mask;
 			public int iItem;
 			public PWSTR pszText;
@@ -4707,34 +4531,29 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct NMCOMBOBOXEXA
-		{
+		public struct NMCOMBOBOXEXA		{
 			public NMHDR hdr;
 			public COMBOBOXEXITEMA ceItem;
 		}
 		[CRepr]
-		public struct NMCOMBOBOXEXW
-		{
+		public struct NMCOMBOBOXEXW		{
 			public NMHDR hdr;
 			public COMBOBOXEXITEMW ceItem;
 		}
 		[CRepr]
-		public struct NMCBEDRAGBEGINW
-		{
+		public struct NMCBEDRAGBEGINW		{
 			public NMHDR hdr;
 			public int32 iItemid;
 			public char16[260] szText;
 		}
 		[CRepr]
-		public struct NMCBEDRAGBEGINA
-		{
+		public struct NMCBEDRAGBEGINA		{
 			public NMHDR hdr;
 			public int32 iItemid;
 			public CHAR[260] szText;
 		}
 		[CRepr]
-		public struct NMCBEENDEDITW
-		{
+		public struct NMCBEENDEDITW		{
 			public NMHDR hdr;
 			public BOOL fChanged;
 			public int32 iNewSelection;
@@ -4742,8 +4561,7 @@ namespace Win32
 			public int32 iWhy;
 		}
 		[CRepr]
-		public struct NMCBEENDEDITA
-		{
+		public struct NMCBEENDEDITA		{
 			public NMHDR hdr;
 			public BOOL fChanged;
 			public int32 iNewSelection;
@@ -4751,8 +4569,7 @@ namespace Win32
 			public int32 iWhy;
 		}
 		[CRepr]
-		public struct TCITEMHEADERA
-		{
+		public struct TCITEMHEADERA		{
 			public TCITEMHEADERA_MASK mask;
 			public uint32 lpReserved1;
 			public uint32 lpReserved2;
@@ -4761,8 +4578,7 @@ namespace Win32
 			public int32 iImage;
 		}
 		[CRepr]
-		public struct TCITEMHEADERW
-		{
+		public struct TCITEMHEADERW		{
 			public TCITEMHEADERA_MASK mask;
 			public uint32 lpReserved1;
 			public uint32 lpReserved2;
@@ -4771,8 +4587,7 @@ namespace Win32
 			public int32 iImage;
 		}
 		[CRepr]
-		public struct TCITEMA
-		{
+		public struct TCITEMA		{
 			public TCITEMHEADERA_MASK mask;
 			public uint32 dwState;
 			public uint32 dwStateMask;
@@ -4782,8 +4597,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct TCITEMW
-		{
+		public struct TCITEMW		{
 			public TCITEMHEADERA_MASK mask;
 			public uint32 dwState;
 			public uint32 dwStateMask;
@@ -4793,21 +4607,18 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct TCHITTESTINFO
-		{
+		public struct TCHITTESTINFO		{
 			public POINT pt;
 			public TCHITTESTINFO_FLAGS flags;
 		}
 		[CRepr]
-		public struct NMTCKEYDOWN
-		{
+		public struct NMTCKEYDOWN		{
 			public NMHDR hdr;
 			public uint16 wVKey;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct MCHITTESTINFO
-		{
+		public struct MCHITTESTINFO		{
 			public uint32 cbSize;
 			public POINT pt;
 			public uint32 uHit;
@@ -4818,8 +4629,7 @@ namespace Win32
 			public int32 iCol;
 		}
 		[CRepr]
-		public struct MCGRIDINFO
-		{
+		public struct MCGRIDINFO		{
 			public uint32 cbSize;
 			public MCGRIDINFO_PART dwPart;
 			public MCGRIDINFO_FLAGS dwFlags;
@@ -4834,30 +4644,26 @@ namespace Win32
 			public uint cchName;
 		}
 		[CRepr]
-		public struct NMSELCHANGE
-		{
+		public struct NMSELCHANGE		{
 			public NMHDR nmhdr;
 			public SYSTEMTIME stSelStart;
 			public SYSTEMTIME stSelEnd;
 		}
 		[CRepr]
-		public struct NMDAYSTATE
-		{
+		public struct NMDAYSTATE		{
 			public NMHDR nmhdr;
 			public SYSTEMTIME stStart;
 			public int32 cDayState;
 			public uint32* prgDayState;
 		}
 		[CRepr]
-		public struct NMVIEWCHANGE
-		{
+		public struct NMVIEWCHANGE		{
 			public NMHDR nmhdr;
 			public uint32 dwOldView;
 			public uint32 dwNewView;
 		}
 		[CRepr]
-		public struct DATETIMEPICKERINFO
-		{
+		public struct DATETIMEPICKERINFO		{
 			public uint32 cbSize;
 			public RECT rcCheck;
 			public uint32 stateCheck;
@@ -4868,47 +4674,41 @@ namespace Win32
 			public HWND hwndDropDown;
 		}
 		[CRepr]
-		public struct NMDATETIMECHANGE
-		{
+		public struct NMDATETIMECHANGE		{
 			public NMHDR nmhdr;
 			public uint32 dwFlags;
 			public SYSTEMTIME st;
 		}
 		[CRepr]
-		public struct NMDATETIMESTRINGA
-		{
+		public struct NMDATETIMESTRINGA		{
 			public NMHDR nmhdr;
 			public PSTR pszUserString;
 			public SYSTEMTIME st;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct NMDATETIMESTRINGW
-		{
+		public struct NMDATETIMESTRINGW		{
 			public NMHDR nmhdr;
 			public PWSTR pszUserString;
 			public SYSTEMTIME st;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct NMDATETIMEWMKEYDOWNA
-		{
+		public struct NMDATETIMEWMKEYDOWNA		{
 			public NMHDR nmhdr;
 			public int32 nVirtKey;
 			public PSTR pszFormat;
 			public SYSTEMTIME st;
 		}
 		[CRepr]
-		public struct NMDATETIMEWMKEYDOWNW
-		{
+		public struct NMDATETIMEWMKEYDOWNW		{
 			public NMHDR nmhdr;
 			public int32 nVirtKey;
 			public PWSTR pszFormat;
 			public SYSTEMTIME st;
 		}
 		[CRepr]
-		public struct NMDATETIMEFORMATA
-		{
+		public struct NMDATETIMEFORMATA		{
 			public NMHDR nmhdr;
 			public PSTR pszFormat;
 			public SYSTEMTIME st;
@@ -4916,8 +4716,7 @@ namespace Win32
 			public CHAR[64] szDisplay;
 		}
 		[CRepr]
-		public struct NMDATETIMEFORMATW
-		{
+		public struct NMDATETIMEFORMATW		{
 			public NMHDR nmhdr;
 			public PWSTR pszFormat;
 			public SYSTEMTIME st;
@@ -4925,29 +4724,25 @@ namespace Win32
 			public char16[64] szDisplay;
 		}
 		[CRepr]
-		public struct NMDATETIMEFORMATQUERYA
-		{
+		public struct NMDATETIMEFORMATQUERYA		{
 			public NMHDR nmhdr;
 			public PSTR pszFormat;
 			public SIZE szMax;
 		}
 		[CRepr]
-		public struct NMDATETIMEFORMATQUERYW
-		{
+		public struct NMDATETIMEFORMATQUERYW		{
 			public NMHDR nmhdr;
 			public PWSTR pszFormat;
 			public SIZE szMax;
 		}
 		[CRepr]
-		public struct NMIPADDRESS
-		{
+		public struct NMIPADDRESS		{
 			public NMHDR hdr;
 			public int32 iField;
 			public int32 iValue;
 		}
 		[CRepr]
-		public struct NMPGSCROLL
-		{
+		public struct NMPGSCROLL		{
 			public NMHDR hdr;
 			public NMPGSCROLL_KEYS fwKeys;
 			public RECT rcParent;
@@ -4957,73 +4752,63 @@ namespace Win32
 			public int32 iScroll;
 		}
 		[CRepr]
-		public struct NMPGCALCSIZE
-		{
+		public struct NMPGCALCSIZE		{
 			public NMHDR hdr;
 			public NMPGCALCSIZE_FLAGS dwFlag;
 			public int32 iWidth;
 			public int32 iHeight;
 		}
 		[CRepr]
-		public struct NMPGHOTITEM
-		{
+		public struct NMPGHOTITEM		{
 			public NMHDR hdr;
 			public int32 idOld;
 			public int32 idNew;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct BUTTON_IMAGELIST
-		{
+		public struct BUTTON_IMAGELIST		{
 			public HIMAGELIST himl;
 			public RECT margin;
 			public BUTTON_IMAGELIST_ALIGN uAlign;
 		}
 		[CRepr]
-		public struct NMBCHOTITEM
-		{
+		public struct NMBCHOTITEM		{
 			public NMHDR hdr;
 			public NMTBHOTITEM_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct BUTTON_SPLITINFO
-		{
+		public struct BUTTON_SPLITINFO		{
 			public uint32 mask;
 			public HIMAGELIST himlGlyph;
 			public uint32 uSplitStyle;
 			public SIZE size;
 		}
 		[CRepr]
-		public struct NMBCDROPDOWN
-		{
+		public struct NMBCDROPDOWN		{
 			public NMHDR hdr;
 			public RECT rcButton;
 		}
 		[CRepr]
-		public struct EDITBALLOONTIP
-		{
+		public struct EDITBALLOONTIP		{
 			public uint32 cbStruct;
 			public PWSTR pszTitle;
 			public PWSTR pszText;
 			public EDITBALLOONTIP_ICON ttiIcon;
 		}
 		[CRepr]
-		public struct NMSEARCHWEB
-		{
+		public struct NMSEARCHWEB		{
 			public NMHDR hdr;
 			public EC_SEARCHWEB_ENTRYPOINT entrypoint;
 			public BOOL hasQueryText;
 			public BOOL invokeSucceeded;
 		}
 		[CRepr]
-		public struct TASKDIALOG_BUTTON
-		{
+		public struct TASKDIALOG_BUTTON		{
 			public int32 nButtonID;
 			public PWSTR pszButtonText;
 		}
 		[CRepr]
-		public struct TASKDIALOGCONFIG
-		{
+		public struct TASKDIALOGCONFIG		{
 			public uint32 cbSize;
 			public HWND hwndParent;
 			public HINSTANCE hInstance;
@@ -5050,35 +4835,30 @@ namespace Win32
 			public uint32 cxWidth;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public HICON hMainIcon;
 				public PWSTR pszMainIcon;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public HICON hFooterIcon;
 				public PWSTR pszFooterIcon;
 			}
 		}
 		[CRepr]
-		public struct DPASTREAMINFO
-		{
+		public struct DPASTREAMINFO		{
 			public int32 iPos;
 			public void* pvItem;
 		}
 		[CRepr]
-		public struct IMAGELISTSTATS
-		{
+		public struct IMAGELISTSTATS		{
 			public uint32 cbSize;
 			public int32 cAlloc;
 			public int32 cUsed;
 			public int32 cStandby;
 		}
 		[CRepr]
-		public struct TA_TRANSFORM
-		{
+		public struct TA_TRANSFORM		{
 			public TA_TRANSFORM_TYPE eTransformType;
 			public uint32 dwTimingFunctionId;
 			public uint32 dwStartTime;
@@ -5086,8 +4866,7 @@ namespace Win32
 			public TA_TRANSFORM_FLAG eFlags;
 		}
 		[CRepr]
-		public struct TA_TRANSFORM_2D
-		{
+		public struct TA_TRANSFORM_2D		{
 			public TA_TRANSFORM header;
 			public float rX;
 			public float rY;
@@ -5097,15 +4876,13 @@ namespace Win32
 			public float rOriginY;
 		}
 		[CRepr]
-		public struct TA_TRANSFORM_OPACITY
-		{
+		public struct TA_TRANSFORM_OPACITY		{
 			public TA_TRANSFORM header;
 			public float rOpacity;
 			public float rInitialOpacity;
 		}
 		[CRepr]
-		public struct TA_TRANSFORM_CLIP
-		{
+		public struct TA_TRANSFORM_CLIP		{
 			public TA_TRANSFORM header;
 			public float rLeft;
 			public float rTop;
@@ -5117,13 +4894,11 @@ namespace Win32
 			public float rInitialBottom;
 		}
 		[CRepr]
-		public struct TA_TIMINGFUNCTION
-		{
+		public struct TA_TIMINGFUNCTION		{
 			public TA_TIMINGFUNCTION_TYPE eTimingFunctionType;
 		}
 		[CRepr]
-		public struct TA_CUBIC_BEZIER
-		{
+		public struct TA_CUBIC_BEZIER		{
 			public TA_TIMINGFUNCTION header;
 			public float rX0;
 			public float rY0;
@@ -5131,35 +4906,30 @@ namespace Win32
 			public float rY1;
 		}
 		[CRepr]
-		public struct DTBGOPTS
-		{
+		public struct DTBGOPTS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public RECT rcClip;
 		}
 		[CRepr]
-		public struct MARGINS
-		{
+		public struct MARGINS		{
 			public int32 cxLeftWidth;
 			public int32 cxRightWidth;
 			public int32 cyTopHeight;
 			public int32 cyBottomHeight;
 		}
 		[CRepr]
-		public struct INTLIST
-		{
+		public struct INTLIST		{
 			public int32 iValueCount;
 			public int32[402] iValues;
 		}
 		[CRepr]
-		public struct WTA_OPTIONS
-		{
+		public struct WTA_OPTIONS		{
 			public uint32 dwFlags;
 			public uint32 dwMask;
 		}
 		[CRepr]
-		public struct DTTOPTS
-		{
+		public struct DTTOPTS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 crText;
@@ -5177,24 +4947,21 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct BP_ANIMATIONPARAMS
-		{
+		public struct BP_ANIMATIONPARAMS		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public BP_ANIMATIONSTYLE style;
 			public uint32 dwDuration;
 		}
 		[CRepr]
-		public struct BP_PAINTPARAMS
-		{
+		public struct BP_PAINTPARAMS		{
 			public uint32 cbSize;
 			public BP_PAINTPARAMS_FLAGS dwFlags;
 			public RECT* prcExclude;
 			public BLENDFUNCTION* pBlendFunction;
 		}
 		[CRepr]
-		public struct CCSTYLEA
-		{
+		public struct CCSTYLEA		{
 			public uint32 flStyle;
 			public uint32 flExtStyle;
 			public CHAR[256] szText;
@@ -5202,8 +4969,7 @@ namespace Win32
 			public uint16 wReserved1;
 		}
 		[CRepr]
-		public struct CCSTYLEW
-		{
+		public struct CCSTYLEW		{
 			public uint32 flStyle;
 			public uint32 flExtStyle;
 			public char16[256] szText;
@@ -5211,22 +4977,19 @@ namespace Win32
 			public uint16 wReserved1;
 		}
 		[CRepr]
-		public struct CCSTYLEFLAGA
-		{
+		public struct CCSTYLEFLAGA		{
 			public uint32 flStyle;
 			public uint32 flStyleMask;
 			public PSTR pszStyle;
 		}
 		[CRepr]
-		public struct CCSTYLEFLAGW
-		{
+		public struct CCSTYLEFLAGW		{
 			public uint32 flStyle;
 			public uint32 flStyleMask;
 			public PWSTR pszStyle;
 		}
 		[CRepr]
-		public struct CCINFOA
-		{
+		public struct CCINFOA		{
 			public CHAR[32] szClass;
 			public uint32 flOptions;
 			public CHAR[32] szDesc;
@@ -5244,8 +5007,7 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct CCINFOW
-		{
+		public struct CCINFOW		{
 			public char16[32] szClass;
 			public uint32 flOptions;
 			public char16[32] szDesc;
@@ -5263,15 +5025,13 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct NMHDR
-		{
+		public struct NMHDR		{
 			public HWND hwndFrom;
 			public uint idFrom;
 			public uint32 code;
 		}
 		[CRepr]
-		public struct MEASUREITEMSTRUCT
-		{
+		public struct MEASUREITEMSTRUCT		{
 			public uint32 CtlType;
 			public uint32 CtlID;
 			public uint32 itemID;
@@ -5280,8 +5040,7 @@ namespace Win32
 			public uint itemData;
 		}
 		[CRepr]
-		public struct DRAWITEMSTRUCT
-		{
+		public struct DRAWITEMSTRUCT		{
 			public DRAWITEMSTRUCT_CTL_TYPE CtlType;
 			public uint32 CtlID;
 			public uint32 itemID;
@@ -5293,8 +5052,7 @@ namespace Win32
 			public uint itemData;
 		}
 		[CRepr]
-		public struct DELETEITEMSTRUCT
-		{
+		public struct DELETEITEMSTRUCT		{
 			public DRAWITEMSTRUCT_CTL_TYPE CtlType;
 			public uint32 CtlID;
 			public uint32 itemID;
@@ -5302,8 +5060,7 @@ namespace Win32
 			public uint itemData;
 		}
 		[CRepr]
-		public struct COMPAREITEMSTRUCT
-		{
+		public struct COMPAREITEMSTRUCT		{
 			public uint32 CtlType;
 			public uint32 CtlID;
 			public HWND hwndItem;
@@ -5314,8 +5071,7 @@ namespace Win32
 			public uint32 dwLocaleId;
 		}
 		[CRepr]
-		public struct USAGE_PROPERTIES
-		{
+		public struct USAGE_PROPERTIES		{
 			public uint16 level;
 			public uint16 page;
 			public uint16 usage;
@@ -5328,27 +5084,23 @@ namespace Win32
 			public int32 physicalMaximum;
 		}
 		[CRepr]
-		public struct POINTER_TYPE_INFO
-		{
+		public struct POINTER_TYPE_INFO		{
 			public POINTER_INPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public POINTER_TOUCH_INFO touchInfo;
 				public POINTER_PEN_INFO penInfo;
 			}
 		}
 		[CRepr]
-		public struct TOUCH_HIT_TESTING_PROXIMITY_EVALUATION
-		{
+		public struct TOUCH_HIT_TESTING_PROXIMITY_EVALUATION		{
 			public uint16 score;
 			public POINT adjustedPoint;
 		}
 		[CRepr]
-		public struct TOUCH_HIT_TESTING_INPUT
-		{
+		public struct TOUCH_HIT_TESTING_INPUT		{
 			public uint32 pointerId;
 			public POINT point;
 			public RECT boundingBox;
@@ -5356,8 +5108,7 @@ namespace Win32
 			public uint32 orientation;
 		}
 		[CRepr]
-		public struct COMBOBOXINFO
-		{
+		public struct COMBOBOXINFO		{
 			public uint32 cbSize;
 			public RECT rcItem;
 			public RECT rcButton;
@@ -5367,8 +5118,7 @@ namespace Win32
 			public HWND hwndList;
 		}
 		[CRepr]
-		public struct POINTER_DEVICE_INFO
-		{
+		public struct POINTER_DEVICE_INFO		{
 			public uint32 displayOrientation;
 			public HANDLE device;
 			public POINTER_DEVICE_TYPE pointerDeviceType;
@@ -5378,8 +5128,7 @@ namespace Win32
 			public char16[520] productString;
 		}
 		[CRepr]
-		public struct POINTER_DEVICE_PROPERTY
-		{
+		public struct POINTER_DEVICE_PROPERTY		{
 			public int32 logicalMin;
 			public int32 logicalMax;
 			public int32 physicalMin;
@@ -5390,8 +5139,7 @@ namespace Win32
 			public uint16 usageId;
 		}
 		[CRepr]
-		public struct POINTER_DEVICE_CURSOR_INFO
-		{
+		public struct POINTER_DEVICE_CURSOR_INFO		{
 			public uint32 cursorId;
 			public POINTER_DEVICE_CURSOR_TYPE cursor;
 		}

@@ -52,15 +52,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct USEROBJECTFLAGS
-		{
+		public struct USEROBJECTFLAGS		{
 			public BOOL fInherit;
 			public BOOL fReserved;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct BSMINFO
-		{
+		public struct BSMINFO		{
 			public uint32 cbSize;
 			public HDESK hdesk;
 			public HWND hwnd;

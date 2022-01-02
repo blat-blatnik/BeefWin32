@@ -1294,38 +1294,32 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct FWP_BYTE_ARRAY6
-		{
+		public struct FWP_BYTE_ARRAY6		{
 			public uint8[6] byteArray6;
 		}
 		[CRepr]
-		public struct FWP_BYTE_ARRAY16
-		{
+		public struct FWP_BYTE_ARRAY16		{
 			public uint8[16] byteArray16;
 		}
 		[CRepr]
-		public struct FWP_BYTE_BLOB
-		{
+		public struct FWP_BYTE_BLOB		{
 			public uint32 size;
 			public uint8* data;
 		}
 		[CRepr]
-		public struct FWP_TOKEN_INFORMATION
-		{
+		public struct FWP_TOKEN_INFORMATION		{
 			public uint32 sidCount;
 			public SID_AND_ATTRIBUTES* sids;
 			public uint32 restrictedSidCount;
 			public SID_AND_ATTRIBUTES* restrictedSids;
 		}
 		[CRepr]
-		public struct FWP_VALUE0
-		{
+		public struct FWP_VALUE0		{
 			public FWP_DATA_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 uint8;
 				public uint16 uint16;
 				public uint32 uint32;
@@ -1347,32 +1341,27 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWP_V4_ADDR_AND_MASK
-		{
+		public struct FWP_V4_ADDR_AND_MASK		{
 			public uint32 addr;
 			public uint32 mask;
 		}
 		[CRepr]
-		public struct FWP_V6_ADDR_AND_MASK
-		{
+		public struct FWP_V6_ADDR_AND_MASK		{
 			public uint8[16] addr;
 			public uint8 prefixLength;
 		}
 		[CRepr]
-		public struct FWP_RANGE0
-		{
+		public struct FWP_RANGE0		{
 			public FWP_VALUE0 valueLow;
 			public FWP_VALUE0 valueHigh;
 		}
 		[CRepr]
-		public struct FWP_CONDITION_VALUE0
-		{
+		public struct FWP_CONDITION_VALUE0		{
 			public FWP_DATA_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 uint8;
 				public uint16 uint16;
 				public uint32 uint32;
@@ -1397,37 +1386,31 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_DISPLAY_DATA0
-		{
+		public struct FWPM_DISPLAY_DATA0		{
 			public PWSTR name;
 			public PWSTR description;
 		}
 		[CRepr]
-		public struct IPSEC_VIRTUAL_IF_TUNNEL_INFO0
-		{
+		public struct IPSEC_VIRTUAL_IF_TUNNEL_INFO0		{
 			public uint64 virtualIfTunnelId;
 			public uint64 trafficSelectorId;
 		}
 		[CRepr]
-		public struct IKEEXT_PRESHARED_KEY_AUTHENTICATION0
-		{
+		public struct IKEEXT_PRESHARED_KEY_AUTHENTICATION0		{
 			public FWP_BYTE_BLOB presharedKey;
 		}
 		[CRepr]
-		public struct IKEEXT_PRESHARED_KEY_AUTHENTICATION1
-		{
+		public struct IKEEXT_PRESHARED_KEY_AUTHENTICATION1		{
 			public FWP_BYTE_BLOB presharedKey;
 			public IKEEXT_PRESHARED_KEY_AUTHENTICATION_FLAGS flags;
 		}
 		[CRepr]
-		public struct IKEEXT_CERT_ROOT_CONFIG0
-		{
+		public struct IKEEXT_CERT_ROOT_CONFIG0		{
 			public FWP_BYTE_BLOB certData;
 			public IKEEXT_CERT_FLAGS flags;
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_AUTHENTICATION0
-		{
+		public struct IKEEXT_CERTIFICATE_AUTHENTICATION0		{
 			public IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
 			public _Anonymous1_e__Union Anonymous1;
 			public IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
@@ -1435,37 +1418,32 @@ namespace Win32
 			public IKEEXT_CERT_AUTH flags;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundTrustedRootStoreConfig;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 outboundRootArraySize;
 					public IKEEXT_CERT_ROOT_CONFIG0* outboundRootArray;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundTrustedRootStoreConfig;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 inboundRootArraySize;
 					public IKEEXT_CERT_ROOT_CONFIG0* inboundRootArray;
 				}
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_AUTHENTICATION1
-		{
+		public struct IKEEXT_CERTIFICATE_AUTHENTICATION1		{
 			public IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
 			public _Anonymous1_e__Union Anonymous1;
 			public IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
@@ -1474,49 +1452,42 @@ namespace Win32
 			public FWP_BYTE_BLOB localCertLocationUrl;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundTrustedRootStoreConfig;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 outboundRootArraySize;
 					public IKEEXT_CERT_ROOT_CONFIG0* outboundRootArray;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundTrustedRootStoreConfig;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 inboundRootArraySize;
 					public IKEEXT_CERT_ROOT_CONFIG0* inboundRootArray;
 				}
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CERT_EKUS0
-		{
+		public struct IKEEXT_CERT_EKUS0		{
 			public uint32 numEku;
 			public PSTR* eku;
 		}
 		[CRepr]
-		public struct IKEEXT_CERT_NAME0
-		{
+		public struct IKEEXT_CERT_NAME0		{
 			public IKEEXT_CERT_CRITERIA_NAME_TYPE nameType;
 			public PWSTR certName;
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_CRITERIA0
-		{
+		public struct IKEEXT_CERTIFICATE_CRITERIA0		{
 			public FWP_BYTE_BLOB certData;
 			public FWP_BYTE_BLOB certHash;
 			public IKEEXT_CERT_EKUS0* eku;
@@ -1524,8 +1495,7 @@ namespace Win32
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_AUTHENTICATION2
-		{
+		public struct IKEEXT_CERTIFICATE_AUTHENTICATION2		{
 			public IKEEXT_CERT_CONFIG_TYPE inboundConfigType;
 			public _Anonymous1_e__Union Anonymous1;
 			public IKEEXT_CERT_CONFIG_TYPE outboundConfigType;
@@ -1534,61 +1504,52 @@ namespace Win32
 			public FWP_BYTE_BLOB localCertLocationUrl;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public _Anonymous3_e__Struct Anonymous3;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public uint32 outboundEnterpriseStoreArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* outboundEnterpriseStoreCriteria;
 				}
 				[CRepr]
-				public struct _Anonymous3_e__Struct
-				{
+				public struct _Anonymous3_e__Struct				{
 					public uint32 outboundRootStoreArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* outboundTrustedRootStoreCriteria;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public uint32 outboundRootArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* outboundRootCriteria;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public _Anonymous3_e__Struct Anonymous3;
 				
 				[CRepr]
-				public struct _Anonymous3_e__Struct
-				{
+				public struct _Anonymous3_e__Struct				{
 					public uint32 inboundRootStoreArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* inboundTrustedRootStoreCriteria;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public uint32 inboundRootArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* inboundRootCriteria;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public uint32 inboundEnterpriseStoreArraySize;
 					public IKEEXT_CERTIFICATE_CRITERIA0* inboundEnterpriseStoreCriteria;
 				}
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_IPV6_CGA_AUTHENTICATION0
-		{
+		public struct IKEEXT_IPV6_CGA_AUTHENTICATION0		{
 			public PWSTR keyContainerName;
 			public PWSTR cspName;
 			public uint32 cspType;
@@ -1596,40 +1557,33 @@ namespace Win32
 			public uint8 cgaCollisionCount;
 		}
 		[CRepr]
-		public struct IKEEXT_KERBEROS_AUTHENTICATION0
-		{
+		public struct IKEEXT_KERBEROS_AUTHENTICATION0		{
 			public IKEEXT_KERBEROS_AUTHENTICATION_FLAGS flags;
 		}
 		[CRepr]
-		public struct IKEEXT_KERBEROS_AUTHENTICATION1
-		{
+		public struct IKEEXT_KERBEROS_AUTHENTICATION1		{
 			public IKEEXT_KERBEROS_AUTHENTICATION_FLAGS flags;
 			public PWSTR proxyServer;
 		}
 		[CRepr]
-		public struct IKEEXT_RESERVED_AUTHENTICATION0
-		{
+		public struct IKEEXT_RESERVED_AUTHENTICATION0		{
 			public IKEEXT_RESERVED_AUTHENTICATION_FLAGS flags;
 		}
 		[CRepr]
-		public struct IKEEXT_NTLM_V2_AUTHENTICATION0
-		{
+		public struct IKEEXT_NTLM_V2_AUTHENTICATION0		{
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct IKEEXT_EAP_AUTHENTICATION0
-		{
+		public struct IKEEXT_EAP_AUTHENTICATION0		{
 			public IKEEXT_EAP_AUTHENTICATION_FLAGS flags;
 		}
 		[CRepr]
-		public struct IKEEXT_AUTHENTICATION_METHOD0
-		{
+		public struct IKEEXT_AUTHENTICATION_METHOD0		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION0 presharedKeyAuthentication;
 				public IKEEXT_CERTIFICATE_AUTHENTICATION0 certificateAuthentication;
 				public IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
@@ -1639,14 +1593,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_AUTHENTICATION_METHOD1
-		{
+		public struct IKEEXT_AUTHENTICATION_METHOD1		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
 				public IKEEXT_CERTIFICATE_AUTHENTICATION1 certificateAuthentication;
 				public IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication;
@@ -1657,14 +1609,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_AUTHENTICATION_METHOD2
-		{
+		public struct IKEEXT_AUTHENTICATION_METHOD2		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication;
 				public IKEEXT_CERTIFICATE_AUTHENTICATION2 certificateAuthentication;
 				public IKEEXT_KERBEROS_AUTHENTICATION1 kerberosAuthentication;
@@ -1676,20 +1626,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CIPHER_ALGORITHM0
-		{
+		public struct IKEEXT_CIPHER_ALGORITHM0		{
 			public IKEEXT_CIPHER_TYPE algoIdentifier;
 			public uint32 keyLen;
 			public uint32 rounds;
 		}
 		[CRepr]
-		public struct IKEEXT_INTEGRITY_ALGORITHM0
-		{
+		public struct IKEEXT_INTEGRITY_ALGORITHM0		{
 			public IKEEXT_INTEGRITY_TYPE algoIdentifier;
 		}
 		[CRepr]
-		public struct IKEEXT_PROPOSAL0
-		{
+		public struct IKEEXT_PROPOSAL0		{
 			public IKEEXT_CIPHER_ALGORITHM0 cipherAlgorithm;
 			public IKEEXT_INTEGRITY_ALGORITHM0 integrityAlgorithm;
 			public uint32 maxLifetimeSeconds;
@@ -1697,8 +1644,7 @@ namespace Win32
 			public uint32 quickModeLimit;
 		}
 		[CRepr]
-		public struct IKEEXT_POLICY0
-		{
+		public struct IKEEXT_POLICY0		{
 			public uint32 softExpirationTime;
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD0* authenticationMethods;
@@ -1709,8 +1655,7 @@ namespace Win32
 			public uint32 maxDynamicFilters;
 		}
 		[CRepr]
-		public struct IKEEXT_POLICY1
-		{
+		public struct IKEEXT_POLICY1		{
 			public uint32 softExpirationTime;
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD1* authenticationMethods;
@@ -1722,8 +1667,7 @@ namespace Win32
 			public uint32 retransmitDurationSecs;
 		}
 		[CRepr]
-		public struct IKEEXT_POLICY2
-		{
+		public struct IKEEXT_POLICY2		{
 			public uint32 softExpirationTime;
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD2* authenticationMethods;
@@ -1735,29 +1679,25 @@ namespace Win32
 			public uint32 retransmitDurationSecs;
 		}
 		[CRepr]
-		public struct IKEEXT_EM_POLICY0
-		{
+		public struct IKEEXT_EM_POLICY0		{
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD0* authenticationMethods;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE initiatorImpersonationType;
 		}
 		[CRepr]
-		public struct IKEEXT_EM_POLICY1
-		{
+		public struct IKEEXT_EM_POLICY1		{
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD1* authenticationMethods;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE initiatorImpersonationType;
 		}
 		[CRepr]
-		public struct IKEEXT_EM_POLICY2
-		{
+		public struct IKEEXT_EM_POLICY2		{
 			public uint32 numAuthenticationMethods;
 			public IKEEXT_AUTHENTICATION_METHOD2* authenticationMethods;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE initiatorImpersonationType;
 		}
 		[CRepr]
-		public struct IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS0
-		{
+		public struct IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS0		{
 			public uint32 currentActiveMainModes;
 			public uint32 totalMainModesStarted;
 			public uint32 totalSuccessfulMainModes;
@@ -1778,8 +1718,7 @@ namespace Win32
 			public uint32 totalImpersonationMainModes;
 		}
 		[CRepr]
-		public struct IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS1
-		{
+		public struct IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS1		{
 			public uint32 currentActiveMainModes;
 			public uint32 totalMainModesStarted;
 			public uint32 totalSuccessfulMainModes;
@@ -1800,8 +1739,7 @@ namespace Win32
 			public uint32 totalImpersonationMainModes;
 		}
 		[CRepr]
-		public struct IKEEXT_KEYMODULE_STATISTICS0
-		{
+		public struct IKEEXT_KEYMODULE_STATISTICS0		{
 			public IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS0 v4Statistics;
 			public IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS0 v6Statistics;
 			public uint32[97] errorFrequencyTable;
@@ -1810,8 +1748,7 @@ namespace Win32
 			public uint32 extendedModeNegotiationTime;
 		}
 		[CRepr]
-		public struct IKEEXT_KEYMODULE_STATISTICS1
-		{
+		public struct IKEEXT_KEYMODULE_STATISTICS1		{
 			public IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS1 v4Statistics;
 			public IKEEXT_IP_VERSION_SPECIFIC_KEYMODULE_STATISTICS1 v6Statistics;
 			public uint32[97] errorFrequencyTable;
@@ -1820,20 +1757,17 @@ namespace Win32
 			public uint32 extendedModeNegotiationTime;
 		}
 		[CRepr]
-		public struct IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS0
-		{
+		public struct IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS0		{
 			public uint32 totalSocketReceiveFailures;
 			public uint32 totalSocketSendFailures;
 		}
 		[CRepr]
-		public struct IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS1
-		{
+		public struct IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS1		{
 			public uint32 totalSocketReceiveFailures;
 			public uint32 totalSocketSendFailures;
 		}
 		[CRepr]
-		public struct IKEEXT_COMMON_STATISTICS0
-		{
+		public struct IKEEXT_COMMON_STATISTICS0		{
 			public IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS0 v4Statistics;
 			public IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS0 v6Statistics;
 			public uint32 totalPacketsReceived;
@@ -1841,8 +1775,7 @@ namespace Win32
 			public uint32 currentQueuedWorkitems;
 		}
 		[CRepr]
-		public struct IKEEXT_COMMON_STATISTICS1
-		{
+		public struct IKEEXT_COMMON_STATISTICS1		{
 			public IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS1 v4Statistics;
 			public IKEEXT_IP_VERSION_SPECIFIC_COMMON_STATISTICS1 v6Statistics;
 			public uint32 totalPacketsReceived;
@@ -1850,89 +1783,76 @@ namespace Win32
 			public uint32 currentQueuedWorkitems;
 		}
 		[CRepr]
-		public struct IKEEXT_STATISTICS0
-		{
+		public struct IKEEXT_STATISTICS0		{
 			public IKEEXT_KEYMODULE_STATISTICS0 ikeStatistics;
 			public IKEEXT_KEYMODULE_STATISTICS0 authipStatistics;
 			public IKEEXT_COMMON_STATISTICS0 commonStatistics;
 		}
 		[CRepr]
-		public struct IKEEXT_STATISTICS1
-		{
+		public struct IKEEXT_STATISTICS1		{
 			public IKEEXT_KEYMODULE_STATISTICS1 ikeStatistics;
 			public IKEEXT_KEYMODULE_STATISTICS1 authipStatistics;
 			public IKEEXT_KEYMODULE_STATISTICS1 ikeV2Statistics;
 			public IKEEXT_COMMON_STATISTICS1 commonStatistics;
 		}
 		[CRepr]
-		public struct IKEEXT_TRAFFIC0
-		{
+		public struct IKEEXT_TRAFFIC0		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint64 authIpFilterId;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_COOKIE_PAIR0
-		{
+		public struct IKEEXT_COOKIE_PAIR0		{
 			public uint64 initiator;
 			public uint64 responder;
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_CREDENTIAL0
-		{
+		public struct IKEEXT_CERTIFICATE_CREDENTIAL0		{
 			public FWP_BYTE_BLOB subjectName;
 			public FWP_BYTE_BLOB certHash;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct IKEEXT_NAME_CREDENTIAL0
-		{
+		public struct IKEEXT_NAME_CREDENTIAL0		{
 			public PWSTR principalName;
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL0
-		{
+		public struct IKEEXT_CREDENTIAL0		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION0* presharedKey;
 				public IKEEXT_CERTIFICATE_CREDENTIAL0* certificate;
 				public IKEEXT_NAME_CREDENTIAL0* name;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL_PAIR0
-		{
+		public struct IKEEXT_CREDENTIAL_PAIR0		{
 			public IKEEXT_CREDENTIAL0 localCredentials;
 			public IKEEXT_CREDENTIAL0 peerCredentials;
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIALS0
-		{
+		public struct IKEEXT_CREDENTIALS0		{
 			public uint32 numCredentials;
 			public IKEEXT_CREDENTIAL_PAIR0* credentials;
 		}
 		[CRepr]
-		public struct IKEEXT_SA_DETAILS0
-		{
+		public struct IKEEXT_SA_DETAILS0		{
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
@@ -1945,49 +1865,42 @@ namespace Win32
 			public uint64 virtualIfTunnelId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CERTIFICATE_CREDENTIAL1
-		{
+		public struct IKEEXT_CERTIFICATE_CREDENTIAL1		{
 			public FWP_BYTE_BLOB subjectName;
 			public FWP_BYTE_BLOB certHash;
 			public uint32 flags;
 			public FWP_BYTE_BLOB certificate;
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL1
-		{
+		public struct IKEEXT_CREDENTIAL1		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION1* presharedKey;
 				public IKEEXT_CERTIFICATE_CREDENTIAL1* certificate;
 				public IKEEXT_NAME_CREDENTIAL0* name;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL_PAIR1
-		{
+		public struct IKEEXT_CREDENTIAL_PAIR1		{
 			public IKEEXT_CREDENTIAL1 localCredentials;
 			public IKEEXT_CREDENTIAL1 peerCredentials;
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIALS1
-		{
+		public struct IKEEXT_CREDENTIALS1		{
 			public uint32 numCredentials;
 			public IKEEXT_CREDENTIAL_PAIR1* credentials;
 		}
 		[CRepr]
-		public struct IKEEXT_SA_DETAILS1
-		{
+		public struct IKEEXT_SA_DETAILS1		{
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
@@ -2001,41 +1914,35 @@ namespace Win32
 			public FWP_BYTE_BLOB correlationKey;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL2
-		{
+		public struct IKEEXT_CREDENTIAL2		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IKEEXT_PRESHARED_KEY_AUTHENTICATION1* presharedKey;
 				public IKEEXT_CERTIFICATE_CREDENTIAL1* certificate;
 				public IKEEXT_NAME_CREDENTIAL0* name;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIAL_PAIR2
-		{
+		public struct IKEEXT_CREDENTIAL_PAIR2		{
 			public IKEEXT_CREDENTIAL2 localCredentials;
 			public IKEEXT_CREDENTIAL2 peerCredentials;
 		}
 		[CRepr]
-		public struct IKEEXT_CREDENTIALS2
-		{
+		public struct IKEEXT_CREDENTIALS2		{
 			public uint32 numCredentials;
 			public IKEEXT_CREDENTIAL_PAIR2* credentials;
 		}
 		[CRepr]
-		public struct IKEEXT_SA_DETAILS2
-		{
+		public struct IKEEXT_SA_DETAILS2		{
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
@@ -2049,64 +1956,54 @@ namespace Win32
 			public FWP_BYTE_BLOB correlationKey;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IKEEXT_SA_ENUM_TEMPLATE0
-		{
+		public struct IKEEXT_SA_ENUM_TEMPLATE0		{
 			public FWP_CONDITION_VALUE0 localSubNet;
 			public FWP_CONDITION_VALUE0 remoteSubNet;
 			public FWP_BYTE_BLOB localMainModeCertHash;
 		}
 		[CRepr]
-		public struct IPSEC_SA_LIFETIME0
-		{
+		public struct IPSEC_SA_LIFETIME0		{
 			public uint32 lifetimeSeconds;
 			public uint32 lifetimeKilobytes;
 			public uint32 lifetimePackets;
 		}
 		[CRepr]
-		public struct IPSEC_AUTH_TRANSFORM_ID0
-		{
+		public struct IPSEC_AUTH_TRANSFORM_ID0		{
 			public IPSEC_AUTH_TYPE authType;
 			public uint8 authConfig;
 		}
 		[CRepr]
-		public struct IPSEC_AUTH_TRANSFORM0
-		{
+		public struct IPSEC_AUTH_TRANSFORM0		{
 			public IPSEC_AUTH_TRANSFORM_ID0 authTransformId;
 			public Guid* cryptoModuleId;
 		}
 		[CRepr]
-		public struct IPSEC_CIPHER_TRANSFORM_ID0
-		{
+		public struct IPSEC_CIPHER_TRANSFORM_ID0		{
 			public IPSEC_CIPHER_TYPE cipherType;
 			public uint8 cipherConfig;
 		}
 		[CRepr]
-		public struct IPSEC_CIPHER_TRANSFORM0
-		{
+		public struct IPSEC_CIPHER_TRANSFORM0		{
 			public IPSEC_CIPHER_TRANSFORM_ID0 cipherTransformId;
 			public Guid* cryptoModuleId;
 		}
 		[CRepr]
-		public struct IPSEC_AUTH_AND_CIPHER_TRANSFORM0
-		{
+		public struct IPSEC_AUTH_AND_CIPHER_TRANSFORM0		{
 			public IPSEC_AUTH_TRANSFORM0 authTransform;
 			public IPSEC_CIPHER_TRANSFORM0 cipherTransform;
 		}
 		[CRepr]
-		public struct IPSEC_SA_TRANSFORM0
-		{
+		public struct IPSEC_SA_TRANSFORM0		{
 			public IPSEC_TRANSFORM_TYPE ipsecTransformType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_AUTH_TRANSFORM0* ahTransform;
 				public IPSEC_AUTH_TRANSFORM0* espAuthTransform;
 				public IPSEC_CIPHER_TRANSFORM0* espCipherTransform;
@@ -2115,22 +2012,19 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IPSEC_PROPOSAL0
-		{
+		public struct IPSEC_PROPOSAL0		{
 			public IPSEC_SA_LIFETIME0 lifetime;
 			public uint32 numSaTransforms;
 			public IPSEC_SA_TRANSFORM0* saTransforms;
 			public IPSEC_PFS_GROUP pfsGroup;
 		}
 		[CRepr]
-		public struct IPSEC_SA_IDLE_TIMEOUT0
-		{
+		public struct IPSEC_SA_IDLE_TIMEOUT0		{
 			public uint32 idleTimeoutSeconds;
 			public uint32 idleTimeoutSecondsFailOver;
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC_SELECTOR0_
-		{
+		public struct IPSEC_TRAFFIC_SELECTOR0_		{
 			public uint8 protocolId;
 			public uint16 portStart;
 			public uint16 portEnd;
@@ -2139,21 +2033,18 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 startV4Address;
 				public uint8[16] startV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 endV4Address;
 				public uint8[16] endV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC_SELECTOR_POLICY0_
-		{
+		public struct IPSEC_TRAFFIC_SELECTOR_POLICY0_		{
 			public uint32 flags;
 			public uint32 numLocalTrafficSelectors;
 			public IPSEC_TRAFFIC_SELECTOR0_* localTrafficSelectors;
@@ -2161,8 +2052,7 @@ namespace Win32
 			public IPSEC_TRAFFIC_SELECTOR0_* remoteTrafficSelectors;
 		}
 		[CRepr]
-		public struct IPSEC_TRANSPORT_POLICY0
-		{
+		public struct IPSEC_TRANSPORT_POLICY0		{
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
 			public IPSEC_POLICY_FLAG flags;
@@ -2171,8 +2061,7 @@ namespace Win32
 			public IKEEXT_EM_POLICY0* emPolicy;
 		}
 		[CRepr]
-		public struct IPSEC_TRANSPORT_POLICY1
-		{
+		public struct IPSEC_TRANSPORT_POLICY1		{
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
 			public IPSEC_POLICY_FLAG flags;
@@ -2181,8 +2070,7 @@ namespace Win32
 			public IKEEXT_EM_POLICY1* emPolicy;
 		}
 		[CRepr]
-		public struct IPSEC_TRANSPORT_POLICY2
-		{
+		public struct IPSEC_TRANSPORT_POLICY2		{
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
 			public IPSEC_POLICY_FLAG flags;
@@ -2191,41 +2079,35 @@ namespace Win32
 			public IKEEXT_EM_POLICY2* emPolicy;
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_ENDPOINTS0
-		{
+		public struct IPSEC_TUNNEL_ENDPOINTS0		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_ENDPOINT0
-		{
+		public struct IPSEC_TUNNEL_ENDPOINT0		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 v4Address;
 				public uint8[16] v6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_ENDPOINTS2
-		{
+		public struct IPSEC_TUNNEL_ENDPOINTS2		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -2235,42 +2117,36 @@ namespace Win32
 			public IPSEC_TUNNEL_ENDPOINT0* remoteAddresses;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_ENDPOINTS1
-		{
+		public struct IPSEC_TUNNEL_ENDPOINTS1		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint64 localIfLuid;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_POLICY0
-		{
+		public struct IPSEC_TUNNEL_POLICY0		{
 			public IPSEC_POLICY_FLAG flags;
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
@@ -2279,8 +2155,7 @@ namespace Win32
 			public IKEEXT_EM_POLICY0* emPolicy;
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_POLICY1
-		{
+		public struct IPSEC_TUNNEL_POLICY1		{
 			public IPSEC_POLICY_FLAG flags;
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
@@ -2289,8 +2164,7 @@ namespace Win32
 			public IKEEXT_EM_POLICY1* emPolicy;
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_POLICY2
-		{
+		public struct IPSEC_TUNNEL_POLICY2		{
 			public IPSEC_POLICY_FLAG flags;
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
@@ -2300,8 +2174,7 @@ namespace Win32
 			public uint32 fwdPathSaLifetime;
 		}
 		[CRepr]
-		public struct IPSEC_TUNNEL_POLICY3_
-		{
+		public struct IPSEC_TUNNEL_POLICY3_		{
 			public uint32 flags;
 			public uint32 numIpsecProposals;
 			public IPSEC_PROPOSAL0* ipsecProposals;
@@ -2314,21 +2187,18 @@ namespace Win32
 			public IPSEC_TRAFFIC_SELECTOR_POLICY0_* trafficSelectorPolicies;
 		}
 		[CRepr]
-		public struct IPSEC_KEYING_POLICY0
-		{
+		public struct IPSEC_KEYING_POLICY0		{
 			public uint32 numKeyMods;
 			public Guid* keyModKeys;
 		}
 		[CRepr]
-		public struct IPSEC_KEYING_POLICY1
-		{
+		public struct IPSEC_KEYING_POLICY1		{
 			public uint32 numKeyMods;
 			public Guid* keyModKeys;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct IPSEC_AGGREGATE_SA_STATISTICS0
-		{
+		public struct IPSEC_AGGREGATE_SA_STATISTICS0		{
 			public uint32 activeSas;
 			public uint32 pendingSaNegotiations;
 			public uint32 totalSasAdded;
@@ -2338,8 +2208,7 @@ namespace Win32
 			public uint32 offloadedSas;
 		}
 		[CRepr]
-		public struct IPSEC_ESP_DROP_PACKET_STATISTICS0
-		{
+		public struct IPSEC_ESP_DROP_PACKET_STATISTICS0		{
 			public uint32 invalidSpisOnInbound;
 			public uint32 decryptionFailuresOnInbound;
 			public uint32 authenticationFailuresOnInbound;
@@ -2347,16 +2216,14 @@ namespace Win32
 			public uint32 saNotInitializedOnInbound;
 		}
 		[CRepr]
-		public struct IPSEC_AH_DROP_PACKET_STATISTICS0
-		{
+		public struct IPSEC_AH_DROP_PACKET_STATISTICS0		{
 			public uint32 invalidSpisOnInbound;
 			public uint32 authenticationFailuresOnInbound;
 			public uint32 replayCheckFailuresOnInbound;
 			public uint32 saNotInitializedOnInbound;
 		}
 		[CRepr]
-		public struct IPSEC_AGGREGATE_DROP_PACKET_STATISTICS0
-		{
+		public struct IPSEC_AGGREGATE_DROP_PACKET_STATISTICS0		{
 			public uint32 invalidSpisOnInbound;
 			public uint32 decryptionFailuresOnInbound;
 			public uint32 authenticationFailuresOnInbound;
@@ -2368,8 +2235,7 @@ namespace Win32
 			public uint32 secureReceivesNotMatchingFilters;
 		}
 		[CRepr]
-		public struct IPSEC_AGGREGATE_DROP_PACKET_STATISTICS1
-		{
+		public struct IPSEC_AGGREGATE_DROP_PACKET_STATISTICS1		{
 			public uint32 invalidSpisOnInbound;
 			public uint32 decryptionFailuresOnInbound;
 			public uint32 authenticationFailuresOnInbound;
@@ -2382,8 +2248,7 @@ namespace Win32
 			public uint32 totalDropPacketsInbound;
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC_STATISTICS0
-		{
+		public struct IPSEC_TRAFFIC_STATISTICS0		{
 			public uint64 encryptedByteCount;
 			public uint64 authenticatedAHByteCount;
 			public uint64 authenticatedESPByteCount;
@@ -2392,8 +2257,7 @@ namespace Win32
 			public uint64 offloadByteCount;
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC_STATISTICS1
-		{
+		public struct IPSEC_TRAFFIC_STATISTICS1		{
 			public uint64 encryptedByteCount;
 			public uint64 authenticatedAHByteCount;
 			public uint64 authenticatedESPByteCount;
@@ -2403,8 +2267,7 @@ namespace Win32
 			public uint64 totalSuccessfulPackets;
 		}
 		[CRepr]
-		public struct IPSEC_STATISTICS0
-		{
+		public struct IPSEC_STATISTICS0		{
 			public IPSEC_AGGREGATE_SA_STATISTICS0 aggregateSaStatistics;
 			public IPSEC_ESP_DROP_PACKET_STATISTICS0 espDropPacketStatistics;
 			public IPSEC_AH_DROP_PACKET_STATISTICS0 ahDropPacketStatistics;
@@ -2413,8 +2276,7 @@ namespace Win32
 			public IPSEC_TRAFFIC_STATISTICS0 outboundTrafficStatistics;
 		}
 		[CRepr]
-		public struct IPSEC_STATISTICS1
-		{
+		public struct IPSEC_STATISTICS1		{
 			public IPSEC_AGGREGATE_SA_STATISTICS0 aggregateSaStatistics;
 			public IPSEC_ESP_DROP_PACKET_STATISTICS0 espDropPacketStatistics;
 			public IPSEC_AH_DROP_PACKET_STATISTICS0 ahDropPacketStatistics;
@@ -2423,33 +2285,28 @@ namespace Win32
 			public IPSEC_TRAFFIC_STATISTICS1 outboundTrafficStatistics;
 		}
 		[CRepr]
-		public struct IPSEC_SA_AUTH_INFORMATION0
-		{
+		public struct IPSEC_SA_AUTH_INFORMATION0		{
 			public IPSEC_AUTH_TRANSFORM0 authTransform;
 			public FWP_BYTE_BLOB authKey;
 		}
 		[CRepr]
-		public struct IPSEC_SA_CIPHER_INFORMATION0
-		{
+		public struct IPSEC_SA_CIPHER_INFORMATION0		{
 			public IPSEC_CIPHER_TRANSFORM0 cipherTransform;
 			public FWP_BYTE_BLOB cipherKey;
 		}
 		[CRepr]
-		public struct IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0
-		{
+		public struct IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0		{
 			public IPSEC_SA_CIPHER_INFORMATION0 saCipherInformation;
 			public IPSEC_SA_AUTH_INFORMATION0 saAuthInformation;
 		}
 		[CRepr]
-		public struct IPSEC_SA0
-		{
+		public struct IPSEC_SA0		{
 			public uint32 spi;
 			public IPSEC_TRANSFORM_TYPE saTransformType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_SA_AUTH_INFORMATION0* ahInformation;
 				public IPSEC_SA_AUTH_INFORMATION0* espAuthInformation;
 				public IPSEC_SA_CIPHER_INFORMATION0* espCipherInformation;
@@ -2458,22 +2315,19 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IPSEC_KEYMODULE_STATE0
-		{
+		public struct IPSEC_KEYMODULE_STATE0		{
 			public Guid keyModuleKey;
 			public FWP_BYTE_BLOB stateBlob;
 		}
 		[CRepr]
-		public struct IPSEC_TOKEN0
-		{
+		public struct IPSEC_TOKEN0		{
 			public IPSEC_TOKEN_TYPE type;
 			public IPSEC_TOKEN_PRINCIPAL principal;
 			public IPSEC_TOKEN_MODE mode;
 			public uint64 token;
 		}
 		[CRepr]
-		public struct IPSEC_ID0
-		{
+		public struct IPSEC_ID0		{
 			public PWSTR mmTargetName;
 			public PWSTR emTargetName;
 			public uint32 numTokens;
@@ -2482,8 +2336,7 @@ namespace Win32
 			public uint64 logonId;
 		}
 		[CRepr]
-		public struct IPSEC_SA_BUNDLE0
-		{
+		public struct IPSEC_SA_BUNDLE0		{
 			public IPSEC_SA_BUNDLE_FLAGS flags;
 			public IPSEC_SA_LIFETIME0 lifetime;
 			public uint32 idleTimeoutSeconds;
@@ -2500,14 +2353,12 @@ namespace Win32
 			public IPSEC_PFS_GROUP pfsGroup;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 peerV4PrivateAddress;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_SA_BUNDLE1
-		{
+		public struct IPSEC_SA_BUNDLE1		{
 			public IPSEC_SA_BUNDLE_FLAGS flags;
 			public IPSEC_SA_LIFETIME0 lifetime;
 			public uint32 idleTimeoutSeconds;
@@ -2526,14 +2377,12 @@ namespace Win32
 			public uint64 qmFilterId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 peerV4PrivateAddress;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC0
-		{
+		public struct IPSEC_TRAFFIC0		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -2542,27 +2391,23 @@ namespace Win32
 			public uint16 remotePort;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public uint64 ipsecFilterId;
 				public uint64 tunnelPolicyId;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_TRAFFIC1
-		{
+		public struct IPSEC_TRAFFIC1		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -2575,61 +2420,52 @@ namespace Win32
 			public uint32 realIfProfileId;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public uint64 ipsecFilterId;
 				public uint64 tunnelPolicyId;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_V4_UDP_ENCAPSULATION0
-		{
+		public struct IPSEC_V4_UDP_ENCAPSULATION0		{
 			public uint16 localUdpEncapPort;
 			public uint16 remoteUdpEncapPort;
 		}
 		[CRepr]
-		public struct IPSEC_GETSPI0
-		{
+		public struct IPSEC_GETSPI0		{
 			public IPSEC_TRAFFIC0 inboundIpsecTraffic;
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous_e__Union Anonymous;
 			public Guid* rngCryptoModuleID;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* inboundUdpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_GETSPI1
-		{
+		public struct IPSEC_GETSPI1		{
 			public IPSEC_TRAFFIC1 inboundIpsecTraffic;
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous_e__Union Anonymous;
 			public Guid* rngCryptoModuleID;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* inboundUdpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_SA_DETAILS0
-		{
+		public struct IPSEC_SA_DETAILS0		{
 			public FWP_IP_VERSION ipVersion;
 			public FWP_DIRECTION saDirection;
 			public IPSEC_TRAFFIC0 traffic;
@@ -2638,14 +2474,12 @@ namespace Win32
 			public FWPM_FILTER0* transportFilter;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* udpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_SA_DETAILS1
-		{
+		public struct IPSEC_SA_DETAILS1		{
 			public FWP_IP_VERSION ipVersion;
 			public FWP_DIRECTION saDirection;
 			public IPSEC_TRAFFIC1 traffic;
@@ -2655,60 +2489,51 @@ namespace Win32
 			public IPSEC_VIRTUAL_IF_TUNNEL_INFO0 virtualIfTunnelInfo;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_V4_UDP_ENCAPSULATION0* udpEncapsulation;
 			}
 		}
 		[CRepr]
-		public struct IPSEC_SA_CONTEXT0
-		{
+		public struct IPSEC_SA_CONTEXT0		{
 			public uint64 saContextId;
 			public IPSEC_SA_DETAILS0* inboundSa;
 			public IPSEC_SA_DETAILS0* outboundSa;
 		}
 		[CRepr]
-		public struct IPSEC_SA_CONTEXT1
-		{
+		public struct IPSEC_SA_CONTEXT1		{
 			public uint64 saContextId;
 			public IPSEC_SA_DETAILS1* inboundSa;
 			public IPSEC_SA_DETAILS1* outboundSa;
 		}
 		[CRepr]
-		public struct IPSEC_SA_CONTEXT_ENUM_TEMPLATE0
-		{
+		public struct IPSEC_SA_CONTEXT_ENUM_TEMPLATE0		{
 			public FWP_CONDITION_VALUE0 localSubNet;
 			public FWP_CONDITION_VALUE0 remoteSubNet;
 		}
 		[CRepr]
-		public struct IPSEC_SA_ENUM_TEMPLATE0
-		{
+		public struct IPSEC_SA_ENUM_TEMPLATE0		{
 			public FWP_DIRECTION saDirection;
 		}
 		[CRepr]
-		public struct IPSEC_SA_CONTEXT_SUBSCRIPTION0
-		{
+		public struct IPSEC_SA_CONTEXT_SUBSCRIPTION0		{
 			public IPSEC_SA_CONTEXT_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct IPSEC_SA_CONTEXT_CHANGE0
-		{
+		public struct IPSEC_SA_CONTEXT_CHANGE0		{
 			public IPSEC_SA_CONTEXT_EVENT_TYPE0 changeType;
 			public uint64 saContextId;
 		}
 		[CRepr]
-		public struct IPSEC_ADDRESS_INFO0
-		{
+		public struct IPSEC_ADDRESS_INFO0		{
 			public uint32 numV4Addresses;
 			public uint32* v4Addresses;
 			public uint32 numV6Addresses;
 			public FWP_BYTE_ARRAY16* v6Addresses;
 		}
 		[CRepr]
-		public struct IPSEC_DOSP_OPTIONS0
-		{
+		public struct IPSEC_DOSP_OPTIONS0		{
 			public uint32 stateIdleTimeoutSeconds;
 			public uint32 perIPRateLimitQueueIdleTimeoutSeconds;
 			public uint8 ipV6IPsecUnauthDscp;
@@ -2733,8 +2558,7 @@ namespace Win32
 			public FWP_V6_ADDR_AND_MASK internalV6AddrMask;
 		}
 		[CRepr]
-		public struct IPSEC_DOSP_STATISTICS0
-		{
+		public struct IPSEC_DOSP_STATISTICS0		{
 			public uint64 totalStateEntriesCreated;
 			public uint64 currentStateEntries;
 			public uint64 totalInboundAllowedIPv6IPsecUnauthPkts;
@@ -2755,8 +2579,7 @@ namespace Win32
 			public uint64 currentInboundIPv6IPsecUnauthPerIPRateLimitQueues;
 		}
 		[CRepr]
-		public struct IPSEC_DOSP_STATE0
-		{
+		public struct IPSEC_DOSP_STATE0		{
 			public uint8[16] publicHostV6Addr;
 			public uint8[16] internalHostV6Addr;
 			public uint64 totalInboundIPv6IPsecAuthPackets;
@@ -2764,22 +2587,19 @@ namespace Win32
 			public uint32 durationSecs;
 		}
 		[CRepr]
-		public struct IPSEC_DOSP_STATE_ENUM_TEMPLATE0
-		{
+		public struct IPSEC_DOSP_STATE_ENUM_TEMPLATE0		{
 			public FWP_V6_ADDR_AND_MASK publicV6AddrMask;
 			public FWP_V6_ADDR_AND_MASK internalV6AddrMask;
 		}
 		[CRepr]
-		public struct IPSEC_KEY_MANAGER0
-		{
+		public struct IPSEC_KEY_MANAGER0		{
 			public Guid keyManagerKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
 			public uint8 keyDictationTimeoutHint;
 		}
 		[CRepr]
-		public struct FWPM_SESSION0
-		{
+		public struct FWPM_SESSION0		{
 			public Guid sessionKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2790,13 +2610,11 @@ namespace Win32
 			public BOOL kernelMode;
 		}
 		[CRepr]
-		public struct FWPM_SESSION_ENUM_TEMPLATE0
-		{
+		public struct FWPM_SESSION_ENUM_TEMPLATE0		{
 			public uint64 reserved;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER0
-		{
+		public struct FWPM_PROVIDER0		{
 			public Guid providerKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2804,38 +2622,32 @@ namespace Win32
 			public PWSTR serviceName;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_ENUM_TEMPLATE0
-		{
+		public struct FWPM_PROVIDER_ENUM_TEMPLATE0		{
 			public uint64 reserved;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CHANGE0
-		{
+		public struct FWPM_PROVIDER_CHANGE0		{
 			public FWPM_CHANGE_TYPE changeType;
 			public Guid providerKey;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_SUBSCRIPTION0
-		{
+		public struct FWPM_PROVIDER_SUBSCRIPTION0		{
 			public FWPM_PROVIDER_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_CLASSIFY_OPTION0
-		{
+		public struct FWPM_CLASSIFY_OPTION0		{
 			public FWP_CLASSIFY_OPTION_TYPE type;
 			public FWP_VALUE0 value;
 		}
 		[CRepr]
-		public struct FWPM_CLASSIFY_OPTIONS0
-		{
+		public struct FWPM_CLASSIFY_OPTIONS0		{
 			public uint32 numOptions;
 			public FWPM_CLASSIFY_OPTION0* options;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT0
-		{
+		public struct FWPM_PROVIDER_CONTEXT0		{
 			public Guid providerContextKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2846,8 +2658,7 @@ namespace Win32
 			public uint64 providerContextId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_KEYING_POLICY0* keyingPolicy;
 				public IPSEC_TRANSPORT_POLICY0* ikeQmTransportPolicy;
 				public IPSEC_TUNNEL_POLICY0* ikeQmTunnelPolicy;
@@ -2860,8 +2671,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT1
-		{
+		public struct FWPM_PROVIDER_CONTEXT1		{
 			public Guid providerContextKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2872,8 +2682,7 @@ namespace Win32
 			public uint64 providerContextId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_KEYING_POLICY0* keyingPolicy;
 				public IPSEC_TRANSPORT_POLICY1* ikeQmTransportPolicy;
 				public IPSEC_TUNNEL_POLICY1* ikeQmTunnelPolicy;
@@ -2889,8 +2698,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT2
-		{
+		public struct FWPM_PROVIDER_CONTEXT2		{
 			public Guid providerContextKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2901,8 +2709,7 @@ namespace Win32
 			public uint64 providerContextId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_KEYING_POLICY1* keyingPolicy;
 				public IPSEC_TRANSPORT_POLICY2* ikeQmTransportPolicy;
 				public IPSEC_TUNNEL_POLICY2* ikeQmTunnelPolicy;
@@ -2919,8 +2726,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT3_
-		{
+		public struct FWPM_PROVIDER_CONTEXT3_		{
 			public Guid providerContextKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2931,8 +2737,7 @@ namespace Win32
 			public uint64 providerContextId;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IPSEC_KEYING_POLICY1* keyingPolicy;
 				public IPSEC_TRANSPORT_POLICY2* ikeQmTransportPolicy;
 				public IPSEC_TUNNEL_POLICY3_* ikeQmTunnelPolicy;
@@ -2949,28 +2754,24 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0
-		{
+		public struct FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0		{
 			public Guid* providerKey;
 			public FWPM_PROVIDER_CONTEXT_TYPE providerContextType;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT_CHANGE0
-		{
+		public struct FWPM_PROVIDER_CONTEXT_CHANGE0		{
 			public FWPM_CHANGE_TYPE changeType;
 			public Guid providerContextKey;
 			public uint64 providerContextId;
 		}
 		[CRepr]
-		public struct FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0
-		{
+		public struct FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0		{
 			public FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0* enumTemplate;
 			public FWPM_SUBSCRIPTION_FLAGS flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_SUBLAYER0
-		{
+		public struct FWPM_SUBLAYER0		{
 			public Guid subLayerKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -2979,33 +2780,28 @@ namespace Win32
 			public uint16 weight;
 		}
 		[CRepr]
-		public struct FWPM_SUBLAYER_ENUM_TEMPLATE0
-		{
+		public struct FWPM_SUBLAYER_ENUM_TEMPLATE0		{
 			public Guid* providerKey;
 		}
 		[CRepr]
-		public struct FWPM_SUBLAYER_CHANGE0
-		{
+		public struct FWPM_SUBLAYER_CHANGE0		{
 			public FWPM_CHANGE_TYPE changeType;
 			public Guid subLayerKey;
 		}
 		[CRepr]
-		public struct FWPM_SUBLAYER_SUBSCRIPTION0
-		{
+		public struct FWPM_SUBLAYER_SUBSCRIPTION0		{
 			public FWPM_SUBLAYER_ENUM_TEMPLATE0* enumTemplate;
 			public FWPM_SUBSCRIPTION_FLAGS flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_FIELD0
-		{
+		public struct FWPM_FIELD0		{
 			public Guid* fieldKey;
 			public FWPM_FIELD_TYPE type;
 			public FWP_DATA_TYPE dataType;
 		}
 		[CRepr]
-		public struct FWPM_LAYER0
-		{
+		public struct FWPM_LAYER0		{
 			public Guid layerKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -3015,13 +2811,11 @@ namespace Win32
 			public uint16 layerId;
 		}
 		[CRepr]
-		public struct FWPM_LAYER_ENUM_TEMPLATE0
-		{
+		public struct FWPM_LAYER_ENUM_TEMPLATE0		{
 			public uint64 reserved;
 		}
 		[CRepr]
-		public struct FWPM_CALLOUT0
-		{
+		public struct FWPM_CALLOUT0		{
 			public Guid calloutKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public uint32 flags;
@@ -3031,48 +2825,41 @@ namespace Win32
 			public uint32 calloutId;
 		}
 		[CRepr]
-		public struct FWPM_CALLOUT_ENUM_TEMPLATE0
-		{
+		public struct FWPM_CALLOUT_ENUM_TEMPLATE0		{
 			public Guid* providerKey;
 			public Guid layerKey;
 		}
 		[CRepr]
-		public struct FWPM_CALLOUT_CHANGE0
-		{
+		public struct FWPM_CALLOUT_CHANGE0		{
 			public FWPM_CHANGE_TYPE changeType;
 			public Guid calloutKey;
 			public uint32 calloutId;
 		}
 		[CRepr]
-		public struct FWPM_CALLOUT_SUBSCRIPTION0
-		{
+		public struct FWPM_CALLOUT_SUBSCRIPTION0		{
 			public FWPM_CALLOUT_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_ACTION0
-		{
+		public struct FWPM_ACTION0		{
 			public uint32 type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public Guid filterType;
 				public Guid calloutKey;
 			}
 		}
 		[CRepr]
-		public struct FWPM_FILTER_CONDITION0
-		{
+		public struct FWPM_FILTER_CONDITION0		{
 			public Guid fieldKey;
 			public FWP_MATCH_TYPE matchType;
 			public FWP_CONDITION_VALUE0 conditionValue;
 		}
 		[CRepr]
-		public struct FWPM_FILTER0
-		{
+		public struct FWPM_FILTER0		{
 			public Guid filterKey;
 			public FWPM_DISPLAY_DATA0 displayData;
 			public FWPM_FILTER_FLAGS flags;
@@ -3090,15 +2877,13 @@ namespace Win32
 			public FWP_VALUE0 effectiveWeight;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint64 rawContext;
 				public Guid providerContextKey;
 			}
 		}
 		[CRepr]
-		public struct FWPM_FILTER_ENUM_TEMPLATE0
-		{
+		public struct FWPM_FILTER_ENUM_TEMPLATE0		{
 			public Guid* providerKey;
 			public Guid layerKey;
 			public FWP_FILTER_ENUM_TYPE enumType;
@@ -3110,22 +2895,19 @@ namespace Win32
 			public Guid* calloutKey;
 		}
 		[CRepr]
-		public struct FWPM_FILTER_CHANGE0
-		{
+		public struct FWPM_FILTER_CHANGE0		{
 			public FWPM_CHANGE_TYPE changeType;
 			public Guid filterKey;
 			public uint64 filterId;
 		}
 		[CRepr]
-		public struct FWPM_FILTER_SUBSCRIPTION0
-		{
+		public struct FWPM_FILTER_SUBSCRIPTION0		{
 			public FWPM_FILTER_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_LAYER_STATISTICS0
-		{
+		public struct FWPM_LAYER_STATISTICS0		{
 			public Guid layerId;
 			public uint32 classifyPermitCount;
 			public uint32 classifyBlockCount;
@@ -3133,8 +2915,7 @@ namespace Win32
 			public uint32 numCacheEntries;
 		}
 		[CRepr]
-		public struct FWPM_STATISTICS0
-		{
+		public struct FWPM_STATISTICS0		{
 			public uint32 numLayerStatistics;
 			public FWPM_LAYER_STATISTICS0* layerStatistics;
 			public uint32 inboundAllowedConnectionsV4;
@@ -3173,8 +2954,7 @@ namespace Win32
 			public uint64 reauthReasonProxyHandleChanged;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_HEADER0
-		{
+		public struct FWPM_NET_EVENT_HEADER0		{
 			public FILETIME timeStamp;
 			public uint32 flags;
 			public FWP_IP_VERSION ipVersion;
@@ -3188,21 +2968,18 @@ namespace Win32
 			public SID* userId;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localAddrV4;
 				public FWP_BYTE_ARRAY16 localAddrV6;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteAddrV4;
 				public FWP_BYTE_ARRAY16 remoteAddrV6;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_HEADER1
-		{
+		public struct FWPM_NET_EVENT_HEADER1		{
 			public FILETIME timeStamp;
 			public uint32 flags;
 			public FWP_IP_VERSION ipVersion;
@@ -3217,24 +2994,20 @@ namespace Win32
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public FWP_AF reserved1;
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union
-					{
+					public struct _Anonymous_e__Union					{
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct
-						{
+						public struct _Anonymous_e__Struct						{
 							public FWP_BYTE_ARRAY6 reserved2;
 							public FWP_BYTE_ARRAY6 reserved3;
 							public uint32 reserved4;
@@ -3249,21 +3022,18 @@ namespace Win32
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localAddrV4;
 				public FWP_BYTE_ARRAY16 localAddrV6;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteAddrV4;
 				public FWP_BYTE_ARRAY16 remoteAddrV6;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_HEADER2
-		{
+		public struct FWPM_NET_EVENT_HEADER2		{
 			public FILETIME timeStamp;
 			public uint32 flags;
 			public FWP_IP_VERSION ipVersion;
@@ -3279,21 +3049,18 @@ namespace Win32
 			public SID* packageSid;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localAddrV4;
 				public FWP_BYTE_ARRAY16 localAddrV6;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteAddrV4;
 				public FWP_BYTE_ARRAY16 remoteAddrV6;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_HEADER3
-		{
+		public struct FWPM_NET_EVENT_HEADER3		{
 			public FILETIME timeStamp;
 			public uint32 flags;
 			public FWP_IP_VERSION ipVersion;
@@ -3312,21 +3079,18 @@ namespace Win32
 			public FWP_BYTE_BLOB effectiveName;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localAddrV4;
 				public FWP_BYTE_ARRAY16 localAddrV6;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteAddrV4;
 				public FWP_BYTE_ARRAY16 remoteAddrV6;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE0
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE0		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public uint32 flags;
@@ -3339,8 +3103,7 @@ namespace Win32
 			public uint64 mmFilterId;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE1
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE1		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public uint32 flags;
@@ -3359,8 +3122,7 @@ namespace Win32
 			public PWSTR* remotePrincipalGroupSids;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public uint32 flags;
@@ -3380,8 +3142,7 @@ namespace Win32
 			public Guid* providerContextKey;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public IKEEXT_KEY_MODULE_TYPE keyingModuleType;
@@ -3393,19 +3154,16 @@ namespace Win32
 			public uint64 qmFilterId;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public FWP_CONDITION_VALUE0 localSubNet;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public FWP_CONDITION_VALUE0 remoteSubNet;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public IKEEXT_KEY_MODULE_TYPE keyingModuleType;
@@ -3419,19 +3177,16 @@ namespace Win32
 			public Guid mmProviderContextKey;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public FWP_CONDITION_VALUE0 localSubNet;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public FWP_CONDITION_VALUE0 remoteSubNet;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_EM_FAILURE0
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_EM_FAILURE0		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public uint32 flags;
@@ -3443,8 +3198,7 @@ namespace Win32
 			public uint64 qmFilterId;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IKEEXT_EM_FAILURE1
-		{
+		public struct FWPM_NET_EVENT_IKEEXT_EM_FAILURE1		{
 			public uint32 failureErrorCode;
 			public IPSEC_FAILURE_POINT failurePoint;
 			public uint32 flags;
@@ -3463,14 +3217,12 @@ namespace Win32
 			public IPSEC_TRAFFIC_TYPE saTrafficType;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CLASSIFY_DROP0
-		{
+		public struct FWPM_NET_EVENT_CLASSIFY_DROP0		{
 			public uint64 filterId;
 			public uint16 layerId;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CLASSIFY_DROP1
-		{
+		public struct FWPM_NET_EVENT_CLASSIFY_DROP1		{
 			public uint64 filterId;
 			public uint16 layerId;
 			public uint32 reauthReason;
@@ -3480,8 +3232,7 @@ namespace Win32
 			public BOOL isLoopback;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CLASSIFY_DROP2
-		{
+		public struct FWPM_NET_EVENT_CLASSIFY_DROP2		{
 			public uint64 filterId;
 			public uint16 layerId;
 			public uint32 reauthReason;
@@ -3494,8 +3245,7 @@ namespace Win32
 			public uint32 vSwitchDestinationPort;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CLASSIFY_DROP_MAC0
-		{
+		public struct FWPM_NET_EVENT_CLASSIFY_DROP_MAC0		{
 			public FWP_BYTE_ARRAY6 localMacAddr;
 			public FWP_BYTE_ARRAY6 remoteMacAddr;
 			public uint32 mediaType;
@@ -3517,8 +3267,7 @@ namespace Win32
 			public uint32 vSwitchDestinationPort;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CLASSIFY_ALLOW0
-		{
+		public struct FWPM_NET_EVENT_CLASSIFY_ALLOW0		{
 			public uint64 filterId;
 			public uint16 layerId;
 			public uint32 reauthReason;
@@ -3528,8 +3277,7 @@ namespace Win32
 			public BOOL isLoopback;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IPSEC_KERNEL_DROP0
-		{
+		public struct FWPM_NET_EVENT_IPSEC_KERNEL_DROP0		{
 			public int32 failureStatus;
 			public FWP_DIRECTION direction;
 			public uint32 spi;
@@ -3537,8 +3285,7 @@ namespace Win32
 			public uint16 layerId;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_IPSEC_DOSP_DROP0
-		{
+		public struct FWPM_NET_EVENT_IPSEC_DOSP_DROP0		{
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
@@ -3546,47 +3293,40 @@ namespace Win32
 			public FWP_DIRECTION direction;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 publicHostV4Addr;
 				public uint8[16] publicHostV6Addr;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 internalHostV4Addr;
 				public uint8[16] internalHostV6Addr;
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CAPABILITY_DROP0
-		{
+		public struct FWPM_NET_EVENT_CAPABILITY_DROP0		{
 			public FWPM_APPC_NETWORK_CAPABILITY_TYPE networkCapabilityId;
 			public uint64 filterId;
 			public BOOL isLoopback;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_CAPABILITY_ALLOW0
-		{
+		public struct FWPM_NET_EVENT_CAPABILITY_ALLOW0		{
 			public FWPM_APPC_NETWORK_CAPABILITY_TYPE networkCapabilityId;
 			public uint64 filterId;
 			public BOOL isLoopback;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_
-		{
+		public struct FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_		{
 			public uint32 spi;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT0
-		{
+		public struct FWPM_NET_EVENT0		{
 			public FWPM_NET_EVENT_HEADER0 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE0* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE0* ikeEmFailure;
@@ -3596,15 +3336,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT1
-		{
+		public struct FWPM_NET_EVENT1		{
 			public FWPM_NET_EVENT_HEADER1 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
@@ -3614,15 +3352,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT2
-		{
+		public struct FWPM_NET_EVENT2		{
 			public FWPM_NET_EVENT_HEADER2 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
@@ -3636,15 +3372,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT3
-		{
+		public struct FWPM_NET_EVENT3		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
@@ -3658,15 +3392,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT4_
-		{
+		public struct FWPM_NET_EVENT4_		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
@@ -3680,15 +3412,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT5_
-		{
+		public struct FWPM_NET_EVENT5_		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_* ikeMmFailure;
 				public FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_* ikeQmFailure;
 				public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure;
@@ -3703,36 +3433,31 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_ENUM_TEMPLATE0
-		{
+		public struct FWPM_NET_EVENT_ENUM_TEMPLATE0		{
 			public FILETIME startTime;
 			public FILETIME endTime;
 			public uint32 numFilterConditions;
 			public FWPM_FILTER_CONDITION0* filterCondition;
 		}
 		[CRepr]
-		public struct FWPM_NET_EVENT_SUBSCRIPTION0
-		{
+		public struct FWPM_NET_EVENT_SUBSCRIPTION0		{
 			public FWPM_NET_EVENT_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_SYSTEM_PORTS_BY_TYPE0
-		{
+		public struct FWPM_SYSTEM_PORTS_BY_TYPE0		{
 			public FWPM_SYSTEM_PORT_TYPE type;
 			public uint32 numPorts;
 			public uint16* ports;
 		}
 		[CRepr]
-		public struct FWPM_SYSTEM_PORTS0
-		{
+		public struct FWPM_SYSTEM_PORTS0		{
 			public uint32 numTypes;
 			public FWPM_SYSTEM_PORTS_BY_TYPE0* types;
 		}
 		[CRepr]
-		public struct FWPM_CONNECTION0
-		{
+		public struct FWPM_CONNECTION0		{
 			public uint64 connectionId;
 			public FWP_IP_VERSION ipVersion;
 			public _Anonymous1_e__Union Anonymous1;
@@ -3749,68 +3474,58 @@ namespace Win32
 			public FILETIME startSysTime;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 localV4Address;
 				public uint8[16] localV6Address;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 remoteV4Address;
 				public uint8[16] remoteV6Address;
 			}
 		}
 		[CRepr]
-		public struct FWPM_CONNECTION_ENUM_TEMPLATE0
-		{
+		public struct FWPM_CONNECTION_ENUM_TEMPLATE0		{
 			public uint64 connectionId;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct FWPM_CONNECTION_SUBSCRIPTION0
-		{
+		public struct FWPM_CONNECTION_SUBSCRIPTION0		{
 			public FWPM_CONNECTION_ENUM_TEMPLATE0* enumTemplate;
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct FWPM_VSWITCH_EVENT0
-		{
+		public struct FWPM_VSWITCH_EVENT0		{
 			public FWPM_VSWITCH_EVENT_TYPE eventType;
 			public PWSTR vSwitchId;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _positionInfo_e__Struct positionInfo;
 				public _reorderInfo_e__Struct reorderInfo;
 				
 				[CRepr]
-				public struct _reorderInfo_e__Struct
-				{
+				public struct _reorderInfo_e__Struct				{
 					public BOOL inRequiredPosition;
 					public uint32 numvSwitchFilterExtensions;
 					public PWSTR* vSwitchFilterExtensions;
 				}
 				[CRepr]
-				public struct _positionInfo_e__Struct
-				{
+				public struct _positionInfo_e__Struct				{
 					public uint32 numvSwitchFilterExtensions;
 					public PWSTR* vSwitchFilterExtensions;
 				}
 			}
 		}
 		[CRepr]
-		public struct FWPM_VSWITCH_EVENT_SUBSCRIPTION0
-		{
+		public struct FWPM_VSWITCH_EVENT_SUBSCRIPTION0		{
 			public uint32 flags;
 			public Guid sessionKey;
 		}
 		[CRepr]
-		public struct IPSEC_KEY_MANAGER_CALLBACKS0
-		{
+		public struct IPSEC_KEY_MANAGER_CALLBACKS0		{
 			public Guid reserved;
 			public uint32 flags;
 			public IPSEC_KEY_MANAGER_KEY_DICTATION_CHECK0 keyDictationCheck;
@@ -3818,62 +3533,52 @@ namespace Win32
 			public IPSEC_KEY_MANAGER_NOTIFY_KEY0 keyNotify;
 		}
 		[CRepr, Union]
-		public struct DL_OUI
-		{
+		public struct DL_OUI		{
 			public uint8[3] Byte;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 _bitfield;
 			}
 		}
 		[CRepr, Union]
-		public struct DL_EI48
-		{
+		public struct DL_EI48		{
 			public uint8[3] Byte;
 		}
 		[CRepr, Union]
-		public struct DL_EUI48
-		{
+		public struct DL_EUI48		{
 			public uint8[6] Byte;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public DL_OUI Oui;
 				public DL_EI48 Ei48;
 			}
 		}
 		[CRepr, Union]
-		public struct DL_EI64
-		{
+		public struct DL_EI64		{
 			public uint8[5] Byte;
 		}
 		[CRepr, Union]
-		public struct DL_EUI64
-		{
+		public struct DL_EUI64		{
 			public uint8[8] Byte;
 			public uint64 Value;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public DL_OUI Oui;
 				public _Anonymous_e__Union Anonymous;
 				
 				[CRepr, Union]
-				public struct _Anonymous_e__Union
-				{
+				public struct _Anonymous_e__Union				{
 					public DL_EI64 Ei64;
 					public _Anonymous_e__Struct Anonymous;
 					
 					[CRepr]
-					public struct _Anonymous_e__Struct
-					{
+					public struct _Anonymous_e__Struct					{
 						public uint8 Type;
 						public uint8 Tse;
 						public DL_EI48 Ei48;
@@ -3882,8 +3587,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SNAP_HEADER
-		{
+		public struct SNAP_HEADER		{
 			public uint8 Dsap;
 			public uint8 Ssap;
 			public uint8 Control;
@@ -3891,62 +3595,53 @@ namespace Win32
 			public uint16 Type;
 		}
 		[CRepr]
-		public struct ETHERNET_HEADER
-		{
+		public struct ETHERNET_HEADER		{
 			public DL_EUI48 Destination;
 			public DL_EUI48 Source;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint16 Type;
 				public uint16 Length;
 			}
 		}
 		[CRepr]
-		public struct VLAN_TAG
-		{
+		public struct VLAN_TAG		{
 			public _Anonymous_e__Union Anonymous;
 			public uint16 Type;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint16 Tag;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct ICMP_HEADER
-		{
+		public struct ICMP_HEADER		{
 			public uint8 Type;
 			public uint8 Code;
 			public uint16 Checksum;
 		}
 		[CRepr]
-		public struct ICMP_MESSAGE
-		{
+		public struct ICMP_MESSAGE		{
 			public ICMP_HEADER Header;
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Data_e__Union
-			{
+			public struct _Data_e__Union			{
 				public uint32[0] Data32;
 				public uint16[2] Data16;
 				public uint8[4] Data8;
 			}
 		}
 		[CRepr]
-		public struct IPV4_HEADER
-		{
+		public struct IPV4_HEADER		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint16 TotalLength;
@@ -3959,120 +3654,101 @@ namespace Win32
 			public IN_ADDR DestinationAddress;
 			
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public uint16 FlagsAndOffset;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint8 TypeOfServiceAndEcnField;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint8 VersionAndHeaderLength;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPV4_OPTION_HEADER
-		{
+		public struct IPV4_OPTION_HEADER		{
 			public _Anonymous_e__Union Anonymous;
 			public uint8 OptionLength;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 OptionType;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPV4_TIMESTAMP_OPTION
-		{
+		public struct IPV4_TIMESTAMP_OPTION		{
 			public IPV4_OPTION_HEADER OptionHeader;
 			public uint8 Pointer;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 FlagsOverflow;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPV4_ROUTING_HEADER
-		{
+		public struct IPV4_ROUTING_HEADER		{
 			public IPV4_OPTION_HEADER OptionHeader;
 			public uint8 Pointer;
 		}
 		[CRepr]
-		public struct ICMPV4_ROUTER_SOLICIT
-		{
+		public struct ICMPV4_ROUTER_SOLICIT		{
 			public ICMP_MESSAGE RsHeader;
 		}
 		[CRepr]
-		public struct ICMPV4_ROUTER_ADVERT_HEADER
-		{
+		public struct ICMPV4_ROUTER_ADVERT_HEADER		{
 			public ICMP_MESSAGE RaHeader;
 		}
 		[CRepr]
-		public struct ICMPV4_ROUTER_ADVERT_ENTRY
-		{
+		public struct ICMPV4_ROUTER_ADVERT_ENTRY		{
 			public IN_ADDR RouterAdvertAddr;
 			public int32 PreferenceLevel;
 		}
 		[CRepr]
-		public struct ICMPV4_TIMESTAMP_MESSAGE
-		{
+		public struct ICMPV4_TIMESTAMP_MESSAGE		{
 			public ICMP_MESSAGE Header;
 			public uint32 OriginateTimestamp;
 			public uint32 ReceiveTimestamp;
 			public uint32 TransmitTimestamp;
 		}
 		[CRepr]
-		public struct ICMPV4_ADDRESS_MASK_MESSAGE
-		{
+		public struct ICMPV4_ADDRESS_MASK_MESSAGE		{
 			public ICMP_MESSAGE Header;
 			public uint32 AddressMask;
 		}
 		[CRepr]
-		public struct ARP_HEADER
-		{
+		public struct ARP_HEADER		{
 			public uint16 HardwareAddressSpace;
 			public uint16 ProtocolAddressSpace;
 			public uint8 HardwareAddressLength;
@@ -4081,36 +3757,31 @@ namespace Win32
 			public uint8[0] SenderHardwareAddress;
 		}
 		[CRepr]
-		public struct IGMP_HEADER
-		{
+		public struct IGMP_HEADER		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint16 Checksum;
 			public IN_ADDR MulticastAddress;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint8 VersionType;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint8 Reserved;
 				public uint8 MaxRespTime;
 				public uint8 Code;
 			}
 		}
 		[CRepr]
-		public struct IGMPV3_QUERY_HEADER
-		{
+		public struct IGMPV3_QUERY_HEADER		{
 			public uint8 Type;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint16 Checksum;
@@ -4120,41 +3791,35 @@ namespace Win32
 			public uint16 SourceCount;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint8 QueriersQueryInterfaceCode;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint8 MaxRespCode;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IGMPV3_REPORT_RECORD_HEADER
-		{
+		public struct IGMPV3_REPORT_RECORD_HEADER		{
 			public uint8 Type;
 			public uint8 AuxillaryDataLength;
 			public uint16 SourceCount;
 			public IN_ADDR MulticastAddress;
 		}
 		[CRepr]
-		public struct IGMPV3_REPORT_HEADER
-		{
+		public struct IGMPV3_REPORT_HEADER		{
 			public uint8 Type;
 			public uint8 Reserved;
 			public uint16 Checksum;
@@ -4162,8 +3827,7 @@ namespace Win32
 			public uint16 RecordCount;
 		}
 		[CRepr]
-		public struct IPV6_HEADER
-		{
+		public struct IPV6_HEADER		{
 			public _Anonymous_e__Union Anonymous;
 			public uint16 PayloadLength;
 			public uint8 NextHeader;
@@ -4172,66 +3836,56 @@ namespace Win32
 			public IN6_ADDR DestinationAddress;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 VersionClassFlow;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPV6_FRAGMENT_HEADER
-		{
+		public struct IPV6_FRAGMENT_HEADER		{
 			public uint8 NextHeader;
 			public uint8 Reserved;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Id;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 OffsetAndFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct IPV6_EXTENSION_HEADER
-		{
+		public struct IPV6_EXTENSION_HEADER		{
 			public uint8 NextHeader;
 			public uint8 Length;
 		}
 		[CRepr]
-		public struct IPV6_OPTION_HEADER
-		{
+		public struct IPV6_OPTION_HEADER		{
 			public uint8 Type;
 			public uint8 DataLength;
 		}
 		[CRepr]
-		public struct IPV6_OPTION_JUMBOGRAM
-		{
+		public struct IPV6_OPTION_JUMBOGRAM		{
 			public IPV6_OPTION_HEADER Header;
 			public uint8[4] JumbogramLength;
 		}
 		[CRepr]
-		public struct IPV6_OPTION_ROUTER_ALERT
-		{
+		public struct IPV6_OPTION_ROUTER_ALERT		{
 			public IPV6_OPTION_HEADER Header;
 			public uint8[2] Value;
 		}
 		[CRepr]
-		public struct IPV6_ROUTING_HEADER
-		{
+		public struct IPV6_ROUTING_HEADER		{
 			public uint8 NextHeader;
 			public uint8 Length;
 			public uint8 RoutingType;
@@ -4239,70 +3893,59 @@ namespace Win32
 			public uint8[4] Reserved;
 		}
 		[CRepr]
-		public struct nd_router_solicit
-		{
+		public struct nd_router_solicit		{
 			public ICMP_MESSAGE nd_rs_hdr;
 		}
 		[CRepr]
-		public struct nd_router_advert
-		{
+		public struct nd_router_advert		{
 			public ICMP_MESSAGE nd_ra_hdr;
 			public uint32 nd_ra_reachable;
 			public uint32 nd_ra_retransmit;
 		}
 		[CRepr, Union]
-		public struct IPV6_ROUTER_ADVERTISEMENT_FLAGS
-		{
+		public struct IPV6_ROUTER_ADVERTISEMENT_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint8 Value;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct nd_neighbor_solicit
-		{
+		public struct nd_neighbor_solicit		{
 			public ICMP_MESSAGE nd_ns_hdr;
 			public IN6_ADDR nd_ns_target;
 		}
 		[CRepr]
-		public struct nd_neighbor_advert
-		{
+		public struct nd_neighbor_advert		{
 			public ICMP_MESSAGE nd_na_hdr;
 			public IN6_ADDR nd_na_target;
 		}
 		[CRepr, Union]
-		public struct IPV6_NEIGHBOR_ADVERTISEMENT_FLAGS
-		{
+		public struct IPV6_NEIGHBOR_ADVERTISEMENT_FLAGS		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 Value;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 _bitfield;
 				public uint8[3] Reserved2;
 			}
 		}
 		[CRepr]
-		public struct nd_redirect
-		{
+		public struct nd_redirect		{
 			public ICMP_MESSAGE nd_rd_hdr;
 			public IN6_ADDR nd_rd_target;
 			public IN6_ADDR nd_rd_dst;
 		}
 		[CRepr]
-		public struct nd_opt_hdr
-		{
+		public struct nd_opt_hdr		{
 			public uint8 nd_opt_type;
 			public uint8 nd_opt_len;
 		}
 		[CRepr]
-		public struct nd_opt_prefix_info
-		{
+		public struct nd_opt_prefix_info		{
 			public uint8 nd_opt_pi_type;
 			public uint8 nd_opt_pi_len;
 			public uint8 nd_opt_pi_prefix_len;
@@ -4313,50 +3956,43 @@ namespace Win32
 			public IN6_ADDR nd_opt_pi_prefix;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 nd_opt_pi_reserved2;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8[3] nd_opt_pi_reserved3;
 					public uint8 nd_opt_pi_site_prefix_len;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint8 nd_opt_pi_flags_reserved;
 				public _Flags_e__Struct Flags;
 				
 				[CRepr]
-				public struct _Flags_e__Struct
-				{
+				public struct _Flags_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct nd_opt_rd_hdr
-		{
+		public struct nd_opt_rd_hdr		{
 			public uint8 nd_opt_rh_type;
 			public uint8 nd_opt_rh_len;
 			public uint16 nd_opt_rh_reserved1;
 			public uint32 nd_opt_rh_reserved2;
 		}
 		[CRepr]
-		public struct nd_opt_mtu
-		{
+		public struct nd_opt_mtu		{
 			public uint8 nd_opt_mtu_type;
 			public uint8 nd_opt_mtu_len;
 			public uint16 nd_opt_mtu_reserved;
 			public uint32 nd_opt_mtu_mtu;
 		}
 		[CRepr]
-		public struct nd_opt_route_info
-		{
+		public struct nd_opt_route_info		{
 			public uint8 nd_opt_ri_type;
 			public uint8 nd_opt_ri_len;
 			public uint8 nd_opt_ri_prefix_len;
@@ -4365,45 +4001,39 @@ namespace Win32
 			public IN6_ADDR nd_opt_ri_prefix;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 nd_opt_ri_flags_reserved;
 				public _Flags_e__Struct Flags;
 				
 				[CRepr]
-				public struct _Flags_e__Struct
-				{
+				public struct _Flags_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct nd_opt_rdnss
-		{
+		public struct nd_opt_rdnss		{
 			public uint8 nd_opt_rdnss_type;
 			public uint8 nd_opt_rdnss_len;
 			public uint16 nd_opt_rdnss_reserved;
 			public uint32 nd_opt_rdnss_lifetime;
 		}
 		[CRepr]
-		public struct nd_opt_dnssl
-		{
+		public struct nd_opt_dnssl		{
 			public uint8 nd_opt_dnssl_type;
 			public uint8 nd_opt_dnssl_len;
 			public uint16 nd_opt_dnssl_reserved;
 			public uint32 nd_opt_dnssl_lifetime;
 		}
 		[CRepr]
-		public struct MLD_HEADER
-		{
+		public struct MLD_HEADER		{
 			public ICMP_HEADER IcmpHeader;
 			public uint16 MaxRespTime;
 			public uint16 Reserved;
 			public IN6_ADDR MulticastAddress;
 		}
 		[CRepr]
-		public struct MLDV2_QUERY_HEADER
-		{
+		public struct MLDV2_QUERY_HEADER		{
 			public ICMP_HEADER IcmpHeader;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint16 Reserved;
@@ -4413,48 +4043,41 @@ namespace Win32
 			public uint16 SourceCount;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint8 QueriersQueryInterfaceCode;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint16 MaxRespCode;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MLDV2_REPORT_RECORD_HEADER
-		{
+		public struct MLDV2_REPORT_RECORD_HEADER		{
 			public uint8 Type;
 			public uint8 AuxillaryDataLength;
 			public uint16 SourceCount;
 			public IN6_ADDR MulticastAddress;
 		}
 		[CRepr]
-		public struct MLDV2_REPORT_HEADER
-		{
+		public struct MLDV2_REPORT_HEADER		{
 			public ICMP_HEADER IcmpHeader;
 			public uint16 Reserved;
 			public uint16 RecordCount;
 		}
 		[CRepr]
-		public struct tcp_hdr
-		{
+		public struct tcp_hdr		{
 			public uint16 th_sport;
 			public uint16 th_dport;
 			public uint32 th_seq;
@@ -4466,82 +4089,70 @@ namespace Win32
 			public uint16 th_urp;
 		}
 		[CRepr]
-		public struct tcp_opt_mss
-		{
+		public struct tcp_opt_mss		{
 			public uint8 Kind;
 			public uint8 Length;
 			public uint16 Mss;
 		}
 		[CRepr]
-		public struct tcp_opt_ws
-		{
+		public struct tcp_opt_ws		{
 			public uint8 Kind;
 			public uint8 Length;
 			public uint8 ShiftCnt;
 		}
 		[CRepr]
-		public struct tcp_opt_sack_permitted
-		{
+		public struct tcp_opt_sack_permitted		{
 			public uint8 Kind;
 			public uint8 Length;
 		}
 		[CRepr]
-		public struct tcp_opt_sack
-		{
+		public struct tcp_opt_sack		{
 			public uint8 Kind;
 			public uint8 Length;
 			public tcp_opt_sack_block[0] Block;
 			
 			[CRepr]
-			public struct tcp_opt_sack_block
-			{
+			public struct tcp_opt_sack_block			{
 				public uint32 Left;
 				public uint32 Right;
 			}
 		}
 		[CRepr]
-		public struct tcp_opt_ts
-		{
+		public struct tcp_opt_ts		{
 			public uint8 Kind;
 			public uint8 Length;
 			public uint32 Val;
 			public uint32 EcR;
 		}
 		[CRepr]
-		public struct tcp_opt_unknown
-		{
+		public struct tcp_opt_unknown		{
 			public uint8 Kind;
 			public uint8 Length;
 		}
 		[CRepr]
-		public struct tcp_opt_fastopen
-		{
+		public struct tcp_opt_fastopen		{
 			public uint8 Kind;
 			public uint8 Length;
 			public uint8[0] Cookie;
 		}
 		[CRepr]
-		public struct DL_TUNNEL_ADDRESS
-		{
+		public struct DL_TUNNEL_ADDRESS		{
 			public COMPARTMENT_ID CompartmentId;
 			public SCOPE_ID ScopeId;
 			public uint8[0] IpAddress;
 		}
 		[CRepr]
-		public struct DL_TEREDO_ADDRESS
-		{
+		public struct DL_TEREDO_ADDRESS		{
 			public uint8[6] Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public DL_EUI64 Eui64;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 Flags;
 					public uint16 MappedPort;
 					public IN_ADDR MappedAddress;
@@ -4549,20 +4160,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DL_TEREDO_ADDRESS_PRV
-		{
+		public struct DL_TEREDO_ADDRESS_PRV		{
 			public uint8[6] Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public DL_EUI64 Eui64;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 Flags;
 					public uint16 MappedPort;
 					public IN_ADDR MappedAddress;
@@ -4574,20 +4182,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct IPTLS_METADATA
-		{
+		public struct IPTLS_METADATA		{
 			public uint64 SequenceNumber;
 		}
 		[CRepr]
-		public struct NPI_MODULEID
-		{
+		public struct NPI_MODULEID		{
 			public uint16 Length;
 			public NPI_MODULEID_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public Guid Guid;
 				public LUID IfLuid;
 			}

@@ -432,14 +432,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct __MACINFO
-		{
+		public struct __MACINFO		{
 			public BOOL fUsed;
 			public uint8[36] abMacState;
 		}
 		[CRepr]
-		public struct _WAVEFORMATEX
-		{
+		public struct _WAVEFORMATEX		{
 			public uint16 wFormatTag;
 			public uint16 nChannels;
 			public uint32 nSamplesPerSec;
@@ -449,8 +447,7 @@ namespace Win32
 			public uint16 cbSize;
 		}
 		[CRepr]
-		public struct _BITMAPINFOHEADER
-		{
+		public struct _BITMAPINFOHEADER		{
 			public uint32 biSize;
 			public int32 biWidth;
 			public int32 biHeight;
@@ -464,8 +461,7 @@ namespace Win32
 			public uint32 biClrImportant;
 		}
 		[CRepr]
-		public struct _VIDEOINFOHEADER
-		{
+		public struct _VIDEOINFOHEADER		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -474,30 +470,26 @@ namespace Win32
 			public _BITMAPINFOHEADER bmiHeader;
 		}
 		[CRepr]
-		public struct WMFILECAPABILITIES
-		{
+		public struct WMFILECAPABILITIES		{
 			public PWSTR pwszMimeType;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct OPAQUECOMMAND
-		{
+		public struct OPAQUECOMMAND		{
 			public Guid guidCommand;
 			public uint32 dwDataLen;
 			public uint8* pData;
 			public uint8[20] abMAC;
 		}
 		[CRepr]
-		public struct WMDMID
-		{
+		public struct WMDMID		{
 			public uint32 cbSize;
 			public uint32 dwVendorID;
 			public uint8[128] pID;
 			public uint32 SerialNumberLength;
 		}
 		[CRepr]
-		public struct WMDMDATETIME
-		{
+		public struct WMDMDATETIME		{
 			public uint16 wYear;
 			public uint16 wMonth;
 			public uint16 wDay;
@@ -506,8 +498,7 @@ namespace Win32
 			public uint16 wSecond;
 		}
 		[CRepr]
-		public struct WMDMRIGHTS
-		{
+		public struct WMDMRIGHTS		{
 			public uint32 cbSize;
 			public uint32 dwContentType;
 			public uint32 fuFlags;
@@ -517,55 +508,47 @@ namespace Win32
 			public WMDMDATETIME ExpirationDate;
 		}
 		[CRepr]
-		public struct WMDMMetadataView
-		{
+		public struct WMDMMetadataView		{
 			public PWSTR pwszViewName;
 			public uint32 nDepth;
 			public uint16** ppwszTags;
 		}
 		[CRepr]
-		public struct WMDM_PROP_VALUES_RANGE
-		{
+		public struct WMDM_PROP_VALUES_RANGE		{
 			public PROPVARIANT rangeMin;
 			public PROPVARIANT rangeMax;
 			public PROPVARIANT rangeStep;
 		}
 		[CRepr]
-		public struct WMDM_PROP_VALUES_ENUM
-		{
+		public struct WMDM_PROP_VALUES_ENUM		{
 			public uint32 cEnumValues;
 			public PROPVARIANT* pValues;
 		}
 		[CRepr]
-		public struct WMDM_PROP_DESC
-		{
+		public struct WMDM_PROP_DESC		{
 			public PWSTR pwszPropName;
 			public WMDM_ENUM_PROP_VALID_VALUES_FORM ValidValuesForm;
 			public _ValidValues_e__Union ValidValues;
 			
 			[CRepr, Union]
-			public struct _ValidValues_e__Union
-			{
+			public struct _ValidValues_e__Union			{
 				public WMDM_PROP_VALUES_RANGE ValidValuesRange;
 				public WMDM_PROP_VALUES_ENUM EnumeratedValidValues;
 			}
 		}
 		[CRepr]
-		public struct WMDM_PROP_CONFIG
-		{
+		public struct WMDM_PROP_CONFIG		{
 			public uint32 nPreference;
 			public uint32 nPropDesc;
 			public WMDM_PROP_DESC* pPropDesc;
 		}
 		[CRepr]
-		public struct WMDM_FORMAT_CAPABILITY
-		{
+		public struct WMDM_FORMAT_CAPABILITY		{
 			public uint32 nPropConfig;
 			public WMDM_PROP_CONFIG* pConfigs;
 		}
 		[CRepr, Union]
-		public struct WMDMDetermineMaxPropStringLen
-		{
+		public struct WMDMDetermineMaxPropStringLen		{
 			public char16[27] sz001;
 			public char16[31] sz002;
 			public char16[14] sz003;
@@ -650,8 +633,7 @@ namespace Win32
 			public char16[30] sz086;
 		}
 		[CRepr]
-		public struct MTP_COMMAND_DATA_IN
-		{
+		public struct MTP_COMMAND_DATA_IN		{
 			public uint16 OpCode;
 			public uint32 NumParams;
 			public uint32[5] Params;
@@ -660,8 +642,7 @@ namespace Win32
 			public uint8[0] CommandWriteData;
 		}
 		[CRepr]
-		public struct MTP_COMMAND_DATA_OUT
-		{
+		public struct MTP_COMMAND_DATA_OUT		{
 			public uint16 ResponseCode;
 			public uint32 NumParams;
 			public uint32[5] Params;

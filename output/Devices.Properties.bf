@@ -247,21 +247,18 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DEVPROPKEY
-		{
+		public struct DEVPROPKEY		{
 			public Guid fmtid;
 			public uint32 pid;
 		}
 		[CRepr]
-		public struct DEVPROPCOMPKEY
-		{
+		public struct DEVPROPCOMPKEY		{
 			public DEVPROPKEY Key;
 			public DEVPROPSTORE Store;
 			public PWSTR LocaleName;
 		}
 		[CRepr]
-		public struct DEVPROPERTY
-		{
+		public struct DEVPROPERTY		{
 			public DEVPROPCOMPKEY CompKey;
 			public uint32 Type;
 			public uint32 BufferSize;

@@ -2233,41 +2233,35 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct LSA_TRUST_INFORMATION
-		{
+		public struct LSA_TRUST_INFORMATION		{
 			public UNICODE_STRING Name;
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct LSA_REFERENCED_DOMAIN_LIST
-		{
+		public struct LSA_REFERENCED_DOMAIN_LIST		{
 			public uint32 Entries;
 			public LSA_TRUST_INFORMATION* Domains;
 		}
 		[CRepr]
-		public struct LSA_TRANSLATED_SID2
-		{
+		public struct LSA_TRANSLATED_SID2		{
 			public SID_NAME_USE Use;
 			public PSID Sid;
 			public int32 DomainIndex;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct LSA_TRANSLATED_NAME
-		{
+		public struct LSA_TRANSLATED_NAME		{
 			public SID_NAME_USE Use;
 			public UNICODE_STRING Name;
 			public int32 DomainIndex;
 		}
 		[CRepr]
-		public struct POLICY_ACCOUNT_DOMAIN_INFO
-		{
+		public struct POLICY_ACCOUNT_DOMAIN_INFO		{
 			public UNICODE_STRING DomainName;
 			public PSID DomainSid;
 		}
 		[CRepr]
-		public struct POLICY_DNS_DOMAIN_INFO
-		{
+		public struct POLICY_DNS_DOMAIN_INFO		{
 			public UNICODE_STRING Name;
 			public UNICODE_STRING DnsDomainName;
 			public UNICODE_STRING DnsForestName;
@@ -2275,24 +2269,21 @@ namespace Win32
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct SE_ADT_OBJECT_TYPE
-		{
+		public struct SE_ADT_OBJECT_TYPE		{
 			public Guid ObjectType;
 			public uint16 Flags;
 			public uint16 Level;
 			public uint32 AccessMask;
 		}
 		[CRepr]
-		public struct SE_ADT_PARAMETER_ARRAY_ENTRY
-		{
+		public struct SE_ADT_PARAMETER_ARRAY_ENTRY		{
 			public SE_ADT_PARAMETER_TYPE Type;
 			public uint32 Length;
 			public uint[2] Data;
 			public void* Address;
 		}
 		[CRepr]
-		public struct SE_ADT_ACCESS_REASON
-		{
+		public struct SE_ADT_ACCESS_REASON		{
 			public uint32 AccessMask;
 			public uint32[32] AccessReasons;
 			public uint32 ObjectTypeIndex;
@@ -2300,14 +2291,12 @@ namespace Win32
 			public SECURITY_DESCRIPTOR* SecurityDescriptor;
 		}
 		[CRepr]
-		public struct SE_ADT_CLAIMS
-		{
+		public struct SE_ADT_CLAIMS		{
 			public uint32 Length;
 			public void* Claims;
 		}
 		[CRepr]
-		public struct SE_ADT_PARAMETER_ARRAY
-		{
+		public struct SE_ADT_PARAMETER_ARRAY		{
 			public uint32 CategoryId;
 			public uint32 AuditId;
 			public uint32 ParameterCount;
@@ -2318,8 +2307,7 @@ namespace Win32
 			public SE_ADT_PARAMETER_ARRAY_ENTRY[32] Parameters;
 		}
 		[CRepr]
-		public struct SE_ADT_PARAMETER_ARRAY_EX
-		{
+		public struct SE_ADT_PARAMETER_ARRAY_EX		{
 			public uint32 CategoryId;
 			public uint32 AuditId;
 			public uint32 Version;
@@ -2331,15 +2319,13 @@ namespace Win32
 			public SE_ADT_PARAMETER_ARRAY_ENTRY[32] Parameters;
 		}
 		[CRepr]
-		public struct LSA_TRANSLATED_SID
-		{
+		public struct LSA_TRANSLATED_SID		{
 			public SID_NAME_USE Use;
 			public uint32 RelativeId;
 			public int32 DomainIndex;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_LOG_INFO
-		{
+		public struct POLICY_AUDIT_LOG_INFO		{
 			public uint32 AuditLogPercentFull;
 			public uint32 MaximumLogSize;
 			public LARGE_INTEGER AuditRetentionPeriod;
@@ -2348,77 +2334,64 @@ namespace Win32
 			public uint32 NextAuditRecordId;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_EVENTS_INFO
-		{
+		public struct POLICY_AUDIT_EVENTS_INFO		{
 			public BOOLEAN AuditingMode;
 			public uint32* EventAuditingOptions;
 			public uint32 MaximumAuditEventCount;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_SUBCATEGORIES_INFO
-		{
+		public struct POLICY_AUDIT_SUBCATEGORIES_INFO		{
 			public uint32 MaximumSubCategoryCount;
 			public uint32* EventAuditingOptions;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_CATEGORIES_INFO
-		{
+		public struct POLICY_AUDIT_CATEGORIES_INFO		{
 			public uint32 MaximumCategoryCount;
 			public POLICY_AUDIT_SUBCATEGORIES_INFO* SubCategoriesInfo;
 		}
 		[CRepr]
-		public struct POLICY_PRIMARY_DOMAIN_INFO
-		{
+		public struct POLICY_PRIMARY_DOMAIN_INFO		{
 			public UNICODE_STRING Name;
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct POLICY_PD_ACCOUNT_INFO
-		{
+		public struct POLICY_PD_ACCOUNT_INFO		{
 			public UNICODE_STRING Name;
 		}
 		[CRepr]
-		public struct POLICY_LSA_SERVER_ROLE_INFO
-		{
+		public struct POLICY_LSA_SERVER_ROLE_INFO		{
 			public POLICY_LSA_SERVER_ROLE LsaServerRole;
 		}
 		[CRepr]
-		public struct POLICY_REPLICA_SOURCE_INFO
-		{
+		public struct POLICY_REPLICA_SOURCE_INFO		{
 			public UNICODE_STRING ReplicaSource;
 			public UNICODE_STRING ReplicaAccountName;
 		}
 		[CRepr]
-		public struct POLICY_DEFAULT_QUOTA_INFO
-		{
+		public struct POLICY_DEFAULT_QUOTA_INFO		{
 			public QUOTA_LIMITS QuotaLimits;
 		}
 		[CRepr]
-		public struct POLICY_MODIFICATION_INFO
-		{
+		public struct POLICY_MODIFICATION_INFO		{
 			public LARGE_INTEGER ModifiedId;
 			public LARGE_INTEGER DatabaseCreationTime;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_FULL_SET_INFO
-		{
+		public struct POLICY_AUDIT_FULL_SET_INFO		{
 			public BOOLEAN ShutDownOnFull;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_FULL_QUERY_INFO
-		{
+		public struct POLICY_AUDIT_FULL_QUERY_INFO		{
 			public BOOLEAN ShutDownOnFull;
 			public BOOLEAN LogIsFull;
 		}
 		[CRepr]
-		public struct POLICY_DOMAIN_EFS_INFO
-		{
+		public struct POLICY_DOMAIN_EFS_INFO		{
 			public uint32 InfoLength;
 			public uint8* EfsBlob;
 		}
 		[CRepr]
-		public struct POLICY_DOMAIN_KERBEROS_TICKET_INFO
-		{
+		public struct POLICY_DOMAIN_KERBEROS_TICKET_INFO		{
 			public uint32 AuthenticationOptions;
 			public LARGE_INTEGER MaxServiceTicketAge;
 			public LARGE_INTEGER MaxTicketAge;
@@ -2427,36 +2400,30 @@ namespace Win32
 			public LARGE_INTEGER Reserved;
 		}
 		[CRepr]
-		public struct POLICY_MACHINE_ACCT_INFO
-		{
+		public struct POLICY_MACHINE_ACCT_INFO		{
 			public uint32 Rid;
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_NAME_INFO
-		{
+		public struct TRUSTED_DOMAIN_NAME_INFO		{
 			public UNICODE_STRING Name;
 		}
 		[CRepr]
-		public struct TRUSTED_CONTROLLERS_INFO
-		{
+		public struct TRUSTED_CONTROLLERS_INFO		{
 			public uint32 Entries;
 			public UNICODE_STRING* Names;
 		}
 		[CRepr]
-		public struct TRUSTED_POSIX_OFFSET_INFO
-		{
+		public struct TRUSTED_POSIX_OFFSET_INFO		{
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct TRUSTED_PASSWORD_INFO
-		{
+		public struct TRUSTED_PASSWORD_INFO		{
 			public UNICODE_STRING Password;
 			public UNICODE_STRING OldPassword;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_INFORMATION_EX
-		{
+		public struct TRUSTED_DOMAIN_INFORMATION_EX		{
 			public UNICODE_STRING Name;
 			public UNICODE_STRING FlatName;
 			public PSID Sid;
@@ -2465,8 +2432,7 @@ namespace Win32
 			public TRUSTED_DOMAIN_TRUST_ATTRIBUTES TrustAttributes;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_INFORMATION_EX2
-		{
+		public struct TRUSTED_DOMAIN_INFORMATION_EX2		{
 			public UNICODE_STRING Name;
 			public UNICODE_STRING FlatName;
 			public PSID Sid;
@@ -2477,16 +2443,14 @@ namespace Win32
 			public uint8* ForestTrustInfo;
 		}
 		[CRepr]
-		public struct LSA_AUTH_INFORMATION
-		{
+		public struct LSA_AUTH_INFORMATION		{
 			public LARGE_INTEGER LastUpdateTime;
 			public LSA_AUTH_INFORMATION_AUTH_TYPE AuthType;
 			public uint32 AuthInfoLength;
 			public uint8* AuthInfo;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_AUTH_INFORMATION
-		{
+		public struct TRUSTED_DOMAIN_AUTH_INFORMATION		{
 			public uint32 IncomingAuthInfos;
 			public LSA_AUTH_INFORMATION* IncomingAuthenticationInformation;
 			public LSA_AUTH_INFORMATION* IncomingPreviousAuthenticationInformation;
@@ -2495,88 +2459,75 @@ namespace Win32
 			public LSA_AUTH_INFORMATION* OutgoingPreviousAuthenticationInformation;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_FULL_INFORMATION
-		{
+		public struct TRUSTED_DOMAIN_FULL_INFORMATION		{
 			public TRUSTED_DOMAIN_INFORMATION_EX Information;
 			public TRUSTED_POSIX_OFFSET_INFO PosixOffset;
 			public TRUSTED_DOMAIN_AUTH_INFORMATION AuthInformation;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_FULL_INFORMATION2
-		{
+		public struct TRUSTED_DOMAIN_FULL_INFORMATION2		{
 			public TRUSTED_DOMAIN_INFORMATION_EX2 Information;
 			public TRUSTED_POSIX_OFFSET_INFO PosixOffset;
 			public TRUSTED_DOMAIN_AUTH_INFORMATION AuthInformation;
 		}
 		[CRepr]
-		public struct TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES
-		{
+		public struct TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES		{
 			public uint32 SupportedEncryptionTypes;
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_DOMAIN_INFO
-		{
+		public struct LSA_FOREST_TRUST_DOMAIN_INFO		{
 			public PSID Sid;
 			public UNICODE_STRING DnsName;
 			public UNICODE_STRING NetbiosName;
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_BINARY_DATA
-		{
+		public struct LSA_FOREST_TRUST_BINARY_DATA		{
 			public uint32 Length;
 			public uint8* Buffer;
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_RECORD
-		{
+		public struct LSA_FOREST_TRUST_RECORD		{
 			public uint32 Flags;
 			public LSA_FOREST_TRUST_RECORD_TYPE ForestTrustType;
 			public LARGE_INTEGER Time;
 			public _ForestTrustData_e__Union ForestTrustData;
 			
 			[CRepr, Union]
-			public struct _ForestTrustData_e__Union
-			{
+			public struct _ForestTrustData_e__Union			{
 				public UNICODE_STRING TopLevelName;
 				public LSA_FOREST_TRUST_DOMAIN_INFO DomainInfo;
 				public LSA_FOREST_TRUST_BINARY_DATA Data;
 			}
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_INFORMATION
-		{
+		public struct LSA_FOREST_TRUST_INFORMATION		{
 			public uint32 RecordCount;
 			public LSA_FOREST_TRUST_RECORD** Entries;
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_COLLISION_RECORD
-		{
+		public struct LSA_FOREST_TRUST_COLLISION_RECORD		{
 			public uint32 Index;
 			public LSA_FOREST_TRUST_COLLISION_RECORD_TYPE Type;
 			public uint32 Flags;
 			public UNICODE_STRING Name;
 		}
 		[CRepr]
-		public struct LSA_FOREST_TRUST_COLLISION_INFORMATION
-		{
+		public struct LSA_FOREST_TRUST_COLLISION_INFORMATION		{
 			public uint32 RecordCount;
 			public LSA_FOREST_TRUST_COLLISION_RECORD** Entries;
 		}
 		[CRepr]
-		public struct LSA_ENUMERATION_INFORMATION
-		{
+		public struct LSA_ENUMERATION_INFORMATION		{
 			public PSID Sid;
 		}
 		[CRepr]
-		public struct LSA_LAST_INTER_LOGON_INFO
-		{
+		public struct LSA_LAST_INTER_LOGON_INFO		{
 			public LARGE_INTEGER LastSuccessfulLogon;
 			public LARGE_INTEGER LastFailedLogon;
 			public uint32 FailedAttemptCountSinceLastSuccessfulLogon;
 		}
 		[CRepr]
-		public struct SECURITY_LOGON_SESSION_DATA
-		{
+		public struct SECURITY_LOGON_SESSION_DATA		{
 			public uint32 Size;
 			public LUID LogonId;
 			public UNICODE_STRING UserName;
@@ -2602,8 +2553,7 @@ namespace Win32
 			public LARGE_INTEGER PasswordMustChange;
 		}
 		[CRepr]
-		public struct CENTRAL_ACCESS_POLICY_ENTRY
-		{
+		public struct CENTRAL_ACCESS_POLICY_ENTRY		{
 			public UNICODE_STRING Name;
 			public UNICODE_STRING Description;
 			public UNICODE_STRING ChangeId;
@@ -2616,8 +2566,7 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct CENTRAL_ACCESS_POLICY
-		{
+		public struct CENTRAL_ACCESS_POLICY		{
 			public PSID CAPID;
 			public UNICODE_STRING Name;
 			public UNICODE_STRING Description;
@@ -2627,8 +2576,7 @@ namespace Win32
 			public CENTRAL_ACCESS_POLICY_ENTRY** CAPEs;
 		}
 		[CRepr]
-		public struct NEGOTIATE_PACKAGE_PREFIX
-		{
+		public struct NEGOTIATE_PACKAGE_PREFIX		{
 			public uint PackageId;
 			public void* PackageDataA;
 			public void* PackageDataW;
@@ -2636,28 +2584,24 @@ namespace Win32
 			public uint8[32] Prefix;
 		}
 		[CRepr]
-		public struct NEGOTIATE_PACKAGE_PREFIXES
-		{
+		public struct NEGOTIATE_PACKAGE_PREFIXES		{
 			public uint32 MessageType;
 			public uint32 PrefixCount;
 			public uint32 Offset;
 			public uint32 Pad;
 		}
 		[CRepr]
-		public struct NEGOTIATE_CALLER_NAME_REQUEST
-		{
+		public struct NEGOTIATE_CALLER_NAME_REQUEST		{
 			public uint32 MessageType;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct NEGOTIATE_CALLER_NAME_RESPONSE
-		{
+		public struct NEGOTIATE_CALLER_NAME_RESPONSE		{
 			public uint32 MessageType;
 			public PWSTR CallerName;
 		}
 		[CRepr]
-		public struct DOMAIN_PASSWORD_INFORMATION
-		{
+		public struct DOMAIN_PASSWORD_INFORMATION		{
 			public uint16 MinPasswordLength;
 			public uint16 PasswordHistoryLength;
 			public DOMAIN_PASSWORD_PROPERTIES PasswordProperties;
@@ -2665,16 +2609,14 @@ namespace Win32
 			public LARGE_INTEGER MinPasswordAge;
 		}
 		[CRepr]
-		public struct MSV1_0_INTERACTIVE_LOGON
-		{
+		public struct MSV1_0_INTERACTIVE_LOGON		{
 			public MSV1_0_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING LogonDomainName;
 			public UNICODE_STRING UserName;
 			public UNICODE_STRING Password;
 		}
 		[CRepr]
-		public struct MSV1_0_INTERACTIVE_PROFILE
-		{
+		public struct MSV1_0_INTERACTIVE_PROFILE		{
 			public MSV1_0_PROFILE_BUFFER_TYPE MessageType;
 			public uint16 LogonCount;
 			public uint16 BadPasswordCount;
@@ -2693,8 +2635,7 @@ namespace Win32
 			public uint32 UserFlags;
 		}
 		[CRepr]
-		public struct MSV1_0_LM20_LOGON
-		{
+		public struct MSV1_0_LM20_LOGON		{
 			public MSV1_0_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING LogonDomainName;
 			public UNICODE_STRING UserName;
@@ -2705,8 +2646,7 @@ namespace Win32
 			public uint32 ParameterControl;
 		}
 		[CRepr]
-		public struct MSV1_0_SUBAUTH_LOGON
-		{
+		public struct MSV1_0_SUBAUTH_LOGON		{
 			public MSV1_0_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING LogonDomainName;
 			public UNICODE_STRING UserName;
@@ -2718,16 +2658,14 @@ namespace Win32
 			public uint32 SubAuthPackageId;
 		}
 		[CRepr]
-		public struct MSV1_0_S4U_LOGON
-		{
+		public struct MSV1_0_S4U_LOGON		{
 			public MSV1_0_LOGON_SUBMIT_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING UserPrincipalName;
 			public UNICODE_STRING DomainName;
 		}
 		[CRepr]
-		public struct MSV1_0_LM20_LOGON_PROFILE
-		{
+		public struct MSV1_0_LM20_LOGON_PROFILE		{
 			public MSV1_0_PROFILE_BUFFER_TYPE MessageType;
 			public LARGE_INTEGER KickOffTime;
 			public LARGE_INTEGER LogoffTime;
@@ -2739,29 +2677,25 @@ namespace Win32
 			public UNICODE_STRING UserParameters;
 		}
 		[CRepr]
-		public struct MSV1_0_CREDENTIAL_KEY
-		{
+		public struct MSV1_0_CREDENTIAL_KEY		{
 			public uint8[20] Data;
 		}
 		[CRepr]
-		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL
-		{
+		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL		{
 			public uint32 Version;
 			public MSV_SUPPLEMENTAL_CREDENTIAL_FLAGS Flags;
 			public uint8[16] LmPassword;
 			public uint8[16] NtPassword;
 		}
 		[CRepr]
-		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL_V2
-		{
+		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL_V2		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint8[16] NtPassword;
 			public MSV1_0_CREDENTIAL_KEY CredentialKey;
 		}
 		[CRepr]
-		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3
-		{
+		public struct MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3		{
 			public uint32 Version;
 			public uint32 Flags;
 			public MSV1_0_CREDENTIAL_KEY_TYPE CredentialKeyType;
@@ -2770,15 +2704,13 @@ namespace Win32
 			public uint8[20] ShaPassword;
 		}
 		[CRepr]
-		public struct MSV1_0_IUM_SUPPLEMENTAL_CREDENTIAL
-		{
+		public struct MSV1_0_IUM_SUPPLEMENTAL_CREDENTIAL		{
 			public uint32 Version;
 			public uint32 EncryptedCredsSize;
 			public uint8[0] EncryptedCreds;
 		}
 		[CRepr]
-		public struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL
-		{
+		public struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL		{
 			public uint32 Version;
 			public uint32 Flags;
 			public MSV1_0_CREDENTIAL_KEY CredentialKey;
@@ -2787,8 +2719,7 @@ namespace Win32
 			public uint8[0] EncryptedCreds;
 		}
 		[CRepr]
-		public struct MSV1_0_NTLM3_RESPONSE
-		{
+		public struct MSV1_0_NTLM3_RESPONSE		{
 			public uint8[16] Response;
 			public uint8 RespType;
 			public uint8 HiRespType;
@@ -2800,14 +2731,12 @@ namespace Win32
 			public uint8[0] Buffer;
 		}
 		[CRepr]
-		public struct MSV1_0_AV_PAIR
-		{
+		public struct MSV1_0_AV_PAIR		{
 			public uint16 AvId;
 			public uint16 AvLen;
 		}
 		[CRepr]
-		public struct MSV1_0_CHANGEPASSWORD_REQUEST
-		{
+		public struct MSV1_0_CHANGEPASSWORD_REQUEST		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING DomainName;
 			public UNICODE_STRING AccountName;
@@ -2816,15 +2745,13 @@ namespace Win32
 			public BOOLEAN Impersonating;
 		}
 		[CRepr]
-		public struct MSV1_0_CHANGEPASSWORD_RESPONSE
-		{
+		public struct MSV1_0_CHANGEPASSWORD_RESPONSE		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public BOOLEAN PasswordInfoValid;
 			public DOMAIN_PASSWORD_INFORMATION DomainPasswordInfo;
 		}
 		[CRepr]
-		public struct MSV1_0_PASSTHROUGH_REQUEST
-		{
+		public struct MSV1_0_PASSTHROUGH_REQUEST		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING DomainName;
 			public UNICODE_STRING PackageName;
@@ -2833,59 +2760,51 @@ namespace Win32
 			public uint32 Pad;
 		}
 		[CRepr]
-		public struct MSV1_0_PASSTHROUGH_RESPONSE
-		{
+		public struct MSV1_0_PASSTHROUGH_RESPONSE		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Pad;
 			public uint32 DataLength;
 			public uint8* ValidationData;
 		}
 		[CRepr]
-		public struct MSV1_0_SUBAUTH_REQUEST
-		{
+		public struct MSV1_0_SUBAUTH_REQUEST		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 SubAuthPackageId;
 			public uint32 SubAuthInfoLength;
 			public uint8* SubAuthSubmitBuffer;
 		}
 		[CRepr]
-		public struct MSV1_0_SUBAUTH_RESPONSE
-		{
+		public struct MSV1_0_SUBAUTH_RESPONSE		{
 			public MSV1_0_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 SubAuthInfoLength;
 			public uint8* SubAuthReturnBuffer;
 		}
 		[CRepr]
-		public struct KERB_INTERACTIVE_LOGON
-		{
+		public struct KERB_INTERACTIVE_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING LogonDomainName;
 			public UNICODE_STRING UserName;
 			public UNICODE_STRING Password;
 		}
 		[CRepr]
-		public struct KERB_INTERACTIVE_UNLOCK_LOGON
-		{
+		public struct KERB_INTERACTIVE_UNLOCK_LOGON		{
 			public KERB_INTERACTIVE_LOGON Logon;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_SMART_CARD_LOGON
-		{
+		public struct KERB_SMART_CARD_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING Pin;
 			public uint32 CspDataLength;
 			public uint8* CspData;
 		}
 		[CRepr]
-		public struct KERB_SMART_CARD_UNLOCK_LOGON
-		{
+		public struct KERB_SMART_CARD_UNLOCK_LOGON		{
 			public KERB_SMART_CARD_LOGON Logon;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_CERTIFICATE_LOGON
-		{
+		public struct KERB_CERTIFICATE_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public UNICODE_STRING DomainName;
 			public UNICODE_STRING UserName;
@@ -2895,14 +2814,12 @@ namespace Win32
 			public uint8* CspData;
 		}
 		[CRepr]
-		public struct KERB_CERTIFICATE_UNLOCK_LOGON
-		{
+		public struct KERB_CERTIFICATE_UNLOCK_LOGON		{
 			public KERB_CERTIFICATE_LOGON Logon;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_CERTIFICATE_S4U_LOGON
-		{
+		public struct KERB_CERTIFICATE_S4U_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING UserPrincipalName;
@@ -2911,8 +2828,7 @@ namespace Win32
 			public uint8* Certificate;
 		}
 		[CRepr]
-		public struct KERB_TICKET_LOGON
-		{
+		public struct KERB_TICKET_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public uint32 Flags;
 			public uint32 ServiceTicketLength;
@@ -2921,22 +2837,19 @@ namespace Win32
 			public uint8* TicketGrantingTicket;
 		}
 		[CRepr]
-		public struct KERB_TICKET_UNLOCK_LOGON
-		{
+		public struct KERB_TICKET_UNLOCK_LOGON		{
 			public KERB_TICKET_LOGON Logon;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_S4U_LOGON
-		{
+		public struct KERB_S4U_LOGON		{
 			public KERB_LOGON_SUBMIT_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING ClientUpn;
 			public UNICODE_STRING ClientRealm;
 		}
 		[CRepr]
-		public struct KERB_INTERACTIVE_PROFILE
-		{
+		public struct KERB_INTERACTIVE_PROFILE		{
 			public KERB_PROFILE_BUFFER_TYPE MessageType;
 			public uint16 LogonCount;
 			public uint16 BadPasswordCount;
@@ -2955,41 +2868,35 @@ namespace Win32
 			public uint32 UserFlags;
 		}
 		[CRepr]
-		public struct KERB_SMART_CARD_PROFILE
-		{
+		public struct KERB_SMART_CARD_PROFILE		{
 			public KERB_INTERACTIVE_PROFILE Profile;
 			public uint32 CertificateSize;
 			public uint8* CertificateData;
 		}
 		[CRepr]
-		public struct KERB_CRYPTO_KEY
-		{
+		public struct KERB_CRYPTO_KEY		{
 			public KERB_CRYPTO_KEY_TYPE KeyType;
 			public uint32 Length;
 			public uint8* Value;
 		}
 		[CRepr]
-		public struct KERB_CRYPTO_KEY32
-		{
+		public struct KERB_CRYPTO_KEY32		{
 			public int32 KeyType;
 			public uint32 Length;
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct KERB_TICKET_PROFILE
-		{
+		public struct KERB_TICKET_PROFILE		{
 			public KERB_INTERACTIVE_PROFILE Profile;
 			public KERB_CRYPTO_KEY SessionKey;
 		}
 		[CRepr]
-		public struct KERB_QUERY_TKT_CACHE_REQUEST
-		{
+		public struct KERB_QUERY_TKT_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_TICKET_CACHE_INFO
-		{
+		public struct KERB_TICKET_CACHE_INFO		{
 			public UNICODE_STRING ServerName;
 			public UNICODE_STRING RealmName;
 			public LARGE_INTEGER StartTime;
@@ -2999,8 +2906,7 @@ namespace Win32
 			public KERB_TICKET_FLAGS TicketFlags;
 		}
 		[CRepr]
-		public struct KERB_TICKET_CACHE_INFO_EX
-		{
+		public struct KERB_TICKET_CACHE_INFO_EX		{
 			public UNICODE_STRING ClientName;
 			public UNICODE_STRING ClientRealm;
 			public UNICODE_STRING ServerName;
@@ -3012,8 +2918,7 @@ namespace Win32
 			public uint32 TicketFlags;
 		}
 		[CRepr]
-		public struct KERB_TICKET_CACHE_INFO_EX2
-		{
+		public struct KERB_TICKET_CACHE_INFO_EX2		{
 			public UNICODE_STRING ClientName;
 			public UNICODE_STRING ClientRealm;
 			public UNICODE_STRING ServerName;
@@ -3027,8 +2932,7 @@ namespace Win32
 			public uint32 BranchId;
 		}
 		[CRepr]
-		public struct KERB_TICKET_CACHE_INFO_EX3
-		{
+		public struct KERB_TICKET_CACHE_INFO_EX3		{
 			public UNICODE_STRING ClientName;
 			public UNICODE_STRING ClientRealm;
 			public UNICODE_STRING ServerName;
@@ -3044,63 +2948,54 @@ namespace Win32
 			public UNICODE_STRING KdcCalled;
 		}
 		[CRepr]
-		public struct KERB_QUERY_TKT_CACHE_RESPONSE
-		{
+		public struct KERB_QUERY_TKT_CACHE_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfTickets;
 			public KERB_TICKET_CACHE_INFO[0] Tickets;
 		}
 		[CRepr]
-		public struct KERB_QUERY_TKT_CACHE_EX_RESPONSE
-		{
+		public struct KERB_QUERY_TKT_CACHE_EX_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfTickets;
 			public KERB_TICKET_CACHE_INFO_EX[0] Tickets;
 		}
 		[CRepr]
-		public struct KERB_QUERY_TKT_CACHE_EX2_RESPONSE
-		{
+		public struct KERB_QUERY_TKT_CACHE_EX2_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfTickets;
 			public KERB_TICKET_CACHE_INFO_EX2[0] Tickets;
 		}
 		[CRepr]
-		public struct KERB_QUERY_TKT_CACHE_EX3_RESPONSE
-		{
+		public struct KERB_QUERY_TKT_CACHE_EX3_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfTickets;
 			public KERB_TICKET_CACHE_INFO_EX3[0] Tickets;
 		}
 		[CRepr]
-		public struct KERB_AUTH_DATA
-		{
+		public struct KERB_AUTH_DATA		{
 			public uint32 Type;
 			public uint32 Length;
 			public uint8* Data;
 		}
 		[CRepr]
-		public struct KERB_NET_ADDRESS
-		{
+		public struct KERB_NET_ADDRESS		{
 			public uint32 Family;
 			public uint32 Length;
 			public PSTR Address;
 		}
 		[CRepr]
-		public struct KERB_NET_ADDRESSES
-		{
+		public struct KERB_NET_ADDRESSES		{
 			public uint32 Number;
 			public KERB_NET_ADDRESS[0] Addresses;
 		}
 		[CRepr]
-		public struct KERB_EXTERNAL_NAME
-		{
+		public struct KERB_EXTERNAL_NAME		{
 			public int16 NameType;
 			public uint16 NameCount;
 			public UNICODE_STRING[0] Names;
 		}
 		[CRepr]
-		public struct KERB_EXTERNAL_TICKET
-		{
+		public struct KERB_EXTERNAL_TICKET		{
 			public KERB_EXTERNAL_NAME* ServiceName;
 			public KERB_EXTERNAL_NAME* TargetName;
 			public KERB_EXTERNAL_NAME* ClientName;
@@ -3119,8 +3014,7 @@ namespace Win32
 			public uint8* EncodedTicket;
 		}
 		[CRepr]
-		public struct KERB_RETRIEVE_TKT_REQUEST
-		{
+		public struct KERB_RETRIEVE_TKT_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public UNICODE_STRING TargetName;
@@ -3130,29 +3024,25 @@ namespace Win32
 			public SecHandle CredentialsHandle;
 		}
 		[CRepr]
-		public struct KERB_RETRIEVE_TKT_RESPONSE
-		{
+		public struct KERB_RETRIEVE_TKT_RESPONSE		{
 			public KERB_EXTERNAL_TICKET Ticket;
 		}
 		[CRepr]
-		public struct KERB_PURGE_TKT_CACHE_REQUEST
-		{
+		public struct KERB_PURGE_TKT_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public UNICODE_STRING ServerName;
 			public UNICODE_STRING RealmName;
 		}
 		[CRepr]
-		public struct KERB_PURGE_TKT_CACHE_EX_REQUEST
-		{
+		public struct KERB_PURGE_TKT_CACHE_EX_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public uint32 Flags;
 			public KERB_TICKET_CACHE_INFO_EX TicketTemplate;
 		}
 		[CRepr]
-		public struct KERB_SUBMIT_TKT_REQUEST
-		{
+		public struct KERB_SUBMIT_TKT_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public uint32 Flags;
@@ -3161,15 +3051,13 @@ namespace Win32
 			public uint32 KerbCredOffset;
 		}
 		[CRepr]
-		public struct KERB_QUERY_KDC_PROXY_CACHE_REQUEST
-		{
+		public struct KERB_QUERY_KDC_PROXY_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KDC_PROXY_CACHE_ENTRY_DATA
-		{
+		public struct KDC_PROXY_CACHE_ENTRY_DATA		{
 			public uint64 SinceLastUsed;
 			public UNICODE_STRING DomainName;
 			public UNICODE_STRING ProxyServerName;
@@ -3181,36 +3069,31 @@ namespace Win32
 			public BOOLEAN GlobalCache;
 		}
 		[CRepr]
-		public struct KERB_QUERY_KDC_PROXY_CACHE_RESPONSE
-		{
+		public struct KERB_QUERY_KDC_PROXY_CACHE_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfEntries;
 			public KDC_PROXY_CACHE_ENTRY_DATA* Entries;
 		}
 		[CRepr]
-		public struct KERB_PURGE_KDC_PROXY_CACHE_REQUEST
-		{
+		public struct KERB_PURGE_KDC_PROXY_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_PURGE_KDC_PROXY_CACHE_RESPONSE
-		{
+		public struct KERB_PURGE_KDC_PROXY_CACHE_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfPurged;
 		}
 		[CRepr]
-		public struct KERB_S4U2PROXY_CACHE_ENTRY_INFO
-		{
+		public struct KERB_S4U2PROXY_CACHE_ENTRY_INFO		{
 			public UNICODE_STRING ServerName;
 			public uint32 Flags;
 			public NTSTATUS LastStatus;
 			public LARGE_INTEGER Expiry;
 		}
 		[CRepr]
-		public struct KERB_S4U2PROXY_CRED
-		{
+		public struct KERB_S4U2PROXY_CRED		{
 			public UNICODE_STRING UserName;
 			public UNICODE_STRING DomainName;
 			public uint32 Flags;
@@ -3220,22 +3103,19 @@ namespace Win32
 			public KERB_S4U2PROXY_CACHE_ENTRY_INFO* Entries;
 		}
 		[CRepr]
-		public struct KERB_QUERY_S4U2PROXY_CACHE_REQUEST
-		{
+		public struct KERB_QUERY_S4U2PROXY_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_QUERY_S4U2PROXY_CACHE_RESPONSE
-		{
+		public struct KERB_QUERY_S4U2PROXY_CACHE_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfCreds;
 			public KERB_S4U2PROXY_CRED* Creds;
 		}
 		[CRepr]
-		public struct KERB_RETRIEVE_KEY_TAB_REQUEST
-		{
+		public struct KERB_RETRIEVE_KEY_TAB_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING UserName;
@@ -3243,46 +3123,39 @@ namespace Win32
 			public UNICODE_STRING Password;
 		}
 		[CRepr]
-		public struct KERB_RETRIEVE_KEY_TAB_RESPONSE
-		{
+		public struct KERB_RETRIEVE_KEY_TAB_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 KeyTabLength;
 			public uint8* KeyTab;
 		}
 		[CRepr]
-		public struct KERB_REFRESH_POLICY_REQUEST
-		{
+		public struct KERB_REFRESH_POLICY_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KERB_REFRESH_POLICY_RESPONSE
-		{
+		public struct KERB_REFRESH_POLICY_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KERB_CLOUD_KERBEROS_DEBUG_REQUEST
-		{
+		public struct KERB_CLOUD_KERBEROS_DEBUG_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_CLOUD_KERBEROS_DEBUG_RESPONSE
-		{
+		public struct KERB_CLOUD_KERBEROS_DEBUG_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Version;
 			public uint32 Length;
 			public uint32[0] Data;
 		}
 		[CRepr]
-		public struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
-		{
+		public struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0		{
 			public int32 _bitfield;
 		}
 		[CRepr]
-		public struct KERB_CHANGEPASSWORD_REQUEST
-		{
+		public struct KERB_CHANGEPASSWORD_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING DomainName;
 			public UNICODE_STRING AccountName;
@@ -3291,8 +3164,7 @@ namespace Win32
 			public BOOLEAN Impersonating;
 		}
 		[CRepr]
-		public struct KERB_SETPASSWORD_REQUEST
-		{
+		public struct KERB_SETPASSWORD_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public SecHandle CredentialsHandle;
@@ -3302,8 +3174,7 @@ namespace Win32
 			public UNICODE_STRING Password;
 		}
 		[CRepr]
-		public struct KERB_SETPASSWORD_EX_REQUEST
-		{
+		public struct KERB_SETPASSWORD_EX_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public SecHandle CredentialsHandle;
@@ -3318,8 +3189,7 @@ namespace Win32
 			public uint32 KdcAddressType;
 		}
 		[CRepr]
-		public struct KERB_DECRYPT_REQUEST
-		{
+		public struct KERB_DECRYPT_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 			public uint32 Flags;
@@ -3332,29 +3202,25 @@ namespace Win32
 			public uint8* EncryptedData;
 		}
 		[CRepr]
-		public struct KERB_DECRYPT_RESPONSE
-		{
+		public struct KERB_DECRYPT_RESPONSE		{
 			public uint8[0] DecryptedData;
 		}
 		[CRepr]
-		public struct KERB_ADD_BINDING_CACHE_ENTRY_REQUEST
-		{
+		public struct KERB_ADD_BINDING_CACHE_ENTRY_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING RealmName;
 			public UNICODE_STRING KdcAddress;
 			public KERB_ADDRESS_TYPE AddressType;
 		}
 		[CRepr]
-		public struct KERB_REFRESH_SCCRED_REQUEST
-		{
+		public struct KERB_REFRESH_SCCRED_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING CredentialBlob;
 			public LUID LogonId;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KERB_ADD_CREDENTIALS_REQUEST
-		{
+		public struct KERB_ADD_CREDENTIALS_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING UserName;
 			public UNICODE_STRING DomainName;
@@ -3363,29 +3229,25 @@ namespace Win32
 			public KERB_REQUEST_FLAGS Flags;
 		}
 		[CRepr]
-		public struct KERB_ADD_CREDENTIALS_REQUEST_EX
-		{
+		public struct KERB_ADD_CREDENTIALS_REQUEST_EX		{
 			public KERB_ADD_CREDENTIALS_REQUEST Credentials;
 			public uint32 PrincipalNameCount;
 			public UNICODE_STRING[0] PrincipalNames;
 		}
 		[CRepr]
-		public struct KERB_TRANSFER_CRED_REQUEST
-		{
+		public struct KERB_TRANSFER_CRED_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID OriginLogonId;
 			public LUID DestinationLogonId;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST
-		{
+		public struct KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public LUID LogonId;
 		}
 		[CRepr]
-		public struct KERB_BINDING_CACHE_ENTRY_DATA
-		{
+		public struct KERB_BINDING_CACHE_ENTRY_DATA		{
 			public uint64 DiscoveryTime;
 			public UNICODE_STRING RealmName;
 			public UNICODE_STRING KdcAddress;
@@ -3396,15 +3258,13 @@ namespace Win32
 			public UNICODE_STRING KdcName;
 		}
 		[CRepr]
-		public struct KERB_QUERY_BINDING_CACHE_RESPONSE
-		{
+		public struct KERB_QUERY_BINDING_CACHE_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 CountOfEntries;
 			public KERB_BINDING_CACHE_ENTRY_DATA* Entries;
 		}
 		[CRepr]
-		public struct KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST
-		{
+		public struct KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public UNICODE_STRING RealmName;
 			public UNICODE_STRING KdcAddress;
@@ -3412,64 +3272,54 @@ namespace Win32
 			public uint32 DcFlags;
 		}
 		[CRepr]
-		public struct KERB_QUERY_BINDING_CACHE_REQUEST
-		{
+		public struct KERB_QUERY_BINDING_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		}
 		[CRepr]
-		public struct KERB_PURGE_BINDING_CACHE_REQUEST
-		{
+		public struct KERB_PURGE_BINDING_CACHE_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		}
 		[CRepr]
-		public struct KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST
-		{
+		public struct KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING DomainName;
 		}
 		[CRepr]
-		public struct KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE
-		{
+		public struct KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE		{
 			public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 			public uint32 Flags;
 			public uint32 ExtendedPolicies;
 			public uint32 DsFlags;
 		}
 		[CRepr]
-		public struct KERB_CERTIFICATE_HASHINFO
-		{
+		public struct KERB_CERTIFICATE_HASHINFO		{
 			public uint16 StoreNameLength;
 			public uint16 HashLength;
 		}
 		[CRepr]
-		public struct KERB_CERTIFICATE_INFO
-		{
+		public struct KERB_CERTIFICATE_INFO		{
 			public uint32 CertInfoSize;
 			public uint32 InfoType;
 		}
 		[CRepr]
-		public struct POLICY_AUDIT_SID_ARRAY
-		{
+		public struct POLICY_AUDIT_SID_ARRAY		{
 			public uint32 UsersCount;
 			public PSID* UserSidArray;
 		}
 		[CRepr]
-		public struct AUDIT_POLICY_INFORMATION
-		{
+		public struct AUDIT_POLICY_INFORMATION		{
 			public Guid AuditSubCategoryGuid;
 			public uint32 AuditingInformation;
 			public Guid AuditCategoryGuid;
 		}
 		[CRepr]
-		public struct PKU2U_CERT_BLOB
-		{
+		public struct PKU2U_CERT_BLOB		{
 			public uint32 CertOffset;
 			public uint16 CertLength;
 		}
 		[CRepr]
-		public struct PKU2U_CREDUI_CONTEXT
-		{
+		public struct PKU2U_CREDUI_CONTEXT		{
 			public uint64 Version;
 			public uint16 cbHeaderLength;
 			public uint32 cbStructureLength;
@@ -3477,8 +3327,7 @@ namespace Win32
 			public uint32 CertArrayOffset;
 		}
 		[CRepr]
-		public struct PKU2U_CERTIFICATE_S4U_LOGON
-		{
+		public struct PKU2U_CERTIFICATE_S4U_LOGON		{
 			public PKU2U_LOGON_SUBMIT_TYPE MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING UserPrincipalName;
@@ -3487,8 +3336,7 @@ namespace Win32
 			public uint8* Certificate;
 		}
 		[CRepr]
-		public struct SecPkgInfoW
-		{
+		public struct SecPkgInfoW		{
 			public uint32 fCapabilities;
 			public uint16 wVersion;
 			public uint16 wRPCID;
@@ -3497,8 +3345,7 @@ namespace Win32
 			public uint16* Comment;
 		}
 		[CRepr]
-		public struct SecPkgInfoA
-		{
+		public struct SecPkgInfoA		{
 			public uint32 fCapabilities;
 			public uint16 wVersion;
 			public uint16 wRPCID;
@@ -3507,30 +3354,26 @@ namespace Win32
 			public int8* Comment;
 		}
 		[CRepr]
-		public struct SecBuffer
-		{
+		public struct SecBuffer		{
 			public uint32 cbBuffer;
 			public uint32 BufferType;
 			public void* pvBuffer;
 		}
 		[CRepr]
-		public struct SecBufferDesc
-		{
+		public struct SecBufferDesc		{
 			public uint32 ulVersion;
 			public uint32 cBuffers;
 			public SecBuffer* pBuffers;
 		}
 		[CRepr]
-		public struct SEC_NEGOTIATION_INFO
-		{
+		public struct SEC_NEGOTIATION_INFO		{
 			public uint32 Size;
 			public uint32 NameLength;
 			public uint16* Name;
 			public void* Reserved;
 		}
 		[CRepr]
-		public struct SEC_CHANNEL_BINDINGS
-		{
+		public struct SEC_CHANNEL_BINDINGS		{
 			public uint32 dwInitiatorAddrType;
 			public uint32 cbInitiatorLength;
 			public uint32 dwInitiatorOffset;
@@ -3541,63 +3384,53 @@ namespace Win32
 			public uint32 dwApplicationDataOffset;
 		}
 		[CRepr]
-		public struct SEC_APPLICATION_PROTOCOL_LIST
-		{
+		public struct SEC_APPLICATION_PROTOCOL_LIST		{
 			public SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT ProtoNegoExt;
 			public uint16 ProtocolListSize;
 			public uint8[0] ProtocolList;
 		}
 		[CRepr]
-		public struct SEC_APPLICATION_PROTOCOLS
-		{
+		public struct SEC_APPLICATION_PROTOCOLS		{
 			public uint32 ProtocolListsSize;
 			public SEC_APPLICATION_PROTOCOL_LIST[0] ProtocolLists;
 		}
 		[CRepr]
-		public struct SEC_SRTP_PROTECTION_PROFILES
-		{
+		public struct SEC_SRTP_PROTECTION_PROFILES		{
 			public uint16 ProfilesSize;
 			public uint16[0] ProfilesList;
 		}
 		[CRepr]
-		public struct SEC_SRTP_MASTER_KEY_IDENTIFIER
-		{
+		public struct SEC_SRTP_MASTER_KEY_IDENTIFIER		{
 			public uint8 MasterKeyIdentifierSize;
 			public uint8[0] MasterKeyIdentifier;
 		}
 		[CRepr]
-		public struct SEC_TOKEN_BINDING
-		{
+		public struct SEC_TOKEN_BINDING		{
 			public uint8 MajorVersion;
 			public uint8 MinorVersion;
 			public uint16 KeyParametersSize;
 			public uint8[0] KeyParameters;
 		}
 		[CRepr]
-		public struct SEC_PRESHAREDKEY
-		{
+		public struct SEC_PRESHAREDKEY		{
 			public uint16 KeySize;
 			public uint8[0] Key;
 		}
 		[CRepr]
-		public struct SEC_PRESHAREDKEY_IDENTITY
-		{
+		public struct SEC_PRESHAREDKEY_IDENTITY		{
 			public uint16 KeyIdentitySize;
 			public uint8[0] KeyIdentity;
 		}
 		[CRepr]
-		public struct SEC_DTLS_MTU
-		{
+		public struct SEC_DTLS_MTU		{
 			public uint16 PathMTU;
 		}
 		[CRepr]
-		public struct SEC_FLAGS
-		{
+		public struct SEC_FLAGS		{
 			public uint64 Flags;
 		}
 		[CRepr]
-		public struct SEC_TRAFFIC_SECRETS
-		{
+		public struct SEC_TRAFFIC_SECRETS		{
 			public char16[64] SymmetricAlgId;
 			public char16[64] ChainingMode;
 			public char16[64] HashAlgId;
@@ -3610,32 +3443,27 @@ namespace Win32
 			public uint8[0] TrafficSecret;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_NamesW
-		{
+		public struct SecPkgCredentials_NamesW		{
 			public uint16* sUserName;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_NamesA
-		{
+		public struct SecPkgCredentials_NamesA		{
 			public int8* sUserName;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_SSIProviderW
-		{
+		public struct SecPkgCredentials_SSIProviderW		{
 			public uint16* sProviderName;
 			public uint32 ProviderInfoLength;
 			public PSTR ProviderInfo;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_SSIProviderA
-		{
+		public struct SecPkgCredentials_SSIProviderA		{
 			public int8* sProviderName;
 			public uint32 ProviderInfoLength;
 			public PSTR ProviderInfo;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_KdcProxySettingsW
-		{
+		public struct SecPkgCredentials_KdcProxySettingsW		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint16 ProxyServerOffset;
@@ -3644,43 +3472,36 @@ namespace Win32
 			public uint16 ClientTlsCredLength;
 		}
 		[CRepr]
-		public struct SecPkgCredentials_Cert
-		{
+		public struct SecPkgCredentials_Cert		{
 			public uint32 EncodedCertSize;
 			public uint8* EncodedCert;
 		}
 		[CRepr]
-		public struct SecPkgContext_SubjectAttributes
-		{
+		public struct SecPkgContext_SubjectAttributes		{
 			public void* AttributeInfo;
 		}
 		[CRepr]
-		public struct SecPkgContext_CredInfo
-		{
+		public struct SecPkgContext_CredInfo		{
 			public SECPKG_CRED_CLASS CredClass;
 			public uint32 IsPromptingNeeded;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegoPackageInfo
-		{
+		public struct SecPkgContext_NegoPackageInfo		{
 			public uint32 PackageMask;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegoStatus
-		{
+		public struct SecPkgContext_NegoStatus		{
 			public uint32 LastStatus;
 		}
 		[CRepr]
-		public struct SecPkgContext_Sizes
-		{
+		public struct SecPkgContext_Sizes		{
 			public uint32 cbMaxToken;
 			public uint32 cbMaxSignature;
 			public uint32 cbBlockSize;
 			public uint32 cbSecurityTrailer;
 		}
 		[CRepr]
-		public struct SecPkgContext_StreamSizes
-		{
+		public struct SecPkgContext_StreamSizes		{
 			public uint32 cbHeader;
 			public uint32 cbTrailer;
 			public uint32 cbMaximumMessage;
@@ -3688,35 +3509,29 @@ namespace Win32
 			public uint32 cbBlockSize;
 		}
 		[CRepr]
-		public struct SecPkgContext_NamesW
-		{
+		public struct SecPkgContext_NamesW		{
 			public uint16* sUserName;
 		}
 		[CRepr]
-		public struct SecPkgContext_LastClientTokenStatus
-		{
+		public struct SecPkgContext_LastClientTokenStatus		{
 			public SECPKG_ATTR_LCT_STATUS LastClientTokenStatus;
 		}
 		[CRepr]
-		public struct SecPkgContext_NamesA
-		{
+		public struct SecPkgContext_NamesA		{
 			public int8* sUserName;
 		}
 		[CRepr]
-		public struct SecPkgContext_Lifespan
-		{
+		public struct SecPkgContext_Lifespan		{
 			public LARGE_INTEGER tsStart;
 			public LARGE_INTEGER tsExpiry;
 		}
 		[CRepr]
-		public struct SecPkgContext_DceInfo
-		{
+		public struct SecPkgContext_DceInfo		{
 			public uint32 AuthzSvc;
 			public void* pPac;
 		}
 		[CRepr]
-		public struct SecPkgContext_KeyInfoA
-		{
+		public struct SecPkgContext_KeyInfoA		{
 			public int8* sSignatureAlgorithmName;
 			public int8* sEncryptAlgorithmName;
 			public uint32 KeySize;
@@ -3724,8 +3539,7 @@ namespace Win32
 			public uint32 EncryptAlgorithm;
 		}
 		[CRepr]
-		public struct SecPkgContext_KeyInfoW
-		{
+		public struct SecPkgContext_KeyInfoW		{
 			public uint16* sSignatureAlgorithmName;
 			public uint16* sEncryptAlgorithmName;
 			public uint32 KeySize;
@@ -3733,48 +3547,40 @@ namespace Win32
 			public uint32 EncryptAlgorithm;
 		}
 		[CRepr]
-		public struct SecPkgContext_AuthorityA
-		{
+		public struct SecPkgContext_AuthorityA		{
 			public int8* sAuthorityName;
 		}
 		[CRepr]
-		public struct SecPkgContext_AuthorityW
-		{
+		public struct SecPkgContext_AuthorityW		{
 			public uint16* sAuthorityName;
 		}
 		[CRepr]
-		public struct SecPkgContext_ProtoInfoA
-		{
+		public struct SecPkgContext_ProtoInfoA		{
 			public int8* sProtocolName;
 			public uint32 majorVersion;
 			public uint32 minorVersion;
 		}
 		[CRepr]
-		public struct SecPkgContext_ProtoInfoW
-		{
+		public struct SecPkgContext_ProtoInfoW		{
 			public uint16* sProtocolName;
 			public uint32 majorVersion;
 			public uint32 minorVersion;
 		}
 		[CRepr]
-		public struct SecPkgContext_PasswordExpiry
-		{
+		public struct SecPkgContext_PasswordExpiry		{
 			public LARGE_INTEGER tsPasswordExpires;
 		}
 		[CRepr]
-		public struct SecPkgContext_LogoffTime
-		{
+		public struct SecPkgContext_LogoffTime		{
 			public LARGE_INTEGER tsLogoffTime;
 		}
 		[CRepr]
-		public struct SecPkgContext_SessionKey
-		{
+		public struct SecPkgContext_SessionKey		{
 			public uint32 SessionKeyLength;
 			public uint8* SessionKey;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegoKeys
-		{
+		public struct SecPkgContext_NegoKeys		{
 			public uint32 KeyType;
 			public uint16 KeyLength;
 			public uint8* KeyValue;
@@ -3783,112 +3589,93 @@ namespace Win32
 			public uint8* VerifyKeyValue;
 		}
 		[CRepr]
-		public struct SecPkgContext_PackageInfoW
-		{
+		public struct SecPkgContext_PackageInfoW		{
 			public SecPkgInfoW* PackageInfo;
 		}
 		[CRepr]
-		public struct SecPkgContext_PackageInfoA
-		{
+		public struct SecPkgContext_PackageInfoA		{
 			public SecPkgInfoA* PackageInfo;
 		}
 		[CRepr]
-		public struct SecPkgContext_UserFlags
-		{
+		public struct SecPkgContext_UserFlags		{
 			public uint32 UserFlags;
 		}
 		[CRepr]
-		public struct SecPkgContext_Flags
-		{
+		public struct SecPkgContext_Flags		{
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegotiationInfoA
-		{
+		public struct SecPkgContext_NegotiationInfoA		{
 			public SecPkgInfoA* PackageInfo;
 			public uint32 NegotiationState;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegotiationInfoW
-		{
+		public struct SecPkgContext_NegotiationInfoW		{
 			public SecPkgInfoW* PackageInfo;
 			public uint32 NegotiationState;
 		}
 		[CRepr]
-		public struct SecPkgContext_NativeNamesW
-		{
+		public struct SecPkgContext_NativeNamesW		{
 			public uint16* sClientName;
 			public uint16* sServerName;
 		}
 		[CRepr]
-		public struct SecPkgContext_NativeNamesA
-		{
+		public struct SecPkgContext_NativeNamesA		{
 			public int8* sClientName;
 			public int8* sServerName;
 		}
 		[CRepr]
-		public struct SecPkgContext_CredentialNameW
-		{
+		public struct SecPkgContext_CredentialNameW		{
 			public uint32 CredentialType;
 			public uint16* sCredentialName;
 		}
 		[CRepr]
-		public struct SecPkgContext_CredentialNameA
-		{
+		public struct SecPkgContext_CredentialNameA		{
 			public uint32 CredentialType;
 			public int8* sCredentialName;
 		}
 		[CRepr]
-		public struct SecPkgContext_AccessToken
-		{
+		public struct SecPkgContext_AccessToken		{
 			public void* AccessToken;
 		}
 		[CRepr]
-		public struct SecPkgContext_TargetInformation
-		{
+		public struct SecPkgContext_TargetInformation		{
 			public uint32 MarshalledTargetInfoLength;
 			public uint8* MarshalledTargetInfo;
 		}
 		[CRepr]
-		public struct SecPkgContext_AuthzID
-		{
+		public struct SecPkgContext_AuthzID		{
 			public uint32 AuthzIDLength;
 			public PSTR AuthzID;
 		}
 		[CRepr]
-		public struct SecPkgContext_Target
-		{
+		public struct SecPkgContext_Target		{
 			public uint32 TargetLength;
 			public PSTR Target;
 		}
 		[CRepr]
-		public struct SecPkgContext_ClientSpecifiedTarget
-		{
+		public struct SecPkgContext_ClientSpecifiedTarget		{
 			public uint16* sTargetName;
 		}
 		[CRepr]
-		public struct SecPkgContext_Bindings
-		{
+		public struct SecPkgContext_Bindings		{
 			public uint32 BindingsLength;
 			public SEC_CHANNEL_BINDINGS* Bindings;
 		}
 		[CRepr]
-		public struct SecPkgContext_ApplicationProtocol
-		{
+		public struct SecPkgContext_ApplicationProtocol		{
 			public SEC_APPLICATION_PROTOCOL_NEGOTIATION_STATUS ProtoNegoStatus;
 			public SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT ProtoNegoExt;
 			public uint8 ProtocolIdSize;
 			public uint8[255] ProtocolId;
 		}
 		[CRepr]
-		public struct SecPkgContext_NegotiatedTlsExtensions
-		{
+		public struct SecPkgContext_NegotiatedTlsExtensions		{
 			public uint32 ExtensionsCount;
 			public uint16* Extensions;
 		}
 		[CRepr]
-		public struct SECPKG_APP_MODE_INFO
-		{
+		public struct SECPKG_APP_MODE_INFO		{
 			public uint32 UserFunction;
 			public uint Argument1;
 			public uint Argument2;
@@ -3896,8 +3683,7 @@ namespace Win32
 			public BOOLEAN ReturnToLsa;
 		}
 		[CRepr]
-		public struct SecurityFunctionTableW
-		{
+		public struct SecurityFunctionTableW		{
 			public uint32 dwVersion;
 			public ENUMERATE_SECURITY_PACKAGES_FN_W EnumerateSecurityPackagesW;
 			public QUERY_CREDENTIALS_ATTRIBUTES_FN_W QueryCredentialsAttributesW;
@@ -3932,8 +3718,7 @@ namespace Win32
 			public QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W QueryCredentialsAttributesExW;
 		}
 		[CRepr]
-		public struct SecurityFunctionTableA
-		{
+		public struct SecurityFunctionTableA		{
 			public uint32 dwVersion;
 			public ENUMERATE_SECURITY_PACKAGES_FN_A EnumerateSecurityPackagesA;
 			public QUERY_CREDENTIALS_ATTRIBUTES_FN_A QueryCredentialsAttributesA;
@@ -3968,8 +3753,7 @@ namespace Win32
 			public QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A QueryCredentialsAttributesExA;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_EX2
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_EX2		{
 			public uint32 Version;
 			public uint16 cbHeaderLength;
 			public uint32 cbStructureLength;
@@ -3984,8 +3768,7 @@ namespace Win32
 			public uint16 PackageListLength;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_EXW
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_EXW		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint16* User;
@@ -3999,8 +3782,7 @@ namespace Win32
 			public uint32 PackageListLength;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_EXA
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_EXA		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint8* User;
@@ -4014,8 +3796,7 @@ namespace Win32
 			public uint32 PackageListLength;
 		}
 		[CRepr, Union]
-		public struct SEC_WINNT_AUTH_IDENTITY_INFO
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_INFO		{
 			public SEC_WINNT_AUTH_IDENTITY_EXW AuthIdExw;
 			public SEC_WINNT_AUTH_IDENTITY_EXA AuthIdExa;
 			public SEC_WINNT_AUTH_IDENTITY_A AuthId_a;
@@ -4023,8 +3804,7 @@ namespace Win32
 			public SEC_WINNT_AUTH_IDENTITY_EX2 AuthIdEx2;
 		}
 		[CRepr]
-		public struct SECURITY_PACKAGE_OPTIONS
-		{
+		public struct SECURITY_PACKAGE_OPTIONS		{
 			public uint32 Size;
 			public SECURITY_PACKAGE_OPTIONS_TYPE Type;
 			public uint32 Flags;
@@ -4032,14 +3812,12 @@ namespace Win32
 			public void* Signature;
 		}
 		[CRepr]
-		public struct LSA_TOKEN_INFORMATION_NULL
-		{
+		public struct LSA_TOKEN_INFORMATION_NULL		{
 			public LARGE_INTEGER ExpirationTime;
 			public TOKEN_GROUPS* Groups;
 		}
 		[CRepr]
-		public struct LSA_TOKEN_INFORMATION_V1
-		{
+		public struct LSA_TOKEN_INFORMATION_V1		{
 			public LARGE_INTEGER ExpirationTime;
 			public TOKEN_USER User;
 			public TOKEN_GROUPS* Groups;
@@ -4049,8 +3827,7 @@ namespace Win32
 			public TOKEN_DEFAULT_DACL DefaultDacl;
 		}
 		[CRepr]
-		public struct LSA_TOKEN_INFORMATION_V3
-		{
+		public struct LSA_TOKEN_INFORMATION_V3		{
 			public LARGE_INTEGER ExpirationTime;
 			public TOKEN_USER User;
 			public TOKEN_GROUPS* Groups;
@@ -4063,8 +3840,7 @@ namespace Win32
 			public TOKEN_GROUPS* DeviceGroups;
 		}
 		[CRepr]
-		public struct LSA_DISPATCH_TABLE
-		{
+		public struct LSA_DISPATCH_TABLE		{
 			public PLSA_CREATE_LOGON_SESSION CreateLogonSession;
 			public PLSA_DELETE_LOGON_SESSION DeleteLogonSession;
 			public PLSA_ADD_CREDENTIAL AddCredential;
@@ -4078,27 +3854,23 @@ namespace Win32
 			public PLSA_COPY_FROM_CLIENT_BUFFER CopyFromClientBuffer;
 		}
 		[CRepr]
-		public struct SAM_REGISTER_MAPPING_ELEMENT
-		{
+		public struct SAM_REGISTER_MAPPING_ELEMENT		{
 			public PSTR Original;
 			public PSTR Mapped;
 			public BOOLEAN Continuable;
 		}
 		[CRepr]
-		public struct SAM_REGISTER_MAPPING_LIST
-		{
+		public struct SAM_REGISTER_MAPPING_LIST		{
 			public uint32 Count;
 			public SAM_REGISTER_MAPPING_ELEMENT* Elements;
 		}
 		[CRepr]
-		public struct SAM_REGISTER_MAPPING_TABLE
-		{
+		public struct SAM_REGISTER_MAPPING_TABLE		{
 			public uint32 Count;
 			public SAM_REGISTER_MAPPING_LIST* Lists;
 		}
 		[CRepr]
-		public struct SECPKG_CLIENT_INFO
-		{
+		public struct SECPKG_CLIENT_INFO		{
 			public LUID LogonId;
 			public uint32 ProcessID;
 			public uint32 ThreadID;
@@ -4110,8 +3882,7 @@ namespace Win32
 			public HANDLE ClientToken;
 		}
 		[CRepr]
-		public struct SECPKG_CALL_INFO
-		{
+		public struct SECPKG_CALL_INFO		{
 			public uint32 ProcessId;
 			public uint32 ThreadId;
 			public uint32 Attributes;
@@ -4119,27 +3890,23 @@ namespace Win32
 			public void* MechOid;
 		}
 		[CRepr]
-		public struct SECPKG_SUPPLEMENTAL_CRED
-		{
+		public struct SECPKG_SUPPLEMENTAL_CRED		{
 			public UNICODE_STRING PackageName;
 			public uint32 CredentialSize;
 			public uint8* Credentials;
 		}
 		[CRepr]
-		public struct SECPKG_BYTE_VECTOR
-		{
+		public struct SECPKG_BYTE_VECTOR		{
 			public uint32 ByteArrayOffset;
 			public uint16 ByteArrayLength;
 		}
 		[CRepr]
-		public struct SECPKG_SHORT_VECTOR
-		{
+		public struct SECPKG_SHORT_VECTOR		{
 			public uint32 ShortArrayOffset;
 			public uint16 ShortArrayCount;
 		}
 		[CRepr]
-		public struct SECPKG_SUPPLIED_CREDENTIAL
-		{
+		public struct SECPKG_SUPPLIED_CREDENTIAL		{
 			public uint16 cbHeaderLength;
 			public uint16 cbStructureLength;
 			public SECPKG_SHORT_VECTOR UserName;
@@ -4148,8 +3915,7 @@ namespace Win32
 			public uint32 CredFlags;
 		}
 		[CRepr]
-		public struct SECPKG_CREDENTIAL
-		{
+		public struct SECPKG_CREDENTIAL		{
 			public uint64 Version;
 			public uint16 cbHeaderLength;
 			public uint32 cbStructureLength;
@@ -4166,28 +3932,24 @@ namespace Win32
 			public SECPKG_BYTE_VECTOR MarshaledSuppliedCreds;
 		}
 		[CRepr]
-		public struct SECPKG_SUPPLEMENTAL_CRED_ARRAY
-		{
+		public struct SECPKG_SUPPLEMENTAL_CRED_ARRAY		{
 			public uint32 CredentialCount;
 			public SECPKG_SUPPLEMENTAL_CRED[0] Credentials;
 		}
 		[CRepr]
-		public struct SECPKG_SURROGATE_LOGON_ENTRY
-		{
+		public struct SECPKG_SURROGATE_LOGON_ENTRY		{
 			public Guid Type;
 			public void* Data;
 		}
 		[CRepr]
-		public struct SECPKG_SURROGATE_LOGON
-		{
+		public struct SECPKG_SURROGATE_LOGON		{
 			public uint32 Version;
 			public LUID SurrogateLogonID;
 			public uint32 EntryCount;
 			public SECPKG_SURROGATE_LOGON_ENTRY* Entries;
 		}
 		[CRepr]
-		public struct SECPKG_PRIMARY_CRED
-		{
+		public struct SECPKG_PRIMARY_CRED		{
 			public LUID LogonId;
 			public UNICODE_STRING DownlevelName;
 			public UNICODE_STRING DomainName;
@@ -4204,8 +3966,7 @@ namespace Win32
 			public UNICODE_STRING Spare4;
 		}
 		[CRepr]
-		public struct SECPKG_PRIMARY_CRED_EX
-		{
+		public struct SECPKG_PRIMARY_CRED_EX		{
 			public LUID LogonId;
 			public UNICODE_STRING DownlevelName;
 			public UNICODE_STRING DomainName;
@@ -4225,8 +3986,7 @@ namespace Win32
 			public uint32 FlagsEx;
 		}
 		[CRepr]
-		public struct SECPKG_PARAMETERS
-		{
+		public struct SECPKG_PARAMETERS		{
 			public uint32 Version;
 			public uint32 MachineState;
 			public uint32 SetupMode;
@@ -4236,55 +3996,46 @@ namespace Win32
 			public Guid DomainGuid;
 		}
 		[CRepr]
-		public struct SECPKG_GSS_INFO
-		{
+		public struct SECPKG_GSS_INFO		{
 			public uint32 EncodedIdLength;
 			public uint8[4] EncodedId;
 		}
 		[CRepr]
-		public struct SECPKG_CONTEXT_THUNKS
-		{
+		public struct SECPKG_CONTEXT_THUNKS		{
 			public uint32 InfoLevelCount;
 			public uint32[0] Levels;
 		}
 		[CRepr]
-		public struct SECPKG_MUTUAL_AUTH_LEVEL
-		{
+		public struct SECPKG_MUTUAL_AUTH_LEVEL		{
 			public uint32 MutualAuthLevel;
 		}
 		[CRepr]
-		public struct SECPKG_WOW_CLIENT_DLL
-		{
+		public struct SECPKG_WOW_CLIENT_DLL		{
 			public UNICODE_STRING WowClientDllPath;
 		}
 		[CRepr]
-		public struct SECPKG_SERIALIZED_OID
-		{
+		public struct SECPKG_SERIALIZED_OID		{
 			public uint32 OidLength;
 			public uint32 OidAttributes;
 			public uint8[32] OidValue;
 		}
 		[CRepr]
-		public struct SECPKG_EXTRA_OIDS
-		{
+		public struct SECPKG_EXTRA_OIDS		{
 			public uint32 OidCount;
 			public SECPKG_SERIALIZED_OID[0] Oids;
 		}
 		[CRepr]
-		public struct SECPKG_NEGO2_INFO
-		{
+		public struct SECPKG_NEGO2_INFO		{
 			public uint8[16] AuthScheme;
 			public uint32 PackageFlags;
 		}
 		[CRepr]
-		public struct SECPKG_EXTENDED_INFORMATION
-		{
+		public struct SECPKG_EXTENDED_INFORMATION		{
 			public SECPKG_EXTENDED_INFORMATION_CLASS Class;
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public SECPKG_GSS_INFO GssInfo;
 				public SECPKG_CONTEXT_THUNKS ContextThunks;
 				public SECPKG_MUTUAL_AUTH_LEVEL MutualAuthLevel;
@@ -4294,27 +4045,23 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SECPKG_TARGETINFO
-		{
+		public struct SECPKG_TARGETINFO		{
 			public PSID DomainSid;
 			public PWSTR ComputerName;
 		}
 		[CRepr]
-		public struct SecPkgContext_SaslContext
-		{
+		public struct SecPkgContext_SaslContext		{
 			public void* SaslContext;
 		}
 		[CRepr]
-		public struct SECURITY_USER_DATA
-		{
+		public struct SECURITY_USER_DATA		{
 			public UNICODE_STRING UserName;
 			public UNICODE_STRING LogonDomainName;
 			public UNICODE_STRING LogonServer;
 			public PSID pSid;
 		}
 		[CRepr]
-		public struct SECPKG_CALL_PACKAGE_PIN_DC_REQUEST
-		{
+		public struct SECPKG_CALL_PACKAGE_PIN_DC_REQUEST		{
 			public uint32 MessageType;
 			public uint32 Flags;
 			public UNICODE_STRING DomainName;
@@ -4322,22 +4069,19 @@ namespace Win32
 			public uint32 DcFlags;
 		}
 		[CRepr]
-		public struct SECPKG_CALL_PACKAGE_UNPIN_ALL_DCS_REQUEST
-		{
+		public struct SECPKG_CALL_PACKAGE_UNPIN_ALL_DCS_REQUEST		{
 			public uint32 MessageType;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SECPKG_CALL_PACKAGE_TRANSFER_CRED_REQUEST
-		{
+		public struct SECPKG_CALL_PACKAGE_TRANSFER_CRED_REQUEST		{
 			public uint32 MessageType;
 			public LUID OriginLogonId;
 			public LUID DestinationLogonId;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SECPKG_REDIRECTED_LOGON_BUFFER
-		{
+		public struct SECPKG_REDIRECTED_LOGON_BUFFER		{
 			public Guid RedirectedLogonGuid;
 			public HANDLE RedirectedLogonHandle;
 			public PLSA_REDIRECTED_LOGON_INIT Init;
@@ -4347,28 +4091,24 @@ namespace Win32
 			public PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS GetSupplementalCreds;
 		}
 		[CRepr]
-		public struct SECPKG_POST_LOGON_USER_INFO
-		{
+		public struct SECPKG_POST_LOGON_USER_INFO		{
 			public uint32 Flags;
 			public LUID LogonId;
 			public LUID LinkedLogonId;
 		}
 		[CRepr]
-		public struct SECPKG_EVENT_PACKAGE_CHANGE
-		{
+		public struct SECPKG_EVENT_PACKAGE_CHANGE		{
 			public SECPKG_PACKAGE_CHANGE_TYPE ChangeType;
 			public uint PackageId;
 			public UNICODE_STRING PackageName;
 		}
 		[CRepr]
-		public struct SECPKG_EVENT_ROLE_CHANGE
-		{
+		public struct SECPKG_EVENT_ROLE_CHANGE		{
 			public uint32 PreviousRole;
 			public uint32 NewRole;
 		}
 		[CRepr]
-		public struct SECPKG_EVENT_NOTIFY
-		{
+		public struct SECPKG_EVENT_NOTIFY		{
 			public uint32 EventClass;
 			public uint32 Reserved;
 			public uint32 EventDataSize;
@@ -4376,14 +4116,12 @@ namespace Win32
 			public void* PackageParameter;
 		}
 		[CRepr]
-		public struct ENCRYPTED_CREDENTIALW
-		{
+		public struct ENCRYPTED_CREDENTIALW		{
 			public CREDENTIALW Cred;
 			public uint32 ClearCredentialBlobSize;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY32
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY32		{
 			public uint32 User;
 			public uint32 UserLength;
 			public uint32 Domain;
@@ -4393,8 +4131,7 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_EX32
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_EX32		{
 			public uint32 Version;
 			public uint32 Length;
 			public uint32 User;
@@ -4408,8 +4145,7 @@ namespace Win32
 			public uint32 PackageListLength;
 		}
 		[CRepr]
-		public struct LSA_SECPKG_FUNCTION_TABLE
-		{
+		public struct LSA_SECPKG_FUNCTION_TABLE		{
 			public PLSA_CREATE_LOGON_SESSION CreateLogonSession;
 			public PLSA_DELETE_LOGON_SESSION DeleteLogonSession;
 			public PLSA_ADD_CREDENTIAL AddCredential;
@@ -4475,16 +4211,14 @@ namespace Win32
 			public PLSA_SET_APP_MODE_INFO SetAppModeInfo;
 		}
 		[CRepr]
-		public struct SECPKG_DLL_FUNCTIONS
-		{
+		public struct SECPKG_DLL_FUNCTIONS		{
 			public PLSA_ALLOCATE_LSA_HEAP AllocateHeap;
 			public PLSA_FREE_LSA_HEAP FreeHeap;
 			public PLSA_REGISTER_CALLBACK RegisterCallback;
 			public PLSA_LOCATE_PKG_BY_ID LocatePackageById;
 		}
 		[CRepr]
-		public struct SECPKG_FUNCTION_TABLE
-		{
+		public struct SECPKG_FUNCTION_TABLE		{
 			public PLSA_AP_INITIALIZE_PACKAGE InitializePackage;
 			public PLSA_AP_LOGON_USER LogonUserA;
 			public PLSA_AP_CALL_PACKAGE CallPackage;
@@ -4529,8 +4263,7 @@ namespace Win32
 			public PLSA_AP_POST_LOGON_USER_SURROGATE PostLogonUserSurrogate;
 		}
 		[CRepr]
-		public struct SECPKG_USER_FUNCTION_TABLE
-		{
+		public struct SECPKG_USER_FUNCTION_TABLE		{
 			public SpInstanceInitFn InstanceInit;
 			public SpInitUserModeContextFn InitUserModeContext;
 			public SpMakeSignatureFn MakeSignature;
@@ -4548,8 +4281,7 @@ namespace Win32
 			public SpMarshalAttributeDataFn MarshalAttributeData;
 		}
 		[CRepr]
-		public struct KSEC_LIST_ENTRY
-		{
+		public struct KSEC_LIST_ENTRY		{
 			public LIST_ENTRY List;
 			public int32 RefCount;
 			public uint32 Signature;
@@ -4557,8 +4289,7 @@ namespace Win32
 			public void* Reserved;
 		}
 		[CRepr]
-		public struct SECPKG_KERNEL_FUNCTIONS
-		{
+		public struct SECPKG_KERNEL_FUNCTIONS		{
 			public PLSA_ALLOCATE_LSA_HEAP AllocateHeap;
 			public PLSA_FREE_LSA_HEAP FreeHeap;
 			public PKSEC_CREATE_CONTEXT_LIST CreateContextList;
@@ -4570,8 +4301,7 @@ namespace Win32
 			public PKSEC_LOCATE_PKG_BY_ID LocatePackageById;
 		}
 		[CRepr]
-		public struct SECPKG_KERNEL_FUNCTION_TABLE
-		{
+		public struct SECPKG_KERNEL_FUNCTION_TABLE		{
 			public KspInitPackageFn Initialize;
 			public KspDeleteContextFn DeleteContext;
 			public KspInitContextFn InitContext;
@@ -4589,25 +4319,21 @@ namespace Win32
 			public KspSerializeAuthDataFn SerializeAuthData;
 		}
 		[CRepr]
-		public struct SecPkgCred_SupportedAlgs
-		{
+		public struct SecPkgCred_SupportedAlgs		{
 			public uint32 cSupportedAlgs;
 			public uint32* palgSupportedAlgs;
 		}
 		[CRepr]
-		public struct SecPkgCred_CipherStrengths
-		{
+		public struct SecPkgCred_CipherStrengths		{
 			public uint32 dwMinimumCipherStrength;
 			public uint32 dwMaximumCipherStrength;
 		}
 		[CRepr]
-		public struct SecPkgCred_SupportedProtocols
-		{
+		public struct SecPkgCred_SupportedProtocols		{
 			public uint32 grbitProtocol;
 		}
 		[CRepr]
-		public struct SecPkgCred_ClientCertPolicy
-		{
+		public struct SecPkgCred_ClientCertPolicy		{
 			public uint32 dwFlags;
 			public Guid guidPolicyId;
 			public uint32 dwCertFlags;
@@ -4619,22 +4345,19 @@ namespace Win32
 			public PWSTR pwszSslCtlIdentifier;
 		}
 		[CRepr]
-		public struct SecPkgCred_SessionTicketKey
-		{
+		public struct SecPkgCred_SessionTicketKey		{
 			public uint32 TicketInfoVersion;
 			public uint8[16] KeyId;
 			public uint8[64] KeyingMaterial;
 			public uint8 KeyingMaterialSize;
 		}
 		[CRepr]
-		public struct SecPkgCred_SessionTicketKeys
-		{
+		public struct SecPkgCred_SessionTicketKeys		{
 			public uint32 cSessionTicketKeys;
 			public SecPkgCred_SessionTicketKey* pSessionTicketKeys;
 		}
 		[CRepr]
-		public struct SecPkgContext_RemoteCredentialInfo
-		{
+		public struct SecPkgContext_RemoteCredentialInfo		{
 			public uint32 cbCertificateChain;
 			public uint8* pbCertificateChain;
 			public uint32 cCertificates;
@@ -4642,8 +4365,7 @@ namespace Win32
 			public uint32 dwBits;
 		}
 		[CRepr]
-		public struct SecPkgContext_LocalCredentialInfo
-		{
+		public struct SecPkgContext_LocalCredentialInfo		{
 			public uint32 cbCertificateChain;
 			public uint8* pbCertificateChain;
 			public uint32 cCertificates;
@@ -4651,20 +4373,17 @@ namespace Win32
 			public uint32 dwBits;
 		}
 		[CRepr]
-		public struct SecPkgContext_ClientCertPolicyResult
-		{
+		public struct SecPkgContext_ClientCertPolicyResult		{
 			public HRESULT dwPolicyResult;
 			public Guid guidPolicyId;
 		}
 		[CRepr]
-		public struct SecPkgContext_IssuerListInfoEx
-		{
+		public struct SecPkgContext_IssuerListInfoEx		{
 			public CRYPTOAPI_BLOB* aIssuers;
 			public uint32 cIssuers;
 		}
 		[CRepr]
-		public struct SecPkgContext_ConnectionInfo
-		{
+		public struct SecPkgContext_ConnectionInfo		{
 			public uint32 dwProtocol;
 			public uint32 aiCipher;
 			public uint32 dwCipherStrength;
@@ -4674,8 +4393,7 @@ namespace Win32
 			public uint32 dwExchStrength;
 		}
 		[CRepr]
-		public struct SecPkgContext_ConnectionInfoEx
-		{
+		public struct SecPkgContext_ConnectionInfoEx		{
 			public uint32 dwVersion;
 			public uint32 dwProtocol;
 			public char16[64] szCipher;
@@ -4686,8 +4404,7 @@ namespace Win32
 			public uint32 dwExchStrength;
 		}
 		[CRepr]
-		public struct SecPkgContext_CipherInfo
-		{
+		public struct SecPkgContext_CipherInfo		{
 			public uint32 dwVersion;
 			public uint32 dwProtocol;
 			public uint32 dwCipherSuite;
@@ -4705,54 +4422,46 @@ namespace Win32
 			public uint32 dwKeyType;
 		}
 		[CRepr]
-		public struct SecPkgContext_EapKeyBlock
-		{
+		public struct SecPkgContext_EapKeyBlock		{
 			public uint8[128] rgbKeys;
 			public uint8[64] rgbIVs;
 		}
 		[CRepr]
-		public struct SecPkgContext_MappedCredAttr
-		{
+		public struct SecPkgContext_MappedCredAttr		{
 			public uint32 dwAttribute;
 			public void* pvBuffer;
 		}
 		[CRepr]
-		public struct SecPkgContext_SessionInfo
-		{
+		public struct SecPkgContext_SessionInfo		{
 			public uint32 dwFlags;
 			public uint32 cbSessionId;
 			public uint8[32] rgbSessionId;
 		}
 		[CRepr]
-		public struct SecPkgContext_SessionAppData
-		{
+		public struct SecPkgContext_SessionAppData		{
 			public uint32 dwFlags;
 			public uint32 cbAppData;
 			public uint8* pbAppData;
 		}
 		[CRepr]
-		public struct SecPkgContext_EapPrfInfo
-		{
+		public struct SecPkgContext_EapPrfInfo		{
 			public uint32 dwVersion;
 			public uint32 cbPrfData;
 			public uint8* pbPrfData;
 		}
 		[CRepr]
-		public struct SecPkgContext_SupportedSignatures
-		{
+		public struct SecPkgContext_SupportedSignatures		{
 			public uint16 cSignatureAndHashAlgorithms;
 			public uint16* pSignatureAndHashAlgorithms;
 		}
 		[CRepr]
-		public struct SecPkgContext_Certificates
-		{
+		public struct SecPkgContext_Certificates		{
 			public uint32 cCertificates;
 			public uint32 cbCertificateChain;
 			public uint8* pbCertificateChain;
 		}
 		[CRepr]
-		public struct SecPkgContext_CertInfo
-		{
+		public struct SecPkgContext_CertInfo		{
 			public uint32 dwVersion;
 			public uint32 cbSubjectName;
 			public PWSTR pwszSubjectName;
@@ -4761,18 +4470,15 @@ namespace Win32
 			public uint32 dwKeySize;
 		}
 		[CRepr]
-		public struct SecPkgContext_UiInfo
-		{
+		public struct SecPkgContext_UiInfo		{
 			public HWND hParentWindow;
 		}
 		[CRepr]
-		public struct SecPkgContext_EarlyStart
-		{
+		public struct SecPkgContext_EarlyStart		{
 			public uint32 dwEarlyStartFlags;
 		}
 		[CRepr]
-		public struct SecPkgContext_KeyingMaterialInfo
-		{
+		public struct SecPkgContext_KeyingMaterialInfo		{
 			public uint16 cbLabel;
 			public PSTR pszLabel;
 			public uint16 cbContextValue;
@@ -4780,14 +4486,12 @@ namespace Win32
 			public uint32 cbKeyingMaterial;
 		}
 		[CRepr]
-		public struct SecPkgContext_KeyingMaterial
-		{
+		public struct SecPkgContext_KeyingMaterial		{
 			public uint32 cbKeyingMaterial;
 			public uint8* pbKeyingMaterial;
 		}
 		[CRepr]
-		public struct SecPkgContext_KeyingMaterial_Inproc
-		{
+		public struct SecPkgContext_KeyingMaterial_Inproc		{
 			public uint16 cbLabel;
 			public PSTR pszLabel;
 			public uint16 cbContextValue;
@@ -4796,33 +4500,27 @@ namespace Win32
 			public uint8* pbKeyingMaterial;
 		}
 		[CRepr]
-		public struct SecPkgContext_SrtpParameters
-		{
+		public struct SecPkgContext_SrtpParameters		{
 			public uint16 ProtectionProfile;
 			public uint8 MasterKeyIdentifierSize;
 			public uint8* MasterKeyIdentifier;
 		}
 		[CRepr]
-		public struct SecPkgContext_TokenBinding
-		{
+		public struct SecPkgContext_TokenBinding		{
 			public uint8 MajorVersion;
 			public uint8 MinorVersion;
 			public uint16 KeyParametersSize;
 			public uint8* KeyParameters;
 		}
 		[CRepr]
-		public struct SecPkgContext_CertificateValidationResult
-		{
+		public struct SecPkgContext_CertificateValidationResult		{
 			public uint32 dwChainErrorStatus;
 			public HRESULT hrVerifyChainStatus;
 		}
 		[CRepr]
-		public struct _HMAPPER
-		{
-		}
+		public struct _HMAPPER {}
 		[CRepr]
-		public struct SCHANNEL_CRED
-		{
+		public struct SCHANNEL_CRED		{
 			public uint32 dwVersion;
 			public uint32 cCreds;
 			public CERT_CONTEXT** paCred;
@@ -4839,8 +4537,7 @@ namespace Win32
 			public uint32 dwCredFormat;
 		}
 		[CRepr]
-		public struct SEND_GENERIC_TLS_EXTENSION
-		{
+		public struct SEND_GENERIC_TLS_EXTENSION		{
 			public uint16 ExtensionType;
 			public uint16 HandshakeType;
 			public uint32 Flags;
@@ -4848,29 +4545,25 @@ namespace Win32
 			public uint8[0] Buffer;
 		}
 		[CRepr]
-		public struct TLS_EXTENSION_SUBSCRIPTION
-		{
+		public struct TLS_EXTENSION_SUBSCRIPTION		{
 			public uint16 ExtensionType;
 			public uint16 HandshakeType;
 		}
 		[CRepr]
-		public struct SUBSCRIBE_GENERIC_TLS_EXTENSION
-		{
+		public struct SUBSCRIBE_GENERIC_TLS_EXTENSION		{
 			public uint32 Flags;
 			public uint32 SubscriptionsCount;
 			public TLS_EXTENSION_SUBSCRIPTION[0] Subscriptions;
 		}
 		[CRepr]
-		public struct SCHANNEL_CERT_HASH
-		{
+		public struct SCHANNEL_CERT_HASH		{
 			public uint32 dwLength;
 			public uint32 dwFlags;
 			public uint hProv;
 			public uint8[20] ShaHash;
 		}
 		[CRepr]
-		public struct SCHANNEL_CERT_HASH_STORE
-		{
+		public struct SCHANNEL_CERT_HASH_STORE		{
 			public uint32 dwLength;
 			public uint32 dwFlags;
 			public uint hProv;
@@ -4878,21 +4571,18 @@ namespace Win32
 			public char16[128] pwszStoreName;
 		}
 		[CRepr]
-		public struct SCHANNEL_ALERT_TOKEN
-		{
+		public struct SCHANNEL_ALERT_TOKEN		{
 			public uint32 dwTokenType;
 			public SCHANNEL_ALERT_TOKEN_ALERT_TYPE dwAlertType;
 			public uint32 dwAlertNumber;
 		}
 		[CRepr]
-		public struct SCHANNEL_SESSION_TOKEN
-		{
+		public struct SCHANNEL_SESSION_TOKEN		{
 			public uint32 dwTokenType;
 			public SCHANNEL_SESSION_TOKEN_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct SCHANNEL_CLIENT_SIGNATURE
-		{
+		public struct SCHANNEL_CLIENT_SIGNATURE		{
 			public uint32 cbLength;
 			public uint32 aiHash;
 			public uint32 cbHash;
@@ -4900,8 +4590,7 @@ namespace Win32
 			public uint8[20] CertThumbprint;
 		}
 		[CRepr]
-		public struct SSL_CREDENTIAL_CERTIFICATE
-		{
+		public struct SSL_CREDENTIAL_CERTIFICATE		{
 			public uint32 cbPrivateKey;
 			public uint8* pPrivateKey;
 			public uint32 cbCertificate;
@@ -4909,8 +4598,7 @@ namespace Win32
 			public PSTR pszPassword;
 		}
 		[CRepr]
-		public struct SCH_CRED
-		{
+		public struct SCH_CRED		{
 			public uint32 dwVersion;
 			public uint32 cCreds;
 			public void** paSecret;
@@ -4919,36 +4607,31 @@ namespace Win32
 			public _HMAPPER** aphMappers;
 		}
 		[CRepr]
-		public struct SCH_CRED_SECRET_CAPI
-		{
+		public struct SCH_CRED_SECRET_CAPI		{
 			public uint32 dwType;
 			public uint hProv;
 		}
 		[CRepr]
-		public struct SCH_CRED_SECRET_PRIVKEY
-		{
+		public struct SCH_CRED_SECRET_PRIVKEY		{
 			public uint32 dwType;
 			public uint8* pPrivateKey;
 			public uint32 cbPrivateKey;
 			public PSTR pszPassword;
 		}
 		[CRepr]
-		public struct SCH_CRED_PUBLIC_CERTCHAIN
-		{
+		public struct SCH_CRED_PUBLIC_CERTCHAIN		{
 			public uint32 dwType;
 			public uint32 cbCertChain;
 			public uint8* pCertChain;
 		}
 		[CRepr]
-		public struct PctPublicKey
-		{
+		public struct PctPublicKey		{
 			public uint32 Type;
 			public uint32 cbKey;
 			public uint8[0] pKey;
 		}
 		[CRepr]
-		public struct X509Certificate
-		{
+		public struct X509Certificate		{
 			public uint32 Version;
 			public uint32[4] SerialNumber;
 			public uint32 SignatureAlgorithm;
@@ -4959,27 +4642,23 @@ namespace Win32
 			public PctPublicKey* pPublicKey;
 		}
 		[CRepr]
-		public struct SCH_EXTENSION_DATA
-		{
+		public struct SCH_EXTENSION_DATA		{
 			public uint16 ExtensionType;
 			public uint8* pExtData;
 			public uint32 cbExtData;
 		}
 		[CRepr]
-		public struct LOGON_HOURS
-		{
+		public struct LOGON_HOURS		{
 			public uint16 UnitsPerWeek;
 			public uint8* LogonHours;
 		}
 		[CRepr]
-		public struct SR_SECURITY_DESCRIPTOR
-		{
+		public struct SR_SECURITY_DESCRIPTOR		{
 			public uint32 Length;
 			public uint8* SecurityDescriptor;
 		}
 		[CRepr]
-		public struct USER_ALL_INFORMATION
-		{
+		public struct USER_ALL_INFORMATION		{
 			public LARGE_INTEGER LastLogon;
 			public LARGE_INTEGER LastLogoff;
 			public LARGE_INTEGER PasswordLastSet;
@@ -5015,18 +4694,15 @@ namespace Win32
 			public BOOLEAN PrivateDataSensitive;
 		}
 		[CRepr]
-		public struct CLEAR_BLOCK
-		{
+		public struct CLEAR_BLOCK		{
 			public CHAR[8] data;
 		}
 		[CRepr]
-		public struct USER_SESSION_KEY
-		{
+		public struct USER_SESSION_KEY		{
 			public CYPHER_BLOCK[2] data;
 		}
 		[CRepr]
-		public struct NETLOGON_LOGON_IDENTITY_INFO
-		{
+		public struct NETLOGON_LOGON_IDENTITY_INFO		{
 			public UNICODE_STRING LogonDomainName;
 			public uint32 ParameterControl;
 			public LARGE_INTEGER LogonId;
@@ -5034,38 +4710,33 @@ namespace Win32
 			public UNICODE_STRING Workstation;
 		}
 		[CRepr]
-		public struct NETLOGON_INTERACTIVE_INFO
-		{
+		public struct NETLOGON_INTERACTIVE_INFO		{
 			public NETLOGON_LOGON_IDENTITY_INFO Identity;
 			public LM_OWF_PASSWORD LmOwfPassword;
 			public LM_OWF_PASSWORD NtOwfPassword;
 		}
 		[CRepr]
-		public struct NETLOGON_SERVICE_INFO
-		{
+		public struct NETLOGON_SERVICE_INFO		{
 			public NETLOGON_LOGON_IDENTITY_INFO Identity;
 			public LM_OWF_PASSWORD LmOwfPassword;
 			public LM_OWF_PASSWORD NtOwfPassword;
 		}
 		[CRepr]
-		public struct NETLOGON_NETWORK_INFO
-		{
+		public struct NETLOGON_NETWORK_INFO		{
 			public NETLOGON_LOGON_IDENTITY_INFO Identity;
 			public CLEAR_BLOCK LmChallenge;
 			public STRING NtChallengeResponse;
 			public STRING LmChallengeResponse;
 		}
 		[CRepr]
-		public struct NETLOGON_GENERIC_INFO
-		{
+		public struct NETLOGON_GENERIC_INFO		{
 			public NETLOGON_LOGON_IDENTITY_INFO Identity;
 			public UNICODE_STRING PackageName;
 			public uint32 DataLength;
 			public uint8* LogonData;
 		}
 		[CRepr]
-		public struct MSV1_0_VALIDATION_INFO
-		{
+		public struct MSV1_0_VALIDATION_INFO		{
 			public LARGE_INTEGER LogoffTime;
 			public LARGE_INTEGER KickoffTime;
 			public UNICODE_STRING LogonServer;
@@ -5077,13 +4748,11 @@ namespace Win32
 			public uint32 UserId;
 		}
 		[CRepr]
-		public struct TOKENBINDING_IDENTIFIER
-		{
+		public struct TOKENBINDING_IDENTIFIER		{
 			public uint8 keyType;
 		}
 		[CRepr]
-		public struct TOKENBINDING_RESULT_DATA
-		{
+		public struct TOKENBINDING_RESULT_DATA		{
 			public TOKENBINDING_TYPE bindingType;
 			public uint32 identifierSize;
 			public TOKENBINDING_IDENTIFIER* identifierData;
@@ -5092,20 +4761,17 @@ namespace Win32
 			public void* extensionData;
 		}
 		[CRepr]
-		public struct TOKENBINDING_RESULT_LIST
-		{
+		public struct TOKENBINDING_RESULT_LIST		{
 			public uint32 resultCount;
 			public TOKENBINDING_RESULT_DATA* resultData;
 		}
 		[CRepr]
-		public struct TOKENBINDING_KEY_TYPES
-		{
+		public struct TOKENBINDING_KEY_TYPES		{
 			public uint32 keyCount;
 			public TOKENBINDING_KEY_PARAMETERS_TYPE* keyType;
 		}
 		[CRepr]
-		public struct SL_LICENSING_STATUS
-		{
+		public struct SL_LICENSING_STATUS		{
 			public Guid SkuId;
 			public SLLICENSINGSTATUS eStatus;
 			public uint32 dwGraceTime;
@@ -5114,28 +4780,24 @@ namespace Win32
 			public uint64 qwValidityExpiration;
 		}
 		[CRepr]
-		public struct SL_ACTIVATION_INFO_HEADER
-		{
+		public struct SL_ACTIVATION_INFO_HEADER		{
 			public uint32 cbSize;
 			public SL_ACTIVATION_TYPE type;
 		}
 		[CRepr]
-		public struct SL_AD_ACTIVATION_INFO
-		{
+		public struct SL_AD_ACTIVATION_INFO		{
 			public SL_ACTIVATION_INFO_HEADER header;
 			public PWSTR pwszProductKey;
 			public PWSTR pwszActivationObjectName;
 		}
 		[CRepr]
-		public struct SL_NONGENUINE_UI_OPTIONS
-		{
+		public struct SL_NONGENUINE_UI_OPTIONS		{
 			public uint32 cbSize;
 			public Guid* pComponentId;
 			public HRESULT hResultUI;
 		}
 		[CRepr]
-		public struct SL_SYSTEM_POLICY_INFORMATION
-		{
+		public struct SL_SYSTEM_POLICY_INFORMATION		{
 			public void*[2] Reserved1;
 			public uint32[3] Reserved2;
 		}

@@ -181,52 +181,44 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DDEACK
-		{
+		public struct DDEACK		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct DDEADVISE
-		{
+		public struct DDEADVISE		{
 			public uint16 _bitfield;
 			public int16 cfFormat;
 		}
 		[CRepr]
-		public struct DDEDATA
-		{
+		public struct DDEDATA		{
 			public uint16 _bitfield;
 			public int16 cfFormat;
 			public uint8[0] Value;
 		}
 		[CRepr]
-		public struct DDEPOKE
-		{
+		public struct DDEPOKE		{
 			public uint16 _bitfield;
 			public int16 cfFormat;
 			public uint8[0] Value;
 		}
 		[CRepr]
-		public struct DDELN
-		{
+		public struct DDELN		{
 			public uint16 _bitfield;
 			public int16 cfFormat;
 		}
 		[CRepr]
-		public struct DDEUP
-		{
+		public struct DDEUP		{
 			public uint16 _bitfield;
 			public int16 cfFormat;
 			public uint8[0] rgb;
 		}
 		[CRepr]
-		public struct HSZPAIR
-		{
+		public struct HSZPAIR		{
 			public HSZ hszSvc;
 			public HSZ hszTopic;
 		}
 		[CRepr]
-		public struct CONVCONTEXT
-		{
+		public struct CONVCONTEXT		{
 			public uint32 cb;
 			public uint32 wFlags;
 			public uint32 wCountryID;
@@ -236,8 +228,7 @@ namespace Win32
 			public SECURITY_QUALITY_OF_SERVICE qos;
 		}
 		[CRepr]
-		public struct CONVINFO
-		{
+		public struct CONVINFO		{
 			public uint32 cb;
 			public uint hUser;
 			public HCONV hConvPartner;
@@ -256,16 +247,14 @@ namespace Win32
 			public HWND hwndPartner;
 		}
 		[CRepr]
-		public struct DDEML_MSG_HOOK_DATA
-		{
+		public struct DDEML_MSG_HOOK_DATA		{
 			public uint uiLo;
 			public uint uiHi;
 			public uint32 cbData;
 			public uint32[8] Data;
 		}
 		[CRepr]
-		public struct MONMSGSTRUCT
-		{
+		public struct MONMSGSTRUCT		{
 			public uint32 cb;
 			public HWND hwndTo;
 			public uint32 dwTime;
@@ -276,8 +265,7 @@ namespace Win32
 			public DDEML_MSG_HOOK_DATA dmhd;
 		}
 		[CRepr]
-		public struct MONCBSTRUCT
-		{
+		public struct MONCBSTRUCT		{
 			public uint32 cb;
 			public uint32 dwTime;
 			public HANDLE hTask;
@@ -295,8 +283,7 @@ namespace Win32
 			public uint32[8] Data;
 		}
 		[CRepr]
-		public struct MONHSZSTRUCTA
-		{
+		public struct MONHSZSTRUCTA		{
 			public uint32 cb;
 			public BOOL fsAction;
 			public uint32 dwTime;
@@ -305,8 +292,7 @@ namespace Win32
 			public CHAR[0] str;
 		}
 		[CRepr]
-		public struct MONHSZSTRUCTW
-		{
+		public struct MONHSZSTRUCTW		{
 			public uint32 cb;
 			public BOOL fsAction;
 			public uint32 dwTime;
@@ -315,16 +301,14 @@ namespace Win32
 			public char16[0] str;
 		}
 		[CRepr]
-		public struct MONERRSTRUCT
-		{
+		public struct MONERRSTRUCT		{
 			public uint32 cb;
 			public uint32 wLastError;
 			public uint32 dwTime;
 			public HANDLE hTask;
 		}
 		[CRepr]
-		public struct MONLINKSTRUCT
-		{
+		public struct MONLINKSTRUCT		{
 			public uint32 cb;
 			public uint32 dwTime;
 			public HANDLE hTask;
@@ -339,8 +323,7 @@ namespace Win32
 			public HCONV hConvClient;
 		}
 		[CRepr]
-		public struct MONCONVSTRUCT
-		{
+		public struct MONCONVSTRUCT		{
 			public uint32 cb;
 			public BOOL fConnect;
 			public uint32 dwTime;
@@ -351,16 +334,14 @@ namespace Win32
 			public HCONV hConvServer;
 		}
 		[CRepr]
-		public struct METAFILEPICT
-		{
+		public struct METAFILEPICT		{
 			public int32 mm;
 			public int32 xExt;
 			public int32 yExt;
 			public HMETAFILE hMF;
 		}
 		[CRepr]
-		public struct COPYDATASTRUCT
-		{
+		public struct COPYDATASTRUCT		{
 			public uint dwData;
 			public uint32 cbData;
 			public void* lpData;

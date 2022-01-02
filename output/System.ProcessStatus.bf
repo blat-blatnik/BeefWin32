@@ -27,76 +27,64 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MODULEINFO
-		{
+		public struct MODULEINFO		{
 			public void* lpBaseOfDll;
 			public uint32 SizeOfImage;
 			public void* EntryPoint;
 		}
 		[CRepr]
-		public struct PSAPI_WS_WATCH_INFORMATION
-		{
+		public struct PSAPI_WS_WATCH_INFORMATION		{
 			public void* FaultingPc;
 			public void* FaultingVa;
 		}
 		[CRepr]
-		public struct PSAPI_WS_WATCH_INFORMATION_EX
-		{
+		public struct PSAPI_WS_WATCH_INFORMATION_EX		{
 			public PSAPI_WS_WATCH_INFORMATION BasicInfo;
 			public uint FaultingThreadId;
 			public uint Flags;
 		}
 		[CRepr, Union]
-		public struct PSAPI_WORKING_SET_BLOCK
-		{
+		public struct PSAPI_WORKING_SET_BLOCK		{
 			public uint Flags;
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint _bitfield;
 			}
 		}
 		[CRepr]
-		public struct PSAPI_WORKING_SET_INFORMATION
-		{
+		public struct PSAPI_WORKING_SET_INFORMATION		{
 			public uint NumberOfEntries;
 			public PSAPI_WORKING_SET_BLOCK[0] WorkingSetInfo;
 		}
 		[CRepr, Union]
-		public struct PSAPI_WORKING_SET_EX_BLOCK
-		{
+		public struct PSAPI_WORKING_SET_EX_BLOCK		{
 			public uint Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public _Invalid_e__Struct Invalid;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint _bitfield;
 				}
 				[CRepr]
-				public struct _Invalid_e__Struct
-				{
+				public struct _Invalid_e__Struct				{
 					public uint _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PSAPI_WORKING_SET_EX_INFORMATION
-		{
+		public struct PSAPI_WORKING_SET_EX_INFORMATION		{
 			public void* VirtualAddress;
 			public PSAPI_WORKING_SET_EX_BLOCK VirtualAttributes;
 		}
 		[CRepr]
-		public struct PROCESS_MEMORY_COUNTERS
-		{
+		public struct PROCESS_MEMORY_COUNTERS		{
 			public uint32 cb;
 			public uint32 PageFaultCount;
 			public uint PeakWorkingSetSize;
@@ -109,8 +97,7 @@ namespace Win32
 			public uint PeakPagefileUsage;
 		}
 		[CRepr]
-		public struct PROCESS_MEMORY_COUNTERS_EX
-		{
+		public struct PROCESS_MEMORY_COUNTERS_EX		{
 			public uint32 cb;
 			public uint32 PageFaultCount;
 			public uint PeakWorkingSetSize;
@@ -124,8 +111,7 @@ namespace Win32
 			public uint PrivateUsage;
 		}
 		[CRepr]
-		public struct PERFORMANCE_INFORMATION
-		{
+		public struct PERFORMANCE_INFORMATION		{
 			public uint32 cb;
 			public uint CommitTotal;
 			public uint CommitLimit;
@@ -142,8 +128,7 @@ namespace Win32
 			public uint32 ThreadCount;
 		}
 		[CRepr]
-		public struct ENUM_PAGE_FILE_INFORMATION
-		{
+		public struct ENUM_PAGE_FILE_INFORMATION		{
 			public uint32 cb;
 			public uint32 Reserved;
 			public uint TotalSize;

@@ -949,8 +949,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CQFORM
-		{
+		public struct CQFORM		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public Guid clsid;
@@ -958,8 +957,7 @@ namespace Win32
 			public PWSTR pszTitle;
 		}
 		[CRepr]
-		public struct CQPAGE
-		{
+		public struct CQPAGE		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public LPCQPAGEPROC pPageProc;
@@ -970,8 +968,7 @@ namespace Win32
 			public LPARAM lParam;
 		}
 		[CRepr]
-		public struct OPENQUERYWINDOW
-		{
+		public struct OPENQUERYWINDOW		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public Guid clsidHandler;
@@ -981,90 +978,76 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* pFormParameters;
 				public IPropertyBag* ppbFormParameters;
 			}
 		}
 		[CRepr]
-		public struct ADS_OCTET_STRING
-		{
+		public struct ADS_OCTET_STRING		{
 			public uint32 dwLength;
 			public uint8* lpValue;
 		}
 		[CRepr]
-		public struct ADS_NT_SECURITY_DESCRIPTOR
-		{
+		public struct ADS_NT_SECURITY_DESCRIPTOR		{
 			public uint32 dwLength;
 			public uint8* lpValue;
 		}
 		[CRepr]
-		public struct ADS_PROV_SPECIFIC
-		{
+		public struct ADS_PROV_SPECIFIC		{
 			public uint32 dwLength;
 			public uint8* lpValue;
 		}
 		[CRepr]
-		public struct ADS_CASEIGNORE_LIST
-		{
+		public struct ADS_CASEIGNORE_LIST		{
 			public ADS_CASEIGNORE_LIST* Next;
 			public PWSTR String;
 		}
 		[CRepr]
-		public struct ADS_OCTET_LIST
-		{
+		public struct ADS_OCTET_LIST		{
 			public ADS_OCTET_LIST* Next;
 			public uint32 Length;
 			public uint8* Data;
 		}
 		[CRepr]
-		public struct ADS_PATH
-		{
+		public struct ADS_PATH		{
 			public uint32 Type;
 			public PWSTR VolumeName;
 			public PWSTR Path;
 		}
 		[CRepr]
-		public struct ADS_POSTALADDRESS
-		{
+		public struct ADS_POSTALADDRESS		{
 			public PWSTR[6] PostalAddress;
 		}
 		[CRepr]
-		public struct ADS_TIMESTAMP
-		{
+		public struct ADS_TIMESTAMP		{
 			public uint32 WholeSeconds;
 			public uint32 EventID;
 		}
 		[CRepr]
-		public struct ADS_BACKLINK
-		{
+		public struct ADS_BACKLINK		{
 			public uint32 RemoteID;
 			public PWSTR ObjectName;
 		}
 		[CRepr]
-		public struct ADS_TYPEDNAME
-		{
+		public struct ADS_TYPEDNAME		{
 			public PWSTR ObjectName;
 			public uint32 Level;
 			public uint32 Interval;
 		}
 		[CRepr]
-		public struct ADS_HOLD
-		{
+		public struct ADS_HOLD		{
 			public PWSTR ObjectName;
 			public uint32 Amount;
 		}
 		[CRepr]
-		public struct ADS_NETADDRESS
-		{
+		public struct ADS_NETADDRESS		{
 			public uint32 AddressType;
 			public uint32 AddressLength;
 			public uint8* Address;
 		}
 		[CRepr]
-		public struct ADS_REPLICAPOINTER
-		{
+		public struct ADS_REPLICAPOINTER		{
 			public PWSTR ServerName;
 			public uint32 ReplicaType;
 			public uint32 ReplicaNumber;
@@ -1072,40 +1055,34 @@ namespace Win32
 			public ADS_NETADDRESS* ReplicaAddressHints;
 		}
 		[CRepr]
-		public struct ADS_FAXNUMBER
-		{
+		public struct ADS_FAXNUMBER		{
 			public PWSTR TelephoneNumber;
 			public uint32 NumberOfBits;
 			public uint8* Parameters;
 		}
 		[CRepr]
-		public struct ADS_EMAIL
-		{
+		public struct ADS_EMAIL		{
 			public PWSTR Address;
 			public uint32 Type;
 		}
 		[CRepr]
-		public struct ADS_DN_WITH_BINARY
-		{
+		public struct ADS_DN_WITH_BINARY		{
 			public uint32 dwLength;
 			public uint8* lpBinaryValue;
 			public PWSTR pszDNString;
 		}
 		[CRepr]
-		public struct ADS_DN_WITH_STRING
-		{
+		public struct ADS_DN_WITH_STRING		{
 			public PWSTR pszStringValue;
 			public PWSTR pszDNString;
 		}
 		[CRepr]
-		public struct ADSVALUE
-		{
+		public struct ADSVALUE		{
 			public ADSTYPEENUM dwType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint16* DNString;
 				public uint16* CaseExactString;
 				public uint16* CaseIgnoreString;
@@ -1136,8 +1113,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct ADS_ATTR_INFO
-		{
+		public struct ADS_ATTR_INFO		{
 			public PWSTR pszAttrName;
 			public uint32 dwControlCode;
 			public ADSTYPEENUM dwADsType;
@@ -1145,8 +1121,7 @@ namespace Win32
 			public uint32 dwNumValues;
 		}
 		[CRepr]
-		public struct ADS_OBJECT_INFO
-		{
+		public struct ADS_OBJECT_INFO		{
 			public PWSTR pszRDN;
 			public PWSTR pszObjectDN;
 			public PWSTR pszParentDN;
@@ -1154,15 +1129,13 @@ namespace Win32
 			public PWSTR pszClassName;
 		}
 		[CRepr]
-		public struct ads_searchpref_info
-		{
+		public struct ads_searchpref_info		{
 			public ADS_SEARCHPREF_ENUM dwSearchPref;
 			public ADSVALUE vValue;
 			public ADS_STATUSENUM dwStatus;
 		}
 		[CRepr]
-		public struct ads_search_column
-		{
+		public struct ads_search_column		{
 			public PWSTR pszAttrName;
 			public ADSTYPEENUM dwADsType;
 			public ADSVALUE* pADsValues;
@@ -1170,8 +1143,7 @@ namespace Win32
 			public HANDLE hReserved;
 		}
 		[CRepr]
-		public struct ADS_ATTR_DEF
-		{
+		public struct ADS_ATTR_DEF		{
 			public PWSTR pszAttrName;
 			public ADSTYPEENUM dwADsType;
 			public uint32 dwMinRange;
@@ -1179,8 +1151,7 @@ namespace Win32
 			public BOOL fMultiValued;
 		}
 		[CRepr]
-		public struct ADS_CLASS_DEF
-		{
+		public struct ADS_CLASS_DEF		{
 			public PWSTR pszClassName;
 			public uint32 dwMandatoryAttrs;
 			public PWSTR* ppszMandatoryAttrs;
@@ -1193,15 +1164,13 @@ namespace Win32
 			public BOOL fIsContainer;
 		}
 		[CRepr]
-		public struct ADS_SORTKEY
-		{
+		public struct ADS_SORTKEY		{
 			public PWSTR pszAttrType;
 			public PWSTR pszReserved;
 			public BOOLEAN fReverseorder;
 		}
 		[CRepr]
-		public struct ADS_VLV
-		{
+		public struct ADS_VLV		{
 			public uint32 dwBeforeCount;
 			public uint32 dwAfterCount;
 			public uint32 dwOffset;
@@ -1211,23 +1180,20 @@ namespace Win32
 			public uint8* lpContextID;
 		}
 		[CRepr]
-		public struct DSOBJECT
-		{
+		public struct DSOBJECT		{
 			public uint32 dwFlags;
 			public uint32 dwProviderFlags;
 			public uint32 offsetName;
 			public uint32 offsetClass;
 		}
 		[CRepr]
-		public struct DSOBJECTNAMES
-		{
+		public struct DSOBJECTNAMES		{
 			public Guid clsidNamespace;
 			public uint32 cItems;
 			public DSOBJECT[0] aObjects;
 		}
 		[CRepr]
-		public struct DSDISPLAYSPECOPTIONS
-		{
+		public struct DSDISPLAYSPECOPTIONS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 offsetAttribPrefix;
@@ -1237,13 +1203,11 @@ namespace Win32
 			public uint32 offsetServerConfigPath;
 		}
 		[CRepr]
-		public struct DSPROPERTYPAGEINFO
-		{
+		public struct DSPROPERTYPAGEINFO		{
 			public uint32 offsetString;
 		}
 		[CRepr]
-		public struct DOMAINDESC
-		{
+		public struct DOMAINDESC		{
 			public PWSTR pszName;
 			public PWSTR pszPath;
 			public PWSTR pszNCName;
@@ -1255,15 +1219,13 @@ namespace Win32
 			public DOMAINDESC* pdNextSibling;
 		}
 		[CRepr]
-		public struct DOMAIN_TREE
-		{
+		public struct DOMAIN_TREE		{
 			public uint32 dsSize;
 			public uint32 dwCount;
 			public DOMAINDESC[0] aDomains;
 		}
 		[CRepr]
-		public struct DSCLASSCREATIONINFO
-		{
+		public struct DSCLASSCREATIONINFO		{
 			public uint32 dwFlags;
 			public Guid clsidWizardDialog;
 			public Guid clsidWizardPrimaryPage;
@@ -1271,8 +1233,7 @@ namespace Win32
 			public Guid[0] aWizardExtensions;
 		}
 		[CRepr]
-		public struct DSBROWSEINFOW
-		{
+		public struct DSBROWSEINFOW		{
 			public uint32 cbStruct;
 			public HWND hwndOwner;
 			public PWSTR pszCaption;
@@ -1290,8 +1251,7 @@ namespace Win32
 			public uint32 cchObjectClass;
 		}
 		[CRepr]
-		public struct DSBROWSEINFOA
-		{
+		public struct DSBROWSEINFOA		{
 			public uint32 cbStruct;
 			public HWND hwndOwner;
 			public PSTR pszCaption;
@@ -1309,8 +1269,7 @@ namespace Win32
 			public uint32 cchObjectClass;
 		}
 		[CRepr]
-		public struct DSBITEMW
-		{
+		public struct DSBITEMW		{
 			public uint32 cbStruct;
 			public PWSTR pszADsPath;
 			public PWSTR pszClass;
@@ -1322,8 +1281,7 @@ namespace Win32
 			public int32 iIconResID;
 		}
 		[CRepr]
-		public struct DSBITEMA
-		{
+		public struct DSBITEMA		{
 			public uint32 cbStruct;
 			public PWSTR pszADsPath;
 			public PWSTR pszClass;
@@ -1335,21 +1293,18 @@ namespace Win32
 			public int32 iIconResID;
 		}
 		[CRepr]
-		public struct DSOP_UPLEVEL_FILTER_FLAGS
-		{
+		public struct DSOP_UPLEVEL_FILTER_FLAGS		{
 			public uint32 flBothModes;
 			public uint32 flMixedModeOnly;
 			public uint32 flNativeModeOnly;
 		}
 		[CRepr]
-		public struct DSOP_FILTER_FLAGS
-		{
+		public struct DSOP_FILTER_FLAGS		{
 			public DSOP_UPLEVEL_FILTER_FLAGS Uplevel;
 			public uint32 flDownlevel;
 		}
 		[CRepr]
-		public struct DSOP_SCOPE_INIT_INFO
-		{
+		public struct DSOP_SCOPE_INIT_INFO		{
 			public uint32 cbSize;
 			public uint32 flType;
 			public uint32 flScope;
@@ -1359,8 +1314,7 @@ namespace Win32
 			public HRESULT hr;
 		}
 		[CRepr]
-		public struct DSOP_INIT_INFO
-		{
+		public struct DSOP_INIT_INFO		{
 			public uint32 cbSize;
 			public PWSTR pwzTargetComputer;
 			public uint32 cDsScopeInfos;
@@ -1370,8 +1324,7 @@ namespace Win32
 			public PWSTR* apwzAttributeNames;
 		}
 		[CRepr]
-		public struct DS_SELECTION
-		{
+		public struct DS_SELECTION		{
 			public PWSTR pwzName;
 			public PWSTR pwzADsPath;
 			public PWSTR pwzClass;
@@ -1380,15 +1333,13 @@ namespace Win32
 			public uint32 flScopeType;
 		}
 		[CRepr]
-		public struct DS_SELECTION_LIST
-		{
+		public struct DS_SELECTION_LIST		{
 			public uint32 cItems;
 			public uint32 cFetchedAttributes;
 			public DS_SELECTION[0] aDsSelection;
 		}
 		[CRepr]
-		public struct DSQUERYINITPARAMS
-		{
+		public struct DSQUERYINITPARAMS		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public PWSTR pDefaultScope;
@@ -1398,8 +1349,7 @@ namespace Win32
 			public PWSTR pServer;
 		}
 		[CRepr]
-		public struct DSCOLUMN
-		{
+		public struct DSCOLUMN		{
 			public uint32 dwFlags;
 			public int32 fmt;
 			public int32 cx;
@@ -1408,8 +1358,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct DSQUERYPARAMS
-		{
+		public struct DSQUERYPARAMS		{
 			public uint32 cbStruct;
 			public uint32 dwFlags;
 			public HINSTANCE hInstance;
@@ -1419,23 +1368,20 @@ namespace Win32
 			public DSCOLUMN[0] aColumns;
 		}
 		[CRepr]
-		public struct DSQUERYCLASSLIST
-		{
+		public struct DSQUERYCLASSLIST		{
 			public uint32 cbStruct;
 			public int32 cClasses;
 			public uint32[0] offsetClass;
 		}
 		[CRepr]
-		public struct DSA_NEWOBJ_DISPINFO
-		{
+		public struct DSA_NEWOBJ_DISPINFO		{
 			public uint32 dwSize;
 			public HICON hObjClassIcon;
 			public PWSTR lpszWizTitle;
 			public PWSTR lpszContDisplayName;
 		}
 		[CRepr]
-		public struct ADSPROPINITPARAMS
-		{
+		public struct ADSPROPINITPARAMS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HRESULT hr;
@@ -1444,8 +1390,7 @@ namespace Win32
 			public ADS_ATTR_INFO* pWritableAttrs;
 		}
 		[CRepr]
-		public struct ADSPROPERROR
-		{
+		public struct ADSPROPERROR		{
 			public HWND hwndPage;
 			public PWSTR pszPageTitle;
 			public PWSTR pszObjPath;
@@ -1454,48 +1399,41 @@ namespace Win32
 			public PWSTR pszError;
 		}
 		[CRepr]
-		public struct SCHEDULE_HEADER
-		{
+		public struct SCHEDULE_HEADER		{
 			public uint32 Type;
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct SCHEDULE
-		{
+		public struct SCHEDULE		{
 			public uint32 Size;
 			public uint32 Bandwidth;
 			public uint32 NumberOfSchedules;
 			public SCHEDULE_HEADER[0] Schedules;
 		}
 		[CRepr]
-		public struct DS_NAME_RESULT_ITEMA
-		{
+		public struct DS_NAME_RESULT_ITEMA		{
 			public uint32 status;
 			public PSTR pDomain;
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct DS_NAME_RESULTA
-		{
+		public struct DS_NAME_RESULTA		{
 			public uint32 cItems;
 			public DS_NAME_RESULT_ITEMA* rItems;
 		}
 		[CRepr]
-		public struct DS_NAME_RESULT_ITEMW
-		{
+		public struct DS_NAME_RESULT_ITEMW		{
 			public uint32 status;
 			public PWSTR pDomain;
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct DS_NAME_RESULTW
-		{
+		public struct DS_NAME_RESULTW		{
 			public uint32 cItems;
 			public DS_NAME_RESULT_ITEMW* rItems;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_SYNCA
-		{
+		public struct DS_REPSYNCALL_SYNCA		{
 			public PSTR pszSrcId;
 			public PSTR pszDstId;
 			public PSTR pszNC;
@@ -1503,8 +1441,7 @@ namespace Win32
 			public Guid* pguidDst;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_SYNCW
-		{
+		public struct DS_REPSYNCALL_SYNCW		{
 			public PWSTR pszSrcId;
 			public PWSTR pszDstId;
 			public PWSTR pszNC;
@@ -1512,58 +1449,50 @@ namespace Win32
 			public Guid* pguidDst;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_ERRINFOA
-		{
+		public struct DS_REPSYNCALL_ERRINFOA		{
 			public PSTR pszSvrId;
 			public DS_REPSYNCALL_ERROR error;
 			public uint32 dwWin32Err;
 			public PSTR pszSrcId;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_ERRINFOW
-		{
+		public struct DS_REPSYNCALL_ERRINFOW		{
 			public PWSTR pszSvrId;
 			public DS_REPSYNCALL_ERROR error;
 			public uint32 dwWin32Err;
 			public PWSTR pszSrcId;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_UPDATEA
-		{
+		public struct DS_REPSYNCALL_UPDATEA		{
 			public DS_REPSYNCALL_EVENT event;
 			public DS_REPSYNCALL_ERRINFOA* pErrInfo;
 			public DS_REPSYNCALL_SYNCA* pSync;
 		}
 		[CRepr]
-		public struct DS_REPSYNCALL_UPDATEW
-		{
+		public struct DS_REPSYNCALL_UPDATEW		{
 			public DS_REPSYNCALL_EVENT event;
 			public DS_REPSYNCALL_ERRINFOW* pErrInfo;
 			public DS_REPSYNCALL_SYNCW* pSync;
 		}
 		[CRepr]
-		public struct DS_SITE_COST_INFO
-		{
+		public struct DS_SITE_COST_INFO		{
 			public uint32 errorCode;
 			public uint32 cost;
 		}
 		[CRepr]
-		public struct DS_SCHEMA_GUID_MAPA
-		{
+		public struct DS_SCHEMA_GUID_MAPA		{
 			public Guid guid;
 			public uint32 guidType;
 			public PSTR pName;
 		}
 		[CRepr]
-		public struct DS_SCHEMA_GUID_MAPW
-		{
+		public struct DS_SCHEMA_GUID_MAPW		{
 			public Guid guid;
 			public uint32 guidType;
 			public PWSTR pName;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_1A
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_1A		{
 			public PSTR NetbiosName;
 			public PSTR DnsHostName;
 			public PSTR SiteName;
@@ -1573,8 +1502,7 @@ namespace Win32
 			public BOOL fDsEnabled;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_1W
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_1W		{
 			public PWSTR NetbiosName;
 			public PWSTR DnsHostName;
 			public PWSTR SiteName;
@@ -1584,8 +1512,7 @@ namespace Win32
 			public BOOL fDsEnabled;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_2A
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_2A		{
 			public PSTR NetbiosName;
 			public PSTR DnsHostName;
 			public PSTR SiteName;
@@ -1602,8 +1529,7 @@ namespace Win32
 			public Guid NtdsDsaObjectGuid;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_2W
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_2W		{
 			public PWSTR NetbiosName;
 			public PWSTR DnsHostName;
 			public PWSTR SiteName;
@@ -1620,8 +1546,7 @@ namespace Win32
 			public Guid NtdsDsaObjectGuid;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_3A
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_3A		{
 			public PSTR NetbiosName;
 			public PSTR DnsHostName;
 			public PSTR SiteName;
@@ -1639,8 +1564,7 @@ namespace Win32
 			public Guid NtdsDsaObjectGuid;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_CONTROLLER_INFO_3W
-		{
+		public struct DS_DOMAIN_CONTROLLER_INFO_3W		{
 			public PWSTR NetbiosName;
 			public PWSTR DnsHostName;
 			public PWSTR SiteName;
@@ -1658,8 +1582,7 @@ namespace Win32
 			public Guid NtdsDsaObjectGuid;
 		}
 		[CRepr]
-		public struct DS_REPL_NEIGHBORW
-		{
+		public struct DS_REPL_NEIGHBORW		{
 			public PWSTR pszNamingContext;
 			public PWSTR pszSourceDsaDN;
 			public PWSTR pszSourceDsaAddress;
@@ -1678,8 +1601,7 @@ namespace Win32
 			public uint32 cNumConsecutiveSyncFailures;
 		}
 		[CRepr]
-		public struct DS_REPL_NEIGHBORW_BLOB
-		{
+		public struct DS_REPL_NEIGHBORW_BLOB		{
 			public uint32 oszNamingContext;
 			public uint32 oszSourceDsaDN;
 			public uint32 oszSourceDsaAddress;
@@ -1698,65 +1620,56 @@ namespace Win32
 			public uint32 cNumConsecutiveSyncFailures;
 		}
 		[CRepr]
-		public struct DS_REPL_NEIGHBORSW
-		{
+		public struct DS_REPL_NEIGHBORSW		{
 			public uint32 cNumNeighbors;
 			public uint32 dwReserved;
 			public DS_REPL_NEIGHBORW[0] rgNeighbor;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSOR
-		{
+		public struct DS_REPL_CURSOR		{
 			public Guid uuidSourceDsaInvocationID;
 			public int64 usnAttributeFilter;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSOR_2
-		{
+		public struct DS_REPL_CURSOR_2		{
 			public Guid uuidSourceDsaInvocationID;
 			public int64 usnAttributeFilter;
 			public FILETIME ftimeLastSyncSuccess;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSOR_3W
-		{
+		public struct DS_REPL_CURSOR_3W		{
 			public Guid uuidSourceDsaInvocationID;
 			public int64 usnAttributeFilter;
 			public FILETIME ftimeLastSyncSuccess;
 			public PWSTR pszSourceDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSOR_BLOB
-		{
+		public struct DS_REPL_CURSOR_BLOB		{
 			public Guid uuidSourceDsaInvocationID;
 			public int64 usnAttributeFilter;
 			public FILETIME ftimeLastSyncSuccess;
 			public uint32 oszSourceDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSORS
-		{
+		public struct DS_REPL_CURSORS		{
 			public uint32 cNumCursors;
 			public uint32 dwReserved;
 			public DS_REPL_CURSOR[0] rgCursor;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSORS_2
-		{
+		public struct DS_REPL_CURSORS_2		{
 			public uint32 cNumCursors;
 			public uint32 dwEnumerationContext;
 			public DS_REPL_CURSOR_2[0] rgCursor;
 		}
 		[CRepr]
-		public struct DS_REPL_CURSORS_3W
-		{
+		public struct DS_REPL_CURSORS_3W		{
 			public uint32 cNumCursors;
 			public uint32 dwEnumerationContext;
 			public DS_REPL_CURSOR_3W[0] rgCursor;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_META_DATA
-		{
+		public struct DS_REPL_ATTR_META_DATA		{
 			public PWSTR pszAttributeName;
 			public uint32 dwVersion;
 			public FILETIME ftimeLastOriginatingChange;
@@ -1765,8 +1678,7 @@ namespace Win32
 			public int64 usnLocalChange;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_META_DATA_2
-		{
+		public struct DS_REPL_ATTR_META_DATA_2		{
 			public PWSTR pszAttributeName;
 			public uint32 dwVersion;
 			public FILETIME ftimeLastOriginatingChange;
@@ -1776,8 +1688,7 @@ namespace Win32
 			public PWSTR pszLastOriginatingDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_META_DATA_BLOB
-		{
+		public struct DS_REPL_ATTR_META_DATA_BLOB		{
 			public uint32 oszAttributeName;
 			public uint32 dwVersion;
 			public FILETIME ftimeLastOriginatingChange;
@@ -1787,22 +1698,19 @@ namespace Win32
 			public uint32 oszLastOriginatingDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_OBJ_META_DATA
-		{
+		public struct DS_REPL_OBJ_META_DATA		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
 			public DS_REPL_ATTR_META_DATA[0] rgMetaData;
 		}
 		[CRepr]
-		public struct DS_REPL_OBJ_META_DATA_2
-		{
+		public struct DS_REPL_OBJ_META_DATA_2		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
 			public DS_REPL_ATTR_META_DATA_2[0] rgMetaData;
 		}
 		[CRepr]
-		public struct DS_REPL_KCC_DSA_FAILUREW
-		{
+		public struct DS_REPL_KCC_DSA_FAILUREW		{
 			public PWSTR pszDsaDN;
 			public Guid uuidDsaObjGuid;
 			public FILETIME ftimeFirstFailure;
@@ -1810,8 +1718,7 @@ namespace Win32
 			public uint32 dwLastResult;
 		}
 		[CRepr]
-		public struct DS_REPL_KCC_DSA_FAILUREW_BLOB
-		{
+		public struct DS_REPL_KCC_DSA_FAILUREW_BLOB		{
 			public uint32 oszDsaDN;
 			public Guid uuidDsaObjGuid;
 			public FILETIME ftimeFirstFailure;
@@ -1819,15 +1726,13 @@ namespace Win32
 			public uint32 dwLastResult;
 		}
 		[CRepr]
-		public struct DS_REPL_KCC_DSA_FAILURESW
-		{
+		public struct DS_REPL_KCC_DSA_FAILURESW		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
 			public DS_REPL_KCC_DSA_FAILUREW[0] rgDsaFailure;
 		}
 		[CRepr]
-		public struct DS_REPL_OPW
-		{
+		public struct DS_REPL_OPW		{
 			public FILETIME ftimeEnqueued;
 			public uint32 ulSerialNumber;
 			public uint32 ulPriority;
@@ -1840,8 +1745,7 @@ namespace Win32
 			public Guid uuidDsaObjGuid;
 		}
 		[CRepr]
-		public struct DS_REPL_OPW_BLOB
-		{
+		public struct DS_REPL_OPW_BLOB		{
 			public FILETIME ftimeEnqueued;
 			public uint32 ulSerialNumber;
 			public uint32 ulPriority;
@@ -1854,15 +1758,13 @@ namespace Win32
 			public Guid uuidDsaObjGuid;
 		}
 		[CRepr]
-		public struct DS_REPL_PENDING_OPSW
-		{
+		public struct DS_REPL_PENDING_OPSW		{
 			public FILETIME ftimeCurrentOpStarted;
 			public uint32 cNumPendingOps;
 			public DS_REPL_OPW[0] rgPendingOp;
 		}
 		[CRepr]
-		public struct DS_REPL_VALUE_META_DATA
-		{
+		public struct DS_REPL_VALUE_META_DATA		{
 			public PWSTR pszAttributeName;
 			public PWSTR pszObjectDn;
 			public uint32 cbData;
@@ -1876,8 +1778,7 @@ namespace Win32
 			public int64 usnLocalChange;
 		}
 		[CRepr]
-		public struct DS_REPL_VALUE_META_DATA_2
-		{
+		public struct DS_REPL_VALUE_META_DATA_2		{
 			public PWSTR pszAttributeName;
 			public PWSTR pszObjectDn;
 			public uint32 cbData;
@@ -1892,8 +1793,7 @@ namespace Win32
 			public PWSTR pszLastOriginatingDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_VALUE_META_DATA_EXT
-		{
+		public struct DS_REPL_VALUE_META_DATA_EXT		{
 			public PWSTR pszAttributeName;
 			public PWSTR pszObjectDn;
 			public uint32 cbData;
@@ -1911,8 +1811,7 @@ namespace Win32
 			public uint32 dwCurrentLinkState;
 		}
 		[CRepr]
-		public struct DS_REPL_VALUE_META_DATA_BLOB
-		{
+		public struct DS_REPL_VALUE_META_DATA_BLOB		{
 			public uint32 oszAttributeName;
 			public uint32 oszObjectDn;
 			public uint32 cbData;
@@ -1927,8 +1826,7 @@ namespace Win32
 			public uint32 oszLastOriginatingDsaDN;
 		}
 		[CRepr]
-		public struct DS_REPL_VALUE_META_DATA_BLOB_EXT
-		{
+		public struct DS_REPL_VALUE_META_DATA_BLOB_EXT		{
 			public uint32 oszAttributeName;
 			public uint32 oszObjectDn;
 			public uint32 cbData;
@@ -1946,29 +1844,25 @@ namespace Win32
 			public uint32 dwCurrentLinkState;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_VALUE_META_DATA
-		{
+		public struct DS_REPL_ATTR_VALUE_META_DATA		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
 			public DS_REPL_VALUE_META_DATA[0] rgMetaData;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_VALUE_META_DATA_2
-		{
+		public struct DS_REPL_ATTR_VALUE_META_DATA_2		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
 			public DS_REPL_VALUE_META_DATA_2[0] rgMetaData;
 		}
 		[CRepr]
-		public struct DS_REPL_ATTR_VALUE_META_DATA_EXT
-		{
+		public struct DS_REPL_ATTR_VALUE_META_DATA_EXT		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
 			public DS_REPL_VALUE_META_DATA_EXT[0] rgMetaData;
 		}
 		[CRepr]
-		public struct DS_REPL_QUEUE_STATISTICSW
-		{
+		public struct DS_REPL_QUEUE_STATISTICSW		{
 			public FILETIME ftimeCurrentOpStarted;
 			public uint32 cNumPendingOps;
 			public FILETIME ftimeOldestSync;
@@ -1978,8 +1872,7 @@ namespace Win32
 			public FILETIME ftimeOldestUpdRefs;
 		}
 		[CRepr]
-		public struct DSROLE_PRIMARY_DOMAIN_INFO_BASIC
-		{
+		public struct DSROLE_PRIMARY_DOMAIN_INFO_BASIC		{
 			public DSROLE_MACHINE_ROLE MachineRole;
 			public uint32 Flags;
 			public PWSTR DomainNameFlat;
@@ -1988,19 +1881,16 @@ namespace Win32
 			public Guid DomainGuid;
 		}
 		[CRepr]
-		public struct DSROLE_UPGRADE_STATUS_INFO
-		{
+		public struct DSROLE_UPGRADE_STATUS_INFO		{
 			public uint32 OperationState;
 			public DSROLE_SERVER_STATE PreviousServerState;
 		}
 		[CRepr]
-		public struct DSROLE_OPERATION_STATE_INFO
-		{
+		public struct DSROLE_OPERATION_STATE_INFO		{
 			public DSROLE_OPERATION_STATE OperationState;
 		}
 		[CRepr]
-		public struct DOMAIN_CONTROLLER_INFOA
-		{
+		public struct DOMAIN_CONTROLLER_INFOA		{
 			public PSTR DomainControllerName;
 			public PSTR DomainControllerAddress;
 			public uint32 DomainControllerAddressType;
@@ -2012,8 +1902,7 @@ namespace Win32
 			public PSTR ClientSiteName;
 		}
 		[CRepr]
-		public struct DOMAIN_CONTROLLER_INFOW
-		{
+		public struct DOMAIN_CONTROLLER_INFOW		{
 			public PWSTR DomainControllerName;
 			public PWSTR DomainControllerAddress;
 			public uint32 DomainControllerAddressType;
@@ -2025,8 +1914,7 @@ namespace Win32
 			public PWSTR ClientSiteName;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_TRUSTSW
-		{
+		public struct DS_DOMAIN_TRUSTSW		{
 			public PWSTR NetbiosDomainName;
 			public PWSTR DnsDomainName;
 			public uint32 Flags;
@@ -2037,8 +1925,7 @@ namespace Win32
 			public Guid DomainGuid;
 		}
 		[CRepr]
-		public struct DS_DOMAIN_TRUSTSA
-		{
+		public struct DS_DOMAIN_TRUSTSA		{
 			public PSTR NetbiosDomainName;
 			public PSTR DnsDomainName;
 			public uint32 Flags;

@@ -607,72 +607,61 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NDR_SCONTEXT_1
-		{
+		public struct NDR_SCONTEXT_1		{
 			public void*[2] pad;
 			public void* userContext;
 		}
 		[CRepr]
-		public struct RPC_BINDING_VECTOR
-		{
+		public struct RPC_BINDING_VECTOR		{
 			public uint32 Count;
 			public void*[0] BindingH;
 		}
 		[CRepr]
-		public struct UUID_VECTOR
-		{
+		public struct UUID_VECTOR		{
 			public uint32 Count;
 			public Guid*[0] Uuid;
 		}
 		[CRepr]
-		public struct RPC_IF_ID
-		{
+		public struct RPC_IF_ID		{
 			public Guid Uuid;
 			public uint16 VersMajor;
 			public uint16 VersMinor;
 		}
 		[CRepr]
-		public struct RPC_PROTSEQ_VECTORA
-		{
+		public struct RPC_PROTSEQ_VECTORA		{
 			public uint32 Count;
 			public uint8*[0] Protseq;
 		}
 		[CRepr]
-		public struct RPC_PROTSEQ_VECTORW
-		{
+		public struct RPC_PROTSEQ_VECTORW		{
 			public uint32 Count;
 			public uint16*[0] Protseq;
 		}
 		[CRepr]
-		public struct RPC_POLICY
-		{
+		public struct RPC_POLICY		{
 			public uint32 Length;
 			public uint32 EndpointFlags;
 			public uint32 NICFlags;
 		}
 		[CRepr]
-		public struct RPC_STATS_VECTOR
-		{
+		public struct RPC_STATS_VECTOR		{
 			public uint32 Count;
 			public uint32[0] Stats;
 		}
 		[CRepr]
-		public struct RPC_IF_ID_VECTOR
-		{
+		public struct RPC_IF_ID_VECTOR		{
 			public uint32 Count;
 			public RPC_IF_ID*[0] IfId;
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS
-		{
+		public struct RPC_SECURITY_QOS		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
 			public RPC_C_IMP_LEVEL ImpersonationType;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_W
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_W		{
 			public uint16* User;
 			public uint32 UserLength;
 			public uint16* Domain;
@@ -682,8 +671,7 @@ namespace Win32
 			public SEC_WINNT_AUTH_IDENTITY Flags;
 		}
 		[CRepr]
-		public struct SEC_WINNT_AUTH_IDENTITY_A
-		{
+		public struct SEC_WINNT_AUTH_IDENTITY_A		{
 			public uint8* User;
 			public uint32 UserLength;
 			public uint8* Domain;
@@ -693,8 +681,7 @@ namespace Win32
 			public SEC_WINNT_AUTH_IDENTITY Flags;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_W
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_W		{
 			public SEC_WINNT_AUTH_IDENTITY_W* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -703,8 +690,7 @@ namespace Win32
 			public uint16* ServerCertificateSubject;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_A
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_A		{
 			public SEC_WINNT_AUTH_IDENTITY_A* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -713,8 +699,7 @@ namespace Win32
 			public uint8* ServerCertificateSubject;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V2_W		{
 			public SEC_WINNT_AUTH_IDENTITY_W* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -726,8 +711,7 @@ namespace Win32
 			public uint32* ProxyAuthnSchemes;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V2_A		{
 			public SEC_WINNT_AUTH_IDENTITY_A* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -739,8 +723,7 @@ namespace Win32
 			public uint32* ProxyAuthnSchemes;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V3_W		{
 			public void* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -752,8 +735,7 @@ namespace Win32
 			public uint32* ProxyAuthnSchemes;
 		}
 		[CRepr]
-		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A
-		{
+		public struct RPC_HTTP_TRANSPORT_CREDENTIALS_V3_A		{
 			public void* TransportCredentials;
 			public RPC_C_HTTP_FLAGS Flags;
 			public RPC_C_HTTP_AUTHN_TARGET AuthenticationTarget;
@@ -765,8 +747,7 @@ namespace Win32
 			public uint32* ProxyAuthnSchemes;
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V2_W
-		{
+		public struct RPC_SECURITY_QOS_V2_W		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -775,14 +756,12 @@ namespace Win32
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_W* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V2_A
-		{
+		public struct RPC_SECURITY_QOS_V2_A		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -791,14 +770,12 @@ namespace Win32
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_A* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V3_W
-		{
+		public struct RPC_SECURITY_QOS_V3_W		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -808,14 +785,12 @@ namespace Win32
 			public void* Sid;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_W* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V3_A
-		{
+		public struct RPC_SECURITY_QOS_V3_A		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -825,14 +800,12 @@ namespace Win32
 			public void* Sid;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_A* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V4_W
-		{
+		public struct RPC_SECURITY_QOS_V4_W		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -843,14 +816,12 @@ namespace Win32
 			public uint32 EffectiveOnly;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_W* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V4_A
-		{
+		public struct RPC_SECURITY_QOS_V4_A		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -861,14 +832,12 @@ namespace Win32
 			public uint32 EffectiveOnly;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_A* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V5_W
-		{
+		public struct RPC_SECURITY_QOS_V5_W		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -880,14 +849,12 @@ namespace Win32
 			public void* ServerSecurityDescriptor;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_W* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_SECURITY_QOS_V5_A
-		{
+		public struct RPC_SECURITY_QOS_V5_A		{
 			public uint32 Version;
 			public RPC_C_QOS_CAPABILITIES Capabilities;
 			public RPC_C_QOS_IDENTITY IdentityTracking;
@@ -899,14 +866,12 @@ namespace Win32
 			public void* ServerSecurityDescriptor;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public RPC_HTTP_TRANSPORT_CREDENTIALS_A* HttpCredentials;
 			}
 		}
 		[CRepr]
-		public struct RPC_BINDING_HANDLE_TEMPLATE_V1_W
-		{
+		public struct RPC_BINDING_HANDLE_TEMPLATE_V1_W		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ProtocolSequence;
@@ -916,14 +881,12 @@ namespace Win32
 			public Guid ObjectUuid;
 			
 			[CRepr, Union]
-			public struct _u1_e__Union
-			{
+			public struct _u1_e__Union			{
 				public uint16* Reserved;
 			}
 		}
 		[CRepr]
-		public struct RPC_BINDING_HANDLE_TEMPLATE_V1_A
-		{
+		public struct RPC_BINDING_HANDLE_TEMPLATE_V1_A		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ProtocolSequence;
@@ -933,14 +896,12 @@ namespace Win32
 			public Guid ObjectUuid;
 			
 			[CRepr, Union]
-			public struct _u1_e__Union
-			{
+			public struct _u1_e__Union			{
 				public uint8* Reserved;
 			}
 		}
 		[CRepr]
-		public struct RPC_BINDING_HANDLE_SECURITY_V1_W
-		{
+		public struct RPC_BINDING_HANDLE_SECURITY_V1_W		{
 			public uint32 Version;
 			public uint16* ServerPrincName;
 			public uint32 AuthnLevel;
@@ -949,8 +910,7 @@ namespace Win32
 			public RPC_SECURITY_QOS* SecurityQos;
 		}
 		[CRepr]
-		public struct RPC_BINDING_HANDLE_SECURITY_V1_A
-		{
+		public struct RPC_BINDING_HANDLE_SECURITY_V1_A		{
 			public uint32 Version;
 			public uint8* ServerPrincName;
 			public uint32 AuthnLevel;
@@ -959,24 +919,21 @@ namespace Win32
 			public RPC_SECURITY_QOS* SecurityQos;
 		}
 		[CRepr]
-		public struct RPC_BINDING_HANDLE_OPTIONS_V1
-		{
+		public struct RPC_BINDING_HANDLE_OPTIONS_V1		{
 			public uint32 Version;
 			public RPC_BINDING_HANDLE_OPTIONS_FLAGS Flags;
 			public uint32 ComTimeout;
 			public uint32 CallTimeout;
 		}
 		[CRepr]
-		public struct RPC_CLIENT_INFORMATION1
-		{
+		public struct RPC_CLIENT_INFORMATION1		{
 			public uint8* UserName;
 			public uint8* ComputerName;
 			public uint16 Privilege;
 			public uint32 AuthFlags;
 		}
 		[CRepr]
-		public struct RPC_ENDPOINT_TEMPLATEW
-		{
+		public struct RPC_ENDPOINT_TEMPLATEW		{
 			public uint32 Version;
 			public uint16* ProtSeq;
 			public uint16* Endpoint;
@@ -984,8 +941,7 @@ namespace Win32
 			public uint32 Backlog;
 		}
 		[CRepr]
-		public struct RPC_ENDPOINT_TEMPLATEA
-		{
+		public struct RPC_ENDPOINT_TEMPLATEA		{
 			public uint32 Version;
 			public uint8* ProtSeq;
 			public uint8* Endpoint;
@@ -993,8 +949,7 @@ namespace Win32
 			public uint32 Backlog;
 		}
 		[CRepr]
-		public struct RPC_INTERFACE_TEMPLATEA
-		{
+		public struct RPC_INTERFACE_TEMPLATEA		{
 			public uint32 Version;
 			public void* IfSpec;
 			public Guid* MgrTypeUuid;
@@ -1008,8 +963,7 @@ namespace Win32
 			public void* SecurityDescriptor;
 		}
 		[CRepr]
-		public struct RPC_INTERFACE_TEMPLATEW
-		{
+		public struct RPC_INTERFACE_TEMPLATEW		{
 			public uint32 Version;
 			public void* IfSpec;
 			public Guid* MgrTypeUuid;
@@ -1023,20 +977,17 @@ namespace Win32
 			public void* SecurityDescriptor;
 		}
 		[CRepr]
-		public struct RPC_VERSION
-		{
+		public struct RPC_VERSION		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 		}
 		[CRepr]
-		public struct RPC_SYNTAX_IDENTIFIER
-		{
+		public struct RPC_SYNTAX_IDENTIFIER		{
 			public Guid SyntaxGUID;
 			public RPC_VERSION SyntaxVersion;
 		}
 		[CRepr]
-		public struct RPC_MESSAGE
-		{
+		public struct RPC_MESSAGE		{
 			public void* Handle;
 			public uint32 DataRepresentation;
 			public void* Buffer;
@@ -1050,21 +1001,18 @@ namespace Win32
 			public uint32 RpcFlags;
 		}
 		[CRepr]
-		public struct RPC_DISPATCH_TABLE
-		{
+		public struct RPC_DISPATCH_TABLE		{
 			public uint32 DispatchTableCount;
 			public RPC_DISPATCH_FUNCTION DispatchTable;
 			public int Reserved;
 		}
 		[CRepr]
-		public struct RPC_PROTSEQ_ENDPOINT
-		{
+		public struct RPC_PROTSEQ_ENDPOINT		{
 			public uint8* RpcProtocolSequence;
 			public uint8* Endpoint;
 		}
 		[CRepr]
-		public struct RPC_SERVER_INTERFACE
-		{
+		public struct RPC_SERVER_INTERFACE		{
 			public uint32 Length;
 			public RPC_SYNTAX_IDENTIFIER InterfaceId;
 			public RPC_SYNTAX_IDENTIFIER TransferSyntax;
@@ -1076,8 +1024,7 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct RPC_CLIENT_INTERFACE
-		{
+		public struct RPC_CLIENT_INTERFACE		{
 			public uint32 Length;
 			public RPC_SYNTAX_IDENTIFIER InterfaceId;
 			public RPC_SYNTAX_IDENTIFIER TransferSyntax;
@@ -1089,28 +1036,24 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct RPC_SEC_CONTEXT_KEY_INFO
-		{
+		public struct RPC_SEC_CONTEXT_KEY_INFO		{
 			public uint32 EncryptAlgorithm;
 			public uint32 KeySize;
 			public uint32 SignatureAlgorithm;
 		}
 		[CRepr]
-		public struct RPC_TRANSFER_SYNTAX
-		{
+		public struct RPC_TRANSFER_SYNTAX		{
 			public Guid Uuid;
 			public uint16 VersMajor;
 			public uint16 VersMinor;
 		}
 		[CRepr]
-		public struct RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR
-		{
+		public struct RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR		{
 			public uint32 BufferSize;
 			public PSTR Buffer;
 		}
 		[CRepr]
-		public struct RDR_CALLOUT_STATE
-		{
+		public struct RDR_CALLOUT_STATE		{
 			public RPC_STATUS LastError;
 			public void* LastEEInfo;
 			public RPC_HTTP_REDIRECTOR_STAGE LastCalledStage;
@@ -1127,8 +1070,7 @@ namespace Win32
 			public void* CertContext;
 		}
 		[CRepr]
-		public struct I_RpcProxyCallbackInterface
-		{
+		public struct I_RpcProxyCallbackInterface		{
 			public I_RpcProxyIsValidMachineFn IsValidMachineFn;
 			public I_RpcProxyGetClientAddressFn GetClientAddressFn;
 			public I_RpcProxyGetConnectionTimeoutFn GetConnectionTimeoutFn;
@@ -1140,8 +1082,7 @@ namespace Win32
 			public I_RpcProxyUpdatePerfCounterBackendServerFn RpcProxyUpdatePerfCounterBackendServerFn;
 		}
 		[CRepr, Union]
-		public struct RPC_ASYNC_NOTIFICATION_INFO
-		{
+		public struct RPC_ASYNC_NOTIFICATION_INFO		{
 			public _APC_e__Struct APC;
 			public _IOC_e__Struct IOC;
 			public _IntPtr_e__Struct IntPtr;
@@ -1149,29 +1090,25 @@ namespace Win32
 			public PFN_RPCNOTIFICATION_ROUTINE NotificationRoutine;
 			
 			[CRepr]
-			public struct _IOC_e__Struct
-			{
+			public struct _IOC_e__Struct			{
 				public HANDLE hIOPort;
 				public uint32 dwNumberOfBytesTransferred;
 				public uint dwCompletionKey;
 				public OVERLAPPED* lpOverlapped;
 			}
 			[CRepr]
-			public struct _APC_e__Struct
-			{
+			public struct _APC_e__Struct			{
 				public PFN_RPCNOTIFICATION_ROUTINE NotificationRoutine;
 				public HANDLE hThread;
 			}
 			[CRepr]
-			public struct _IntPtr_e__Struct
-			{
+			public struct _IntPtr_e__Struct			{
 				public HWND hWnd;
 				public uint32 Msg;
 			}
 		}
 		[CRepr]
-		public struct RPC_ASYNC_STATE
-		{
+		public struct RPC_ASYNC_STATE		{
 			public uint32 Size;
 			public uint32 Signature;
 			public int32 Lock;
@@ -1185,20 +1122,17 @@ namespace Win32
 			public int[4] Reserved;
 		}
 		[CRepr]
-		public struct BinaryParam
-		{
+		public struct BinaryParam		{
 			public void* Buffer;
 			public int16 Size;
 		}
 		[CRepr]
-		public struct RPC_EE_INFO_PARAM
-		{
+		public struct RPC_EE_INFO_PARAM		{
 			public ExtendedErrorParamTypes ParameterType;
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public PSTR AnsiString;
 				public PWSTR UnicodeString;
 				public int32 LVal;
@@ -1208,8 +1142,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct RPC_EXTENDED_ERROR_INFO
-		{
+		public struct RPC_EXTENDED_ERROR_INFO		{
 			public uint32 Version;
 			public PWSTR ComputerName;
 			public uint32 ProcessID;
@@ -1222,30 +1155,26 @@ namespace Win32
 			public RPC_EE_INFO_PARAM[4] Parameters;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public SYSTEMTIME SystemTime;
 				public FILETIME FileTime;
 			}
 		}
 		[CRepr]
-		public struct RPC_ERROR_ENUM_HANDLE
-		{
+		public struct RPC_ERROR_ENUM_HANDLE		{
 			public uint32 Signature;
 			public void* CurrentPos;
 			public void* Head;
 		}
 		[CRepr]
-		public struct RPC_CALL_LOCAL_ADDRESS_V1
-		{
+		public struct RPC_CALL_LOCAL_ADDRESS_V1		{
 			public uint32 Version;
 			public void* Buffer;
 			public uint32 BufferSize;
 			public RpcLocalAddressFormat AddressFormat;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V1_W
-		{
+		public struct RPC_CALL_ATTRIBUTES_V1_W		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1257,8 +1186,7 @@ namespace Win32
 			public BOOL NullSession;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V1_A
-		{
+		public struct RPC_CALL_ATTRIBUTES_V1_A		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1270,8 +1198,7 @@ namespace Win32
 			public BOOL NullSession;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V2_W
-		{
+		public struct RPC_CALL_ATTRIBUTES_V2_W		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1292,8 +1219,7 @@ namespace Win32
 			public Guid InterfaceUuid;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V2_A
-		{
+		public struct RPC_CALL_ATTRIBUTES_V2_A		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1314,8 +1240,7 @@ namespace Win32
 			public Guid InterfaceUuid;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V3_W
-		{
+		public struct RPC_CALL_ATTRIBUTES_V3_W		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1338,8 +1263,7 @@ namespace Win32
 			public uint8* ClientIdentifier;
 		}
 		[CRepr]
-		public struct RPC_CALL_ATTRIBUTES_V3_A
-		{
+		public struct RPC_CALL_ATTRIBUTES_V3_A		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 ServerPrincipalNameBufferLength;
@@ -1362,27 +1286,23 @@ namespace Win32
 			public uint8* ClientIdentifier;
 		}
 		[CRepr]
-		public struct RPC_IMPORT_CONTEXT_P
-		{
+		public struct RPC_IMPORT_CONTEXT_P		{
 			public void* LookupContext;
 			public void* ProposedHandle;
 			public RPC_BINDING_VECTOR* Bindings;
 		}
 		[CRepr]
-		public struct _NDR_SCONTEXT
-		{
+		public struct _NDR_SCONTEXT		{
 			public void*[2] pad;
 			public void* userContext;
 		}
 		[CRepr]
-		public struct SCONTEXT_QUEUE
-		{
+		public struct SCONTEXT_QUEUE		{
 			public uint32 NumberOfObjects;
 			public NDR_SCONTEXT_1** ArrayOfObjects;
 		}
 		[CRepr]
-		public struct ARRAY_INFO
-		{
+		public struct ARRAY_INFO		{
 			public int32 Dimension;
 			public uint32* BufferConformanceMark;
 			public uint32* BufferVarianceMark;
@@ -1391,28 +1311,17 @@ namespace Win32
 			public uint32* ActualCountArray;
 		}
 		[CRepr]
-		public struct _NDR_ASYNC_MESSAGE
-		{
-		}
+		public struct _NDR_ASYNC_MESSAGE {}
 		[CRepr]
-		public struct _NDR_CORRELATION_INFO
-		{
-		}
+		public struct _NDR_CORRELATION_INFO {}
 		[CRepr]
-		public struct NDR_ALLOC_ALL_NODES_CONTEXT
-		{
-		}
+		public struct NDR_ALLOC_ALL_NODES_CONTEXT {}
 		[CRepr]
-		public struct NDR_POINTER_QUEUE_STATE
-		{
-		}
+		public struct NDR_POINTER_QUEUE_STATE {}
 		[CRepr]
-		public struct _NDR_PROC_CONTEXT
-		{
-		}
+		public struct _NDR_PROC_CONTEXT {}
 		[CRepr]
-		public struct MIDL_STUB_MESSAGE
-		{
+		public struct MIDL_STUB_MESSAGE		{
 			public RPC_MESSAGE* RpcMsg;
 			public uint8* Buffer;
 			public uint8* BufferStart;
@@ -1474,38 +1383,33 @@ namespace Win32
 			public int Reserved51_5;
 		}
 		[CRepr]
-		public struct GENERIC_BINDING_ROUTINE_PAIR
-		{
+		public struct GENERIC_BINDING_ROUTINE_PAIR		{
 			public GENERIC_BINDING_ROUTINE pfnBind;
 			public GENERIC_UNBIND_ROUTINE pfnUnbind;
 		}
 		[CRepr]
-		public struct GENERIC_BINDING_INFO
-		{
+		public struct GENERIC_BINDING_INFO		{
 			public void* pObj;
 			public uint32 Size;
 			public GENERIC_BINDING_ROUTINE pfnBind;
 			public GENERIC_UNBIND_ROUTINE pfnUnbind;
 		}
 		[CRepr]
-		public struct XMIT_ROUTINE_QUINTUPLE
-		{
+		public struct XMIT_ROUTINE_QUINTUPLE		{
 			public XMIT_HELPER_ROUTINE pfnTranslateToXmit;
 			public XMIT_HELPER_ROUTINE pfnTranslateFromXmit;
 			public XMIT_HELPER_ROUTINE pfnFreeXmit;
 			public XMIT_HELPER_ROUTINE pfnFreeInst;
 		}
 		[CRepr]
-		public struct USER_MARSHAL_ROUTINE_QUADRUPLE
-		{
+		public struct USER_MARSHAL_ROUTINE_QUADRUPLE		{
 			public USER_MARSHAL_SIZING_ROUTINE pfnBufferSize;
 			public USER_MARSHAL_MARSHALLING_ROUTINE pfnMarshall;
 			public USER_MARSHAL_UNMARSHALLING_ROUTINE pfnUnmarshall;
 			public USER_MARSHAL_FREEING_ROUTINE pfnFree;
 		}
 		[CRepr]
-		public struct USER_MARSHAL_CB
-		{
+		public struct USER_MARSHAL_CB		{
 			public uint32 Flags;
 			public MIDL_STUB_MESSAGE* pStubMsg;
 			public uint8* pReserve;
@@ -1515,40 +1419,34 @@ namespace Win32
 			public uint8* pTypeFormat;
 		}
 		[CRepr]
-		public struct MALLOC_FREE_STRUCT
-		{
+		public struct MALLOC_FREE_STRUCT		{
 			public int pfnAllocate;
 			public int pfnFree;
 		}
 		[CRepr]
-		public struct COMM_FAULT_OFFSETS
-		{
+		public struct COMM_FAULT_OFFSETS		{
 			public int16 CommOffset;
 			public int16 FaultOffset;
 		}
 		[CRepr]
-		public struct NDR_CS_SIZE_CONVERT_ROUTINES
-		{
+		public struct NDR_CS_SIZE_CONVERT_ROUTINES		{
 			public CS_TYPE_NET_SIZE_ROUTINE pfnNetSize;
 			public CS_TYPE_TO_NETCS_ROUTINE pfnToNetCs;
 			public CS_TYPE_LOCAL_SIZE_ROUTINE pfnLocalSize;
 			public CS_TYPE_FROM_NETCS_ROUTINE pfnFromNetCs;
 		}
 		[CRepr]
-		public struct NDR_CS_ROUTINES
-		{
+		public struct NDR_CS_ROUTINES		{
 			public NDR_CS_SIZE_CONVERT_ROUTINES* pSizeConvertRoutines;
 			public CS_TAG_GETTING_ROUTINE* pTagGettingRoutines;
 		}
 		[CRepr]
-		public struct NDR_EXPR_DESC
-		{
+		public struct NDR_EXPR_DESC		{
 			public uint16* pOffset;
 			public uint8* pFormatExpr;
 		}
 		[CRepr]
-		public struct MIDL_STUB_DESC
-		{
+		public struct MIDL_STUB_DESC		{
 			public void* RpcInterfaceInformation;
 			public int pfnAllocate;
 			public int pfnFree;
@@ -1571,40 +1469,34 @@ namespace Win32
 			public NDR_EXPR_DESC* pExprInfo;
 			
 			[CRepr, Union]
-			public struct _IMPLICIT_HANDLE_INFO_e__Union
-			{
+			public struct _IMPLICIT_HANDLE_INFO_e__Union			{
 				public void** pAutoHandle;
 				public void** pPrimitiveHandle;
 				public GENERIC_BINDING_INFO* pGenericBindingInfo;
 			}
 		}
 		[CRepr]
-		public struct MIDL_FORMAT_STRING
-		{
+		public struct MIDL_FORMAT_STRING		{
 			public int16 Pad;
 			public uint8[0] Format;
 		}
 		[CRepr]
-		public struct MIDL_METHOD_PROPERTY
-		{
+		public struct MIDL_METHOD_PROPERTY		{
 			public uint32 Id;
 			public uint Value;
 		}
 		[CRepr]
-		public struct MIDL_METHOD_PROPERTY_MAP
-		{
+		public struct MIDL_METHOD_PROPERTY_MAP		{
 			public uint32 Count;
 			public MIDL_METHOD_PROPERTY* Properties;
 		}
 		[CRepr]
-		public struct MIDL_INTERFACE_METHOD_PROPERTIES
-		{
+		public struct MIDL_INTERFACE_METHOD_PROPERTIES		{
 			public uint16 MethodCount;
 			public MIDL_METHOD_PROPERTY_MAP** MethodProperties;
 		}
 		[CRepr]
-		public struct MIDL_SERVER_INFO
-		{
+		public struct MIDL_SERVER_INFO		{
 			public MIDL_STUB_DESC* pStubDesc;
 			public SERVER_ROUTINE* DispatchTable;
 			public uint8* ProcString;
@@ -1615,8 +1507,7 @@ namespace Win32
 			public MIDL_SYNTAX_INFO* pSyntaxInfo;
 		}
 		[CRepr]
-		public struct MIDL_STUBLESS_PROXY_INFO
-		{
+		public struct MIDL_STUBLESS_PROXY_INFO		{
 			public MIDL_STUB_DESC* pStubDesc;
 			public uint8* ProcFormatString;
 			public uint16* FormatStringOffset;
@@ -1625,8 +1516,7 @@ namespace Win32
 			public MIDL_SYNTAX_INFO* pSyntaxInfo;
 		}
 		[CRepr]
-		public struct MIDL_SYNTAX_INFO
-		{
+		public struct MIDL_SYNTAX_INFO		{
 			public RPC_SYNTAX_IDENTIFIER TransferSyntax;
 			public RPC_DISPATCH_TABLE* DispatchTable;
 			public uint8* ProcString;
@@ -1637,22 +1527,19 @@ namespace Win32
 			public uint pReserved2;
 		}
 		[CRepr, Union]
-		public struct CLIENT_CALL_RETURN
-		{
+		public struct CLIENT_CALL_RETURN		{
 			public void* Pointer;
 			public int Simple;
 		}
 		[CRepr]
-		public struct FULL_PTR_XLAT_TABLES
-		{
+		public struct FULL_PTR_XLAT_TABLES		{
 			public void* RefIdToPointer;
 			public void* PointerToRefId;
 			public uint32 NextRefId;
 			public XLAT_SIDE XlatSide;
 		}
 		[CRepr]
-		public struct MIDL_INTERCEPTION_INFO
-		{
+		public struct MIDL_INTERCEPTION_INFO		{
 			public uint32 Version;
 			public uint8* ProcString;
 			public uint16* ProcFormatOffsetTable;
@@ -1660,8 +1547,7 @@ namespace Win32
 			public uint8* TypeString;
 		}
 		[CRepr]
-		public struct MIDL_WINRT_TYPE_SERIALIZATION_INFO
-		{
+		public struct MIDL_WINRT_TYPE_SERIALIZATION_INFO		{
 			public uint32 Version;
 			public uint8* TypeFormatString;
 			public uint16 FormatStringSize;
@@ -1669,8 +1555,7 @@ namespace Win32
 			public MIDL_STUB_DESC* StubDesc;
 		}
 		[CRepr]
-		public struct NDR_USER_MARSHAL_INFO_LEVEL1
-		{
+		public struct NDR_USER_MARSHAL_INFO_LEVEL1		{
 			public void* Buffer;
 			public uint32 BufferSize;
 			public int pfnAllocate;
@@ -1679,37 +1564,31 @@ namespace Win32
 			public uint[5] Reserved;
 		}
 		[CRepr]
-		public struct NDR_USER_MARSHAL_INFO
-		{
+		public struct NDR_USER_MARSHAL_INFO		{
 			public uint32 InformationLevel;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public NDR_USER_MARSHAL_INFO_LEVEL1 Level1;
 			}
 		}
 		[CRepr]
-		public struct MIDL_TYPE_PICKLING_INFO
-		{
+		public struct MIDL_TYPE_PICKLING_INFO		{
 			public uint32 Version;
 			public uint32 Flags;
 			public uint[3] Reserved;
 		}
 		[CRepr]
-		public struct NDR64_PROC_FLAGS
-		{
+		public struct NDR64_PROC_FLAGS		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_RPC_FLAGS
-		{
+		public struct NDR64_RPC_FLAGS		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_PROC_FORMAT
-		{
+		public struct NDR64_PROC_FORMAT		{
 			public uint32 Flags;
 			public uint32 StackSize;
 			public uint32 ConstantClientBufferSize;
@@ -1720,21 +1599,18 @@ namespace Win32
 			public uint16 ExtensionSize;
 		}
 		[CRepr]
-		public struct NDR64_PARAM_FLAGS
-		{
+		public struct NDR64_PARAM_FLAGS		{
 			public uint16 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_PARAM_FORMAT
-		{
+		public struct NDR64_PARAM_FORMAT		{
 			public void* Type;
 			public NDR64_PARAM_FLAGS Attributes;
 			public uint16 Reserved;
 			public uint32 StackOffset;
 		}
 		[CRepr]
-		public struct NDR64_RANGE_FORMAT
-		{
+		public struct NDR64_RANGE_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 RangeType;
 			public uint16 Reserved;
@@ -1742,29 +1618,25 @@ namespace Win32
 			public int64 MaxValue;
 		}
 		[CRepr]
-		public struct NDR64_CONTEXT_HANDLE_FLAGS
-		{
+		public struct NDR64_CONTEXT_HANDLE_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_CONTEXT_HANDLE_FORMAT
-		{
+		public struct NDR64_CONTEXT_HANDLE_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 ContextFlags;
 			public uint8 RundownRoutineIndex;
 			public uint8 Ordinal;
 		}
 		[CRepr]
-		public struct NDR64_BIND_PRIMITIVE
-		{
+		public struct NDR64_BIND_PRIMITIVE		{
 			public uint8 HandleType;
 			public uint8 Flags;
 			public uint16 StackOffset;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_BIND_GENERIC
-		{
+		public struct NDR64_BIND_GENERIC		{
 			public uint8 HandleType;
 			public uint8 Flags;
 			public uint16 StackOffset;
@@ -1772,8 +1644,7 @@ namespace Win32
 			public uint8 Size;
 		}
 		[CRepr]
-		public struct NDR64_BIND_CONTEXT
-		{
+		public struct NDR64_BIND_CONTEXT		{
 			public uint8 HandleType;
 			public uint8 Flags;
 			public uint16 StackOffset;
@@ -1781,55 +1652,47 @@ namespace Win32
 			public uint8 Ordinal;
 		}
 		[CRepr, Union]
-		public struct NDR64_BINDINGS
-		{
+		public struct NDR64_BINDINGS		{
 			public NDR64_BIND_PRIMITIVE Primitive;
 			public NDR64_BIND_GENERIC Generic;
 			public NDR64_BIND_CONTEXT Context;
 		}
 		[CRepr]
-		public struct NDR64_BIND_AND_NOTIFY_EXTENSION
-		{
+		public struct NDR64_BIND_AND_NOTIFY_EXTENSION		{
 			public NDR64_BIND_CONTEXT Binding;
 			public uint16 NotifyIndex;
 		}
 		[CRepr]
-		public struct NDR64_SYSTEM_HANDLE_FORMAT
-		{
+		public struct NDR64_SYSTEM_HANDLE_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 HandleType;
 			public uint32 DesiredAccess;
 		}
 		[CRepr]
-		public struct NDR64_POINTER_FORMAT
-		{
+		public struct NDR64_POINTER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 Reserved;
 			public void* Pointee;
 		}
 		[CRepr]
-		public struct NDR64_NO_REPEAT_FORMAT
-		{
+		public struct NDR64_NO_REPEAT_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 Reserved1;
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct NDR64_POINTER_INSTANCE_HEADER_FORMAT
-		{
+		public struct NDR64_POINTER_INSTANCE_HEADER_FORMAT		{
 			public uint32 Offset;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_POINTER_REPEAT_FLAGS
-		{
+		public struct NDR64_POINTER_REPEAT_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_REPEAT_FORMAT
-		{
+		public struct NDR64_REPEAT_FORMAT		{
 			public uint8 FormatCode;
 			public NDR64_POINTER_REPEAT_FLAGS Flags;
 			public uint16 Reserved;
@@ -1838,41 +1701,35 @@ namespace Win32
 			public uint32 NumberOfPointers;
 		}
 		[CRepr]
-		public struct NDR64_FIXED_REPEAT_FORMAT
-		{
+		public struct NDR64_FIXED_REPEAT_FORMAT		{
 			public NDR64_REPEAT_FORMAT RepeatFormat;
 			public uint32 Iterations;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_IID_FLAGS
-		{
+		public struct NDR64_IID_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_CONSTANT_IID_FORMAT
-		{
+		public struct NDR64_CONSTANT_IID_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 Reserved;
 			public Guid Guid;
 		}
 		[CRepr]
-		public struct NDR64_IID_FORMAT
-		{
+		public struct NDR64_IID_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 Reserved;
 			public void* IIDDescriptor;
 		}
 		[CRepr]
-		public struct NDR64_STRUCTURE_FLAGS
-		{
+		public struct NDR64_STRUCTURE_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_STRUCTURE_HEADER_FORMAT
-		{
+		public struct NDR64_STRUCTURE_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_STRUCTURE_FLAGS Flags;
@@ -1880,8 +1737,7 @@ namespace Win32
 			public uint32 MemorySize;
 		}
 		[CRepr]
-		public struct NDR64_CONF_STRUCTURE_HEADER_FORMAT
-		{
+		public struct NDR64_CONF_STRUCTURE_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_STRUCTURE_FLAGS Flags;
@@ -1890,8 +1746,7 @@ namespace Win32
 			public void* ArrayDescription;
 		}
 		[CRepr]
-		public struct NDR64_BOGUS_STRUCTURE_HEADER_FORMAT
-		{
+		public struct NDR64_BOGUS_STRUCTURE_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_STRUCTURE_FLAGS Flags;
@@ -1902,8 +1757,7 @@ namespace Win32
 			public void* PointerLayout;
 		}
 		[CRepr]
-		public struct NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT
-		{
+		public struct NDR64_CONF_BOGUS_STRUCTURE_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_STRUCTURE_FLAGS Flags;
@@ -1915,48 +1769,42 @@ namespace Win32
 			public void* ConfArrayDescription;
 		}
 		[CRepr]
-		public struct NDR64_SIMPLE_MEMBER_FORMAT
-		{
+		public struct NDR64_SIMPLE_MEMBER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Reserved1;
 			public uint16 Reserved2;
 			public uint32 Reserved3;
 		}
 		[CRepr]
-		public struct NDR64_MEMPAD_FORMAT
-		{
+		public struct NDR64_MEMPAD_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Reserve1;
 			public uint16 MemPad;
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct NDR64_EMBEDDED_COMPLEX_FORMAT
-		{
+		public struct NDR64_EMBEDDED_COMPLEX_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Reserve1;
 			public uint16 Reserve2;
 			public void* Type;
 		}
 		[CRepr]
-		public struct NDR64_BUFFER_ALIGN_FORMAT
-		{
+		public struct NDR64_BUFFER_ALIGN_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public uint16 Reserved;
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct NDR64_SIMPLE_REGION_FORMAT
-		{
+		public struct NDR64_SIMPLE_REGION_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public uint16 RegionSize;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_ENCAPSULATED_UNION
-		{
+		public struct NDR64_ENCAPSULATED_UNION		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public uint8 Flags;
@@ -1966,8 +1814,7 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_NON_ENCAPSULATED_UNION
-		{
+		public struct NDR64_NON_ENCAPSULATED_UNION		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public uint8 Flags;
@@ -1977,34 +1824,29 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_UNION_ARM_SELECTOR
-		{
+		public struct NDR64_UNION_ARM_SELECTOR		{
 			public uint8 Reserved1;
 			public uint8 Alignment;
 			public uint16 Reserved2;
 			public uint32 Arms;
 		}
 		[CRepr]
-		public struct NDR64_UNION_ARM
-		{
+		public struct NDR64_UNION_ARM		{
 			public int64 CaseValue;
 			public void* Type;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_ARRAY_FLAGS
-		{
+		public struct NDR64_ARRAY_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_ARRAY_ELEMENT_INFO
-		{
+		public struct NDR64_ARRAY_ELEMENT_INFO		{
 			public uint32 ElementMemSize;
 			public void* Element;
 		}
 		[CRepr]
-		public struct NDR64_FIX_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_FIX_ARRAY_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_ARRAY_FLAGS Flags;
@@ -2012,8 +1854,7 @@ namespace Win32
 			public uint32 TotalSize;
 		}
 		[CRepr]
-		public struct NDR64_CONF_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_CONF_ARRAY_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_ARRAY_FLAGS Flags;
@@ -2022,8 +1863,7 @@ namespace Win32
 			public void* ConfDescriptor;
 		}
 		[CRepr]
-		public struct NDR64_CONF_VAR_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_CONF_VAR_ARRAY_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_ARRAY_FLAGS Flags;
@@ -2033,8 +1873,7 @@ namespace Win32
 			public void* VarDescriptor;
 		}
 		[CRepr]
-		public struct NDR64_VAR_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_VAR_ARRAY_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_ARRAY_FLAGS Flags;
@@ -2044,8 +1883,7 @@ namespace Win32
 			public void* VarDescriptor;
 		}
 		[CRepr]
-		public struct NDR64_BOGUS_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_BOGUS_ARRAY_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Alignment;
 			public NDR64_ARRAY_FLAGS Flags;
@@ -2054,97 +1892,83 @@ namespace Win32
 			public void* Element;
 		}
 		[CRepr]
-		public struct NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT
-		{
+		public struct NDR64_CONF_VAR_BOGUS_ARRAY_HEADER_FORMAT		{
 			public NDR64_BOGUS_ARRAY_HEADER_FORMAT FixedArrayFormat;
 			public void* ConfDescription;
 			public void* VarDescription;
 			public void* OffsetDescription;
 		}
 		[CRepr]
-		public struct NDR64_STRING_FLAGS
-		{
+		public struct NDR64_STRING_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_STRING_HEADER_FORMAT
-		{
+		public struct NDR64_STRING_HEADER_FORMAT		{
 			public uint8 FormatCode;
 			public NDR64_STRING_FLAGS Flags;
 			public uint16 ElementSize;
 		}
 		[CRepr]
-		public struct NDR64_NON_CONFORMANT_STRING_FORMAT
-		{
+		public struct NDR64_NON_CONFORMANT_STRING_FORMAT		{
 			public NDR64_STRING_HEADER_FORMAT Header;
 			public uint32 TotalSize;
 		}
 		[CRepr]
-		public struct NDR64_RANGED_STRING_FORMAT
-		{
+		public struct NDR64_RANGED_STRING_FORMAT		{
 			public NDR64_STRING_HEADER_FORMAT Header;
 			public uint32 Reserved;
 			public uint64 Min;
 			public uint64 Max;
 		}
 		[CRepr]
-		public struct NDR64_CONFORMANT_STRING_FORMAT
-		{
+		public struct NDR64_CONFORMANT_STRING_FORMAT		{
 			public NDR64_STRING_HEADER_FORMAT Header;
 		}
 		[CRepr]
-		public struct NDR64_SIZED_CONFORMANT_STRING_FORMAT
-		{
+		public struct NDR64_SIZED_CONFORMANT_STRING_FORMAT		{
 			public NDR64_STRING_HEADER_FORMAT Header;
 			public void* SizeDescription;
 		}
 		[CRepr]
-		public struct NDR64_EXPR_OPERATOR
-		{
+		public struct NDR64_EXPR_OPERATOR		{
 			public uint8 ExprType;
 			public uint8 Operator;
 			public uint8 CastType;
 			public uint8 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_EXPR_CONST32
-		{
+		public struct NDR64_EXPR_CONST32		{
 			public uint8 ExprType;
 			public uint8 Reserved;
 			public uint16 Reserved1;
 			public uint32 ConstValue;
 		}
 		[CRepr]
-		public struct NDR64_EXPR_CONST64
-		{
+		public struct NDR64_EXPR_CONST64		{
 			public uint8 ExprType;
 			public uint8 Reserved;
 			public uint16 Reserved1;
 			public int64 ConstValue;
 		}
 		[CRepr]
-		public struct NDR64_EXPR_VAR
-		{
+		public struct NDR64_EXPR_VAR		{
 			public uint8 ExprType;
 			public uint8 VarType;
 			public uint16 Reserved;
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct NDR64_EXPR_NOOP
-		{
+		public struct NDR64_EXPR_NOOP		{
 			public uint8 ExprType;
 			public uint8 Size;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct NDR64_TRANSMIT_AS_FLAGS
-		{
+		public struct NDR64_TRANSMIT_AS_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_TRANSMIT_AS_FORMAT
-		{
+		public struct NDR64_TRANSMIT_AS_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 RoutineIndex;
@@ -2155,13 +1979,11 @@ namespace Win32
 			public void* TransmittedType;
 		}
 		[CRepr]
-		public struct NDR64_USER_MARSHAL_FLAGS
-		{
+		public struct NDR64_USER_MARSHAL_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_USER_MARSHAL_FORMAT
-		{
+		public struct NDR64_USER_MARSHAL_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint16 RoutineIndex;
@@ -2172,13 +1994,11 @@ namespace Win32
 			public void* TransmittedType;
 		}
 		[CRepr]
-		public struct NDR64_PIPE_FLAGS
-		{
+		public struct NDR64_PIPE_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NDR64_PIPE_FORMAT
-		{
+		public struct NDR64_PIPE_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint8 Alignment;
@@ -2188,8 +2008,7 @@ namespace Win32
 			public uint32 BufferSize;
 		}
 		[CRepr]
-		public struct NDR64_RANGE_PIPE_FORMAT
-		{
+		public struct NDR64_RANGE_PIPE_FORMAT		{
 			public uint8 FormatCode;
 			public uint8 Flags;
 			public uint8 Alignment;
@@ -2201,8 +2020,7 @@ namespace Win32
 			public uint32 MaxValue;
 		}
 		[CRepr]
-		public struct NDR64_TYPE_STRICT_CONTEXT_HANDLE
-		{
+		public struct NDR64_TYPE_STRICT_CONTEXT_HANDLE		{
 			public uint8 FormatCode;
 			public uint8 RealFormatCode;
 			public uint16 Reserved;

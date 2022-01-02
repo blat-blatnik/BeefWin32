@@ -39,8 +39,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CALLFRAMEINFO
-		{
+		public struct CALLFRAMEINFO		{
 			public uint32 iMethod;
 			public BOOL fHasInValues;
 			public BOOL fHasInOutValues;
@@ -55,16 +54,14 @@ namespace Win32
 			public uint32 cParams;
 		}
 		[CRepr]
-		public struct CALLFRAMEPARAMINFO
-		{
+		public struct CALLFRAMEPARAMINFO		{
 			public BOOLEAN fIn;
 			public BOOLEAN fOut;
 			public uint32 stackOffset;
 			public uint32 cbParam;
 		}
 		[CRepr]
-		public struct CALLFRAME_MARSHALCONTEXT
-		{
+		public struct CALLFRAME_MARSHALCONTEXT		{
 			public BOOLEAN fIn;
 			public uint32 dwDestContext;
 			public void* pvDestContext;

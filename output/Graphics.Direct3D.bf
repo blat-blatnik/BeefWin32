@@ -723,32 +723,27 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D3D_SHADER_MACRO
-		{
+		public struct D3D_SHADER_MACRO		{
 			public PSTR Name;
 			public PSTR Definition;
 		}
 		[CRepr]
-		public struct D3DVECTOR
-		{
+		public struct D3DVECTOR		{
 			public float x;
 			public float y;
 			public float z;
 		}
 		[CRepr]
-		public struct D3DMATRIX
-		{
+		public struct D3DMATRIX		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public float[16] m;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _13;

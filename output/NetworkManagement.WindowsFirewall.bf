@@ -254,8 +254,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NETCON_PROPERTIES
-		{
+		public struct NETCON_PROPERTIES		{
 			public Guid guidId;
 			public PWSTR pszwName;
 			public PWSTR pszwDeviceName;
@@ -266,20 +265,17 @@ namespace Win32
 			public Guid clsidUiObject;
 		}
 		[CRepr]
-		public struct INET_FIREWALL_AC_CAPABILITIES
-		{
+		public struct INET_FIREWALL_AC_CAPABILITIES		{
 			public uint32 count;
 			public SID_AND_ATTRIBUTES* capabilities;
 		}
 		[CRepr]
-		public struct INET_FIREWALL_AC_BINARIES
-		{
+		public struct INET_FIREWALL_AC_BINARIES		{
 			public uint32 count;
 			public PWSTR* binaries;
 		}
 		[CRepr]
-		public struct INET_FIREWALL_AC_CHANGE
-		{
+		public struct INET_FIREWALL_AC_CHANGE		{
 			public INET_FIREWALL_AC_CHANGE_TYPE changeType;
 			public INET_FIREWALL_AC_CREATION_TYPE createType;
 			public SID* appContainerSid;
@@ -288,15 +284,13 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public INET_FIREWALL_AC_CAPABILITIES capabilities;
 				public INET_FIREWALL_AC_BINARIES binaries;
 			}
 		}
 		[CRepr]
-		public struct INET_FIREWALL_APP_CONTAINER
-		{
+		public struct INET_FIREWALL_APP_CONTAINER		{
 			public SID* appContainerSid;
 			public SID* userSid;
 			public PWSTR appContainerName;
@@ -308,16 +302,14 @@ namespace Win32
 			public PWSTR packageFullName;
 		}
 		[CRepr]
-		public struct _tag_FW_DYNAMIC_KEYWORD_ADDRESS0
-		{
+		public struct _tag_FW_DYNAMIC_KEYWORD_ADDRESS0		{
 			public Guid id;
 			public PWSTR keyword;
 			public uint32 flags;
 			public PWSTR addresses;
 		}
 		[CRepr]
-		public struct _tag_FW_DYNAMIC_KEYWORD_ADDRESS_DATA0
-		{
+		public struct _tag_FW_DYNAMIC_KEYWORD_ADDRESS_DATA0		{
 			public _tag_FW_DYNAMIC_KEYWORD_ADDRESS0 dynamicKeywordAddress;
 			public _tag_FW_DYNAMIC_KEYWORD_ADDRESS_DATA0* next;
 			public uint16 schemaVersion;

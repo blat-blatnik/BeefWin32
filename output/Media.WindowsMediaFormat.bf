@@ -617,20 +617,17 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct AM_WMT_EVENT_DATA
-		{
+		public struct AM_WMT_EVENT_DATA		{
 			public HRESULT hrStatus;
 			public void* pData;
 		}
 		[CRepr]
-		public struct WM_STREAM_PRIORITY_RECORD
-		{
+		public struct WM_STREAM_PRIORITY_RECORD		{
 			public uint16 wStreamNumber;
 			public BOOL fMandatory;
 		}
 		[CRepr]
-		public struct WM_WRITER_STATISTICS
-		{
+		public struct WM_WRITER_STATISTICS		{
 			public uint64 qwSampleCount;
 			public uint64 qwByteCount;
 			public uint64 qwDroppedSampleCount;
@@ -643,8 +640,7 @@ namespace Win32
 			public uint32 dwExpectedSampleRate;
 		}
 		[CRepr]
-		public struct WM_WRITER_STATISTICS_EX
-		{
+		public struct WM_WRITER_STATISTICS_EX		{
 			public uint32 dwBitratePlusOverhead;
 			public uint32 dwCurrentSampleDropRateInQueue;
 			public uint32 dwCurrentSampleDropRateInCodec;
@@ -654,8 +650,7 @@ namespace Win32
 			public uint32 dwTotalSampleDropsInMultiplexer;
 		}
 		[CRepr]
-		public struct WM_READER_STATISTICS
-		{
+		public struct WM_READER_STATISTICS		{
 			public uint32 cbSize;
 			public uint32 dwBandwidth;
 			public uint32 cPacketsReceived;
@@ -664,8 +659,7 @@ namespace Win32
 			public uint16 wQuality;
 		}
 		[CRepr]
-		public struct WM_READER_CLIENTINFO
-		{
+		public struct WM_READER_CLIENTINFO		{
 			public uint32 cbSize;
 			public PWSTR wszLang;
 			public PWSTR wszBrowserUserAgent;
@@ -677,41 +671,35 @@ namespace Win32
 			public PWSTR wszPlayerUserAgent;
 		}
 		[CRepr]
-		public struct WM_CLIENT_PROPERTIES
-		{
+		public struct WM_CLIENT_PROPERTIES		{
 			public uint32 dwIPAddress;
 			public uint32 dwPort;
 		}
 		[CRepr]
-		public struct WM_CLIENT_PROPERTIES_EX
-		{
+		public struct WM_CLIENT_PROPERTIES_EX		{
 			public uint32 cbSize;
 			public PWSTR pwszIPAddress;
 			public PWSTR pwszPort;
 			public PWSTR pwszDNSName;
 		}
 		[CRepr]
-		public struct WM_PORT_NUMBER_RANGE
-		{
+		public struct WM_PORT_NUMBER_RANGE		{
 			public uint16 wPortBegin;
 			public uint16 wPortEnd;
 		}
 		[CRepr]
-		public struct WMT_BUFFER_SEGMENT
-		{
+		public struct WMT_BUFFER_SEGMENT		{
 			public INSSBuffer* pBuffer;
 			public uint32 cbOffset;
 			public uint32 cbLength;
 		}
 		[CRepr]
-		public struct WMT_PAYLOAD_FRAGMENT
-		{
+		public struct WMT_PAYLOAD_FRAGMENT		{
 			public uint32 dwPayloadIndex;
 			public WMT_BUFFER_SEGMENT segmentData;
 		}
 		[CRepr]
-		public struct WMT_FILESINK_DATA_UNIT
-		{
+		public struct WMT_FILESINK_DATA_UNIT		{
 			public WMT_BUFFER_SEGMENT packetHeaderBuffer;
 			public uint32 cPayloads;
 			public WMT_BUFFER_SEGMENT* pPayloadHeaderBuffers;
@@ -719,16 +707,14 @@ namespace Win32
 			public WMT_PAYLOAD_FRAGMENT* pPayloadDataFragments;
 		}
 		[CRepr]
-		public struct WMT_WEBSTREAM_FORMAT
-		{
+		public struct WMT_WEBSTREAM_FORMAT		{
 			public uint16 cbSize;
 			public uint16 cbSampleHeaderFixedData;
 			public uint16 wVersion;
 			public uint16 wReserved;
 		}
 		[CRepr]
-		public struct WMT_WEBSTREAM_SAMPLE_HEADER
-		{
+		public struct WMT_WEBSTREAM_SAMPLE_HEADER		{
 			public uint16 cbLength;
 			public uint16 wPart;
 			public uint16 cTotalParts;
@@ -736,14 +722,12 @@ namespace Win32
 			public char16[0] wszURL;
 		}
 		[CRepr]
-		public struct WM_ADDRESS_ACCESSENTRY
-		{
+		public struct WM_ADDRESS_ACCESSENTRY		{
 			public uint32 dwIPAddress;
 			public uint32 dwMask;
 		}
 		[CRepr]
-		public struct WM_PICTURE
-		{
+		public struct WM_PICTURE		{
 			public PWSTR pwszMIMEType;
 			public uint8 bPictureType;
 			public PWSTR pwszDescription;
@@ -751,8 +735,7 @@ namespace Win32
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct WM_SYNCHRONISED_LYRICS
-		{
+		public struct WM_SYNCHRONISED_LYRICS		{
 			public uint8 bTimeStampFormat;
 			public uint8 bContentType;
 			public PWSTR pwszContentDescriptor;
@@ -760,40 +743,34 @@ namespace Win32
 			public uint8* pbLyrics;
 		}
 		[CRepr]
-		public struct WM_USER_WEB_URL
-		{
+		public struct WM_USER_WEB_URL		{
 			public PWSTR pwszDescription;
 			public PWSTR pwszURL;
 		}
 		[CRepr]
-		public struct WM_USER_TEXT
-		{
+		public struct WM_USER_TEXT		{
 			public PWSTR pwszDescription;
 			public PWSTR pwszText;
 		}
 		[CRepr]
-		public struct WM_LEAKY_BUCKET_PAIR
-		{
+		public struct WM_LEAKY_BUCKET_PAIR		{
 			public uint32 dwBitrate;
 			public uint32 msBufferWindow;
 		}
 		[CRepr]
-		public struct WM_STREAM_TYPE_INFO
-		{
+		public struct WM_STREAM_TYPE_INFO		{
 			public Guid guidMajorType;
 			public uint32 cbFormat;
 		}
 		[CRepr]
-		public struct WMT_WATERMARK_ENTRY
-		{
+		public struct WMT_WATERMARK_ENTRY		{
 			public WMT_WATERMARK_ENTRY_TYPE wmetType;
 			public Guid clsid;
 			public uint32 cbDisplayName;
 			public PWSTR pwszDisplayName;
 		}
 		[CRepr]
-		public struct WMT_VIDEOIMAGE_SAMPLE
-		{
+		public struct WMT_VIDEOIMAGE_SAMPLE		{
 			public uint32 dwMagic;
 			public uint32 cbStruct;
 			public uint32 dwControlFlags;
@@ -817,8 +794,7 @@ namespace Win32
 			public int32 lPrevBlendCoef2;
 		}
 		[CRepr]
-		public struct WMT_VIDEOIMAGE_SAMPLE2
-		{
+		public struct WMT_VIDEOIMAGE_SAMPLE2		{
 			public uint32 dwMagic;
 			public uint32 dwStructSize;
 			public uint32 dwControlFlags;
@@ -848,8 +824,7 @@ namespace Win32
 			public BOOL bKeepPrevImage;
 		}
 		[CRepr]
-		public struct WM_MEDIA_TYPE
-		{
+		public struct WM_MEDIA_TYPE		{
 			public Guid majortype;
 			public Guid subtype;
 			public BOOL bFixedSizeSamples;
@@ -861,8 +836,7 @@ namespace Win32
 			public uint8* pbFormat;
 		}
 		[CRepr]
-		public struct WMVIDEOINFOHEADER
-		{
+		public struct WMVIDEOINFOHEADER		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -871,8 +845,7 @@ namespace Win32
 			public BITMAPINFOHEADER bmiHeader;
 		}
 		[CRepr]
-		public struct WMVIDEOINFOHEADER2
-		{
+		public struct WMVIDEOINFOHEADER2		{
 			public RECT rcSource;
 			public RECT rcTarget;
 			public uint32 dwBitRate;
@@ -887,8 +860,7 @@ namespace Win32
 			public BITMAPINFOHEADER bmiHeader;
 		}
 		[CRepr]
-		public struct WMMPEG2VIDEOINFO
-		{
+		public struct WMMPEG2VIDEOINFO		{
 			public WMVIDEOINFOHEADER2 hdr;
 			public uint32 dwStartTimeCode;
 			public uint32 cbSequenceHeader;
@@ -898,33 +870,28 @@ namespace Win32
 			public uint32[0] dwSequenceHeader;
 		}
 		[CRepr]
-		public struct WMSCRIPTFORMAT
-		{
+		public struct WMSCRIPTFORMAT		{
 			public Guid scriptType;
 		}
 		[CRepr]
-		public struct WMT_COLORSPACEINFO_EXTENSION_DATA
-		{
+		public struct WMT_COLORSPACEINFO_EXTENSION_DATA		{
 			public uint8 ucColorPrimaries;
 			public uint8 ucColorTransferChar;
 			public uint8 ucColorMatrixCoef;
 		}
 		[CRepr]
-		public struct WMT_TIMECODE_EXTENSION_DATA
-		{
+		public struct WMT_TIMECODE_EXTENSION_DATA		{
 			public uint16 wRange;
 			public uint32 dwTimecode;
 			public uint32 dwUserbits;
 			public uint32 dwAmFlags;
 		}
 		[CRepr]
-		public struct DRM_VAL16
-		{
+		public struct DRM_VAL16		{
 			public uint8[16] val;
 		}
 		[CRepr]
-		public struct WMDRM_IMPORT_INIT_STRUCT
-		{
+		public struct WMDRM_IMPORT_INIT_STRUCT		{
 			public uint32 dwVersion;
 			public uint32 cbEncryptedSessionKeyMessage;
 			public uint8* pbEncryptedSessionKeyMessage;
@@ -932,8 +899,7 @@ namespace Win32
 			public uint8* pbEncryptedKeyMessage;
 		}
 		[CRepr]
-		public struct DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS
-		{
+		public struct DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS		{
 			public uint16 wCompressedDigitalVideo;
 			public uint16 wUncompressedDigitalVideo;
 			public uint16 wAnalogVideo;
@@ -941,33 +907,28 @@ namespace Win32
 			public uint16 wUncompressedDigitalAudio;
 		}
 		[CRepr]
-		public struct DRM_OPL_OUTPUT_IDS
-		{
+		public struct DRM_OPL_OUTPUT_IDS		{
 			public uint16 cIds;
 			public Guid* rgIds;
 		}
 		[CRepr]
-		public struct DRM_OUTPUT_PROTECTION
-		{
+		public struct DRM_OUTPUT_PROTECTION		{
 			public Guid guidId;
 			public uint8 bConfigData;
 		}
 		[CRepr]
-		public struct DRM_VIDEO_OUTPUT_PROTECTION_IDS
-		{
+		public struct DRM_VIDEO_OUTPUT_PROTECTION_IDS		{
 			public uint16 cEntries;
 			public DRM_OUTPUT_PROTECTION* rgVop;
 		}
 		[CRepr]
-		public struct DRM_PLAY_OPL
-		{
+		public struct DRM_PLAY_OPL		{
 			public DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS minOPL;
 			public DRM_OPL_OUTPUT_IDS oplIdReserved;
 			public DRM_VIDEO_OUTPUT_PROTECTION_IDS vopi;
 		}
 		[CRepr]
-		public struct DRM_COPY_OPL
-		{
+		public struct DRM_COPY_OPL		{
 			public uint16 wMinimumCopyLevel;
 			public DRM_OPL_OUTPUT_IDS oplIdIncludes;
 			public DRM_OPL_OUTPUT_IDS oplIdExcludes;

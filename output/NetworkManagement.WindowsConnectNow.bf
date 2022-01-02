@@ -351,15 +351,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WCN_VALUE_TYPE_PRIMARY_DEVICE_TYPE
-		{
+		public struct WCN_VALUE_TYPE_PRIMARY_DEVICE_TYPE		{
 			public uint16 Category;
 			public uint32 SubCategoryOUI;
 			public uint16 SubCategory;
 		}
 		[CRepr]
-		public struct WCN_VENDOR_EXTENSION_SPEC
-		{
+		public struct WCN_VENDOR_EXTENSION_SPEC		{
 			public uint32 VendorId;
 			public uint32 SubType;
 			public uint32 Index;

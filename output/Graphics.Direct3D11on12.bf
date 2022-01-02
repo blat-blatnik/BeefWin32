@@ -12,8 +12,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D3D11_RESOURCE_FLAGS
-		{
+		public struct D3D11_RESOURCE_FLAGS		{
 			public uint32 BindFlags;
 			public uint32 MiscFlags;
 			public uint32 CPUAccessFlags;

@@ -310,8 +310,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MBN_INTERFACE_CAPS
-		{
+		public struct MBN_INTERFACE_CAPS		{
 			public MBN_CELLULAR_CLASS cellularClass;
 			public MBN_VOICE_CLASS voiceClass;
 			public uint32 dataClass;
@@ -327,31 +326,27 @@ namespace Win32
 			public BSTR firmwareInfo;
 		}
 		[CRepr]
-		public struct MBN_PROVIDER
-		{
+		public struct MBN_PROVIDER		{
 			public BSTR providerID;
 			public uint32 providerState;
 			public BSTR providerName;
 			public uint32 dataClass;
 		}
 		[CRepr]
-		public struct MBN_PROVIDER2
-		{
+		public struct MBN_PROVIDER2		{
 			public MBN_PROVIDER provider;
 			public MBN_CELLULAR_CLASS cellularClass;
 			public uint32 signalStrength;
 			public uint32 signalError;
 		}
 		[CRepr]
-		public struct MBN_PIN_INFO
-		{
+		public struct MBN_PIN_INFO		{
 			public MBN_PIN_STATE pinState;
 			public MBN_PIN_TYPE pinType;
 			public uint32 attemptsRemaining;
 		}
 		[CRepr]
-		public struct MBN_CONTEXT
-		{
+		public struct MBN_CONTEXT		{
 			public uint32 contextID;
 			public MBN_CONTEXT_TYPE contextType;
 			public BSTR accessString;
@@ -361,27 +356,23 @@ namespace Win32
 			public MBN_AUTH_PROTOCOL authType;
 		}
 		[CRepr]
-		public struct MBN_SMS_FILTER
-		{
+		public struct MBN_SMS_FILTER		{
 			public MBN_SMS_FLAG flag;
 			public uint32 messageIndex;
 		}
 		[CRepr]
-		public struct MBN_SMS_STATUS_INFO
-		{
+		public struct MBN_SMS_STATUS_INFO		{
 			public uint32 flag;
 			public uint32 messageIndex;
 		}
 		[CRepr]
-		public struct MBN_DEVICE_SERVICE
-		{
+		public struct MBN_DEVICE_SERVICE		{
 			public BSTR deviceServiceID;
 			public int16 dataWriteSupported;
 			public int16 dataReadSupported;
 		}
 		[CRepr]
-		public struct __mbnapi_ReferenceRemainingTypes__
-		{
+		public struct __mbnapi_ReferenceRemainingTypes__		{
 			public MBN_BAND_CLASS bandClass;
 			public MBN_CONTEXT_CONSTANTS contextConstants;
 			public MBN_CTRL_CAPS ctrlCaps;
@@ -398,8 +389,7 @@ namespace Win32
 			public MBN_SMS_STATUS_FLAG smsStatusFlag;
 		}
 		[CRepr]
-		public struct __DummyPinType__
-		{
+		public struct __DummyPinType__		{
 			public uint32 pinType;
 		}
 		
@@ -419,11 +409,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IMbnConnection : IUnknown

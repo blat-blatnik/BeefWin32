@@ -97,43 +97,37 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DEVPROP_FILTER_EXPRESSION
-		{
+		public struct DEVPROP_FILTER_EXPRESSION		{
 			public DEVPROP_OPERATOR Operator;
 			public DEVPROPERTY Property;
 		}
 		[CRepr]
-		public struct DEV_OBJECT
-		{
+		public struct DEV_OBJECT		{
 			public DEV_OBJECT_TYPE ObjectType;
 			public PWSTR pszObjectId;
 			public uint32 cPropertyCount;
 			public DEVPROPERTY* pProperties;
 		}
 		[CRepr]
-		public struct DEV_QUERY_RESULT_ACTION_DATA
-		{
+		public struct DEV_QUERY_RESULT_ACTION_DATA		{
 			public DEV_QUERY_RESULT_ACTION Action;
 			public _DEV_QUERY_RESULT_UPDATE_PAYLOAD Data;
 			
 			[CRepr, Union]
-			public struct _DEV_QUERY_RESULT_UPDATE_PAYLOAD
-			{
+			public struct _DEV_QUERY_RESULT_UPDATE_PAYLOAD			{
 				public DEV_QUERY_STATE State;
 				public DEV_OBJECT DeviceObject;
 			}
 		}
 		[CRepr]
-		public struct DEV_QUERY_PARAMETER
-		{
+		public struct DEV_QUERY_PARAMETER		{
 			public DEVPROPKEY Key;
 			public uint32 Type;
 			public uint32 BufferSize;
 			public void* Buffer;
 		}
 		[CRepr]
-		public struct HDEVQUERY__
-		{
+		public struct HDEVQUERY__		{
 			public int32 unused;
 		}
 		

@@ -31,8 +31,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct XPS_JOB_STATUS
-		{
+		public struct XPS_JOB_STATUS		{
 			public uint32 jobId;
 			public int32 currentDocument;
 			public int32 currentPage;
@@ -41,8 +40,7 @@ namespace Win32
 			public HRESULT jobStatus;
 		}
 		[CRepr]
-		public struct PrintDocumentPackageStatus
-		{
+		public struct PrintDocumentPackageStatus		{
 			public uint32 JobId;
 			public int32 CurrentDocument;
 			public int32 CurrentPage;

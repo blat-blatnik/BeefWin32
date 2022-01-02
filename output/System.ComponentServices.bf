@@ -455,8 +455,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COMSVCSEVENTINFO
-		{
+		public struct COMSVCSEVENTINFO		{
 			public uint32 cbSize;
 			public uint32 dwPid;
 			public int64 lTime;
@@ -466,8 +465,7 @@ namespace Win32
 			public PWSTR sMachineName;
 		}
 		[CRepr]
-		public struct RECYCLE_INFO
-		{
+		public struct RECYCLE_INFO		{
 			public Guid guidCombaseProcessIdentifier;
 			public int64 ProcessStartTime;
 			public uint32 dwRecycleLifetimeLimit;
@@ -475,8 +473,7 @@ namespace Win32
 			public uint32 dwRecycleExpirationTimeout;
 		}
 		[CRepr]
-		public struct HANG_INFO
-		{
+		public struct HANG_INFO		{
 			public BOOL fAppHangMonitorEnabled;
 			public BOOL fTerminateOnHang;
 			public DUMPTYPE DumpType;
@@ -485,24 +482,21 @@ namespace Win32
 			public uint32 dwInfoMsgCount;
 		}
 		[CRepr]
-		public struct CAppStatistics
-		{
+		public struct CAppStatistics		{
 			public uint32 m_cTotalCalls;
 			public uint32 m_cTotalInstances;
 			public uint32 m_cTotalClasses;
 			public uint32 m_cCallsPerSecond;
 		}
 		[CRepr]
-		public struct CAppData
-		{
+		public struct CAppData		{
 			public uint32 m_idApp;
 			public char16[40] m_szAppGuid;
 			public uint32 m_dwAppProcessId;
 			public CAppStatistics m_AppStatistics;
 		}
 		[CRepr]
-		public struct CCLSIDData
-		{
+		public struct CCLSIDData		{
 			public Guid m_clsid;
 			public uint32 m_cReferences;
 			public uint32 m_cBound;
@@ -513,8 +507,7 @@ namespace Win32
 			public uint32 m_cCallsFailed;
 		}
 		[CRepr]
-		public struct CCLSIDData2
-		{
+		public struct CCLSIDData2		{
 			public Guid m_clsid;
 			public Guid m_appid;
 			public Guid m_partid;
@@ -530,8 +523,7 @@ namespace Win32
 			public uint32 m_cCallsFailed;
 		}
 		[CRepr]
-		public struct ApplicationProcessSummary
-		{
+		public struct ApplicationProcessSummary		{
 			public Guid PartitionIdPrimaryApplication;
 			public Guid ApplicationIdPrimaryApplication;
 			public Guid ApplicationInstanceId;
@@ -543,8 +535,7 @@ namespace Win32
 			public BOOL IsRecycled;
 		}
 		[CRepr]
-		public struct ApplicationProcessStatistics
-		{
+		public struct ApplicationProcessStatistics		{
 			public uint32 NumCallsOutstanding;
 			public uint32 NumTrackedComponents;
 			public uint32 NumComponentInstances;
@@ -555,8 +546,7 @@ namespace Win32
 			public uint32 Reserved4;
 		}
 		[CRepr]
-		public struct ApplicationProcessRecycleInfo
-		{
+		public struct ApplicationProcessRecycleInfo		{
 			public BOOL IsRecyclable;
 			public BOOL IsRecycled;
 			public FILETIME TimeRecycled;
@@ -573,8 +563,7 @@ namespace Win32
 			public uint32 NumCallsLastReported;
 		}
 		[CRepr]
-		public struct ApplicationSummary
-		{
+		public struct ApplicationSummary		{
 			public Guid ApplicationInstanceId;
 			public Guid PartitionId;
 			public Guid ApplicationId;
@@ -584,8 +573,7 @@ namespace Win32
 			public uint32 NumComponentInstances;
 		}
 		[CRepr]
-		public struct ComponentSummary
-		{
+		public struct ComponentSummary		{
 			public Guid ApplicationInstanceId;
 			public Guid PartitionId;
 			public Guid ApplicationId;
@@ -594,8 +582,7 @@ namespace Win32
 			public PWSTR ApplicationName;
 		}
 		[CRepr]
-		public struct ComponentStatistics
-		{
+		public struct ComponentStatistics		{
 			public uint32 NumInstances;
 			public uint32 NumBoundReferences;
 			public uint32 NumPooledObjects;
@@ -611,15 +598,13 @@ namespace Win32
 			public uint32 Reserved4;
 		}
 		[CRepr]
-		public struct ComponentHangMonitorInfo
-		{
+		public struct ComponentHangMonitorInfo		{
 			public BOOL IsMonitored;
 			public BOOL TerminateOnHang;
 			public uint32 AvgCallThresholdInMs;
 		}
 		[CRepr]
-		public struct CrmLogRecordRead
-		{
+		public struct CrmLogRecordRead		{
 			public uint32 dwCrmFlags;
 			public uint32 dwSequenceNumber;
 			public BLOB blobUserData;

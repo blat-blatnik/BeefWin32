@@ -12,30 +12,26 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct OVERLAPPED
-		{
+		public struct OVERLAPPED		{
 			public uint Internal;
 			public uint InternalHigh;
 			public _Anonymous_e__Union Anonymous;
 			public HANDLE hEvent;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public void* Pointer;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 Offset;
 					public uint32 OffsetHigh;
 				}
 			}
 		}
 		[CRepr]
-		public struct OVERLAPPED_ENTRY
-		{
+		public struct OVERLAPPED_ENTRY		{
 			public uint lpCompletionKey;
 			public OVERLAPPED* lpOverlapped;
 			public uint Internal;

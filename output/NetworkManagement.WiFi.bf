@@ -1426,26 +1426,22 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DOT11_SSID
-		{
+		public struct DOT11_SSID		{
 			public uint32 uSSIDLength;
 			public uint8[32] ucSSID;
 		}
 		[CRepr]
-		public struct DOT11_AUTH_CIPHER_PAIR
-		{
+		public struct DOT11_AUTH_CIPHER_PAIR		{
 			public DOT11_AUTH_ALGORITHM AuthAlgoId;
 			public DOT11_CIPHER_ALGORITHM CipherAlgoId;
 		}
 		[CRepr]
-		public struct DOT11_OI
-		{
+		public struct DOT11_OI		{
 			public uint16 OILength;
 			public uint8[5] OI;
 		}
 		[CRepr]
-		public struct DOT11_ACCESSNETWORKOPTIONS
-		{
+		public struct DOT11_ACCESSNETWORKOPTIONS		{
 			public uint8 AccessNetworkType;
 			public uint8 Internet;
 			public uint8 ASRA;
@@ -1453,34 +1449,29 @@ namespace Win32
 			public uint8 UESA;
 		}
 		[CRepr]
-		public struct DOT11_VENUEINFO
-		{
+		public struct DOT11_VENUEINFO		{
 			public uint8 VenueGroup;
 			public uint8 VenueType;
 		}
 		[CRepr]
-		public struct DOT11_BSSID_LIST
-		{
+		public struct DOT11_BSSID_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint8[6] BSSIDs;
 		}
 		[CRepr]
-		public struct DOT11_RATE_SET
-		{
+		public struct DOT11_RATE_SET		{
 			public uint32 uRateSetLength;
 			public uint8[126] ucRateSet;
 		}
 		[CRepr]
-		public struct DOT11_WFD_SESSION_INFO
-		{
+		public struct DOT11_WFD_SESSION_INFO		{
 			public uint16 uSessionInfoLength;
 			public uint8[144] ucSessionInfo;
 		}
 		[CRepr]
-		public struct DOT11_OFFLOAD_CAPABILITY
-		{
+		public struct DOT11_OFFLOAD_CAPABILITY		{
 			public uint32 uReserved;
 			public uint32 uFlags;
 			public uint32 uSupportedWEPAlgorithms;
@@ -1490,20 +1481,17 @@ namespace Win32
 			public uint32 uMaxAuthKeyMappingLength;
 		}
 		[CRepr]
-		public struct DOT11_CURRENT_OFFLOAD_CAPABILITY
-		{
+		public struct DOT11_CURRENT_OFFLOAD_CAPABILITY		{
 			public uint32 uReserved;
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct DOT11_IV48_COUNTER
-		{
+		public struct DOT11_IV48_COUNTER		{
 			public uint32 uIV32Counter;
 			public uint16 usIV16Counter;
 		}
 		[CRepr]
-		public struct DOT11_WEP_OFFLOAD
-		{
+		public struct DOT11_WEP_OFFLOAD		{
 			public uint32 uReserved;
 			public HANDLE hOffloadContext;
 			public HANDLE hOffload;
@@ -1521,8 +1509,7 @@ namespace Win32
 			public uint8[0] ucKey;
 		}
 		[CRepr]
-		public struct DOT11_WEP_UPLOAD
-		{
+		public struct DOT11_WEP_UPLOAD		{
 			public uint32 uReserved;
 			public DOT11_OFFLOAD_TYPE dot11OffloadType;
 			public HANDLE hOffload;
@@ -1531,8 +1518,7 @@ namespace Win32
 			public uint16[16] usDot11RWBitMaps;
 		}
 		[CRepr]
-		public struct DOT11_DEFAULT_WEP_OFFLOAD
-		{
+		public struct DOT11_DEFAULT_WEP_OFFLOAD		{
 			public uint32 uReserved;
 			public HANDLE hOffloadContext;
 			public HANDLE hOffload;
@@ -1549,8 +1535,7 @@ namespace Win32
 			public uint8[0] ucKey;
 		}
 		[CRepr]
-		public struct DOT11_DEFAULT_WEP_UPLOAD
-		{
+		public struct DOT11_DEFAULT_WEP_UPLOAD		{
 			public uint32 uReserved;
 			public DOT11_OFFLOAD_TYPE dot11OffloadType;
 			public HANDLE hOffload;
@@ -1559,8 +1544,7 @@ namespace Win32
 			public uint16[16] usDot11RWBitMaps;
 		}
 		[CRepr]
-		public struct DOT11_OPERATION_MODE_CAPABILITY
-		{
+		public struct DOT11_OPERATION_MODE_CAPABILITY		{
 			public uint32 uReserved;
 			public uint32 uMajorVersion;
 			public uint32 uMinorVersion;
@@ -1569,14 +1553,12 @@ namespace Win32
 			public uint32 uOpModeCapability;
 		}
 		[CRepr]
-		public struct DOT11_CURRENT_OPERATION_MODE
-		{
+		public struct DOT11_CURRENT_OPERATION_MODE		{
 			public uint32 uReserved;
 			public uint32 uCurrentOpMode;
 		}
 		[CRepr]
-		public struct DOT11_SCAN_REQUEST
-		{
+		public struct DOT11_SCAN_REQUEST		{
 			public DOT11_BSS_TYPE dot11BSSType;
 			public uint8[6] dot11BSSID;
 			public DOT11_SSID dot11SSID;
@@ -1592,8 +1574,7 @@ namespace Win32
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_PHY_TYPE_INFO
-		{
+		public struct DOT11_PHY_TYPE_INFO		{
 			public DOT11_PHY_TYPE dot11PhyType;
 			public BOOLEAN bUseParameters;
 			public uint32 uProbeDelay;
@@ -1604,8 +1585,7 @@ namespace Win32
 			public uint8[0] ucChannelListBuffer;
 		}
 		[CRepr]
-		public struct DOT11_SCAN_REQUEST_V2
-		{
+		public struct DOT11_SCAN_REQUEST_V2		{
 			public DOT11_BSS_TYPE dot11BSSType;
 			public uint8[6] dot11BSSID;
 			public DOT11_SCAN_TYPE dot11ScanType;
@@ -1622,16 +1602,14 @@ namespace Win32
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_PHY_TYPE_LIST
-		{
+		public struct DOT11_PHY_TYPE_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_PHY_TYPE[0] dot11PhyType;
 		}
 		[CRepr]
-		public struct DOT11_BSS_DESCRIPTION
-		{
+		public struct DOT11_BSS_DESCRIPTION		{
 			public uint32 uReserved;
 			public uint8[6] dot11BSSID;
 			public DOT11_BSS_TYPE dot11BSSType;
@@ -1642,46 +1620,40 @@ namespace Win32
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_JOIN_REQUEST
-		{
+		public struct DOT11_JOIN_REQUEST		{
 			public uint32 uJoinFailureTimeout;
 			public DOT11_RATE_SET OperationalRateSet;
 			public uint32 uChCenterFrequency;
 			public DOT11_BSS_DESCRIPTION dot11BSSDescription;
 		}
 		[CRepr]
-		public struct DOT11_START_REQUEST
-		{
+		public struct DOT11_START_REQUEST		{
 			public uint32 uStartFailureTimeout;
 			public DOT11_RATE_SET OperationalRateSet;
 			public uint32 uChCenterFrequency;
 			public DOT11_BSS_DESCRIPTION dot11BSSDescription;
 		}
 		[CRepr]
-		public struct DOT11_UPDATE_IE
-		{
+		public struct DOT11_UPDATE_IE		{
 			public DOT11_UPDATE_IE_OP dot11UpdateIEOp;
 			public uint32 uBufferLength;
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_RESET_REQUEST
-		{
+		public struct DOT11_RESET_REQUEST		{
 			public DOT11_RESET_TYPE dot11ResetType;
 			public uint8[6] dot11MacAddress;
 			public BOOLEAN bSetDefaultMIB;
 		}
 		[CRepr]
-		public struct DOT11_OPTIONAL_CAPABILITY
-		{
+		public struct DOT11_OPTIONAL_CAPABILITY		{
 			public uint32 uReserved;
 			public BOOLEAN bDot11PCF;
 			public BOOLEAN bDot11PCFMPDUTransferToPC;
 			public BOOLEAN bStrictlyOrderedServiceClass;
 		}
 		[CRepr]
-		public struct DOT11_CURRENT_OPTIONAL_CAPABILITY
-		{
+		public struct DOT11_CURRENT_OPTIONAL_CAPABILITY		{
 			public uint32 uReserved;
 			public BOOLEAN bDot11CFPollable;
 			public BOOLEAN bDot11PCF;
@@ -1689,8 +1661,7 @@ namespace Win32
 			public BOOLEAN bStrictlyOrderedServiceClass;
 		}
 		[CRepr]
-		public struct DOT11_POWER_MGMT_MODE
-		{
+		public struct DOT11_POWER_MGMT_MODE		{
 			public DOT11_POWER_MODE dot11PowerMode;
 			public uint32 uPowerSaveLevel;
 			public uint16 usListenInterval;
@@ -1698,8 +1669,7 @@ namespace Win32
 			public BOOLEAN bReceiveDTIMs;
 		}
 		[CRepr]
-		public struct DOT11_COUNTERS_ENTRY
-		{
+		public struct DOT11_COUNTERS_ENTRY		{
 			public uint32 uTransmittedFragmentCount;
 			public uint32 uMulticastTransmittedFrameCount;
 			public uint32 uFailedCount;
@@ -1715,152 +1685,130 @@ namespace Win32
 			public uint32 uTransmittedFrameCount;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_PHY_TYPES
-		{
+		public struct DOT11_SUPPORTED_PHY_TYPES		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_PHY_TYPE[0] dot11PHYType;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_POWER_LEVELS
-		{
+		public struct DOT11_SUPPORTED_POWER_LEVELS		{
 			public uint32 uNumOfSupportedPowerLevels;
 			public uint32[8] uTxPowerLevelValues;
 		}
 		[CRepr]
-		public struct DOT11_REG_DOMAIN_VALUE
-		{
+		public struct DOT11_REG_DOMAIN_VALUE		{
 			public uint32 uRegDomainsSupportIndex;
 			public uint32 uRegDomainsSupportValue;
 		}
 		[CRepr]
-		public struct DOT11_REG_DOMAINS_SUPPORT_VALUE
-		{
+		public struct DOT11_REG_DOMAINS_SUPPORT_VALUE		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_REG_DOMAIN_VALUE[0] dot11RegDomainValue;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_ANTENNA
-		{
+		public struct DOT11_SUPPORTED_ANTENNA		{
 			public uint32 uAntennaListIndex;
 			public BOOLEAN bSupportedAntenna;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_ANTENNA_LIST
-		{
+		public struct DOT11_SUPPORTED_ANTENNA_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_SUPPORTED_ANTENNA[0] dot11SupportedAntenna;
 		}
 		[CRepr]
-		public struct DOT11_DIVERSITY_SELECTION_RX
-		{
+		public struct DOT11_DIVERSITY_SELECTION_RX		{
 			public uint32 uAntennaListIndex;
 			public BOOLEAN bDiversitySelectionRX;
 		}
 		[CRepr]
-		public struct DOT11_DIVERSITY_SELECTION_RX_LIST
-		{
+		public struct DOT11_DIVERSITY_SELECTION_RX_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_DIVERSITY_SELECTION_RX[0] dot11DiversitySelectionRx;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_DATA_RATES_VALUE
-		{
+		public struct DOT11_SUPPORTED_DATA_RATES_VALUE		{
 			public uint8[8] ucSupportedTxDataRatesValue;
 			public uint8[8] ucSupportedRxDataRatesValue;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_DATA_RATES_VALUE_V2
-		{
+		public struct DOT11_SUPPORTED_DATA_RATES_VALUE_V2		{
 			public uint8[255] ucSupportedTxDataRatesValue;
 			public uint8[255] ucSupportedRxDataRatesValue;
 		}
 		[CRepr]
-		public struct DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY
-		{
+		public struct DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY		{
 			public uint32 uMultiDomainCapabilityIndex;
 			public uint32 uFirstChannelNumber;
 			public uint32 uNumberOfChannels;
 			public int32 lMaximumTransmitPowerLevel;
 		}
 		[CRepr]
-		public struct DOT11_MD_CAPABILITY_ENTRY_LIST
-		{
+		public struct DOT11_MD_CAPABILITY_ENTRY_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY[0] dot11MDCapabilityEntry;
 		}
 		[CRepr]
-		public struct DOT11_HOPPING_PATTERN_ENTRY
-		{
+		public struct DOT11_HOPPING_PATTERN_ENTRY		{
 			public uint32 uHoppingPatternIndex;
 			public uint32 uRandomTableFieldNumber;
 		}
 		[CRepr]
-		public struct DOT11_HOPPING_PATTERN_ENTRY_LIST
-		{
+		public struct DOT11_HOPPING_PATTERN_ENTRY_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_HOPPING_PATTERN_ENTRY[0] dot11HoppingPatternEntry;
 		}
 		[CRepr]
-		public struct DOT11_WPA_TSC
-		{
+		public struct DOT11_WPA_TSC		{
 			public uint32 uReserved;
 			public DOT11_OFFLOAD_TYPE dot11OffloadType;
 			public HANDLE hOffload;
 			public DOT11_IV48_COUNTER dot11IV48Counter;
 		}
 		[CRepr]
-		public struct DOT11_RSSI_RANGE
-		{
+		public struct DOT11_RSSI_RANGE		{
 			public DOT11_PHY_TYPE dot11PhyType;
 			public uint32 uRSSIMin;
 			public uint32 uRSSIMax;
 		}
 		[CRepr]
-		public struct DOT11_NIC_SPECIFIC_EXTENSION
-		{
+		public struct DOT11_NIC_SPECIFIC_EXTENSION		{
 			public uint32 uBufferLength;
 			public uint32 uTotalBufferLength;
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_AP_JOIN_REQUEST
-		{
+		public struct DOT11_AP_JOIN_REQUEST		{
 			public uint32 uJoinFailureTimeout;
 			public DOT11_RATE_SET OperationalRateSet;
 			public uint32 uChCenterFrequency;
 			public DOT11_BSS_DESCRIPTION dot11BSSDescription;
 		}
 		[CRepr]
-		public struct DOT11_RECV_SENSITIVITY
-		{
+		public struct DOT11_RECV_SENSITIVITY		{
 			public uint8 ucDataRate;
 			public int32 lRSSIMin;
 			public int32 lRSSIMax;
 		}
 		[CRepr]
-		public struct DOT11_RECV_SENSITIVITY_LIST
-		{
+		public struct DOT11_RECV_SENSITIVITY_LIST		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_RECV_SENSITIVITY[0] dot11RecvSensitivity;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public DOT11_PHY_TYPE dot11PhyType;
 				public uint32 uPhyId;
 			}
 		}
 		[CRepr]
-		public struct DOT11_WME_AC_PARAMETERS
-		{
+		public struct DOT11_WME_AC_PARAMETERS		{
 			public uint8 ucAccessCategoryIndex;
 			public uint8 ucAIFSN;
 			public uint8 ucECWmin;
@@ -1868,15 +1816,13 @@ namespace Win32
 			public uint16 usTXOPLimit;
 		}
 		[CRepr]
-		public struct _DOT11_WME_AC_PARAMTERS_LIST
-		{
+		public struct _DOT11_WME_AC_PARAMTERS_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_WME_AC_PARAMETERS[0] dot11WMEACParameters;
 		}
 		[CRepr]
-		public struct DOT11_WME_UPDATE_IE
-		{
+		public struct DOT11_WME_UPDATE_IE		{
 			public uint32 uParamElemMinBeaconIntervals;
 			public uint32 uWMEInfoElemOffset;
 			public uint32 uWMEInfoElemLength;
@@ -1885,68 +1831,58 @@ namespace Win32
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_QOS_TX_DURATION
-		{
+		public struct DOT11_QOS_TX_DURATION		{
 			public uint32 uNominalMSDUSize;
 			public uint32 uMinPHYRate;
 			public uint32 uDuration;
 		}
 		[CRepr]
-		public struct DOT11_QOS_TX_MEDIUM_TIME
-		{
+		public struct DOT11_QOS_TX_MEDIUM_TIME		{
 			public uint8[6] dot11PeerAddress;
 			public uint8 ucQoSPriority;
 			public uint32 uMediumTimeAdmited;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_OFDM_FREQUENCY
-		{
+		public struct DOT11_SUPPORTED_OFDM_FREQUENCY		{
 			public uint32 uCenterFrequency;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_OFDM_FREQUENCY_LIST
-		{
+		public struct DOT11_SUPPORTED_OFDM_FREQUENCY_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_SUPPORTED_OFDM_FREQUENCY[0] dot11SupportedOFDMFrequency;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_DSSS_CHANNEL
-		{
+		public struct DOT11_SUPPORTED_DSSS_CHANNEL		{
 			public uint32 uChannel;
 		}
 		[CRepr]
-		public struct DOT11_SUPPORTED_DSSS_CHANNEL_LIST
-		{
+		public struct DOT11_SUPPORTED_DSSS_CHANNEL_LIST		{
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_SUPPORTED_DSSS_CHANNEL[0] dot11SupportedDSSSChannel;
 		}
 		[CRepr]
-		public struct DOT11_BYTE_ARRAY
-		{
+		public struct DOT11_BYTE_ARRAY		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfBytes;
 			public uint32 uTotalNumOfBytes;
 			public uint8[0] ucBuffer;
 		}
 		[CRepr, Union]
-		public struct DOT11_BSS_ENTRY_PHY_SPECIFIC_INFO
-		{
+		public struct DOT11_BSS_ENTRY_PHY_SPECIFIC_INFO		{
 			public uint32 uChCenterFrequency;
 			public _FHSS_e__Struct FHSS;
 			
 			[CRepr]
-			public struct _FHSS_e__Struct
-			{
+			public struct _FHSS_e__Struct			{
 				public uint32 uHopPattern;
 				public uint32 uHopSet;
 				public uint32 uDwellTime;
 			}
 		}
 		[CRepr]
-		public struct DOT11_BSS_ENTRY
-		{
+		public struct DOT11_BSS_ENTRY		{
 			public uint32 uPhyId;
 			public DOT11_BSS_ENTRY_PHY_SPECIFIC_INFO PhySpecificInfo;
 			public uint8[6] dot11BSSID;
@@ -1962,39 +1898,34 @@ namespace Win32
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_SSID_LIST
-		{
+		public struct DOT11_SSID_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_SSID[0] SSIDs;
 		}
 		[CRepr]
-		public struct DOT11_MAC_ADDRESS_LIST
-		{
+		public struct DOT11_MAC_ADDRESS_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint8[6] MacAddrs;
 		}
 		[CRepr]
-		public struct DOT11_PMKID_ENTRY
-		{
+		public struct DOT11_PMKID_ENTRY		{
 			public uint8[6] BSSID;
 			public uint8[16] PMKID;
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct DOT11_PMKID_LIST
-		{
+		public struct DOT11_PMKID_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_PMKID_ENTRY[0] PMKIDs;
 		}
 		[CRepr]
-		public struct DOT11_PHY_FRAME_STATISTICS
-		{
+		public struct DOT11_PHY_FRAME_STATISTICS		{
 			public uint64 ullTransmittedFrameCount;
 			public uint64 ullMulticastTransmittedFrameCount;
 			public uint64 ullFailedCount;
@@ -2015,8 +1946,7 @@ namespace Win32
 			public uint64 ullFCSErrorCount;
 		}
 		[CRepr]
-		public struct DOT11_MAC_FRAME_STATISTICS
-		{
+		public struct DOT11_MAC_FRAME_STATISTICS		{
 			public uint64 ullTransmittedFrameCount;
 			public uint64 ullReceivedFrameCount;
 			public uint64 ullTransmittedFailureFrameCount;
@@ -2033,8 +1963,7 @@ namespace Win32
 			public uint64 ullDecryptFailureCount;
 		}
 		[CRepr]
-		public struct DOT11_STATISTICS
-		{
+		public struct DOT11_STATISTICS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint64 ullFourWayHandshakeFailures;
 			public uint64 ullTKIPCounterMeasuresInvoked;
@@ -2044,47 +1973,41 @@ namespace Win32
 			public DOT11_PHY_FRAME_STATISTICS[0] PhyCounters;
 		}
 		[CRepr]
-		public struct DOT11_PRIVACY_EXEMPTION
-		{
+		public struct DOT11_PRIVACY_EXEMPTION		{
 			public uint16 usEtherType;
 			public uint16 usExemptionActionType;
 			public uint16 usExemptionPacketType;
 		}
 		[CRepr]
-		public struct DOT11_PRIVACY_EXEMPTION_LIST
-		{
+		public struct DOT11_PRIVACY_EXEMPTION_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_PRIVACY_EXEMPTION[0] PrivacyExemptionEntries;
 		}
 		[CRepr]
-		public struct DOT11_AUTH_ALGORITHM_LIST
-		{
+		public struct DOT11_AUTH_ALGORITHM_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_AUTH_ALGORITHM[0] AlgorithmIds;
 		}
 		[CRepr]
-		public struct DOT11_AUTH_CIPHER_PAIR_LIST
-		{
+		public struct DOT11_AUTH_CIPHER_PAIR_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_AUTH_CIPHER_PAIR[0] AuthCipherPairs;
 		}
 		[CRepr]
-		public struct DOT11_CIPHER_ALGORITHM_LIST
-		{
+		public struct DOT11_CIPHER_ALGORITHM_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_CIPHER_ALGORITHM[0] AlgorithmIds;
 		}
 		[CRepr]
-		public struct DOT11_CIPHER_DEFAULT_KEY_VALUE
-		{
+		public struct DOT11_CIPHER_DEFAULT_KEY_VALUE		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uKeyIndex;
 			public DOT11_CIPHER_ALGORITHM AlgorithmId;
@@ -2095,51 +2018,44 @@ namespace Win32
 			public uint8[0] ucKey;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_TKIP_MIC
-		{
+		public struct DOT11_KEY_ALGO_TKIP_MIC		{
 			public uint8[6] ucIV48Counter;
 			public uint32 ulTKIPKeyLength;
 			public uint32 ulMICKeyLength;
 			public uint8[0] ucTKIPMICKeys;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_CCMP
-		{
+		public struct DOT11_KEY_ALGO_CCMP		{
 			public uint8[6] ucIV48Counter;
 			public uint32 ulCCMPKeyLength;
 			public uint8[0] ucCCMPKey;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_GCMP
-		{
+		public struct DOT11_KEY_ALGO_GCMP		{
 			public uint8[6] ucIV48Counter;
 			public uint32 ulGCMPKeyLength;
 			public uint8[0] ucGCMPKey;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_GCMP_256
-		{
+		public struct DOT11_KEY_ALGO_GCMP_256		{
 			public uint8[6] ucIV48Counter;
 			public uint32 ulGCMP256KeyLength;
 			public uint8[0] ucGCMP256Key;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_BIP
-		{
+		public struct DOT11_KEY_ALGO_BIP		{
 			public uint8[6] ucIPN;
 			public uint32 ulBIPKeyLength;
 			public uint8[0] ucBIPKey;
 		}
 		[CRepr]
-		public struct DOT11_KEY_ALGO_BIP_GMAC_256
-		{
+		public struct DOT11_KEY_ALGO_BIP_GMAC_256		{
 			public uint8[6] ucIPN;
 			public uint32 ulBIPGmac256KeyLength;
 			public uint8[0] ucBIPGmac256Key;
 		}
 		[CRepr]
-		public struct DOT11_CIPHER_KEY_MAPPING_KEY_VALUE
-		{
+		public struct DOT11_CIPHER_KEY_MAPPING_KEY_VALUE		{
 			public uint8[6] PeerMacAddr;
 			public DOT11_CIPHER_ALGORITHM AlgorithmId;
 			public DOT11_DIRECTION Direction;
@@ -2149,8 +2065,7 @@ namespace Win32
 			public uint8[0] ucKey;
 		}
 		[CRepr]
-		public struct DOT11_ASSOCIATION_INFO_EX
-		{
+		public struct DOT11_ASSOCIATION_INFO_EX		{
 			public uint8[6] PeerMacAddress;
 			public uint8[6] BSSID;
 			public uint16 usCapabilityInformation;
@@ -2166,24 +2081,21 @@ namespace Win32
 			public uint64 ullNumOfRxPacketFailures;
 		}
 		[CRepr]
-		public struct DOT11_ASSOCIATION_INFO_LIST
-		{
+		public struct DOT11_ASSOCIATION_INFO_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_ASSOCIATION_INFO_EX[0] dot11AssocInfo;
 		}
 		[CRepr]
-		public struct DOT11_PHY_ID_LIST
-		{
+		public struct DOT11_PHY_ID_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint32[0] dot11PhyId;
 		}
 		[CRepr]
-		public struct DOT11_EXTSTA_CAPABILITY
-		{
+		public struct DOT11_EXTSTA_CAPABILITY		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uScanSSIDListSize;
 			public uint32 uDesiredBSSIDListSize;
@@ -2197,65 +2109,56 @@ namespace Win32
 			public uint32 uMaxNumPerSTADefaultKeyTables;
 		}
 		[CRepr]
-		public struct DOT11_DATA_RATE_MAPPING_ENTRY
-		{
+		public struct DOT11_DATA_RATE_MAPPING_ENTRY		{
 			public uint8 ucDataRateIndex;
 			public uint8 ucDataRateFlag;
 			public uint16 usDataRateValue;
 		}
 		[CRepr]
-		public struct DOT11_DATA_RATE_MAPPING_TABLE
-		{
+		public struct DOT11_DATA_RATE_MAPPING_TABLE		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uDataRateMappingLength;
 			public DOT11_DATA_RATE_MAPPING_ENTRY[126] DataRateMappingEntries;
 		}
 		[CRepr]
-		public struct DOT11_COUNTRY_OR_REGION_STRING_LIST
-		{
+		public struct DOT11_COUNTRY_OR_REGION_STRING_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint8[3] CountryOrRegionStrings;
 		}
 		[CRepr]
-		public struct DOT11_PORT_STATE_NOTIFICATION
-		{
+		public struct DOT11_PORT_STATE_NOTIFICATION		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMac;
 			public BOOLEAN bOpen;
 		}
 		[CRepr]
-		public struct DOT11_IBSS_PARAMS
-		{
+		public struct DOT11_IBSS_PARAMS		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bJoinOnly;
 			public uint32 uIEsOffset;
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_QOS_PARAMS
-		{
+		public struct DOT11_QOS_PARAMS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8 ucEnabledQoSProtocolFlags;
 		}
 		[CRepr]
-		public struct DOT11_ASSOCIATION_PARAMS
-		{
+		public struct DOT11_ASSOCIATION_PARAMS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] BSSID;
 			public uint32 uAssocRequestIEsOffset;
 			public uint32 uAssocRequestIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_FRAGMENT_DESCRIPTOR
-		{
+		public struct DOT11_FRAGMENT_DESCRIPTOR		{
 			public uint32 uOffset;
 			public uint32 uLength;
 		}
 		[CRepr]
-		public struct DOT11_PER_MSDU_COUNTERS
-		{
+		public struct DOT11_PER_MSDU_COUNTERS		{
 			public uint32 uTransmittedFragmentCount;
 			public uint32 uRetryCount;
 			public uint32 uRTSSuccessCount;
@@ -2263,29 +2166,25 @@ namespace Win32
 			public uint32 uACKFailureCount;
 		}
 		[CRepr]
-		public struct DOT11_HRDSSS_PHY_ATTRIBUTES
-		{
+		public struct DOT11_HRDSSS_PHY_ATTRIBUTES		{
 			public BOOLEAN bShortPreambleOptionImplemented;
 			public BOOLEAN bPBCCOptionImplemented;
 			public BOOLEAN bChannelAgilityPresent;
 			public uint32 uHRCCAModeSupported;
 		}
 		[CRepr]
-		public struct DOT11_OFDM_PHY_ATTRIBUTES
-		{
+		public struct DOT11_OFDM_PHY_ATTRIBUTES		{
 			public uint32 uFrequencyBandsSupported;
 		}
 		[CRepr]
-		public struct DOT11_ERP_PHY_ATTRIBUTES
-		{
+		public struct DOT11_ERP_PHY_ATTRIBUTES		{
 			public DOT11_HRDSSS_PHY_ATTRIBUTES HRDSSSAttributes;
 			public BOOLEAN bERPPBCCOptionImplemented;
 			public BOOLEAN bDSSSOFDMOptionImplemented;
 			public BOOLEAN bShortSlotTimeOptionImplemented;
 		}
 		[CRepr]
-		public struct DOT11_PHY_ATTRIBUTES
-		{
+		public struct DOT11_PHY_ATTRIBUTES		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_PHY_TYPE PhyType;
 			public BOOLEAN bHardwarePhyState;
@@ -2302,16 +2201,14 @@ namespace Win32
 			public DOT11_SUPPORTED_DATA_RATES_VALUE_V2 SupportedDataRatesValue;
 			
 			[CRepr, Union]
-			public struct _PhySpecificAttributes_e__Union
-			{
+			public struct _PhySpecificAttributes_e__Union			{
 				public DOT11_HRDSSS_PHY_ATTRIBUTES HRDSSSAttributes;
 				public DOT11_OFDM_PHY_ATTRIBUTES OFDMAttributes;
 				public DOT11_ERP_PHY_ATTRIBUTES ERPAttributes;
 			}
 		}
 		[CRepr]
-		public struct DOT11_EXTSTA_ATTRIBUTES
-		{
+		public struct DOT11_EXTSTA_ATTRIBUTES		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uScanSSIDListSize;
 			public uint32 uDesiredBSSIDListSize;
@@ -2348,8 +2245,7 @@ namespace Win32
 			public BOOLEAN bHESSIDConnectionSupported;
 		}
 		[CRepr]
-		public struct DOT11_RECV_EXTENSION_INFO
-		{
+		public struct DOT11_RECV_EXTENSION_INFO		{
 			public uint32 uVersion;
 			public void* pvReserved;
 			public DOT11_PHY_TYPE dot11PhyType;
@@ -2375,8 +2271,7 @@ namespace Win32
 			public void*[0] pNdisPackets;
 		}
 		[CRepr]
-		public struct DOT11_RECV_EXTENSION_INFO_V2
-		{
+		public struct DOT11_RECV_EXTENSION_INFO_V2		{
 			public uint32 uVersion;
 			public void* pvReserved;
 			public DOT11_PHY_TYPE dot11PhyType;
@@ -2400,21 +2295,18 @@ namespace Win32
 			public void*[0] pNdisPackets;
 		}
 		[CRepr]
-		public struct DOT11_STATUS_INDICATION
-		{
+		public struct DOT11_STATUS_INDICATION		{
 			public uint32 uStatusType;
 			public int32 ndisStatus;
 		}
 		[CRepr]
-		public struct DOT11_MPDU_MAX_LENGTH_INDICATION
-		{
+		public struct DOT11_MPDU_MAX_LENGTH_INDICATION		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uPhyId;
 			public uint32 uMPDUMaxLength;
 		}
 		[CRepr]
-		public struct DOT11_ASSOCIATION_START_PARAMETERS
-		{
+		public struct DOT11_ASSOCIATION_START_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] MacAddr;
 			public DOT11_SSID SSID;
@@ -2422,14 +2314,12 @@ namespace Win32
 			public uint32 uIHVDataSize;
 		}
 		[CRepr]
-		public struct DOT11_ENCAP_ENTRY
-		{
+		public struct DOT11_ENCAP_ENTRY		{
 			public uint16 usEtherType;
 			public uint16 usEncapType;
 		}
 		[CRepr]
-		public struct DOT11_ASSOCIATION_COMPLETION_PARAMETERS
-		{
+		public struct DOT11_ASSOCIATION_COMPLETION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] MacAddr;
 			public uint32 uStatus;
@@ -2458,36 +2348,31 @@ namespace Win32
 			public uint32 uAssocComebackTime;
 		}
 		[CRepr]
-		public struct DOT11_CONNECTION_START_PARAMETERS
-		{
+		public struct DOT11_CONNECTION_START_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_BSS_TYPE BSSType;
 			public uint8[6] AdhocBSSID;
 			public DOT11_SSID AdhocSSID;
 		}
 		[CRepr]
-		public struct DOT11_CONNECTION_COMPLETION_PARAMETERS
-		{
+		public struct DOT11_CONNECTION_COMPLETION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uStatus;
 		}
 		[CRepr]
-		public struct DOT11_ROAMING_START_PARAMETERS
-		{
+		public struct DOT11_ROAMING_START_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] AdhocBSSID;
 			public DOT11_SSID AdhocSSID;
 			public uint32 uRoamingReason;
 		}
 		[CRepr]
-		public struct DOT11_ROAMING_COMPLETION_PARAMETERS
-		{
+		public struct DOT11_ROAMING_COMPLETION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uStatus;
 		}
 		[CRepr]
-		public struct DOT11_DISASSOCIATION_PARAMETERS
-		{
+		public struct DOT11_DISASSOCIATION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] MacAddr;
 			public uint32 uReason;
@@ -2495,50 +2380,43 @@ namespace Win32
 			public uint32 uIHVDataSize;
 		}
 		[CRepr]
-		public struct DOT11_TKIPMIC_FAILURE_PARAMETERS
-		{
+		public struct DOT11_TKIPMIC_FAILURE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bDefaultKeyFailure;
 			public uint32 uKeyIndex;
 			public uint8[6] PeerMac;
 		}
 		[CRepr]
-		public struct DOT11_PMKID_CANDIDATE_LIST_PARAMETERS
-		{
+		public struct DOT11_PMKID_CANDIDATE_LIST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uCandidateListSize;
 			public uint32 uCandidateListOffset;
 		}
 		[CRepr]
-		public struct DOT11_BSSID_CANDIDATE
-		{
+		public struct DOT11_BSSID_CANDIDATE		{
 			public uint8[6] BSSID;
 			public uint32 uFlags;
 		}
 		[CRepr]
-		public struct DOT11_PHY_STATE_PARAMETERS
-		{
+		public struct DOT11_PHY_STATE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uPhyId;
 			public BOOLEAN bHardwarePhyState;
 			public BOOLEAN bSoftwarePhyState;
 		}
 		[CRepr]
-		public struct DOT11_LINK_QUALITY_ENTRY
-		{
+		public struct DOT11_LINK_QUALITY_ENTRY		{
 			public uint8[6] PeerMacAddr;
 			public uint8 ucLinkQuality;
 		}
 		[CRepr]
-		public struct DOT11_LINK_QUALITY_PARAMETERS
-		{
+		public struct DOT11_LINK_QUALITY_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uLinkQualityListSize;
 			public uint32 uLinkQualityListOffset;
 		}
 		[CRepr]
-		public struct DOT11_EXTSTA_SEND_CONTEXT
-		{
+		public struct DOT11_EXTSTA_SEND_CONTEXT		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint16 usExemptionActionType;
 			public uint32 uPhyId;
@@ -2547,8 +2425,7 @@ namespace Win32
 			public uint32 uSendFlags;
 		}
 		[CRepr]
-		public struct DOT11_EXTSTA_RECV_CONTEXT
-		{
+		public struct DOT11_EXTSTA_RECV_CONTEXT		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uReceiveFlags;
 			public uint32 uPhyId;
@@ -2561,8 +2438,7 @@ namespace Win32
 			public uint64 ullTimestamp;
 		}
 		[CRepr]
-		public struct DOT11_EXTAP_ATTRIBUTES
-		{
+		public struct DOT11_EXTAP_ATTRIBUTES		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uScanSSIDListSize;
 			public uint32 uDesiredSSIDListSize;
@@ -2579,14 +2455,12 @@ namespace Win32
 			public DOT11_AUTH_CIPHER_PAIR* pInfraSupportedMcastAlgoPairs;
 		}
 		[CRepr]
-		public struct DOT11_INCOMING_ASSOC_STARTED_PARAMETERS
-		{
+		public struct DOT11_INCOMING_ASSOC_STARTED_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 		}
 		[CRepr]
-		public struct DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS
-		{
+		public struct DOT11_INCOMING_ASSOC_REQUEST_RECEIVED_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 			public BOOLEAN bReAssocReq;
@@ -2594,8 +2468,7 @@ namespace Win32
 			public uint32 uAssocReqSize;
 		}
 		[CRepr]
-		public struct DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS
-		{
+		public struct DOT11_INCOMING_ASSOC_COMPLETION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 			public uint32 uStatus;
@@ -2615,57 +2488,49 @@ namespace Win32
 			public uint32 uBeaconSize;
 		}
 		[CRepr]
-		public struct DOT11_STOP_AP_PARAMETERS
-		{
+		public struct DOT11_STOP_AP_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 ulReason;
 		}
 		[CRepr]
-		public struct DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS
-		{
+		public struct DOT11_PHY_FREQUENCY_ADOPTED_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 ulPhyId;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 ulChannel;
 				public uint32 ulFrequency;
 			}
 		}
 		[CRepr]
-		public struct DOT11_CAN_SUSTAIN_AP_PARAMETERS
-		{
+		public struct DOT11_CAN_SUSTAIN_AP_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 ulReason;
 		}
 		[CRepr]
-		public struct DOT11_AVAILABLE_CHANNEL_LIST
-		{
+		public struct DOT11_AVAILABLE_CHANNEL_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint32[0] uChannelNumber;
 		}
 		[CRepr]
-		public struct DOT11_AVAILABLE_FREQUENCY_LIST
-		{
+		public struct DOT11_AVAILABLE_FREQUENCY_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public uint32[0] uFrequencyValue;
 		}
 		[CRepr]
-		public struct DOT11_DISASSOCIATE_PEER_REQUEST
-		{
+		public struct DOT11_DISASSOCIATE_PEER_REQUEST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 			public uint16 usReason;
 		}
 		[CRepr]
-		public struct DOT11_INCOMING_ASSOC_DECISION
-		{
+		public struct DOT11_INCOMING_ASSOC_DECISION		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 			public BOOLEAN bAccept;
@@ -2674,8 +2539,7 @@ namespace Win32
 			public uint32 uAssocResponseIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_INCOMING_ASSOC_DECISION_V2
-		{
+		public struct DOT11_INCOMING_ASSOC_DECISION_V2		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerMacAddr;
 			public BOOLEAN bAccept;
@@ -2685,8 +2549,7 @@ namespace Win32
 			public uint8 WFDStatus;
 		}
 		[CRepr]
-		public struct DOT11_ADDITIONAL_IE
-		{
+		public struct DOT11_ADDITIONAL_IE		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uBeaconIEsOffset;
 			public uint32 uBeaconIEsLength;
@@ -2694,8 +2557,7 @@ namespace Win32
 			public uint32 uResponseIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_PEER_STATISTICS
-		{
+		public struct DOT11_PEER_STATISTICS		{
 			public uint64 ullDecryptSuccessCount;
 			public uint64 ullDecryptFailureCount;
 			public uint64 ullTxPacketSuccessCount;
@@ -2704,8 +2566,7 @@ namespace Win32
 			public uint64 ullRxPacketFailureCount;
 		}
 		[CRepr]
-		public struct DOT11_PEER_INFO
-		{
+		public struct DOT11_PEER_INFO		{
 			public uint8[6] MacAddress;
 			public uint16 usCapabilityInformation;
 			public DOT11_AUTH_ALGORITHM AuthAlgo;
@@ -2721,24 +2582,21 @@ namespace Win32
 			public DOT11_PEER_STATISTICS Statistics;
 		}
 		[CRepr]
-		public struct DOT11_PEER_INFO_LIST
-		{
+		public struct DOT11_PEER_INFO_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_PEER_INFO[0] PeerInfo;
 		}
 		[CRepr]
-		public struct DOT11_VWIFI_COMBINATION
-		{
+		public struct DOT11_VWIFI_COMBINATION		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumInfrastructure;
 			public uint32 uNumAdhoc;
 			public uint32 uNumSoftAP;
 		}
 		[CRepr]
-		public struct DOT11_VWIFI_COMBINATION_V2
-		{
+		public struct DOT11_VWIFI_COMBINATION_V2		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumInfrastructure;
 			public uint32 uNumAdhoc;
@@ -2746,8 +2604,7 @@ namespace Win32
 			public uint32 uNumVirtualStation;
 		}
 		[CRepr]
-		public struct DOT11_VWIFI_COMBINATION_V3
-		{
+		public struct DOT11_VWIFI_COMBINATION_V3		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumInfrastructure;
 			public uint32 uNumAdhoc;
@@ -2756,28 +2613,24 @@ namespace Win32
 			public uint32 uNumWFDGroup;
 		}
 		[CRepr]
-		public struct DOT11_VWIFI_ATTRIBUTES
-		{
+		public struct DOT11_VWIFI_ATTRIBUTES		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_VWIFI_COMBINATION[0] Combinations;
 		}
 		[CRepr]
-		public struct DOT11_MAC_PARAMETERS
-		{
+		public struct DOT11_MAC_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uOpmodeMask;
 		}
 		[CRepr]
-		public struct DOT11_MAC_INFO
-		{
+		public struct DOT11_MAC_INFO		{
 			public uint32 uReserved;
 			public uint32 uNdisPortNumber;
 			public uint8[6] MacAddr;
 		}
 		[CRepr]
-		public struct DOT11_WFD_ATTRIBUTES
-		{
+		public struct DOT11_WFD_ATTRIBUTES		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumConcurrentGORole;
 			public uint32 uNumConcurrentClientRole;
@@ -2795,84 +2648,71 @@ namespace Win32
 			public uint32 uGORoleClientTableSize;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DEVICE_TYPE
-		{
+		public struct DOT11_WFD_DEVICE_TYPE		{
 			public uint16 CategoryID;
 			public uint16 SubCategoryID;
 			public uint8[4] OUI;
 		}
 		[CRepr]
-		public struct DOT11_WPS_DEVICE_NAME
-		{
+		public struct DOT11_WPS_DEVICE_NAME		{
 			public uint32 uDeviceNameLength;
 			public uint8[32] ucDeviceName;
 		}
 		[CRepr]
-		public struct DOT11_WFD_CONFIGURATION_TIMEOUT
-		{
+		public struct DOT11_WFD_CONFIGURATION_TIMEOUT		{
 			public uint8 GOTimeout;
 			public uint8 ClientTimeout;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GROUP_ID
-		{
+		public struct DOT11_WFD_GROUP_ID		{
 			public uint8[6] DeviceAddress;
 			public DOT11_SSID SSID;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GO_INTENT
-		{
+		public struct DOT11_WFD_GO_INTENT		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct DOT11_WFD_CHANNEL
-		{
+		public struct DOT11_WFD_CHANNEL		{
 			public uint8[3] CountryRegionString;
 			public uint8 OperatingClass;
 			public uint8 ChannelNumber;
 		}
 		[CRepr]
-		public struct WFDSVC_CONNECTION_CAPABILITY
-		{
+		public struct WFDSVC_CONNECTION_CAPABILITY		{
 			public BOOLEAN bNew;
 			public BOOLEAN bClient;
 			public BOOLEAN bGO;
 		}
 		[CRepr]
-		public struct DOT11_WFD_SERVICE_HASH_LIST
-		{
+		public struct DOT11_WFD_SERVICE_HASH_LIST		{
 			public uint16 ServiceHashCount;
 			public uint8[6] ServiceHash;
 		}
 		[CRepr]
-		public struct DOT11_WFD_ADVERTISEMENT_ID
-		{
+		public struct DOT11_WFD_ADVERTISEMENT_ID		{
 			public uint32 AdvertisementID;
 			public uint8[6] ServiceAddress;
 		}
 		[CRepr]
-		public struct DOT11_WFD_SESSION_ID
-		{
+		public struct DOT11_WFD_SESSION_ID		{
 			public uint32 SessionID;
 			public uint8[6] SessionAddress;
 		}
 		[CRepr]
-		public struct DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR
-		{
+		public struct DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR		{
 			public uint32 AdvertisementID;
 			public uint16 ConfigMethods;
 			public uint8 ServiceNameLength;
 			public uint8[255] ServiceName;
 		}
 		[CRepr]
-		public struct DOT11_WFD_ADVERTISED_SERVICE_LIST
-		{
+		public struct DOT11_WFD_ADVERTISED_SERVICE_LIST		{
 			public uint16 ServiceCount;
 			public DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR[0] AdvertisedService;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public int32 Status;
 			public uint32 uNumOfEntries;
@@ -2881,8 +2721,7 @@ namespace Win32
 			public uint32 uListLength;
 		}
 		[CRepr]
-		public struct DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_GO_NEGOTIATION_REQUEST_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2891,8 +2730,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_GO_NEGOTIATION_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2901,8 +2739,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_GO_NEGOTIATION_RESPONSE_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2911,8 +2748,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_GO_NEGOTIATION_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2921,8 +2757,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_GO_NEGOTIATION_CONFIRMATION_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2931,8 +2766,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_GO_NEGOTIATION_CONFIRMATION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -2940,8 +2774,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_INVITATION_REQUEST_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8[6] ReceiverAddress;
@@ -2951,8 +2784,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_INVITATION_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] TransmitterDeviceAddress;
 			public uint8[6] BSSID;
@@ -2962,8 +2794,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_INVITATION_RESPONSE_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] ReceiverDeviceAddress;
 			public uint8 DialogToken;
@@ -2972,8 +2803,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_INVITATION_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] TransmitterDeviceAddress;
 			public uint8[6] BSSID;
@@ -2982,8 +2812,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_PROVISION_DISCOVERY_REQUEST_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8[6] ReceiverAddress;
@@ -2993,8 +2822,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_PROVISION_DISCOVERY_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] TransmitterDeviceAddress;
 			public uint8[6] BSSID;
@@ -3004,8 +2832,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_PROVISION_DISCOVERY_RESPONSE_SEND_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] ReceiverDeviceAddress;
 			public uint8 DialogToken;
@@ -3014,8 +2841,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_RECEIVED_PROVISION_DISCOVERY_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] TransmitterDeviceAddress;
 			public uint8[6] BSSID;
@@ -3024,16 +2850,14 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_ANQP_QUERY_COMPLETE_PARAMETERS
-		{
+		public struct DOT11_ANQP_QUERY_COMPLETE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_ANQP_QUERY_RESULT Status;
 			public HANDLE hContext;
 			public uint32 uResponseLength;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DEVICE_CAPABILITY_CONFIG
-		{
+		public struct DOT11_WFD_DEVICE_CAPABILITY_CONFIG		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bServiceDiscoveryEnabled;
 			public BOOLEAN bClientDiscoverabilityEnabled;
@@ -3044,8 +2868,7 @@ namespace Win32
 			public uint32 WPSVersionsEnabled;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG
-		{
+		public struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bPersistentGroupEnabled;
 			public BOOLEAN bIntraBSSDistributionSupported;
@@ -3055,8 +2878,7 @@ namespace Win32
 			public uint32 uMaximumGroupLimit;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2
-		{
+		public struct DOT11_WFD_GROUP_OWNER_CAPABILITY_CONFIG_V2		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bPersistentGroupEnabled;
 			public BOOLEAN bIntraBSSDistributionSupported;
@@ -3067,8 +2889,7 @@ namespace Win32
 			public BOOLEAN bEapolKeyIpAddressAllocationSupported;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DEVICE_INFO
-		{
+		public struct DOT11_WFD_DEVICE_INFO		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] DeviceAddress;
 			public uint16 ConfigMethods;
@@ -3076,23 +2897,20 @@ namespace Win32
 			public DOT11_WPS_DEVICE_NAME DeviceName;
 		}
 		[CRepr]
-		public struct DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST
-		{
+		public struct DOT11_WFD_SECONDARY_DEVICE_TYPE_LIST		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_WFD_DEVICE_TYPE[0] SecondaryDeviceTypes;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DISCOVER_DEVICE_FILTER
-		{
+		public struct DOT11_WFD_DISCOVER_DEVICE_FILTER		{
 			public uint8[6] DeviceID;
 			public uint8 ucBitmask;
 			public DOT11_SSID GroupSSID;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DISCOVER_REQUEST
-		{
+		public struct DOT11_WFD_DISCOVER_REQUEST		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_WFD_DISCOVER_TYPE DiscoverType;
 			public DOT11_WFD_SCAN_TYPE ScanType;
@@ -3104,8 +2922,7 @@ namespace Win32
 			public BOOLEAN bForceScanLegacyNetworks;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DEVICE_ENTRY
-		{
+		public struct DOT11_WFD_DEVICE_ENTRY		{
 			public uint32 uPhyId;
 			public DOT11_BSS_ENTRY_PHY_SPECIFIC_INFO PhySpecificInfo;
 			public uint8[6] dot11BSSID;
@@ -3124,8 +2941,7 @@ namespace Win32
 			public uint32 uProbeResponseIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_WFD_ADDITIONAL_IE
-		{
+		public struct DOT11_WFD_ADDITIONAL_IE		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 uBeaconIEsOffset;
 			public uint32 uBeaconIEsLength;
@@ -3135,8 +2951,7 @@ namespace Win32
 			public uint32 uDefaultRequestIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS
-		{
+		public struct DOT11_SEND_GO_NEGOTIATION_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -3149,8 +2964,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_SEND_GO_NEGOTIATION_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -3167,8 +2981,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS
-		{
+		public struct DOT11_SEND_GO_NEGOTIATION_CONFIRMATION_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] PeerDeviceAddress;
 			public uint8 DialogToken;
@@ -3182,13 +2995,11 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_WFD_INVITATION_FLAGS
-		{
+		public struct DOT11_WFD_INVITATION_FLAGS		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct DOT11_SEND_INVITATION_REQUEST_PARAMETERS
-		{
+		public struct DOT11_SEND_INVITATION_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8 DialogToken;
 			public uint8[6] PeerDeviceAddress;
@@ -3205,8 +3016,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_INVITATION_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_SEND_INVITATION_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] ReceiverDeviceAddress;
 			public uint8 DialogToken;
@@ -3222,8 +3032,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS
-		{
+		public struct DOT11_SEND_PROVISION_DISCOVERY_REQUEST_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8 DialogToken;
 			public uint8[6] PeerDeviceAddress;
@@ -3235,8 +3044,7 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS
-		{
+		public struct DOT11_SEND_PROVISION_DISCOVERY_RESPONSE_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8[6] ReceiverDeviceAddress;
 			public uint8 DialogToken;
@@ -3246,20 +3054,17 @@ namespace Win32
 			public uint32 uIEsLength;
 		}
 		[CRepr]
-		public struct DOT11_WFD_DEVICE_LISTEN_CHANNEL
-		{
+		public struct DOT11_WFD_DEVICE_LISTEN_CHANNEL		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint8 ChannelNumber;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GROUP_START_PARAMETERS
-		{
+		public struct DOT11_WFD_GROUP_START_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_WFD_CHANNEL AdvertisedOperatingChannel;
 		}
 		[CRepr]
-		public struct DOT11_WFD_GROUP_JOIN_PARAMETERS
-		{
+		public struct DOT11_WFD_GROUP_JOIN_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_WFD_CHANNEL GOOperatingChannel;
 			public uint32 GOConfigTime;
@@ -3267,36 +3072,31 @@ namespace Win32
 			public BOOLEAN bWaitForWPSReady;
 		}
 		[CRepr]
-		public struct DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO
-		{
+		public struct DOT11_POWER_MGMT_AUTO_MODE_ENABLED_INFO		{
 			public NDIS_OBJECT_HEADER Header;
 			public BOOLEAN bEnabled;
 		}
 		[CRepr]
-		public struct DOT11_POWER_MGMT_MODE_STATUS_INFO
-		{
+		public struct DOT11_POWER_MGMT_MODE_STATUS_INFO		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_POWER_MODE PowerSaveMode;
 			public uint32 uPowerSaveLevel;
 			public DOT11_POWER_MODE_REASON Reason;
 		}
 		[CRepr]
-		public struct DOT11_CHANNEL_HINT
-		{
+		public struct DOT11_CHANNEL_HINT		{
 			public DOT11_PHY_TYPE Dot11PhyType;
 			public uint32 uChannelNumber;
 		}
 		[CRepr]
-		public struct DOT11_OFFLOAD_NETWORK
-		{
+		public struct DOT11_OFFLOAD_NETWORK		{
 			public DOT11_SSID Ssid;
 			public DOT11_CIPHER_ALGORITHM UnicastCipher;
 			public DOT11_AUTH_ALGORITHM AuthAlgo;
 			public DOT11_CHANNEL_HINT[4] Dot11ChannelHints;
 		}
 		[CRepr]
-		public struct DOT11_OFFLOAD_NETWORK_LIST_INFO
-		{
+		public struct DOT11_OFFLOAD_NETWORK_LIST_INFO		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 ulFlags;
 			public uint32 FastScanPeriod;
@@ -3306,21 +3106,18 @@ namespace Win32
 			public DOT11_OFFLOAD_NETWORK[0] offloadNetworkList;
 		}
 		[CRepr]
-		public struct DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS
-		{
+		public struct DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public int32 Status;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_TEST
-		{
+		public struct DOT11_MANUFACTURING_TEST		{
 			public DOT11_MANUFACTURING_TEST_TYPE dot11ManufacturingTestType;
 			public uint32 uBufferLength;
 			public uint8[0] ucBuffer;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_SELF_TEST_SET_PARAMS
-		{
+		public struct DOT11_MANUFACTURING_SELF_TEST_SET_PARAMS		{
 			public DOT11_MANUFACTURING_SELF_TEST_TYPE SelfTestType;
 			public uint32 uTestID;
 			public uint32 uPinBitMask;
@@ -3329,8 +3126,7 @@ namespace Win32
 			public uint8[0] ucBufferIn;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_SELF_TEST_QUERY_RESULTS
-		{
+		public struct DOT11_MANUFACTURING_SELF_TEST_QUERY_RESULTS		{
 			public DOT11_MANUFACTURING_SELF_TEST_TYPE SelfTestType;
 			public uint32 uTestID;
 			public BOOLEAN bResult;
@@ -3340,16 +3136,14 @@ namespace Win32
 			public uint8[0] ucBufferOut;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_RX
-		{
+		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_RX		{
 			public BOOLEAN bEnabled;
 			public DOT11_BAND Dot11Band;
 			public uint32 uChannel;
 			public int32 PowerLevel;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_TX
-		{
+		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_TX		{
 			public BOOLEAN bEnable;
 			public BOOLEAN bOpenLoop;
 			public DOT11_BAND Dot11Band;
@@ -3358,23 +3152,20 @@ namespace Win32
 			public int32 ADCPowerLevel;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_QUERY_ADC
-		{
+		public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_QUERY_ADC		{
 			public DOT11_BAND Dot11Band;
 			public uint32 uChannel;
 			public int32 ADCPowerLevel;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_TEST_SET_DATA
-		{
+		public struct DOT11_MANUFACTURING_TEST_SET_DATA		{
 			public uint32 uKey;
 			public uint32 uOffset;
 			public uint32 uBufferLength;
 			public uint8[0] ucBufferIn;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_TEST_QUERY_DATA
-		{
+		public struct DOT11_MANUFACTURING_TEST_QUERY_DATA		{
 			public uint32 uKey;
 			public uint32 uOffset;
 			public uint32 uBufferLength;
@@ -3382,22 +3173,19 @@ namespace Win32
 			public uint8[0] ucBufferOut;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_TEST_SLEEP
-		{
+		public struct DOT11_MANUFACTURING_TEST_SLEEP		{
 			public uint32 uSleepTime;
 			public void* pvContext;
 		}
 		[CRepr]
-		public struct DOT11_MANUFACTURING_CALLBACK_PARAMETERS
-		{
+		public struct DOT11_MANUFACTURING_CALLBACK_PARAMETERS		{
 			public NDIS_OBJECT_HEADER Header;
 			public DOT11_MANUFACTURING_CALLBACK_TYPE dot11ManufacturingCallbackType;
 			public uint32 uStatus;
 			public void* pvContext;
 		}
 		[CRepr]
-		public struct L2_NOTIFICATION_DATA
-		{
+		public struct L2_NOTIFICATION_DATA		{
 			public uint32 NotificationSource;
 			public uint32 NotificationCode;
 			public Guid InterfaceGuid;
@@ -3405,46 +3193,39 @@ namespace Win32
 			public void* pData;
 		}
 		[CRepr]
-		public struct WLAN_PROFILE_INFO
-		{
+		public struct WLAN_PROFILE_INFO		{
 			public char16[256] strProfileName;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DOT11_NETWORK
-		{
+		public struct DOT11_NETWORK		{
 			public DOT11_SSID dot11Ssid;
 			public DOT11_BSS_TYPE dot11BssType;
 		}
 		[CRepr]
-		public struct WLAN_RAW_DATA
-		{
+		public struct WLAN_RAW_DATA		{
 			public uint32 dwDataSize;
 			public uint8[0] DataBlob;
 		}
 		[CRepr]
-		public struct WLAN_RAW_DATA_LIST
-		{
+		public struct WLAN_RAW_DATA_LIST		{
 			public uint32 dwTotalSize;
 			public uint32 dwNumberOfItems;
 			public _Anonymous_e__Struct[0] DataList;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 dwDataOffset;
 				public uint32 dwDataSize;
 			}
 		}
 		[CRepr]
-		public struct WLAN_RATE_SET
-		{
+		public struct WLAN_RATE_SET		{
 			public uint32 uRateSetLength;
 			public uint16[126] usRateSet;
 		}
 		[CRepr]
-		public struct WLAN_AVAILABLE_NETWORK
-		{
+		public struct WLAN_AVAILABLE_NETWORK		{
 			public char16[256] strProfileName;
 			public DOT11_SSID dot11Ssid;
 			public DOT11_BSS_TYPE dot11BssType;
@@ -3462,8 +3243,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct WLAN_AVAILABLE_NETWORK_V2
-		{
+		public struct WLAN_AVAILABLE_NETWORK_V2		{
 			public char16[256] strProfileName;
 			public DOT11_SSID dot11Ssid;
 			public DOT11_BSS_TYPE dot11BssType;
@@ -3484,8 +3264,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct WLAN_BSS_ENTRY
-		{
+		public struct WLAN_BSS_ENTRY		{
 			public DOT11_SSID dot11Ssid;
 			public uint32 uPhyId;
 			public uint8[6] dot11Bssid;
@@ -3504,22 +3283,19 @@ namespace Win32
 			public uint32 ulIeSize;
 		}
 		[CRepr]
-		public struct WLAN_BSS_LIST
-		{
+		public struct WLAN_BSS_LIST		{
 			public uint32 dwTotalSize;
 			public uint32 dwNumberOfItems;
 			public WLAN_BSS_ENTRY[0] wlanBssEntries;
 		}
 		[CRepr]
-		public struct WLAN_INTERFACE_INFO
-		{
+		public struct WLAN_INTERFACE_INFO		{
 			public Guid InterfaceGuid;
 			public char16[256] strInterfaceDescription;
 			public WLAN_INTERFACE_STATE isState;
 		}
 		[CRepr]
-		public struct WLAN_ASSOCIATION_ATTRIBUTES
-		{
+		public struct WLAN_ASSOCIATION_ATTRIBUTES		{
 			public DOT11_SSID dot11Ssid;
 			public DOT11_BSS_TYPE dot11BssType;
 			public uint8[6] dot11Bssid;
@@ -3530,16 +3306,14 @@ namespace Win32
 			public uint32 ulTxRate;
 		}
 		[CRepr]
-		public struct WLAN_SECURITY_ATTRIBUTES
-		{
+		public struct WLAN_SECURITY_ATTRIBUTES		{
 			public BOOL bSecurityEnabled;
 			public BOOL bOneXEnabled;
 			public DOT11_AUTH_ALGORITHM dot11AuthAlgorithm;
 			public DOT11_CIPHER_ALGORITHM dot11CipherAlgorithm;
 		}
 		[CRepr]
-		public struct WLAN_CONNECTION_ATTRIBUTES
-		{
+		public struct WLAN_CONNECTION_ATTRIBUTES		{
 			public WLAN_INTERFACE_STATE isState;
 			public WLAN_CONNECTION_MODE wlanConnectionMode;
 			public char16[256] strProfileName;
@@ -3547,21 +3321,18 @@ namespace Win32
 			public WLAN_SECURITY_ATTRIBUTES wlanSecurityAttributes;
 		}
 		[CRepr]
-		public struct WLAN_PHY_RADIO_STATE
-		{
+		public struct WLAN_PHY_RADIO_STATE		{
 			public uint32 dwPhyIndex;
 			public DOT11_RADIO_STATE dot11SoftwareRadioState;
 			public DOT11_RADIO_STATE dot11HardwareRadioState;
 		}
 		[CRepr]
-		public struct WLAN_RADIO_STATE
-		{
+		public struct WLAN_RADIO_STATE		{
 			public uint32 dwNumberOfPhys;
 			public WLAN_PHY_RADIO_STATE[64] PhyRadioState;
 		}
 		[CRepr]
-		public struct WLAN_INTERFACE_CAPABILITY
-		{
+		public struct WLAN_INTERFACE_CAPABILITY		{
 			public WLAN_INTERFACE_TYPE interfaceType;
 			public BOOL bDot11DSupported;
 			public uint32 dwMaxDesiredSsidListSize;
@@ -3570,55 +3341,47 @@ namespace Win32
 			public DOT11_PHY_TYPE[64] dot11PhyTypes;
 		}
 		[CRepr]
-		public struct WLAN_AUTH_CIPHER_PAIR_LIST
-		{
+		public struct WLAN_AUTH_CIPHER_PAIR_LIST		{
 			public uint32 dwNumberOfItems;
 			public DOT11_AUTH_CIPHER_PAIR[0] pAuthCipherPairList;
 		}
 		[CRepr]
-		public struct WLAN_COUNTRY_OR_REGION_STRING_LIST
-		{
+		public struct WLAN_COUNTRY_OR_REGION_STRING_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint8[3] pCountryOrRegionStringList;
 		}
 		[CRepr]
-		public struct WLAN_PROFILE_INFO_LIST
-		{
+		public struct WLAN_PROFILE_INFO_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public WLAN_PROFILE_INFO[0] ProfileInfo;
 		}
 		[CRepr]
-		public struct WLAN_AVAILABLE_NETWORK_LIST
-		{
+		public struct WLAN_AVAILABLE_NETWORK_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public WLAN_AVAILABLE_NETWORK[0] Network;
 		}
 		[CRepr]
-		public struct WLAN_AVAILABLE_NETWORK_LIST_V2
-		{
+		public struct WLAN_AVAILABLE_NETWORK_LIST_V2		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public WLAN_AVAILABLE_NETWORK_V2[0] Network;
 		}
 		[CRepr]
-		public struct WLAN_INTERFACE_INFO_LIST
-		{
+		public struct WLAN_INTERFACE_INFO_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public WLAN_INTERFACE_INFO[0] InterfaceInfo;
 		}
 		[CRepr]
-		public struct DOT11_NETWORK_LIST
-		{
+		public struct DOT11_NETWORK_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public DOT11_NETWORK[0] Network;
 		}
 		[CRepr]
-		public struct WLAN_CONNECTION_PARAMETERS
-		{
+		public struct WLAN_CONNECTION_PARAMETERS		{
 			public WLAN_CONNECTION_MODE wlanConnectionMode;
 			public PWSTR strProfile;
 			public DOT11_SSID* pDot11Ssid;
@@ -3627,8 +3390,7 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct WLAN_CONNECTION_PARAMETERS_V2
-		{
+		public struct WLAN_CONNECTION_PARAMETERS_V2		{
 			public WLAN_CONNECTION_MODE wlanConnectionMode;
 			public PWSTR strProfile;
 			public DOT11_SSID* pDot11Ssid;
@@ -3639,8 +3401,7 @@ namespace Win32
 			public DOT11_ACCESSNETWORKOPTIONS* pDot11AccessNetworkOptions;
 		}
 		[CRepr]
-		public struct WLAN_MSM_NOTIFICATION_DATA
-		{
+		public struct WLAN_MSM_NOTIFICATION_DATA		{
 			public WLAN_CONNECTION_MODE wlanConnectionMode;
 			public char16[256] strProfileName;
 			public DOT11_SSID dot11Ssid;
@@ -3652,8 +3413,7 @@ namespace Win32
 			public uint32 wlanReasonCode;
 		}
 		[CRepr]
-		public struct WLAN_CONNECTION_NOTIFICATION_DATA
-		{
+		public struct WLAN_CONNECTION_NOTIFICATION_DATA		{
 			public WLAN_CONNECTION_MODE wlanConnectionMode;
 			public char16[256] strProfileName;
 			public DOT11_SSID dot11Ssid;
@@ -3664,16 +3424,14 @@ namespace Win32
 			public char16[0] strProfileXml;
 		}
 		[CRepr]
-		public struct WLAN_DEVICE_SERVICE_NOTIFICATION_DATA
-		{
+		public struct WLAN_DEVICE_SERVICE_NOTIFICATION_DATA		{
 			public Guid DeviceService;
 			public uint32 dwOpCode;
 			public uint32 dwDataSize;
 			public uint8[0] DataBlob;
 		}
 		[CRepr]
-		public struct WLAN_PHY_FRAME_STATISTICS
-		{
+		public struct WLAN_PHY_FRAME_STATISTICS		{
 			public uint64 ullTransmittedFrameCount;
 			public uint64 ullMulticastTransmittedFrameCount;
 			public uint64 ullFailedCount;
@@ -3694,8 +3452,7 @@ namespace Win32
 			public uint64 ullFCSErrorCount;
 		}
 		[CRepr]
-		public struct WLAN_MAC_FRAME_STATISTICS
-		{
+		public struct WLAN_MAC_FRAME_STATISTICS		{
 			public uint64 ullTransmittedFrameCount;
 			public uint64 ullReceivedFrameCount;
 			public uint64 ullWEPExcludedCount;
@@ -3710,8 +3467,7 @@ namespace Win32
 			public uint64 ullDecryptFailureCount;
 		}
 		[CRepr]
-		public struct WLAN_STATISTICS
-		{
+		public struct WLAN_STATISTICS		{
 			public uint64 ullFourWayHandshakeFailures;
 			public uint64 ullTKIPCounterMeasuresInvoked;
 			public uint64 ullReserved;
@@ -3721,59 +3477,50 @@ namespace Win32
 			public WLAN_PHY_FRAME_STATISTICS[0] PhyCounters;
 		}
 		[CRepr]
-		public struct WLAN_DEVICE_SERVICE_GUID_LIST
-		{
+		public struct WLAN_DEVICE_SERVICE_GUID_LIST		{
 			public uint32 dwNumberOfItems;
 			public uint32 dwIndex;
 			public Guid[0] DeviceService;
 		}
 		[CRepr]
-		public struct WFD_GROUP_ID
-		{
+		public struct WFD_GROUP_ID		{
 			public uint8[6] DeviceAddress;
 			public DOT11_SSID GroupSSID;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_PEER_STATE
-		{
+		public struct WLAN_HOSTED_NETWORK_PEER_STATE		{
 			public uint8[6] PeerMacAddress;
 			public WLAN_HOSTED_NETWORK_PEER_AUTH_STATE PeerAuthState;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_RADIO_STATE
-		{
+		public struct WLAN_HOSTED_NETWORK_RADIO_STATE		{
 			public DOT11_RADIO_STATE dot11SoftwareRadioState;
 			public DOT11_RADIO_STATE dot11HardwareRadioState;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_STATE_CHANGE
-		{
+		public struct WLAN_HOSTED_NETWORK_STATE_CHANGE		{
 			public WLAN_HOSTED_NETWORK_STATE OldState;
 			public WLAN_HOSTED_NETWORK_STATE NewState;
 			public WLAN_HOSTED_NETWORK_REASON StateChangeReason;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_DATA_PEER_STATE_CHANGE
-		{
+		public struct WLAN_HOSTED_NETWORK_DATA_PEER_STATE_CHANGE		{
 			public WLAN_HOSTED_NETWORK_PEER_STATE OldState;
 			public WLAN_HOSTED_NETWORK_PEER_STATE NewState;
 			public WLAN_HOSTED_NETWORK_REASON PeerStateChangeReason;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_CONNECTION_SETTINGS
-		{
+		public struct WLAN_HOSTED_NETWORK_CONNECTION_SETTINGS		{
 			public DOT11_SSID hostedNetworkSSID;
 			public uint32 dwMaxNumberOfPeers;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_SECURITY_SETTINGS
-		{
+		public struct WLAN_HOSTED_NETWORK_SECURITY_SETTINGS		{
 			public DOT11_AUTH_ALGORITHM dot11AuthAlgo;
 			public DOT11_CIPHER_ALGORITHM dot11CipherAlgo;
 		}
 		[CRepr]
-		public struct WLAN_HOSTED_NETWORK_STATUS
-		{
+		public struct WLAN_HOSTED_NETWORK_STATUS		{
 			public WLAN_HOSTED_NETWORK_STATE HostedNetworkState;
 			public Guid IPDeviceID;
 			public uint8[6] wlanHostedNetworkBSSID;
@@ -3783,14 +3530,12 @@ namespace Win32
 			public WLAN_HOSTED_NETWORK_PEER_STATE[0] PeerList;
 		}
 		[CRepr]
-		public struct ONEX_VARIABLE_BLOB
-		{
+		public struct ONEX_VARIABLE_BLOB		{
 			public uint32 dwSize;
 			public uint32 dwOffset;
 		}
 		[CRepr]
-		public struct ONEX_AUTH_PARAMS
-		{
+		public struct ONEX_AUTH_PARAMS		{
 			public BOOL fUpdatePending;
 			public ONEX_VARIABLE_BLOB oneXConnProfile;
 			public ONEX_AUTH_IDENTITY authIdentity;
@@ -3804,8 +3549,7 @@ namespace Win32
 			public ONEX_VARIABLE_BLOB Domain;
 		}
 		[CRepr]
-		public struct ONEX_EAP_ERROR
-		{
+		public struct ONEX_EAP_ERROR		{
 			public uint32 dwWinError;
 			public EAP_METHOD_TYPE type;
 			public uint32 dwReasonCode;
@@ -3817,15 +3561,13 @@ namespace Win32
 			public ONEX_VARIABLE_BLOB RepairString;
 		}
 		[CRepr]
-		public struct ONEX_STATUS
-		{
+		public struct ONEX_STATUS		{
 			public ONEX_AUTH_STATUS authStatus;
 			public uint32 dwReason;
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct ONEX_RESULT_UPDATE_DATA
-		{
+		public struct ONEX_RESULT_UPDATE_DATA		{
 			public ONEX_STATUS oneXStatus;
 			public ONEX_EAP_METHOD_BACKEND_SUPPORT BackendSupport;
 			public BOOL fBackendEngaged;
@@ -3834,8 +3576,7 @@ namespace Win32
 			public ONEX_VARIABLE_BLOB eapError;
 		}
 		[CRepr]
-		public struct ONEX_USER_INFO
-		{
+		public struct ONEX_USER_INFO		{
 			public ONEX_AUTH_IDENTITY authIdentity;
 			public uint32 _bitfield;
 			public ONEX_VARIABLE_BLOB UserName;

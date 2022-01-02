@@ -73,49 +73,42 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DEDUP_CONTAINER_EXTENT
-		{
+		public struct DEDUP_CONTAINER_EXTENT		{
 			public uint32 ContainerIndex;
 			public int64 StartOffset;
 			public int64 Length;
 		}
 		[CRepr]
-		public struct DDP_FILE_EXTENT
-		{
+		public struct DDP_FILE_EXTENT		{
 			public int64 Length;
 			public int64 Offset;
 		}
 		[CRepr]
-		public struct DEDUP_CHUNK_INFO_HASH32
-		{
+		public struct DEDUP_CHUNK_INFO_HASH32		{
 			public uint32 ChunkFlags;
 			public uint64 ChunkOffsetInStream;
 			public uint64 ChunkSize;
 			public uint8[32] HashVal;
 		}
 		[CRepr]
-		public struct DedupHash
-		{
+		public struct DedupHash		{
 			public uint8[32] Hash;
 		}
 		[CRepr]
-		public struct DedupChunk
-		{
+		public struct DedupChunk		{
 			public DedupHash Hash;
 			public DedupChunkFlags Flags;
 			public uint32 LogicalSize;
 			public uint32 DataSize;
 		}
 		[CRepr]
-		public struct DedupStreamEntry
-		{
+		public struct DedupStreamEntry		{
 			public DedupHash Hash;
 			public uint32 LogicalSize;
 			public uint64 Offset;
 		}
 		[CRepr]
-		public struct DedupStream
-		{
+		public struct DedupStream		{
 			public BSTR Path;
 			public uint64 Offset;
 			public uint64 Length;

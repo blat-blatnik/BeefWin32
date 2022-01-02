@@ -111,8 +111,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WINML_TENSOR_BINDING_DESC
-		{
+		public struct WINML_TENSOR_BINDING_DESC		{
 			public WINML_TENSOR_DATA_TYPE DataType;
 			public uint32 NumDimensions;
 			public int64* pShape;
@@ -120,15 +119,13 @@ namespace Win32
 			public void* pData;
 		}
 		[CRepr]
-		public struct WINML_SEQUENCE_BINDING_DESC
-		{
+		public struct WINML_SEQUENCE_BINDING_DESC		{
 			public uint32 ElementCount;
 			public WINML_TENSOR_DATA_TYPE ElementType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR* pStrings;
 				public int64* pInts;
 				public float* pFloats;
@@ -136,8 +133,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINML_MAP_BINDING_DESC
-		{
+		public struct WINML_MAP_BINDING_DESC		{
 			public uint32 ElementCount;
 			public WINML_TENSOR_DATA_TYPE KeyType;
 			public _Anonymous1_e__Union Anonymous1;
@@ -145,23 +141,20 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public PWSTR* pStringFields;
 				public int64* pIntFields;
 				public float* pFloatFields;
 				public double* pDoubleFields;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR* pStringKeys;
 				public int64* pIntKeys;
 			}
 		}
 		[CRepr]
-		public struct WINML_IMAGE_BINDING_DESC
-		{
+		public struct WINML_IMAGE_BINDING_DESC		{
 			public WINML_TENSOR_DATA_TYPE ElementType;
 			public uint32 NumDimensions;
 			public int64* pShape;
@@ -169,23 +162,20 @@ namespace Win32
 			public void* pData;
 		}
 		[CRepr]
-		public struct WINML_RESOURCE_BINDING_DESC
-		{
+		public struct WINML_RESOURCE_BINDING_DESC		{
 			public WINML_TENSOR_DATA_TYPE ElementType;
 			public uint32 NumDimensions;
 			public int64* pShape;
 			public ID3D12Resource* pResource;
 		}
 		[CRepr]
-		public struct WINML_BINDING_DESC
-		{
+		public struct WINML_BINDING_DESC		{
 			public PWSTR Name;
 			public WINML_BINDING_TYPE BindType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public WINML_TENSOR_BINDING_DESC Tensor;
 				public WINML_SEQUENCE_BINDING_DESC Sequence;
 				public WINML_MAP_BINDING_DESC Map;
@@ -194,33 +184,28 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINML_TENSOR_VARIABLE_DESC
-		{
+		public struct WINML_TENSOR_VARIABLE_DESC		{
 			public WINML_TENSOR_DATA_TYPE ElementType;
 			public uint32 NumDimensions;
 			public int64* pShape;
 		}
 		[CRepr]
-		public struct WINML_SEQUENCE_VARIABLE_DESC
-		{
+		public struct WINML_SEQUENCE_VARIABLE_DESC		{
 			public WINML_TENSOR_DATA_TYPE ElementType;
 		}
 		[CRepr]
-		public struct WINML_MAP_VARIABLE_DESC
-		{
+		public struct WINML_MAP_VARIABLE_DESC		{
 			public WINML_TENSOR_DATA_TYPE KeyType;
 			public WINML_TENSOR_DATA_TYPE Fields;
 		}
 		[CRepr]
-		public struct WINML_IMAGE_VARIABLE_DESC
-		{
+		public struct WINML_IMAGE_VARIABLE_DESC		{
 			public WINML_TENSOR_DATA_TYPE ElementType;
 			public uint32 NumDimensions;
 			public int64* pShape;
 		}
 		[CRepr]
-		public struct WINML_VARIABLE_DESC
-		{
+		public struct WINML_VARIABLE_DESC		{
 			public PWSTR Name;
 			public PWSTR Description;
 			public WINML_FEATURE_TYPE FeatureType;
@@ -228,8 +213,7 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public WINML_TENSOR_VARIABLE_DESC Tensor;
 				public WINML_SEQUENCE_VARIABLE_DESC Sequence;
 				public WINML_MAP_VARIABLE_DESC Map;
@@ -237,8 +221,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINML_MODEL_DESC
-		{
+		public struct WINML_MODEL_DESC		{
 			public PWSTR Author;
 			public PWSTR Name;
 			public PWSTR Domain;
@@ -246,58 +229,50 @@ namespace Win32
 			public uint Version;
 		}
 		[CRepr]
-		public struct MLOperatorEdgeDescription
-		{
+		public struct MLOperatorEdgeDescription		{
 			public MLOperatorEdgeType edgeType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint64 reserved;
 				public MLOperatorTensorDataType tensorDataType;
 			}
 		}
 		[CRepr]
-		public struct MLOperatorSchemaEdgeDescription
-		{
+		public struct MLOperatorSchemaEdgeDescription		{
 			public MLOperatorParameterOptions options;
 			public MLOperatorSchemaEdgeTypeFormat typeFormat;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* reserved;
 				public PSTR typeLabel;
 				public MLOperatorEdgeDescription edgeDescription;
 			}
 		}
 		[CRepr]
-		public struct MLOperatorEdgeTypeConstraint
-		{
+		public struct MLOperatorEdgeTypeConstraint		{
 			public PSTR typeLabel;
 			public MLOperatorEdgeDescription* allowedTypes;
 			public uint32 allowedTypeCount;
 		}
 		[CRepr]
-		public struct MLOperatorAttribute
-		{
+		public struct MLOperatorAttribute		{
 			public PSTR name;
 			public MLOperatorAttributeType type;
 			public Boolean required;
 		}
 		[CRepr]
-		public struct MLOperatorAttributeNameValue
-		{
+		public struct MLOperatorAttributeNameValue		{
 			public PSTR name;
 			public MLOperatorAttributeType type;
 			public uint32 valueCount;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* reserved;
 				public int64* ints;
 				public int8** strings;
@@ -305,8 +280,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct MLOperatorSchemaDescription
-		{
+		public struct MLOperatorSchemaDescription		{
 			public PSTR name;
 			public int32 operatorSetVersionAtLastChange;
 			public MLOperatorSchemaEdgeDescription* inputs;
@@ -321,14 +295,12 @@ namespace Win32
 			public uint32 defaultAttributeCount;
 		}
 		[CRepr]
-		public struct MLOperatorSetId
-		{
+		public struct MLOperatorSetId		{
 			public PSTR domain;
 			public int32 version;
 		}
 		[CRepr]
-		public struct MLOperatorKernelDescription
-		{
+		public struct MLOperatorKernelDescription		{
 			public PSTR domain;
 			public PSTR name;
 			public int32 minimumOperatorSetVersion;

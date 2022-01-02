@@ -556,29 +556,25 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr, Union]
-		public struct CY
-		{
+		public struct CY		{
 			public _Anonymous_e__Struct Anonymous;
 			public int64 int64;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 Lo;
 				public int32 Hi;
 			}
 		}
 		[CRepr]
-		public struct CSPLATFORM
-		{
+		public struct CSPLATFORM		{
 			public uint32 dwPlatformId;
 			public uint32 dwVersionHi;
 			public uint32 dwVersionLo;
 			public uint32 dwProcessorArch;
 		}
 		[CRepr]
-		public struct QUERYCONTEXT
-		{
+		public struct QUERYCONTEXT		{
 			public uint32 dwContext;
 			public CSPLATFORM Platform;
 			public uint32 Locale;
@@ -586,14 +582,12 @@ namespace Win32
 			public uint32 dwVersionLo;
 		}
 		[CRepr]
-		public struct uCLSSPEC
-		{
+		public struct uCLSSPEC		{
 			public uint32 tyspec;
 			public _tagged_union_e__Struct tagged_union;
 			
 			[CRepr, Union]
-			public struct _tagged_union_e__Struct
-			{
+			public struct _tagged_union_e__Struct			{
 				public Guid clsid;
 				public PWSTR pFileExt;
 				public PWSTR pMimeType;
@@ -603,22 +597,19 @@ namespace Win32
 				public _ByObjectId_e__Struct ByObjectId;
 				
 				[CRepr]
-				public struct _ByName_e__Struct
-				{
+				public struct _ByName_e__Struct				{
 					public PWSTR pPackageName;
 					public Guid PolicyId;
 				}
 				[CRepr]
-				public struct _ByObjectId_e__Struct
-				{
+				public struct _ByObjectId_e__Struct				{
 					public Guid ObjectId;
 					public Guid PolicyId;
 				}
 			}
 		}
 		[CRepr]
-		public struct COAUTHIDENTITY
-		{
+		public struct COAUTHIDENTITY		{
 			public uint16* User;
 			public uint32 UserLength;
 			public uint16* Domain;
@@ -628,8 +619,7 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct COAUTHINFO
-		{
+		public struct COAUTHINFO		{
 			public uint32 dwAuthnSvc;
 			public uint32 dwAuthzSvc;
 			public PWSTR pwszServerPrincName;
@@ -639,93 +629,76 @@ namespace Win32
 			public uint32 dwCapabilities;
 		}
 		[CRepr]
-		public struct BYTE_BLOB
-		{
+		public struct BYTE_BLOB		{
 			public uint32 clSize;
 			public uint8[0] abData;
 		}
 		[CRepr]
-		public struct WORD_BLOB
-		{
+		public struct WORD_BLOB		{
 			public uint32 clSize;
 			public uint16[0] asData;
 		}
 		[CRepr]
-		public struct DWORD_BLOB
-		{
+		public struct DWORD_BLOB		{
 			public uint32 clSize;
 			public uint32[0] alData;
 		}
 		[CRepr]
-		public struct FLAGGED_BYTE_BLOB
-		{
+		public struct FLAGGED_BYTE_BLOB		{
 			public uint32 fFlags;
 			public uint32 clSize;
 			public uint8[0] abData;
 		}
 		[CRepr]
-		public struct FLAGGED_WORD_BLOB
-		{
+		public struct FLAGGED_WORD_BLOB		{
 			public uint32 fFlags;
 			public uint32 clSize;
 			public uint16[0] asData;
 		}
 		[CRepr]
-		public struct BYTE_SIZEDARR
-		{
+		public struct BYTE_SIZEDARR		{
 			public uint32 clSize;
 			public uint8* pData;
 		}
 		[CRepr]
-		public struct SHORT_SIZEDARR
-		{
+		public struct SHORT_SIZEDARR		{
 			public uint32 clSize;
 			public uint16* pData;
 		}
 		[CRepr]
-		public struct LONG_SIZEDARR
-		{
+		public struct LONG_SIZEDARR		{
 			public uint32 clSize;
 			public uint32* pData;
 		}
 		[CRepr]
-		public struct HYPER_SIZEDARR
-		{
+		public struct HYPER_SIZEDARR		{
 			public uint32 clSize;
 			public int64* pData;
 		}
 		[CRepr]
-		public struct BLOB
-		{
+		public struct BLOB		{
 			public uint32 cbSize;
 			public uint8* pBlobData;
 		}
 		[CRepr]
-		public struct IEnumContextProps
-		{
-		}
+		public struct IEnumContextProps {}
 		[CRepr]
-		public struct IContext
-		{
-		}
+		public struct IContext {}
 		[CRepr]
-		public struct COSERVERINFO
-		{
+		public struct COSERVERINFO		{
 			public uint32 dwReserved1;
 			public PWSTR pwszName;
 			public COAUTHINFO* pAuthInfo;
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct MULTI_QI
-		{
+		public struct MULTI_QI		{
 			public Guid* pIID;
 			public IUnknown* pItf;
 			public HRESULT hr;
 		}
 		[CRepr]
-		public struct STATSTG
-		{
+		public struct STATSTG		{
 			public PWSTR pwcsName;
 			public uint32 type;
 			public ULARGE_INTEGER cbSize;
@@ -739,8 +712,7 @@ namespace Win32
 			public uint32 reserved;
 		}
 		[CRepr]
-		public struct RPCOLEMESSAGE
-		{
+		public struct RPCOLEMESSAGE		{
 			public void* reserved1;
 			public uint32 dataRepresentation;
 			public void* Buffer;
@@ -750,8 +722,7 @@ namespace Win32
 			public uint32 rpcFlags;
 		}
 		[CRepr]
-		public struct SChannelHookCallInfo
-		{
+		public struct SChannelHookCallInfo		{
 			public Guid iid;
 			public uint32 cbSize;
 			public Guid uCausality;
@@ -760,42 +731,36 @@ namespace Win32
 			public void* pObject;
 		}
 		[CRepr]
-		public struct SOLE_AUTHENTICATION_SERVICE
-		{
+		public struct SOLE_AUTHENTICATION_SERVICE		{
 			public uint32 dwAuthnSvc;
 			public uint32 dwAuthzSvc;
 			public PWSTR pPrincipalName;
 			public HRESULT hr;
 		}
 		[CRepr]
-		public struct SOLE_AUTHENTICATION_INFO
-		{
+		public struct SOLE_AUTHENTICATION_INFO		{
 			public uint32 dwAuthnSvc;
 			public uint32 dwAuthzSvc;
 			public void* pAuthInfo;
 		}
 		[CRepr]
-		public struct SOLE_AUTHENTICATION_LIST
-		{
+		public struct SOLE_AUTHENTICATION_LIST		{
 			public uint32 cAuthInfo;
 			public SOLE_AUTHENTICATION_INFO* aAuthInfo;
 		}
 		[CRepr]
-		public struct MachineGlobalObjectTableRegistrationToken__
-		{
+		public struct MachineGlobalObjectTableRegistrationToken__		{
 			public int32 unused;
 		}
 		[CRepr]
-		public struct BIND_OPTS
-		{
+		public struct BIND_OPTS		{
 			public uint32 cbStruct;
 			public uint32 grfFlags;
 			public uint32 grfMode;
 			public uint32 dwTickCountDeadline;
 		}
 		[CRepr]
-		public struct BIND_OPTS2
-		{
+		public struct BIND_OPTS2		{
 			public BIND_OPTS __AnonymousBase_objidl_L9017_C36;
 			public uint32 dwTrackFlags;
 			public uint32 dwClassContext;
@@ -803,14 +768,12 @@ namespace Win32
 			public COSERVERINFO* pServerInfo;
 		}
 		[CRepr]
-		public struct BIND_OPTS3
-		{
+		public struct BIND_OPTS3		{
 			public BIND_OPTS2 __AnonymousBase_objidl_L9041_C36;
 			public HWND hwnd;
 		}
 		[CRepr]
-		public struct DVTARGETDEVICE
-		{
+		public struct DVTARGETDEVICE		{
 			public uint32 tdSize;
 			public uint16 tdDriverNameOffset;
 			public uint16 tdDeviceNameOffset;
@@ -819,8 +782,7 @@ namespace Win32
 			public uint8[0] tdData;
 		}
 		[CRepr]
-		public struct FORMATETC
-		{
+		public struct FORMATETC		{
 			public uint16 cfFormat;
 			public DVTARGETDEVICE* ptd;
 			public uint32 dwAspect;
@@ -828,16 +790,14 @@ namespace Win32
 			public uint32 tymed;
 		}
 		[CRepr]
-		public struct STATDATA
-		{
+		public struct STATDATA		{
 			public FORMATETC formatetc;
 			public uint32 advf;
 			public IAdviseSink* pAdvSink;
 			public uint32 dwConnection;
 		}
 		[CRepr]
-		public struct RemSTGMEDIUM
-		{
+		public struct RemSTGMEDIUM		{
 			public uint32 tymed;
 			public uint32 dwHandleType;
 			public uint32 pData;
@@ -846,15 +806,13 @@ namespace Win32
 			public uint8[0] data;
 		}
 		[CRepr]
-		public struct STGMEDIUM
-		{
+		public struct STGMEDIUM		{
 			public uint32 tymed;
 			public _Anonymous_e__Union Anonymous;
 			public IUnknown* pUnkForRelease;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public HBITMAP hBitmap;
 				public void* hMetaFilePict;
 				public HENHMETAFILE hEnhMetaFile;
@@ -865,33 +823,28 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct GDI_OBJECT
-		{
+		public struct GDI_OBJECT		{
 			public uint32 ObjectType;
 			public _u_e__Struct u;
 			
 			[CRepr, Union]
-			public struct _u_e__Struct
-			{
+			public struct _u_e__Struct			{
 				public userHBITMAP* hBitmap;
 				public userHPALETTE* hPalette;
 				public userHGLOBAL* hGeneric;
 			}
 		}
 		[CRepr]
-		public struct userSTGMEDIUM
-		{
+		public struct userSTGMEDIUM		{
 			public IUnknown* pUnkForRelease;
 			
 			[CRepr]
-			public struct _STGMEDIUM_UNION
-			{
+			public struct _STGMEDIUM_UNION			{
 				public uint32 tymed;
 				public _u_e__Struct u;
 				
 				[CRepr, Union]
-				public struct _u_e__Struct
-				{
+				public struct _u_e__Struct				{
 					public userHMETAFILEPICT* hMetaFilePict;
 					public userHENHMETAFILE* hHEnhMetaFile;
 					public GDI_OBJECT* hGdiHandle;
@@ -903,51 +856,44 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct userFLAG_STGMEDIUM
-		{
+		public struct userFLAG_STGMEDIUM		{
 			public int32 ContextFlags;
 			public int32 fPassOwnership;
 			public userSTGMEDIUM Stgmed;
 		}
 		[CRepr]
-		public struct FLAG_STGMEDIUM
-		{
+		public struct FLAG_STGMEDIUM		{
 			public int32 ContextFlags;
 			public int32 fPassOwnership;
 			public STGMEDIUM Stgmed;
 		}
 		[CRepr]
-		public struct INTERFACEINFO
-		{
+		public struct INTERFACEINFO		{
 			public IUnknown* pUnk;
 			public Guid iid;
 			public uint16 wMethod;
 		}
 		[CRepr]
-		public struct StorageLayout
-		{
+		public struct StorageLayout		{
 			public uint32 LayoutType;
 			public PWSTR pwcsElementName;
 			public LARGE_INTEGER cOffset;
 			public LARGE_INTEGER cBytes;
 		}
 		[CRepr]
-		public struct CATEGORYINFO
-		{
+		public struct CATEGORYINFO		{
 			public Guid catid;
 			public uint32 lcid;
 			public char16[128] szDescription;
 		}
 		[CRepr]
-		public struct ComCallData
-		{
+		public struct ComCallData		{
 			public uint32 dwDispid;
 			public uint32 dwReserved;
 			public void* pUserDefined;
 		}
 		[CRepr]
-		public struct BINDINFO
-		{
+		public struct BINDINFO		{
 			public uint32 cbSize;
 			public PWSTR szExtraInfo;
 			public STGMEDIUM stgmedData;
@@ -964,20 +910,17 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct AUTHENTICATEINFO
-		{
+		public struct AUTHENTICATEINFO		{
 			public uint32 dwFlags;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct SAFEARRAYBOUND
-		{
+		public struct SAFEARRAYBOUND		{
 			public uint32 cElements;
 			public int32 lLbound;
 		}
 		[CRepr]
-		public struct SAFEARRAY
-		{
+		public struct SAFEARRAY		{
 			public uint16 cDims;
 			public uint16 fFeatures;
 			public uint32 cbElements;
@@ -986,19 +929,16 @@ namespace Win32
 			public SAFEARRAYBOUND[0] rgsabound;
 		}
 		[CRepr]
-		public struct VARIANT
-		{
+		public struct VARIANT		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public DECIMAL decVal;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 vt;
 					public uint16 wReserved1;
 					public uint16 wReserved2;
@@ -1006,8 +946,7 @@ namespace Win32
 					public _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
-					public struct _Anonymous_e__Union
-					{
+					public struct _Anonymous_e__Union					{
 						public int64 llVal;
 						public int32 lVal;
 						public uint8 bVal;
@@ -1056,8 +995,7 @@ namespace Win32
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct
-						{
+						public struct _Anonymous_e__Struct						{
 							public void* pvRecord;
 							public IRecordInfo* pRecInfo;
 						}
@@ -1066,41 +1004,35 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct TYPEDESC
-		{
+		public struct TYPEDESC		{
 			public _Anonymous_e__Union Anonymous;
 			public uint16 vt;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public TYPEDESC* lptdesc;
 				public ARRAYDESC* lpadesc;
 				public uint32 hreftype;
 			}
 		}
 		[CRepr]
-		public struct IDLDESC
-		{
+		public struct IDLDESC		{
 			public uint dwReserved;
 			public uint16 wIDLFlags;
 		}
 		[CRepr]
-		public struct ELEMDESC
-		{
+		public struct ELEMDESC		{
 			public TYPEDESC tdesc;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public IDLDESC idldesc;
 				public PARAMDESC paramdesc;
 			}
 		}
 		[CRepr]
-		public struct TYPEATTR
-		{
+		public struct TYPEATTR		{
 			public Guid guid;
 			public uint32 lcid;
 			public uint32 dwReserved;
@@ -1121,16 +1053,14 @@ namespace Win32
 			public IDLDESC idldescType;
 		}
 		[CRepr]
-		public struct DISPPARAMS
-		{
+		public struct DISPPARAMS		{
 			public VARIANT* rgvarg;
 			public int32* rgdispidNamedArgs;
 			public uint32 cArgs;
 			public uint32 cNamedArgs;
 		}
 		[CRepr]
-		public struct EXCEPINFO
-		{
+		public struct EXCEPINFO		{
 			public uint16 wCode;
 			public uint16 wReserved;
 			public BSTR bstrSource;
@@ -1142,8 +1072,7 @@ namespace Win32
 			public int32 scode;
 		}
 		[CRepr]
-		public struct FUNCDESC
-		{
+		public struct FUNCDESC		{
 			public int32 memid;
 			public int32* lprgscode;
 			public ELEMDESC* lprgelemdescParam;
@@ -1158,8 +1087,7 @@ namespace Win32
 			public uint16 wFuncFlags;
 		}
 		[CRepr]
-		public struct VARDESC
-		{
+		public struct VARDESC		{
 			public int32 memid;
 			public PWSTR lpstrSchema;
 			public _Anonymous_e__Union Anonymous;
@@ -1168,34 +1096,29 @@ namespace Win32
 			public VARKIND varkind;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 oInst;
 				public VARIANT* lpvarValue;
 			}
 		}
 		[CRepr]
-		public struct CUSTDATAITEM
-		{
+		public struct CUSTDATAITEM		{
 			public Guid guid;
 			public VARIANT varValue;
 		}
 		[CRepr]
-		public struct CUSTDATA
-		{
+		public struct CUSTDATA		{
 			public uint32 cCustData;
 			public CUSTDATAITEM* prgCustData;
 		}
 		[CRepr, Union]
-		public struct BINDPTR
-		{
+		public struct BINDPTR		{
 			public FUNCDESC* lpfuncdesc;
 			public VARDESC* lpvardesc;
 			public ITypeComp* lptcomp;
 		}
 		[CRepr]
-		public struct TLIBATTR
-		{
+		public struct TLIBATTR		{
 			public Guid guid;
 			public uint32 lcid;
 			public SYSKIND syskind;
@@ -1204,8 +1127,7 @@ namespace Win32
 			public uint16 wLibFlags;
 		}
 		[CRepr]
-		public struct CONNECTDATA
-		{
+		public struct CONNECTDATA		{
 			public IUnknown* pUnk;
 			public uint32 dwCookie;
 		}
@@ -1281,11 +1203,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IAgileObject : IUnknown
@@ -1294,11 +1213,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IActivationFilter : IUnknown
@@ -2176,11 +2092,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IMachineGlobalObjectTable : IUnknown

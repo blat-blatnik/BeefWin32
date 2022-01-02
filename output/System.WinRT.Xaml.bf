@@ -20,8 +20,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TrackerHandle__
-		{
+		public struct TrackerHandle__		{
 			public int32 unused;
 		}
 		
@@ -317,11 +316,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct ITrackerOwner : IUnknown

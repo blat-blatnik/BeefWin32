@@ -443,158 +443,135 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct VK_TO_BIT
-		{
+		public struct VK_TO_BIT		{
 			public uint8 Vk;
 			public uint8 ModBits;
 		}
 		[CRepr]
-		public struct MODIFIERS
-		{
+		public struct MODIFIERS		{
 			public VK_TO_BIT* pVkToBit;
 			public uint16 wMaxModBits;
 			public uint8[0] ModNumber;
 		}
 		[CRepr]
-		public struct VSC_VK
-		{
+		public struct VSC_VK		{
 			public uint8 Vsc;
 			public uint16 Vk;
 		}
 		[CRepr]
-		public struct VK_VSC
-		{
+		public struct VK_VSC		{
 			public uint8 Vk;
 			public uint8 Vsc;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS1
-		{
+		public struct VK_TO_WCHARS1		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[0] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS2
-		{
+		public struct VK_TO_WCHARS2		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[2] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS3
-		{
+		public struct VK_TO_WCHARS3		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[3] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS4
-		{
+		public struct VK_TO_WCHARS4		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[4] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS5
-		{
+		public struct VK_TO_WCHARS5		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[5] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS6
-		{
+		public struct VK_TO_WCHARS6		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[6] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS7
-		{
+		public struct VK_TO_WCHARS7		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[7] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS8
-		{
+		public struct VK_TO_WCHARS8		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[8] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS9
-		{
+		public struct VK_TO_WCHARS9		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[9] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHARS10
-		{
+		public struct VK_TO_WCHARS10		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
 			public char16[10] wch;
 		}
 		[CRepr]
-		public struct VK_TO_WCHAR_TABLE
-		{
+		public struct VK_TO_WCHAR_TABLE		{
 			public VK_TO_WCHARS1* pVkToWchars;
 			public uint8 nModifications;
 			public uint8 cbSize;
 		}
 		[CRepr]
-		public struct DEADKEY
-		{
+		public struct DEADKEY		{
 			public uint32 dwBoth;
 			public char16 wchComposed;
 			public uint16 uFlags;
 		}
 		[CRepr]
-		public struct LIGATURE1
-		{
+		public struct LIGATURE1		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
 			public char16[0] wch;
 		}
 		[CRepr]
-		public struct LIGATURE2
-		{
+		public struct LIGATURE2		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
 			public char16[2] wch;
 		}
 		[CRepr]
-		public struct LIGATURE3
-		{
+		public struct LIGATURE3		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
 			public char16[3] wch;
 		}
 		[CRepr]
-		public struct LIGATURE4
-		{
+		public struct LIGATURE4		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
 			public char16[4] wch;
 		}
 		[CRepr]
-		public struct LIGATURE5
-		{
+		public struct LIGATURE5		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
 			public char16[5] wch;
 		}
 		[CRepr]
-		public struct VSC_LPWSTR
-		{
+		public struct VSC_LPWSTR		{
 			public uint8 vsc;
 			public PWSTR pwsz;
 		}
 		[CRepr]
-		public struct tagKbdLayer
-		{
+		public struct tagKbdLayer		{
 			public MODIFIERS* pCharModifiers;
 			public VK_TO_WCHAR_TABLE* pVkToWcharTable;
 			public DEADKEY* pDeadKey;
@@ -613,14 +590,12 @@ namespace Win32
 			public uint32 dwSubType;
 		}
 		[CRepr]
-		public struct _VK_FUNCTION_PARAM
-		{
+		public struct _VK_FUNCTION_PARAM		{
 			public uint8 NLSFEProcIndex;
 			public uint32 NLSFEProcParam;
 		}
 		[CRepr]
-		public struct _VK_TO_FUNCTION_TABLE
-		{
+		public struct _VK_TO_FUNCTION_TABLE		{
 			public uint8 Vk;
 			public uint8 NLSFEProcType;
 			public uint8 NLSFEProcCurrent;
@@ -629,8 +604,7 @@ namespace Win32
 			public _VK_FUNCTION_PARAM[8] NLSFEProcAlt;
 		}
 		[CRepr]
-		public struct tagKbdNlsLayer
-		{
+		public struct tagKbdNlsLayer		{
 			public uint16 OEMIdentifier;
 			public uint16 LayoutInformation;
 			public uint32 NumOfVkToF;
@@ -639,44 +613,38 @@ namespace Win32
 			public uint16* pusMouseVKey;
 		}
 		[CRepr]
-		public struct KBDTABLE_DESC
-		{
+		public struct KBDTABLE_DESC		{
 			public char16[32] wszDllName;
 			public uint32 dwType;
 			public uint32 dwSubType;
 		}
 		[CRepr]
-		public struct KBDTABLE_MULTI
-		{
+		public struct KBDTABLE_MULTI		{
 			public uint32 nTables;
 			public KBDTABLE_DESC[8] aKbdTables;
 		}
 		[CRepr]
-		public struct KBD_TYPE_INFO
-		{
+		public struct KBD_TYPE_INFO		{
 			public uint32 dwVersion;
 			public uint32 dwType;
 			public uint32 dwSubType;
 		}
 		[CRepr]
-		public struct MOUSEMOVEPOINT
-		{
+		public struct MOUSEMOVEPOINT		{
 			public int32 x;
 			public int32 y;
 			public uint32 time;
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct TRACKMOUSEEVENT
-		{
+		public struct TRACKMOUSEEVENT		{
 			public uint32 cbSize;
 			public TRACKMOUSEEVENT_FLAGS dwFlags;
 			public HWND hwndTrack;
 			public uint32 dwHoverTime;
 		}
 		[CRepr]
-		public struct MOUSEINPUT
-		{
+		public struct MOUSEINPUT		{
 			public int32 dx;
 			public int32 dy;
 			public uint32 mouseData;
@@ -685,8 +653,7 @@ namespace Win32
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct KEYBDINPUT
-		{
+		public struct KEYBDINPUT		{
 			public VIRTUAL_KEY wVk;
 			public uint16 wScan;
 			public KEYBD_EVENT_FLAGS dwFlags;
@@ -694,29 +661,25 @@ namespace Win32
 			public uint dwExtraInfo;
 		}
 		[CRepr]
-		public struct HARDWAREINPUT
-		{
+		public struct HARDWAREINPUT		{
 			public uint32 uMsg;
 			public uint16 wParamL;
 			public uint16 wParamH;
 		}
 		[CRepr]
-		public struct INPUT
-		{
+		public struct INPUT		{
 			public INPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public MOUSEINPUT mi;
 				public KEYBDINPUT ki;
 				public HARDWAREINPUT hi;
 			}
 		}
 		[CRepr]
-		public struct LASTINPUTINFO
-		{
+		public struct LASTINPUTINFO		{
 			public uint32 cbSize;
 			public uint32 dwTime;
 		}

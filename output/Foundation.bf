@@ -9811,8 +9811,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SYSTEMTIME
-		{
+		public struct SYSTEMTIME		{
 			public uint16 wYear;
 			public uint16 wMonth;
 			public uint16 wDayOfWeek;
@@ -9823,147 +9822,125 @@ namespace Win32
 			public uint16 wMilliseconds;
 		}
 		[CRepr]
-		public struct DECIMAL
-		{
+		public struct DECIMAL		{
 			public uint16 wReserved;
 			public _Anonymous1_e__Union Anonymous1;
 			public uint32 Hi32;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 Lo64;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 Lo32;
 					public uint32 Mid32;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 signscale;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 scale;
 					public uint8 sign;
 				}
 			}
 		}
 		[CRepr]
-		public struct FILETIME
-		{
+		public struct FILETIME		{
 			public uint32 dwLowDateTime;
 			public uint32 dwHighDateTime;
 		}
 		[CRepr]
-		public struct RECT
-		{
+		public struct RECT		{
 			public int32 left;
 			public int32 top;
 			public int32 right;
 			public int32 bottom;
 		}
 		[CRepr]
-		public struct RECTL
-		{
+		public struct RECTL		{
 			public int32 left;
 			public int32 top;
 			public int32 right;
 			public int32 bottom;
 		}
 		[CRepr]
-		public struct POINT
-		{
+		public struct POINT		{
 			public int32 x;
 			public int32 y;
 		}
 		[CRepr]
-		public struct POINTL
-		{
+		public struct POINTL		{
 			public int32 x;
 			public int32 y;
 		}
 		[CRepr]
-		public struct SIZE
-		{
+		public struct SIZE		{
 			public int32 cx;
 			public int32 cy;
 		}
 		[CRepr]
-		public struct POINTS
-		{
+		public struct POINTS		{
 			public int16 x;
 			public int16 y;
 		}
 		[CRepr]
-		public struct APP_LOCAL_DEVICE_ID
-		{
+		public struct APP_LOCAL_DEVICE_ID		{
 			public uint8[32] value;
 		}
 		[CRepr]
-		public struct UNICODE_STRING
-		{
+		public struct UNICODE_STRING		{
 			public uint16 Length;
 			public uint16 MaximumLength;
 			public PWSTR Buffer;
 		}
 		[CRepr]
-		public struct FLOAT128
-		{
+		public struct FLOAT128		{
 			public int64 LowPart;
 			public int64 HighPart;
 		}
 		[CRepr, Union]
-		public struct LARGE_INTEGER
-		{
+		public struct LARGE_INTEGER		{
 			public _Anonymous_e__Struct Anonymous;
 			public _u_e__Struct u;
 			public int64 QuadPart;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 LowPart;
 				public int32 HighPart;
 			}
 			[CRepr]
-			public struct _u_e__Struct
-			{
+			public struct _u_e__Struct			{
 				public uint32 LowPart;
 				public int32 HighPart;
 			}
 		}
 		[CRepr, Union]
-		public struct ULARGE_INTEGER
-		{
+		public struct ULARGE_INTEGER		{
 			public _Anonymous_e__Struct Anonymous;
 			public _u_e__Struct u;
 			public uint64 QuadPart;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 LowPart;
 				public uint32 HighPart;
 			}
 			[CRepr]
-			public struct _u_e__Struct
-			{
+			public struct _u_e__Struct			{
 				public uint32 LowPart;
 				public uint32 HighPart;
 			}
 		}
 		[CRepr]
-		public struct LUID
-		{
+		public struct LUID		{
 			public uint32 LowPart;
 			public int32 HighPart;
 		}

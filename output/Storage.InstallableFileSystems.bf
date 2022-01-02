@@ -161,8 +161,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct FILTER_FULL_INFORMATION
-		{
+		public struct FILTER_FULL_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint32 FrameID;
 			public uint32 NumberOfInstances;
@@ -170,21 +169,18 @@ namespace Win32
 			public char16[0] FilterNameBuffer;
 		}
 		[CRepr]
-		public struct FILTER_AGGREGATE_BASIC_INFORMATION
-		{
+		public struct FILTER_AGGREGATE_BASIC_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint32 Flags;
 			public _Type_e__Union Type;
 			
 			[CRepr, Union]
-			public struct _Type_e__Union
-			{
+			public struct _Type_e__Union			{
 				public _MiniFilter_e__Struct MiniFilter;
 				public _LegacyFilter_e__Struct LegacyFilter;
 				
 				[CRepr]
-				public struct _MiniFilter_e__Struct
-				{
+				public struct _MiniFilter_e__Struct				{
 					public uint32 FrameID;
 					public uint32 NumberOfInstances;
 					public uint16 FilterNameLength;
@@ -193,29 +189,25 @@ namespace Win32
 					public uint16 FilterAltitudeBufferOffset;
 				}
 				[CRepr]
-				public struct _LegacyFilter_e__Struct
-				{
+				public struct _LegacyFilter_e__Struct				{
 					public uint16 FilterNameLength;
 					public uint16 FilterNameBufferOffset;
 				}
 			}
 		}
 		[CRepr]
-		public struct FILTER_AGGREGATE_STANDARD_INFORMATION
-		{
+		public struct FILTER_AGGREGATE_STANDARD_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint32 Flags;
 			public _Type_e__Union Type;
 			
 			[CRepr, Union]
-			public struct _Type_e__Union
-			{
+			public struct _Type_e__Union			{
 				public _MiniFilter_e__Struct MiniFilter;
 				public _LegacyFilter_e__Struct LegacyFilter;
 				
 				[CRepr]
-				public struct _MiniFilter_e__Struct
-				{
+				public struct _MiniFilter_e__Struct				{
 					public uint32 Flags;
 					public uint32 FrameID;
 					public uint32 NumberOfInstances;
@@ -225,8 +217,7 @@ namespace Win32
 					public uint16 FilterAltitudeBufferOffset;
 				}
 				[CRepr]
-				public struct _LegacyFilter_e__Struct
-				{
+				public struct _LegacyFilter_e__Struct				{
 					public uint32 Flags;
 					public uint16 FilterNameLength;
 					public uint16 FilterNameBufferOffset;
@@ -236,14 +227,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FILTER_VOLUME_BASIC_INFORMATION
-		{
+		public struct FILTER_VOLUME_BASIC_INFORMATION		{
 			public uint16 FilterVolumeNameLength;
 			public char16[0] FilterVolumeName;
 		}
 		[CRepr]
-		public struct FILTER_VOLUME_STANDARD_INFORMATION
-		{
+		public struct FILTER_VOLUME_STANDARD_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint32 Flags;
 			public uint32 FrameID;
@@ -252,15 +241,13 @@ namespace Win32
 			public char16[0] FilterVolumeName;
 		}
 		[CRepr]
-		public struct INSTANCE_BASIC_INFORMATION
-		{
+		public struct INSTANCE_BASIC_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint16 InstanceNameLength;
 			public uint16 InstanceNameBufferOffset;
 		}
 		[CRepr]
-		public struct INSTANCE_PARTIAL_INFORMATION
-		{
+		public struct INSTANCE_PARTIAL_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint16 InstanceNameLength;
 			public uint16 InstanceNameBufferOffset;
@@ -268,8 +255,7 @@ namespace Win32
 			public uint16 AltitudeBufferOffset;
 		}
 		[CRepr]
-		public struct INSTANCE_FULL_INFORMATION
-		{
+		public struct INSTANCE_FULL_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint16 InstanceNameLength;
 			public uint16 InstanceNameBufferOffset;
@@ -281,21 +267,18 @@ namespace Win32
 			public uint16 FilterNameBufferOffset;
 		}
 		[CRepr]
-		public struct INSTANCE_AGGREGATE_STANDARD_INFORMATION
-		{
+		public struct INSTANCE_AGGREGATE_STANDARD_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public uint32 Flags;
 			public _Type_e__Union Type;
 			
 			[CRepr, Union]
-			public struct _Type_e__Union
-			{
+			public struct _Type_e__Union			{
 				public _MiniFilter_e__Struct MiniFilter;
 				public _LegacyFilter_e__Struct LegacyFilter;
 				
 				[CRepr]
-				public struct _MiniFilter_e__Struct
-				{
+				public struct _MiniFilter_e__Struct				{
 					public uint32 Flags;
 					public uint32 FrameID;
 					public FLT_FILESYSTEM_TYPE VolumeFileSystemType;
@@ -310,8 +293,7 @@ namespace Win32
 					public uint32 SupportedFeatures;
 				}
 				[CRepr]
-				public struct _LegacyFilter_e__Struct
-				{
+				public struct _LegacyFilter_e__Struct				{
 					public uint32 Flags;
 					public uint16 AltitudeLength;
 					public uint16 AltitudeBufferOffset;
@@ -324,14 +306,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct FILTER_MESSAGE_HEADER
-		{
+		public struct FILTER_MESSAGE_HEADER		{
 			public uint32 ReplyLength;
 			public uint64 MessageId;
 		}
 		[CRepr]
-		public struct FILTER_REPLY_HEADER
-		{
+		public struct FILTER_REPLY_HEADER		{
 			public NTSTATUS Status;
 			public uint64 MessageId;
 		}

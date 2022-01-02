@@ -97,8 +97,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct UNCOMPRESSEDAUDIOFORMAT
-		{
+		public struct UNCOMPRESSEDAUDIOFORMAT		{
 			public Guid guidFormatType;
 			public uint32 dwSamplesPerFrame;
 			public uint32 dwBytesPerSampleContainer;
@@ -107,22 +106,19 @@ namespace Win32
 			public uint32 dwChannelMask;
 		}
 		[CRepr]
-		public struct APO_CONNECTION_PROPERTY
-		{
+		public struct APO_CONNECTION_PROPERTY		{
 			public uint pBuffer;
 			public uint32 u32ValidFrameCount;
 			public APO_BUFFER_FLAGS u32BufferFlags;
 			public uint32 u32Signature;
 		}
 		[CRepr]
-		public struct APO_CONNECTION_PROPERTY_V2
-		{
+		public struct APO_CONNECTION_PROPERTY_V2		{
 			public APO_CONNECTION_PROPERTY property;
 			public uint64 u64QPCTime;
 		}
 		[CRepr]
-		public struct APO_CONNECTION_DESCRIPTOR
-		{
+		public struct APO_CONNECTION_DESCRIPTOR		{
 			public APO_CONNECTION_BUFFER_TYPE Type;
 			public uint pBuffer;
 			public uint32 u32MaxFrameCount;
@@ -130,8 +126,7 @@ namespace Win32
 			public uint32 u32Signature;
 		}
 		[CRepr]
-		public struct APO_REG_PROPERTIES
-		{
+		public struct APO_REG_PROPERTIES		{
 			public Guid clsid;
 			public APO_FLAG Flags;
 			public char16[256] szFriendlyName;
@@ -147,14 +142,12 @@ namespace Win32
 			public Guid[0] iidAPOInterfaceList;
 		}
 		[CRepr]
-		public struct APOInitBaseStruct
-		{
+		public struct APOInitBaseStruct		{
 			public uint32 cbSize;
 			public Guid clsid;
 		}
 		[CRepr]
-		public struct APOInitSystemEffects
-		{
+		public struct APOInitSystemEffects		{
 			public APOInitBaseStruct APOInit;
 			public IPropertyStore* pAPOEndpointProperties;
 			public IPropertyStore* pAPOSystemEffectsProperties;
@@ -162,8 +155,7 @@ namespace Win32
 			public IMMDeviceCollection* pDeviceCollection;
 		}
 		[CRepr]
-		public struct APOInitSystemEffects2
-		{
+		public struct APOInitSystemEffects2		{
 			public APOInitBaseStruct APOInit;
 			public IPropertyStore* pAPOEndpointProperties;
 			public IPropertyStore* pAPOSystemEffectsProperties;
@@ -175,22 +167,19 @@ namespace Win32
 			public BOOL InitializeForDiscoveryOnly;
 		}
 		[CRepr]
-		public struct AudioFXExtensionParams
-		{
+		public struct AudioFXExtensionParams		{
 			public LPARAM AddPageParam;
 			public PWSTR pwstrEndpointID;
 			public IPropertyStore* pFxProperties;
 		}
 		[CRepr]
-		public struct AUDIO_SYSTEMEFFECT
-		{
+		public struct AUDIO_SYSTEMEFFECT		{
 			public Guid id;
 			public BOOL canSetState;
 			public AUDIO_SYSTEMEFFECT_STATE state;
 		}
 		[CRepr]
-		public struct APOInitSystemEffects3
-		{
+		public struct APOInitSystemEffects3		{
 			public APOInitBaseStruct APOInit;
 			public IPropertyStore* pAPOEndpointProperties;
 			public IServiceProvider* pServiceProvider;
@@ -201,21 +190,18 @@ namespace Win32
 			public BOOL InitializeForDiscoveryOnly;
 		}
 		[CRepr]
-		public struct AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION
-		{
+		public struct AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION		{
 			public IMMDevice* endpoint;
 			public AUDIO_VOLUME_NOTIFICATION_DATA* volume;
 		}
 		[CRepr]
-		public struct AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION
-		{
+		public struct AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION		{
 			public IMMDevice* endpoint;
 			public IPropertyStore* propertyStore;
 			public PROPERTYKEY propertyKey;
 		}
 		[CRepr]
-		public struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION
-		{
+		public struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION		{
 			public IMMDevice* endpoint;
 			public Guid propertyStoreContext;
 			public __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 propertyStoreType;
@@ -223,44 +209,37 @@ namespace Win32
 			public PROPERTYKEY propertyKey;
 		}
 		[CRepr]
-		public struct APO_NOTIFICATION
-		{
+		public struct APO_NOTIFICATION		{
 			public APO_NOTIFICATION_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION audioEndpointVolumeChange;
 				public AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION audioEndpointPropertyChange;
 				public AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION audioSystemEffectsPropertyChange;
 			}
 		}
 		[CRepr]
-		public struct AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR
-		{
+		public struct AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR		{
 			public IMMDevice* device;
 		}
 		[CRepr]
-		public struct AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR
-		{
+		public struct AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR		{
 			public IMMDevice* device;
 		}
 		[CRepr]
-		public struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR
-		{
+		public struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR		{
 			public IMMDevice* device;
 			public Guid propertyStoreContext;
 		}
 		[CRepr]
-		public struct APO_NOTIFICATION_DESCRIPTOR
-		{
+		public struct APO_NOTIFICATION_DESCRIPTOR		{
 			public APO_NOTIFICATION_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR audioEndpointVolume;
 				public AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR audioEndpointPropertyChange;
 				public AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR audioSystemEffectsPropertyChange;
@@ -392,11 +371,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IAudioSystemEffects2 : IAudioSystemEffects
@@ -473,11 +449,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IAudioSystemEffects3 : IAudioSystemEffects2

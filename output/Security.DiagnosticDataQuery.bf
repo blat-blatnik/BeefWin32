@@ -17,8 +17,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_RECORD
-		{
+		public struct DIAGNOSTIC_DATA_RECORD		{
 			public int64 rowId;
 			public uint64 timestamp;
 			public uint64 eventKeywords;
@@ -35,8 +34,7 @@ namespace Win32
 			public PWSTR extra3;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_SEARCH_CRITERIA
-		{
+		public struct DIAGNOSTIC_DATA_SEARCH_CRITERIA		{
 			public PWSTR* producerNames;
 			public uint32 producerNameCount;
 			public PWSTR textToMatch;
@@ -47,40 +45,34 @@ namespace Win32
 			public BOOL coreDataOnly;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_TAG_DESCRIPTION
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_TAG_DESCRIPTION		{
 			public int32 privacyTag;
 			public PWSTR name;
 			public PWSTR description;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_PRODUCER_DESCRIPTION
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_PRODUCER_DESCRIPTION		{
 			public PWSTR name;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_CATEGORY_DESCRIPTION
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_CATEGORY_DESCRIPTION		{
 			public int32 id;
 			public PWSTR name;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_TAG_STATS
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_TAG_STATS		{
 			public int32 privacyTag;
 			public uint32 eventCount;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_BINARY_STATS
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_BINARY_STATS		{
 			public PWSTR moduleName;
 			public PWSTR friendlyModuleName;
 			public uint32 eventCount;
 			public uint64 uploadSizeBytes;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_GENERAL_STATS
-		{
+		public struct DIAGNOSTIC_DATA_GENERAL_STATS		{
 			public uint32 optInLevel;
 			public uint64 transcriptSizeBytes;
 			public uint64 oldestEventTimestamp;
@@ -88,27 +80,23 @@ namespace Win32
 			public float averageDailyEvents;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION
-		{
+		public struct DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION		{
 			public uint32 hoursOfHistoryToKeep;
 			public uint32 maxStoreMegabytes;
 			public uint32 requestedMaxStoreMegabytes;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_REPORT_PARAMETER
-		{
+		public struct DIAGNOSTIC_REPORT_PARAMETER		{
 			public char16[129] name;
 			public char16[260] value;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_REPORT_SIGNATURE
-		{
+		public struct DIAGNOSTIC_REPORT_SIGNATURE		{
 			public char16[65] eventName;
 			public DIAGNOSTIC_REPORT_PARAMETER[10] parameters;
 		}
 		[CRepr]
-		public struct DIAGNOSTIC_REPORT_DATA
-		{
+		public struct DIAGNOSTIC_REPORT_DATA		{
 			public DIAGNOSTIC_REPORT_SIGNATURE signature;
 			public Guid bucketId;
 			public Guid reportId;

@@ -81,14 +81,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NLM_USAGE_DATA
-		{
+		public struct NLM_USAGE_DATA		{
 			public uint32 UsageInMegabytes;
 			public FILETIME LastSyncTime;
 		}
 		[CRepr]
-		public struct NLM_DATAPLAN_STATUS
-		{
+		public struct NLM_DATAPLAN_STATUS		{
 			public Guid InterfaceGuid;
 			public NLM_USAGE_DATA UsageData;
 			public uint32 DataLimitInMegabytes;
@@ -99,13 +97,11 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct NLM_SOCKADDR
-		{
+		public struct NLM_SOCKADDR		{
 			public uint8[128] data;
 		}
 		[CRepr]
-		public struct NLM_SIMULATED_PROFILE_INFO
-		{
+		public struct NLM_SIMULATED_PROFILE_INFO		{
 			public char16[256] ProfileName;
 			public NLM_CONNECTION_COST cost;
 			public uint32 UsageInMegabytes;

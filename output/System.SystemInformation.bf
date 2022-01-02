@@ -405,15 +405,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct GROUP_AFFINITY
-		{
+		public struct GROUP_AFFINITY		{
 			public uint Mask;
 			public uint16 Group;
 			public uint16[3] Reserved;
 		}
 		[CRepr]
-		public struct SYSTEM_INFO
-		{
+		public struct SYSTEM_INFO		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwPageSize;
 			public void* lpMinimumApplicationAddress;
@@ -426,22 +424,19 @@ namespace Win32
 			public uint16 wProcessorRevision;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 dwOemId;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public PROCESSOR_ARCHITECTURE wProcessorArchitecture;
 					public uint16 wReserved;
 				}
 			}
 		}
 		[CRepr]
-		public struct MEMORYSTATUSEX
-		{
+		public struct MEMORYSTATUSEX		{
 			public uint32 dwLength;
 			public uint32 dwMemoryLoad;
 			public uint64 ullTotalPhys;
@@ -453,8 +448,7 @@ namespace Win32
 			public uint64 ullAvailExtendedVirtual;
 		}
 		[CRepr]
-		public struct CACHE_DESCRIPTOR
-		{
+		public struct CACHE_DESCRIPTOR		{
 			public uint8 Level;
 			public uint8 Associativity;
 			public uint16 LineSize;
@@ -462,35 +456,30 @@ namespace Win32
 			public PROCESSOR_CACHE_TYPE Type;
 		}
 		[CRepr]
-		public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
-		{
+		public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION		{
 			public uint ProcessorMask;
 			public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _ProcessorCore_e__Struct ProcessorCore;
 				public _NumaNode_e__Struct NumaNode;
 				public CACHE_DESCRIPTOR Cache;
 				public uint64[2] Reserved;
 				
 				[CRepr]
-				public struct _ProcessorCore_e__Struct
-				{
+				public struct _ProcessorCore_e__Struct				{
 					public uint8 Flags;
 				}
 				[CRepr]
-				public struct _NumaNode_e__Struct
-				{
+				public struct _NumaNode_e__Struct				{
 					public uint32 NodeNumber;
 				}
 			}
 		}
 		[CRepr]
-		public struct PROCESSOR_RELATIONSHIP
-		{
+		public struct PROCESSOR_RELATIONSHIP		{
 			public uint8 Flags;
 			public uint8 EfficiencyClass;
 			public uint8[20] Reserved;
@@ -498,23 +487,20 @@ namespace Win32
 			public GROUP_AFFINITY[0] GroupMask;
 		}
 		[CRepr]
-		public struct NUMA_NODE_RELATIONSHIP
-		{
+		public struct NUMA_NODE_RELATIONSHIP		{
 			public uint32 NodeNumber;
 			public uint8[18] Reserved;
 			public uint16 GroupCount;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public GROUP_AFFINITY GroupMask;
 				public GROUP_AFFINITY[0] GroupMasks;
 			}
 		}
 		[CRepr]
-		public struct CACHE_RELATIONSHIP
-		{
+		public struct CACHE_RELATIONSHIP		{
 			public uint8 Level;
 			public uint8 Associativity;
 			public uint16 LineSize;
@@ -525,38 +511,33 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public GROUP_AFFINITY GroupMask;
 				public GROUP_AFFINITY[0] GroupMasks;
 			}
 		}
 		[CRepr]
-		public struct PROCESSOR_GROUP_INFO
-		{
+		public struct PROCESSOR_GROUP_INFO		{
 			public uint8 MaximumProcessorCount;
 			public uint8 ActiveProcessorCount;
 			public uint8[38] Reserved;
 			public uint ActiveProcessorMask;
 		}
 		[CRepr]
-		public struct GROUP_RELATIONSHIP
-		{
+		public struct GROUP_RELATIONSHIP		{
 			public uint16 MaximumGroupCount;
 			public uint16 ActiveGroupCount;
 			public uint8[20] Reserved;
 			public PROCESSOR_GROUP_INFO[0] GroupInfo;
 		}
 		[CRepr]
-		public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
-		{
+		public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX		{
 			public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 			public uint32 Size;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PROCESSOR_RELATIONSHIP Processor;
 				public NUMA_NODE_RELATIONSHIP NumaNode;
 				public CACHE_RELATIONSHIP Cache;
@@ -564,20 +545,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SYSTEM_CPU_SET_INFORMATION
-		{
+		public struct SYSTEM_CPU_SET_INFORMATION		{
 			public uint32 Size;
 			public CPU_SET_INFORMATION_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _CpuSet_e__Struct CpuSet;
 				
 				[CRepr]
-				public struct _CpuSet_e__Struct
-				{
+				public struct _CpuSet_e__Struct				{
 					public uint32 Id;
 					public uint16 Group;
 					public uint8 LogicalProcessorIndex;
@@ -590,20 +568,17 @@ namespace Win32
 					public uint64 AllocationTag;
 					
 					[CRepr, Union]
-					public struct _Anonymous1_e__Union
-					{
+					public struct _Anonymous1_e__Union					{
 						public uint8 AllFlags;
 						public _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
-						public struct _Anonymous_e__Struct
-						{
+						public struct _Anonymous_e__Struct						{
 							public uint8 _bitfield;
 						}
 					}
 					[CRepr, Union]
-					public struct _Anonymous2_e__Union
-					{
+					public struct _Anonymous2_e__Union					{
 						public uint32 Reserved;
 						public uint8 SchedulingClass;
 					}
@@ -611,23 +586,19 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SYSTEM_POOL_ZEROING_INFORMATION
-		{
+		public struct SYSTEM_POOL_ZEROING_INFORMATION		{
 			public BOOLEAN PoolZeroingSupportPresent;
 		}
 		[CRepr]
-		public struct SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION
-		{
+		public struct SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION		{
 			public uint64 CycleTime;
 		}
 		[CRepr]
-		public struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
-		{
+		public struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct OSVERSIONINFOA
-		{
+		public struct OSVERSIONINFOA		{
 			public uint32 dwOSVersionInfoSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -636,8 +607,7 @@ namespace Win32
 			public CHAR[128] szCSDVersion;
 		}
 		[CRepr]
-		public struct OSVERSIONINFOW
-		{
+		public struct OSVERSIONINFOW		{
 			public uint32 dwOSVersionInfoSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -646,8 +616,7 @@ namespace Win32
 			public char16[128] szCSDVersion;
 		}
 		[CRepr]
-		public struct OSVERSIONINFOEXA
-		{
+		public struct OSVERSIONINFOEXA		{
 			public uint32 dwOSVersionInfoSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -661,8 +630,7 @@ namespace Win32
 			public uint8 wReserved;
 		}
 		[CRepr]
-		public struct OSVERSIONINFOEXW
-		{
+		public struct OSVERSIONINFOEXW		{
 			public uint32 dwOSVersionInfoSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -676,8 +644,7 @@ namespace Win32
 			public uint8 wReserved;
 		}
 		[CRepr]
-		public struct MEMORYSTATUS
-		{
+		public struct MEMORYSTATUS		{
 			public uint32 dwLength;
 			public uint32 dwMemoryLoad;
 			public uint dwTotalPhys;

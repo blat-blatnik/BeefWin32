@@ -55,8 +55,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ENCLAVE_IDENTITY
-		{
+		public struct ENCLAVE_IDENTITY		{
 			public uint8[32] OwnerId;
 			public uint8[32] UniqueId;
 			public uint8[32] AuthorId;
@@ -70,8 +69,7 @@ namespace Win32
 			public uint32 EnclaveType;
 		}
 		[CRepr]
-		public struct VBS_ENCLAVE_REPORT_PKG_HEADER
-		{
+		public struct VBS_ENCLAVE_REPORT_PKG_HEADER		{
 			public uint32 PackageSize;
 			public uint32 Version;
 			public uint32 SignatureScheme;
@@ -80,22 +78,19 @@ namespace Win32
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct VBS_ENCLAVE_REPORT
-		{
+		public struct VBS_ENCLAVE_REPORT		{
 			public uint32 ReportSize;
 			public uint32 ReportVersion;
 			public uint8[64] EnclaveData;
 			public ENCLAVE_IDENTITY EnclaveIdentity;
 		}
 		[CRepr]
-		public struct VBS_ENCLAVE_REPORT_VARDATA_HEADER
-		{
+		public struct VBS_ENCLAVE_REPORT_VARDATA_HEADER		{
 			public uint32 DataType;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct VBS_ENCLAVE_REPORT_MODULE
-		{
+		public struct VBS_ENCLAVE_REPORT_MODULE		{
 			public VBS_ENCLAVE_REPORT_VARDATA_HEADER Header;
 			public uint8[32] UniqueId;
 			public uint8[32] AuthorId;
@@ -105,8 +100,7 @@ namespace Win32
 			public char16[0] ModuleName;
 		}
 		[CRepr]
-		public struct ENCLAVE_INFORMATION
-		{
+		public struct ENCLAVE_INFORMATION		{
 			public uint32 EnclaveType;
 			public uint32 Reserved;
 			public void* BaseAddress;
@@ -114,8 +108,7 @@ namespace Win32
 			public ENCLAVE_IDENTITY Identity;
 		}
 		[CRepr]
-		public struct VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR32
-		{
+		public struct VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR32		{
 			public uint32[4] ThreadContext;
 			public uint32 EntryPoint;
 			public uint32 StackPointer;
@@ -124,8 +117,7 @@ namespace Win32
 			public uint32 ExceptionActive;
 		}
 		[CRepr]
-		public struct VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64
-		{
+		public struct VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64		{
 			public uint64[4] ThreadContext;
 			public uint64 EntryPoint;
 			public uint64 StackPointer;
@@ -134,8 +126,7 @@ namespace Win32
 			public uint32 ExceptionActive;
 		}
 		[CRepr]
-		public struct VBS_BASIC_ENCLAVE_EXCEPTION_AMD64
-		{
+		public struct VBS_BASIC_ENCLAVE_EXCEPTION_AMD64		{
 			public uint32 ExceptionCode;
 			public uint32 NumberParameters;
 			public uint[3] ExceptionInformation;
@@ -146,8 +137,7 @@ namespace Win32
 			public uint ExceptionRSP;
 		}
 		[CRepr]
-		public struct ENCLAVE_VBS_BASIC_KEY_REQUEST
-		{
+		public struct ENCLAVE_VBS_BASIC_KEY_REQUEST		{
 			public uint32 RequestSize;
 			public uint32 Flags;
 			public uint32 EnclaveSVN;
@@ -155,8 +145,7 @@ namespace Win32
 			public uint32 CurrentSystemKeyID;
 		}
 		[CRepr]
-		public struct VBS_BASIC_ENCLAVE_SYSCALL_PAGE
-		{
+		public struct VBS_BASIC_ENCLAVE_SYSCALL_PAGE		{
 			public VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_ENCLAVE ReturnFromEnclave;
 			public VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_EXCEPTION ReturnFromException;
 			public VBS_BASIC_ENCLAVE_BASIC_CALL_TERMINATE_THREAD TerminateThread;

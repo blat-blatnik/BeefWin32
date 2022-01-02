@@ -8,8 +8,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct UAL_DATA_BLOB
-		{
+		public struct UAL_DATA_BLOB		{
 			public uint32 Size;
 			public Guid RoleGuid;
 			public Guid TenantId;

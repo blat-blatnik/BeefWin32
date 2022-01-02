@@ -566,28 +566,24 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct FAX_LOG_CATEGORYA
-		{
+		public struct FAX_LOG_CATEGORYA		{
 			public PSTR Name;
 			public uint32 Category;
 			public uint32 Level;
 		}
 		[CRepr]
-		public struct FAX_LOG_CATEGORYW
-		{
+		public struct FAX_LOG_CATEGORYW		{
 			public PWSTR Name;
 			public uint32 Category;
 			public uint32 Level;
 		}
 		[CRepr]
-		public struct FAX_TIME
-		{
+		public struct FAX_TIME		{
 			public uint16 Hour;
 			public uint16 Minute;
 		}
 		[CRepr]
-		public struct FAX_CONFIGURATIONA
-		{
+		public struct FAX_CONFIGURATIONA		{
 			public uint32 SizeOfStruct;
 			public uint32 Retries;
 			public uint32 RetryDelay;
@@ -603,8 +599,7 @@ namespace Win32
 			public PSTR Reserved;
 		}
 		[CRepr]
-		public struct FAX_CONFIGURATIONW
-		{
+		public struct FAX_CONFIGURATIONW		{
 			public uint32 SizeOfStruct;
 			public uint32 Retries;
 			public uint32 RetryDelay;
@@ -620,8 +615,7 @@ namespace Win32
 			public PWSTR Reserved;
 		}
 		[CRepr]
-		public struct FAX_DEVICE_STATUSA
-		{
+		public struct FAX_DEVICE_STATUSA		{
 			public uint32 SizeOfStruct;
 			public PSTR CallerId;
 			public PSTR Csid;
@@ -644,8 +638,7 @@ namespace Win32
 			public PSTR UserName;
 		}
 		[CRepr]
-		public struct FAX_DEVICE_STATUSW
-		{
+		public struct FAX_DEVICE_STATUSW		{
 			public uint32 SizeOfStruct;
 			public PWSTR CallerId;
 			public PWSTR Csid;
@@ -668,8 +661,7 @@ namespace Win32
 			public PWSTR UserName;
 		}
 		[CRepr]
-		public struct FAX_JOB_ENTRYA
-		{
+		public struct FAX_JOB_ENTRYA		{
 			public uint32 SizeOfStruct;
 			public uint32 JobId;
 			public PSTR UserName;
@@ -692,8 +684,7 @@ namespace Win32
 			public PSTR DocumentName;
 		}
 		[CRepr]
-		public struct FAX_JOB_ENTRYW
-		{
+		public struct FAX_JOB_ENTRYW		{
 			public uint32 SizeOfStruct;
 			public uint32 JobId;
 			public PWSTR UserName;
@@ -716,8 +707,7 @@ namespace Win32
 			public PWSTR DocumentName;
 		}
 		[CRepr]
-		public struct FAX_PORT_INFOA
-		{
+		public struct FAX_PORT_INFOA		{
 			public uint32 SizeOfStruct;
 			public uint32 DeviceId;
 			public uint32 State;
@@ -729,8 +719,7 @@ namespace Win32
 			public PSTR Csid;
 		}
 		[CRepr]
-		public struct FAX_PORT_INFOW
-		{
+		public struct FAX_PORT_INFOW		{
 			public uint32 SizeOfStruct;
 			public uint32 DeviceId;
 			public uint32 State;
@@ -742,8 +731,7 @@ namespace Win32
 			public PWSTR Csid;
 		}
 		[CRepr]
-		public struct FAX_ROUTING_METHODA
-		{
+		public struct FAX_ROUTING_METHODA		{
 			public uint32 SizeOfStruct;
 			public uint32 DeviceId;
 			public BOOL Enabled;
@@ -755,8 +743,7 @@ namespace Win32
 			public PSTR ExtensionFriendlyName;
 		}
 		[CRepr]
-		public struct FAX_ROUTING_METHODW
-		{
+		public struct FAX_ROUTING_METHODW		{
 			public uint32 SizeOfStruct;
 			public uint32 DeviceId;
 			public BOOL Enabled;
@@ -768,8 +755,7 @@ namespace Win32
 			public PWSTR ExtensionFriendlyName;
 		}
 		[CRepr]
-		public struct FAX_GLOBAL_ROUTING_INFOA
-		{
+		public struct FAX_GLOBAL_ROUTING_INFOA		{
 			public uint32 SizeOfStruct;
 			public uint32 Priority;
 			public PSTR Guid;
@@ -779,8 +765,7 @@ namespace Win32
 			public PSTR ExtensionFriendlyName;
 		}
 		[CRepr]
-		public struct FAX_GLOBAL_ROUTING_INFOW
-		{
+		public struct FAX_GLOBAL_ROUTING_INFOW		{
 			public uint32 SizeOfStruct;
 			public uint32 Priority;
 			public PWSTR Guid;
@@ -790,8 +775,7 @@ namespace Win32
 			public PWSTR ExtensionFriendlyName;
 		}
 		[CRepr]
-		public struct FAX_COVERPAGE_INFOA
-		{
+		public struct FAX_COVERPAGE_INFOA		{
 			public uint32 SizeOfStruct;
 			public PSTR CoverPageName;
 			public BOOL UseServerCoverPage;
@@ -823,8 +807,7 @@ namespace Win32
 			public uint32 PageCount;
 		}
 		[CRepr]
-		public struct FAX_COVERPAGE_INFOW
-		{
+		public struct FAX_COVERPAGE_INFOW		{
 			public uint32 SizeOfStruct;
 			public PWSTR CoverPageName;
 			public BOOL UseServerCoverPage;
@@ -856,8 +839,7 @@ namespace Win32
 			public uint32 PageCount;
 		}
 		[CRepr]
-		public struct FAX_JOB_PARAMA
-		{
+		public struct FAX_JOB_PARAMA		{
 			public uint32 SizeOfStruct;
 			public PSTR RecipientNumber;
 			public PSTR RecipientName;
@@ -875,8 +857,7 @@ namespace Win32
 			public uint[3] Reserved;
 		}
 		[CRepr]
-		public struct FAX_JOB_PARAMW
-		{
+		public struct FAX_JOB_PARAMW		{
 			public uint32 SizeOfStruct;
 			public PWSTR RecipientNumber;
 			public PWSTR RecipientName;
@@ -894,8 +875,7 @@ namespace Win32
 			public uint[3] Reserved;
 		}
 		[CRepr]
-		public struct FAX_EVENTA
-		{
+		public struct FAX_EVENTA		{
 			public uint32 SizeOfStruct;
 			public FILETIME TimeStamp;
 			public uint32 DeviceId;
@@ -903,8 +883,7 @@ namespace Win32
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct FAX_EVENTW
-		{
+		public struct FAX_EVENTW		{
 			public uint32 SizeOfStruct;
 			public FILETIME TimeStamp;
 			public uint32 DeviceId;
@@ -912,8 +891,7 @@ namespace Win32
 			public uint32 JobId;
 		}
 		[CRepr]
-		public struct FAX_PRINT_INFOA
-		{
+		public struct FAX_PRINT_INFOA		{
 			public uint32 SizeOfStruct;
 			public PSTR DocName;
 			public PSTR RecipientName;
@@ -927,8 +905,7 @@ namespace Win32
 			public PSTR OutputFileName;
 		}
 		[CRepr]
-		public struct FAX_PRINT_INFOW
-		{
+		public struct FAX_PRINT_INFOW		{
 			public uint32 SizeOfStruct;
 			public PWSTR DocName;
 			public PWSTR RecipientName;
@@ -942,22 +919,19 @@ namespace Win32
 			public PWSTR OutputFileName;
 		}
 		[CRepr]
-		public struct FAX_CONTEXT_INFOA
-		{
+		public struct FAX_CONTEXT_INFOA		{
 			public uint32 SizeOfStruct;
 			public HDC hDC;
 			public CHAR[16] ServerName;
 		}
 		[CRepr]
-		public struct FAX_CONTEXT_INFOW
-		{
+		public struct FAX_CONTEXT_INFOW		{
 			public uint32 SizeOfStruct;
 			public HDC hDC;
 			public char16[16] ServerName;
 		}
 		[CRepr]
-		public struct FAX_SEND
-		{
+		public struct FAX_SEND		{
 			public uint32 SizeOfStruct;
 			public PWSTR FileName;
 			public PWSTR CallerName;
@@ -969,8 +943,7 @@ namespace Win32
 			public uint32[3] Reserved;
 		}
 		[CRepr]
-		public struct FAX_RECEIVE
-		{
+		public struct FAX_RECEIVE		{
 			public uint32 SizeOfStruct;
 			public PWSTR FileName;
 			public PWSTR ReceiverName;
@@ -978,8 +951,7 @@ namespace Win32
 			public uint32[4] Reserved;
 		}
 		[CRepr]
-		public struct FAX_DEV_STATUS
-		{
+		public struct FAX_DEV_STATUS		{
 			public uint32 SizeOfStruct;
 			public uint32 StatusId;
 			public uint32 StringId;
@@ -991,8 +963,7 @@ namespace Win32
 			public uint32[3] Reserved;
 		}
 		[CRepr]
-		public struct FAX_ROUTE_CALLBACKROUTINES
-		{
+		public struct FAX_ROUTE_CALLBACKROUTINES		{
 			public uint32 SizeOfStruct;
 			public PFAXROUTEADDFILE FaxRouteAddFile;
 			public PFAXROUTEDELETEFILE FaxRouteDeleteFile;
@@ -1001,8 +972,7 @@ namespace Win32
 			public PFAXROUTEMODIFYROUTINGDATA FaxRouteModifyRoutingData;
 		}
 		[CRepr]
-		public struct FAX_ROUTE
-		{
+		public struct FAX_ROUTE		{
 			public uint32 SizeOfStruct;
 			public uint32 JobId;
 			public uint64 ElapsedTime;
@@ -1020,13 +990,11 @@ namespace Win32
 			public uint32 RoutingInfoDataSize;
 		}
 		[CRepr]
-		public struct STI_DEV_CAPS
-		{
+		public struct STI_DEV_CAPS		{
 			public uint32 dwGeneric;
 		}
 		[CRepr]
-		public struct STI_DEVICE_INFORMATIONW
-		{
+		public struct STI_DEVICE_INFORMATIONW		{
 			public uint32 dwSize;
 			public uint32 DeviceType;
 			public char16[128] szDeviceInternalName;
@@ -1039,8 +1007,7 @@ namespace Win32
 			public PWSTR pszLocalName;
 		}
 		[CRepr]
-		public struct STI_WIA_DEVICE_INFORMATIONW
-		{
+		public struct STI_WIA_DEVICE_INFORMATIONW		{
 			public uint32 dwSize;
 			public uint32 DeviceType;
 			public char16[128] szDeviceInternalName;
@@ -1055,8 +1022,7 @@ namespace Win32
 			public PWSTR pszServer;
 		}
 		[CRepr]
-		public struct STI_DEVICE_STATUS
-		{
+		public struct STI_DEVICE_STATUS		{
 			public uint32 dwSize;
 			public uint32 StatusMask;
 			public uint32 dwOnlineState;
@@ -1065,16 +1031,14 @@ namespace Win32
 			public uint32 dwPollingInterval;
 		}
 		[CRepr]
-		public struct _ERROR_INFOW
-		{
+		public struct _ERROR_INFOW		{
 			public uint32 dwSize;
 			public uint32 dwGenericError;
 			public uint32 dwVendorError;
 			public char16[255] szExtendedErrorText;
 		}
 		[CRepr]
-		public struct STI_DIAG
-		{
+		public struct STI_DIAG		{
 			public uint32 dwSize;
 			public uint32 dwBasicDiagCode;
 			public uint32 dwVendorDiagCode;
@@ -1082,8 +1046,7 @@ namespace Win32
 			public _ERROR_INFOW sErrorInfo;
 		}
 		[CRepr]
-		public struct STISUBSCRIBE
-		{
+		public struct STISUBSCRIBE		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwFilter;
@@ -1092,19 +1055,15 @@ namespace Win32
 			public uint32 uiNotificationMessage;
 		}
 		[CRepr]
-		public struct STINOTIFY
-		{
+		public struct STINOTIFY		{
 			public uint32 dwSize;
 			public Guid guidNotificationCode;
 			public uint8[64] abNotificationData;
 		}
 		[CRepr]
-		public struct IStiDeviceW
-		{
-		}
+		public struct IStiDeviceW {}
 		[CRepr]
-		public struct STI_USD_CAPS
-		{
+		public struct STI_USD_CAPS		{
 			public uint32 dwVersion;
 			public uint32 dwGenericCaps;
 		}
@@ -3006,11 +2965,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct _IFaxServerNotify2 : IDispatch
@@ -3084,11 +3040,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct _IFaxAccountNotify : IDispatch
@@ -3132,11 +3085,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IStillImageW : IUnknown

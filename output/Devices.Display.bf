@@ -1146,20 +1146,17 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DISPLAYCONFIG_RATIONAL
-		{
+		public struct DISPLAYCONFIG_RATIONAL		{
 			public uint32 Numerator;
 			public uint32 Denominator;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_2DREGION
-		{
+		public struct DISPLAYCONFIG_2DREGION		{
 			public uint32 cx;
 			public uint32 cy;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
-		{
+		public struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO		{
 			public uint64 pixelRate;
 			public DISPLAYCONFIG_RATIONAL hSyncFreq;
 			public DISPLAYCONFIG_RATIONAL vSyncFreq;
@@ -1169,78 +1166,67 @@ namespace Win32
 			public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _AdditionalSignalInfo_e__Struct AdditionalSignalInfo;
 				public uint32 videoStandard;
 				
 				[CRepr]
-				public struct _AdditionalSignalInfo_e__Struct
-				{
+				public struct _AdditionalSignalInfo_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SOURCE_MODE
-		{
+		public struct DISPLAYCONFIG_SOURCE_MODE		{
 			public uint32 width;
 			public uint32 height;
 			public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
 			public POINTL position;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_TARGET_MODE
-		{
+		public struct DISPLAYCONFIG_TARGET_MODE		{
 			public DISPLAYCONFIG_VIDEO_SIGNAL_INFO targetVideoSignalInfo;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO
-		{
+		public struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO		{
 			public POINTL PathSourceSize;
 			public RECTL DesktopImageRegion;
 			public RECTL DesktopImageClip;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_MODE_INFO
-		{
+		public struct DISPLAYCONFIG_MODE_INFO		{
 			public DISPLAYCONFIG_MODE_INFO_TYPE infoType;
 			public uint32 id;
 			public LUID adapterId;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public DISPLAYCONFIG_TARGET_MODE targetMode;
 				public DISPLAYCONFIG_SOURCE_MODE sourceMode;
 				public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo;
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_PATH_SOURCE_INFO
-		{
+		public struct DISPLAYCONFIG_PATH_SOURCE_INFO		{
 			public LUID adapterId;
 			public uint32 id;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 statusFlags;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 modeInfoIdx;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_PATH_TARGET_INFO
-		{
+		public struct DISPLAYCONFIG_PATH_TARGET_INFO		{
 			public LUID adapterId;
 			public uint32 id;
 			public _Anonymous_e__Union Anonymous;
@@ -1253,60 +1239,51 @@ namespace Win32
 			public uint32 statusFlags;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 modeInfoIdx;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_PATH_INFO
-		{
+		public struct DISPLAYCONFIG_PATH_INFO		{
 			public DISPLAYCONFIG_PATH_SOURCE_INFO sourceInfo;
 			public DISPLAYCONFIG_PATH_TARGET_INFO targetInfo;
 			public uint32 flags;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_DEVICE_INFO_HEADER
-		{
+		public struct DISPLAYCONFIG_DEVICE_INFO_HEADER		{
 			public DISPLAYCONFIG_DEVICE_INFO_TYPE type;
 			public uint32 size;
 			public LUID adapterId;
 			public uint32 id;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SOURCE_DEVICE_NAME
-		{
+		public struct DISPLAYCONFIG_SOURCE_DEVICE_NAME		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public char16[32] viewGdiDeviceName;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
-		{
+		public struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_TARGET_DEVICE_NAME
-		{
+		public struct DISPLAYCONFIG_TARGET_DEVICE_NAME		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS flags;
 			public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
@@ -1317,131 +1294,111 @@ namespace Win32
 			public char16[128] monitorDevicePath;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_TARGET_PREFERRED_MODE
-		{
+		public struct DISPLAYCONFIG_TARGET_PREFERRED_MODE		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public uint32 width;
 			public uint32 height;
 			public DISPLAYCONFIG_TARGET_MODE targetMode;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_ADAPTER_NAME
-		{
+		public struct DISPLAYCONFIG_ADAPTER_NAME		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public char16[128] adapterDevicePath;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_TARGET_BASE_TYPE
-		{
+		public struct DISPLAYCONFIG_TARGET_BASE_TYPE		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY baseOutputTechnology;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
-		{
+		public struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
-		{
+		public struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
-		{
+		public struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
 			public uint32 bitsPerColorChannel;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
-		{
+		public struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SDR_WHITE_LEVEL
-		{
+		public struct DISPLAYCONFIG_SDR_WHITE_LEVEL		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public uint32 SDRWhiteLevel;
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
-		{
+		public struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
-		{
+		public struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 			public _Anonymous_e__Union Anonymous;
 			public Guid specializationType;
@@ -1449,66 +1406,56 @@ namespace Win32
 			public char16[128] specializationApplicationName;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PHYSICAL_MONITOR
-		{
+		public struct PHYSICAL_MONITOR		{
 			public HANDLE hPhysicalMonitor;
 			public char16[128] szPhysicalMonitorDescription;
 		}
 		[CRepr]
-		public struct MC_TIMING_REPORT
-		{
+		public struct MC_TIMING_REPORT		{
 			public uint32 dwHorizontalFrequencyInHZ;
 			public uint32 dwVerticalFrequencyInHZ;
 			public uint8 bTimingStatusByte;
 		}
 		[CRepr]
-		public struct Sources
-		{
+		public struct Sources		{
 			public uint32 sourceId;
 			public int32 numTargets;
 			public uint32[0] aTargets;
 		}
 		[CRepr]
-		public struct Adapter
-		{
+		public struct Adapter		{
 			public char16[128] AdapterName;
 			public int32 numSources;
 			public Sources[0] sources;
 		}
 		[CRepr]
-		public struct Adapters
-		{
+		public struct Adapters		{
 			public int32 numAdapters;
 			public Adapter[0] adapter;
 		}
 		[CRepr]
-		public struct DisplayMode
-		{
+		public struct DisplayMode		{
 			public char16[32] DeviceName;
 			public DEVMODEW devMode;
 		}
 		[CRepr]
-		public struct DisplayModes
-		{
+		public struct DisplayModes		{
 			public int32 numDisplayModes;
 			public DisplayMode[0] displayMode;
 		}
 		[CRepr]
-		public struct VIDEOPARAMETERS
-		{
+		public struct VIDEOPARAMETERS		{
 			public Guid Guid;
 			public uint32 dwOffset;
 			public uint32 dwCommand;
@@ -1534,42 +1481,36 @@ namespace Win32
 			public uint8[256] bOEMCopyProtection;
 		}
 		[CRepr]
-		public struct POINTE
-		{
+		public struct POINTE		{
 			public float x;
 			public float y;
 		}
 		[CRepr, Union]
-		public struct FLOAT_LONG
-		{
+		public struct FLOAT_LONG		{
 			public float e;
 			public int32 l;
 		}
 		[CRepr]
-		public struct POINTFIX
-		{
+		public struct POINTFIX		{
 			public int32 x;
 			public int32 y;
 		}
 		[CRepr]
-		public struct RECTFX
-		{
+		public struct RECTFX		{
 			public int32 xLeft;
 			public int32 yTop;
 			public int32 xRight;
 			public int32 yBottom;
 		}
 		[CRepr]
-		public struct FD_XFORM
-		{
+		public struct FD_XFORM		{
 			public float eXX;
 			public float eXY;
 			public float eYX;
 			public float eYY;
 		}
 		[CRepr]
-		public struct FD_DEVICEMETRICS
-		{
+		public struct FD_DEVICEMETRICS		{
 			public uint32 flRealizedType;
 			public POINTE pteBase;
 			public POINTE pteSide;
@@ -1594,37 +1535,32 @@ namespace Win32
 			public int32[0] alReserved;
 		}
 		[CRepr]
-		public struct LIGATURE
-		{
+		public struct LIGATURE		{
 			public uint32 culSize;
 			public PWSTR pwsz;
 			public uint32 chglyph;
 			public uint32[0] ahglyph;
 		}
 		[CRepr]
-		public struct FD_LIGATURE
-		{
+		public struct FD_LIGATURE		{
 			public uint32 culThis;
 			public uint32 ulType;
 			public uint32 cLigatures;
 			public LIGATURE[0] alig;
 		}
 		[CRepr]
-		public struct POINTQF
-		{
+		public struct POINTQF		{
 			public LARGE_INTEGER x;
 			public LARGE_INTEGER y;
 		}
 		[CRepr]
-		public struct WCRUN
-		{
+		public struct WCRUN		{
 			public char16 wcLow;
 			public uint16 cGlyphs;
 			public uint32* phg;
 		}
 		[CRepr]
-		public struct FD_GLYPHSET
-		{
+		public struct FD_GLYPHSET		{
 			public uint32 cjThis;
 			public uint32 flAccel;
 			public uint32 cGlyphsSupported;
@@ -1632,23 +1568,20 @@ namespace Win32
 			public WCRUN[0] awcrun;
 		}
 		[CRepr]
-		public struct FD_GLYPHATTR
-		{
+		public struct FD_GLYPHATTR		{
 			public uint32 cjThis;
 			public uint32 cGlyphs;
 			public uint32 iMode;
 			public uint8[0] aGlyphAttr;
 		}
 		[CRepr]
-		public struct FD_KERNINGPAIR
-		{
+		public struct FD_KERNINGPAIR		{
 			public char16 wcFirst;
 			public char16 wcSecond;
 			public int16 fwdKern;
 		}
 		[CRepr]
-		public struct FONTDIFF
-		{
+		public struct FONTDIFF		{
 			public uint8 jReserved1;
 			public uint8 jReserved2;
 			public uint8 jReserved3;
@@ -1660,15 +1593,13 @@ namespace Win32
 			public POINTL ptlCaret;
 		}
 		[CRepr]
-		public struct FONTSIM
-		{
+		public struct FONTSIM		{
 			public int32 dpBold;
 			public int32 dpItalic;
 			public int32 dpBoldItalic;
 		}
 		[CRepr]
-		public struct IFIMETRICS
-		{
+		public struct IFIMETRICS		{
 			public uint32 cjThis;
 			public uint32 cjIfiExtra;
 			public int32 dpwszFamilyName;
@@ -1731,8 +1662,7 @@ namespace Win32
 			public void* Align;
 		}
 		[CRepr]
-		public struct IFIEXTRA
-		{
+		public struct IFIEXTRA		{
 			public uint32 ulIdentifier;
 			public int32 dpFontSig;
 			public uint32 cig;
@@ -1741,21 +1671,18 @@ namespace Win32
 			public uint32[0] aulReserved;
 		}
 		[CRepr]
-		public struct DRVFN
-		{
+		public struct DRVFN		{
 			public uint32 iFunc;
 			public PFN pfn;
 		}
 		[CRepr]
-		public struct DRVENABLEDATA
-		{
+		public struct DRVENABLEDATA		{
 			public uint32 iDriverVersion;
 			public uint32 c;
 			public DRVFN* pdrvfn;
 		}
 		[CRepr]
-		public struct DEVINFO
-		{
+		public struct DEVINFO		{
 			public uint32 flGraphicsCaps;
 			public LOGFONTW lfDefaultFont;
 			public LOGFONTW lfAnsiVarFont;
@@ -1768,8 +1695,7 @@ namespace Win32
 			public uint32 flGraphicsCaps2;
 		}
 		[CRepr]
-		public struct LINEATTRS
-		{
+		public struct LINEATTRS		{
 			public uint32 fl;
 			public uint32 iJoin;
 			public uint32 iEndCap;
@@ -1780,8 +1706,7 @@ namespace Win32
 			public FLOAT_LONG elStyleState;
 		}
 		[CRepr]
-		public struct XFORML
-		{
+		public struct XFORML		{
 			public float eM11;
 			public float eM12;
 			public float eM21;
@@ -1790,15 +1715,13 @@ namespace Win32
 			public float eDy;
 		}
 		[CRepr]
-		public struct CIECHROMA
-		{
+		public struct CIECHROMA		{
 			public int32 x;
 			public int32 y;
 			public int32 Y;
 		}
 		[CRepr]
-		public struct COLORINFO
-		{
+		public struct COLORINFO		{
 			public CIECHROMA Red;
 			public CIECHROMA Green;
 			public CIECHROMA Blue;
@@ -1817,8 +1740,7 @@ namespace Win32
 			public int32 MagentaInYellowDye;
 		}
 		[CRepr]
-		public struct CDDDXGK_REDIRBITMAPPRESENTINFO
-		{
+		public struct CDDDXGK_REDIRBITMAPPRESENTINFO		{
 			public uint32 NumDirtyRects;
 			public RECT* DirtyRect;
 			public uint32 NumContexts;
@@ -1826,8 +1748,7 @@ namespace Win32
 			public BOOLEAN bDoNotSynchronizeWithDxContent;
 		}
 		[CRepr]
-		public struct GDIINFO
-		{
+		public struct GDIINFO		{
 			public uint32 ulVersion;
 			public uint32 ulTechnology;
 			public uint32 ulHorzSize;
@@ -1875,15 +1796,13 @@ namespace Win32
 			public uint32 ulPhysicalPixelGamma;
 		}
 		[CRepr]
-		public struct BRUSHOBJ
-		{
+		public struct BRUSHOBJ		{
 			public uint32 iSolidColor;
 			public void* pvRbrush;
 			public uint32 flColorType;
 		}
 		[CRepr]
-		public struct CLIPOBJ
-		{
+		public struct CLIPOBJ		{
 			public uint32 iUniq;
 			public RECTL rclBounds;
 			public uint8 iDComplexity;
@@ -1892,16 +1811,14 @@ namespace Win32
 			public uint8 fjOptions;
 		}
 		[CRepr]
-		public struct DRIVEROBJ
-		{
+		public struct DRIVEROBJ		{
 			public void* pvObj;
 			public FREEOBJPROC pFreeProc;
 			public HDEV hdev;
 			public DHPDEV dhpdev;
 		}
 		[CRepr]
-		public struct FONTOBJ
-		{
+		public struct FONTOBJ		{
 			public uint32 iUniq;
 			public uint32 iFace;
 			public uint32 cxMax;
@@ -1914,24 +1831,20 @@ namespace Win32
 			public void* pvProducer;
 		}
 		[CRepr]
-		public struct BLENDOBJ
-		{
+		public struct BLENDOBJ		{
 			public BLENDFUNCTION BlendFunction;
 		}
 		[CRepr]
-		public struct PALOBJ
-		{
+		public struct PALOBJ		{
 			public uint32 ulReserved;
 		}
 		[CRepr]
-		public struct PATHOBJ
-		{
+		public struct PATHOBJ		{
 			public uint32 fl;
 			public uint32 cCurves;
 		}
 		[CRepr]
-		public struct SURFOBJ
-		{
+		public struct SURFOBJ		{
 			public DHSURF dhsurf;
 			public HSURF hsurf;
 			public DHPDEV dhpdev;
@@ -1947,21 +1860,18 @@ namespace Win32
 			public uint16 fjBitmap;
 		}
 		[CRepr]
-		public struct WNDOBJ
-		{
+		public struct WNDOBJ		{
 			public CLIPOBJ coClient;
 			public void* pvConsumer;
 			public RECTL rclClient;
 			public SURFOBJ* psoOwner;
 		}
 		[CRepr]
-		public struct XFORMOBJ
-		{
+		public struct XFORMOBJ		{
 			public uint32 ulReserved;
 		}
 		[CRepr]
-		public struct XLATEOBJ
-		{
+		public struct XLATEOBJ		{
 			public uint32 iUniq;
 			public uint32 flXlate;
 			public uint16 iSrcType;
@@ -1970,34 +1880,29 @@ namespace Win32
 			public uint32* pulXlate;
 		}
 		[CRepr]
-		public struct ENUMRECTS
-		{
+		public struct ENUMRECTS		{
 			public uint32 c;
 			public RECTL[0] arcl;
 		}
 		[CRepr]
-		public struct GLYPHBITS
-		{
+		public struct GLYPHBITS		{
 			public POINTL ptlOrigin;
 			public SIZE sizlBitmap;
 			public uint8[0] aj;
 		}
 		[CRepr, Union]
-		public struct GLYPHDEF
-		{
+		public struct GLYPHDEF		{
 			public GLYPHBITS* pgb;
 			public PATHOBJ* ppo;
 		}
 		[CRepr]
-		public struct GLYPHPOS
-		{
+		public struct GLYPHPOS		{
 			public uint32 hg;
 			public GLYPHDEF* pgdf;
 			public POINTL ptl;
 		}
 		[CRepr]
-		public struct GLYPHDATA
-		{
+		public struct GLYPHDATA		{
 			public GLYPHDEF gdf;
 			public uint32 hg;
 			public int32 fxD;
@@ -2009,8 +1914,7 @@ namespace Win32
 			public POINTQF ptqD;
 		}
 		[CRepr]
-		public struct STROBJ
-		{
+		public struct STROBJ		{
 			public uint32 cGlyphs;
 			public uint32 flAccel;
 			public uint32 ulCharInc;
@@ -2019,8 +1923,7 @@ namespace Win32
 			public PWSTR pwszOrg;
 		}
 		[CRepr]
-		public struct FONTINFO
-		{
+		public struct FONTINFO		{
 			public uint32 cjThis;
 			public uint32 flCaps;
 			public uint32 cGlyphsSupported;
@@ -2030,21 +1933,18 @@ namespace Win32
 			public uint32 cjMaxGlyph32;
 		}
 		[CRepr]
-		public struct PATHDATA
-		{
+		public struct PATHDATA		{
 			public uint32 flags;
 			public uint32 count;
 			public POINTFIX* pptfx;
 		}
 		[CRepr]
-		public struct RUN
-		{
+		public struct RUN		{
 			public int32 iStart;
 			public int32 iStop;
 		}
 		[CRepr]
-		public struct CLIPLINE
-		{
+		public struct CLIPLINE		{
 			public POINTFIX ptfxA;
 			public POINTFIX ptfxB;
 			public int32 lStyleState;
@@ -2052,31 +1952,27 @@ namespace Win32
 			public RUN[0] arun;
 		}
 		[CRepr]
-		public struct PERBANDINFO
-		{
+		public struct PERBANDINFO		{
 			public BOOL bRepeatThisBand;
 			public SIZE szlBand;
 			public uint32 ulHorzRes;
 			public uint32 ulVertRes;
 		}
 		[CRepr]
-		public struct GAMMARAMP
-		{
+		public struct GAMMARAMP		{
 			public uint16[256] Red;
 			public uint16[256] Green;
 			public uint16[256] Blue;
 		}
 		[CRepr]
-		public struct DEVHTINFO
-		{
+		public struct DEVHTINFO		{
 			public uint32 HTFlags;
 			public uint32 HTPatternSize;
 			public uint32 DevPelsDPI;
 			public COLORINFO ColorInfo;
 		}
 		[CRepr]
-		public struct DEVHTADJDATA
-		{
+		public struct DEVHTADJDATA		{
 			public uint32 DeviceFlags;
 			public uint32 DeviceXDPI;
 			public uint32 DeviceYDPI;
@@ -2084,21 +1980,18 @@ namespace Win32
 			public DEVHTINFO* pAdjHTInfo;
 		}
 		[CRepr]
-		public struct TYPE1_FONT
-		{
+		public struct TYPE1_FONT		{
 			public HANDLE hPFM;
 			public HANDLE hPFB;
 			public uint32 ulIdentifier;
 		}
 		[CRepr]
-		public struct ENGSAFESEMAPHORE
-		{
+		public struct ENGSAFESEMAPHORE		{
 			public HSEMAPHORE hsem;
 			public int32 lCount;
 		}
 		[CRepr]
-		public struct FLOATOBJ_XFORM
-		{
+		public struct FLOATOBJ_XFORM		{
 			public float eM11;
 			public float eM12;
 			public float eM21;
@@ -2107,8 +2000,7 @@ namespace Win32
 			public float eDy;
 		}
 		[CRepr]
-		public struct ENG_TIME_FIELDS
-		{
+		public struct ENG_TIME_FIELDS		{
 			public uint16 usYear;
 			public uint16 usMonth;
 			public uint16 usDay;
@@ -2119,46 +2011,39 @@ namespace Win32
 			public uint16 usWeekday;
 		}
 		[CRepr]
-		public struct EMFINFO
-		{
+		public struct EMFINFO		{
 			public uint32 nSize;
 			public HDC hdc;
 			public uint8* pvEMF;
 			public uint8* pvCurrentRecord;
 		}
 		[CRepr]
-		public struct DRH_APIBITMAPDATA
-		{
+		public struct DRH_APIBITMAPDATA		{
 			public SURFOBJ* pso;
 			public BOOL b;
 		}
 		[CRepr]
-		public struct INDIRECT_DISPLAY_INFO
-		{
+		public struct INDIRECT_DISPLAY_INFO		{
 			public LUID DisplayAdapterLuid;
 			public uint32 Flags;
 			public uint32 NumMonitors;
 			public uint32 DisplayAdapterTargetBase;
 		}
 		[CRepr]
-		public struct VIDEO_VDM
-		{
+		public struct VIDEO_VDM		{
 			public HANDLE ProcessHandle;
 		}
 		[CRepr]
-		public struct VIDEO_REGISTER_VDM
-		{
+		public struct VIDEO_REGISTER_VDM		{
 			public uint32 MinimumStateSize;
 		}
 		[CRepr]
-		public struct VIDEO_MONITOR_DESCRIPTOR
-		{
+		public struct VIDEO_MONITOR_DESCRIPTOR		{
 			public uint32 DescriptorSize;
 			public uint8[0] Descriptor;
 		}
 		[CRepr]
-		public struct DXGK_WIN32K_PARAM_DATA
-		{
+		public struct DXGK_WIN32K_PARAM_DATA		{
 			public void* PathsArray;
 			public void* ModesArray;
 			public uint32 NumPathArrayElements;
@@ -2166,8 +2051,7 @@ namespace Win32
 			public uint32 SDCFlags;
 		}
 		[CRepr]
-		public struct VIDEO_WIN32K_CALLBACKS_PARAMS
-		{
+		public struct VIDEO_WIN32K_CALLBACKS_PARAMS		{
 			public VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE CalloutType;
 			public void* PhysDisp;
 			public uint Param;
@@ -2178,8 +2062,7 @@ namespace Win32
 			public BOOLEAN WaitForQueueReady;
 		}
 		[CRepr]
-		public struct VIDEO_WIN32K_CALLBACKS
-		{
+		public struct VIDEO_WIN32K_CALLBACKS		{
 			public void* PhysDisp;
 			public PVIDEO_WIN32K_CALLOUT Callout;
 			public uint32 bACPI;
@@ -2187,14 +2070,12 @@ namespace Win32
 			public uint32 DualviewFlags;
 		}
 		[CRepr]
-		public struct VIDEO_DEVICE_SESSION_STATUS
-		{
+		public struct VIDEO_DEVICE_SESSION_STATUS		{
 			public uint32 bEnable;
 			public uint32 bSuccess;
 		}
 		[CRepr]
-		public struct VIDEO_HARDWARE_STATE_HEADER
-		{
+		public struct VIDEO_HARDWARE_STATE_HEADER		{
 			public uint32 Length;
 			public uint8[48] PortValue;
 			public uint32 AttribIndexDataState;
@@ -2227,25 +2108,21 @@ namespace Win32
 			public void* FrameBufferData;
 		}
 		[CRepr]
-		public struct VIDEO_HARDWARE_STATE
-		{
+		public struct VIDEO_HARDWARE_STATE		{
 			public VIDEO_HARDWARE_STATE_HEADER* StateHeader;
 			public uint32 StateLength;
 		}
 		[CRepr]
-		public struct VIDEO_NUM_MODES
-		{
+		public struct VIDEO_NUM_MODES		{
 			public uint32 NumModes;
 			public uint32 ModeInformationLength;
 		}
 		[CRepr]
-		public struct VIDEO_MODE
-		{
+		public struct VIDEO_MODE		{
 			public uint32 RequestedMode;
 		}
 		[CRepr]
-		public struct VIDEO_MODE_INFORMATION
-		{
+		public struct VIDEO_MODE_INFORMATION		{
 			public uint32 Length;
 			public uint32 ModeIndex;
 			public uint32 VisScreenWidth;
@@ -2268,51 +2145,44 @@ namespace Win32
 			public uint32 DriverSpecificAttributeFlags;
 		}
 		[CRepr]
-		public struct VIDEO_LOAD_FONT_INFORMATION
-		{
+		public struct VIDEO_LOAD_FONT_INFORMATION		{
 			public uint16 WidthInPixels;
 			public uint16 HeightInPixels;
 			public uint32 FontSize;
 			public uint8[0] Font;
 		}
 		[CRepr]
-		public struct VIDEO_PALETTE_DATA
-		{
+		public struct VIDEO_PALETTE_DATA		{
 			public uint16 NumEntries;
 			public uint16 FirstEntry;
 			public uint16[0] Colors;
 		}
 		[CRepr]
-		public struct VIDEO_CLUTDATA
-		{
+		public struct VIDEO_CLUTDATA		{
 			public uint8 Red;
 			public uint8 Green;
 			public uint8 Blue;
 			public uint8 Unused;
 		}
 		[CRepr]
-		public struct VIDEO_CLUT
-		{
+		public struct VIDEO_CLUT		{
 			public uint16 NumEntries;
 			public uint16 FirstEntry;
 			public _Anonymous_e__Union[0] LookupTable;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public VIDEO_CLUTDATA RgbArray;
 				public uint32 RgbLong;
 			}
 		}
 		[CRepr]
-		public struct VIDEO_CURSOR_POSITION
-		{
+		public struct VIDEO_CURSOR_POSITION		{
 			public int16 Column;
 			public int16 Row;
 		}
 		[CRepr]
-		public struct VIDEO_CURSOR_ATTRIBUTES
-		{
+		public struct VIDEO_CURSOR_ATTRIBUTES		{
 			public uint16 Width;
 			public uint16 Height;
 			public int16 Column;
@@ -2321,14 +2191,12 @@ namespace Win32
 			public uint8 Enable;
 		}
 		[CRepr]
-		public struct VIDEO_POINTER_POSITION
-		{
+		public struct VIDEO_POINTER_POSITION		{
 			public int16 Column;
 			public int16 Row;
 		}
 		[CRepr]
-		public struct VIDEO_POINTER_ATTRIBUTES
-		{
+		public struct VIDEO_POINTER_ATTRIBUTES		{
 			public uint32 Flags;
 			public uint32 Width;
 			public uint32 Height;
@@ -2339,8 +2207,7 @@ namespace Win32
 			public uint8[0] Pixels;
 		}
 		[CRepr]
-		public struct VIDEO_POINTER_CAPABILITIES
-		{
+		public struct VIDEO_POINTER_CAPABILITIES		{
 			public uint32 Flags;
 			public uint32 MaxWidth;
 			public uint32 MaxHeight;
@@ -2348,8 +2215,7 @@ namespace Win32
 			public uint32 HWPtrBitmapEnd;
 		}
 		[CRepr]
-		public struct VIDEO_BANK_SELECT
-		{
+		public struct VIDEO_BANK_SELECT		{
 			public uint32 Length;
 			public uint32 Size;
 			public uint32 BankingFlags;
@@ -2365,43 +2231,37 @@ namespace Win32
 			public uint32 PlanarHCDisableCodeOffset;
 		}
 		[CRepr]
-		public struct VIDEO_MEMORY
-		{
+		public struct VIDEO_MEMORY		{
 			public void* RequestedVirtualAddress;
 		}
 		[CRepr]
-		public struct VIDEO_SHARE_MEMORY
-		{
+		public struct VIDEO_SHARE_MEMORY		{
 			public HANDLE ProcessHandle;
 			public uint32 ViewOffset;
 			public uint32 ViewSize;
 			public void* RequestedVirtualAddress;
 		}
 		[CRepr]
-		public struct VIDEO_SHARE_MEMORY_INFORMATION
-		{
+		public struct VIDEO_SHARE_MEMORY_INFORMATION		{
 			public uint32 SharedViewOffset;
 			public uint32 SharedViewSize;
 			public void* VirtualAddress;
 		}
 		[CRepr]
-		public struct VIDEO_MEMORY_INFORMATION
-		{
+		public struct VIDEO_MEMORY_INFORMATION		{
 			public void* VideoRamBase;
 			public uint32 VideoRamLength;
 			public void* FrameBufferBase;
 			public uint32 FrameBufferLength;
 		}
 		[CRepr]
-		public struct VIDEO_PUBLIC_ACCESS_RANGES
-		{
+		public struct VIDEO_PUBLIC_ACCESS_RANGES		{
 			public uint32 InIoSpace;
 			public uint32 MappedInIoSpace;
 			public void* VirtualAddress;
 		}
 		[CRepr]
-		public struct VIDEO_COLOR_CAPABILITIES
-		{
+		public struct VIDEO_COLOR_CAPABILITIES		{
 			public uint32 Length;
 			public uint32 AttributeFlags;
 			public int32 RedPhosphoreDecay;
@@ -2422,123 +2282,104 @@ namespace Win32
 			public int32 BlueGamma;
 		}
 		[CRepr]
-		public struct VIDEO_POWER_MANAGEMENT
-		{
+		public struct VIDEO_POWER_MANAGEMENT		{
 			public uint32 Length;
 			public uint32 DPMSVersion;
 			public uint32 PowerState;
 		}
 		[CRepr]
-		public struct VIDEO_COLOR_LUT_DATA
-		{
+		public struct VIDEO_COLOR_LUT_DATA		{
 			public uint32 Length;
 			public uint32 LutDataFormat;
 			public uint8[0] LutData;
 		}
 		[CRepr]
-		public struct VIDEO_LUT_RGB256WORDS
-		{
+		public struct VIDEO_LUT_RGB256WORDS		{
 			public uint16[256] Red;
 			public uint16[256] Green;
 			public uint16[256] Blue;
 		}
 		[CRepr]
-		public struct BANK_POSITION
-		{
+		public struct BANK_POSITION		{
 			public uint32 ReadBankPosition;
 			public uint32 WriteBankPosition;
 		}
 		[CRepr]
-		public struct DISPLAY_BRIGHTNESS
-		{
+		public struct DISPLAY_BRIGHTNESS		{
 			public uint8 ucDisplayPolicy;
 			public uint8 ucACBrightness;
 			public uint8 ucDCBrightness;
 		}
 		[CRepr]
-		public struct VIDEO_BRIGHTNESS_POLICY
-		{
+		public struct VIDEO_BRIGHTNESS_POLICY		{
 			public BOOLEAN DefaultToBiosPolicy;
 			public uint8 LevelCount;
 			public _Anonymous_e__Struct[0] Level;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint8 BatteryLevel;
 				public uint8 Brightness;
 			}
 		}
 		[CRepr]
-		public struct FSCNTL_SCREEN_INFO
-		{
+		public struct FSCNTL_SCREEN_INFO		{
 			public COORD Position;
 			public COORD ScreenSize;
 			public uint32 nNumberOfChars;
 		}
 		[CRepr]
-		public struct FONT_IMAGE_INFO
-		{
+		public struct FONT_IMAGE_INFO		{
 			public COORD FontSize;
 			public uint8* ImageBits;
 		}
 		[CRepr]
-		public struct CHAR_IMAGE_INFO
-		{
+		public struct CHAR_IMAGE_INFO		{
 			public CHAR_INFO CharInfo;
 			public FONT_IMAGE_INFO FontImageInfo;
 		}
 		[CRepr]
-		public struct VGA_CHAR
-		{
+		public struct VGA_CHAR		{
 			public CHAR Char;
 			public CHAR Attributes;
 		}
 		[CRepr]
-		public struct FSVIDEO_COPY_FRAME_BUFFER
-		{
+		public struct FSVIDEO_COPY_FRAME_BUFFER		{
 			public FSCNTL_SCREEN_INFO SrcScreen;
 			public FSCNTL_SCREEN_INFO DestScreen;
 		}
 		[CRepr]
-		public struct FSVIDEO_WRITE_TO_FRAME_BUFFER
-		{
+		public struct FSVIDEO_WRITE_TO_FRAME_BUFFER		{
 			public CHAR_IMAGE_INFO* SrcBuffer;
 			public FSCNTL_SCREEN_INFO DestScreen;
 		}
 		[CRepr]
-		public struct FSVIDEO_REVERSE_MOUSE_POINTER
-		{
+		public struct FSVIDEO_REVERSE_MOUSE_POINTER		{
 			public FSCNTL_SCREEN_INFO Screen;
 			public uint32 dwType;
 		}
 		[CRepr]
-		public struct FSVIDEO_MODE_INFORMATION
-		{
+		public struct FSVIDEO_MODE_INFORMATION		{
 			public VIDEO_MODE_INFORMATION VideoMode;
 			public VIDEO_MEMORY_INFORMATION VideoMemory;
 		}
 		[CRepr]
-		public struct FSVIDEO_SCREEN_INFORMATION
-		{
+		public struct FSVIDEO_SCREEN_INFORMATION		{
 			public COORD ScreenSize;
 			public COORD FontSize;
 		}
 		[CRepr]
-		public struct FSVIDEO_CURSOR_POSITION
-		{
+		public struct FSVIDEO_CURSOR_POSITION		{
 			public VIDEO_CURSOR_POSITION Coord;
 			public uint32 dwType;
 		}
 		[CRepr]
-		public struct ENG_EVENT
-		{
+		public struct ENG_EVENT		{
 			public void* pKEvent;
 			public uint32 fFlags;
 		}
 		[CRepr]
-		public struct VIDEO_PERFORMANCE_COUNTER
-		{
+		public struct VIDEO_PERFORMANCE_COUNTER		{
 			public uint64[10] NbOfAllocationEvicted;
 			public uint64[10] NbOfAllocationMarked;
 			public uint64[10] NbOfAllocationRestored;
@@ -2562,126 +2403,107 @@ namespace Win32
 			public uint64 KBytesRotateOut;
 		}
 		[CRepr]
-		public struct VIDEO_QUERY_PERFORMANCE_COUNTER
-		{
+		public struct VIDEO_QUERY_PERFORMANCE_COUNTER		{
 			public uint32 BufferSize;
 			public VIDEO_PERFORMANCE_COUNTER* Buffer;
 		}
 		[CRepr]
-		public struct PANEL_QUERY_BRIGHTNESS_CAPS
-		{
+		public struct PANEL_QUERY_BRIGHTNESS_CAPS		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct BRIGHTNESS_LEVEL
-		{
+		public struct BRIGHTNESS_LEVEL		{
 			public uint8 Count;
 			public uint8[103] Level;
 		}
 		[CRepr]
-		public struct BRIGHTNESS_NIT_RANGE
-		{
+		public struct BRIGHTNESS_NIT_RANGE		{
 			public uint32 MinLevelInMillinit;
 			public uint32 MaxLevelInMillinit;
 			public uint32 StepSizeInMillinit;
 		}
 		[CRepr]
-		public struct BRIGHTNESS_NIT_RANGES
-		{
+		public struct BRIGHTNESS_NIT_RANGES		{
 			public uint32 NormalRangeCount;
 			public uint32 RangeCount;
 			public uint32 PreferredMaximumBrightness;
 			public BRIGHTNESS_NIT_RANGE[16] SupportedRanges;
 		}
 		[CRepr]
-		public struct PANEL_QUERY_BRIGHTNESS_RANGES
-		{
+		public struct PANEL_QUERY_BRIGHTNESS_RANGES		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public BRIGHTNESS_LEVEL BrightnessLevel;
 				public BRIGHTNESS_NIT_RANGES NitRanges;
 			}
 		}
 		[CRepr]
-		public struct PANEL_GET_BRIGHTNESS
-		{
+		public struct PANEL_GET_BRIGHTNESS		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 Level;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 CurrentInMillinits;
 					public uint32 TargetInMillinits;
 				}
 			}
 		}
 		[CRepr]
-		public struct CHROMATICITY_COORDINATE
-		{
+		public struct CHROMATICITY_COORDINATE		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct PANEL_BRIGHTNESS_SENSOR_DATA
-		{
+		public struct PANEL_BRIGHTNESS_SENSOR_DATA		{
 			public _Anonymous_e__Union Anonymous;
 			public float AlsReading;
 			public CHROMATICITY_COORDINATE ChromaticityCoordinate;
 			public float ColorTemperature;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PANEL_SET_BRIGHTNESS
-		{
+		public struct PANEL_SET_BRIGHTNESS		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 Level;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 Millinits;
 					public uint32 TransitionTimeInMs;
 					public PANEL_BRIGHTNESS_SENSOR_DATA SensorData;
@@ -2689,139 +2511,118 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PANEL_SET_BRIGHTNESS_STATE
-		{
+		public struct PANEL_SET_BRIGHTNESS_STATE		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct PANEL_SET_BACKLIGHT_OPTIMIZATION
-		{
+		public struct PANEL_SET_BACKLIGHT_OPTIMIZATION		{
 			public BACKLIGHT_OPTIMIZATION_LEVEL Level;
 		}
 		[CRepr]
-		public struct BACKLIGHT_REDUCTION_GAMMA_RAMP
-		{
+		public struct BACKLIGHT_REDUCTION_GAMMA_RAMP		{
 			public uint16[256] R;
 			public uint16[256] G;
 			public uint16[256] B;
 		}
 		[CRepr]
-		public struct PANEL_GET_BACKLIGHT_REDUCTION
-		{
+		public struct PANEL_GET_BACKLIGHT_REDUCTION		{
 			public uint16 BacklightUsersetting;
 			public uint16 BacklightEffective;
 			public BACKLIGHT_REDUCTION_GAMMA_RAMP GammaRamp;
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_DATA_CAP
-		{
+		public struct COLORSPACE_TRANSFORM_DATA_CAP		{
 			public COLORSPACE_TRANSFORM_DATA_TYPE DataType;
 			public _Anonymous_e__Union Anonymous;
 			public float NumericRangeMin;
 			public float NumericRangeMax;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public uint32 _bitfield;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_1DLUT_CAP
-		{
+		public struct COLORSPACE_TRANSFORM_1DLUT_CAP		{
 			public uint32 NumberOfLUTEntries;
 			public COLORSPACE_TRANSFORM_DATA_CAP DataCap;
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_MATRIX_CAP
-		{
+		public struct COLORSPACE_TRANSFORM_MATRIX_CAP		{
 			public _Anonymous_e__Union Anonymous;
 			public COLORSPACE_TRANSFORM_DATA_CAP DataCap;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_TARGET_CAPS
-		{
+		public struct COLORSPACE_TRANSFORM_TARGET_CAPS		{
 			public COLORSPACE_TRANSFORM_TARGET_CAPS_VERSION Version;
 			public COLORSPACE_TRANSFORM_1DLUT_CAP LookupTable1DDegammaCap;
 			public COLORSPACE_TRANSFORM_MATRIX_CAP ColorMatrix3x3Cap;
 			public COLORSPACE_TRANSFORM_1DLUT_CAP LookupTable1DRegammaCap;
 		}
 		[CRepr]
-		public struct GAMMA_RAMP_RGB256x3x16
-		{
+		public struct GAMMA_RAMP_RGB256x3x16		{
 			public uint16[256] Red;
 			public uint16[256] Green;
 			public uint16[256] Blue;
 		}
 		[CRepr]
-		public struct GAMMA_RAMP_RGB
-		{
+		public struct GAMMA_RAMP_RGB		{
 			public float Red;
 			public float Green;
 			public float Blue;
 		}
 		[CRepr]
-		public struct GAMMA_RAMP_DXGI_1
-		{
+		public struct GAMMA_RAMP_DXGI_1		{
 			public GAMMA_RAMP_RGB Scale;
 			public GAMMA_RAMP_RGB Offset;
 			public GAMMA_RAMP_RGB[1025] GammaCurve;
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_3x4
-		{
+		public struct COLORSPACE_TRANSFORM_3x4		{
 			public float[12] ColorMatrix3x4;
 			public float ScalarMultiplier;
 			public GAMMA_RAMP_RGB[4096] LookupTable1D;
 		}
 		[CRepr]
-		public struct OUTPUT_WIRE_FORMAT
-		{
+		public struct OUTPUT_WIRE_FORMAT		{
 			public OUTPUT_COLOR_ENCODING ColorEncoding;
 			public uint32 BitsPerPixel;
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_MATRIX_V2
-		{
+		public struct COLORSPACE_TRANSFORM_MATRIX_V2		{
 			public COLORSPACE_TRANSFORM_STAGE_CONTROL StageControlLookupTable1DDegamma;
 			public GAMMA_RAMP_RGB[4096] LookupTable1DDegamma;
 			public COLORSPACE_TRANSFORM_STAGE_CONTROL StageControlColorMatrix3x3;
@@ -2830,14 +2631,12 @@ namespace Win32
 			public GAMMA_RAMP_RGB[4096] LookupTable1DRegamma;
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM
-		{
+		public struct COLORSPACE_TRANSFORM		{
 			public COLORSPACE_TRANSFORM_TYPE Type;
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Data_e__Union
-			{
+			public struct _Data_e__Union			{
 				public GAMMA_RAMP_RGB256x3x16 Rgb256x3x16;
 				public GAMMA_RAMP_DXGI_1 Dxgi1;
 				public COLORSPACE_TRANSFORM_3x4 T3x4;
@@ -2845,20 +2644,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct COLORSPACE_TRANSFORM_SET_INPUT
-		{
+		public struct COLORSPACE_TRANSFORM_SET_INPUT		{
 			public OUTPUT_WIRE_COLOR_SPACE_TYPE OutputWireColorSpaceExpected;
 			public OUTPUT_WIRE_FORMAT OutputWireFormatExpected;
 			public COLORSPACE_TRANSFORM ColorSpaceTransform;
 		}
 		[CRepr]
-		public struct SET_ACTIVE_COLOR_PROFILE_NAME
-		{
+		public struct SET_ACTIVE_COLOR_PROFILE_NAME		{
 			public char16[0] ColorProfileName;
 		}
 		[CRepr]
-		public struct MIPI_DSI_CAPS
-		{
+		public struct MIPI_DSI_CAPS		{
 			public uint8 DSITypeMajor;
 			public uint8 DSITypeMinor;
 			public uint8 SpecVersionMajor;
@@ -2879,42 +2675,36 @@ namespace Win32
 			public uint8 LengthLo;
 		}
 		[CRepr]
-		public struct MIPI_DSI_PACKET
-		{
+		public struct MIPI_DSI_PACKET		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			public uint8 EccFiller;
 			public uint8[8] Payload;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 LongWriteWordCount;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 Data0;
 					public uint8 Data1;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint8 DataId;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct MIPI_DSI_TRANSMISSION
-		{
+		public struct MIPI_DSI_TRANSMISSION		{
 			public uint32 TotalBufferSize;
 			public uint8 PacketCount;
 			public uint8 FailedPacket;
@@ -2926,33 +2716,28 @@ namespace Win32
 			public MIPI_DSI_PACKET[0] Packets;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint16 _bitfield;
 			}
 		}
 		[CRepr]
-		public struct MIPI_DSI_RESET
-		{
+		public struct MIPI_DSI_RESET		{
 			public uint32 Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Results;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct FLOATOBJ
-		{
+		public struct FLOATOBJ		{
 			public uint32 ul1;
 			public uint32 ul2;
 		}

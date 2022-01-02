@@ -12,8 +12,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PDF_RENDER_PARAMS
-		{
+		public struct PDF_RENDER_PARAMS		{
 			public D2D_RECT_F SourceRect;
 			public uint32 DestinationWidth;
 			public uint32 DestinationHeight;

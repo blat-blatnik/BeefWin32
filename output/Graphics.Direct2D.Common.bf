@@ -109,103 +109,88 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D2D_COLOR_F
-		{
+		public struct D2D_COLOR_F		{
 			public float r;
 			public float g;
 			public float b;
 			public float a;
 		}
 		[CRepr]
-		public struct D2D1_COLOR_F
-		{
+		public struct D2D1_COLOR_F		{
 			public float r;
 			public float g;
 			public float b;
 			public float a;
 		}
 		[CRepr]
-		public struct D2D1_PIXEL_FORMAT
-		{
+		public struct D2D1_PIXEL_FORMAT		{
 			public DXGI_FORMAT format;
 			public D2D1_ALPHA_MODE alphaMode;
 		}
 		[CRepr]
-		public struct D2D_POINT_2U
-		{
+		public struct D2D_POINT_2U		{
 			public uint32 x;
 			public uint32 y;
 		}
 		[CRepr]
-		public struct D2D_POINT_2F
-		{
+		public struct D2D_POINT_2F		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct D2D_VECTOR_2F
-		{
+		public struct D2D_VECTOR_2F		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct D2D_VECTOR_3F
-		{
+		public struct D2D_VECTOR_3F		{
 			public float x;
 			public float y;
 			public float z;
 		}
 		[CRepr]
-		public struct D2D_VECTOR_4F
-		{
+		public struct D2D_VECTOR_4F		{
 			public float x;
 			public float y;
 			public float z;
 			public float w;
 		}
 		[CRepr]
-		public struct D2D_RECT_F
-		{
+		public struct D2D_RECT_F		{
 			public float left;
 			public float top;
 			public float right;
 			public float bottom;
 		}
 		[CRepr]
-		public struct D2D_RECT_U
-		{
+		public struct D2D_RECT_U		{
 			public uint32 left;
 			public uint32 top;
 			public uint32 right;
 			public uint32 bottom;
 		}
 		[CRepr]
-		public struct D2D_SIZE_F
-		{
+		public struct D2D_SIZE_F		{
 			public float width;
 			public float height;
 		}
 		[CRepr]
-		public struct D2D_SIZE_U
-		{
+		public struct D2D_SIZE_U		{
 			public uint32 width;
 			public uint32 height;
 		}
 		[CRepr]
-		public struct D2D_MATRIX_3X2_F
-		{
+		public struct D2D_MATRIX_3X2_F		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public float[6] m;
 				
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public float m11;
 					public float m12;
 					public float m21;
@@ -214,8 +199,7 @@ namespace Win32
 					public float dy;
 				}
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _21;
@@ -226,19 +210,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D2D_MATRIX_4X3_F
-		{
+		public struct D2D_MATRIX_4X3_F		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public float[12] m;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _13;
@@ -255,19 +236,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D2D_MATRIX_4X4_F
-		{
+		public struct D2D_MATRIX_4X4_F		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public float[16] m;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _13;
@@ -288,19 +266,16 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D2D_MATRIX_5X4_F
-		{
+		public struct D2D_MATRIX_5X4_F		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public float[20] m;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public float _11;
 					public float _12;
 					public float _13;
@@ -325,8 +300,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct D2D1_BEZIER_SEGMENT
-		{
+		public struct D2D1_BEZIER_SEGMENT		{
 			public D2D_POINT_2F point1;
 			public D2D_POINT_2F point2;
 			public D2D_POINT_2F point3;

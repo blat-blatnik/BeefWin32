@@ -47,11 +47,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IMarshal.VTable
-			{
-			}
+			public struct VTable : IMarshal.VTable {}
 		}
 		[CRepr]
 		public struct IMarshalingStream : IStream

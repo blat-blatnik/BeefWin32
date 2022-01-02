@@ -219,8 +219,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ENHANCED_STORAGE_PASSWORD_SILO_INFORMATION
-		{
+		public struct ENHANCED_STORAGE_PASSWORD_SILO_INFORMATION		{
 			public uint8 CurrentAdminFailures;
 			public uint8 CurrentUserFailures;
 			public uint32 TotalUserAuthenticationCount;
@@ -249,13 +248,11 @@ namespace Win32
 			public uint16 MaxChallengeSize;
 		}
 		[CRepr]
-		public struct ACT_AUTHORIZATION_STATE
-		{
+		public struct ACT_AUTHORIZATION_STATE		{
 			public uint32 ulState;
 		}
 		[CRepr]
-		public struct SILO_INFO
-		{
+		public struct SILO_INFO		{
 			public uint32 ulSTID;
 			public uint8 SpecificationMajor;
 			public uint8 SpecificationMinor;

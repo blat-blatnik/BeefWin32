@@ -358,22 +358,19 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WDS_CLI_CRED
-		{
+		public struct WDS_CLI_CRED		{
 			public PWSTR pwszUserName;
 			public PWSTR pwszDomain;
 			public PWSTR pwszPassword;
 		}
 		[CRepr]
-		public struct PXE_DHCP_OPTION
-		{
+		public struct PXE_DHCP_OPTION		{
 			public uint8 OptionType;
 			public uint8 OptionLength;
 			public uint8[0] OptionValue;
 		}
 		[CRepr]
-		public struct PXE_DHCP_MESSAGE
-		{
+		public struct PXE_DHCP_MESSAGE		{
 			public uint8 Operation;
 			public uint8 HardwareAddressType;
 			public uint8 HardwareAddressLength;
@@ -392,28 +389,24 @@ namespace Win32
 			public PXE_DHCP_OPTION Option;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8[4] bMagicCookie;
 				public uint32 uMagicCookie;
 			}
 		}
 		[CRepr]
-		public struct PXE_DHCPV6_OPTION
-		{
+		public struct PXE_DHCPV6_OPTION		{
 			public uint16 OptionCode;
 			public uint16 DataLength;
 			public uint8[0] Data;
 		}
 		[CRepr]
-		public struct PXE_DHCPV6_MESSAGE_HEADER
-		{
+		public struct PXE_DHCPV6_MESSAGE_HEADER		{
 			public uint8 MessageType;
 			public uint8[0] Message;
 		}
 		[CRepr]
-		public struct PXE_DHCPV6_MESSAGE
-		{
+		public struct PXE_DHCPV6_MESSAGE		{
 			public uint8 MessageType;
 			public uint8 TransactionIDByte1;
 			public uint8 TransactionIDByte2;
@@ -421,8 +414,7 @@ namespace Win32
 			public PXE_DHCPV6_OPTION[0] Options;
 		}
 		[CRepr]
-		public struct PXE_DHCPV6_RELAY_MESSAGE
-		{
+		public struct PXE_DHCPV6_RELAY_MESSAGE		{
 			public uint8 MessageType;
 			public uint8 HopCount;
 			public uint8[16] LinkAddress;
@@ -430,8 +422,7 @@ namespace Win32
 			public PXE_DHCPV6_OPTION[0] Options;
 		}
 		[CRepr]
-		public struct PXE_PROVIDER
-		{
+		public struct PXE_PROVIDER		{
 			public uint32 uSizeOfStruct;
 			public PWSTR pwszName;
 			public PWSTR pwszFilePath;
@@ -439,52 +430,45 @@ namespace Win32
 			public uint32 uIndex;
 		}
 		[CRepr]
-		public struct PXE_ADDRESS
-		{
+		public struct PXE_ADDRESS		{
 			public uint32 uFlags;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 uAddrLen;
 			public uint16 uPort;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8[16] bAddress;
 				public uint32 uIpAddress;
 			}
 		}
 		[CRepr]
-		public struct PXE_DHCPV6_NESTED_RELAY_MESSAGE
-		{
+		public struct PXE_DHCPV6_NESTED_RELAY_MESSAGE		{
 			public PXE_DHCPV6_RELAY_MESSAGE* pRelayMessage;
 			public uint32 cbRelayMessage;
 			public void* pInterfaceIdOption;
 			public uint16 cbInterfaceIdOption;
 		}
 		[CRepr]
-		public struct WDS_TRANSPORTPROVIDER_INIT_PARAMS
-		{
+		public struct WDS_TRANSPORTPROVIDER_INIT_PARAMS		{
 			public uint32 ulLength;
 			public uint32 ulMcServerVersion;
 			public HKEY hRegistryKey;
 			public HANDLE hProvider;
 		}
 		[CRepr]
-		public struct WDS_TRANSPORTPROVIDER_SETTINGS
-		{
+		public struct WDS_TRANSPORTPROVIDER_SETTINGS		{
 			public uint32 ulLength;
 			public uint32 ulProviderVersion;
 		}
 		[CRepr]
-		public struct TRANSPORTCLIENT_SESSION_INFO
-		{
+		public struct TRANSPORTCLIENT_SESSION_INFO		{
 			public uint32 ulStructureLength;
 			public ULARGE_INTEGER ullFileSize;
 			public uint32 ulBlockSize;
 		}
 		[CRepr]
-		public struct WDS_TRANSPORTCLIENT_REQUEST
-		{
+		public struct WDS_TRANSPORTCLIENT_REQUEST		{
 			public uint32 ulLength;
 			public uint32 ulApiVersion;
 			public WDS_TRANSPORTCLIENT_REQUEST_AUTH_LEVEL ulAuthLevel;
@@ -497,8 +481,7 @@ namespace Win32
 			public uint32 ulProtocolDataLength;
 		}
 		[CRepr]
-		public struct WDS_TRANSPORTCLIENT_CALLBACKS
-		{
+		public struct WDS_TRANSPORTCLIENT_CALLBACKS		{
 			public PFN_WdsTransportClientSessionStart SessionStart;
 			public PFN_WdsTransportClientSessionStartEx SessionStartEx;
 			public PFN_WdsTransportClientReceiveContents ReceiveContents;
@@ -920,11 +903,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IWdsTransportNamespace.VTable
-			{
-			}
+			public struct VTable : IWdsTransportNamespace.VTable {}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceScheduledCast : IWdsTransportNamespace
@@ -948,11 +928,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable
-			{
-			}
+			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable {}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceScheduledCastAutoStart : IWdsTransportNamespaceScheduledCast

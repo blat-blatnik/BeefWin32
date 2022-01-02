@@ -319,29 +319,25 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DRAWPATRECT
-		{
+		public struct DRAWPATRECT		{
 			public POINT ptPosition;
 			public POINT ptSize;
 			public uint16 wStyle;
 			public uint16 wPattern;
 		}
 		[CRepr]
-		public struct PSINJECTDATA
-		{
+		public struct PSINJECTDATA		{
 			public uint32 DataBytes;
 			public PSINJECT_POINT InjectionPoint;
 			public uint16 PageNumber;
 		}
 		[CRepr]
-		public struct PSFEATURE_OUTPUT
-		{
+		public struct PSFEATURE_OUTPUT		{
 			public BOOL bPageIndependent;
 			public BOOL bSetPageDevice;
 		}
 		[CRepr]
-		public struct PSFEATURE_CUSTPAPER
-		{
+		public struct PSFEATURE_CUSTPAPER		{
 			public int32 lOrientation;
 			public int32 lWidth;
 			public int32 lHeight;
@@ -349,8 +345,7 @@ namespace Win32
 			public int32 lHeightOffset;
 		}
 		[CRepr]
-		public struct DOCINFOA
-		{
+		public struct DOCINFOA		{
 			public int32 cbSize;
 			public PSTR lpszDocName;
 			public PSTR lpszOutput;
@@ -358,8 +353,7 @@ namespace Win32
 			public uint32 fwType;
 		}
 		[CRepr]
-		public struct DOCINFOW
-		{
+		public struct DOCINFOW		{
 			public int32 cbSize;
 			public PWSTR lpszDocName;
 			public PWSTR lpszOutput;
@@ -367,50 +361,43 @@ namespace Win32
 			public uint32 fwType;
 		}
 		[CRepr]
-		public struct XPS_POINT
-		{
+		public struct XPS_POINT		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct XPS_SIZE
-		{
+		public struct XPS_SIZE		{
 			public float width;
 			public float height;
 		}
 		[CRepr]
-		public struct XPS_RECT
-		{
+		public struct XPS_RECT		{
 			public float x;
 			public float y;
 			public float width;
 			public float height;
 		}
 		[CRepr]
-		public struct XPS_DASH
-		{
+		public struct XPS_DASH		{
 			public float length;
 			public float gap;
 		}
 		[CRepr]
-		public struct XPS_GLYPH_INDEX
-		{
+		public struct XPS_GLYPH_INDEX		{
 			public int32 index;
 			public float advanceWidth;
 			public float horizontalOffset;
 			public float verticalOffset;
 		}
 		[CRepr]
-		public struct XPS_GLYPH_MAPPING
-		{
+		public struct XPS_GLYPH_MAPPING		{
 			public uint32 unicodeStringStart;
 			public uint16 unicodeStringLength;
 			public uint32 glyphIndicesStart;
 			public uint16 glyphIndicesLength;
 		}
 		[CRepr]
-		public struct XPS_MATRIX
-		{
+		public struct XPS_MATRIX		{
 			public float m11;
 			public float m12;
 			public float m21;
@@ -419,37 +406,32 @@ namespace Win32
 			public float m32;
 		}
 		[CRepr]
-		public struct XPS_COLOR
-		{
+		public struct XPS_COLOR		{
 			public XPS_COLOR_TYPE colorType;
 			public XPS_COLOR_VALUE value;
 			
 			[CRepr, Union]
-			public struct XPS_COLOR_VALUE
-			{
+			public struct XPS_COLOR_VALUE			{
 				public _sRGB_e__Struct sRGB;
 				public _scRGB_e__Struct scRGB;
 				public _context_e__Struct context;
 				
 				[CRepr]
-				public struct _scRGB_e__Struct
-				{
+				public struct _scRGB_e__Struct				{
 					public float alpha;
 					public float red;
 					public float green;
 					public float blue;
 				}
 				[CRepr]
-				public struct _sRGB_e__Struct
-				{
+				public struct _sRGB_e__Struct				{
 					public uint8 alpha;
 					public uint8 red;
 					public uint8 green;
 					public uint8 blue;
 				}
 				[CRepr]
-				public struct _context_e__Struct
-				{
+				public struct _context_e__Struct				{
 					public uint8 channelCount;
 					public float[9] channels;
 				}
@@ -1166,11 +1148,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IXpsOMPart.VTable
-			{
-			}
+			public struct VTable : IXpsOMPart.VTable {}
 		}
 		[CRepr]
 		public struct IXpsOMPartResources : IUnknown

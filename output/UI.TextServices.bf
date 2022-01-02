@@ -689,54 +689,46 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TS_STATUS
-		{
+		public struct TS_STATUS		{
 			public uint32 dwDynamicFlags;
 			public uint32 dwStaticFlags;
 		}
 		[CRepr]
-		public struct TS_TEXTCHANGE
-		{
+		public struct TS_TEXTCHANGE		{
 			public int32 acpStart;
 			public int32 acpOldEnd;
 			public int32 acpNewEnd;
 		}
 		[CRepr]
-		public struct TS_SELECTIONSTYLE
-		{
+		public struct TS_SELECTIONSTYLE		{
 			public TsActiveSelEnd ase;
 			public BOOL fInterimChar;
 		}
 		[CRepr]
-		public struct TS_SELECTION_ACP
-		{
+		public struct TS_SELECTION_ACP		{
 			public int32 acpStart;
 			public int32 acpEnd;
 			public TS_SELECTIONSTYLE style;
 		}
 		[CRepr]
-		public struct TS_SELECTION_ANCHOR
-		{
+		public struct TS_SELECTION_ANCHOR		{
 			public IAnchor* paStart;
 			public IAnchor* paEnd;
 			public TS_SELECTIONSTYLE style;
 		}
 		[CRepr]
-		public struct TS_ATTRVAL
-		{
+		public struct TS_ATTRVAL		{
 			public Guid idAttr;
 			public uint32 dwOverlapId;
 			public VARIANT varValue;
 		}
 		[CRepr]
-		public struct TS_RUNINFO
-		{
+		public struct TS_RUNINFO		{
 			public uint32 uCount;
 			public TsRunType type;
 		}
 		[CRepr]
-		public struct TF_LANGBARITEMINFO
-		{
+		public struct TF_LANGBARITEMINFO		{
 			public Guid clsidService;
 			public Guid guidItem;
 			public uint32 dwStyle;
@@ -744,14 +736,12 @@ namespace Win32
 			public char16[32] szDescription;
 		}
 		[CRepr]
-		public struct TF_LBBALLOONINFO
-		{
+		public struct TF_LBBALLOONINFO		{
 			public TfLBBalloonStyle style;
 			public BSTR bstrText;
 		}
 		[CRepr]
-		public struct TF_PERSISTENT_PROPERTY_HEADER_ACP
-		{
+		public struct TF_PERSISTENT_PROPERTY_HEADER_ACP		{
 			public Guid guidType;
 			public int32 ichStart;
 			public int32 cch;
@@ -760,8 +750,7 @@ namespace Win32
 			public Guid clsidTIP;
 		}
 		[CRepr]
-		public struct TF_LANGUAGEPROFILE
-		{
+		public struct TF_LANGUAGEPROFILE		{
 			public Guid clsid;
 			public uint16 langid;
 			public Guid catid;
@@ -769,33 +758,28 @@ namespace Win32
 			public Guid guidProfile;
 		}
 		[CRepr]
-		public struct TF_SELECTIONSTYLE
-		{
+		public struct TF_SELECTIONSTYLE		{
 			public TfActiveSelEnd ase;
 			public BOOL fInterimChar;
 		}
 		[CRepr]
-		public struct TF_SELECTION
-		{
+		public struct TF_SELECTION		{
 			public ITfRange* range;
 			public TF_SELECTIONSTYLE style;
 		}
 		[CRepr]
-		public struct TF_PROPERTYVAL
-		{
+		public struct TF_PROPERTYVAL		{
 			public Guid guidId;
 			public VARIANT varValue;
 		}
 		[CRepr]
-		public struct TF_HALTCOND
-		{
+		public struct TF_HALTCOND		{
 			public ITfRange* pHaltRange;
 			public TfAnchor aHaltPos;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct TF_INPUTPROCESSORPROFILE
-		{
+		public struct TF_INPUTPROCESSORPROFILE		{
 			public uint32 dwProfileType;
 			public uint16 langid;
 			public Guid clsid;
@@ -807,27 +791,23 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct TF_PRESERVEDKEY
-		{
+		public struct TF_PRESERVEDKEY		{
 			public uint32 uVKey;
 			public uint32 uModifiers;
 		}
 		[CRepr]
-		public struct TF_DA_COLOR
-		{
+		public struct TF_DA_COLOR		{
 			public TF_DA_COLORTYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public int32 nIndex;
 				public uint32 cr;
 			}
 		}
 		[CRepr]
-		public struct TF_DISPLAYATTRIBUTE
-		{
+		public struct TF_DISPLAYATTRIBUTE		{
 			public TF_DA_COLOR crText;
 			public TF_DA_COLOR crBk;
 			public TF_DA_LINESTYLE lsStyle;
@@ -836,8 +816,7 @@ namespace Win32
 			public TF_DA_ATTR_INFO bAttr;
 		}
 		[CRepr]
-		public struct TF_LMLATTELEMENT
-		{
+		public struct TF_LMLATTELEMENT		{
 			public uint32 dwFrameStart;
 			public uint32 dwFrameLen;
 			public uint32 dwFlags;
@@ -845,8 +824,7 @@ namespace Win32
 			public BSTR bstrText;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public int32 iCost;
 			}
 		}

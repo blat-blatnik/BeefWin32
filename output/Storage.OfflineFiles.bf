@@ -644,11 +644,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IOfflineFilesItem.VTable
-			{
-			}
+			public struct VTable : IOfflineFilesItem.VTable {}
 		}
 		[CRepr]
 		public struct IOfflineFilesShareItem : IOfflineFilesItem
@@ -657,11 +654,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IOfflineFilesItem.VTable
-			{
-			}
+			public struct VTable : IOfflineFilesItem.VTable {}
 		}
 		[CRepr]
 		public struct IOfflineFilesDirectoryItem : IOfflineFilesItem
@@ -670,11 +664,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IOfflineFilesItem.VTable
-			{
-			}
+			public struct VTable : IOfflineFilesItem.VTable {}
 		}
 		[CRepr]
 		public struct IOfflineFilesFileItem : IOfflineFilesItem

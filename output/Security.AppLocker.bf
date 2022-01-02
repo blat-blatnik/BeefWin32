@@ -88,8 +88,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SAFER_CODE_PROPERTIES_V1
-		{
+		public struct SAFER_CODE_PROPERTIES_V1		{
 			public uint32 cbSize;
 			public uint32 dwCheckFlags;
 			public PWSTR ImagePath;
@@ -104,8 +103,7 @@ namespace Win32
 			public uint32 dwWVTUIChoice;
 		}
 		[CRepr]
-		public struct SAFER_CODE_PROPERTIES_V2
-		{
+		public struct SAFER_CODE_PROPERTIES_V2		{
 			public uint32 cbSize;
 			public uint32 dwCheckFlags;
 			public PWSTR ImagePath;
@@ -125,24 +123,21 @@ namespace Win32
 			public BOOL PackageIsFramework;
 		}
 		[CRepr]
-		public struct SAFER_IDENTIFICATION_HEADER
-		{
+		public struct SAFER_IDENTIFICATION_HEADER		{
 			public SAFER_IDENTIFICATION_TYPES dwIdentificationType;
 			public uint32 cbStructSize;
 			public Guid IdentificationGuid;
 			public FILETIME lastModified;
 		}
 		[CRepr]
-		public struct SAFER_PATHNAME_IDENTIFICATION
-		{
+		public struct SAFER_PATHNAME_IDENTIFICATION		{
 			public SAFER_IDENTIFICATION_HEADER header;
 			public char16[256] Description;
 			public PWSTR ImageName;
 			public uint32 dwSaferFlags;
 		}
 		[CRepr]
-		public struct SAFER_HASH_IDENTIFICATION
-		{
+		public struct SAFER_HASH_IDENTIFICATION		{
 			public SAFER_IDENTIFICATION_HEADER header;
 			public char16[256] Description;
 			public char16[256] FriendlyName;
@@ -153,16 +148,14 @@ namespace Win32
 			public uint32 dwSaferFlags;
 		}
 		[CRepr]
-		public struct SAFER_HASH_IDENTIFICATION2
-		{
+		public struct SAFER_HASH_IDENTIFICATION2		{
 			public SAFER_HASH_IDENTIFICATION hashIdentification;
 			public uint32 HashSize;
 			public uint8[64] ImageHash;
 			public uint32 HashAlgorithm;
 		}
 		[CRepr]
-		public struct SAFER_URLZONE_IDENTIFICATION
-		{
+		public struct SAFER_URLZONE_IDENTIFICATION		{
 			public SAFER_IDENTIFICATION_HEADER header;
 			public uint32 UrlZoneId;
 			public uint32 dwSaferFlags;

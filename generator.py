@@ -368,6 +368,8 @@ for filename in filenames:
                     name = replace_type_name(type['Name'], namespace_name)
                     base_type = replace_type_name(type['IntegerBase'])
                     values = type['Values']
+                    if len(values) == 0:
+                        x = 123
                     value_values = [value['Value'] for value in values]
                     if len(set(value_values)) != len(value_values):
                         output.write(f'{indent}[AllowDuplicates]\n')
@@ -435,39 +437,39 @@ for filename in filenames:
                             output.write(f'{indent}[CRepr]\n')
                         elif kind == 'Union':
                             output.write(f'{indent}[CRepr, Union]\n')
-                        output.write(f'{indent}public struct {name}\n')
-                        output.write(f'{indent}{{\n')
-                        indent += '\t'
+                        output.write(f'{indent}public struct {name}')
 
                         fields = type['Fields']
-                        for field in fields:
-                            field_name = replace_name(field['Name'])
-                            if field_name == '_bitfield':
-                                x = 123 # TODO: Do something about bitfields...
-                            field_type = get_type_name(field['Type'])
-                            output.write(f'{indent}public {field_type} {field_name};\n')
-
-                        nested_types = type['NestedTypes']
-                        if len(nested_types) > 0:
-                            output.write(f'{indent}\n')
-                            for nested_type in nested_types:
-                                process_type(nested_type)
-
-                        # This struct is used as a constant - ideally we would initialize a PROPERTYKEY const like this:
-                        #   public const PROPERTYKEY pk = .{ fmtid=..., pid=... };
-                        # However constants currently can't be brace initialized, see https://github.com/beefytech/Beef/issues/1278.
-                        # So instead we initialize them with a constructor.
-                        if name == 'PROPERTYKEY':
-                            output.write(f'{indent}public this(Guid fmtid, uint32 pid)\n')
+                        if len(fields) == 0:
+                            output.write(' {}\n')
+                        else:
                             output.write(f'{indent}{{\n')
                             indent += '\t'
-                            output.write(f'{indent}this.fmtid = fmtid;\n')    
-                            output.write(f'{indent}this.pid = pid;\n')    
+                            for field in fields:
+                                field_name = replace_name(field['Name'])
+                                if field_name == '_bitfield':
+                                    x = 123 # TODO: Do something about bitfields...
+                                field_type = get_type_name(field['Type'])
+                                output.write(f'{indent}public {field_type} {field_name};\n')
+                            nested_types = type['NestedTypes']
+                            if len(nested_types) > 0:
+                                output.write(f'{indent}\n')
+                                for nested_type in nested_types:
+                                    process_type(nested_type)
+                            # This struct is used as a constant - ideally we would initialize a PROPERTYKEY const like this:
+                            #   public const PROPERTYKEY pk = .{ fmtid=..., pid=... };
+                            # However constants currently can't be brace initialized, see https://github.com/beefytech/Beef/issues/1278.
+                            # So instead we initialize them with a constructor.
+                            if name == 'PROPERTYKEY':
+                                output.write(f'{indent}public this(Guid fmtid, uint32 pid)\n')
+                                output.write(f'{indent}{{\n')
+                                indent += '\t'
+                                output.write(f'{indent}this.fmtid = fmtid;\n')    
+                                output.write(f'{indent}this.pid = pid;\n')    
+                                indent = indent[:-1]
+                                output.write(f'{indent}}}\n')
                             indent = indent[:-1]
                             output.write(f'{indent}}}\n')
-
-                        indent = indent[:-1]
-                        output.write(f'{indent}}}\n')
                     process_type(type)
 
                 output.write(f'{indent}\n')
@@ -524,70 +526,76 @@ for filename in filenames:
                         ref = '&'
 
                     methods = com['Methods']
-                    # Functions could be overloaded here, so we need to mangle the names somehow.
-                    encountered_names = set()
-                    for method in methods:
-                        method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
-                        mangled_name = method_name
-                        if mangled_name in encountered_names:
-                            i = 2
-                            while f'{method_name}{i}' in encountered_names:
-                                i += 1
-                            mangled_name = f'{method_name}{i}'
-                        encountered_names.add(mangled_name)
-                        return_type = get_type_name(method['ReturnType'])
-                        parameters = method['Params']
-                        output.write(f'{indent}public {return_type} {method_name}(')
-                        for i, param in enumerate(parameters):
-                            param_name = replace_name(param['Name'])
-                            param_type = get_param_type(param)
-                            output.write(f'{param_type} {param_name}')
-                            if i != len(parameters) - 1:
-                                output.write(', ')
-                        output.write(f') mut => VT.{mangled_name}({ref}this')
-                        for param in parameters:
-                            param_name = replace_name(param['Name'])
-                            param_type = get_param_type(param)
-                            if ENHANCED_POINTERS and param_type.startswith('ref'):
-                                output.write(f', ref {param_name}')
-                            elif ENHANCED_POINTERS and param_type.startswith('out'):
-                                output.write(f', out {param_name}')
-                            else:
-                                output.write(f', {param_name}')
-                        output.write(');\n')
+                    if len(methods) > 0:
+                        # Functions could be overloaded here, so we need to mangle the names somehow.
+                        encountered_names = set()
+                        for method in methods:
+                            method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
+                            mangled_name = method_name
+                            if mangled_name in encountered_names:
+                                i = 2
+                                while f'{method_name}{i}' in encountered_names:
+                                    i += 1
+                                mangled_name = f'{method_name}{i}'
+                            encountered_names.add(mangled_name)
+                            return_type = get_type_name(method['ReturnType'])
+                            parameters = method['Params']
+                            output.write(f'{indent}public {return_type} {method_name}(')
+                            for i, param in enumerate(parameters):
+                                param_name = replace_name(param['Name'])
+                                param_type = get_param_type(param)
+                                output.write(f'{param_type} {param_name}')
+                                if i != len(parameters) - 1:
+                                    output.write(', ')
+                            output.write(f') mut => VT.{mangled_name}({ref}this')
+                            for param in parameters:
+                                param_name = replace_name(param['Name'])
+                                param_type = get_param_type(param)
+                                if ENHANCED_POINTERS and param_type.startswith('ref'):
+                                    output.write(f', ref {param_name}')
+                                elif ENHANCED_POINTERS and param_type.startswith('out'):
+                                    output.write(f', out {param_name}')
+                                else:
+                                    output.write(f', {param_name}')
+                            output.write(');\n')
+                        output.write(f'\n')
 
-                    output.write(f'\n')
                     output.write(f'{indent}[CRepr]\n')
                     if base != None:
-                        output.write(f'{indent}public struct VTable : {base_name}.VTable\n')
+                        output.write(f'{indent}public struct VTable : {base_name}.VTable')
                     else:
-                        output.write(f'{indent}public struct VTable\n')
-                    
-                    output.write(f'{indent}{{\n')
-                    indent += '\t'
-                    # Functions could be overloaded here, so we need to mangle the names somehow.
-                    encountered_names = set()
-                    for method in methods:
-                        method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
-                        if method_name in encountered_names:
-                            i = 2
-                            while f'{method_name}{i}' in encountered_names:
-                                i += 1
-                            method_name = f'{method_name}{i}'
-                        encountered_names.add(method_name)
-                        return_type = get_type_name(method['ReturnType'])
-                        parameters = method['Params']
-                        if ENHANCED_POINTERS:
-                            output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
-                        else:
-                            output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}({name}* self')
-                        for param in parameters:
-                            param_name = replace_name(param['Name'])
-                            param_type = get_param_type(param)
-                            output.write(f', {param_type} {param_name}')
-                        output.write(f') {method_name};\n')
-                    indent = indent[:-1]
-                    output.write(f'{indent}}}\n')
+                        output.write(f'{indent}public struct VTable')
+
+                    if len(methods) == 0:
+                        output.write(' {}\n')
+                    else:
+                        output.write('\n')
+                        output.write(f'{indent}{{\n')
+                        indent += '\t'
+                        # Functions could be overloaded here, so we need to mangle the names somehow.
+                        encountered_names = set()
+                        for method in methods:
+                            method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
+                            if method_name in encountered_names:
+                                i = 2
+                                while f'{method_name}{i}' in encountered_names:
+                                    i += 1
+                                method_name = f'{method_name}{i}'
+                            encountered_names.add(method_name)
+                            return_type = get_type_name(method['ReturnType'])
+                            parameters = method['Params']
+                            if ENHANCED_POINTERS:
+                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
+                            else:
+                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}({name}* self')
+                            for param in parameters:
+                                param_name = replace_name(param['Name'])
+                                param_type = get_param_type(param)
+                                output.write(f', {param_type} {param_name}')
+                            output.write(f') {method_name};\n')
+                        indent = indent[:-1]
+                        output.write(f'{indent}}}\n')
+
                     indent = indent[:-1]
                     output.write(f'{indent}}}\n')
 

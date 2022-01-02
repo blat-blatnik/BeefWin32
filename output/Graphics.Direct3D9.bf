@@ -1148,24 +1148,21 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct D3DCOLORVALUE
-		{
+		public struct D3DCOLORVALUE		{
 			public float r;
 			public float g;
 			public float b;
 			public float a;
 		}
 		[CRepr]
-		public struct D3DRECT
-		{
+		public struct D3DRECT		{
 			public int32 x1;
 			public int32 y1;
 			public int32 x2;
 			public int32 y2;
 		}
 		[CRepr]
-		public struct D3DVIEWPORT9
-		{
+		public struct D3DVIEWPORT9		{
 			public uint32 X;
 			public uint32 Y;
 			public uint32 Width;
@@ -1174,14 +1171,12 @@ namespace Win32
 			public float MaxZ;
 		}
 		[CRepr]
-		public struct D3DCLIPSTATUS9
-		{
+		public struct D3DCLIPSTATUS9		{
 			public uint32 ClipUnion;
 			public uint32 ClipIntersection;
 		}
 		[CRepr]
-		public struct D3DMATERIAL9
-		{
+		public struct D3DMATERIAL9		{
 			public D3DCOLORVALUE Diffuse;
 			public D3DCOLORVALUE Ambient;
 			public D3DCOLORVALUE Specular;
@@ -1189,8 +1184,7 @@ namespace Win32
 			public float Power;
 		}
 		[CRepr]
-		public struct D3DLIGHT9
-		{
+		public struct D3DLIGHT9		{
 			public D3DLIGHTTYPE Type;
 			public D3DCOLORVALUE Diffuse;
 			public D3DCOLORVALUE Specular;
@@ -1206,8 +1200,7 @@ namespace Win32
 			public float Phi;
 		}
 		[CRepr]
-		public struct D3DVERTEXELEMENT9
-		{
+		public struct D3DVERTEXELEMENT9		{
 			public uint16 Stream;
 			public uint16 Offset;
 			public uint8 Type;
@@ -1216,24 +1209,21 @@ namespace Win32
 			public uint8 UsageIndex;
 		}
 		[CRepr]
-		public struct D3DDISPLAYMODE
-		{
+		public struct D3DDISPLAYMODE		{
 			public uint32 Width;
 			public uint32 Height;
 			public uint32 RefreshRate;
 			public D3DFORMAT Format;
 		}
 		[CRepr]
-		public struct D3DDEVICE_CREATION_PARAMETERS
-		{
+		public struct D3DDEVICE_CREATION_PARAMETERS		{
 			public uint32 AdapterOrdinal;
 			public D3DDEVTYPE DeviceType;
 			public HWND hFocusWindow;
 			public uint32 BehaviorFlags;
 		}
 		[CRepr]
-		public struct D3DPRESENT_PARAMETERS
-		{
+		public struct D3DPRESENT_PARAMETERS		{
 			public uint32 BackBufferWidth;
 			public uint32 BackBufferHeight;
 			public D3DFORMAT BackBufferFormat;
@@ -1250,15 +1240,13 @@ namespace Win32
 			public uint32 PresentationInterval;
 		}
 		[CRepr]
-		public struct D3DGAMMARAMP
-		{
+		public struct D3DGAMMARAMP		{
 			public uint16[256] red;
 			public uint16[256] green;
 			public uint16[256] blue;
 		}
 		[CRepr]
-		public struct D3DVERTEXBUFFER_DESC
-		{
+		public struct D3DVERTEXBUFFER_DESC		{
 			public D3DFORMAT Format;
 			public D3DRESOURCETYPE Type;
 			public uint32 Usage;
@@ -1267,8 +1255,7 @@ namespace Win32
 			public uint32 FVF;
 		}
 		[CRepr]
-		public struct D3DINDEXBUFFER_DESC
-		{
+		public struct D3DINDEXBUFFER_DESC		{
 			public D3DFORMAT Format;
 			public D3DRESOURCETYPE Type;
 			public uint32 Usage;
@@ -1276,8 +1263,7 @@ namespace Win32
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct D3DSURFACE_DESC
-		{
+		public struct D3DSURFACE_DESC		{
 			public D3DFORMAT Format;
 			public D3DRESOURCETYPE Type;
 			public uint32 Usage;
@@ -1288,8 +1274,7 @@ namespace Win32
 			public uint32 Height;
 		}
 		[CRepr]
-		public struct D3DVOLUME_DESC
-		{
+		public struct D3DVOLUME_DESC		{
 			public D3DFORMAT Format;
 			public D3DRESOURCETYPE Type;
 			public uint32 Usage;
@@ -1299,14 +1284,12 @@ namespace Win32
 			public uint32 Depth;
 		}
 		[CRepr]
-		public struct D3DLOCKED_RECT
-		{
+		public struct D3DLOCKED_RECT		{
 			public int32 Pitch;
 			public void* pBits;
 		}
 		[CRepr]
-		public struct D3DBOX
-		{
+		public struct D3DBOX		{
 			public uint32 Left;
 			public uint32 Top;
 			public uint32 Right;
@@ -1315,21 +1298,18 @@ namespace Win32
 			public uint32 Back;
 		}
 		[CRepr]
-		public struct D3DLOCKED_BOX
-		{
+		public struct D3DLOCKED_BOX		{
 			public int32 RowPitch;
 			public int32 SlicePitch;
 			public void* pBits;
 		}
 		[CRepr]
-		public struct D3DRANGE
-		{
+		public struct D3DRANGE		{
 			public uint32 Offset;
 			public uint32 Size;
 		}
 		[CRepr]
-		public struct D3DRECTPATCH_INFO
-		{
+		public struct D3DRECTPATCH_INFO		{
 			public uint32 StartVertexOffsetWidth;
 			public uint32 StartVertexOffsetHeight;
 			public uint32 Width;
@@ -1339,16 +1319,14 @@ namespace Win32
 			public D3DDEGREETYPE Degree;
 		}
 		[CRepr]
-		public struct D3DTRIPATCH_INFO
-		{
+		public struct D3DTRIPATCH_INFO		{
 			public uint32 StartVertexOffset;
 			public uint32 NumVertices;
 			public D3DBASISTYPE Basis;
 			public D3DDEGREETYPE Degree;
 		}
 		[CRepr]
-		public struct D3DADAPTER_IDENTIFIER9
-		{
+		public struct D3DADAPTER_IDENTIFIER9		{
 			public CHAR[512] Driver;
 			public CHAR[512] Description;
 			public CHAR[32] DeviceName;
@@ -1361,14 +1339,12 @@ namespace Win32
 			public uint32 WHQLLevel;
 		}
 		[CRepr]
-		public struct D3DRASTER_STATUS
-		{
+		public struct D3DRASTER_STATUS		{
 			public BOOL InVBlank;
 			public uint32 ScanLine;
 		}
 		[CRepr]
-		public struct D3DRESOURCESTATS
-		{
+		public struct D3DRESOURCESTATS		{
 			public BOOL bThrashing;
 			public uint32 ApproxBytesDownloaded;
 			public uint32 NumEvicts;
@@ -1382,35 +1358,30 @@ namespace Win32
 			public uint32 TotalBytes;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_RESOURCEMANAGER
-		{
+		public struct D3DDEVINFO_RESOURCEMANAGER		{
 			public D3DRESOURCESTATS[8] stats;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3DVERTEXSTATS
-		{
+		public struct D3DDEVINFO_D3DVERTEXSTATS		{
 			public uint32 NumRenderedTriangles;
 			public uint32 NumExtraClippingTriangles;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_VCACHE
-		{
+		public struct D3DDEVINFO_VCACHE		{
 			public uint32 Pattern;
 			public uint32 OptMethod;
 			public uint32 CacheSize;
 			public uint32 MagicNumber;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3D9PIPELINETIMINGS
-		{
+		public struct D3DDEVINFO_D3D9PIPELINETIMINGS		{
 			public float VertexProcessingTimePercent;
 			public float PixelProcessingTimePercent;
 			public float OtherGPUProcessingTimePercent;
 			public float GPUIdleTimePercent;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3D9INTERFACETIMINGS
-		{
+		public struct D3DDEVINFO_D3D9INTERFACETIMINGS		{
 			public float WaitingForGPUToUseApplicationResourceTimePercent;
 			public float WaitingForGPUToAcceptMoreCommandsTimePercent;
 			public float WaitingForGPUToStayWithinLatencyTimePercent;
@@ -1418,14 +1389,12 @@ namespace Win32
 			public float WaitingForGPUOtherTimePercent;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3D9STAGETIMINGS
-		{
+		public struct D3DDEVINFO_D3D9STAGETIMINGS		{
 			public float MemoryProcessingPercent;
 			public float ComputationProcessingPercent;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3D9BANDWIDTHTIMINGS
-		{
+		public struct D3DDEVINFO_D3D9BANDWIDTHTIMINGS		{
 			public float MaxBandwidthUtilized;
 			public float FrontEndUploadMemoryUtilizedPercent;
 			public float VertexRateUtilizedPercent;
@@ -1433,37 +1402,32 @@ namespace Win32
 			public float FillRateUtilizedPercent;
 		}
 		[CRepr]
-		public struct D3DDEVINFO_D3D9CACHEUTILIZATION
-		{
+		public struct D3DDEVINFO_D3D9CACHEUTILIZATION		{
 			public float TextureCacheHitRate;
 			public float PostTransformVertexCacheHitRate;
 		}
 		[CRepr]
-		public struct D3DMEMORYPRESSURE
-		{
+		public struct D3DMEMORYPRESSURE		{
 			public uint64 BytesEvictedFromProcess;
 			public uint64 SizeOfInefficientAllocation;
 			public uint32 LevelOfEfficiency;
 		}
 		[CRepr]
-		public struct D3DCOMPOSERECTDESC
-		{
+		public struct D3DCOMPOSERECTDESC		{
 			public uint16 X;
 			public uint16 Y;
 			public uint16 Width;
 			public uint16 Height;
 		}
 		[CRepr]
-		public struct D3DCOMPOSERECTDESTINATION
-		{
+		public struct D3DCOMPOSERECTDESTINATION		{
 			public uint16 SrcRectIndex;
 			public uint16 Reserved;
 			public int16 X;
 			public int16 Y;
 		}
 		[CRepr]
-		public struct D3DPRESENTSTATS
-		{
+		public struct D3DPRESENTSTATS		{
 			public uint32 PresentCount;
 			public uint32 PresentRefreshCount;
 			public uint32 SyncRefreshCount;
@@ -1471,8 +1435,7 @@ namespace Win32
 			public LARGE_INTEGER SyncGPUTime;
 		}
 		[CRepr]
-		public struct D3DDISPLAYMODEEX
-		{
+		public struct D3DDISPLAYMODEEX		{
 			public uint32 Size;
 			public uint32 Width;
 			public uint32 Height;
@@ -1481,27 +1444,23 @@ namespace Win32
 			public D3DSCANLINEORDERING ScanLineOrdering;
 		}
 		[CRepr]
-		public struct D3DDISPLAYMODEFILTER
-		{
+		public struct D3DDISPLAYMODEFILTER		{
 			public uint32 Size;
 			public D3DFORMAT Format;
 			public D3DSCANLINEORDERING ScanLineOrdering;
 		}
 		[CRepr]
-		public struct D3D_OMAC
-		{
+		public struct D3D_OMAC		{
 			public uint8[16] Omac;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERY_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERY_INPUT		{
 			public Guid QueryType;
 			public HANDLE hChannel;
 			public uint32 SequenceNumber;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT		{
 			public D3D_OMAC omac;
 			public Guid QueryType;
 			public HANDLE hChannel;
@@ -1509,107 +1468,91 @@ namespace Win32
 			public HRESULT ReturnCode;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS ProtectionFlags;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public D3DAUTHENTICATEDCHANNELTYPE ChannelType;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public HANDLE DeviceHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_INPUT Input;
 			public HANDLE DXVA2DecodeHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public HANDLE DXVA2DecodeHandle;
 			public HANDLE CryptoSessionHandle;
 			public HANDLE DeviceHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public uint32 NumRestrictedSharedResourceProcesses;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_INPUT Input;
 			public uint32 ProcessIndex;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public uint32 ProcessIndex;
 			public D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE ProcessIdentifer;
 			public HANDLE ProcessHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public uint32 NumUnrestrictedProtectedSharedResources;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_INPUT Input;
 			public HANDLE DeviceHandle;
 			public HANDLE CryptoSessionHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public HANDLE DeviceHandle;
 			public HANDLE CryptoSessionHandle;
 			public uint32 NumOutputIDs;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_INPUT Input;
 			public HANDLE DeviceHandle;
 			public HANDLE CryptoSessionHandle;
 			public uint32 OutputIDIndex;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public HANDLE DeviceHandle;
 			public HANDLE CryptoSessionHandle;
@@ -1617,49 +1560,42 @@ namespace Win32
 			public uint64 OutputID;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public D3DBUSTYPE BusType;
 			public BOOL bAccessibleInContiguousBlocks;
 			public BOOL bAccessibleInNonContiguousBlocks;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public uint32 NumEncryptionGuids;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_INPUT Input;
 			public uint32 EncryptionGuidIndex;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public uint32 EncryptionGuidIndex;
 			public Guid EncryptionGuid;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT		{
 			public D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT Output;
 			public Guid EncryptionGuid;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT		{
 			public D3D_OMAC omac;
 			public Guid ConfigureType;
 			public HANDLE hChannel;
 			public uint32 SequenceNumber;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT		{
 			public D3D_OMAC omac;
 			public Guid ConfigureType;
 			public HANDLE hChannel;
@@ -1667,64 +1603,55 @@ namespace Win32
 			public HRESULT ReturnCode;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE		{
 			public D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT Parameters;
 			public uint32 StartSequenceQuery;
 			public uint32 StartSequenceConfigure;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION		{
 			public D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT Parameters;
 			public D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS Protections;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION		{
 			public D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT Parameters;
 			public HANDLE DXVA2DecodeHandle;
 			public HANDLE CryptoSessionHandle;
 			public HANDLE DeviceHandle;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE		{
 			public D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT Parameters;
 			public D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE ProcessIdentiferType;
 			public HANDLE ProcessHandle;
 			public BOOL AllowAccess;
 		}
 		[CRepr]
-		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION
-		{
+		public struct D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION		{
 			public D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT Parameters;
 			public Guid EncryptionGuid;
 		}
 		[CRepr]
-		public struct D3DENCRYPTED_BLOCK_INFO
-		{
+		public struct D3DENCRYPTED_BLOCK_INFO		{
 			public uint32 NumEncryptedBytesAtBeginning;
 			public uint32 NumBytesInSkipPattern;
 			public uint32 NumBytesInEncryptPattern;
 		}
 		[CRepr]
-		public struct D3DAES_CTR_IV
-		{
+		public struct D3DAES_CTR_IV		{
 			public uint64 IV;
 			public uint64 Count;
 		}
 		[CRepr]
-		public struct D3DVSHADERCAPS2_0
-		{
+		public struct D3DVSHADERCAPS2_0		{
 			public uint32 Caps;
 			public int32 DynamicFlowControlDepth;
 			public int32 NumTemps;
 			public int32 StaticFlowControlDepth;
 		}
 		[CRepr]
-		public struct D3DPSHADERCAPS2_0
-		{
+		public struct D3DPSHADERCAPS2_0		{
 			public uint32 Caps;
 			public int32 DynamicFlowControlDepth;
 			public int32 NumTemps;
@@ -1732,8 +1659,7 @@ namespace Win32
 			public int32 NumInstructionSlots;
 		}
 		[CRepr]
-		public struct D3DCAPS9
-		{
+		public struct D3DCAPS9		{
 			public D3DDEVTYPE DeviceType;
 			public uint32 AdapterOrdinal;
 			public uint32 Caps;

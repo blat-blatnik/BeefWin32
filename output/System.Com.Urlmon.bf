@@ -776,15 +776,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct REMSECURITY_ATTRIBUTES
-		{
+		public struct REMSECURITY_ATTRIBUTES		{
 			public uint32 nLength;
 			public uint32 lpSecurityDescriptor;
 			public BOOL bInheritHandle;
 		}
 		[CRepr]
-		public struct RemBINDINFO
-		{
+		public struct RemBINDINFO		{
 			public uint32 cbSize;
 			public PWSTR szExtraInfo;
 			public uint32 grfBindInfoF;
@@ -800,8 +798,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct RemFORMATETC
-		{
+		public struct RemFORMATETC		{
 			public uint32 cfFormat;
 			public uint32 ptd;
 			public uint32 dwAspect;
@@ -809,23 +806,20 @@ namespace Win32
 			public uint32 tymed;
 		}
 		[CRepr]
-		public struct PROTOCOLDATA
-		{
+		public struct PROTOCOLDATA		{
 			public uint32 grfFlags;
 			public uint32 dwState;
 			public void* pData;
 			public uint32 cbData;
 		}
 		[CRepr]
-		public struct StartParam
-		{
+		public struct StartParam		{
 			public Guid iid;
 			public IBindCtx* pIBindCtx;
 			public IUnknown* pItf;
 		}
 		[CRepr]
-		public struct ZONEATTRIBUTES
-		{
+		public struct ZONEATTRIBUTES		{
 			public uint32 cbSize;
 			public char16[260] szDisplayName;
 			public char16[200] szDescription;
@@ -836,8 +830,7 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct CODEBASEHOLD
-		{
+		public struct CODEBASEHOLD		{
 			public uint32 cbSize;
 			public PWSTR szDistUnit;
 			public PWSTR szCodeBase;
@@ -846,8 +839,7 @@ namespace Win32
 			public uint32 dwStyle;
 		}
 		[CRepr]
-		public struct SOFTDISTINFO
-		{
+		public struct SOFTDISTINFO		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 dwAdState;
@@ -863,8 +855,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct PROTOCOLFILTERDATA
-		{
+		public struct PROTOCOLFILTERDATA		{
 			public uint32 cbSize;
 			public IInternetProtocolSink* pProtocolSink;
 			public IInternetProtocol* pProtocol;
@@ -872,16 +863,14 @@ namespace Win32
 			public uint32 dwFilterFlags;
 		}
 		[CRepr]
-		public struct DATAINFO
-		{
+		public struct DATAINFO		{
 			public uint32 ulTotalSize;
 			public uint32 ulavrPacketSize;
 			public uint32 ulConnectSpeed;
 			public uint32 ulProcessorSpeed;
 		}
 		[CRepr]
-		public struct HIT_LOGGING_INFO
-		{
+		public struct HIT_LOGGING_INFO		{
 			public uint32 dwStructSize;
 			public PSTR lpszLoggedUrlName;
 			public SYSTEMTIME StartTime;
@@ -889,15 +878,13 @@ namespace Win32
 			public PSTR lpszExtendedInfo;
 		}
 		[CRepr]
-		public struct CONFIRMSAFETY
-		{
+		public struct CONFIRMSAFETY		{
 			public Guid clsid;
 			public IUnknown* pUnk;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct PROTOCOL_ARGUMENT
-		{
+		public struct PROTOCOL_ARGUMENT		{
 			public PWSTR szMethod;
 			public PWSTR szTargetUrl;
 		}
@@ -1182,11 +1169,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IInternetBindInfo : IUnknown

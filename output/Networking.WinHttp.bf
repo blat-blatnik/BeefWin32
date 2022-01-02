@@ -630,20 +630,17 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WINHTTP_ASYNC_RESULT
-		{
+		public struct WINHTTP_ASYNC_RESULT		{
 			public uint dwResult;
 			public uint32 dwError;
 		}
 		[CRepr]
-		public struct HTTP_VERSION_INFO
-		{
+		public struct HTTP_VERSION_INFO		{
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
 		}
 		[CRepr]
-		public struct URL_COMPONENTS
-		{
+		public struct URL_COMPONENTS		{
 			public uint32 dwStructSize;
 			public PWSTR lpszScheme;
 			public uint32 dwSchemeLength;
@@ -661,15 +658,13 @@ namespace Win32
 			public uint32 dwExtraInfoLength;
 		}
 		[CRepr]
-		public struct WINHTTP_PROXY_INFO
-		{
+		public struct WINHTTP_PROXY_INFO		{
 			public WINHTTP_ACCESS_TYPE dwAccessType;
 			public PWSTR lpszProxy;
 			public PWSTR lpszProxyBypass;
 		}
 		[CRepr]
-		public struct WINHTTP_AUTOPROXY_OPTIONS
-		{
+		public struct WINHTTP_AUTOPROXY_OPTIONS		{
 			public uint32 dwFlags;
 			public uint32 dwAutoDetectFlags;
 			public PWSTR lpszAutoConfigUrl;
@@ -678,8 +673,7 @@ namespace Win32
 			public BOOL fAutoLogonIfChallenged;
 		}
 		[CRepr]
-		public struct WINHTTP_PROXY_RESULT_ENTRY
-		{
+		public struct WINHTTP_PROXY_RESULT_ENTRY		{
 			public BOOL fProxy;
 			public BOOL fBypass;
 			public WINHTTP_INTERNET_SCHEME ProxyScheme;
@@ -687,27 +681,23 @@ namespace Win32
 			public uint16 ProxyPort;
 		}
 		[CRepr]
-		public struct WINHTTP_PROXY_RESULT
-		{
+		public struct WINHTTP_PROXY_RESULT		{
 			public uint32 cEntries;
 			public WINHTTP_PROXY_RESULT_ENTRY* pEntries;
 		}
 		[CRepr]
-		public struct WINHTTP_PROXY_RESULT_EX
-		{
+		public struct WINHTTP_PROXY_RESULT_EX		{
 			public uint32 cEntries;
 			public WINHTTP_PROXY_RESULT_ENTRY* pEntries;
 			public HANDLE hProxyDetectionHandle;
 			public uint32 dwProxyInterfaceAffinity;
 		}
 		[CRepr]
-		public struct _WinHttpProxyNetworkKey
-		{
+		public struct _WinHttpProxyNetworkKey		{
 			public uint8[128] pbBuffer;
 		}
 		[CRepr]
-		public struct WINHTTP_PROXY_SETTINGS
-		{
+		public struct WINHTTP_PROXY_SETTINGS		{
 			public uint32 dwStructSize;
 			public uint32 dwFlags;
 			public uint32 dwCurrentSettingsVersion;
@@ -726,8 +716,7 @@ namespace Win32
 			public _WinHttpProxyNetworkKey* pNetworkKeys;
 		}
 		[CRepr]
-		public struct WINHTTP_CERTIFICATE_INFO
-		{
+		public struct WINHTTP_CERTIFICATE_INFO		{
 			public FILETIME ftExpiry;
 			public FILETIME ftStart;
 			public PWSTR lpszSubjectInfo;
@@ -738,60 +727,51 @@ namespace Win32
 			public uint32 dwKeySize;
 		}
 		[CRepr]
-		public struct WINHTTP_CONNECTION_INFO
-		{
+		public struct WINHTTP_CONNECTION_INFO		{
 			public uint32 cbSize;
 			public SOCKADDR_STORAGE LocalAddress;
 			public SOCKADDR_STORAGE RemoteAddress;
 		}
 		[CRepr]
-		public struct WINHTTP_REQUEST_TIMES
-		{
+		public struct WINHTTP_REQUEST_TIMES		{
 			public uint32 cTimes;
 			public uint64[64] rgullTimes;
 		}
 		[CRepr]
-		public struct WINHTTP_REQUEST_STATS
-		{
+		public struct WINHTTP_REQUEST_STATS		{
 			public uint64 ullFlags;
 			public uint32 ulIndex;
 			public uint32 cStats;
 			public uint64[32] rgullStats;
 		}
 		[CRepr]
-		public struct WINHTTP_MATCH_CONNECTION_GUID
-		{
+		public struct WINHTTP_MATCH_CONNECTION_GUID		{
 			public Guid ConnectionGuid;
 			public uint64 ullFlags;
 		}
 		[CRepr]
-		public struct WINHTTP_EXTENDED_HEADER
-		{
+		public struct WINHTTP_EXTENDED_HEADER		{
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR pwszName;
 				public PSTR pszName;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public PWSTR pwszValue;
 				public PSTR pszValue;
 			}
 		}
 		[CRepr, Union]
-		public struct WINHTTP_HEADER_NAME
-		{
+		public struct WINHTTP_HEADER_NAME		{
 			public PWSTR pwszName;
 			public PSTR pszName;
 		}
 		[CRepr]
-		public struct WINHTTP_RESOLVER_CACHE_CONFIG
-		{
+		public struct WINHTTP_RESOLVER_CACHE_CONFIG		{
 			public uint32 ulMaxResolverCacheEntries;
 			public uint32 ulMaxCacheEntryAge;
 			public uint32 ulMinCacheEntryTtl;
@@ -800,39 +780,33 @@ namespace Win32
 			public uint64 ullFlags;
 		}
 		[CRepr]
-		public struct WINHTTP_CONNECTION_GROUP
-		{
+		public struct WINHTTP_CONNECTION_GROUP		{
 			public uint32 cConnections;
 			public Guid guidGroup;
 		}
 		[CRepr]
-		public struct WINHTTP_HOST_CONNECTION_GROUP
-		{
+		public struct WINHTTP_HOST_CONNECTION_GROUP		{
 			public PWSTR pwszHost;
 			public uint32 cConnectionGroups;
 			public WINHTTP_CONNECTION_GROUP* pConnectionGroups;
 		}
 		[CRepr]
-		public struct WINHTTP_QUERY_CONNECTION_GROUP_RESULT
-		{
+		public struct WINHTTP_QUERY_CONNECTION_GROUP_RESULT		{
 			public uint32 cHosts;
 			public WINHTTP_HOST_CONNECTION_GROUP* pHostConnectionGroups;
 		}
 		[CRepr]
-		public struct WINHTTP_HTTP2_RECEIVE_WINDOW
-		{
+		public struct WINHTTP_HTTP2_RECEIVE_WINDOW		{
 			public uint32 ulStreamWindow;
 			public uint32 ulStreamWindowUpdateDelta;
 		}
 		[CRepr]
-		public struct WINHTTP_FAILED_CONNECTION_RETRIES
-		{
+		public struct WINHTTP_FAILED_CONNECTION_RETRIES		{
 			public uint32 dwMaxRetries;
 			public uint32 dwAllowedRetryConditions;
 		}
 		[CRepr]
-		public struct WINHTTP_CREDS
-		{
+		public struct WINHTTP_CREDS		{
 			public PSTR lpszUserName;
 			public PSTR lpszPassword;
 			public PSTR lpszRealm;
@@ -841,8 +815,7 @@ namespace Win32
 			public uint32 dwPort;
 		}
 		[CRepr]
-		public struct WINHTTP_CREDS_EX
-		{
+		public struct WINHTTP_CREDS_EX		{
 			public PSTR lpszUserName;
 			public PSTR lpszPassword;
 			public PSTR lpszRealm;
@@ -852,22 +825,19 @@ namespace Win32
 			public PSTR lpszUrl;
 		}
 		[CRepr]
-		public struct WINHTTP_CURRENT_USER_IE_PROXY_CONFIG
-		{
+		public struct WINHTTP_CURRENT_USER_IE_PROXY_CONFIG		{
 			public BOOL fAutoDetect;
 			public PWSTR lpszAutoConfigUrl;
 			public PWSTR lpszProxy;
 			public PWSTR lpszProxyBypass;
 		}
 		[CRepr]
-		public struct WINHTTP_WEB_SOCKET_ASYNC_RESULT
-		{
+		public struct WINHTTP_WEB_SOCKET_ASYNC_RESULT		{
 			public WINHTTP_ASYNC_RESULT AsyncResult;
 			public WINHTTP_WEB_SOCKET_OPERATION Operation;
 		}
 		[CRepr]
-		public struct WINHTTP_WEB_SOCKET_STATUS
-		{
+		public struct WINHTTP_WEB_SOCKET_STATUS		{
 			public uint32 dwBytesTransferred;
 			public WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType;
 		}

@@ -139,15 +139,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DRMID
-		{
+		public struct DRMID		{
 			public uint32 uVersion;
 			public PWSTR wszIDType;
 			public PWSTR wszID;
 		}
 		[CRepr]
-		public struct DRMBOUNDLICENSEPARAMS
-		{
+		public struct DRMBOUNDLICENSEPARAMS		{
 			public uint32 uVersion;
 			public uint32 hEnablingPrincipal;
 			public uint32 hSecureStore;
@@ -160,8 +158,7 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DRM_LICENSE_ACQ_DATA
-		{
+		public struct DRM_LICENSE_ACQ_DATA		{
 			public uint32 uVersion;
 			public PWSTR wszURL;
 			public PWSTR wszLocalFilename;
@@ -170,15 +167,13 @@ namespace Win32
 			public PWSTR wszFriendlyName;
 		}
 		[CRepr]
-		public struct DRM_ACTSERV_INFO
-		{
+		public struct DRM_ACTSERV_INFO		{
 			public uint32 uVersion;
 			public PWSTR wszPubKey;
 			public PWSTR wszURL;
 		}
 		[CRepr]
-		public struct DRM_CLIENT_VERSION_INFO
-		{
+		public struct DRM_CLIENT_VERSION_INFO		{
 			public uint32 uStructVersion;
 			public uint32[4] dwVersion;
 			public char16[256] wszHierarchy;

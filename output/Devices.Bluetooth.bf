@@ -875,93 +875,79 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct SDP_LARGE_INTEGER_16
-		{
+		public struct SDP_LARGE_INTEGER_16		{
 			public uint64 LowPart;
 			public int64 HighPart;
 		}
 		[CRepr]
-		public struct SDP_ULARGE_INTEGER_16
-		{
+		public struct SDP_ULARGE_INTEGER_16		{
 			public uint64 LowPart;
 			public uint64 HighPart;
 		}
 		[CRepr]
-		public struct SdpAttributeRange
-		{
+		public struct SdpAttributeRange		{
 			public uint16 minAttribute;
 			public uint16 maxAttribute;
 		}
 		[CRepr, Union]
-		public struct SdpQueryUuidUnion
-		{
+		public struct SdpQueryUuidUnion		{
 			public Guid uuid128;
 			public uint32 uuid32;
 			public uint16 uuid16;
 		}
 		[CRepr]
-		public struct SdpQueryUuid
-		{
+		public struct SdpQueryUuid		{
 			public SdpQueryUuidUnion u;
 			public uint16 uuidType;
 		}
 		[CRepr]
-		public struct BTH_DEVICE_INFO
-		{
+		public struct BTH_DEVICE_INFO		{
 			public uint32 flags;
 			public uint64 address;
 			public uint32 classOfDevice;
 			public CHAR[248] name;
 		}
 		[CRepr]
-		public struct BTH_RADIO_IN_RANGE
-		{
+		public struct BTH_RADIO_IN_RANGE		{
 			public BTH_DEVICE_INFO deviceInfo;
 			public uint32 previousDeviceFlags;
 		}
 		[CRepr]
-		public struct BTH_L2CAP_EVENT_INFO
-		{
+		public struct BTH_L2CAP_EVENT_INFO		{
 			public uint64 bthAddress;
 			public uint16 psm;
 			public uint8 connected;
 			public uint8 initiated;
 		}
 		[CRepr]
-		public struct BTH_HCI_EVENT_INFO
-		{
+		public struct BTH_HCI_EVENT_INFO		{
 			public uint64 bthAddress;
 			public uint8 connectionType;
 			public uint8 connected;
 		}
 		[CRepr]
-		public struct BLUETOOTH_ADDRESS
-		{
+		public struct BLUETOOTH_ADDRESS		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint64 ullLong;
 				public uint8[6] rgBytes;
 			}
 		}
 		[CRepr]
-		public struct BLUETOOTH_LOCAL_SERVICE_INFO
-		{
+		public struct BLUETOOTH_LOCAL_SERVICE_INFO		{
 			public BOOL Enabled;
 			public BLUETOOTH_ADDRESS btAddr;
 			public char16[256] szName;
 			public char16[256] szDeviceString;
 		}
 		[CRepr]
-		public struct BLUETOOTH_FIND_RADIO_PARAMS
-		{
+		public struct BLUETOOTH_FIND_RADIO_PARAMS		{
 			public uint32 dwSize;
 		}
 		[CRepr]
-		public struct BLUETOOTH_RADIO_INFO
-		{
+		public struct BLUETOOTH_RADIO_INFO		{
 			public uint32 dwSize;
 			public BLUETOOTH_ADDRESS address;
 			public char16[248] szName;
@@ -970,8 +956,7 @@ namespace Win32
 			public uint16 manufacturer;
 		}
 		[CRepr]
-		public struct BLUETOOTH_DEVICE_INFO
-		{
+		public struct BLUETOOTH_DEVICE_INFO		{
 			public uint32 dwSize;
 			public BLUETOOTH_ADDRESS Address;
 			public uint32 ulClassofDevice;
@@ -983,8 +968,7 @@ namespace Win32
 			public char16[248] szName;
 		}
 		[CRepr]
-		public struct BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS
-		{
+		public struct BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS		{
 			public BLUETOOTH_DEVICE_INFO deviceInfo;
 			public BLUETOOTH_AUTHENTICATION_METHOD authenticationMethod;
 			public BLUETOOTH_IO_CAPABILITY ioCapability;
@@ -992,15 +976,13 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 Numeric_Value;
 				public uint32 Passkey;
 			}
 		}
 		[CRepr]
-		public struct BLUETOOTH_DEVICE_SEARCH_PARAMS
-		{
+		public struct BLUETOOTH_DEVICE_SEARCH_PARAMS		{
 			public uint32 dwSize;
 			public BOOL fReturnAuthenticated;
 			public BOOL fReturnRemembered;
@@ -1011,14 +993,12 @@ namespace Win32
 			public HANDLE hRadio;
 		}
 		[CRepr]
-		public struct BLUETOOTH_COD_PAIRS
-		{
+		public struct BLUETOOTH_COD_PAIRS		{
 			public uint32 ulCODMask;
 			public PWSTR pcszDescription;
 		}
 		[CRepr]
-		public struct BLUETOOTH_SELECT_DEVICE_PARAMS
-		{
+		public struct BLUETOOTH_SELECT_DEVICE_PARAMS		{
 			public uint32 dwSize;
 			public uint32 cNumOfClasses;
 			public BLUETOOTH_COD_PAIRS* prgClassOfDevices;
@@ -1036,38 +1016,32 @@ namespace Win32
 			public BLUETOOTH_DEVICE_INFO* pDevices;
 		}
 		[CRepr]
-		public struct BLUETOOTH_PIN_INFO
-		{
+		public struct BLUETOOTH_PIN_INFO		{
 			public uint8[16] pin;
 			public uint8 pinLength;
 		}
 		[CRepr]
-		public struct BLUETOOTH_OOB_DATA_INFO
-		{
+		public struct BLUETOOTH_OOB_DATA_INFO		{
 			public uint8[16] C;
 			public uint8[16] R;
 		}
 		[CRepr]
-		public struct BLUETOOTH_NUMERIC_COMPARISON_INFO
-		{
+		public struct BLUETOOTH_NUMERIC_COMPARISON_INFO		{
 			public uint32 NumericValue;
 		}
 		[CRepr]
-		public struct BLUETOOTH_PASSKEY_INFO
-		{
+		public struct BLUETOOTH_PASSKEY_INFO		{
 			public uint32 passkey;
 		}
 		[CRepr]
-		public struct BLUETOOTH_AUTHENTICATE_RESPONSE
-		{
+		public struct BLUETOOTH_AUTHENTICATE_RESPONSE		{
 			public BLUETOOTH_ADDRESS bthAddressRemote;
 			public BLUETOOTH_AUTHENTICATION_METHOD authMethod;
 			public _Anonymous_e__Union Anonymous;
 			public uint8 negativeResponse;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public BLUETOOTH_PIN_INFO pinInfo;
 				public BLUETOOTH_OOB_DATA_INFO oobInfo;
 				public BLUETOOTH_NUMERIC_COMPARISON_INFO numericCompInfo;
@@ -1075,15 +1049,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SDP_ELEMENT_DATA
-		{
+		public struct SDP_ELEMENT_DATA		{
 			public SDP_TYPE type;
 			public SDP_SPECIFICTYPE specificType;
 			public _data_e__Union data;
 			
 			[CRepr, Union]
-			public struct _data_e__Union
-			{
+			public struct _data_e__Union			{
 				public SDP_LARGE_INTEGER_16 int128;
 				public int64 int64;
 				public int32 int32;
@@ -1104,49 +1076,42 @@ namespace Win32
 				public _alternative_e__Struct alternative;
 				
 				[CRepr]
-				public struct _sequence_e__Struct
-				{
+				public struct _sequence_e__Struct				{
 					public uint8* value;
 					public uint32 length;
 				}
 				[CRepr]
-				public struct _string_e__Struct
-				{
+				public struct _string_e__Struct				{
 					public uint8* value;
 					public uint32 length;
 				}
 				[CRepr]
-				public struct _alternative_e__Struct
-				{
+				public struct _alternative_e__Struct				{
 					public uint8* value;
 					public uint32 length;
 				}
 				[CRepr]
-				public struct _url_e__Struct
-				{
+				public struct _url_e__Struct				{
 					public uint8* value;
 					public uint32 length;
 				}
 			}
 		}
 		[CRepr]
-		public struct SDP_STRING_TYPE_DATA
-		{
+		public struct SDP_STRING_TYPE_DATA		{
 			public uint16 encoding;
 			public uint16 mibeNum;
 			public uint16 attributeId;
 		}
 		[CRepr]
-		public struct SOCKADDR_BTH
-		{
+		public struct SOCKADDR_BTH		{
 			public uint16 addressFamily;
 			public uint64 btAddr;
 			public Guid serviceClassId;
 			public uint32 port;
 		}
 		[CRepr]
-		public struct BTH_SET_SERVICE
-		{
+		public struct BTH_SET_SERVICE		{
 			public uint32* pSdpVersion;
 			public HANDLE* pRecordHandle;
 			public uint32 fCodService;
@@ -1155,14 +1120,12 @@ namespace Win32
 			public uint8[0] pRecord;
 		}
 		[CRepr]
-		public struct BTH_QUERY_DEVICE
-		{
+		public struct BTH_QUERY_DEVICE		{
 			public uint32 LAP;
 			public uint8 length;
 		}
 		[CRepr]
-		public struct BTH_QUERY_SERVICE
-		{
+		public struct BTH_QUERY_SERVICE		{
 			public uint32 type;
 			public uint32 serviceHandle;
 			public SdpQueryUuid[12] uuids;
@@ -1170,19 +1133,16 @@ namespace Win32
 			public SdpAttributeRange[0] pRange;
 		}
 		[CRepr]
-		public struct RFCOMM_MSC_DATA
-		{
+		public struct RFCOMM_MSC_DATA		{
 			public uint8 Signals;
 			public uint8 Break;
 		}
 		[CRepr]
-		public struct RFCOMM_RLS_DATA
-		{
+		public struct RFCOMM_RLS_DATA		{
 			public uint8 LineStatus;
 		}
 		[CRepr]
-		public struct RFCOMM_RPN_DATA
-		{
+		public struct RFCOMM_RPN_DATA		{
 			public uint8 Baud;
 			public uint8 Data;
 			public uint8 FlowControl;
@@ -1192,48 +1152,41 @@ namespace Win32
 			public uint8 ParameterMask2;
 		}
 		[CRepr]
-		public struct RFCOMM_COMMAND
-		{
+		public struct RFCOMM_COMMAND		{
 			public uint32 CmdType;
 			public _Data_e__Union Data;
 			
 			[CRepr, Union]
-			public struct _Data_e__Union
-			{
+			public struct _Data_e__Union			{
 				public RFCOMM_MSC_DATA MSC;
 				public RFCOMM_RLS_DATA RLS;
 				public RFCOMM_RPN_DATA RPN;
 			}
 		}
 		[CRepr]
-		public struct BTH_PING_REQ
-		{
+		public struct BTH_PING_REQ		{
 			public uint64 btAddr;
 			public uint8 dataLen;
 			public uint8[44] data;
 		}
 		[CRepr]
-		public struct BTH_PING_RSP
-		{
+		public struct BTH_PING_RSP		{
 			public uint8 dataLen;
 			public uint8[44] data;
 		}
 		[CRepr]
-		public struct BTH_INFO_REQ
-		{
+		public struct BTH_INFO_REQ		{
 			public uint64 btAddr;
 			public uint16 infoType;
 		}
 		[CRepr]
-		public struct BTH_INFO_RSP
-		{
+		public struct BTH_INFO_RSP		{
 			public uint16 result;
 			public uint8 dataLen;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint16 connectionlessMTU;
 				public uint8[44] data;
 			}

@@ -110,22 +110,19 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WLX_SC_NOTIFICATION_INFO
-		{
+		public struct WLX_SC_NOTIFICATION_INFO		{
 			public PWSTR pszCard;
 			public PWSTR pszReader;
 			public PWSTR pszContainer;
 			public PWSTR pszCryptoProvider;
 		}
 		[CRepr]
-		public struct WLX_PROFILE_V1_0
-		{
+		public struct WLX_PROFILE_V1_0		{
 			public uint32 dwType;
 			public PWSTR pszProfile;
 		}
 		[CRepr]
-		public struct WLX_PROFILE_V2_0
-		{
+		public struct WLX_PROFILE_V2_0		{
 			public uint32 dwType;
 			public PWSTR pszProfile;
 			public PWSTR pszPolicy;
@@ -134,23 +131,20 @@ namespace Win32
 			public PWSTR pszEnvironment;
 		}
 		[CRepr]
-		public struct WLX_MPR_NOTIFY_INFO
-		{
+		public struct WLX_MPR_NOTIFY_INFO		{
 			public PWSTR pszUserName;
 			public PWSTR pszDomain;
 			public PWSTR pszPassword;
 			public PWSTR pszOldPassword;
 		}
 		[CRepr]
-		public struct WLX_TERMINAL_SERVICES_DATA
-		{
+		public struct WLX_TERMINAL_SERVICES_DATA		{
 			public char16[257] ProfilePath;
 			public char16[257] HomeDir;
 			public char16[4] HomeDirDrive;
 		}
 		[CRepr]
-		public struct WLX_CLIENT_CREDENTIALS_INFO_V1_0
-		{
+		public struct WLX_CLIENT_CREDENTIALS_INFO_V1_0		{
 			public uint32 dwType;
 			public PWSTR pszUserName;
 			public PWSTR pszDomain;
@@ -158,8 +152,7 @@ namespace Win32
 			public BOOL fPromptForPassword;
 		}
 		[CRepr]
-		public struct WLX_CLIENT_CREDENTIALS_INFO_V2_0
-		{
+		public struct WLX_CLIENT_CREDENTIALS_INFO_V2_0		{
 			public uint32 dwType;
 			public PWSTR pszUserName;
 			public PWSTR pszDomain;
@@ -168,8 +161,7 @@ namespace Win32
 			public BOOL fDisconnectOnLogonFailure;
 		}
 		[CRepr]
-		public struct WLX_CONSOLESWITCH_CREDENTIALS_INFO_V1_0
-		{
+		public struct WLX_CONSOLESWITCH_CREDENTIALS_INFO_V1_0		{
 			public uint32 dwType;
 			public HANDLE UserToken;
 			public LUID LogonId;
@@ -199,16 +191,14 @@ namespace Win32
 			public uint8* PrivateData;
 		}
 		[CRepr]
-		public struct WLX_DESKTOP
-		{
+		public struct WLX_DESKTOP		{
 			public uint32 Size;
 			public uint32 Flags;
 			public HDESK hDesktop;
 			public PWSTR pszDesktopName;
 		}
 		[CRepr]
-		public struct WLX_DISPATCH_VERSION_1_0
-		{
+		public struct WLX_DISPATCH_VERSION_1_0		{
 			public PWLX_USE_CTRL_ALT_DEL WlxUseCtrlAltDel;
 			public PWLX_SET_CONTEXT_POINTER WlxSetContextPointer;
 			public PWLX_SAS_NOTIFY WlxSasNotify;
@@ -224,8 +214,7 @@ namespace Win32
 			public PWLX_CHANGE_PASSWORD_NOTIFY WlxChangePasswordNotify;
 		}
 		[CRepr]
-		public struct WLX_DISPATCH_VERSION_1_1
-		{
+		public struct WLX_DISPATCH_VERSION_1_1		{
 			public PWLX_USE_CTRL_ALT_DEL WlxUseCtrlAltDel;
 			public PWLX_SET_CONTEXT_POINTER WlxSetContextPointer;
 			public PWLX_SAS_NOTIFY WlxSasNotify;
@@ -245,8 +234,7 @@ namespace Win32
 			public PWLX_CHANGE_PASSWORD_NOTIFY_EX WlxChangePasswordNotifyEx;
 		}
 		[CRepr]
-		public struct WLX_DISPATCH_VERSION_1_2
-		{
+		public struct WLX_DISPATCH_VERSION_1_2		{
 			public PWLX_USE_CTRL_ALT_DEL WlxUseCtrlAltDel;
 			public PWLX_SET_CONTEXT_POINTER WlxSetContextPointer;
 			public PWLX_SAS_NOTIFY WlxSasNotify;
@@ -267,8 +255,7 @@ namespace Win32
 			public PWLX_CLOSE_USER_DESKTOP WlxCloseUserDesktop;
 		}
 		[CRepr]
-		public struct WLX_DISPATCH_VERSION_1_3
-		{
+		public struct WLX_DISPATCH_VERSION_1_3		{
 			public PWLX_USE_CTRL_ALT_DEL WlxUseCtrlAltDel;
 			public PWLX_SET_CONTEXT_POINTER WlxSetContextPointer;
 			public PWLX_SAS_NOTIFY WlxSasNotify;
@@ -296,8 +283,7 @@ namespace Win32
 			public PWLX_QUERY_TERMINAL_SERVICES_DATA WlxQueryTerminalServicesData;
 		}
 		[CRepr]
-		public struct WLX_DISPATCH_VERSION_1_4
-		{
+		public struct WLX_DISPATCH_VERSION_1_4		{
 			public PWLX_USE_CTRL_ALT_DEL WlxUseCtrlAltDel;
 			public PWLX_SET_CONTEXT_POINTER WlxSetContextPointer;
 			public PWLX_SAS_NOTIFY WlxSasNotify;
@@ -327,8 +313,7 @@ namespace Win32
 			public PWLX_QUERY_TS_LOGON_CREDENTIALS WlxQueryTsLogonCredentials;
 		}
 		[CRepr]
-		public struct WLX_NOTIFICATION_INFO
-		{
+		public struct WLX_NOTIFICATION_INFO		{
 			public uint32 Size;
 			public uint32 Flags;
 			public PWSTR UserName;

@@ -133,8 +133,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct UI_EVENTPARAMS_COMMAND
-		{
+		public struct UI_EVENTPARAMS_COMMAND		{
 			public uint32 CommandID;
 			public PWSTR CommandName;
 			public uint32 ParentCommandID;
@@ -143,14 +142,12 @@ namespace Win32
 			public UI_EVENTLOCATION Location;
 		}
 		[CRepr]
-		public struct UI_EVENTPARAMS
-		{
+		public struct UI_EVENTPARAMS		{
 			public UI_EVENTTYPE EventType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public int32 Modes;
 				public UI_EVENTPARAMS_COMMAND Params;
 			}

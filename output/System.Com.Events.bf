@@ -17,8 +17,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COMEVENTSYSCHANGEINFO
-		{
+		public struct COMEVENTSYSCHANGEINFO		{
 			public uint32 cbSize;
 			public EOC_ChangeType changeType;
 			public BSTR objectId;
@@ -464,11 +463,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		
 	}

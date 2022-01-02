@@ -112,22 +112,19 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct COORD
-		{
+		public struct COORD		{
 			public int16 X;
 			public int16 Y;
 		}
 		[CRepr]
-		public struct SMALL_RECT
-		{
+		public struct SMALL_RECT		{
 			public int16 Left;
 			public int16 Top;
 			public int16 Right;
 			public int16 Bottom;
 		}
 		[CRepr]
-		public struct KEY_EVENT_RECORD
-		{
+		public struct KEY_EVENT_RECORD		{
 			public BOOL bKeyDown;
 			public uint16 wRepeatCount;
 			public uint16 wVirtualKeyCode;
@@ -136,44 +133,37 @@ namespace Win32
 			public uint32 dwControlKeyState;
 			
 			[CRepr, Union]
-			public struct _uChar_e__Union
-			{
+			public struct _uChar_e__Union			{
 				public char16 UnicodeChar;
 				public CHAR AsciiChar;
 			}
 		}
 		[CRepr]
-		public struct MOUSE_EVENT_RECORD
-		{
+		public struct MOUSE_EVENT_RECORD		{
 			public COORD dwMousePosition;
 			public uint32 dwButtonState;
 			public uint32 dwControlKeyState;
 			public uint32 dwEventFlags;
 		}
 		[CRepr]
-		public struct WINDOW_BUFFER_SIZE_RECORD
-		{
+		public struct WINDOW_BUFFER_SIZE_RECORD		{
 			public COORD dwSize;
 		}
 		[CRepr]
-		public struct MENU_EVENT_RECORD
-		{
+		public struct MENU_EVENT_RECORD		{
 			public uint32 dwCommandId;
 		}
 		[CRepr]
-		public struct FOCUS_EVENT_RECORD
-		{
+		public struct FOCUS_EVENT_RECORD		{
 			public BOOL bSetFocus;
 		}
 		[CRepr]
-		public struct INPUT_RECORD
-		{
+		public struct INPUT_RECORD		{
 			public uint16 EventType;
 			public _Event_e__Union Event;
 			
 			[CRepr, Union]
-			public struct _Event_e__Union
-			{
+			public struct _Event_e__Union			{
 				public KEY_EVENT_RECORD KeyEvent;
 				public MOUSE_EVENT_RECORD MouseEvent;
 				public WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
@@ -182,41 +172,35 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct CHAR_INFO
-		{
+		public struct CHAR_INFO		{
 			public _Char_e__Union Char;
 			public uint16 Attributes;
 			
 			[CRepr, Union]
-			public struct _Char_e__Union
-			{
+			public struct _Char_e__Union			{
 				public char16 UnicodeChar;
 				public CHAR AsciiChar;
 			}
 		}
 		[CRepr]
-		public struct CONSOLE_FONT_INFO
-		{
+		public struct CONSOLE_FONT_INFO		{
 			public uint32 nFont;
 			public COORD dwFontSize;
 		}
 		[CRepr]
-		public struct CONSOLE_READCONSOLE_CONTROL
-		{
+		public struct CONSOLE_READCONSOLE_CONTROL		{
 			public uint32 nLength;
 			public uint32 nInitialChars;
 			public uint32 dwCtrlWakeupMask;
 			public uint32 dwControlKeyState;
 		}
 		[CRepr]
-		public struct CONSOLE_CURSOR_INFO
-		{
+		public struct CONSOLE_CURSOR_INFO		{
 			public uint32 dwSize;
 			public BOOL bVisible;
 		}
 		[CRepr]
-		public struct CONSOLE_SCREEN_BUFFER_INFO
-		{
+		public struct CONSOLE_SCREEN_BUFFER_INFO		{
 			public COORD dwSize;
 			public COORD dwCursorPosition;
 			public uint16 wAttributes;
@@ -224,8 +208,7 @@ namespace Win32
 			public COORD dwMaximumWindowSize;
 		}
 		[CRepr]
-		public struct CONSOLE_SCREEN_BUFFER_INFOEX
-		{
+		public struct CONSOLE_SCREEN_BUFFER_INFOEX		{
 			public uint32 cbSize;
 			public COORD dwSize;
 			public COORD dwCursorPosition;
@@ -237,8 +220,7 @@ namespace Win32
 			public uint32[16] ColorTable;
 		}
 		[CRepr]
-		public struct CONSOLE_FONT_INFOEX
-		{
+		public struct CONSOLE_FONT_INFOEX		{
 			public uint32 cbSize;
 			public uint32 nFont;
 			public COORD dwFontSize;
@@ -247,15 +229,13 @@ namespace Win32
 			public char16[32] FaceName;
 		}
 		[CRepr]
-		public struct CONSOLE_SELECTION_INFO
-		{
+		public struct CONSOLE_SELECTION_INFO		{
 			public uint32 dwFlags;
 			public COORD dwSelectionAnchor;
 			public SMALL_RECT srSelection;
 		}
 		[CRepr]
-		public struct CONSOLE_HISTORY_INFO
-		{
+		public struct CONSOLE_HISTORY_INFO		{
 			public uint32 cbSize;
 			public uint32 HistoryBufferSize;
 			public uint32 NumberOfHistoryBuffers;

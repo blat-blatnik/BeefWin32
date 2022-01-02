@@ -1319,8 +1319,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WIN32_FIND_DATAA
-		{
+		public struct WIN32_FIND_DATAA		{
 			public uint32 dwFileAttributes;
 			public FILETIME ftCreationTime;
 			public FILETIME ftLastAccessTime;
@@ -1333,8 +1332,7 @@ namespace Win32
 			public CHAR[14] cAlternateFileName;
 		}
 		[CRepr]
-		public struct WIN32_FIND_DATAW
-		{
+		public struct WIN32_FIND_DATAW		{
 			public uint32 dwFileAttributes;
 			public FILETIME ftCreationTime;
 			public FILETIME ftLastAccessTime;
@@ -1347,55 +1345,47 @@ namespace Win32
 			public char16[14] cAlternateFileName;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION
-		{
+		public struct TRANSACTION_NOTIFICATION		{
 			public void* TransactionKey;
 			public uint32 TransactionNotification;
 			public LARGE_INTEGER TmVirtualClock;
 			public uint32 ArgumentLength;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT
-		{
+		public struct TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT		{
 			public Guid EnlistmentId;
 			public Guid UOW;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT
-		{
+		public struct TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT		{
 			public Guid TmIdentity;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT
-		{
+		public struct TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT		{
 			public uint32 SavepointId;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT
-		{
+		public struct TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT		{
 			public uint32 PropagationCookie;
 			public Guid UOW;
 			public Guid TmIdentity;
 			public uint32 BufferLength;
 		}
 		[CRepr]
-		public struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT
-		{
+		public struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT		{
 			public uint32 MarshalCookie;
 			public Guid UOW;
 		}
 		[CRepr]
-		public struct KCRM_MARSHAL_HEADER
-		{
+		public struct KCRM_MARSHAL_HEADER		{
 			public uint32 VersionMajor;
 			public uint32 VersionMinor;
 			public uint32 NumProtocols;
 			public uint32 Unused;
 		}
 		[CRepr]
-		public struct KCRM_TRANSACTION_BLOB
-		{
+		public struct KCRM_TRANSACTION_BLOB		{
 			public Guid UOW;
 			public Guid TmIdentity;
 			public uint32 IsolationLevel;
@@ -1404,8 +1394,7 @@ namespace Win32
 			public char16[64] Description;
 		}
 		[CRepr]
-		public struct KCRM_PROTOCOL_BLOB
-		{
+		public struct KCRM_PROTOCOL_BLOB		{
 			public Guid ProtocolId;
 			public uint32 StaticInfoLength;
 			public uint32 TransactionIdInfoLength;
@@ -1413,8 +1402,7 @@ namespace Win32
 			public uint32 Unused2;
 		}
 		[CRepr]
-		public struct DISK_SPACE_INFORMATION
-		{
+		public struct DISK_SPACE_INFORMATION		{
 			public uint64 ActualTotalAllocationUnits;
 			public uint64 ActualAvailableAllocationUnits;
 			public uint64 ActualPoolUnavailableAllocationUnits;
@@ -1430,8 +1418,7 @@ namespace Win32
 			public uint32 BytesPerSector;
 		}
 		[CRepr]
-		public struct WIN32_FILE_ATTRIBUTE_DATA
-		{
+		public struct WIN32_FILE_ATTRIBUTE_DATA		{
 			public uint32 dwFileAttributes;
 			public FILETIME ftCreationTime;
 			public FILETIME ftLastAccessTime;
@@ -1440,8 +1427,7 @@ namespace Win32
 			public uint32 nFileSizeLow;
 		}
 		[CRepr]
-		public struct BY_HANDLE_FILE_INFORMATION
-		{
+		public struct BY_HANDLE_FILE_INFORMATION		{
 			public uint32 dwFileAttributes;
 			public FILETIME ftCreationTime;
 			public FILETIME ftLastAccessTime;
@@ -1454,8 +1440,7 @@ namespace Win32
 			public uint32 nFileIndexLow;
 		}
 		[CRepr]
-		public struct CREATEFILE2_EXTENDED_PARAMETERS
-		{
+		public struct CREATEFILE2_EXTENDED_PARAMETERS		{
 			public uint32 dwSize;
 			public uint32 dwFileAttributes;
 			public uint32 dwFileFlags;
@@ -1464,14 +1449,12 @@ namespace Win32
 			public HANDLE hTemplateFile;
 		}
 		[CRepr]
-		public struct WIN32_FIND_STREAM_DATA
-		{
+		public struct WIN32_FIND_STREAM_DATA		{
 			public LARGE_INTEGER StreamSize;
 			public char16[296] cStreamName;
 		}
 		[CRepr]
-		public struct VS_FIXEDFILEINFO
-		{
+		public struct VS_FIXEDFILEINFO		{
 			public uint32 dwSignature;
 			public uint32 dwStrucVersion;
 			public uint32 dwFileVersionMS;
@@ -1487,8 +1470,7 @@ namespace Win32
 			public uint32 dwFileDateLS;
 		}
 		[CRepr]
-		public struct NTMS_ASYNC_IO
-		{
+		public struct NTMS_ASYNC_IO		{
 			public Guid OperationId;
 			public Guid EventId;
 			public uint32 dwOperationType;
@@ -1498,21 +1480,18 @@ namespace Win32
 			public BOOL bOnStateChange;
 		}
 		[CRepr]
-		public struct NTMS_MOUNT_INFORMATION
-		{
+		public struct NTMS_MOUNT_INFORMATION		{
 			public uint32 dwSize;
 			public void* lpReserved;
 		}
 		[CRepr]
-		public struct NTMS_ALLOCATION_INFORMATION
-		{
+		public struct NTMS_ALLOCATION_INFORMATION		{
 			public uint32 dwSize;
 			public void* lpReserved;
 			public Guid AllocatedFrom;
 		}
 		[CRepr]
-		public struct NTMS_DRIVEINFORMATIONA
-		{
+		public struct NTMS_DRIVEINFORMATIONA		{
 			public uint32 Number;
 			public NtmsDriveState State;
 			public Guid DriveType;
@@ -1531,8 +1510,7 @@ namespace Win32
 			public uint32 dwDeferDismountDelay;
 		}
 		[CRepr]
-		public struct NTMS_DRIVEINFORMATIONW
-		{
+		public struct NTMS_DRIVEINFORMATIONW		{
 			public uint32 Number;
 			public NtmsDriveState State;
 			public Guid DriveType;
@@ -1551,8 +1529,7 @@ namespace Win32
 			public uint32 dwDeferDismountDelay;
 		}
 		[CRepr]
-		public struct NTMS_LIBRARYINFORMATION
-		{
+		public struct NTMS_LIBRARYINFORMATION		{
 			public NtmsLibraryType LibraryType;
 			public Guid CleanerSlot;
 			public Guid CleanerSlotDefault;
@@ -1578,8 +1555,7 @@ namespace Win32
 			public NtmsLibraryFlags dwFlags;
 		}
 		[CRepr]
-		public struct NTMS_CHANGERINFORMATIONA
-		{
+		public struct NTMS_CHANGERINFORMATIONA		{
 			public uint32 Number;
 			public Guid ChangerType;
 			public CHAR[32] szSerialNumber;
@@ -1592,8 +1568,7 @@ namespace Win32
 			public Guid Library;
 		}
 		[CRepr]
-		public struct NTMS_CHANGERINFORMATIONW
-		{
+		public struct NTMS_CHANGERINFORMATIONW		{
 			public uint32 Number;
 			public Guid ChangerType;
 			public char16[32] szSerialNumber;
@@ -1606,23 +1581,20 @@ namespace Win32
 			public Guid Library;
 		}
 		[CRepr]
-		public struct NTMS_STORAGESLOTINFORMATION
-		{
+		public struct NTMS_STORAGESLOTINFORMATION		{
 			public uint32 Number;
 			public uint32 State;
 			public Guid Library;
 		}
 		[CRepr]
-		public struct NTMS_IEDOORINFORMATION
-		{
+		public struct NTMS_IEDOORINFORMATION		{
 			public uint32 Number;
 			public NtmsDoorState State;
 			public uint16 MaxOpenSecs;
 			public Guid Library;
 		}
 		[CRepr]
-		public struct NTMS_IEPORTINFORMATION
-		{
+		public struct NTMS_IEPORTINFORMATION		{
 			public uint32 Number;
 			public NtmsPortContent Content;
 			public NtmsPortPosition Position;
@@ -1630,8 +1602,7 @@ namespace Win32
 			public Guid Library;
 		}
 		[CRepr]
-		public struct NTMS_PMIDINFORMATIONA
-		{
+		public struct NTMS_PMIDINFORMATIONA		{
 			public Guid CurrentLibrary;
 			public Guid MediaPool;
 			public Guid Location;
@@ -1648,8 +1619,7 @@ namespace Win32
 			public Guid MountedPartition;
 		}
 		[CRepr]
-		public struct NTMS_PMIDINFORMATIONW
-		{
+		public struct NTMS_PMIDINFORMATIONW		{
 			public Guid CurrentLibrary;
 			public Guid MediaPool;
 			public Guid Location;
@@ -1666,14 +1636,12 @@ namespace Win32
 			public Guid MountedPartition;
 		}
 		[CRepr]
-		public struct NTMS_LMIDINFORMATION
-		{
+		public struct NTMS_LMIDINFORMATION		{
 			public Guid MediaPool;
 			public uint32 dwNumberOfPartitions;
 		}
 		[CRepr]
-		public struct NTMS_PARTITIONINFORMATIONA
-		{
+		public struct NTMS_PARTITIONINFORMATIONA		{
 			public Guid PhysicalMedia;
 			public Guid LogicalMedia;
 			public NtmsPartitionState State;
@@ -1687,8 +1655,7 @@ namespace Win32
 			public LARGE_INTEGER Capacity;
 		}
 		[CRepr]
-		public struct NTMS_PARTITIONINFORMATIONW
-		{
+		public struct NTMS_PARTITIONINFORMATIONW		{
 			public Guid PhysicalMedia;
 			public Guid LogicalMedia;
 			public NtmsPartitionState State;
@@ -1702,8 +1669,7 @@ namespace Win32
 			public LARGE_INTEGER Capacity;
 		}
 		[CRepr]
-		public struct NTMS_MEDIAPOOLINFORMATION
-		{
+		public struct NTMS_MEDIAPOOLINFORMATION		{
 			public uint32 PoolType;
 			public Guid MediaType;
 			public Guid Parent;
@@ -1715,46 +1681,40 @@ namespace Win32
 			public uint32 dwNumberOfMediaPools;
 		}
 		[CRepr]
-		public struct NTMS_MEDIATYPEINFORMATION
-		{
+		public struct NTMS_MEDIATYPEINFORMATION		{
 			public uint32 MediaType;
 			public uint32 NumberOfSides;
 			public NtmsReadWriteCharacteristics ReadWriteCharacteristics;
 			public FILE_DEVICE_TYPE DeviceType;
 		}
 		[CRepr]
-		public struct NTMS_DRIVETYPEINFORMATIONA
-		{
+		public struct NTMS_DRIVETYPEINFORMATIONA		{
 			public CHAR[128] szVendor;
 			public CHAR[128] szProduct;
 			public uint32 NumberOfHeads;
 			public FILE_DEVICE_TYPE DeviceType;
 		}
 		[CRepr]
-		public struct NTMS_DRIVETYPEINFORMATIONW
-		{
+		public struct NTMS_DRIVETYPEINFORMATIONW		{
 			public char16[128] szVendor;
 			public char16[128] szProduct;
 			public uint32 NumberOfHeads;
 			public FILE_DEVICE_TYPE DeviceType;
 		}
 		[CRepr]
-		public struct NTMS_CHANGERTYPEINFORMATIONA
-		{
+		public struct NTMS_CHANGERTYPEINFORMATIONA		{
 			public CHAR[128] szVendor;
 			public CHAR[128] szProduct;
 			public uint32 DeviceType;
 		}
 		[CRepr]
-		public struct NTMS_CHANGERTYPEINFORMATIONW
-		{
+		public struct NTMS_CHANGERTYPEINFORMATIONW		{
 			public char16[128] szVendor;
 			public char16[128] szProduct;
 			public uint32 DeviceType;
 		}
 		[CRepr]
-		public struct NTMS_LIBREQUESTINFORMATIONA
-		{
+		public struct NTMS_LIBREQUESTINFORMATIONA		{
 			public NtmsLmOperation OperationCode;
 			public uint32 OperationOption;
 			public NtmsLmState State;
@@ -1773,8 +1733,7 @@ namespace Win32
 			public uint32 dwPriority;
 		}
 		[CRepr]
-		public struct NTMS_LIBREQUESTINFORMATIONW
-		{
+		public struct NTMS_LIBREQUESTINFORMATIONW		{
 			public NtmsLmOperation OperationCode;
 			public uint32 OperationOption;
 			public NtmsLmState State;
@@ -1793,8 +1752,7 @@ namespace Win32
 			public uint32 dwPriority;
 		}
 		[CRepr]
-		public struct NTMS_OPREQUESTINFORMATIONA
-		{
+		public struct NTMS_OPREQUESTINFORMATIONA		{
 			public NtmsOpreqCommand Request;
 			public SYSTEMTIME Submitted;
 			public NtmsOpreqState State;
@@ -1808,8 +1766,7 @@ namespace Win32
 			public CHAR[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_OPREQUESTINFORMATIONW
-		{
+		public struct NTMS_OPREQUESTINFORMATIONW		{
 			public NtmsOpreqCommand Request;
 			public SYSTEMTIME Submitted;
 			public NtmsOpreqState State;
@@ -1823,8 +1780,7 @@ namespace Win32
 			public char16[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_COMPUTERINFORMATION
-		{
+		public struct NTMS_COMPUTERINFORMATION		{
 			public uint32 dwLibRequestPurgeTime;
 			public uint32 dwOpRequestPurgeTime;
 			public uint32 dwLibRequestFlags;
@@ -1832,8 +1788,7 @@ namespace Win32
 			public uint32 dwMediaPoolPolicy;
 		}
 		[CRepr]
-		public struct NTMS_OBJECTINFORMATIONA
-		{
+		public struct NTMS_OBJECTINFORMATIONA		{
 			public uint32 dwSize;
 			public NtmsObjectsTypes dwType;
 			public SYSTEMTIME Created;
@@ -1846,8 +1801,7 @@ namespace Win32
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public NTMS_DRIVEINFORMATIONA Drive;
 				public NTMS_DRIVETYPEINFORMATIONA DriveType;
 				public NTMS_LIBRARYINFORMATION Library;
@@ -1867,8 +1821,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NTMS_OBJECTINFORMATIONW
-		{
+		public struct NTMS_OBJECTINFORMATIONW		{
 			public uint32 dwSize;
 			public NtmsObjectsTypes dwType;
 			public SYSTEMTIME Created;
@@ -1881,8 +1834,7 @@ namespace Win32
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public NTMS_DRIVEINFORMATIONW Drive;
 				public NTMS_DRIVETYPEINFORMATIONW DriveType;
 				public NTMS_LIBRARYINFORMATION Library;
@@ -1902,8 +1854,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NTMS_I1_LIBRARYINFORMATION
-		{
+		public struct NTMS_I1_LIBRARYINFORMATION		{
 			public uint32 LibraryType;
 			public Guid CleanerSlot;
 			public Guid CleanerSlotDefault;
@@ -1927,8 +1878,7 @@ namespace Win32
 			public Guid Reserved;
 		}
 		[CRepr]
-		public struct NTMS_I1_LIBREQUESTINFORMATIONA
-		{
+		public struct NTMS_I1_LIBREQUESTINFORMATIONA		{
 			public uint32 OperationCode;
 			public uint32 OperationOption;
 			public uint32 State;
@@ -1944,8 +1894,7 @@ namespace Win32
 			public CHAR[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_I1_LIBREQUESTINFORMATIONW
-		{
+		public struct NTMS_I1_LIBREQUESTINFORMATIONW		{
 			public uint32 OperationCode;
 			public uint32 OperationOption;
 			public uint32 State;
@@ -1961,8 +1910,7 @@ namespace Win32
 			public char16[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_I1_PMIDINFORMATIONA
-		{
+		public struct NTMS_I1_PMIDINFORMATIONA		{
 			public Guid CurrentLibrary;
 			public Guid MediaPool;
 			public Guid Location;
@@ -1976,8 +1924,7 @@ namespace Win32
 			public uint32 dwNumberOfPartitions;
 		}
 		[CRepr]
-		public struct NTMS_I1_PMIDINFORMATIONW
-		{
+		public struct NTMS_I1_PMIDINFORMATIONW		{
 			public Guid CurrentLibrary;
 			public Guid MediaPool;
 			public Guid Location;
@@ -1991,8 +1938,7 @@ namespace Win32
 			public uint32 dwNumberOfPartitions;
 		}
 		[CRepr]
-		public struct NTMS_I1_PARTITIONINFORMATIONA
-		{
+		public struct NTMS_I1_PARTITIONINFORMATIONA		{
 			public Guid PhysicalMedia;
 			public Guid LogicalMedia;
 			public uint32 State;
@@ -2005,8 +1951,7 @@ namespace Win32
 			public uint32 dwAllocateCount;
 		}
 		[CRepr]
-		public struct NTMS_I1_PARTITIONINFORMATIONW
-		{
+		public struct NTMS_I1_PARTITIONINFORMATIONW		{
 			public Guid PhysicalMedia;
 			public Guid LogicalMedia;
 			public uint32 State;
@@ -2019,8 +1964,7 @@ namespace Win32
 			public uint32 dwAllocateCount;
 		}
 		[CRepr]
-		public struct NTMS_I1_OPREQUESTINFORMATIONA
-		{
+		public struct NTMS_I1_OPREQUESTINFORMATIONA		{
 			public uint32 Request;
 			public SYSTEMTIME Submitted;
 			public uint32 State;
@@ -2034,8 +1978,7 @@ namespace Win32
 			public CHAR[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_I1_OPREQUESTINFORMATIONW
-		{
+		public struct NTMS_I1_OPREQUESTINFORMATIONW		{
 			public uint32 Request;
 			public SYSTEMTIME Submitted;
 			public uint32 State;
@@ -2049,8 +1992,7 @@ namespace Win32
 			public char16[64] szComputer;
 		}
 		[CRepr]
-		public struct NTMS_I1_OBJECTINFORMATIONA
-		{
+		public struct NTMS_I1_OBJECTINFORMATIONA		{
 			public uint32 dwSize;
 			public uint32 dwType;
 			public SYSTEMTIME Created;
@@ -2063,8 +2005,7 @@ namespace Win32
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public NTMS_DRIVEINFORMATIONA Drive;
 				public NTMS_DRIVETYPEINFORMATIONA DriveType;
 				public NTMS_I1_LIBRARYINFORMATION Library;
@@ -2083,8 +2024,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NTMS_I1_OBJECTINFORMATIONW
-		{
+		public struct NTMS_I1_OBJECTINFORMATIONW		{
 			public uint32 dwSize;
 			public uint32 dwType;
 			public SYSTEMTIME Created;
@@ -2097,8 +2037,7 @@ namespace Win32
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public NTMS_DRIVEINFORMATIONW Drive;
 				public NTMS_DRIVETYPEINFORMATIONW DriveType;
 				public NTMS_I1_LIBRARYINFORMATION Library;
@@ -2117,46 +2056,39 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NTMS_FILESYSTEM_INFO
-		{
+		public struct NTMS_FILESYSTEM_INFO		{
 			public char16[64] FileSystemType;
 			public char16[256] VolumeName;
 			public uint32 SerialNumber;
 		}
 		[CRepr]
-		public struct NTMS_NOTIFICATIONINFORMATION
-		{
+		public struct NTMS_NOTIFICATIONINFORMATION		{
 			public NtmsNotificationOperations dwOperation;
 			public Guid ObjectId;
 		}
 		[CRepr]
-		public struct MediaLabelInfo
-		{
+		public struct MediaLabelInfo		{
 			public char16[64] LabelType;
 			public uint32 LabelIDSize;
 			public uint8[256] LabelID;
 			public char16[256] LabelAppDescr;
 		}
 		[CRepr]
-		public struct CLS_LSN
-		{
+		public struct CLS_LSN		{
 			public uint64 Internal;
 		}
 		[CRepr]
-		public struct CLFS_NODE_ID
-		{
+		public struct CLFS_NODE_ID		{
 			public uint32 cType;
 			public uint32 cbNode;
 		}
 		[CRepr]
-		public struct CLS_WRITE_ENTRY
-		{
+		public struct CLS_WRITE_ENTRY		{
 			public void* Buffer;
 			public uint32 ByteLength;
 		}
 		[CRepr]
-		public struct CLS_INFORMATION
-		{
+		public struct CLS_INFORMATION		{
 			public int64 TotalAvailable;
 			public int64 CurrentAvailable;
 			public int64 TotalReservation;
@@ -2176,26 +2108,22 @@ namespace Win32
 			public Guid Identity;
 		}
 		[CRepr]
-		public struct CLFS_LOG_NAME_INFORMATION
-		{
+		public struct CLFS_LOG_NAME_INFORMATION		{
 			public uint16 NameLengthInBytes;
 			public char16[0] Name;
 		}
 		[CRepr]
-		public struct CLFS_STREAM_ID_INFORMATION
-		{
+		public struct CLFS_STREAM_ID_INFORMATION		{
 			public uint8 StreamIdentifier;
 		}
 		[CRepr]
-		public struct CLFS_PHYSICAL_LSN_INFORMATION
-		{
+		public struct CLFS_PHYSICAL_LSN_INFORMATION		{
 			public uint8 StreamIdentifier;
 			public CLS_LSN VirtualLsn;
 			public CLS_LSN PhysicalLsn;
 		}
 		[CRepr]
-		public struct CLS_CONTAINER_INFORMATION
-		{
+		public struct CLS_CONTAINER_INFORMATION		{
 			public uint32 FileAttributes;
 			public uint64 CreationTime;
 			public uint64 LastAccessTime;
@@ -2209,8 +2137,7 @@ namespace Win32
 			public uint32 LogicalContainerId;
 		}
 		[CRepr]
-		public struct CLS_IO_STATISTICS_HEADER
-		{
+		public struct CLS_IO_STATISTICS_HEADER		{
 			public uint8 ubMajorVersion;
 			public uint8 ubMinorVersion;
 			public CLFS_IOSTATS_CLASS eStatsClass;
@@ -2218,8 +2145,7 @@ namespace Win32
 			public uint32 coffData;
 		}
 		[CRepr]
-		public struct CLS_IO_STATISTICS
-		{
+		public struct CLS_IO_STATISTICS		{
 			public CLS_IO_STATISTICS_HEADER hdrIoStats;
 			public uint64 cFlush;
 			public uint64 cbFlush;
@@ -2227,8 +2153,7 @@ namespace Win32
 			public uint64 cbMetaFlush;
 		}
 		[CRepr]
-		public struct CLS_SCAN_CONTEXT
-		{
+		public struct CLS_SCAN_CONTEXT		{
 			public CLFS_NODE_ID cidNode;
 			public HANDLE hLog;
 			public uint32 cIndex;
@@ -2238,15 +2163,13 @@ namespace Win32
 			public CLS_CONTAINER_INFORMATION* pinfoContainer;
 		}
 		[CRepr]
-		public struct CLS_ARCHIVE_DESCRIPTOR
-		{
+		public struct CLS_ARCHIVE_DESCRIPTOR		{
 			public uint64 coffLow;
 			public uint64 coffHigh;
 			public CLS_CONTAINER_INFORMATION infoContainer;
 		}
 		[CRepr]
-		public struct CLFS_MGMT_POLICY
-		{
+		public struct CLFS_MGMT_POLICY		{
 			public uint32 Version;
 			public uint32 LengthInBytes;
 			public uint32 PolicyFlags;
@@ -2254,8 +2177,7 @@ namespace Win32
 			public _PolicyParameters_e__Union PolicyParameters;
 			
 			[CRepr, Union]
-			public struct _PolicyParameters_e__Union
-			{
+			public struct _PolicyParameters_e__Union			{
 				public _MaximumSize_e__Struct MaximumSize;
 				public _MinimumSize_e__Struct MinimumSize;
 				public _NewContainerSize_e__Struct NewContainerSize;
@@ -2268,192 +2190,162 @@ namespace Win32
 				public _NewContainerExtension_e__Struct NewContainerExtension;
 				
 				[CRepr]
-				public struct _NewContainerExtension_e__Struct
-				{
+				public struct _NewContainerExtension_e__Struct				{
 					public uint16 ExtensionLengthInBytes;
 					public char16[0] ExtensionString;
 				}
 				[CRepr]
-				public struct _NewContainerPrefix_e__Struct
-				{
+				public struct _NewContainerPrefix_e__Struct				{
 					public uint16 PrefixLengthInBytes;
 					public char16[0] PrefixString;
 				}
 				[CRepr]
-				public struct _AutoShrink_e__Struct
-				{
+				public struct _AutoShrink_e__Struct				{
 					public uint32 Percentage;
 				}
 				[CRepr]
-				public struct _GrowthRate_e__Struct
-				{
+				public struct _GrowthRate_e__Struct				{
 					public uint32 AbsoluteGrowthInContainers;
 					public uint32 RelativeGrowthPercentage;
 				}
 				[CRepr]
-				public struct _MinimumSize_e__Struct
-				{
+				public struct _MinimumSize_e__Struct				{
 					public uint32 Containers;
 				}
 				[CRepr]
-				public struct _NewContainerSuffix_e__Struct
-				{
+				public struct _NewContainerSuffix_e__Struct				{
 					public uint64 NextContainerSuffix;
 				}
 				[CRepr]
-				public struct _LogTail_e__Struct
-				{
+				public struct _LogTail_e__Struct				{
 					public uint32 MinimumAvailablePercentage;
 					public uint32 MinimumAvailableContainers;
 				}
 				[CRepr]
-				public struct _MaximumSize_e__Struct
-				{
+				public struct _MaximumSize_e__Struct				{
 					public uint32 Containers;
 				}
 				[CRepr]
-				public struct _AutoGrow_e__Struct
-				{
+				public struct _AutoGrow_e__Struct				{
 					public uint32 Enabled;
 				}
 				[CRepr]
-				public struct _NewContainerSize_e__Struct
-				{
+				public struct _NewContainerSize_e__Struct				{
 					public uint32 SizeInBytes;
 				}
 			}
 		}
 		[CRepr]
-		public struct CLFS_MGMT_NOTIFICATION
-		{
+		public struct CLFS_MGMT_NOTIFICATION		{
 			public CLFS_MGMT_NOTIFICATION_TYPE Notification;
 			public CLS_LSN Lsn;
 			public uint16 LogIsPinned;
 		}
 		[CRepr]
-		public struct LOG_MANAGEMENT_CALLBACKS
-		{
+		public struct LOG_MANAGEMENT_CALLBACKS		{
 			public void* CallbackContext;
 			public PLOG_TAIL_ADVANCE_CALLBACK AdvanceTailCallback;
 			public PLOG_FULL_HANDLER_CALLBACK LogFullHandlerCallback;
 			public PLOG_UNPINNED_CALLBACK LogUnpinnedCallback;
 		}
 		[CRepr]
-		public struct DISKQUOTA_USER_INFORMATION
-		{
+		public struct DISKQUOTA_USER_INFORMATION		{
 			public int64 QuotaUsed;
 			public int64 QuotaThreshold;
 			public int64 QuotaLimit;
 		}
 		[CRepr]
-		public struct EFS_CERTIFICATE_BLOB
-		{
+		public struct EFS_CERTIFICATE_BLOB		{
 			public uint32 dwCertEncodingType;
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct EFS_HASH_BLOB
-		{
+		public struct EFS_HASH_BLOB		{
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct EFS_RPC_BLOB
-		{
+		public struct EFS_RPC_BLOB		{
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct EFS_PIN_BLOB
-		{
+		public struct EFS_PIN_BLOB		{
 			public uint32 cbPadding;
 			public uint32 cbData;
 			public uint8* pbData;
 		}
 		[CRepr]
-		public struct EFS_KEY_INFO
-		{
+		public struct EFS_KEY_INFO		{
 			public uint32 dwVersion;
 			public uint32 Entropy;
 			public uint32 Algorithm;
 			public uint32 KeyLength;
 		}
 		[CRepr]
-		public struct EFS_COMPATIBILITY_INFO
-		{
+		public struct EFS_COMPATIBILITY_INFO		{
 			public uint32 EfsVersion;
 		}
 		[CRepr]
-		public struct EFS_VERSION_INFO
-		{
+		public struct EFS_VERSION_INFO		{
 			public uint32 EfsVersion;
 			public uint32 SubVersion;
 		}
 		[CRepr]
-		public struct EFS_DECRYPTION_STATUS_INFO
-		{
+		public struct EFS_DECRYPTION_STATUS_INFO		{
 			public uint32 dwDecryptionError;
 			public uint32 dwHashOffset;
 			public uint32 cbHash;
 		}
 		[CRepr]
-		public struct EFS_ENCRYPTION_STATUS_INFO
-		{
+		public struct EFS_ENCRYPTION_STATUS_INFO		{
 			public BOOL bHasCurrentKey;
 			public uint32 dwEncryptionError;
 		}
 		[CRepr]
-		public struct ENCRYPTION_CERTIFICATE
-		{
+		public struct ENCRYPTION_CERTIFICATE		{
 			public uint32 cbTotalLength;
 			public SID* pUserSid;
 			public EFS_CERTIFICATE_BLOB* pCertBlob;
 		}
 		[CRepr]
-		public struct ENCRYPTION_CERTIFICATE_HASH
-		{
+		public struct ENCRYPTION_CERTIFICATE_HASH		{
 			public uint32 cbTotalLength;
 			public SID* pUserSid;
 			public EFS_HASH_BLOB* pHash;
 			public PWSTR lpDisplayInformation;
 		}
 		[CRepr]
-		public struct ENCRYPTION_CERTIFICATE_HASH_LIST
-		{
+		public struct ENCRYPTION_CERTIFICATE_HASH_LIST		{
 			public uint32 nCert_Hash;
 			public ENCRYPTION_CERTIFICATE_HASH** pUsers;
 		}
 		[CRepr]
-		public struct ENCRYPTION_CERTIFICATE_LIST
-		{
+		public struct ENCRYPTION_CERTIFICATE_LIST		{
 			public uint32 nUsers;
 			public ENCRYPTION_CERTIFICATE** pUsers;
 		}
 		[CRepr]
-		public struct ENCRYPTED_FILE_METADATA_SIGNATURE
-		{
+		public struct ENCRYPTED_FILE_METADATA_SIGNATURE		{
 			public uint32 dwEfsAccessType;
 			public ENCRYPTION_CERTIFICATE_HASH_LIST* pCertificatesAdded;
 			public ENCRYPTION_CERTIFICATE* pEncryptionCertificate;
 			public EFS_RPC_BLOB* pEfsStreamSignature;
 		}
 		[CRepr]
-		public struct ENCRYPTION_PROTECTOR
-		{
+		public struct ENCRYPTION_PROTECTOR		{
 			public uint32 cbTotalLength;
 			public SID* pUserSid;
 			public PWSTR lpProtectorDescriptor;
 		}
 		[CRepr]
-		public struct ENCRYPTION_PROTECTOR_LIST
-		{
+		public struct ENCRYPTION_PROTECTOR_LIST		{
 			public uint32 nProtectors;
 			public ENCRYPTION_PROTECTOR** pProtectors;
 		}
 		[CRepr]
-		public struct WIM_ENTRY_INFO
-		{
+		public struct WIM_ENTRY_INFO		{
 			public uint32 WimEntryInfoSize;
 			public uint32 WimType;
 			public LARGE_INTEGER DataSourceId;
@@ -2463,45 +2355,38 @@ namespace Win32
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct WIM_EXTERNAL_FILE_INFO
-		{
+		public struct WIM_EXTERNAL_FILE_INFO		{
 			public LARGE_INTEGER DataSourceId;
 			public uint8[20] ResourceHash;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct WOF_FILE_COMPRESSION_INFO_V0
-		{
+		public struct WOF_FILE_COMPRESSION_INFO_V0		{
 			public uint32 Algorithm;
 		}
 		[CRepr]
-		public struct WOF_FILE_COMPRESSION_INFO_V1
-		{
+		public struct WOF_FILE_COMPRESSION_INFO_V1		{
 			public uint32 Algorithm;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct TXF_ID
-		{
+		public struct TXF_ID		{
 			public _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public int64 LowPart;
 				public int64 HighPart;
 			}
 		}
 		[CRepr]
-		public struct TXF_LOG_RECORD_BASE
-		{
+		public struct TXF_LOG_RECORD_BASE		{
 			public uint16 Version;
 			public TXF_LOG_RECORD_TYPE RecordType;
 			public uint32 RecordLength;
 		}
 		[CRepr]
-		public struct TXF_LOG_RECORD_WRITE
-		{
+		public struct TXF_LOG_RECORD_WRITE		{
 			public uint16 Version;
 			public uint16 RecordType;
 			public uint32 RecordLength;
@@ -2515,8 +2400,7 @@ namespace Win32
 			public uint32 FileNameByteOffsetInStructure;
 		}
 		[CRepr]
-		public struct TXF_LOG_RECORD_TRUNCATE
-		{
+		public struct TXF_LOG_RECORD_TRUNCATE		{
 			public uint16 Version;
 			public uint16 RecordType;
 			public uint32 RecordLength;
@@ -2528,8 +2412,7 @@ namespace Win32
 			public uint32 FileNameByteOffsetInStructure;
 		}
 		[CRepr]
-		public struct TXF_LOG_RECORD_AFFECTED_FILE
-		{
+		public struct TXF_LOG_RECORD_AFFECTED_FILE		{
 			public uint16 Version;
 			public uint32 RecordLength;
 			public uint32 Flags;
@@ -2539,44 +2422,37 @@ namespace Win32
 			public uint32 FileNameByteOffsetInStructure;
 		}
 		[CRepr]
-		public struct VOLUME_FAILOVER_SET
-		{
+		public struct VOLUME_FAILOVER_SET		{
 			public uint32 NumberOfDisks;
 			public uint32[0] DiskNumbers;
 		}
 		[CRepr]
-		public struct VOLUME_NUMBER
-		{
+		public struct VOLUME_NUMBER		{
 			public uint32 VolumeNumber;
 			public char16[8] VolumeManagerName;
 		}
 		[CRepr]
-		public struct VOLUME_LOGICAL_OFFSET
-		{
+		public struct VOLUME_LOGICAL_OFFSET		{
 			public int64 LogicalOffset;
 		}
 		[CRepr]
-		public struct VOLUME_PHYSICAL_OFFSET
-		{
+		public struct VOLUME_PHYSICAL_OFFSET		{
 			public uint32 DiskNumber;
 			public int64 Offset;
 		}
 		[CRepr]
-		public struct VOLUME_PHYSICAL_OFFSETS
-		{
+		public struct VOLUME_PHYSICAL_OFFSETS		{
 			public uint32 NumberOfPhysicalOffsets;
 			public VOLUME_PHYSICAL_OFFSET[0] PhysicalOffset;
 		}
 		[CRepr]
-		public struct VOLUME_READ_PLEX_INPUT
-		{
+		public struct VOLUME_READ_PLEX_INPUT		{
 			public LARGE_INTEGER ByteOffset;
 			public uint32 Length;
 			public uint32 PlexNumber;
 		}
 		[CRepr]
-		public struct VOLUME_SET_GPT_ATTRIBUTES_INFORMATION
-		{
+		public struct VOLUME_SET_GPT_ATTRIBUTES_INFORMATION		{
 			public uint64 GptAttributes;
 			public BOOLEAN RevertOnClose;
 			public BOOLEAN ApplyToAllConnectedVolumes;
@@ -2584,8 +2460,7 @@ namespace Win32
 			public uint32 Reserved2;
 		}
 		[CRepr]
-		public struct VOLUME_GET_BC_PROPERTIES_INPUT
-		{
+		public struct VOLUME_GET_BC_PROPERTIES_INPUT		{
 			public uint32 Version;
 			public uint32 Reserved1;
 			public uint64 LowestByteOffset;
@@ -2594,8 +2469,7 @@ namespace Win32
 			public uint32 AccessMode;
 		}
 		[CRepr]
-		public struct VOLUME_GET_BC_PROPERTIES_OUTPUT
-		{
+		public struct VOLUME_GET_BC_PROPERTIES_OUTPUT		{
 			public uint32 MaximumRequestsPerPeriod;
 			public uint32 MinimumPeriod;
 			public uint64 MaximumRequestSize;
@@ -2604,8 +2478,7 @@ namespace Win32
 			public uint64 RequestSize;
 		}
 		[CRepr]
-		public struct VOLUME_ALLOCATE_BC_STREAM_INPUT
-		{
+		public struct VOLUME_ALLOCATE_BC_STREAM_INPUT		{
 			public uint32 Version;
 			public uint32 RequestsPerPeriod;
 			public uint32 Period;
@@ -2618,56 +2491,47 @@ namespace Win32
 			public uint32 AccessMode;
 		}
 		[CRepr]
-		public struct VOLUME_ALLOCATE_BC_STREAM_OUTPUT
-		{
+		public struct VOLUME_ALLOCATE_BC_STREAM_OUTPUT		{
 			public uint64 RequestSize;
 			public uint32 NumOutStandingRequests;
 		}
 		[CRepr]
-		public struct FILE_EXTENT
-		{
+		public struct FILE_EXTENT		{
 			public uint64 VolumeOffset;
 			public uint64 ExtentLength;
 		}
 		[CRepr]
-		public struct VOLUME_CRITICAL_IO
-		{
+		public struct VOLUME_CRITICAL_IO		{
 			public uint32 AccessType;
 			public uint32 ExtentsCount;
 			public FILE_EXTENT[0] Extents;
 		}
 		[CRepr]
-		public struct VOLUME_ALLOCATION_HINT_INPUT
-		{
+		public struct VOLUME_ALLOCATION_HINT_INPUT		{
 			public uint32 ClusterSize;
 			public uint32 NumberOfClusters;
 			public int64 StartingClusterNumber;
 		}
 		[CRepr]
-		public struct VOLUME_ALLOCATION_HINT_OUTPUT
-		{
+		public struct VOLUME_ALLOCATION_HINT_OUTPUT		{
 			public uint32[0] Bitmap;
 		}
 		[CRepr]
-		public struct VOLUME_SHRINK_INFO
-		{
+		public struct VOLUME_SHRINK_INFO		{
 			public uint64 VolumeSize;
 		}
 		[CRepr]
-		public struct SHARE_INFO_0
-		{
+		public struct SHARE_INFO_0		{
 			public PWSTR shi0_netname;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1
-		{
+		public struct SHARE_INFO_1		{
 			public PWSTR shi1_netname;
 			public SHARE_TYPE shi1_type;
 			public PWSTR shi1_remark;
 		}
 		[CRepr]
-		public struct SHARE_INFO_2
-		{
+		public struct SHARE_INFO_2		{
 			public PWSTR shi2_netname;
 			public SHARE_TYPE shi2_type;
 			public PWSTR shi2_remark;
@@ -2678,16 +2542,14 @@ namespace Win32
 			public PWSTR shi2_passwd;
 		}
 		[CRepr]
-		public struct SHARE_INFO_501
-		{
+		public struct SHARE_INFO_501		{
 			public PWSTR shi501_netname;
 			public SHARE_TYPE shi501_type;
 			public PWSTR shi501_remark;
 			public uint32 shi501_flags;
 		}
 		[CRepr]
-		public struct SHARE_INFO_502
-		{
+		public struct SHARE_INFO_502		{
 			public PWSTR shi502_netname;
 			public SHARE_TYPE shi502_type;
 			public PWSTR shi502_remark;
@@ -2700,8 +2562,7 @@ namespace Win32
 			public SECURITY_DESCRIPTOR* shi502_security_descriptor;
 		}
 		[CRepr]
-		public struct SHARE_INFO_503
-		{
+		public struct SHARE_INFO_503		{
 			public PWSTR shi503_netname;
 			public SHARE_TYPE shi503_type;
 			public PWSTR shi503_remark;
@@ -2715,47 +2576,39 @@ namespace Win32
 			public SECURITY_DESCRIPTOR* shi503_security_descriptor;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1004
-		{
+		public struct SHARE_INFO_1004		{
 			public PWSTR shi1004_remark;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1005
-		{
+		public struct SHARE_INFO_1005		{
 			public uint32 shi1005_flags;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1006
-		{
+		public struct SHARE_INFO_1006		{
 			public uint32 shi1006_max_uses;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1501
-		{
+		public struct SHARE_INFO_1501		{
 			public uint32 shi1501_reserved;
 			public SECURITY_DESCRIPTOR* shi1501_security_descriptor;
 		}
 		[CRepr]
-		public struct SHARE_INFO_1503
-		{
+		public struct SHARE_INFO_1503		{
 			public Guid shi1503_sharefilter;
 		}
 		[CRepr]
-		public struct SERVER_ALIAS_INFO_0
-		{
+		public struct SERVER_ALIAS_INFO_0		{
 			public PWSTR srvai0_alias;
 			public PWSTR srvai0_target;
 			public BOOLEAN srvai0_default;
 			public uint32 srvai0_reserved;
 		}
 		[CRepr]
-		public struct SESSION_INFO_0
-		{
+		public struct SESSION_INFO_0		{
 			public PWSTR sesi0_cname;
 		}
 		[CRepr]
-		public struct SESSION_INFO_1
-		{
+		public struct SESSION_INFO_1		{
 			public PWSTR sesi1_cname;
 			public PWSTR sesi1_username;
 			public uint32 sesi1_num_opens;
@@ -2764,8 +2617,7 @@ namespace Win32
 			public SESSION_INFO_USER_FLAGS sesi1_user_flags;
 		}
 		[CRepr]
-		public struct SESSION_INFO_2
-		{
+		public struct SESSION_INFO_2		{
 			public PWSTR sesi2_cname;
 			public PWSTR sesi2_username;
 			public uint32 sesi2_num_opens;
@@ -2775,16 +2627,14 @@ namespace Win32
 			public PWSTR sesi2_cltype_name;
 		}
 		[CRepr]
-		public struct SESSION_INFO_10
-		{
+		public struct SESSION_INFO_10		{
 			public PWSTR sesi10_cname;
 			public PWSTR sesi10_username;
 			public uint32 sesi10_time;
 			public uint32 sesi10_idle_time;
 		}
 		[CRepr]
-		public struct SESSION_INFO_502
-		{
+		public struct SESSION_INFO_502		{
 			public PWSTR sesi502_cname;
 			public PWSTR sesi502_username;
 			public uint32 sesi502_num_opens;
@@ -2795,13 +2645,11 @@ namespace Win32
 			public PWSTR sesi502_transport;
 		}
 		[CRepr]
-		public struct CONNECTION_INFO_0
-		{
+		public struct CONNECTION_INFO_0		{
 			public uint32 coni0_id;
 		}
 		[CRepr]
-		public struct CONNECTION_INFO_1
-		{
+		public struct CONNECTION_INFO_1		{
 			public uint32 coni1_id;
 			public SHARE_TYPE coni1_type;
 			public uint32 coni1_num_opens;
@@ -2811,13 +2659,11 @@ namespace Win32
 			public PWSTR coni1_netname;
 		}
 		[CRepr]
-		public struct FILE_INFO_2
-		{
+		public struct FILE_INFO_2		{
 			public uint32 fi2_id;
 		}
 		[CRepr]
-		public struct FILE_INFO_3
-		{
+		public struct FILE_INFO_3		{
 			public uint32 fi3_id;
 			public FILE_INFO_FLAGS_PERMISSIONS fi3_permissions;
 			public uint32 fi3_num_locks;
@@ -2825,8 +2671,7 @@ namespace Win32
 			public PWSTR fi3_username;
 		}
 		[CRepr]
-		public struct SERVER_CERTIFICATE_INFO_0
-		{
+		public struct SERVER_CERTIFICATE_INFO_0		{
 			public PWSTR srvci0_name;
 			public PWSTR srvci0_subject;
 			public PWSTR srvci0_issuer;
@@ -2841,8 +2686,7 @@ namespace Win32
 			public uint32 srvci0_flags;
 		}
 		[CRepr]
-		public struct STAT_WORKSTATION_0
-		{
+		public struct STAT_WORKSTATION_0		{
 			public LARGE_INTEGER StatisticsStartTime;
 			public LARGE_INTEGER BytesReceived;
 			public LARGE_INTEGER SmbsReceived;
@@ -2885,8 +2729,7 @@ namespace Win32
 			public uint32 CurrentCommands;
 		}
 		[CRepr]
-		public struct STAT_SERVER_0
-		{
+		public struct STAT_SERVER_0		{
 			public uint32 sts0_start;
 			public uint32 sts0_fopens;
 			public uint32 sts0_devopens;
@@ -2906,8 +2749,7 @@ namespace Win32
 			public uint32 sts0_bigbufneed;
 		}
 		[CRepr]
-		public struct FH_OVERLAPPED
-		{
+		public struct FH_OVERLAPPED		{
 			public uint Internal;
 			public uint InternalHigh;
 			public uint32 Offset;
@@ -2920,8 +2762,7 @@ namespace Win32
 			public uint Reserved4;
 		}
 		[CRepr]
-		public struct FIO_CONTEXT
-		{
+		public struct FIO_CONTEXT		{
 			public uint32 m_dwTempHack;
 			public uint32 m_dwSignature;
 			public HANDLE m_hFile;
@@ -2929,98 +2770,83 @@ namespace Win32
 			public uint32 m_dwHeaderLength;
 		}
 		[CRepr]
-		public struct NAME_CACHE_CONTEXT
-		{
+		public struct NAME_CACHE_CONTEXT		{
 			public uint32 m_dwSignature;
 		}
 		[CRepr]
-		public struct IORING_BUFFER_INFO
-		{
+		public struct IORING_BUFFER_INFO		{
 			public void* Address;
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct IORING_REGISTERED_BUFFER
-		{
+		public struct IORING_REGISTERED_BUFFER		{
 			public uint32 BufferIndex;
 			public uint32 Offset;
 		}
 		[CRepr]
-		public struct HIORING__
-		{
+		public struct HIORING__		{
 			public int32 unused;
 		}
 		[CRepr]
-		public struct IORING_CREATE_FLAGS
-		{
+		public struct IORING_CREATE_FLAGS		{
 			public IORING_CREATE_REQUIRED_FLAGS Required;
 			public IORING_CREATE_ADVISORY_FLAGS Advisory;
 		}
 		[CRepr]
-		public struct IORING_INFO
-		{
+		public struct IORING_INFO		{
 			public IORING_VERSION IoRingVersion;
 			public IORING_CREATE_FLAGS Flags;
 			public uint32 SubmissionQueueSize;
 			public uint32 CompletionQueueSize;
 		}
 		[CRepr]
-		public struct IORING_CAPABILITIES
-		{
+		public struct IORING_CAPABILITIES		{
 			public IORING_VERSION MaxVersion;
 			public uint32 MaxSubmissionQueueSize;
 			public uint32 MaxCompletionQueueSize;
 			public IORING_FEATURE_FLAGS FeatureFlags;
 		}
 		[CRepr]
-		public struct IORING_HANDLE_REF
-		{
+		public struct IORING_HANDLE_REF		{
 			public IORING_REF_KIND Kind;
 			public HandleUnion Handle;
 			
 			[CRepr, Union]
-			public struct HandleUnion
-			{
+			public struct HandleUnion			{
 				public HANDLE Handle;
 				public uint32 Index;
 			}
 		}
 		[CRepr]
-		public struct IORING_BUFFER_REF
-		{
+		public struct IORING_BUFFER_REF		{
 			public IORING_REF_KIND Kind;
 			public BufferUnion Buffer;
 			
 			[CRepr, Union]
-			public struct BufferUnion
-			{
+			public struct BufferUnion			{
 				public void* Address;
 				public IORING_REGISTERED_BUFFER IndexAndOffset;
 			}
 		}
 		[CRepr]
-		public struct IORING_CQE
-		{
+		public struct IORING_CQE		{
 			public uint UserData;
 			public HRESULT ResultCode;
 			public uint Information;
 		}
 		[CRepr]
-		public struct FILE_ID_128
-		{
+		public struct FILE_ID_128		{
 			public uint8[16] Identifier;
 		}
 		[CRepr]
-		public struct FILE_NOTIFY_INFORMATION
-		{
+		public struct FILE_NOTIFY_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public FILE_ACTION Action;
 			public uint32 FileNameLength;
 			public char16[0] FileName;
 		}
 		[CRepr]
-		public struct FILE_NOTIFY_EXTENDED_INFORMATION
-		{
+		public struct FILE_NOTIFY_EXTENDED_INFORMATION		{
 			public uint32 NextEntryOffset;
 			public FILE_ACTION Action;
 			public LARGE_INTEGER CreationTime;
@@ -3037,14 +2863,12 @@ namespace Win32
 			public char16[0] FileName;
 		}
 		[CRepr, Union]
-		public struct FILE_SEGMENT_ELEMENT
-		{
+		public struct FILE_SEGMENT_ELEMENT		{
 			public void* Buffer;
 			public uint64 Alignment;
 		}
 		[CRepr]
-		public struct REPARSE_GUID_DATA_BUFFER
-		{
+		public struct REPARSE_GUID_DATA_BUFFER		{
 			public uint32 ReparseTag;
 			public uint16 ReparseDataLength;
 			public uint16 Reserved;
@@ -3052,48 +2876,41 @@ namespace Win32
 			public _GenericReparseBuffer_e__Struct GenericReparseBuffer;
 			
 			[CRepr]
-			public struct _GenericReparseBuffer_e__Struct
-			{
+			public struct _GenericReparseBuffer_e__Struct			{
 				public uint8[0] DataBuffer;
 			}
 		}
 		[CRepr]
-		public struct TAPE_ERASE
-		{
+		public struct TAPE_ERASE		{
 			public ERASE_TAPE_TYPE Type;
 			public BOOLEAN Immediate;
 		}
 		[CRepr]
-		public struct TAPE_PREPARE
-		{
+		public struct TAPE_PREPARE		{
 			public PREPARE_TAPE_OPERATION Operation;
 			public BOOLEAN Immediate;
 		}
 		[CRepr]
-		public struct TAPE_WRITE_MARKS
-		{
+		public struct TAPE_WRITE_MARKS		{
 			public TAPEMARK_TYPE Type;
 			public uint32 Count;
 			public BOOLEAN Immediate;
 		}
 		[CRepr]
-		public struct TAPE_GET_POSITION
-		{
+		public struct TAPE_GET_POSITION		{
 			public TAPE_POSITION_TYPE Type;
 			public uint32 Partition;
 			public LARGE_INTEGER Offset;
 		}
 		[CRepr]
-		public struct TAPE_SET_POSITION
-		{
+		public struct TAPE_SET_POSITION		{
 			public TAPE_POSITION_METHOD Method;
 			public uint32 Partition;
 			public LARGE_INTEGER Offset;
 			public BOOLEAN Immediate;
 		}
 		[CRepr]
-		public struct OFSTRUCT
-		{
+		public struct OFSTRUCT		{
 			public uint8 cBytes;
 			public uint8 fFixedDisk;
 			public uint16 nErrCode;
@@ -3102,8 +2919,7 @@ namespace Win32
 			public CHAR[128] szPathName;
 		}
 		[CRepr]
-		public struct WIN32_STREAM_ID
-		{
+		public struct WIN32_STREAM_ID		{
 			public WIN_STREAM_ID dwStreamId;
 			public uint32 dwStreamAttributes;
 			public LARGE_INTEGER Size;
@@ -3111,15 +2927,13 @@ namespace Win32
 			public char16[0] cStreamName;
 		}
 		[CRepr]
-		public struct COPYFILE2_MESSAGE
-		{
+		public struct COPYFILE2_MESSAGE		{
 			public COPYFILE2_MESSAGE_TYPE Type;
 			public uint32 dwPadding;
 			public _Info_e__Union Info;
 			
 			[CRepr, Union]
-			public struct _Info_e__Union
-			{
+			public struct _Info_e__Union			{
 				public _ChunkStarted_e__Struct ChunkStarted;
 				public _ChunkFinished_e__Struct ChunkFinished;
 				public _StreamStarted_e__Struct StreamStarted;
@@ -3128,8 +2942,7 @@ namespace Win32
 				public _Error_e__Struct Error;
 				
 				[CRepr]
-				public struct _Error_e__Struct
-				{
+				public struct _Error_e__Struct				{
 					public COPYFILE2_COPY_PHASE CopyPhase;
 					public uint32 dwStreamNumber;
 					public HRESULT hrFailure;
@@ -3141,8 +2954,7 @@ namespace Win32
 					public ULARGE_INTEGER uliTotalBytesTransferred;
 				}
 				[CRepr]
-				public struct _StreamFinished_e__Struct
-				{
+				public struct _StreamFinished_e__Struct				{
 					public uint32 dwStreamNumber;
 					public uint32 dwReserved;
 					public HANDLE hSourceFile;
@@ -3153,8 +2965,7 @@ namespace Win32
 					public ULARGE_INTEGER uliTotalBytesTransferred;
 				}
 				[CRepr]
-				public struct _ChunkFinished_e__Struct
-				{
+				public struct _ChunkFinished_e__Struct				{
 					public uint32 dwStreamNumber;
 					public uint32 dwFlags;
 					public HANDLE hSourceFile;
@@ -3167,13 +2978,11 @@ namespace Win32
 					public ULARGE_INTEGER uliTotalBytesTransferred;
 				}
 				[CRepr]
-				public struct _PollContinue_e__Struct
-				{
+				public struct _PollContinue_e__Struct				{
 					public uint32 dwReserved;
 				}
 				[CRepr]
-				public struct _ChunkStarted_e__Struct
-				{
+				public struct _ChunkStarted_e__Struct				{
 					public uint32 dwStreamNumber;
 					public uint32 dwReserved;
 					public HANDLE hSourceFile;
@@ -3184,8 +2993,7 @@ namespace Win32
 					public ULARGE_INTEGER uliTotalFileSize;
 				}
 				[CRepr]
-				public struct _StreamStarted_e__Struct
-				{
+				public struct _StreamStarted_e__Struct				{
 					public uint32 dwStreamNumber;
 					public uint32 dwReserved;
 					public HANDLE hSourceFile;
@@ -3196,8 +3004,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct COPYFILE2_EXTENDED_PARAMETERS
-		{
+		public struct COPYFILE2_EXTENDED_PARAMETERS		{
 			public uint32 dwSize;
 			public uint32 dwCopyFlags;
 			public BOOL* pfCancel;
@@ -3205,8 +3012,7 @@ namespace Win32
 			public void* pvCallbackContext;
 		}
 		[CRepr]
-		public struct COPYFILE2_EXTENDED_PARAMETERS_V2
-		{
+		public struct COPYFILE2_EXTENDED_PARAMETERS_V2		{
 			public uint32 dwSize;
 			public uint32 dwCopyFlags;
 			public BOOL* pfCancel;
@@ -3218,8 +3024,7 @@ namespace Win32
 			public void*[8] reserved;
 		}
 		[CRepr]
-		public struct FILE_BASIC_INFO
-		{
+		public struct FILE_BASIC_INFO		{
 			public LARGE_INTEGER CreationTime;
 			public LARGE_INTEGER LastAccessTime;
 			public LARGE_INTEGER LastWriteTime;
@@ -3227,8 +3032,7 @@ namespace Win32
 			public uint32 FileAttributes;
 		}
 		[CRepr]
-		public struct FILE_STANDARD_INFO
-		{
+		public struct FILE_STANDARD_INFO		{
 			public LARGE_INTEGER AllocationSize;
 			public LARGE_INTEGER EndOfFile;
 			public uint32 NumberOfLinks;
@@ -3236,39 +3040,33 @@ namespace Win32
 			public BOOLEAN Directory;
 		}
 		[CRepr]
-		public struct FILE_NAME_INFO
-		{
+		public struct FILE_NAME_INFO		{
 			public uint32 FileNameLength;
 			public char16[0] FileName;
 		}
 		[CRepr]
-		public struct FILE_RENAME_INFO
-		{
+		public struct FILE_RENAME_INFO		{
 			public _Anonymous_e__Union Anonymous;
 			public HANDLE RootDirectory;
 			public uint32 FileNameLength;
 			public char16[0] FileName;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public BOOLEAN ReplaceIfExists;
 				public uint32 Flags;
 			}
 		}
 		[CRepr]
-		public struct FILE_ALLOCATION_INFO
-		{
+		public struct FILE_ALLOCATION_INFO		{
 			public LARGE_INTEGER AllocationSize;
 		}
 		[CRepr]
-		public struct FILE_END_OF_FILE_INFO
-		{
+		public struct FILE_END_OF_FILE_INFO		{
 			public LARGE_INTEGER EndOfFile;
 		}
 		[CRepr]
-		public struct FILE_STREAM_INFO
-		{
+		public struct FILE_STREAM_INFO		{
 			public uint32 NextEntryOffset;
 			public uint32 StreamNameLength;
 			public LARGE_INTEGER StreamSize;
@@ -3276,8 +3074,7 @@ namespace Win32
 			public char16[0] StreamName;
 		}
 		[CRepr]
-		public struct FILE_COMPRESSION_INFO
-		{
+		public struct FILE_COMPRESSION_INFO		{
 			public LARGE_INTEGER CompressedFileSize;
 			public uint16 CompressionFormat;
 			public uint8 CompressionUnitShift;
@@ -3286,19 +3083,16 @@ namespace Win32
 			public uint8[3] Reserved;
 		}
 		[CRepr]
-		public struct FILE_ATTRIBUTE_TAG_INFO
-		{
+		public struct FILE_ATTRIBUTE_TAG_INFO		{
 			public uint32 FileAttributes;
 			public uint32 ReparseTag;
 		}
 		[CRepr]
-		public struct FILE_DISPOSITION_INFO
-		{
+		public struct FILE_DISPOSITION_INFO		{
 			public BOOLEAN DeleteFileA;
 		}
 		[CRepr]
-		public struct FILE_ID_BOTH_DIR_INFO
-		{
+		public struct FILE_ID_BOTH_DIR_INFO		{
 			public uint32 NextEntryOffset;
 			public uint32 FileIndex;
 			public LARGE_INTEGER CreationTime;
@@ -3316,8 +3110,7 @@ namespace Win32
 			public char16[0] FileName;
 		}
 		[CRepr]
-		public struct FILE_FULL_DIR_INFO
-		{
+		public struct FILE_FULL_DIR_INFO		{
 			public uint32 NextEntryOffset;
 			public uint32 FileIndex;
 			public LARGE_INTEGER CreationTime;
@@ -3332,18 +3125,15 @@ namespace Win32
 			public char16[0] FileName;
 		}
 		[CRepr]
-		public struct FILE_IO_PRIORITY_HINT_INFO
-		{
+		public struct FILE_IO_PRIORITY_HINT_INFO		{
 			public PRIORITY_HINT PriorityHint;
 		}
 		[CRepr]
-		public struct FILE_ALIGNMENT_INFO
-		{
+		public struct FILE_ALIGNMENT_INFO		{
 			public uint32 AlignmentRequirement;
 		}
 		[CRepr]
-		public struct FILE_STORAGE_INFO
-		{
+		public struct FILE_STORAGE_INFO		{
 			public uint32 LogicalBytesPerSector;
 			public uint32 PhysicalBytesPerSectorForAtomicity;
 			public uint32 PhysicalBytesPerSectorForPerformance;
@@ -3353,14 +3143,12 @@ namespace Win32
 			public uint32 ByteOffsetForPartitionAlignment;
 		}
 		[CRepr]
-		public struct FILE_ID_INFO
-		{
+		public struct FILE_ID_INFO		{
 			public uint64 VolumeSerialNumber;
 			public FILE_ID_128 FileId;
 		}
 		[CRepr]
-		public struct FILE_ID_EXTD_DIR_INFO
-		{
+		public struct FILE_ID_EXTD_DIR_INFO		{
 			public uint32 NextEntryOffset;
 			public uint32 FileIndex;
 			public LARGE_INTEGER CreationTime;
@@ -3377,8 +3165,7 @@ namespace Win32
 			public char16[0] FileName;
 		}
 		[CRepr]
-		public struct FILE_REMOTE_PROTOCOL_INFO
-		{
+		public struct FILE_REMOTE_PROTOCOL_INFO		{
 			public uint16 StructureVersion;
 			public uint16 StructureSize;
 			public uint32 Protocol;
@@ -3391,46 +3178,39 @@ namespace Win32
 			public _ProtocolSpecific_e__Union ProtocolSpecific;
 			
 			[CRepr, Union]
-			public struct _ProtocolSpecific_e__Union
-			{
+			public struct _ProtocolSpecific_e__Union			{
 				public _Smb2_e__Struct Smb2;
 				public uint32[16] Reserved;
 				
 				[CRepr]
-				public struct _Smb2_e__Struct
-				{
+				public struct _Smb2_e__Struct				{
 					public _Server_e__Struct Server;
 					public _Share_e__Struct Share;
 					
 					[CRepr]
-					public struct _Server_e__Struct
-					{
+					public struct _Server_e__Struct					{
 						public uint32 Capabilities;
 					}
 					[CRepr]
-					public struct _Share_e__Struct
-					{
+					public struct _Share_e__Struct					{
 						public uint32 Capabilities;
 						public uint32 CachingFlags;
 					}
 				}
 			}
 			[CRepr]
-			public struct _GenericReserved_e__Struct
-			{
+			public struct _GenericReserved_e__Struct			{
 				public uint32[8] Reserved;
 			}
 		}
 		[CRepr]
-		public struct FILE_ID_DESCRIPTOR
-		{
+		public struct FILE_ID_DESCRIPTOR		{
 			public uint32 dwSize;
 			public FILE_ID_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public LARGE_INTEGER FileId;
 				public Guid ObjectId;
 				public FILE_ID_128 ExtendedFileId;

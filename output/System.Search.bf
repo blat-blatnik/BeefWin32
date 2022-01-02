@@ -4719,56 +4719,47 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct IRowsetExactScroll
-		{
-		}
+		public struct IRowsetExactScroll {}
 		[CRepr]
-		public struct TEXT_SOURCE
-		{
+		public struct TEXT_SOURCE		{
 			public PFNFILLTEXTBUFFER pfnFillTextBuffer;
 			public PWSTR awcBuffer;
 			public uint32 iEnd;
 			public uint32 iCur;
 		}
 		[CRepr]
-		public struct FILTERED_DATA_SOURCES
-		{
+		public struct FILTERED_DATA_SOURCES		{
 			public PWSTR pwcsExtension;
 			public PWSTR pwcsMime;
 			public Guid* pClsid;
 			public PWSTR pwcsOverride;
 		}
 		[CRepr]
-		public struct DB_NUMERIC
-		{
+		public struct DB_NUMERIC		{
 			public uint8 precision;
 			public uint8 scale;
 			public uint8 sign;
 			public uint8[16] val;
 		}
 		[CRepr]
-		public struct DBVECTOR
-		{
+		public struct DBVECTOR		{
 			public uint size;
 			public void* ptr;
 		}
 		[CRepr]
-		public struct DBDATE
-		{
+		public struct DBDATE		{
 			public int16 year;
 			public uint16 month;
 			public uint16 day;
 		}
 		[CRepr]
-		public struct DBTIME
-		{
+		public struct DBTIME		{
 			public uint16 hour;
 			public uint16 minute;
 			public uint16 second;
 		}
 		[CRepr]
-		public struct DBTIMESTAMP
-		{
+		public struct DBTIMESTAMP		{
 			public int16 year;
 			public uint16 month;
 			public uint16 day;
@@ -4778,47 +4769,40 @@ namespace Win32
 			public uint32 fraction;
 		}
 		[CRepr]
-		public struct DB_VARNUMERIC
-		{
+		public struct DB_VARNUMERIC		{
 			public uint8 precision;
 			public int8 scale;
 			public uint8 sign;
 			public uint8[0] val;
 		}
 		[CRepr]
-		public struct SEC_OBJECT_ELEMENT
-		{
+		public struct SEC_OBJECT_ELEMENT		{
 			public Guid guidObjectType;
 			public DBID ObjectID;
 		}
 		[CRepr]
-		public struct SEC_OBJECT
-		{
+		public struct SEC_OBJECT		{
 			public uint32 cObjects;
 			public SEC_OBJECT_ELEMENT* prgObjects;
 		}
 		[CRepr]
-		public struct DBIMPLICITSESSION
-		{
+		public struct DBIMPLICITSESSION		{
 			public IUnknown* pUnkOuter;
 			public Guid* piid;
 			public IUnknown* pSession;
 		}
 		[CRepr]
-		public struct DBOBJECT
-		{
+		public struct DBOBJECT		{
 			public uint32 dwFlags;
 			public Guid iid;
 		}
 		[CRepr]
-		public struct DBBINDEXT
-		{
+		public struct DBBINDEXT		{
 			public uint8* pExtension;
 			public uint ulExtension;
 		}
 		[CRepr]
-		public struct DBBINDING
-		{
+		public struct DBBINDING		{
 			public uint iOrdinal;
 			public uint obValue;
 			public uint obLength;
@@ -4836,15 +4820,13 @@ namespace Win32
 			public uint8 bScale;
 		}
 		[CRepr]
-		public struct DBFAILUREINFO
-		{
+		public struct DBFAILUREINFO		{
 			public uint hRow;
 			public uint iColumn;
 			public HRESULT failure;
 		}
 		[CRepr]
-		public struct DBCOLUMNINFO
-		{
+		public struct DBCOLUMNINFO		{
 			public PWSTR pwszName;
 			public ITypeInfo* pTypeInfo;
 			public uint iOrdinal;
@@ -4856,15 +4838,13 @@ namespace Win32
 			public DBID columnid;
 		}
 		[CRepr]
-		public struct DBPARAMS
-		{
+		public struct DBPARAMS		{
 			public void* pData;
 			public uint cParamSets;
 			public uint hAccessor;
 		}
 		[CRepr]
-		public struct DBPARAMINFO
-		{
+		public struct DBPARAMINFO		{
 			public uint32 dwFlags;
 			public uint iOrdinal;
 			public PWSTR pwszName;
@@ -4875,15 +4855,13 @@ namespace Win32
 			public uint8 bScale;
 		}
 		[CRepr]
-		public struct DBPROPIDSET
-		{
+		public struct DBPROPIDSET		{
 			public uint32* rgPropertyIDs;
 			public uint32 cPropertyIDs;
 			public Guid guidPropertySet;
 		}
 		[CRepr]
-		public struct DBPROPINFO
-		{
+		public struct DBPROPINFO		{
 			public PWSTR pwszDescription;
 			public uint32 dwPropertyID;
 			public uint32 dwFlags;
@@ -4891,15 +4869,13 @@ namespace Win32
 			public VARIANT vValues;
 		}
 		[CRepr]
-		public struct DBPROPINFOSET
-		{
+		public struct DBPROPINFOSET		{
 			public DBPROPINFO* rgPropertyInfos;
 			public uint32 cPropertyInfos;
 			public Guid guidPropertySet;
 		}
 		[CRepr]
-		public struct DBPROP
-		{
+		public struct DBPROP		{
 			public uint32 dwPropertyID;
 			public uint32 dwOptions;
 			public uint32 dwStatus;
@@ -4907,21 +4883,18 @@ namespace Win32
 			public VARIANT vValue;
 		}
 		[CRepr]
-		public struct DBPROPSET
-		{
+		public struct DBPROPSET		{
 			public DBPROP* rgProperties;
 			public uint32 cProperties;
 			public Guid guidPropertySet;
 		}
 		[CRepr]
-		public struct DBINDEXCOLUMNDESC
-		{
+		public struct DBINDEXCOLUMNDESC		{
 			public DBID* pColumnID;
 			public uint32 eIndexColOrder;
 		}
 		[CRepr]
-		public struct DBCOLUMNDESC
-		{
+		public struct DBCOLUMNDESC		{
 			public PWSTR pwszTypeName;
 			public ITypeInfo* pTypeInfo;
 			public DBPROPSET* rgPropertySets;
@@ -4934,8 +4907,7 @@ namespace Win32
 			public uint8 bScale;
 		}
 		[CRepr]
-		public struct DBCOLUMNACCESS
-		{
+		public struct DBCOLUMNACCESS		{
 			public void* pData;
 			public DBID columnid;
 			public uint cbDataLen;
@@ -4947,8 +4919,7 @@ namespace Win32
 			public uint8 bScale;
 		}
 		[CRepr]
-		public struct DBCONSTRAINTDESC
-		{
+		public struct DBCONSTRAINTDESC		{
 			public DBID* pConstraintID;
 			public uint32 ConstraintType;
 			public uint cColumns;
@@ -4965,8 +4936,7 @@ namespace Win32
 			public DBPROPSET* rgReserved;
 		}
 		[CRepr]
-		public struct MDAXISINFO
-		{
+		public struct MDAXISINFO		{
 			public uint cbSize;
 			public uint iAxis;
 			public uint cDimensions;
@@ -4975,8 +4945,7 @@ namespace Win32
 			public PWSTR* rgpwszDimensionNames;
 		}
 		[CRepr]
-		public struct RMTPACK
-		{
+		public struct RMTPACK		{
 			public ISequentialStream* pISeqStream;
 			public uint32 cbData;
 			public uint32 cBSTR;
@@ -4993,8 +4962,7 @@ namespace Win32
 			public VARIANT* rgArray;
 		}
 		[CRepr]
-		public struct DBPARAMBINDINFO
-		{
+		public struct DBPARAMBINDINFO		{
 			public PWSTR pwszDataSourceType;
 			public PWSTR pwszName;
 			public uint ulParamSize;
@@ -5003,8 +4971,7 @@ namespace Win32
 			public uint8 bScale;
 		}
 		[CRepr]
-		public struct DBLITERALINFO
-		{
+		public struct DBLITERALINFO		{
 			public PWSTR pwszLiteralValue;
 			public PWSTR pwszInvalidChars;
 			public PWSTR pwszInvalidStartingChars;
@@ -5013,8 +4980,7 @@ namespace Win32
 			public uint32 cchMaxLen;
 		}
 		[CRepr]
-		public struct ERRORINFO
-		{
+		public struct ERRORINFO		{
 			public HRESULT hrError;
 			public uint32 dwMinor;
 			public Guid clsid;
@@ -5022,21 +4988,18 @@ namespace Win32
 			public int32 dispid;
 		}
 		[CRepr]
-		public struct HITRANGE
-		{
+		public struct HITRANGE		{
 			public uint32 iPosition;
 			public uint32 cLength;
 		}
 		[CRepr]
-		public struct TIMEOUT_INFO
-		{
+		public struct TIMEOUT_INFO		{
 			public uint32 dwSize;
 			public uint32 dwConnectTimeout;
 			public uint32 dwDataTimeout;
 		}
 		[CRepr]
-		public struct PROXY_INFO
-		{
+		public struct PROXY_INFO		{
 			public uint32 dwSize;
 			public PWSTR pcwszUserAgent;
 			public PROXY_ACCESS paUseProxy;
@@ -5046,22 +5009,19 @@ namespace Win32
 			public PWSTR pcwszBypassList;
 		}
 		[CRepr]
-		public struct AUTHENTICATION_INFO
-		{
+		public struct AUTHENTICATION_INFO		{
 			public uint32 dwSize;
 			public AUTH_TYPE atAuthenticationType;
 			public PWSTR pcwszUser;
 			public PWSTR pcwszPassword;
 		}
 		[CRepr]
-		public struct INCREMENTAL_ACCESS_INFO
-		{
+		public struct INCREMENTAL_ACCESS_INFO		{
 			public uint32 dwSize;
 			public FILETIME ftLastModifiedTime;
 		}
 		[CRepr]
-		public struct ITEM_INFO
-		{
+		public struct ITEM_INFO		{
 			public uint32 dwSize;
 			public PWSTR pcwszFromEMail;
 			public PWSTR pcwszApplicationName;
@@ -5069,8 +5029,7 @@ namespace Win32
 			public PWSTR pcwszContentClass;
 		}
 		[CRepr]
-		public struct SEARCH_ITEM_CHANGE
-		{
+		public struct SEARCH_ITEM_CHANGE		{
 			public SEARCH_KIND_OF_CHANGE Change;
 			public SEARCH_NOTIFICATION_PRIORITY Priority;
 			public BLOB* pUserData;
@@ -5078,34 +5037,29 @@ namespace Win32
 			public PWSTR lpwszOldURL;
 		}
 		[CRepr]
-		public struct SEARCH_ITEM_PERSISTENT_CHANGE
-		{
+		public struct SEARCH_ITEM_PERSISTENT_CHANGE		{
 			public SEARCH_KIND_OF_CHANGE Change;
 			public PWSTR URL;
 			public PWSTR OldURL;
 			public SEARCH_NOTIFICATION_PRIORITY Priority;
 		}
 		[CRepr]
-		public struct SEARCH_ITEM_INDEXING_STATUS
-		{
+		public struct SEARCH_ITEM_INDEXING_STATUS		{
 			public uint32 dwDocID;
 			public HRESULT hrIndexingStatus;
 		}
 		[CRepr]
-		public struct SEARCH_COLUMN_PROPERTIES
-		{
+		public struct SEARCH_COLUMN_PROPERTIES		{
 			public PROPVARIANT Value;
 			public uint32 lcid;
 		}
 		[CRepr]
-		public struct ITEMPROP
-		{
+		public struct ITEMPROP		{
 			public VARIANT variantValue;
 			public PWSTR pwszName;
 		}
 		[CRepr]
-		public struct SUBSCRIPTIONITEMINFO
-		{
+		public struct SUBSCRIPTIONITEMINFO		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 dwPriority;
@@ -5113,8 +5067,7 @@ namespace Win32
 			public Guid clsidAgent;
 		}
 		[CRepr]
-		public struct SUBSCRIPTIONINFO
-		{
+		public struct SUBSCRIPTIONINFO		{
 			public uint32 cbSize;
 			public uint32 fUpdateFlags;
 			public SUBSCRIPTIONSCHEDULE schedule;
@@ -5136,42 +5089,36 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct DCINFO
-		{
+		public struct DCINFO		{
 			public uint32 eInfoType;
 			public VARIANT vData;
 		}
 		[CRepr]
-		public struct KAGREQDIAG
-		{
+		public struct KAGREQDIAG		{
 			public uint32 ulDiagFlags;
 			public uint16 vt;
 			public int16 sDiagField;
 		}
 		[CRepr]
-		public struct KAGGETDIAG
-		{
+		public struct KAGGETDIAG		{
 			public uint32 ulSize;
 			public VARIANT vDiagInfo;
 			public int16 sDiagField;
 		}
 		[CRepr]
-		public struct DATE_STRUCT
-		{
+		public struct DATE_STRUCT		{
 			public int16 year;
 			public uint16 month;
 			public uint16 day;
 		}
 		[CRepr]
-		public struct TIME_STRUCT
-		{
+		public struct TIME_STRUCT		{
 			public uint16 hour;
 			public uint16 minute;
 			public uint16 second;
 		}
 		[CRepr]
-		public struct TIMESTAMP_STRUCT
-		{
+		public struct TIMESTAMP_STRUCT		{
 			public int16 year;
 			public uint16 month;
 			public uint16 day;
@@ -5181,14 +5128,12 @@ namespace Win32
 			public uint32 fraction;
 		}
 		[CRepr]
-		public struct tagSQL_YEAR_MONTH
-		{
+		public struct tagSQL_YEAR_MONTH		{
 			public uint32 year;
 			public uint32 month;
 		}
 		[CRepr]
-		public struct tagSQL_DAY_SECOND
-		{
+		public struct tagSQL_DAY_SECOND		{
 			public uint32 day;
 			public uint32 hour;
 			public uint32 minute;
@@ -5196,60 +5141,51 @@ namespace Win32
 			public uint32 fraction;
 		}
 		[CRepr]
-		public struct SQL_INTERVAL_STRUCT
-		{
+		public struct SQL_INTERVAL_STRUCT		{
 			public SQLINTERVAL interval_type;
 			public int16 interval_sign;
 			public _intval_e__Union intval;
 			
 			[CRepr, Union]
-			public struct _intval_e__Union
-			{
+			public struct _intval_e__Union			{
 				public tagSQL_YEAR_MONTH year_month;
 				public tagSQL_DAY_SECOND day_second;
 			}
 		}
 		[CRepr]
-		public struct SQL_NUMERIC_STRUCT
-		{
+		public struct SQL_NUMERIC_STRUCT		{
 			public uint8 precision;
 			public int8 scale;
 			public uint8 sign;
 			public uint8[16] val;
 		}
 		[CRepr]
-		public struct dbvarychar
-		{
+		public struct dbvarychar		{
 			public int16 len;
 			public int8[8001] str;
 		}
 		[CRepr]
-		public struct dbvarybin
-		{
+		public struct dbvarybin		{
 			public int16 len;
 			public uint8[8001] array;
 		}
 		[CRepr]
-		public struct dbmoney
-		{
+		public struct dbmoney		{
 			public int32 mnyhigh;
 			public uint32 mnylow;
 		}
 		[CRepr]
-		public struct dbdatetime
-		{
+		public struct dbdatetime		{
 			public int32 dtdays;
 			public uint32 dttime;
 		}
 		[CRepr]
-		public struct dbdatetime4
-		{
+		public struct dbdatetime4		{
 			public uint16 numdays;
 			public uint16 nummins;
 		}
 		[CRepr]
-		public struct sqlperf
-		{
+		public struct sqlperf		{
 			public uint32 TimerResolution;
 			public uint32 SQLidu;
 			public uint32 SQLiduRows;
@@ -5285,70 +5221,60 @@ namespace Win32
 			public uint32 msNetWorkServerTime;
 		}
 		[CRepr]
-		public struct tagDBROWWATCHRANGE
-		{
+		public struct tagDBROWWATCHRANGE		{
 			public uint hRegion;
 			public uint32 eChangeKind;
 			public uint hRow;
 			public uint iRow;
 		}
 		[CRepr]
-		public struct DBCOST
-		{
+		public struct DBCOST		{
 			public uint32 eKind;
 			public uint32 dwUnits;
 			public int32 lValue;
 		}
 		[CRepr]
-		public struct NOTRESTRICTION
-		{
+		public struct NOTRESTRICTION		{
 			public RESTRICTION* pRes;
 		}
 		[CRepr]
-		public struct NODERESTRICTION
-		{
+		public struct NODERESTRICTION		{
 			public uint32 cRes;
 			public RESTRICTION** paRes;
 			public uint32 reserved;
 		}
 		[CRepr]
-		public struct VECTORRESTRICTION
-		{
+		public struct VECTORRESTRICTION		{
 			public NODERESTRICTION Node;
 			public uint32 RankMethod;
 		}
 		[CRepr]
-		public struct CONTENTRESTRICTION
-		{
+		public struct CONTENTRESTRICTION		{
 			public FULLPROPSPEC prop;
 			public PWSTR pwcsPhrase;
 			public uint32 lcid;
 			public uint32 ulGenerateMethod;
 		}
 		[CRepr]
-		public struct NATLANGUAGERESTRICTION
-		{
+		public struct NATLANGUAGERESTRICTION		{
 			public FULLPROPSPEC prop;
 			public PWSTR pwcsPhrase;
 			public uint32 lcid;
 		}
 		[CRepr]
-		public struct PROPERTYRESTRICTION
-		{
+		public struct PROPERTYRESTRICTION		{
 			public uint32 rel;
 			public FULLPROPSPEC prop;
 			public PROPVARIANT prval;
 		}
 		[CRepr]
-		public struct RESTRICTION
-		{
+		public struct RESTRICTION		{
 			public uint32 rt;
 			public uint32 weight;
 			public _URes res;
 			
 			[CRepr, Union]
-			public struct _URes
-			{
+			public struct _URes			{
 				public NODERESTRICTION ar;
 				public NODERESTRICTION orRestriction;
 				public NODERESTRICTION pxr;
@@ -5360,60 +5286,51 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct COLUMNSET
-		{
+		public struct COLUMNSET		{
 			public uint32 cCol;
 			public FULLPROPSPEC* aCol;
 		}
 		[CRepr]
-		public struct SORTKEY
-		{
+		public struct SORTKEY		{
 			public FULLPROPSPEC propColumn;
 			public uint32 dwOrder;
 			public uint32 locale;
 		}
 		[CRepr]
-		public struct SORTSET
-		{
+		public struct SORTSET		{
 			public uint32 cCol;
 			public SORTKEY* aCol;
 		}
 		[CRepr]
-		public struct BUCKETCATEGORIZE
-		{
+		public struct BUCKETCATEGORIZE		{
 			public uint32 cBuckets;
 			public uint32 Distribution;
 		}
 		[CRepr]
-		public struct RANGECATEGORIZE
-		{
+		public struct RANGECATEGORIZE		{
 			public uint32 cRange;
 			public PROPVARIANT* aRangeBegin;
 		}
 		[CRepr]
-		public struct CATEGORIZATION
-		{
+		public struct CATEGORIZATION		{
 			public uint32 ulCatType;
 			public _Anonymous_e__Union Anonymous;
 			public COLUMNSET csColumns;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cClusters;
 				public BUCKETCATEGORIZE bucket;
 				public RANGECATEGORIZE range;
 			}
 		}
 		[CRepr]
-		public struct CATEGORIZATIONSET
-		{
+		public struct CATEGORIZATIONSET		{
 			public uint32 cCat;
 			public CATEGORIZATION* aCat;
 		}
 		[CRepr]
-		public struct ODBC_VS_ARGS
-		{
+		public struct ODBC_VS_ARGS		{
 			public Guid* pguidEvent;
 			public uint32 dwFlags;
 			public _Anonymous1_e__Union Anonymous1;
@@ -5421,29 +5338,25 @@ namespace Win32
 			public int16 RetCode;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public PWSTR wszArg;
 				public PSTR szArg;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public PWSTR wszCorrelation;
 				public PSTR szCorrelation;
 			}
 		}
 		[CRepr]
-		public struct SSVARIANT
-		{
+		public struct SSVARIANT		{
 			public uint16 vt;
 			public uint32 dwReserved1;
 			public uint32 dwReserved2;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint8 bTinyIntVal;
 				public int16 sShortIntVal;
 				public int32 lIntVal;
@@ -5462,15 +5375,13 @@ namespace Win32
 				public _BLOBType BLOBType;
 				
 				[CRepr]
-				public struct _UnknownType
-				{
+				public struct _UnknownType				{
 					public uint32 dwActualLength;
 					public uint8[16] rgMetadata;
 					public uint8* pUnknownData;
 				}
 				[CRepr]
-				public struct _CharVal
-				{
+				public struct _CharVal				{
 					public int16 sActualLength;
 					public int16 sMaxLength;
 					public PSTR pchCharVal;
@@ -5479,22 +5390,19 @@ namespace Win32
 					public PWSTR pwchReserved;
 				}
 				[CRepr]
-				public struct _BinaryVal
-				{
+				public struct _BinaryVal				{
 					public int16 sActualLength;
 					public int16 sMaxLength;
 					public uint8* prgbBinaryVal;
 					public uint32 dwReserved;
 				}
 				[CRepr]
-				public struct _BLOBType
-				{
+				public struct _BLOBType				{
 					public DBOBJECT dbobj;
 					public IUnknown* pUnk;
 				}
 				[CRepr]
-				public struct _NCharVal
-				{
+				public struct _NCharVal				{
 					public int16 sActualLength;
 					public int16 sMaxLength;
 					public PWSTR pwchNCharVal;
@@ -5505,8 +5413,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct tagSSErrorInfo
-		{
+		public struct tagSSErrorInfo		{
 			public PWSTR pwszMessage;
 			public PWSTR pwszServer;
 			public PWSTR pwszProcedure;
@@ -8462,11 +8369,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IService : IUnknown

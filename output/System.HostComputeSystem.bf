@@ -95,15 +95,13 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HCS_EVENT
-		{
+		public struct HCS_EVENT		{
 			public HCS_EVENT_TYPE Type;
 			public PWSTR EventData;
 			public HCS_OPERATION Operation;
 		}
 		[CRepr]
-		public struct HCS_PROCESS_INFORMATION
-		{
+		public struct HCS_PROCESS_INFORMATION		{
 			public uint32 ProcessId;
 			public uint32 Reserved;
 			public HANDLE StdInput;
@@ -111,8 +109,7 @@ namespace Win32
 			public HANDLE StdError;
 		}
 		[CRepr]
-		public struct HCS_CREATE_OPTIONS_1
-		{
+		public struct HCS_CREATE_OPTIONS_1		{
 			public HCS_CREATE_OPTIONS Version;
 			public HANDLE UserToken;
 			public SECURITY_DESCRIPTOR* SecurityDescriptor;

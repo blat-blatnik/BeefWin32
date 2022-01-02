@@ -1060,23 +1060,20 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct VDS_STORAGE_IDENTIFIER
-		{
+		public struct VDS_STORAGE_IDENTIFIER		{
 			public VDS_STORAGE_IDENTIFIER_CODE_SET m_CodeSet;
 			public VDS_STORAGE_IDENTIFIER_TYPE m_Type;
 			public uint32 m_cbIdentifier;
 			public uint8* m_rgbIdentifier;
 		}
 		[CRepr]
-		public struct VDS_STORAGE_DEVICE_ID_DESCRIPTOR
-		{
+		public struct VDS_STORAGE_DEVICE_ID_DESCRIPTOR		{
 			public uint32 m_version;
 			public uint32 m_cIdentifiers;
 			public VDS_STORAGE_IDENTIFIER* m_rgIdentifiers;
 		}
 		[CRepr]
-		public struct VDS_INTERCONNECT
-		{
+		public struct VDS_INTERCONNECT		{
 			public VDS_INTERCONNECT_ADDRESS_TYPE m_addressType;
 			public uint32 m_cbPort;
 			public uint8* m_pbPort;
@@ -1084,8 +1081,7 @@ namespace Win32
 			public uint8* m_pbAddress;
 		}
 		[CRepr]
-		public struct VDS_LUN_INFORMATION
-		{
+		public struct VDS_LUN_INFORMATION		{
 			public uint32 m_version;
 			public uint8 m_DeviceType;
 			public uint8 m_DeviceTypeModifier;
@@ -1101,115 +1097,97 @@ namespace Win32
 			public VDS_INTERCONNECT* m_rgInterconnects;
 		}
 		[CRepr]
-		public struct VDS_PACK_NOTIFICATION
-		{
+		public struct VDS_PACK_NOTIFICATION		{
 			public VDS_NF_PACK ulEvent;
 			public Guid packId;
 		}
 		[CRepr]
-		public struct VDS_DISK_NOTIFICATION
-		{
+		public struct VDS_DISK_NOTIFICATION		{
 			public VDS_NF_DISK ulEvent;
 			public Guid diskId;
 		}
 		[CRepr]
-		public struct VDS_VOLUME_NOTIFICATION
-		{
+		public struct VDS_VOLUME_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid volumeId;
 			public Guid plexId;
 			public uint32 ulPercentCompleted;
 		}
 		[CRepr]
-		public struct VDS_PARTITION_NOTIFICATION
-		{
+		public struct VDS_PARTITION_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid diskId;
 			public uint64 ullOffset;
 		}
 		[CRepr]
-		public struct VDS_SERVICE_NOTIFICATION
-		{
+		public struct VDS_SERVICE_NOTIFICATION		{
 			public uint32 ulEvent;
 			public VDS_RECOVER_ACTION action;
 		}
 		[CRepr]
-		public struct VDS_DRIVE_LETTER_NOTIFICATION
-		{
+		public struct VDS_DRIVE_LETTER_NOTIFICATION		{
 			public uint32 ulEvent;
 			public char16 wcLetter;
 			public Guid volumeId;
 		}
 		[CRepr]
-		public struct VDS_FILE_SYSTEM_NOTIFICATION
-		{
+		public struct VDS_FILE_SYSTEM_NOTIFICATION		{
 			public VDS_NF_FILE_SYSTEM ulEvent;
 			public Guid volumeId;
 			public uint32 dwPercentCompleted;
 		}
 		[CRepr]
-		public struct VDS_MOUNT_POINT_NOTIFICATION
-		{
+		public struct VDS_MOUNT_POINT_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid volumeId;
 		}
 		[CRepr]
-		public struct VDS_SUB_SYSTEM_NOTIFICATION
-		{
+		public struct VDS_SUB_SYSTEM_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid subSystemId;
 		}
 		[CRepr]
-		public struct VDS_CONTROLLER_NOTIFICATION
-		{
+		public struct VDS_CONTROLLER_NOTIFICATION		{
 			public VDS_NF_CONTROLLER ulEvent;
 			public Guid controllerId;
 		}
 		[CRepr]
-		public struct VDS_DRIVE_NOTIFICATION
-		{
+		public struct VDS_DRIVE_NOTIFICATION		{
 			public VDS_NF_DRIVE ulEvent;
 			public Guid driveId;
 		}
 		[CRepr]
-		public struct VDS_LUN_NOTIFICATION
-		{
+		public struct VDS_LUN_NOTIFICATION		{
 			public VDS_NF_LUN ulEvent;
 			public Guid LunId;
 		}
 		[CRepr]
-		public struct VDS_PORT_NOTIFICATION
-		{
+		public struct VDS_PORT_NOTIFICATION		{
 			public VDS_NF_PORT ulEvent;
 			public Guid portId;
 		}
 		[CRepr]
-		public struct VDS_PORTAL_NOTIFICATION
-		{
+		public struct VDS_PORTAL_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid portalId;
 		}
 		[CRepr]
-		public struct VDS_TARGET_NOTIFICATION
-		{
+		public struct VDS_TARGET_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid targetId;
 		}
 		[CRepr]
-		public struct VDS_PORTAL_GROUP_NOTIFICATION
-		{
+		public struct VDS_PORTAL_GROUP_NOTIFICATION		{
 			public uint32 ulEvent;
 			public Guid portalGroupId;
 		}
 		[CRepr]
-		public struct VDS_NOTIFICATION
-		{
+		public struct VDS_NOTIFICATION		{
 			public VDS_NOTIFICATION_TARGET_TYPE objectType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public VDS_PACK_NOTIFICATION Pack;
 				public VDS_DISK_NOTIFICATION Disk;
 				public VDS_VOLUME_NOTIFICATION Volume;
@@ -1229,14 +1207,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct VDS_ASYNC_OUTPUT
-		{
+		public struct VDS_ASYNC_OUTPUT		{
 			public VDS_ASYNC_OUTPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _cp cp;
 				public _cv cv;
 				public _bvp bvp;
@@ -1247,62 +1223,51 @@ namespace Win32
 				public _cvd cvd;
 				
 				[CRepr]
-				public struct _cpg
-				{
+				public struct _cpg				{
 					public IUnknown* pPortalGroupUnk;
 				}
 				[CRepr]
-				public struct _cl
-				{
+				public struct _cl				{
 					public IUnknown* pLunUnk;
 				}
 				[CRepr]
-				public struct _bvp
-				{
+				public struct _bvp				{
 					public IUnknown* pVolumeUnk;
 				}
 				[CRepr]
-				public struct _cp
-				{
+				public struct _cp				{
 					public uint64 ullOffset;
 					public Guid volumeId;
 				}
 				[CRepr]
-				public struct _cvd
-				{
+				public struct _cvd				{
 					public IUnknown* pVDiskUnk;
 				}
 				[CRepr]
-				public struct _sv
-				{
+				public struct _sv				{
 					public uint64 ullReclaimedBytes;
 				}
 				[CRepr]
-				public struct _ct
-				{
+				public struct _ct				{
 					public IUnknown* pTargetUnk;
 				}
 				[CRepr]
-				public struct _cv
-				{
+				public struct _cv				{
 					public IUnknown* pVolumeUnk;
 				}
 			}
 		}
 		[CRepr]
-		public struct VDS_PATH_ID
-		{
+		public struct VDS_PATH_ID		{
 			public uint64 ullSourceId;
 			public uint64 ullPathId;
 		}
 		[CRepr]
-		public struct VDS_WWN
-		{
+		public struct VDS_WWN		{
 			public uint8[8] rguchWwn;
 		}
 		[CRepr]
-		public struct VDS_IPADDRESS
-		{
+		public struct VDS_IPADDRESS		{
 			public VDS_IPADDRESS_TYPE type;
 			public uint32 ipv4Address;
 			public uint8[16] ipv6Address;
@@ -1312,20 +1277,17 @@ namespace Win32
 			public uint32 ulPort;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_IPSEC_KEY
-		{
+		public struct VDS_ISCSI_IPSEC_KEY		{
 			public uint8* pKey;
 			public uint32 ulKeySize;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_SHARED_SECRET
-		{
+		public struct VDS_ISCSI_SHARED_SECRET		{
 			public uint8* pSharedSecret;
 			public uint32 ulSharedSecretSize;
 		}
 		[CRepr]
-		public struct VDS_HBAPORT_PROP
-		{
+		public struct VDS_HBAPORT_PROP		{
 			public Guid id;
 			public VDS_WWN wwnNode;
 			public VDS_WWN wwnPort;
@@ -1335,21 +1297,18 @@ namespace Win32
 			public uint32 ulSupportedPortSpeed;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_INITIATOR_ADAPTER_PROP
-		{
+		public struct VDS_ISCSI_INITIATOR_ADAPTER_PROP		{
 			public Guid id;
 			public PWSTR pwszName;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_INITIATOR_PORTAL_PROP
-		{
+		public struct VDS_ISCSI_INITIATOR_PORTAL_PROP		{
 			public Guid id;
 			public VDS_IPADDRESS address;
 			public uint32 ulPortIndex;
 		}
 		[CRepr]
-		public struct VDS_PROVIDER_PROP
-		{
+		public struct VDS_PROVIDER_PROP		{
 			public Guid id;
 			public PWSTR pwszName;
 			public Guid guidVersionId;
@@ -1360,8 +1319,7 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_PATH_INFO
-		{
+		public struct VDS_PATH_INFO		{
 			public VDS_PATH_ID pathId;
 			public VDS_HWPROVIDER_TYPE type;
 			public VDS_PATH_STATUS status;
@@ -1370,34 +1328,29 @@ namespace Win32
 			public _Anonymous3_e__Union Anonymous3;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public Guid hbaPortId;
 				public Guid initiatorAdapterId;
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public Guid controllerPortId;
 				public Guid targetPortalId;
 			}
 			[CRepr, Union]
-			public struct _Anonymous3_e__Union
-			{
+			public struct _Anonymous3_e__Union			{
 				public VDS_HBAPORT_PROP* pHbaPortProp;
 				public VDS_IPADDRESS* pInitiatorPortalIpAddr;
 			}
 		}
 		[CRepr]
-		public struct VDS_PATH_POLICY
-		{
+		public struct VDS_PATH_POLICY		{
 			public VDS_PATH_ID pathId;
 			public BOOL bPrimaryPath;
 			public uint32 ulWeight;
 		}
 		[CRepr]
-		public struct VDS_HINTS
-		{
+		public struct VDS_HINTS		{
 			public uint64 ullHintMask;
 			public uint64 ullExpectedMaximumSize;
 			public uint32 ulOptimalReadSize;
@@ -1418,8 +1371,7 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_HINTS2
-		{
+		public struct VDS_HINTS2		{
 			public uint64 ullHintMask;
 			public uint64 ullExpectedMaximumSize;
 			public uint32 ulOptimalReadSize;
@@ -1453,8 +1405,7 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_SUB_SYSTEM_PROP
-		{
+		public struct VDS_SUB_SYSTEM_PROP		{
 			public Guid id;
 			public PWSTR pwszFriendlyName;
 			public PWSTR pwszIdentification;
@@ -1468,8 +1419,7 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_SUB_SYSTEM_PROP2
-		{
+		public struct VDS_SUB_SYSTEM_PROP2		{
 			public Guid id;
 			public PWSTR pwszFriendlyName;
 			public PWSTR pwszIdentification;
@@ -1485,8 +1435,7 @@ namespace Win32
 			public uint32 ulNumberOfEnclosures;
 		}
 		[CRepr]
-		public struct VDS_CONTROLLER_PROP
-		{
+		public struct VDS_CONTROLLER_PROP		{
 			public Guid id;
 			public PWSTR pwszFriendlyName;
 			public PWSTR pwszIdentification;
@@ -1495,8 +1444,7 @@ namespace Win32
 			public int16 sNumberOfPorts;
 		}
 		[CRepr]
-		public struct VDS_DRIVE_PROP
-		{
+		public struct VDS_DRIVE_PROP		{
 			public Guid id;
 			public uint64 ullSize;
 			public PWSTR pwszFriendlyName;
@@ -1508,8 +1456,7 @@ namespace Win32
 			public int16 sSlotNumber;
 		}
 		[CRepr]
-		public struct VDS_DRIVE_PROP2
-		{
+		public struct VDS_DRIVE_PROP2		{
 			public Guid id;
 			public uint64 ullSize;
 			public PWSTR pwszFriendlyName;
@@ -1524,16 +1471,14 @@ namespace Win32
 			public uint32 ulSpindleSpeed;
 		}
 		[CRepr]
-		public struct VDS_DRIVE_EXTENT
-		{
+		public struct VDS_DRIVE_EXTENT		{
 			public Guid id;
 			public Guid LunId;
 			public uint64 ullSize;
 			public BOOL bUsed;
 		}
 		[CRepr]
-		public struct VDS_LUN_PROP
-		{
+		public struct VDS_LUN_PROP		{
 			public Guid id;
 			public uint64 ullSize;
 			public PWSTR pwszFriendlyName;
@@ -1547,8 +1492,7 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_LUN_PLEX_PROP
-		{
+		public struct VDS_LUN_PLEX_PROP		{
 			public Guid id;
 			public uint64 ullSize;
 			public VDS_LUN_PLEX_TYPE type;
@@ -1560,43 +1504,37 @@ namespace Win32
 			public int16 sRebuildPriority;
 		}
 		[CRepr]
-		public struct VDS_PORT_PROP
-		{
+		public struct VDS_PORT_PROP		{
 			public Guid id;
 			public PWSTR pwszFriendlyName;
 			public PWSTR pwszIdentification;
 			public VDS_PORT_STATUS status;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_PORTAL_PROP
-		{
+		public struct VDS_ISCSI_PORTAL_PROP		{
 			public Guid id;
 			public VDS_IPADDRESS address;
 			public VDS_ISCSI_PORTAL_STATUS status;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_TARGET_PROP
-		{
+		public struct VDS_ISCSI_TARGET_PROP		{
 			public Guid id;
 			public PWSTR pwszIscsiName;
 			public PWSTR pwszFriendlyName;
 			public BOOL bChapEnabled;
 		}
 		[CRepr]
-		public struct VDS_ISCSI_PORTALGROUP_PROP
-		{
+		public struct VDS_ISCSI_PORTALGROUP_PROP		{
 			public Guid id;
 			public uint16 tag;
 		}
 		[CRepr]
-		public struct VDS_POOL_CUSTOM_ATTRIBUTES
-		{
+		public struct VDS_POOL_CUSTOM_ATTRIBUTES		{
 			public PWSTR pwszName;
 			public PWSTR pwszValue;
 		}
 		[CRepr]
-		public struct VDS_POOL_ATTRIBUTES
-		{
+		public struct VDS_POOL_ATTRIBUTES		{
 			public uint64 ullAttributeMask;
 			public VDS_RAID_TYPE raidType;
 			public VDS_STORAGE_BUS_TYPE busType;
@@ -1637,8 +1575,7 @@ namespace Win32
 			public uint64 ullReserved2;
 		}
 		[CRepr]
-		public struct VDS_STORAGE_POOL_PROP
-		{
+		public struct VDS_STORAGE_POOL_PROP		{
 			public Guid id;
 			public VDS_STORAGE_POOL_STATUS status;
 			public VDS_HEALTH health;
@@ -1650,8 +1587,7 @@ namespace Win32
 			public uint64 ullRemainingFreeSpace;
 		}
 		[CRepr]
-		public struct VDS_STORAGE_POOL_DRIVE_EXTENT
-		{
+		public struct VDS_STORAGE_POOL_DRIVE_EXTENT		{
 			public Guid id;
 			public uint64 ullSize;
 			public BOOL bUsed;

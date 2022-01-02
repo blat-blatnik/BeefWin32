@@ -402,57 +402,33 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct sqlite3
-		{
-		}
+		public struct sqlite3 {}
 		[CRepr]
-		public struct sqlite3_mutex
-		{
-		}
+		public struct sqlite3_mutex {}
 		[CRepr]
-		public struct sqlite3_stmt
-		{
-		}
+		public struct sqlite3_stmt {}
 		[CRepr]
-		public struct sqlite3_value
-		{
-		}
+		public struct sqlite3_value {}
 		[CRepr]
-		public struct sqlite3_context
-		{
-		}
+		public struct sqlite3_context {}
 		[CRepr]
-		public struct sqlite3_blob
-		{
-		}
+		public struct sqlite3_blob {}
 		[CRepr]
-		public struct sqlite3_str
-		{
-		}
+		public struct sqlite3_str {}
 		[CRepr]
-		public struct sqlite3_pcache
-		{
-		}
+		public struct sqlite3_pcache {}
 		[CRepr]
-		public struct sqlite3_backup
-		{
-		}
+		public struct sqlite3_backup {}
 		[CRepr]
-		public struct Fts5Context
-		{
-		}
+		public struct Fts5Context {}
 		[CRepr]
-		public struct Fts5Tokenizer
-		{
-		}
+		public struct Fts5Tokenizer {}
 		[CRepr]
-		public struct sqlite3_file
-		{
+		public struct sqlite3_file		{
 			public sqlite3_io_methods* pMethods;
 		}
 		[CRepr]
-		public struct sqlite3_io_methods
-		{
+		public struct sqlite3_io_methods		{
 			public int32 iVersion;
 			public int xClose;
 			public int xRead;
@@ -474,8 +450,7 @@ namespace Win32
 			public int xUnfetch;
 		}
 		[CRepr]
-		public struct sqlite3_vfs
-		{
+		public struct sqlite3_vfs		{
 			public int32 iVersion;
 			public int32 szOsFile;
 			public int32 mxPathname;
@@ -500,8 +475,7 @@ namespace Win32
 			public int xNextSystemCall;
 		}
 		[CRepr]
-		public struct sqlite3_mem_methods
-		{
+		public struct sqlite3_mem_methods		{
 			public int xMalloc;
 			public int xFree;
 			public int xRealloc;
@@ -512,8 +486,7 @@ namespace Win32
 			public void* pAppData;
 		}
 		[CRepr]
-		public struct sqlite3_module
-		{
+		public struct sqlite3_module		{
 			public int32 iVersion;
 			public int xCreate;
 			public int xConnect;
@@ -540,8 +513,7 @@ namespace Win32
 			public int xShadowName;
 		}
 		[CRepr]
-		public struct sqlite3_index_info
-		{
+		public struct sqlite3_index_info		{
 			public int32 nConstraint;
 			public sqlite3_index_constraint* aConstraint;
 			public int32 nOrderBy;
@@ -557,20 +529,17 @@ namespace Win32
 			public uint64 colUsed;
 			
 			[CRepr]
-			public struct sqlite3_index_orderby
-			{
+			public struct sqlite3_index_orderby			{
 				public int32 iColumn;
 				public uint8 desc;
 			}
 			[CRepr]
-			public struct sqlite3_index_constraint_usage
-			{
+			public struct sqlite3_index_constraint_usage			{
 				public int32 argvIndex;
 				public uint8 omit;
 			}
 			[CRepr]
-			public struct sqlite3_index_constraint
-			{
+			public struct sqlite3_index_constraint			{
 				public int32 iColumn;
 				public uint8 op;
 				public uint8 usable;
@@ -578,20 +547,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct sqlite3_vtab
-		{
+		public struct sqlite3_vtab		{
 			public sqlite3_module* pModule;
 			public int32 nRef;
 			public PSTR zErrMsg;
 		}
 		[CRepr]
-		public struct sqlite3_vtab_cursor
-		{
+		public struct sqlite3_vtab_cursor		{
 			public sqlite3_vtab* pVtab;
 		}
 		[CRepr]
-		public struct sqlite3_mutex_methods
-		{
+		public struct sqlite3_mutex_methods		{
 			public int xMutexInit;
 			public int xMutexEnd;
 			public sqlite3_mutex********* xMutexAlloc;
@@ -603,14 +569,12 @@ namespace Win32
 			public int xMutexNotheld;
 		}
 		[CRepr]
-		public struct sqlite3_pcache_page
-		{
+		public struct sqlite3_pcache_page		{
 			public void* pBuf;
 			public void* pExtra;
 		}
 		[CRepr]
-		public struct sqlite3_pcache_methods2
-		{
+		public struct sqlite3_pcache_methods2		{
 			public int32 iVersion;
 			public void* pArg;
 			public int xInit;
@@ -626,8 +590,7 @@ namespace Win32
 			public int xShrink;
 		}
 		[CRepr]
-		public struct sqlite3_pcache_methods
-		{
+		public struct sqlite3_pcache_methods		{
 			public void* pArg;
 			public int xInit;
 			public int xShutdown;
@@ -641,13 +604,11 @@ namespace Win32
 			public int xDestroy;
 		}
 		[CRepr]
-		public struct sqlite3_snapshot
-		{
+		public struct sqlite3_snapshot		{
 			public uint8[48] hidden;
 		}
 		[CRepr]
-		public struct sqlite3_rtree_geometry
-		{
+		public struct sqlite3_rtree_geometry		{
 			public void* pContext;
 			public int32 nParam;
 			public double* aParam;
@@ -655,8 +616,7 @@ namespace Win32
 			public int xDelUser;
 		}
 		[CRepr]
-		public struct sqlite3_rtree_query_info
-		{
+		public struct sqlite3_rtree_query_info		{
 			public void* pContext;
 			public int32 nParam;
 			public double* aParam;
@@ -675,14 +635,12 @@ namespace Win32
 			public sqlite3_value** apSqlParam;
 		}
 		[CRepr]
-		public struct Fts5PhraseIter
-		{
+		public struct Fts5PhraseIter		{
 			public uint8* a;
 			public uint8* b;
 		}
 		[CRepr]
-		public struct Fts5ExtensionApi
-		{
+		public struct Fts5ExtensionApi		{
 			public int32 iVersion;
 			public int xUserData;
 			public int xColumnCount;
@@ -705,23 +663,20 @@ namespace Win32
 			public int xPhraseNextColumn;
 		}
 		[CRepr]
-		public struct fts5_tokenizer
-		{
+		public struct fts5_tokenizer		{
 			public int xCreate;
 			public int xDelete;
 			public int xTokenize;
 		}
 		[CRepr]
-		public struct fts5_api
-		{
+		public struct fts5_api		{
 			public int32 iVersion;
 			public int xCreateTokenizer;
 			public int xFindTokenizer;
 			public int xCreateFunction;
 		}
 		[CRepr]
-		public struct sqlite3_api_routines
-		{
+		public struct sqlite3_api_routines		{
 			public int aggregate_context;
 			public int aggregate_count;
 			public int bind_blob;

@@ -1326,35 +1326,30 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PMSIHANDLE
-		{
+		public struct PMSIHANDLE		{
 			public MSIHANDLE m_h;
 		}
 		[CRepr]
-		public struct MSIPATCHSEQUENCEINFOA
-		{
+		public struct MSIPATCHSEQUENCEINFOA		{
 			public PSTR szPatchData;
 			public MSIPATCHDATATYPE ePatchDataType;
 			public uint32 dwOrder;
 			public uint32 uStatus;
 		}
 		[CRepr]
-		public struct MSIPATCHSEQUENCEINFOW
-		{
+		public struct MSIPATCHSEQUENCEINFOW		{
 			public PWSTR szPatchData;
 			public MSIPATCHDATATYPE ePatchDataType;
 			public uint32 dwOrder;
 			public uint32 uStatus;
 		}
 		[CRepr]
-		public struct MSIFILEHASHINFO
-		{
+		public struct MSIFILEHASHINFO		{
 			public uint32 dwFileHashInfoSize;
 			public uint32[4] dwData;
 		}
 		[CRepr]
-		public struct ASSEMBLY_INFO
-		{
+		public struct ASSEMBLY_INFO		{
 			public uint32 cbAssemblyInfo;
 			public uint32 dwAssemblyFlags;
 			public ULARGE_INTEGER uliAssemblySizeInKB;
@@ -1362,8 +1357,7 @@ namespace Win32
 			public uint32 cchBuf;
 		}
 		[CRepr]
-		public struct FUSION_INSTALL_REFERENCE
-		{
+		public struct FUSION_INSTALL_REFERENCE		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public Guid guidScheme;
@@ -1371,44 +1365,37 @@ namespace Win32
 			public PWSTR szNonCannonicalData;
 		}
 		[CRepr]
-		public struct PROTECTED_FILE_DATA
-		{
+		public struct PROTECTED_FILE_DATA		{
 			public char16[260] FileName;
 			public uint32 FileNumber;
 		}
 		[CRepr]
-		public struct _tagAPPTASKTYPE
-		{
+		public struct _tagAPPTASKTYPE		{
 			public Guid ProductID;
 			public PM_TASK_TYPE TaskType;
 		}
 		[CRepr]
-		public struct PM_EXTENSIONCONSUMER
-		{
+		public struct PM_EXTENSIONCONSUMER		{
 			public Guid ConsumerPID;
 			public BSTR ExtensionID;
 		}
 		[CRepr]
-		public struct PM_BSATASKID
-		{
+		public struct PM_BSATASKID		{
 			public Guid ProductID;
 			public BSTR TaskID;
 		}
 		[CRepr]
-		public struct PM_BWTASKID
-		{
+		public struct PM_BWTASKID		{
 			public Guid ProductID;
 			public BSTR TaskID;
 		}
 		[CRepr]
-		public struct PM_ENUM_FILTER
-		{
+		public struct PM_ENUM_FILTER		{
 			public int32 FilterType;
 			public _FilterParameter_e__Union FilterParameter;
 			
 			[CRepr, Union]
-			public struct _FilterParameter_e__Union
-			{
+			public struct _FilterParameter_e__Union			{
 				public int32 Dummy;
 				public PM_APP_GENRE Genre;
 				public PM_APPLICATION_HUBTYPE AppHubType;
@@ -1429,8 +1416,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PM_STARTAPPBLOB
-		{
+		public struct PM_STARTAPPBLOB		{
 			public uint32 cbSize;
 			public Guid ProductID;
 			public BSTR AppTitle;
@@ -1444,14 +1430,12 @@ namespace Win32
 			public uint16 LightUpSupportMask;
 		}
 		[CRepr]
-		public struct PM_INVOCATIONINFO
-		{
+		public struct PM_INVOCATIONINFO		{
 			public BSTR URIBaseOrAUMID;
 			public BSTR URIFragmentOrArgs;
 		}
 		[CRepr]
-		public struct PM_STARTTILEBLOB
-		{
+		public struct PM_STARTTILEBLOB		{
 			public uint32 cbSize;
 			public Guid ProductID;
 			public BSTR TileID;
@@ -1467,8 +1451,7 @@ namespace Win32
 			public PM_INVOCATIONINFO InvocationInfo;
 		}
 		[CRepr]
-		public struct PM_INSTALLINFO
-		{
+		public struct PM_INSTALLINFO		{
 			public Guid ProductID;
 			public BSTR PackagePath;
 			public Guid InstanceID;
@@ -1480,8 +1463,7 @@ namespace Win32
 			public BSTR MarketplaceAppVersion;
 		}
 		[CRepr]
-		public struct PM_UPDATEINFO_LEGACY
-		{
+		public struct PM_UPDATEINFO_LEGACY		{
 			public Guid ProductID;
 			public BSTR PackagePath;
 			public Guid InstanceID;
@@ -1490,8 +1472,7 @@ namespace Win32
 			public BSTR MarketplaceAppVersion;
 		}
 		[CRepr]
-		public struct PM_UPDATEINFO
-		{
+		public struct PM_UPDATEINFO		{
 			public Guid ProductID;
 			public BSTR PackagePath;
 			public Guid InstanceID;
@@ -1501,21 +1482,18 @@ namespace Win32
 			public uint32 DeploymentOptions;
 		}
 		[CRepr]
-		public struct PATCH_IGNORE_RANGE
-		{
+		public struct PATCH_IGNORE_RANGE		{
 			public uint32 OffsetInOldFile;
 			public uint32 LengthInBytes;
 		}
 		[CRepr]
-		public struct PATCH_RETAIN_RANGE
-		{
+		public struct PATCH_RETAIN_RANGE		{
 			public uint32 OffsetInOldFile;
 			public uint32 LengthInBytes;
 			public uint32 OffsetInNewFile;
 		}
 		[CRepr]
-		public struct PATCH_OLD_FILE_INFO_A
-		{
+		public struct PATCH_OLD_FILE_INFO_A		{
 			public uint32 SizeOfThisStruct;
 			public PSTR OldFileName;
 			public uint32 IgnoreRangeCount;
@@ -1524,8 +1502,7 @@ namespace Win32
 			public PATCH_RETAIN_RANGE* RetainRangeArray;
 		}
 		[CRepr]
-		public struct PATCH_OLD_FILE_INFO_W
-		{
+		public struct PATCH_OLD_FILE_INFO_W		{
 			public uint32 SizeOfThisStruct;
 			public PWSTR OldFileName;
 			public uint32 IgnoreRangeCount;
@@ -1534,8 +1511,7 @@ namespace Win32
 			public PATCH_RETAIN_RANGE* RetainRangeArray;
 		}
 		[CRepr]
-		public struct PATCH_OLD_FILE_INFO_H
-		{
+		public struct PATCH_OLD_FILE_INFO_H		{
 			public uint32 SizeOfThisStruct;
 			public HANDLE OldFileHandle;
 			public uint32 IgnoreRangeCount;
@@ -1544,8 +1520,7 @@ namespace Win32
 			public PATCH_RETAIN_RANGE* RetainRangeArray;
 		}
 		[CRepr]
-		public struct PATCH_OLD_FILE_INFO
-		{
+		public struct PATCH_OLD_FILE_INFO		{
 			public uint32 SizeOfThisStruct;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 IgnoreRangeCount;
@@ -1554,30 +1529,26 @@ namespace Win32
 			public PATCH_RETAIN_RANGE* RetainRangeArray;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PSTR OldFileNameA;
 				public PWSTR OldFileNameW;
 				public HANDLE OldFileHandle;
 			}
 		}
 		[CRepr]
-		public struct PATCH_INTERLEAVE_MAP
-		{
+		public struct PATCH_INTERLEAVE_MAP		{
 			public uint32 CountRanges;
 			public _Anonymous_e__Struct[0] Range;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public uint32 OldOffset;
 				public uint32 OldLength;
 				public uint32 NewLength;
 			}
 		}
 		[CRepr]
-		public struct PATCH_OPTION_DATA
-		{
+		public struct PATCH_OPTION_DATA		{
 			public uint32 SizeOfThisStruct;
 			public uint32 SymbolOptionFlags;
 			public PSTR NewFileSymbolPath;
@@ -1589,34 +1560,29 @@ namespace Win32
 			public uint32 MaxLzxWindowSize;
 		}
 		[CRepr]
-		public struct DELTA_INPUT
-		{
+		public struct DELTA_INPUT		{
 			public _Anonymous_e__Union Anonymous;
 			public uint uSize;
 			public BOOL Editable;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public void* lpcStart;
 				public void* lpStart;
 			}
 		}
 		[CRepr]
-		public struct DELTA_OUTPUT
-		{
+		public struct DELTA_OUTPUT		{
 			public void* lpStart;
 			public uint uSize;
 		}
 		[CRepr]
-		public struct DELTA_HASH
-		{
+		public struct DELTA_HASH		{
 			public uint32 HashSize;
 			public uint8[32] HashValue;
 		}
 		[CRepr]
-		public struct DELTA_HEADER_INFO
-		{
+		public struct DELTA_HEADER_INFO		{
 			public int64 FileTypeSet;
 			public int64 FileType;
 			public int64 Flags;
@@ -1626,14 +1592,12 @@ namespace Win32
 			public DELTA_HASH TargetHash;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_QUERY_INDEX
-		{
+		public struct ACTIVATION_CONTEXT_QUERY_INDEX		{
 			public uint32 ulAssemblyIndex;
 			public uint32 ulFileIndexInAssembly;
 		}
 		[CRepr]
-		public struct ASSEMBLY_FILE_DETAILED_INFORMATION
-		{
+		public struct ASSEMBLY_FILE_DETAILED_INFORMATION		{
 			public uint32 ulFlags;
 			public uint32 ulFilenameLength;
 			public uint32 ulPathLength;
@@ -1641,8 +1605,7 @@ namespace Win32
 			public PWSTR lpFilePath;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION
-		{
+		public struct ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION		{
 			public uint32 ulFlags;
 			public uint32 ulEncodedAssemblyIdentityLength;
 			public uint32 ulManifestPathType;
@@ -1664,28 +1627,24 @@ namespace Win32
 			public uint32 ulFileCount;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION
-		{
+		public struct ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION		{
 			public uint32 ulFlags;
 			public ACTCTX_REQUESTED_RUN_LEVEL RunLevel;
 			public uint32 UiAccess;
 		}
 		[CRepr]
-		public struct COMPATIBILITY_CONTEXT_ELEMENT
-		{
+		public struct COMPATIBILITY_CONTEXT_ELEMENT		{
 			public Guid Id;
 			public ACTCTX_COMPATIBILITY_ELEMENT_TYPE Type;
 			public uint64 MaxVersionTested;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
-		{
+		public struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION		{
 			public uint32 ElementCount;
 			public COMPATIBILITY_CONTEXT_ELEMENT[0] Elements;
 		}
 		[CRepr]
-		public struct ACTIVATION_CONTEXT_DETAILED_INFORMATION
-		{
+		public struct ACTIVATION_CONTEXT_DETAILED_INFORMATION		{
 			public uint32 dwFlags;
 			public uint32 ulFormatVersion;
 			public uint32 ulAssemblyCount;
@@ -1700,8 +1659,7 @@ namespace Win32
 			public PWSTR lpAppDirPath;
 		}
 		[CRepr]
-		public struct ACTCTXA
-		{
+		public struct ACTCTXA		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public PSTR lpSource;
@@ -1713,8 +1671,7 @@ namespace Win32
 			public HINSTANCE hModule;
 		}
 		[CRepr]
-		public struct ACTCTXW
-		{
+		public struct ACTCTXW		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public PWSTR lpSource;
@@ -1726,8 +1683,7 @@ namespace Win32
 			public HINSTANCE hModule;
 		}
 		[CRepr]
-		public struct ACTCTX_SECTION_KEYED_DATA
-		{
+		public struct ACTCTX_SECTION_KEYED_DATA		{
 			public uint32 cbSize;
 			public uint32 ulDataFormatVersion;
 			public void* lpData;

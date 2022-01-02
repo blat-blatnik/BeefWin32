@@ -202,8 +202,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct CI_STATE
-		{
+		public struct CI_STATE		{
 			public uint32 cbStruct;
 			public uint32 cWordList;
 			public uint32 cPersistentIndex;
@@ -221,21 +220,18 @@ namespace Win32
 			public uint32 dwPropCacheSize;
 		}
 		[CRepr]
-		public struct FULLPROPSPEC
-		{
+		public struct FULLPROPSPEC		{
 			public Guid guidPropSet;
 			public PROPSPEC psProperty;
 		}
 		[CRepr]
-		public struct FILTERREGION
-		{
+		public struct FILTERREGION		{
 			public uint32 idChunk;
 			public uint32 cwcStart;
 			public uint32 cwcExtent;
 		}
 		[CRepr]
-		public struct STAT_CHUNK
-		{
+		public struct STAT_CHUNK		{
 			public uint32 idChunk;
 			public CHUNK_BREAKTYPE breakType;
 			public CHUNKSTATE flags;
@@ -246,21 +242,18 @@ namespace Win32
 			public uint32 cwcLenSource;
 		}
 		[CRepr]
-		public struct DBID
-		{
+		public struct DBID		{
 			public _uGuid_e__Union uGuid;
 			public uint32 eKind;
 			public _uName_e__Union uName;
 			
 			[CRepr, Union]
-			public struct _uName_e__Union
-			{
+			public struct _uName_e__Union			{
 				public PWSTR pwszName;
 				public uint32 ulPropid;
 			}
 			[CRepr, Union]
-			public struct _uGuid_e__Union
-			{
+			public struct _uGuid_e__Union			{
 				public Guid guid;
 				public Guid* pguid;
 			}

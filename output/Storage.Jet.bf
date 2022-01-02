@@ -1006,71 +1006,60 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct JET_INDEXID
-		{
+		public struct JET_INDEXID		{
 			public uint32 cbStruct;
 			public uint8[16] rgbIndexId;
 		}
 		[CRepr]
-		public struct JET_RSTMAP_A
-		{
+		public struct JET_RSTMAP_A		{
 			public PSTR szDatabaseName;
 			public PSTR szNewDatabaseName;
 		}
 		[CRepr]
-		public struct JET_RSTMAP_W
-		{
+		public struct JET_RSTMAP_W		{
 			public PWSTR szDatabaseName;
 			public PWSTR szNewDatabaseName;
 		}
 		[CRepr]
-		public struct CONVERT_A
-		{
+		public struct CONVERT_A		{
 			public PSTR szOldDll;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 fFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct CONVERT_W
-		{
+		public struct CONVERT_W		{
 			public PWSTR szOldDll;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 fFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct JET_SNPROG
-		{
+		public struct JET_SNPROG		{
 			public uint32 cbStruct;
 			public uint32 cunitDone;
 			public uint32 cunitTotal;
 		}
 		[CRepr]
-		public struct JET_DBINFOUPGRADE
-		{
+		public struct JET_DBINFOUPGRADE		{
 			public uint32 cbStruct;
 			public uint32 cbFilesizeLow;
 			public uint32 cbFilesizeHigh;
@@ -1080,21 +1069,18 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 ulFlags;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct JET_OBJECTINFO
-		{
+		public struct JET_OBJECTINFO		{
 			public uint32 cbStruct;
 			public uint32 objtyp;
 			public double dtCreate;
@@ -1105,8 +1091,7 @@ namespace Win32
 			public uint32 cPage;
 		}
 		[CRepr]
-		public struct JET_OBJECTLIST
-		{
+		public struct JET_OBJECTLIST		{
 			public uint32 cbStruct;
 			public JET_TABLEID tableid;
 			public uint32 cRecord;
@@ -1121,8 +1106,7 @@ namespace Win32
 			public uint32 columnidcPage;
 		}
 		[CRepr]
-		public struct JET_COLUMNLIST
-		{
+		public struct JET_COLUMNLIST		{
 			public uint32 cbStruct;
 			public JET_TABLEID tableid;
 			public uint32 cRecord;
@@ -1142,8 +1126,7 @@ namespace Win32
 			public uint32 columnidDefinitionName;
 		}
 		[CRepr]
-		public struct JET_COLUMNDEF
-		{
+		public struct JET_COLUMNDEF		{
 			public uint32 cbStruct;
 			public uint32 columnid;
 			public uint32 coltyp;
@@ -1155,8 +1138,7 @@ namespace Win32
 			public uint32 grbit;
 		}
 		[CRepr]
-		public struct JET_COLUMNBASE_A
-		{
+		public struct JET_COLUMNBASE_A		{
 			public uint32 cbStruct;
 			public uint32 columnid;
 			public uint32 coltyp;
@@ -1170,8 +1152,7 @@ namespace Win32
 			public CHAR[256] szBaseColumnName;
 		}
 		[CRepr]
-		public struct JET_COLUMNBASE_W
-		{
+		public struct JET_COLUMNBASE_W		{
 			public uint32 cbStruct;
 			public uint32 columnid;
 			public uint32 coltyp;
@@ -1185,8 +1166,7 @@ namespace Win32
 			public char16[256] szBaseColumnName;
 		}
 		[CRepr]
-		public struct JET_INDEXLIST
-		{
+		public struct JET_INDEXLIST		{
 			public uint32 cbStruct;
 			public JET_TABLEID tableid;
 			public uint32 cRecord;
@@ -1208,8 +1188,7 @@ namespace Win32
 			public uint32 columnidLCMapFlags;
 		}
 		[CRepr]
-		public struct JET_COLUMNCREATE_A
-		{
+		public struct JET_COLUMNCREATE_A		{
 			public uint32 cbStruct;
 			public PSTR szColumnName;
 			public uint32 coltyp;
@@ -1222,8 +1201,7 @@ namespace Win32
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_COLUMNCREATE_W
-		{
+		public struct JET_COLUMNCREATE_W		{
 			public uint32 cbStruct;
 			public PWSTR szColumnName;
 			public uint32 coltyp;
@@ -1236,50 +1214,43 @@ namespace Win32
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_USERDEFINEDDEFAULT_A
-		{
+		public struct JET_USERDEFINEDDEFAULT_A		{
 			public PSTR szCallback;
 			public uint8* pbUserData;
 			public uint32 cbUserData;
 			public PSTR szDependantColumns;
 		}
 		[CRepr]
-		public struct JET_USERDEFINEDDEFAULT_W
-		{
+		public struct JET_USERDEFINEDDEFAULT_W		{
 			public PWSTR szCallback;
 			public uint8* pbUserData;
 			public uint32 cbUserData;
 			public PWSTR szDependantColumns;
 		}
 		[CRepr]
-		public struct JET_CONDITIONALCOLUMN_A
-		{
+		public struct JET_CONDITIONALCOLUMN_A		{
 			public uint32 cbStruct;
 			public PSTR szColumnName;
 			public uint32 grbit;
 		}
 		[CRepr]
-		public struct JET_CONDITIONALCOLUMN_W
-		{
+		public struct JET_CONDITIONALCOLUMN_W		{
 			public uint32 cbStruct;
 			public PWSTR szColumnName;
 			public uint32 grbit;
 		}
 		[CRepr]
-		public struct JET_UNICODEINDEX
-		{
+		public struct JET_UNICODEINDEX		{
 			public uint32 lcid;
 			public uint32 dwMapFlags;
 		}
 		[CRepr]
-		public struct JET_UNICODEINDEX2
-		{
+		public struct JET_UNICODEINDEX2		{
 			public PWSTR szLocaleName;
 			public uint32 dwMapFlags;
 		}
 		[CRepr]
-		public struct JET_TUPLELIMITS
-		{
+		public struct JET_TUPLELIMITS		{
 			public uint32 chLengthMin;
 			public uint32 chLengthMax;
 			public uint32 chToIndexMax;
@@ -1287,8 +1258,7 @@ namespace Win32
 			public uint32 ichStart;
 		}
 		[CRepr]
-		public struct JET_SPACEHINTS
-		{
+		public struct JET_SPACEHINTS		{
 			public uint32 cbStruct;
 			public uint32 ulInitialDensity;
 			public uint32 cbInitial;
@@ -1299,8 +1269,7 @@ namespace Win32
 			public uint32 cbMaxExtent;
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE_A
-		{
+		public struct JET_INDEXCREATE_A		{
 			public uint32 cbStruct;
 			public PSTR szIndexName;
 			public PSTR szKey;
@@ -1315,21 +1284,18 @@ namespace Win32
 			public uint32 cbKeyMost;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 lcid;
 				public JET_UNICODEINDEX* pidxunicode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE_W
-		{
+		public struct JET_INDEXCREATE_W		{
 			public uint32 cbStruct;
 			public PWSTR szIndexName;
 			public PWSTR szKey;
@@ -1344,21 +1310,18 @@ namespace Win32
 			public uint32 cbKeyMost;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 lcid;
 				public JET_UNICODEINDEX* pidxunicode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE2_A
-		{
+		public struct JET_INDEXCREATE2_A		{
 			public uint32 cbStruct;
 			public PSTR szIndexName;
 			public PSTR szKey;
@@ -1374,21 +1337,18 @@ namespace Win32
 			public JET_SPACEHINTS* pSpacehints;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 lcid;
 				public JET_UNICODEINDEX* pidxunicode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE2_W
-		{
+		public struct JET_INDEXCREATE2_W		{
 			public uint32 cbStruct;
 			public PWSTR szIndexName;
 			public PWSTR szKey;
@@ -1404,21 +1364,18 @@ namespace Win32
 			public JET_SPACEHINTS* pSpacehints;
 			
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public uint32 lcid;
 				public JET_UNICODEINDEX* pidxunicode;
 			}
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE3_A
-		{
+		public struct JET_INDEXCREATE3_A		{
 			public uint32 cbStruct;
 			public PSTR szIndexName;
 			public PSTR szKey;
@@ -1434,15 +1391,13 @@ namespace Win32
 			public JET_SPACEHINTS* pSpacehints;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_INDEXCREATE3_W
-		{
+		public struct JET_INDEXCREATE3_W		{
 			public uint32 cbStruct;
 			public PWSTR szIndexName;
 			public PWSTR szKey;
@@ -1458,15 +1413,13 @@ namespace Win32
 			public JET_SPACEHINTS* pSpacehints;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 cbVarSegMac;
 				public JET_TUPLELIMITS* ptuplelimits;
 			}
 		}
 		[CRepr]
-		public struct JET_TABLECREATE_A
-		{
+		public struct JET_TABLECREATE_A		{
 			public uint32 cbStruct;
 			public PSTR szTableName;
 			public PSTR szTemplateTableName;
@@ -1481,8 +1434,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE_W
-		{
+		public struct JET_TABLECREATE_W		{
 			public uint32 cbStruct;
 			public PWSTR szTableName;
 			public PWSTR szTemplateTableName;
@@ -1497,8 +1449,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE2_A
-		{
+		public struct JET_TABLECREATE2_A		{
 			public uint32 cbStruct;
 			public PSTR szTableName;
 			public PSTR szTemplateTableName;
@@ -1515,8 +1466,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE2_W
-		{
+		public struct JET_TABLECREATE2_W		{
 			public uint32 cbStruct;
 			public PWSTR szTableName;
 			public PWSTR szTemplateTableName;
@@ -1533,8 +1483,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE3_A
-		{
+		public struct JET_TABLECREATE3_A		{
 			public uint32 cbStruct;
 			public PSTR szTableName;
 			public PSTR szTemplateTableName;
@@ -1554,8 +1503,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE3_W
-		{
+		public struct JET_TABLECREATE3_W		{
 			public uint32 cbStruct;
 			public PWSTR szTableName;
 			public PWSTR szTemplateTableName;
@@ -1575,8 +1523,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE4_A
-		{
+		public struct JET_TABLECREATE4_A		{
 			public uint32 cbStruct;
 			public PSTR szTableName;
 			public PSTR szTemplateTableName;
@@ -1596,8 +1543,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_TABLECREATE4_W
-		{
+		public struct JET_TABLECREATE4_W		{
 			public uint32 cbStruct;
 			public PWSTR szTableName;
 			public PWSTR szTemplateTableName;
@@ -1617,8 +1563,7 @@ namespace Win32
 			public uint32 cCreated;
 		}
 		[CRepr]
-		public struct JET_OPENTEMPORARYTABLE
-		{
+		public struct JET_OPENTEMPORARYTABLE		{
 			public uint32 cbStruct;
 			public JET_COLUMNDEF* prgcolumndef;
 			public uint32 ccolumn;
@@ -1630,8 +1575,7 @@ namespace Win32
 			public JET_TABLEID tableid;
 		}
 		[CRepr]
-		public struct JET_OPENTEMPORARYTABLE2
-		{
+		public struct JET_OPENTEMPORARYTABLE2		{
 			public uint32 cbStruct;
 			public JET_COLUMNDEF* prgcolumndef;
 			public uint32 ccolumn;
@@ -1643,46 +1587,40 @@ namespace Win32
 			public JET_TABLEID tableid;
 		}
 		[CRepr]
-		public struct JET_RETINFO
-		{
+		public struct JET_RETINFO		{
 			public uint32 cbStruct;
 			public uint32 ibLongValue;
 			public uint32 itagSequence;
 			public uint32 columnidNextTagged;
 		}
 		[CRepr]
-		public struct JET_SETINFO
-		{
+		public struct JET_SETINFO		{
 			public uint32 cbStruct;
 			public uint32 ibLongValue;
 			public uint32 itagSequence;
 		}
 		[CRepr]
-		public struct JET_RECPOS
-		{
+		public struct JET_RECPOS		{
 			public uint32 cbStruct;
 			public uint32 centriesLT;
 			public uint32 centriesInRange;
 			public uint32 centriesTotal;
 		}
 		[CRepr]
-		public struct JET_RECORDLIST
-		{
+		public struct JET_RECORDLIST		{
 			public uint32 cbStruct;
 			public JET_TABLEID tableid;
 			public uint32 cRecord;
 			public uint32 columnidBookmark;
 		}
 		[CRepr]
-		public struct JET_INDEXRANGE
-		{
+		public struct JET_INDEXRANGE		{
 			public uint32 cbStruct;
 			public JET_TABLEID tableid;
 			public uint32 grbit;
 		}
 		[CRepr]
-		public struct JET_INDEX_COLUMN
-		{
+		public struct JET_INDEX_COLUMN		{
 			public uint32 columnid;
 			public JET_RELOP relop;
 			public void* pv;
@@ -1690,16 +1628,14 @@ namespace Win32
 			public uint32 grbit;
 		}
 		[CRepr]
-		public struct JET_INDEX_RANGE
-		{
+		public struct JET_INDEX_RANGE		{
 			public JET_INDEX_COLUMN* rgStartColumns;
 			public uint32 cStartColumns;
 			public JET_INDEX_COLUMN* rgEndColumns;
 			public uint32 cEndColumns;
 		}
 		[CRepr]
-		public struct JET_LOGTIME
-		{
+		public struct JET_LOGTIME		{
 			public CHAR bSeconds;
 			public CHAR bMinutes;
 			public CHAR bHours;
@@ -1710,33 +1646,28 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public CHAR bFiller2;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public CHAR bFiller1;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct JET_BKLOGTIME
-		{
+		public struct JET_BKLOGTIME		{
 			public CHAR bSeconds;
 			public CHAR bMinutes;
 			public CHAR bHours;
@@ -1747,62 +1678,53 @@ namespace Win32
 			public _Anonymous2_e__Union Anonymous2;
 			
 			[CRepr, Union]
-			public struct _Anonymous2_e__Union
-			{
+			public struct _Anonymous2_e__Union			{
 				public CHAR bFiller2;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 			[CRepr, Union]
-			public struct _Anonymous1_e__Union
-			{
+			public struct _Anonymous1_e__Union			{
 				public CHAR bFiller1;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint8 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct JET_LGPOS
-		{
+		public struct JET_LGPOS		{
 			public uint16 ib;
 			public uint16 isec;
 			public int32 lGeneration;
 		}
 		[CRepr]
-		public struct JET_SIGNATURE
-		{
+		public struct JET_SIGNATURE		{
 			public uint32 ulRandom;
 			public JET_LOGTIME logtimeCreate;
 			public CHAR[16] szComputerName;
 		}
 		[CRepr]
-		public struct JET_BKINFO
-		{
+		public struct JET_BKINFO		{
 			public JET_LGPOS lgposMark;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 genLow;
 			public uint32 genHigh;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public JET_LOGTIME logtimeMark;
 				public JET_BKLOGTIME bklogtimeMark;
 			}
 		}
 		[CRepr]
-		public struct JET_DBINFOMISC
-		{
+		public struct JET_DBINFOMISC		{
 			public uint32 ulVersion;
 			public uint32 ulUpdate;
 			public JET_SIGNATURE signDb;
@@ -1826,8 +1748,7 @@ namespace Win32
 			public uint32 cbPageSize;
 		}
 		[CRepr]
-		public struct JET_DBINFOMISC2
-		{
+		public struct JET_DBINFOMISC2		{
 			public uint32 ulVersion;
 			public uint32 ulUpdate;
 			public JET_SIGNATURE signDb;
@@ -1866,8 +1787,7 @@ namespace Win32
 			public uint32 ulBadChecksumOld;
 		}
 		[CRepr]
-		public struct JET_DBINFOMISC3
-		{
+		public struct JET_DBINFOMISC3		{
 			public uint32 ulVersion;
 			public uint32 ulUpdate;
 			public JET_SIGNATURE signDb;
@@ -1907,8 +1827,7 @@ namespace Win32
 			public uint32 genCommitted;
 		}
 		[CRepr]
-		public struct JET_DBINFOMISC4
-		{
+		public struct JET_DBINFOMISC4		{
 			public uint32 ulVersion;
 			public uint32 ulUpdate;
 			public JET_SIGNATURE signDb;
@@ -1950,8 +1869,7 @@ namespace Win32
 			public JET_BKINFO bkinfoDiffPrev;
 		}
 		[CRepr]
-		public struct JET_THREADSTATS
-		{
+		public struct JET_THREADSTATS		{
 			public uint32 cbStruct;
 			public uint32 cPageReferenced;
 			public uint32 cPageRead;
@@ -1962,8 +1880,7 @@ namespace Win32
 			public uint32 cbLogRecord;
 		}
 		[CRepr]
-		public struct JET_THREADSTATS2
-		{
+		public struct JET_THREADSTATS2		{
 			public uint32 cbStruct;
 			public uint32 cPageReferenced;
 			public uint32 cPageRead;
@@ -1976,8 +1893,7 @@ namespace Win32
 			public uint32 cPageCacheMiss;
 		}
 		[CRepr]
-		public struct JET_RSTINFO_A
-		{
+		public struct JET_RSTINFO_A		{
 			public uint32 cbStruct;
 			public JET_RSTMAP_A* rgrstmap;
 			public int32 crstmap;
@@ -1986,8 +1902,7 @@ namespace Win32
 			public JET_PFNSTATUS pfnStatus;
 		}
 		[CRepr]
-		public struct JET_RSTINFO_W
-		{
+		public struct JET_RSTINFO_W		{
 			public uint32 cbStruct;
 			public JET_RSTMAP_W* rgrstmap;
 			public int32 crstmap;
@@ -1996,8 +1911,7 @@ namespace Win32
 			public JET_PFNSTATUS pfnStatus;
 		}
 		[CRepr]
-		public struct JET_ERRINFOBASIC_W
-		{
+		public struct JET_ERRINFOBASIC_W		{
 			public uint32 cbStruct;
 			public int32 errValue;
 			public JET_ERRCAT errcatMostSpecific;
@@ -2006,15 +1920,13 @@ namespace Win32
 			public char16[64] rgszSourceFile;
 		}
 		[CRepr]
-		public struct JET_COMMIT_ID
-		{
+		public struct JET_COMMIT_ID		{
 			public JET_SIGNATURE signLog;
 			public int32 reserved;
 			public int64 commitId;
 		}
 		[CRepr]
-		public struct JET_RBSINFOMISC
-		{
+		public struct JET_RBSINFOMISC		{
 			public int32 lRBSGeneration;
 			public JET_LOGTIME logtimeCreate;
 			public JET_LOGTIME logtimeCreatePrevRBS;
@@ -2023,8 +1935,7 @@ namespace Win32
 			public uint64 cbLogicalFileSize;
 		}
 		[CRepr]
-		public struct JET_RBSREVERTINFOMISC
-		{
+		public struct JET_RBSREVERTINFOMISC		{
 			public int32 lGenMinRevertStart;
 			public int32 lGenMaxRevertStart;
 			public int32 lGenMinRevertEnd;
@@ -2034,8 +1945,7 @@ namespace Win32
 			public uint64 cPagesReverted;
 		}
 		[CRepr]
-		public struct JET_OPERATIONCONTEXT
-		{
+		public struct JET_OPERATIONCONTEXT		{
 			public uint32 ulUserID;
 			public uint8 nOperationID;
 			public uint8 nOperationType;
@@ -2043,8 +1953,7 @@ namespace Win32
 			public uint8 fFlags;
 		}
 		[CRepr]
-		public struct JET_SETCOLUMN
-		{
+		public struct JET_SETCOLUMN		{
 			public uint32 columnid;
 			public void* pvData;
 			public uint32 cbData;
@@ -2054,24 +1963,21 @@ namespace Win32
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_SETSYSPARAM_A
-		{
+		public struct JET_SETSYSPARAM_A		{
 			public uint32 paramid;
 			public JET_API_PTR lParam;
 			public PSTR sz;
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_SETSYSPARAM_W
-		{
+		public struct JET_SETSYSPARAM_W		{
 			public uint32 paramid;
 			public JET_API_PTR lParam;
 			public PWSTR sz;
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_RETRIEVECOLUMN
-		{
+		public struct JET_RETRIEVECOLUMN		{
 			public uint32 columnid;
 			public void* pvData;
 			public uint32 cbData;
@@ -2083,50 +1989,43 @@ namespace Win32
 			public int32 err;
 		}
 		[CRepr]
-		public struct JET_ENUMCOLUMNID
-		{
+		public struct JET_ENUMCOLUMNID		{
 			public uint32 columnid;
 			public uint32 ctagSequence;
 			public uint32* rgtagSequence;
 		}
 		[CRepr]
-		public struct JET_ENUMCOLUMNVALUE
-		{
+		public struct JET_ENUMCOLUMNVALUE		{
 			public uint32 itagSequence;
 			public int32 err;
 			public uint32 cbData;
 			public void* pvData;
 		}
 		[CRepr]
-		public struct JET_ENUMCOLUMN
-		{
+		public struct JET_ENUMCOLUMN		{
 			public uint32 columnid;
 			public int32 err;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				
 				[CRepr]
-				public struct _Anonymous2_e__Struct
-				{
+				public struct _Anonymous2_e__Struct				{
 					public uint32 cbData;
 					public void* pvData;
 				}
 				[CRepr]
-				public struct _Anonymous1_e__Struct
-				{
+				public struct _Anonymous1_e__Struct				{
 					public uint32 cEnumColumnValue;
 					public JET_ENUMCOLUMNVALUE* rgEnumColumnValue;
 				}
 			}
 		}
 		[CRepr]
-		public struct JET_RECSIZE
-		{
+		public struct JET_RECSIZE		{
 			public uint64 cbData;
 			public uint64 cbLongValueData;
 			public uint64 cbOverhead;
@@ -2137,8 +2036,7 @@ namespace Win32
 			public uint64 cMultiValues;
 		}
 		[CRepr]
-		public struct JET_RECSIZE2
-		{
+		public struct JET_RECSIZE2		{
 			public uint64 cbData;
 			public uint64 cbLongValueData;
 			public uint64 cbOverhead;
@@ -2152,24 +2050,21 @@ namespace Win32
 			public uint64 cbLongValueDataCompressed;
 		}
 		[CRepr]
-		public struct JET_LOGINFO_A
-		{
+		public struct JET_LOGINFO_A		{
 			public uint32 cbSize;
 			public uint32 ulGenLow;
 			public uint32 ulGenHigh;
 			public CHAR[4] szBaseName;
 		}
 		[CRepr]
-		public struct JET_LOGINFO_W
-		{
+		public struct JET_LOGINFO_W		{
 			public uint32 cbSize;
 			public uint32 ulGenLow;
 			public uint32 ulGenHigh;
 			public char16[4] szBaseName;
 		}
 		[CRepr]
-		public struct JET_INSTANCE_INFO_A
-		{
+		public struct JET_INSTANCE_INFO_A		{
 			public JET_INSTANCE hInstanceId;
 			public PSTR szInstanceName;
 			public JET_API_PTR cDatabases;
@@ -2178,8 +2073,7 @@ namespace Win32
 			public int8** szDatabaseSLVFileName_Obsolete;
 		}
 		[CRepr]
-		public struct JET_INSTANCE_INFO_W
-		{
+		public struct JET_INSTANCE_INFO_W		{
 			public JET_INSTANCE hInstanceId;
 			public PWSTR szInstanceName;
 			public JET_API_PTR cDatabases;

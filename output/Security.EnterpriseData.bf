@@ -28,14 +28,12 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HTHREAD_NETWORK_CONTEXT
-		{
+		public struct HTHREAD_NETWORK_CONTEXT		{
 			public uint32 ThreadId;
 			public HANDLE ThreadContext;
 		}
 		[CRepr]
-		public struct FILE_UNPROTECT_OPTIONS
-		{
+		public struct FILE_UNPROTECT_OPTIONS		{
 			public Boolean audit;
 		}
 		

@@ -752,8 +752,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct PIXELFORMATDESCRIPTOR
-		{
+		public struct PIXELFORMATDESCRIPTOR		{
 			public uint16 nSize;
 			public uint16 nVersion;
 			public uint32 dwFlags;
@@ -782,20 +781,17 @@ namespace Win32
 			public uint32 dwDamageMask;
 		}
 		[CRepr]
-		public struct EMRPIXELFORMAT
-		{
+		public struct EMRPIXELFORMAT		{
 			public EMR emr;
 			public PIXELFORMATDESCRIPTOR pfd;
 		}
 		[CRepr]
-		public struct POINTFLOAT
-		{
+		public struct POINTFLOAT		{
 			public float x;
 			public float y;
 		}
 		[CRepr]
-		public struct GLYPHMETRICSFLOAT
-		{
+		public struct GLYPHMETRICSFLOAT		{
 			public float gmfBlackBoxX;
 			public float gmfBlackBoxY;
 			public POINTFLOAT gmfptGlyphOrigin;
@@ -803,8 +799,7 @@ namespace Win32
 			public float gmfCellIncY;
 		}
 		[CRepr]
-		public struct LAYERPLANEDESCRIPTOR
-		{
+		public struct LAYERPLANEDESCRIPTOR		{
 			public uint16 nSize;
 			public uint16 nVersion;
 			public uint32 dwFlags;
@@ -831,17 +826,11 @@ namespace Win32
 			public uint32 crTransparent;
 		}
 		[CRepr]
-		public struct GLUnurbs
-		{
-		}
+		public struct GLUnurbs {}
 		[CRepr]
-		public struct GLUquadric
-		{
-		}
+		public struct GLUquadric {}
 		[CRepr]
-		public struct GLUtesselator
-		{
-		}
+		public struct GLUtesselator {}
 		
 		// --- Functions ---
 		

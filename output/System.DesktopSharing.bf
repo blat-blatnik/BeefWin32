@@ -220,8 +220,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct __ReferenceRemainingTypes__
-		{
+		public struct __ReferenceRemainingTypes__		{
 			public CTRL_LEVEL __ctrlLevel__;
 			public ATTENDEE_DISCONNECT_REASON __attendeeDisconnectReason__;
 			public CHANNEL_PRIORITY __channelPriority__;
@@ -876,11 +875,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		
 	}

@@ -2473,27 +2473,23 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DICONSTANTFORCE
-		{
+		public struct DICONSTANTFORCE		{
 			public int32 lMagnitude;
 		}
 		[CRepr]
-		public struct DIRAMPFORCE
-		{
+		public struct DIRAMPFORCE		{
 			public int32 lStart;
 			public int32 lEnd;
 		}
 		[CRepr]
-		public struct DIPERIODIC
-		{
+		public struct DIPERIODIC		{
 			public uint32 dwMagnitude;
 			public int32 lOffset;
 			public uint32 dwPhase;
 			public uint32 dwPeriod;
 		}
 		[CRepr]
-		public struct DICONDITION
-		{
+		public struct DICONDITION		{
 			public int32 lOffset;
 			public int32 lPositiveCoefficient;
 			public int32 lNegativeCoefficient;
@@ -2502,16 +2498,14 @@ namespace Win32
 			public int32 lDeadBand;
 		}
 		[CRepr]
-		public struct DICUSTOMFORCE
-		{
+		public struct DICUSTOMFORCE		{
 			public uint32 cChannels;
 			public uint32 dwSamplePeriod;
 			public uint32 cSamples;
 			public int32* rglForceData;
 		}
 		[CRepr]
-		public struct DIENVELOPE
-		{
+		public struct DIENVELOPE		{
 			public uint32 dwSize;
 			public uint32 dwAttackLevel;
 			public uint32 dwAttackTime;
@@ -2519,8 +2513,7 @@ namespace Win32
 			public uint32 dwFadeTime;
 		}
 		[CRepr]
-		public struct DIEFFECT_DX5
-		{
+		public struct DIEFFECT_DX5		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDuration;
@@ -2536,8 +2529,7 @@ namespace Win32
 			public void* lpvTypeSpecificParams;
 		}
 		[CRepr]
-		public struct DIEFFECT
-		{
+		public struct DIEFFECT		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDuration;
@@ -2554,16 +2546,14 @@ namespace Win32
 			public uint32 dwStartDelay;
 		}
 		[CRepr]
-		public struct DIFILEEFFECT
-		{
+		public struct DIFILEEFFECT		{
 			public uint32 dwSize;
 			public Guid GuidEffect;
 			public DIEFFECT* lpDiEffect;
 			public CHAR[260] szFriendlyName;
 		}
 		[CRepr]
-		public struct DIEFFESCAPE
-		{
+		public struct DIEFFESCAPE		{
 			public uint32 dwSize;
 			public uint32 dwCommand;
 			public void* lpvInBuffer;
@@ -2572,8 +2562,7 @@ namespace Win32
 			public uint32 cbOutBuffer;
 		}
 		[CRepr]
-		public struct DIDEVCAPS_DX3
-		{
+		public struct DIDEVCAPS_DX3		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDevType;
@@ -2582,8 +2571,7 @@ namespace Win32
 			public uint32 dwPOVs;
 		}
 		[CRepr]
-		public struct DIDEVCAPS
-		{
+		public struct DIDEVCAPS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwDevType;
@@ -2597,16 +2585,14 @@ namespace Win32
 			public uint32 dwFFDriverVersion;
 		}
 		[CRepr]
-		public struct DIOBJECTDATAFORMAT
-		{
+		public struct DIOBJECTDATAFORMAT		{
 			public Guid* pguid;
 			public uint32 dwOfs;
 			public uint32 dwType;
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct DIDATAFORMAT
-		{
+		public struct DIDATAFORMAT		{
 			public uint32 dwSize;
 			public uint32 dwObjSize;
 			public uint32 dwFlags;
@@ -2615,8 +2601,7 @@ namespace Win32
 			public DIOBJECTDATAFORMAT* rgodf;
 		}
 		[CRepr]
-		public struct DIACTIONA
-		{
+		public struct DIACTIONA		{
 			public uint uAppData;
 			public uint32 dwSemantic;
 			public uint32 dwFlags;
@@ -2626,15 +2611,13 @@ namespace Win32
 			public uint32 dwHow;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PSTR lptszActionName;
 				public uint32 uResIdString;
 			}
 		}
 		[CRepr]
-		public struct DIACTIONW
-		{
+		public struct DIACTIONW		{
 			public uint uAppData;
 			public uint32 dwSemantic;
 			public uint32 dwFlags;
@@ -2644,15 +2627,13 @@ namespace Win32
 			public uint32 dwHow;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR lptszActionName;
 				public uint32 uResIdString;
 			}
 		}
 		[CRepr]
-		public struct DIACTIONFORMATA
-		{
+		public struct DIACTIONFORMATA		{
 			public uint32 dwSize;
 			public uint32 dwActionSize;
 			public uint32 dwDataSize;
@@ -2669,8 +2650,7 @@ namespace Win32
 			public CHAR[260] tszActionMap;
 		}
 		[CRepr]
-		public struct DIACTIONFORMATW
-		{
+		public struct DIACTIONFORMATW		{
 			public uint32 dwSize;
 			public uint32 dwActionSize;
 			public uint32 dwDataSize;
@@ -2687,8 +2667,7 @@ namespace Win32
 			public char16[260] tszActionMap;
 		}
 		[CRepr]
-		public struct DICOLORSET
-		{
+		public struct DICOLORSET		{
 			public uint32 dwSize;
 			public uint32 cTextFore;
 			public uint32 cTextHighlight;
@@ -2700,8 +2679,7 @@ namespace Win32
 			public uint32 cAreaFill;
 		}
 		[CRepr]
-		public struct DICONFIGUREDEVICESPARAMSA
-		{
+		public struct DICONFIGUREDEVICESPARAMSA		{
 			public uint32 dwSize;
 			public uint32 dwcUsers;
 			public PSTR lptszUserNames;
@@ -2712,8 +2690,7 @@ namespace Win32
 			public IUnknown* lpUnkDDSTarget;
 		}
 		[CRepr]
-		public struct DICONFIGUREDEVICESPARAMSW
-		{
+		public struct DICONFIGUREDEVICESPARAMSW		{
 			public uint32 dwSize;
 			public uint32 dwcUsers;
 			public PWSTR lptszUserNames;
@@ -2724,8 +2701,7 @@ namespace Win32
 			public IUnknown* lpUnkDDSTarget;
 		}
 		[CRepr]
-		public struct DIDEVICEIMAGEINFOA
-		{
+		public struct DIDEVICEIMAGEINFOA		{
 			public CHAR[260] tszImagePath;
 			public uint32 dwFlags;
 			public uint32 dwViewID;
@@ -2737,8 +2713,7 @@ namespace Win32
 			public uint32 dwTextAlign;
 		}
 		[CRepr]
-		public struct DIDEVICEIMAGEINFOW
-		{
+		public struct DIDEVICEIMAGEINFOW		{
 			public char16[260] tszImagePath;
 			public uint32 dwFlags;
 			public uint32 dwViewID;
@@ -2750,8 +2725,7 @@ namespace Win32
 			public uint32 dwTextAlign;
 		}
 		[CRepr]
-		public struct DIDEVICEIMAGEINFOHEADERA
-		{
+		public struct DIDEVICEIMAGEINFOHEADERA		{
 			public uint32 dwSize;
 			public uint32 dwSizeImageInfo;
 			public uint32 dwcViews;
@@ -2763,8 +2737,7 @@ namespace Win32
 			public DIDEVICEIMAGEINFOA* lprgImageInfoArray;
 		}
 		[CRepr]
-		public struct DIDEVICEIMAGEINFOHEADERW
-		{
+		public struct DIDEVICEIMAGEINFOHEADERW		{
 			public uint32 dwSize;
 			public uint32 dwSizeImageInfo;
 			public uint32 dwcViews;
@@ -2776,8 +2749,7 @@ namespace Win32
 			public DIDEVICEIMAGEINFOW* lprgImageInfoArray;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTINSTANCE_DX3A
-		{
+		public struct DIDEVICEOBJECTINSTANCE_DX3A		{
 			public uint32 dwSize;
 			public Guid guidType;
 			public uint32 dwOfs;
@@ -2786,8 +2758,7 @@ namespace Win32
 			public CHAR[260] tszName;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTINSTANCE_DX3W
-		{
+		public struct DIDEVICEOBJECTINSTANCE_DX3W		{
 			public uint32 dwSize;
 			public Guid guidType;
 			public uint32 dwOfs;
@@ -2796,8 +2767,7 @@ namespace Win32
 			public char16[260] tszName;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTINSTANCEA
-		{
+		public struct DIDEVICEOBJECTINSTANCEA		{
 			public uint32 dwSize;
 			public Guid guidType;
 			public uint32 dwOfs;
@@ -2815,8 +2785,7 @@ namespace Win32
 			public uint16 wReportId;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTINSTANCEW
-		{
+		public struct DIDEVICEOBJECTINSTANCEW		{
 			public uint32 dwSize;
 			public Guid guidType;
 			public uint32 dwOfs;
@@ -2834,84 +2803,72 @@ namespace Win32
 			public uint16 wReportId;
 		}
 		[CRepr]
-		public struct DIPROPHEADER
-		{
+		public struct DIPROPHEADER		{
 			public uint32 dwSize;
 			public uint32 dwHeaderSize;
 			public uint32 dwObj;
 			public uint32 dwHow;
 		}
 		[CRepr]
-		public struct DIPROPDWORD
-		{
+		public struct DIPROPDWORD		{
 			public DIPROPHEADER diph;
 			public uint32 dwData;
 		}
 		[CRepr]
-		public struct DIPROPPOINTER
-		{
+		public struct DIPROPPOINTER		{
 			public DIPROPHEADER diph;
 			public uint uData;
 		}
 		[CRepr]
-		public struct DIPROPRANGE
-		{
+		public struct DIPROPRANGE		{
 			public DIPROPHEADER diph;
 			public int32 lMin;
 			public int32 lMax;
 		}
 		[CRepr]
-		public struct DIPROPCAL
-		{
+		public struct DIPROPCAL		{
 			public DIPROPHEADER diph;
 			public int32 lMin;
 			public int32 lCenter;
 			public int32 lMax;
 		}
 		[CRepr]
-		public struct DIPROPCALPOV
-		{
+		public struct DIPROPCALPOV		{
 			public DIPROPHEADER diph;
 			public int32[5] lMin;
 			public int32[5] lMax;
 		}
 		[CRepr]
-		public struct DIPROPGUIDANDPATH
-		{
+		public struct DIPROPGUIDANDPATH		{
 			public DIPROPHEADER diph;
 			public Guid guidClass;
 			public char16[260] wszPath;
 		}
 		[CRepr]
-		public struct DIPROPSTRING
-		{
+		public struct DIPROPSTRING		{
 			public DIPROPHEADER diph;
 			public char16[260] wsz;
 		}
 		[CRepr]
-		public struct CPOINT
-		{
+		public struct CPOINT		{
 			public int32 lP;
 			public uint32 dwLog;
 		}
 		[CRepr]
-		public struct DIPROPCPOINTS
-		{
+		public struct DIPROPCPOINTS		{
 			public DIPROPHEADER diph;
 			public uint32 dwCPointsNum;
 			public CPOINT[8] cp;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTDATA_DX3
-		{
+		public struct DIDEVICEOBJECTDATA_DX3		{
 			public uint32 dwOfs;
 			public uint32 dwData;
 			public uint32 dwTimeStamp;
 			public uint32 dwSequence;
 		}
 		[CRepr]
-		public struct DIDEVICEOBJECTDATA
-		{
+		public struct DIDEVICEOBJECTDATA		{
 			public uint32 dwOfs;
 			public uint32 dwData;
 			public uint32 dwTimeStamp;
@@ -2919,8 +2876,7 @@ namespace Win32
 			public uint uAppData;
 		}
 		[CRepr]
-		public struct DIDEVICEINSTANCE_DX3A
-		{
+		public struct DIDEVICEINSTANCE_DX3A		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public Guid guidProduct;
@@ -2929,8 +2885,7 @@ namespace Win32
 			public CHAR[260] tszProductName;
 		}
 		[CRepr]
-		public struct DIDEVICEINSTANCE_DX3W
-		{
+		public struct DIDEVICEINSTANCE_DX3W		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public Guid guidProduct;
@@ -2939,8 +2894,7 @@ namespace Win32
 			public char16[260] tszProductName;
 		}
 		[CRepr]
-		public struct DIDEVICEINSTANCEA
-		{
+		public struct DIDEVICEINSTANCEA		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public Guid guidProduct;
@@ -2952,8 +2906,7 @@ namespace Win32
 			public uint16 wUsage;
 		}
 		[CRepr]
-		public struct DIDEVICEINSTANCEW
-		{
+		public struct DIDEVICEINSTANCEW		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public Guid guidProduct;
@@ -2965,8 +2918,7 @@ namespace Win32
 			public uint16 wUsage;
 		}
 		[CRepr]
-		public struct DIEFFECTINFOA
-		{
+		public struct DIEFFECTINFOA		{
 			public uint32 dwSize;
 			public Guid guid;
 			public uint32 dwEffType;
@@ -2975,8 +2927,7 @@ namespace Win32
 			public CHAR[260] tszName;
 		}
 		[CRepr]
-		public struct DIEFFECTINFOW
-		{
+		public struct DIEFFECTINFOW		{
 			public uint32 dwSize;
 			public Guid guid;
 			public uint32 dwEffType;
@@ -2985,24 +2936,21 @@ namespace Win32
 			public char16[260] tszName;
 		}
 		[CRepr]
-		public struct DIMOUSESTATE
-		{
+		public struct DIMOUSESTATE		{
 			public int32 lX;
 			public int32 lY;
 			public int32 lZ;
 			public uint8[4] rgbButtons;
 		}
 		[CRepr]
-		public struct DIMOUSESTATE2
-		{
+		public struct DIMOUSESTATE2		{
 			public int32 lX;
 			public int32 lY;
 			public int32 lZ;
 			public uint8[8] rgbButtons;
 		}
 		[CRepr]
-		public struct DIJOYSTATE
-		{
+		public struct DIJOYSTATE		{
 			public int32 lX;
 			public int32 lY;
 			public int32 lZ;
@@ -3014,8 +2962,7 @@ namespace Win32
 			public uint8[32] rgbButtons;
 		}
 		[CRepr]
-		public struct DIJOYSTATE2
-		{
+		public struct DIJOYSTATE2		{
 			public int32 lX;
 			public int32 lY;
 			public int32 lZ;
@@ -3048,34 +2995,29 @@ namespace Win32
 			public int32[2] rglFSlider;
 		}
 		[CRepr]
-		public struct DIOBJECTATTRIBUTES
-		{
+		public struct DIOBJECTATTRIBUTES		{
 			public uint32 dwFlags;
 			public uint16 wUsagePage;
 			public uint16 wUsage;
 		}
 		[CRepr]
-		public struct DIFFOBJECTATTRIBUTES
-		{
+		public struct DIFFOBJECTATTRIBUTES		{
 			public uint32 dwFFMaxForce;
 			public uint32 dwFFForceResolution;
 		}
 		[CRepr]
-		public struct DIOBJECTCALIBRATION
-		{
+		public struct DIOBJECTCALIBRATION		{
 			public int32 lMin;
 			public int32 lCenter;
 			public int32 lMax;
 		}
 		[CRepr]
-		public struct DIPOVCALIBRATION
-		{
+		public struct DIPOVCALIBRATION		{
 			public int32[5] lMin;
 			public int32[5] lMax;
 		}
 		[CRepr]
-		public struct DIEFFECTATTRIBUTES
-		{
+		public struct DIEFFECTATTRIBUTES		{
 			public uint32 dwEffectId;
 			public uint32 dwEffType;
 			public uint32 dwStaticParams;
@@ -3083,37 +3025,32 @@ namespace Win32
 			public uint32 dwCoords;
 		}
 		[CRepr]
-		public struct DIFFDEVICEATTRIBUTES
-		{
+		public struct DIFFDEVICEATTRIBUTES		{
 			public uint32 dwFlags;
 			public uint32 dwFFSamplePeriod;
 			public uint32 dwFFMinTimeResolution;
 		}
 		[CRepr]
-		public struct DIDRIVERVERSIONS
-		{
+		public struct DIDRIVERVERSIONS		{
 			public uint32 dwSize;
 			public uint32 dwFirmwareRevision;
 			public uint32 dwHardwareRevision;
 			public uint32 dwFFDriverVersion;
 		}
 		[CRepr]
-		public struct DIDEVICESTATE
-		{
+		public struct DIDEVICESTATE		{
 			public uint32 dwSize;
 			public uint32 dwState;
 			public uint32 dwLoad;
 		}
 		[CRepr]
-		public struct DIHIDFFINITINFO
-		{
+		public struct DIHIDFFINITINFO		{
 			public uint32 dwSize;
 			public PWSTR pwszDeviceInterface;
 			public Guid GuidInstance;
 		}
 		[CRepr]
-		public struct JOYPOS
-		{
+		public struct JOYPOS		{
 			public uint32 dwX;
 			public uint32 dwY;
 			public uint32 dwZ;
@@ -3122,35 +3059,30 @@ namespace Win32
 			public uint32 dwV;
 		}
 		[CRepr]
-		public struct JOYRANGE
-		{
+		public struct JOYRANGE		{
 			public JOYPOS jpMin;
 			public JOYPOS jpMax;
 			public JOYPOS jpCenter;
 		}
 		[CRepr]
-		public struct JOYREGUSERVALUES
-		{
+		public struct JOYREGUSERVALUES		{
 			public uint32 dwTimeOut;
 			public JOYRANGE jrvRanges;
 			public JOYPOS jpDeadZone;
 		}
 		[CRepr]
-		public struct JOYREGHWSETTINGS
-		{
+		public struct JOYREGHWSETTINGS		{
 			public uint32 dwFlags;
 			public uint32 dwNumButtons;
 		}
 		[CRepr]
-		public struct JOYREGHWVALUES
-		{
+		public struct JOYREGHWVALUES		{
 			public JOYRANGE jrvHardware;
 			public uint32[4] dwPOVValues;
 			public uint32 dwCalFlags;
 		}
 		[CRepr]
-		public struct JOYREGHWCONFIG
-		{
+		public struct JOYREGHWCONFIG		{
 			public JOYREGHWSETTINGS hws;
 			public uint32 dwUsageSettings;
 			public JOYREGHWVALUES hwv;
@@ -3158,8 +3090,7 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct JOYCALIBRATE
-		{
+		public struct JOYCALIBRATE		{
 			public uint32 wXbase;
 			public uint32 wXdelta;
 			public uint32 wYbase;
@@ -3168,8 +3099,7 @@ namespace Win32
 			public uint32 wZdelta;
 		}
 		[CRepr]
-		public struct DIJOYTYPEINFO_DX5
-		{
+		public struct DIJOYTYPEINFO_DX5		{
 			public uint32 dwSize;
 			public JOYREGHWSETTINGS hws;
 			public Guid clsidConfig;
@@ -3177,8 +3107,7 @@ namespace Win32
 			public char16[260] wszCallout;
 		}
 		[CRepr]
-		public struct DIJOYTYPEINFO_DX6
-		{
+		public struct DIJOYTYPEINFO_DX6		{
 			public uint32 dwSize;
 			public JOYREGHWSETTINGS hws;
 			public Guid clsidConfig;
@@ -3188,8 +3117,7 @@ namespace Win32
 			public uint32 dwFlags1;
 		}
 		[CRepr]
-		public struct DIJOYTYPEINFO
-		{
+		public struct DIJOYTYPEINFO		{
 			public uint32 dwSize;
 			public JOYREGHWSETTINGS hws;
 			public Guid clsidConfig;
@@ -3201,8 +3129,7 @@ namespace Win32
 			public char16[256] wszMapFile;
 		}
 		[CRepr]
-		public struct DIJOYCONFIG_DX5
-		{
+		public struct DIJOYCONFIG_DX5		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public JOYREGHWCONFIG hwc;
@@ -3211,8 +3138,7 @@ namespace Win32
 			public char16[256] wszCallout;
 		}
 		[CRepr]
-		public struct DIJOYCONFIG
-		{
+		public struct DIJOYCONFIG		{
 			public uint32 dwSize;
 			public Guid guidInstance;
 			public JOYREGHWCONFIG hwc;
@@ -3222,16 +3148,14 @@ namespace Win32
 			public Guid guidGameport;
 		}
 		[CRepr]
-		public struct DIJOYUSERVALUES
-		{
+		public struct DIJOYUSERVALUES		{
 			public uint32 dwSize;
 			public JOYREGUSERVALUES ruv;
 			public char16[256] wszGlobalDriver;
 			public char16[256] wszGameportEmulator;
 		}
 		[CRepr]
-		public struct KEYBOARD_INPUT_DATA
-		{
+		public struct KEYBOARD_INPUT_DATA		{
 			public uint16 UnitId;
 			public uint16 MakeCode;
 			public uint16 Flags;
@@ -3239,21 +3163,18 @@ namespace Win32
 			public uint32 ExtraInformation;
 		}
 		[CRepr]
-		public struct KEYBOARD_TYPEMATIC_PARAMETERS
-		{
+		public struct KEYBOARD_TYPEMATIC_PARAMETERS		{
 			public uint16 UnitId;
 			public uint16 Rate;
 			public uint16 Delay;
 		}
 		[CRepr]
-		public struct KEYBOARD_ID
-		{
+		public struct KEYBOARD_ID		{
 			public uint8 Type;
 			public uint8 Subtype;
 		}
 		[CRepr]
-		public struct KEYBOARD_ATTRIBUTES
-		{
+		public struct KEYBOARD_ATTRIBUTES		{
 			public KEYBOARD_ID KeyboardIdentifier;
 			public uint16 KeyboardMode;
 			public uint16 NumberOfFunctionKeys;
@@ -3264,8 +3185,7 @@ namespace Win32
 			public KEYBOARD_TYPEMATIC_PARAMETERS KeyRepeatMaximum;
 		}
 		[CRepr]
-		public struct KEYBOARD_EXTENDED_ATTRIBUTES
-		{
+		public struct KEYBOARD_EXTENDED_ATTRIBUTES		{
 			public uint8 Version;
 			public uint8 FormFactor;
 			public uint8 KeyType;
@@ -3275,38 +3195,32 @@ namespace Win32
 			public uint8 ImplementedInputAssistControls;
 		}
 		[CRepr]
-		public struct KEYBOARD_INDICATOR_PARAMETERS
-		{
+		public struct KEYBOARD_INDICATOR_PARAMETERS		{
 			public uint16 UnitId;
 			public uint16 LedFlags;
 		}
 		[CRepr]
-		public struct INDICATOR_LIST
-		{
+		public struct INDICATOR_LIST		{
 			public uint16 MakeCode;
 			public uint16 IndicatorFlags;
 		}
 		[CRepr]
-		public struct KEYBOARD_INDICATOR_TRANSLATION
-		{
+		public struct KEYBOARD_INDICATOR_TRANSLATION		{
 			public uint16 NumberOfIndicatorKeys;
 			public INDICATOR_LIST[0] IndicatorList;
 		}
 		[CRepr]
-		public struct KEYBOARD_UNIT_ID_PARAMETER
-		{
+		public struct KEYBOARD_UNIT_ID_PARAMETER		{
 			public uint16 UnitId;
 		}
 		[CRepr]
-		public struct KEYBOARD_IME_STATUS
-		{
+		public struct KEYBOARD_IME_STATUS		{
 			public uint16 UnitId;
 			public uint32 ImeOpen;
 			public uint32 ImeConvMode;
 		}
 		[CRepr]
-		public struct MOUSE_INPUT_DATA
-		{
+		public struct MOUSE_INPUT_DATA		{
 			public uint16 UnitId;
 			public uint16 Flags;
 			public _Anonymous_e__Union Anonymous;
@@ -3316,41 +3230,35 @@ namespace Win32
 			public uint32 ExtraInformation;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 Buttons;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 ButtonFlags;
 					public uint16 ButtonData;
 				}
 			}
 		}
 		[CRepr]
-		public struct MOUSE_ATTRIBUTES
-		{
+		public struct MOUSE_ATTRIBUTES		{
 			public uint16 MouseIdentifier;
 			public uint16 NumberOfButtons;
 			public uint16 SampleRate;
 			public uint32 InputDataQueueLength;
 		}
 		[CRepr]
-		public struct MOUSE_UNIT_ID_PARAMETER
-		{
+		public struct MOUSE_UNIT_ID_PARAMETER		{
 			public uint16 UnitId;
 		}
 		[CRepr]
-		public struct USAGE_AND_PAGE
-		{
+		public struct USAGE_AND_PAGE		{
 			public uint16 Usage;
 			public uint16 UsagePage;
 		}
 		[CRepr]
-		public struct HIDP_BUTTON_CAPS
-		{
+		public struct HIDP_BUTTON_CAPS		{
 			public uint16 UsagePage;
 			public uint8 ReportID;
 			public BOOLEAN IsAlias;
@@ -3368,14 +3276,12 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Range_e__Struct Range;
 				public _NotRange_e__Struct NotRange;
 				
 				[CRepr]
-				public struct _Range_e__Struct
-				{
+				public struct _Range_e__Struct				{
 					public uint16 UsageMin;
 					public uint16 UsageMax;
 					public uint16 StringMin;
@@ -3386,8 +3292,7 @@ namespace Win32
 					public uint16 DataIndexMax;
 				}
 				[CRepr]
-				public struct _NotRange_e__Struct
-				{
+				public struct _NotRange_e__Struct				{
 					public uint16 Usage;
 					public uint16 Reserved1;
 					public uint16 StringIndex;
@@ -3400,8 +3305,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HIDP_VALUE_CAPS
-		{
+		public struct HIDP_VALUE_CAPS		{
 			public uint16 UsagePage;
 			public uint8 ReportID;
 			public BOOLEAN IsAlias;
@@ -3427,14 +3331,12 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Range_e__Struct Range;
 				public _NotRange_e__Struct NotRange;
 				
 				[CRepr]
-				public struct _Range_e__Struct
-				{
+				public struct _Range_e__Struct				{
 					public uint16 UsageMin;
 					public uint16 UsageMax;
 					public uint16 StringMin;
@@ -3445,8 +3347,7 @@ namespace Win32
 					public uint16 DataIndexMax;
 				}
 				[CRepr]
-				public struct _NotRange_e__Struct
-				{
+				public struct _NotRange_e__Struct				{
 					public uint16 Usage;
 					public uint16 Reserved1;
 					public uint16 StringIndex;
@@ -3459,8 +3360,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HIDP_LINK_COLLECTION_NODE
-		{
+		public struct HIDP_LINK_COLLECTION_NODE		{
 			public uint16 LinkUsage;
 			public uint16 LinkUsagePage;
 			public uint16 Parent;
@@ -3471,12 +3371,9 @@ namespace Win32
 			public void* UserContext;
 		}
 		[CRepr]
-		public struct _HIDP_PREPARSED_DATA
-		{
-		}
+		public struct _HIDP_PREPARSED_DATA {}
 		[CRepr]
-		public struct HIDP_CAPS
-		{
+		public struct HIDP_CAPS		{
 			public uint16 Usage;
 			public uint16 UsagePage;
 			public uint16 InputReportByteLength;
@@ -3495,83 +3392,71 @@ namespace Win32
 			public uint16 NumberFeatureDataIndices;
 		}
 		[CRepr]
-		public struct HIDP_DATA
-		{
+		public struct HIDP_DATA		{
 			public uint16 DataIndex;
 			public uint16 Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 RawValue;
 				public BOOLEAN On;
 			}
 		}
 		[CRepr]
-		public struct HIDP_UNKNOWN_TOKEN
-		{
+		public struct HIDP_UNKNOWN_TOKEN		{
 			public uint8 Token;
 			public uint8[3] Reserved;
 			public uint32 BitField;
 		}
 		[CRepr]
-		public struct HIDP_EXTENDED_ATTRIBUTES
-		{
+		public struct HIDP_EXTENDED_ATTRIBUTES		{
 			public uint8 NumGlobalUnknowns;
 			public uint8[3] Reserved;
 			public HIDP_UNKNOWN_TOKEN* GlobalUnknowns;
 			public uint32[0] Data;
 		}
 		[CRepr]
-		public struct HIDP_BUTTON_ARRAY_DATA
-		{
+		public struct HIDP_BUTTON_ARRAY_DATA		{
 			public uint16 ArrayIndex;
 			public BOOLEAN On;
 		}
 		[CRepr]
-		public struct HIDP_KEYBOARD_MODIFIER_STATE
-		{
+		public struct HIDP_KEYBOARD_MODIFIER_STATE		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 ul;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct HIDD_CONFIGURATION
-		{
+		public struct HIDD_CONFIGURATION		{
 			public void* cookie;
 			public uint32 size;
 			public uint32 RingBufferSize;
 		}
 		[CRepr]
-		public struct HIDD_ATTRIBUTES
-		{
+		public struct HIDD_ATTRIBUTES		{
 			public uint32 Size;
 			public uint16 VendorID;
 			public uint16 ProductID;
 			public uint16 VersionNumber;
 		}
 		[CRepr]
-		public struct HID_XFER_PACKET
-		{
+		public struct HID_XFER_PACKET		{
 			public uint8* reportBuffer;
 			public uint32 reportBufferLen;
 			public uint8 reportId;
 		}
 		[CRepr]
-		public struct HID_COLLECTION_INFORMATION
-		{
+		public struct HID_COLLECTION_INFORMATION		{
 			public uint32 DescriptorSize;
 			public BOOLEAN Polled;
 			public uint8[0] Reserved1;
@@ -3580,14 +3465,12 @@ namespace Win32
 			public uint16 VersionNumber;
 		}
 		[CRepr]
-		public struct HID_DRIVER_CONFIG
-		{
+		public struct HID_DRIVER_CONFIG		{
 			public uint32 Size;
 			public uint32 RingBufferSize;
 		}
 		[CRepr]
-		public struct INPUT_BUTTON_ENABLE_INFO
-		{
+		public struct INPUT_BUTTON_ENABLE_INFO		{
 			public GPIOBUTTONS_BUTTON_TYPE ButtonType;
 			public BOOLEAN Enabled;
 		}

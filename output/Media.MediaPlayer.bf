@@ -986,29 +986,25 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TimedLevel
-		{
+		public struct TimedLevel		{
 			public uint8[2048] frequency;
 			public uint8[2048] waveform;
 			public int32 state;
 			public int64 timeStamp;
 		}
 		[CRepr]
-		public struct WMPContextMenuInfo
-		{
+		public struct WMPContextMenuInfo		{
 			public uint32 dwID;
 			public BSTR bstrMenuText;
 			public BSTR bstrHelpText;
 		}
 		[CRepr]
-		public struct WMP_WMDM_METADATA_ROUND_TRIP_PC2DEVICE
-		{
+		public struct WMP_WMDM_METADATA_ROUND_TRIP_PC2DEVICE		{
 			public uint32 dwChangesSinceTransactionID;
 			public uint32 dwResultSetStartingIndex;
 		}
 		[CRepr]
-		public struct WMP_WMDM_METADATA_ROUND_TRIP_DEVICE2PC
-		{
+		public struct WMP_WMDM_METADATA_ROUND_TRIP_DEVICE2PC		{
 			public uint32 dwCurrentTransactionID;
 			public uint32 dwReturnedObjectCount;
 			public uint32 dwUnretrievedObjectCount;
@@ -2531,11 +2527,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IWMPNodeRealEstate : IUnknown

@@ -8,8 +8,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct NV_MEMORY_RANGE
-		{
+		public struct NV_MEMORY_RANGE		{
 			public void* BaseAddress;
 			public uint Length;
 		}

@@ -378,41 +378,28 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct TP_CALLBACK_INSTANCE
-		{
-		}
+		public struct TP_CALLBACK_INSTANCE {}
 		[CRepr]
-		public struct TP_WORK
-		{
-		}
+		public struct TP_WORK {}
 		[CRepr]
-		public struct TP_TIMER
-		{
-		}
+		public struct TP_TIMER {}
 		[CRepr]
-		public struct TP_WAIT
-		{
-		}
+		public struct TP_WAIT {}
 		[CRepr]
-		public struct TP_IO
-		{
-		}
+		public struct TP_IO {}
 		[CRepr]
-		public struct REASON_CONTEXT
-		{
+		public struct REASON_CONTEXT		{
 			public uint32 Version;
 			public POWER_REQUEST_CONTEXT_FLAGS Flags;
 			public _Reason_e__Union Reason;
 			
 			[CRepr, Union]
-			public struct _Reason_e__Union
-			{
+			public struct _Reason_e__Union			{
 				public _Detailed_e__Struct Detailed;
 				public PWSTR SimpleReasonString;
 				
 				[CRepr]
-				public struct _Detailed_e__Struct
-				{
+				public struct _Detailed_e__Struct				{
 					public HINSTANCE LocalizedReasonModule;
 					public uint32 LocalizedReasonId;
 					public uint32 ReasonStringCount;
@@ -421,16 +408,14 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PROCESS_INFORMATION
-		{
+		public struct PROCESS_INFORMATION		{
 			public HANDLE hProcess;
 			public HANDLE hThread;
 			public uint32 dwProcessId;
 			public uint32 dwThreadId;
 		}
 		[CRepr]
-		public struct STARTUPINFOA
-		{
+		public struct STARTUPINFOA		{
 			public uint32 cb;
 			public PSTR lpReserved;
 			public PSTR lpDesktop;
@@ -451,8 +436,7 @@ namespace Win32
 			public HANDLE hStdError;
 		}
 		[CRepr]
-		public struct STARTUPINFOW
-		{
+		public struct STARTUPINFOW		{
 			public uint32 cb;
 			public PWSTR lpReserved;
 			public PWSTR lpDesktop;
@@ -473,90 +457,77 @@ namespace Win32
 			public HANDLE hStdError;
 		}
 		[CRepr]
-		public struct MEMORY_PRIORITY_INFORMATION
-		{
+		public struct MEMORY_PRIORITY_INFORMATION		{
 			public MEMORY_PRIORITY MemoryPriority;
 		}
 		[CRepr]
-		public struct THREAD_POWER_THROTTLING_STATE
-		{
+		public struct THREAD_POWER_THROTTLING_STATE		{
 			public uint32 Version;
 			public uint32 ControlMask;
 			public uint32 StateMask;
 		}
 		[CRepr]
-		public struct APP_MEMORY_INFORMATION
-		{
+		public struct APP_MEMORY_INFORMATION		{
 			public uint64 AvailableCommit;
 			public uint64 PrivateCommitUsage;
 			public uint64 PeakPrivateCommitUsage;
 			public uint64 TotalCommitUsage;
 		}
 		[CRepr]
-		public struct PROCESS_MACHINE_INFORMATION
-		{
+		public struct PROCESS_MACHINE_INFORMATION		{
 			public uint16 ProcessMachine;
 			public uint16 Res0;
 			public MACHINE_ATTRIBUTES MachineAttributes;
 		}
 		[CRepr]
-		public struct PROCESS_MEMORY_EXHAUSTION_INFO
-		{
+		public struct PROCESS_MEMORY_EXHAUSTION_INFO		{
 			public uint16 Version;
 			public uint16 Reserved;
 			public PROCESS_MEMORY_EXHAUSTION_TYPE Type;
 			public uint Value;
 		}
 		[CRepr]
-		public struct PROCESS_POWER_THROTTLING_STATE
-		{
+		public struct PROCESS_POWER_THROTTLING_STATE		{
 			public uint32 Version;
 			public uint32 ControlMask;
 			public uint32 StateMask;
 		}
 		[CRepr]
-		public struct PROCESS_PROTECTION_LEVEL_INFORMATION
-		{
+		public struct PROCESS_PROTECTION_LEVEL_INFORMATION		{
 			public PROCESS_PROTECTION_LEVEL ProtectionLevel;
 		}
 		[CRepr]
-		public struct PROCESS_LEAP_SECOND_INFO
-		{
+		public struct PROCESS_LEAP_SECOND_INFO		{
 			public uint32 Flags;
 			public uint32 Reserved;
 		}
 		[CRepr]
-		public struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGET
-		{
+		public struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGET		{
 			public uint TargetAddress;
 			public uint Flags;
 		}
 		[CRepr]
-		public struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION
-		{
+		public struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION		{
 			public uint16 NumberOfTargets;
 			public uint16 Reserved;
 			public uint32 Reserved2;
 			public PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets;
 		}
 		[CRepr]
-		public struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE
-		{
+		public struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE		{
 			public uint BaseAddress;
 			public uint Size;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION
-		{
+		public struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGES_INFORMATION		{
 			public uint16 NumberOfRanges;
 			public uint16 Reserved;
 			public uint32 Reserved2;
 			public PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges;
 		}
 		[CRepr]
-		public struct IO_COUNTERS
-		{
+		public struct IO_COUNTERS		{
 			public uint64 ReadOperationCount;
 			public uint64 WriteOperationCount;
 			public uint64 OtherOperationCount;
@@ -565,13 +536,11 @@ namespace Win32
 			public uint64 OtherTransferCount;
 		}
 		[CRepr, Union]
-		public struct RTL_RUN_ONCE
-		{
+		public struct RTL_RUN_ONCE		{
 			public void* Ptr;
 		}
 		[CRepr]
-		public struct RTL_BARRIER
-		{
+		public struct RTL_BARRIER		{
 			public uint32 Reserved1;
 			public uint32 Reserved2;
 			public uint[2] Reserved3;
@@ -579,8 +548,7 @@ namespace Win32
 			public uint32 Reserved5;
 		}
 		[CRepr]
-		public struct RTL_CRITICAL_SECTION_DEBUG
-		{
+		public struct RTL_CRITICAL_SECTION_DEBUG		{
 			public uint16 Type;
 			public uint16 CreatorBackTraceIndex;
 			public RTL_CRITICAL_SECTION* CriticalSection;
@@ -592,8 +560,7 @@ namespace Win32
 			public uint16 SpareWORD;
 		}
 		[CRepr]
-		public struct RTL_CRITICAL_SECTION
-		{
+		public struct RTL_CRITICAL_SECTION		{
 			public RTL_CRITICAL_SECTION_DEBUG* DebugInfo;
 			public int32 LockCount;
 			public int32 RecursionCount;
@@ -602,24 +569,20 @@ namespace Win32
 			public uint SpinCount;
 		}
 		[CRepr]
-		public struct RTL_SRWLOCK
-		{
+		public struct RTL_SRWLOCK		{
 			public void* Ptr;
 		}
 		[CRepr]
-		public struct RTL_CONDITION_VARIABLE
-		{
+		public struct RTL_CONDITION_VARIABLE		{
 			public void* Ptr;
 		}
 		[CRepr]
-		public struct TP_POOL_STACK_INFORMATION
-		{
+		public struct TP_POOL_STACK_INFORMATION		{
 			public uint StackReserve;
 			public uint StackCommit;
 		}
 		[CRepr]
-		public struct TP_CALLBACK_ENVIRON_V3
-		{
+		public struct TP_CALLBACK_ENVIRON_V3		{
 			public uint32 Version;
 			public PTP_POOL Pool;
 			public int CleanupGroup;
@@ -632,79 +595,66 @@ namespace Win32
 			public uint32 Size;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public uint32 Flags;
 				public _s_e__Struct s;
 				
 				[CRepr]
-				public struct _s_e__Struct
-				{
+				public struct _s_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 			[CRepr]
-			public struct _ACTIVATION_CONTEXT
-			{
-			}
+			public struct _ACTIVATION_CONTEXT {}
 		}
 		[CRepr]
-		public struct UMS_SCHEDULER_STARTUP_INFO
-		{
+		public struct UMS_SCHEDULER_STARTUP_INFO		{
 			public uint32 UmsVersion;
 			public void* CompletionList;
 			public PRTL_UMS_SCHEDULER_ENTRY_POINT SchedulerProc;
 			public void* SchedulerParam;
 		}
 		[CRepr]
-		public struct UMS_SYSTEM_THREAD_INFORMATION
-		{
+		public struct UMS_SYSTEM_THREAD_INFORMATION		{
 			public uint32 UmsVersion;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 ThreadUmsFlags;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct STARTUPINFOEXA
-		{
+		public struct STARTUPINFOEXA		{
 			public STARTUPINFOA StartupInfo;
 			public LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList;
 		}
 		[CRepr]
-		public struct STARTUPINFOEXW
-		{
+		public struct STARTUPINFOEXW		{
 			public STARTUPINFOW StartupInfo;
 			public LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList;
 		}
 		[CRepr]
-		public struct PEB_LDR_DATA
-		{
+		public struct PEB_LDR_DATA		{
 			public uint8[8] Reserved1;
 			public void*[3] Reserved2;
 			public LIST_ENTRY InMemoryOrderModuleList;
 		}
 		[CRepr]
-		public struct RTL_USER_PROCESS_PARAMETERS
-		{
+		public struct RTL_USER_PROCESS_PARAMETERS		{
 			public uint8[16] Reserved1;
 			public void*[10] Reserved2;
 			public UNICODE_STRING ImagePathName;
 			public UNICODE_STRING CommandLine;
 		}
 		[CRepr]
-		public struct PEB
-		{
+		public struct PEB		{
 			public uint8[2] Reserved1;
 			public uint8 BeingDebugged;
 			public uint8[0] Reserved2;
@@ -726,8 +676,7 @@ namespace Win32
 			public uint32 SessionId;
 		}
 		[CRepr]
-		public struct PROCESS_BASIC_INFORMATION
-		{
+		public struct PROCESS_BASIC_INFORMATION		{
 			public void* Reserved1;
 			public PEB* PebBaseAddress;
 			public void*[2] Reserved2;

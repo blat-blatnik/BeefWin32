@@ -261,8 +261,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct GROUP_POLICY_OBJECTA
-		{
+		public struct GROUP_POLICY_OBJECTA		{
 			public uint32 dwOptions;
 			public uint32 dwVersion;
 			public PSTR lpDSPath;
@@ -278,8 +277,7 @@ namespace Win32
 			public PSTR lpLink;
 		}
 		[CRepr]
-		public struct GROUP_POLICY_OBJECTW
-		{
+		public struct GROUP_POLICY_OBJECTW		{
 			public uint32 dwOptions;
 			public uint32 dwVersion;
 			public PWSTR lpDSPath;
@@ -295,8 +293,7 @@ namespace Win32
 			public PWSTR lpLink;
 		}
 		[CRepr]
-		public struct RSOP_TARGET
-		{
+		public struct RSOP_TARGET		{
 			public PWSTR pwszAccountName;
 			public PWSTR pwszNewSOM;
 			public SAFEARRAY* psaSecurityGroups;
@@ -305,8 +302,7 @@ namespace Win32
 			public IWbemServices* pWbemServices;
 		}
 		[CRepr]
-		public struct POLICYSETTINGSTATUSINFO
-		{
+		public struct POLICYSETTINGSTATUSINFO		{
 			public PWSTR szKey;
 			public PWSTR szEventSource;
 			public PWSTR szEventLogName;
@@ -316,43 +312,37 @@ namespace Win32
 			public SYSTEMTIME timeLogged;
 		}
 		[CRepr, Union]
-		public struct INSTALLSPEC
-		{
+		public struct INSTALLSPEC		{
 			public _AppName_e__Struct AppName;
 			public PWSTR FileExt;
 			public PWSTR ProgId;
 			public _COMClass_e__Struct COMClass;
 			
 			[CRepr]
-			public struct _AppName_e__Struct
-			{
+			public struct _AppName_e__Struct			{
 				public PWSTR Name;
 				public Guid GPOId;
 			}
 			[CRepr]
-			public struct _COMClass_e__Struct
-			{
+			public struct _COMClass_e__Struct			{
 				public Guid Clsid;
 				public uint32 ClsCtx;
 			}
 		}
 		[CRepr]
-		public struct INSTALLDATA
-		{
+		public struct INSTALLDATA		{
 			public INSTALLSPECTYPE Type;
 			public INSTALLSPEC Spec;
 		}
 		[CRepr]
-		public struct LOCALMANAGEDAPPLICATION
-		{
+		public struct LOCALMANAGEDAPPLICATION		{
 			public PWSTR pszDeploymentName;
 			public PWSTR pszPolicyName;
 			public PWSTR pszProductId;
 			public uint32 dwState;
 		}
 		[CRepr]
-		public struct MANAGEDAPPLICATION
-		{
+		public struct MANAGEDAPPLICATION		{
 			public PWSTR pszPackageName;
 			public PWSTR pszPublisher;
 			public uint32 dwVersionHi;
@@ -371,8 +361,7 @@ namespace Win32
 			public BOOL bInstalled;
 		}
 		[CRepr]
-		public struct GPOBROWSEINFO
-		{
+		public struct GPOBROWSEINFO		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HWND hwndOwner;

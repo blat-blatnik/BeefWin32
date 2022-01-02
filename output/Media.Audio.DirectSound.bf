@@ -341,8 +341,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DSCAPS
-		{
+		public struct DSCAPS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwMinSecondarySampleRate;
@@ -369,8 +368,7 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct DSBCAPS
-		{
+		public struct DSBCAPS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
@@ -378,8 +376,7 @@ namespace Win32
 			public uint32 dwPlayCpuOverhead;
 		}
 		[CRepr]
-		public struct DSEFFECTDESC
-		{
+		public struct DSEFFECTDESC		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public Guid guidDSFXClass;
@@ -387,8 +384,7 @@ namespace Win32
 			public uint dwReserved2;
 		}
 		[CRepr]
-		public struct DSCEFFECTDESC
-		{
+		public struct DSCEFFECTDESC		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public Guid guidDSCFXClass;
@@ -397,8 +393,7 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct DSBUFFERDESC
-		{
+		public struct DSBUFFERDESC		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
@@ -407,8 +402,7 @@ namespace Win32
 			public Guid guid3DAlgorithm;
 		}
 		[CRepr]
-		public struct DSBUFFERDESC1
-		{
+		public struct DSBUFFERDESC1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
@@ -416,8 +410,7 @@ namespace Win32
 			public WAVEFORMATEX* lpwfxFormat;
 		}
 		[CRepr]
-		public struct DS3DBUFFER
-		{
+		public struct DS3DBUFFER		{
 			public uint32 dwSize;
 			public D3DVECTOR vPosition;
 			public D3DVECTOR vVelocity;
@@ -430,8 +423,7 @@ namespace Win32
 			public uint32 dwMode;
 		}
 		[CRepr]
-		public struct DS3DLISTENER
-		{
+		public struct DS3DLISTENER		{
 			public uint32 dwSize;
 			public D3DVECTOR vPosition;
 			public D3DVECTOR vVelocity;
@@ -442,16 +434,14 @@ namespace Win32
 			public float flDopplerFactor;
 		}
 		[CRepr]
-		public struct DSCCAPS
-		{
+		public struct DSCCAPS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwFormats;
 			public uint32 dwChannels;
 		}
 		[CRepr]
-		public struct DSCBUFFERDESC1
-		{
+		public struct DSCBUFFERDESC1		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
@@ -459,8 +449,7 @@ namespace Win32
 			public WAVEFORMATEX* lpwfxFormat;
 		}
 		[CRepr]
-		public struct DSCBUFFERDESC
-		{
+		public struct DSCBUFFERDESC		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
@@ -470,28 +459,24 @@ namespace Win32
 			public DSCEFFECTDESC* lpDSCFXDesc;
 		}
 		[CRepr]
-		public struct DSCBCAPS
-		{
+		public struct DSCBCAPS		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwBufferBytes;
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct DSBPOSITIONNOTIFY
-		{
+		public struct DSBPOSITIONNOTIFY		{
 			public uint32 dwOffset;
 			public HANDLE hEventNotify;
 		}
 		[CRepr]
-		public struct DSFXGargle
-		{
+		public struct DSFXGargle		{
 			public uint32 dwRateHz;
 			public uint32 dwWaveShape;
 		}
 		[CRepr]
-		public struct DSFXChorus
-		{
+		public struct DSFXChorus		{
 			public float fWetDryMix;
 			public float fDepth;
 			public float fFeedback;
@@ -501,8 +486,7 @@ namespace Win32
 			public int32 lPhase;
 		}
 		[CRepr]
-		public struct DSFXFlanger
-		{
+		public struct DSFXFlanger		{
 			public float fWetDryMix;
 			public float fDepth;
 			public float fFeedback;
@@ -512,8 +496,7 @@ namespace Win32
 			public int32 lPhase;
 		}
 		[CRepr]
-		public struct DSFXEcho
-		{
+		public struct DSFXEcho		{
 			public float fWetDryMix;
 			public float fFeedback;
 			public float fLeftDelay;
@@ -521,8 +504,7 @@ namespace Win32
 			public int32 lPanDelay;
 		}
 		[CRepr]
-		public struct DSFXDistortion
-		{
+		public struct DSFXDistortion		{
 			public float fGain;
 			public float fEdge;
 			public float fPostEQCenterFrequency;
@@ -530,8 +512,7 @@ namespace Win32
 			public float fPreLowpassCutoff;
 		}
 		[CRepr]
-		public struct DSFXCompressor
-		{
+		public struct DSFXCompressor		{
 			public float fGain;
 			public float fAttack;
 			public float fRelease;
@@ -540,15 +521,13 @@ namespace Win32
 			public float fPredelay;
 		}
 		[CRepr]
-		public struct DSFXParamEq
-		{
+		public struct DSFXParamEq		{
 			public float fCenter;
 			public float fBandwidth;
 			public float fGain;
 		}
 		[CRepr]
-		public struct DSFXI3DL2Reverb
-		{
+		public struct DSFXI3DL2Reverb		{
 			public int32 lRoom;
 			public int32 lRoomHF;
 			public float flRoomRolloffFactor;
@@ -563,23 +542,20 @@ namespace Win32
 			public float flHFReference;
 		}
 		[CRepr]
-		public struct DSFXWavesReverb
-		{
+		public struct DSFXWavesReverb		{
 			public float fInGain;
 			public float fReverbMix;
 			public float fReverbTime;
 			public float fHighFreqRTRatio;
 		}
 		[CRepr]
-		public struct DSCFXAec
-		{
+		public struct DSCFXAec		{
 			public BOOL fEnable;
 			public BOOL fNoiseFill;
 			public uint32 dwMode;
 		}
 		[CRepr]
-		public struct DSCFXNoiseSuppress
-		{
+		public struct DSCFXNoiseSuppress		{
 			public BOOL fEnable;
 		}
 		

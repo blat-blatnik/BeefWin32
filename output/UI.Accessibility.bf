@@ -1454,55 +1454,47 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MSAAMENUINFO
-		{
+		public struct MSAAMENUINFO		{
 			public uint32 dwMSAASignature;
 			public uint32 cchWText;
 			public PWSTR pszWText;
 		}
 		[CRepr]
-		public struct UiaRect
-		{
+		public struct UiaRect		{
 			public double left;
 			public double top;
 			public double width;
 			public double height;
 		}
 		[CRepr]
-		public struct UiaPoint
-		{
+		public struct UiaPoint		{
 			public double x;
 			public double y;
 		}
 		[CRepr]
-		public struct UiaChangeInfo
-		{
+		public struct UiaChangeInfo		{
 			public int32 uiaId;
 			public VARIANT payload;
 			public VARIANT extraInfo;
 		}
 		[CRepr]
-		public struct UIAutomationParameter
-		{
+		public struct UIAutomationParameter		{
 			public UIAutomationType type;
 			public void* pData;
 		}
 		[CRepr]
-		public struct UIAutomationPropertyInfo
-		{
+		public struct UIAutomationPropertyInfo		{
 			public Guid guid;
 			public PWSTR pProgrammaticName;
 			public UIAutomationType type;
 		}
 		[CRepr]
-		public struct UIAutomationEventInfo
-		{
+		public struct UIAutomationEventInfo		{
 			public Guid guid;
 			public PWSTR pProgrammaticName;
 		}
 		[CRepr]
-		public struct UIAutomationMethodInfo
-		{
+		public struct UIAutomationMethodInfo		{
 			public PWSTR pProgrammaticName;
 			public BOOL doSetFocus;
 			public uint32 cInParameters;
@@ -1511,8 +1503,7 @@ namespace Win32
 			public PWSTR* pParameterNames;
 		}
 		[CRepr]
-		public struct UIAutomationPatternInfo
-		{
+		public struct UIAutomationPatternInfo		{
 			public Guid guid;
 			public PWSTR pProgrammaticName;
 			public Guid providerInterfaceId;
@@ -1526,40 +1517,34 @@ namespace Win32
 			public IUIAutomationPatternHandler* pPatternHandler;
 		}
 		[CRepr]
-		public struct ExtendedProperty
-		{
+		public struct ExtendedProperty		{
 			public BSTR PropertyName;
 			public BSTR PropertyValue;
 		}
 		[CRepr]
-		public struct UiaCondition
-		{
+		public struct UiaCondition		{
 			public ConditionType ConditionType;
 		}
 		[CRepr]
-		public struct UiaPropertyCondition
-		{
+		public struct UiaPropertyCondition		{
 			public ConditionType ConditionType;
 			public int32 PropertyId;
 			public VARIANT Value;
 			public PropertyConditionFlags Flags;
 		}
 		[CRepr]
-		public struct UiaAndOrCondition
-		{
+		public struct UiaAndOrCondition		{
 			public ConditionType ConditionType;
 			public UiaCondition** ppConditions;
 			public int32 cConditions;
 		}
 		[CRepr]
-		public struct UiaNotCondition
-		{
+		public struct UiaNotCondition		{
 			public ConditionType ConditionType;
 			public UiaCondition* pCondition;
 		}
 		[CRepr]
-		public struct UiaCacheRequest
-		{
+		public struct UiaCacheRequest		{
 			public UiaCondition* pViewCondition;
 			public TreeScope Scope;
 			public int32* pProperties;
@@ -1569,22 +1554,19 @@ namespace Win32
 			public AutomationElementMode automationElementMode;
 		}
 		[CRepr]
-		public struct UiaFindParams
-		{
+		public struct UiaFindParams		{
 			public int32 MaxDepth;
 			public BOOL FindFirst;
 			public BOOL ExcludeRoot;
 			public UiaCondition* pFindCondition;
 		}
 		[CRepr]
-		public struct UiaEventArgs
-		{
+		public struct UiaEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 		}
 		[CRepr]
-		public struct UiaPropertyChangedEventArgs
-		{
+		public struct UiaPropertyChangedEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public int32 PropertyId;
@@ -1592,8 +1574,7 @@ namespace Win32
 			public VARIANT NewValue;
 		}
 		[CRepr]
-		public struct UiaStructureChangedEventArgs
-		{
+		public struct UiaStructureChangedEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public StructureChangeType StructureChangeType;
@@ -1601,40 +1582,35 @@ namespace Win32
 			public int32 cRuntimeIdLen;
 		}
 		[CRepr]
-		public struct UiaTextEditTextChangedEventArgs
-		{
+		public struct UiaTextEditTextChangedEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public TextEditChangeType TextEditChangeType;
 			public SAFEARRAY* pTextChange;
 		}
 		[CRepr]
-		public struct UiaChangesEventArgs
-		{
+		public struct UiaChangesEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public int32 EventIdCount;
 			public UiaChangeInfo* pUiaChanges;
 		}
 		[CRepr]
-		public struct UiaAsyncContentLoadedEventArgs
-		{
+		public struct UiaAsyncContentLoadedEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public AsyncContentLoadedState AsyncContentLoadedState;
 			public double PercentComplete;
 		}
 		[CRepr]
-		public struct UiaWindowClosedEventArgs
-		{
+		public struct UiaWindowClosedEventArgs		{
 			public EventArgsType Type;
 			public int32 EventId;
 			public int32* pRuntimeId;
 			public int32 cRuntimeIdLen;
 		}
 		[CRepr]
-		public struct SERIALKEYSA
-		{
+		public struct SERIALKEYSA		{
 			public uint32 cbSize;
 			public SERIALKEYS_FLAGS dwFlags;
 			public PSTR lpszActivePort;
@@ -1644,8 +1620,7 @@ namespace Win32
 			public uint32 iActive;
 		}
 		[CRepr]
-		public struct SERIALKEYSW
-		{
+		public struct SERIALKEYSW		{
 			public uint32 cbSize;
 			public SERIALKEYS_FLAGS dwFlags;
 			public PWSTR lpszActivePort;
@@ -1655,22 +1630,19 @@ namespace Win32
 			public uint32 iActive;
 		}
 		[CRepr]
-		public struct HIGHCONTRASTA
-		{
+		public struct HIGHCONTRASTA		{
 			public uint32 cbSize;
 			public HIGHCONTRASTW_FLAGS dwFlags;
 			public PSTR lpszDefaultScheme;
 		}
 		[CRepr]
-		public struct HIGHCONTRASTW
-		{
+		public struct HIGHCONTRASTW		{
 			public uint32 cbSize;
 			public HIGHCONTRASTW_FLAGS dwFlags;
 			public PWSTR lpszDefaultScheme;
 		}
 		[CRepr]
-		public struct FILTERKEYS
-		{
+		public struct FILTERKEYS		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 iWaitMSec;
@@ -1679,14 +1651,12 @@ namespace Win32
 			public uint32 iBounceMSec;
 		}
 		[CRepr]
-		public struct STICKYKEYS
-		{
+		public struct STICKYKEYS		{
 			public uint32 cbSize;
 			public STICKYKEYS_FLAGS dwFlags;
 		}
 		[CRepr]
-		public struct MOUSEKEYS
-		{
+		public struct MOUSEKEYS		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 iMaxSpeed;
@@ -1696,15 +1666,13 @@ namespace Win32
 			public uint32 dwReserved2;
 		}
 		[CRepr]
-		public struct ACCESSTIMEOUT
-		{
+		public struct ACCESSTIMEOUT		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 			public uint32 iTimeOutMSec;
 		}
 		[CRepr]
-		public struct SOUNDSENTRYA
-		{
+		public struct SOUNDSENTRYA		{
 			public uint32 cbSize;
 			public SOUNDSENTRY_FLAGS dwFlags;
 			public SOUNDSENTRY_TEXT_EFFECT iFSTextEffect;
@@ -1719,8 +1687,7 @@ namespace Win32
 			public uint32 iWindowsEffectOrdinal;
 		}
 		[CRepr]
-		public struct SOUNDSENTRYW
-		{
+		public struct SOUNDSENTRYW		{
 			public uint32 cbSize;
 			public SOUNDSENTRY_FLAGS dwFlags;
 			public SOUNDSENTRY_TEXT_EFFECT iFSTextEffect;
@@ -1735,8 +1702,7 @@ namespace Win32
 			public uint32 iWindowsEffectOrdinal;
 		}
 		[CRepr]
-		public struct TOGGLEKEYS
-		{
+		public struct TOGGLEKEYS		{
 			public uint32 cbSize;
 			public uint32 dwFlags;
 		}
@@ -3206,11 +3172,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IUnknown.VTable
-			{
-			}
+			public struct VTable : IUnknown.VTable {}
 		}
 		[CRepr]
 		public struct IUIAutomationBoolCondition : IUIAutomationCondition

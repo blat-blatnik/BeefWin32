@@ -110,52 +110,44 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct ID_PARAMETER_PAIR
-		{
+		public struct ID_PARAMETER_PAIR		{
 			public BOOL fIsVariable;
 			public uint16 cbIdSize;
 		}
 		[CRepr]
-		public struct ID_PARAMETERS
-		{
+		public struct ID_PARAMETERS		{
 			public uint32 dwSize;
 			public ID_PARAMETER_PAIR replicaId;
 			public ID_PARAMETER_PAIR itemId;
 			public ID_PARAMETER_PAIR changeUnitId;
 		}
 		[CRepr]
-		public struct SYNC_SESSION_STATISTICS
-		{
+		public struct SYNC_SESSION_STATISTICS		{
 			public uint32 dwChangesApplied;
 			public uint32 dwChangesFailed;
 		}
 		[CRepr]
-		public struct SYNC_VERSION
-		{
+		public struct SYNC_VERSION		{
 			public uint32 dwLastUpdatingReplicaKey;
 			public uint64 ullTickCount;
 		}
 		[CRepr]
-		public struct SYNC_RANGE
-		{
+		public struct SYNC_RANGE		{
 			public uint8* pbClosedLowerBound;
 			public uint8* pbClosedUpperBound;
 		}
 		[CRepr]
-		public struct SYNC_TIME
-		{
+		public struct SYNC_TIME		{
 			public uint32 dwDate;
 			public uint32 dwTime;
 		}
 		[CRepr]
-		public struct SYNC_FILTER_CHANGE
-		{
+		public struct SYNC_FILTER_CHANGE		{
 			public BOOL fMoveIn;
 			public SYNC_VERSION moveVersion;
 		}
 		[CRepr]
-		public struct SyncProviderConfiguration
-		{
+		public struct SyncProviderConfiguration		{
 			public uint32 dwVersion;
 			public Guid guidInstanceId;
 			public Guid clsidProvider;
@@ -165,8 +157,7 @@ namespace Win32
 			public uint32 dwSupportedArchitecture;
 		}
 		[CRepr]
-		public struct SyncProviderConfigUIConfiguration
-		{
+		public struct SyncProviderConfigUIConfiguration		{
 			public uint32 dwVersion;
 			public Guid guidInstanceId;
 			public Guid clsidConfigUI;

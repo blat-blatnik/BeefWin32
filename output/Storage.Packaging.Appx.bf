@@ -228,63 +228,54 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct APPX_PACKAGE_SETTINGS
-		{
+		public struct APPX_PACKAGE_SETTINGS		{
 			public BOOL forceZip32;
 			public IUri* hashMethod;
 		}
 		[CRepr]
-		public struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
-		{
+		public struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM		{
 			public IStream* inputStream;
 			public PWSTR fileName;
 			public PWSTR contentType;
 			public APPX_COMPRESSION_OPTION compressionOption;
 		}
 		[CRepr]
-		public struct APPX_ENCRYPTED_PACKAGE_SETTINGS
-		{
+		public struct APPX_ENCRYPTED_PACKAGE_SETTINGS		{
 			public uint32 keyLength;
 			public PWSTR encryptionAlgorithm;
 			public BOOL useDiffusion;
 			public IUri* blockMapHashAlgorithm;
 		}
 		[CRepr]
-		public struct APPX_ENCRYPTED_PACKAGE_SETTINGS2
-		{
+		public struct APPX_ENCRYPTED_PACKAGE_SETTINGS2		{
 			public uint32 keyLength;
 			public PWSTR encryptionAlgorithm;
 			public IUri* blockMapHashAlgorithm;
 			public uint32 options;
 		}
 		[CRepr]
-		public struct APPX_KEY_INFO
-		{
+		public struct APPX_KEY_INFO		{
 			public uint32 keyLength;
 			public uint32 keyIdLength;
 			public uint8* key;
 			public uint8* keyId;
 		}
 		[CRepr]
-		public struct APPX_ENCRYPTED_EXEMPTIONS
-		{
+		public struct APPX_ENCRYPTED_EXEMPTIONS		{
 			public uint32 count;
 			public PWSTR* plainTextFiles;
 		}
 		[CRepr]
-		public struct PACKAGE_VERSION
-		{
+		public struct PACKAGE_VERSION		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint64 Version;
 				public _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint16 Revision;
 					public uint16 Build;
 					public uint16 Minor;
@@ -293,8 +284,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct PACKAGE_ID
-		{
+		public struct PACKAGE_ID		{
 			public uint32 reserved;
 			public uint32 processorArchitecture;
 			public PACKAGE_VERSION version;
@@ -304,13 +294,11 @@ namespace Win32
 			public PWSTR publisherId;
 		}
 		[CRepr]
-		public struct _PACKAGE_INFO_REFERENCE
-		{
+		public struct _PACKAGE_INFO_REFERENCE		{
 			public void* reserved;
 		}
 		[CRepr]
-		public struct PACKAGE_INFO
-		{
+		public struct PACKAGE_INFO		{
 			public uint32 reserved;
 			public uint32 flags;
 			public PWSTR path;
@@ -319,13 +307,11 @@ namespace Win32
 			public PACKAGE_ID packageId;
 		}
 		[CRepr]
-		public struct PACKAGEDEPENDENCY_CONTEXT__
-		{
+		public struct PACKAGEDEPENDENCY_CONTEXT__		{
 			public int32 unused;
 		}
 		[CRepr]
-		public struct PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__
-		{
+		public struct PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__		{
 			public int32 unused;
 		}
 		

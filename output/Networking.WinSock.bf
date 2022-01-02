@@ -1590,38 +1590,28 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct RIO_BUFFERID_t
-		{
-		}
+		public struct RIO_BUFFERID_t {}
 		[CRepr]
-		public struct RIO_CQ_t
-		{
-		}
+		public struct RIO_CQ_t {}
 		[CRepr]
-		public struct RIO_RQ_t
-		{
-		}
+		public struct RIO_RQ_t {}
 		[CRepr]
-		public struct IN_ADDR
-		{
+		public struct IN_ADDR		{
 			public _S_un_e__Union S_un;
 			
 			[CRepr, Union]
-			public struct _S_un_e__Union
-			{
+			public struct _S_un_e__Union			{
 				public _S_un_b_e__Struct S_un_b;
 				public _S_un_w_e__Struct S_un_w;
 				public uint32 S_addr;
 				
 				[CRepr]
-				public struct _S_un_w_e__Struct
-				{
+				public struct _S_un_w_e__Struct				{
 					public uint16 s_w1;
 					public uint16 s_w2;
 				}
 				[CRepr]
-				public struct _S_un_b_e__Struct
-				{
+				public struct _S_un_b_e__Struct				{
 					public uint8 s_b1;
 					public uint8 s_b2;
 					public uint8 s_b3;
@@ -1630,96 +1620,82 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct SOCKADDR
-		{
+		public struct SOCKADDR		{
 			public uint16 sa_family;
 			public CHAR[14] sa_data;
 		}
 		[CRepr]
-		public struct SOCKET_ADDRESS
-		{
+		public struct SOCKET_ADDRESS		{
 			public SOCKADDR* lpSockaddr;
 			public int32 iSockaddrLength;
 		}
 		[CRepr]
-		public struct SOCKET_ADDRESS_LIST
-		{
+		public struct SOCKET_ADDRESS_LIST		{
 			public int32 iAddressCount;
 			public SOCKET_ADDRESS[0] Address;
 		}
 		[CRepr]
-		public struct CSADDR_INFO
-		{
+		public struct CSADDR_INFO		{
 			public SOCKET_ADDRESS LocalAddr;
 			public SOCKET_ADDRESS RemoteAddr;
 			public int32 iSocketType;
 			public int32 iProtocol;
 		}
 		[CRepr]
-		public struct SOCKADDR_STORAGE
-		{
+		public struct SOCKADDR_STORAGE		{
 			public uint16 ss_family;
 			public CHAR[6] __ss_pad1;
 			public int64 __ss_align;
 			public CHAR[112] __ss_pad2;
 		}
 		[CRepr]
-		public struct SOCKADDR_STORAGE_XP
-		{
+		public struct SOCKADDR_STORAGE_XP		{
 			public int16 ss_family;
 			public CHAR[6] __ss_pad1;
 			public int64 __ss_align;
 			public CHAR[112] __ss_pad2;
 		}
 		[CRepr]
-		public struct SOCKET_PROCESSOR_AFFINITY
-		{
+		public struct SOCKET_PROCESSOR_AFFINITY		{
 			public PROCESSOR_NUMBER Processor;
 			public uint16 NumaNodeId;
 			public uint16 Reserved;
 		}
 		[CRepr]
-		public struct SCOPE_ID
-		{
+		public struct SCOPE_ID		{
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public uint32 _bitfield;
 				}
 			}
 		}
 		[CRepr]
-		public struct SOCKADDR_IN
-		{
+		public struct SOCKADDR_IN		{
 			public uint16 sin_family;
 			public uint16 sin_port;
 			public IN_ADDR sin_addr;
 			public CHAR[8] sin_zero;
 		}
 		[CRepr]
-		public struct SOCKADDR_DL
-		{
+		public struct SOCKADDR_DL		{
 			public uint16 sdl_family;
 			public uint8[8] sdl_data;
 			public uint8[4] sdl_zero;
 		}
 		[CRepr]
-		public struct WSABUF
-		{
+		public struct WSABUF		{
 			public uint32 len;
 			public PSTR buf;
 		}
 		[CRepr]
-		public struct WSAMSG
-		{
+		public struct WSAMSG		{
 			public SOCKADDR* name;
 			public int32 namelen;
 			public WSABUF* lpBuffers;
@@ -1728,15 +1704,13 @@ namespace Win32
 			public uint32 dwFlags;
 		}
 		[CRepr]
-		public struct cmsghdr
-		{
+		public struct cmsghdr		{
 			public uint cmsg_len;
 			public int32 cmsg_level;
 			public int32 cmsg_type;
 		}
 		[CRepr]
-		public struct ADDRINFOA
-		{
+		public struct ADDRINFOA		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1747,8 +1721,7 @@ namespace Win32
 			public ADDRINFOA* ai_next;
 		}
 		[CRepr]
-		public struct addrinfoW
-		{
+		public struct addrinfoW		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1759,8 +1732,7 @@ namespace Win32
 			public addrinfoW* ai_next;
 		}
 		[CRepr]
-		public struct addrinfoexA
-		{
+		public struct addrinfoexA		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1774,8 +1746,7 @@ namespace Win32
 			public addrinfoexA* ai_next;
 		}
 		[CRepr]
-		public struct addrinfoexW
-		{
+		public struct addrinfoexW		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1789,8 +1760,7 @@ namespace Win32
 			public addrinfoexW* ai_next;
 		}
 		[CRepr]
-		public struct addrinfoex2A
-		{
+		public struct addrinfoex2A		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1806,8 +1776,7 @@ namespace Win32
 			public PSTR ai_fqdn;
 		}
 		[CRepr]
-		public struct addrinfoex2W
-		{
+		public struct addrinfoex2W		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1823,8 +1792,7 @@ namespace Win32
 			public PWSTR ai_fqdn;
 		}
 		[CRepr]
-		public struct addrinfoex3
-		{
+		public struct addrinfoex3		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1841,8 +1809,7 @@ namespace Win32
 			public int32 ai_interfaceindex;
 		}
 		[CRepr]
-		public struct addrinfoex4
-		{
+		public struct addrinfoex4		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1860,8 +1827,7 @@ namespace Win32
 			public HANDLE ai_resolutionhandle;
 		}
 		[CRepr]
-		public struct addrinfoex5
-		{
+		public struct addrinfoex5		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1880,8 +1846,7 @@ namespace Win32
 			public uint32 ai_ttl;
 		}
 		[CRepr]
-		public struct addrinfo_dns_server
-		{
+		public struct addrinfo_dns_server		{
 			public uint32 ai_servertype;
 			public uint64 ai_flags;
 			public uint32 ai_addrlen;
@@ -1889,14 +1854,12 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public PWSTR ai_template;
 			}
 		}
 		[CRepr]
-		public struct addrinfoex6
-		{
+		public struct addrinfoex6		{
 			public int32 ai_flags;
 			public int32 ai_family;
 			public int32 ai_socktype;
@@ -1918,20 +1881,17 @@ namespace Win32
 			public uint64 ai_responseflags;
 		}
 		[CRepr]
-		public struct fd_set
-		{
+		public struct fd_set		{
 			public uint32 fd_count;
 			public SOCKET[64] fd_array;
 		}
 		[CRepr]
-		public struct timeval
-		{
+		public struct timeval		{
 			public int32 tv_sec;
 			public int32 tv_usec;
 		}
 		[CRepr]
-		public struct hostent
-		{
+		public struct hostent		{
 			public PSTR h_name;
 			public int8** h_aliases;
 			public int16 h_addrtype;
@@ -1939,31 +1899,27 @@ namespace Win32
 			public int8** h_addr_list;
 		}
 		[CRepr]
-		public struct netent
-		{
+		public struct netent		{
 			public PSTR n_name;
 			public int8** n_aliases;
 			public int16 n_addrtype;
 			public uint32 n_net;
 		}
 		[CRepr]
-		public struct servent
-		{
+		public struct servent		{
 			public PSTR s_name;
 			public int8** s_aliases;
 			public PSTR s_proto;
 			public int16 s_port;
 		}
 		[CRepr]
-		public struct protoent
-		{
+		public struct protoent		{
 			public PSTR p_name;
 			public int8** p_aliases;
 			public int16 p_proto;
 		}
 		[CRepr]
-		public struct WSAData
-		{
+		public struct WSAData		{
 			public uint16 wVersion;
 			public uint16 wHighVersion;
 			public uint16 iMaxSockets;
@@ -1973,32 +1929,27 @@ namespace Win32
 			public CHAR[129] szSystemStatus;
 		}
 		[CRepr]
-		public struct sockproto
-		{
+		public struct sockproto		{
 			public uint16 sp_family;
 			public uint16 sp_protocol;
 		}
 		[CRepr]
-		public struct linger
-		{
+		public struct linger		{
 			public uint16 l_onoff;
 			public uint16 l_linger;
 		}
 		[CRepr]
-		public struct WSANETWORKEVENTS
-		{
+		public struct WSANETWORKEVENTS		{
 			public int32 lNetworkEvents;
 			public int32[10] iErrorCode;
 		}
 		[CRepr]
-		public struct WSAPROTOCOLCHAIN
-		{
+		public struct WSAPROTOCOLCHAIN		{
 			public int32 ChainLen;
 			public uint32[7] ChainEntries;
 		}
 		[CRepr]
-		public struct WSAPROTOCOL_INFOA
-		{
+		public struct WSAPROTOCOL_INFOA		{
 			public uint32 dwServiceFlags1;
 			public uint32 dwServiceFlags2;
 			public uint32 dwServiceFlags3;
@@ -2021,8 +1972,7 @@ namespace Win32
 			public CHAR[256] szProtocol;
 		}
 		[CRepr]
-		public struct WSAPROTOCOL_INFOW
-		{
+		public struct WSAPROTOCOL_INFOW		{
 			public uint32 dwServiceFlags1;
 			public uint32 dwServiceFlags2;
 			public uint32 dwServiceFlags3;
@@ -2045,61 +1995,52 @@ namespace Win32
 			public char16[256] szProtocol;
 		}
 		[CRepr]
-		public struct WSACOMPLETION
-		{
+		public struct WSACOMPLETION		{
 			public WSACOMPLETIONTYPE Type;
 			public _Parameters_e__Union Parameters;
 			
 			[CRepr, Union]
-			public struct _Parameters_e__Union
-			{
+			public struct _Parameters_e__Union			{
 				public _WindowMessage_e__Struct WindowMessage;
 				public _Event_e__Struct Event;
 				public _Apc_e__Struct Apc;
 				public _Port_e__Struct Port;
 				
 				[CRepr]
-				public struct _Port_e__Struct
-				{
+				public struct _Port_e__Struct				{
 					public OVERLAPPED* lpOverlapped;
 					public HANDLE hPort;
 					public uint Key;
 				}
 				[CRepr]
-				public struct _Event_e__Struct
-				{
+				public struct _Event_e__Struct				{
 					public OVERLAPPED* lpOverlapped;
 				}
 				[CRepr]
-				public struct _WindowMessage_e__Struct
-				{
+				public struct _WindowMessage_e__Struct				{
 					public HWND hWnd;
 					public uint32 uMsg;
 					public WPARAM context;
 				}
 				[CRepr]
-				public struct _Apc_e__Struct
-				{
+				public struct _Apc_e__Struct				{
 					public OVERLAPPED* lpOverlapped;
 					public LPWSAOVERLAPPED_COMPLETION_ROUTINE lpfnCompletionProc;
 				}
 			}
 		}
 		[CRepr]
-		public struct AFPROTOCOLS
-		{
+		public struct AFPROTOCOLS		{
 			public int32 iAddressFamily;
 			public int32 iProtocol;
 		}
 		[CRepr]
-		public struct WSAVERSION
-		{
+		public struct WSAVERSION		{
 			public uint32 dwVersion;
 			public WSAECOMPARATOR ecHow;
 		}
 		[CRepr]
-		public struct WSAQUERYSETA
-		{
+		public struct WSAQUERYSETA		{
 			public uint32 dwSize;
 			public PSTR lpszServiceInstanceName;
 			public Guid* lpServiceClassId;
@@ -2117,8 +2058,7 @@ namespace Win32
 			public BLOB* lpBlob;
 		}
 		[CRepr]
-		public struct WSAQUERYSETW
-		{
+		public struct WSAQUERYSETW		{
 			public uint32 dwSize;
 			public PWSTR lpszServiceInstanceName;
 			public Guid* lpServiceClassId;
@@ -2136,8 +2076,7 @@ namespace Win32
 			public BLOB* lpBlob;
 		}
 		[CRepr]
-		public struct WSAQUERYSET2A
-		{
+		public struct WSAQUERYSET2A		{
 			public uint32 dwSize;
 			public PSTR lpszServiceInstanceName;
 			public WSAVERSION* lpVersion;
@@ -2154,8 +2093,7 @@ namespace Win32
 			public BLOB* lpBlob;
 		}
 		[CRepr]
-		public struct WSAQUERYSET2W
-		{
+		public struct WSAQUERYSET2W		{
 			public uint32 dwSize;
 			public PWSTR lpszServiceInstanceName;
 			public WSAVERSION* lpVersion;
@@ -2172,8 +2110,7 @@ namespace Win32
 			public BLOB* lpBlob;
 		}
 		[CRepr]
-		public struct WSANSCLASSINFOA
-		{
+		public struct WSANSCLASSINFOA		{
 			public PSTR lpszName;
 			public uint32 dwNameSpace;
 			public uint32 dwValueType;
@@ -2181,8 +2118,7 @@ namespace Win32
 			public void* lpValue;
 		}
 		[CRepr]
-		public struct WSANSCLASSINFOW
-		{
+		public struct WSANSCLASSINFOW		{
 			public PWSTR lpszName;
 			public uint32 dwNameSpace;
 			public uint32 dwValueType;
@@ -2190,24 +2126,21 @@ namespace Win32
 			public void* lpValue;
 		}
 		[CRepr]
-		public struct WSASERVICECLASSINFOA
-		{
+		public struct WSASERVICECLASSINFOA		{
 			public Guid* lpServiceClassId;
 			public PSTR lpszServiceClassName;
 			public uint32 dwCount;
 			public WSANSCLASSINFOA* lpClassInfos;
 		}
 		[CRepr]
-		public struct WSASERVICECLASSINFOW
-		{
+		public struct WSASERVICECLASSINFOW		{
 			public Guid* lpServiceClassId;
 			public PWSTR lpszServiceClassName;
 			public uint32 dwCount;
 			public WSANSCLASSINFOW* lpClassInfos;
 		}
 		[CRepr]
-		public struct WSANAMESPACE_INFOA
-		{
+		public struct WSANAMESPACE_INFOA		{
 			public Guid NSProviderId;
 			public uint32 dwNameSpace;
 			public BOOL fActive;
@@ -2215,8 +2148,7 @@ namespace Win32
 			public PSTR lpszIdentifier;
 		}
 		[CRepr]
-		public struct WSANAMESPACE_INFOW
-		{
+		public struct WSANAMESPACE_INFOW		{
 			public Guid NSProviderId;
 			public uint32 dwNameSpace;
 			public BOOL fActive;
@@ -2224,8 +2156,7 @@ namespace Win32
 			public PWSTR lpszIdentifier;
 		}
 		[CRepr]
-		public struct WSANAMESPACE_INFOEXA
-		{
+		public struct WSANAMESPACE_INFOEXA		{
 			public Guid NSProviderId;
 			public uint32 dwNameSpace;
 			public BOOL fActive;
@@ -2234,8 +2165,7 @@ namespace Win32
 			public BLOB ProviderSpecific;
 		}
 		[CRepr]
-		public struct WSANAMESPACE_INFOEXW
-		{
+		public struct WSANAMESPACE_INFOEXW		{
 			public Guid NSProviderId;
 			public uint32 dwNameSpace;
 			public BOOL fActive;
@@ -2244,15 +2174,13 @@ namespace Win32
 			public BLOB ProviderSpecific;
 		}
 		[CRepr]
-		public struct WSAPOLLFD
-		{
+		public struct WSAPOLLFD		{
 			public SOCKET fd;
 			public int16 events;
 			public int16 revents;
 		}
 		[CRepr]
-		public struct SOCK_NOTIFY_REGISTRATION
-		{
+		public struct SOCK_NOTIFY_REGISTRATION		{
 			public SOCKET socket;
 			public void* completionKey;
 			public uint16 eventFilter;
@@ -2261,51 +2189,44 @@ namespace Win32
 			public uint32 registrationResult;
 		}
 		[CRepr]
-		public struct IN6_ADDR
-		{
+		public struct IN6_ADDR		{
 			public _u_e__Union u;
 			
 			[CRepr, Union]
-			public struct _u_e__Union
-			{
+			public struct _u_e__Union			{
 				public uint8[16] Byte;
 				public uint16[8] Word;
 			}
 		}
 		[CRepr]
-		public struct sockaddr_in6_old
-		{
+		public struct sockaddr_in6_old		{
 			public int16 sin6_family;
 			public uint16 sin6_port;
 			public uint32 sin6_flowinfo;
 			public IN6_ADDR sin6_addr;
 		}
 		[CRepr, Union]
-		public struct sockaddr_gen
-		{
+		public struct sockaddr_gen		{
 			public SOCKADDR Address;
 			public SOCKADDR_IN AddressIn;
 			public sockaddr_in6_old AddressIn6;
 		}
 		[CRepr]
-		public struct INTERFACE_INFO
-		{
+		public struct INTERFACE_INFO		{
 			public uint32 iiFlags;
 			public sockaddr_gen iiAddress;
 			public sockaddr_gen iiBroadcastAddress;
 			public sockaddr_gen iiNetmask;
 		}
 		[CRepr]
-		public struct INTERFACE_INFO_EX
-		{
+		public struct INTERFACE_INFO_EX		{
 			public uint32 iiFlags;
 			public SOCKET_ADDRESS iiAddress;
 			public SOCKET_ADDRESS iiBroadcastAddress;
 			public SOCKET_ADDRESS iiNetmask;
 		}
 		[CRepr]
-		public struct SOCKADDR_IN6
-		{
+		public struct SOCKADDR_IN6		{
 			public uint16 sin6_family;
 			public uint16 sin6_port;
 			public uint32 sin6_flowinfo;
@@ -2313,15 +2234,13 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public uint32 sin6_scope_id;
 				public SCOPE_ID sin6_scope_struct;
 			}
 		}
 		[CRepr]
-		public struct SOCKADDR_IN6_W2KSP1
-		{
+		public struct SOCKADDR_IN6_W2KSP1		{
 			public int16 sin6_family;
 			public uint16 sin6_port;
 			public uint32 sin6_flowinfo;
@@ -2329,34 +2248,29 @@ namespace Win32
 			public uint32 sin6_scope_id;
 		}
 		[CRepr, Union]
-		public struct SOCKADDR_INET
-		{
+		public struct SOCKADDR_INET		{
 			public SOCKADDR_IN Ipv4;
 			public SOCKADDR_IN6 Ipv6;
 			public uint16 si_family;
 		}
 		[CRepr]
-		public struct SOCKADDR_IN6_PAIR
-		{
+		public struct SOCKADDR_IN6_PAIR		{
 			public SOCKADDR_IN6* SourceAddress;
 			public SOCKADDR_IN6* DestinationAddress;
 		}
 		[CRepr]
-		public struct IP_MREQ
-		{
+		public struct IP_MREQ		{
 			public IN_ADDR imr_multiaddr;
 			public IN_ADDR imr_interface;
 		}
 		[CRepr]
-		public struct IP_MREQ_SOURCE
-		{
+		public struct IP_MREQ_SOURCE		{
 			public IN_ADDR imr_multiaddr;
 			public IN_ADDR imr_sourceaddr;
 			public IN_ADDR imr_interface;
 		}
 		[CRepr]
-		public struct IP_MSFILTER
-		{
+		public struct IP_MSFILTER		{
 			public IN_ADDR imsf_multiaddr;
 			public IN_ADDR imsf_interface;
 			public MULTICAST_MODE_TYPE imsf_fmode;
@@ -2364,27 +2278,23 @@ namespace Win32
 			public IN_ADDR[0] imsf_slist;
 		}
 		[CRepr]
-		public struct IPV6_MREQ
-		{
+		public struct IPV6_MREQ		{
 			public IN6_ADDR ipv6mr_multiaddr;
 			public uint32 ipv6mr_interface;
 		}
 		[CRepr]
-		public struct GROUP_REQ
-		{
+		public struct GROUP_REQ		{
 			public uint32 gr_interface;
 			public SOCKADDR_STORAGE gr_group;
 		}
 		[CRepr]
-		public struct GROUP_SOURCE_REQ
-		{
+		public struct GROUP_SOURCE_REQ		{
 			public uint32 gsr_interface;
 			public SOCKADDR_STORAGE gsr_group;
 			public SOCKADDR_STORAGE gsr_source;
 		}
 		[CRepr]
-		public struct GROUP_FILTER
-		{
+		public struct GROUP_FILTER		{
 			public uint32 gf_interface;
 			public SOCKADDR_STORAGE gf_group;
 			public MULTICAST_MODE_TYPE gf_fmode;
@@ -2392,55 +2302,47 @@ namespace Win32
 			public SOCKADDR_STORAGE[0] gf_slist;
 		}
 		[CRepr]
-		public struct IN_PKTINFO
-		{
+		public struct IN_PKTINFO		{
 			public IN_ADDR ipi_addr;
 			public uint32 ipi_ifindex;
 		}
 		[CRepr]
-		public struct IN6_PKTINFO
-		{
+		public struct IN6_PKTINFO		{
 			public IN6_ADDR ipi6_addr;
 			public uint32 ipi6_ifindex;
 		}
 		[CRepr]
-		public struct IN_PKTINFO_EX
-		{
+		public struct IN_PKTINFO_EX		{
 			public IN_PKTINFO pkt_info;
 			public SCOPE_ID scope_id;
 		}
 		[CRepr]
-		public struct in6_pktinfo_ex
-		{
+		public struct in6_pktinfo_ex		{
 			public IN6_PKTINFO pkt_info;
 			public SCOPE_ID scope_id;
 		}
 		[CRepr]
-		public struct IN_RECVERR
-		{
+		public struct IN_RECVERR		{
 			public IPPROTO protocol;
 			public uint32 info;
 			public uint8 type;
 			public uint8 code;
 		}
 		[CRepr]
-		public struct ICMP_ERROR_INFO
-		{
+		public struct ICMP_ERROR_INFO		{
 			public SOCKADDR_INET srcaddress;
 			public IPPROTO protocol;
 			public uint8 type;
 			public uint8 code;
 		}
 		[CRepr]
-		public struct RM_SEND_WINDOW
-		{
+		public struct RM_SEND_WINDOW		{
 			public uint32 RateKbitsPerSec;
 			public uint32 WindowSizeInMSecs;
 			public uint32 WindowSizeInBytes;
 		}
 		[CRepr]
-		public struct RM_SENDER_STATS
-		{
+		public struct RM_SENDER_STATS		{
 			public uint64 DataBytesSent;
 			public uint64 TotalBytesSent;
 			public uint64 NaksReceived;
@@ -2456,8 +2358,7 @@ namespace Win32
 			public uint64 TotalODataPacketsSent;
 		}
 		[CRepr]
-		public struct RM_RECEIVER_STATS
-		{
+		public struct RM_RECEIVER_STATS		{
 			public uint64 NumODataPacketsReceived;
 			public uint64 NumRDataPacketsReceived;
 			public uint64 NumDuplicateDataPackets;
@@ -2478,16 +2379,14 @@ namespace Win32
 			public uint64 TotalParityNaksSent;
 		}
 		[CRepr]
-		public struct RM_FEC_INFO
-		{
+		public struct RM_FEC_INFO		{
 			public uint16 FECBlockSize;
 			public uint16 FECProActivePackets;
 			public uint8 FECGroupSize;
 			public BOOLEAN fFECOnDemandParityEnabled;
 		}
 		[CRepr]
-		public struct IPX_ADDRESS_DATA
-		{
+		public struct IPX_ADDRESS_DATA		{
 			public int32 adapternum;
 			public uint8[4] netnum;
 			public uint8[6] nodenum;
@@ -2497,8 +2396,7 @@ namespace Win32
 			public uint32 linkspeed;
 		}
 		[CRepr]
-		public struct IPX_NETNUM_DATA
-		{
+		public struct IPX_NETNUM_DATA		{
 			public uint8[4] netnum;
 			public uint16 hopcount;
 			public uint16 netdelay;
@@ -2506,8 +2404,7 @@ namespace Win32
 			public uint8[6] router;
 		}
 		[CRepr]
-		public struct IPX_SPXCONNSTATUS_DATA
-		{
+		public struct IPX_SPXCONNSTATUS_DATA		{
 			public uint8 ConnectionState;
 			public uint8 WatchDogActive;
 			public uint16 LocalConnectionId;
@@ -2528,8 +2425,7 @@ namespace Win32
 			public uint16 SuppressedPacket;
 		}
 		[CRepr]
-		public struct LM_IRPARMS
-		{
+		public struct LM_IRPARMS		{
 			public uint32 nTXDataBytes;
 			public uint32 nRXDataBytes;
 			public uint32 nBaudRate;
@@ -2540,15 +2436,13 @@ namespace Win32
 			public uint8 nRXPackets;
 		}
 		[CRepr]
-		public struct SOCKADDR_IRDA
-		{
+		public struct SOCKADDR_IRDA		{
 			public uint16 irdaAddressFamily;
 			public uint8[4] irdaDeviceID;
 			public CHAR[25] irdaServiceName;
 		}
 		[CRepr]
-		public struct WINDOWS_IRDA_DEVICE_INFO
-		{
+		public struct WINDOWS_IRDA_DEVICE_INFO		{
 			public uint8[4] irdaDeviceID;
 			public CHAR[22] irdaDeviceName;
 			public uint8 irdaDeviceHints1;
@@ -2556,48 +2450,41 @@ namespace Win32
 			public uint8 irdaCharSet;
 		}
 		[CRepr]
-		public struct WCE_IRDA_DEVICE_INFO
-		{
+		public struct WCE_IRDA_DEVICE_INFO		{
 			public uint8[4] irdaDeviceID;
 			public CHAR[22] irdaDeviceName;
 			public uint8[2] Reserved;
 		}
 		[CRepr]
-		public struct WINDOWS_DEVICELIST
-		{
+		public struct WINDOWS_DEVICELIST		{
 			public uint32 numDevice;
 			public WINDOWS_IRDA_DEVICE_INFO[0] Device;
 		}
 		[CRepr]
-		public struct WCE_DEVICELIST
-		{
+		public struct WCE_DEVICELIST		{
 			public uint32 numDevice;
 			public WCE_IRDA_DEVICE_INFO[0] Device;
 		}
 		[CRepr]
-		public struct WINDOWS_IAS_SET
-		{
+		public struct WINDOWS_IAS_SET		{
 			public CHAR[64] irdaClassName;
 			public CHAR[256] irdaAttribName;
 			public uint32 irdaAttribType;
 			public _irdaAttribute_e__Union irdaAttribute;
 			
 			[CRepr, Union]
-			public struct _irdaAttribute_e__Union
-			{
+			public struct _irdaAttribute_e__Union			{
 				public int32 irdaAttribInt;
 				public _irdaAttribOctetSeq_e__Struct irdaAttribOctetSeq;
 				public _irdaAttribUsrStr_e__Struct irdaAttribUsrStr;
 				
 				[CRepr]
-				public struct _irdaAttribOctetSeq_e__Struct
-				{
+				public struct _irdaAttribOctetSeq_e__Struct				{
 					public uint16 Len;
 					public uint8[1024] OctetSeq;
 				}
 				[CRepr]
-				public struct _irdaAttribUsrStr_e__Struct
-				{
+				public struct _irdaAttribUsrStr_e__Struct				{
 					public uint8 Len;
 					public uint8 CharSet;
 					public uint8[256] UsrStr;
@@ -2605,8 +2492,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct WINDOWS_IAS_QUERY
-		{
+		public struct WINDOWS_IAS_QUERY		{
 			public uint8[4] irdaDeviceID;
 			public CHAR[64] irdaClassName;
 			public CHAR[256] irdaAttribName;
@@ -2614,21 +2500,18 @@ namespace Win32
 			public _irdaAttribute_e__Union irdaAttribute;
 			
 			[CRepr, Union]
-			public struct _irdaAttribute_e__Union
-			{
+			public struct _irdaAttribute_e__Union			{
 				public int32 irdaAttribInt;
 				public _irdaAttribOctetSeq_e__Struct irdaAttribOctetSeq;
 				public _irdaAttribUsrStr_e__Struct irdaAttribUsrStr;
 				
 				[CRepr]
-				public struct _irdaAttribOctetSeq_e__Struct
-				{
+				public struct _irdaAttribOctetSeq_e__Struct				{
 					public uint32 Len;
 					public uint8[1024] OctetSeq;
 				}
 				[CRepr]
-				public struct _irdaAttribUsrStr_e__Struct
-				{
+				public struct _irdaAttribUsrStr_e__Struct				{
 					public uint32 Len;
 					public uint32 CharSet;
 					public uint8[256] UsrStr;
@@ -2636,20 +2519,17 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct NL_INTERFACE_OFFLOAD_ROD
-		{
+		public struct NL_INTERFACE_OFFLOAD_ROD		{
 			public uint8 _bitfield;
 		}
 		[CRepr]
-		public struct NL_PATH_BANDWIDTH_ROD
-		{
+		public struct NL_PATH_BANDWIDTH_ROD		{
 			public uint64 Bandwidth;
 			public uint64 Instability;
 			public BOOLEAN BandwidthPeaked;
 		}
 		[CRepr]
-		public struct NL_NETWORK_CONNECTIVITY_HINT
-		{
+		public struct NL_NETWORK_CONNECTIVITY_HINT		{
 			public NL_NETWORK_CONNECTIVITY_LEVEL_HINT ConnectivityLevel;
 			public NL_NETWORK_CONNECTIVITY_COST_HINT ConnectivityCost;
 			public BOOLEAN ApproachingDataLimit;
@@ -2657,85 +2537,71 @@ namespace Win32
 			public BOOLEAN Roaming;
 		}
 		[CRepr]
-		public struct NL_BANDWIDTH_INFORMATION
-		{
+		public struct NL_BANDWIDTH_INFORMATION		{
 			public uint64 Bandwidth;
 			public uint64 Instability;
 			public BOOLEAN BandwidthPeaked;
 		}
 		[CRepr]
-		public struct TRANSPORT_SETTING_ID
-		{
+		public struct TRANSPORT_SETTING_ID		{
 			public Guid Guid;
 		}
 		[CRepr]
-		public struct tcp_keepalive
-		{
+		public struct tcp_keepalive		{
 			public uint32 onoff;
 			public uint32 keepalivetime;
 			public uint32 keepaliveinterval;
 		}
 		[CRepr]
-		public struct REAL_TIME_NOTIFICATION_SETTING_INPUT
-		{
+		public struct REAL_TIME_NOTIFICATION_SETTING_INPUT		{
 			public TRANSPORT_SETTING_ID TransportSettingId;
 			public Guid BrokerEventGuid;
 		}
 		[CRepr]
-		public struct REAL_TIME_NOTIFICATION_SETTING_INPUT_EX
-		{
+		public struct REAL_TIME_NOTIFICATION_SETTING_INPUT_EX		{
 			public TRANSPORT_SETTING_ID TransportSettingId;
 			public Guid BrokerEventGuid;
 			public BOOLEAN Unmark;
 		}
 		[CRepr]
-		public struct REAL_TIME_NOTIFICATION_SETTING_OUTPUT
-		{
+		public struct REAL_TIME_NOTIFICATION_SETTING_OUTPUT		{
 			public CONTROL_CHANNEL_TRIGGER_STATUS ChannelStatus;
 		}
 		[CRepr]
-		public struct ASSOCIATE_NAMERES_CONTEXT_INPUT
-		{
+		public struct ASSOCIATE_NAMERES_CONTEXT_INPUT		{
 			public TRANSPORT_SETTING_ID TransportSettingId;
 			public uint64 Handle;
 		}
 		[CRepr]
-		public struct TIMESTAMPING_CONFIG
-		{
+		public struct TIMESTAMPING_CONFIG		{
 			public uint32 Flags;
 			public uint16 TxTimestampsBuffered;
 		}
 		[CRepr]
-		public struct PRIORITY_STATUS
-		{
+		public struct PRIORITY_STATUS		{
 			public SOCKET_PRIORITY_HINT Sender;
 			public SOCKET_PRIORITY_HINT Receiver;
 		}
 		[CRepr]
-		public struct RCVALL_IF
-		{
+		public struct RCVALL_IF		{
 			public RCVALL_VALUE Mode;
 			public uint32 Interface;
 		}
 		[CRepr]
-		public struct TCP_INITIAL_RTO_PARAMETERS
-		{
+		public struct TCP_INITIAL_RTO_PARAMETERS		{
 			public uint16 Rtt;
 			public uint8 MaxSynRetransmissions;
 		}
 		[CRepr]
-		public struct TCP_ICW_PARAMETERS
-		{
+		public struct TCP_ICW_PARAMETERS		{
 			public TCP_ICW_LEVEL Level;
 		}
 		[CRepr]
-		public struct TCP_ACK_FREQUENCY_PARAMETERS
-		{
+		public struct TCP_ACK_FREQUENCY_PARAMETERS		{
 			public uint8 TcpDelayedAckFrequency;
 		}
 		[CRepr]
-		public struct TCP_INFO_v0
-		{
+		public struct TCP_INFO_v0		{
 			public TCPSTATE State;
 			public uint32 Mss;
 			public uint64 ConnectionTimeMs;
@@ -2757,8 +2623,7 @@ namespace Win32
 			public uint8 SynRetrans;
 		}
 		[CRepr]
-		public struct TCP_INFO_v1
-		{
+		public struct TCP_INFO_v1		{
 			public TCPSTATE State;
 			public uint32 Mss;
 			public uint64 ConnectionTimeMs;
@@ -2789,36 +2654,30 @@ namespace Win32
 			public uint64 SndLimBytesSnd;
 		}
 		[CRepr]
-		public struct INET_PORT_RANGE
-		{
+		public struct INET_PORT_RANGE		{
 			public uint16 StartPort;
 			public uint16 NumberOfPorts;
 		}
 		[CRepr]
-		public struct INET_PORT_RESERVATION_TOKEN
-		{
+		public struct INET_PORT_RESERVATION_TOKEN		{
 			public uint64 Token;
 		}
 		[CRepr]
-		public struct INET_PORT_RESERVATION_INSTANCE
-		{
+		public struct INET_PORT_RESERVATION_INSTANCE		{
 			public INET_PORT_RANGE Reservation;
 			public INET_PORT_RESERVATION_TOKEN Token;
 		}
 		[CRepr]
-		public struct INET_PORT_RESERVATION_INFORMATION
-		{
+		public struct INET_PORT_RESERVATION_INFORMATION		{
 			public uint32 OwningPid;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_SETTINGS
-		{
+		public struct SOCKET_SECURITY_SETTINGS		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public uint32 SecurityFlags;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_SETTINGS_IPSEC
-		{
+		public struct SOCKET_SECURITY_SETTINGS_IPSEC		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public uint32 SecurityFlags;
 			public uint32 IpsecFlags;
@@ -2832,23 +2691,20 @@ namespace Win32
 			public char16[0] AllStrings;
 		}
 		[CRepr]
-		public struct SOCKET_PEER_TARGET_NAME
-		{
+		public struct SOCKET_PEER_TARGET_NAME		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public SOCKADDR_STORAGE PeerAddress;
 			public uint32 PeerTargetNameStringLen;
 			public char16[0] AllStrings;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_QUERY_TEMPLATE
-		{
+		public struct SOCKET_SECURITY_QUERY_TEMPLATE		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public SOCKADDR_STORAGE PeerAddress;
 			public uint32 PeerTokenAccessMask;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_QUERY_TEMPLATE_IPSEC2
-		{
+		public struct SOCKET_SECURITY_QUERY_TEMPLATE_IPSEC2		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public SOCKADDR_STORAGE PeerAddress;
 			public uint32 PeerTokenAccessMask;
@@ -2856,16 +2712,14 @@ namespace Win32
 			public uint32 FieldMask;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_QUERY_INFO
-		{
+		public struct SOCKET_SECURITY_QUERY_INFO		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public uint32 Flags;
 			public uint64 PeerApplicationAccessTokenHandle;
 			public uint64 PeerMachineAccessTokenHandle;
 		}
 		[CRepr]
-		public struct SOCKET_SECURITY_QUERY_INFO_IPSEC2
-		{
+		public struct SOCKET_SECURITY_QUERY_INFO_IPSEC2		{
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public uint32 Flags;
 			public uint64 PeerApplicationAccessTokenHandle;
@@ -2876,46 +2730,39 @@ namespace Win32
 			public Guid SaLookupContext;
 		}
 		[CRepr]
-		public struct RSS_SCALABILITY_INFO
-		{
+		public struct RSS_SCALABILITY_INFO		{
 			public BOOLEAN RssEnabled;
 		}
 		[CRepr]
-		public struct WSA_COMPATIBILITY_MODE
-		{
+		public struct WSA_COMPATIBILITY_MODE		{
 			public WSA_COMPATIBILITY_BEHAVIOR_ID BehaviorId;
 			public uint32 TargetOsVersion;
 		}
 		[CRepr]
-		public struct RIORESULT
-		{
+		public struct RIORESULT		{
 			public int32 Status;
 			public uint32 BytesTransferred;
 			public uint64 SocketContext;
 			public uint64 RequestContext;
 		}
 		[CRepr]
-		public struct RIO_BUF
-		{
+		public struct RIO_BUF		{
 			public RIO_BUFFERID_t* BufferId;
 			public uint32 Offset;
 			public uint32 Length;
 		}
 		[CRepr]
-		public struct RIO_CMSG_BUFFER
-		{
+		public struct RIO_CMSG_BUFFER		{
 			public uint32 TotalLength;
 		}
 		[CRepr]
-		public struct ATM_ADDRESS
-		{
+		public struct ATM_ADDRESS		{
 			public uint32 AddressType;
 			public uint32 NumofDigits;
 			public uint8[20] Addr;
 		}
 		[CRepr]
-		public struct ATM_BLLI
-		{
+		public struct ATM_BLLI		{
 			public uint32 Layer2Protocol;
 			public uint32 Layer2UserSpecifiedProtocol;
 			public uint32 Layer3Protocol;
@@ -2924,56 +2771,48 @@ namespace Win32
 			public uint8[5] SnapID;
 		}
 		[CRepr]
-		public struct ATM_BHLI
-		{
+		public struct ATM_BHLI		{
 			public uint32 HighLayerInfoType;
 			public uint32 HighLayerInfoLength;
 			public uint8[8] HighLayerInfo;
 		}
 		[CRepr]
-		public struct sockaddr_atm
-		{
+		public struct sockaddr_atm		{
 			public uint16 satm_family;
 			public ATM_ADDRESS satm_number;
 			public ATM_BLLI satm_blli;
 			public ATM_BHLI satm_bhli;
 		}
 		[CRepr]
-		public struct Q2931_IE
-		{
+		public struct Q2931_IE		{
 			public Q2931_IE_TYPE IEType;
 			public uint32 IELength;
 			public uint8[0] IE;
 		}
 		[CRepr]
-		public struct AAL5_PARAMETERS
-		{
+		public struct AAL5_PARAMETERS		{
 			public uint32 ForwardMaxCPCSSDUSize;
 			public uint32 BackwardMaxCPCSSDUSize;
 			public uint8 Mode;
 			public uint8 SSCSType;
 		}
 		[CRepr]
-		public struct AALUSER_PARAMETERS
-		{
+		public struct AALUSER_PARAMETERS		{
 			public uint32 UserDefined;
 		}
 		[CRepr]
-		public struct AAL_PARAMETERS_IE
-		{
+		public struct AAL_PARAMETERS_IE		{
 			public AAL_TYPE AALType;
 			public _AALSpecificParameters_e__Union AALSpecificParameters;
 			
 			[CRepr, Union]
-			public struct _AALSpecificParameters_e__Union
-			{
+			public struct _AALSpecificParameters_e__Union			{
 				public AAL5_PARAMETERS AAL5Parameters;
 				public AALUSER_PARAMETERS AALUserParameters;
 			}
 		}
 		[CRepr]
-		public struct ATM_TD
-		{
+		public struct ATM_TD		{
 			public uint32 PeakCellRate_CLP0;
 			public uint32 PeakCellRate_CLP01;
 			public uint32 SustainableCellRate_CLP0;
@@ -2983,15 +2822,13 @@ namespace Win32
 			public BOOL Tagging;
 		}
 		[CRepr]
-		public struct ATM_TRAFFIC_DESCRIPTOR_IE
-		{
+		public struct ATM_TRAFFIC_DESCRIPTOR_IE		{
 			public ATM_TD Forward;
 			public ATM_TD Backward;
 			public BOOL BestEffort;
 		}
 		[CRepr]
-		public struct ATM_BROADBAND_BEARER_CAPABILITY_IE
-		{
+		public struct ATM_BROADBAND_BEARER_CAPABILITY_IE		{
 			public uint8 BearerClass;
 			public uint8 TrafficType;
 			public uint8 TimingRequirements;
@@ -2999,8 +2836,7 @@ namespace Win32
 			public uint8 UserPlaneConnectionConfig;
 		}
 		[CRepr]
-		public struct ATM_BLLI_IE
-		{
+		public struct ATM_BLLI_IE		{
 			public uint32 Layer2Protocol;
 			public uint8 Layer2Mode;
 			public uint8 Layer2WindowSize;
@@ -3014,58 +2850,50 @@ namespace Win32
 			public uint8[5] SnapID;
 		}
 		[CRepr]
-		public struct ATM_CALLING_PARTY_NUMBER_IE
-		{
+		public struct ATM_CALLING_PARTY_NUMBER_IE		{
 			public ATM_ADDRESS ATM_Number;
 			public uint8 Presentation_Indication;
 			public uint8 Screening_Indicator;
 		}
 		[CRepr]
-		public struct ATM_CAUSE_IE
-		{
+		public struct ATM_CAUSE_IE		{
 			public uint8 Location;
 			public uint8 Cause;
 			public uint8 DiagnosticsLength;
 			public uint8[4] Diagnostics;
 		}
 		[CRepr]
-		public struct ATM_QOS_CLASS_IE
-		{
+		public struct ATM_QOS_CLASS_IE		{
 			public uint8 QOSClassForward;
 			public uint8 QOSClassBackward;
 		}
 		[CRepr]
-		public struct ATM_TRANSIT_NETWORK_SELECTION_IE
-		{
+		public struct ATM_TRANSIT_NETWORK_SELECTION_IE		{
 			public uint8 TypeOfNetworkId;
 			public uint8 NetworkIdPlan;
 			public uint8 NetworkIdLength;
 			public uint8[0] NetworkId;
 		}
 		[CRepr]
-		public struct ATM_CONNECTION_ID
-		{
+		public struct ATM_CONNECTION_ID		{
 			public uint32 DeviceNumber;
 			public uint32 VPI;
 			public uint32 VCI;
 		}
 		[CRepr]
-		public struct ATM_PVC_PARAMS
-		{
+		public struct ATM_PVC_PARAMS		{
 			public ATM_CONNECTION_ID PvcConnectionId;
 			public QOS PvcQos;
 		}
 		[CRepr]
-		public struct NAPI_DOMAIN_DESCRIPTION_BLOB
-		{
+		public struct NAPI_DOMAIN_DESCRIPTION_BLOB		{
 			public uint32 AuthLevel;
 			public uint32 cchDomainName;
 			public uint32 OffsetNextDomainDescription;
 			public uint32 OffsetThisDomainName;
 		}
 		[CRepr]
-		public struct NAPI_PROVIDER_INSTALLATION_BLOB
-		{
+		public struct NAPI_PROVIDER_INSTALLATION_BLOB		{
 			public uint32 dwVersion;
 			public uint32 dwProviderType;
 			public uint32 fSupportsWildCard;
@@ -3073,43 +2901,37 @@ namespace Win32
 			public uint32 OffsetFirstDomain;
 		}
 		[CRepr]
-		public struct TRANSMIT_FILE_BUFFERS
-		{
+		public struct TRANSMIT_FILE_BUFFERS		{
 			public void* Head;
 			public uint32 HeadLength;
 			public void* Tail;
 			public uint32 TailLength;
 		}
 		[CRepr]
-		public struct TRANSMIT_PACKETS_ELEMENT
-		{
+		public struct TRANSMIT_PACKETS_ELEMENT		{
 			public uint32 dwElFlags;
 			public uint32 cLength;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Anonymous_e__Struct Anonymous;
 				public void* pBuffer;
 				
 				[CRepr]
-				public struct _Anonymous_e__Struct
-				{
+				public struct _Anonymous_e__Struct				{
 					public LARGE_INTEGER nFileOffset;
 					public HANDLE hFile;
 				}
 			}
 		}
 		[CRepr]
-		public struct NLA_BLOB
-		{
+		public struct NLA_BLOB		{
 			public _header_e__Struct header;
 			public _data_e__Union data;
 			
 			[CRepr, Union]
-			public struct _data_e__Union
-			{
+			public struct _data_e__Union			{
 				public CHAR[0] rawData;
 				public _interfaceData_e__Struct interfaceData;
 				public _locationData_e__Struct locationData;
@@ -3117,13 +2939,11 @@ namespace Win32
 				public _ICS_e__Struct ICS;
 				
 				[CRepr]
-				public struct _ICS_e__Struct
-				{
+				public struct _ICS_e__Struct				{
 					public _remote_e__Struct remote;
 					
 					[CRepr]
-					public struct _remote_e__Struct
-					{
+					public struct _remote_e__Struct					{
 						public uint32 speed;
 						public uint32 type;
 						public uint32 state;
@@ -3132,43 +2952,37 @@ namespace Win32
 					}
 				}
 				[CRepr]
-				public struct _locationData_e__Struct
-				{
+				public struct _locationData_e__Struct				{
 					public CHAR[0] information;
 				}
 				[CRepr]
-				public struct _interfaceData_e__Struct
-				{
+				public struct _interfaceData_e__Struct				{
 					public uint32 dwType;
 					public uint32 dwSpeed;
 					public CHAR[0] adapterName;
 				}
 				[CRepr]
-				public struct _connectivity_e__Struct
-				{
+				public struct _connectivity_e__Struct				{
 					public NLA_CONNECTIVITY_TYPE type;
 					public NLA_INTERNET internet;
 				}
 			}
 			[CRepr]
-			public struct _header_e__Struct
-			{
+			public struct _header_e__Struct			{
 				public NLA_BLOB_DATA_TYPE type;
 				public uint32 dwSize;
 				public uint32 nextOffset;
 			}
 		}
 		[CRepr]
-		public struct WSAPOLLDATA
-		{
+		public struct WSAPOLLDATA		{
 			public int32 result;
 			public uint32 fds;
 			public int32 timeout;
 			public WSAPOLLFD[0] fdArray;
 		}
 		[CRepr]
-		public struct WSASENDMSG
-		{
+		public struct WSASENDMSG		{
 			public WSAMSG* lpMsg;
 			public uint32 dwFlags;
 			public uint32* lpNumberOfBytesSent;
@@ -3176,35 +2990,30 @@ namespace Win32
 			public LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine;
 		}
 		[CRepr]
-		public struct RIO_NOTIFICATION_COMPLETION
-		{
+		public struct RIO_NOTIFICATION_COMPLETION		{
 			public RIO_NOTIFICATION_COMPLETION_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _Event_e__Struct Event;
 				public _Iocp_e__Struct Iocp;
 				
 				[CRepr]
-				public struct _Iocp_e__Struct
-				{
+				public struct _Iocp_e__Struct				{
 					public HANDLE IocpHandle;
 					public void* CompletionKey;
 					public void* Overlapped;
 				}
 				[CRepr]
-				public struct _Event_e__Struct
-				{
+				public struct _Event_e__Struct				{
 					public HANDLE EventHandle;
 					public BOOL NotifyReset;
 				}
 			}
 		}
 		[CRepr]
-		public struct RIO_EXTENSION_FUNCTION_TABLE
-		{
+		public struct RIO_EXTENSION_FUNCTION_TABLE		{
 			public uint32 cbSize;
 			public LPFN_RIORECEIVE RIOReceive;
 			public LPFN_RIORECEIVEEX RIOReceiveEx;
@@ -3221,21 +3030,18 @@ namespace Win32
 			public LPFN_RIORESIZEREQUESTQUEUE RIOResizeRequestQueue;
 		}
 		[CRepr]
-		public struct WSPData
-		{
+		public struct WSPData		{
 			public uint16 wVersion;
 			public uint16 wHighVersion;
 			public char16[256] szDescription;
 		}
 		[CRepr]
-		public struct WSATHREADID
-		{
+		public struct WSATHREADID		{
 			public HANDLE ThreadHandle;
 			public uint Reserved;
 		}
 		[CRepr]
-		public struct WSPPROC_TABLE
-		{
+		public struct WSPPROC_TABLE		{
 			public LPWSPACCEPT lpWSPAccept;
 			public LPWSPADDRESSTOSTRING lpWSPAddressToString;
 			public LPWSPASYNCSELECT lpWSPAsyncSelect;
@@ -3268,8 +3074,7 @@ namespace Win32
 			public LPWSPSTRINGTOADDRESS lpWSPStringToAddress;
 		}
 		[CRepr]
-		public struct WSPUPCALLTABLE
-		{
+		public struct WSPUPCALLTABLE		{
 			public LPWPUCLOSEEVENT lpWPUCloseEvent;
 			public LPWPUCLOSESOCKETHANDLE lpWPUCloseSocketHandle;
 			public LPWPUCREATEEVENT lpWPUCreateEvent;
@@ -3287,14 +3092,12 @@ namespace Win32
 			public LPWPUCLOSETHREAD lpWPUCloseThread;
 		}
 		[CRepr]
-		public struct WSC_PROVIDER_AUDIT_INFO
-		{
+		public struct WSC_PROVIDER_AUDIT_INFO		{
 			public uint32 RecordSize;
 			public void* Reserved;
 		}
 		[CRepr]
-		public struct NSP_ROUTINE
-		{
+		public struct NSP_ROUTINE		{
 			public uint32 cbSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -3309,8 +3112,7 @@ namespace Win32
 			public LPNSPIOCTL NSPIoctl;
 		}
 		[CRepr]
-		public struct NSPV2_ROUTINE
-		{
+		public struct NSPV2_ROUTINE		{
 			public uint32 cbSize;
 			public uint32 dwMajorVersion;
 			public uint32 dwMinorVersion;
@@ -3323,22 +3125,19 @@ namespace Win32
 			public LPNSPV2CLIENTSESSIONRUNDOWN NSPv2ClientSessionRundown;
 		}
 		[CRepr]
-		public struct NS_INFOA
-		{
+		public struct NS_INFOA		{
 			public uint32 dwNameSpace;
 			public uint32 dwNameSpaceFlags;
 			public PSTR lpNameSpace;
 		}
 		[CRepr]
-		public struct NS_INFOW
-		{
+		public struct NS_INFOW		{
 			public uint32 dwNameSpace;
 			public uint32 dwNameSpaceFlags;
 			public PWSTR lpNameSpace;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_VALUE
-		{
+		public struct SERVICE_TYPE_VALUE		{
 			public uint32 dwNameSpace;
 			public uint32 dwValueType;
 			public uint32 dwValueSize;
@@ -3346,8 +3145,7 @@ namespace Win32
 			public uint32 dwValueOffset;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_VALUE_ABSA
-		{
+		public struct SERVICE_TYPE_VALUE_ABSA		{
 			public uint32 dwNameSpace;
 			public uint32 dwValueType;
 			public uint32 dwValueSize;
@@ -3355,8 +3153,7 @@ namespace Win32
 			public void* lpValue;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_VALUE_ABSW
-		{
+		public struct SERVICE_TYPE_VALUE_ABSW		{
 			public uint32 dwNameSpace;
 			public uint32 dwValueType;
 			public uint32 dwValueSize;
@@ -3364,29 +3161,25 @@ namespace Win32
 			public void* lpValue;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_INFO
-		{
+		public struct SERVICE_TYPE_INFO		{
 			public uint32 dwTypeNameOffset;
 			public uint32 dwValueCount;
 			public SERVICE_TYPE_VALUE[0] Values;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_INFO_ABSA
-		{
+		public struct SERVICE_TYPE_INFO_ABSA		{
 			public PSTR lpTypeName;
 			public uint32 dwValueCount;
 			public SERVICE_TYPE_VALUE_ABSA[0] Values;
 		}
 		[CRepr]
-		public struct SERVICE_TYPE_INFO_ABSW
-		{
+		public struct SERVICE_TYPE_INFO_ABSW		{
 			public PWSTR lpTypeName;
 			public uint32 dwValueCount;
 			public SERVICE_TYPE_VALUE_ABSW[0] Values;
 		}
 		[CRepr]
-		public struct SERVICE_ADDRESS
-		{
+		public struct SERVICE_ADDRESS		{
 			public uint32 dwAddressType;
 			public uint32 dwAddressFlags;
 			public uint32 dwAddressLength;
@@ -3395,14 +3188,12 @@ namespace Win32
 			public uint8* lpPrincipal;
 		}
 		[CRepr]
-		public struct SERVICE_ADDRESSES
-		{
+		public struct SERVICE_ADDRESSES		{
 			public uint32 dwAddressCount;
 			public SERVICE_ADDRESS[0] Addresses;
 		}
 		[CRepr]
-		public struct SERVICE_INFOA
-		{
+		public struct SERVICE_INFOA		{
 			public Guid* lpServiceType;
 			public PSTR lpServiceName;
 			public PSTR lpComment;
@@ -3415,8 +3206,7 @@ namespace Win32
 			public BLOB ServiceSpecificInfo;
 		}
 		[CRepr]
-		public struct SERVICE_INFOW
-		{
+		public struct SERVICE_INFOW		{
 			public Guid* lpServiceType;
 			public PWSTR lpServiceName;
 			public PWSTR lpComment;
@@ -3429,20 +3219,17 @@ namespace Win32
 			public BLOB ServiceSpecificInfo;
 		}
 		[CRepr]
-		public struct NS_SERVICE_INFOA
-		{
+		public struct NS_SERVICE_INFOA		{
 			public uint32 dwNameSpace;
 			public SERVICE_INFOA ServiceInfo;
 		}
 		[CRepr]
-		public struct NS_SERVICE_INFOW
-		{
+		public struct NS_SERVICE_INFOW		{
 			public uint32 dwNameSpace;
 			public SERVICE_INFOW ServiceInfo;
 		}
 		[CRepr]
-		public struct PROTOCOL_INFOA
-		{
+		public struct PROTOCOL_INFOA		{
 			public uint32 dwServiceFlags;
 			public int32 iAddressFamily;
 			public int32 iMaxSockAddr;
@@ -3453,8 +3240,7 @@ namespace Win32
 			public PSTR lpProtocol;
 		}
 		[CRepr]
-		public struct PROTOCOL_INFOW
-		{
+		public struct PROTOCOL_INFOW		{
 			public uint32 dwServiceFlags;
 			public int32 iAddressFamily;
 			public int32 iMaxSockAddr;
@@ -3465,8 +3251,7 @@ namespace Win32
 			public PWSTR lpProtocol;
 		}
 		[CRepr]
-		public struct NETRESOURCE2A
-		{
+		public struct NETRESOURCE2A		{
 			public uint32 dwScope;
 			public uint32 dwType;
 			public uint32 dwUsage;
@@ -3480,8 +3265,7 @@ namespace Win32
 			public int32* lpiProtocols;
 		}
 		[CRepr]
-		public struct NETRESOURCE2W
-		{
+		public struct NETRESOURCE2W		{
 			public uint32 dwScope;
 			public uint32 dwType;
 			public uint32 dwUsage;
@@ -3495,29 +3279,25 @@ namespace Win32
 			public int32* lpiProtocols;
 		}
 		[CRepr]
-		public struct SERVICE_ASYNC_INFO
-		{
+		public struct SERVICE_ASYNC_INFO		{
 			public LPSERVICE_CALLBACK_PROC lpServiceCallbackProc;
 			public LPARAM lParam;
 			public HANDLE hAsyncTaskHandle;
 		}
 		[CRepr]
-		public struct sockaddr_un
-		{
+		public struct sockaddr_un		{
 			public uint16 sun_family;
 			public CHAR[108] sun_path;
 		}
 		[CRepr]
-		public struct sockaddr_ipx
-		{
+		public struct sockaddr_ipx		{
 			public int16 sa_family;
 			public CHAR[4] sa_netnum;
 			public CHAR[6] sa_nodenum;
 			public uint16 sa_socket;
 		}
 		[CRepr]
-		public struct sockaddr_tp
-		{
+		public struct sockaddr_tp		{
 			public uint16 tp_family;
 			public uint16 tp_addr_type;
 			public uint16 tp_taddr_len;
@@ -3525,15 +3305,13 @@ namespace Win32
 			public uint8[64] tp_addr;
 		}
 		[CRepr]
-		public struct sockaddr_nb
-		{
+		public struct sockaddr_nb		{
 			public int16 snb_family;
 			public uint16 snb_type;
 			public CHAR[16] snb_name;
 		}
 		[CRepr]
-		public struct sockaddr_vns
-		{
+		public struct sockaddr_vns		{
 			public uint16 sin_family;
 			public uint8[4] net_address;
 			public uint8[2] subnet_addr;

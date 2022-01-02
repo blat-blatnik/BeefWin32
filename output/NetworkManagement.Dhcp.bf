@@ -524,8 +524,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct DHCPV6CAPI_PARAMS
-		{
+		public struct DHCPV6CAPI_PARAMS		{
 			public uint32 Flags;
 			public uint32 OptionId;
 			public BOOL IsVendor;
@@ -533,21 +532,18 @@ namespace Win32
 			public uint32 nBytesData;
 		}
 		[CRepr]
-		public struct DHCPV6CAPI_PARAMS_ARRAY
-		{
+		public struct DHCPV6CAPI_PARAMS_ARRAY		{
 			public uint32 nParams;
 			public DHCPV6CAPI_PARAMS* Params;
 		}
 		[CRepr]
-		public struct DHCPV6CAPI_CLASSID
-		{
+		public struct DHCPV6CAPI_CLASSID		{
 			public uint32 Flags;
 			public uint8* Data;
 			public uint32 nBytesData;
 		}
 		[CRepr]
-		public struct DHCPV6Prefix
-		{
+		public struct DHCPV6Prefix		{
 			public uint8[16] prefix;
 			public uint32 prefixLength;
 			public uint32 preferredLifeTime;
@@ -555,8 +551,7 @@ namespace Win32
 			public StatusCode status;
 		}
 		[CRepr]
-		public struct DHCPV6PrefixLeaseInformation
-		{
+		public struct DHCPV6PrefixLeaseInformation		{
 			public uint32 nPrefixes;
 			public DHCPV6Prefix* prefixArray;
 			public uint32 iaid;
@@ -569,8 +564,7 @@ namespace Win32
 			public uint32 ServerIdLen;
 		}
 		[CRepr]
-		public struct DHCPAPI_PARAMS
-		{
+		public struct DHCPAPI_PARAMS		{
 			public uint32 Flags;
 			public uint32 OptionId;
 			public BOOL IsVendor;
@@ -578,21 +572,18 @@ namespace Win32
 			public uint32 nBytesData;
 		}
 		[CRepr]
-		public struct DHCPCAPI_PARAMS_ARRAY
-		{
+		public struct DHCPCAPI_PARAMS_ARRAY		{
 			public uint32 nParams;
 			public DHCPAPI_PARAMS* Params;
 		}
 		[CRepr]
-		public struct DHCPCAPI_CLASSID
-		{
+		public struct DHCPCAPI_CLASSID		{
 			public uint32 Flags;
 			public uint8* Data;
 			public uint32 nBytesData;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_OPTIONS
-		{
+		public struct DHCP_SERVER_OPTIONS		{
 			public uint8* MessageType;
 			public uint32* SubnetMask;
 			public uint32* RequestedAddress;
@@ -620,8 +611,7 @@ namespace Win32
 			public uint32* ScopeId;
 		}
 		[CRepr]
-		public struct DHCP_CALLOUT_TABLE
-		{
+		public struct DHCP_CALLOUT_TABLE		{
 			public LPDHCP_CONTROL DhcpControlHook;
 			public LPDHCP_NEWPKT DhcpNewPktHook;
 			public LPDHCP_DROP_SEND DhcpPktDropHook;
@@ -634,39 +624,33 @@ namespace Win32
 			public void* DhcpReservedHook;
 		}
 		[CRepr]
-		public struct DATE_TIME
-		{
+		public struct DATE_TIME		{
 			public uint32 dwLowDateTime;
 			public uint32 dwHighDateTime;
 		}
 		[CRepr]
-		public struct DHCP_IP_RANGE
-		{
+		public struct DHCP_IP_RANGE		{
 			public uint32 StartAddress;
 			public uint32 EndAddress;
 		}
 		[CRepr]
-		public struct DHCP_BINARY_DATA
-		{
+		public struct DHCP_BINARY_DATA		{
 			public uint32 DataLength;
 			public uint8* Data;
 		}
 		[CRepr]
-		public struct DHCP_HOST_INFO
-		{
+		public struct DHCP_HOST_INFO		{
 			public uint32 IpAddress;
 			public PWSTR NetBiosName;
 			public PWSTR HostName;
 		}
 		[CRepr]
-		public struct DWORD_DWORD
-		{
+		public struct DWORD_DWORD		{
 			public uint32 DWord1;
 			public uint32 DWord2;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_INFO
-		{
+		public struct DHCP_SUBNET_INFO		{
 			public uint32 SubnetAddress;
 			public uint32 SubnetMask;
 			public PWSTR SubnetName;
@@ -675,8 +659,7 @@ namespace Win32
 			public DHCP_SUBNET_STATE SubnetState;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_INFO_VQ
-		{
+		public struct DHCP_SUBNET_INFO_VQ		{
 			public uint32 SubnetAddress;
 			public uint32 SubnetMask;
 			public PWSTR SubnetName;
@@ -690,32 +673,27 @@ namespace Win32
 			public int64 Reserved4;
 		}
 		[CRepr]
-		public struct DHCP_IP_ARRAY
-		{
+		public struct DHCP_IP_ARRAY		{
 			public uint32 NumElements;
 			public uint32* Elements;
 		}
 		[CRepr]
-		public struct DHCP_IP_CLUSTER
-		{
+		public struct DHCP_IP_CLUSTER		{
 			public uint32 ClusterAddress;
 			public uint32 ClusterMask;
 		}
 		[CRepr]
-		public struct DHCP_IP_RESERVATION
-		{
+		public struct DHCP_IP_RESERVATION		{
 			public uint32 ReservedIpAddress;
 			public DHCP_BINARY_DATA* ReservedForClient;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_DATA
-		{
+		public struct DHCP_SUBNET_ELEMENT_DATA		{
 			public DHCP_SUBNET_ELEMENT_TYPE ElementType;
 			public DHCP_SUBNET_ELEMENT_UNION Element;
 			
 			[CRepr, Union]
-			public struct DHCP_SUBNET_ELEMENT_UNION
-			{
+			public struct DHCP_SUBNET_ELEMENT_UNION			{
 				public DHCP_IP_RANGE* IpRange;
 				public DHCP_HOST_INFO* SecondaryHost;
 				public DHCP_IP_RESERVATION* ReservedIp;
@@ -724,24 +702,19 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_SUBNET_ELEMENT_UNION
-		{
-		}
+		public struct DHCP_SUBNET_ELEMENT_UNION {}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY
-		{
+		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_SUBNET_ELEMENT_DATA* Elements;
 		}
 		[CRepr]
-		public struct DHCP_IPV6_ADDRESS
-		{
+		public struct DHCP_IPV6_ADDRESS		{
 			public uint64 HighOrderBits;
 			public uint64 LowOrderBits;
 		}
 		[CRepr]
-		public struct DHCP_ADDR_PATTERN
-		{
+		public struct DHCP_ADDR_PATTERN		{
 			public BOOL MatchHWType;
 			public uint8 HWType;
 			public BOOL IsWildcard;
@@ -749,39 +722,33 @@ namespace Win32
 			public uint8[255] Pattern;
 		}
 		[CRepr]
-		public struct DHCP_FILTER_ADD_INFO
-		{
+		public struct DHCP_FILTER_ADD_INFO		{
 			public DHCP_ADDR_PATTERN AddrPatt;
 			public PWSTR Comment;
 			public DHCP_FILTER_LIST_TYPE ListType;
 		}
 		[CRepr]
-		public struct DHCP_FILTER_GLOBAL_INFO
-		{
+		public struct DHCP_FILTER_GLOBAL_INFO		{
 			public BOOL EnforceAllowList;
 			public BOOL EnforceDenyList;
 		}
 		[CRepr]
-		public struct DHCP_FILTER_RECORD
-		{
+		public struct DHCP_FILTER_RECORD		{
 			public DHCP_ADDR_PATTERN AddrPatt;
 			public PWSTR Comment;
 		}
 		[CRepr]
-		public struct DHCP_FILTER_ENUM_INFO
-		{
+		public struct DHCP_FILTER_ENUM_INFO		{
 			public uint32 NumElements;
 			public DHCP_FILTER_RECORD* pEnumRecords;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_DATA_ELEMENT
-		{
+		public struct DHCP_OPTION_DATA_ELEMENT		{
 			public DHCP_OPTION_DATA_TYPE OptionType;
 			public DHCP_OPTION_ELEMENT_UNION Element;
 			
 			[CRepr, Union]
-			public struct DHCP_OPTION_ELEMENT_UNION
-			{
+			public struct DHCP_OPTION_ELEMENT_UNION			{
 				public uint8 ByteOption;
 				public uint16 WordOption;
 				public uint32 DWordOption;
@@ -794,18 +761,14 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_OPTION_ELEMENT_UNION
-		{
-		}
+		public struct DHCP_OPTION_ELEMENT_UNION {}
 		[CRepr]
-		public struct DHCP_OPTION_DATA
-		{
+		public struct DHCP_OPTION_DATA		{
 			public uint32 NumElements;
 			public DHCP_OPTION_DATA_ELEMENT* Elements;
 		}
 		[CRepr]
-		public struct DHCP_OPTION
-		{
+		public struct DHCP_OPTION		{
 			public uint32 OptionID;
 			public PWSTR OptionName;
 			public PWSTR OptionComment;
@@ -813,38 +776,32 @@ namespace Win32
 			public DHCP_OPTION_TYPE OptionType;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_ARRAY
-		{
+		public struct DHCP_OPTION_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_OPTION* Options;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_VALUE
-		{
+		public struct DHCP_OPTION_VALUE		{
 			public uint32 OptionID;
 			public DHCP_OPTION_DATA Value;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_VALUE_ARRAY
-		{
+		public struct DHCP_OPTION_VALUE_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_OPTION_VALUE* Values;
 		}
 		[CRepr]
-		public struct DHCP_RESERVED_SCOPE
-		{
+		public struct DHCP_RESERVED_SCOPE		{
 			public uint32 ReservedIpAddress;
 			public uint32 ReservedIpSubnetAddress;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_SCOPE_INFO
-		{
+		public struct DHCP_OPTION_SCOPE_INFO		{
 			public DHCP_OPTION_SCOPE_TYPE ScopeType;
 			public _DHCP_OPTION_SCOPE_UNION ScopeInfo;
 			
 			[CRepr, Union]
-			public struct _DHCP_OPTION_SCOPE_UNION
-			{
+			public struct _DHCP_OPTION_SCOPE_UNION			{
 				public void* DefaultScopeInfo;
 				public void* GlobalScopeInfo;
 				public uint32 SubnetScopeInfo;
@@ -853,38 +810,31 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DHCP_RESERVED_SCOPE6
-		{
+		public struct DHCP_RESERVED_SCOPE6		{
 			public DHCP_IPV6_ADDRESS ReservedIpAddress;
 			public DHCP_IPV6_ADDRESS ReservedIpSubnetAddress;
 		}
 		[CRepr]
-		public struct DHCP_OPTION_SCOPE_INFO6
-		{
+		public struct DHCP_OPTION_SCOPE_INFO6		{
 			public DHCP_OPTION_SCOPE_TYPE6 ScopeType;
 			public DHCP_OPTION_SCOPE_UNION6 ScopeInfo;
 			
 			[CRepr, Union]
-			public struct DHCP_OPTION_SCOPE_UNION6
-			{
+			public struct DHCP_OPTION_SCOPE_UNION6			{
 				public void* DefaultScopeInfo;
 				public DHCP_IPV6_ADDRESS SubnetScopeInfo;
 				public DHCP_RESERVED_SCOPE6 ReservedScopeInfo;
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_OPTION_SCOPE_UNION6
-		{
-		}
+		public struct DHCP_OPTION_SCOPE_UNION6 {}
 		[CRepr]
-		public struct DHCP_OPTION_LIST
-		{
+		public struct DHCP_OPTION_LIST		{
 			public uint32 NumOptions;
 			public DHCP_OPTION_VALUE* Options;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO
-		{
+		public struct DHCP_CLIENT_INFO		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -894,14 +844,12 @@ namespace Win32
 			public DHCP_HOST_INFO OwnerHost;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_ARRAY
-		{
+		public struct DHCP_CLIENT_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO** Clients;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_VQ
-		{
+		public struct DHCP_CLIENT_INFO_VQ		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -916,14 +864,12 @@ namespace Win32
 			public BOOL QuarantineCapable;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_ARRAY_VQ
-		{
+		public struct DHCP_CLIENT_INFO_ARRAY_VQ		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_VQ** Clients;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_FILTER_STATUS_INFO
-		{
+		public struct DHCP_CLIENT_FILTER_STATUS_INFO		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -939,14 +885,12 @@ namespace Win32
 			public uint32 FilterStatus;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY
-		{
+		public struct DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_FILTER_STATUS_INFO** Clients;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_PB
-		{
+		public struct DHCP_CLIENT_INFO_PB		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -963,39 +907,32 @@ namespace Win32
 			public PWSTR PolicyName;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_PB_ARRAY
-		{
+		public struct DHCP_CLIENT_INFO_PB_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_PB** Clients;
 		}
 		[CRepr]
-		public struct DHCP_SEARCH_INFO
-		{
+		public struct DHCP_SEARCH_INFO		{
 			public DHCP_SEARCH_INFO_TYPE SearchType;
 			public DHCP_CLIENT_SEARCH_UNION SearchInfo;
 			
 			[CRepr, Union]
-			public struct DHCP_CLIENT_SEARCH_UNION
-			{
+			public struct DHCP_CLIENT_SEARCH_UNION			{
 				public uint32 ClientIpAddress;
 				public DHCP_BINARY_DATA ClientHardwareAddress;
 				public PWSTR ClientName;
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_CLIENT_SEARCH_UNION
-		{
-		}
+		public struct DHCP_CLIENT_SEARCH_UNION {}
 		[CRepr]
-		public struct DHCP_PROPERTY
-		{
+		public struct DHCP_PROPERTY		{
 			public DHCP_PROPERTY_ID ID;
 			public DHCP_PROPERTY_TYPE Type;
 			public _DHCP_PROPERTY_VALUE_UNION Value;
 			
 			[CRepr, Union]
-			public struct _DHCP_PROPERTY_VALUE_UNION
-			{
+			public struct _DHCP_PROPERTY_VALUE_UNION			{
 				public uint8 ByteValue;
 				public uint16 WordValue;
 				public uint32 DWordValue;
@@ -1004,14 +941,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DHCP_PROPERTY_ARRAY
-		{
+		public struct DHCP_PROPERTY_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_PROPERTY* Elements;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_EX
-		{
+		public struct DHCP_CLIENT_INFO_EX		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -1029,22 +964,19 @@ namespace Win32
 			public DHCP_PROPERTY_ARRAY* Properties;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_EX_ARRAY
-		{
+		public struct DHCP_CLIENT_INFO_EX_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_EX** Clients;
 		}
 		[CRepr]
-		public struct SCOPE_MIB_INFO
-		{
+		public struct SCOPE_MIB_INFO		{
 			public uint32 Subnet;
 			public uint32 NumAddressesInuse;
 			public uint32 NumAddressesFree;
 			public uint32 NumPendingOffers;
 		}
 		[CRepr]
-		public struct DHCP_MIB_INFO
-		{
+		public struct DHCP_MIB_INFO		{
 			public uint32 Discovers;
 			public uint32 Offers;
 			public uint32 Requests;
@@ -1057,8 +989,7 @@ namespace Win32
 			public SCOPE_MIB_INFO* ScopeInfo;
 		}
 		[CRepr]
-		public struct SCOPE_MIB_INFO_VQ
-		{
+		public struct SCOPE_MIB_INFO_VQ		{
 			public uint32 Subnet;
 			public uint32 NumAddressesInuse;
 			public uint32 NumAddressesFree;
@@ -1071,8 +1002,7 @@ namespace Win32
 			public uint32 QtnCapableClients;
 		}
 		[CRepr]
-		public struct DHCP_MIB_INFO_VQ
-		{
+		public struct DHCP_MIB_INFO_VQ		{
 			public uint32 Discovers;
 			public uint32 Offers;
 			public uint32 Requests;
@@ -1092,16 +1022,14 @@ namespace Win32
 			public SCOPE_MIB_INFO_VQ* ScopeInfo;
 		}
 		[CRepr]
-		public struct SCOPE_MIB_INFO_V5
-		{
+		public struct SCOPE_MIB_INFO_V5		{
 			public uint32 Subnet;
 			public uint32 NumAddressesInuse;
 			public uint32 NumAddressesFree;
 			public uint32 NumPendingOffers;
 		}
 		[CRepr]
-		public struct DHCP_MIB_INFO_V5
-		{
+		public struct DHCP_MIB_INFO_V5		{
 			public uint32 Discovers;
 			public uint32 Offers;
 			public uint32 Requests;
@@ -1123,8 +1051,7 @@ namespace Win32
 			public SCOPE_MIB_INFO_V5* ScopeInfo;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_CONFIG_INFO
-		{
+		public struct DHCP_SERVER_CONFIG_INFO		{
 			public uint32 APIProtocolSupport;
 			public PWSTR DatabaseName;
 			public PWSTR DatabasePath;
@@ -1136,20 +1063,17 @@ namespace Win32
 			public uint32 DebugFlag;
 		}
 		[CRepr]
-		public struct DHCP_SCAN_ITEM
-		{
+		public struct DHCP_SCAN_ITEM		{
 			public uint32 IpAddress;
 			public DHCP_SCAN_FLAG ScanFlag;
 		}
 		[CRepr]
-		public struct DHCP_SCAN_LIST
-		{
+		public struct DHCP_SCAN_LIST		{
 			public uint32 NumScanItems;
 			public DHCP_SCAN_ITEM* ScanItems;
 		}
 		[CRepr]
-		public struct DHCP_CLASS_INFO
-		{
+		public struct DHCP_CLASS_INFO		{
 			public PWSTR ClassName;
 			public PWSTR ClassComment;
 			public uint32 ClassDataLength;
@@ -1158,14 +1082,12 @@ namespace Win32
 			public uint8* ClassData;
 		}
 		[CRepr]
-		public struct DHCP_CLASS_INFO_ARRAY
-		{
+		public struct DHCP_CLASS_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_CLASS_INFO* Classes;
 		}
 		[CRepr]
-		public struct DHCP_CLASS_INFO_V6
-		{
+		public struct DHCP_CLASS_INFO_V6		{
 			public PWSTR ClassName;
 			public PWSTR ClassComment;
 			public uint32 ClassDataLength;
@@ -1175,27 +1097,23 @@ namespace Win32
 			public uint8* ClassData;
 		}
 		[CRepr]
-		public struct DHCP_CLASS_INFO_ARRAY_V6
-		{
+		public struct DHCP_CLASS_INFO_ARRAY_V6		{
 			public uint32 NumElements;
 			public DHCP_CLASS_INFO_V6* Classes;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_SPECIFIC_STRINGS
-		{
+		public struct DHCP_SERVER_SPECIFIC_STRINGS		{
 			public PWSTR DefaultVendorClassName;
 			public PWSTR DefaultUserClassName;
 		}
 		[CRepr]
-		public struct DHCP_IP_RESERVATION_V4
-		{
+		public struct DHCP_IP_RESERVATION_V4		{
 			public uint32 ReservedIpAddress;
 			public DHCP_BINARY_DATA* ReservedForClient;
 			public uint8 bAllowedClientTypes;
 		}
 		[CRepr]
-		public struct DHCP_IP_RESERVATION_INFO
-		{
+		public struct DHCP_IP_RESERVATION_INFO		{
 			public uint32 ReservedIpAddress;
 			public DHCP_BINARY_DATA ReservedForClient;
 			public PWSTR ReservedClientName;
@@ -1204,20 +1122,17 @@ namespace Win32
 			public uint8 fOptionsPresent;
 		}
 		[CRepr]
-		public struct DHCP_RESERVATION_INFO_ARRAY
-		{
+		public struct DHCP_RESERVATION_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_IP_RESERVATION_INFO** Elements;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_DATA_V4
-		{
+		public struct DHCP_SUBNET_ELEMENT_DATA_V4		{
 			public DHCP_SUBNET_ELEMENT_TYPE ElementType;
 			public DHCP_SUBNET_ELEMENT_UNION_V4 Element;
 			
 			[CRepr, Union]
-			public struct DHCP_SUBNET_ELEMENT_UNION_V4
-			{
+			public struct DHCP_SUBNET_ELEMENT_UNION_V4			{
 				public DHCP_IP_RANGE* IpRange;
 				public DHCP_HOST_INFO* SecondaryHost;
 				public DHCP_IP_RESERVATION_V4* ReservedIp;
@@ -1226,18 +1141,14 @@ namespace Win32
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_SUBNET_ELEMENT_UNION_V4
-		{
-		}
+		public struct DHCP_SUBNET_ELEMENT_UNION_V4 {}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V4
-		{
+		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V4		{
 			public uint32 NumElements;
 			public DHCP_SUBNET_ELEMENT_DATA_V4* Elements;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_V4
-		{
+		public struct DHCP_CLIENT_INFO_V4		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -1248,14 +1159,12 @@ namespace Win32
 			public uint8 bClientType;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_ARRAY_V4
-		{
+		public struct DHCP_CLIENT_INFO_ARRAY_V4		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_V4** Clients;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_CONFIG_INFO_V4
-		{
+		public struct DHCP_SERVER_CONFIG_INFO_V4		{
 			public uint32 APIProtocolSupport;
 			public PWSTR DatabaseName;
 			public PWSTR DatabasePath;
@@ -1271,8 +1180,7 @@ namespace Win32
 			public BOOL fAuditLog;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_CONFIG_INFO_VQ
-		{
+		public struct DHCP_SERVER_CONFIG_INFO_VQ		{
 			public uint32 APIProtocolSupport;
 			public PWSTR DatabaseName;
 			public PWSTR DatabasePath;
@@ -1291,8 +1199,7 @@ namespace Win32
 			public BOOL QuarRuntimeStatus;
 		}
 		[CRepr]
-		public struct DHCP_SERVER_CONFIG_INFO_V6
-		{
+		public struct DHCP_SERVER_CONFIG_INFO_V6		{
 			public BOOL UnicastFlag;
 			public BOOL RapidCommitFlag;
 			public uint32 PreferredLifetime;
@@ -1304,22 +1211,19 @@ namespace Win32
 			public BOOL fAuditLog;
 		}
 		[CRepr]
-		public struct DHCP_SUPER_SCOPE_TABLE_ENTRY
-		{
+		public struct DHCP_SUPER_SCOPE_TABLE_ENTRY		{
 			public uint32 SubnetAddress;
 			public uint32 SuperScopeNumber;
 			public uint32 NextInSuperScope;
 			public PWSTR SuperScopeName;
 		}
 		[CRepr]
-		public struct DHCP_SUPER_SCOPE_TABLE
-		{
+		public struct DHCP_SUPER_SCOPE_TABLE		{
 			public uint32 cEntries;
 			public DHCP_SUPER_SCOPE_TABLE_ENTRY* pEntries;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_V5
-		{
+		public struct DHCP_CLIENT_INFO_V5		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -1331,37 +1235,32 @@ namespace Win32
 			public uint8 AddressState;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_ARRAY_V5
-		{
+		public struct DHCP_CLIENT_INFO_ARRAY_V5		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_V5** Clients;
 		}
 		[CRepr]
-		public struct DHCP_ALL_OPTIONS
-		{
+		public struct DHCP_ALL_OPTIONS		{
 			public uint32 Flags;
 			public DHCP_OPTION_ARRAY* NonVendorOptions;
 			public uint32 NumVendorOptions;
 			public _Anonymous_e__Struct* VendorOptions;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public DHCP_OPTION Option;
 				public PWSTR VendorName;
 				public PWSTR ClassName;
 			}
 		}
 		[CRepr]
-		public struct DHCP_ALL_OPTION_VALUES
-		{
+		public struct DHCP_ALL_OPTION_VALUES		{
 			public uint32 Flags;
 			public uint32 NumElements;
 			public _Anonymous_e__Struct* Options;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public PWSTR ClassName;
 				public PWSTR VendorName;
 				public BOOL IsVendor;
@@ -1369,15 +1268,13 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DHCP_ALL_OPTION_VALUES_PB
-		{
+		public struct DHCP_ALL_OPTION_VALUES_PB		{
 			public uint32 Flags;
 			public uint32 NumElements;
 			public _Anonymous_e__Struct* Options;
 			
 			[CRepr]
-			public struct _Anonymous_e__Struct
-			{
+			public struct _Anonymous_e__Struct			{
 				public PWSTR PolicyName;
 				public PWSTR VendorName;
 				public BOOL IsVendor;
@@ -1385,8 +1282,7 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DHCPDS_SERVER
-		{
+		public struct DHCPDS_SERVER		{
 			public uint32 Version;
 			public PWSTR ServerName;
 			public uint32 ServerAddress;
@@ -1396,49 +1292,42 @@ namespace Win32
 			public uint32 DsLocType;
 		}
 		[CRepr]
-		public struct DHCPDS_SERVERS
-		{
+		public struct DHCPDS_SERVERS		{
 			public uint32 Flags;
 			public uint32 NumElements;
 			public DHCPDS_SERVER* Servers;
 		}
 		[CRepr]
-		public struct DHCP_ATTRIB
-		{
+		public struct DHCP_ATTRIB		{
 			public uint32 DhcpAttribId;
 			public uint32 DhcpAttribType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public BOOL DhcpAttribBool;
 				public uint32 DhcpAttribUlong;
 			}
 		}
 		[CRepr]
-		public struct DHCP_ATTRIB_ARRAY
-		{
+		public struct DHCP_ATTRIB_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_ATTRIB* DhcpAttribs;
 		}
 		[CRepr]
-		public struct DHCP_BOOTP_IP_RANGE
-		{
+		public struct DHCP_BOOTP_IP_RANGE		{
 			public uint32 StartAddress;
 			public uint32 EndAddress;
 			public uint32 BootpAllocated;
 			public uint32 MaxBootpAllowed;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_DATA_V5
-		{
+		public struct DHCP_SUBNET_ELEMENT_DATA_V5		{
 			public DHCP_SUBNET_ELEMENT_TYPE ElementType;
 			public _DHCP_SUBNET_ELEMENT_UNION_V5 Element;
 			
 			[CRepr, Union]
-			public struct _DHCP_SUBNET_ELEMENT_UNION_V5
-			{
+			public struct _DHCP_SUBNET_ELEMENT_UNION_V5			{
 				public DHCP_BOOTP_IP_RANGE* IpRange;
 				public DHCP_HOST_INFO* SecondaryHost;
 				public DHCP_IP_RESERVATION_V4* ReservedIp;
@@ -1447,14 +1336,12 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V5
-		{
+		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V5		{
 			public uint32 NumElements;
 			public DHCP_SUBNET_ELEMENT_DATA_V5* Elements;
 		}
 		[CRepr]
-		public struct DHCP_PERF_STATS
-		{
+		public struct DHCP_PERF_STATS		{
 			public uint32 dwNumPacketsReceived;
 			public uint32 dwNumPacketsDuplicate;
 			public uint32 dwNumPacketsExpired;
@@ -1476,8 +1363,7 @@ namespace Win32
 			public uint32 dwNumPacketsInQuarDecisionQueue;
 		}
 		[CRepr]
-		public struct DHCP_BIND_ELEMENT
-		{
+		public struct DHCP_BIND_ELEMENT		{
 			public uint32 Flags;
 			public BOOL fBoundToDHCPServer;
 			public uint32 AdapterPrimaryAddress;
@@ -1487,14 +1373,12 @@ namespace Win32
 			public uint8* IfId;
 		}
 		[CRepr]
-		public struct DHCP_BIND_ELEMENT_ARRAY
-		{
+		public struct DHCP_BIND_ELEMENT_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_BIND_ELEMENT* Elements;
 		}
 		[CRepr]
-		public struct DHCPV6_BIND_ELEMENT
-		{
+		public struct DHCPV6_BIND_ELEMENT		{
 			public uint32 Flags;
 			public BOOL fBoundToDHCPServer;
 			public DHCP_IPV6_ADDRESS AdapterPrimaryAddress;
@@ -1505,27 +1389,23 @@ namespace Win32
 			public uint8* IfId;
 		}
 		[CRepr]
-		public struct DHCPV6_BIND_ELEMENT_ARRAY
-		{
+		public struct DHCPV6_BIND_ELEMENT_ARRAY		{
 			public uint32 NumElements;
 			public DHCPV6_BIND_ELEMENT* Elements;
 		}
 		[CRepr]
-		public struct DHCP_IP_RANGE_V6
-		{
+		public struct DHCP_IP_RANGE_V6		{
 			public DHCP_IPV6_ADDRESS StartAddress;
 			public DHCP_IPV6_ADDRESS EndAddress;
 		}
 		[CRepr]
-		public struct DHCP_HOST_INFO_V6
-		{
+		public struct DHCP_HOST_INFO_V6		{
 			public DHCP_IPV6_ADDRESS IpAddress;
 			public PWSTR NetBiosName;
 			public PWSTR HostName;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_INFO_V6
-		{
+		public struct DHCP_SUBNET_INFO_V6		{
 			public DHCP_IPV6_ADDRESS SubnetAddress;
 			public uint32 Prefix;
 			public uint16 Preference;
@@ -1535,16 +1415,14 @@ namespace Win32
 			public uint32 ScopeId;
 		}
 		[CRepr]
-		public struct SCOPE_MIB_INFO_V6
-		{
+		public struct SCOPE_MIB_INFO_V6		{
 			public DHCP_IPV6_ADDRESS Subnet;
 			public uint64 NumAddressesInuse;
 			public uint64 NumAddressesFree;
 			public uint64 NumPendingAdvertises;
 		}
 		[CRepr]
-		public struct DHCP_MIB_INFO_V6
-		{
+		public struct DHCP_MIB_INFO_V6		{
 			public uint32 Solicits;
 			public uint32 Advertises;
 			public uint32 Requests;
@@ -1560,39 +1438,32 @@ namespace Win32
 			public SCOPE_MIB_INFO_V6* ScopeInfo;
 		}
 		[CRepr]
-		public struct DHCP_IP_RESERVATION_V6
-		{
+		public struct DHCP_IP_RESERVATION_V6		{
 			public DHCP_IPV6_ADDRESS ReservedIpAddress;
 			public DHCP_BINARY_DATA* ReservedForClient;
 			public uint32 InterfaceId;
 		}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_DATA_V6
-		{
+		public struct DHCP_SUBNET_ELEMENT_DATA_V6		{
 			public DHCP_SUBNET_ELEMENT_TYPE_V6 ElementType;
 			public DHCP_SUBNET_ELEMENT_UNION_V6 Element;
 			
 			[CRepr, Union]
-			public struct DHCP_SUBNET_ELEMENT_UNION_V6
-			{
+			public struct DHCP_SUBNET_ELEMENT_UNION_V6			{
 				public DHCP_IP_RANGE_V6* IpRange;
 				public DHCP_IP_RESERVATION_V6* ReservedIp;
 				public DHCP_IP_RANGE_V6* ExcludeIpRange;
 			}
 		}
 		[CRepr, Union]
-		public struct DHCP_SUBNET_ELEMENT_UNION_V6
-		{
-		}
+		public struct DHCP_SUBNET_ELEMENT_UNION_V6 {}
 		[CRepr]
-		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6
-		{
+		public struct DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6		{
 			public uint32 NumElements;
 			public DHCP_SUBNET_ELEMENT_DATA_V6* Elements;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_V6
-		{
+		public struct DHCP_CLIENT_INFO_V6		{
 			public DHCP_IPV6_ADDRESS ClientIpAddress;
 			public DHCP_BINARY_DATA ClientDUID;
 			public uint32 AddressType;
@@ -1604,34 +1475,29 @@ namespace Win32
 			public DHCP_HOST_INFO_V6 OwnerHost;
 		}
 		[CRepr]
-		public struct DHCPV6_IP_ARRAY
-		{
+		public struct DHCPV6_IP_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_IPV6_ADDRESS* Elements;
 		}
 		[CRepr]
-		public struct DHCP_CLIENT_INFO_ARRAY_V6
-		{
+		public struct DHCP_CLIENT_INFO_ARRAY_V6		{
 			public uint32 NumElements;
 			public DHCP_CLIENT_INFO_V6** Clients;
 		}
 		[CRepr]
-		public struct DHCP_SEARCH_INFO_V6
-		{
+		public struct DHCP_SEARCH_INFO_V6		{
 			public DHCP_SEARCH_INFO_TYPE_V6 SearchType;
 			public _DHCP_CLIENT_SEARCH_UNION_V6 SearchInfo;
 			
 			[CRepr, Union]
-			public struct _DHCP_CLIENT_SEARCH_UNION_V6
-			{
+			public struct _DHCP_CLIENT_SEARCH_UNION_V6			{
 				public DHCP_IPV6_ADDRESS ClientIpAddress;
 				public DHCP_BINARY_DATA ClientDUID;
 				public PWSTR ClientName;
 			}
 		}
 		[CRepr]
-		public struct DHCP_POL_COND
-		{
+		public struct DHCP_POL_COND		{
 			public uint32 ParentExpr;
 			public DHCP_POL_ATTR_TYPE Type;
 			public uint32 OptionID;
@@ -1642,32 +1508,27 @@ namespace Win32
 			public uint32 ValueLength;
 		}
 		[CRepr]
-		public struct DHCP_POL_COND_ARRAY
-		{
+		public struct DHCP_POL_COND_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_POL_COND* Elements;
 		}
 		[CRepr]
-		public struct DHCP_POL_EXPR
-		{
+		public struct DHCP_POL_EXPR		{
 			public uint32 ParentExpr;
 			public DHCP_POL_LOGIC_OPER Operator;
 		}
 		[CRepr]
-		public struct DHCP_POL_EXPR_ARRAY
-		{
+		public struct DHCP_POL_EXPR_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_POL_EXPR* Elements;
 		}
 		[CRepr]
-		public struct DHCP_IP_RANGE_ARRAY
-		{
+		public struct DHCP_IP_RANGE_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_IP_RANGE* Elements;
 		}
 		[CRepr]
-		public struct DHCP_POLICY
-		{
+		public struct DHCP_POLICY		{
 			public PWSTR PolicyName;
 			public BOOL IsGlobalPolicy;
 			public uint32 Subnet;
@@ -1679,14 +1540,12 @@ namespace Win32
 			public BOOL Enabled;
 		}
 		[CRepr]
-		public struct DHCP_POLICY_ARRAY
-		{
+		public struct DHCP_POLICY_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_POLICY* Elements;
 		}
 		[CRepr]
-		public struct DHCP_POLICY_EX
-		{
+		public struct DHCP_POLICY_EX		{
 			public PWSTR PolicyName;
 			public BOOL IsGlobalPolicy;
 			public uint32 Subnet;
@@ -1699,33 +1558,28 @@ namespace Win32
 			public DHCP_PROPERTY_ARRAY* Properties;
 		}
 		[CRepr]
-		public struct DHCP_POLICY_EX_ARRAY
-		{
+		public struct DHCP_POLICY_EX_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_POLICY_EX* Elements;
 		}
 		[CRepr]
-		public struct DHCPV6_STATELESS_PARAMS
-		{
+		public struct DHCPV6_STATELESS_PARAMS		{
 			public BOOL Status;
 			public uint32 PurgeInterval;
 		}
 		[CRepr]
-		public struct DHCPV6_STATELESS_SCOPE_STATS
-		{
+		public struct DHCPV6_STATELESS_SCOPE_STATS		{
 			public DHCP_IPV6_ADDRESS SubnetAddress;
 			public uint64 NumStatelessClientsAdded;
 			public uint64 NumStatelessClientsRemoved;
 		}
 		[CRepr]
-		public struct DHCPV6_STATELESS_STATS
-		{
+		public struct DHCPV6_STATELESS_STATS		{
 			public uint32 NumScopes;
 			public DHCPV6_STATELESS_SCOPE_STATS* ScopeStats;
 		}
 		[CRepr]
-		public struct DHCP_FAILOVER_RELATIONSHIP
-		{
+		public struct DHCP_FAILOVER_RELATIONSHIP		{
 			public uint32 PrimaryServer;
 			public uint32 SecondaryServer;
 			public DHCP_FAILOVER_MODE Mode;
@@ -1742,14 +1596,12 @@ namespace Win32
 			public PWSTR SharedSecret;
 		}
 		[CRepr]
-		public struct DHCP_FAILOVER_RELATIONSHIP_ARRAY
-		{
+		public struct DHCP_FAILOVER_RELATIONSHIP_ARRAY		{
 			public uint32 NumElements;
 			public DHCP_FAILOVER_RELATIONSHIP* pRelationships;
 		}
 		[CRepr]
-		public struct DHCPV4_FAILOVER_CLIENT_INFO
-		{
+		public struct DHCPV4_FAILOVER_CLIENT_INFO		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -1773,14 +1625,12 @@ namespace Win32
 			public uint8 Flags;
 		}
 		[CRepr]
-		public struct DHCPV4_FAILOVER_CLIENT_INFO_ARRAY
-		{
+		public struct DHCPV4_FAILOVER_CLIENT_INFO_ARRAY		{
 			public uint32 NumElements;
 			public DHCPV4_FAILOVER_CLIENT_INFO** Clients;
 		}
 		[CRepr]
-		public struct DHCPV4_FAILOVER_CLIENT_INFO_EX
-		{
+		public struct DHCPV4_FAILOVER_CLIENT_INFO_EX		{
 			public uint32 ClientIpAddress;
 			public uint32 SubnetMask;
 			public DHCP_BINARY_DATA ClientHardwareAddress;
@@ -1805,8 +1655,7 @@ namespace Win32
 			public uint32 AddressStateEx;
 		}
 		[CRepr]
-		public struct DHCP_FAILOVER_STATISTICS
-		{
+		public struct DHCP_FAILOVER_STATISTICS		{
 			public uint32 NumAddr;
 			public uint32 AddrFree;
 			public uint32 AddrInUse;

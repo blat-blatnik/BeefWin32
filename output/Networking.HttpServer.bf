@@ -459,51 +459,43 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct HTTP_PROPERTY_FLAGS
-		{
+		public struct HTTP_PROPERTY_FLAGS		{
 			public uint32 _bitfield;
 		}
 		[CRepr]
-		public struct HTTP_STATE_INFO
-		{
+		public struct HTTP_STATE_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public HTTP_ENABLED_STATE State;
 		}
 		[CRepr]
-		public struct HTTP_QOS_SETTING_INFO
-		{
+		public struct HTTP_QOS_SETTING_INFO		{
 			public HTTP_QOS_SETTING_TYPE QosType;
 			public void* QosSetting;
 		}
 		[CRepr]
-		public struct HTTP_CONNECTION_LIMIT_INFO
-		{
+		public struct HTTP_CONNECTION_LIMIT_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint32 MaxConnections;
 		}
 		[CRepr]
-		public struct HTTP_BANDWIDTH_LIMIT_INFO
-		{
+		public struct HTTP_BANDWIDTH_LIMIT_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint32 MaxBandwidth;
 		}
 		[CRepr]
-		public struct HTTP_FLOWRATE_INFO
-		{
+		public struct HTTP_FLOWRATE_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint32 MaxBandwidth;
 			public uint32 MaxPeakBandwidth;
 			public uint32 BurstSize;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_TIMEOUT_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_TIMEOUT_SET		{
 			public HTTP_SERVICE_CONFIG_TIMEOUT_KEY KeyDesc;
 			public uint16 ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_TIMEOUT_LIMIT_INFO
-		{
+		public struct HTTP_TIMEOUT_LIMIT_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint16 EntityBody;
 			public uint16 DrainEntityBody;
@@ -513,34 +505,29 @@ namespace Win32
 			public uint32 MinSendRate;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SETTING_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_SETTING_SET		{
 			public HTTP_SERVICE_CONFIG_SETTING_KEY KeyDesc;
 			public uint32 ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_LISTEN_ENDPOINT_INFO
-		{
+		public struct HTTP_LISTEN_ENDPOINT_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public BOOLEAN EnableSharing;
 		}
 		[CRepr]
-		public struct HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS
-		{
+		public struct HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS		{
 			public uint16 DomainNameLength;
 			public PWSTR DomainName;
 			public uint16 RealmLength;
 			public PWSTR Realm;
 		}
 		[CRepr]
-		public struct HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS
-		{
+		public struct HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS		{
 			public uint16 RealmLength;
 			public PWSTR Realm;
 		}
 		[CRepr]
-		public struct HTTP_SERVER_AUTHENTICATION_INFO
-		{
+		public struct HTTP_SERVER_AUTHENTICATION_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint32 AuthSchemes;
 			public BOOLEAN ReceiveMutualAuth;
@@ -551,43 +538,37 @@ namespace Win32
 			public HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS BasicParams;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_BINDING_BASE
-		{
+		public struct HTTP_SERVICE_BINDING_BASE		{
 			public HTTP_SERVICE_BINDING_TYPE Type;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_BINDING_A
-		{
+		public struct HTTP_SERVICE_BINDING_A		{
 			public HTTP_SERVICE_BINDING_BASE Base;
 			public PSTR Buffer;
 			public uint32 BufferSize;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_BINDING_W
-		{
+		public struct HTTP_SERVICE_BINDING_W		{
 			public HTTP_SERVICE_BINDING_BASE Base;
 			public PWSTR Buffer;
 			public uint32 BufferSize;
 		}
 		[CRepr]
-		public struct HTTP_CHANNEL_BIND_INFO
-		{
+		public struct HTTP_CHANNEL_BIND_INFO		{
 			public HTTP_AUTHENTICATION_HARDENING_LEVELS Hardening;
 			public uint32 Flags;
 			public HTTP_SERVICE_BINDING_BASE** ServiceNames;
 			public uint32 NumberOfServiceNames;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_CHANNEL_BIND_STATUS
-		{
+		public struct HTTP_REQUEST_CHANNEL_BIND_STATUS		{
 			public HTTP_SERVICE_BINDING_BASE* ServiceName;
 			public uint8* ChannelToken;
 			public uint32 ChannelTokenSize;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_TOKEN_BINDING_INFO
-		{
+		public struct HTTP_REQUEST_TOKEN_BINDING_INFO		{
 			public uint8* TokenBinding;
 			public uint32 TokenBindingSize;
 			public uint8* EKM;
@@ -595,8 +576,7 @@ namespace Win32
 			public uint8 KeyType;
 		}
 		[CRepr]
-		public struct HTTP_LOGGING_INFO
-		{
+		public struct HTTP_LOGGING_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public uint32 LoggingFlags;
 			public PWSTR SoftwareName;
@@ -613,51 +593,43 @@ namespace Win32
 			public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 		}
 		[CRepr]
-		public struct HTTP_BINDING_INFO
-		{
+		public struct HTTP_BINDING_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public HANDLE RequestQueueHandle;
 		}
 		[CRepr]
-		public struct HTTP_PROTECTION_LEVEL_INFO
-		{
+		public struct HTTP_PROTECTION_LEVEL_INFO		{
 			public HTTP_PROPERTY_FLAGS Flags;
 			public HTTP_PROTECTION_LEVEL_TYPE Level;
 		}
 		[CRepr]
-		public struct HTTP_BYTE_RANGE
-		{
+		public struct HTTP_BYTE_RANGE		{
 			public ULARGE_INTEGER StartingOffset;
 			public ULARGE_INTEGER Length;
 		}
 		[CRepr]
-		public struct HTTP_VERSION
-		{
+		public struct HTTP_VERSION		{
 			public uint16 MajorVersion;
 			public uint16 MinorVersion;
 		}
 		[CRepr]
-		public struct HTTP_KNOWN_HEADER
-		{
+		public struct HTTP_KNOWN_HEADER		{
 			public uint16 RawValueLength;
 			public PSTR pRawValue;
 		}
 		[CRepr]
-		public struct HTTP_UNKNOWN_HEADER
-		{
+		public struct HTTP_UNKNOWN_HEADER		{
 			public uint16 NameLength;
 			public uint16 RawValueLength;
 			public PSTR pName;
 			public PSTR pRawValue;
 		}
 		[CRepr]
-		public struct HTTP_LOG_DATA
-		{
+		public struct HTTP_LOG_DATA		{
 			public HTTP_LOG_DATA_TYPE Type;
 		}
 		[CRepr]
-		public struct HTTP_LOG_FIELDS_DATA
-		{
+		public struct HTTP_LOG_FIELDS_DATA		{
 			public HTTP_LOG_DATA Base;
 			public uint16 UserNameLength;
 			public uint16 UriStemLength;
@@ -690,14 +662,12 @@ namespace Win32
 			public uint16 SubStatus;
 		}
 		[CRepr]
-		public struct HTTP_DATA_CHUNK
-		{
+		public struct HTTP_DATA_CHUNK		{
 			public HTTP_DATA_CHUNK_TYPE DataChunkType;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public _FromMemory_e__Struct FromMemory;
 				public _FromFileHandle_e__Struct FromFileHandle;
 				public _FromFragmentCache_e__Struct FromFragmentCache;
@@ -705,40 +675,34 @@ namespace Win32
 				public _Trailers_e__Struct Trailers;
 				
 				[CRepr]
-				public struct _FromFragmentCacheEx_e__Struct
-				{
+				public struct _FromFragmentCacheEx_e__Struct				{
 					public HTTP_BYTE_RANGE ByteRange;
 					public PWSTR pFragmentName;
 				}
 				[CRepr]
-				public struct _FromFileHandle_e__Struct
-				{
+				public struct _FromFileHandle_e__Struct				{
 					public HTTP_BYTE_RANGE ByteRange;
 					public HANDLE FileHandle;
 				}
 				[CRepr]
-				public struct _FromFragmentCache_e__Struct
-				{
+				public struct _FromFragmentCache_e__Struct				{
 					public uint16 FragmentNameLength;
 					public PWSTR pFragmentName;
 				}
 				[CRepr]
-				public struct _FromMemory_e__Struct
-				{
+				public struct _FromMemory_e__Struct				{
 					public void* pBuffer;
 					public uint32 BufferLength;
 				}
 				[CRepr]
-				public struct _Trailers_e__Struct
-				{
+				public struct _Trailers_e__Struct				{
 					public uint16 TrailerCount;
 					public HTTP_UNKNOWN_HEADER* pTrailers;
 				}
 			}
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_HEADERS
-		{
+		public struct HTTP_REQUEST_HEADERS		{
 			public uint16 UnknownHeaderCount;
 			public HTTP_UNKNOWN_HEADER* pUnknownHeaders;
 			public uint16 TrailerCount;
@@ -746,8 +710,7 @@ namespace Win32
 			public HTTP_KNOWN_HEADER[41] KnownHeaders;
 		}
 		[CRepr]
-		public struct HTTP_RESPONSE_HEADERS
-		{
+		public struct HTTP_RESPONSE_HEADERS		{
 			public uint16 UnknownHeaderCount;
 			public HTTP_UNKNOWN_HEADER* pUnknownHeaders;
 			public uint16 TrailerCount;
@@ -755,28 +718,24 @@ namespace Win32
 			public HTTP_KNOWN_HEADER[30] KnownHeaders;
 		}
 		[CRepr]
-		public struct HTTP_DELEGATE_REQUEST_PROPERTY_INFO
-		{
+		public struct HTTP_DELEGATE_REQUEST_PROPERTY_INFO		{
 			public HTTP_DELEGATE_REQUEST_PROPERTY_ID PropertyId;
 			public uint32 PropertyInfoLength;
 			public void* PropertyInfo;
 		}
 		[CRepr]
-		public struct HTTP_CREATE_REQUEST_QUEUE_PROPERTY_INFO
-		{
+		public struct HTTP_CREATE_REQUEST_QUEUE_PROPERTY_INFO		{
 			public HTTP_CREATE_REQUEST_QUEUE_PROPERTY_ID PropertyId;
 			public uint32 PropertyInfoLength;
 			public void* PropertyInfo;
 		}
 		[CRepr]
-		public struct HTTP_TRANSPORT_ADDRESS
-		{
+		public struct HTTP_TRANSPORT_ADDRESS		{
 			public SOCKADDR* pRemoteAddress;
 			public SOCKADDR* pLocalAddress;
 		}
 		[CRepr]
-		public struct HTTP_COOKED_URL
-		{
+		public struct HTTP_COOKED_URL		{
 			public uint16 FullUrlLength;
 			public uint16 HostLength;
 			public uint16 AbsPathLength;
@@ -787,8 +746,7 @@ namespace Win32
 			public PWSTR pQueryString;
 		}
 		[CRepr]
-		public struct HTTP_SSL_CLIENT_CERT_INFO
-		{
+		public struct HTTP_SSL_CLIENT_CERT_INFO		{
 			public uint32 CertFlags;
 			public uint32 CertEncodedSize;
 			public uint8* pCertEncoded;
@@ -796,8 +754,7 @@ namespace Win32
 			public BOOLEAN CertDeniedByMapper;
 		}
 		[CRepr]
-		public struct HTTP_SSL_INFO
-		{
+		public struct HTTP_SSL_INFO		{
 			public uint16 ServerCertKeySize;
 			public uint16 ConnectionKeySize;
 			public uint32 ServerCertIssuerSize;
@@ -808,8 +765,7 @@ namespace Win32
 			public uint32 SslClientCertNegotiated;
 		}
 		[CRepr]
-		public struct HTTP_SSL_PROTOCOL_INFO
-		{
+		public struct HTTP_SSL_PROTOCOL_INFO		{
 			public uint32 Protocol;
 			public uint32 CipherType;
 			public uint32 CipherStrength;
@@ -819,29 +775,25 @@ namespace Win32
 			public uint32 KeyExchangeStrength;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_SIZING_INFO
-		{
+		public struct HTTP_REQUEST_SIZING_INFO		{
 			public uint64 Flags;
 			public uint32 RequestIndex;
 			public uint32 RequestSizingCount;
 			public uint64[5] RequestSizing;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_TIMING_INFO
-		{
+		public struct HTTP_REQUEST_TIMING_INFO		{
 			public uint32 RequestTimingCount;
 			public uint64[30] RequestTiming;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_INFO
-		{
+		public struct HTTP_REQUEST_INFO		{
 			public HTTP_REQUEST_INFO_TYPE InfoType;
 			public uint32 InfoLength;
 			public void* pInfo;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_AUTH_INFO
-		{
+		public struct HTTP_REQUEST_AUTH_INFO		{
 			public HTTP_AUTH_STATUS AuthStatus;
 			public int32 SecStatus;
 			public uint32 Flags;
@@ -857,8 +809,7 @@ namespace Win32
 			public PWSTR pPackageName;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_V1
-		{
+		public struct HTTP_REQUEST_V1		{
 			public uint32 Flags;
 			public uint64 ConnectionId;
 			public uint64 RequestId;
@@ -879,15 +830,13 @@ namespace Win32
 			public HTTP_SSL_INFO* pSslInfo;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_V2
-		{
+		public struct HTTP_REQUEST_V2		{
 			public HTTP_REQUEST_V1 __AnonymousBase_http_L1861_C35;
 			public uint16 RequestInfoCount;
 			public HTTP_REQUEST_INFO* pRequestInfo;
 		}
 		[CRepr]
-		public struct HTTP_RESPONSE_V1
-		{
+		public struct HTTP_RESPONSE_V1		{
 			public uint32 Flags;
 			public HTTP_VERSION Version;
 			public uint16 StatusCode;
@@ -898,63 +847,53 @@ namespace Win32
 			public HTTP_DATA_CHUNK* pEntityChunks;
 		}
 		[CRepr]
-		public struct HTTP_RESPONSE_INFO
-		{
+		public struct HTTP_RESPONSE_INFO		{
 			public HTTP_RESPONSE_INFO_TYPE Type;
 			public uint32 Length;
 			public void* pInfo;
 		}
 		[CRepr]
-		public struct HTTP_MULTIPLE_KNOWN_HEADERS
-		{
+		public struct HTTP_MULTIPLE_KNOWN_HEADERS		{
 			public HTTP_HEADER_ID HeaderId;
 			public uint32 Flags;
 			public uint16 KnownHeaderCount;
 			public HTTP_KNOWN_HEADER* KnownHeaders;
 		}
 		[CRepr]
-		public struct HTTP_RESPONSE_V2
-		{
+		public struct HTTP_RESPONSE_V2		{
 			public HTTP_RESPONSE_V1 __AnonymousBase_http_L2050_C36;
 			public uint16 ResponseInfoCount;
 			public HTTP_RESPONSE_INFO* pResponseInfo;
 		}
 		[CRepr]
-		public struct HTTPAPI_VERSION
-		{
+		public struct HTTPAPI_VERSION		{
 			public uint16 HttpApiMajorVersion;
 			public uint16 HttpApiMinorVersion;
 		}
 		[CRepr]
-		public struct HTTP_CACHE_POLICY
-		{
+		public struct HTTP_CACHE_POLICY		{
 			public HTTP_CACHE_POLICY_TYPE Policy;
 			public uint32 SecondsToLive;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_KEY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_KEY		{
 			public SOCKADDR* pIpPort;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_KEY_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_KEY_EX		{
 			public SOCKADDR_STORAGE IpPort;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SNI_KEY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SNI_KEY		{
 			public SOCKADDR_STORAGE IpPort;
 			public PWSTR Host;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_CCS_KEY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_CCS_KEY		{
 			public SOCKADDR_STORAGE LocalAddress;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_PARAM
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_PARAM		{
 			public uint32 SslHashLength;
 			public void* pSslHash;
 			public Guid AppId;
@@ -967,52 +906,44 @@ namespace Win32
 			public uint32 DefaultFlags;
 		}
 		[CRepr]
-		public struct HTTP2_WINDOW_SIZE_PARAM
-		{
+		public struct HTTP2_WINDOW_SIZE_PARAM		{
 			public uint32 Http2ReceiveWindowSize;
 		}
 		[CRepr]
-		public struct HTTP2_SETTINGS_LIMITS_PARAM
-		{
+		public struct HTTP2_SETTINGS_LIMITS_PARAM		{
 			public uint32 Http2MaxSettingsPerFrame;
 			public uint32 Http2MaxSettingsPerMinute;
 		}
 		[CRepr]
-		public struct HTTP_PERFORMANCE_PARAM
-		{
+		public struct HTTP_PERFORMANCE_PARAM		{
 			public HTTP_PERFORMANCE_PARAM_TYPE Type;
 			public uint32 BufferSize;
 			public void* Buffer;
 		}
 		[CRepr]
-		public struct HTTP_TLS_RESTRICTIONS_PARAM
-		{
+		public struct HTTP_TLS_RESTRICTIONS_PARAM		{
 			public uint32 RestrictionCount;
 			public void* TlsRestrictions;
 		}
 		[CRepr]
-		public struct HTTP_ERROR_HEADERS_PARAM
-		{
+		public struct HTTP_ERROR_HEADERS_PARAM		{
 			public uint16 StatusCode;
 			public uint16 HeaderCount;
 			public HTTP_UNKNOWN_HEADER* Headers;
 		}
 		[CRepr]
-		public struct HTTP_TLS_SESSION_TICKET_KEYS_PARAM
-		{
+		public struct HTTP_TLS_SESSION_TICKET_KEYS_PARAM		{
 			public uint32 SessionTicketKeyCount;
 			public void* SessionTicketKeys;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_PARAM_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_PARAM_EX		{
 			public HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE ParamType;
 			public uint64 Flags;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
-			public struct _Anonymous_e__Union
-			{
+			public struct _Anonymous_e__Union			{
 				public HTTP2_WINDOW_SIZE_PARAM Http2WindowSizeParam;
 				public HTTP2_SETTINGS_LIMITS_PARAM Http2SettingsLimitsParam;
 				public HTTP_PERFORMANCE_PARAM HttpPerformanceParam;
@@ -1022,151 +953,127 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SET		{
 			public HTTP_SERVICE_CONFIG_SSL_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SNI_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SNI_SET		{
 			public HTTP_SERVICE_CONFIG_SSL_SNI_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_CCS_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_CCS_SET		{
 			public HTTP_SERVICE_CONFIG_SSL_CCS_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SET_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SET_EX		{
 			public HTTP_SERVICE_CONFIG_SSL_KEY_EX KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM_EX ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX		{
 			public HTTP_SERVICE_CONFIG_SSL_SNI_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM_EX ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX		{
 			public HTTP_SERVICE_CONFIG_SSL_CCS_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_SSL_PARAM_EX ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_QUERY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_QUERY		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_KEY KeyDesc;
 			public uint32 dwToken;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_SNI_KEY KeyDesc;
 			public uint32 dwToken;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_CCS_KEY KeyDesc;
 			public uint32 dwToken;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_QUERY_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_QUERY_EX		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_KEY_EX KeyDesc;
 			public uint32 dwToken;
 			public HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE ParamType;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_SNI_KEY KeyDesc;
 			public uint32 dwToken;
 			public HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE ParamType;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX
-		{
+		public struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_SSL_CCS_KEY KeyDesc;
 			public uint32 dwToken;
 			public HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE ParamType;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM
-		{
+		public struct HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM		{
 			public uint16 AddrLength;
 			public SOCKADDR* pAddress;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY
-		{
+		public struct HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY		{
 			public uint32 AddrCount;
 			public SOCKADDR_STORAGE[0] AddrList;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_URLACL_KEY
-		{
+		public struct HTTP_SERVICE_CONFIG_URLACL_KEY		{
 			public PWSTR pUrlPrefix;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_URLACL_PARAM
-		{
+		public struct HTTP_SERVICE_CONFIG_URLACL_PARAM		{
 			public PWSTR pStringSecurityDescriptor;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_URLACL_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_URLACL_SET		{
 			public HTTP_SERVICE_CONFIG_URLACL_KEY KeyDesc;
 			public HTTP_SERVICE_CONFIG_URLACL_PARAM ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_URLACL_QUERY
-		{
+		public struct HTTP_SERVICE_CONFIG_URLACL_QUERY		{
 			public HTTP_SERVICE_CONFIG_QUERY_TYPE QueryDesc;
 			public HTTP_SERVICE_CONFIG_URLACL_KEY KeyDesc;
 			public uint32 dwToken;
 		}
 		[CRepr]
-		public struct HTTP_SERVICE_CONFIG_CACHE_SET
-		{
+		public struct HTTP_SERVICE_CONFIG_CACHE_SET		{
 			public HTTP_SERVICE_CONFIG_CACHE_KEY KeyDesc;
 			public uint32 ParamDesc;
 		}
 		[CRepr]
-		public struct HTTP_QUERY_REQUEST_QUALIFIER_TCP
-		{
+		public struct HTTP_QUERY_REQUEST_QUALIFIER_TCP		{
 			public uint64 Freshness;
 		}
 		[CRepr]
-		public struct HTTP_QUERY_REQUEST_QUALIFIER_QUIC
-		{
+		public struct HTTP_QUERY_REQUEST_QUALIFIER_QUIC		{
 			public uint64 Freshness;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_PROPERTY_SNI
-		{
+		public struct HTTP_REQUEST_PROPERTY_SNI		{
 			public char16[256] Hostname;
 			public uint32 Flags;
 		}
 		[CRepr]
-		public struct HTTP_REQUEST_PROPERTY_STREAM_ERROR
-		{
+		public struct HTTP_REQUEST_PROPERTY_STREAM_ERROR		{
 			public uint32 ErrorCode;
 		}
 		[CRepr]
-		public struct HTTP_WSK_API_TIMINGS
-		{
+		public struct HTTP_WSK_API_TIMINGS		{
 			public uint64 ConnectCount;
 			public uint64 ConnectSum;
 			public uint64 DisconnectCount;
@@ -1181,8 +1088,7 @@ namespace Win32
 			public uint64 ControlSocketSum;
 		}
 		[CRepr]
-		public struct HTTP_QUIC_STREAM_API_TIMINGS
-		{
+		public struct HTTP_QUIC_STREAM_API_TIMINGS		{
 			public uint64 OpenCount;
 			public uint64 OpenSum;
 			public uint64 CloseCount;
@@ -1203,8 +1109,7 @@ namespace Win32
 			public uint64 SetCallbackHandlerSum;
 		}
 		[CRepr]
-		public struct HTTP_QUIC_CONNECTION_API_TIMINGS
-		{
+		public struct HTTP_QUIC_CONNECTION_API_TIMINGS		{
 			public uint64 OpenTime;
 			public uint64 CloseTime;
 			public uint64 StartTime;
@@ -1220,8 +1125,7 @@ namespace Win32
 			public HTTP_QUIC_STREAM_API_TIMINGS ControlStreamTimings;
 		}
 		[CRepr]
-		public struct HTTP_QUIC_API_TIMINGS
-		{
+		public struct HTTP_QUIC_API_TIMINGS		{
 			public HTTP_QUIC_CONNECTION_API_TIMINGS ConnectionTimings;
 			public HTTP_QUIC_STREAM_API_TIMINGS StreamTimings;
 		}

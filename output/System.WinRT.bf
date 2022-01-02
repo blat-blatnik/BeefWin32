@@ -98,40 +98,33 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct EventRegistrationToken
-		{
+		public struct EventRegistrationToken		{
 			public int64 value;
 		}
 		[CRepr]
-		public struct ServerInformation
-		{
+		public struct ServerInformation		{
 			public uint32 dwServerPid;
 			public uint32 dwServerTid;
 			public uint64 ui64ServerAddress;
 		}
 		[CRepr]
-		public struct HSTRING_HEADER
-		{
+		public struct HSTRING_HEADER		{
 			public _Reserved_e__Union Reserved;
 			
 			[CRepr, Union]
-			public struct _Reserved_e__Union
-			{
+			public struct _Reserved_e__Union			{
 				public void* Reserved1;
 				public CHAR[24] Reserved2;
 			}
 		}
 		[CRepr]
-		public struct DispatcherQueueOptions
-		{
+		public struct DispatcherQueueOptions		{
 			public uint32 dwSize;
 			public DISPATCHERQUEUE_THREAD_TYPE threadType;
 			public DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
 		}
 		[CRepr]
-		public struct _RO_REGISTRATION_COOKIE
-		{
-		}
+		public struct _RO_REGISTRATION_COOKIE {}
 		
 		// --- COM Interfaces ---
 		

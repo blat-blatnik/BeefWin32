@@ -195,8 +195,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct WER_REPORT_INFORMATION
-		{
+		public struct WER_REPORT_INFORMATION		{
 			public uint32 dwSize;
 			public HANDLE hProcess;
 			public char16[64] wzConsentKey;
@@ -207,8 +206,7 @@ namespace Win32
 			public HWND hwndParent;
 		}
 		[CRepr]
-		public struct WER_REPORT_INFORMATION_V3
-		{
+		public struct WER_REPORT_INFORMATION_V3		{
 			public uint32 dwSize;
 			public HANDLE hProcess;
 			public char16[64] wzConsentKey;
@@ -221,8 +219,7 @@ namespace Win32
 			public char16[64] wzNamespaceGroup;
 		}
 		[CRepr]
-		public struct WER_DUMP_CUSTOM_OPTIONS
-		{
+		public struct WER_DUMP_CUSTOM_OPTIONS		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public uint32 dwDumpFlags;
@@ -236,8 +233,7 @@ namespace Win32
 			public char16[256] wzPreferredModuleList;
 		}
 		[CRepr]
-		public struct WER_DUMP_CUSTOM_OPTIONS_V2
-		{
+		public struct WER_DUMP_CUSTOM_OPTIONS_V2		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public uint32 dwDumpFlags;
@@ -253,8 +249,7 @@ namespace Win32
 			public uint32 dwOtherModuleResetFlags;
 		}
 		[CRepr]
-		public struct WER_REPORT_INFORMATION_V4
-		{
+		public struct WER_REPORT_INFORMATION_V4		{
 			public uint32 dwSize;
 			public HANDLE hProcess;
 			public char16[64] wzConsentKey;
@@ -270,8 +265,7 @@ namespace Win32
 			public HANDLE hDeleteFilesImpersonationToken;
 		}
 		[CRepr]
-		public struct WER_REPORT_INFORMATION_V5
-		{
+		public struct WER_REPORT_INFORMATION_V5		{
 			public uint32 dwSize;
 			public HANDLE hProcess;
 			public char16[64] wzConsentKey;
@@ -288,8 +282,7 @@ namespace Win32
 			public WER_SUBMIT_RESULT submitResultMax;
 		}
 		[CRepr]
-		public struct WER_DUMP_CUSTOM_OPTIONS_V3
-		{
+		public struct WER_DUMP_CUSTOM_OPTIONS_V3		{
 			public uint32 dwSize;
 			public uint32 dwMask;
 			public uint32 dwDumpFlags;
@@ -308,14 +301,12 @@ namespace Win32
 			public uint32 dwThreadID;
 		}
 		[CRepr]
-		public struct WER_EXCEPTION_INFORMATION
-		{
+		public struct WER_EXCEPTION_INFORMATION		{
 			public EXCEPTION_POINTERS* pExceptionPointers;
 			public BOOL bClientPointers;
 		}
 		[CRepr]
-		public struct WER_RUNTIME_EXCEPTION_INFORMATION
-		{
+		public struct WER_RUNTIME_EXCEPTION_INFORMATION		{
 			public uint32 dwSize;
 			public HANDLE hProcess;
 			public HANDLE hThread;
@@ -326,20 +317,17 @@ namespace Win32
 			public uint32 dwReserved;
 		}
 		[CRepr]
-		public struct WER_REPORT_PARAMETER
-		{
+		public struct WER_REPORT_PARAMETER		{
 			public char16[129] Name;
 			public char16[260] Value;
 		}
 		[CRepr]
-		public struct WER_REPORT_SIGNATURE
-		{
+		public struct WER_REPORT_SIGNATURE		{
 			public char16[65] EventName;
 			public WER_REPORT_PARAMETER[10] Parameters;
 		}
 		[CRepr]
-		public struct WER_REPORT_METADATA_V2
-		{
+		public struct WER_REPORT_METADATA_V2		{
 			public WER_REPORT_SIGNATURE Signature;
 			public Guid BucketId;
 			public Guid ReportId;
@@ -353,8 +341,7 @@ namespace Win32
 			public PWSTR FileNames;
 		}
 		[CRepr]
-		public struct WER_REPORT_METADATA_V3
-		{
+		public struct WER_REPORT_METADATA_V3		{
 			public WER_REPORT_SIGNATURE Signature;
 			public Guid BucketId;
 			public Guid ReportId;
@@ -374,8 +361,7 @@ namespace Win32
 			public uint64 LegacyBucketId;
 		}
 		[CRepr]
-		public struct WER_REPORT_METADATA_V1
-		{
+		public struct WER_REPORT_METADATA_V1		{
 			public WER_REPORT_SIGNATURE Signature;
 			public Guid BucketId;
 			public Guid ReportId;

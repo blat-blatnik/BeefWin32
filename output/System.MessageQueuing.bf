@@ -1392,11 +1392,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IMSMQEvent2 : IMSMQEvent
@@ -1420,11 +1417,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IMSMQEvent2.VTable
-			{
-			}
+			public struct VTable : IMSMQEvent2.VTable {}
 		}
 		[CRepr]
 		public struct IMSMQTransaction : IDispatch
@@ -2109,11 +2103,8 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-
 			[CRepr]
-			public struct VTable : IDispatch.VTable
-			{
-			}
+			public struct VTable : IDispatch.VTable {}
 		}
 		[CRepr]
 		public struct IMSMQTransaction2 : IMSMQTransaction

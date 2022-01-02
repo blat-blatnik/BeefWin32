@@ -150,8 +150,7 @@ namespace Win32
 		// --- Structs ---
 		
 		[CRepr]
-		public struct MANIPULATION_TRANSFORM
-		{
+		public struct MANIPULATION_TRANSFORM		{
 			public float translationX;
 			public float translationY;
 			public float scale;
@@ -159,34 +158,29 @@ namespace Win32
 			public float rotation;
 		}
 		[CRepr]
-		public struct MANIPULATION_VELOCITY
-		{
+		public struct MANIPULATION_VELOCITY		{
 			public float velocityX;
 			public float velocityY;
 			public float velocityExpansion;
 			public float velocityAngular;
 		}
 		[CRepr]
-		public struct INTERACTION_ARGUMENTS_MANIPULATION
-		{
+		public struct INTERACTION_ARGUMENTS_MANIPULATION		{
 			public MANIPULATION_TRANSFORM delta;
 			public MANIPULATION_TRANSFORM cumulative;
 			public MANIPULATION_VELOCITY velocity;
 			public MANIPULATION_RAILS_STATE railsState;
 		}
 		[CRepr]
-		public struct INTERACTION_ARGUMENTS_TAP
-		{
+		public struct INTERACTION_ARGUMENTS_TAP		{
 			public uint32 count;
 		}
 		[CRepr]
-		public struct INTERACTION_ARGUMENTS_CROSS_SLIDE
-		{
+		public struct INTERACTION_ARGUMENTS_CROSS_SLIDE		{
 			public CROSS_SLIDE_FLAGS flags;
 		}
 		[CRepr]
-		public struct INTERACTION_CONTEXT_OUTPUT
-		{
+		public struct INTERACTION_CONTEXT_OUTPUT		{
 			public INTERACTION_ID interactionId;
 			public INTERACTION_FLAGS interactionFlags;
 			public POINTER_INPUT_TYPE inputType;
@@ -195,16 +189,14 @@ namespace Win32
 			public _arguments_e__Union arguments;
 			
 			[CRepr, Union]
-			public struct _arguments_e__Union
-			{
+			public struct _arguments_e__Union			{
 				public INTERACTION_ARGUMENTS_MANIPULATION manipulation;
 				public INTERACTION_ARGUMENTS_TAP tap;
 				public INTERACTION_ARGUMENTS_CROSS_SLIDE crossSlide;
 			}
 		}
 		[CRepr]
-		public struct INTERACTION_CONTEXT_OUTPUT2
-		{
+		public struct INTERACTION_CONTEXT_OUTPUT2		{
 			public INTERACTION_ID interactionId;
 			public INTERACTION_FLAGS interactionFlags;
 			public POINTER_INPUT_TYPE inputType;
@@ -215,22 +207,19 @@ namespace Win32
 			public _arguments_e__Union arguments;
 			
 			[CRepr, Union]
-			public struct _arguments_e__Union
-			{
+			public struct _arguments_e__Union			{
 				public INTERACTION_ARGUMENTS_MANIPULATION manipulation;
 				public INTERACTION_ARGUMENTS_TAP tap;
 				public INTERACTION_ARGUMENTS_CROSS_SLIDE crossSlide;
 			}
 		}
 		[CRepr]
-		public struct INTERACTION_CONTEXT_CONFIGURATION
-		{
+		public struct INTERACTION_CONTEXT_CONFIGURATION		{
 			public INTERACTION_ID interactionId;
 			public INTERACTION_CONFIGURATION_FLAGS enable;
 		}
 		[CRepr]
-		public struct CROSS_SLIDE_PARAMETER
-		{
+		public struct CROSS_SLIDE_PARAMETER		{
 			public CROSS_SLIDE_THRESHOLD threshold;
 			public float distance;
 		}
