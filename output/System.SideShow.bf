@@ -88,7 +88,7 @@ namespace Win32
 			public uint32 MenuPage;
 			public uint32 MenuItemId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CONTENT_MISSING_EVENT_DATA
 		{
 			public uint32 cbContentMissingEventData;
@@ -96,7 +96,7 @@ namespace Win32
 			public Guid EndpointId;
 			public uint32 ContentId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct APPLICATION_EVENT_DATA
 		{
 			public uint32 cbApplicationEventData;
@@ -106,19 +106,19 @@ namespace Win32
 			public uint32 cbEventData;
 			public uint8[0] bEventData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICE_USER_CHANGE_EVENT_DATA
 		{
 			public uint32 cbDeviceUserChangeEventData;
 			public char16 wszUser;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NEW_EVENT_DATA_AVAILABLE
 		{
 			public uint32 cbNewEventDataAvailable;
 			public uint32 dwVersion;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EVENT_DATA_HEADER
 		{
 			public uint32 cbEventDataHeader;

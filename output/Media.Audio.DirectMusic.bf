@@ -521,7 +521,7 @@ namespace Win32
 		{
 			public uint32 cbWaveData;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct DMUS_EVENTHEADER
 		{
 			public uint32 cbEvent;
@@ -711,13 +711,13 @@ namespace Win32
 			public uint16 wDIFMode;
 			public uint16 wBlkDiv;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MDEVICECAPSEX
 		{
 			public uint32 cbSize;
 			public void* pCaps;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOPENDESC
 		{
 			public HMIDI hMidi;

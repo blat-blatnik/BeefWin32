@@ -1965,7 +1965,7 @@ namespace Win32
 			public uint32 CD_ulFlags;
 			public char16[260] CD_szDescription;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MEM_RANGE
 		{
 			public uint64 MR_Align;
@@ -1975,7 +1975,7 @@ namespace Win32
 			public uint32 MR_Flags;
 			public uint32 MR_Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MEM_DES
 		{
 			public uint32 MD_Count;
@@ -1991,7 +1991,7 @@ namespace Win32
 			public MEM_DES MEM_Header;
 			public MEM_RANGE[0] MEM_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct Mem_Large_Range_s
 		{
 			public uint64 MLR_Align;
@@ -2001,7 +2001,7 @@ namespace Win32
 			public uint32 MLR_Flags;
 			public uint32 MLR_Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct Mem_Large_Des_s
 		{
 			public uint32 MLD_Count;
@@ -2017,7 +2017,7 @@ namespace Win32
 			public Mem_Large_Des_s MEM_LARGE_Header;
 			public Mem_Large_Range_s[0] MEM_LARGE_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IO_RANGE
 		{
 			public uint64 IOR_Align;
@@ -2027,7 +2027,7 @@ namespace Win32
 			public uint32 IOR_RangeFlags;
 			public uint64 IOR_Alias;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IO_DES
 		{
 			public uint32 IOD_Count;
@@ -2042,14 +2042,14 @@ namespace Win32
 			public IO_DES IO_Header;
 			public IO_RANGE[0] IO_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DMA_RANGE
 		{
 			public uint32 DR_Min;
 			public uint32 DR_Max;
 			public uint32 DR_Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DMA_DES
 		{
 			public uint32 DD_Count;
@@ -2063,14 +2063,14 @@ namespace Win32
 			public DMA_DES DMA_Header;
 			public DMA_RANGE[0] DMA_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IRQ_RANGE
 		{
 			public uint32 IRQR_Min;
 			public uint32 IRQR_Max;
 			public uint32 IRQR_Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IRQ_DES_32
 		{
 			public uint32 IRQD_Count;
@@ -2079,7 +2079,7 @@ namespace Win32
 			public uint32 IRQD_Alloc_Num;
 			public uint32 IRQD_Affinity;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IRQ_DES_64
 		{
 			public uint32 IRQD_Count;
@@ -2100,14 +2100,14 @@ namespace Win32
 			public IRQ_DES_64 IRQ_Header;
 			public IRQ_RANGE[0] IRQ_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DevPrivate_Range_s
 		{
 			public uint32 PR_Data1;
 			public uint32 PR_Data2;
 			public uint32 PR_Data3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DevPrivate_Des_s
 		{
 			public uint32 PD_Count;
@@ -2123,7 +2123,7 @@ namespace Win32
 			public DevPrivate_Des_s PRV_Header;
 			public DevPrivate_Range_s[0] PRV_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CS_DES
 		{
 			public uint32 CSD_SignatureLength;
@@ -2138,7 +2138,7 @@ namespace Win32
 		{
 			public CS_DES CS_Header;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PCCARD_DES
 		{
 			public uint32 PCD_Count;
@@ -2157,7 +2157,7 @@ namespace Win32
 		{
 			public PCCARD_DES PcCard_Header;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MFCARD_DES
 		{
 			public uint32 PMF_Count;
@@ -2173,7 +2173,7 @@ namespace Win32
 		{
 			public MFCARD_DES MfCard_Header;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BUSNUMBER_RANGE
 		{
 			public uint32 BUSR_Min;
@@ -2181,7 +2181,7 @@ namespace Win32
 			public uint32 BUSR_nBusNumbers;
 			public uint32 BUSR_Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BUSNUMBER_DES
 		{
 			public uint32 BUSD_Count;
@@ -2196,7 +2196,7 @@ namespace Win32
 			public BUSNUMBER_DES BusNumber_Header;
 			public BUSNUMBER_RANGE[0] BusNumber_Data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct Connection_Des_s
 		{
 			public uint32 COND_Type;
@@ -2212,14 +2212,14 @@ namespace Win32
 		{
 			public Connection_Des_s Connection_Header;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct HWProfileInfo_sA
 		{
 			public uint32 HWPI_ulHWProfile;
 			public CHAR[80] HWPI_szFriendlyName;
 			public uint32 HWPI_dwFlags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct HWProfileInfo_sW
 		{
 			public uint32 HWPI_ulHWProfile;

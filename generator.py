@@ -432,11 +432,15 @@ for filename in filenames:
                         global indent
                         name = replace_type_name(type['Name'], namespace_name)
                         kind = type['Kind']
+                        pack = type['PackingSize']
 
-                        if kind == 'Struct':
-                            output.write(f'{indent}[CRepr]\n')
-                        elif kind == 'Union':
-                            output.write(f'{indent}[CRepr, Union]\n')
+                        attribs = ['CRepr']
+                        if kind == 'Union':
+                            attribs.append('Union')
+                        if pack != 0:
+                            attribs.append(f'Packed({pack})')
+                        
+                        output.write(f'{indent}[{", ".join(attribs)}]\n')
                         output.write(f'{indent}public struct {name}')
 
                         fields = type['Fields']

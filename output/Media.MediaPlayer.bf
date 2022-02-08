@@ -1000,13 +1000,13 @@ namespace Win32
 			public BSTR bstrMenuText;
 			public BSTR bstrHelpText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WMP_WMDM_METADATA_ROUND_TRIP_PC2DEVICE
 		{
 			public uint32 dwChangesSinceTransactionID;
 			public uint32 dwResultSetStartingIndex;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WMP_WMDM_METADATA_ROUND_TRIP_DEVICE2PC
 		{
 			public uint32 dwCurrentTransactionID;

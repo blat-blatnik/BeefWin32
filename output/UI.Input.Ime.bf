@@ -888,7 +888,7 @@ namespace Win32
 			public uint32 cLineHeight;
 			public RECT rcDocument;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEDLG
 		{
 			public int32 cbIMEDLG;
@@ -896,7 +896,7 @@ namespace Win32
 			public PWSTR lpwstrWord;
 			public int32 nTabId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WDD
 		{
 			public uint16 wDispPos;
@@ -908,20 +908,20 @@ namespace Win32
 			public uint16 _bitfield;
 			public void* pReserved;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous2_e__Union
 			{
 				public uint16 cchRead;
 				public uint16 cchComp;
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous1_e__Union
 			{
 				public uint16 wReadPos;
 				public uint16 wCompPos;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MORRSLT
 		{
 			public uint32 dwSize;
@@ -938,26 +938,26 @@ namespace Win32
 			public void* pPrivate;
 			public char16[0] BLKBuff;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous2_e__Union
 			{
 				public uint16 cchRead;
 				public uint16 cchComp;
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous3_e__Union
 			{
 				public uint16* pchReadIdxWDD;
 				public uint16* pchCompIdxWDD;
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous1_e__Union
 			{
 				public PWSTR pwchRead;
 				public PWSTR pwchComp;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEWRD
 		{
 			public PWSTR pwchReading;
@@ -968,13 +968,13 @@ namespace Win32
 			public IMEUCT uct;
 			public void* pvComment;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulPos;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 nPos1;
@@ -982,7 +982,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMESHF
 		{
 			public uint16 cbShf;
@@ -991,26 +991,26 @@ namespace Win32
 			public CHAR[256] szDescription;
 			public CHAR[128] szCopyright;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct POSTBL
 		{
 			public uint16 nPos;
 			public uint8* szName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEDP
 		{
 			public IMEWRD wrdModifier;
 			public IMEWRD wrdModifiee;
 			public IMEREL relID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSINIT
 		{
 			public int32 cbSize;
 			public HWND hWnd;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSKEY
 		{
 			public uint32 dwStatus;
@@ -1019,20 +1019,20 @@ namespace Win32
 			public _Anonymous1_e__Union Anonymous1;
 			public _Anonymous2_e__Union Anonymous2;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous1_e__Union
 			{
 				public uint32 dwControl;
 				public uint32 dwNotUsed;
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous2_e__Union
 			{
 				public char16[31] pwszDscr;
 				public char16[31] pwszNoUse;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMS
 		{
 			public int32 cbSize;
@@ -1040,14 +1040,14 @@ namespace Win32
 			public uint32 cKeyList;
 			public IMEKMSKEY* pKeyList;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSNTFY
 		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public BOOL fSelect;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSKMP
 		{
 			public int32 cbSize;
@@ -1058,14 +1058,14 @@ namespace Win32
 			public int32 cKeyList;
 			public IMEKMSKEY* pKeyList;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSINVK
 		{
 			public int32 cbSize;
 			public HIMC hIMC;
 			public uint32 dwControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMEKMSFUNCDESC
 		{
 			public int32 cbSize;

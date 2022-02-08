@@ -350,7 +350,7 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WCN_VALUE_TYPE_PRIMARY_DEVICE_TYPE
 		{
 			public uint16 Category;

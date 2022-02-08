@@ -322,7 +322,7 @@ namespace Win32
 		}
 		[CRepr]
 		public struct SERIALIZEDPROPSTORAGE {}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PROPPRG
 		{
 			public uint16 flPrg;

@@ -2024,7 +2024,7 @@ namespace Win32
 			public BITMAPCOREHEADER bmciHeader;
 			public RGBTRIPLE[0] bmciColors;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct BITMAPFILEHEADER
 		{
 			public uint16 bfType;
@@ -2045,7 +2045,7 @@ namespace Win32
 			public uint16 rdFunction;
 			public uint16[0] rdParm;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct METAHEADER
 		{
 			public uint16 mtType;

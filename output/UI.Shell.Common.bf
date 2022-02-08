@@ -89,7 +89,7 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHITEMID
 		{
 			public uint16 cb;
@@ -114,7 +114,7 @@ namespace Win32
 				public uint8[260] cStr;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHELLDETAILS
 		{
 			public int32 fmt;

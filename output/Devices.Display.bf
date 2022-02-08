@@ -1461,13 +1461,13 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHYSICAL_MONITOR
 		{
 			public HANDLE hPhysicalMonitor;
 			public char16[128] szPhysicalMonitorDescription;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MC_TIMING_REPORT
 		{
 			public uint32 dwHorizontalFrequencyInHZ;

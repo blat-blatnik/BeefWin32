@@ -649,7 +649,7 @@ namespace Win32
 			public char16[18] sz085;
 			public char16[30] sz086;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MTP_COMMAND_DATA_IN
 		{
 			public uint16 OpCode;
@@ -659,7 +659,7 @@ namespace Win32
 			public uint32 CommandWriteDataSize;
 			public uint8[0] CommandWriteData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MTP_COMMAND_DATA_OUT
 		{
 			public uint16 ResponseCode;

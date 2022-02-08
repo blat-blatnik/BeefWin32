@@ -1136,7 +1136,7 @@ namespace Win32
 			public uint16 mibeNum;
 			public uint16 attributeId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SOCKADDR_BTH
 		{
 			public uint16 addressFamily;
@@ -1144,7 +1144,7 @@ namespace Win32
 			public Guid serviceClassId;
 			public uint32 port;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_SET_SERVICE
 		{
 			public uint32* pSdpVersion;
@@ -1154,13 +1154,13 @@ namespace Win32
 			public uint32 ulRecordLength;
 			public uint8[0] pRecord;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_QUERY_DEVICE
 		{
 			public uint32 LAP;
 			public uint8 length;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_QUERY_SERVICE
 		{
 			public uint32 type;
@@ -1191,7 +1191,7 @@ namespace Win32
 			public uint8 ParameterMask1;
 			public uint8 ParameterMask2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFCOMM_COMMAND
 		{
 			public uint32 CmdType;
@@ -1205,7 +1205,7 @@ namespace Win32
 				public RFCOMM_RPN_DATA RPN;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_PING_REQ
 		{
 			public uint64 btAddr;
@@ -1218,20 +1218,20 @@ namespace Win32
 			public uint8 dataLen;
 			public uint8[44] data;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_INFO_REQ
 		{
 			public uint64 btAddr;
 			public uint16 infoType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BTH_INFO_RSP
 		{
 			public uint16 result;
 			public uint8 dataLen;
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint16 connectionlessMTU;

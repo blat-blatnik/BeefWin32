@@ -852,7 +852,7 @@ namespace Win32
 			public void* Data;
 			public ip_option_information32 Options;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IPV6_ADDRESS_EX
 		{
 			public uint16 sin6_port;

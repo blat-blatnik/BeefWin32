@@ -49,7 +49,7 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RESTOREPOINTINFOA
 		{
 			public RESTOREPOINTINFO_EVENT_TYPE dwEventType;
@@ -57,7 +57,7 @@ namespace Win32
 			public int64 llSequenceNumber;
 			public CHAR[64] szDescription;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RESTOREPOINTINFOW
 		{
 			public RESTOREPOINTINFO_EVENT_TYPE dwEventType;
@@ -65,7 +65,7 @@ namespace Win32
 			public int64 llSequenceNumber;
 			public char16[256] szDescription;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct _RESTOREPTINFOEX
 		{
 			public FILETIME ftCreation;
@@ -74,7 +74,7 @@ namespace Win32
 			public uint32 dwRPNum;
 			public char16[256] szDescription;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct STATEMGRSTATUS
 		{
 			public uint32 nStatus;

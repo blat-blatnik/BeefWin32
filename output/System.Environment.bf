@@ -54,7 +54,7 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ENCLAVE_IDENTITY
 		{
 			public uint8[32] OwnerId;
@@ -69,7 +69,7 @@ namespace Win32
 			public uint32 SigningLevel;
 			public uint32 EnclaveType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VBS_ENCLAVE_REPORT_PKG_HEADER
 		{
 			public uint32 PackageSize;
@@ -79,7 +79,7 @@ namespace Win32
 			public uint32 SignatureSize;
 			public uint32 Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VBS_ENCLAVE_REPORT
 		{
 			public uint32 ReportSize;
@@ -87,13 +87,13 @@ namespace Win32
 			public uint8[64] EnclaveData;
 			public ENCLAVE_IDENTITY EnclaveIdentity;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VBS_ENCLAVE_REPORT_VARDATA_HEADER
 		{
 			public uint32 DataType;
 			public uint32 Size;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VBS_ENCLAVE_REPORT_MODULE
 		{
 			public VBS_ENCLAVE_REPORT_VARDATA_HEADER Header;

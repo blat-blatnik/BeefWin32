@@ -4874,7 +4874,7 @@ namespace Win32
 		{
 			public uint32 ulDialogNumber;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BDA_ISDBCAS_REQUESTHEADER
 		{
 			public uint8 bInstruction;
@@ -4882,7 +4882,7 @@ namespace Win32
 			public uint32 ulDataLength;
 			public uint8[0] argbIsdbCommand;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BDA_ISDBCAS_RESPONSEDATA
 		{
 			public int32 lResult;
@@ -4905,14 +4905,14 @@ namespace Win32
 			public uint8 bMessageControl;
 			public uint8[0] bMessageCode;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct BDA_MUX_PIDLISTITEM
 		{
 			public uint16 usPIDNumber;
 			public uint16 usProgramNumber;
 			public MUX_PID_TYPE ePIDType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BDA_TS_SELECTORINFO
 		{
 			public uint8 bTSInfolength;
@@ -5230,20 +5230,20 @@ namespace Win32
 			public int64 rtEnd;
 			public VMR9_SampleFormat SampleFormat;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct RIFFCHUNK
 		{
 			public uint32 fcc;
 			public uint32 cb;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct RIFFLIST
 		{
 			public uint32 fcc;
 			public uint32 cb;
 			public uint32 fccListType;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVIMAINHEADER
 		{
 			public uint32 fcc;
@@ -5260,7 +5260,7 @@ namespace Win32
 			public uint32 dwHeight;
 			public uint32[4] dwReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVIEXTHEADER
 		{
 			public uint32 fcc;
@@ -5268,7 +5268,7 @@ namespace Win32
 			public uint32 dwGrandFrames;
 			public uint32[61] dwFuture;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVISTREAMHEADER
 		{
 			public uint32 fcc;
@@ -5297,14 +5297,14 @@ namespace Win32
 				public int16 bottom;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVIOLDINDEX
 		{
 			public uint32 fcc;
 			public uint32 cb;
 			public _avioldindex_entry[0] aIndex;
 			
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _avioldindex_entry
 			{
 				public uint32 dwChunkId;
@@ -5313,14 +5313,14 @@ namespace Win32
 				public uint32 dwSize;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct TIMECODEDATA
 		{
 			public TIMECODE time;
 			public uint32 dwSMPTEflags;
 			public uint32 dwUser;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVIMETAINDEX
 		{
 			public uint32 fcc;
@@ -5333,7 +5333,7 @@ namespace Win32
 			public uint32[3] dwReserved;
 			public uint32[0] adwIndex;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVISUPERINDEX
 		{
 			public uint32 fcc;
@@ -5346,7 +5346,7 @@ namespace Win32
 			public uint32[3] dwReserved;
 			public _avisuperindex_entry[1022] aIndex;
 			
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _avisuperindex_entry
 			{
 				public uint64 qwOffset;
@@ -5354,13 +5354,13 @@ namespace Win32
 				public uint32 dwDuration;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVISTDINDEX_ENTRY
 		{
 			public uint32 dwOffset;
 			public uint32 dwSize;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVISTDINDEX
 		{
 			public uint32 fcc;
@@ -5374,14 +5374,14 @@ namespace Win32
 			public uint32 dwReserved_3;
 			public AVISTDINDEX_ENTRY[2044] aIndex;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVITIMEDINDEX_ENTRY
 		{
 			public uint32 dwOffset;
 			public uint32 dwSize;
 			public uint32 dwDuration;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct _avitimedindex
 		{
 			public uint32 fcc;
@@ -5396,7 +5396,7 @@ namespace Win32
 			public AVITIMEDINDEX_ENTRY[1362] aIndex;
 			public uint32[2734] adwTrailingFill;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVITIMECODEINDEX
 		{
 			public uint32 fcc;
@@ -5409,7 +5409,7 @@ namespace Win32
 			public uint32[3] dwReserved;
 			public TIMECODEDATA[1022] aIndex;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVITCDLINDEX_ENTRY
 		{
 			public uint32 dwTick;
@@ -5418,7 +5418,7 @@ namespace Win32
 			public uint32 dwUser;
 			public int8[12] szReelId;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct _avitcdlindex
 		{
 			public uint32 fcc;
@@ -5432,7 +5432,7 @@ namespace Win32
 			public AVITCDLINDEX_ENTRY[584] aIndex;
 			public uint32[3512] adwTrailingFill;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct AVIFIELDINDEX
 		{
 			public uint32 fcc;
@@ -5446,7 +5446,7 @@ namespace Win32
 			public uint32 dwReserved3;
 			public _avifieldindex_entry[0] aIndex;
 			
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _avifieldindex_entry
 			{
 				public uint32 dwOffset;
@@ -5818,7 +5818,7 @@ namespace Win32
 			public RECT TargetRect;
 			public BOOL Enter;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WMDRMProtectionInfo
 		{
 			public uint16[25] wszKID;
@@ -5826,7 +5826,7 @@ namespace Win32
 			public uint64 qwIndex;
 			public uint8 bOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct BadSampleInfo
 		{
 			public HRESULT hrReason;
@@ -5868,12 +5868,12 @@ namespace Win32
 			public Guid guidFormatType;
 			public AM_MEDIA_TYPE MediaType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PID_BITS_MIDL
 		{
 			public uint16 Bits;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_HEADER_BITS_MIDL
 		{
 			public uint16 Bits;
@@ -5883,7 +5883,7 @@ namespace Win32
 		{
 			public uint8 Bits;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TID_EXTENSION
 		{
 			public uint16 wTidExt;
@@ -5896,14 +5896,14 @@ namespace Win32
 			public _Header_e__Union Header;
 			public uint8[0] SectionData;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Header_e__Union
 			{
 				public MPEG_HEADER_BITS_MIDL S;
 				public uint16 W;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LONG_SECTION
 		{
 			public uint8 TableId;
@@ -5914,7 +5914,7 @@ namespace Win32
 			public uint8 LastSectionNumber;
 			public uint8[0] RemainingData;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Header_e__Union
 			{
 				public MPEG_HEADER_BITS_MIDL S;
@@ -5927,7 +5927,7 @@ namespace Win32
 				public uint8 B;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DSMCC_SECTION
 		{
 			public uint8 TableId;
@@ -5945,7 +5945,7 @@ namespace Win32
 			public uint16 MessageLength;
 			public uint8[0] RemainingData;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Header_e__Union
 			{
 				public MPEG_HEADER_BITS_MIDL S;
@@ -5958,19 +5958,19 @@ namespace Win32
 				public uint8 B;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_RQST_PACKET
 		{
 			public uint32 dwLength;
 			public SECTION* pSection;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_PACKET_LIST
 		{
 			public uint16 wPacketCount;
 			public MPEG_RQST_PACKET*[0] PacketList;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DSMCC_FILTER_OPTIONS
 		{
 			public BOOL fSpecifyProtocol;
@@ -5989,19 +5989,19 @@ namespace Win32
 			public BOOL fGetModuleCall;
 			public uint16 NumberOfBlocksInModule;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ATSC_FILTER_OPTIONS
 		{
 			public BOOL fSpecifyEtmId;
 			public uint32 EtmId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DVB_EIT_FILTER_OPTIONS
 		{
 			public BOOL fSpecifySegment;
 			public uint8 bSegment;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG2_FILTER
 		{
 			public uint8 bVersionNumber;
@@ -6022,7 +6022,7 @@ namespace Win32
 			public BOOL fSpecifyAtscOptions;
 			public ATSC_FILTER_OPTIONS Atsc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG2_FILTER2
 		{
 			public _Anonymous_e__Union Anonymous;
@@ -6035,7 +6035,7 @@ namespace Win32
 				public _Anonymous_e__Struct Anonymous;
 				public uint8[124] bVersion1Bytes;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint8 bVersionNumber;
@@ -6058,7 +6058,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_STREAM_BUFFER
 		{
 			public HRESULT hr;
@@ -6073,7 +6073,7 @@ namespace Win32
 			public uint8 Minutes;
 			public uint8 Seconds;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_DATE
 		{
 			public uint8 Date;
@@ -6086,17 +6086,17 @@ namespace Win32
 			public MPEG_DATE D;
 			public MPEG_TIME T;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_BCS_DEMUX
 		{
 			public uint32 AVMGraphId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_WINSOCK
 		{
 			public uint32 AVMGraphId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_CONTEXT
 		{
 			public MPEG_CONTEXT_TYPE Type;
@@ -6109,7 +6109,7 @@ namespace Win32
 				public MPEG_WINSOCK Winsock;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_SERVICE_REQUEST
 		{
 			public MPEG_REQUEST_TYPE Type;
@@ -6119,13 +6119,13 @@ namespace Win32
 			public MPEG2_FILTER Filter;
 			public uint32 Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_SERVICE_RESPONSE
 		{
 			public uint32 IPAddress;
 			public uint16 Port;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DSMCC_ELEMENT
 		{
 			public uint16 pid;
@@ -6134,14 +6134,14 @@ namespace Win32
 			public uint32 dwTransactionId;
 			public DSMCC_ELEMENT* pNext;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPE_ELEMENT
 		{
 			public uint16 pid;
 			public uint8 bComponentTag;
 			public MPE_ELEMENT* pNext;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_STREAM_FILTER
 		{
 			public uint16 wPidValue;
@@ -6150,7 +6150,7 @@ namespace Win32
 			public uint8[16] rgchFilter;
 			public uint8[16] rgchMask;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct Mpeg2TableSampleHdr
 		{
 			public uint8 SectionCount;
@@ -6614,13 +6614,13 @@ namespace Win32
 			public uint16 wPIDCount;
 			public uint32[0] pulPIDs;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RATING_ATTRIBUTE
 		{
 			public uint32 rating_attribute_id;
 			public uint32 rating_attribute_value;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RATING_SYSTEM
 		{
 			public Guid rating_system_id;
@@ -6629,13 +6629,13 @@ namespace Win32
 			public uint32 rating_attribute_count;
 			public RATING_ATTRIBUTE* lpratingattrib;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RATING_INFO
 		{
 			public uint32 rating_system_count;
 			public RATING_SYSTEM* lpratingsystem;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PBDAParentalControl
 		{
 			public uint32 rating_system_count;
@@ -6697,12 +6697,12 @@ namespace Win32
 			public uint32 EndFrequency;
 			public BDA_LockType LockRequested;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PID_BITS
 		{
 			public uint16 _bitfield;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG_HEADER_BITS
 		{
 			public uint16 _bitfield;
@@ -6712,7 +6712,7 @@ namespace Win32
 		{
 			public uint8 _bitfield;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEG1WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -6725,7 +6725,7 @@ namespace Win32
 			public uint32 dwPTSLow;
 			public uint32 dwPTSHigh;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MPEGLAYER3WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -6735,7 +6735,7 @@ namespace Win32
 			public uint16 nFramesPerBlock;
 			public uint16 nCodecDelay;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct HEAACWAVEINFO
 		{
 			public WAVEFORMATEX wfx;

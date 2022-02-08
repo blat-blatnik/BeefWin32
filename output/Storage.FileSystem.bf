@@ -2485,7 +2485,7 @@ namespace Win32
 		{
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(4)]
 			public struct _Anonymous_e__Struct
 			{
 				public int64 LowPart;
@@ -2499,7 +2499,7 @@ namespace Win32
 			public TXF_LOG_RECORD_TYPE RecordType;
 			public uint32 RecordLength;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct TXF_LOG_RECORD_WRITE
 		{
 			public uint16 Version;
@@ -2514,7 +2514,7 @@ namespace Win32
 			public uint32 FileNameLength;
 			public uint32 FileNameByteOffsetInStructure;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct TXF_LOG_RECORD_TRUNCATE
 		{
 			public uint16 Version;

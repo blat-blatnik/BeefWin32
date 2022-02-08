@@ -3458,7 +3458,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct HIDP_LINK_COLLECTION_NODE
 		{
 			public uint16 LinkUsage;
@@ -3513,7 +3513,7 @@ namespace Win32
 			public uint8[3] Reserved;
 			public uint32 BitField;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct HIDP_EXTENDED_ATTRIBUTES
 		{
 			public uint8 NumGlobalUnknowns;
@@ -3545,7 +3545,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct HIDD_CONFIGURATION
 		{
 			public void* cookie;

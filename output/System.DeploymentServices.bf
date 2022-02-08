@@ -371,7 +371,7 @@ namespace Win32
 			public uint8 OptionLength;
 			public uint8[0] OptionValue;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PXE_DHCP_MESSAGE
 		{
 			public uint8 Operation;
@@ -391,14 +391,14 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public PXE_DHCP_OPTION Option;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint8[4] bMagicCookie;
 				public uint32 uMagicCookie;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PXE_DHCPV6_OPTION
 		{
 			public uint16 OptionCode;

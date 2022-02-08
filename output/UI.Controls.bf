@@ -4410,7 +4410,7 @@ namespace Win32
 			public NMHDR hdr;
 			public LVITEMW item;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NMLVKEYDOWN
 		{
 			public NMHDR hdr;
@@ -4626,7 +4626,7 @@ namespace Win32
 			public NMHDR hdr;
 			public TVITEMEXW item;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NMTVKEYDOWN
 		{
 			public NMHDR hdr;
@@ -4798,7 +4798,7 @@ namespace Win32
 			public POINT pt;
 			public TCHITTESTINFO_FLAGS flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NMTCKEYDOWN
 		{
 			public NMHDR hdr;
@@ -4945,7 +4945,7 @@ namespace Win32
 			public int32 iField;
 			public int32 iValue;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NMPGSCROLL
 		{
 			public NMHDR hdr;
@@ -5015,13 +5015,13 @@ namespace Win32
 			public BOOL hasQueryText;
 			public BOOL invokeSucceeded;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TASKDIALOG_BUTTON
 		{
 			public int32 nButtonID;
 			public PWSTR pszButtonText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TASKDIALOGCONFIG
 		{
 			public uint32 cbSize;
@@ -5049,13 +5049,13 @@ namespace Win32
 			public int lpCallbackData;
 			public uint32 cxWidth;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous1_e__Union
 			{
 				public HICON hMainIcon;
 				public PWSTR pszMainIcon;
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous2_e__Union
 			{
 				public HICON hFooterIcon;

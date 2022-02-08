@@ -6322,7 +6322,7 @@ namespace Win32
 			public uint8 bY_Value;
 			public uint8 bSampleAlpha8;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DXVA_BufferDescription
 		{
 			public uint32 dwTypeIndex;
@@ -6336,7 +6336,7 @@ namespace Win32
 			public uint32 dwStride;
 			public uint32 dwReservedBits;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DXVA_ConfigPictureDecode
 		{
 			public uint32 dwFunction;
@@ -6357,7 +6357,7 @@ namespace Win32
 			public uint8 bConfigSpecificIDCT;
 			public uint8 bConfig4GroupedCoefs;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DXVA_PictureParameters
 		{
 			public uint16 wDecodedPictureIndex;
@@ -7131,7 +7131,7 @@ namespace Win32
 		{
 			public uint8[256] abEncryptedInitializationParameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_GET_INFO_PARAMETERS
 		{
 			public OPM_OMAC omac;
@@ -7141,7 +7141,7 @@ namespace Win32
 			public uint32 cbParametersSize;
 			public uint8[4056] abParameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7155,7 +7155,7 @@ namespace Win32
 		{
 			public uint8[5] abKeySelectionVector;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_CONNECTED_HDCP_DEVICE_INFORMATION
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7166,14 +7166,14 @@ namespace Win32
 			public uint8[16] Reserved2;
 			public uint8[16] Reserved3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_REQUESTED_INFORMATION
 		{
 			public OPM_OMAC omac;
 			public uint32 cbRequestedInformationSize;
 			public uint8[4076] abRequestedInformation;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_STANDARD_INFORMATION
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7182,7 +7182,7 @@ namespace Win32
 			public uint32 ulReserved;
 			public uint32 ulReserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_ACTUAL_OUTPUT_FORMAT
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7194,7 +7194,7 @@ namespace Win32
 			public uint32 ulFrequencyNumerator;
 			public uint32 ulFrequencyDenominator;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_ACP_AND_CGMSA_SIGNALING
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7211,14 +7211,14 @@ namespace Win32
 			public uint32[4] ulReserved2;
 			public uint32[4] ulReserved3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_OUTPUT_ID_DATA
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
 			public uint32 ulStatusFlags;
 			public uint64 OutputId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_CONFIGURE_PARAMETERS
 		{
 			public OPM_OMAC omac;
@@ -7227,7 +7227,7 @@ namespace Win32
 			public uint32 cbParametersSize;
 			public uint8[4056] abParameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_SET_PROTECTION_LEVEL_PARAMETERS
 		{
 			public uint32 ulProtectionType;
@@ -7235,7 +7235,7 @@ namespace Win32
 			public uint32 Reserved;
 			public uint32 Reserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS
 		{
 			public uint32 ulNewTVProtectionStandard;
@@ -7249,18 +7249,18 @@ namespace Win32
 			public uint32[4] ulReserved2;
 			public uint32 ulReserved3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_SET_HDCP_SRM_PARAMETERS
 		{
 			public uint32 ulSRMVersion;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_GET_CODEC_INFO_PARAMETERS
 		{
 			public uint32 cbVerifier;
 			public uint8[4052] Verifier;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OPM_GET_CODEC_INFO_INFORMATION
 		{
 			public OPM_RANDOM_NUMBER rnRandomNumber;
@@ -7422,13 +7422,13 @@ namespace Win32
 			public uint32 dwRRComponents;
 			public MFRR_COMPONENT_HASH_INFO* pRRComponents;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ASF_FLAT_PICTURE
 		{
 			public uint8 bPictureType;
 			public uint32 dwDataLen;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ASF_FLAT_SYNCHRONISED_LYRICS
 		{
 			public uint8 bTimeStampFormat;

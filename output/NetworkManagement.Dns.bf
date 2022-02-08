@@ -450,13 +450,13 @@ namespace Win32
 			public CHAR[32] MaxSa;
 			public _Data_e__Union Data;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Data_e__Union
 			{
 				public uint32[8] DnsAddrUserDword;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DNS_ADDR_ARRAY
 		{
 			public uint32 MaxCount;
@@ -470,7 +470,7 @@ namespace Win32
 			public uint32 Reserved2;
 			public DNS_ADDR[0] AddrArray;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DNS_HEADER
 		{
 			public uint16 Xid;
@@ -481,20 +481,20 @@ namespace Win32
 			public uint16 NameServerCount;
 			public uint16 AdditionalCount;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DNS_HEADER_EXT
 		{
 			public uint16 _bitfield;
 			public uint8 chRcode;
 			public uint8 chVersion;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DNS_WIRE_QUESTION
 		{
 			public uint16 QuestionType;
 			public uint16 QuestionClass;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DNS_WIRE_RECORD
 		{
 			public uint16 RecordType;

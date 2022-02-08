@@ -5575,7 +5575,7 @@ namespace Win32
 			public int64 expiration;
 			public void* cryptoParameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct GENERIC_XML_TOKEN
 		{
 			public FILETIME createDate;

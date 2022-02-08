@@ -4,12 +4,11 @@
 
 This is a **mostly untested work in progress**. Use at your own peril.
 
-**Note** Currently, this will not work with Beef 0.43.1 or prior. The blockers are already fixed, but until Beef 0.43.2 releases you will need to use a nightly build from January 1, 2022 onwards. You can get nightly builds [here](https://nightly.beeflang.org/index.html).
+**Note** Currently, this will not work with Beef 0.43.1 or prior. The blockers are already fixed, but until Beef 0.43.2 releases you will need to use a nightly build from February 7th, 2022 onwards. You can get nightly builds [here](https://nightly.beeflang.org/index.html).
 
 ## Current state
 
 - Most of the types, constants, functions, and COM classes should be working at the moment (I've only tested a few).
-- Structs that have an explicit packing size are currently not packed (waiting on [#1339](https://github.com/beefytech/Beef/issues/1339) and [#1340](https://github.com/beefytech/Beef/issues/1340) for that).
 - DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
 - All the generated code is placed into a single static class - `Win32`. I might decide to group them in some other way later.
 - Some types had name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.

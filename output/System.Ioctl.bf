@@ -3197,21 +3197,21 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_SUBSECTION_POINTER
 		{
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public uint32 dwOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_STRUCTURE_VERSION
 		{
 			public uint32 dwSignature;
 			public uint32 dwVersion;
 			public uint32 dwSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_SECTION_HEADER
 		{
 			public Guid guidDeviceDataId;
@@ -3224,13 +3224,13 @@ namespace Win32
 			public uint32 dwFirmwareIssueId;
 			public uint8[132] szIssueDescriptionString;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct GP_LOG_PAGE_DESCRIPTOR
 		{
 			public uint16 LogAddress;
 			public uint16 LogSectors;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_PUBLIC_SUBSECTION
 		{
 			public uint32 dwFlags;
@@ -3243,14 +3243,14 @@ namespace Win32
 		{
 			public uint8[0] bData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_PRIVATE_SUBSECTION
 		{
 			public uint32 dwFlags;
 			public GP_LOG_PAGE_DESCRIPTOR GPLogId;
 			public uint8[0] bData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_STORAGEDEVICE_DATA
 		{
 			public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
@@ -3261,7 +3261,7 @@ namespace Win32
 			public DEVICEDUMP_SUBSECTION_POINTER RestrictedData;
 			public DEVICEDUMP_SUBSECTION_POINTER PrivateData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
 		{
 			public uint8[16] Cdb;
@@ -3279,24 +3279,24 @@ namespace Win32
 				public _AtaPort_e__Struct AtaPort;
 				public _StorPort_e__Struct StorPort;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _StorPort_e__Struct
 				{
 					public uint32 SrbTag;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _ExternalStack_e__Struct
 				{
 					public uint32 dwReserved;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _AtaPort_e__Struct
 				{
 					public uint32 dwAtaPortSpecific;
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
 		{
 			public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
@@ -3885,7 +3885,7 @@ namespace Win32
 			public uint16 Count;
 			public uint32[0] BlockNumber;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct REASSIGN_BLOCKS_EX
 		{
 			public uint16 Reserved;
@@ -4197,7 +4197,7 @@ namespace Win32
 			public uint32 NumberOfBins;
 			public BIN_COUNT[0] BinCounts;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct GETVERSIONINPARAMS
 		{
 			public uint8 bVersion;
@@ -4219,7 +4219,7 @@ namespace Win32
 			public uint8 bCommandReg;
 			public uint8 bReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SENDCMDINPARAMS
 		{
 			public uint32 cBufferSize;
@@ -4229,7 +4229,7 @@ namespace Win32
 			public uint32[4] dwReserved;
 			public uint8[0] bBuffer;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DRIVERSTATUS
 		{
 			public uint8 bDriverError;
@@ -4237,7 +4237,7 @@ namespace Win32
 			public uint8[2] bReserved;
 			public uint32[2] dwReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SENDCMDOUTPARAMS
 		{
 			public uint32 cBufferSize;

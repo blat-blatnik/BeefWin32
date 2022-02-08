@@ -1004,7 +1004,7 @@ namespace Win32
 				public IN6_ADDR ipv6;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASCONNW
 		{
 			public uint32 dwSize;
@@ -1019,7 +1019,7 @@ namespace Win32
 			public LUID luid;
 			public Guid guidCorrelationId;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASCONNA
 		{
 			public uint32 dwSize;
@@ -1060,7 +1060,7 @@ namespace Win32
 			public RASTUNNELENDPOINT remoteEndPoint;
 			public RASCONNSUBSTATE rasconnsubstate;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASDIALPARAMSW
 		{
 			public uint32 dwSize;
@@ -1075,7 +1075,7 @@ namespace Win32
 			public uint32 dwIfIndex;
 			public PWSTR szEncPassword;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASDIALPARAMSA
 		{
 			public uint32 dwSize;
@@ -1090,19 +1090,19 @@ namespace Win32
 			public uint32 dwIfIndex;
 			public PSTR szEncPassword;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASEAPINFO
 		{
 			public uint32 dwSizeofEapInfo;
 			public uint8* pbEapInfo;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASDEVSPECIFICINFO
 		{
 			public uint32 dwSize;
 			public uint8* pbDevSpecificInfo;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASDIALEXTENSIONS
 		{
 			public uint32 dwSize;
@@ -1285,7 +1285,7 @@ namespace Win32
 			public uint32 dwCcpOptions;
 			public uint32 dwCcpServerOptions;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASIKEV2_PROJECTION_INFO
 		{
 			public uint32 dwIPv4NegotiationError;
@@ -1471,7 +1471,7 @@ namespace Win32
 			public IKEV2_ID_PAYLOAD_TYPE IdrType;
 			public BOOL fDisableIKEv2Fragmentation;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASADPARAMS
 		{
 			public uint32 dwSize;
@@ -1557,7 +1557,7 @@ namespace Win32
 			public uint8 bByteSize;
 			public uint8 bAlign;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASCUSTOMSCRIPTEXTENSIONS
 		{
 			public uint32 dwSize;
@@ -1612,7 +1612,7 @@ namespace Win32
 			public CHAR[257] szPassword;
 			public CHAR[16] szDomain;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASPBDLGW
 		{
 			public uint32 dwSize;
@@ -1626,7 +1626,7 @@ namespace Win32
 			public uint reserved;
 			public uint reserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASPBDLGA
 		{
 			public uint32 dwSize;
@@ -1640,7 +1640,7 @@ namespace Win32
 			public uint reserved;
 			public uint reserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASENTRYDLGW
 		{
 			public uint32 dwSize;
@@ -1653,7 +1653,7 @@ namespace Win32
 			public uint reserved;
 			public uint reserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASENTRYDLGA
 		{
 			public uint32 dwSize;
@@ -1666,7 +1666,7 @@ namespace Win32
 			public uint reserved;
 			public uint reserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct RASDIALDLG
 		{
 			public uint32 dwSize;

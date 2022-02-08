@@ -1771,7 +1771,7 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEADDRESSCAPS
 		{
 			public uint32 dwTotalSize;
@@ -1832,7 +1832,7 @@ namespace Win32
 			public uint32 dwOfferingModes;
 			public uint32 dwAvailableMediaModes;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEADDRESSSTATUS
 		{
 			public uint32 dwTotalSize;
@@ -1852,14 +1852,14 @@ namespace Win32
 			public uint32 dwDevSpecificSize;
 			public uint32 dwDevSpecificOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTACTIVITYENTRY
 		{
 			public uint32 dwID;
 			public uint32 dwNameSize;
 			public uint32 dwNameOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTACTIVITYLIST
 		{
 			public uint32 dwTotalSize;
@@ -1869,7 +1869,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTCAPS
 		{
 			public uint32 dwTotalSize;
@@ -1888,14 +1888,14 @@ namespace Win32
 			public uint32 dwAgentExtensionIDListOffset;
 			public Guid ProxyGUID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTGROUPENTRY
 		{
 			public _GroupID_e__Struct GroupID;
 			public uint32 dwNameSize;
 			public uint32 dwNameOffset;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _GroupID_e__Struct
 			{
 				public uint32 dwGroupID1;
@@ -1904,7 +1904,7 @@ namespace Win32
 				public uint32 dwGroupID4;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTGROUPLIST
 		{
 			public uint32 dwTotalSize;
@@ -1914,7 +1914,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTSTATUS
 		{
 			public uint32 dwTotalSize;
@@ -1932,7 +1932,7 @@ namespace Win32
 			public uint32 dwValidStates;
 			public uint32 dwValidNextStates;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAPPINFO
 		{
 			public uint32 dwMachineNameSize;
@@ -1946,7 +1946,7 @@ namespace Win32
 			public uint32 dwMediaModes;
 			public uint32 dwAddressID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTENTRY
 		{
 			public uint32 hAgent;
@@ -1957,7 +1957,7 @@ namespace Win32
 			public uint32 dwPINSize;
 			public uint32 dwPINOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTLIST
 		{
 			public uint32 dwTotalSize;
@@ -1967,7 +1967,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTINFO
 		{
 			public uint32 dwTotalSize;
@@ -1984,7 +1984,7 @@ namespace Win32
 			public uint32 dwTotalACDCallTime;
 			public uint32 dwTotalACDWrapUpTime;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTSESSIONENTRY
 		{
 			public uint32 hAgentSession;
@@ -1992,7 +1992,7 @@ namespace Win32
 			public Guid GroupID;
 			public uint32 dwWorkingAddressID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTSESSIONLIST
 		{
 			public uint32 dwTotalSize;
@@ -2002,7 +2002,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEAGENTSESSIONINFO
 		{
 			public uint32 dwTotalSize;
@@ -2023,14 +2023,14 @@ namespace Win32
 			public uint32 dwLongestTimeToAnswer;
 			public uint32 dwAverageTimeToAnswer;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEQUEUEENTRY
 		{
 			public uint32 dwQueueID;
 			public uint32 dwNameSize;
 			public uint32 dwNameOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEQUEUELIST
 		{
 			public uint32 dwTotalSize;
@@ -2040,7 +2040,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEQUEUEINFO
 		{
 			public uint32 dwTotalSize;
@@ -2057,7 +2057,7 @@ namespace Win32
 			public uint32 dwAverageWaitTime;
 			public uint32 dwFinalDisposition;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEPROXYREQUESTLIST
 		{
 			public uint32 dwTotalSize;
@@ -2067,7 +2067,7 @@ namespace Win32
 			public uint32 dwListSize;
 			public uint32 dwListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEDIALPARAMS
 		{
 			public uint32 dwDialPause;
@@ -2075,7 +2075,7 @@ namespace Win32
 			public uint32 dwDigitDuration;
 			public uint32 dwWaitForDialtone;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECALLINFO
 		{
 			public uint32 dwTotalSize;
@@ -2157,7 +2157,7 @@ namespace Win32
 			public uint32 dwReceivingFlowspecSize;
 			public uint32 dwReceivingFlowspecOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECALLLIST
 		{
 			public uint32 dwTotalSize;
@@ -2167,7 +2167,7 @@ namespace Win32
 			public uint32 dwCallsSize;
 			public uint32 dwCallsOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECALLPARAMS
 		{
 			public uint32 dwTotalSize;
@@ -2212,7 +2212,7 @@ namespace Win32
 			public uint32 dwCallingPartyIDSize;
 			public uint32 dwCallingPartyIDOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECALLSTATUS
 		{
 			public uint32 dwTotalSize;
@@ -2227,14 +2227,14 @@ namespace Win32
 			public uint32 dwCallFeatures2;
 			public SYSTEMTIME tStateEntryTime;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECALLTREATMENTENTRY
 		{
 			public uint32 dwCallTreatmentID;
 			public uint32 dwCallTreatmentNameSize;
 			public uint32 dwCallTreatmentNameOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECARDENTRY
 		{
 			public uint32 dwPermanentCardID;
@@ -2249,7 +2249,7 @@ namespace Win32
 			public uint32 dwInternationalRuleOffset;
 			public uint32 dwOptions;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECOUNTRYENTRY
 		{
 			public uint32 dwCountryID;
@@ -2264,7 +2264,7 @@ namespace Win32
 			public uint32 dwInternationalRuleSize;
 			public uint32 dwInternationalRuleOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINECOUNTRYLIST
 		{
 			public uint32 dwTotalSize;
@@ -2274,7 +2274,7 @@ namespace Win32
 			public uint32 dwCountryListSize;
 			public uint32 dwCountryListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEDEVCAPS
 		{
 			public uint32 dwTotalSize;
@@ -2333,7 +2333,7 @@ namespace Win32
 			public uint32 dwDeviceClassesOffset;
 			public Guid PermanentLineGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEDEVSTATUS
 		{
 			public uint32 dwTotalSize;
@@ -2359,7 +2359,7 @@ namespace Win32
 			public uint32 dwAppInfoSize;
 			public uint32 dwAppInfoOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEEXTENSIONID
 		{
 			public uint32 dwExtensionID0;
@@ -2367,7 +2367,7 @@ namespace Win32
 			public uint32 dwExtensionID2;
 			public uint32 dwExtensionID3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEFORWARD
 		{
 			public uint32 dwForwardMode;
@@ -2377,14 +2377,14 @@ namespace Win32
 			public uint32 dwDestAddressSize;
 			public uint32 dwDestAddressOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEFORWARDLIST
 		{
 			public uint32 dwTotalSize;
 			public uint32 dwNumEntries;
 			public LINEFORWARD[0] ForwardList;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEGENERATETONE
 		{
 			public uint32 dwFrequency;
@@ -2392,7 +2392,7 @@ namespace Win32
 			public uint32 dwCadenceOff;
 			public uint32 dwVolume;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEINITIALIZEEXPARAMS
 		{
 			public uint32 dwTotalSize;
@@ -2402,14 +2402,14 @@ namespace Win32
 			public _Handles_e__Union Handles;
 			public uint32 dwCompletionKey;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Handles_e__Union
 			{
 				public HANDLE hEvent;
 				public HANDLE hCompletionPort;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINELOCATIONENTRY
 		{
 			public uint32 dwPermanentLocationID;
@@ -2430,27 +2430,27 @@ namespace Win32
 			public uint32 dwCancelCallWaitingSize;
 			public uint32 dwCancelCallWaitingOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMEDIACONTROLCALLSTATE
 		{
 			public uint32 dwCallStates;
 			public uint32 dwMediaControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMEDIACONTROLDIGIT
 		{
 			public uint32 dwDigit;
 			public uint32 dwDigitModes;
 			public uint32 dwMediaControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMEDIACONTROLMEDIA
 		{
 			public uint32 dwMediaModes;
 			public uint32 dwDuration;
 			public uint32 dwMediaControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMEDIACONTROLTONE
 		{
 			public uint32 dwAppSpecific;
@@ -2460,7 +2460,7 @@ namespace Win32
 			public uint32 dwFrequency3;
 			public uint32 dwMediaControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMESSAGE
 		{
 			public uint32 hDevice;
@@ -2470,7 +2470,7 @@ namespace Win32
 			public uint dwParam2;
 			public uint dwParam3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEMONITORTONE
 		{
 			public uint32 dwAppSpecific;
@@ -2479,14 +2479,14 @@ namespace Win32
 			public uint32 dwFrequency2;
 			public uint32 dwFrequency3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEPROVIDERENTRY
 		{
 			public uint32 dwPermanentProviderID;
 			public uint32 dwProviderFilenameSize;
 			public uint32 dwProviderFilenameOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEPROVIDERLIST
 		{
 			public uint32 dwTotalSize;
@@ -2496,7 +2496,7 @@ namespace Win32
 			public uint32 dwProviderListSize;
 			public uint32 dwProviderListOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEPROXYREQUEST
 		{
 			public uint32 dwSize;
@@ -2532,25 +2532,25 @@ namespace Win32
 				public _GetQueueInfo_e__Struct GetQueueInfo;
 				public _GetGroupList_e__Struct GetGroupList;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetQueueInfo_e__Struct
 				{
 					public uint32 dwQueueID;
 					public LINEQUEUEINFO QueueInfo;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetQueueList_e__Struct
 				{
 					public Guid GroupID;
 					public LINEQUEUELIST QueueList;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentSessionInfo_e__Struct
 				{
 					public uint32 hAgentSession;
 					public LINEAGENTSESSIONINFO SessionInfo;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _CreateAgentSession_e__Struct
 				{
 					public uint32 hAgentSession;
@@ -2560,13 +2560,13 @@ namespace Win32
 					public Guid GroupID;
 					public uint32 dwWorkingAddressID;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentMeasurementPeriod_e__Struct
 				{
 					public uint32 hAgent;
 					public uint32 dwMeasurementPeriod;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _CreateAgent_e__Struct
 				{
 					public uint32 hAgent;
@@ -2575,50 +2575,50 @@ namespace Win32
 					public uint32 dwAgentPINSize;
 					public uint32 dwAgentPINOffset;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentActivityList_e__Struct
 				{
 					public uint32 dwAddressID;
 					public LINEAGENTACTIVITYLIST ActivityList;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentStatus_e__Struct
 				{
 					public uint32 dwAddressID;
 					public LINEAGENTSTATUS AgentStatus;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentActivity_e__Struct
 				{
 					public uint32 dwAddressID;
 					public uint32 dwActivityID;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentGroup_e__Struct
 				{
 					public uint32 dwAddressID;
 					public LINEAGENTGROUPLIST GroupList;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetQueueMeasurementPeriod_e__Struct
 				{
 					public uint32 dwQueueID;
 					public uint32 dwMeasurementPeriod;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentSessionList_e__Struct
 				{
 					public uint32 hAgent;
 					public LINEAGENTSESSIONLIST SessionList;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentStateEx_e__Struct
 				{
 					public uint32 hAgent;
 					public uint32 dwAgentState;
 					public uint32 dwNextAgentState;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _AgentSpecific_e__Struct
 				{
 					public uint32 dwAddressID;
@@ -2626,21 +2626,21 @@ namespace Win32
 					public uint32 dwSize;
 					public uint8[0] Params;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentState_e__Struct
 				{
 					public uint32 dwAddressID;
 					public uint32 dwAgentState;
 					public uint32 dwNextAgentState;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _SetAgentSessionState_e__Struct
 				{
 					public uint32 hAgentSession;
 					public uint32 dwAgentSessionState;
 					public uint32 dwNextAgentSessionState;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentGroupList_e__Struct
 				{
 					public uint32 dwAddressID;
@@ -2651,13 +2651,13 @@ namespace Win32
 				{
 					public LINEAGENTGROUPLIST GroupList;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentCaps_e__Struct
 				{
 					public uint32 dwAddressID;
 					public LINEAGENTCAPS AgentCaps;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _GetAgentInfo_e__Struct
 				{
 					public uint32 hAgent;
@@ -2673,7 +2673,7 @@ namespace Win32
 			public CHAR[40] szCalledParty;
 			public CHAR[80] szComment;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct linereqmakecallW_tag
 		{
 			public char16[80] szDestAddress;
@@ -2681,7 +2681,7 @@ namespace Win32
 			public char16[40] szCalledParty;
 			public char16[80] szComment;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINEREQMEDIACALL
 		{
 			public HWND hWnd;
@@ -2695,7 +2695,7 @@ namespace Win32
 			public CHAR[40] szCalledParty;
 			public CHAR[80] szComment;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct linereqmediacallW_tag
 		{
 			public HWND hWnd;
@@ -2709,14 +2709,14 @@ namespace Win32
 			public char16[40] szCalledParty;
 			public char16[80] szComment;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINETERMCAPS
 		{
 			public uint32 dwTermDev;
 			public uint32 dwTermModes;
 			public uint32 dwTermSharing;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINETRANSLATECAPS
 		{
 			public uint32 dwTotalSize;
@@ -2731,7 +2731,7 @@ namespace Win32
 			public uint32 dwCardListOffset;
 			public uint32 dwCurrentPreferredCardID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct LINETRANSLATEOUTPUT
 		{
 			public uint32 dwTotalSize;
@@ -2745,7 +2745,7 @@ namespace Win32
 			public uint32 dwDestCountry;
 			public uint32 dwTranslateResults;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONEBUTTONINFO
 		{
 			public uint32 dwTotalSize;
@@ -2759,7 +2759,7 @@ namespace Win32
 			public uint32 dwDevSpecificOffset;
 			public uint32 dwButtonState;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONECAPS
 		{
 			public uint32 dwTotalSize;
@@ -2809,7 +2809,7 @@ namespace Win32
 			public uint32 dwMonitoredHeadsetHookSwitchModes;
 			public Guid PermanentPhoneGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONEEXTENSIONID
 		{
 			public uint32 dwExtensionID0;
@@ -2817,7 +2817,7 @@ namespace Win32
 			public uint32 dwExtensionID2;
 			public uint32 dwExtensionID3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONEINITIALIZEEXPARAMS
 		{
 			public uint32 dwTotalSize;
@@ -2827,14 +2827,14 @@ namespace Win32
 			public _Handles_e__Union Handles;
 			public uint32 dwCompletionKey;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Handles_e__Union
 			{
 				public HANDLE hEvent;
 				public HANDLE hCompletionPort;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONEMESSAGE
 		{
 			public uint32 hDevice;
@@ -2844,7 +2844,7 @@ namespace Win32
 			public uint dwParam2;
 			public uint dwParam3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PHONESTATUS
 		{
 			public uint32 dwTotalSize;
@@ -2874,7 +2874,7 @@ namespace Win32
 			public uint32 dwDevSpecificOffset;
 			public uint32 dwPhoneFeatures;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VARSTRING
 		{
 			public uint32 dwTotalSize;
@@ -3046,7 +3046,7 @@ namespace Win32
 			public uint32 cProblem;
 			public STnefProblem[0] aProblem;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct _renddata
 		{
 			public uint16 atyp;
@@ -3055,7 +3055,7 @@ namespace Win32
 			public uint16 dyHeight;
 			public uint32 dwFlags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct _dtr
 		{
 			public uint16 wYear;

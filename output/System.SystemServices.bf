@@ -5072,7 +5072,7 @@ namespace Win32
 			public uint64 MaxPhysicalMemory;
 			public uint32[3] PhysicalMemoryPercent;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_DOS_HEADER
 		{
 			public uint16 e_magic;
@@ -5095,7 +5095,7 @@ namespace Win32
 			public uint16[10] e_res2;
 			public int32 e_lfanew;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_OS2_HEADER
 		{
 			public uint16 ne_magic;
@@ -5129,7 +5129,7 @@ namespace Win32
 			public uint16 ne_swaparea;
 			public uint16 ne_expver;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_VXD_HEADER
 		{
 			public uint16 e32_magic;
@@ -5226,7 +5226,7 @@ namespace Win32
 			public uint32 PointerToSymbolTable;
 			public uint32 NumberOfSymbols;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_SYMBOL
 		{
 			public _N_e__Union N;
@@ -5236,14 +5236,14 @@ namespace Win32
 			public uint8 StorageClass;
 			public uint8 NumberOfAuxSymbols;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(2)]
 			public struct _N_e__Union
 			{
 				public uint8[8] ShortName;
 				public _Name_e__Struct Name;
 				public uint32[2] LongName;
 				
-				[CRepr]
+				[CRepr, Packed(2)]
 				public struct _Name_e__Struct
 				{
 					public uint32 Short;
@@ -5251,7 +5251,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_SYMBOL_EX
 		{
 			public _N_e__Union N;
@@ -5261,14 +5261,14 @@ namespace Win32
 			public uint8 StorageClass;
 			public uint8 NumberOfAuxSymbols;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(2)]
 			public struct _N_e__Union
 			{
 				public uint8[8] ShortName;
 				public _Name_e__Struct Name;
 				public uint32[2] LongName;
 				
-				[CRepr]
+				[CRepr, Packed(2)]
 				public struct _Name_e__Struct
 				{
 					public uint32 Short;
@@ -5276,7 +5276,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_AUX_SYMBOL_TOKEN_DEF
 		{
 			public uint8 bAuxType;
@@ -5293,7 +5293,7 @@ namespace Win32
 			public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 			public _CRC_e__Struct CRC;
 			
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _CRC_e__Struct
 			{
 				public uint32 crc;
@@ -5304,7 +5304,7 @@ namespace Win32
 			{
 				public uint8[18] Name;
 			}
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _Sym_e__Struct
 			{
 				public uint32 TagIndex;
@@ -5323,14 +5323,14 @@ namespace Win32
 					{
 						public uint16[4] Dimension;
 					}
-					[CRepr]
+					[CRepr, Packed(2)]
 					public struct _Function_e__Struct
 					{
 						public uint32 PointerToLinenumber;
 						public uint32 PointerToNextFunction;
 					}
 				}
-				[CRepr, Union]
+				[CRepr, Union, Packed(2)]
 				public struct _Misc_e__Union
 				{
 					public _LnSz_e__Struct LnSz;
@@ -5344,7 +5344,7 @@ namespace Win32
 					}
 				}
 			}
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _Section_e__Struct
 			{
 				public uint32 Length;
@@ -5377,20 +5377,20 @@ namespace Win32
 			{
 				public uint8[20] Name;
 			}
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _CRC_e__Struct
 			{
 				public uint32 crc;
 				public uint8[16] rgbReserved;
 			}
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _Sym_e__Struct
 			{
 				public uint32 WeakDefaultSymIndex;
 				public uint32 WeakSearchType;
 				public uint8[12] rgbReserved;
 			}
-			[CRepr]
+			[CRepr, Packed(2)]
 			public struct _Section_e__Struct
 			{
 				public uint32 Length;
@@ -5404,14 +5404,14 @@ namespace Win32
 				public uint8[2] rgbReserved;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct IMAGE_RELOCATION
 		{
 			public _Anonymous_e__Union Anonymous;
 			public uint32 SymbolTableIndex;
 			public uint16 Type;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(2)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 VirtualAddress;
@@ -5424,7 +5424,7 @@ namespace Win32
 			public _Type_e__Union Type;
 			public uint16 Linenumber;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(2)]
 			public struct _Type_e__Union
 			{
 				public uint32 SymbolTableIndex;
@@ -5469,7 +5469,7 @@ namespace Win32
 			public uint16 Hint;
 			public CHAR[0] Name;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct IMAGE_TLS_DIRECTORY64
 		{
 			public uint64 StartAddressOfRawData;
@@ -5613,19 +5613,19 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Size;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_DYNAMIC_RELOCATION32
 		{
 			public uint32 Symbol;
 			public uint32 BaseRelocSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_DYNAMIC_RELOCATION64
 		{
 			public uint64 Symbol;
 			public uint32 BaseRelocSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_DYNAMIC_RELOCATION32_V2
 		{
 			public uint32 HeaderSize;
@@ -5634,7 +5634,7 @@ namespace Win32
 			public uint32 SymbolGroup;
 			public uint32 Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_DYNAMIC_RELOCATION64_V2
 		{
 			public uint32 HeaderSize;
@@ -5648,7 +5648,7 @@ namespace Win32
 		{
 			public uint8 PrologueByteCount;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER
 		{
 			public uint32 EpilogueCount;
@@ -5656,17 +5656,17 @@ namespace Win32
 			public uint8 BranchDescriptorElementSize;
 			public uint16 BranchDescriptorCount;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 		{
 			public uint32 _bitfield;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 		{
 			public uint16 _bitfield;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
 		{
 			public uint16 _bitfield;
@@ -5737,7 +5737,7 @@ namespace Win32
 				public uint32 _bitfield;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY
 		{
 			public uint64 BeginAddress;
@@ -5781,7 +5781,7 @@ namespace Win32
 			public uint32 SectionAlignment;
 			public uint32[2] Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct NON_PAGED_DEBUG_INFO
 		{
 			public uint16 Signature;

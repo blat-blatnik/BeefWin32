@@ -761,7 +761,7 @@ namespace Win32
 			public uint32 nChannels;
 			public float[0] afChannelVolumes;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEFORMATEXTENSIBLE
 		{
 			public WAVEFORMATEX Format;
@@ -769,7 +769,7 @@ namespace Win32
 			public uint32 dwChannelMask;
 			public Guid SubFormat;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Samples_e__Union
 			{
 				public uint16 wValidBitsPerSample;
@@ -777,7 +777,7 @@ namespace Win32
 				public uint16 wReserved;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEFILTER
 		{
 			public uint32 cbStruct;
@@ -785,20 +785,20 @@ namespace Win32
 			public uint32 fdwFilter;
 			public uint32[5] dwReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct VOLUMEWAVEFILTER
 		{
 			public WAVEFILTER wfltr;
 			public uint32 dwVolume;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ECHOWAVEFILTER
 		{
 			public WAVEFILTER wfltr;
 			public uint32 dwVolume;
 			public uint32 dwDelay;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEHDR
 		{
 			public PSTR lpData;
@@ -810,7 +810,7 @@ namespace Win32
 			public WAVEHDR* lpNext;
 			public uint reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEOUTCAPSA
 		{
 			public uint16 wMid;
@@ -822,7 +822,7 @@ namespace Win32
 			public uint16 wReserved1;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEOUTCAPSW
 		{
 			public uint16 wMid;
@@ -834,7 +834,7 @@ namespace Win32
 			public uint16 wReserved1;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEOUTCAPS2A
 		{
 			public uint16 wMid;
@@ -849,7 +849,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEOUTCAPS2W
 		{
 			public uint16 wMid;
@@ -864,7 +864,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEINCAPSA
 		{
 			public uint16 wMid;
@@ -875,7 +875,7 @@ namespace Win32
 			public uint16 wChannels;
 			public uint16 wReserved1;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEINCAPSW
 		{
 			public uint16 wMid;
@@ -886,7 +886,7 @@ namespace Win32
 			public uint16 wChannels;
 			public uint16 wReserved1;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEINCAPS2A
 		{
 			public uint16 wMid;
@@ -900,7 +900,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEINCAPS2W
 		{
 			public uint16 wMid;
@@ -914,7 +914,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEFORMAT
 		{
 			public uint16 wFormatTag;
@@ -923,13 +923,13 @@ namespace Win32
 			public uint32 nAvgBytesPerSec;
 			public uint16 nBlockAlign;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PCMWAVEFORMAT
 		{
 			public WAVEFORMAT wf;
 			public uint16 wBitsPerSample;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEFORMATEX
 		{
 			public uint16 wFormatTag;
@@ -940,7 +940,7 @@ namespace Win32
 			public uint16 wBitsPerSample;
 			public uint16 cbSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOUTCAPSA
 		{
 			public uint16 wMid;
@@ -953,7 +953,7 @@ namespace Win32
 			public uint16 wChannelMask;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOUTCAPSW
 		{
 			public uint16 wMid;
@@ -966,7 +966,7 @@ namespace Win32
 			public uint16 wChannelMask;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOUTCAPS2A
 		{
 			public uint16 wMid;
@@ -982,7 +982,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOUTCAPS2W
 		{
 			public uint16 wMid;
@@ -998,7 +998,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIINCAPSA
 		{
 			public uint16 wMid;
@@ -1007,7 +1007,7 @@ namespace Win32
 			public CHAR[32] szPname;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIINCAPSW
 		{
 			public uint16 wMid;
@@ -1016,7 +1016,7 @@ namespace Win32
 			public char16[32] szPname;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIINCAPS2A
 		{
 			public uint16 wMid;
@@ -1028,7 +1028,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIINCAPS2W
 		{
 			public uint16 wMid;
@@ -1040,7 +1040,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIHDR
 		{
 			public PSTR lpData;
@@ -1053,7 +1053,7 @@ namespace Win32
 			public uint32 dwOffset;
 			public uint[8] dwReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIEVENT
 		{
 			public uint32 dwDeltaTime;
@@ -1061,26 +1061,26 @@ namespace Win32
 			public uint32 dwEvent;
 			public uint32[0] dwParms;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDISTRMBUFFVER
 		{
 			public uint32 dwVersion;
 			public uint32 dwMid;
 			public uint32 dwOEMVersion;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIPROPTIMEDIV
 		{
 			public uint32 cbStruct;
 			public uint32 dwTimeDiv;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIPROPTEMPO
 		{
 			public uint32 cbStruct;
 			public uint32 dwTempo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUXCAPSA
 		{
 			public uint16 wMid;
@@ -1091,7 +1091,7 @@ namespace Win32
 			public uint16 wReserved1;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUXCAPSW
 		{
 			public uint16 wMid;
@@ -1102,7 +1102,7 @@ namespace Win32
 			public uint16 wReserved1;
 			public uint32 dwSupport;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUXCAPS2A
 		{
 			public uint16 wMid;
@@ -1116,7 +1116,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUXCAPS2W
 		{
 			public uint16 wMid;
@@ -1130,7 +1130,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCAPSA
 		{
 			public uint16 wMid;
@@ -1140,7 +1140,7 @@ namespace Win32
 			public uint32 fdwSupport;
 			public uint32 cDestinations;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCAPSW
 		{
 			public uint16 wMid;
@@ -1150,7 +1150,7 @@ namespace Win32
 			public uint32 fdwSupport;
 			public uint32 cDestinations;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCAPS2A
 		{
 			public uint16 wMid;
@@ -1163,7 +1163,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCAPS2W
 		{
 			public uint16 wMid;
@@ -1176,7 +1176,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERLINEA
 		{
 			public uint32 cbStruct;
@@ -1193,7 +1193,7 @@ namespace Win32
 			public CHAR[64] szName;
 			public _Target_e__Struct Target;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Target_e__Struct
 			{
 				public uint32 dwType;
@@ -1204,7 +1204,7 @@ namespace Win32
 				public CHAR[32] szPname;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERLINEW
 		{
 			public uint32 cbStruct;
@@ -1221,7 +1221,7 @@ namespace Win32
 			public char16[64] szName;
 			public _Target_e__Struct Target;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Target_e__Struct
 			{
 				public uint32 dwType;
@@ -1232,7 +1232,7 @@ namespace Win32
 				public char16[32] szPname;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLA
 		{
 			public uint32 cbStruct;
@@ -1245,27 +1245,27 @@ namespace Win32
 			public _Bounds_e__Union Bounds;
 			public _Metrics_e__Union Metrics;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Bounds_e__Union
 			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public uint32[6] dwReserved;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous2_e__Struct
 				{
 					public uint32 dwMinimum;
 					public uint32 dwMaximum;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous1_e__Struct
 				{
 					public int32 lMinimum;
 					public int32 lMaximum;
 				}
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Metrics_e__Union
 			{
 				public uint32 cSteps;
@@ -1273,7 +1273,7 @@ namespace Win32
 				public uint32[6] dwReserved;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLW
 		{
 			public uint32 cbStruct;
@@ -1286,27 +1286,27 @@ namespace Win32
 			public _Bounds_e__Union Bounds;
 			public _Metrics_e__Union Metrics;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Bounds_e__Union
 			{
 				public _Anonymous1_e__Struct Anonymous1;
 				public _Anonymous2_e__Struct Anonymous2;
 				public uint32[6] dwReserved;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous1_e__Struct
 				{
 					public int32 lMinimum;
 					public int32 lMaximum;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous2_e__Struct
 				{
 					public uint32 dwMinimum;
 					public uint32 dwMaximum;
 				}
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Metrics_e__Union
 			{
 				public uint32 cSteps;
@@ -1314,7 +1314,7 @@ namespace Win32
 				public uint32[6] dwReserved;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERLINECONTROLSA
 		{
 			public uint32 cbStruct;
@@ -1324,14 +1324,14 @@ namespace Win32
 			public uint32 cbmxctrl;
 			public MIXERCONTROLA* pamxctrl;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 dwControlID;
 				public uint32 dwControlType;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERLINECONTROLSW
 		{
 			public uint32 cbStruct;
@@ -1341,14 +1341,14 @@ namespace Win32
 			public uint32 cbmxctrl;
 			public MIXERCONTROLW* pamxctrl;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 dwControlID;
 				public uint32 dwControlType;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS
 		{
 			public uint32 cbStruct;
@@ -1358,38 +1358,38 @@ namespace Win32
 			public uint32 cbDetails;
 			public void* paDetails;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public HWND hwndOwner;
 				public uint32 cMultipleItems;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS_LISTTEXTA
 		{
 			public uint32 dwParam1;
 			public uint32 dwParam2;
 			public CHAR[64] szName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS_LISTTEXTW
 		{
 			public uint32 dwParam1;
 			public uint32 dwParam2;
 			public char16[64] szName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS_BOOLEAN
 		{
 			public int32 fValue;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS_SIGNED
 		{
 			public int32 lValue;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXERCONTROLDETAILS_UNSIGNED
 		{
 			public uint32 dwValue;
@@ -1426,7 +1426,7 @@ namespace Win32
 			public uint32 u32NumChannels;
 			public uint32* pu32ChannelMap;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioObjectRenderStreamActivationParams
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1437,7 +1437,7 @@ namespace Win32
 			public HANDLE EventHandle;
 			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioObjectRenderStreamActivationParams2
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1459,19 +1459,19 @@ namespace Win32
 			public int32 minorVersion2;
 			public int32 minorVersion3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfDirectivity
 		{
 			public SpatialAudioHrtfDirectivityType Type;
 			public float Scaling;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfDirectivityCardioid
 		{
 			public SpatialAudioHrtfDirectivity directivity;
 			public float Order;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfDirectivityCone
 		{
 			public SpatialAudioHrtfDirectivity directivity;
@@ -1485,7 +1485,7 @@ namespace Win32
 			public SpatialAudioHrtfDirectivityCardioid Cardiod;
 			public SpatialAudioHrtfDirectivity Omni;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfDistanceDecay
 		{
 			public SpatialAudioHrtfDistanceDecayType Type;
@@ -1494,7 +1494,7 @@ namespace Win32
 			public float UnityGainDistance;
 			public float CutoffDistance;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfActivationParams
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1509,7 +1509,7 @@ namespace Win32
 			public SpatialAudioHrtfEnvironmentType* Environment;
 			public float* Orientation;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioHrtfActivationParams2
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1540,7 +1540,7 @@ namespace Win32
 			public IMMDevice* pPnpInterface;
 			public IMMDevice* pPnpDevnode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioMetadataItemsInfo
 		{
 			public uint16 FrameCount;
@@ -1548,7 +1548,7 @@ namespace Win32
 			public uint16 MaxItemCount;
 			public uint32 MaxValueBufferLength;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioObjectRenderStreamForMetadataActivationParams
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1562,7 +1562,7 @@ namespace Win32
 			public PROPVARIANT* MetadataActivationParams;
 			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SpatialAudioObjectRenderStreamForMetadataActivationParams2
 		{
 			public WAVEFORMATEX* ObjectFormat;
@@ -1595,7 +1595,7 @@ namespace Win32
 				public AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRIVERDETAILSA
 		{
 			public uint32 cbStruct;
@@ -1615,7 +1615,7 @@ namespace Win32
 			public CHAR[128] szLicensing;
 			public CHAR[512] szFeatures;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRIVERDETAILSW
 		{
 			public uint32 cbStruct;
@@ -1635,7 +1635,7 @@ namespace Win32
 			public char16[128] szLicensing;
 			public char16[512] szFeatures;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFORMATTAGDETAILSA
 		{
 			public uint32 cbStruct;
@@ -1646,7 +1646,7 @@ namespace Win32
 			public uint32 cStandardFormats;
 			public CHAR[48] szFormatTag;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFORMATTAGDETAILSW
 		{
 			public uint32 cbStruct;
@@ -1657,7 +1657,7 @@ namespace Win32
 			public uint32 cStandardFormats;
 			public char16[48] szFormatTag;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFORMATDETAILSA
 		{
 			public uint32 cbStruct;
@@ -1668,7 +1668,7 @@ namespace Win32
 			public uint32 cbwfx;
 			public CHAR[128] szFormat;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tACMFORMATDETAILSW
 		{
 			public uint32 cbStruct;
@@ -1679,7 +1679,7 @@ namespace Win32
 			public uint32 cbwfx;
 			public char16[128] szFormat;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFORMATCHOOSEA
 		{
 			public uint32 cbStruct;
@@ -1699,7 +1699,7 @@ namespace Win32
 			public LPARAM lCustData;
 			public ACMFORMATCHOOSEHOOKPROCA pfnHook;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFORMATCHOOSEW
 		{
 			public uint32 cbStruct;
@@ -1719,7 +1719,7 @@ namespace Win32
 			public LPARAM lCustData;
 			public ACMFORMATCHOOSEHOOKPROCW pfnHook;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERTAGDETAILSA
 		{
 			public uint32 cbStruct;
@@ -1730,7 +1730,7 @@ namespace Win32
 			public uint32 cStandardFilters;
 			public CHAR[48] szFilterTag;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERTAGDETAILSW
 		{
 			public uint32 cbStruct;
@@ -1741,7 +1741,7 @@ namespace Win32
 			public uint32 cStandardFilters;
 			public char16[48] szFilterTag;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERDETAILSA
 		{
 			public uint32 cbStruct;
@@ -1752,7 +1752,7 @@ namespace Win32
 			public uint32 cbwfltr;
 			public CHAR[128] szFilter;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERDETAILSW
 		{
 			public uint32 cbStruct;
@@ -1763,7 +1763,7 @@ namespace Win32
 			public uint32 cbwfltr;
 			public char16[128] szFilter;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERCHOOSEA
 		{
 			public uint32 cbStruct;
@@ -1783,7 +1783,7 @@ namespace Win32
 			public LPARAM lCustData;
 			public ACMFILTERCHOOSEHOOKPROCA pfnHook;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMFILTERCHOOSEW
 		{
 			public uint32 cbStruct;
@@ -1803,7 +1803,7 @@ namespace Win32
 			public LPARAM lCustData;
 			public ACMFILTERCHOOSEHOOKPROCW pfnHook;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMSTREAMHEADER
 		{
 			public uint32 cbStruct;
@@ -1819,7 +1819,7 @@ namespace Win32
 			public uint dwDstUser;
 			public uint32[15] dwReservedDriver;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tACMDRVOPENDESCA
 		{
 			public uint32 cbStruct;
@@ -1832,7 +1832,7 @@ namespace Win32
 			public PSTR pszAliasName;
 			public uint32 dnDevNode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tACMDRVOPENDESCW
 		{
 			public uint32 cbStruct;
@@ -1845,7 +1845,7 @@ namespace Win32
 			public PWSTR pszAliasName;
 			public uint32 dnDevNode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRVSTREAMINSTANCE
 		{
 			public uint32 cbStruct;
@@ -1859,7 +1859,7 @@ namespace Win32
 			public uint dwDriver;
 			public HACMSTREAM has;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRVSTREAMHEADER
 		{
 			public uint32 cbStruct;
@@ -1884,7 +1884,7 @@ namespace Win32
 			public uint8* pbPreparedDst;
 			public uint32 cbPreparedDstLength;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRVSTREAMSIZE
 		{
 			public uint32 cbStruct;
@@ -1892,7 +1892,7 @@ namespace Win32
 			public uint32 cbSrcLength;
 			public uint32 cbDstLength;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ACMDRVFORMATSUGGEST
 		{
 			public uint32 cbStruct;

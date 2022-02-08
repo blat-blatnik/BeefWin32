@@ -1215,7 +1215,7 @@ namespace Win32
 			public FILETIME DisconnectTime;
 			public WTSSBX_SESSION_STATE SessionState;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CHANNEL_DEF
 		{
 			public CHAR[8] name;
@@ -1309,7 +1309,7 @@ namespace Win32
 			public uint32 dwFramesDelivered;
 			public uint32 dwFramesDropped;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_RECT
 		{
 			public int32 left;
@@ -1317,13 +1317,13 @@ namespace Win32
 			public int32 right;
 			public int32 bottom;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MSG_HEADER
 		{
 			public uint16 uMSGType;
 			public uint16 cbSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MONITOR_INFO
 		{
 			public int32 left;
@@ -1340,7 +1340,7 @@ namespace Win32
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
@@ -1349,7 +1349,7 @@ namespace Win32
 			public RFX_GFX_MONITOR_INFO[16] MonitorData;
 			public char16[32] clientUniqueId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MSG_DESKTOP_CONFIG_CHANGE_NOTIFY
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
@@ -1363,14 +1363,14 @@ namespace Win32
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MSG_DESKTOP_INPUT_RESET
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
 			public uint32 ulWidth;
 			public uint32 ulHeight;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RFX_GFX_MSG_DISCONNECT_NOTIFY
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;

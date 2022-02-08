@@ -3043,7 +3043,7 @@ namespace Win32
 			public uint32 VPI;
 			public uint32 VCI;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct ATM_PVC_PARAMS
 		{
 			public ATM_CONNECTION_ID PvcConnectionId;

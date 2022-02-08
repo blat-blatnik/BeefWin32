@@ -1771,21 +1771,21 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JET_LGPOS
 		{
 			public uint16 ib;
 			public uint16 isec;
 			public int32 lGeneration;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JET_SIGNATURE
 		{
 			public uint32 ulRandom;
 			public JET_LOGTIME logtimeCreate;
 			public CHAR[16] szComputerName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JET_BKINFO
 		{
 			public JET_LGPOS lgposMark;

@@ -726,7 +726,7 @@ namespace Win32
 				public uint8 _bitfield;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEFAULT_PIPE_SETUP_PACKET
 		{
 			public BM_REQUEST_TYPE bmRequestType;
@@ -735,7 +735,7 @@ namespace Win32
 			public _wIndex wIndex;
 			public uint16 wLength;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _wIndex
 			{
 				public _Anonymous_e__Struct Anonymous;
@@ -748,7 +748,7 @@ namespace Win32
 					public uint8 HiByte;
 				}
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _wValue
 			{
 				public _Anonymous_e__Struct Anonymous;
@@ -762,37 +762,37 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_DEVICE_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_INTERFACE_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_ENDPOINT_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
@@ -804,7 +804,7 @@ namespace Win32
 			public uint8 bLength;
 			public uint8 bDescriptorType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -822,7 +822,7 @@ namespace Win32
 			public uint8 iSerialNumber;
 			public uint8 bNumConfigurations;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_QUALIFIER_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -835,7 +835,7 @@ namespace Win32
 			public uint8 bNumConfigurations;
 			public uint8 bReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_BOS_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -851,20 +851,20 @@ namespace Win32
 			public uint8 bDevCapabilityType;
 			public _bmAttributes_e__Union bmAttributes;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint32 _bitfield;
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_POWER_DELIVERY_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -878,20 +878,20 @@ namespace Win32
 			public uint16 bcdPDVersion;
 			public uint16 bcdUSBTypeCVersion;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint32 _bitfield;
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_PD_CONSUMER_PORT_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -906,20 +906,20 @@ namespace Win32
 			public uint32 dwMaxPeakPower;
 			public uint32 dwMaxPeakPowerTime;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _bmCapabilities_e__Union
 			{
 				public uint16 AsUshort;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 _bitfield;
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_SUPERSPEED_USB_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -931,19 +931,19 @@ namespace Win32
 			public uint8 bU1DevExitLat;
 			public uint16 wU2DevExitLat;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED
 		{
 			public uint32 AsUlong32;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint32 _bitfield;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_USB_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -955,25 +955,25 @@ namespace Win32
 			public uint16 wReserved;
 			public USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED[0] bmSublinkSpeedAttr;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _wFunctionalitySupport_e__Union
 			{
 				public uint16 AsUshort;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 _bitfield;
 				}
 			}
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint32 _bitfield;
@@ -989,7 +989,7 @@ namespace Win32
 			public uint8 bReserved;
 			public uint8[16] ContainerID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_PLATFORM_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -999,7 +999,7 @@ namespace Win32
 			public Guid PlatformCapabilityUuid;
 			public uint8[0] CapabililityData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DEVICE_CAPABILITY_BILLBOARD_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1013,19 +1013,19 @@ namespace Win32
 			public uint32 bReserved;
 			public _Anonymous_e__Struct[0] AlternateMode;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _VconnPower_e__Union
 			{
 				public uint16 AsUshort;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 _bitfield;
 				}
 			}
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 wSVID;
@@ -1042,13 +1042,13 @@ namespace Win32
 			public uint8 bcdDescriptorVersion;
 			public _bmAttributes_e__Union bmAttributes;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint32 _bitfield;
@@ -1062,7 +1062,7 @@ namespace Win32
 			public uint8 bDescriptorType;
 			public uint8 bDevCapabilityType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_CONFIGURATION_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1099,7 +1099,7 @@ namespace Win32
 			public uint8 bInterfaceProtocol;
 			public uint8 iInterface;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_ENDPOINT_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1109,25 +1109,25 @@ namespace Win32
 			public uint16 wMaxPacketSize;
 			public uint8 bInterval;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_HIGH_SPEED_MAXPACKET
 		{
 			public uint16 us;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _MP
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_STRING_DESCRIPTOR
 		{
 			public uint8 bLength;
 			public uint8 bDescriptorType;
 			public char16[0] bString;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1155,7 +1155,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_SUPERSPEEDPLUS_ISOCH_ENDPOINT_COMPANION_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1163,7 +1163,7 @@ namespace Win32
 			public uint16 wReserved;
 			public uint32 dwBytesPerInterval;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_HUB_DESCRIPTOR
 		{
 			public uint8 bDescriptorLength;
@@ -1174,7 +1174,7 @@ namespace Win32
 			public uint8 bHubControlCurrent;
 			public uint8[64] bRemoveAndPowerMask;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_30_HUB_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1187,31 +1187,31 @@ namespace Win32
 			public uint16 wHubDelay;
 			public uint16 DeviceRemovable;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_HUB_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_HUB_CHANGE
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_HUB_STATUS_AND_CHANGE
 		{
 			public uint32 AsUlong32;
@@ -1224,81 +1224,81 @@ namespace Win32
 				public USB_HUB_CHANGE HubChange;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_20_PORT_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_20_PORT_CHANGE
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_30_PORT_STATUS
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_30_PORT_CHANGE
 		{
 			public uint16 AsUshort16;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_PORT_STATUS
 		{
 			public uint16 AsUshort16;
 			public USB_20_PORT_STATUS Usb20PortStatus;
 			public USB_30_PORT_STATUS Usb30PortStatus;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_PORT_CHANGE
 		{
 			public uint16 AsUshort16;
 			public USB_20_PORT_CHANGE Usb20PortChange;
 			public USB_30_PORT_CHANGE Usb30PortChange;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_PORT_EXT_STATUS
 		{
 			public uint32 AsUlong32;
 			public _Anonymous_e__Struct Anonymous;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint32 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_PORT_STATUS_AND_CHANGE
 		{
 			public uint32 AsUlong32;
@@ -1311,7 +1311,7 @@ namespace Win32
 				public USB_PORT_CHANGE PortChange;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct USB_PORT_EXT_STATUS_AND_CHANGE
 		{
 			public uint64 AsUlong64;
@@ -1348,7 +1348,7 @@ namespace Win32
 				public uint8 _bitfield;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_CONFIGURATION_POWER_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1365,7 +1365,7 @@ namespace Win32
 			public uint16 TransitionTimeFromD2;
 			public uint16 TransitionTimeFromD3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_INTERFACE_POWER_DESCRIPTOR
 		{
 			public uint8 bLength;
@@ -1405,7 +1405,7 @@ namespace Win32
 			public uint32 MaximumTransferSize;
 			public uint32 PipeFlags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USBD_ENDPOINT_OFFLOAD_INFORMATION
 		{
 			public uint32 Size;
@@ -1749,7 +1749,7 @@ namespace Win32
 			public USB_IDLE_CALLBACK IdleCallback;
 			public void* IdleContext;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USBUSER_REQUEST_HEADER
 		{
 			public uint32 UsbUserRequest;
@@ -1757,7 +1757,7 @@ namespace Win32
 			public uint32 RequestBufferLength;
 			public uint32 ActualBufferLength;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct PACKET_PARAMETERS
 		{
 			public uint8 DeviceAddress;
@@ -1779,7 +1779,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public PACKET_PARAMETERS PacketParameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RAW_RESET_PORT_PARAMETERS
 		{
 			public uint16 PortNumber;
@@ -1791,7 +1791,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public RAW_RESET_PORT_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RAW_ROOTPORT_FEATURE
 		{
 			public uint16 PortNumber;
@@ -1804,7 +1804,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public RAW_ROOTPORT_FEATURE Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct RAW_ROOTPORT_PARAMETERS
 		{
 			public uint16 PortNumber;
@@ -1816,7 +1816,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public RAW_ROOTPORT_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_CONTROLLER_INFO_0
 		{
 			public uint32 PciVendorId;
@@ -1832,7 +1832,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_CONTROLLER_INFO_0 Info0;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_UNICODE_NAME
 		{
 			public uint32 Length;
@@ -1844,7 +1844,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_UNICODE_NAME UnicodeName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_PASS_THRU_PARAMETERS
 		{
 			public Guid FunctionGUID;
@@ -1857,7 +1857,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_PASS_THRU_PARAMETERS PassThru;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_POWER_INFO
 		{
 			public WDMUSB_POWER_STATE SystemState;
@@ -1877,7 +1877,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_POWER_INFO PowerInformation;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_OPEN_RAW_DEVICE_PARAMETERS
 		{
 			public uint16 PortStatus;
@@ -1889,7 +1889,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_OPEN_RAW_DEVICE_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_CLOSE_RAW_DEVICE_PARAMETERS
 		{
 			public uint32 xxx;
@@ -1900,7 +1900,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_CLOSE_RAW_DEVICE_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_SEND_RAW_COMMAND_PARAMETERS
 		{
 			public uint8 Usb_bmRequest;
@@ -1921,7 +1921,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_SEND_RAW_COMMAND_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_BANDWIDTH_INFO
 		{
 			public uint32 DeviceCount;
@@ -1942,7 +1942,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_BANDWIDTH_INFO BandwidthInformation;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_BUS_STATISTICS_0
 		{
 			public uint32 DeviceCount;
@@ -1968,7 +1968,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_BUS_STATISTICS_0 BusStatistics0;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_DRIVER_VERSION_PARAMETERS
 		{
 			public uint32 DriverTrackingCode;
@@ -1995,7 +1995,7 @@ namespace Win32
 			public USBUSER_REQUEST_HEADER Header;
 			public USB_USB2HW_VERSION_PARAMETERS Parameters;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USBUSER_REFRESH_HCT_REG
 		{
 			public USBUSER_REQUEST_HEADER Header;
@@ -2018,7 +2018,7 @@ namespace Win32
 			public uint8 Interval;
 			public uint32 MaximumBytesPerInterval;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WINUSB_SETUP_PACKET
 		{
 			public uint8 RequestType;
@@ -2027,18 +2027,18 @@ namespace Win32
 			public uint16 Index;
 			public uint16 Length;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION
 		{
 			public HANDLE TimeTrackingHandle;
 			public BOOLEAN IsStartupDelayTolerable;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION
 		{
 			public HANDLE TimeTrackingHandle;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION
 		{
 			public HANDLE TimeTrackingHandle;

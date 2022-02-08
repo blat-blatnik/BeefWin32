@@ -216,14 +216,14 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct AsnOctetString
 		{
 			public uint8* stream;
 			public uint32 length;
 			public BOOL dynamic;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct AsnObjectIdentifier
 		{
 			public uint32 idLength;
@@ -235,7 +235,7 @@ namespace Win32
 			public uint8 asnType;
 			public _asnValue_e__Union asnValue;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(4)]
 			public struct _asnValue_e__Union
 			{
 				public int32 number;
@@ -258,7 +258,7 @@ namespace Win32
 			public AsnObjectIdentifier name;
 			public AsnAny value;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct SnmpVarBindList
 		{
 			public SnmpVarBind* list;

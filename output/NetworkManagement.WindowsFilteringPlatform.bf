@@ -4452,7 +4452,7 @@ namespace Win32
 			public uint16 Reserved;
 			public uint16 RecordCount;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tcp_hdr
 		{
 			public uint16 th_sport;
@@ -4465,7 +4465,7 @@ namespace Win32
 			public uint16 th_sum;
 			public uint16 th_urp;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tcp_opt_mss
 		{
 			public uint8 Kind;
@@ -4492,14 +4492,14 @@ namespace Win32
 			public uint8 Length;
 			public tcp_opt_sack_block[0] Block;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct tcp_opt_sack_block
 			{
 				public uint32 Left;
 				public uint32 Right;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tcp_opt_ts
 		{
 			public uint8 Kind;
@@ -4533,13 +4533,13 @@ namespace Win32
 			public uint8[6] Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public DL_EUI64 Eui64;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 Flags;
@@ -4554,13 +4554,13 @@ namespace Win32
 			public uint8[6] Reserved;
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public DL_EUI64 Eui64;
 				public _Anonymous_e__Struct Anonymous;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
 				{
 					public uint16 Flags;
@@ -4573,7 +4573,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IPTLS_METADATA
 		{
 			public uint64 SequenceNumber;

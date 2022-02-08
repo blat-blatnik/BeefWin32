@@ -622,7 +622,7 @@ namespace Win32
 			public HRESULT hrStatus;
 			public void* pData;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct WM_STREAM_PRIORITY_RECORD
 		{
 			public uint16 wStreamNumber;
@@ -741,7 +741,7 @@ namespace Win32
 			public uint32 dwIPAddress;
 			public uint32 dwMask;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_PICTURE
 		{
 			public PWSTR pwszMIMEType;
@@ -750,7 +750,7 @@ namespace Win32
 			public uint32 dwDataLen;
 			public uint8* pbData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_SYNCHRONISED_LYRICS
 		{
 			public uint8 bTimeStampFormat;
@@ -759,25 +759,25 @@ namespace Win32
 			public uint32 dwLyricsLen;
 			public uint8* pbLyrics;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_USER_WEB_URL
 		{
 			public PWSTR pwszDescription;
 			public PWSTR pwszURL;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_USER_TEXT
 		{
 			public PWSTR pwszDescription;
 			public PWSTR pwszText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_LEAKY_BUCKET_PAIR
 		{
 			public uint32 dwBitrate;
 			public uint32 msBufferWindow;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WM_STREAM_TYPE_INFO
 		{
 			public Guid guidMajorType;
@@ -909,7 +909,7 @@ namespace Win32
 			public uint8 ucColorTransferChar;
 			public uint8 ucColorMatrixCoef;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct WMT_TIMECODE_EXTENSION_DATA
 		{
 			public uint16 wRange;

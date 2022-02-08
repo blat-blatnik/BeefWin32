@@ -3354,7 +3354,7 @@ namespace Win32
 			public BOOL bPortControlled;
 			public BOOL bPortAuthorized;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DOT11_SECURITY_PACKET_HEADER
 		{
 			public uint8[6] PeerMac;

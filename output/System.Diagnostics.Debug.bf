@@ -5202,7 +5202,7 @@ namespace Win32
 			public uint32[4] CprMask;
 			public uint32 GpValue;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct IMAGE_OPTIONAL_HEADER64
 		{
 			public IMAGE_OPTIONAL_HEADER_MAGIC Magic;
@@ -5337,7 +5337,7 @@ namespace Win32
 			public uint32 GuardXFGTableDispatchFunctionPointer;
 			public uint32 CastGuardOsDeterminedFailureMode;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct IMAGE_LOAD_CONFIG_DIRECTORY64
 		{
 			public uint32 Size;
@@ -5462,14 +5462,14 @@ namespace Win32
 			public uint32 EndingAddress;
 			public uint32 EndOfPrologue;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct IMAGE_FUNCTION_ENTRY64
 		{
 			public uint64 StartingAddress;
 			public uint64 EndingAddress;
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 EndOfPrologue;
@@ -5547,25 +5547,25 @@ namespace Win32
 			public uint32 DataSize;
 			public uint32 Rva;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_LOCATION_DESCRIPTOR64
 		{
 			public uint64 DataSize;
 			public uint64 Rva;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MEMORY_DESCRIPTOR
 		{
 			public uint64 StartOfMemoryRange;
 			public MINIDUMP_LOCATION_DESCRIPTOR Memory;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MEMORY_DESCRIPTOR64
 		{
 			public uint64 StartOfMemoryRange;
 			public uint64 DataSize;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_HEADER
 		{
 			public uint32 Signature;
@@ -5609,7 +5609,7 @@ namespace Win32
 				public uint32 FeatureInformation;
 				public uint32 AMDExtendedCpuFeatures;
 			}
-			[CRepr]
+			[CRepr, Packed(4)]
 			public struct _OtherCpuInfo_e__Struct
 			{
 				public uint64[2] ProcessorFeatures;
@@ -5657,7 +5657,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_THREAD
 		{
 			public uint32 ThreadId;
@@ -5674,7 +5674,7 @@ namespace Win32
 			public uint32 NumberOfThreads;
 			public MINIDUMP_THREAD[0] Threads;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_THREAD_EX
 		{
 			public uint32 ThreadId;
@@ -5692,7 +5692,7 @@ namespace Win32
 			public uint32 NumberOfThreads;
 			public MINIDUMP_THREAD_EX[0] Threads;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_EXCEPTION
 		{
 			public uint32 ExceptionCode;
@@ -5711,7 +5711,7 @@ namespace Win32
 			public MINIDUMP_EXCEPTION ExceptionRecord;
 			public MINIDUMP_LOCATION_DESCRIPTOR ThreadContext;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MODULE
 		{
 			public uint64 BaseOfImage;
@@ -5737,21 +5737,21 @@ namespace Win32
 			public uint32 NumberOfMemoryRanges;
 			public MINIDUMP_MEMORY_DESCRIPTOR[0] MemoryRanges;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MEMORY64_LIST
 		{
 			public uint64 NumberOfMemoryRanges;
 			public uint64 BaseRva;
 			public MINIDUMP_MEMORY_DESCRIPTOR64[0] MemoryRanges;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_EXCEPTION_INFORMATION
 		{
 			public uint32 ThreadId;
 			public EXCEPTION_POINTERS* ExceptionPointers;
 			public BOOL ClientPointers;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_EXCEPTION_INFORMATION64
 		{
 			public uint32 ThreadId;
@@ -5766,7 +5766,7 @@ namespace Win32
 			public uint32 InfoType;
 			public uint32 SizeOfInfo;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_HANDLE_DESCRIPTOR
 		{
 			public uint64 Handle;
@@ -5777,7 +5777,7 @@ namespace Win32
 			public uint32 HandleCount;
 			public uint32 PointerCount;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_HANDLE_DESCRIPTOR_2
 		{
 			public uint64 Handle;
@@ -5806,7 +5806,7 @@ namespace Win32
 			public uint32 NumberOfEntries;
 			public uint32 Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_FUNCTION_TABLE_DESCRIPTOR
 		{
 			public uint64 MinimumAddress;
@@ -5825,7 +5825,7 @@ namespace Win32
 			public uint32 NumberOfDescriptors;
 			public uint32 SizeOfAlignPad;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_UNLOADED_MODULE
 		{
 			public uint64 BaseOfImage;
@@ -5841,7 +5841,7 @@ namespace Win32
 			public uint32 SizeOfEntry;
 			public uint32 NumberOfEntries;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct XSTATE_CONFIG_FEATURE_MSC_INFO
 		{
 			public uint32 SizeOfInfo;
@@ -5940,7 +5940,7 @@ namespace Win32
 			public XSTATE_CONFIG_FEATURE_MSC_INFO XStateData;
 			public uint32 ProcessCookie;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MEMORY_INFO
 		{
 			public uint64 BaseAddress;
@@ -5953,14 +5953,14 @@ namespace Win32
 			public uint32 Type;
 			public uint32 __alignment2;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MEMORY_INFO_LIST
 		{
 			public uint32 SizeOfHeader;
 			public uint32 SizeOfEntry;
 			public uint64 NumberOfEntries;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_THREAD_NAME
 		{
 			public uint32 ThreadId;
@@ -5972,7 +5972,7 @@ namespace Win32
 			public uint32 NumberOfThreadNames;
 			public MINIDUMP_THREAD_NAME[0] ThreadNames;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_THREAD_INFO
 		{
 			public uint32 ThreadId;
@@ -5993,7 +5993,7 @@ namespace Win32
 			public uint32 SizeOfEntry;
 			public uint32 NumberOfEntries;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_TOKEN_INFO_HEADER
 		{
 			public uint32 TokenSize;
@@ -6008,7 +6008,7 @@ namespace Win32
 			public uint32 ListHeaderSize;
 			public uint32 ElementHeaderSize;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_SYSTEM_BASIC_INFORMATION
 		{
 			public uint32 TimerResolution;
@@ -6022,7 +6022,7 @@ namespace Win32
 			public uint64 ActiveProcessorsAffinityMask;
 			public uint32 NumberOfProcessors;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_SYSTEM_FILECACHE_INFORMATION
 		{
 			public uint64 CurrentSize;
@@ -6035,7 +6035,7 @@ namespace Win32
 			public uint32 TransitionRePurposeCount;
 			public uint32 Flags;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_SYSTEM_BASIC_PERFORMANCE_INFORMATION
 		{
 			public uint64 AvailablePages;
@@ -6043,7 +6043,7 @@ namespace Win32
 			public uint64 CommitLimit;
 			public uint64 PeakCommitment;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION
 		{
 			public uint64 IdleProcessTime;
@@ -6135,7 +6135,7 @@ namespace Win32
 			public MINIDUMP_SYSTEM_BASIC_PERFORMANCE_INFORMATION BasicPerfInfo;
 			public MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION PerfInfo;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_PROCESS_VM_COUNTERS_1
 		{
 			public uint16 Revision;
@@ -6150,7 +6150,7 @@ namespace Win32
 			public uint64 PeakPagefileUsage;
 			public uint64 PrivateUsage;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_PROCESS_VM_COUNTERS_2
 		{
 			public uint16 Revision;
@@ -6181,14 +6181,14 @@ namespace Win32
 			public uint32 Type;
 			public MINIDUMP_LOCATION_DESCRIPTOR Memory;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_USER_STREAM
 		{
 			public uint32 Type;
 			public uint32 BufferSize;
 			public void* Buffer;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_USER_STREAM_INFORMATION
 		{
 			public uint32 UserStreamCount;
@@ -6199,7 +6199,7 @@ namespace Win32
 		{
 			public uint32 ThreadId;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_MODULE_CALLBACK
 		{
 			public PWSTR FullPath;
@@ -6213,12 +6213,12 @@ namespace Win32
 			public void* MiscRecord;
 			public uint32 SizeOfMiscRecord;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_INCLUDE_MODULE_CALLBACK
 		{
 			public uint64 BaseOfImage;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_IO_CALLBACK
 		{
 			public HANDLE Handle;
@@ -6226,26 +6226,26 @@ namespace Win32
 			public void* Buffer;
 			public uint32 BufferBytes;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_READ_MEMORY_FAILURE_CALLBACK
 		{
 			public uint64 Offset;
 			public uint32 Bytes;
 			public HRESULT FailureStatus;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_VM_QUERY_CALLBACK
 		{
 			public uint64 Offset;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_VM_PRE_READ_CALLBACK
 		{
 			public uint64 Offset;
 			public void* Buffer;
 			public uint32 Size;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_VM_POST_READ_CALLBACK
 		{
 			public uint64 Offset;
@@ -6284,7 +6284,7 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ModuleWriteFlags;
@@ -6316,7 +6316,7 @@ namespace Win32
 					public HRESULT VmReadStatus;
 					public uint32 VmReadBytesCompleted;
 				}
-				[CRepr]
+				[CRepr, Packed(4)]
 				public struct _Anonymous1_e__Struct
 				{
 					public uint64 MemoryBase;
@@ -6330,7 +6330,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MINIDUMP_CALLBACK_INFORMATION
 		{
 			public MINIDUMP_CALLBACK_ROUTINE CallbackRoutine;
@@ -7103,14 +7103,14 @@ namespace Win32
 				public uint8[700] PhysicalMemoryBlockBuffer;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DD
 		{
 			public WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER Initialize;
 			public WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER Uninitialize;
 			public WHEA_ERROR_SOURCE_CORRECT_DEVICE_DRIVER Correct;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1
 		{
 			public uint32 Version;
@@ -7120,7 +7120,7 @@ namespace Win32
 			public WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER Initialize;
 			public WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER Uninitialize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER
 		{
 			public uint32 Version;
@@ -7134,7 +7134,7 @@ namespace Win32
 			public Guid CreatorId;
 			public Guid PartitionId;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_DRIVER_BUFFER_SET
 		{
 			public uint32 Version;
@@ -7144,13 +7144,13 @@ namespace Win32
 			public uint8* SectionFriendlyName;
 			public uint8* Flags;
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct WHEA_NOTIFICATION_FLAGS
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
@@ -7168,49 +7168,49 @@ namespace Win32
 				public uint8 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct XPF_MCE_FLAGS
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsULONG;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint32 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct AER_ROOTPORT_DESCRIPTOR_FLAGS
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct AER_ENDPOINT_DESCRIPTOR_FLAGS
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
 			}
 		}
-		[CRepr, Union]
+		[CRepr, Union, Packed(1)]
 		public struct AER_BRIDGE_DESCRIPTOR_FLAGS
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
-			[CRepr]
+			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
 				public uint16 _bitfield;
@@ -7236,7 +7236,7 @@ namespace Win32
 				public _Sei_e__Struct Sei;
 				public _Gsiv_e__Struct Gsiv;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Sei_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7246,7 +7246,7 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Nmi_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7256,7 +7256,7 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _LocalInterrupt_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7266,12 +7266,12 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Polled_e__Struct
 				{
 					public uint32 PollInterval;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Sea_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7281,7 +7281,7 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Interrupt_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7291,7 +7291,7 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Sci_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7301,7 +7301,7 @@ namespace Win32
 					public uint32 ErrorThreshold;
 					public uint32 ErrorThresholdWindow;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _Gsiv_e__Struct
 				{
 					public uint32 PollInterval;
@@ -7313,7 +7313,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_XPF_MC_BANK_DESCRIPTOR
 		{
 			public uint8 BankNumber;
@@ -7326,7 +7326,7 @@ namespace Win32
 			public uint32 MiscMsr;
 			public uint64 ControlData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_XPF_MCE_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7337,7 +7337,7 @@ namespace Win32
 			public uint64 MCG_GlobalControl;
 			public WHEA_XPF_MC_BANK_DESCRIPTOR[32] Banks;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_XPF_CMC_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7352,26 +7352,26 @@ namespace Win32
 		{
 			public _u_e__Union u;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _u_e__Union
 			{
 				public _bits_e__Struct bits;
 				public uint32 AsULONG;
 				
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _bits_e__Struct
 				{
 					public uint32 _bitfield;
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_XPF_NMI_DESCRIPTOR
 		{
 			public uint16 Type;
 			public BOOLEAN Enabled;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_AER_ROOTPORT_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7387,7 +7387,7 @@ namespace Win32
 			public uint32 AdvancedCapsAndControl;
 			public uint32 RootErrorCommand;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_AER_ENDPOINT_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7402,7 +7402,7 @@ namespace Win32
 			public uint32 CorrectableErrorMask;
 			public uint32 AdvancedCapsAndControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_AER_BRIDGE_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7420,7 +7420,7 @@ namespace Win32
 			public uint32 SecondaryUncorrectableErrorSev;
 			public uint32 SecondaryCapsAndControl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_GENERIC_ERROR_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7435,7 +7435,7 @@ namespace Win32
 			public LARGE_INTEGER ErrStatusAddress;
 			public WHEA_NOTIFICATION_DESCRIPTOR Notify;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_GENERIC_ERROR_DESCRIPTOR_V2
 		{
 			public uint16 Type;
@@ -7457,7 +7457,7 @@ namespace Win32
 			public uint64 ReadAckPreserveMask;
 			public uint64 ReadAckWriteMask;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_DEVICE_DRIVER_DESCRIPTOR
 		{
 			public uint16 Type;
@@ -7477,28 +7477,28 @@ namespace Win32
 			public uint8* PacketStateBuffer;
 			public int32 OpenHandles;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_IPF_MCA_DESCRIPTOR
 		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_IPF_CMC_DESCRIPTOR
 		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_IPF_CPE_DESCRIPTOR
 		{
 			public uint16 Type;
 			public uint8 Enabled;
 			public uint8 Reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WHEA_ERROR_SOURCE_DESCRIPTOR
 		{
 			public uint32 Length;
@@ -7530,7 +7530,7 @@ namespace Win32
 				public WHEA_DEVICE_DRIVER_DESCRIPTOR DeviceDriverDescriptor;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IPMI_OS_SEL_RECORD
 		{
 			public uint32 Signature;

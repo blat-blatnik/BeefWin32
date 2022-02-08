@@ -2507,7 +2507,7 @@ namespace Win32
 			public void* Context;
 			public uint32 Status;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct KSPROPERTY_SERIALHDR
 		{
 			public Guid PropertySet;
@@ -3581,7 +3581,7 @@ namespace Win32
 			public uint8 Confidence;
 			public uint8[36] Bytes;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NABTS_BUFFER
 		{
 			public VBICODECFILTERING_SCANLINES ScanlinesRequested;

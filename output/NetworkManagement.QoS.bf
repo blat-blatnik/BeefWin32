@@ -1292,7 +1292,7 @@ namespace Win32
 			public uint8 PeAttribSubType;
 			public uint8[4] PeAttribValue;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WBCL_Iterator
 		{
 			public void* firstElementPtr;
@@ -1306,7 +1306,7 @@ namespace Win32
 			public uint32 supportedAlgorithms;
 			public uint16 hashAlgorithm;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TCG_PCClientPCREventStruct
 		{
 			public uint32 pcrIndex;
@@ -1315,14 +1315,14 @@ namespace Win32
 			public uint32 eventDataSize;
 			public uint8[0] event;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TCG_PCClientTaggedEventStruct
 		{
 			public uint32 EventID;
 			public uint32 EventDataSize;
 			public uint8[0] EventData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WBCL_LogHdr
 		{
 			public uint32 signature;
@@ -1330,7 +1330,7 @@ namespace Win32
 			public uint32 entries;
 			public uint32 length;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_VSM_IDK_RSA_INFO
 		{
 			public uint32 KeyBitLength;
@@ -1338,7 +1338,7 @@ namespace Win32
 			public uint32 ModulusSizeBytes;
 			public uint8[0] PublicKeyData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_VSM_IDK_INFO_PAYLOAD
 		{
 			public uint32 KeyAlgID;
@@ -1350,7 +1350,7 @@ namespace Win32
 				public tag_SIPAEVENT_VSM_IDK_RSA_INFO RsaKeyInfo;
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_SI_POLICY_PAYLOAD
 		{
 			public uint64 PolicyVersion;
@@ -1359,7 +1359,7 @@ namespace Win32
 			public uint32 DigestLength;
 			public uint8[0] VarLengthData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_REVOCATION_LIST_PAYLOAD
 		{
 			public int64 CreationTime;
@@ -1367,14 +1367,14 @@ namespace Win32
 			public uint16 HashAlgID;
 			public uint8[0] Digest;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_KSR_SIGNATURE_PAYLOAD
 		{
 			public uint32 SignAlgID;
 			public uint32 SignatureLength;
 			public uint8[0] Signature;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct tag_SIPAEVENT_SBCP_INFO_PAYLOAD_V1
 		{
 			public uint32 PayloadVersion;

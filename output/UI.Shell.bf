@@ -4660,7 +4660,7 @@ namespace Win32
 			public uint32 dwState;
 			public uint32 dwStyle;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DELEGATEITEMID
 		{
 			public uint16 cbSize;
@@ -4741,13 +4741,13 @@ namespace Win32
 			public int32 iLevel;
 			public int32 iIndent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DATABLOCK_HEADER
 		{
 			public uint32 cbSize;
 			public uint32 dwSignature;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NT_CONSOLE_PROPS
 		{
 			public DATABLOCK_HEADER dbh;
@@ -4772,20 +4772,20 @@ namespace Win32
 			public BOOL bHistoryNoDup;
 			public uint32[16] ColorTable;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NT_FE_CONSOLE_PROPS
 		{
 			public DATABLOCK_HEADER dbh;
 			public uint32 uCodePage;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EXP_DARWIN_LINK
 		{
 			public DATABLOCK_HEADER dbh;
 			public CHAR[260] szDarwinID;
 			public char16[260] szwDarwinID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EXP_SPECIAL_FOLDER
 		{
 			public uint32 cbSize;
@@ -4793,7 +4793,7 @@ namespace Win32
 			public uint32 idSpecialFolder;
 			public uint32 cbOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EXP_SZ_LINK
 		{
 			public uint32 cbSize;
@@ -4801,7 +4801,7 @@ namespace Win32
 			public CHAR[260] szTarget;
 			public char16[260] swzTarget;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EXP_PROPERTYSTORAGE
 		{
 			public uint32 cbSize;
@@ -4857,13 +4857,13 @@ namespace Win32
 			public uint32 cItems;
 			public NETRESOURCEA[0] nr;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CIDA
 		{
 			public uint32 cidl;
 			public uint32[0] aoffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FILEDESCRIPTORA
 		{
 			public uint32 dwFlags;
@@ -4878,7 +4878,7 @@ namespace Win32
 			public uint32 nFileSizeLow;
 			public CHAR[260] cFileName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FILEDESCRIPTORW
 		{
 			public uint32 dwFlags;
@@ -4893,19 +4893,19 @@ namespace Win32
 			public uint32 nFileSizeLow;
 			public char16[260] cFileName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FILEGROUPDESCRIPTORA
 		{
 			public uint32 cItems;
 			public FILEDESCRIPTORA[0] fgd;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FILEGROUPDESCRIPTORW
 		{
 			public uint32 cItems;
 			public FILEDESCRIPTORW[0] fgd;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DROPFILES
 		{
 			public uint32 pFiles;
@@ -4913,7 +4913,7 @@ namespace Win32
 			public BOOL fNC;
 			public BOOL fWide;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FILE_ATTRIBUTES_ARRAY
 		{
 			public uint32 cItems;
@@ -4921,38 +4921,38 @@ namespace Win32
 			public uint32 dwProductFileAttributes;
 			public uint32[0] rgdwFileAttributes;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DROPDESCRIPTION
 		{
 			public DROPIMAGETYPE type;
 			public char16[260] szMessage;
 			public char16[260] szInsert;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHChangeNotifyEntry
 		{
 			public ITEMIDLIST* pidl;
 			public BOOL fRecursive;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHARDAPPIDINFO
 		{
 			public IShellItem* psi;
 			public PWSTR pszAppID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHARDAPPIDINFOIDLIST
 		{
 			public ITEMIDLIST* pidl;
 			public PWSTR pszAppID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHARDAPPIDINFOLINK
 		{
 			public IShellLinkA* psl;
 			public PWSTR pszAppID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHChangeDWORDAsIDList
 		{
 			public uint16 cb;
@@ -4960,7 +4960,7 @@ namespace Win32
 			public uint32 dwItem2;
 			public uint16 cbZero;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHChangeUpdateImageIDList
 		{
 			public uint16 cb;
@@ -4977,7 +4977,7 @@ namespace Win32
 			public SHDID_ID dwDescriptionId;
 			public Guid clsid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUTO_SCROLL_DATA
 		{
 			public int32 iNextSample;
@@ -4986,7 +4986,7 @@ namespace Win32
 			public POINT[3] pts;
 			public uint32[3] dwTimes;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CABINETSTATE
 		{
 			public uint16 cLength;
@@ -5095,7 +5095,7 @@ namespace Win32
 			public LPFNVIEWCALLBACK pfnCallback;
 			public FOLDERVIEWMODE fvm;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHELLSTATEA
 		{
 			public int32 _bitfield1;
@@ -5107,7 +5107,7 @@ namespace Win32
 			public uint32 uNotUsed;
 			public int32 _bitfield2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHELLSTATEW
 		{
 			public int32 _bitfield1;
@@ -5119,7 +5119,7 @@ namespace Win32
 			public uint32 uNotUsed;
 			public int32 _bitfield2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHELLFLAGSTATE
 		{
 			public int32 _bitfield;
@@ -5138,7 +5138,7 @@ namespace Win32
 			public IShellFolder* psf;
 			public ITEMIDLIST* pidl;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHCOLUMNINFO
 		{
 			public PROPERTYKEY scid;
@@ -5165,7 +5165,7 @@ namespace Win32
 			public PWSTR pwszExt;
 			public char16[260] wszFile;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SHChangeProductKeyAsIDList
 		{
 			public uint16 cb;
@@ -5740,7 +5740,7 @@ namespace Win32
 			public BOOL fShow;
 			public HMONITOR hMon;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CPLINFO
 		{
 			public int32 idIcon;
@@ -5748,7 +5748,7 @@ namespace Win32
 			public int32 idInfo;
 			public int lData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NEWCPLINFOA
 		{
 			public uint32 dwSize;
@@ -5760,7 +5760,7 @@ namespace Win32
 			public CHAR[64] szInfo;
 			public CHAR[128] szHelpFile;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NEWCPLINFOW
 		{
 			public uint32 dwSize;

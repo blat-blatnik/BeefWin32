@@ -129,13 +129,13 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MMTIME
 		{
 			public uint32 wType;
 			public _u_e__Union u;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(1)]
 			public struct _u_e__Union
 			{
 				public uint32 ms;
@@ -156,7 +156,7 @@ namespace Win32
 					public uint8 dummy;
 					public uint8[2] pad;
 				}
-				[CRepr]
+				[CRepr, Packed(1)]
 				public struct _midi_e__Struct
 				{
 					public uint32 songptrpos;

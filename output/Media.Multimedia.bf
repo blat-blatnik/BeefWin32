@@ -4678,13 +4678,13 @@ namespace Win32
 		
 		// --- Structs ---
 		
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ADPCMCOEFSET
 		{
 			public int16 iCoef1;
 			public int16 iCoef2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4692,7 +4692,7 @@ namespace Win32
 			public uint16 wNumCoef;
 			public ADPCMCOEFSET[0] aCoef;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DRMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4700,64 +4700,64 @@ namespace Win32
 			public uint32 ulContentId;
 			public WAVEFORMATEX wfxSecure;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DVIADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct IMAADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MEDIASPACEADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SIERRAADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct G723_ADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 cbExtraSize;
 			public uint16 nAuxBlockSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DIGISTDWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DIGIFIXWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DIALOGICOKIADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX ewf;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct YAMAHA_ADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct SONARCWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wCompType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TRUESPEECHWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4765,88 +4765,88 @@ namespace Win32
 			public uint16 nSamplesPerBlock;
 			public uint8[28] abReserved;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ECHOSC1WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUDIOFILE_AF36WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct APTXWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct AUDIOFILE_AF10WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DOLBYAC2WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 nAuxBitsCode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct GSM610WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct ADPCMEWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CONTRESVQLPCWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DIGIREALWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DIGIADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CONTRESCR10WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct NMS_VBXADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct G721_ADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 nAuxBlockSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MSAUDIO1WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wSamplesPerBlock;
 			public uint16 wEncodeOptions;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WMAUDIO2WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4854,7 +4854,7 @@ namespace Win32
 			public uint16 wEncodeOptions;
 			public uint32 dwSuperBlockAlign;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WMAUDIO3WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4865,56 +4865,56 @@ namespace Win32
 			public uint16 wEncodeOptions;
 			public uint16 wReserved3;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CREATIVEADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CREATIVEFASTSPEECH8WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CREATIVEFASTSPEECH10WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct FMTOWNS_SND_WAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 			public uint16 wRevision;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OLIGSMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OLIADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OLICELPWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OLISBCWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct OLIOPRWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct CSIMAADPCMWAVEFORMAT
 		{
 			public WAVEFORMATEX wfx;
@@ -4930,13 +4930,13 @@ namespace Win32
 			public uint8 bLowVelocity;
 			public uint8 bHighVelocity;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct EXBMINFOHEADER
 		{
 			public BITMAPINFOHEADER bmi;
 			public uint32 biExtDataOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JPEGINFOHEADER
 		{
 			public uint32 JPEGSize;
@@ -4946,12 +4946,12 @@ namespace Win32
 			public uint32 JPEGHSubSampling;
 			public uint32 JPEGVSubSampling;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_GENERIC_PARMS
 		{
 			public uint dwCallback;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OPEN_PARMSA
 		{
 			public uint dwCallback;
@@ -4960,7 +4960,7 @@ namespace Win32
 			public PSTR lpstrElementName;
 			public PSTR lpstrAlias;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OPEN_PARMSW
 		{
 			public uint dwCallback;
@@ -4969,20 +4969,20 @@ namespace Win32
 			public PWSTR lpstrElementName;
 			public PWSTR lpstrAlias;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_PLAY_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrom;
 			public uint32 dwTo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SEEK_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwTo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_STATUS_PARMS
 		{
 			public uint dwCallback;
@@ -4990,28 +4990,28 @@ namespace Win32
 			public uint32 dwItem;
 			public uint32 dwTrack;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_INFO_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrReturn;
 			public uint32 dwRetSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_INFO_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrReturn;
 			public uint32 dwRetSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_GETDEVCAPS_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwReturn;
 			public uint32 dwItem;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SYSINFO_PARMSA
 		{
 			public uint dwCallback;
@@ -5020,7 +5020,7 @@ namespace Win32
 			public uint32 dwNumber;
 			public uint32 wDeviceType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SYSINFO_PARMSW
 		{
 			public uint dwCallback;
@@ -5029,52 +5029,52 @@ namespace Win32
 			public uint32 dwNumber;
 			public uint32 wDeviceType;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SET_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwTimeFormat;
 			public uint32 dwAudio;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_BREAK_PARMS
 		{
 			public uint dwCallback;
 			public int32 nVirtKey;
 			public HWND hwndBreak;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SAVE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpfilename;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SAVE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpfilename;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_LOAD_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpfilename;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_LOAD_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpfilename;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_RECORD_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrom;
 			public uint32 dwTo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_VD_PLAY_PARMS
 		{
 			public uint dwCallback;
@@ -5082,25 +5082,25 @@ namespace Win32
 			public uint32 dwTo;
 			public uint32 dwSpeed;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_VD_STEP_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrames;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_VD_ESCAPE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrCommand;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_VD_ESCAPE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrCommand;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_WAVE_OPEN_PARMSA
 		{
 			public uint dwCallback;
@@ -5110,7 +5110,7 @@ namespace Win32
 			public PSTR lpstrAlias;
 			public uint32 dwBufferSeconds;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_WAVE_OPEN_PARMSW
 		{
 			public uint dwCallback;
@@ -5120,14 +5120,14 @@ namespace Win32
 			public PWSTR lpstrAlias;
 			public uint32 dwBufferSeconds;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_WAVE_DELETE_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrom;
 			public uint32 dwTo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_WAVE_SET_PARMS
 		{
 			public uint dwCallback;
@@ -5146,7 +5146,7 @@ namespace Win32
 			public uint16 wBitsPerSample;
 			public uint16 wReserved5;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_SEQ_SET_PARMS
 		{
 			public uint dwCallback;
@@ -5158,7 +5158,7 @@ namespace Win32
 			public uint32 dwMaster;
 			public uint32 dwOffset;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_OPEN_PARMSA
 		{
 			public uint dwCallback;
@@ -5169,7 +5169,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_OPEN_PARMSW
 		{
 			public uint dwCallback;
@@ -5180,7 +5180,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_PLAY_PARMS
 		{
 			public uint dwCallback;
@@ -5188,13 +5188,13 @@ namespace Win32
 			public uint32 dwTo;
 			public uint32 dwSpeed;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_STEP_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrames;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_WINDOW_PARMSA
 		{
 			public uint dwCallback;
@@ -5202,7 +5202,7 @@ namespace Win32
 			public uint32 nCmdShow;
 			public PSTR lpstrText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_WINDOW_PARMSW
 		{
 			public uint dwCallback;
@@ -5210,20 +5210,20 @@ namespace Win32
 			public uint32 nCmdShow;
 			public PWSTR lpstrText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_RECT_PARMS
 		{
 			public uint dwCallback;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_ANIM_UPDATE_PARMS
 		{
 			public uint dwCallback;
 			public RECT rc;
 			public HDC hDC;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_OPEN_PARMSA
 		{
 			public uint dwCallback;
@@ -5234,7 +5234,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_OPEN_PARMSW
 		{
 			public uint dwCallback;
@@ -5245,7 +5245,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_WINDOW_PARMSA
 		{
 			public uint dwCallback;
@@ -5253,7 +5253,7 @@ namespace Win32
 			public uint32 nCmdShow;
 			public PSTR lpstrText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_WINDOW_PARMSW
 		{
 			public uint dwCallback;
@@ -5261,41 +5261,41 @@ namespace Win32
 			public uint32 nCmdShow;
 			public PWSTR lpstrText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_RECT_PARMS
 		{
 			public uint dwCallback;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_SAVE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpfilename;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_SAVE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpfilename;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_LOAD_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpfilename;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OVLY_LOAD_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpfilename;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DRVCONFIGINFOEX
 		{
 			public uint32 dwDCISize;
@@ -5303,14 +5303,14 @@ namespace Win32
 			public PWSTR lpszDCIAliasName;
 			public uint32 dnDevNode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DRVCONFIGINFO
 		{
 			public uint32 dwDCISize;
 			public PWSTR lpszDCISectionName;
 			public PWSTR lpszDCIAliasName;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MMIOINFO
 		{
 			public uint32 dwFlags;
@@ -5330,7 +5330,7 @@ namespace Win32
 			public uint32 dwReserved2;
 			public HMMIO hmmio;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MMCKINFO
 		{
 			public uint32 ckid;
@@ -5339,7 +5339,7 @@ namespace Win32
 			public uint32 dwDataOffset;
 			public uint32 dwFlags;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYCAPSA
 		{
 			public uint16 wMid;
@@ -5367,7 +5367,7 @@ namespace Win32
 			public CHAR[32] szRegKey;
 			public CHAR[260] szOEMVxD;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYCAPSW
 		{
 			public uint16 wMid;
@@ -5395,7 +5395,7 @@ namespace Win32
 			public char16[32] szRegKey;
 			public char16[260] szOEMVxD;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYCAPS2A
 		{
 			public uint16 wMid;
@@ -5426,7 +5426,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYCAPS2W
 		{
 			public uint16 wMid;
@@ -5457,7 +5457,7 @@ namespace Win32
 			public Guid ProductGuid;
 			public Guid NameGuid;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYINFO
 		{
 			public uint32 wXpos;
@@ -5465,7 +5465,7 @@ namespace Win32
 			public uint32 wZpos;
 			public uint32 wButtons;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct JOYINFOEX
 		{
 			public uint32 dwSize;
@@ -5482,27 +5482,27 @@ namespace Win32
 			public uint32 dwReserved1;
 			public uint32 dwReserved2;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RECT_PARMS
 		{
 			public uint dwCallback;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_CAPTURE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_CAPTURE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_COPY_PARMS
 		{
 			public uint dwCallback;
@@ -5512,13 +5512,13 @@ namespace Win32
 			public uint32 dwAudioStream;
 			public uint32 dwVideoStream;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_CUE_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwTo;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_CUT_PARMS
 		{
 			public uint dwCallback;
@@ -5528,7 +5528,7 @@ namespace Win32
 			public uint32 dwAudioStream;
 			public uint32 dwVideoStream;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_DELETE_PARMS
 		{
 			public uint dwCallback;
@@ -5538,7 +5538,7 @@ namespace Win32
 			public uint32 dwAudioStream;
 			public uint32 dwVideoStream;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_INFO_PARMSA
 		{
 			public uint dwCallback;
@@ -5546,7 +5546,7 @@ namespace Win32
 			public uint32 dwRetSize;
 			public uint32 dwItem;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_INFO_PARMSW
 		{
 			public uint dwCallback;
@@ -5554,7 +5554,7 @@ namespace Win32
 			public uint32 dwRetSize;
 			public uint32 dwItem;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_LIST_PARMSA
 		{
 			public uint dwCallback;
@@ -5564,7 +5564,7 @@ namespace Win32
 			public uint32 dwItem;
 			public PSTR lpstrAlgorithm;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_LIST_PARMSW
 		{
 			public uint dwCallback;
@@ -5574,14 +5574,14 @@ namespace Win32
 			public uint32 dwItem;
 			public PWSTR lpstrAlgorithm;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_MONITOR_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwSource;
 			public uint32 dwMethod;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_OPEN_PARMSA
 		{
 			public uint dwCallback;
@@ -5592,7 +5592,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_OPEN_PARMSW
 		{
 			public uint dwCallback;
@@ -5603,7 +5603,7 @@ namespace Win32
 			public uint32 dwStyle;
 			public HWND hWndParent;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_PASTE_PARMS
 		{
 			public uint dwCallback;
@@ -5612,7 +5612,7 @@ namespace Win32
 			public uint32 dwAudioStream;
 			public uint32 dwVideoStream;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_QUALITY_PARMSA
 		{
 			public uint dwCallback;
@@ -5621,7 +5621,7 @@ namespace Win32
 			public uint32 lpstrAlgorithm;
 			public uint32 dwHandle;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_QUALITY_PARMSW
 		{
 			public uint dwCallback;
@@ -5630,7 +5630,7 @@ namespace Win32
 			public uint32 lpstrAlgorithm;
 			public uint32 dwHandle;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RECORD_PARMS
 		{
 			public uint dwCallback;
@@ -5640,49 +5640,49 @@ namespace Win32
 			public uint32 dwAudioStream;
 			public uint32 dwVideoStream;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RESERVE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrPath;
 			public uint32 dwSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RESERVE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrPath;
 			public uint32 dwSize;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RESTORE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_RESTORE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SAVE_PARMSA
 		{
 			public uint dwCallback;
 			public PSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SAVE_PARMSW
 		{
 			public uint dwCallback;
 			public PWSTR lpstrFileName;
 			public RECT rc;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SET_PARMS
 		{
 			public uint dwCallback;
@@ -5691,7 +5691,7 @@ namespace Win32
 			public uint32 dwFileFormat;
 			public uint32 dwSpeed;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SETAUDIO_PARMSA
 		{
 			public uint dwCallback;
@@ -5701,7 +5701,7 @@ namespace Win32
 			public PSTR lpstrAlgorithm;
 			public PSTR lpstrQuality;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SETAUDIO_PARMSW
 		{
 			public uint dwCallback;
@@ -5711,7 +5711,7 @@ namespace Win32
 			public PWSTR lpstrAlgorithm;
 			public PWSTR lpstrQuality;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SIGNAL_PARMS
 		{
 			public uint dwCallback;
@@ -5719,7 +5719,7 @@ namespace Win32
 			public uint32 dwPeriod;
 			public uint32 dwUserParm;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SETVIDEO_PARMSA
 		{
 			public uint dwCallback;
@@ -5730,7 +5730,7 @@ namespace Win32
 			public PSTR lpstrQuality;
 			public uint32 dwSourceNumber;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_SETVIDEO_PARMSW
 		{
 			public uint dwCallback;
@@ -5741,7 +5741,7 @@ namespace Win32
 			public PWSTR lpstrQuality;
 			public uint32 dwSourceNumber;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_STATUS_PARMSA
 		{
 			public uint dwCallback;
@@ -5751,7 +5751,7 @@ namespace Win32
 			public PSTR lpstrDrive;
 			public uint32 dwReference;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_STATUS_PARMSW
 		{
 			public uint dwCallback;
@@ -5761,20 +5761,20 @@ namespace Win32
 			public PWSTR lpstrDrive;
 			public uint32 dwReference;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_STEP_PARMS
 		{
 			public uint dwCallback;
 			public uint32 dwFrames;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_UPDATE_PARMS
 		{
 			public uint dwCallback;
 			public RECT rc;
 			public HDC hDC;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_WINDOW_PARMSA
 		{
 			public uint dwCallback;
@@ -5782,7 +5782,7 @@ namespace Win32
 			public uint32 nCmdShow;
 			public PSTR lpstrText;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_DGV_WINDOW_PARMSW
 		{
 			public uint dwCallback;
@@ -6151,13 +6151,13 @@ namespace Win32
 			public void* lpData;
 			public int32 cbData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct DRVM_IOCTL_DATA
 		{
 			public uint32 dwSize;
 			public uint32 dwCmd;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct WAVEOPENDESC
 		{
 			public HWAVE hWave;
@@ -6167,13 +6167,13 @@ namespace Win32
 			public uint32 uMappedDeviceID;
 			public uint dnDevNode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIDIOPENSTRMID
 		{
 			public uint32 dwStreamID;
 			public uint32 uDeviceID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MIXEROPENDESC
 		{
 			public HMIXER hmx;
@@ -6182,7 +6182,7 @@ namespace Win32
 			public uint dwInstance;
 			public uint dnDevNode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct TIMEREVENT
 		{
 			public uint16 wDelay;
@@ -6192,7 +6192,7 @@ namespace Win32
 			public uint16 wFlags;
 			public uint16 wReserved1;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MCI_OPEN_DRIVER_PARMS
 		{
 			public uint32 wDeviceID;

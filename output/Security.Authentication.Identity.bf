@@ -2776,7 +2776,7 @@ namespace Win32
 			public uint32 EncryptedCredsSize;
 			public uint8[0] EncryptedCreds;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL
 		{
 			public uint32 Version;
@@ -4975,7 +4975,7 @@ namespace Win32
 			public uint32 Length;
 			public uint8* SecurityDescriptor;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct USER_ALL_INFORMATION
 		{
 			public LARGE_INTEGER LastLogon;

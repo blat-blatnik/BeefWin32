@@ -2801,7 +2801,7 @@ namespace Win32
 			public uint32 uCount;
 			public uint32 dwTimeout;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct DLGTEMPLATE
 		{
 			public uint32 style;
@@ -2812,7 +2812,7 @@ namespace Win32
 			public int16 cx;
 			public int16 cy;
 		}
-		[CRepr]
+		[CRepr, Packed(2)]
 		public struct DLGITEMTEMPLATE
 		{
 			public uint32 style;

@@ -276,7 +276,7 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
-			[CRepr, Union]
+			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Version;
@@ -292,7 +292,7 @@ namespace Win32
 				}
 			}
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct PACKAGE_ID
 		{
 			public uint32 reserved;
@@ -308,7 +308,7 @@ namespace Win32
 		{
 			public void* reserved;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct PACKAGE_INFO
 		{
 			public uint32 reserved;

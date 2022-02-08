@@ -3285,26 +3285,26 @@ namespace Win32
 			public PRINT_EXECUTION_CONTEXT context;
 			public uint32 clientAppPID;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MxdcEscapeHeader
 		{
 			public uint32 cbInput;
 			public uint32 cbOutput;
 			public uint32 opCode;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MxdcGetFileNameData
 		{
 			public uint32 cbOutput;
 			public char16[0] wszData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MxdcS0PageData
 		{
 			public uint32 dwSize;
 			public uint8[0] bData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MxdcXpsS0PageResource
 		{
 			public uint32 dwSize;
@@ -3313,7 +3313,7 @@ namespace Win32
 			public uint32 dwDataSize;
 			public uint8[0] bData;
 		}
-		[CRepr]
+		[CRepr, Packed(1)]
 		public struct MxdcPrintTicketPassthrough
 		{
 			public uint32 dwDataSize;

@@ -240,7 +240,7 @@ namespace Win32
 			public uint16 hModule;
 			public uint16 hTask;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct MODULEENTRY
 		{
 			public uint32 dwSize;
@@ -267,7 +267,7 @@ namespace Win32
 			public CHAR[9] ModuleName;
 			public CHAR[255] FileName;
 		}
-		[CRepr]
+		[CRepr, Packed(4)]
 		public struct GLOBALENTRY
 		{
 			public uint32 dwSize;
