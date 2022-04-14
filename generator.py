@@ -337,8 +337,8 @@ for filename in filenames:
                         output.write(f'{indent}public const {type} {name} = {value}f;\n')
                     elif type == 'uint64':
                         output.write(f'{indent}public const {type} {name} = {value}uL;\n')
-                    elif type == 'PWSTR': # There's a bug that doesn't allow initializing const typed pointers (issue #1264).
-                        output.write(f'{indent}public const void* {name} = (void*){value};\n')
+                    elif type == 'PWSTR':
+                        output.write(f'{indent}public const {type} {name} = (PWSTR)(void*){value};\n')
                     else:
                         output.write(f'{indent}public const {type} {name} = {value};\n')
 
@@ -453,8 +453,10 @@ for filename in filenames:
                             for field in fields:
                                 field_name = replace_name(field['Name'])
                                 if field_name == '_bitfield':
-                                    x = 123 # TODO: Do something about bitfields...
+                                    x = 123 # I don't think we can do anything with bitfields because there aren't any names for them in the metadata.
                                 field_type = get_type_name(field['Type'])
+                                if '_Anonymous_' in field_type:
+                                    x = 123 # TODO: Anonymous fields.
                                 output.write(f'{indent}public {field_type} {field_name};\n')
                             nested_types = type['NestedTypes']
                             if len(nested_types) > 0:

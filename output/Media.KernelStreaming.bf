@@ -175,8 +175,8 @@ namespace Win32
 		public const uint32 KSPIN_FLAG_SOME_FRAMES_REQUIRED_FOR_PROCESSING = 8388608;
 		public const uint32 KSPIN_FLAG_PROCESS_IF_ANY_IN_RUN_STATE = 16777216;
 		public const uint32 KSPIN_FLAG_DENY_USERMODE_ACCESS = 2147483648;
-		public const void* RT_STRING = (void*)6;
-		public const void* RT_RCDATA = (void*)10;
+		public const PWSTR RT_STRING = (PWSTR)(void*)6;
+		public const PWSTR RT_RCDATA = (PWSTR)(void*)10;
 		public const uint32 WAVE_FORMAT_EXTENSIBLE = 65534;
 		public const uint32 KSDSOUND_BUFFER_PRIMARY = 1;
 		public const uint32 KSDSOUND_BUFFER_STATIC = 2;
