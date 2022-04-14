@@ -4,17 +4,15 @@
 
 This is a **mostly untested work in progress**. Use at your own peril.
 
-**Note** Currently, this will not work with Beef 0.43.1 or prior. The blockers are already fixed, but until Beef 0.43.2 releases you will need to use a nightly build from February 7th, 2022 onwards. You can get nightly builds [here](https://nightly.beeflang.org/index.html).
-
 ## Current state
 
 - Most of the types, constants, functions, and COM classes should be working at the moment (I've only tested a few).
+- The whole Win32 API is so large that adding all the files into your project will bring the compiler and IDE to their knees. The first debug build of this project can take more than a minute. Subsequent builds take ~3-5 seconds. And this is just from using a few of the APIs. For the moment these generated APIs are only really useful as a reference implementation and not for actual use in a project. 
 - DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
 - All the generated code is placed into a single static class - `Win32`. I might decide to group them in some other way later.
 - Some types had name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
 - Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. Since every class/struct in Beef implicitly defines these methods, I had to rename them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals` respectively.
 - Some functions and COM methods take parameters with types that are never defined in the metadata. For now, I've changed their signature so they all take `void*` instead.
-- Structs and unions with anonymous members are very annoying to access since Beef doesn't support anonymous members yet. I plan to add properties to make this easier.
 - Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
 
 ## How to use
