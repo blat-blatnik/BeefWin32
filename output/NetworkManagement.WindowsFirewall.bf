@@ -287,6 +287,9 @@ namespace Win32
 			public PWSTR displayName;
 			public _Anonymous_e__Union Anonymous;
 			
+			public INET_FIREWALL_AC_CAPABILITIES capabilities { get => Anonymous.capabilities; set mut => Anonymous.capabilities = value; }
+			public INET_FIREWALL_AC_BINARIES binaries { get => Anonymous.binaries; set mut => Anonymous.binaries = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

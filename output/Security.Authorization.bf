@@ -564,6 +564,9 @@ namespace Win32
 			public uint32 Reserved2;
 			public HANDLE hEvent;
 			
+			public void* Provider { get => Anonymous.Provider; set mut => Anonymous.Provider = value; }
+			public uint32 Reserved1 { get => Anonymous.Reserved1; set mut => Anonymous.Reserved1 = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -798,6 +801,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwObjectTypeNameCount;
 			public AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET[0] ObjectTypeNames;
+			
+			public void* pReserved { get => Anonymous.pReserved; set mut => Anonymous.pReserved = value; }
+			public Guid* pProviderGuid { get => Anonymous.pProviderGuid; set mut => Anonymous.pProviderGuid = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

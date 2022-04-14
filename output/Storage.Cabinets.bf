@@ -139,6 +139,7 @@ namespace Win32
 			public void* pvUser;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

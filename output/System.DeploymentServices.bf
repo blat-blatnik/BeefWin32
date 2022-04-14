@@ -391,6 +391,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public PXE_DHCP_OPTION Option;
 			
+			public uint8[4] bMagicCookie { get => Anonymous.bMagicCookie; set mut => Anonymous.bMagicCookie = value; }
+			public uint32 uMagicCookie { get => Anonymous.uMagicCookie; set mut => Anonymous.uMagicCookie = value; }
+			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
@@ -445,6 +448,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 uAddrLen;
 			public uint16 uPort;
+			
+			public uint8[16] bAddress { get => Anonymous.bAddress; set mut => Anonymous.bAddress = value; }
+			public uint32 uIpAddress { get => Anonymous.uIpAddress; set mut => Anonymous.uIpAddress = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

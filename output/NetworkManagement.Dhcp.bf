@@ -1334,6 +1334,7 @@ namespace Win32
 			public uint32 NumVendorOptions;
 			public _Anonymous_e__Struct* VendorOptions;
 			
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -1348,6 +1349,7 @@ namespace Win32
 			public uint32 Flags;
 			public uint32 NumElements;
 			public _Anonymous_e__Struct* Options;
+			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1364,6 +1366,7 @@ namespace Win32
 			public uint32 Flags;
 			public uint32 NumElements;
 			public _Anonymous_e__Struct* Options;
+			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1398,6 +1401,9 @@ namespace Win32
 			public uint32 DhcpAttribId;
 			public uint32 DhcpAttribType;
 			public _Anonymous_e__Union Anonymous;
+			
+			public BOOL DhcpAttribBool { get => Anonymous.DhcpAttribBool; set mut => Anonymous.DhcpAttribBool = value; }
+			public uint32 DhcpAttribUlong { get => Anonymous.DhcpAttribUlong; set mut => Anonymous.DhcpAttribUlong = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -412,6 +412,9 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public int64 ll { get => Anonymous.ll; set mut => Anonymous.ll = value; }
+			public FILETIME ft { get => Anonymous.ft; set mut => Anonymous.ft = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

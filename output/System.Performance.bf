@@ -666,6 +666,12 @@ namespace Win32
 			public uint32 CStatus;
 			public _Anonymous_e__Union Anonymous;
 			
+			public int32 longValue { get => Anonymous.longValue; set mut => Anonymous.longValue = value; }
+			public double doubleValue { get => Anonymous.doubleValue; set mut => Anonymous.doubleValue = value; }
+			public int64 largeValue { get => Anonymous.largeValue; set mut => Anonymous.largeValue = value; }
+			public PSTR AnsiStringValue { get => Anonymous.AnsiStringValue; set mut => Anonymous.AnsiStringValue = value; }
+			public PWSTR WideStringValue { get => Anonymous.WideStringValue; set mut => Anonymous.WideStringValue = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -749,12 +755,22 @@ namespace Win32
 			public PSTR szExplainText;
 			public uint32[0] DataBuffer;
 			
+			public PDH_DATA_ITEM_PATH_ELEMENTS_A DataItemPath { get => Anonymous.DataItemPath; set mut => Anonymous.DataItemPath = value; }
+			public PDH_COUNTER_PATH_ELEMENTS_A CounterPath { get => Anonymous.CounterPath; set mut => Anonymous.CounterPath = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public PDH_DATA_ITEM_PATH_ELEMENTS_A DataItemPath;
 				public PDH_COUNTER_PATH_ELEMENTS_A CounterPath;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public PSTR szMachineName { get => Anonymous.szMachineName; set mut => Anonymous.szMachineName = value; }
+				public PSTR szObjectName { get => Anonymous.szObjectName; set mut => Anonymous.szObjectName = value; }
+				public PSTR szInstanceName { get => Anonymous.szInstanceName; set mut => Anonymous.szInstanceName = value; }
+				public PSTR szParentInstance { get => Anonymous.szParentInstance; set mut => Anonymous.szParentInstance = value; }
+				public uint32 dwInstanceIndex { get => Anonymous.dwInstanceIndex; set mut => Anonymous.dwInstanceIndex = value; }
+				public PSTR szCounterName { get => Anonymous.szCounterName; set mut => Anonymous.szCounterName = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -784,12 +800,22 @@ namespace Win32
 			public PWSTR szExplainText;
 			public uint32[0] DataBuffer;
 			
+			public PDH_DATA_ITEM_PATH_ELEMENTS_W DataItemPath { get => Anonymous.DataItemPath; set mut => Anonymous.DataItemPath = value; }
+			public PDH_COUNTER_PATH_ELEMENTS_W CounterPath { get => Anonymous.CounterPath; set mut => Anonymous.CounterPath = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public PDH_DATA_ITEM_PATH_ELEMENTS_W DataItemPath;
 				public PDH_COUNTER_PATH_ELEMENTS_W CounterPath;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public PWSTR szMachineName { get => Anonymous.szMachineName; set mut => Anonymous.szMachineName = value; }
+				public PWSTR szObjectName { get => Anonymous.szObjectName; set mut => Anonymous.szObjectName = value; }
+				public PWSTR szInstanceName { get => Anonymous.szInstanceName; set mut => Anonymous.szInstanceName = value; }
+				public PWSTR szParentInstance { get => Anonymous.szParentInstance; set mut => Anonymous.szParentInstance = value; }
+				public uint32 dwInstanceIndex { get => Anonymous.dwInstanceIndex; set mut => Anonymous.dwInstanceIndex = value; }
+				public PWSTR szCounterName { get => Anonymous.szCounterName; set mut => Anonymous.szCounterName = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -830,6 +856,7 @@ namespace Win32
 			public uint32 dwFileType;
 			public uint32 dwReserved;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -877,6 +904,7 @@ namespace Win32
 			public uint32 dwFileType;
 			public uint32 dwReserved;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

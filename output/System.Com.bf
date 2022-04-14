@@ -561,6 +561,9 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public int64 int64;
 			
+			public uint32 Lo { get => Anonymous.Lo; set mut => Anonymous.Lo = value; }
+			public int32 Hi { get => Anonymous.Hi; set mut => Anonymous.Hi = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -848,6 +851,14 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public IUnknown* pUnkForRelease;
 			
+			public HBITMAP hBitmap { get => Anonymous.hBitmap; set mut => Anonymous.hBitmap = value; }
+			public void* hMetaFilePict { get => Anonymous.hMetaFilePict; set mut => Anonymous.hMetaFilePict = value; }
+			public HENHMETAFILE hEnhMetaFile { get => Anonymous.hEnhMetaFile; set mut => Anonymous.hEnhMetaFile = value; }
+			public int hGlobal { get => Anonymous.hGlobal; set mut => Anonymous.hGlobal = value; }
+			public PWSTR lpszFileName { get => Anonymous.lpszFileName; set mut => Anonymous.lpszFileName = value; }
+			public IStream* pstm { get => Anonymous.pstm; set mut => Anonymous.pstm = value; }
+			public IStorage* pstg { get => Anonymous.pstg; set mut => Anonymous.pstg = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -986,11 +997,18 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public DECIMAL decVal { get => Anonymous.decVal; set mut => Anonymous.decVal = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public DECIMAL decVal;
+				
+				public uint16 vt { get => Anonymous.vt; set mut => Anonymous.vt = value; }
+				public uint16 wReserved1 { get => Anonymous.wReserved1; set mut => Anonymous.wReserved1 = value; }
+				public uint16 wReserved2 { get => Anonymous.wReserved2; set mut => Anonymous.wReserved2 = value; }
+				public uint16 wReserved3 { get => Anonymous.wReserved3; set mut => Anonymous.wReserved3 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1000,6 +1018,52 @@ namespace Win32
 					public uint16 wReserved2;
 					public uint16 wReserved3;
 					public _Anonymous_e__Union Anonymous;
+					
+					public int64 llVal { get => Anonymous.llVal; set mut => Anonymous.llVal = value; }
+					public int32 lVal { get => Anonymous.lVal; set mut => Anonymous.lVal = value; }
+					public uint8 bVal { get => Anonymous.bVal; set mut => Anonymous.bVal = value; }
+					public int16 iVal { get => Anonymous.iVal; set mut => Anonymous.iVal = value; }
+					public float fltVal { get => Anonymous.fltVal; set mut => Anonymous.fltVal = value; }
+					public double dblVal { get => Anonymous.dblVal; set mut => Anonymous.dblVal = value; }
+					public int16 boolVal { get => Anonymous.boolVal; set mut => Anonymous.boolVal = value; }
+					public int16 __OBSOLETE__VARIANT_BOOL { get => Anonymous.__OBSOLETE__VARIANT_BOOL; set mut => Anonymous.__OBSOLETE__VARIANT_BOOL = value; }
+					public int32 scode { get => Anonymous.scode; set mut => Anonymous.scode = value; }
+					public CY cyVal { get => Anonymous.cyVal; set mut => Anonymous.cyVal = value; }
+					public double date { get => Anonymous.date; set mut => Anonymous.date = value; }
+					public BSTR bstrVal { get => Anonymous.bstrVal; set mut => Anonymous.bstrVal = value; }
+					public IUnknown* punkVal { get => Anonymous.punkVal; set mut => Anonymous.punkVal = value; }
+					public IDispatch* pdispVal { get => Anonymous.pdispVal; set mut => Anonymous.pdispVal = value; }
+					public SAFEARRAY* parray { get => Anonymous.parray; set mut => Anonymous.parray = value; }
+					public uint8* pbVal { get => Anonymous.pbVal; set mut => Anonymous.pbVal = value; }
+					public int16* piVal { get => Anonymous.piVal; set mut => Anonymous.piVal = value; }
+					public int32* plVal { get => Anonymous.plVal; set mut => Anonymous.plVal = value; }
+					public int64* pllVal { get => Anonymous.pllVal; set mut => Anonymous.pllVal = value; }
+					public float* pfltVal { get => Anonymous.pfltVal; set mut => Anonymous.pfltVal = value; }
+					public double* pdblVal { get => Anonymous.pdblVal; set mut => Anonymous.pdblVal = value; }
+					public int16* pboolVal { get => Anonymous.pboolVal; set mut => Anonymous.pboolVal = value; }
+					public int16* __OBSOLETE__VARIANT_PBOOL { get => Anonymous.__OBSOLETE__VARIANT_PBOOL; set mut => Anonymous.__OBSOLETE__VARIANT_PBOOL = value; }
+					public int32* pscode { get => Anonymous.pscode; set mut => Anonymous.pscode = value; }
+					public CY* pcyVal { get => Anonymous.pcyVal; set mut => Anonymous.pcyVal = value; }
+					public double* pdate { get => Anonymous.pdate; set mut => Anonymous.pdate = value; }
+					public BSTR* pbstrVal { get => Anonymous.pbstrVal; set mut => Anonymous.pbstrVal = value; }
+					public IUnknown** ppunkVal { get => Anonymous.ppunkVal; set mut => Anonymous.ppunkVal = value; }
+					public IDispatch** ppdispVal { get => Anonymous.ppdispVal; set mut => Anonymous.ppdispVal = value; }
+					public SAFEARRAY** pparray { get => Anonymous.pparray; set mut => Anonymous.pparray = value; }
+					public VARIANT* pvarVal { get => Anonymous.pvarVal; set mut => Anonymous.pvarVal = value; }
+					public void* byref { get => Anonymous.byref; set mut => Anonymous.byref = value; }
+					public CHAR cVal { get => Anonymous.cVal; set mut => Anonymous.cVal = value; }
+					public uint16 uiVal { get => Anonymous.uiVal; set mut => Anonymous.uiVal = value; }
+					public uint32 ulVal { get => Anonymous.ulVal; set mut => Anonymous.ulVal = value; }
+					public uint64 ullVal { get => Anonymous.ullVal; set mut => Anonymous.ullVal = value; }
+					public int32 intVal { get => Anonymous.intVal; set mut => Anonymous.intVal = value; }
+					public uint32 uintVal { get => Anonymous.uintVal; set mut => Anonymous.uintVal = value; }
+					public DECIMAL* pdecVal { get => Anonymous.pdecVal; set mut => Anonymous.pdecVal = value; }
+					public PSTR pcVal { get => Anonymous.pcVal; set mut => Anonymous.pcVal = value; }
+					public uint16* puiVal { get => Anonymous.puiVal; set mut => Anonymous.puiVal = value; }
+					public uint32* pulVal { get => Anonymous.pulVal; set mut => Anonymous.pulVal = value; }
+					public uint64* pullVal { get => Anonymous.pullVal; set mut => Anonymous.pullVal = value; }
+					public int32* pintVal { get => Anonymous.pintVal; set mut => Anonymous.pintVal = value; }
+					public uint32* puintVal { get => Anonymous.puintVal; set mut => Anonymous.puintVal = value; }
 					
 					[CRepr, Union]
 					public struct _Anonymous_e__Union
@@ -1051,6 +1115,9 @@ namespace Win32
 						public uint32* puintVal;
 						public _Anonymous_e__Struct Anonymous;
 						
+						public void* pvRecord { get => Anonymous.pvRecord; set mut => Anonymous.pvRecord = value; }
+						public IRecordInfo* pRecInfo { get => Anonymous.pRecInfo; set mut => Anonymous.pRecInfo = value; }
+						
 						[CRepr]
 						public struct _Anonymous_e__Struct
 						{
@@ -1066,6 +1133,10 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			public uint16 vt;
+			
+			public TYPEDESC* lptdesc { get => Anonymous.lptdesc; set mut => Anonymous.lptdesc = value; }
+			public ARRAYDESC* lpadesc { get => Anonymous.lpadesc; set mut => Anonymous.lpadesc = value; }
+			public uint32 hreftype { get => Anonymous.hreftype; set mut => Anonymous.hreftype = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1086,6 +1157,9 @@ namespace Win32
 		{
 			public TYPEDESC tdesc;
 			public _Anonymous_e__Union Anonymous;
+			
+			public IDLDESC idldesc { get => Anonymous.idldesc; set mut => Anonymous.idldesc = value; }
+			public PARAMDESC paramdesc { get => Anonymous.paramdesc; set mut => Anonymous.paramdesc = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1162,6 +1236,9 @@ namespace Win32
 			public ELEMDESC elemdescVar;
 			public uint16 wVarFlags;
 			public VARKIND varkind;
+			
+			public uint32 oInst { get => Anonymous.oInst; set mut => Anonymous.oInst = value; }
+			public VARIANT* lpvarValue { get => Anonymous.lpvarValue; set mut => Anonymous.lpvarValue = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

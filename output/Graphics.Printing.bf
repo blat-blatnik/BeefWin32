@@ -2214,6 +2214,9 @@ namespace Win32
 			public uint UserData;
 			public uint Result;
 			
+			public int32 OldSel { get => Anonymous.OldSel; set mut => Anonymous.OldSel = value; }
+			public int8* pOldSel { get => Anonymous.pOldSel; set mut => Anonymous.pOldSel = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2230,6 +2233,9 @@ namespace Win32
 			public int8* pTabName;
 			public uint IconID;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint16 DlgTemplateID { get => Anonymous.DlgTemplateID; set mut => Anonymous.DlgTemplateID = value; }
+			public HANDLE hDlgTemplate { get => Anonymous.hDlgTemplate; set mut => Anonymous.hDlgTemplate = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2322,6 +2328,9 @@ namespace Win32
 			public HWND hWndParent;
 			public HINSTANCE hInst;
 			public _Anonymous_e__Union Anonymous;
+			
+			public HICON hIcon { get => Anonymous.hIcon; set mut => Anonymous.hIcon = value; }
+			public uint IconID { get => Anonymous.IconID; set mut => Anonymous.IconID = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

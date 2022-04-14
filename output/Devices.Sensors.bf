@@ -304,6 +304,8 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public float[9] M { get => Anonymous.M; set mut => Anonymous.M = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

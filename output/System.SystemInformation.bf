@@ -425,11 +425,16 @@ namespace Win32
 			public uint16 wProcessorLevel;
 			public uint16 wProcessorRevision;
 			
+			public uint32 dwOemId { get => Anonymous.dwOemId; set mut => Anonymous.dwOemId = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 dwOemId;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public PROCESSOR_ARCHITECTURE wProcessorArchitecture { get => Anonymous.wProcessorArchitecture; set mut => Anonymous.wProcessorArchitecture = value; }
+				public uint16 wReserved { get => Anonymous.wReserved; set mut => Anonymous.wReserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -468,6 +473,9 @@ namespace Win32
 			public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 			public _Anonymous_e__Union Anonymous;
 			
+			public CACHE_DESCRIPTOR Cache { get => Anonymous.Cache; set mut => Anonymous.Cache = value; }
+			public uint64[2] Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -505,6 +513,9 @@ namespace Win32
 			public uint16 GroupCount;
 			public _Anonymous_e__Union Anonymous;
 			
+			public GROUP_AFFINITY GroupMask { get => Anonymous.GroupMask; set mut => Anonymous.GroupMask = value; }
+			public GROUP_AFFINITY[0] GroupMasks { get => Anonymous.GroupMasks; set mut => Anonymous.GroupMasks = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -523,6 +534,9 @@ namespace Win32
 			public uint8[18] Reserved;
 			public uint16 GroupCount;
 			public _Anonymous_e__Union Anonymous;
+			
+			public GROUP_AFFINITY GroupMask { get => Anonymous.GroupMask; set mut => Anonymous.GroupMask = value; }
+			public GROUP_AFFINITY[0] GroupMasks { get => Anonymous.GroupMasks; set mut => Anonymous.GroupMasks = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -554,6 +568,11 @@ namespace Win32
 			public uint32 Size;
 			public _Anonymous_e__Union Anonymous;
 			
+			public PROCESSOR_RELATIONSHIP Processor { get => Anonymous.Processor; set mut => Anonymous.Processor = value; }
+			public NUMA_NODE_RELATIONSHIP NumaNode { get => Anonymous.NumaNode; set mut => Anonymous.NumaNode = value; }
+			public CACHE_RELATIONSHIP Cache { get => Anonymous.Cache; set mut => Anonymous.Cache = value; }
+			public GROUP_RELATIONSHIP Group { get => Anonymous.Group; set mut => Anonymous.Group = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -569,6 +588,7 @@ namespace Win32
 			public uint32 Size;
 			public CPU_SET_INFORMATION_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -594,6 +614,8 @@ namespace Win32
 					{
 						public uint8 AllFlags;
 						public _Anonymous_e__Struct Anonymous;
+						
+						public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 						
 						[CRepr]
 						public struct _Anonymous_e__Struct

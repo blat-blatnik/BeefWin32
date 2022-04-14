@@ -4542,6 +4542,9 @@ namespace Win32
 			public HTREEITEM hInsertAfter;
 			public _Anonymous_e__Union Anonymous;
 			
+			public TVITEMEXA itemex { get => Anonymous.itemex; set mut => Anonymous.itemex = value; }
+			public TVITEMA item { get => Anonymous.item; set mut => Anonymous.item = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4555,6 +4558,9 @@ namespace Win32
 			public HTREEITEM hParent;
 			public HTREEITEM hInsertAfter;
 			public _Anonymous_e__Union Anonymous;
+			
+			public TVITEMEXW itemex { get => Anonymous.itemex; set mut => Anonymous.itemex = value; }
+			public TVITEMW item { get => Anonymous.item; set mut => Anonymous.item = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5332,6 +5338,9 @@ namespace Win32
 		{
 			public POINTER_INPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
+			
+			public POINTER_TOUCH_INFO touchInfo { get => Anonymous.touchInfo; set mut => Anonymous.touchInfo = value; }
+			public POINTER_PEN_INFO penInfo { get => Anonymous.penInfo; set mut => Anonymous.penInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

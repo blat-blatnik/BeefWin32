@@ -650,11 +650,15 @@ namespace Win32
 			public uint32 UmsVersion;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 ThreadUmsFlags { get => Anonymous.ThreadUmsFlags; set mut => Anonymous.ThreadUmsFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 ThreadUmsFlags;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

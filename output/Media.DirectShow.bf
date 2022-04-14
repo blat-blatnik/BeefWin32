@@ -4206,6 +4206,7 @@ namespace Win32
 			public uint32 dwMerit;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4554,6 +4555,9 @@ namespace Win32
 			public DVD_MultichannelAudioAttributes[8] MultichannelAudioAttributes;
 			public uint32 ulNumberOfSubpictureStreams;
 			public DVD_SubpictureAttributes[32] SubpictureAttributes;
+			
+			public DVD_TITLE_APPMODE AppMode { get => Anonymous.AppMode; set mut => Anonymous.AppMode = value; }
+			public DVD_HMSF_TIMECODE TitleLength { get => Anonymous.TitleLength; set mut => Anonymous.TitleLength = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5065,6 +5069,10 @@ namespace Win32
 			public int64 AvgTimePerFrame;
 			public BITMAPINFOHEADER bmiHeader;
 			public _Anonymous_e__Union Anonymous;
+			
+			public RGBQUAD[256] bmiColors { get => Anonymous.bmiColors; set mut => Anonymous.bmiColors = value; }
+			public uint32[3] dwBitMasks { get => Anonymous.dwBitMasks; set mut => Anonymous.dwBitMasks = value; }
+			public TRUECOLORINFO TrueColorInfo { get => Anonymous.TrueColorInfo; set mut => Anonymous.TrueColorInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5629,6 +5637,9 @@ namespace Win32
 			public uint32 dwReserved2;
 			public BITMAPINFOHEADER bmiHeader;
 			
+			public uint32 dwControlFlags { get => Anonymous.dwControlFlags; set mut => Anonymous.dwControlFlags = value; }
+			public uint32 dwReserved1 { get => Anonymous.dwReserved1; set mut => Anonymous.dwReserved1 = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -6029,11 +6040,31 @@ namespace Win32
 			public BOOL fSpecifyDvbEitOptions;
 			public DVB_EIT_FILTER_OPTIONS DvbEit;
 			
+			public uint8[124] bVersion1Bytes { get => Anonymous.bVersion1Bytes; set mut => Anonymous.bVersion1Bytes = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint8[124] bVersion1Bytes;
+				
+				public uint8 bVersionNumber { get => Anonymous.bVersionNumber; set mut => Anonymous.bVersionNumber = value; }
+				public uint16 wFilterSize { get => Anonymous.wFilterSize; set mut => Anonymous.wFilterSize = value; }
+				public BOOL fUseRawFilteringBits { get => Anonymous.fUseRawFilteringBits; set mut => Anonymous.fUseRawFilteringBits = value; }
+				public uint8[16] Filter { get => Anonymous.Filter; set mut => Anonymous.Filter = value; }
+				public uint8[16] Mask { get => Anonymous.Mask; set mut => Anonymous.Mask = value; }
+				public BOOL fSpecifyTableIdExtension { get => Anonymous.fSpecifyTableIdExtension; set mut => Anonymous.fSpecifyTableIdExtension = value; }
+				public uint16 TableIdExtension { get => Anonymous.TableIdExtension; set mut => Anonymous.TableIdExtension = value; }
+				public BOOL fSpecifyVersion { get => Anonymous.fSpecifyVersion; set mut => Anonymous.fSpecifyVersion = value; }
+				public uint8 Version { get => Anonymous.Version; set mut => Anonymous.Version = value; }
+				public BOOL fSpecifySectionNumber { get => Anonymous.fSpecifySectionNumber; set mut => Anonymous.fSpecifySectionNumber = value; }
+				public uint8 SectionNumber { get => Anonymous.SectionNumber; set mut => Anonymous.SectionNumber = value; }
+				public BOOL fSpecifyCurrentNext { get => Anonymous.fSpecifyCurrentNext; set mut => Anonymous.fSpecifyCurrentNext = value; }
+				public BOOL fNext { get => Anonymous.fNext; set mut => Anonymous.fNext = value; }
+				public BOOL fSpecifyDsmccOptions { get => Anonymous.fSpecifyDsmccOptions; set mut => Anonymous.fSpecifyDsmccOptions = value; }
+				public DSMCC_FILTER_OPTIONS Dsmcc { get => Anonymous.Dsmcc; set mut => Anonymous.Dsmcc = value; }
+				public BOOL fSpecifyAtscOptions { get => Anonymous.fSpecifyAtscOptions; set mut => Anonymous.fSpecifyAtscOptions = value; }
+				public ATSC_FILTER_OPTIONS Atsc { get => Anonymous.Atsc; set mut => Anonymous.Atsc = value; }
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -6260,6 +6291,9 @@ namespace Win32
 			public KSIDENTIFIER Method;
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Reserved;
+			
+			public uint32 PinId { get => Anonymous.PinId; set mut => Anonymous.PinId = value; }
+			public uint32 PinType { get => Anonymous.PinType; set mut => Anonymous.PinType = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6536,6 +6570,7 @@ namespace Win32
 		{
 			public int32 lFrequency;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

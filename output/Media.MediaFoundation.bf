@@ -5702,6 +5702,11 @@ namespace Win32
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP* pConfiguration_CQP { get => Anonymous.pConfiguration_CQP; set mut => Anonymous.pConfiguration_CQP = value; }
+			public D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR* pConfiguration_CBR { get => Anonymous.pConfiguration_CBR; set mut => Anonymous.pConfiguration_CBR = value; }
+			public D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR* pConfiguration_VBR { get => Anonymous.pConfiguration_VBR; set mut => Anonymous.pConfiguration_VBR = value; }
+			public D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR* pConfiguration_QVBR { get => Anonymous.pConfiguration_QVBR; set mut => Anonymous.pConfiguration_QVBR = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5732,6 +5737,9 @@ namespace Win32
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D12_VIDEO_ENCODER_PROFILE_H264* pH264Profile { get => Anonymous.pH264Profile; set mut => Anonymous.pH264Profile = value; }
+			public D3D12_VIDEO_ENCODER_PROFILE_HEVC* pHEVCProfile { get => Anonymous.pHEVCProfile; set mut => Anonymous.pHEVCProfile = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5750,6 +5758,9 @@ namespace Win32
 		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D12_VIDEO_ENCODER_LEVELS_H264* pH264LevelSetting { get => Anonymous.pH264LevelSetting; set mut => Anonymous.pH264LevelSetting = value; }
+			public D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC* pHEVCLevelSetting { get => Anonymous.pHEVCLevelSetting; set mut => Anonymous.pHEVCLevelSetting = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5879,6 +5890,9 @@ namespace Win32
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264* pH264Support { get => Anonymous.pH264Support; set mut => Anonymous.pH264Support = value; }
+			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC* pHEVCSupport { get => Anonymous.pHEVCSupport; set mut => Anonymous.pHEVCSupport = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5919,6 +5933,9 @@ namespace Win32
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_H264* pH264Support { get => Anonymous.pH264Support; set mut => Anonymous.pH264Support = value; }
+			public D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_HEVC* pHEVCSupport { get => Anonymous.pHEVCSupport; set mut => Anonymous.pHEVCSupport = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5958,6 +5975,9 @@ namespace Win32
 		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264* pH264Config { get => Anonymous.pH264Config; set mut => Anonymous.pH264Config = value; }
+			public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC* pHEVCConfig { get => Anonymous.pHEVCConfig; set mut => Anonymous.pHEVCConfig = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6001,6 +6021,9 @@ namespace Win32
 		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264* pH264GroupOfPictures { get => Anonymous.pH264GroupOfPictures; set mut => Anonymous.pH264GroupOfPictures = value; }
+			public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC* pHEVCGroupOfPictures { get => Anonymous.pHEVCGroupOfPictures; set mut => Anonymous.pHEVCGroupOfPictures = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6141,6 +6164,9 @@ namespace Win32
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264* pH264PicData { get => Anonymous.pH264PicData; set mut => Anonymous.pH264PicData = value; }
+			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC* pHEVCPicData { get => Anonymous.pHEVCPicData; set mut => Anonymous.pHEVCPicData = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -6168,6 +6194,11 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 MaxBytesPerSlice { get => Anonymous.MaxBytesPerSlice; set mut => Anonymous.MaxBytesPerSlice = value; }
+			public uint32 NumberOfCodingUnitsPerSlice { get => Anonymous.NumberOfCodingUnitsPerSlice; set mut => Anonymous.NumberOfCodingUnitsPerSlice = value; }
+			public uint32 NumberOfRowsPerSlice { get => Anonymous.NumberOfRowsPerSlice; set mut => Anonymous.NumberOfRowsPerSlice = value; }
+			public uint32 NumberOfSlicesPerFrame { get => Anonymous.NumberOfSlicesPerFrame; set mut => Anonymous.NumberOfSlicesPerFrame = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -6182,6 +6213,9 @@ namespace Win32
 		{
 			public uint32 DataSize;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_H264 { get => Anonymous.pSlicesPartition_H264; set mut => Anonymous.pSlicesPartition_H264 = value; }
+			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_HEVC { get => Anonymous.pSlicesPartition_HEVC; set mut => Anonymous.pSlicesPartition_HEVC = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6705,11 +6739,15 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -6752,11 +6790,15 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -6925,11 +6967,15 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 value;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -6975,11 +7021,16 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public int32 ll { get => Anonymous.ll; set mut => Anonymous.ll = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 ll;
+				
+				public uint16 Fraction { get => Anonymous.Fraction; set mut => Anonymous.Fraction = value; }
+				public int16 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -7442,6 +7493,10 @@ namespace Win32
 			public Guid guidAttributeKey;
 			public MF_ATTRIBUTE_TYPE attrType;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 u32 { get => Anonymous.u32; set mut => Anonymous.u32 = value; }
+			public uint64 u64 { get => Anonymous.u64; set mut => Anonymous.u64 = value; }
+			public double d { get => Anonymous.d; set mut => Anonymous.d = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

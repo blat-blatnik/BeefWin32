@@ -3054,6 +3054,18 @@ namespace Win32
 			public D3D_SRV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_BUFFER_SRV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_SRV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_SRV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_SRV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_SRV Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX2DMS_SRV Texture2DMS { get => Anonymous.Texture2DMS; set mut => Anonymous.Texture2DMS = value; }
+			public D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray { get => Anonymous.Texture2DMSArray; set mut => Anonymous.Texture2DMSArray = value; }
+			public D3D11_TEX3D_SRV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
+			public D3D11_TEXCUBE_SRV TextureCube { get => Anonymous.TextureCube; set mut => Anonymous.TextureCube = value; }
+			public D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray { get => Anonymous.TextureCubeArray; set mut => Anonymous.TextureCubeArray = value; }
+			public D3D11_BUFFEREX_SRV BufferEx { get => Anonymous.BufferEx; set mut => Anonymous.BufferEx = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3138,6 +3150,15 @@ namespace Win32
 			public D3D11_RTV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_BUFFER_RTV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_RTV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_RTV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_RTV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_RTV Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX2DMS_RTV Texture2DMS { get => Anonymous.Texture2DMS; set mut => Anonymous.Texture2DMS = value; }
+			public D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray { get => Anonymous.Texture2DMSArray; set mut => Anonymous.Texture2DMSArray = value; }
+			public D3D11_TEX3D_RTV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3194,6 +3215,13 @@ namespace Win32
 			public uint32 Flags;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_TEX1D_DSV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_DSV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_DSV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_DSV Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX2DMS_DSV Texture2DMS { get => Anonymous.Texture2DMS; set mut => Anonymous.Texture2DMS = value; }
+			public D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray { get => Anonymous.Texture2DMSArray; set mut => Anonymous.Texture2DMSArray = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3249,6 +3277,13 @@ namespace Win32
 			public DXGI_FORMAT Format;
 			public D3D11_UAV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D11_BUFFER_UAV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_UAV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_UAV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_UAV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_UAV Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX3D_UAV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3617,6 +3652,9 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_VIDEO_COLOR_YCbCrA YCbCr { get => Anonymous.YCbCr; set mut => Anonymous.YCbCr = value; }
+			public D3D11_VIDEO_COLOR_RGBA RGBA { get => Anonymous.RGBA; set mut => Anonymous.RGBA = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3864,6 +3902,8 @@ namespace Win32
 			public D3D11_VDOV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_TEX2D_VDOV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3882,6 +3922,8 @@ namespace Win32
 			public uint32 FourCC;
 			public D3D11_VPIV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D11_TEX2D_VPIV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3906,6 +3948,9 @@ namespace Win32
 		{
 			public D3D11_VPOV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D11_TEX2D_VPOV Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_VPOV Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4151,6 +4196,18 @@ namespace Win32
 			public D3D_SRV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_BUFFER_SRV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_SRV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_SRV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_SRV1 Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_SRV1 Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX2DMS_SRV Texture2DMS { get => Anonymous.Texture2DMS; set mut => Anonymous.Texture2DMS = value; }
+			public D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray { get => Anonymous.Texture2DMSArray; set mut => Anonymous.Texture2DMSArray = value; }
+			public D3D11_TEX3D_SRV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
+			public D3D11_TEXCUBE_SRV TextureCube { get => Anonymous.TextureCube; set mut => Anonymous.TextureCube = value; }
+			public D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray { get => Anonymous.TextureCubeArray; set mut => Anonymous.TextureCubeArray = value; }
+			public D3D11_BUFFEREX_SRV BufferEx { get => Anonymous.BufferEx; set mut => Anonymous.BufferEx = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4188,6 +4245,15 @@ namespace Win32
 			public D3D11_RTV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_BUFFER_RTV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_RTV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_RTV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_RTV1 Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_RTV1 Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX2DMS_RTV Texture2DMS { get => Anonymous.Texture2DMS; set mut => Anonymous.Texture2DMS = value; }
+			public D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray { get => Anonymous.Texture2DMSArray; set mut => Anonymous.Texture2DMSArray = value; }
+			public D3D11_TEX3D_RTV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4221,6 +4287,13 @@ namespace Win32
 			public DXGI_FORMAT Format;
 			public D3D11_UAV_DIMENSION ViewDimension;
 			public _Anonymous_e__Union Anonymous;
+			
+			public D3D11_BUFFER_UAV Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public D3D11_TEX1D_UAV Texture1D { get => Anonymous.Texture1D; set mut => Anonymous.Texture1D = value; }
+			public D3D11_TEX1D_ARRAY_UAV Texture1DArray { get => Anonymous.Texture1DArray; set mut => Anonymous.Texture1DArray = value; }
+			public D3D11_TEX2D_UAV1 Texture2D { get => Anonymous.Texture2D; set mut => Anonymous.Texture2D = value; }
+			public D3D11_TEX2D_ARRAY_UAV1 Texture2DArray { get => Anonymous.Texture2DArray; set mut => Anonymous.Texture2DArray = value; }
+			public D3D11_TEX3D_UAV Texture3D { get => Anonymous.Texture3D; set mut => Anonymous.Texture3D = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4469,6 +4542,13 @@ namespace Win32
 			public uint32 Flags;
 			public _Anonymous_e__Union Anonymous;
 			
+			public D3D11_VERTEX_SHADER_TRACE_DESC VertexShaderTraceDesc { get => Anonymous.VertexShaderTraceDesc; set mut => Anonymous.VertexShaderTraceDesc = value; }
+			public D3D11_HULL_SHADER_TRACE_DESC HullShaderTraceDesc { get => Anonymous.HullShaderTraceDesc; set mut => Anonymous.HullShaderTraceDesc = value; }
+			public D3D11_DOMAIN_SHADER_TRACE_DESC DomainShaderTraceDesc { get => Anonymous.DomainShaderTraceDesc; set mut => Anonymous.DomainShaderTraceDesc = value; }
+			public D3D11_GEOMETRY_SHADER_TRACE_DESC GeometryShaderTraceDesc { get => Anonymous.GeometryShaderTraceDesc; set mut => Anonymous.GeometryShaderTraceDesc = value; }
+			public D3D11_PIXEL_SHADER_TRACE_DESC PixelShaderTraceDesc { get => Anonymous.PixelShaderTraceDesc; set mut => Anonymous.PixelShaderTraceDesc = value; }
+			public D3D11_COMPUTE_SHADER_TRACE_DESC ComputeShaderTraceDesc { get => Anonymous.ComputeShaderTraceDesc; set mut => Anonymous.ComputeShaderTraceDesc = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4520,6 +4600,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint8 OperandIndex;
 			public uint8 Flags;
+			
+			public uint16 Index1D { get => Anonymous.Index1D; set mut => Anonymous.Index1D = value; }
+			public uint16[2] Index2D { get => Anonymous.Index2D; set mut => Anonymous.Index2D = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

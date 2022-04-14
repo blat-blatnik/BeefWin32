@@ -2540,6 +2540,9 @@ namespace Win32
 			public uint32 Type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public NDIS_802_11_AUTHENTICATION_EVENT AuthenticationEvent { get => Anonymous.AuthenticationEvent; set mut => Anonymous.AuthenticationEvent = value; }
+			public int32 RssiTrigger { get => Anonymous.RssiTrigger; set mut => Anonymous.RssiTrigger = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2787,6 +2790,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 Size;
 			public uint32 Flags;
+			
+			public uint32 Oid { get => Anonymous.Oid; set mut => Anonymous.Oid = value; }
+			public int32 Status { get => Anonymous.Status; set mut => Anonymous.Status = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

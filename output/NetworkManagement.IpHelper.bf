@@ -1220,6 +1220,9 @@ namespace Win32
 			public uint64 LinkTransmitSpeed;
 			public uint64 LinkReceiveSpeed;
 			
+			public uint32 LastReachable { get => Anonymous.LastReachable; set mut => Anonymous.LastReachable = value; }
+			public uint32 LastUnreachable { get => Anonymous.LastUnreachable; set mut => Anonymous.LastUnreachable = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1245,11 +1248,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public _ReachabilityTime_e__Union ReachabilityTime;
 			
+			public uint8 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint8 Flags;
+				
+				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1473,6 +1480,9 @@ namespace Win32
 			public uint32 dwAddr;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 dwType { get => Anonymous.dwType; set mut => Anonymous.dwType = value; }
+			public MIB_IPNET_TYPE Type { get => Anonymous.Type; set mut => Anonymous.Type = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1521,6 +1531,9 @@ namespace Win32
 			public uint32 dwNumIf;
 			public uint32 dwNumAddr;
 			public uint32 dwNumRoutes;
+			
+			public uint32 dwForwarding { get => Anonymous.dwForwarding; set mut => Anonymous.dwForwarding = value; }
+			public MIB_IPSTATS_FORWARDING Forwarding { get => Anonymous.Forwarding; set mut => Anonymous.Forwarding = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1750,6 +1763,9 @@ namespace Win32
 			public uint32 dwRemoteAddr;
 			public uint32 dwRemotePort;
 			
+			public uint32 dwState { get => Anonymous.dwState; set mut => Anonymous.dwState = value; }
+			public MIB_TCP_STATE State { get => Anonymous.State; set mut => Anonymous.State = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1916,6 +1932,9 @@ namespace Win32
 			public uint32 dwOutRsts;
 			public uint32 dwNumConns;
 			
+			public uint32 dwRtoAlgorithm { get => Anonymous.dwRtoAlgorithm; set mut => Anonymous.dwRtoAlgorithm = value; }
+			public TCP_RTO_ALGORITHM RtoAlgorithm { get => Anonymous.RtoAlgorithm; set mut => Anonymous.RtoAlgorithm = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1996,11 +2015,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint64[16] OwningModuleInfo;
 			
+			public int32 dwFlags { get => Anonymous.dwFlags; set mut => Anonymous.dwFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
+				
+				public int32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2027,11 +2050,15 @@ namespace Win32
 			public uint32 dwRemoteAddr;
 			public uint32 dwRemotePort;
 			
+			public int32 dwFlags { get => Anonymous.dwFlags; set mut => Anonymous.dwFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
+				
+				public int32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2084,11 +2111,15 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint64[16] OwningModuleInfo;
 			
+			public int32 dwFlags { get => Anonymous.dwFlags; set mut => Anonymous.dwFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
+				
+				public int32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2117,11 +2148,15 @@ namespace Win32
 			public uint32 dwRemoteScopeId;
 			public uint32 dwRemotePort;
 			
+			public int32 dwFlags { get => Anonymous.dwFlags; set mut => Anonymous.dwFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public int32 dwFlags;
+				
+				public int32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2240,6 +2275,9 @@ namespace Win32
 			public uint32 dwId;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint64 ullAlign { get => Anonymous.ullAlign; set mut => Anonymous.ullAlign = value; }
+			public uint8[0] rgbyData { get => Anonymous.rgbyData; set mut => Anonymous.rgbyData = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2296,11 +2334,16 @@ namespace Win32
 			public uint32 LeaseLifetime;
 			public uint8 OnLinkPrefixLength;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2323,11 +2366,16 @@ namespace Win32
 			public uint32 PreferredLifetime;
 			public uint32 LeaseLifetime;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2344,11 +2392,16 @@ namespace Win32
 			public IP_ADAPTER_ANYCAST_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2365,11 +2418,16 @@ namespace Win32
 			public IP_ADAPTER_MULTICAST_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2386,11 +2444,16 @@ namespace Win32
 			public IP_ADAPTER_DNS_SERVER_ADDRESS_XP* Next;
 			public SOCKET_ADDRESS Address;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2407,11 +2470,16 @@ namespace Win32
 			public IP_ADAPTER_WINS_SERVER_ADDRESS_LH* Next;
 			public SOCKET_ADDRESS Address;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2428,11 +2496,16 @@ namespace Win32
 			public IP_ADAPTER_GATEWAY_ADDRESS_LH* Next;
 			public SOCKET_ADDRESS Address;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2450,11 +2523,16 @@ namespace Win32
 			public SOCKET_ADDRESS Address;
 			public uint32 PrefixLength;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2516,6 +2594,8 @@ namespace Win32
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
 				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -2527,6 +2607,9 @@ namespace Win32
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 IfIndex { get => Anonymous.IfIndex; set mut => Anonymous.IfIndex = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2559,11 +2642,16 @@ namespace Win32
 			public uint32[16] ZoneIndices;
 			public IP_ADAPTER_PREFIX_XP* FirstPrefix;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Alignment;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+				public uint32 IfIndex { get => Anonymous.IfIndex; set mut => Anonymous.IfIndex = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

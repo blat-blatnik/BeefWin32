@@ -228,6 +228,10 @@ namespace Win32
 			public APO_NOTIFICATION_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION audioEndpointVolumeChange { get => Anonymous.audioEndpointVolumeChange; set mut => Anonymous.audioEndpointVolumeChange = value; }
+			public AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION audioEndpointPropertyChange { get => Anonymous.audioEndpointPropertyChange; set mut => Anonymous.audioEndpointPropertyChange = value; }
+			public AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION audioSystemEffectsPropertyChange { get => Anonymous.audioSystemEffectsPropertyChange; set mut => Anonymous.audioSystemEffectsPropertyChange = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -257,6 +261,10 @@ namespace Win32
 		{
 			public APO_NOTIFICATION_TYPE type;
 			public _Anonymous_e__Union Anonymous;
+			
+			public AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR audioEndpointVolume { get => Anonymous.audioEndpointVolume; set mut => Anonymous.audioEndpointVolume = value; }
+			public AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR audioEndpointPropertyChange { get => Anonymous.audioEndpointPropertyChange; set mut => Anonymous.audioEndpointPropertyChange = value; }
+			public AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR audioSystemEffectsPropertyChange { get => Anonymous.audioSystemEffectsPropertyChange; set mut => Anonymous.audioSystemEffectsPropertyChange = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

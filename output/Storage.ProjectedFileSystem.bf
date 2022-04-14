@@ -116,6 +116,7 @@ namespace Win32
 			public uint32 NextInfoOffset;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -250,6 +251,7 @@ namespace Win32
 		{
 			public PRJ_COMPLETE_COMMAND_TYPE CommandType;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

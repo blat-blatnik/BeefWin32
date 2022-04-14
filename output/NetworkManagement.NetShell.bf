@@ -101,11 +101,16 @@ namespace Win32
 			public PNS_HELPER_START_FN pfnStart;
 			public PNS_HELPER_STOP_FN pfnStop;
 			
+			public uint64 _ullAlign { get => Anonymous._ullAlign; set mut => Anonymous._ullAlign = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 _ullAlign;
+				
+				public uint32 dwVersion { get => Anonymous.dwVersion; set mut => Anonymous.dwVersion = value; }
+				public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -153,11 +158,16 @@ namespace Win32
 			public void* pReserved;
 			public PNS_OSVERSIONCHECK pfnOsVersionCheck;
 			
+			public uint64 _ullAlign { get => Anonymous._ullAlign; set mut => Anonymous._ullAlign = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 _ullAlign;
+				
+				public uint32 dwVersion { get => Anonymous.dwVersion; set mut => Anonymous.dwVersion = value; }
+				public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

@@ -748,6 +748,9 @@ namespace Win32
 			public uint32 cbDataLength;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 dwValue { get => Anonymous.dwValue; set mut => Anonymous.dwValue = value; }
+			public uint8* lpValue { get => Anonymous.lpValue; set mut => Anonymous.lpValue = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

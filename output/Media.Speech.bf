@@ -1493,11 +1493,17 @@ namespace Win32
 			public float SREngineConfidence;
 			public int8 Confidence;
 			
+			public uint32 ulId { get => Anonymous.ulId; set mut => Anonymous.ulId = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulId;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint8 bType { get => Anonymous.bType; set mut => Anonymous.bType = value; }
+				public uint8 bReserved { get => Anonymous.bReserved; set mut => Anonymous.bReserved = value; }
+				public uint16 usArrayIndex { get => Anonymous.usArrayIndex; set mut => Anonymous.usArrayIndex = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

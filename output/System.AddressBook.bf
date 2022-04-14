@@ -824,6 +824,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public DTCTL* lpctl;
 			
+			public int8* lpszComponent { get => Anonymous.lpszComponent; set mut => Anonymous.lpszComponent = value; }
+			public uint32 ulItemID { get => Anonymous.ulItemID; set mut => Anonymous.ulItemID = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

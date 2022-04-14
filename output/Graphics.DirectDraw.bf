@@ -1207,6 +1207,9 @@ namespace Win32
 			public uint32 dwCaps3;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 dwCaps4 { get => Anonymous.dwCaps4; set mut => Anonymous.dwCaps4 = value; }
+			public uint32 dwVolumeDepth { get => Anonymous.dwVolumeDepth; set mut => Anonymous.dwVolumeDepth = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1221,6 +1224,9 @@ namespace Win32
 			public uint32 dwCaps2;
 			public uint32 dwCaps3;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 dwCaps4 { get => Anonymous.dwCaps4; set mut => Anonymous.dwCaps4 = value; }
+			public uint32 dwVolumeDepth { get => Anonymous.dwVolumeDepth; set mut => Anonymous.dwVolumeDepth = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1867,6 +1873,7 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2277,6 +2284,9 @@ namespace Win32
 			public uint32 dwSaveStamp;
 			public uint32 dwHandle;
 			
+			public uint dwReserved1 { get => Anonymous.dwReserved1; set mut => Anonymous.dwReserved1 = value; }
+			public HPALETTE hHELGDIPalette { get => Anonymous.hHELGDIPalette; set mut => Anonymous.hHELGDIPalette = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2427,6 +2437,9 @@ namespace Win32
 			public uint32 dwDDRAWReserved1;
 			public uint32 dwDDRAWReserved2;
 			public uint fpAliasOfVidMem;
+			
+			public uint32 dwPhysicalPageTable { get => Anonymous.dwPhysicalPageTable; set mut => Anonymous.dwPhysicalPageTable = value; }
+			public uint fpPhysicalVidMem { get => Anonymous.fpPhysicalVidMem; set mut => Anonymous.fpPhysicalVidMem = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3281,6 +3294,8 @@ namespace Win32
 			public uint32* lpdwStates;
 			public uint32 dwLength;
 			public HRESULT ddRVal;
+			
+			public uint dwhContext { get => Anonymous.dwhContext; set mut => Anonymous.dwhContext = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4528,6 +4543,9 @@ namespace Win32
 			public uint32* lpdwStates;
 			public uint32 dwLength;
 			public HRESULT ddRVal;
+			
+			public DD_DIRECTDRAW_GLOBAL* lpDD { get => Anonymous.lpDD; set mut => Anonymous.lpDD = value; }
+			public uint dwhContext { get => Anonymous.dwhContext; set mut => Anonymous.dwhContext = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -159,6 +159,12 @@ namespace Win32
 			public WINTRUST_DATA_UICONTEXT dwUIContext;
 			public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
 			
+			public WINTRUST_FILE_INFO* pFile { get => Anonymous.pFile; set mut => Anonymous.pFile = value; }
+			public WINTRUST_CATALOG_INFO* pCatalog { get => Anonymous.pCatalog; set mut => Anonymous.pCatalog = value; }
+			public WINTRUST_BLOB_INFO* pBlob { get => Anonymous.pBlob; set mut => Anonymous.pBlob = value; }
+			public WINTRUST_SGNR_INFO* pSgnr { get => Anonymous.pSgnr; set mut => Anonymous.pSgnr = value; }
+			public WINTRUST_CERT_INFO* pCert { get => Anonymous.pCert; set mut => Anonymous.pCert = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -268,6 +274,8 @@ namespace Win32
 			public uint32 dwUIStateFlags;
 			public CRYPT_PROVIDER_SIGSTATE* pSigState;
 			public WINTRUST_SIGNATURE_SETTINGS* pSigSettings;
+			
+			public PROVDATA_SIP* pPDSip { get => Anonymous.pPDSip; set mut => Anonymous.pPDSip = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -446,6 +454,10 @@ namespace Win32
 			public uint32 dwLinkChoice;
 			public _Anonymous_e__Union Anonymous;
 			
+			public PWSTR pwszUrl { get => Anonymous.pwszUrl; set mut => Anonymous.pwszUrl = value; }
+			public SPC_SERIALIZED_OBJECT Moniker { get => Anonymous.Moniker; set mut => Anonymous.Moniker = value; }
+			public PWSTR pwszFile { get => Anonymous.pwszFile; set mut => Anonymous.pwszFile = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -594,6 +606,9 @@ namespace Win32
 			public uint32 cCounterSigner;
 			public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
 			
+			public uint32 cbStruct { get => Anonymous.cbStruct; set mut => Anonymous.cbStruct = value; }
+			public uint32 cbSize { get => Anonymous.cbSize; set mut => Anonymous.cbSize = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -610,6 +625,9 @@ namespace Win32
 			public uint32 dwFlags;
 			public void* pvReserved;
 			
+			public uint32 cbStruct { get => Anonymous.cbStruct; set mut => Anonymous.cbStruct = value; }
+			public uint32 cbSize { get => Anonymous.cbSize; set mut => Anonymous.cbSize = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -625,6 +643,9 @@ namespace Win32
 			public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
 			public PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK pfnPolicyCallback;
 			public void* pvPolicyArg;
+			
+			public uint32 cbStruct { get => Anonymous.cbStruct; set mut => Anonymous.cbStruct = value; }
+			public uint32 cbSize { get => Anonymous.cbSize; set mut => Anonymous.cbSize = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

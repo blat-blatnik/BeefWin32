@@ -818,6 +818,9 @@ namespace Win32
 			public TF_DA_COLORTYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public int32 nIndex { get => Anonymous.nIndex; set mut => Anonymous.nIndex = value; }
+			public uint32 cr { get => Anonymous.cr; set mut => Anonymous.cr = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -843,6 +846,8 @@ namespace Win32
 			public uint32 dwFlags;
 			public _Anonymous_e__Union Anonymous;
 			public BSTR bstrText;
+			
+			public int32 iCost { get => Anonymous.iCost; set mut => Anonymous.iCost = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

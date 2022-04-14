@@ -120,6 +120,16 @@ namespace Win32
 			public uint32 Count;
 			public uint32 Type;
 			
+			public BOOL BooleanVal { get => Anonymous.BooleanVal; set mut => Anonymous.BooleanVal = value; }
+			public uint32 UInt32Val { get => Anonymous.UInt32Val; set mut => Anonymous.UInt32Val = value; }
+			public uint64 DateTimeVal { get => Anonymous.DateTimeVal; set mut => Anonymous.DateTimeVal = value; }
+			public PWSTR StringVal { get => Anonymous.StringVal; set mut => Anonymous.StringVal = value; }
+			public uint8* BinaryVal { get => Anonymous.BinaryVal; set mut => Anonymous.BinaryVal = value; }
+			public BOOL* BooleanArr { get => Anonymous.BooleanArr; set mut => Anonymous.BooleanArr = value; }
+			public int32* Int32Arr { get => Anonymous.Int32Arr; set mut => Anonymous.Int32Arr = value; }
+			public PWSTR* StringArr { get => Anonymous.StringArr; set mut => Anonymous.StringArr = value; }
+			public int PropertyHandleVal { get => Anonymous.PropertyHandleVal; set mut => Anonymous.PropertyHandleVal = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

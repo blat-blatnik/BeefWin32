@@ -103,6 +103,9 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public _HeaderArm64_e__Struct HeaderArm64;
 			
+			public uint64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			public uint64 Region { get => Anonymous.Region; set mut => Anonymous.Region = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -120,6 +123,9 @@ namespace Win32
 		public struct QUAD
 		{
 			public _Anonymous_e__Union Anonymous;
+			
+			public int64 UseThisFieldToCopy { get => Anonymous.UseThisFieldToCopy; set mut => Anonymous.UseThisFieldToCopy = value; }
+			public double DoNotUseThisField { get => Anonymous.DoNotUseThisField; set mut => Anonymous.DoNotUseThisField = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -177,6 +183,9 @@ namespace Win32
 			{
 				public RTL_BALANCED_NODE*[2] Children;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public RTL_BALANCED_NODE* Left { get => Anonymous.Left; set mut => Anonymous.Left = value; }
+				public RTL_BALANCED_NODE* Right { get => Anonymous.Right; set mut => Anonymous.Right = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -264,6 +273,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public void* ArbitraryUserPointer;
 			public NT_TIB* Self;
+			
+			public void* FiberData { get => Anonymous.FiberData; set mut => Anonymous.FiberData = value; }
+			public uint32 Version { get => Anonymous.Version; set mut => Anonymous.Version = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

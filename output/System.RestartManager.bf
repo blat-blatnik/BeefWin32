@@ -96,6 +96,10 @@ namespace Win32
 			public uint32 cbNextOffset;
 			public _Anonymous_e__Union Anonymous;
 			
+			public PWSTR strFilename { get => Anonymous.strFilename; set mut => Anonymous.strFilename = value; }
+			public RM_UNIQUE_PROCESS Process { get => Anonymous.Process; set mut => Anonymous.Process = value; }
+			public PWSTR strServiceShortName { get => Anonymous.strServiceShortName; set mut => Anonymous.strServiceShortName = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

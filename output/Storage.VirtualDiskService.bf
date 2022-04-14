@@ -1207,6 +1207,23 @@ namespace Win32
 			public VDS_NOTIFICATION_TARGET_TYPE objectType;
 			public _Anonymous_e__Union Anonymous;
 			
+			public VDS_PACK_NOTIFICATION Pack { get => Anonymous.Pack; set mut => Anonymous.Pack = value; }
+			public VDS_DISK_NOTIFICATION Disk { get => Anonymous.Disk; set mut => Anonymous.Disk = value; }
+			public VDS_VOLUME_NOTIFICATION Volume { get => Anonymous.Volume; set mut => Anonymous.Volume = value; }
+			public VDS_PARTITION_NOTIFICATION Partition { get => Anonymous.Partition; set mut => Anonymous.Partition = value; }
+			public VDS_DRIVE_LETTER_NOTIFICATION Letter { get => Anonymous.Letter; set mut => Anonymous.Letter = value; }
+			public VDS_FILE_SYSTEM_NOTIFICATION FileSystem { get => Anonymous.FileSystem; set mut => Anonymous.FileSystem = value; }
+			public VDS_MOUNT_POINT_NOTIFICATION MountPoint { get => Anonymous.MountPoint; set mut => Anonymous.MountPoint = value; }
+			public VDS_SUB_SYSTEM_NOTIFICATION SubSystem { get => Anonymous.SubSystem; set mut => Anonymous.SubSystem = value; }
+			public VDS_CONTROLLER_NOTIFICATION Controller { get => Anonymous.Controller; set mut => Anonymous.Controller = value; }
+			public VDS_DRIVE_NOTIFICATION Drive { get => Anonymous.Drive; set mut => Anonymous.Drive = value; }
+			public VDS_LUN_NOTIFICATION Lun { get => Anonymous.Lun; set mut => Anonymous.Lun = value; }
+			public VDS_PORT_NOTIFICATION Port { get => Anonymous.Port; set mut => Anonymous.Port = value; }
+			public VDS_PORTAL_NOTIFICATION Portal { get => Anonymous.Portal; set mut => Anonymous.Portal = value; }
+			public VDS_TARGET_NOTIFICATION Target { get => Anonymous.Target; set mut => Anonymous.Target = value; }
+			public VDS_PORTAL_GROUP_NOTIFICATION PortalGroup { get => Anonymous.PortalGroup; set mut => Anonymous.PortalGroup = value; }
+			public VDS_SERVICE_NOTIFICATION Service { get => Anonymous.Service; set mut => Anonymous.Service = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1233,6 +1250,7 @@ namespace Win32
 		{
 			public VDS_ASYNC_OUTPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

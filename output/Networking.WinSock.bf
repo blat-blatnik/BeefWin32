@@ -1677,11 +1677,15 @@ namespace Win32
 		{
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1881,6 +1885,8 @@ namespace Win32
 			public uint32 ai_addrlen;
 			public SOCKADDR* ai_addr;
 			public _Anonymous_e__Union Anonymous;
+			
+			public PWSTR ai_template { get => Anonymous.ai_template; set mut => Anonymous.ai_template = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2305,6 +2311,9 @@ namespace Win32
 			public uint32 sin6_flowinfo;
 			public IN6_ADDR sin6_addr;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 sin6_scope_id { get => Anonymous.sin6_scope_id; set mut => Anonymous.sin6_scope_id = value; }
+			public SCOPE_ID sin6_scope_struct { get => Anonymous.sin6_scope_struct; set mut => Anonymous.sin6_scope_struct = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3081,11 +3090,16 @@ namespace Win32
 			public uint32 cLength;
 			public _Anonymous_e__Union Anonymous;
 			
+			public void* pBuffer { get => Anonymous.pBuffer; set mut => Anonymous.pBuffer = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public void* pBuffer;
+				
+				public LARGE_INTEGER nFileOffset { get => Anonymous.nFileOffset; set mut => Anonymous.nFileOffset = value; }
+				public HANDLE hFile { get => Anonymous.hFile; set mut => Anonymous.hFile = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -3174,6 +3188,7 @@ namespace Win32
 		{
 			public RIO_NOTIFICATION_COMPLETION_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

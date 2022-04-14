@@ -1054,6 +1054,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 dwMDDataTag;
 			
+			public uint dwMDDataOffset { get => Anonymous.dwMDDataOffset; set mut => Anonymous.dwMDDataOffset = value; }
+			public uint8* pbMDData { get => Anonymous.pbMDData; set mut => Anonymous.pbMDData = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

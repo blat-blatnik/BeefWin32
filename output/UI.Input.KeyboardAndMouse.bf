@@ -706,6 +706,10 @@ namespace Win32
 			public INPUT_TYPE type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public MOUSEINPUT mi { get => Anonymous.mi; set mut => Anonymous.mi = value; }
+			public KEYBDINPUT ki { get => Anonymous.ki; set mut => Anonymous.ki = value; }
+			public HARDWAREINPUT hi { get => Anonymous.hi; set mut => Anonymous.hi = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

@@ -63,6 +63,10 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public void* pClientData;
 			
+			public MS_ADDINFO_FLAT* psFlat { get => Anonymous.psFlat; set mut => Anonymous.psFlat = value; }
+			public MS_ADDINFO_CATALOGMEMBER* psCatMember { get => Anonymous.psCatMember; set mut => Anonymous.psCatMember = value; }
+			public MS_ADDINFO_BLOB* psBlob { get => Anonymous.psBlob; set mut => Anonymous.psBlob = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -108,6 +112,9 @@ namespace Win32
 			public uint32 dwVersion;
 			public BOOL isMultiSign;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 dwFlags { get => Anonymous.dwFlags; set mut => Anonymous.dwFlags = value; }
+			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

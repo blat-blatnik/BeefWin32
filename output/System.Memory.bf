@@ -198,6 +198,7 @@ namespace Win32
 			public uint16 wFlags;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -244,11 +245,15 @@ namespace Win32
 			public uint RegionSize;
 			public uint CommitSize;
 			
+			public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 Flags;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

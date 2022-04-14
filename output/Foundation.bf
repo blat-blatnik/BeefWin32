@@ -9836,6 +9836,9 @@ namespace Win32
 				public _Anonymous_e__Struct Anonymous;
 				public uint64 Lo64;
 				
+				public uint32 Lo32 { get => Anonymous.Lo32; set mut => Anonymous.Lo32 = value; }
+				public uint32 Mid32 { get => Anonymous.Mid32; set mut => Anonymous.Mid32 = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -9848,6 +9851,9 @@ namespace Win32
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint16 signscale;
+				
+				public uint8 scale { get => Anonymous.scale; set mut => Anonymous.scale = value; }
+				public uint8 sign { get => Anonymous.sign; set mut => Anonymous.sign = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -9928,6 +9934,9 @@ namespace Win32
 			public _u_e__Struct u;
 			public int64 QuadPart;
 			
+			public uint32 LowPart { get => Anonymous.LowPart; set mut => Anonymous.LowPart = value; }
+			public int32 HighPart { get => Anonymous.HighPart; set mut => Anonymous.HighPart = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -9947,6 +9956,9 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public _u_e__Struct u;
 			public uint64 QuadPart;
+			
+			public uint32 LowPart { get => Anonymous.LowPart; set mut => Anonymous.LowPart = value; }
+			public uint32 HighPart { get => Anonymous.HighPart; set mut => Anonymous.HighPart = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct

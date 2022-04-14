@@ -1475,6 +1475,9 @@ namespace Win32
 			public uint8 bRevAuthor;
 			public uint8 bUnderlineColor;
 			
+			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
+			public uint32 dwCookie { get => Anonymous.dwCookie; set mut => Anonymous.dwCookie = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1497,6 +1500,9 @@ namespace Win32
 			public uint8 bAnimation;
 			public uint8 bRevAuthor;
 			public uint8 bUnderlineColor;
+			
+			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
+			public uint32 dwCookie { get => Anonymous.dwCookie; set mut => Anonymous.dwCookie = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1578,6 +1584,9 @@ namespace Win32
 			public PARAFORMAT_ALIGNMENT wAlignment;
 			public int16 cTabCount;
 			public uint32[32] rgxTabs;
+			
+			public uint16 wReserved { get => Anonymous.wReserved; set mut => Anonymous.wReserved = value; }
+			public uint16 wEffects { get => Anonymous.wEffects; set mut => Anonymous.wEffects = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

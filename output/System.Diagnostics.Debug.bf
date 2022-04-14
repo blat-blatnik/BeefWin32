@@ -3337,11 +3337,45 @@ namespace Win32
 			public uint32[2] Wcr;
 			public uint64[2] Wvr;
 			
+			public uint64[31] X { get => Anonymous.X; set mut => Anonymous.X = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[31] X;
+				
+				public uint64 X0 { get => Anonymous.X0; set mut => Anonymous.X0 = value; }
+				public uint64 X1 { get => Anonymous.X1; set mut => Anonymous.X1 = value; }
+				public uint64 X2 { get => Anonymous.X2; set mut => Anonymous.X2 = value; }
+				public uint64 X3 { get => Anonymous.X3; set mut => Anonymous.X3 = value; }
+				public uint64 X4 { get => Anonymous.X4; set mut => Anonymous.X4 = value; }
+				public uint64 X5 { get => Anonymous.X5; set mut => Anonymous.X5 = value; }
+				public uint64 X6 { get => Anonymous.X6; set mut => Anonymous.X6 = value; }
+				public uint64 X7 { get => Anonymous.X7; set mut => Anonymous.X7 = value; }
+				public uint64 X8 { get => Anonymous.X8; set mut => Anonymous.X8 = value; }
+				public uint64 X9 { get => Anonymous.X9; set mut => Anonymous.X9 = value; }
+				public uint64 X10 { get => Anonymous.X10; set mut => Anonymous.X10 = value; }
+				public uint64 X11 { get => Anonymous.X11; set mut => Anonymous.X11 = value; }
+				public uint64 X12 { get => Anonymous.X12; set mut => Anonymous.X12 = value; }
+				public uint64 X13 { get => Anonymous.X13; set mut => Anonymous.X13 = value; }
+				public uint64 X14 { get => Anonymous.X14; set mut => Anonymous.X14 = value; }
+				public uint64 X15 { get => Anonymous.X15; set mut => Anonymous.X15 = value; }
+				public uint64 X16 { get => Anonymous.X16; set mut => Anonymous.X16 = value; }
+				public uint64 X17 { get => Anonymous.X17; set mut => Anonymous.X17 = value; }
+				public uint64 X18 { get => Anonymous.X18; set mut => Anonymous.X18 = value; }
+				public uint64 X19 { get => Anonymous.X19; set mut => Anonymous.X19 = value; }
+				public uint64 X20 { get => Anonymous.X20; set mut => Anonymous.X20 = value; }
+				public uint64 X21 { get => Anonymous.X21; set mut => Anonymous.X21 = value; }
+				public uint64 X22 { get => Anonymous.X22; set mut => Anonymous.X22 = value; }
+				public uint64 X23 { get => Anonymous.X23; set mut => Anonymous.X23 = value; }
+				public uint64 X24 { get => Anonymous.X24; set mut => Anonymous.X24 = value; }
+				public uint64 X25 { get => Anonymous.X25; set mut => Anonymous.X25 = value; }
+				public uint64 X26 { get => Anonymous.X26; set mut => Anonymous.X26 = value; }
+				public uint64 X27 { get => Anonymous.X27; set mut => Anonymous.X27 = value; }
+				public uint64 X28 { get => Anonymous.X28; set mut => Anonymous.X28 = value; }
+				public uint64 Fp { get => Anonymous.Fp; set mut => Anonymous.Fp = value; }
+				public uint64 Lr { get => Anonymous.Lr; set mut => Anonymous.Lr = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -3674,6 +3708,10 @@ namespace Win32
 			public uint32 ContextValue;
 			public _Anonymous_e__Struct Anonymous;
 			
+			public uint8 FrameId { get => Anonymous.FrameId; set mut => Anonymous.FrameId = value; }
+			public uint8 FrameType { get => Anonymous.FrameType; set mut => Anonymous.FrameType = value; }
+			public uint16 FrameSignature { get => Anonymous.FrameSignature; set mut => Anonymous.FrameSignature = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -3768,6 +3806,22 @@ namespace Win32
 			public uint32 TailOfRawBytes;
 			public uint32 Type;
 			
+			public uint8 I8 { get => Anonymous.I8; set mut => Anonymous.I8 = value; }
+			public uint16 I16 { get => Anonymous.I16; set mut => Anonymous.I16 = value; }
+			public uint32 I32 { get => Anonymous.I32; set mut => Anonymous.I32 = value; }
+			public float F32 { get => Anonymous.F32; set mut => Anonymous.F32 = value; }
+			public double F64 { get => Anonymous.F64; set mut => Anonymous.F64 = value; }
+			public uint8[10] F80Bytes { get => Anonymous.F80Bytes; set mut => Anonymous.F80Bytes = value; }
+			public uint8[11] F82Bytes { get => Anonymous.F82Bytes; set mut => Anonymous.F82Bytes = value; }
+			public uint8[16] F128Bytes { get => Anonymous.F128Bytes; set mut => Anonymous.F128Bytes = value; }
+			public uint8[16] VI8 { get => Anonymous.VI8; set mut => Anonymous.VI8 = value; }
+			public uint16[8] VI16 { get => Anonymous.VI16; set mut => Anonymous.VI16 = value; }
+			public uint32[4] VI32 { get => Anonymous.VI32; set mut => Anonymous.VI32 = value; }
+			public uint64[2] VI64 { get => Anonymous.VI64; set mut => Anonymous.VI64 = value; }
+			public float[4] VF32 { get => Anonymous.VF32; set mut => Anonymous.VF32 = value; }
+			public double[2] VF64 { get => Anonymous.VF64; set mut => Anonymous.VF64 = value; }
+			public uint8[24] RawBytes { get => Anonymous.RawBytes; set mut => Anonymous.RawBytes = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3789,6 +3843,9 @@ namespace Win32
 				public _I64Parts32_e__Struct I64Parts32;
 				public _F128Parts64_e__Struct F128Parts64;
 				public uint8[24] RawBytes;
+				
+				public uint64 I64 { get => Anonymous.I64; set mut => Anonymous.I64 = value; }
+				public BOOL Nat { get => Anonymous.Nat; set mut => Anonymous.Nat = value; }
 				
 				[CRepr]
 				public struct _I64Parts32_e__Struct
@@ -4718,6 +4775,9 @@ namespace Win32
 			public _BitField BitField;
 			public uint32 _bitfield;
 			
+			public void* fieldCallBack { get => Anonymous.fieldCallBack; set mut => Anonymous.fieldCallBack = value; }
+			public void* pBuffer { get => Anonymous.pBuffer; set mut => Anonymous.pBuffer = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -4748,6 +4808,9 @@ namespace Win32
 			public uint32 TypeSize;
 			public uint32 BufferSize;
 			public uint32 _bitfield;
+			
+			public void* Context { get => Anonymous.Context; set mut => Anonymous.Context = value; }
+			public void* pBuffer { get => Anonymous.pBuffer; set mut => Anonymous.pBuffer = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4816,6 +4879,23 @@ namespace Win32
 				public uint64*[16] IntegerContext;
 				public _Anonymous_e__Struct Anonymous;
 				
+				public uint64* Rax { get => Anonymous.Rax; set mut => Anonymous.Rax = value; }
+				public uint64* Rcx { get => Anonymous.Rcx; set mut => Anonymous.Rcx = value; }
+				public uint64* Rdx { get => Anonymous.Rdx; set mut => Anonymous.Rdx = value; }
+				public uint64* Rbx { get => Anonymous.Rbx; set mut => Anonymous.Rbx = value; }
+				public uint64* Rsp { get => Anonymous.Rsp; set mut => Anonymous.Rsp = value; }
+				public uint64* Rbp { get => Anonymous.Rbp; set mut => Anonymous.Rbp = value; }
+				public uint64* Rsi { get => Anonymous.Rsi; set mut => Anonymous.Rsi = value; }
+				public uint64* Rdi { get => Anonymous.Rdi; set mut => Anonymous.Rdi = value; }
+				public uint64* R8 { get => Anonymous.R8; set mut => Anonymous.R8 = value; }
+				public uint64* R9 { get => Anonymous.R9; set mut => Anonymous.R9 = value; }
+				public uint64* R10 { get => Anonymous.R10; set mut => Anonymous.R10 = value; }
+				public uint64* R11 { get => Anonymous.R11; set mut => Anonymous.R11 = value; }
+				public uint64* R12 { get => Anonymous.R12; set mut => Anonymous.R12 = value; }
+				public uint64* R13 { get => Anonymous.R13; set mut => Anonymous.R13 = value; }
+				public uint64* R14 { get => Anonymous.R14; set mut => Anonymous.R14 = value; }
+				public uint64* R15 { get => Anonymous.R15; set mut => Anonymous.R15 = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -4842,6 +4922,23 @@ namespace Win32
 			{
 				public M128A*[16] FloatingContext;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public M128A* Xmm0 { get => Anonymous.Xmm0; set mut => Anonymous.Xmm0 = value; }
+				public M128A* Xmm1 { get => Anonymous.Xmm1; set mut => Anonymous.Xmm1 = value; }
+				public M128A* Xmm2 { get => Anonymous.Xmm2; set mut => Anonymous.Xmm2 = value; }
+				public M128A* Xmm3 { get => Anonymous.Xmm3; set mut => Anonymous.Xmm3 = value; }
+				public M128A* Xmm4 { get => Anonymous.Xmm4; set mut => Anonymous.Xmm4 = value; }
+				public M128A* Xmm5 { get => Anonymous.Xmm5; set mut => Anonymous.Xmm5 = value; }
+				public M128A* Xmm6 { get => Anonymous.Xmm6; set mut => Anonymous.Xmm6 = value; }
+				public M128A* Xmm7 { get => Anonymous.Xmm7; set mut => Anonymous.Xmm7 = value; }
+				public M128A* Xmm8 { get => Anonymous.Xmm8; set mut => Anonymous.Xmm8 = value; }
+				public M128A* Xmm9 { get => Anonymous.Xmm9; set mut => Anonymous.Xmm9 = value; }
+				public M128A* Xmm10 { get => Anonymous.Xmm10; set mut => Anonymous.Xmm10 = value; }
+				public M128A* Xmm11 { get => Anonymous.Xmm11; set mut => Anonymous.Xmm11 = value; }
+				public M128A* Xmm12 { get => Anonymous.Xmm12; set mut => Anonymous.Xmm12 = value; }
+				public M128A* Xmm13 { get => Anonymous.Xmm13; set mut => Anonymous.Xmm13 = value; }
+				public M128A* Xmm14 { get => Anonymous.Xmm14; set mut => Anonymous.Xmm14 = value; }
+				public M128A* Xmm15 { get => Anonymous.Xmm15; set mut => Anonymous.Xmm15 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4874,6 +4971,9 @@ namespace Win32
 			public uint16[8] H;
 			public uint8[16] B;
 			
+			public uint64 Low { get => Anonymous.Low; set mut => Anonymous.Low = value; }
+			public int64 High { get => Anonymous.High; set mut => Anonymous.High = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -4897,11 +4997,45 @@ namespace Win32
 			public uint32[2] Wcr;
 			public uint64[2] Wvr;
 			
+			public uint64[31] X { get => Anonymous.X; set mut => Anonymous.X = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint64[31] X;
+				
+				public uint64 X0 { get => Anonymous.X0; set mut => Anonymous.X0 = value; }
+				public uint64 X1 { get => Anonymous.X1; set mut => Anonymous.X1 = value; }
+				public uint64 X2 { get => Anonymous.X2; set mut => Anonymous.X2 = value; }
+				public uint64 X3 { get => Anonymous.X3; set mut => Anonymous.X3 = value; }
+				public uint64 X4 { get => Anonymous.X4; set mut => Anonymous.X4 = value; }
+				public uint64 X5 { get => Anonymous.X5; set mut => Anonymous.X5 = value; }
+				public uint64 X6 { get => Anonymous.X6; set mut => Anonymous.X6 = value; }
+				public uint64 X7 { get => Anonymous.X7; set mut => Anonymous.X7 = value; }
+				public uint64 X8 { get => Anonymous.X8; set mut => Anonymous.X8 = value; }
+				public uint64 X9 { get => Anonymous.X9; set mut => Anonymous.X9 = value; }
+				public uint64 X10 { get => Anonymous.X10; set mut => Anonymous.X10 = value; }
+				public uint64 X11 { get => Anonymous.X11; set mut => Anonymous.X11 = value; }
+				public uint64 X12 { get => Anonymous.X12; set mut => Anonymous.X12 = value; }
+				public uint64 X13 { get => Anonymous.X13; set mut => Anonymous.X13 = value; }
+				public uint64 X14 { get => Anonymous.X14; set mut => Anonymous.X14 = value; }
+				public uint64 X15 { get => Anonymous.X15; set mut => Anonymous.X15 = value; }
+				public uint64 X16 { get => Anonymous.X16; set mut => Anonymous.X16 = value; }
+				public uint64 X17 { get => Anonymous.X17; set mut => Anonymous.X17 = value; }
+				public uint64 X18 { get => Anonymous.X18; set mut => Anonymous.X18 = value; }
+				public uint64 X19 { get => Anonymous.X19; set mut => Anonymous.X19 = value; }
+				public uint64 X20 { get => Anonymous.X20; set mut => Anonymous.X20 = value; }
+				public uint64 X21 { get => Anonymous.X21; set mut => Anonymous.X21 = value; }
+				public uint64 X22 { get => Anonymous.X22; set mut => Anonymous.X22 = value; }
+				public uint64 X23 { get => Anonymous.X23; set mut => Anonymous.X23 = value; }
+				public uint64 X24 { get => Anonymous.X24; set mut => Anonymous.X24 = value; }
+				public uint64 X25 { get => Anonymous.X25; set mut => Anonymous.X25 = value; }
+				public uint64 X26 { get => Anonymous.X26; set mut => Anonymous.X26 = value; }
+				public uint64 X27 { get => Anonymous.X27; set mut => Anonymous.X27 = value; }
+				public uint64 X28 { get => Anonymous.X28; set mut => Anonymous.X28 = value; }
+				public uint64 Fp { get => Anonymous.Fp; set mut => Anonymous.Fp = value; }
+				public uint64 Lr { get => Anonymous.Lr; set mut => Anonymous.Lr = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -5120,11 +5254,15 @@ namespace Win32
 			public uint32 AllNonLargeFeatureSize;
 			public uint32 Spare;
 			
+			public uint32 ControlFlags { get => Anonymous.ControlFlags; set mut => Anonymous.ControlFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ControlFlags;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -5395,11 +5533,15 @@ namespace Win32
 			public uint32 BeginAddress;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 UnwindData { get => Anonymous.UnwindData; set mut => Anonymous.UnwindData = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 UnwindData;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -5414,6 +5556,9 @@ namespace Win32
 			public uint32 BeginAddress;
 			public uint32 EndAddress;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 UnwindInfoAddress { get => Anonymous.UnwindInfoAddress; set mut => Anonymous.UnwindInfoAddress = value; }
+			public uint32 UnwindData { get => Anonymous.UnwindData; set mut => Anonymous.UnwindData = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5469,6 +5614,9 @@ namespace Win32
 			public uint64 EndingAddress;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint64 EndOfPrologue { get => Anonymous.EndOfPrologue; set mut => Anonymous.EndOfPrologue = value; }
+			public uint64 UnwindInfoAddress { get => Anonymous.UnwindInfoAddress; set mut => Anonymous.UnwindInfoAddress = value; }
+			
 			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
 			{
@@ -5491,6 +5639,9 @@ namespace Win32
 			public IMAGE_DATA_DIRECTORY VTableFixups;
 			public IMAGE_DATA_DIRECTORY ExportAddressTableJumps;
 			public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
+			
+			public uint32 EntryPointToken { get => Anonymous.EntryPointToken; set mut => Anonymous.EntryPointToken = value; }
+			public uint32 EntryPointRVA { get => Anonymous.EntryPointRVA; set mut => Anonymous.EntryPointRVA = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5517,6 +5668,7 @@ namespace Win32
 			public WCT_OBJECT_TYPE ObjectType;
 			public WCT_OBJECT_STATUS ObjectStatus;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5575,6 +5727,9 @@ namespace Win32
 			public uint32 CheckSum;
 			public _Anonymous_e__Union Anonymous;
 			public uint64 Flags;
+			
+			public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
+			public uint32 TimeDateStamp { get => Anonymous.TimeDateStamp; set mut => Anonymous.TimeDateStamp = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5636,6 +5791,9 @@ namespace Win32
 				public uint32 Reserved1;
 				public _Anonymous_e__Struct Anonymous;
 				
+				public uint16 SuiteMask { get => Anonymous.SuiteMask; set mut => Anonymous.SuiteMask = value; }
+				public uint16 Reserved2 { get => Anonymous.Reserved2; set mut => Anonymous.Reserved2 = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -5648,6 +5806,9 @@ namespace Win32
 			{
 				public uint16 Reserved0;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint8 NumberOfProcessors { get => Anonymous.NumberOfProcessors; set mut => Anonymous.NumberOfProcessors = value; }
+				public uint8 ProductType { get => Anonymous.ProductType; set mut => Anonymous.ProductType = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -6262,6 +6423,19 @@ namespace Win32
 			public uint32 CallbackType;
 			public _Anonymous_e__Union Anonymous;
 			
+			public HRESULT Status { get => Anonymous.Status; set mut => Anonymous.Status = value; }
+			public MINIDUMP_THREAD_CALLBACK Thread { get => Anonymous.Thread; set mut => Anonymous.Thread = value; }
+			public MINIDUMP_THREAD_EX_CALLBACK ThreadEx { get => Anonymous.ThreadEx; set mut => Anonymous.ThreadEx = value; }
+			public MINIDUMP_MODULE_CALLBACK Module { get => Anonymous.Module; set mut => Anonymous.Module = value; }
+			public MINIDUMP_INCLUDE_THREAD_CALLBACK IncludeThread { get => Anonymous.IncludeThread; set mut => Anonymous.IncludeThread = value; }
+			public MINIDUMP_INCLUDE_MODULE_CALLBACK IncludeModule { get => Anonymous.IncludeModule; set mut => Anonymous.IncludeModule = value; }
+			public MINIDUMP_IO_CALLBACK Io { get => Anonymous.Io; set mut => Anonymous.Io = value; }
+			public MINIDUMP_READ_MEMORY_FAILURE_CALLBACK ReadMemoryFailure { get => Anonymous.ReadMemoryFailure; set mut => Anonymous.ReadMemoryFailure = value; }
+			public uint32 SecondaryFlags { get => Anonymous.SecondaryFlags; set mut => Anonymous.SecondaryFlags = value; }
+			public MINIDUMP_VM_QUERY_CALLBACK VmQuery { get => Anonymous.VmQuery; set mut => Anonymous.VmQuery = value; }
+			public MINIDUMP_VM_PRE_READ_CALLBACK VmPreRead { get => Anonymous.VmPreRead; set mut => Anonymous.VmPreRead = value; }
+			public MINIDUMP_VM_POST_READ_CALLBACK VmPostRead { get => Anonymous.VmPostRead; set mut => Anonymous.VmPostRead = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -6283,6 +6457,12 @@ namespace Win32
 		public struct MINIDUMP_CALLBACK_OUTPUT
 		{
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint32 ModuleWriteFlags { get => Anonymous.ModuleWriteFlags; set mut => Anonymous.ModuleWriteFlags = value; }
+			public uint32 ThreadWriteFlags { get => Anonymous.ThreadWriteFlags; set mut => Anonymous.ThreadWriteFlags = value; }
+			public uint32 SecondaryFlags { get => Anonymous.SecondaryFlags; set mut => Anonymous.SecondaryFlags = value; }
+			public HANDLE Handle { get => Anonymous.Handle; set mut => Anonymous.Handle = value; }
+			public HRESULT Status { get => Anonymous.Status; set mut => Anonymous.Status = value; }
 			
 			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
@@ -6400,6 +6580,13 @@ namespace Win32
 			public PROFILER_RELATIONSHIP_INFO relationshipInfo;
 			public _Anonymous_e__Union Anonymous;
 			
+			public double numberValue { get => Anonymous.numberValue; set mut => Anonymous.numberValue = value; }
+			public PWSTR stringValue { get => Anonymous.stringValue; set mut => Anonymous.stringValue = value; }
+			public BSTR bstrValue { get => Anonymous.bstrValue; set mut => Anonymous.bstrValue = value; }
+			public uint objectId { get => Anonymous.objectId; set mut => Anonymous.objectId = value; }
+			public void* externalObjectAddress { get => Anonymous.externalObjectAddress; set mut => Anonymous.externalObjectAddress = value; }
+			public PROFILER_PROPERTY_TYPE_SUBSTRING_INFO* subString { get => Anonymous.subString; set mut => Anonymous.subString = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -6422,6 +6609,20 @@ namespace Win32
 		{
 			public PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE infoType;
 			public _Anonymous_e__Union Anonymous;
+			
+			public uint prototype { get => Anonymous.prototype; set mut => Anonymous.prototype = value; }
+			public PWSTR functionName { get => Anonymous.functionName; set mut => Anonymous.functionName = value; }
+			public uint32 elementAttributesSize { get => Anonymous.elementAttributesSize; set mut => Anonymous.elementAttributesSize = value; }
+			public uint32 elementTextChildrenSize { get => Anonymous.elementTextChildrenSize; set mut => Anonymous.elementTextChildrenSize = value; }
+			public PROFILER_HEAP_OBJECT_SCOPE_LIST* scopeList { get => Anonymous.scopeList; set mut => Anonymous.scopeList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP* internalProperty { get => Anonymous.internalProperty; set mut => Anonymous.internalProperty = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* namePropertyList { get => Anonymous.namePropertyList; set mut => Anonymous.namePropertyList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* indexPropertyList { get => Anonymous.indexPropertyList; set mut => Anonymous.indexPropertyList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* relationshipList { get => Anonymous.relationshipList; set mut => Anonymous.relationshipList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* eventList { get => Anonymous.eventList; set mut => Anonymous.eventList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* weakMapCollectionList { get => Anonymous.weakMapCollectionList; set mut => Anonymous.weakMapCollectionList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* mapCollectionList { get => Anonymous.mapCollectionList; set mut => Anonymous.mapCollectionList = value; }
+			public PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST* setCollectionList { get => Anonymous.setCollectionList; set mut => Anonymous.setCollectionList = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6450,6 +6651,9 @@ namespace Win32
 			public uint32 flags;
 			public uint16 unused;
 			public uint16 optionalInfoCount;
+			
+			public uint objectId { get => Anonymous.objectId; set mut => Anonymous.objectId = value; }
+			public void* externalObjectAddress { get => Anonymous.externalObjectAddress; set mut => Anonymous.externalObjectAddress = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -7001,6 +7205,8 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 Attributes;
 			
+			public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -7049,6 +7255,9 @@ namespace Win32
 			public LARGE_INTEGER SystemTime;
 			public uint8[56] _reserved3;
 			
+			public PHYSICAL_MEMORY_DESCRIPTOR32 PhysicalMemoryBlock { get => Anonymous.PhysicalMemoryBlock; set mut => Anonymous.PhysicalMemoryBlock = value; }
+			public uint8[700] PhysicalMemoryBlockBuffer { get => Anonymous.PhysicalMemoryBlockBuffer; set mut => Anonymous.PhysicalMemoryBlockBuffer = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -7095,6 +7304,9 @@ namespace Win32
 			public DUMP_FILE_ATTRIBUTES Attributes;
 			public uint32 BootId;
 			public uint8[4008] _reserved0;
+			
+			public PHYSICAL_MEMORY_DESCRIPTOR64 PhysicalMemoryBlock { get => Anonymous.PhysicalMemoryBlock; set mut => Anonymous.PhysicalMemoryBlock = value; }
+			public uint8[700] PhysicalMemoryBlockBuffer { get => Anonymous.PhysicalMemoryBlockBuffer; set mut => Anonymous.PhysicalMemoryBlockBuffer = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -7150,6 +7362,8 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
+			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
@@ -7161,6 +7375,8 @@ namespace Win32
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint8 AsUCHAR;
+			
+			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -7174,6 +7390,8 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public uint32 AsULONG;
 			
+			public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
@@ -7185,6 +7403,8 @@ namespace Win32
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
+			
+			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -7198,6 +7418,8 @@ namespace Win32
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
 			
+			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
 			{
@@ -7209,6 +7431,8 @@ namespace Win32
 		{
 			public _Anonymous_e__Struct Anonymous;
 			public uint16 AsUSHORT;
+			
+			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct

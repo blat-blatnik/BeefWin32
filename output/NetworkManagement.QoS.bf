@@ -1181,6 +1181,12 @@ namespace Win32
 			public FilterType Type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public RSVP_FILTERSPEC_V4 FilterSpecV4 { get => Anonymous.FilterSpecV4; set mut => Anonymous.FilterSpecV4 = value; }
+			public RSVP_FILTERSPEC_V6 FilterSpecV6 { get => Anonymous.FilterSpecV6; set mut => Anonymous.FilterSpecV6 = value; }
+			public RSVP_FILTERSPEC_V6_FLOW FilterSpecV6Flow { get => Anonymous.FilterSpecV6Flow; set mut => Anonymous.FilterSpecV6Flow = value; }
+			public RSVP_FILTERSPEC_V4_GPI FilterSpecV4Gpi { get => Anonymous.FilterSpecV4Gpi; set mut => Anonymous.FilterSpecV4Gpi = value; }
+			public RSVP_FILTERSPEC_V6_GPI FilterSpecV6Gpi { get => Anonymous.FilterSpecV6Gpi; set mut => Anonymous.FilterSpecV6Gpi = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1269,6 +1275,9 @@ namespace Win32
 			public AD_GENERAL_PARAMS Overrides;
 			public _Anonymous_e__Union Anonymous;
 			
+			public AD_GUARANTEED Guaranteed { get => Anonymous.Guaranteed; set mut => Anonymous.Guaranteed = value; }
+			public PARAM_BUFFER[0] ParamBuffer { get => Anonymous.ParamBuffer; set mut => Anonymous.ParamBuffer = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1343,6 +1352,8 @@ namespace Win32
 		{
 			public uint32 KeyAlgID;
 			public _Anonymous_e__Union Anonymous;
+			
+			public tag_SIPAEVENT_VSM_IDK_RSA_INFO RsaKeyInfo { get => Anonymous.RsaKeyInfo; set mut => Anonymous.RsaKeyInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

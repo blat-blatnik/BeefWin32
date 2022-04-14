@@ -119,6 +119,25 @@ UNREFERENCED_TYPES = {
     'HUMPD__',
 }
 
+# Some anonymous structs define their own inner structs and have fields of those types. We can't handle those so we skip them.
+NO_ANONYMOUS_PROPERTIES_FOR_THESE_TYPES = {
+    '_DNS_CONNECTION_PROXY_INFO_CONFIG',
+    '_DNS_CONNECTION_PROXY_INFO_SCRIPT',
+    '_cp',
+    '_cv',
+    '_bvp',
+    '_sv',
+    '_cl',
+    '_ct',
+    '_cpg',
+    '_cvd',
+    '_NCharVal',
+    '_CharVal',
+    '_BinaryVal',
+    '_UnknownType',
+    '_BLOBType'
+}
+
 def replace_name(name: str, namespace: str = '') -> str:
     qualified_name = f'{namespace}.{name}'
     if qualified_name in CONFLICTING_NAME_REPLACEMENTS:
@@ -434,6 +453,9 @@ for filename in filenames:
                         kind = type['Kind']
                         pack = type['PackingSize']
 
+                        if name == 'LARGE_INTEGER':
+                            x = 123
+
                         attribs = ['CRepr']
                         if kind == 'Union':
                             attribs.append('Union')
@@ -450,15 +472,29 @@ for filename in filenames:
                             output.write('\n')
                             output.write(f'{indent}{{\n')
                             indent += '\t'
+                            anonymous = {}
                             for field in fields:
                                 field_name = replace_name(field['Name'])
                                 if field_name == '_bitfield':
                                     x = 123 # I don't think we can do anything with bitfields because there aren't any names for them in the metadata.
                                 field_type = get_type_name(field['Type'])
                                 if '_Anonymous_' in field_type:
-                                    x = 123 # TODO: Anonymous fields.
+                                    anonymous[field_type] = field_name
                                 output.write(f'{indent}public {field_type} {field_name};\n')
                             nested_types = type['NestedTypes']
+                            if len(anonymous) > 0:
+                                output.write(f'{indent}\n')
+                                for nested_type in nested_types:
+                                    nested_type_name = replace_type_name(nested_type['Name'], namespace_name)
+                                    if nested_type_name in anonymous:
+                                        anon_name = anonymous[nested_type_name]
+                                        anon_fields = nested_type['Fields']
+                                        for field in anon_fields:
+                                            field_name = replace_name(field['Name'])
+                                            field_type = get_type_name(field['Type'])
+                                            # This is an anonymous structure within an anonymous structure. We don't do those.
+                                            if '_e__' not in field_type and field_type not in NO_ANONYMOUS_PROPERTIES_FOR_THESE_TYPES:
+                                                output.write(f'{indent}public {field_type} {field_name} {{ get => {anon_name}.{field_name}; set mut => {anon_name}.{field_name} = value; }}\n')
                             if len(nested_types) > 0:
                                 output.write(f'{indent}\n')
                                 for nested_type in nested_types:

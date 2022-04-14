@@ -2485,6 +2485,9 @@ namespace Win32
 		{
 			public _Anonymous_e__Struct Anonymous;
 			
+			public int64 LowPart { get => Anonymous.LowPart; set mut => Anonymous.LowPart = value; }
+			public int64 HighPart { get => Anonymous.HighPart; set mut => Anonymous.HighPart = value; }
+			
 			[CRepr, Packed(4)]
 			public struct _Anonymous_e__Struct
 			{
@@ -3249,6 +3252,9 @@ namespace Win32
 			public uint32 FileNameLength;
 			public char16[0] FileName;
 			
+			public BOOLEAN ReplaceIfExists { get => Anonymous.ReplaceIfExists; set mut => Anonymous.ReplaceIfExists = value; }
+			public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -3427,6 +3433,10 @@ namespace Win32
 			public uint32 dwSize;
 			public FILE_ID_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
+			
+			public LARGE_INTEGER FileId { get => Anonymous.FileId; set mut => Anonymous.FileId = value; }
+			public Guid ObjectId { get => Anonymous.ObjectId; set mut => Anonymous.ObjectId = value; }
+			public FILE_ID_128 ExtendedFileId { get => Anonymous.ExtendedFileId; set mut => Anonymous.ExtendedFileId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

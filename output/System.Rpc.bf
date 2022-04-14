@@ -1674,6 +1674,8 @@ namespace Win32
 			public uint32 InformationLevel;
 			public _Anonymous_e__Union Anonymous;
 			
+			public NDR_USER_MARSHAL_INFO_LEVEL1 Level1 { get => Anonymous.Level1; set mut => Anonymous.Level1 = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

@@ -67,11 +67,15 @@ namespace Win32
 			public uint32 version;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 asUINT32 { get => Anonymous.asUINT32; set mut => Anonymous.asUINT32 = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
 				public uint32 asUINT32;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

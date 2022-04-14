@@ -148,6 +148,9 @@ namespace Win32
 			public UI_EVENTTYPE EventType;
 			public _Anonymous_e__Union Anonymous;
 			
+			public int32 Modes { get => Anonymous.Modes; set mut => Anonymous.Modes = value; }
+			public UI_EVENTPARAMS_COMMAND Params { get => Anonymous.Params; set mut => Anonymous.Params = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{

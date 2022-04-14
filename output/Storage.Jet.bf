@@ -1029,11 +1029,15 @@ namespace Win32
 			public PSTR szOldDll;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 fFlags { get => Anonymous.fFlags; set mut => Anonymous.fFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 fFlags;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1048,11 +1052,15 @@ namespace Win32
 			public PWSTR szOldDll;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 fFlags { get => Anonymous.fFlags; set mut => Anonymous.fFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 fFlags;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1079,11 +1087,15 @@ namespace Win32
 			public uint32 csecToUpgrade;
 			public _Anonymous_e__Union Anonymous;
 			
+			public uint32 ulFlags { get => Anonymous.ulFlags; set mut => Anonymous.ulFlags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulFlags;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1433,6 +1445,9 @@ namespace Win32
 			public uint32 cbKeyMost;
 			public JET_SPACEHINTS* pSpacehints;
 			
+			public uint32 cbVarSegMac { get => Anonymous.cbVarSegMac; set mut => Anonymous.cbVarSegMac = value; }
+			public JET_TUPLELIMITS* ptuplelimits { get => Anonymous.ptuplelimits; set mut => Anonymous.ptuplelimits = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1456,6 +1471,9 @@ namespace Win32
 			public int32 err;
 			public uint32 cbKeyMost;
 			public JET_SPACEHINTS* pSpacehints;
+			
+			public uint32 cbVarSegMac { get => Anonymous.cbVarSegMac; set mut => Anonymous.cbVarSegMac = value; }
+			public JET_TUPLELIMITS* ptuplelimits { get => Anonymous.ptuplelimits; set mut => Anonymous.ptuplelimits = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1715,6 +1733,8 @@ namespace Win32
 				public CHAR bFiller2;
 				public _Anonymous_e__Struct Anonymous;
 				
+				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -1726,6 +1746,8 @@ namespace Win32
 			{
 				public CHAR bFiller1;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1752,6 +1774,8 @@ namespace Win32
 				public CHAR bFiller2;
 				public _Anonymous_e__Struct Anonymous;
 				
+				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
@@ -1763,6 +1787,8 @@ namespace Win32
 			{
 				public CHAR bFiller1;
 				public _Anonymous_e__Struct Anonymous;
+				
+				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1792,6 +1818,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 genLow;
 			public uint32 genHigh;
+			
+			public JET_LOGTIME logtimeMark { get => Anonymous.logtimeMark; set mut => Anonymous.logtimeMark = value; }
+			public JET_BKLOGTIME bklogtimeMark { get => Anonymous.bklogtimeMark; set mut => Anonymous.bklogtimeMark = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2103,6 +2132,7 @@ namespace Win32
 			public uint32 columnid;
 			public int32 err;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

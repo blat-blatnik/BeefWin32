@@ -1404,6 +1404,9 @@ namespace Win32
 			public uint16 SuiteMask;
 			public uint32 BuildNumber;
 			
+			public uint16 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
+			public uint16 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -1422,6 +1425,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 FirstValidatedMajorVersion;
 			public uint32 FirstValidatedMinorVersion;
+			
+			public uint16 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
+			public uint16 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

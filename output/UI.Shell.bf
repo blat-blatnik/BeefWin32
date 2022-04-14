@@ -5287,6 +5287,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public HANDLE hProcess;
 			
+			public HANDLE hIcon { get => Anonymous.hIcon; set mut => Anonymous.hIcon = value; }
+			public HANDLE hMonitor { get => Anonymous.hMonitor; set mut => Anonymous.hMonitor = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5312,6 +5315,9 @@ namespace Win32
 			public uint32 dwHotKey;
 			public _Anonymous_e__Union Anonymous;
 			public HANDLE hProcess;
+			
+			public HANDLE hIcon { get => Anonymous.hIcon; set mut => Anonymous.hIcon = value; }
+			public HANDLE hMonitor { get => Anonymous.hMonitor; set mut => Anonymous.hMonitor = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5370,6 +5376,9 @@ namespace Win32
 			public Guid guidItem;
 			public HICON hBalloonIcon;
 			
+			public uint32 uTimeout { get => Anonymous.uTimeout; set mut => Anonymous.uTimeout = value; }
+			public uint32 uVersion { get => Anonymous.uVersion; set mut => Anonymous.uVersion = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -5395,6 +5404,9 @@ namespace Win32
 			public uint32 dwInfoFlags;
 			public Guid guidItem;
 			public HICON hBalloonIcon;
+			
+			public uint32 uTimeout { get => Anonymous.uTimeout; set mut => Anonymous.uTimeout = value; }
+			public uint32 uVersion { get => Anonymous.uVersion; set mut => Anonymous.uVersion = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -300,6 +300,7 @@ namespace Win32
 			public OPEN_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -334,6 +335,7 @@ namespace Win32
 		{
 			public CREATE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -412,6 +414,7 @@ namespace Win32
 			public ATTACH_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -457,6 +460,9 @@ namespace Win32
 			public uint32 NumberEntries;
 			public _Anonymous_e__Union Anonymous;
 			
+			public STORAGE_DEPENDENCY_INFO_TYPE_1[0] Version1Entries { get => Anonymous.Version1Entries; set mut => Anonymous.Version1Entries = value; }
+			public STORAGE_DEPENDENCY_INFO_TYPE_2[0] Version2Entries { get => Anonymous.Version2Entries; set mut => Anonymous.Version2Entries = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -469,6 +475,18 @@ namespace Win32
 		{
 			public GET_VIRTUAL_DISK_INFO_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
+			public Guid Identifier { get => Anonymous.Identifier; set mut => Anonymous.Identifier = value; }
+			public Guid ParentIdentifier { get => Anonymous.ParentIdentifier; set mut => Anonymous.ParentIdentifier = value; }
+			public uint32 ParentTimestamp { get => Anonymous.ParentTimestamp; set mut => Anonymous.ParentTimestamp = value; }
+			public VIRTUAL_STORAGE_TYPE VirtualStorageType { get => Anonymous.VirtualStorageType; set mut => Anonymous.VirtualStorageType = value; }
+			public uint32 ProviderSubtype { get => Anonymous.ProviderSubtype; set mut => Anonymous.ProviderSubtype = value; }
+			public BOOL Is4kAligned { get => Anonymous.Is4kAligned; set mut => Anonymous.Is4kAligned = value; }
+			public BOOL IsLoaded { get => Anonymous.IsLoaded; set mut => Anonymous.IsLoaded = value; }
+			public uint32 VhdPhysicalSectorSize { get => Anonymous.VhdPhysicalSectorSize; set mut => Anonymous.VhdPhysicalSectorSize = value; }
+			public uint64 SmallestSafeVirtualSize { get => Anonymous.SmallestSafeVirtualSize; set mut => Anonymous.SmallestSafeVirtualSize = value; }
+			public uint32 FragmentationPercentage { get => Anonymous.FragmentationPercentage; set mut => Anonymous.FragmentationPercentage = value; }
+			public Guid VirtualDiskId { get => Anonymous.VirtualDiskId; set mut => Anonymous.VirtualDiskId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -525,6 +543,12 @@ namespace Win32
 			public SET_VIRTUAL_DISK_INFO_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			public PWSTR ParentFilePath { get => Anonymous.ParentFilePath; set mut => Anonymous.ParentFilePath = value; }
+			public Guid UniqueIdentifier { get => Anonymous.UniqueIdentifier; set mut => Anonymous.UniqueIdentifier = value; }
+			public uint32 VhdPhysicalSectorSize { get => Anonymous.VhdPhysicalSectorSize; set mut => Anonymous.VhdPhysicalSectorSize = value; }
+			public Guid VirtualDiskId { get => Anonymous.VirtualDiskId; set mut => Anonymous.VirtualDiskId = value; }
+			public BOOL ChangeTrackingEnabled { get => Anonymous.ChangeTrackingEnabled; set mut => Anonymous.ChangeTrackingEnabled = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -563,6 +587,7 @@ namespace Win32
 			public COMPACT_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -580,6 +605,7 @@ namespace Win32
 		{
 			public MERGE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -606,6 +632,7 @@ namespace Win32
 			public EXPAND_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -624,6 +651,7 @@ namespace Win32
 			public RESIZE_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -641,6 +669,7 @@ namespace Win32
 		{
 			public MIRROR_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -667,6 +696,7 @@ namespace Win32
 			public TAKE_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -685,6 +715,7 @@ namespace Win32
 			public DELETE_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -702,6 +733,9 @@ namespace Win32
 		{
 			public MODIFY_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
+			public Guid SnapshotId { get => Anonymous.SnapshotId; set mut => Anonymous.SnapshotId = value; }
+			public PWSTR DefaultFilePath { get => Anonymous.DefaultFilePath; set mut => Anonymous.DefaultFilePath = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -724,6 +758,7 @@ namespace Win32
 			public APPLY_SNAPSHOT_VHDSET_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -742,6 +777,7 @@ namespace Win32
 		{
 			public RAW_SCSI_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -769,6 +805,7 @@ namespace Win32
 			public RAW_SCSI_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
 			
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -788,6 +825,7 @@ namespace Win32
 		{
 			public FORK_VIRTUAL_DISK_VERSION Version;
 			public _Anonymous_e__Union Anonymous;
+			
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

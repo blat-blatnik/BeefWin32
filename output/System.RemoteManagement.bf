@@ -705,6 +705,10 @@ namespace Win32
 			public WSManDataType type;
 			public _Anonymous_e__Union Anonymous;
 			
+			public WSMAN_DATA_TEXT text { get => Anonymous.text; set mut => Anonymous.text = value; }
+			public WSMAN_DATA_BINARY binaryData { get => Anonymous.binaryData; set mut => Anonymous.binaryData = value; }
+			public uint32 number { get => Anonymous.number; set mut => Anonymous.number = value; }
+			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -733,6 +737,9 @@ namespace Win32
 		{
 			public uint32 authenticationMechanism;
 			public _Anonymous_e__Union Anonymous;
+			
+			public WSMAN_USERNAME_PASSWORD_CREDS userAccount { get => Anonymous.userAccount; set mut => Anonymous.userAccount = value; }
+			public PWSTR certificateThumbprint { get => Anonymous.certificateThumbprint; set mut => Anonymous.certificateThumbprint = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

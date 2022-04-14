@@ -1324,6 +1324,9 @@ namespace Win32
 			public uint32 cbmxctrl;
 			public MIXERCONTROLA* pamxctrl;
 			
+			public uint32 dwControlID { get => Anonymous.dwControlID; set mut => Anonymous.dwControlID = value; }
+			public uint32 dwControlType { get => Anonymous.dwControlType; set mut => Anonymous.dwControlType = value; }
+			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
@@ -1341,6 +1344,9 @@ namespace Win32
 			public uint32 cbmxctrl;
 			public MIXERCONTROLW* pamxctrl;
 			
+			public uint32 dwControlID { get => Anonymous.dwControlID; set mut => Anonymous.dwControlID = value; }
+			public uint32 dwControlType { get => Anonymous.dwControlType; set mut => Anonymous.dwControlType = value; }
+			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
@@ -1357,6 +1363,9 @@ namespace Win32
 			public _Anonymous_e__Union Anonymous;
 			public uint32 cbDetails;
 			public void* paDetails;
+			
+			public HWND hwndOwner { get => Anonymous.hwndOwner; set mut => Anonymous.hwndOwner = value; }
+			public uint32 cMultipleItems { get => Anonymous.cMultipleItems; set mut => Anonymous.cMultipleItems = value; }
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
@@ -1588,6 +1597,8 @@ namespace Win32
 		{
 			public AUDIOCLIENT_ACTIVATION_TYPE ActivationType;
 			public _Anonymous_e__Union Anonymous;
+			
+			public AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams { get => Anonymous.ProcessLoopbackParams; set mut => Anonymous.ProcessLoopbackParams = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
