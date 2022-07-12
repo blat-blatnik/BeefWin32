@@ -1547,15 +1547,11 @@ namespace Win32
 		public struct PATCH_OLD_FILE_INFO
 		{
 			public uint32 SizeOfThisStruct;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 IgnoreRangeCount;
 			public PATCH_IGNORE_RANGE* IgnoreRangeArray;
 			public uint32 RetainRangeCount;
 			public PATCH_RETAIN_RANGE* RetainRangeArray;
-			
-			public PSTR OldFileNameA { get => Anonymous.OldFileNameA; set mut => Anonymous.OldFileNameA = value; }
-			public PWSTR OldFileNameW { get => Anonymous.OldFileNameW; set mut => Anonymous.OldFileNameW = value; }
-			public HANDLE OldFileHandle { get => Anonymous.OldFileHandle; set mut => Anonymous.OldFileHandle = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1570,7 +1566,6 @@ namespace Win32
 		{
 			public uint32 CountRanges;
 			public _Anonymous_e__Struct[0] Range;
-			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1596,12 +1591,9 @@ namespace Win32
 		[CRepr]
 		public struct DELTA_INPUT
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint uSize;
 			public BOOL Editable;
-			
-			public void* lpcStart { get => Anonymous.lpcStart; set mut => Anonymous.lpcStart = value; }
-			public void* lpStart { get => Anonymous.lpStart; set mut => Anonymous.lpStart = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

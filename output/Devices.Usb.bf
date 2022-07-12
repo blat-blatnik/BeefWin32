@@ -738,11 +738,8 @@ namespace Win32
 			[CRepr, Union, Packed(1)]
 			public struct _wIndex
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 W;
-				
-				public uint8 LowByte { get => Anonymous.LowByte; set mut => Anonymous.LowByte = value; }
-				public uint8 HiByte { get => Anonymous.HiByte; set mut => Anonymous.HiByte = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -754,11 +751,8 @@ namespace Win32
 			[CRepr, Union, Packed(1)]
 			public struct _wValue
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 W;
-				
-				public uint8 LowByte { get => Anonymous.LowByte; set mut => Anonymous.LowByte = value; }
-				public uint8 HiByte { get => Anonymous.HiByte; set mut => Anonymous.HiByte = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -772,9 +766,7 @@ namespace Win32
 		public struct USB_DEVICE_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -786,9 +778,7 @@ namespace Win32
 		public struct USB_INTERFACE_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -800,9 +790,7 @@ namespace Win32
 		public struct USB_ENDPOINT_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -867,9 +855,7 @@ namespace Win32
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -896,9 +882,7 @@ namespace Win32
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -926,9 +910,7 @@ namespace Win32
 			public struct _bmCapabilities_e__Union
 			{
 				public uint16 AsUshort;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -953,9 +935,7 @@ namespace Win32
 		public struct USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED
 		{
 			public uint32 AsUlong32;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -979,9 +959,7 @@ namespace Win32
 			public struct _wFunctionalitySupport_e__Union
 			{
 				public uint16 AsUshort;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -993,9 +971,7 @@ namespace Win32
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -1037,14 +1013,11 @@ namespace Win32
 			public uint32 bReserved;
 			public _Anonymous_e__Struct[0] AlternateMode;
 			
-			
 			[CRepr, Union, Packed(1)]
 			public struct _VconnPower_e__Union
 			{
 				public uint16 AsUshort;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -1073,9 +1046,7 @@ namespace Win32
 			public struct _bmAttributes_e__Union
 			{
 				public uint32 AsUlong;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -1220,9 +1191,7 @@ namespace Win32
 		public struct USB_HUB_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1234,9 +1203,7 @@ namespace Win32
 		public struct USB_HUB_CHANGE
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1248,10 +1215,7 @@ namespace Win32
 		public struct USB_HUB_STATUS_AND_CHANGE
 		{
 			public uint32 AsUlong32;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public USB_HUB_STATUS HubStatus { get => Anonymous.HubStatus; set mut => Anonymous.HubStatus = value; }
-			public USB_HUB_CHANGE HubChange { get => Anonymous.HubChange; set mut => Anonymous.HubChange = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1264,9 +1228,7 @@ namespace Win32
 		public struct USB_20_PORT_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1278,9 +1240,7 @@ namespace Win32
 		public struct USB_20_PORT_CHANGE
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1292,9 +1252,7 @@ namespace Win32
 		public struct USB_30_PORT_STATUS
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1306,9 +1264,7 @@ namespace Win32
 		public struct USB_30_PORT_CHANGE
 		{
 			public uint16 AsUshort16;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1334,9 +1290,7 @@ namespace Win32
 		public struct USB_PORT_EXT_STATUS
 		{
 			public uint32 AsUlong32;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr, Packed(1)]
 			public struct _Anonymous_e__Struct
@@ -1348,10 +1302,7 @@ namespace Win32
 		public struct USB_PORT_STATUS_AND_CHANGE
 		{
 			public uint32 AsUlong32;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public USB_PORT_STATUS PortStatus { get => Anonymous.PortStatus; set mut => Anonymous.PortStatus = value; }
-			public USB_PORT_CHANGE PortChange { get => Anonymous.PortChange; set mut => Anonymous.PortChange = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1364,10 +1315,7 @@ namespace Win32
 		public struct USB_PORT_EXT_STATUS_AND_CHANGE
 		{
 			public uint64 AsUlong64;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public USB_PORT_STATUS_AND_CHANGE PortStatusChange { get => Anonymous.PortStatusChange; set mut => Anonymous.PortStatusChange = value; }
-			public USB_PORT_EXT_STATUS PortExtStatus { get => Anonymous.PortExtStatus; set mut => Anonymous.PortExtStatus = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1380,9 +1328,7 @@ namespace Win32
 		public struct USB_HUB_30_PORT_REMOTE_WAKE_MASK
 		{
 			public uint8 AsUchar8;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1394,9 +1340,7 @@ namespace Win32
 		public struct USB_FUNCTION_SUSPEND_OPTIONS
 		{
 			public uint8 AsUchar;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1654,10 +1598,7 @@ namespace Win32
 			public uint8 bDescriptorType;
 			public char16[7] MicrosoftString;
 			public uint8 bVendorCode;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 bPad { get => Anonymous.bPad; set mut => Anonymous.bPad = value; }
-			public uint8 bFlags { get => Anonymous.bFlags; set mut => Anonymous.bFlags = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1774,29 +1715,7 @@ namespace Win32
 		[CRepr]
 		public struct URB
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public _URB_HEADER UrbHeader { get => Anonymous.UrbHeader; set mut => Anonymous.UrbHeader = value; }
-			public _URB_SELECT_INTERFACE UrbSelectInterface { get => Anonymous.UrbSelectInterface; set mut => Anonymous.UrbSelectInterface = value; }
-			public _URB_SELECT_CONFIGURATION UrbSelectConfiguration { get => Anonymous.UrbSelectConfiguration; set mut => Anonymous.UrbSelectConfiguration = value; }
-			public _URB_PIPE_REQUEST UrbPipeRequest { get => Anonymous.UrbPipeRequest; set mut => Anonymous.UrbPipeRequest = value; }
-			public _URB_FRAME_LENGTH_CONTROL UrbFrameLengthControl { get => Anonymous.UrbFrameLengthControl; set mut => Anonymous.UrbFrameLengthControl = value; }
-			public _URB_GET_FRAME_LENGTH UrbGetFrameLength { get => Anonymous.UrbGetFrameLength; set mut => Anonymous.UrbGetFrameLength = value; }
-			public _URB_SET_FRAME_LENGTH UrbSetFrameLength { get => Anonymous.UrbSetFrameLength; set mut => Anonymous.UrbSetFrameLength = value; }
-			public _URB_GET_CURRENT_FRAME_NUMBER UrbGetCurrentFrameNumber { get => Anonymous.UrbGetCurrentFrameNumber; set mut => Anonymous.UrbGetCurrentFrameNumber = value; }
-			public _URB_CONTROL_TRANSFER UrbControlTransfer { get => Anonymous.UrbControlTransfer; set mut => Anonymous.UrbControlTransfer = value; }
-			public _URB_CONTROL_TRANSFER_EX UrbControlTransferEx { get => Anonymous.UrbControlTransferEx; set mut => Anonymous.UrbControlTransferEx = value; }
-			public _URB_BULK_OR_INTERRUPT_TRANSFER UrbBulkOrInterruptTransfer { get => Anonymous.UrbBulkOrInterruptTransfer; set mut => Anonymous.UrbBulkOrInterruptTransfer = value; }
-			public _URB_ISOCH_TRANSFER UrbIsochronousTransfer { get => Anonymous.UrbIsochronousTransfer; set mut => Anonymous.UrbIsochronousTransfer = value; }
-			public _URB_CONTROL_DESCRIPTOR_REQUEST UrbControlDescriptorRequest { get => Anonymous.UrbControlDescriptorRequest; set mut => Anonymous.UrbControlDescriptorRequest = value; }
-			public _URB_CONTROL_GET_STATUS_REQUEST UrbControlGetStatusRequest { get => Anonymous.UrbControlGetStatusRequest; set mut => Anonymous.UrbControlGetStatusRequest = value; }
-			public _URB_CONTROL_FEATURE_REQUEST UrbControlFeatureRequest { get => Anonymous.UrbControlFeatureRequest; set mut => Anonymous.UrbControlFeatureRequest = value; }
-			public _URB_CONTROL_VENDOR_OR_CLASS_REQUEST UrbControlVendorClassRequest { get => Anonymous.UrbControlVendorClassRequest; set mut => Anonymous.UrbControlVendorClassRequest = value; }
-			public _URB_CONTROL_GET_INTERFACE_REQUEST UrbControlGetInterfaceRequest { get => Anonymous.UrbControlGetInterfaceRequest; set mut => Anonymous.UrbControlGetInterfaceRequest = value; }
-			public _URB_CONTROL_GET_CONFIGURATION_REQUEST UrbControlGetConfigurationRequest { get => Anonymous.UrbControlGetConfigurationRequest; set mut => Anonymous.UrbControlGetConfigurationRequest = value; }
-			public _URB_OS_FEATURE_DESCRIPTOR_REQUEST UrbOSFeatureDescriptorRequest { get => Anonymous.UrbOSFeatureDescriptorRequest; set mut => Anonymous.UrbOSFeatureDescriptorRequest = value; }
-			public _URB_OPEN_STATIC_STREAMS UrbOpenStaticStreams { get => Anonymous.UrbOpenStaticStreams; set mut => Anonymous.UrbOpenStaticStreams = value; }
-			public _URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS UrbGetIsochPipeTransferPathDelays { get => Anonymous.UrbGetIsochPipeTransferPathDelays; set mut => Anonymous.UrbGetIsochPipeTransferPathDelays = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

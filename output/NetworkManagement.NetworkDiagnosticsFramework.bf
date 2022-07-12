@@ -132,22 +132,7 @@ namespace Win32
 		{
 			public PWSTR pwszName;
 			public ATTRIBUTE_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public BOOL Boolean { get => Anonymous.Boolean; set mut => Anonymous.Boolean = value; }
-			public uint8 Char { get => Anonymous.Char; set mut => Anonymous.Char = value; }
-			public uint8 Byte { get => Anonymous.Byte; set mut => Anonymous.Byte = value; }
-			public int16 Short { get => Anonymous.Short; set mut => Anonymous.Short = value; }
-			public uint16 Word { get => Anonymous.Word; set mut => Anonymous.Word = value; }
-			public int32 Int { get => Anonymous.Int; set mut => Anonymous.Int = value; }
-			public uint32 DWord { get => Anonymous.DWord; set mut => Anonymous.DWord = value; }
-			public int64 Int64 { get => Anonymous.Int64; set mut => Anonymous.Int64 = value; }
-			public uint64 UInt64 { get => Anonymous.UInt64; set mut => Anonymous.UInt64 = value; }
-			public PWSTR PWStr { get => Anonymous.PWStr; set mut => Anonymous.PWStr = value; }
-			public Guid Guid { get => Anonymous.Guid; set mut => Anonymous.Guid = value; }
-			public LIFE_TIME LifeTime { get => Anonymous.LifeTime; set mut => Anonymous.LifeTime = value; }
-			public DIAG_SOCKADDR Address { get => Anonymous.Address; set mut => Anonymous.Address = value; }
-			public OCTET_STRING OctetString { get => Anonymous.OctetString; set mut => Anonymous.OctetString = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -181,12 +166,7 @@ namespace Win32
 		public struct UiInfo
 		{
 			public UI_INFO_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PWSTR pwzNull { get => Anonymous.pwzNull; set mut => Anonymous.pwzNull = value; }
-			public ShellCommandInfo ShellInfo { get => Anonymous.ShellInfo; set mut => Anonymous.ShellInfo = value; }
-			public PWSTR pwzHelpUrl { get => Anonymous.pwzHelpUrl; set mut => Anonymous.pwzHelpUrl = value; }
-			public PWSTR pwzDui { get => Anonymous.pwzDui; set mut => Anonymous.pwzDui = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

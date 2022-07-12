@@ -16,19 +16,14 @@ namespace Win32
 		{
 			public uint Internal;
 			public uint InternalHigh;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public HANDLE hEvent;
-			
-			public void* Pointer { get => Anonymous.Pointer; set mut => Anonymous.Pointer = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public void* Pointer;
-				
-				public uint32 Offset { get => Anonymous.Offset; set mut => Anonymous.Offset = value; }
-				public uint32 OffsetHigh { get => Anonymous.OffsetHigh; set mut => Anonymous.OffsetHigh = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

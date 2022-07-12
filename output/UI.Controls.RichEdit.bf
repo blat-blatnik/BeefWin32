@@ -1467,16 +1467,13 @@ namespace Win32
 			public int16 sSpacing;
 			public uint32 crBackColor;
 			public uint32 lcid;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public int16 sStyle;
 			public uint16 wKerning;
 			public uint8 bUnderlineType;
 			public uint8 bAnimation;
 			public uint8 bRevAuthor;
 			public uint8 bUnderlineColor;
-			
-			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
-			public uint32 dwCookie { get => Anonymous.dwCookie; set mut => Anonymous.dwCookie = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1493,16 +1490,13 @@ namespace Win32
 			public int16 sSpacing;
 			public uint32 crBackColor;
 			public uint32 lcid;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public int16 sStyle;
 			public uint16 wKerning;
 			public uint8 bUnderlineType;
 			public uint8 bAnimation;
 			public uint8 bRevAuthor;
 			public uint8 bUnderlineColor;
-			
-			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
-			public uint32 dwCookie { get => Anonymous.dwCookie; set mut => Anonymous.dwCookie = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1577,16 +1571,13 @@ namespace Win32
 			public uint32 cbSize;
 			public PARAFORMAT_MASK dwMask;
 			public uint16 wNumbering;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public int32 dxStartIndent;
 			public int32 dxRightIndent;
 			public int32 dxOffset;
 			public PARAFORMAT_ALIGNMENT wAlignment;
 			public int16 cTabCount;
 			public uint32[32] rgxTabs;
-			
-			public uint16 wReserved { get => Anonymous.wReserved; set mut => Anonymous.wReserved = value; }
-			public uint16 wEffects { get => Anonymous.wEffects; set mut => Anonymous.wEffects = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

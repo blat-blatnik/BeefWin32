@@ -462,10 +462,7 @@ namespace Win32
 		public struct MMC_TASK_DISPLAY_OBJECT
 		{
 			public MMC_TASK_DISPLAY_TYPE eDisplayType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public MMC_TASK_DISPLAY_BITMAP uBitmap { get => Anonymous.uBitmap; set mut => Anonymous.uBitmap = value; }
-			public MMC_TASK_DISPLAY_SYMBOL uSymbol { get => Anonymous.uSymbol; set mut => Anonymous.uSymbol = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -481,11 +478,7 @@ namespace Win32
 			public PWSTR szText;
 			public PWSTR szHelpString;
 			public MMC_ACTION_TYPE eActionType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public int nCommandID { get => Anonymous.nCommandID; set mut => Anonymous.nCommandID = value; }
-			public PWSTR szActionURL { get => Anonymous.szActionURL; set mut => Anonymous.szActionURL = value; }
-			public PWSTR szScript { get => Anonymous.szScript; set mut => Anonymous.szScript = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -554,9 +547,7 @@ namespace Win32
 			public PWSTR pstrPersistableViewDescription;
 			public MMC_VIEW_TYPE eViewType;
 			public uint32 dwMiscOptions;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 dwListOptions { get => Anonymous.dwListOptions; set mut => Anonymous.dwListOptions = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -2167,10 +2167,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Flags_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint8 AsBYTE;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2343,10 +2341,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint32 AsUlong;
-			
-			public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2437,10 +2433,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct STORAGE_SPEC_VERSION
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint32 AsUlong;
-			
-			public uint16 MajorVersion { get => Anonymous.MajorVersion; set mut => Anonymous.MajorVersion = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2451,11 +2445,8 @@ namespace Win32
 				[CRepr, Union]
 				public struct _MinorVersion_e__Union
 				{
-					public _Anonymous_e__Struct Anonymous;
+					public using _Anonymous_e__Struct Anonymous;
 					public uint16 AsUshort;
-					
-					public uint8 SubMinor { get => Anonymous.SubMinor; set mut => Anonymous.SubMinor = value; }
-					public uint8 Minor { get => Anonymous.Minor; set mut => Anonymous.Minor = value; }
 					
 					[CRepr]
 					public struct _Anonymous_e__Struct
@@ -2629,8 +2620,7 @@ namespace Win32
 			public uint32 Slot;
 			public uint32 Adapter;
 			public uint32 Port;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2774,9 +2764,7 @@ namespace Win32
 			public uint8[4] TokenType;
 			public uint8[2] Reserved;
 			public uint8[2] TokenIdLength;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8[504] Token { get => Anonymous.Token; set mut => Anonymous.Token = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2968,18 +2956,14 @@ namespace Win32
 		public struct DEVICE_STORAGE_RANGE_ATTRIBUTES
 		{
 			public uint64 LengthInBytes;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 Reserved;
-			
-			public uint32 AllFlags { get => Anonymous.AllFlags; set mut => Anonymous.AllFlags = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 AllFlags;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -3190,8 +3174,7 @@ namespace Win32
 		{
 			public uint32 Version;
 			public uint32 Size;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3930,10 +3913,7 @@ namespace Win32
 		public struct SET_PARTITION_INFORMATION_EX
 		{
 			public PARTITION_STYLE PartitionStyle;
-			public _Anonymous_e__Union Anonymous;
-			
-			public SET_PARTITION_INFORMATION Mbr { get => Anonymous.Mbr; set mut => Anonymous.Mbr = value; }
-			public PARTITION_INFORMATION_GPT Gpt { get => Anonymous.Gpt; set mut => Anonymous.Gpt = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3957,10 +3937,7 @@ namespace Win32
 		public struct CREATE_DISK
 		{
 			public PARTITION_STYLE PartitionStyle;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CREATE_DISK_MBR Mbr { get => Anonymous.Mbr; set mut => Anonymous.Mbr = value; }
-			public CREATE_DISK_GPT Gpt { get => Anonymous.Gpt; set mut => Anonymous.Gpt = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3983,10 +3960,7 @@ namespace Win32
 			public uint32 PartitionNumber;
 			public BOOLEAN RewritePartition;
 			public BOOLEAN IsServicePartition;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PARTITION_INFORMATION_MBR Mbr { get => Anonymous.Mbr; set mut => Anonymous.Mbr = value; }
-			public PARTITION_INFORMATION_GPT Gpt { get => Anonymous.Gpt; set mut => Anonymous.Gpt = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4014,11 +3988,8 @@ namespace Win32
 		{
 			public uint32 PartitionStyle;
 			public uint32 PartitionCount;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public PARTITION_INFORMATION_EX[0] PartitionEntry;
-			
-			public DRIVE_LAYOUT_INFORMATION_MBR Mbr { get => Anonymous.Mbr; set mut => Anonymous.Mbr = value; }
-			public DRIVE_LAYOUT_INFORMATION_GPT Gpt { get => Anonymous.Gpt; set mut => Anonymous.Gpt = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4053,16 +4024,12 @@ namespace Win32
 		{
 			public uint32 SizeOfDetectInfo;
 			public DETECTION_TYPE DetectionType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
-				
-				public DISK_INT13_INFO Int13 { get => Anonymous.Int13; set mut => Anonymous.Int13 = value; }
-				public DISK_EX_INT13_INFO ExInt13 { get => Anonymous.ExInt13; set mut => Anonymous.ExInt13 = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4077,8 +4044,7 @@ namespace Win32
 		{
 			public uint32 SizeOfPartitionInfo;
 			public PARTITION_STYLE PartitionStyle;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4122,8 +4088,7 @@ namespace Win32
 			public DISK_CACHE_RETENTION_PRIORITY WriteRetentionPriority;
 			public uint16 DisablePrefetchTransferLength;
 			public BOOLEAN PrefetchScalar;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4527,7 +4492,6 @@ namespace Win32
 			public LARGE_INTEGER StartingVcn;
 			public _Anonymous_e__Struct[0] Extents;
 			
-			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -4541,7 +4505,6 @@ namespace Win32
 			public uint32 ExtentCount;
 			public LARGE_INTEGER StartingVcn;
 			public _Anonymous_e__Struct[0] Extents;
-			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4788,12 +4751,9 @@ namespace Win32
 		[CRepr]
 		public struct MARK_HANDLE_INFO
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public HANDLE VolumeHandle;
 			public uint32 HandleInfo;
-			
-			public uint32 UsnSourceInfo { get => Anonymous.UsnSourceInfo; set mut => Anonymous.UsnSourceInfo = value; }
-			public uint32 CopyNumber { get => Anonymous.CopyNumber; set mut => Anonymous.CopyNumber = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4805,12 +4765,9 @@ namespace Win32
 		[CRepr]
 		public struct MARK_HANDLE_INFO32
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 VolumeHandle;
 			public uint32 HandleInfo;
-			
-			public uint32 UsnSourceInfo { get => Anonymous.UsnSourceInfo; set mut => Anonymous.UsnSourceInfo = value; }
-			public uint32 CopyNumber { get => Anonymous.CopyNumber; set mut => Anonymous.CopyNumber = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5112,19 +5069,13 @@ namespace Win32
 		public struct FILE_OBJECTID_BUFFER
 		{
 			public uint8[16] ObjectId;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8[48] ExtendedInfo { get => Anonymous.ExtendedInfo; set mut => Anonymous.ExtendedInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint8[48] ExtendedInfo;
-				
-				public uint8[16] BirthVolumeId { get => Anonymous.BirthVolumeId; set mut => Anonymous.BirthVolumeId = value; }
-				public uint8[16] BirthObjectId { get => Anonymous.BirthObjectId; set mut => Anonymous.BirthObjectId = value; }
-				public uint8[16] DomainId { get => Anonymous.DomainId; set mut => Anonymous.DomainId = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -5380,10 +5331,7 @@ namespace Win32
 		[CRepr]
 		public struct TXFS_READ_BACKUP_INFORMATION_OUT
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 BufferLength { get => Anonymous.BufferLength; set mut => Anonymous.BufferLength = value; }
-			public uint8[0] Buffer { get => Anonymous.Buffer; set mut => Anonymous.Buffer = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5431,7 +5379,6 @@ namespace Win32
 		{
 			public uint32 BootSectorCount;
 			public _Anonymous_e__Struct[2] BootSectors;
-			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -5512,10 +5459,7 @@ namespace Win32
 		{
 			public uint32 ResponseLevel;
 			public uint32 NumberEntries;
-			public _Anonymous_e__Union Anonymous;
-			
-			public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY[0] Lev1Depends { get => Anonymous.Lev1Depends; set mut => Anonymous.Lev1Depends = value; }
-			public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY[0] Lev2Depends { get => Anonymous.Lev2Depends; set mut => Anonymous.Lev2Depends = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5588,11 +5532,7 @@ namespace Win32
 		{
 			public uint32 Flags;
 			public uint32 ChangeType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public SD_CHANGE_MACHINE_SID_INPUT SdChange { get => Anonymous.SdChange; set mut => Anonymous.SdChange = value; }
-			public SD_QUERY_STATS_INPUT SdQueryStats { get => Anonymous.SdQueryStats; set mut => Anonymous.SdQueryStats = value; }
-			public SD_ENUM_SDS_INPUT SdEnumSds { get => Anonymous.SdEnumSds; set mut => Anonymous.SdEnumSds = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5607,11 +5547,7 @@ namespace Win32
 		{
 			public uint32 Flags;
 			public uint32 ChangeType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public SD_CHANGE_MACHINE_SID_OUTPUT SdChange { get => Anonymous.SdChange; set mut => Anonymous.SdChange = value; }
-			public SD_QUERY_STATS_OUTPUT SdQueryStats { get => Anonymous.SdQueryStats; set mut => Anonymous.SdQueryStats = value; }
-			public SD_ENUM_SDS_OUTPUT SdEnumSds { get => Anonymous.SdEnumSds; set mut => Anonymous.SdEnumSds = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5776,14 +5712,11 @@ namespace Win32
 		[CRepr]
 		public struct QUERY_FILE_LAYOUT_INPUT
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 Flags;
 			public QUERY_FILE_LAYOUT_FILTER_TYPE FilterType;
 			public uint32 Reserved;
 			public _Filter_e__Union Filter;
-			
-			public uint32 FilterEntryCount { get => Anonymous.FilterEntryCount; set mut => Anonymous.FilterEntryCount = value; }
-			public uint32 NumberOfPairs { get => Anonymous.NumberOfPairs; set mut => Anonymous.NumberOfPairs = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -6389,13 +6322,7 @@ namespace Win32
 			public FS_BPIO_OUTFLAGS OutFlags;
 			public uint64 Reserved1;
 			public uint64 Reserved2;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FS_BPIO_RESULTS Enable { get => Anonymous.Enable; set mut => Anonymous.Enable = value; }
-			public FS_BPIO_RESULTS Query { get => Anonymous.Query; set mut => Anonymous.Query = value; }
-			public FS_BPIO_RESULTS VolumeStackResume { get => Anonymous.VolumeStackResume; set mut => Anonymous.VolumeStackResume = value; }
-			public FS_BPIO_RESULTS StreamResume { get => Anonymous.StreamResume; set mut => Anonymous.StreamResume = value; }
-			public FS_BPIO_INFO GetInfo { get => Anonymous.GetInfo; set mut => Anonymous.GetInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

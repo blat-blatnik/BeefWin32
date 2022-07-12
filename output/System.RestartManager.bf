@@ -94,11 +94,7 @@ namespace Win32
 			public RM_FILTER_ACTION FilterAction;
 			public RM_FILTER_TRIGGER FilterTrigger;
 			public uint32 cbNextOffset;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PWSTR strFilename { get => Anonymous.strFilename; set mut => Anonymous.strFilename = value; }
-			public RM_UNIQUE_PROCESS Process { get => Anonymous.Process; set mut => Anonymous.Process = value; }
-			public PWSTR strServiceShortName { get => Anonymous.strServiceShortName; set mut => Anonymous.strServiceShortName = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

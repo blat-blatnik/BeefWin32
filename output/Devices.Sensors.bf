@@ -302,9 +302,7 @@ namespace Win32
 		[CRepr]
 		public struct MATRIX3X3
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public float[9] M { get => Anonymous.M; set mut => Anonymous.M = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

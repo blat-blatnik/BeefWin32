@@ -2288,10 +2288,7 @@ namespace Win32
 		public struct CLUSPROP_SYNTAX
 		{
 			public uint32 dw;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint16 wFormat { get => Anonymous.wFormat; set mut => Anonymous.wFormat = value; }
-			public uint16 wType { get => Anonymous.wType; set mut => Anonymous.wType = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2352,10 +2349,7 @@ namespace Win32
 		public struct CLUSPROP_SECURITY_DESCRIPTOR
 		{
 			public CLUSPROP_VALUE __AnonymousBase_clusapi_L5211_C54;
-			public _Anonymous_e__Union Anonymous;
-			
-			public SECURITY_DESCRIPTOR_RELATIVE sd { get => Anonymous.sd; set mut => Anonymous.sd = value; }
-			public uint8[0] rgbSecurityDescriptor { get => Anonymous.rgbSecurityDescriptor; set mut => Anonymous.rgbSecurityDescriptor = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2373,26 +2367,19 @@ namespace Win32
 		[CRepr]
 		public struct CLUS_RESOURCE_CLASS_INFO
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public ULARGE_INTEGER li { get => Anonymous.li; set mut => Anonymous.li = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public ULARGE_INTEGER li;
-				
-				public uint32 SubClass { get => Anonymous.SubClass; set mut => Anonymous.SubClass = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
-					public _Anonymous_e__Union Anonymous;
+					public using _Anonymous_e__Union Anonymous;
 					public uint32 SubClass;
-					
-					public uint32 dw { get => Anonymous.dw; set mut => Anonymous.dw = value; }
-					public CLUSTER_RESOURCE_CLASS rc { get => Anonymous.rc; set mut => Anonymous.rc = value; }
 					
 					[CRepr, Union]
 					public struct _Anonymous_e__Union
@@ -2502,12 +2489,7 @@ namespace Win32
 		public struct CLUSTER_SHARED_VOLUME_RENAME_INPUT_VOLUME
 		{
 			public CLUSTER_SHARED_VOLUME_RENAME_INPUT_TYPE InputType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint64 VolumeOffset { get => Anonymous.VolumeOffset; set mut => Anonymous.VolumeOffset = value; }
-			public char16[260] VolumeId { get => Anonymous.VolumeId; set mut => Anonymous.VolumeId = value; }
-			public char16[260] VolumeName { get => Anonymous.VolumeName; set mut => Anonymous.VolumeName = value; }
-			public char16[50] VolumeGuid { get => Anonymous.VolumeGuid; set mut => Anonymous.VolumeGuid = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2595,20 +2577,13 @@ namespace Win32
 		[CRepr]
 		public struct CLUS_SCSI_ADDRESS
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 dw { get => Anonymous.dw; set mut => Anonymous.dw = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 dw;
-				
-				public uint8 PortNumber { get => Anonymous.PortNumber; set mut => Anonymous.PortNumber = value; }
-				public uint8 PathId { get => Anonymous.PathId; set mut => Anonymous.PathId = value; }
-				public uint8 TargetId { get => Anonymous.TargetId; set mut => Anonymous.TargetId = value; }
-				public uint8 Lun { get => Anonymous.Lun; set mut => Anonymous.Lun = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2987,12 +2962,7 @@ namespace Win32
 		{
 			public uint32 TableSize;
 			public uint32 Version;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CLRES_V1_FUNCTIONS V1Functions { get => Anonymous.V1Functions; set mut => Anonymous.V1Functions = value; }
-			public CLRES_V2_FUNCTIONS V2Functions { get => Anonymous.V2Functions; set mut => Anonymous.V2Functions = value; }
-			public CLRES_V3_FUNCTIONS V3Functions { get => Anonymous.V3Functions; set mut => Anonymous.V3Functions = value; }
-			public CLRES_V4_FUNCTIONS V4Functions { get => Anonymous.V4Functions; set mut => Anonymous.V4Functions = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3030,18 +3000,11 @@ namespace Win32
 			public PWSTR Name;
 			public PWSTR KeyName;
 			public uint32 Format;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 Minimum;
 			public uint32 Maximum;
 			public uint32 Flags;
 			public uint32 Offset;
-			
-			public uint DefaultPtr { get => Anonymous.DefaultPtr; set mut => Anonymous.DefaultPtr = value; }
-			public uint32 Default { get => Anonymous.Default; set mut => Anonymous.Default = value; }
-			public void* lpDefault { get => Anonymous.lpDefault; set mut => Anonymous.lpDefault = value; }
-			public RESUTIL_LARGEINT_DATA* LargeIntData { get => Anonymous.LargeIntData; set mut => Anonymous.LargeIntData = value; }
-			public RESUTIL_ULARGEINT_DATA* ULargeIntData { get => Anonymous.ULargeIntData; set mut => Anonymous.ULargeIntData = value; }
-			public RESUTIL_FILETIME_DATA* FileTimeData { get => Anonymous.FileTimeData; set mut => Anonymous.FileTimeData = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

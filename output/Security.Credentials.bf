@@ -426,10 +426,7 @@ namespace Win32
 			public SCARD_IO_REQUEST ioRequest;
 			public uint8 bSw1;
 			public uint8 bSw2;
-			public _Anonymous_e__Union Anonymous;
-			
-			public SCARD_T0_COMMAND CmdBytes { get => Anonymous.CmdBytes; set mut => Anonymous.CmdBytes = value; }
-			public uint8[5] rgbHeader { get => Anonymous.rgbHeader; set mut => Anonymous.rgbHeader = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -554,8 +551,7 @@ namespace Win32
 			public uint32 dwShareMode;
 			public uint32 dwPreferredProtocols;
 			public READER_SEL_REQUEST_MATCH_TYPE MatchType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

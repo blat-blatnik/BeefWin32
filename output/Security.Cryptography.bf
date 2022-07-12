@@ -3351,15 +3351,7 @@ namespace Win32
 		public struct CERT_ALT_NAME_ENTRY
 		{
 			public uint32 dwAltNameChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CERT_OTHER_NAME* pOtherName { get => Anonymous.pOtherName; set mut => Anonymous.pOtherName = value; }
-			public PWSTR pwszRfc822Name { get => Anonymous.pwszRfc822Name; set mut => Anonymous.pwszRfc822Name = value; }
-			public PWSTR pwszDNSName { get => Anonymous.pwszDNSName; set mut => Anonymous.pwszDNSName = value; }
-			public CRYPTOAPI_BLOB DirectoryName { get => Anonymous.DirectoryName; set mut => Anonymous.DirectoryName = value; }
-			public PWSTR pwszURL { get => Anonymous.pwszURL; set mut => Anonymous.pwszURL = value; }
-			public CRYPTOAPI_BLOB IPAddress { get => Anonymous.IPAddress; set mut => Anonymous.IPAddress = value; }
-			public PSTR pszRegisteredID { get => Anonymous.pszRegisteredID; set mut => Anonymous.pszRegisteredID = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3505,9 +3497,7 @@ namespace Win32
 		public struct CRL_DIST_POINT_NAME
 		{
 			public uint32 dwDistPointNameChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CERT_ALT_NAME_INFO FullName { get => Anonymous.FullName; set mut => Anonymous.FullName = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3689,9 +3679,7 @@ namespace Win32
 		public struct CMC_TAGGED_REQUEST
 		{
 			public uint32 dwTaggedRequestChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest { get => Anonymous.pTaggedCertRequest; set mut => Anonymous.pTaggedCertRequest = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3748,10 +3736,7 @@ namespace Win32
 			public uint32* rgdwBodyList;
 			public PWSTR pwszStatusString;
 			public uint32 dwOtherInfoChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 dwFailInfo { get => Anonymous.dwFailInfo; set mut => Anonymous.dwFailInfo = value; }
-			public CMC_PEND_INFO* pPendInfo { get => Anonymous.pPendInfo; set mut => Anonymous.pPendInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3814,11 +3799,8 @@ namespace Win32
 			public uint32 dwXSize;
 			public uint32 dwYSize;
 			public CERT_LOGOTYPE_CHOICE dwLogotypeImageResolutionChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public PWSTR pwszLanguage;
-			
-			public uint32 dwNumBits { get => Anonymous.dwNumBits; set mut => Anonymous.dwNumBits = value; }
-			public uint32 dwTableSize { get => Anonymous.dwTableSize; set mut => Anonymous.dwTableSize = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3860,10 +3842,7 @@ namespace Win32
 		public struct CERT_LOGOTYPE_INFO
 		{
 			public CERT_LOGOTYPE_OPTION dwLogotypeInfoChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CERT_LOGOTYPE_DATA* pLogotypeDirectInfo { get => Anonymous.pLogotypeDirectInfo; set mut => Anonymous.pLogotypeDirectInfo = value; }
-			public CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo { get => Anonymous.pLogotypeIndirectInfo; set mut => Anonymous.pLogotypeIndirectInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3892,11 +3871,8 @@ namespace Win32
 		public struct CERT_BIOMETRIC_DATA
 		{
 			public CERT_BIOMETRIC_DATA_TYPE dwTypeOfBiometricDataChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CERT_HASHED_URL HashedUrl;
-			
-			public uint32 dwPredefined { get => Anonymous.dwPredefined; set mut => Anonymous.dwPredefined = value; }
-			public PSTR pszObjId { get => Anonymous.pszObjId; set mut => Anonymous.pszObjId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3974,13 +3950,11 @@ namespace Win32
 		{
 			public OCSP_CERT_ID CertId;
 			public uint32 dwCertStatus;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public FILETIME ThisUpdate;
 			public FILETIME NextUpdate;
 			public uint32 cExtension;
 			public CERT_EXTENSION* rgExtension;
-			
-			public OCSP_BASIC_REVOKED_INFO* pRevokedInfo { get => Anonymous.pRevokedInfo; set mut => Anonymous.pRevokedInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3993,15 +3967,12 @@ namespace Win32
 		{
 			public uint32 dwVersion;
 			public uint32 dwResponderIdChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public FILETIME ProducedAt;
 			public uint32 cResponseEntry;
 			public OCSP_BASIC_RESPONSE_ENTRY* rgResponseEntry;
 			public uint32 cExtension;
 			public CERT_EXTENSION* rgExtension;
-			
-			public CRYPTOAPI_BLOB ByNameResponderId { get => Anonymous.ByNameResponderId; set mut => Anonymous.ByNameResponderId = value; }
-			public CRYPTOAPI_BLOB ByKeyResponderId { get => Anonymous.ByKeyResponderId; set mut => Anonymous.ByKeyResponderId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4037,12 +4008,8 @@ namespace Win32
 			public PSTR pszOID;
 			public PWSTR pwszName;
 			public uint32 dwGroupId;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CRYPTOAPI_BLOB ExtraInfo;
-			
-			public uint32 dwValue { get => Anonymous.dwValue; set mut => Anonymous.dwValue = value; }
-			public uint32 Algid { get => Anonymous.Algid; set mut => Anonymous.Algid = value; }
-			public uint32 dwLength { get => Anonymous.dwLength; set mut => Anonymous.dwLength = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4064,11 +4031,7 @@ namespace Win32
 		{
 			public uint32 cbSize;
 			public uint32 dwInfoChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public void* pvInfo { get => Anonymous.pvInfo; set mut => Anonymous.pvInfo = value; }
-			public CERT_STRONG_SIGN_SERIALIZED_INFO* pSerializedInfo { get => Anonymous.pSerializedInfo; set mut => Anonymous.pSerializedInfo = value; }
-			public PSTR pszOID { get => Anonymous.pszOID; set mut => Anonymous.pszOID = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4088,11 +4051,7 @@ namespace Win32
 		public struct CERT_ID
 		{
 			public CERT_ID_OPTION dwIdChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber { get => Anonymous.IssuerSerialNumber; set mut => Anonymous.IssuerSerialNumber = value; }
-			public CRYPTOAPI_BLOB KeyId { get => Anonymous.KeyId; set mut => Anonymous.KeyId = value; }
-			public CRYPTOAPI_BLOB HashId { get => Anonymous.HashId; set mut => Anonymous.HashId = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4107,7 +4066,7 @@ namespace Win32
 		{
 			public uint32 cbSize;
 			public CERT_INFO* pCertInfo;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwKeySpec;
 			public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 			public void* pvHashAuxInfo;
@@ -4115,9 +4074,6 @@ namespace Win32
 			public CRYPT_ATTRIBUTE* rgAuthAttr;
 			public uint32 cUnauthAttr;
 			public CRYPT_ATTRIBUTE* rgUnauthAttr;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4177,13 +4133,10 @@ namespace Win32
 			public uint hCryptProv;
 			public uint32 dwKeySpec;
 			public CMSG_KEY_AGREE_OPTION dwKeyChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CRYPTOAPI_BLOB UserKeyingMaterial;
 			public uint32 cRecipientEncryptedKeys;
 			public CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO** rgpRecipientEncryptedKeys;
-			
-			public CRYPT_ALGORITHM_IDENTIFIER* pEphemeralAlgorithm { get => Anonymous.pEphemeralAlgorithm; set mut => Anonymous.pEphemeralAlgorithm = value; }
-			public CERT_ID* pSenderId { get => Anonymous.pSenderId; set mut => Anonymous.pSenderId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4200,13 +4153,10 @@ namespace Win32
 			public void* pvKeyEncryptionAuxInfo;
 			public uint hCryptProv;
 			public uint32 dwKeyChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CRYPTOAPI_BLOB KeyId;
 			public FILETIME Date;
 			public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
-			
-			public uint hKeyEncryptionKey { get => Anonymous.hKeyEncryptionKey; set mut => Anonymous.hKeyEncryptionKey = value; }
-			public void* pvKeyEncryptionKey { get => Anonymous.pvKeyEncryptionKey; set mut => Anonymous.pvKeyEncryptionKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4219,11 +4169,7 @@ namespace Win32
 		public struct CMSG_RECIPIENT_ENCODE_INFO
 		{
 			public uint32 dwRecipientChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans { get => Anonymous.pKeyTrans; set mut => Anonymous.pKeyTrans = value; }
-			public CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree { get => Anonymous.pKeyAgree; set mut => Anonymous.pKeyAgree = value; }
-			public CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList { get => Anonymous.pMailList; set mut => Anonymous.pMailList = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4324,14 +4270,11 @@ namespace Win32
 		{
 			public uint32 dwVersion;
 			public CMSG_KEY_AGREE_ORIGINATOR dwOriginatorChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CRYPTOAPI_BLOB UserKeyingMaterial;
 			public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 			public uint32 cRecipientEncryptedKeys;
 			public CMSG_RECIPIENT_ENCRYPTED_KEY_INFO** rgpRecipientEncryptedKeys;
-			
-			public CERT_ID OriginatorCertId { get => Anonymous.OriginatorCertId; set mut => Anonymous.OriginatorCertId = value; }
-			public CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo { get => Anonymous.OriginatorPublicKeyInfo; set mut => Anonymous.OriginatorPublicKeyInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4354,11 +4297,7 @@ namespace Win32
 		public struct CMSG_CMS_RECIPIENT_INFO
 		{
 			public uint32 dwRecipientChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CMSG_KEY_TRANS_RECIPIENT_INFO* pKeyTrans { get => Anonymous.pKeyTrans; set mut => Anonymous.pKeyTrans = value; }
-			public CMSG_KEY_AGREE_RECIPIENT_INFO* pKeyAgree { get => Anonymous.pKeyAgree; set mut => Anonymous.pKeyAgree = value; }
-			public CMSG_MAIL_LIST_RECIPIENT_INFO* pMailList { get => Anonymous.pMailList; set mut => Anonymous.pMailList = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4381,12 +4320,9 @@ namespace Win32
 		public struct CMSG_CTRL_DECRYPT_PARA
 		{
 			public uint32 cbSize;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwKeySpec;
 			public uint32 dwRecipientIndex;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4399,13 +4335,10 @@ namespace Win32
 		public struct CMSG_CTRL_KEY_TRANS_DECRYPT_PARA
 		{
 			public uint32 cbSize;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwKeySpec;
 			public CMSG_KEY_TRANS_RECIPIENT_INFO* pKeyTrans;
 			public uint32 dwRecipientIndex;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4418,15 +4351,12 @@ namespace Win32
 		public struct CMSG_CTRL_KEY_AGREE_DECRYPT_PARA
 		{
 			public uint32 cbSize;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwKeySpec;
 			public CMSG_KEY_AGREE_RECIPIENT_INFO* pKeyAgree;
 			public uint32 dwRecipientIndex;
 			public uint32 dwRecipientEncryptedKeyIndex;
 			public CRYPT_BIT_BLOB OriginatorPublicKey;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4443,10 +4373,7 @@ namespace Win32
 			public CMSG_MAIL_LIST_RECIPIENT_INFO* pMailList;
 			public uint32 dwRecipientIndex;
 			public uint32 dwKeyChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint hKeyEncryptionKey { get => Anonymous.hKeyEncryptionKey; set mut => Anonymous.hKeyEncryptionKey = value; }
-			public void* pvKeyEncryptionKey { get => Anonymous.pvKeyEncryptionKey; set mut => Anonymous.pvKeyEncryptionKey = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4481,15 +4408,12 @@ namespace Win32
 			public PFN_CMSG_ALLOC pfnAlloc;
 			public PFN_CMSG_FREE pfnFree;
 			public uint32 dwEncryptFlags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwFlags;
 			public BOOL fCNG;
 			public uint8* pbCNGContentEncryptKeyObject;
 			public uint8* pbContentEncryptKey;
 			public uint32 cbContentEncryptKey;
-			
-			public uint hContentEncryptKey { get => Anonymous.hContentEncryptKey; set mut => Anonymous.hContentEncryptKey = value; }
-			public BCRYPT_KEY_HANDLE hCNGContentEncryptKey { get => Anonymous.hCNGContentEncryptKey; set mut => Anonymous.hCNGContentEncryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4521,13 +4445,10 @@ namespace Win32
 			public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 			public CRYPTOAPI_BLOB UserKeyingMaterial;
 			public CMSG_KEY_AGREE_ORIGINATOR dwOriginatorChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 cKeyAgreeKeyEncryptInfo;
 			public CMSG_KEY_AGREE_KEY_ENCRYPT_INFO** rgpKeyAgreeKeyEncryptInfo;
 			public uint32 dwFlags;
-			
-			public CERT_ID OriginatorCertId { get => Anonymous.OriginatorCertId; set mut => Anonymous.OriginatorCertId = value; }
-			public CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo { get => Anonymous.OriginatorPublicKeyInfo; set mut => Anonymous.OriginatorPublicKeyInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4611,11 +4532,8 @@ namespace Win32
 		public struct CERT_KEY_CONTEXT
 		{
 			public uint32 cbSize;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwKeySpec;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4876,14 +4794,11 @@ namespace Win32
 		{
 			public uint32 cbSize;
 			public CERT_QUERY_ENCODING_TYPE dwMsgAndCertEncodingType;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CERT_KEY_SPEC dwKeySpec;
 			public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 			public void* pvHashAuxInfo;
 			public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
-			
-			public uint hCryptProv { get => Anonymous.hCryptProv; set mut => Anonymous.hCryptProv = value; }
-			public uint hNCryptKey { get => Anonymous.hNCryptKey; set mut => Anonymous.hNCryptKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5180,13 +5095,10 @@ namespace Win32
 		[CRepr]
 		public struct HTTPSPolicyCallbackData
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE dwAuthType;
 			public uint32 fdwChecks;
 			public PWSTR pwszServerName;
-			
-			public uint32 cbStruct { get => Anonymous.cbStruct; set mut => Anonymous.cbStruct = value; }
-			public uint32 cbSize { get => Anonymous.cbSize; set mut => Anonymous.cbSize = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5462,12 +5374,7 @@ namespace Win32
 		public struct CRYPT_XML_KEY_VALUE
 		{
 			public CRYPT_XML_KEY_VALUE_TYPE dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CRYPT_XML_KEY_DSA_KEY_VALUE DSAKeyValue { get => Anonymous.DSAKeyValue; set mut => Anonymous.DSAKeyValue = value; }
-			public CRYPT_XML_KEY_RSA_KEY_VALUE RSAKeyValue { get => Anonymous.RSAKeyValue; set mut => Anonymous.RSAKeyValue = value; }
-			public CRYPT_XML_KEY_ECDSA_KEY_VALUE ECDSAKeyValue { get => Anonymous.ECDSAKeyValue; set mut => Anonymous.ECDSAKeyValue = value; }
-			public CRYPT_XML_BLOB Custom { get => Anonymous.Custom; set mut => Anonymous.Custom = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5488,14 +5395,7 @@ namespace Win32
 		public struct CRYPT_XML_X509DATA_ITEM
 		{
 			public CRYPT_XML_X509DATA_TYPE dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CRYPT_XML_ISSUER_SERIAL IssuerSerial { get => Anonymous.IssuerSerial; set mut => Anonymous.IssuerSerial = value; }
-			public CRYPT_XML_DATA_BLOB SKI { get => Anonymous.SKI; set mut => Anonymous.SKI = value; }
-			public PWSTR wszSubjectName { get => Anonymous.wszSubjectName; set mut => Anonymous.wszSubjectName = value; }
-			public CRYPT_XML_DATA_BLOB Certificate { get => Anonymous.Certificate; set mut => Anonymous.Certificate = value; }
-			public CRYPT_XML_DATA_BLOB CRL { get => Anonymous.CRL; set mut => Anonymous.CRL = value; }
-			public CRYPT_XML_BLOB Custom { get => Anonymous.Custom; set mut => Anonymous.Custom = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5518,13 +5418,7 @@ namespace Win32
 		public struct CRYPT_XML_KEY_INFO_ITEM
 		{
 			public CRYPT_XML_KEYINFO_TYPE dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PWSTR wszKeyName { get => Anonymous.wszKeyName; set mut => Anonymous.wszKeyName = value; }
-			public CRYPT_XML_KEY_VALUE KeyValue { get => Anonymous.KeyValue; set mut => Anonymous.KeyValue = value; }
-			public CRYPT_XML_BLOB RetrievalMethod { get => Anonymous.RetrievalMethod; set mut => Anonymous.RetrievalMethod = value; }
-			public CRYPT_XML_X509DATA X509Data { get => Anonymous.X509Data; set mut => Anonymous.X509Data = value; }
-			public CRYPT_XML_BLOB Custom { get => Anonymous.Custom; set mut => Anonymous.Custom = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

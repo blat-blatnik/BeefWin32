@@ -1511,17 +1511,13 @@ namespace Win32
 		[CRepr]
 		public struct D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

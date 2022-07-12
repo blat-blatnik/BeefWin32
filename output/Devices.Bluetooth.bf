@@ -937,10 +937,7 @@ namespace Win32
 		[CRepr]
 		public struct BLUETOOTH_ADDRESS
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint64 ullLong { get => Anonymous.ullLong; set mut => Anonymous.ullLong = value; }
-			public uint8[6] rgBytes { get => Anonymous.rgBytes; set mut => Anonymous.rgBytes = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -992,10 +989,7 @@ namespace Win32
 			public BLUETOOTH_AUTHENTICATION_METHOD authenticationMethod;
 			public BLUETOOTH_IO_CAPABILITY ioCapability;
 			public BLUETOOTH_AUTHENTICATION_REQUIREMENTS authenticationRequirements;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Numeric_Value { get => Anonymous.Numeric_Value; set mut => Anonymous.Numeric_Value = value; }
-			public uint32 Passkey { get => Anonymous.Passkey; set mut => Anonymous.Passkey = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1068,13 +1062,8 @@ namespace Win32
 		{
 			public BLUETOOTH_ADDRESS bthAddressRemote;
 			public BLUETOOTH_AUTHENTICATION_METHOD authMethod;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint8 negativeResponse;
-			
-			public BLUETOOTH_PIN_INFO pinInfo { get => Anonymous.pinInfo; set mut => Anonymous.pinInfo = value; }
-			public BLUETOOTH_OOB_DATA_INFO oobInfo { get => Anonymous.oobInfo; set mut => Anonymous.oobInfo = value; }
-			public BLUETOOTH_NUMERIC_COMPARISON_INFO numericCompInfo { get => Anonymous.numericCompInfo; set mut => Anonymous.numericCompInfo = value; }
-			public BLUETOOTH_PASSKEY_INFO passkeyInfo { get => Anonymous.passkeyInfo; set mut => Anonymous.passkeyInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1240,10 +1229,7 @@ namespace Win32
 		{
 			public uint16 result;
 			public uint8 dataLen;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint16 connectionlessMTU { get => Anonymous.connectionlessMTU; set mut => Anonymous.connectionlessMTU = value; }
-			public uint8[44] data { get => Anonymous.data; set mut => Anonymous.data = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union

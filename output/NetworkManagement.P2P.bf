@@ -422,10 +422,7 @@ namespace Win32
 			public SOCKET_ADDRESS saHint;
 			public PNRP_REGISTERED_ID_STATE enNameState;
 			public PNRP_EXTENDED_PAYLOAD_TYPE enExtendedPayloadType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public BLOB blobPayload { get => Anonymous.blobPayload; set mut => Anonymous.blobPayload = value; }
-			public PWSTR pwszPayload { get => Anonymous.pwszPayload; set mut => Anonymous.pwszPayload = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -561,14 +558,7 @@ namespace Win32
 		public struct PEER_GRAPH_EVENT_DATA
 		{
 			public PEER_GRAPH_EVENT_TYPE eventType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PEER_GRAPH_STATUS_FLAGS dwStatus { get => Anonymous.dwStatus; set mut => Anonymous.dwStatus = value; }
-			public PEER_EVENT_INCOMING_DATA incomingData { get => Anonymous.incomingData; set mut => Anonymous.incomingData = value; }
-			public PEER_EVENT_RECORD_CHANGE_DATA recordChangeData { get => Anonymous.recordChangeData; set mut => Anonymous.recordChangeData = value; }
-			public PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData { get => Anonymous.connectionChangeData; set mut => Anonymous.connectionChangeData = value; }
-			public PEER_EVENT_NODE_CHANGE_DATA nodeChangeData { get => Anonymous.nodeChangeData; set mut => Anonymous.nodeChangeData = value; }
-			public PEER_EVENT_SYNCHRONIZED_DATA synchronizedData { get => Anonymous.synchronizedData; set mut => Anonymous.synchronizedData = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -678,14 +668,7 @@ namespace Win32
 		public struct PEER_GROUP_EVENT_DATA
 		{
 			public PEER_GROUP_EVENT_TYPE eventType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PEER_GROUP_STATUS dwStatus { get => Anonymous.dwStatus; set mut => Anonymous.dwStatus = value; }
-			public PEER_EVENT_INCOMING_DATA incomingData { get => Anonymous.incomingData; set mut => Anonymous.incomingData = value; }
-			public PEER_EVENT_RECORD_CHANGE_DATA recordChangeData { get => Anonymous.recordChangeData; set mut => Anonymous.recordChangeData = value; }
-			public PEER_EVENT_CONNECTION_CHANGE_DATA connectionChangeData { get => Anonymous.connectionChangeData; set mut => Anonymous.connectionChangeData = value; }
-			public PEER_EVENT_MEMBER_CHANGE_DATA memberChangeData { get => Anonymous.memberChangeData; set mut => Anonymous.memberChangeData = value; }
-			public HRESULT hrConnectionFailedReason { get => Anonymous.hrConnectionFailedReason; set mut => Anonymous.hrConnectionFailedReason = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -836,15 +819,7 @@ namespace Win32
 		public struct PEER_COLLAB_EVENT_DATA
 		{
 			public PEER_COLLAB_EVENT_TYPE eventType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PEER_EVENT_WATCHLIST_CHANGED_DATA watchListChangedData { get => Anonymous.watchListChangedData; set mut => Anonymous.watchListChangedData = value; }
-			public PEER_EVENT_PRESENCE_CHANGED_DATA presenceChangedData { get => Anonymous.presenceChangedData; set mut => Anonymous.presenceChangedData = value; }
-			public PEER_EVENT_APPLICATION_CHANGED_DATA applicationChangedData { get => Anonymous.applicationChangedData; set mut => Anonymous.applicationChangedData = value; }
-			public PEER_EVENT_OBJECT_CHANGED_DATA objectChangedData { get => Anonymous.objectChangedData; set mut => Anonymous.objectChangedData = value; }
-			public PEER_EVENT_ENDPOINT_CHANGED_DATA endpointChangedData { get => Anonymous.endpointChangedData; set mut => Anonymous.endpointChangedData = value; }
-			public PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA peopleNearMeChangedData { get => Anonymous.peopleNearMeChangedData; set mut => Anonymous.peopleNearMeChangedData = value; }
-			public PEER_EVENT_REQUEST_STATUS_CHANGED_DATA requestStatusChangedData { get => Anonymous.requestStatusChangedData; set mut => Anonymous.requestStatusChangedData = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -980,8 +955,7 @@ namespace Win32
 			public DRT_EVENT_TYPE type;
 			public HRESULT hr;
 			public void* pvContext;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

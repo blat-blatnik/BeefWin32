@@ -137,8 +137,7 @@ namespace Win32
 		{
 			public FDIDECRYPTTYPE fdidt;
 			public void* pvUser;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

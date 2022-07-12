@@ -407,10 +407,7 @@ namespace Win32
 			public uint32 dwSize;
 			public PWSTR pwszSigningCertFileName;
 			public CRYPTUI_WIZ_DIGITAL_SIGN_PVK_OPTION dwPvkChoice;
-			public _Anonymous_e__Union Anonymous;
-			
-			public CRYPTUI_WIZ_DIGITAL_SIGN_PVK_FILE_INFO* pPvkFileInfo { get => Anonymous.pPvkFileInfo; set mut => Anonymous.pPvkFileInfo = value; }
-			public CRYPT_KEY_PROV_INFO* pPvkProvInfo { get => Anonymous.pPvkProvInfo; set mut => Anonymous.pPvkProvInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -481,7 +478,7 @@ namespace Win32
 			public CERT_CONTEXT* pCertContext;
 			public PSTR* rgszPurposes;
 			public uint32 cPurposes;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public BOOL fpCryptProviderDataTrustedUsage;
 			public uint32 idxSigner;
 			public uint32 idxCert;
@@ -492,9 +489,6 @@ namespace Win32
 			public uint32 cPropSheetPages;
 			public PROPSHEETPAGEW* rgPropSheetPages;
 			public uint32 nStartPage;
-			
-			public CRYPT_PROVIDER_DATA* pCryptProviderData { get => Anonymous.pCryptProviderData; set mut => Anonymous.pCryptProviderData = value; }
-			public HANDLE hWVTStateData { get => Anonymous.hWVTStateData; set mut => Anonymous.hWVTStateData = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -513,7 +507,7 @@ namespace Win32
 			public CERT_CONTEXT* pCertContext;
 			public PSTR* rgszPurposes;
 			public uint32 cPurposes;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public BOOL fpCryptProviderDataTrustedUsage;
 			public uint32 idxSigner;
 			public uint32 idxCert;
@@ -524,9 +518,6 @@ namespace Win32
 			public uint32 cPropSheetPages;
 			public PROPSHEETPAGEA* rgPropSheetPages;
 			public uint32 nStartPage;
-			
-			public CRYPT_PROVIDER_DATA* pCryptProviderData { get => Anonymous.pCryptProviderData; set mut => Anonymous.pCryptProviderData = value; }
-			public HANDLE hWVTStateData { get => Anonymous.hWVTStateData; set mut => Anonymous.hWVTStateData = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -541,14 +532,9 @@ namespace Win32
 			public uint32 dwSize;
 			public PWSTR pwszExportFileName;
 			public CRYPTUI_WIZ_EXPORT_SUBJECT dwSubjectChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 cStores;
 			public void** rghStores;
-			
-			public CERT_CONTEXT* pCertContext { get => Anonymous.pCertContext; set mut => Anonymous.pCertContext = value; }
-			public CTL_CONTEXT* pCTLContext { get => Anonymous.pCTLContext; set mut => Anonymous.pCTLContext = value; }
-			public CRL_CONTEXT* pCRLContext { get => Anonymous.pCRLContext; set mut => Anonymous.pCRLContext = value; }
-			public void* hCertStore { get => Anonymous.hCertStore; set mut => Anonymous.hCertStore = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -574,15 +560,9 @@ namespace Win32
 		{
 			public uint32 dwSize;
 			public CRYPTUI_WIZ_IMPORT_SUBJECT_OPTION dwSubjectChoice;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public CRYPT_KEY_FLAGS dwFlags;
 			public PWSTR pwszPassword;
-			
-			public PWSTR pwszFileName { get => Anonymous.pwszFileName; set mut => Anonymous.pwszFileName = value; }
-			public CERT_CONTEXT* pCertContext { get => Anonymous.pCertContext; set mut => Anonymous.pCertContext = value; }
-			public CTL_CONTEXT* pCTLContext { get => Anonymous.pCTLContext; set mut => Anonymous.pCTLContext = value; }
-			public CRL_CONTEXT* pCRLContext { get => Anonymous.pCRLContext; set mut => Anonymous.pCRLContext = value; }
-			public void* hCertStore { get => Anonymous.hCertStore; set mut => Anonymous.hCertStore = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

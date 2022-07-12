@@ -1483,7 +1483,7 @@ namespace Win32
 		public struct SPPHRASEPROPERTY
 		{
 			public PWSTR pszName;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public PWSTR pszValue;
 			public VARIANT vValue;
 			public uint32 ulFirstElement;
@@ -1493,17 +1493,11 @@ namespace Win32
 			public float SREngineConfidence;
 			public int8 Confidence;
 			
-			public uint32 ulId { get => Anonymous.ulId; set mut => Anonymous.ulId = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulId;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 bType { get => Anonymous.bType; set mut => Anonymous.bType = value; }
-				public uint8 bReserved { get => Anonymous.bReserved; set mut => Anonymous.bReserved = value; }
-				public uint16 usArrayIndex { get => Anonymous.usArrayIndex; set mut => Anonymous.usArrayIndex = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

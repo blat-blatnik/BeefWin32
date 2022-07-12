@@ -1231,8 +1231,7 @@ namespace Win32
 			public PWSTR pwszFriendlyName;
 			public uint32 Flags;
 			public DNS_CONNECTION_PROXY_INFO_SWITCH Switch;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1346,11 +1345,8 @@ namespace Win32
 			public uint32 Version;
 			public uint32 InterfaceIndex;
 			public PWSTR QueryName;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public void* pQueryContext;
-			
-			public PDNS_SERVICE_BROWSE_CALLBACK pBrowseCallback { get => Anonymous.pBrowseCallback; set mut => Anonymous.pBrowseCallback = value; }
-			public PDNS_QUERY_COMPLETION_ROUTINE pBrowseCallbackV2 { get => Anonymous.pBrowseCallbackV2; set mut => Anonymous.pBrowseCallbackV2 = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

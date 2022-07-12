@@ -978,10 +978,7 @@ namespace Win32
 			public void* pHandlerParameters;
 			public Guid clsidDefaultForm;
 			public IPersistQuery* pPersistQuery;
-			public _Anonymous_e__Union Anonymous;
-			
-			public void* pFormParameters { get => Anonymous.pFormParameters; set mut => Anonymous.pFormParameters = value; }
-			public IPropertyBag* ppbFormParameters { get => Anonymous.ppbFormParameters; set mut => Anonymous.ppbFormParameters = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1104,35 +1101,7 @@ namespace Win32
 		public struct ADSVALUE
 		{
 			public ADSTYPEENUM dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint16* DNString { get => Anonymous.DNString; set mut => Anonymous.DNString = value; }
-			public uint16* CaseExactString { get => Anonymous.CaseExactString; set mut => Anonymous.CaseExactString = value; }
-			public uint16* CaseIgnoreString { get => Anonymous.CaseIgnoreString; set mut => Anonymous.CaseIgnoreString = value; }
-			public uint16* PrintableString { get => Anonymous.PrintableString; set mut => Anonymous.PrintableString = value; }
-			public uint16* NumericString { get => Anonymous.NumericString; set mut => Anonymous.NumericString = value; }
-			public uint32 Boolean { get => Anonymous.Boolean; set mut => Anonymous.Boolean = value; }
-			public uint32 Integer { get => Anonymous.Integer; set mut => Anonymous.Integer = value; }
-			public ADS_OCTET_STRING OctetString { get => Anonymous.OctetString; set mut => Anonymous.OctetString = value; }
-			public SYSTEMTIME UTCTime { get => Anonymous.UTCTime; set mut => Anonymous.UTCTime = value; }
-			public LARGE_INTEGER LargeInteger { get => Anonymous.LargeInteger; set mut => Anonymous.LargeInteger = value; }
-			public uint16* ClassName { get => Anonymous.ClassName; set mut => Anonymous.ClassName = value; }
-			public ADS_PROV_SPECIFIC ProviderSpecific { get => Anonymous.ProviderSpecific; set mut => Anonymous.ProviderSpecific = value; }
-			public ADS_CASEIGNORE_LIST* pCaseIgnoreList { get => Anonymous.pCaseIgnoreList; set mut => Anonymous.pCaseIgnoreList = value; }
-			public ADS_OCTET_LIST* pOctetList { get => Anonymous.pOctetList; set mut => Anonymous.pOctetList = value; }
-			public ADS_PATH* pPath { get => Anonymous.pPath; set mut => Anonymous.pPath = value; }
-			public ADS_POSTALADDRESS* pPostalAddress { get => Anonymous.pPostalAddress; set mut => Anonymous.pPostalAddress = value; }
-			public ADS_TIMESTAMP Timestamp { get => Anonymous.Timestamp; set mut => Anonymous.Timestamp = value; }
-			public ADS_BACKLINK BackLink { get => Anonymous.BackLink; set mut => Anonymous.BackLink = value; }
-			public ADS_TYPEDNAME* pTypedName { get => Anonymous.pTypedName; set mut => Anonymous.pTypedName = value; }
-			public ADS_HOLD Hold { get => Anonymous.Hold; set mut => Anonymous.Hold = value; }
-			public ADS_NETADDRESS* pNetAddress { get => Anonymous.pNetAddress; set mut => Anonymous.pNetAddress = value; }
-			public ADS_REPLICAPOINTER* pReplicaPointer { get => Anonymous.pReplicaPointer; set mut => Anonymous.pReplicaPointer = value; }
-			public ADS_FAXNUMBER* pFaxNumber { get => Anonymous.pFaxNumber; set mut => Anonymous.pFaxNumber = value; }
-			public ADS_EMAIL Email { get => Anonymous.Email; set mut => Anonymous.Email = value; }
-			public ADS_NT_SECURITY_DESCRIPTOR SecurityDescriptor { get => Anonymous.SecurityDescriptor; set mut => Anonymous.SecurityDescriptor = value; }
-			public ADS_DN_WITH_BINARY* pDNWithBinary { get => Anonymous.pDNWithBinary; set mut => Anonymous.pDNWithBinary = value; }
-			public ADS_DN_WITH_STRING* pDNWithString { get => Anonymous.pDNWithString; set mut => Anonymous.pDNWithString = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

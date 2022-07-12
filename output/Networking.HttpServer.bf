@@ -693,8 +693,7 @@ namespace Win32
 		public struct HTTP_DATA_CHUNK
 		{
 			public HTTP_DATA_CHUNK_TYPE DataChunkType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1009,14 +1008,7 @@ namespace Win32
 		{
 			public HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE ParamType;
 			public uint64 Flags;
-			public _Anonymous_e__Union Anonymous;
-			
-			public HTTP2_WINDOW_SIZE_PARAM Http2WindowSizeParam { get => Anonymous.Http2WindowSizeParam; set mut => Anonymous.Http2WindowSizeParam = value; }
-			public HTTP2_SETTINGS_LIMITS_PARAM Http2SettingsLimitsParam { get => Anonymous.Http2SettingsLimitsParam; set mut => Anonymous.Http2SettingsLimitsParam = value; }
-			public HTTP_PERFORMANCE_PARAM HttpPerformanceParam { get => Anonymous.HttpPerformanceParam; set mut => Anonymous.HttpPerformanceParam = value; }
-			public HTTP_TLS_RESTRICTIONS_PARAM HttpTlsRestrictionsParam { get => Anonymous.HttpTlsRestrictionsParam; set mut => Anonymous.HttpTlsRestrictionsParam = value; }
-			public HTTP_ERROR_HEADERS_PARAM HttpErrorHeadersParam { get => Anonymous.HttpErrorHeadersParam; set mut => Anonymous.HttpErrorHeadersParam = value; }
-			public HTTP_TLS_SESSION_TICKET_KEYS_PARAM HttpTlsSessionTicketKeysParam { get => Anonymous.HttpTlsSessionTicketKeysParam; set mut => Anonymous.HttpTlsSessionTicketKeysParam = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

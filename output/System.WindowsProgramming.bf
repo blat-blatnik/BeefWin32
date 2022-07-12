@@ -836,9 +836,7 @@ namespace Win32
 			public struct _Attributes_e__Union
 			{
 				public uint32 AllAttributes;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -934,11 +932,8 @@ namespace Win32
 			public UNICODE_STRING FullDllName;
 			public uint8[8] Reserved4;
 			public void*[3] Reserved5;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 TimeDateStamp;
-			
-			public uint32 CheckSum { get => Anonymous.CheckSum; set mut => Anonymous.CheckSum = value; }
-			public void* Reserved6 { get => Anonymous.Reserved6; set mut => Anonymous.Reserved6 = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -960,11 +955,8 @@ namespace Win32
 		[CRepr]
 		public struct IO_STATUS_BLOCK
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint Information;
-			
-			public NTSTATUS Status { get => Anonymous.Status; set mut => Anonymous.Status = value; }
-			public void* Pointer { get => Anonymous.Pointer; set mut => Anonymous.Pointer = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1387,14 +1379,11 @@ namespace Win32
 		{
 			public TDI_TL_IO_CONTROL_TYPE Type;
 			public uint32 Level;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public void* InputBuffer;
 			public uint32 InputBufferLength;
 			public void* OutputBuffer;
 			public uint32 OutputBufferLength;
-			
-			public uint32 IoControlCode { get => Anonymous.IoControlCode; set mut => Anonymous.IoControlCode = value; }
-			public uint32 OptionName { get => Anonymous.OptionName; set mut => Anonymous.OptionName = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -114,8 +114,7 @@ namespace Win32
 		{
 			public PRJ_EXT_INFO_TYPE InfoType;
 			public uint32 NextInfoOffset;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -250,8 +249,7 @@ namespace Win32
 		public struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
 		{
 			public PRJ_COMPLETE_COMMAND_TYPE CommandType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

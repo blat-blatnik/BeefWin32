@@ -294,50 +294,9 @@ namespace Win32
 		[CRepr]
 		public struct EVT_VARIANT
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 Count;
 			public uint32 Type;
-			
-			public BOOL BooleanVal { get => Anonymous.BooleanVal; set mut => Anonymous.BooleanVal = value; }
-			public int8 SByteVal { get => Anonymous.SByteVal; set mut => Anonymous.SByteVal = value; }
-			public int16 Int16Val { get => Anonymous.Int16Val; set mut => Anonymous.Int16Val = value; }
-			public int32 Int32Val { get => Anonymous.Int32Val; set mut => Anonymous.Int32Val = value; }
-			public int64 Int64Val { get => Anonymous.Int64Val; set mut => Anonymous.Int64Val = value; }
-			public uint8 ByteVal { get => Anonymous.ByteVal; set mut => Anonymous.ByteVal = value; }
-			public uint16 UInt16Val { get => Anonymous.UInt16Val; set mut => Anonymous.UInt16Val = value; }
-			public uint32 UInt32Val { get => Anonymous.UInt32Val; set mut => Anonymous.UInt32Val = value; }
-			public uint64 UInt64Val { get => Anonymous.UInt64Val; set mut => Anonymous.UInt64Val = value; }
-			public float SingleVal { get => Anonymous.SingleVal; set mut => Anonymous.SingleVal = value; }
-			public double DoubleVal { get => Anonymous.DoubleVal; set mut => Anonymous.DoubleVal = value; }
-			public uint64 FileTimeVal { get => Anonymous.FileTimeVal; set mut => Anonymous.FileTimeVal = value; }
-			public SYSTEMTIME* SysTimeVal { get => Anonymous.SysTimeVal; set mut => Anonymous.SysTimeVal = value; }
-			public Guid* GuidVal { get => Anonymous.GuidVal; set mut => Anonymous.GuidVal = value; }
-			public PWSTR StringVal { get => Anonymous.StringVal; set mut => Anonymous.StringVal = value; }
-			public PSTR AnsiStringVal { get => Anonymous.AnsiStringVal; set mut => Anonymous.AnsiStringVal = value; }
-			public uint8* BinaryVal { get => Anonymous.BinaryVal; set mut => Anonymous.BinaryVal = value; }
-			public PSID SidVal { get => Anonymous.SidVal; set mut => Anonymous.SidVal = value; }
-			public uint SizeTVal { get => Anonymous.SizeTVal; set mut => Anonymous.SizeTVal = value; }
-			public BOOL* BooleanArr { get => Anonymous.BooleanArr; set mut => Anonymous.BooleanArr = value; }
-			public int8* SByteArr { get => Anonymous.SByteArr; set mut => Anonymous.SByteArr = value; }
-			public int16* Int16Arr { get => Anonymous.Int16Arr; set mut => Anonymous.Int16Arr = value; }
-			public int32* Int32Arr { get => Anonymous.Int32Arr; set mut => Anonymous.Int32Arr = value; }
-			public int64* Int64Arr { get => Anonymous.Int64Arr; set mut => Anonymous.Int64Arr = value; }
-			public uint8* ByteArr { get => Anonymous.ByteArr; set mut => Anonymous.ByteArr = value; }
-			public uint16* UInt16Arr { get => Anonymous.UInt16Arr; set mut => Anonymous.UInt16Arr = value; }
-			public uint32* UInt32Arr { get => Anonymous.UInt32Arr; set mut => Anonymous.UInt32Arr = value; }
-			public uint64* UInt64Arr { get => Anonymous.UInt64Arr; set mut => Anonymous.UInt64Arr = value; }
-			public float* SingleArr { get => Anonymous.SingleArr; set mut => Anonymous.SingleArr = value; }
-			public double* DoubleArr { get => Anonymous.DoubleArr; set mut => Anonymous.DoubleArr = value; }
-			public FILETIME* FileTimeArr { get => Anonymous.FileTimeArr; set mut => Anonymous.FileTimeArr = value; }
-			public SYSTEMTIME* SysTimeArr { get => Anonymous.SysTimeArr; set mut => Anonymous.SysTimeArr = value; }
-			public Guid* GuidArr { get => Anonymous.GuidArr; set mut => Anonymous.GuidArr = value; }
-			public PWSTR* StringArr { get => Anonymous.StringArr; set mut => Anonymous.StringArr = value; }
-			public PSTR* AnsiStringArr { get => Anonymous.AnsiStringArr; set mut => Anonymous.AnsiStringArr = value; }
-			public PSID* SidArr { get => Anonymous.SidArr; set mut => Anonymous.SidArr = value; }
-			public uint* SizeTArr { get => Anonymous.SizeTArr; set mut => Anonymous.SizeTArr = value; }
-			public int EvtHandleVal { get => Anonymous.EvtHandleVal; set mut => Anonymous.EvtHandleVal = value; }
-			public PWSTR XmlVal { get => Anonymous.XmlVal; set mut => Anonymous.XmlVal = value; }
-			public PWSTR* XmlValArr { get => Anonymous.XmlValArr; set mut => Anonymous.XmlValArr = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

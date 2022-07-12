@@ -1321,26 +1321,7 @@ namespace Win32
 		public struct FWP_VALUE0
 		{
 			public FWP_DATA_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 uint8 { get => Anonymous.uint8; set mut => Anonymous.uint8 = value; }
-			public uint16 uint16 { get => Anonymous.uint16; set mut => Anonymous.uint16 = value; }
-			public uint32 uint32 { get => Anonymous.uint32; set mut => Anonymous.uint32 = value; }
-			public uint64* uint64 { get => Anonymous.uint64; set mut => Anonymous.uint64 = value; }
-			public int8 int8 { get => Anonymous.int8; set mut => Anonymous.int8 = value; }
-			public int16 int16 { get => Anonymous.int16; set mut => Anonymous.int16 = value; }
-			public int32 int32 { get => Anonymous.int32; set mut => Anonymous.int32 = value; }
-			public int64* int64 { get => Anonymous.int64; set mut => Anonymous.int64 = value; }
-			public float float32 { get => Anonymous.float32; set mut => Anonymous.float32 = value; }
-			public double* double64 { get => Anonymous.double64; set mut => Anonymous.double64 = value; }
-			public FWP_BYTE_ARRAY16* byteArray16 { get => Anonymous.byteArray16; set mut => Anonymous.byteArray16 = value; }
-			public FWP_BYTE_BLOB* byteBlob { get => Anonymous.byteBlob; set mut => Anonymous.byteBlob = value; }
-			public SID* sid { get => Anonymous.sid; set mut => Anonymous.sid = value; }
-			public FWP_BYTE_BLOB* sd { get => Anonymous.sd; set mut => Anonymous.sd = value; }
-			public FWP_TOKEN_INFORMATION* tokenInformation { get => Anonymous.tokenInformation; set mut => Anonymous.tokenInformation = value; }
-			public FWP_BYTE_BLOB* tokenAccessInformation { get => Anonymous.tokenAccessInformation; set mut => Anonymous.tokenAccessInformation = value; }
-			public PWSTR unicodeString { get => Anonymous.unicodeString; set mut => Anonymous.unicodeString = value; }
-			public FWP_BYTE_ARRAY6* byteArray6 { get => Anonymous.byteArray6; set mut => Anonymous.byteArray6 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1387,29 +1368,7 @@ namespace Win32
 		public struct FWP_CONDITION_VALUE0
 		{
 			public FWP_DATA_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 uint8 { get => Anonymous.uint8; set mut => Anonymous.uint8 = value; }
-			public uint16 uint16 { get => Anonymous.uint16; set mut => Anonymous.uint16 = value; }
-			public uint32 uint32 { get => Anonymous.uint32; set mut => Anonymous.uint32 = value; }
-			public uint64* uint64 { get => Anonymous.uint64; set mut => Anonymous.uint64 = value; }
-			public int8 int8 { get => Anonymous.int8; set mut => Anonymous.int8 = value; }
-			public int16 int16 { get => Anonymous.int16; set mut => Anonymous.int16 = value; }
-			public int32 int32 { get => Anonymous.int32; set mut => Anonymous.int32 = value; }
-			public int64* int64 { get => Anonymous.int64; set mut => Anonymous.int64 = value; }
-			public float float32 { get => Anonymous.float32; set mut => Anonymous.float32 = value; }
-			public double* double64 { get => Anonymous.double64; set mut => Anonymous.double64 = value; }
-			public FWP_BYTE_ARRAY16* byteArray16 { get => Anonymous.byteArray16; set mut => Anonymous.byteArray16 = value; }
-			public FWP_BYTE_BLOB* byteBlob { get => Anonymous.byteBlob; set mut => Anonymous.byteBlob = value; }
-			public SID* sid { get => Anonymous.sid; set mut => Anonymous.sid = value; }
-			public FWP_BYTE_BLOB* sd { get => Anonymous.sd; set mut => Anonymous.sd = value; }
-			public FWP_TOKEN_INFORMATION* tokenInformation { get => Anonymous.tokenInformation; set mut => Anonymous.tokenInformation = value; }
-			public FWP_BYTE_BLOB* tokenAccessInformation { get => Anonymous.tokenAccessInformation; set mut => Anonymous.tokenAccessInformation = value; }
-			public PWSTR unicodeString { get => Anonymous.unicodeString; set mut => Anonymous.unicodeString = value; }
-			public FWP_BYTE_ARRAY6* byteArray6 { get => Anonymous.byteArray6; set mut => Anonymous.byteArray6 = value; }
-			public FWP_V4_ADDR_AND_MASK* v4AddrMask { get => Anonymous.v4AddrMask; set mut => Anonymous.v4AddrMask = value; }
-			public FWP_V6_ADDR_AND_MASK* v6AddrMask { get => Anonymous.v6AddrMask; set mut => Anonymous.v6AddrMask = value; }
-			public FWP_RANGE0* rangeValue { get => Anonymous.rangeValue; set mut => Anonymous.rangeValue = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1478,12 +1437,9 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous2_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundTrustedRootStoreConfig;
-				
-				public uint32 outboundRootArraySize { get => Anonymous.outboundRootArraySize; set mut => Anonymous.outboundRootArraySize = value; }
-				public IKEEXT_CERT_ROOT_CONFIG0* outboundRootArray { get => Anonymous.outboundRootArray; set mut => Anonymous.outboundRootArray = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1495,12 +1451,9 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous1_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundTrustedRootStoreConfig;
-				
-				public uint32 inboundRootArraySize { get => Anonymous.inboundRootArraySize; set mut => Anonymous.inboundRootArraySize = value; }
-				public IKEEXT_CERT_ROOT_CONFIG0* inboundRootArray { get => Anonymous.inboundRootArray; set mut => Anonymous.inboundRootArray = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1523,12 +1476,9 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous2_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* outboundTrustedRootStoreConfig;
-				
-				public uint32 outboundRootArraySize { get => Anonymous.outboundRootArraySize; set mut => Anonymous.outboundRootArraySize = value; }
-				public IKEEXT_CERT_ROOT_CONFIG0* outboundRootArray { get => Anonymous.outboundRootArray; set mut => Anonymous.outboundRootArray = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1540,12 +1490,9 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous1_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundEnterpriseStoreConfig;
 				public IKEEXT_CERT_ROOT_CONFIG0* inboundTrustedRootStoreConfig;
-				
-				public uint32 inboundRootArraySize { get => Anonymous.inboundRootArraySize; set mut => Anonymous.inboundRootArraySize = value; }
-				public IKEEXT_CERT_ROOT_CONFIG0* inboundRootArray { get => Anonymous.inboundRootArray; set mut => Anonymous.inboundRootArray = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1678,14 +1625,7 @@ namespace Win32
 		public struct IKEEXT_AUTHENTICATION_METHOD0
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION0 presharedKeyAuthentication { get => Anonymous.presharedKeyAuthentication; set mut => Anonymous.presharedKeyAuthentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION0 certificateAuthentication { get => Anonymous.certificateAuthentication; set mut => Anonymous.certificateAuthentication = value; }
-			public IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication { get => Anonymous.kerberosAuthentication; set mut => Anonymous.kerberosAuthentication = value; }
-			public IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication { get => Anonymous.ntlmV2Authentication; set mut => Anonymous.ntlmV2Authentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION0 sslAuthentication { get => Anonymous.sslAuthentication; set mut => Anonymous.sslAuthentication = value; }
-			public IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication { get => Anonymous.cgaAuthentication; set mut => Anonymous.cgaAuthentication = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1702,15 +1642,7 @@ namespace Win32
 		public struct IKEEXT_AUTHENTICATION_METHOD1
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication { get => Anonymous.presharedKeyAuthentication; set mut => Anonymous.presharedKeyAuthentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION1 certificateAuthentication { get => Anonymous.certificateAuthentication; set mut => Anonymous.certificateAuthentication = value; }
-			public IKEEXT_KERBEROS_AUTHENTICATION0 kerberosAuthentication { get => Anonymous.kerberosAuthentication; set mut => Anonymous.kerberosAuthentication = value; }
-			public IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication { get => Anonymous.ntlmV2Authentication; set mut => Anonymous.ntlmV2Authentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION1 sslAuthentication { get => Anonymous.sslAuthentication; set mut => Anonymous.sslAuthentication = value; }
-			public IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication { get => Anonymous.cgaAuthentication; set mut => Anonymous.cgaAuthentication = value; }
-			public IKEEXT_EAP_AUTHENTICATION0 eapAuthentication { get => Anonymous.eapAuthentication; set mut => Anonymous.eapAuthentication = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1728,16 +1660,7 @@ namespace Win32
 		public struct IKEEXT_AUTHENTICATION_METHOD2
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION1 presharedKeyAuthentication { get => Anonymous.presharedKeyAuthentication; set mut => Anonymous.presharedKeyAuthentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION2 certificateAuthentication { get => Anonymous.certificateAuthentication; set mut => Anonymous.certificateAuthentication = value; }
-			public IKEEXT_KERBEROS_AUTHENTICATION1 kerberosAuthentication { get => Anonymous.kerberosAuthentication; set mut => Anonymous.kerberosAuthentication = value; }
-			public IKEEXT_RESERVED_AUTHENTICATION0 reservedAuthentication { get => Anonymous.reservedAuthentication; set mut => Anonymous.reservedAuthentication = value; }
-			public IKEEXT_NTLM_V2_AUTHENTICATION0 ntlmV2Authentication { get => Anonymous.ntlmV2Authentication; set mut => Anonymous.ntlmV2Authentication = value; }
-			public IKEEXT_CERTIFICATE_AUTHENTICATION2 sslAuthentication { get => Anonymous.sslAuthentication; set mut => Anonymous.sslAuthentication = value; }
-			public IKEEXT_IPV6_CGA_AUTHENTICATION0 cgaAuthentication { get => Anonymous.cgaAuthentication; set mut => Anonymous.cgaAuthentication = value; }
-			public IKEEXT_EAP_AUTHENTICATION0 eapAuthentication { get => Anonymous.eapAuthentication; set mut => Anonymous.eapAuthentication = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1985,11 +1908,7 @@ namespace Win32
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION0* presharedKey { get => Anonymous.presharedKey; set mut => Anonymous.presharedKey = value; }
-			public IKEEXT_CERTIFICATE_CREDENTIAL0* certificate { get => Anonymous.certificate; set mut => Anonymous.certificate = value; }
-			public IKEEXT_NAME_CREDENTIAL0* name { get => Anonymous.name; set mut => Anonymous.name = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2017,15 +1936,13 @@ namespace Win32
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public IKEEXT_TRAFFIC0 ikeTraffic;
 			public IKEEXT_PROPOSAL0 ikeProposal;
 			public IKEEXT_COOKIE_PAIR0 cookiePair;
 			public IKEEXT_CREDENTIALS0 ikeCredentials;
 			public Guid ikePolicyKey;
 			public uint64 virtualIfTunnelId;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation { get => Anonymous.v4UdpEncapsulation; set mut => Anonymous.v4UdpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2046,11 +1963,7 @@ namespace Win32
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION1* presharedKey { get => Anonymous.presharedKey; set mut => Anonymous.presharedKey = value; }
-			public IKEEXT_CERTIFICATE_CREDENTIAL1* certificate { get => Anonymous.certificate; set mut => Anonymous.certificate = value; }
-			public IKEEXT_NAME_CREDENTIAL0* name { get => Anonymous.name; set mut => Anonymous.name = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2078,7 +1991,7 @@ namespace Win32
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public IKEEXT_TRAFFIC0 ikeTraffic;
 			public IKEEXT_PROPOSAL0 ikeProposal;
 			public IKEEXT_COOKIE_PAIR0 cookiePair;
@@ -2086,8 +1999,6 @@ namespace Win32
 			public Guid ikePolicyKey;
 			public uint64 virtualIfTunnelId;
 			public FWP_BYTE_BLOB correlationKey;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation { get => Anonymous.v4UdpEncapsulation; set mut => Anonymous.v4UdpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2100,11 +2011,7 @@ namespace Win32
 		{
 			public IKEEXT_AUTHENTICATION_METHOD_TYPE authenticationMethodType;
 			public IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE impersonationType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKEEXT_PRESHARED_KEY_AUTHENTICATION1* presharedKey { get => Anonymous.presharedKey; set mut => Anonymous.presharedKey = value; }
-			public IKEEXT_CERTIFICATE_CREDENTIAL1* certificate { get => Anonymous.certificate; set mut => Anonymous.certificate = value; }
-			public IKEEXT_NAME_CREDENTIAL0* name { get => Anonymous.name; set mut => Anonymous.name = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2132,7 +2039,7 @@ namespace Win32
 			public uint64 saId;
 			public IKEEXT_KEY_MODULE_TYPE keyModuleType;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public IKEEXT_TRAFFIC0 ikeTraffic;
 			public IKEEXT_PROPOSAL0 ikeProposal;
 			public IKEEXT_COOKIE_PAIR0 cookiePair;
@@ -2140,8 +2047,6 @@ namespace Win32
 			public Guid ikePolicyKey;
 			public uint64 virtualIfTunnelId;
 			public FWP_BYTE_BLOB correlationKey;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* v4UdpEncapsulation { get => Anonymous.v4UdpEncapsulation; set mut => Anonymous.v4UdpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2197,13 +2102,7 @@ namespace Win32
 		public struct IPSEC_SA_TRANSFORM0
 		{
 			public IPSEC_TRANSFORM_TYPE ipsecTransformType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IPSEC_AUTH_TRANSFORM0* ahTransform { get => Anonymous.ahTransform; set mut => Anonymous.ahTransform = value; }
-			public IPSEC_AUTH_TRANSFORM0* espAuthTransform { get => Anonymous.espAuthTransform; set mut => Anonymous.espAuthTransform = value; }
-			public IPSEC_CIPHER_TRANSFORM0* espCipherTransform { get => Anonymous.espCipherTransform; set mut => Anonymous.espCipherTransform = value; }
-			public IPSEC_AUTH_AND_CIPHER_TRANSFORM0* espAuthAndCipherTransform { get => Anonymous.espAuthAndCipherTransform; set mut => Anonymous.espAuthAndCipherTransform = value; }
-			public IPSEC_AUTH_TRANSFORM0* espAuthFwTransform { get => Anonymous.espAuthFwTransform; set mut => Anonymous.espAuthFwTransform = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2315,10 +2214,7 @@ namespace Win32
 		public struct IPSEC_TUNNEL_ENDPOINT0
 		{
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 v4Address { get => Anonymous.v4Address; set mut => Anonymous.v4Address = value; }
-			public uint8[16] v6Address { get => Anonymous.v6Address; set mut => Anonymous.v6Address = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2549,13 +2445,7 @@ namespace Win32
 		{
 			public uint32 spi;
 			public IPSEC_TRANSFORM_TYPE saTransformType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IPSEC_SA_AUTH_INFORMATION0* ahInformation { get => Anonymous.ahInformation; set mut => Anonymous.ahInformation = value; }
-			public IPSEC_SA_AUTH_INFORMATION0* espAuthInformation { get => Anonymous.espAuthInformation; set mut => Anonymous.espAuthInformation = value; }
-			public IPSEC_SA_CIPHER_INFORMATION0* espCipherInformation { get => Anonymous.espCipherInformation; set mut => Anonymous.espCipherInformation = value; }
-			public IPSEC_SA_AUTH_AND_CIPHER_INFORMATION0* espAuthAndCipherInformation { get => Anonymous.espAuthAndCipherInformation; set mut => Anonymous.espAuthAndCipherInformation = value; }
-			public IPSEC_SA_AUTH_INFORMATION0* espAuthFwInformation { get => Anonymous.espAuthFwInformation; set mut => Anonymous.espAuthFwInformation = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2605,11 +2495,9 @@ namespace Win32
 			public IPSEC_SA0* saList;
 			public IPSEC_KEYMODULE_STATE0* keyModuleState;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 mmSaId;
 			public IPSEC_PFS_GROUP pfsGroup;
-			
-			public uint32 peerV4PrivateAddress { get => Anonymous.peerV4PrivateAddress; set mut => Anonymous.peerV4PrivateAddress = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2631,13 +2519,11 @@ namespace Win32
 			public IPSEC_SA0* saList;
 			public IPSEC_KEYMODULE_STATE0* keyModuleState;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 mmSaId;
 			public IPSEC_PFS_GROUP pfsGroup;
 			public Guid saLookupContext;
 			public uint64 qmFilterId;
-			
-			public uint32 peerV4PrivateAddress { get => Anonymous.peerV4PrivateAddress; set mut => Anonymous.peerV4PrivateAddress = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2718,10 +2604,8 @@ namespace Win32
 		{
 			public IPSEC_TRAFFIC0 inboundIpsecTraffic;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid* rngCryptoModuleID;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* inboundUdpEncapsulation { get => Anonymous.inboundUdpEncapsulation; set mut => Anonymous.inboundUdpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2734,10 +2618,8 @@ namespace Win32
 		{
 			public IPSEC_TRAFFIC1 inboundIpsecTraffic;
 			public FWP_IP_VERSION ipVersion;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid* rngCryptoModuleID;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* inboundUdpEncapsulation { get => Anonymous.inboundUdpEncapsulation; set mut => Anonymous.inboundUdpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2752,10 +2634,8 @@ namespace Win32
 			public FWP_DIRECTION saDirection;
 			public IPSEC_TRAFFIC0 traffic;
 			public IPSEC_SA_BUNDLE0 saBundle;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public FWPM_FILTER0* transportFilter;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* udpEncapsulation { get => Anonymous.udpEncapsulation; set mut => Anonymous.udpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2770,11 +2650,9 @@ namespace Win32
 			public FWP_DIRECTION saDirection;
 			public IPSEC_TRAFFIC1 traffic;
 			public IPSEC_SA_BUNDLE1 saBundle;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public FWPM_FILTER0* transportFilter;
 			public IPSEC_VIRTUAL_IF_TUNNEL_INFO0 virtualIfTunnelInfo;
-			
-			public IPSEC_V4_UDP_ENCAPSULATION0* udpEncapsulation { get => Anonymous.udpEncapsulation; set mut => Anonymous.udpEncapsulation = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2964,18 +2842,8 @@ namespace Win32
 			public Guid* providerKey;
 			public FWP_BYTE_BLOB providerData;
 			public FWPM_PROVIDER_CONTEXT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 providerContextId;
-			
-			public IPSEC_KEYING_POLICY0* keyingPolicy { get => Anonymous.keyingPolicy; set mut => Anonymous.keyingPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY0* ikeQmTransportPolicy { get => Anonymous.ikeQmTransportPolicy; set mut => Anonymous.ikeQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY0* ikeQmTunnelPolicy { get => Anonymous.ikeQmTunnelPolicy; set mut => Anonymous.ikeQmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY0* authipQmTransportPolicy { get => Anonymous.authipQmTransportPolicy; set mut => Anonymous.authipQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY0* authipQmTunnelPolicy { get => Anonymous.authipQmTunnelPolicy; set mut => Anonymous.authipQmTunnelPolicy = value; }
-			public IKEEXT_POLICY0* ikeMmPolicy { get => Anonymous.ikeMmPolicy; set mut => Anonymous.ikeMmPolicy = value; }
-			public IKEEXT_POLICY0* authIpMmPolicy { get => Anonymous.authIpMmPolicy; set mut => Anonymous.authIpMmPolicy = value; }
-			public FWP_BYTE_BLOB* dataBuffer { get => Anonymous.dataBuffer; set mut => Anonymous.dataBuffer = value; }
-			public FWPM_CLASSIFY_OPTIONS0* classifyOptions { get => Anonymous.classifyOptions; set mut => Anonymous.classifyOptions = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3000,21 +2868,8 @@ namespace Win32
 			public Guid* providerKey;
 			public FWP_BYTE_BLOB providerData;
 			public FWPM_PROVIDER_CONTEXT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 providerContextId;
-			
-			public IPSEC_KEYING_POLICY0* keyingPolicy { get => Anonymous.keyingPolicy; set mut => Anonymous.keyingPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY1* ikeQmTransportPolicy { get => Anonymous.ikeQmTransportPolicy; set mut => Anonymous.ikeQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY1* ikeQmTunnelPolicy { get => Anonymous.ikeQmTunnelPolicy; set mut => Anonymous.ikeQmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY1* authipQmTransportPolicy { get => Anonymous.authipQmTransportPolicy; set mut => Anonymous.authipQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY1* authipQmTunnelPolicy { get => Anonymous.authipQmTunnelPolicy; set mut => Anonymous.authipQmTunnelPolicy = value; }
-			public IKEEXT_POLICY1* ikeMmPolicy { get => Anonymous.ikeMmPolicy; set mut => Anonymous.ikeMmPolicy = value; }
-			public IKEEXT_POLICY1* authIpMmPolicy { get => Anonymous.authIpMmPolicy; set mut => Anonymous.authIpMmPolicy = value; }
-			public FWP_BYTE_BLOB* dataBuffer { get => Anonymous.dataBuffer; set mut => Anonymous.dataBuffer = value; }
-			public FWPM_CLASSIFY_OPTIONS0* classifyOptions { get => Anonymous.classifyOptions; set mut => Anonymous.classifyOptions = value; }
-			public IPSEC_TUNNEL_POLICY1* ikeV2QmTunnelPolicy { get => Anonymous.ikeV2QmTunnelPolicy; set mut => Anonymous.ikeV2QmTunnelPolicy = value; }
-			public IKEEXT_POLICY1* ikeV2MmPolicy { get => Anonymous.ikeV2MmPolicy; set mut => Anonymous.ikeV2MmPolicy = value; }
-			public IPSEC_DOSP_OPTIONS0* idpOptions { get => Anonymous.idpOptions; set mut => Anonymous.idpOptions = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3042,22 +2897,8 @@ namespace Win32
 			public Guid* providerKey;
 			public FWP_BYTE_BLOB providerData;
 			public FWPM_PROVIDER_CONTEXT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 providerContextId;
-			
-			public IPSEC_KEYING_POLICY1* keyingPolicy { get => Anonymous.keyingPolicy; set mut => Anonymous.keyingPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* ikeQmTransportPolicy { get => Anonymous.ikeQmTransportPolicy; set mut => Anonymous.ikeQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY2* ikeQmTunnelPolicy { get => Anonymous.ikeQmTunnelPolicy; set mut => Anonymous.ikeQmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* authipQmTransportPolicy { get => Anonymous.authipQmTransportPolicy; set mut => Anonymous.authipQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY2* authipQmTunnelPolicy { get => Anonymous.authipQmTunnelPolicy; set mut => Anonymous.authipQmTunnelPolicy = value; }
-			public IKEEXT_POLICY2* ikeMmPolicy { get => Anonymous.ikeMmPolicy; set mut => Anonymous.ikeMmPolicy = value; }
-			public IKEEXT_POLICY2* authIpMmPolicy { get => Anonymous.authIpMmPolicy; set mut => Anonymous.authIpMmPolicy = value; }
-			public FWP_BYTE_BLOB* dataBuffer { get => Anonymous.dataBuffer; set mut => Anonymous.dataBuffer = value; }
-			public FWPM_CLASSIFY_OPTIONS0* classifyOptions { get => Anonymous.classifyOptions; set mut => Anonymous.classifyOptions = value; }
-			public IPSEC_TUNNEL_POLICY2* ikeV2QmTunnelPolicy { get => Anonymous.ikeV2QmTunnelPolicy; set mut => Anonymous.ikeV2QmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* ikeV2QmTransportPolicy { get => Anonymous.ikeV2QmTransportPolicy; set mut => Anonymous.ikeV2QmTransportPolicy = value; }
-			public IKEEXT_POLICY2* ikeV2MmPolicy { get => Anonymous.ikeV2MmPolicy; set mut => Anonymous.ikeV2MmPolicy = value; }
-			public IPSEC_DOSP_OPTIONS0* idpOptions { get => Anonymous.idpOptions; set mut => Anonymous.idpOptions = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3086,22 +2927,8 @@ namespace Win32
 			public Guid* providerKey;
 			public FWP_BYTE_BLOB providerData;
 			public FWPM_PROVIDER_CONTEXT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint64 providerContextId;
-			
-			public IPSEC_KEYING_POLICY1* keyingPolicy { get => Anonymous.keyingPolicy; set mut => Anonymous.keyingPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* ikeQmTransportPolicy { get => Anonymous.ikeQmTransportPolicy; set mut => Anonymous.ikeQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY3_* ikeQmTunnelPolicy { get => Anonymous.ikeQmTunnelPolicy; set mut => Anonymous.ikeQmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* authipQmTransportPolicy { get => Anonymous.authipQmTransportPolicy; set mut => Anonymous.authipQmTransportPolicy = value; }
-			public IPSEC_TUNNEL_POLICY3_* authipQmTunnelPolicy { get => Anonymous.authipQmTunnelPolicy; set mut => Anonymous.authipQmTunnelPolicy = value; }
-			public IKEEXT_POLICY2* ikeMmPolicy { get => Anonymous.ikeMmPolicy; set mut => Anonymous.ikeMmPolicy = value; }
-			public IKEEXT_POLICY2* authIpMmPolicy { get => Anonymous.authIpMmPolicy; set mut => Anonymous.authIpMmPolicy = value; }
-			public FWP_BYTE_BLOB* dataBuffer { get => Anonymous.dataBuffer; set mut => Anonymous.dataBuffer = value; }
-			public FWPM_CLASSIFY_OPTIONS0* classifyOptions { get => Anonymous.classifyOptions; set mut => Anonymous.classifyOptions = value; }
-			public IPSEC_TUNNEL_POLICY3_* ikeV2QmTunnelPolicy { get => Anonymous.ikeV2QmTunnelPolicy; set mut => Anonymous.ikeV2QmTunnelPolicy = value; }
-			public IPSEC_TRANSPORT_POLICY2* ikeV2QmTransportPolicy { get => Anonymous.ikeV2QmTransportPolicy; set mut => Anonymous.ikeV2QmTransportPolicy = value; }
-			public IKEEXT_POLICY2* ikeV2MmPolicy { get => Anonymous.ikeV2MmPolicy; set mut => Anonymous.ikeV2MmPolicy = value; }
-			public IPSEC_DOSP_OPTIONS0* idpOptions { get => Anonymous.idpOptions; set mut => Anonymous.idpOptions = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3227,10 +3054,7 @@ namespace Win32
 		public struct FWPM_ACTION0
 		{
 			public uint32 type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public Guid filterType { get => Anonymous.filterType; set mut => Anonymous.filterType = value; }
-			public Guid calloutKey { get => Anonymous.calloutKey; set mut => Anonymous.calloutKey = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3260,13 +3084,10 @@ namespace Win32
 			public uint32 numFilterConditions;
 			public FWPM_FILTER_CONDITION0* filterCondition;
 			public FWPM_ACTION0 action;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid* reserved;
 			public uint64 filterId;
 			public FWP_VALUE0 effectiveWeight;
-			
-			public uint64 rawContext { get => Anonymous.rawContext; set mut => Anonymous.rawContext = value; }
-			public Guid providerContextKey { get => Anonymous.providerContextKey; set mut => Anonymous.providerContextKey = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3398,31 +3219,18 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous3_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
-				
-				public FWP_AF reserved1 { get => Anonymous.reserved1; set mut => Anonymous.reserved1 = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
 				{
 					public FWP_AF reserved1;
-					public _Anonymous_e__Union Anonymous;
-					
+					public using _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
 					public struct _Anonymous_e__Union
 					{
-						public _Anonymous_e__Struct Anonymous;
-						
-						public FWP_BYTE_ARRAY6 reserved2 { get => Anonymous.reserved2; set mut => Anonymous.reserved2 = value; }
-						public FWP_BYTE_ARRAY6 reserved3 { get => Anonymous.reserved3; set mut => Anonymous.reserved3 = value; }
-						public uint32 reserved4 { get => Anonymous.reserved4; set mut => Anonymous.reserved4 = value; }
-						public uint32 reserved5 { get => Anonymous.reserved5; set mut => Anonymous.reserved5 = value; }
-						public uint16 reserved6 { get => Anonymous.reserved6; set mut => Anonymous.reserved6 = value; }
-						public uint32 reserved7 { get => Anonymous.reserved7; set mut => Anonymous.reserved7 = value; }
-						public uint32 reserved8 { get => Anonymous.reserved8; set mut => Anonymous.reserved8 = value; }
-						public uint16 reserved9 { get => Anonymous.reserved9; set mut => Anonymous.reserved9 = value; }
-						public uint64 reserved10 { get => Anonymous.reserved10; set mut => Anonymous.reserved10 = value; }
+						public using _Anonymous_e__Struct Anonymous;
 						
 						[CRepr]
 						public struct _Anonymous_e__Struct
@@ -3774,14 +3582,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER0 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE0* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE0* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP0* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3799,14 +3600,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER1 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP1* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3824,18 +3618,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER2 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP2* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
-			public FWPM_NET_EVENT_CLASSIFY_ALLOW0* classifyAllow { get => Anonymous.classifyAllow; set mut => Anonymous.classifyAllow = value; }
-			public FWPM_NET_EVENT_CAPABILITY_DROP0* capabilityDrop { get => Anonymous.capabilityDrop; set mut => Anonymous.capabilityDrop = value; }
-			public FWPM_NET_EVENT_CAPABILITY_ALLOW0* capabilityAllow { get => Anonymous.capabilityAllow; set mut => Anonymous.capabilityAllow = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP_MAC0* classifyDropMac { get => Anonymous.classifyDropMac; set mut => Anonymous.classifyDropMac = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3857,18 +3640,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE1* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE0* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP2* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
-			public FWPM_NET_EVENT_CLASSIFY_ALLOW0* classifyAllow { get => Anonymous.classifyAllow; set mut => Anonymous.classifyAllow = value; }
-			public FWPM_NET_EVENT_CAPABILITY_DROP0* capabilityDrop { get => Anonymous.capabilityDrop; set mut => Anonymous.capabilityDrop = value; }
-			public FWPM_NET_EVENT_CAPABILITY_ALLOW0* capabilityAllow { get => Anonymous.capabilityAllow; set mut => Anonymous.capabilityAllow = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP_MAC0* classifyDropMac { get => Anonymous.classifyDropMac; set mut => Anonymous.classifyDropMac = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3890,18 +3662,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP2* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
-			public FWPM_NET_EVENT_CLASSIFY_ALLOW0* classifyAllow { get => Anonymous.classifyAllow; set mut => Anonymous.classifyAllow = value; }
-			public FWPM_NET_EVENT_CAPABILITY_DROP0* capabilityDrop { get => Anonymous.capabilityDrop; set mut => Anonymous.capabilityDrop = value; }
-			public FWPM_NET_EVENT_CAPABILITY_ALLOW0* capabilityAllow { get => Anonymous.capabilityAllow; set mut => Anonymous.capabilityAllow = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP_MAC0* classifyDropMac { get => Anonymous.classifyDropMac; set mut => Anonymous.classifyDropMac = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3923,19 +3684,7 @@ namespace Win32
 		{
 			public FWPM_NET_EVENT_HEADER3 header;
 			public FWPM_NET_EVENT_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_* ikeMmFailure { get => Anonymous.ikeMmFailure; set mut => Anonymous.ikeMmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_* ikeQmFailure { get => Anonymous.ikeQmFailure; set mut => Anonymous.ikeQmFailure = value; }
-			public FWPM_NET_EVENT_IKEEXT_EM_FAILURE1* ikeEmFailure { get => Anonymous.ikeEmFailure; set mut => Anonymous.ikeEmFailure = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP2* classifyDrop { get => Anonymous.classifyDrop; set mut => Anonymous.classifyDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_KERNEL_DROP0* ipsecDrop { get => Anonymous.ipsecDrop; set mut => Anonymous.ipsecDrop = value; }
-			public FWPM_NET_EVENT_IPSEC_DOSP_DROP0* idpDrop { get => Anonymous.idpDrop; set mut => Anonymous.idpDrop = value; }
-			public FWPM_NET_EVENT_CLASSIFY_ALLOW0* classifyAllow { get => Anonymous.classifyAllow; set mut => Anonymous.classifyAllow = value; }
-			public FWPM_NET_EVENT_CAPABILITY_DROP0* capabilityDrop { get => Anonymous.capabilityDrop; set mut => Anonymous.capabilityDrop = value; }
-			public FWPM_NET_EVENT_CAPABILITY_ALLOW0* capabilityAllow { get => Anonymous.capabilityAllow; set mut => Anonymous.capabilityAllow = value; }
-			public FWPM_NET_EVENT_CLASSIFY_DROP_MAC0* classifyDropMac { get => Anonymous.classifyDropMac; set mut => Anonymous.classifyDropMac = value; }
-			public FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_* lpmPacketArrival { get => Anonymous.lpmPacketArrival; set mut => Anonymous.lpmPacketArrival = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4030,8 +3779,7 @@ namespace Win32
 		{
 			public FWPM_VSWITCH_EVENT_TYPE eventType;
 			public PWSTR vSwitchId;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4073,9 +3821,7 @@ namespace Win32
 		public struct DL_OUI
 		{
 			public uint8[3] Byte;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4092,10 +3838,7 @@ namespace Win32
 		public struct DL_EUI48
 		{
 			public uint8[6] Byte;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public DL_OUI Oui { get => Anonymous.Oui; set mut => Anonymous.Oui = value; }
-			public DL_EI48 Ei48 { get => Anonymous.Ei48; set mut => Anonymous.Ei48 = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4114,27 +3857,19 @@ namespace Win32
 		{
 			public uint8[8] Byte;
 			public uint64 Value;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public DL_OUI Oui { get => Anonymous.Oui; set mut => Anonymous.Oui = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
 				public DL_OUI Oui;
-				public _Anonymous_e__Union Anonymous;
-				
-				public DL_EI64 Ei64 { get => Anonymous.Ei64; set mut => Anonymous.Ei64 = value; }
+				public using _Anonymous_e__Union Anonymous;
 				
 				[CRepr, Union]
 				public struct _Anonymous_e__Union
 				{
 					public DL_EI64 Ei64;
-					public _Anonymous_e__Struct Anonymous;
-					
-					public uint8 Type { get => Anonymous.Type; set mut => Anonymous.Type = value; }
-					public uint8 Tse { get => Anonymous.Tse; set mut => Anonymous.Tse = value; }
-					public DL_EI48 Ei48 { get => Anonymous.Ei48; set mut => Anonymous.Ei48 = value; }
+					public using _Anonymous_e__Struct Anonymous;
 					
 					[CRepr]
 					public struct _Anonymous_e__Struct
@@ -4160,10 +3895,7 @@ namespace Win32
 		{
 			public DL_EUI48 Destination;
 			public DL_EUI48 Source;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint16 Type { get => Anonymous.Type; set mut => Anonymous.Type = value; }
-			public uint16 Length { get => Anonymous.Length; set mut => Anonymous.Length = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4175,18 +3907,14 @@ namespace Win32
 		[CRepr]
 		public struct VLAN_TAG
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint16 Type;
-			
-			public uint16 Tag { get => Anonymous.Tag; set mut => Anonymous.Tag = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint16 Tag;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4234,9 +3962,7 @@ namespace Win32
 			public struct _Anonymous3_e__Union
 			{
 				public uint16 FlagsAndOffset;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4248,9 +3974,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public uint8 TypeOfServiceAndEcnField;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4262,9 +3986,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint8 VersionAndHeaderLength;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4276,18 +3998,14 @@ namespace Win32
 		[CRepr]
 		public struct IPV4_OPTION_HEADER
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint8 OptionLength;
-			
-			public uint8 OptionType { get => Anonymous.OptionType; set mut => Anonymous.OptionType = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint8 OptionType;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4301,17 +4019,13 @@ namespace Win32
 		{
 			public IPV4_OPTION_HEADER OptionHeader;
 			public uint8 Pointer;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 FlagsOverflow { get => Anonymous.FlagsOverflow; set mut => Anonymous.FlagsOverflow = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint8 FlagsOverflow;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4377,10 +4091,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous1_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint8 VersionType;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4411,9 +4123,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public uint8 QueriersQueryInterfaceCode;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4425,9 +4135,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint8 MaxRespCode;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4456,22 +4164,18 @@ namespace Win32
 		[CRepr]
 		public struct IPV6_HEADER
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint16 PayloadLength;
 			public uint8 NextHeader;
 			public uint8 HopLimit;
 			public IN6_ADDR SourceAddress;
 			public IN6_ADDR DestinationAddress;
 			
-			public uint32 VersionClassFlow { get => Anonymous.VersionClassFlow; set mut => Anonymous.VersionClassFlow = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 VersionClassFlow;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4485,18 +4189,14 @@ namespace Win32
 		{
 			public uint8 NextHeader;
 			public uint8 Reserved;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 Id;
-			
-			public uint16 OffsetAndFlags { get => Anonymous.OffsetAndFlags; set mut => Anonymous.OffsetAndFlags = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 OffsetAndFlags;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4553,10 +4253,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct IPV6_ROUTER_ADVERTISEMENT_FLAGS
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint8 Value;
-			
-			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4579,11 +4277,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct IPV6_NEIGHBOR_ADVERTISEMENT_FLAGS
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint32 Value;
-			
-			public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
-			public uint8[3] Reserved2 { get => Anonymous.Reserved2; set mut => Anonymous.Reserved2 = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4621,10 +4316,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public uint32 nd_opt_pi_reserved2;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8[3] nd_opt_pi_reserved3 { get => Anonymous.nd_opt_pi_reserved3; set mut => Anonymous.nd_opt_pi_reserved3 = value; }
-				public uint8 nd_opt_pi_site_prefix_len { get => Anonymous.nd_opt_pi_site_prefix_len; set mut => Anonymous.nd_opt_pi_site_prefix_len = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4668,11 +4360,9 @@ namespace Win32
 			public uint8 nd_opt_ri_type;
 			public uint8 nd_opt_ri_len;
 			public uint8 nd_opt_ri_prefix_len;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 nd_opt_ri_route_lifetime;
 			public IN6_ADDR nd_opt_ri_prefix;
-			
-			public uint8 nd_opt_ri_flags_reserved { get => Anonymous.nd_opt_ri_flags_reserved; set mut => Anonymous.nd_opt_ri_flags_reserved = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4726,9 +4416,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public uint8 QueriersQueryInterfaceCode;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4740,9 +4428,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint16 MaxRespCode;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4845,19 +4531,13 @@ namespace Win32
 		public struct DL_TEREDO_ADDRESS
 		{
 			public uint8[6] Reserved;
-			public _Anonymous_e__Union Anonymous;
-			
-			public DL_EUI64 Eui64 { get => Anonymous.Eui64; set mut => Anonymous.Eui64 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public DL_EUI64 Eui64;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
-				public uint16 MappedPort { get => Anonymous.MappedPort; set mut => Anonymous.MappedPort = value; }
-				public IN_ADDR MappedAddress { get => Anonymous.MappedAddress; set mut => Anonymous.MappedAddress = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -4872,23 +4552,13 @@ namespace Win32
 		public struct DL_TEREDO_ADDRESS_PRV
 		{
 			public uint8[6] Reserved;
-			public _Anonymous_e__Union Anonymous;
-			
-			public DL_EUI64 Eui64 { get => Anonymous.Eui64; set mut => Anonymous.Eui64 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public DL_EUI64 Eui64;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
-				public uint16 MappedPort { get => Anonymous.MappedPort; set mut => Anonymous.MappedPort = value; }
-				public IN_ADDR MappedAddress { get => Anonymous.MappedAddress; set mut => Anonymous.MappedAddress = value; }
-				public IN_ADDR LocalAddress { get => Anonymous.LocalAddress; set mut => Anonymous.LocalAddress = value; }
-				public uint32 InterfaceIndex { get => Anonymous.InterfaceIndex; set mut => Anonymous.InterfaceIndex = value; }
-				public uint16 LocalPort { get => Anonymous.LocalPort; set mut => Anonymous.LocalPort = value; }
-				public DL_EUI48 DlDestination { get => Anonymous.DlDestination; set mut => Anonymous.DlDestination = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct
@@ -4913,10 +4583,7 @@ namespace Win32
 		{
 			public uint16 Length;
 			public NPI_MODULEID_TYPE Type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public Guid Guid { get => Anonymous.Guid; set mut => Anonymous.Guid = value; }
-			public LUID IfLuid { get => Anonymous.IfLuid; set mut => Anonymous.IfLuid = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

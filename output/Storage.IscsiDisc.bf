@@ -991,9 +991,7 @@ namespace Win32
 		public struct IKE_AUTHENTICATION_INFORMATION
 		{
 			public IKE_AUTHENTICATION_METHOD AuthMethod;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IKE_AUTHENTICATION_PRESHARED_KEY PsKey { get => Anonymous.PsKey; set mut => Anonymous.PsKey = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

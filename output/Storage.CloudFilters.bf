@@ -470,8 +470,7 @@ namespace Win32
 		public struct CF_CALLBACK_PARAMETERS
 		{
 			public uint32 ParamSize;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -522,8 +521,7 @@ namespace Win32
 				public struct _Cancel_e__Struct
 				{
 					public CF_CALLBACK_CANCEL_FLAGS Flags;
-					public _Anonymous_e__Union Anonymous;
-					
+					public using _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
 					public struct _Anonymous_e__Union
@@ -610,8 +608,7 @@ namespace Win32
 		public struct CF_OPERATION_PARAMETERS
 		{
 			public uint32 ParamSize;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

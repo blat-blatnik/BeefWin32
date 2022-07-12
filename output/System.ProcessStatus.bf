@@ -50,9 +50,7 @@ namespace Win32
 		public struct PSAPI_WORKING_SET_BLOCK
 		{
 			public uint Flags;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -70,16 +68,13 @@ namespace Win32
 		public struct PSAPI_WORKING_SET_EX_BLOCK
 		{
 			public uint Flags;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public _Invalid_e__Struct Invalid;
-				
-				public uint _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

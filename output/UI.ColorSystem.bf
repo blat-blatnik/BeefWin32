@@ -422,10 +422,7 @@ namespace Win32
 			public GENERIC3CHANNEL gen3ch;
 			public NAMEDCOLOR named;
 			public HiFiCOLOR hifi;
-			public _Anonymous_e__Struct Anonymous;
-			
-			public uint32 reserved1 { get => Anonymous.reserved1; set mut => Anonymous.reserved1 = value; }
-			public void* reserved2 { get => Anonymous.reserved2; set mut => Anonymous.reserved2 = value; }
+			public using _Anonymous_e__Struct Anonymous;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct

@@ -738,32 +738,13 @@ namespace Win32
 		[CRepr]
 		public struct D3DMATRIX
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public float[16] m { get => Anonymous.m; set mut => Anonymous.m = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public float[16] m;
-				
-				public float _11 { get => Anonymous._11; set mut => Anonymous._11 = value; }
-				public float _12 { get => Anonymous._12; set mut => Anonymous._12 = value; }
-				public float _13 { get => Anonymous._13; set mut => Anonymous._13 = value; }
-				public float _14 { get => Anonymous._14; set mut => Anonymous._14 = value; }
-				public float _21 { get => Anonymous._21; set mut => Anonymous._21 = value; }
-				public float _22 { get => Anonymous._22; set mut => Anonymous._22 = value; }
-				public float _23 { get => Anonymous._23; set mut => Anonymous._23 = value; }
-				public float _24 { get => Anonymous._24; set mut => Anonymous._24 = value; }
-				public float _31 { get => Anonymous._31; set mut => Anonymous._31 = value; }
-				public float _32 { get => Anonymous._32; set mut => Anonymous._32 = value; }
-				public float _33 { get => Anonymous._33; set mut => Anonymous._33 = value; }
-				public float _34 { get => Anonymous._34; set mut => Anonymous._34 = value; }
-				public float _41 { get => Anonymous._41; set mut => Anonymous._41 = value; }
-				public float _42 { get => Anonymous._42; set mut => Anonymous._42 = value; }
-				public float _43 { get => Anonymous._43; set mut => Anonymous._43 = value; }
-				public float _44 { get => Anonymous._44; set mut => Anonymous._44 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

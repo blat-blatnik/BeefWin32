@@ -172,12 +172,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct TIMECODE
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint64 qw;
-			
-			public uint16 wFrameRate { get => Anonymous.wFrameRate; set mut => Anonymous.wFrameRate = value; }
-			public uint16 wFrameFract { get => Anonymous.wFrameFract; set mut => Anonymous.wFrameFract = value; }
-			public uint32 dwFrames { get => Anonymous.dwFrames; set mut => Anonymous.dwFrames = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct

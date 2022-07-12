@@ -1976,19 +1976,13 @@ namespace Win32
 		[CRepr]
 		public struct KSIDENTIFIER
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public int64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public int64 Alignment;
-				
-				public Guid Set { get => Anonymous.Set; set mut => Anonymous.Set = value; }
-				public uint32 Id { get => Anonymous.Id; set mut => Anonymous.Id = value; }
-				public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2098,8 +2092,7 @@ namespace Win32
 		public struct KSEVENTDATA
 		{
 			public uint32 NotificationType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2141,13 +2134,10 @@ namespace Win32
 		{
 			public uint32 Size;
 			public uint32 Flags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public void* Reserved;
 			public KSIDENTIFIER Event;
 			public KSEVENTDATA EventData;
-			
-			public HANDLE ObjectHandle { get => Anonymous.ObjectHandle; set mut => Anonymous.ObjectHandle = value; }
-			public void* ObjectPointer { get => Anonymous.ObjectPointer; set mut => Anonymous.ObjectPointer = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2238,10 +2228,7 @@ namespace Win32
 		{
 			public KSIDENTIFIER Property;
 			public uint32 PinId;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
-			public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2266,16 +2253,8 @@ namespace Win32
 		[CRepr, Union]
 		public struct KSDATAFORMAT
 		{
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public int64 Alignment;
-			
-			public uint32 FormatSize { get => Anonymous.FormatSize; set mut => Anonymous.FormatSize = value; }
-			public uint32 Flags { get => Anonymous.Flags; set mut => Anonymous.Flags = value; }
-			public uint32 SampleSize { get => Anonymous.SampleSize; set mut => Anonymous.SampleSize = value; }
-			public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
-			public Guid MajorFormat { get => Anonymous.MajorFormat; set mut => Anonymous.MajorFormat = value; }
-			public Guid SubFormat { get => Anonymous.SubFormat; set mut => Anonymous.SubFormat = value; }
-			public Guid Specifier { get => Anonymous.Specifier; set mut => Anonymous.Specifier = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2365,13 +2344,10 @@ namespace Win32
 			public uint32 BusFlags;
 			public uint32 Flags;
 			public uint32 Frames;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 MemoryTypeWeight;
 			public KS_FRAMING_RANGE PhysicalRange;
 			public KS_FRAMING_RANGE_WEIGHTED FramingRange;
-			
-			public uint32 FileAlignment { get => Anonymous.FileAlignment; set mut => Anonymous.FileAlignment = value; }
-			public int32 FramePitch { get => Anonymous.FramePitch; set mut => Anonymous.FramePitch = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2438,19 +2414,15 @@ namespace Win32
 		{
 			public uint32 PresentationTimeStamp;
 			public uint32 SourceClockReference;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint16 Reserved0;
 			public uint32 Reserved1;
-			
-			public uint16 SCRToken { get => Anonymous.SCRToken; set mut => Anonymous.SCRToken = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 SCRToken;
-				
-				public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2922,10 +2894,7 @@ namespace Win32
 			public BOOL Mute;
 			public int32 Minimum;
 			public int32 Maximum;
-			public _Anonymous_e__Union Anonymous;
-			
-			public int32 Reset { get => Anonymous.Reset; set mut => Anonymous.Reset = value; }
-			public int32 Resolution { get => Anonymous.Resolution; set mut => Anonymous.Resolution = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3271,11 +3240,7 @@ namespace Win32
 			public uint32 dwBitErrorRate;
 			public int64 AvgTimePerFrame;
 			public KS_BITMAPINFOHEADER bmiHeader;
-			public _Anonymous_e__Union Anonymous;
-			
-			public KS_RGBQUAD[256] bmiColors { get => Anonymous.bmiColors; set mut => Anonymous.bmiColors = value; }
-			public uint32[3] dwBitMasks { get => Anonymous.dwBitMasks; set mut => Anonymous.dwBitMasks = value; }
-			public KS_TRUECOLORINFO TrueColorInfo { get => Anonymous.TrueColorInfo; set mut => Anonymous.TrueColorInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3329,12 +3294,9 @@ namespace Win32
 			public uint32 dwCopyProtectFlags;
 			public uint32 dwPictAspectRatioX;
 			public uint32 dwPictAspectRatioY;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwReserved2;
 			public KS_BITMAPINFOHEADER bmiHeader;
-			
-			public uint32 dwControlFlags { get => Anonymous.dwControlFlags; set mut => Anonymous.dwControlFlags = value; }
-			public uint32 dwReserved1 { get => Anonymous.dwReserved1; set mut => Anonymous.dwReserved1 = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3802,11 +3764,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous2_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint64 FrameCompletionNumber;
-				
-				public uint32 Reserved3 { get => Anonymous.Reserved3; set mut => Anonymous.Reserved3 = value; }
-				public uint32 Reserved4 { get => Anonymous.Reserved4; set mut => Anonymous.Reserved4 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4131,10 +4090,7 @@ namespace Win32
 			public BOOL AutoFocusLock;
 			public BOOL AutoExposureLock;
 			public BOOL AutoWhitebalanceLock;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Capabilities { get => Anonymous.Capabilities; set mut => Anonymous.Capabilities = value; }
-			public uint32 Configuration { get => Anonymous.Configuration; set mut => Anonymous.Configuration = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -4467,20 +4423,15 @@ namespace Win32
 		public struct KSCAMERA_PROFILE_PININFO
 		{
 			public Guid PinCategory;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 MediaInfoCount;
 			public KSCAMERA_PROFILE_MEDIAINFO* MediaInfos;
-			
-			public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Reserved;
-				
-				public uint16 PinIndex { get => Anonymous.PinIndex; set mut => Anonymous.PinIndex = value; }
-				public uint16 ProfileSensorType { get => Anonymous.ProfileSensorType; set mut => Anonymous.ProfileSensorType = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -4511,8 +4462,7 @@ namespace Win32
 		{
 			public uint32 Type;
 			public uint32 Size;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5036,9 +4986,7 @@ namespace Win32
 		[CRepr]
 		public struct KSAUDIOMODULE_NOTIFICATION
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public int64 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

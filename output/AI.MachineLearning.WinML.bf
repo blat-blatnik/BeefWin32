@@ -124,12 +124,7 @@ namespace Win32
 		{
 			public uint32 ElementCount;
 			public WINML_TENSOR_DATA_TYPE ElementType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PWSTR* pStrings { get => Anonymous.pStrings; set mut => Anonymous.pStrings = value; }
-			public int64* pInts { get => Anonymous.pInts; set mut => Anonymous.pInts = value; }
-			public float* pFloats { get => Anonymous.pFloats; set mut => Anonymous.pFloats = value; }
-			public double* pDoubles { get => Anonymous.pDoubles; set mut => Anonymous.pDoubles = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -186,13 +181,7 @@ namespace Win32
 		{
 			public PWSTR Name;
 			public WINML_BINDING_TYPE BindType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public WINML_TENSOR_BINDING_DESC Tensor { get => Anonymous.Tensor; set mut => Anonymous.Tensor = value; }
-			public WINML_SEQUENCE_BINDING_DESC Sequence { get => Anonymous.Sequence; set mut => Anonymous.Sequence = value; }
-			public WINML_MAP_BINDING_DESC Map { get => Anonymous.Map; set mut => Anonymous.Map = value; }
-			public WINML_IMAGE_BINDING_DESC Image { get => Anonymous.Image; set mut => Anonymous.Image = value; }
-			public WINML_RESOURCE_BINDING_DESC Resource { get => Anonymous.Resource; set mut => Anonymous.Resource = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -236,12 +225,7 @@ namespace Win32
 			public PWSTR Description;
 			public WINML_FEATURE_TYPE FeatureType;
 			public BOOL Required;
-			public _Anonymous_e__Union Anonymous;
-			
-			public WINML_TENSOR_VARIABLE_DESC Tensor { get => Anonymous.Tensor; set mut => Anonymous.Tensor = value; }
-			public WINML_SEQUENCE_VARIABLE_DESC Sequence { get => Anonymous.Sequence; set mut => Anonymous.Sequence = value; }
-			public WINML_MAP_VARIABLE_DESC Map { get => Anonymous.Map; set mut => Anonymous.Map = value; }
-			public WINML_IMAGE_VARIABLE_DESC Image { get => Anonymous.Image; set mut => Anonymous.Image = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -265,10 +249,7 @@ namespace Win32
 		public struct MLOperatorEdgeDescription
 		{
 			public MLOperatorEdgeType edgeType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint64 reserved { get => Anonymous.reserved; set mut => Anonymous.reserved = value; }
-			public MLOperatorTensorDataType tensorDataType { get => Anonymous.tensorDataType; set mut => Anonymous.tensorDataType = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -282,11 +263,7 @@ namespace Win32
 		{
 			public MLOperatorParameterOptions options;
 			public MLOperatorSchemaEdgeTypeFormat typeFormat;
-			public _Anonymous_e__Union Anonymous;
-			
-			public void* reserved { get => Anonymous.reserved; set mut => Anonymous.reserved = value; }
-			public PSTR typeLabel { get => Anonymous.typeLabel; set mut => Anonymous.typeLabel = value; }
-			public MLOperatorEdgeDescription edgeDescription { get => Anonymous.edgeDescription; set mut => Anonymous.edgeDescription = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -316,12 +293,7 @@ namespace Win32
 			public PSTR name;
 			public MLOperatorAttributeType type;
 			public uint32 valueCount;
-			public _Anonymous_e__Union Anonymous;
-			
-			public void* reserved { get => Anonymous.reserved; set mut => Anonymous.reserved = value; }
-			public int64* ints { get => Anonymous.ints; set mut => Anonymous.ints = value; }
-			public int8** strings { get => Anonymous.strings; set mut => Anonymous.strings = value; }
-			public float* floats { get => Anonymous.floats; set mut => Anonymous.floats = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

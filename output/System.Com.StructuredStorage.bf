@@ -308,20 +308,13 @@ namespace Win32
 		[CRepr]
 		public struct PROPVARIANT
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public DECIMAL decVal { get => Anonymous.decVal; set mut => Anonymous.decVal = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public DECIMAL decVal;
-				
-				public uint16 vt { get => Anonymous.vt; set mut => Anonymous.vt = value; }
-				public uint16 wReserved1 { get => Anonymous.wReserved1; set mut => Anonymous.wReserved1 = value; }
-				public uint16 wReserved2 { get => Anonymous.wReserved2; set mut => Anonymous.wReserved2 = value; }
-				public uint16 wReserved3 { get => Anonymous.wReserved3; set mut => Anonymous.wReserved3 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -330,81 +323,7 @@ namespace Win32
 					public uint16 wReserved1;
 					public uint16 wReserved2;
 					public uint16 wReserved3;
-					public _Anonymous_e__Union Anonymous;
-					
-					public CHAR cVal { get => Anonymous.cVal; set mut => Anonymous.cVal = value; }
-					public uint8 bVal { get => Anonymous.bVal; set mut => Anonymous.bVal = value; }
-					public int16 iVal { get => Anonymous.iVal; set mut => Anonymous.iVal = value; }
-					public uint16 uiVal { get => Anonymous.uiVal; set mut => Anonymous.uiVal = value; }
-					public int32 lVal { get => Anonymous.lVal; set mut => Anonymous.lVal = value; }
-					public uint32 ulVal { get => Anonymous.ulVal; set mut => Anonymous.ulVal = value; }
-					public int32 intVal { get => Anonymous.intVal; set mut => Anonymous.intVal = value; }
-					public uint32 uintVal { get => Anonymous.uintVal; set mut => Anonymous.uintVal = value; }
-					public LARGE_INTEGER hVal { get => Anonymous.hVal; set mut => Anonymous.hVal = value; }
-					public ULARGE_INTEGER uhVal { get => Anonymous.uhVal; set mut => Anonymous.uhVal = value; }
-					public float fltVal { get => Anonymous.fltVal; set mut => Anonymous.fltVal = value; }
-					public double dblVal { get => Anonymous.dblVal; set mut => Anonymous.dblVal = value; }
-					public int16 boolVal { get => Anonymous.boolVal; set mut => Anonymous.boolVal = value; }
-					public int16 __OBSOLETE__VARIANT_BOOL { get => Anonymous.__OBSOLETE__VARIANT_BOOL; set mut => Anonymous.__OBSOLETE__VARIANT_BOOL = value; }
-					public int32 scode { get => Anonymous.scode; set mut => Anonymous.scode = value; }
-					public CY cyVal { get => Anonymous.cyVal; set mut => Anonymous.cyVal = value; }
-					public double date { get => Anonymous.date; set mut => Anonymous.date = value; }
-					public FILETIME filetime { get => Anonymous.filetime; set mut => Anonymous.filetime = value; }
-					public Guid* puuid { get => Anonymous.puuid; set mut => Anonymous.puuid = value; }
-					public CLIPDATA* pclipdata { get => Anonymous.pclipdata; set mut => Anonymous.pclipdata = value; }
-					public BSTR bstrVal { get => Anonymous.bstrVal; set mut => Anonymous.bstrVal = value; }
-					public BSTRBLOB bstrblobVal { get => Anonymous.bstrblobVal; set mut => Anonymous.bstrblobVal = value; }
-					public BLOB blob { get => Anonymous.blob; set mut => Anonymous.blob = value; }
-					public PSTR pszVal { get => Anonymous.pszVal; set mut => Anonymous.pszVal = value; }
-					public PWSTR pwszVal { get => Anonymous.pwszVal; set mut => Anonymous.pwszVal = value; }
-					public IUnknown* punkVal { get => Anonymous.punkVal; set mut => Anonymous.punkVal = value; }
-					public IDispatch* pdispVal { get => Anonymous.pdispVal; set mut => Anonymous.pdispVal = value; }
-					public IStream* pStream { get => Anonymous.pStream; set mut => Anonymous.pStream = value; }
-					public IStorage* pStorage { get => Anonymous.pStorage; set mut => Anonymous.pStorage = value; }
-					public VERSIONEDSTREAM* pVersionedStream { get => Anonymous.pVersionedStream; set mut => Anonymous.pVersionedStream = value; }
-					public SAFEARRAY* parray { get => Anonymous.parray; set mut => Anonymous.parray = value; }
-					public CAC cac { get => Anonymous.cac; set mut => Anonymous.cac = value; }
-					public CAUB caub { get => Anonymous.caub; set mut => Anonymous.caub = value; }
-					public CAI cai { get => Anonymous.cai; set mut => Anonymous.cai = value; }
-					public CAUI caui { get => Anonymous.caui; set mut => Anonymous.caui = value; }
-					public CAL cal { get => Anonymous.cal; set mut => Anonymous.cal = value; }
-					public CAUL caul { get => Anonymous.caul; set mut => Anonymous.caul = value; }
-					public CAH cah { get => Anonymous.cah; set mut => Anonymous.cah = value; }
-					public CAUH cauh { get => Anonymous.cauh; set mut => Anonymous.cauh = value; }
-					public CAFLT caflt { get => Anonymous.caflt; set mut => Anonymous.caflt = value; }
-					public CADBL cadbl { get => Anonymous.cadbl; set mut => Anonymous.cadbl = value; }
-					public CABOOL cabool { get => Anonymous.cabool; set mut => Anonymous.cabool = value; }
-					public CASCODE cascode { get => Anonymous.cascode; set mut => Anonymous.cascode = value; }
-					public CACY cacy { get => Anonymous.cacy; set mut => Anonymous.cacy = value; }
-					public CADATE cadate { get => Anonymous.cadate; set mut => Anonymous.cadate = value; }
-					public CAFILETIME cafiletime { get => Anonymous.cafiletime; set mut => Anonymous.cafiletime = value; }
-					public CACLSID cauuid { get => Anonymous.cauuid; set mut => Anonymous.cauuid = value; }
-					public CACLIPDATA caclipdata { get => Anonymous.caclipdata; set mut => Anonymous.caclipdata = value; }
-					public CABSTR cabstr { get => Anonymous.cabstr; set mut => Anonymous.cabstr = value; }
-					public CABSTRBLOB cabstrblob { get => Anonymous.cabstrblob; set mut => Anonymous.cabstrblob = value; }
-					public CALPSTR calpstr { get => Anonymous.calpstr; set mut => Anonymous.calpstr = value; }
-					public CALPWSTR calpwstr { get => Anonymous.calpwstr; set mut => Anonymous.calpwstr = value; }
-					public CAPROPVARIANT capropvar { get => Anonymous.capropvar; set mut => Anonymous.capropvar = value; }
-					public PSTR pcVal { get => Anonymous.pcVal; set mut => Anonymous.pcVal = value; }
-					public uint8* pbVal { get => Anonymous.pbVal; set mut => Anonymous.pbVal = value; }
-					public int16* piVal { get => Anonymous.piVal; set mut => Anonymous.piVal = value; }
-					public uint16* puiVal { get => Anonymous.puiVal; set mut => Anonymous.puiVal = value; }
-					public int32* plVal { get => Anonymous.plVal; set mut => Anonymous.plVal = value; }
-					public uint32* pulVal { get => Anonymous.pulVal; set mut => Anonymous.pulVal = value; }
-					public int32* pintVal { get => Anonymous.pintVal; set mut => Anonymous.pintVal = value; }
-					public uint32* puintVal { get => Anonymous.puintVal; set mut => Anonymous.puintVal = value; }
-					public float* pfltVal { get => Anonymous.pfltVal; set mut => Anonymous.pfltVal = value; }
-					public double* pdblVal { get => Anonymous.pdblVal; set mut => Anonymous.pdblVal = value; }
-					public int16* pboolVal { get => Anonymous.pboolVal; set mut => Anonymous.pboolVal = value; }
-					public DECIMAL* pdecVal { get => Anonymous.pdecVal; set mut => Anonymous.pdecVal = value; }
-					public int32* pscode { get => Anonymous.pscode; set mut => Anonymous.pscode = value; }
-					public CY* pcyVal { get => Anonymous.pcyVal; set mut => Anonymous.pcyVal = value; }
-					public double* pdate { get => Anonymous.pdate; set mut => Anonymous.pdate = value; }
-					public BSTR* pbstrVal { get => Anonymous.pbstrVal; set mut => Anonymous.pbstrVal = value; }
-					public IUnknown** ppunkVal { get => Anonymous.ppunkVal; set mut => Anonymous.ppunkVal = value; }
-					public IDispatch** ppdispVal { get => Anonymous.ppdispVal; set mut => Anonymous.ppdispVal = value; }
-					public SAFEARRAY** pparray { get => Anonymous.pparray; set mut => Anonymous.pparray = value; }
-					public PROPVARIANT* pvarVal { get => Anonymous.pvarVal; set mut => Anonymous.pvarVal = value; }
+					public using _Anonymous_e__Union Anonymous;
 					
 					[CRepr, Union]
 					public struct _Anonymous_e__Union
@@ -490,10 +409,7 @@ namespace Win32
 		public struct PROPSPEC
 		{
 			public PROPSPEC_KIND ulKind;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 propid { get => Anonymous.propid; set mut => Anonymous.propid = value; }
-			public PWSTR lpwstr { get => Anonymous.lpwstr; set mut => Anonymous.lpwstr = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

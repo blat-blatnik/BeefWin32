@@ -1535,10 +1535,7 @@ namespace Win32
 			public PSTR lpHeaderInfo;
 			public uint32 dwHeaderInfoSize;
 			public PSTR lpszFileExtension;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
-			public uint32 dwExemptDelta { get => Anonymous.dwExemptDelta; set mut => Anonymous.dwExemptDelta = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1565,10 +1562,7 @@ namespace Win32
 			public PWSTR lpHeaderInfo;
 			public uint32 dwHeaderInfoSize;
 			public PWSTR lpszFileExtension;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 dwReserved { get => Anonymous.dwReserved; set mut => Anonymous.dwReserved = value; }
-			public uint32 dwExemptDelta { get => Anonymous.dwExemptDelta; set mut => Anonymous.dwExemptDelta = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1704,18 +1698,13 @@ namespace Win32
 			public PWSTR lpcwszUrl;
 			public PWSTR lpcwszRealm;
 			public BOOL fAuthIdentity;
-			public _Anonymous_e__Union Anonymous;
-			
-			public void* pAuthIdentityOpaque { get => Anonymous.pAuthIdentityOpaque; set mut => Anonymous.pAuthIdentityOpaque = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public void* pAuthIdentityOpaque;
-				
-				public PWSTR lpcwszUserName { get => Anonymous.lpcwszUserName; set mut => Anonymous.lpcwszUserName = value; }
-				public PWSTR lpcwszPassword { get => Anonymous.lpcwszPassword; set mut => Anonymous.lpcwszPassword = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1783,20 +1772,15 @@ namespace Win32
 			public BOOL fPerUser;
 			public uint32 dwSyncMode;
 			public uint32 dwNumCachePaths;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwNormalUsage;
 			public uint32 dwExemptUsage;
-			
-			public INTERNET_CACHE_CONFIG_PATH_ENTRYA[0] CachePaths { get => Anonymous.CachePaths; set mut => Anonymous.CachePaths = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public INTERNET_CACHE_CONFIG_PATH_ENTRYA[0] CachePaths;
-				
-				public CHAR[260] CachePath { get => Anonymous.CachePath; set mut => Anonymous.CachePath = value; }
-				public uint32 dwCacheSize { get => Anonymous.dwCacheSize; set mut => Anonymous.dwCacheSize = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1816,20 +1800,15 @@ namespace Win32
 			public BOOL fPerUser;
 			public uint32 dwSyncMode;
 			public uint32 dwNumCachePaths;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 dwNormalUsage;
 			public uint32 dwExemptUsage;
-			
-			public INTERNET_CACHE_CONFIG_PATH_ENTRYW[0] CachePaths { get => Anonymous.CachePaths; set mut => Anonymous.CachePaths = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public INTERNET_CACHE_CONFIG_PATH_ENTRYW[0] CachePaths;
-				
-				public char16[260] CachePath { get => Anonymous.CachePath; set mut => Anonymous.CachePath = value; }
-				public uint32 dwCacheSize { get => Anonymous.dwCacheSize; set mut => Anonymous.dwCacheSize = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

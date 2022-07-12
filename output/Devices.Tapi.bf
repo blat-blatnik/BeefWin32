@@ -2506,8 +2506,7 @@ namespace Win32
 			public uint32 dwClientUserNameOffset;
 			public uint32 dwClientAppAPIVersion;
 			public uint32 dwRequestType;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2963,8 +2962,7 @@ namespace Win32
 			public uint32 dwSize;
 			public MSP_EVENT Event;
 			public int32* hCall;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

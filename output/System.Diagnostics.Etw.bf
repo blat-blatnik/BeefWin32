@@ -804,10 +804,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint64 HistoricalContext;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 Version { get => Anonymous.Version; set mut => Anonymous.Version = value; }
-				public uint32 Linkage { get => Anonymous.Linkage; set mut => Anonymous.Linkage = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -830,10 +827,7 @@ namespace Win32
 			public uint32 DataBlockOffset;
 			public uint32 InstanceCount;
 			public uint32 OffsetInstanceNameOffsets;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 FixedInstanceSize { get => Anonymous.FixedInstanceSize; set mut => Anonymous.FixedInstanceSize = value; }
-			public OFFSETINSTANCEDATAANDLENGTH[0] OffsetInstanceDataAndLength { get => Anonymous.OffsetInstanceDataAndLength; set mut => Anonymous.OffsetInstanceDataAndLength = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -885,10 +879,7 @@ namespace Win32
 			public WNODE_HEADER WnodeHeader;
 			public Guid TargetGuid;
 			public uint32 TargetDataBlockSize;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 TargetInstanceIndex { get => Anonymous.TargetInstanceIndex; set mut => Anonymous.TargetInstanceIndex = value; }
-			public char16[0] TargetInstanceName { get => Anonymous.TargetInstanceName; set mut => Anonymous.TargetInstanceName = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -909,12 +900,7 @@ namespace Win32
 			public Guid Guid;
 			public uint32 Flags;
 			public uint32 InstanceCount;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 InstanceNameList { get => Anonymous.InstanceNameList; set mut => Anonymous.InstanceNameList = value; }
-			public uint32 BaseNameOffset { get => Anonymous.BaseNameOffset; set mut => Anonymous.BaseNameOffset = value; }
-			public uint Pdo { get => Anonymous.Pdo; set mut => Anonymous.Pdo = value; }
-			public uint InstanceInfo { get => Anonymous.InstanceInfo; set mut => Anonymous.InstanceInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -985,10 +971,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint16 FieldTypeFlags;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 HeaderType { get => Anonymous.HeaderType; set mut => Anonymous.HeaderType = value; }
-				public uint8 MarkerFlags { get => Anonymous.MarkerFlags; set mut => Anonymous.MarkerFlags = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1057,10 +1040,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint16 FieldTypeFlags;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 HeaderType { get => Anonymous.HeaderType; set mut => Anonymous.HeaderType = value; }
-				public uint8 MarkerFlags { get => Anonymous.MarkerFlags; set mut => Anonymous.MarkerFlags = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1103,12 +1083,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public Guid LogInstanceGuid;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 StartBuffers { get => Anonymous.StartBuffers; set mut => Anonymous.StartBuffers = value; }
-				public uint32 PointerSize { get => Anonymous.PointerSize; set mut => Anonymous.PointerSize = value; }
-				public uint32 EventsLost { get => Anonymous.EventsLost; set mut => Anonymous.EventsLost = value; }
-				public uint32 CpuSpeedInMHz { get => Anonymous.CpuSpeedInMHz; set mut => Anonymous.CpuSpeedInMHz = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1161,12 +1136,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public Guid LogInstanceGuid;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 StartBuffers { get => Anonymous.StartBuffers; set mut => Anonymous.StartBuffers = value; }
-				public uint32 PointerSize { get => Anonymous.PointerSize; set mut => Anonymous.PointerSize = value; }
-				public uint32 EventsLost { get => Anonymous.EventsLost; set mut => Anonymous.EventsLost = value; }
-				public uint32 CpuSpeedInMHz { get => Anonymous.CpuSpeedInMHz; set mut => Anonymous.CpuSpeedInMHz = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1219,12 +1189,7 @@ namespace Win32
 			public struct _Anonymous2_e__Union
 			{
 				public Guid LogInstanceGuid;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 StartBuffers { get => Anonymous.StartBuffers; set mut => Anonymous.StartBuffers = value; }
-				public uint32 PointerSize { get => Anonymous.PointerSize; set mut => Anonymous.PointerSize = value; }
-				public uint32 EventsLost { get => Anonymous.EventsLost; set mut => Anonymous.EventsLost = value; }
-				public uint32 CpuSpeedInMHz { get => Anonymous.CpuSpeedInMHz; set mut => Anonymous.CpuSpeedInMHz = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1268,7 +1233,7 @@ namespace Win32
 			public uint32 LogFileMode;
 			public uint32 FlushTimer;
 			public EVENT_TRACE_FLAG EnableFlags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 NumberOfBuffers;
 			public uint32 FreeBuffers;
 			public uint32 EventsLost;
@@ -1278,9 +1243,6 @@ namespace Win32
 			public HANDLE LoggerThreadId;
 			public uint32 LogFileNameOffset;
 			public uint32 LoggerNameOffset;
-			
-			public int32 AgeLimit { get => Anonymous.AgeLimit; set mut => Anonymous.AgeLimit = value; }
-			public int32 FlushThreshold { get => Anonymous.FlushThreshold; set mut => Anonymous.FlushThreshold = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1318,10 +1280,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous3_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint64 V2Options;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1332,10 +1292,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous2_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 V2Control;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1369,19 +1327,14 @@ namespace Win32
 		[CRepr]
 		public struct ETW_BUFFER_CONTEXT
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint16 LoggerId;
-			
-			public uint16 ProcessorIndex { get => Anonymous.ProcessorIndex; set mut => Anonymous.ProcessorIndex = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 ProcessorIndex;
-				
-				public uint8 ProcessorNumber { get => Anonymous.ProcessorNumber; set mut => Anonymous.ProcessorNumber = value; }
-				public uint8 Alignment { get => Anonymous.Alignment; set mut => Anonymous.Alignment = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1450,10 +1403,7 @@ namespace Win32
 			public Guid ParentGuid;
 			public void* MofData;
 			public uint32 MofLength;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 ClientContext { get => Anonymous.ClientContext; set mut => Anonymous.ClientContext = value; }
-			public ETW_BUFFER_CONTEXT BufferContext { get => Anonymous.BufferContext; set mut => Anonymous.BufferContext = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1597,19 +1547,13 @@ namespace Win32
 		{
 			public uint64 Ptr;
 			public uint32 Size;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Reserved { get => Anonymous.Reserved; set mut => Anonymous.Reserved = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 Reserved;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 Type { get => Anonymous.Type; set mut => Anonymous.Type = value; }
-				public uint8 Reserved1 { get => Anonymous.Reserved1; set mut => Anonymous.Reserved1 = value; }
-				public uint16 Reserved2 { get => Anonymous.Reserved2; set mut => Anonymous.Reserved2 = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1679,11 +1623,9 @@ namespace Win32
 		{
 			public uint16 Reserved1;
 			public uint16 ExtType;
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint16 DataSize;
 			public uint64 DataPtr;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1765,19 +1707,14 @@ namespace Win32
 			public LARGE_INTEGER TimeStamp;
 			public Guid ProviderId;
 			public EVENT_DESCRIPTOR EventDescriptor;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid ActivityId;
-			
-			public uint64 ProcessorTime { get => Anonymous.ProcessorTime; set mut => Anonymous.ProcessorTime = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint64 ProcessorTime;
-				
-				public uint32 KernelTime { get => Anonymous.KernelTime; set mut => Anonymous.KernelTime = value; }
-				public uint32 UserTime { get => Anonymous.UserTime; set mut => Anonymous.UserTime = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1802,10 +1739,7 @@ namespace Win32
 		public struct EVENT_MAP_ENTRY
 		{
 			public uint32 OutputOffset;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
-			public uint32 InputOffset { get => Anonymous.InputOffset; set mut => Anonymous.InputOffset = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1820,11 +1754,8 @@ namespace Win32
 			public uint32 NameOffset;
 			public MAP_FLAGS Flag;
 			public uint32 EntryCount;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public EVENT_MAP_ENTRY[0] MapEntryArray;
-			
-			public MAP_VALUETYPE MapEntryValueType { get => Anonymous.MapEntryValueType; set mut => Anonymous.MapEntryValueType = value; }
-			public uint32 FormatStringOffset { get => Anonymous.FormatStringOffset; set mut => Anonymous.FormatStringOffset = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1847,9 +1778,7 @@ namespace Win32
 			public struct _Anonymous4_e__Union
 			{
 				public uint32 Reserved;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1927,9 +1856,7 @@ namespace Win32
 			public struct _Anonymous3_e__Union
 			{
 				public TEMPLATE_FLAGS Flags;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

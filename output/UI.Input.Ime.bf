@@ -962,22 +962,17 @@ namespace Win32
 		{
 			public PWSTR pwchReading;
 			public PWSTR pwchDisplay;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32[2] rgulAttrs;
 			public int32 cbComment;
 			public IMEUCT uct;
 			public void* pvComment;
 			
-			public uint32 ulPos { get => Anonymous.ulPos; set mut => Anonymous.ulPos = value; }
-			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulPos;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 nPos1 { get => Anonymous.nPos1; set mut => Anonymous.nPos1 = value; }
-				public uint16 nPos2 { get => Anonymous.nPos2; set mut => Anonymous.nPos2 = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr, Packed(1)]
 				public struct _Anonymous_e__Struct

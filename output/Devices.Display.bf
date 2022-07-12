@@ -1165,10 +1165,8 @@ namespace Win32
 			public DISPLAYCONFIG_RATIONAL vSyncFreq;
 			public DISPLAYCONFIG_2DREGION activeSize;
 			public DISPLAYCONFIG_2DREGION totalSize;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
-			
-			public uint32 videoStandard { get => Anonymous.videoStandard; set mut => Anonymous.videoStandard = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1209,11 +1207,7 @@ namespace Win32
 			public DISPLAYCONFIG_MODE_INFO_TYPE infoType;
 			public uint32 id;
 			public LUID adapterId;
-			public _Anonymous_e__Union Anonymous;
-			
-			public DISPLAYCONFIG_TARGET_MODE targetMode { get => Anonymous.targetMode; set mut => Anonymous.targetMode = value; }
-			public DISPLAYCONFIG_SOURCE_MODE sourceMode { get => Anonymous.sourceMode; set mut => Anonymous.sourceMode = value; }
-			public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo { get => Anonymous.desktopImageInfo; set mut => Anonymous.desktopImageInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1228,18 +1222,14 @@ namespace Win32
 		{
 			public LUID adapterId;
 			public uint32 id;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 statusFlags;
-			
-			public uint32 modeInfoIdx { get => Anonymous.modeInfoIdx; set mut => Anonymous.modeInfoIdx = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 modeInfoIdx;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1253,7 +1243,7 @@ namespace Win32
 		{
 			public LUID adapterId;
 			public uint32 id;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
 			public DISPLAYCONFIG_ROTATION rotation;
 			public DISPLAYCONFIG_SCALING scaling;
@@ -1262,15 +1252,11 @@ namespace Win32
 			public BOOL targetAvailable;
 			public uint32 statusFlags;
 			
-			public uint32 modeInfoIdx { get => Anonymous.modeInfoIdx; set mut => Anonymous.modeInfoIdx = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 modeInfoIdx;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1303,17 +1289,13 @@ namespace Win32
 		[CRepr]
 		public struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1358,17 +1340,13 @@ namespace Win32
 		public struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1381,17 +1359,13 @@ namespace Win32
 		public struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1404,19 +1378,15 @@ namespace Win32
 		public struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
 			public uint32 bitsPerColorChannel;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1429,17 +1399,13 @@ namespace Win32
 		public struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1458,17 +1424,13 @@ namespace Win32
 		public struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1481,20 +1443,16 @@ namespace Win32
 		public struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 		{
 			public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid specializationType;
 			public Guid specializationSubType;
 			public char16[128] specializationApplicationName;
 			
-			public uint32 value { get => Anonymous.value; set mut => Anonymous.value = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2339,7 +2297,6 @@ namespace Win32
 			public uint16 FirstEntry;
 			public _Anonymous_e__Union[0] LookupTable;
 			
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
@@ -2505,7 +2462,6 @@ namespace Win32
 			public uint8 LevelCount;
 			public _Anonymous_e__Struct[0] Level;
 			
-			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -2615,17 +2571,13 @@ namespace Win32
 		public struct PANEL_QUERY_BRIGHTNESS_CAPS
 		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2659,10 +2611,7 @@ namespace Win32
 		public struct PANEL_QUERY_BRIGHTNESS_RANGES
 		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
-			public _Anonymous_e__Union Anonymous;
-			
-			public BRIGHTNESS_LEVEL BrightnessLevel { get => Anonymous.BrightnessLevel; set mut => Anonymous.BrightnessLevel = value; }
-			public BRIGHTNESS_NIT_RANGES NitRanges { get => Anonymous.NitRanges; set mut => Anonymous.NitRanges = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2675,18 +2624,13 @@ namespace Win32
 		public struct PANEL_GET_BRIGHTNESS
 		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 Level { get => Anonymous.Level; set mut => Anonymous.Level = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint8 Level;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 CurrentInMillinits { get => Anonymous.CurrentInMillinits; set mut => Anonymous.CurrentInMillinits = value; }
-				public uint32 TargetInMillinits { get => Anonymous.TargetInMillinits; set mut => Anonymous.TargetInMillinits = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2705,20 +2649,16 @@ namespace Win32
 		[CRepr]
 		public struct PANEL_BRIGHTNESS_SENSOR_DATA
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public float AlsReading;
 			public CHROMATICITY_COORDINATE ChromaticityCoordinate;
 			public float ColorTemperature;
 			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2731,19 +2671,13 @@ namespace Win32
 		public struct PANEL_SET_BRIGHTNESS
 		{
 			public BRIGHTNESS_INTERFACE_VERSION Version;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 Level { get => Anonymous.Level; set mut => Anonymous.Level = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint8 Level;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint32 Millinits { get => Anonymous.Millinits; set mut => Anonymous.Millinits = value; }
-				public uint32 TransitionTimeInMs { get => Anonymous.TransitionTimeInMs; set mut => Anonymous.TransitionTimeInMs = value; }
-				public PANEL_BRIGHTNESS_SENSOR_DATA SensorData { get => Anonymous.SensorData; set mut => Anonymous.SensorData = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2757,17 +2691,13 @@ namespace Win32
 		[CRepr]
 		public struct PANEL_SET_BRIGHTNESS_STATE
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2799,11 +2729,9 @@ namespace Win32
 		public struct COLORSPACE_TRANSFORM_DATA_CAP
 		{
 			public COLORSPACE_TRANSFORM_DATA_TYPE DataType;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public float NumericRangeMin;
 			public float NumericRangeMax;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2833,18 +2761,14 @@ namespace Win32
 		[CRepr]
 		public struct COLORSPACE_TRANSFORM_MATRIX_CAP
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public COLORSPACE_TRANSFORM_DATA_CAP DataCap;
-			
-			public uint32 Value { get => Anonymous.Value; set mut => Anonymous.Value = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Value;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2965,11 +2889,8 @@ namespace Win32
 			[CRepr, Union]
 			public struct _Anonymous2_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint16 LongWriteWordCount;
-				
-				public uint8 Data0 { get => Anonymous.Data0; set mut => Anonymous.Data0 = value; }
-				public uint8 Data1 { get => Anonymous.Data1; set mut => Anonymous.Data1 = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2982,9 +2903,7 @@ namespace Win32
 			public struct _Anonymous1_e__Union
 			{
 				public uint8 DataId;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint8 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -2999,14 +2918,12 @@ namespace Win32
 			public uint32 TotalBufferSize;
 			public uint8 PacketCount;
 			public uint8 FailedPacket;
-			public _Anonymous_e__Struct Anonymous;
+			public using _Anonymous_e__Struct Anonymous;
 			public uint16 ReadWordCount;
 			public uint16 FinalCommandExtraPayload;
 			public uint16 MipiErrors;
 			public uint16 HostErrors;
 			public MIPI_DSI_PACKET[0] Packets;
-			
-			public uint16 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -3018,17 +2935,13 @@ namespace Win32
 		public struct MIPI_DSI_RESET
 		{
 			public uint32 Flags;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 Results { get => Anonymous.Results; set mut => Anonymous.Results = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 Results;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

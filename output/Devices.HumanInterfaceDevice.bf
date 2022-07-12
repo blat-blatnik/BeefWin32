@@ -2620,13 +2620,10 @@ namespace Win32
 			public uint uAppData;
 			public uint32 dwSemantic;
 			public uint32 dwFlags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid guidInstance;
 			public uint32 dwObjID;
 			public uint32 dwHow;
-			
-			public PSTR lptszActionName { get => Anonymous.lptszActionName; set mut => Anonymous.lptszActionName = value; }
-			public uint32 uResIdString { get => Anonymous.uResIdString; set mut => Anonymous.uResIdString = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2641,13 +2638,10 @@ namespace Win32
 			public uint uAppData;
 			public uint32 dwSemantic;
 			public uint32 dwFlags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public Guid guidInstance;
 			public uint32 dwObjID;
 			public uint32 dwHow;
-			
-			public PWSTR lptszActionName { get => Anonymous.lptszActionName; set mut => Anonymous.lptszActionName = value; }
-			public uint32 uResIdString { get => Anonymous.uResIdString; set mut => Anonymous.uResIdString = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3315,22 +3309,17 @@ namespace Win32
 		{
 			public uint16 UnitId;
 			public uint16 Flags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 RawButtons;
 			public int32 LastX;
 			public int32 LastY;
 			public uint32 ExtraInformation;
 			
-			public uint32 Buttons { get => Anonymous.Buttons; set mut => Anonymous.Buttons = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 Buttons;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 ButtonFlags { get => Anonymous.ButtonFlags; set mut => Anonymous.ButtonFlags = value; }
-				public uint16 ButtonData { get => Anonymous.ButtonData; set mut => Anonymous.ButtonData = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -3376,8 +3365,7 @@ namespace Win32
 			public uint16 ReportCount;
 			public uint16 Reserved2;
 			public uint32[9] Reserved;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3436,8 +3424,7 @@ namespace Win32
 			public int32 LogicalMax;
 			public int32 PhysicalMin;
 			public int32 PhysicalMax;
-			public _Anonymous_e__Union Anonymous;
-			
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3510,10 +3497,7 @@ namespace Win32
 		{
 			public uint16 DataIndex;
 			public uint16 Reserved;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 RawValue { get => Anonymous.RawValue; set mut => Anonymous.RawValue = value; }
-			public BOOLEAN On { get => Anonymous.On; set mut => Anonymous.On = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3546,17 +3530,13 @@ namespace Win32
 		[CRepr]
 		public struct HIDP_KEYBOARD_MODIFIER_STATE
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 ul { get => Anonymous.ul; set mut => Anonymous.ul = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint32 ul;
-				
-				public uint32 _bitfield { get => Anonymous._bitfield; set mut => Anonymous._bitfield = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

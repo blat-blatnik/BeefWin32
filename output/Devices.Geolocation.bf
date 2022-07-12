@@ -279,14 +279,8 @@ namespace Win32
 			public uint32 HorizontalConfidence;
 			public uint32[9] Reserved;
 			public uint32 FixLevelOfDetails;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint8[256] Unused;
-			
-			public GNSS_SINGLESHOT_PARAM SingleShotParam { get => Anonymous.SingleShotParam; set mut => Anonymous.SingleShotParam = value; }
-			public GNSS_DISTANCETRACKING_PARAM DistanceParam { get => Anonymous.DistanceParam; set mut => Anonymous.DistanceParam = value; }
-			public GNSS_CONTINUOUSTRACKING_PARAM ContinuousParam { get => Anonymous.ContinuousParam; set mut => Anonymous.ContinuousParam = value; }
-			public GNSS_LKGFIX_PARAM LkgFixParam { get => Anonymous.LkgFixParam; set mut => Anonymous.LkgFixParam = value; }
-			public uint8[268] UnusedParam { get => Anonymous.UnusedParam; set mut => Anonymous.UnusedParam = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -454,9 +448,7 @@ namespace Win32
 			public uint32 Size;
 			public uint32 Version;
 			public uint32 NumCrumbs;
-			public _Anonymous_e__Union Anonymous;
-			
-			public GNSS_BREADCRUMB_V1[50] v1 { get => Anonymous.v1; set mut => Anonymous.v1 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -477,10 +469,7 @@ namespace Win32
 			public uint32 Size;
 			public uint32 Version;
 			public GNSS_GEOREGIONTYPE GeoRegionType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public GNSS_GEOREGION_CIRCLE Circle { get => Anonymous.Circle; set mut => Anonymous.Circle = value; }
-			public uint8[512] Unused { get => Anonymous.Unused; set mut => Anonymous.Unused = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -594,13 +583,9 @@ namespace Win32
 			public GNSS_NI_REQUEST_TYPE RequestType;
 			public GNSS_NI_NOTIFICATION_TYPE NotificationType;
 			public GNSS_NI_PLANE_TYPE RequestPlaneType;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 ResponseTimeInSec;
 			public BOOL EmergencyLocation;
-			
-			public GNSS_SUPL_NI_INFO SuplNiInfo { get => Anonymous.SuplNiInfo; set mut => Anonymous.SuplNiInfo = value; }
-			public GNSS_CP_NI_INFO CpNiInfo { get => Anonymous.CpNiInfo; set mut => Anonymous.CpNiInfo = value; }
-			public GNSS_V2UPL_NI_INFO V2UplNiInfo { get => Anonymous.V2UplNiInfo; set mut => Anonymous.V2UplNiInfo = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -626,18 +611,7 @@ namespace Win32
 			public GNSS_EVENT_TYPE EventType;
 			public uint32 EventDataSize;
 			public uint8[512] Unused;
-			public _Anonymous_e__Union Anonymous;
-			
-			public GNSS_FIXDATA FixData { get => Anonymous.FixData; set mut => Anonymous.FixData = value; }
-			public GNSS_AGNSS_REQUEST_PARAM AgnssRequest { get => Anonymous.AgnssRequest; set mut => Anonymous.AgnssRequest = value; }
-			public GNSS_NI_REQUEST_PARAM NiRequest { get => Anonymous.NiRequest; set mut => Anonymous.NiRequest = value; }
-			public GNSS_ERRORINFO ErrorInformation { get => Anonymous.ErrorInformation; set mut => Anonymous.ErrorInformation = value; }
-			public GNSS_NMEA_DATA NmeaData { get => Anonymous.NmeaData; set mut => Anonymous.NmeaData = value; }
-			public GNSS_GEOFENCE_ALERT_DATA GeofenceAlertData { get => Anonymous.GeofenceAlertData; set mut => Anonymous.GeofenceAlertData = value; }
-			public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData { get => Anonymous.BreadcrumbAlertData; set mut => Anonymous.BreadcrumbAlertData = value; }
-			public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus { get => Anonymous.GeofencesTrackingStatus; set mut => Anonymous.GeofencesTrackingStatus = value; }
-			public GNSS_DRIVER_REQUEST_DATA DriverRequestData { get => Anonymous.DriverRequestData; set mut => Anonymous.DriverRequestData = value; }
-			public uint8[0] CustomData { get => Anonymous.CustomData; set mut => Anonymous.CustomData = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -662,19 +636,7 @@ namespace Win32
 			public GNSS_EVENT_TYPE EventType;
 			public uint32 EventDataSize;
 			public uint8[512] Unused;
-			public _Anonymous_e__Union Anonymous;
-			
-			public GNSS_FIXDATA FixData { get => Anonymous.FixData; set mut => Anonymous.FixData = value; }
-			public GNSS_FIXDATA_2 FixData2 { get => Anonymous.FixData2; set mut => Anonymous.FixData2 = value; }
-			public GNSS_AGNSS_REQUEST_PARAM AgnssRequest { get => Anonymous.AgnssRequest; set mut => Anonymous.AgnssRequest = value; }
-			public GNSS_NI_REQUEST_PARAM NiRequest { get => Anonymous.NiRequest; set mut => Anonymous.NiRequest = value; }
-			public GNSS_ERRORINFO ErrorInformation { get => Anonymous.ErrorInformation; set mut => Anonymous.ErrorInformation = value; }
-			public GNSS_NMEA_DATA NmeaData { get => Anonymous.NmeaData; set mut => Anonymous.NmeaData = value; }
-			public GNSS_GEOFENCE_ALERT_DATA GeofenceAlertData { get => Anonymous.GeofenceAlertData; set mut => Anonymous.GeofenceAlertData = value; }
-			public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData { get => Anonymous.BreadcrumbAlertData; set mut => Anonymous.BreadcrumbAlertData = value; }
-			public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus { get => Anonymous.GeofencesTrackingStatus; set mut => Anonymous.GeofencesTrackingStatus = value; }
-			public GNSS_DRIVER_REQUEST_DATA DriverRequestData { get => Anonymous.DriverRequestData; set mut => Anonymous.DriverRequestData = value; }
-			public uint8[0] CustomData { get => Anonymous.CustomData; set mut => Anonymous.CustomData = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -729,11 +691,7 @@ namespace Win32
 			public NTSTATUS InjectionStatus;
 			public uint32 InjectionDataSize;
 			public uint8[512] Unused;
-			public _Anonymous_e__Union Anonymous;
-			
-			public GNSS_AGNSS_INJECTTIME Time { get => Anonymous.Time; set mut => Anonymous.Time = value; }
-			public GNSS_AGNSS_INJECTPOSITION Position { get => Anonymous.Position; set mut => Anonymous.Position = value; }
-			public GNSS_AGNSS_INJECTBLOB BlobData { get => Anonymous.BlobData; set mut => Anonymous.BlobData = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

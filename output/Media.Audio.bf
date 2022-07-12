@@ -1319,13 +1319,10 @@ namespace Win32
 		{
 			public uint32 cbStruct;
 			public uint32 dwLineID;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 cControls;
 			public uint32 cbmxctrl;
 			public MIXERCONTROLA* pamxctrl;
-			
-			public uint32 dwControlID { get => Anonymous.dwControlID; set mut => Anonymous.dwControlID = value; }
-			public uint32 dwControlType { get => Anonymous.dwControlType; set mut => Anonymous.dwControlType = value; }
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
@@ -1339,13 +1336,10 @@ namespace Win32
 		{
 			public uint32 cbStruct;
 			public uint32 dwLineID;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 cControls;
 			public uint32 cbmxctrl;
 			public MIXERCONTROLW* pamxctrl;
-			
-			public uint32 dwControlID { get => Anonymous.dwControlID; set mut => Anonymous.dwControlID = value; }
-			public uint32 dwControlType { get => Anonymous.dwControlType; set mut => Anonymous.dwControlType = value; }
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
@@ -1360,12 +1354,9 @@ namespace Win32
 			public uint32 cbStruct;
 			public uint32 dwControlID;
 			public uint32 cChannels;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 cbDetails;
 			public void* paDetails;
-			
-			public HWND hwndOwner { get => Anonymous.hwndOwner; set mut => Anonymous.hwndOwner = value; }
-			public uint32 cMultipleItems { get => Anonymous.cMultipleItems; set mut => Anonymous.cMultipleItems = value; }
 			
 			[CRepr, Union, Packed(1)]
 			public struct _Anonymous_e__Union
@@ -1596,9 +1587,7 @@ namespace Win32
 		public struct AUDIOCLIENT_ACTIVATION_PARAMS
 		{
 			public AUDIOCLIENT_ACTIVATION_TYPE ActivationType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams { get => Anonymous.ProcessLoopbackParams; set mut => Anonymous.ProcessLoopbackParams = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

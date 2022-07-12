@@ -432,12 +432,8 @@ namespace Win32
 			public uint32 dwPropID;
 			public uint32 cbData;
 			public uint32 dwType;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public BOOL fPersist;
-			
-			public PWSTR lpszwData { get => Anonymous.lpszwData; set mut => Anonymous.lpszwData = value; }
-			public void* lpvData { get => Anonymous.lpvData; set mut => Anonymous.lpvData = value; }
-			public uint32 dwValue { get => Anonymous.dwValue; set mut => Anonymous.dwValue = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

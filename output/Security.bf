@@ -410,10 +410,7 @@ namespace Win32
 		[CRepr]
 		public struct LLFILETIME
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public int64 ll { get => Anonymous.ll; set mut => Anonymous.ll = value; }
-			public FILETIME ft { get => Anonymous.ft; set mut => Anonymous.ft = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

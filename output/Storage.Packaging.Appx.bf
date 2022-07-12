@@ -274,20 +274,13 @@ namespace Win32
 		[CRepr]
 		public struct PACKAGE_VERSION
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint64 Version { get => Anonymous.Version; set mut => Anonymous.Version = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union, Packed(4)]
 			public struct _Anonymous_e__Union
 			{
 				public uint64 Version;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 Revision { get => Anonymous.Revision; set mut => Anonymous.Revision = value; }
-				public uint16 Build { get => Anonymous.Build; set mut => Anonymous.Build = value; }
-				public uint16 Minor { get => Anonymous.Minor; set mut => Anonymous.Minor = value; }
-				public uint16 Major { get => Anonymous.Major; set mut => Anonymous.Major = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

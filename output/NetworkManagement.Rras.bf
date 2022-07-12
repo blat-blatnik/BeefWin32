@@ -995,10 +995,7 @@ namespace Win32
 		public struct RASTUNNELENDPOINT
 		{
 			public uint32 dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IN_ADDR ipv4 { get => Anonymous.ipv4; set mut => Anonymous.ipv4 = value; }
-			public IN6_ADDR ipv6 { get => Anonymous.ipv6; set mut => Anonymous.ipv6 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -1312,10 +1309,7 @@ namespace Win32
 		{
 			public RASAPIVERSION version;
 			public RASPROJECTION_INFO_TYPE type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public RASPPP_PROJECTION_INFO ppp { get => Anonymous.ppp; set mut => Anonymous.ppp = value; }
-			public RASIKEV2_PROJECTION_INFO ikev2 { get => Anonymous.ikev2; set mut => Anonymous.ikev2 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2215,10 +2209,7 @@ namespace Win32
 		public struct PROJECTION_INFO
 		{
 			public uint8 projectionInfoType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PPP_PROJECTION_INFO PppProjectionInfo { get => Anonymous.PppProjectionInfo; set mut => Anonymous.PppProjectionInfo = value; }
-			public IKEV2_PROJECTION_INFO Ikev2ProjectionInfo { get => Anonymous.Ikev2ProjectionInfo; set mut => Anonymous.Ikev2ProjectionInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2231,10 +2222,7 @@ namespace Win32
 		public struct PROJECTION_INFO2
 		{
 			public uint8 projectionInfoType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PPP_PROJECTION_INFO2 PppProjectionInfo { get => Anonymous.PppProjectionInfo; set mut => Anonymous.PppProjectionInfo = value; }
-			public IKEV2_PROJECTION_INFO2 Ikev2ProjectionInfo { get => Anonymous.Ikev2ProjectionInfo; set mut => Anonymous.Ikev2ProjectionInfo = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2346,10 +2334,7 @@ namespace Win32
 		public struct VPN_TS_IP_ADDRESS
 		{
 			public uint16 Type;
-			public _Anonymous_e__Union Anonymous;
-			
-			public IN_ADDR v4 { get => Anonymous.v4; set mut => Anonymous.v4 = value; }
-			public IN6_ADDR v6 { get => Anonymous.v6; set mut => Anonymous.v6 = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2699,7 +2684,6 @@ namespace Win32
 			public uint32 NumberOfViews;
 			public _Anonymous_e__Struct[0] ViewInfo;
 			
-			
 			[CRepr]
 			public struct _Anonymous_e__Struct
 			{
@@ -2739,18 +2723,13 @@ namespace Win32
 		[CRepr]
 		public struct RTM_ENTITY_ID
 		{
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint64 EntityId { get => Anonymous.EntityId; set mut => Anonymous.EntityId = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
-				public _Anonymous_e__Struct Anonymous;
+				public using _Anonymous_e__Struct Anonymous;
 				public uint64 EntityId;
-				
-				public uint32 EntityProtocolId { get => Anonymous.EntityProtocolId; set mut => Anonymous.EntityProtocolId = value; }
-				public uint32 EntityInstanceId { get => Anonymous.EntityInstanceId; set mut => Anonymous.EntityInstanceId = value; }
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

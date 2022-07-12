@@ -5392,12 +5392,8 @@ namespace Win32
 		public struct CATEGORIZATION
 		{
 			public uint32 ulCatType;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public COLUMNSET csColumns;
-			
-			public uint32 cClusters { get => Anonymous.cClusters; set mut => Anonymous.cClusters = value; }
-			public BUCKETCATEGORIZE bucket { get => Anonymous.bucket; set mut => Anonymous.bucket = value; }
-			public RANGECATEGORIZE range { get => Anonymous.range; set mut => Anonymous.range = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -5441,19 +5437,7 @@ namespace Win32
 			public uint16 vt;
 			public uint32 dwReserved1;
 			public uint32 dwReserved2;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint8 bTinyIntVal { get => Anonymous.bTinyIntVal; set mut => Anonymous.bTinyIntVal = value; }
-			public int16 sShortIntVal { get => Anonymous.sShortIntVal; set mut => Anonymous.sShortIntVal = value; }
-			public int32 lIntVal { get => Anonymous.lIntVal; set mut => Anonymous.lIntVal = value; }
-			public int64 llBigIntVal { get => Anonymous.llBigIntVal; set mut => Anonymous.llBigIntVal = value; }
-			public float fltRealVal { get => Anonymous.fltRealVal; set mut => Anonymous.fltRealVal = value; }
-			public double dblFloatVal { get => Anonymous.dblFloatVal; set mut => Anonymous.dblFloatVal = value; }
-			public CY cyMoneyVal { get => Anonymous.cyMoneyVal; set mut => Anonymous.cyMoneyVal = value; }
-			public int16 fBitVal { get => Anonymous.fBitVal; set mut => Anonymous.fBitVal = value; }
-			public uint8[16] rgbGuidVal { get => Anonymous.rgbGuidVal; set mut => Anonymous.rgbGuidVal = value; }
-			public DB_NUMERIC numNumericVal { get => Anonymous.numNumericVal; set mut => Anonymous.numNumericVal = value; }
-			public DBTIMESTAMP tsDateTimeVal { get => Anonymous.tsDateTimeVal; set mut => Anonymous.tsDateTimeVal = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

@@ -1846,13 +1846,10 @@ namespace Win32
 		[CRepr]
 		public struct DOT11_RECV_SENSITIVITY_LIST
 		{
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 uNumOfEntries;
 			public uint32 uTotalNumOfEntries;
 			public DOT11_RECV_SENSITIVITY[0] dot11RecvSensitivity;
-			
-			public DOT11_PHY_TYPE dot11PhyType { get => Anonymous.dot11PhyType; set mut => Anonymous.dot11PhyType = value; }
-			public uint32 uPhyId { get => Anonymous.uPhyId; set mut => Anonymous.uPhyId = value; }
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2628,10 +2625,7 @@ namespace Win32
 		{
 			public NDIS_OBJECT_HEADER Header;
 			public uint32 ulPhyId;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 ulChannel { get => Anonymous.ulChannel; set mut => Anonymous.ulChannel = value; }
-			public uint32 ulFrequency { get => Anonymous.ulFrequency; set mut => Anonymous.ulFrequency = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -3434,7 +3428,6 @@ namespace Win32
 			public uint32 dwTotalSize;
 			public uint32 dwNumberOfItems;
 			public _Anonymous_e__Struct[0] DataList;
-			
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct

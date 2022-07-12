@@ -359,20 +359,14 @@ namespace Win32
 		public struct JOBOBJECT_CPU_RATE_CONTROL_INFORMATION
 		{
 			public JOB_OBJECT_CPU_RATE_CONTROL ControlFlags;
-			public _Anonymous_e__Union Anonymous;
-			
-			public uint32 CpuRate { get => Anonymous.CpuRate; set mut => Anonymous.CpuRate = value; }
-			public uint32 Weight { get => Anonymous.Weight; set mut => Anonymous.Weight = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 CpuRate;
 				public uint32 Weight;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 MinRate { get => Anonymous.MinRate; set mut => Anonymous.MinRate = value; }
-				public uint16 MaxRate { get => Anonymous.MaxRate; set mut => Anonymous.MaxRate = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct

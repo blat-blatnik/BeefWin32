@@ -73,22 +73,17 @@ namespace Win32
 		public struct RAWMOUSE
 		{
 			public uint16 usFlags;
-			public _Anonymous_e__Union Anonymous;
+			public using _Anonymous_e__Union Anonymous;
 			public uint32 ulRawButtons;
 			public int32 lLastX;
 			public int32 lLastY;
 			public uint32 ulExtraInformation;
 			
-			public uint32 ulButtons { get => Anonymous.ulButtons; set mut => Anonymous.ulButtons = value; }
-			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public uint32 ulButtons;
-				public _Anonymous_e__Struct Anonymous;
-				
-				public uint16 usButtonFlags { get => Anonymous.usButtonFlags; set mut => Anonymous.usButtonFlags = value; }
-				public uint16 usButtonData { get => Anonymous.usButtonData; set mut => Anonymous.usButtonData = value; }
+				public using _Anonymous_e__Struct Anonymous;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -161,11 +156,7 @@ namespace Win32
 		{
 			public uint32 cbSize;
 			public RID_DEVICE_INFO_TYPE dwType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public RID_DEVICE_INFO_MOUSE mouse { get => Anonymous.mouse; set mut => Anonymous.mouse = value; }
-			public RID_DEVICE_INFO_KEYBOARD keyboard { get => Anonymous.keyboard; set mut => Anonymous.keyboard = value; }
-			public RID_DEVICE_INFO_HID hid { get => Anonymous.hid; set mut => Anonymous.hid = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union

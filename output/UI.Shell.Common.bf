@@ -104,11 +104,7 @@ namespace Win32
 		public struct STRRET
 		{
 			public uint32 uType;
-			public _Anonymous_e__Union Anonymous;
-			
-			public PWSTR pOleStr { get => Anonymous.pOleStr; set mut => Anonymous.pOleStr = value; }
-			public uint32 uOffset { get => Anonymous.uOffset; set mut => Anonymous.uOffset = value; }
-			public uint8[260] cStr { get => Anonymous.cStr; set mut => Anonymous.cStr = value; }
+			public using _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
