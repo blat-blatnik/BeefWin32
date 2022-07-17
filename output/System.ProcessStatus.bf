@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PSAPI_VERSION = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ENUM_PROCESS_MODULES_EX_FLAGS : uint32
 		{
 			ALL = 3,
@@ -18,14 +17,14 @@ namespace Win32
 			_32BIT = 1,
 			_64BIT = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PENUM_PAGE_FILE_CALLBACKW(void* pContext, out ENUM_PAGE_FILE_INFORMATION pPageFileInfo, PWSTR lpFilename);
 		public function BOOL PENUM_PAGE_FILE_CALLBACKA(void* pContext, out ENUM_PAGE_FILE_INFORMATION pPageFileInfo, PSTR lpFilename);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MODULEINFO
 		{
@@ -150,9 +149,9 @@ namespace Win32
 			public uint TotalInUse;
 			public uint PeakUsage;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL K32EnumProcesses(out uint32 lpidProcess, uint32 cb, out uint32 lpcbNeeded);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -207,5 +206,6 @@ namespace Win32
 		public static extern uint32 K32GetProcessImageFileNameA(HANDLE hProcess, uint8* lpImageFileName, uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 K32GetProcessImageFileNameW(HANDLE hProcess, char16* lpImageFileName, uint32 nSize);
+		#endregion
 	}
 }

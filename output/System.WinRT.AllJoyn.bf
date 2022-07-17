@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWindowsDevicesAllJoynBusAttachmentInterop : IInspectable
 		{
@@ -71,6 +70,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsDevicesAllJoynBusObjectFactoryInterop self, uint64 win32handle, in Guid riid, void** ppv) CreateFromWin32Handle;
 			}
 		}
+		#endregion
 		
 	}
 }

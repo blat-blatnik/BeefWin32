@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 _FACDXGI = 2170;
 		public const uint32 DXGI_CPU_ACCESS_NONE = 0;
 		public const uint32 DXGI_CPU_ACCESS_DYNAMIC = 1;
@@ -16,9 +15,9 @@ namespace Win32
 		public const uint32 DXGI_FORMAT_DEFINED = 1;
 		public const uint32 DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = 4294967295;
 		public const uint32 DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = 4294967294;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DXGI_COLOR_SPACE_TYPE : int32
 		{
 			RGB_FULL_G22_NONE_P709 = 0,
@@ -202,9 +201,9 @@ namespace Win32
 			IGNORE = 3,
 			FORCE_DWORD = 4294967295,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DXGI_RATIONAL
 		{
@@ -267,6 +266,7 @@ namespace Win32
 		{
 			public uint8[64] Elements;
 		}
+		#endregion
 		
 	}
 }

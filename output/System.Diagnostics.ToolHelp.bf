@@ -5,14 +5,13 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MAX_MODULE_NAME32 = 255;
 		public const uint32 HF32_DEFAULT = 1;
 		public const uint32 HF32_SHARED = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CREATE_TOOLHELP_SNAPSHOT_FLAGS : uint32
 		{
 			INHERIT = 2147483648,
@@ -29,9 +28,9 @@ namespace Win32
 			FREE = 2,
 			MOVEABLE = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HEAPLIST32
 		{
@@ -120,9 +119,9 @@ namespace Win32
 			public CHAR[256] szModule;
 			public CHAR[260] szExePath;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateToolhelp32Snapshot(CREATE_TOOLHELP_SNAPSHOT_FLAGS dwFlags, uint32 th32ProcessID);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -155,5 +154,6 @@ namespace Win32
 		public static extern BOOL Module32First(HANDLE hSnapshot, out MODULEENTRY32 lpme);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL Module32Next(HANDLE hSnapshot, out MODULEENTRY32 lpme);
+		#endregion
 	}
 }

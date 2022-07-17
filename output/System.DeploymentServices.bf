@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WDS_CLI_TRANSFER_ASYNCHRONOUS = 1;
 		public const uint32 WDS_CLI_NO_SPARSE_FILE = 2;
 		public const uint32 PXE_DHCP_SERVER_PORT = 67;
@@ -204,9 +203,9 @@ namespace Win32
 		public const int32 WDS_LOG_LEVEL_ERROR = 1;
 		public const int32 WDS_LOG_LEVEL_WARNING = 2;
 		public const int32 WDS_LOG_LEVEL_INFO = 3;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CPU_ARCHITECTURE : uint32
 		{
 			AMD64 = 9,
@@ -343,9 +342,9 @@ namespace Win32
 			MaximumBlockSize = 1,
 			VariableWindow = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFN_WdsCliTraceFunction(PWSTR pwszFormat, ref int8 Params);
 		public function void PFN_WdsCliCallback(PFN_WDS_CLI_CALLBACK_MESSAGE_ID dwMessageId, WPARAM wParam, LPARAM lParam, void* pvUserData);
 		public function void PFN_WdsTransportClientSessionStart(HANDLE hSessionKey, void* pCallerData, ref ULARGE_INTEGER ullFileSize);
@@ -354,9 +353,9 @@ namespace Win32
 		public function void PFN_WdsTransportClientReceiveContents(HANDLE hSessionKey, void* pCallerData, void* pContents, uint32 ulSize, ref ULARGE_INTEGER pullContentOffset);
 		public function void PFN_WdsTransportClientSessionComplete(HANDLE hSessionKey, void* pCallerData, uint32 dwError);
 		public function void PFN_WdsTransportClientSessionNegotiate(HANDLE hSessionKey, void* pCallerData, ref TRANSPORTCLIENT_SESSION_INFO pInfo, HANDLE hNegotiateKey);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WDS_CLI_CRED
 		{
@@ -506,9 +505,9 @@ namespace Win32
 			public PFN_WdsTransportClientSessionComplete SessionComplete;
 			public PFN_WdsTransportClientSessionNegotiate SessionNegotiate;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WdsTransportCacheable = .(0x70590b16, 0xf146, 0x46bd, 0xbd, 0x9d, 0x4a, 0xaa, 0x90, 0x08, 0x4b, 0xf5);
 		public const Guid CLSID_WdsTransportCollection = .(0xc7f18b09, 0x391e, 0x436e, 0xb1, 0x0b, 0xc3, 0xef, 0x46, 0xf2, 0xc3, 0x4f);
 		public const Guid CLSID_WdsTransportManager = .(0xf21523f6, 0x837c, 0x4a58, 0xaf, 0x99, 0x8a, 0x7e, 0x27, 0xf8, 0xff, 0x59);
@@ -530,9 +529,9 @@ namespace Win32
 		public const Guid CLSID_WdsTransportTftpClient = .(0x50343925, 0x7c5c, 0x4c8c, 0x96, 0xc4, 0xad, 0x9f, 0xa5, 0x00, 0x5f, 0xba);
 		public const Guid CLSID_WdsTransportTftpManager = .(0xc8e9dca2, 0x3241, 0x4e4d, 0xb8, 0x06, 0xbc, 0x74, 0x01, 0x9d, 0xfe, 0xda);
 		public const Guid CLSID_WdsTransportContentProvider = .(0xe0be741f, 0x5a75, 0x4eb9, 0x8a, 0x2d, 0x5e, 0x18, 0x9b, 0x45, 0xf3, 0x27);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWdsTransportCacheable : IDispatch
 		{
@@ -1106,9 +1105,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWdsTransportContentProvider self, out BSTR pbszInitializationRoutine) get_InitializationRoutine;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wdsclientapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WdsCliClose(HANDLE Handle);
 		[Import("wdsclientapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1297,5 +1296,6 @@ namespace Win32
 		public static extern uint32 WdsBpAddOption(HANDLE hHandle, uint32 uOption, uint32 uValueLen, void* pValue);
 		[Import("wdsbp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WdsBpGetOptionBuffer(HANDLE hHandle, uint32 uBufferLen, void* pBuffer, out uint32 puBytes);
+		#endregion
 	}
 }

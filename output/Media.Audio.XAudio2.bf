@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FXEQ_MIN_FRAMERATE = 22000;
 		public const uint32 FXEQ_MAX_FRAMERATE = 48000;
 		public const float FXEQ_MIN_FREQUENCY_CENTER = 20f;
@@ -225,9 +224,9 @@ namespace Win32
 		public const uint32 X3DAUDIO_CALCULATE_EMITTER_ANGLE = 64;
 		public const uint32 X3DAUDIO_CALCULATE_ZEROCENTER = 65536;
 		public const uint32 X3DAUDIO_CALCULATE_REDIRECT_TO_LFE = 131072;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum XAPO_BUFFER_FLAGS : int32
 		{
 			SILENT = 0,
@@ -260,9 +259,9 @@ namespace Win32
 			NaturalDecay = 0,
 			CustomDecay = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct XAPO_REGISTRATION_PROPERTIES
 		{
@@ -522,18 +521,18 @@ namespace Win32
 			public HrtfDistanceDecay* distanceDecay;
 			public HrtfDirectivity* directivity;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FXEQ = .(0xf5e01117, 0xd6c4, 0x485a, 0xa3, 0xf5, 0x69, 0x51, 0x96, 0xf3, 0xdb, 0xfa);
 		public const Guid CLSID_FXMasteringLimiter = .(0xc4137916, 0x2be1, 0x46fd, 0x85, 0x99, 0x44, 0x15, 0x36, 0xf4, 0x98, 0x56);
 		public const Guid CLSID_FXReverb = .(0x7d9aca56, 0xcb68, 0x4807, 0xb6, 0x32, 0xb1, 0x37, 0x35, 0x2e, 0x85, 0x96);
 		public const Guid CLSID_FXEcho = .(0x5039d740, 0xf736, 0x449a, 0x84, 0xd3, 0xa5, 0x62, 0x02, 0x55, 0x7b, 0x87);
 		public const Guid CLSID_AudioVolumeMeter = .(0x4fc3b166, 0x972a, 0x40cf, 0xbc, 0x37, 0x7d, 0xb0, 0x3d, 0xb2, 0xfb, 0xa3);
 		public const Guid CLSID_AudioReverb = .(0xc2633b16, 0x471b, 0x4498, 0xb8, 0xc5, 0x4f, 0x09, 0x59, 0xe2, 0xec, 0x09);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IXAPO : IUnknown
 		{
@@ -801,9 +800,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXAPOHrtfParameters self, HrtfEnvironment environment) SetEnvironment;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("xaudio2_8.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateFX(in Guid clsid, out IUnknown* pEffect, void* pInitDat, uint32 InitDataByteSize);
 		[Import("xaudio2_8.dll"), CLink, CallingConvention(.Stdcall)]
@@ -814,5 +813,6 @@ namespace Win32
 		public static extern HRESULT CreateAudioReverb(out IUnknown* ppApo);
 		[Import("hrtfapo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateHrtfApo(in HrtfApoInit init, out IXAPO* xApo);
+		#endregion
 	}
 }

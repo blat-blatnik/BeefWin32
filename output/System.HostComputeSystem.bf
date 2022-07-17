@@ -5,14 +5,13 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCS_OPERATION = int;
 		public typealias HCS_SYSTEM = int;
 		public typealias HCS_PROCESS = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum HCS_OPERATION_TYPE : int32
 		{
 			None = -1,
@@ -85,15 +84,15 @@ namespace Win32
 		{
 			HcsCreateOptions_1 = 65536,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void HCS_OPERATION_COMPLETION(HCS_OPERATION operation, void* context);
 		public function void HCS_EVENT_CALLBACK(ref HCS_EVENT event, void* context);
 		public function void HCS_NOTIFICATION_CALLBACK(uint32 notificationType, void* context, HRESULT notificationStatus, PWSTR notificationData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HCS_EVENT
 		{
@@ -120,9 +119,9 @@ namespace Win32
 			public void* CallbackContext;
 			public HCS_EVENT_CALLBACK Callback;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsEnumerateComputeSystems(PWSTR query, HCS_OPERATION operation);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -251,5 +250,6 @@ namespace Win32
 		public static extern HRESULT HcsGetLayerVhdMountPath(HANDLE vhdHandle, out PWSTR mountPath);
 		[Import("computestorage.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsSetupBaseOSVolume(PWSTR layerPath, PWSTR volumePath, PWSTR options);
+		#endregion
 	}
 }

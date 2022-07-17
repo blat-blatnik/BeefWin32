@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 SP_LOW_CONFIDENCE = -1;
 		public const uint32 SP_NORMAL_CONFIDENCE = 0;
 		public const uint32 DEFAULT_WEIGHT = 1;
@@ -24,9 +23,9 @@ namespace Win32
 		public const int32 Speech_StreamPos_Asap = 0;
 		public const int32 Speech_StreamPos_RealTime = -1;
 		public const int32 SpeechAllElements = -1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SPDATAKEYLOCATION : int32
 		{
 			DefaultLocation = 0,
@@ -1380,13 +1379,13 @@ namespace Win32
 			SPCPhoneToId = 2,
 			SPCIdToPhone = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void SPNOTIFYCALLBACK(WPARAM wParam, LPARAM lParam);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SPEVENT
 		{
@@ -1738,9 +1737,9 @@ namespace Win32
 			public uint32 ulNumTokens;
 			public SPDISPLAYTOKEN* pTokens;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SpNotifyTranslator = .(0xe2ae5372, 0x5d40, 0x11d2, 0x96, 0x0e, 0x00, 0xc0, 0x4f, 0x8e, 0xe6, 0x28);
 		public const Guid CLSID_SpObjectTokenCategory = .(0xa910187f, 0x0c7a, 0x45ac, 0x92, 0xcc, 0x59, 0xed, 0xaf, 0xb7, 0x7b, 0x53);
 		public const Guid CLSID_SpObjectToken = .(0xef411752, 0x3736, 0x4cb4, 0x9c, 0x8c, 0x8e, 0xf4, 0xcc, 0xb5, 0x8e, 0xfe);
@@ -1769,9 +1768,9 @@ namespace Win32
 		public const Guid CLSID_SpCustomStream = .(0x8dbef13f, 0x1948, 0x4aa8, 0x8c, 0xf0, 0x04, 0x8e, 0xeb, 0xed, 0x95, 0xd8);
 		public const Guid CLSID_SpFileStream = .(0x947812b3, 0x2ae1, 0x4644, 0xba, 0x86, 0x9e, 0x90, 0xde, 0xd7, 0xec, 0x91);
 		public const Guid CLSID_SpMemoryStream = .(0x5fb7ef7d, 0xdff4, 0x468a, 0xb6, 0xb7, 0x2f, 0xcb, 0xd1, 0x88, 0xf9, 0x94);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISpNotifyCallback
 		{
@@ -4291,6 +4290,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISpeechPhoneConverter self, VARIANT IdArray, BSTR* Phonemes) IdToPhone;
 			}
 		}
+		#endregion
 		
 	}
 }

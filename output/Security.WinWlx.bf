@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WLX_VERSION_1_0 = 65536;
 		public const uint32 WLX_VERSION_1_1 = 65537;
 		public const uint32 WLX_VERSION_1_2 = 65538;
@@ -66,18 +65,18 @@ namespace Win32
 		public const uint32 WLX_OPTION_SMART_CARD_PRESENT = 65537;
 		public const uint32 WLX_OPTION_SMART_CARD_INFO = 65538;
 		public const uint32 WLX_OPTION_DISPATCH_TABLE_SIZE = 65539;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WLX_SHUTDOWN_TYPE : uint32
 		{
 			SHUTDOWN = 5,
 			SHUTDOWN_REBOOT = 11,
 			SHUTDOWN_POWER_OFF = 10,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PWLX_USE_CTRL_ALT_DEL(HANDLE hWlx);
 		public function void PWLX_SET_CONTEXT_POINTER(HANDLE hWlx, void* pWlxContext);
 		public function void PWLX_SAS_NOTIFY(HANDLE hWlx, uint32 dwSasType);
@@ -106,9 +105,9 @@ namespace Win32
 		public function uint32 PWLX_QUERY_TERMINAL_SERVICES_DATA(HANDLE hWlx, out WLX_TERMINAL_SERVICES_DATA pTSData, PWSTR UserName, PWSTR Domain);
 		public function uint32 PWLX_QUERY_CONSOLESWITCH_CREDENTIALS(out WLX_CONSOLESWITCH_CREDENTIALS_INFO_V1_0 pCred);
 		public function uint32 PFNMSGECALLBACK(BOOL bVerbose, PWSTR lpMessage);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WLX_SC_NOTIFICATION_INFO
 		{
@@ -338,6 +337,7 @@ namespace Win32
 			public HDESK hDesktop;
 			public PFNMSGECALLBACK pStatusCallback;
 		}
+		#endregion
 		
 	}
 }

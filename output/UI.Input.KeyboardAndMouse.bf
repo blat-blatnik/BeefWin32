@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 EXTENDED_BIT = 16777216;
 		public const uint32 DONTCARE_BIT = 33554432;
 		public const uint32 FAKE_KEYSTROKE = 33554432;
@@ -140,9 +139,9 @@ namespace Win32
 		public const uint32 VK_DBE_NOCODEINPUT = 251;
 		public const uint32 VK_DBE_DETERMINESTRING = 252;
 		public const uint32 VK_DBE_ENTERDLGCONVERSIONMODE = 253;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum HOT_KEY_MODIFIERS : uint32
 		{
 			ALT = 1,
@@ -439,9 +438,9 @@ namespace Win32
 			PA1 = 253,
 			OEM_CLEAR = 254,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct VK_TO_BIT
 		{
@@ -720,9 +719,9 @@ namespace Win32
 			public uint32 cbSize;
 			public uint32 dwTime;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL _TrackMouseEvent(out TRACKMOUSEEVENT lpEventTrack);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -827,5 +826,6 @@ namespace Win32
 		public static extern HWND SetActiveWindow(HWND hWnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BlockInput(BOOL fBlockIt);
+		#endregion
 	}
 }

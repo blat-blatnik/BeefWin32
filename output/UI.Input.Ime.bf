@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid CLSID_VERSION_DEPENDENT_MSIME_JAPANESE = .(0x6a91029e, 0xaa49, 0x471b, 0xae, 0xe7, 0x7d, 0x33, 0x27, 0x85, 0x66, 0x0d);
 		public const HRESULT IFEC_S_ALREADY_DEFAULT = 291840;
 		public const uint32 FELANG_REQ_CONV = 65536;
@@ -642,9 +641,9 @@ namespace Win32
 		public const int32 IPAWS_MINSIZEFIXED = 196608;
 		public const Guid CLSID_ImePlugInDictDictionaryList_CHS = .(0x7bf0129b, 0x5bef, 0x4de4, 0x9b, 0x0b, 0x5e, 0xdb, 0x66, 0xac, 0x2f, 0xa6);
 		public const Guid CLSID_ImePlugInDictDictionaryList_JPN = .(0x4fe2776b, 0xb0f9, 0x4396, 0xb5, 0xfc, 0xe9, 0xd4, 0xcf, 0x1e, 0xc1, 0x95);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SET_COMPOSITION_STRING_TYPE : uint32
 		{
 			SETSTR = 9,
@@ -778,9 +777,9 @@ namespace Win32
 			UNKNOWN2 = 23,
 			ALL = 24,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL IMCENUMPROC(HIMC param0, LPARAM param1);
 		public function int32 REGISTERWORDENUMPROCA(PSTR lpszReading, uint32 param1, PSTR lpszString, void* param3);
 		public function int32 REGISTERWORDENUMPROCW(PWSTR lpszReading, uint32 param1, PWSTR lpszString, void* param3);
@@ -788,9 +787,9 @@ namespace Win32
 		public function HRESULT fpCreateIFECommonInstanceType(void** ppvObj);
 		public function HRESULT fpCreateIFELanguageInstanceType(in Guid clsid, void** ppvObj);
 		public function HRESULT fpCreateIFEDictionaryInstanceType(void** ppvObj);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct COMPOSITIONFORM
 		{
@@ -1279,13 +1278,13 @@ namespace Win32
 			public PWSTR lpwstrReading;
 			public uint32 dwReserved;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CActiveIMM = .(0x4955dd33, 0xb159, 0x11d0, 0x8f, 0xcf, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFEClassFactory : IClassFactory
 		{
@@ -1962,9 +1961,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IActiveIME2 self, BOOL fDead) Unsleep;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("imm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HKL ImmInstallIMEA(PSTR lpszIMEFileName, PSTR lpszLayoutText);
 		[Import("imm32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2129,5 +2128,6 @@ namespace Win32
 		public static extern HIMCC ImmReSizeIMCC(HIMCC param0, uint32 param1);
 		[Import("imm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ImmGetIMCCSize(HIMCC param0);
+		#endregion
 	}
 }

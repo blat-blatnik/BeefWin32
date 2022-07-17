@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum OPERATION_START_FLAGS : uint32
 		{
 			TRACE_CURRENT_THREAD = 1,
@@ -15,9 +14,9 @@ namespace Win32
 		{
 			DISCARD = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct OPERATION_START_PARAMETERS
 		{
@@ -32,12 +31,13 @@ namespace Win32
 			public uint32 OperationId;
 			public OPERATION_END_PARAMETERS_FLAGS Flags;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL OperationStart(ref OPERATION_START_PARAMETERS OperationStartParams);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL OperationEnd(ref OPERATION_END_PARAMETERS OperationEndParams);
+		#endregion
 	}
 }

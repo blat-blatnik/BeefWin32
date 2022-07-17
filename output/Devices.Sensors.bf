@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid GUID_DEVINTERFACE_SENSOR = .(0xba1bb692, 0x9b7a, 0x4833, 0x9a, 0x1e, 0x52, 0x5e, 0xd1, 0x34, 0xe7, 0xe2);
 		public const Guid SENSOR_EVENT_STATE_CHANGED = .(0xbfd96016, 0x6bd7, 0x4560, 0xad, 0x34, 0xf2, 0xf6, 0x60, 0x7e, 0x8f, 0x81);
 		public const Guid SENSOR_EVENT_DATA_UPDATED = .(0x2ed0f2a4, 0x0087, 0x41d3, 0x87, 0xdb, 0x67, 0x73, 0x37, 0x0b, 0x3c, 0x88);
@@ -128,9 +127,9 @@ namespace Win32
 		public const Guid GUID_SensorType_Temperature = .(0x04fd0ec4, 0xd5da, 0x45fa, 0x95, 0xa9, 0x5d, 0xb3, 0x8e, 0xe1, 0x93, 0x06);
 		public const Guid GUID_SensorType_HingeAngle = .(0x82358065, 0xf4c4, 0x4da1, 0xb2, 0x72, 0x13, 0xc2, 0x33, 0x32, 0xa2, 0x07);
 		public const uint32 SENSOR_PROPERTY_LIST_HEADER_SIZE = 8;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum SensorState : int32
 		{
@@ -269,9 +268,9 @@ namespace Win32
 			Z = 2,
 			MAX = 3,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SENSOR_VALUE_PAIR
 		{
@@ -341,16 +340,16 @@ namespace Win32
 			public float Z;
 			public float W;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SensorManager = .(0x77a1c827, 0xfcd2, 0x4689, 0x89, 0x15, 0x9d, 0x61, 0x3c, 0xc5, 0xfa, 0x3e);
 		public const Guid CLSID_SensorCollection = .(0x79c43adb, 0xa429, 0x469f, 0xaa, 0x39, 0x2f, 0x2b, 0x74, 0xb7, 0x59, 0x37);
 		public const Guid CLSID_Sensor = .(0xe97ced00, 0x523a, 0x4133, 0xbf, 0x6f, 0xd3, 0xa2, 0xda, 0xe7, 0xf6, 0xba);
 		public const Guid CLSID_SensorDataReport = .(0x4ea9d6ef, 0x694b, 0x4218, 0x88, 0x16, 0xcc, 0xda, 0x8d, 0xa7, 0x4b, 0xba);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISensorManager : IUnknown
 		{
@@ -514,9 +513,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensorEvents self, ref Guid ID) OnLeave;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS GetPerformanceTime(out uint32 TimeMs);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
@@ -597,5 +596,6 @@ namespace Win32
 		public static extern BOOLEAN IsSensorSubscribed(ref SENSOR_COLLECTION_LIST subscriptionList, Guid currentType);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN IsGUIDPresentInList(Guid* guidArray, uint32 arrayLength, in Guid guidElem);
+		#endregion
 	}
 }

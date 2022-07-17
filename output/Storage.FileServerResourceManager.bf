@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FSRM_DISPID_FEATURE_MASK = 251658240;
 		public const uint32 FSRM_DISPID_INTERFACE_A_MASK = 15728640;
 		public const uint32 FSRM_DISPID_INTERFACE_B_MASK = 983040;
@@ -158,9 +157,9 @@ namespace Win32
 		public const HRESULT FSRM_E_EXPIRATION_VOLUME_NOT_NTFS = -2147200103;
 		public const HRESULT FSRM_E_FILE_MANAGEMENT_JOB_DEPRECATED = -2147200102;
 		public const HRESULT FSRM_E_MODULE_TIMEOUT = -2147200101;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FsrmQuotaFlags : int32
 		{
 			Enforce = 256,
@@ -493,9 +492,9 @@ namespace Win32
 			FailIfNotSupportedByServer = 2,
 			FailIfNotDomainJoined = 4,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FsrmSetting = .(0xf556d708, 0x6d4d, 0x4594, 0x9c, 0x61, 0x7d, 0xbb, 0x0d, 0xae, 0x2a, 0x46);
 		public const Guid CLSID_FsrmPathMapper = .(0xf3be42bd, 0x8ac2, 0x409e, 0xbb, 0xd8, 0xfa, 0xf9, 0xb6, 0xb4, 0x1f, 0xeb);
 		public const Guid CLSID_FsrmExportImport = .(0x1482dc37, 0xfae9, 0x4787, 0x90, 0x25, 0x8c, 0xe4, 0xe0, 0x24, 0xab, 0x56);
@@ -511,9 +510,9 @@ namespace Win32
 		public const Guid CLSID_FsrmPipelineModuleConnector = .(0xc7643375, 0x1eb5, 0x44de, 0xa0, 0x62, 0x62, 0x35, 0x47, 0xd9, 0x33, 0xbc);
 		public const Guid CLSID_AdSyncTask = .(0x2ae64751, 0xb728, 0x4d6b, 0x97, 0xa0, 0xb2, 0xda, 0x2e, 0x7d, 0x2a, 0x3b);
 		public const Guid CLSID_FsrmAccessDeniedRemediationClient = .(0x100b4fc8, 0x74c1, 0x470f, 0xb1, 0xb7, 0xdd, 0x7b, 0x6b, 0xae, 0x79, 0xbd);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFsrmObject : IDispatch
 		{
@@ -2166,6 +2165,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable {}
 		}
+		#endregion
 		
 	}
 }

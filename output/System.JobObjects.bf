@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum JOB_OBJECT_LIMIT : uint32
 		{
@@ -155,9 +154,9 @@ namespace Win32
 			JobObjectReserved25Information = 47,
 			MaxJobObjectInfoClass = 48,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION
 		{
@@ -449,9 +448,9 @@ namespace Win32
 			public JOBOBJECT_IO_ATTRIBUTION_STATS ReadStats;
 			public JOBOBJECT_IO_ATTRIBUTION_STATS WriteStats;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsProcessInJob(HANDLE ProcessHandle, HANDLE JobHandle, out BOOL Result);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -480,5 +479,6 @@ namespace Win32
 		public static extern HANDLE OpenJobObjectA(uint32 dwDesiredAccess, BOOL bInheritHandle, PSTR lpName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CreateJobSet(uint32 NumJob, JOB_SET_ARRAY* UserJobSet, uint32 Flags);
+		#endregion
 	}
 }

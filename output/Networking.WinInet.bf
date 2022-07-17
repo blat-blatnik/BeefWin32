@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DIALENG_OperationComplete = 65536;
 		public const uint32 DIALENG_RedialAttempt = 65537;
 		public const uint32 DIALENG_RedialWait = 65538;
@@ -893,13 +892,13 @@ namespace Win32
 		public const uint32 HTTP_WEB_SOCKET_MAX_CLOSE_REASON_LENGTH = 123;
 		public const uint32 HTTP_WEB_SOCKET_MIN_KEEPALIVE_VALUE = 10000;
 		public const uint32 INTERNET_GLOBAL_CALLBACK_SENDING_HTTP_HEADERS = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HTTP_PUSH_WAIT_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CACHE_CONFIG : uint32
 		{
 			FORCE_CLEANUP_FC = 32,
@@ -1148,9 +1147,9 @@ namespace Win32
 		{
 			POLICY_EXTENSION_VERSION1 = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void LPINTERNET_STATUS_CALLBACK(void* hInternet, uint dwContext, uint32 dwInternetStatus, void* lpvStatusInformation, uint32 dwStatusInformationLength);
 		public function BOOL GOPHER_ATTRIBUTE_ENUMERATOR(ref GOPHER_ATTRIBUTE_TYPE lpAttributeInfo, uint32 dwError);
 		public function uint32 PFN_AUTH_NOTIFY(uint param0, uint32 param1, void* param2);
@@ -1161,9 +1160,9 @@ namespace Win32
 		public function BOOL CACHE_OPERATOR(out INTERNET_CACHE_ENTRY_INFOA pcei, out uint32 pcbcei, void* pOpData);
 		public function uint32 HTTP_POLICY_EXTENSION_INIT(HTTP_POLICY_EXTENSION_VERSION Version, HTTP_POLICY_EXTENSION_TYPE Type, void* pvData, uint32 cbData);
 		public function uint32 HTTP_POLICY_EXTENSION_SHUTDOWN(HTTP_POLICY_EXTENSION_TYPE Type);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct INTERNET_ASYNC_RESULT
 		{
@@ -1911,13 +1910,13 @@ namespace Win32
 			public uint32 flags;
 			public PWSTR p3pHeader;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_ProofOfPossessionCookieInfoManager = .(0xa9927f85, 0xa304, 0x4390, 0x8b, 0x23, 0xa7, 0x5f, 0x1c, 0x66, 0x86, 0x00);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDialEventSink : IUnknown
 		{
@@ -2007,9 +2006,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProofOfPossessionCookieInfoManager2 self, ref IInspectable webAccount, PWSTR uri, out uint32 cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wininet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL InternetTimeFromSystemTimeA(in SYSTEMTIME pst, uint32 dwRFC, PSTR lpszTime, uint32 cbTime);
 		[Import("wininet.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2602,5 +2601,6 @@ namespace Win32
 		public static extern BOOL HttpWebSocketQueryCloseStatus(void* hWebSocket, out uint16 pusStatus, void* pvReason, uint32 dwReasonLength, out uint32 pdwReasonLengthConsumed);
 		[Import("wininet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 InternetConvertUrlFromWireToWideChar(uint8* pcszUrl, uint32 cchUrl, PWSTR pcwszBaseUrl, uint32 dwCodePageHost, uint32 dwCodePagePath, BOOL fEncodePathExtra, uint32 dwCodePageExtra, out PWSTR ppwszConvertedUrl);
+		#endregion
 	}
 }

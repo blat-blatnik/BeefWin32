@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 OFFLINEFILES_SYNC_STATE_LOCAL_KNOWN = 1;
 		public const uint32 OFFLINEFILES_SYNC_STATE_REMOTE_KNOWN = 2;
 		public const uint32 OFFLINEFILES_CHANGES_NONE = 0;
@@ -104,9 +103,9 @@ namespace Win32
 		public const uint32 OFFLINEFILES_SYNC_ITEM_CHANGE_WRITETIME = 2;
 		public const uint32 OFFLINEFILES_SYNC_ITEM_CHANGE_FILESIZE = 4;
 		public const uint32 OFFLINEFILES_SYNC_ITEM_CHANGE_ATTRIBUTES = 8;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum OFFLINEFILES_ITEM_TYPE : int32
 		{
 			FILE = 0,
@@ -307,14 +306,14 @@ namespace Win32
 			FileReplacedAndDeletedOnClient_DirChangedOnServer = 53,
 			NUMSTATES = 54,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_OfflineFilesSetting = .(0xfd3659e9, 0xa920, 0x4123, 0xad, 0x64, 0x7f, 0xc7, 0x6c, 0x7a, 0xac, 0xdf);
 		public const Guid CLSID_OfflineFilesCache = .(0x48c6be7c, 0x3871, 0x43cc, 0xb4, 0x6f, 0x14, 0x49, 0xa1, 0xbb, 0x2f, 0xf3);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IOfflineFilesEvents : IUnknown
 		{
@@ -1035,9 +1034,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOfflineFilesCache2 self, PWSTR pszPathOriginal, PWSTR pszPathNew, BOOL bReplaceIfExists) RenameItemEx;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OfflineFilesEnable(BOOL bEnable, out BOOL pbRebootRequired);
 		[Import("cscapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1046,5 +1045,6 @@ namespace Win32
 		public static extern uint32 OfflineFilesQueryStatus(BOOL* pbActive, BOOL* pbEnabled);
 		[Import("cscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OfflineFilesQueryStatusEx(BOOL* pbActive, BOOL* pbEnabled, BOOL* pbAvailable);
+		#endregion
 	}
 }

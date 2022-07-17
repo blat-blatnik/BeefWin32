@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WNV_API_MAJOR_VERSION_1 = 1;
 		public const uint32 WNV_API_MINOR_VERSION_0 = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WNV_NOTIFICATION_TYPE : int32
 		{
 			PolicyMismatchType = 0,
@@ -32,9 +31,9 @@ namespace Win32
 			Moved = 2,
 			Max = 3,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WNV_OBJECT_HEADER
 		{
@@ -114,12 +113,13 @@ namespace Win32
 			public WNV_IP_ADDRESS PA;
 			public WNV_IP_ADDRESS NewPA;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wnvapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE WnvOpen();
 		[Import("wnvapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WnvRequestNotification(HANDLE WnvHandle, out WNV_NOTIFICATION_PARAM NotificationParam, out OVERLAPPED Overlapped, out uint32 BytesTransferred);
+		#endregion
 	}
 }

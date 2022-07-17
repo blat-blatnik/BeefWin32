@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void LPOVERLAPPED_COMPLETION_ROUTINE(uint32 dwErrorCode, uint32 dwNumberOfBytesTransfered, out OVERLAPPED lpOverlapped);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct OVERLAPPED
 		{
@@ -41,9 +40,9 @@ namespace Win32
 			public uint Internal;
 			public uint32 dwNumberOfBytesTransferred;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateIoCompletionPort(HANDLE FileHandle, HANDLE ExistingCompletionPort, uint CompletionKey, uint32 NumberOfConcurrentThreads);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -66,5 +65,6 @@ namespace Win32
 		public static extern BOOL CancelSynchronousIo(HANDLE hThread);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BindIoCompletionCallback(HANDLE FileHandle, LPOVERLAPPED_COMPLETION_ROUTINE Function, uint32 Flags);
+		#endregion
 	}
 }

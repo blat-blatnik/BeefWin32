@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum PresentStatisticsKind : int32
 		{
 			PresentStatus = 1,
@@ -25,9 +24,9 @@ namespace Win32
 			ScanoutOnScreen = 1,
 			ComposedToIntermediate = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SystemInterruptTime
 		{
@@ -55,9 +54,9 @@ namespace Win32
 			public uint8 requiredCrossAdapterCopy;
 			public DXGI_COLOR_SPACE_TYPE colorSpace;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPresentationBuffer : IUnknown
 		{
@@ -253,10 +252,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetPresentDuration;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreatePresentationFactory(ref IUnknown d3dDevice, in Guid riid, void** presentationFactory);
+		#endregion
 	}
 }

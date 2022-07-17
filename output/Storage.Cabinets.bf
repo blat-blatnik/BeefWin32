@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 INCLUDED_FCI = 1;
 		public const uint32 _A_NAME_IS_UTF = 128;
 		public const uint32 _A_EXEC = 64;
@@ -17,9 +16,9 @@ namespace Win32
 		public const uint32 CB_MAX_CAB_PATH = 256;
 		public const uint32 CB_MAX_DISK_NAME = 256;
 		public const uint32 INCLUDED_FDI = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FDICREATE_CPU_TYPE : uint32
 		{
 			cpu80286 = 0,
@@ -69,9 +68,9 @@ namespace Win32
 			NEXT_CABINET = 4,
 			ENUMERATE = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PFNFCIALLOC(uint32 cb);
 		public function void PFNFCIFREE(void* memory);
 		public function int PFNFCIOPEN(PSTR pszFile, int32 oflag, int32 pmode, out int32 err, void* pv);
@@ -94,9 +93,9 @@ namespace Win32
 		public function int32 PFNSEEK(int hf, int32 dist, int32 seektype);
 		public function int32 PFNFDIDECRYPT(out FDIDECRYPT pfdid);
 		public function int PFNFDINOTIFY(FDINOTIFICATIONTYPE fdint, out FDINOTIFICATION pfdin);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ERF
 		{
@@ -196,9 +195,9 @@ namespace Win32
 			public CHAR[2] ach;
 			public int32 cbFile;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* FCICreate(ref ERF perf, PFNFCIFILEPLACED pfnfcifp, PFNFCIALLOC pfna, PFNFCIFREE pfnf, PFNFCIOPEN pfnopen, PFNFCIREAD pfnread, PFNFCIWRITE pfnwrite, PFNFCICLOSE pfnclose, PFNFCISEEK pfnseek, PFNFCIDELETE pfndelete, PFNFCIGETTEMPFILE pfnfcigtf, ref CCAB pccab, void* pv);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
@@ -219,5 +218,6 @@ namespace Win32
 		public static extern BOOL FDIDestroy(void* hfdi);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FDITruncateCabinet(void* hfdi, PSTR pszCabinetName, uint16 iFolderToDelete);
+		#endregion
 	}
 }

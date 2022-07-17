@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TBS_CONTEXT_VERSION_ONE = 1;
 		public const uint32 TBS_SUCCESS = 0;
 		public const uint32 TBS_OWNERAUTH_TYPE_FULL = 1;
@@ -34,9 +33,9 @@ namespace Win32
 		public const uint32 TBS_TCGLOG_SRTM_RESUME = 3;
 		public const uint32 TBS_TCGLOG_DRTM_BOOT = 4;
 		public const uint32 TBS_TCGLOG_DRTM_RESUME = 5;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TBS_COMMAND_PRIORITY : uint32
 		{
 			LOW = 100,
@@ -53,9 +52,9 @@ namespace Win32
 			THREE = 3,
 			FOUR = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TBS_CONTEXT_PARAMS
 		{
@@ -94,9 +93,9 @@ namespace Win32
 			public uint32 tpmInterfaceType;
 			public uint32 tpmImpRevision;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 Tbsi_Context_Create(ref TBS_CONTEXT_PARAMS pContextParams, void** phContext);
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
@@ -123,5 +122,6 @@ namespace Win32
 		public static extern uint32 Tbsi_Create_Windows_Key(uint32 keyHandle);
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 Tbsi_Get_TCG_Log_Ex(uint32 logType, uint8* pbOutput, out uint32 pcbOutput);
+		#endregion
 	}
 }

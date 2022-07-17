@@ -5,28 +5,27 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 E_SURFACE_CONTENTS_LOST = 2150301728;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum XAML_REFERENCETRACKER_DISCONNECT : int32
 		{
 			DEFAULT = 0,
 			SUSPEND = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TrackerHandle__
 		{
 			public int32 unused;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISurfaceImageSourceNative : IUnknown
 		{
@@ -341,6 +340,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] uint8(ref ITrackerOwner self, ref TrackerHandle__ handle, out IUnknown* returnValue) TryGetSafeTrackerValue;
 			}
 		}
+		#endregion
 		
 	}
 }

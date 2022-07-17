@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HWINSTA = int;
 		public typealias HDESK = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum BROADCAST_SYSTEM_MESSAGE_FLAGS : uint32
 		{
 			ALLOWSFW = 128,
@@ -41,16 +40,16 @@ namespace Win32
 			TYPE = 3,
 			USER_SID = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL WINSTAENUMPROCA(PSTR param0, LPARAM param1);
 		public function BOOL WINSTAENUMPROCW(PWSTR param0, LPARAM param1);
 		public function BOOL DESKTOPENUMPROCA(PSTR param0, LPARAM param1);
 		public function BOOL DESKTOPENUMPROCW(PWSTR param0, LPARAM param1);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct USEROBJECTFLAGS
 		{
@@ -66,9 +65,9 @@ namespace Win32
 			public HWND hwnd;
 			public LUID luid;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HDESK CreateDesktopA(PSTR lpszDesktop, PSTR lpszDevice, out DEVMODEA pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -131,5 +130,6 @@ namespace Win32
 		public static extern int32 BroadcastSystemMessageA(uint32 flags, uint32* lpInfo, uint32 Msg, WPARAM wParam, LPARAM lParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 BroadcastSystemMessageW(BROADCAST_SYSTEM_MESSAGE_FLAGS flags, BROADCAST_SYSTEM_MESSAGE_INFO* lpInfo, uint32 Msg, WPARAM wParam, LPARAM lParam);
+		#endregion
 	}
 }

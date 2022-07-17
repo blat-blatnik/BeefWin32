@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WLDP_LOCKDOWN_UNDEFINED = 0;
 		public const uint32 WLDP_LOCKDOWN_DEFINED_FLAG = 2147483648;
 		public const uint32 WLDP_LOCKDOWN_CONFIG_CI_FLAG = 1;
@@ -565,15 +564,15 @@ namespace Win32
 		public const uint32 DELETE_BROWSING_HISTORY_PASSWORDS = 16;
 		public const uint32 DELETE_BROWSING_HISTORY_PRESERVEFAVORITES = 32;
 		public const uint32 DELETE_BROWSING_HISTORY_DOWNLOADHISTORY = 64;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HWINWATCH = int;
 		public typealias FEATURE_STATE_CHANGE_SUBSCRIPTION = int;
 		public typealias FH_SERVICE_PIPE_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TDIENTITY_ENTITY_TYPE : uint32
 		{
 			GENERIC_ENTITY = 0,
@@ -758,9 +757,9 @@ namespace Win32
 		{
 			SETTING_AV_PERF_MODE = 1000,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PFIBER_CALLOUT_ROUTINE(void* lpParameter);
 		public function BOOL PQUERYACTCTXW_FUNC(uint32 dwFlags, HANDLE hActCtx, void* pvSubInstance, uint32 ulInfoClass, void* pvBuffer, uint cbBuffer, uint* pcbWrittenOrRequired);
 		public function uint32 APPLICATION_RECOVERY_CALLBACK(void* pvParameter);
@@ -785,9 +784,9 @@ namespace Win32
 		public function HRESULT PWLDP_ISPRODUCTIONCONFIGURATION_API(out BOOL IsProductionConfiguration);
 		public function HRESULT PWLDP_RESETPRODUCTIONCONFIGURATION_API();
 		public function void* PDELAYLOAD_FAILURE_DLL_CALLBACK(uint32 NotificationReason, ref DELAYLOAD_INFO DelayloadInfo);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _D3DHAL_CALLBACKS {}
 		[CRepr]
@@ -1433,16 +1432,16 @@ namespace Win32
 			public void* Unused;
 			public uint32 LastError;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CameraUIControl = .(0x16d5a2be, 0xb1c5, 0x47b3, 0x8e, 0xae, 0xcc, 0xbc, 0xf4, 0x52, 0xc7, 0xe8);
 		public const Guid CLSID_EditionUpgradeHelper = .(0x01776df3, 0xb9af, 0x4e50, 0x9b, 0x1c, 0x56, 0xe9, 0x31, 0x16, 0xd7, 0x04);
 		public const Guid CLSID_EditionUpgradeBroker = .(0xc4270827, 0x4f39, 0x45df, 0x92, 0x88, 0x12, 0xff, 0x6b, 0x85, 0xa9, 0x21);
 		public const Guid CLSID_DefaultBrowserSyncSettings = .(0x3ac83423, 0x3112, 0x4aa6, 0x9b, 0x5b, 0x1f, 0xeb, 0x23, 0xd0, 0xc5, 0xf9);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICameraUIControlEventCallback : IUnknown
 		{
@@ -1614,9 +1613,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDeleteBrowsingHistory self, uint32 dwFlags) DeleteBrowsingHistory;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint RtlGetReturnAddressHijackTarget();
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2071,5 +2070,6 @@ namespace Win32
 		public static extern HRESULT WldpQueryDynamicCodeTrust(HANDLE fileHandle, void* baseImage, uint32 imageSize);
 		[Import("wldp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WldpQueryDeviceSecurityInformation(WLDP_DEVICE_SECURITY_INFORMATION* information, uint32 informationLength, out uint32 returnLength);
+		#endregion
 	}
 }

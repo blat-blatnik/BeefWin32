@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TSF_Hardware = 1;
 		public const uint32 TSF_Authenticated = 2;
 		public const uint32 TSF_IPv6 = 4;
 		public const uint32 TSF_SignatureAuthenticated = 8;
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TIME_ZONE_INFORMATION
 		{
@@ -38,9 +37,9 @@ namespace Win32
 			public char16[128] TimeZoneKeyName;
 			public BOOLEAN DynamicDaylightTimeDisabled;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SystemTimeToTzSpecificLocalTime(TIME_ZONE_INFORMATION* lpTimeZoneInformation, in SYSTEMTIME lpUniversalTime, out SYSTEMTIME lpLocalTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -71,5 +70,6 @@ namespace Win32
 		public static extern BOOL LocalFileTimeToLocalSystemTime(TIME_ZONE_INFORMATION* timeZoneInformation, in FILETIME localFileTime, out SYSTEMTIME localSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL LocalSystemTimeToLocalFileTime(TIME_ZONE_INFORMATION* timeZoneInformation, in SYSTEMTIME localSystemTime, out FILETIME localFileTime);
+		#endregion
 	}
 }

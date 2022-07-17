@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid CLSID_SoftwareBitmapNativeFactory = .(0x84e65691, 0x8602, 0x4a84, 0xbe, 0x46, 0x70, 0x8b, 0xe9, 0xcd, 0x4b, 0x74);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISoftwareBitmapNative : IInspectable
 		{
@@ -43,6 +42,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISoftwareBitmapNativeFactory self, ref IMF2DBuffer2 data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, in Guid riid, void** ppv) CreateFromMF2DBuffer2;
 			}
 		}
+		#endregion
 		
 	}
 }

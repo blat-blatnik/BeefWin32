@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 QCC_TRUE = 1;
 		public const uint32 QCC_FALSE = 0;
 		public const uint32 ALLJOYN_MESSAGE_FLAG_NO_REPLY_EXPECTED = 1;
@@ -44,9 +43,9 @@ namespace Win32
 		public const uint8 ALLJOYN_MEMBER_ANNOTATE_SESSIONLESS = 8;
 		public const uint8 ALLJOYN_MEMBER_ANNOTATE_UNICAST = 16;
 		public const uint8 ALLJOYN_MEMBER_ANNOTATE_GLOBAL_BROADCAST = 32;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias alljoyn_aboutdata = int;
 		public typealias alljoyn_aboutdatalistener = int;
 		public typealias alljoyn_aboutlistener = int;
@@ -76,9 +75,9 @@ namespace Win32
 		public typealias alljoyn_sessionlistener = int;
 		public typealias alljoyn_sessionopts = int;
 		public typealias alljoyn_sessionportlistener = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum alljoyn_about_announceflag : int32
 		{
 			UNANNOUNCED = 0,
@@ -558,9 +557,9 @@ namespace Win32
 			LINK_TIMEOUT = 4,
 			REASON_OTHER = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void alljoyn_applicationstatelistener_state_ptr(out int8 busName, out int8 publicKey, alljoyn_applicationstate applicationState, void* context);
 		public function QStatus alljoyn_keystorelistener_loadrequest_ptr(void* context, alljoyn_keystorelistener listener, alljoyn_keystore keyStore);
 		public function QStatus alljoyn_keystorelistener_storerequest_ptr(void* context, alljoyn_keystorelistener listener, alljoyn_keystore keyStore);
@@ -610,9 +609,9 @@ namespace Win32
 		public function void alljoyn_autopinger_destination_found_ptr(void* context, PSTR group, PSTR destination);
 		public function void alljoyn_observer_object_discovered_ptr(void* context, alljoyn_proxybusobject_ref proxyref);
 		public function void alljoyn_observer_object_lost_ptr(void* context, alljoyn_proxybusobject_ref proxyref);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _alljoyn_abouticon_handle {}
 		[CRepr]
@@ -764,9 +763,9 @@ namespace Win32
 			public alljoyn_observer_object_discovered_ptr object_discovered;
 			public alljoyn_observer_object_lost_ptr object_lost;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msajapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE AllJoynConnectToBus(PWSTR connectionSpec);
 		[Import("msajapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1861,5 +1860,6 @@ namespace Win32
 		public static extern void alljoyn_securityapplicationproxy_digest_destroy(out uint8 digest);
 		[Import("msajapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern QStatus alljoyn_securityapplicationproxy_setmanifestsignature(out int8 unsignedManifestXml, out int8 identityCertificatePem, in uint8 signature, uint signatureSize, out int8* signedManifestXml);
+		#endregion
 	}
 }

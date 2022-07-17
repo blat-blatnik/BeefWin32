@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 OPTION_PAD = 0;
 		public const uint32 OPTION_SUBNET_MASK = 1;
 		public const uint32 OPTION_TIME_OFFSET = 2;
@@ -327,9 +326,9 @@ namespace Win32
 		public const uint32 DHCPV6_OPTION_NISP_SERVERS = 28;
 		public const uint32 DHCPV6_OPTION_NIS_DOMAIN_NAME = 29;
 		public const uint32 DHCPV6_OPTION_NISP_DOMAIN_NAME = 30;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum StatusCode : int32
 		{
 			NO_ERROR = 0,
@@ -509,9 +508,9 @@ namespace Win32
 			PAUSED = 12,
 			SHUTDOWN = 13,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 LPDHCP_CONTROL(uint32 dwControlCode, void* lpReserved);
 		public function uint32 LPDHCP_NEWPKT(out uint8* Packet, out uint32 PacketSize, uint32 IpAddress, void* Reserved, void** PktContext, out int32 ProcessIt);
 		public function uint32 LPDHCP_DROP_SEND(out uint8* Packet, out uint32 PacketSize, uint32 ControlCode, uint32 IpAddress, void* Reserved, void* PktContext);
@@ -520,9 +519,9 @@ namespace Win32
 		public function uint32 LPDHCP_HANDLE_OPTIONS(out uint8 Packet, uint32 PacketSize, void* Reserved, void* PktContext, out DHCP_SERVER_OPTIONS ServerOptions);
 		public function uint32 LPDHCP_DELETE_CLIENT(uint32 IpAddress, out uint8 HwAddress, uint32 HwAddressLength, uint32 Reserved, uint32 ClientType);
 		public function uint32 LPDHCP_ENTRY_POINT_FUNC(PWSTR ChainDlls, uint32 CalloutVersion, out DHCP_CALLOUT_TABLE CalloutTbl);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DHCPV6CAPI_PARAMS
 		{
@@ -1803,9 +1802,9 @@ namespace Win32
 			public uint32 PartnerAddrInUse;
 			public uint32 ThisAddrInUse;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dhcpcsvc6.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void Dhcpv6CApiInitialize(out uint32 Version);
 		[Import("dhcpcsvc6.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2226,5 +2225,6 @@ namespace Win32
 		public static extern uint32 DhcpV4SetPolicyEx(PWSTR ServerIpAddress, uint32 FieldsModified, BOOL GlobalPolicy, uint32 SubnetAddress, PWSTR PolicyName, ref DHCP_POLICY_EX Policy);
 		[Import("dhcpsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DhcpV4EnumPoliciesEx(PWSTR ServerIpAddress, out uint32 ResumeHandle, uint32 PreferredMaximum, BOOL GlobalPolicy, uint32 SubnetAddress, out DHCP_POLICY_EX_ARRAY* EnumInfo, out uint32 ElementsRead, out uint32 ElementsTotal);
+		#endregion
 	}
 }

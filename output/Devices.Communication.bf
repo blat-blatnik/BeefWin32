@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MDM_COMPRESSION = 1;
 		public const uint32 MDM_ERROR_CONTROL = 2;
 		public const uint32 MDM_FORCED_EC = 4;
@@ -99,9 +98,9 @@ namespace Win32
 		public const Guid SID_3GPP_SUPSVCMODEL = .(0xd7d08e07, 0xd767, 0x4478, 0xb1, 0x4a, 0xee, 0xcc, 0x87, 0xea, 0x12, 0xf7);
 		public const uint32 MAXLENGTH_NAI = 72;
 		public const uint32 MAXLENGTH_UICCDATASTORE = 10;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MODEM_STATUS_FLAGS : uint32
 		{
 			CTS_ON = 16,
@@ -194,9 +193,9 @@ namespace Win32
 			OFF = 1,
 			ON = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MODEMDEVCAPS
 		{
@@ -306,9 +305,9 @@ namespace Win32
 			public uint32 dwProviderSize;
 			public char16[0] wcProviderData;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ClearCommBreak(HANDLE hFile);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -369,5 +368,6 @@ namespace Win32
 		public static extern BOOL SetDefaultCommConfigA(PSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDefaultCommConfigW(PWSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
+		#endregion
 	}
 }

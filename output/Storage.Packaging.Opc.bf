@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT OPC_E_NONCONFORMING_URI = -2142175231;
 		public const HRESULT OPC_E_RELATIVE_URI_REQUIRED = -2142175230;
 		public const HRESULT OPC_E_RELATIONSHIP_URI_REQUIRED = -2142175229;
@@ -109,9 +108,9 @@ namespace Win32
 		public const HRESULT OPC_E_ZIP_FILE_HEADER_TOO_LARGE = -2142171122;
 		public const HRESULT OPC_E_ZIP_MISSING_END_OF_CENTRAL_DIRECTORY = -2142171121;
 		public const HRESULT OPC_E_ZIP_REQUIRES_64_BIT = -2142171120;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum OPC_URI_TARGET_MODE : int32
 		{
 			INTERNAL = 0,
@@ -177,13 +176,13 @@ namespace Win32
 			MONTHS = 4,
 			YEARS = 5,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_OpcFactory = .(0x6b2d6ba0, 0x9f3e, 0x4f27, 0x92, 0x0b, 0x31, 0x3c, 0xc4, 0x26, 0xa3, 0x9e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IOpcUri : IUri
 		{
@@ -891,6 +890,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IOpcFactory self, ref IOpcPackage package, out IOpcDigitalSignatureManager* signatureManager) CreateDigitalSignatureManager;
 			}
 		}
+		#endregion
 		
 	}
 }

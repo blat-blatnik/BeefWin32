@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WSMAN_FLAG_REQUESTED_API_VERSION_1_0 = 0;
 		public const uint32 WSMAN_FLAG_REQUESTED_API_VERSION_1_1 = 1;
 		public const uint32 WSMAN_OPERATION_INFOV1 = 0;
@@ -545,9 +544,9 @@ namespace Win32
 		public const uint32 ERROR_WSMAN_VIRTUALACCOUNT_NOTSUPPORTED_DOWNLEVEL = 2150859260;
 		public const uint32 ERROR_WSMAN_RUNASUSER_MANAGEDACCOUNT_LOGON_FAILED = 2150859261;
 		public const uint32 ERROR_WSMAN_CERTMAPPING_CREDENTIAL_MANAGEMENT_FAILIED = 2150859262;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSManDataType : int32
 		{
 			NONE = 0,
@@ -666,9 +665,9 @@ namespace Win32
 			Basic = 2,
 			Digest = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void WSMAN_SHELL_COMPLETION_FUNCTION(void* operationContext, uint32 flags, ref WSMAN_ERROR error, ref WSMAN_SHELL shell, WSMAN_COMMAND* command, WSMAN_OPERATION* operationHandle, WSMAN_RESPONSE_DATA* data);
 		public function void WSMAN_PLUGIN_RELEASE_SHELL_CONTEXT(void* shellContext);
 		public function void WSMAN_PLUGIN_RELEASE_COMMAND_CONTEXT(void* shellContext, void* commandContext);
@@ -684,9 +683,9 @@ namespace Win32
 		public function void WSMAN_PLUGIN_AUTHORIZE_OPERATION(void* pluginContext, ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, uint32 operation, PWSTR action, PWSTR resourceUri);
 		public function void WSMAN_PLUGIN_AUTHORIZE_QUERY_QUOTA(void* pluginContext, ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags);
 		public function void WSMAN_PLUGIN_AUTHORIZE_RELEASE_CONTEXT(void* userAuthorizationContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WSMAN_DATA_TEXT
 		{
@@ -935,14 +934,14 @@ namespace Win32
 			public uint32 timeslotSize;
 			public uint32 maxAllowedOperationsPerTimeslot;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WSMan = .(0xbced617b, 0xec03, 0x420b, 0x85, 0x08, 0x97, 0x7d, 0xc7, 0xa6, 0x86, 0xbd);
 		public const Guid CLSID_WSManInternal = .(0x7de087a5, 0x5dcb, 0x4df7, 0xbb, 0x12, 0x09, 0x24, 0xad, 0x8f, 0xbd, 0x9a);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWSMan : IDispatch
 		{
@@ -1244,9 +1243,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSManInternal self, ref IDispatch session, VARIANT resourceUri, int32 flags, out BSTR resource) ConfigSDDL;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManInitialize(uint32 flags, out WSMAN_API* apiHandle);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1313,5 +1312,6 @@ namespace Win32
 		public static extern uint32 WSManPluginAuthzOperationComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, void* userAuthorizationContext, uint32 errorCode, PWSTR extendedErrorInformation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManPluginAuthzQueryQuotaComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, WSMAN_AUTHZ_QUOTA* quota, uint32 errorCode, PWSTR extendedErrorInformation);
+		#endregion
 	}
 }

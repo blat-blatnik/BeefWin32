@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 EC_SND_DEVICE_ERROR_BASE = 512;
 		public const uint32 EC_SNDDEV_IN_ERROR = 512;
 		public const uint32 EC_SNDDEV_OUT_ERROR = 513;
@@ -1014,9 +1013,9 @@ namespace Win32
 		public const int32 STREAMBUFFER_EC_PRIMARY_AUDIO = 814;
 		public const int32 STREAMBUFFER_EC_RATE_CHANGING_FOR_SETPOSITIONS = 815;
 		public const int32 STREAMBUFFER_EC_SETPOSITIONS_EVENTS_DONE = 816;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum OA_BOOL : int32
 		{
 			OATRUE = -1,
@@ -4055,9 +4054,9 @@ namespace Win32
 			Integrated = -2147483648,
 			ForceDWORD = 2147483647,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL AMGETERRORTEXTPROCA(HRESULT param0, PSTR param1, uint32 param2);
 		public function BOOL AMGETERRORTEXTPROCW(HRESULT param0, PWSTR param1, uint32 param2);
 		public function HRESULT PDXVA2SW_GETVIDEOPROCESSORRENDERTARGETCOUNT(in DXVA2_VideoDesc pVideoDesc, out uint32 pCount);
@@ -4073,9 +4072,9 @@ namespace Win32
 		public function HRESULT PDXVA2SW_VIDEOPROCESSENDFRAME(HANDLE hDevice, HANDLE* pHandleComplete);
 		public function HRESULT PDXVA2SW_VIDEOPROCESSSETRENDERTARGET(HANDLE hDevice, ref IDirect3DSurface9 pRenderTarget);
 		public function HRESULT PDXVA2SW_VIDEOPROCESSBLT(HANDLE hDevice, in DXVA2_VIDEOPROCESSBLT pBlt);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AMVPSIZE
 		{
@@ -6821,9 +6820,9 @@ namespace Win32
 			public uint32[4] ExtendedInfoValidMask;
 			public uint32[4] ExtendedInfoData;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FilgraphManager = .(0xe436ebb3, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
 		public const Guid CLSID_SystemTuningSpaces = .(0xd02aac50, 0x027e, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
 		public const Guid CLSID_TuningSpace = .(0x5ffdc5e6, 0xb83a, 0x4b55, 0xb6, 0xe8, 0xc6, 0x9e, 0x76, 0x5f, 0xe9, 0xdb);
@@ -7118,9 +7117,9 @@ namespace Win32
 		public const Guid CLSID_EVENTID_BDA_RatingPinReset = .(0xc6e048c0, 0xc574, 0x4c26, 0xbc, 0xda, 0x2f, 0x4d, 0x35, 0xeb, 0x5e, 0x85);
 		public const Guid CLSID_PBDA_ALWAYS_TUNE_IN_MUX = .(0x1e1d7141, 0x583f, 0x4ac2, 0xb0, 0x19, 0x1f, 0x43, 0x0e, 0xda, 0x0f, 0x4c);
 		public const Guid CLSID_BDANETWORKTYPE_ATSC = .(0x71985f51, 0x1ca1, 0x11d3, 0x9c, 0xc8, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICreateDevEnum : IUnknown
 		{
@@ -21047,12 +21046,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGuideDataLoader self) Terminate;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("quartz.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 AMGetErrorTextA(HRESULT hr, uint8* pbuffer, uint32 MaxLen);
 		[Import("quartz.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 AMGetErrorTextW(HRESULT hr, char16* pbuffer, uint32 MaxLen);
+		#endregion
 	}
 }

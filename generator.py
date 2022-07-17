@@ -317,8 +317,7 @@ for filename in filenames:
             com_class_ids      = remove_duplicate_and_unreferenced_names(com_class_ids)
 
             if len(constants) > 0:
-                output.write(f'{indent}// --- Constants ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Constants\n')
 
                 for constant in constants:
                     type = get_type_name(constant['Type'])
@@ -342,11 +341,11 @@ for filename in filenames:
                     else:
                         output.write(f'{indent}public const {type} {name} = {value};\n')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(typedefs) > 0:
-                output.write(f'{indent}// --- Typedefs ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Typedefs\n')
 
                 for type in typedefs:
                     name = type['Name']
@@ -358,11 +357,11 @@ for filename in filenames:
                     else:
                         raise RuntimeError(f'Unhandled typedef kind "{kind}"')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(enums) > 0:
-                output.write(f'{indent}// --- Enums ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Enums\n')
 
                 for type in enums:
                     name = replace_type_name(type['Name'], namespace_name)
@@ -398,11 +397,11 @@ for filename in filenames:
                         indent = indent[:-1]
                         output.write(f'{indent}}}\n')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(function_pointers) > 0:
-                output.write(f'{indent}// --- Function Pointers ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Function pointers\n')
 
                 for type in function_pointers:
                     name = replace_type_name(type['Name'], namespace_name)
@@ -421,11 +420,11 @@ for filename in filenames:
                             output.write(f', ')
                     output.write(f');\n')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(structs_and_unions) > 0:
-                output.write(f'{indent}// --- Structs ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Structs\n')
 
                 for type in structs_and_unions:
                     def process_type(type):
@@ -483,22 +482,22 @@ for filename in filenames:
                             output.write(f'{indent}}}\n')
                     process_type(type)
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(com_class_ids) > 0:
-                output.write(f'{indent}// --- COM Class IDs ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region COM class IDs\n')
 
                 for class_id in com_class_ids:
                     name = replace_type_name(class_id['Name'], namespace_name)
                     guid = guid_literal(class_id['Guid'])
                     output.write(f'{indent}public const Guid CLSID_{name} = {guid};\n')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(com_interfaces) > 0:
-                output.write(f'{indent}// --- COM Interfaces ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region COM interfaces\n')
 
                 for com in com_interfaces:
                     name = replace_type_name(com['Name'], namespace_name)
@@ -610,11 +609,11 @@ for filename in filenames:
                     indent = indent[:-1]
                     output.write(f'{indent}}}\n')
 
+                output.write(f'{indent}#endregion\n')
                 output.write(f'{indent}\n')
 
             if len(functions) > 0:
-                output.write(f'{indent}// --- Functions ---\n')
-                output.write(f'{indent}\n')
+                output.write(f'{indent}#region Functions\n')
 
                 for function in functions:
                     name = replace_name(function['Name'])
@@ -634,6 +633,8 @@ for filename in filenames:
                         if i < len(parameters) - 1:
                             output.write(f', ')
                     output.write(f');\n')
+
+                output.write(f'{indent}#endregion\n')
             
             indent = indent[:-1]
             output.write(f'{indent}}}\n')

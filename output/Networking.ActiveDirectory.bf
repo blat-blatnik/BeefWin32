@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WM_ADSPROP_NOTIFY_PAGEINIT = 2125;
 		public const uint32 WM_ADSPROP_NOTIFY_PAGEHWND = 2126;
 		public const uint32 WM_ADSPROP_NOTIFY_CHANGE = 2127;
@@ -471,13 +470,13 @@ namespace Win32
 		public const uint32 STATUS_SEVERITY_WARNING = 2;
 		public const uint32 STATUS_SEVERITY_ERROR = 3;
 		public const Guid CLSID_DsObjectPicker = .(0x17d6ccd8, 0x3b7b, 0x11d2, 0xb9, 0xe0, 0x00, 0xc0, 0x4f, 0xd8, 0xdb, 0xf7);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias GetDcContextHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ADSTYPEENUM : int32
 		{
 			INVALID = 0,
@@ -938,16 +937,16 @@ namespace Win32
 			Active = 1,
 			NeedReboot = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT LPCQADDFORMSPROC(LPARAM lParam, out CQFORM pForm);
 		public function HRESULT LPCQADDPAGESPROC(LPARAM lParam, in Guid clsidForm, out CQPAGE pPage);
 		public function HRESULT LPCQPAGEPROC(out CQPAGE pPage, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
 		public function HRESULT LPDSENUMATTRIBUTES(LPARAM lParam, PWSTR pszAttributeName, PWSTR pszDisplayName, uint32 dwFlags);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CQFORM
 		{
@@ -2048,9 +2047,9 @@ namespace Win32
 			public PSID DomainSid;
 			public Guid DomainGuid;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_PropertyEntry = .(0x72d3edc2, 0xa4c4, 0x11d0, 0x85, 0x33, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
 		public const Guid CLSID_PropertyValue = .(0x7b9e38b0, 0xa97c, 0x11d0, 0x85, 0x34, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
 		public const Guid CLSID_AccessControlEntry = .(0xb75ac000, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
@@ -2076,9 +2075,9 @@ namespace Win32
 		public const Guid CLSID_DNWithBinary = .(0x7e99c0a3, 0xf935, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
 		public const Guid CLSID_DNWithString = .(0x334857cc, 0xf934, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
 		public const Guid CLSID_ADsSecurityUtility = .(0xf270c64a, 0xffb8, 0x4ae4, 0x85, 0xfe, 0x3a, 0x75, 0xe5, 0x34, 0x79, 0x66);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IQueryForm : IUnknown
 		{
@@ -4409,9 +4408,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsAdminNotifyHandler self) End;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ADsGetObject(PWSTR lpszPathName, in Guid riid, void** ppObject);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4728,5 +4727,6 @@ namespace Win32
 		public static extern uint32 DsGetDcNextA(HANDLE GetDcContextHandle, uint32* SockAddressCount, SOCKET_ADDRESS** SockAddresses, PSTR* DnsHostName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsGetDcCloseW(GetDcContextHandle GetDcContextHandle);
+		#endregion
 	}
 }

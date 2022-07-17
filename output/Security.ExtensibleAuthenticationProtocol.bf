@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FACILITY_EAP_MESSAGE = 2114;
 		public const int32 EAP_GROUP_MASK = 65280;
 		public const int32 EAP_E_EAPHOST_FIRST = -2143158272;
@@ -183,9 +182,9 @@ namespace Win32
 		public const Guid GUID_EapHost_Help_ObtainingCerts = .(0xf535eea3, 0x1bdd, 0x46ca, 0xa2, 0xfc, 0xa6, 0x65, 0x59, 0x39, 0xb7, 0xe8);
 		public const Guid GUID_EapHost_Help_Troubleshooting = .(0x33307acf, 0x0698, 0x41ba, 0xb0, 0x14, 0xea, 0x0a, 0x2e, 0xb8, 0xd0, 0xa8);
 		public const Guid GUID_EapHost_Cause_Method_Config_Does_Not_Support_Sso = .(0xda18bd32, 0x004f, 0x41fa, 0xae, 0x08, 0x0b, 0xc8, 0x5e, 0x58, 0x45, 0xac);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum RAS_AUTH_ATTRIBUTE_TYPE : int32
 		{
@@ -549,13 +548,13 @@ namespace Win32
 			BASIC = 1,
 			INTERACTIVE = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void NotificationHandler(Guid connectionId, void* pContextData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NgcTicketContext
 		{
@@ -952,9 +951,9 @@ namespace Win32
 			public int EapMethodAuthenticatorEndSession;
 			public int EapMethodAuthenticatorShutdown;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRouterProtocolConfig : IUnknown
 		{
@@ -1073,9 +1072,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEAPProviderConfig3 self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, in uint8 pConfigDataIn, uint32 dwSizeOfConfigDataIn, out uint8* ppConfigDataOut, out uint32 pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 EapHostPeerGetMethods(out EAP_METHOD_INFO_ARRAY pEapMethodInfoArray, out EAP_ERROR* ppEapError);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1140,5 +1139,6 @@ namespace Win32
 		public static extern uint32 EapHostPeerGetEncryptedPassword(uint32 dwSizeofPassword, PWSTR szPassword, out PWSTR ppszEncPassword);
 		[Import("eappprxy.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EapHostPeerFreeRuntimeMemory(out uint8 pData);
+		#endregion
 	}
 }

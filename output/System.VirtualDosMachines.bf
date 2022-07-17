@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 VDMCONTEXT_i386 = 65536;
 		public const uint32 VDMCONTEXT_i486 = 65536;
 		public const uint32 VDM_KGDT_R3_CODE = 24;
@@ -101,9 +100,9 @@ namespace Win32
 		public const uint32 VDMADDR_V86 = 2;
 		public const uint32 VDMADDR_PM16 = 4;
 		public const uint32 VDMADDR_PM32 = 16;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 DEBUGEVENTPROC(out DEBUG_EVENT param0, void* param1);
 		public function BOOL PROCESSENUMPROC(uint32 dwProcessId, uint32 dwAttributes, LPARAM lpUserDefined);
 		public function BOOL TASKENUMPROC(uint32 dwThreadId, uint16 hMod16, uint16 hTask16, LPARAM lpUserDefined);
@@ -133,9 +132,9 @@ namespace Win32
 		public function BOOL VDMGETSEGMENTINFOPROC(uint16 param0, uint32 param1, BOOL param2, VDM_SEGINFO param3);
 		public function BOOL VDMGETSYMBOLPROC(PSTR param0, uint16 param1, uint32 param2, BOOL param3, BOOL param4, uint8* param5, out uint32 param6);
 		public function BOOL VDMGETADDREXPRESSIONPROC(PSTR param0, PSTR param1, out uint16 param2, out uint32 param3, out uint16 param4);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct VDMCONTEXT
 		{
@@ -284,6 +283,7 @@ namespace Win32
 			public uint32 dwNext;
 			public uint32 dwNextAlt;
 		}
+		#endregion
 		
 	}
 }

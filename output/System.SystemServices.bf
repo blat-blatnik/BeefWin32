@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 _MM_HINT_T0 = 1;
 		public const uint32 _MM_HINT_T1 = 2;
 		public const uint32 _MM_HINT_T2 = 3;
@@ -3112,9 +3111,9 @@ namespace Win32
 		public const Guid GUID_DEVINTERFACE_DMR = .(0xd0875fb4, 0x2196, 0x4c7a, 0xa6, 0x3d, 0xe4, 0x16, 0xad, 0xdd, 0x60, 0xa1);
 		public const Guid GUID_DEVINTERFACE_DMP = .(0x25b4e268, 0x2a05, 0x496e, 0x80, 0x3b, 0x26, 0x68, 0x37, 0xfb, 0xda, 0x4b);
 		public const Guid GUID_DEVINTERFACE_DMS = .(0xc96037ae, 0xa558, 0x4470, 0xb4, 0x32, 0x11, 0x5a, 0x31, 0xb8, 0x55, 0x53);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ALERT_SYSTEM_SEV : uint32
 		{
 			INFORMATIONAL = 1,
@@ -3710,9 +3709,9 @@ namespace Win32
 			ENLISTMENT = 3,
 			INVALID = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PUMS_SCHEDULER_ENTRY_POINT(RTL_UMS_SCHEDULER_REASON Reason, uint ActivationPayload, void* SchedulerParam);
 		public function void PTERMINATION_HANDLER(BOOLEAN _abnormal_termination, uint64 EstablisherFrame);
 		public function uint32 POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK(HANDLE Process, void* TableAddress, out uint32 Entries, out IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* Functions);
@@ -3720,9 +3719,9 @@ namespace Win32
 		public function void PIMAGE_TLS_CALLBACK(void* DllHandle, uint32 Reason, void* Reserved);
 		public function void WORKERCALLBACKFUNC(void* param0);
 		public function void APC_CALLBACK_FUNCTION(uint32 param0, void* param1, void* param2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TP_POOL {}
 		[CRepr]
@@ -6044,10 +6043,11 @@ namespace Win32
 			public uint32 ObjectIdCount;
 			public Guid[0] ObjectIds;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnregisterDeviceNotification(void* Handle);
+		#endregion
 	}
 }

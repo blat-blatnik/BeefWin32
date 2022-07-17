@@ -5,19 +5,18 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 COMDB_MIN_PORTS_ARBITRATED = 256;
 		public const uint32 COMDB_MAX_PORTS_ARBITRATED = 4096;
 		public const uint32 CDB_REPORT_BITS = 0;
 		public const uint32 CDB_REPORT_BYTES = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCOMDB = int;
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msports.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ComDBOpen(out int PHComDB);
 		[Import("msports.dll"), CLink, CallingConvention(.Stdcall)]
@@ -32,5 +31,6 @@ namespace Win32
 		public static extern int32 ComDBReleasePort(HCOMDB HComDB, uint32 ComNumber);
 		[Import("msports.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ComDBResizeDatabase(HCOMDB HComDB, uint32 NewSize);
+		#endregion
 	}
 }

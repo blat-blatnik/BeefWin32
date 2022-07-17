@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSL_DISTRIBUTION_FLAGS : uint32
 		{
 			NONE = 0,
@@ -14,9 +13,9 @@ namespace Win32
 			APPEND_NT_PATH = 2,
 			ENABLE_DRIVE_MOUNTING = 4,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("api-ms-win-wsl-api-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WslIsDistributionRegistered(PWSTR distributionName);
 		[Import("api-ms-win-wsl-api-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -31,5 +30,6 @@ namespace Win32
 		public static extern HRESULT WslLaunchInteractive(PWSTR distributionName, PWSTR command, BOOL useCurrentWorkingDirectory, out uint32 exitCode);
 		[Import("api-ms-win-wsl-api-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WslLaunch(PWSTR distributionName, PWSTR command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut, HANDLE stdErr, out HANDLE process);
+		#endregion
 	}
 }

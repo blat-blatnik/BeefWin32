@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT RegisterAuthoringClientFunctionType(ref IWebApplicationAuthoringMode authoringModeObject, ref IWebApplicationHost host);
 		public function HRESULT UnregisterAuthoringClientFunctionType(ref IWebApplicationHost host);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWebApplicationScriptEvents : IUnknown
 		{
@@ -139,6 +138,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWebApplicationAuthoringMode self, BSTR* designModeDllPath) get_AuthoringClientBinary;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_AUTHENTICATED = 1;
 		public const uint32 NET_IF_OPER_STATUS_DOWN_NOT_MEDIA_CONNECTED = 2;
 		public const uint32 NET_IF_OPER_STATUS_DORMANT_PAUSED = 4;
@@ -475,14 +474,14 @@ namespace Win32
 		public const uint32 IP_FILTER_ENABLE_INFO = 4294901781;
 		public const uint32 IP_FILTER_ENABLE_INFO_V6 = 4294901782;
 		public const uint32 IP_PROT_PRIORITY_INFO_EX = 4294901783;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias IcmpHandle = int;
 		public typealias HIFTIMESTAMPCHANGE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ADDRESS_FAMILY : uint32
 		{
 			INET = 2,
@@ -799,9 +798,9 @@ namespace Win32
 			FRAG = 2,
 			SPOOF = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PIPINTERFACE_CHANGE_CALLBACK(void* CallerContext, ref MIB_IPINTERFACE_ROW Row, MIB_NOTIFICATION_TYPE NotificationType);
 		public function void PUNICAST_IPADDRESS_CHANGE_CALLBACK(void* CallerContext, MIB_UNICASTIPADDRESS_ROW* Row, MIB_NOTIFICATION_TYPE NotificationType);
 		public function void PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK(void* CallerContext, ref MIB_UNICASTIPADDRESS_TABLE AddressTable);
@@ -809,9 +808,9 @@ namespace Win32
 		public function void PTEREDO_PORT_CHANGE_CALLBACK(void* CallerContext, uint16 Port, MIB_NOTIFICATION_TYPE NotificationType);
 		public function void PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK(void* CallerContext, NL_NETWORK_CONNECTIVITY_HINT ConnectivityHint);
 		public function void PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK(void* CallerContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ip_option_information
 		{
@@ -2893,9 +2892,9 @@ namespace Win32
 			public uint32 dwIPIndex;
 			public uint8[0] bPacketData;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("iphlpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS GetIfEntry2(out MIB_IF_ROW2 Row);
 		[Import("iphlpapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3288,5 +3287,6 @@ namespace Win32
 		public static extern uint32 PfGetInterfaceStatistics(void* pInterface, out PF_INTERFACE_STATS ppfStats, out uint32 pdwBufferSize, BOOL fResetCounters);
 		[Import("iphlpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PfTestPacket(void* pInInterface, void* pOutInterface, uint32 cBytes, out uint8 pbPacket, out PFFORWARD_ACTION ppAction);
+		#endregion
 	}
 }

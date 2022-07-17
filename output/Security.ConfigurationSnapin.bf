@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid cNodetypeSceTemplateServices = .(0x24a7f717, 0x1f0c, 0x11d1, 0xaf, 0xfb, 0x00, 0xc0, 0x4f, 0xb9, 0x84, 0xf9);
 		public const Guid cNodetypeSceAnalysisServices = .(0x678050c7, 0x1ff8, 0x11d1, 0xaf, 0xfb, 0x00, 0xc0, 0x4f, 0xb9, 0x84, 0xf9);
 		public const Guid cNodetypeSceEventLog = .(0x2ce06698, 0x4bf3, 0x11d1, 0x8c, 0x30, 0x00, 0xc0, 0x4f, 0xb9, 0x84, 0xf9);
@@ -31,9 +30,9 @@ namespace Win32
 		public const int32 SCESTATUS_NO_MAPPING = 18;
 		public const int32 SCESTATUS_TRUST_FAIL = 19;
 		public const int32 SCESVC_ENUMERATION_MAX = 100;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SCE_LOG_ERR_LEVEL : uint32
 		{
 			ALWAYS = 0,
@@ -48,18 +47,18 @@ namespace Win32
 			AnalysisInfo = 2,
 			InternalUse = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PFSCE_QUERY_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, out int8 lpPrefix, BOOL bExact, void** ppvInfo, out uint32 psceEnumHandle);
 		public function uint32 PFSCE_SET_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, out int8 lpPrefix, BOOL bExact, void* pvInfo);
 		public function uint32 PFSCE_FREE_INFO(void* pvServiceInfo);
 		public function uint32 PFSCE_LOG_INFO(SCE_LOG_ERR_LEVEL ErrLevel, uint32 Win32rc, out int8 pErrFmt);
 		public function uint32 PF_ConfigAnalyzeService(out SCESVC_CALLBACK_INFO pSceCbInfo);
 		public function uint32 PF_UpdateService(out SCESVC_CALLBACK_INFO pSceCbInfo, out SCESVC_CONFIGURATION_INFO ServiceInfo);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SCESVC_CONFIGURATION_LINE
 		{
@@ -95,9 +94,9 @@ namespace Win32
 			public PFSCE_FREE_INFO pfFreeInfo;
 			public PFSCE_LOG_INFO pfLogInfo;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISceSvcAttachmentPersistInfo : IUnknown
 		{
@@ -138,6 +137,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle) CloseHandle;
 			}
 		}
+		#endregion
 		
 	}
 }

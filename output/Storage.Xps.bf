@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT XPS_E_SIGREQUESTID_DUP = -2142108795;
 		public const HRESULT XPS_E_PACKAGE_NOT_OPENED = -2142108794;
 		public const HRESULT XPS_E_PACKAGE_ALREADY_OPENED = -2142108793;
@@ -92,13 +91,13 @@ namespace Win32
 		public const HRESULT XPS_E_RELATIONSHIP_EXTERNAL = -2142108406;
 		public const HRESULT XPS_E_NOT_ENOUGH_GRADIENT_STOPS = -2142108405;
 		public const HRESULT XPS_E_PACKAGE_WRITER_NOT_CLOSED = -2142108404;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HPTPROVIDER = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PRINT_WINDOW_FLAGS : uint32
 		{
 			PW_CLIENTONLY = 1,
@@ -311,13 +310,13 @@ namespace Win32
 			NONE = 0,
 			IGNORE_MARKUP_COMPATIBILITY = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL ABORTPROC(HDC param0, int32 param1);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DRAWPATRECT
 		{
@@ -455,15 +454,15 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_XpsOMObjectFactory = .(0xe974d26d, 0x3d9b, 0x4d47, 0x88, 0xcc, 0x38, 0x72, 0xf2, 0xdc, 0x35, 0x85);
 		public const Guid CLSID_XpsOMThumbnailGenerator = .(0x7e4a23e2, 0xb969, 0x4761, 0xbe, 0x35, 0x1a, 0x8c, 0xed, 0x58, 0xe3, 0x23);
 		public const Guid CLSID_XpsSignatureManager = .(0xb0c43320, 0x2315, 0x44a2, 0xb7, 0x0a, 0x09, 0x43, 0xa1, 0x40, 0xa8, 0xee);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IXpsOMShareable : IUnknown
 		{
@@ -2447,9 +2446,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXpsSignatureManager self, ref IStream stream) SavePackageToStream;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DeviceCapabilitiesA(PSTR pDevice, PSTR pPort, DEVICE_CAPABILITIES fwCapability, PSTR pOutput, DEVMODEA* pDevMode);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2474,5 +2473,6 @@ namespace Win32
 		public static extern int32 SetAbortProc(HDC hdc, ABORTPROC proc);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, PRINT_WINDOW_FLAGS nFlags);
+		#endregion
 	}
 }

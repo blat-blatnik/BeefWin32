@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DRMHANDLE_INVALID = 0;
 		public const uint32 DRMENVHANDLE_INVALID = 0;
 		public const uint32 DRMQUERYHANDLE_INVALID = 0;
@@ -72,9 +71,9 @@ namespace Win32
 		public const uint32 DRMACTSERVINFOVERSION = 0;
 		public const uint32 DRMCLIENTSTRUCTVERSION = 1;
 		public const uint32 DRMCALLBACKVERSION = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DRMTIMETYPE : int32
 		{
 			SYSTEMUTC = 0,
@@ -131,13 +130,13 @@ namespace Win32
 			PUBLISHING = 1,
 			REFERRAL_INFO = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT DRMCALLBACK(DRM_STATUS_MSG param0, HRESULT param1, void* param2, void* param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DRMID
 		{
@@ -185,9 +184,9 @@ namespace Win32
 			public char16[256] wszProductId;
 			public char16[256] wszProductDescription;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msdrm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DRMSetGlobalOptions(DRMGLOBALOPTIONS eGlobalOptions, void* pvdata, uint32 dwlen);
 		[Import("msdrm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -356,5 +355,6 @@ namespace Win32
 		public static extern HRESULT DRMIsWindowProtected(HWND hwnd, out BOOL pfProtected);
 		[Import("msdrm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DRMAcquireIssuanceLicenseTemplate(uint32 hClient, uint32 uFlags, void* pvReserved, uint32 cTemplates, PWSTR* pwszTemplateIds, PWSTR wszUrl, void* pvContext);
+		#endregion
 	}
 }

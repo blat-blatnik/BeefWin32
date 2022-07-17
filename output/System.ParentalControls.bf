@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ARRAY_SEP_CHAR = 9;
 		public const uint32 WPCCHANNEL = 16;
 		public const uint32 WPC_SETTINGS_LOCATE = 20;
@@ -110,9 +109,9 @@ namespace Win32
 		public const int32 MSG_Event_ContentUsage = -1342177258;
 		public const uint32 FACILITY_WPC = 2457;
 		public const Guid WPCPROV = .(0x01090065, 0xb467, 0x4503, 0x9b, 0x28, 0x53, 0x37, 0x66, 0x76, 0x10, 0x87);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WPCFLAG_OVERRIDE : int32
 		{
 			APPLICATION = 1,
@@ -506,15 +505,15 @@ namespace Win32
 			SETTINGS_GAME_RESTRICTED = 36,
 			SETTING_COUNT = 37,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WpcSettingsProvider = .(0x355dffaa, 0x3b9f, 0x435c, 0xb4, 0x28, 0x5d, 0x44, 0x29, 0x0b, 0xc5, 0xf2);
 		public const Guid CLSID_WpcProviderSupport = .(0xbb18c7a0, 0x2186, 0x4be0, 0x97, 0xd8, 0x04, 0x84, 0x7b, 0x62, 0x8e, 0x02);
 		public const Guid CLSID_WindowsParentalControls = .(0xe77cc89b, 0x7401, 0x4c04, 0x8c, 0xed, 0x14, 0x9d, 0xb3, 0x5a, 0xdd, 0x04);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWPCProviderState : IUnknown
 		{
@@ -653,6 +652,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWPCProviderSupport self, out Guid pguidProvider) GetCurrent;
 			}
 		}
+		#endregion
 		
 	}
 }

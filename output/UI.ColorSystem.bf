@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid CATID_WcsPlugin = .(0xa0b402e0, 0x8240, 0x405f, 0x8a, 0x16, 0x8a, 0x5b, 0x4d, 0xf2, 0xf0, 0xdd);
 		public const uint32 MAX_COLOR_CHANNELS = 8;
 		public const uint32 INTENT_PERCEPTUAL = 0;
@@ -90,13 +89,13 @@ namespace Win32
 		public const int32 DONT_USE_EMBEDDED_WCS_PROFILES = 1;
 		public const int32 WCS_DEFAULT = 0;
 		public const int32 WCS_ICCONLY = 65536;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCOLORSPACE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ICM_COMMAND : uint32
 		{
 			ADDPROFILE = 1,
@@ -211,17 +210,17 @@ namespace Win32
 			VideoCardGammaTable = 1,
 			MicrosoftHardwareColorV2 = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 ICMENUMPROCA(PSTR param0, LPARAM param1);
 		public function int32 ICMENUMPROCW(PWSTR param0, LPARAM param1);
 		public function BOOL LPBMCALLBACKFN(uint32 param0, uint32 param1, LPARAM param2);
 		public function BOOL PCMSCALLBACKW(out COLORMATCHSETUPW param0, LPARAM param1);
 		public function BOOL PCMSCALLBACKA(out COLORMATCHSETUPA param0, LPARAM param1);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct LOGCOLORSPACEA
 		{
@@ -568,9 +567,9 @@ namespace Win32
 			public uint32 CscXyzMatrixRows;
 			public uint32 CscXyzMatrixColumns;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDeviceModelPlugIn : IUnknown
 		{
@@ -623,9 +622,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGamutMapModelPlugIn self, uint32 cColors, JChColorF* pInputColors, JChColorF* pOutputColors) SourceToDestinationAppearanceColors;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetICMMode(HDC hdc, int32 mode);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -868,5 +867,6 @@ namespace Win32
 		public static extern HRESULT ColorProfileGetDisplayDefault(WCS_PROFILE_MANAGEMENT_SCOPE @scope, LUID targetAdapterID, uint32 sourceID, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, out PWSTR profileName);
 		[Import("mscms.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ColorProfileGetDisplayUserScope(LUID targetAdapterID, uint32 sourceID, out WCS_PROFILE_MANAGEMENT_SCOPE @scope);
+		#endregion
 	}
 }

@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HGESTUREINFO = int;
 		public typealias HTOUCHINPUT = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum GESTURECONFIG_ID : uint32
 		{
@@ -55,9 +54,9 @@ namespace Win32
 			ROTATE = 8,
 			ALL = 15,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TOUCHINPUT
 		{
@@ -101,14 +100,14 @@ namespace Win32
 			public uint32 dwWant;
 			public uint32 dwBlock;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_InertiaProcessor = .(0xabb27087, 0x4ce0, 0x4e58, 0xa0, 0xcb, 0xe2, 0x4d, 0xf9, 0x68, 0x14, 0xbe);
 		public const Guid CLSID_ManipulationProcessor = .(0x597d4fb0, 0x47fd, 0x4aff, 0x89, 0xb9, 0xc6, 0xcf, 0xae, 0x8c, 0xf0, 0x8e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct _IManipulationEvents : IUnknown
 		{
@@ -294,9 +293,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IManipulationProcessor self, float minRadius) put_MinimumScaleRotateRadius;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetTouchInputInfo(HTOUCHINPUT hTouchInput, uint32 cInputs, TOUCHINPUT* pInputs, int32 cbSize);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -317,5 +316,6 @@ namespace Win32
 		public static extern BOOL SetGestureConfig(HWND hwnd, uint32 dwReserved, uint32 cIDs, GESTURECONFIG* pGestureConfig, uint32 cbSize);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetGestureConfig(HWND hwnd, uint32 dwReserved, uint32 dwFlags, ref uint32 pcIDs, GESTURECONFIG* pGestureConfig, uint32 cbSize);
+		#endregion
 	}
 }

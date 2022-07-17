@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 VSS_ASSOC_NO_MAX_SPACE = -1;
 		public const uint32 VSS_ASSOC_REMOVE = 0;
 		public const HRESULT VSS_E_BAD_STATE = -2147212543;
@@ -90,9 +89,9 @@ namespace Win32
 		public const HRESULT VSS_E_ASRERROR_CRITICAL_DISK_CANNOT_BE_EXCLUDED = -2147212267;
 		public const HRESULT VSS_E_ASRERROR_SYSTEM_PARTITION_HIDDEN = -2147212266;
 		public const HRESULT VSS_E_FSS_TIMEOUT = -2147212265;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum VSS_OBJECT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -407,9 +406,9 @@ namespace Win32
 			EXTERNAL_WRITER_TO_DIFF_AREA = 15,
 			MOUNT_DURING_CLUSTER_OFFLINE = 16,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct VSS_SNAPSHOT_PROP
 		{
@@ -497,14 +496,14 @@ namespace Win32
 			public BOOL m_volumeHasUnusedDiffArea;
 			public uint32 m_reserved;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_VssSnapshotMgmt = .(0x0b5a2c52, 0x3eb9, 0x470a, 0x96, 0xe2, 0x6c, 0x6d, 0x45, 0x70, 0xe4, 0x0f);
 		public const Guid CLSID_VSSCoordinator = .(0xe579ab5f, 0x1cc4, 0x44b4, 0xbe, 0xd9, 0xde, 0x09, 0x91, 0xff, 0x06, 0x23);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IVssEnumObject : IUnknown
 		{
@@ -1189,10 +1188,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVssFileShareSnapshotProvider self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("vssapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateVssExpressWriterInternal(out IVssExpressWriter* ppWriter);
+		#endregion
 	}
 }

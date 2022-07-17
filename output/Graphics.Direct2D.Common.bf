@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum D2D1_ALPHA_MODE : uint32
 		{
 			UNKNOWN = 0,
@@ -105,9 +104,9 @@ namespace Win32
 			MASK_INVERT = 12,
 			FORCE_DWORD = 4294967295,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D2D_COLOR_F
 		{
@@ -331,9 +330,9 @@ namespace Win32
 			public D2D_POINT_2F point2;
 			public D2D_POINT_2F point3;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID2D1SimplifiedGeometrySink : IUnknown
 		{
@@ -361,6 +360,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1SimplifiedGeometrySink self) Close;
 			}
 		}
+		#endregion
 		
 	}
 }

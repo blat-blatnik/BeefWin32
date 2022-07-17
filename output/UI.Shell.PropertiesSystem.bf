@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PKEY_PIDSTR_MAX = 10;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum GETPROPERTYSTOREFLAGS : int32
 		{
 			DEFAULT = 0,
@@ -306,9 +305,9 @@ namespace Win32
 			PAUSED_DUE_TO_USER_REQUEST = 256,
 			ALL_FLAGS = 511,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PROPERTYKEY
 		{
@@ -338,15 +337,15 @@ namespace Win32
 			public CHAR[80] achOtherFile;
 			public CHAR[260] achPIFFile;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_InMemoryPropertyStore = .(0x9a02e012, 0x6303, 0x4e1e, 0xb9, 0xa1, 0x63, 0x0f, 0x80, 0x25, 0x92, 0xc5);
 		public const Guid CLSID_InMemoryPropertyStoreMarshalByValue = .(0xd4ca0e2d, 0x6da7, 0x4b75, 0xa9, 0x7c, 0x5f, 0x30, 0x6f, 0x0e, 0xae, 0xdc);
 		public const Guid CLSID_PropertySystem = .(0xb8967f85, 0x58ae, 0x4f46, 0x9f, 0xb2, 0x5d, 0x79, 0x04, 0x79, 0x8f, 0x4b);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IInitializeWithFile : IUnknown
 		{
@@ -873,9 +872,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyUI self, in Guid fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, out uint32 puHelpID) GetHelpInfo;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PropVariantToWinRTPropertyValue(in PROPVARIANT propvar, in Guid riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1330,5 +1329,6 @@ namespace Win32
 		public static extern HRESULT SHPropStgWriteMultiple(ref IPropertyStorage pps, uint32* puCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar, uint32 propidNameFirst);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SHGetPropertyStoreForWindow(HWND hwnd, in Guid riid, void** ppv);
+		#endregion
 	}
 }

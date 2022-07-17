@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSC_SECURITY_PRODUCT_SUBSTATUS : int32
 		{
 			NOT_SET = 0,
@@ -51,14 +50,14 @@ namespace Win32
 			POOR = 2,
 			SNOOZE = 3,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WSCProductList = .(0x17072f7b, 0x9abe, 0x4a74, 0xa2, 0x61, 0x1e, 0xb7, 0x6b, 0x55, 0x10, 0x7a);
 		public const Guid CLSID_WSCDefaultProduct = .(0x2981a36e, 0xf22d, 0x11e5, 0x9c, 0xe9, 0x5e, 0x55, 0x17, 0x50, 0x7c, 0x66);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWscProduct : IDispatch
 		{
@@ -160,9 +159,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSCDefaultProduct self, SECURITY_PRODUCT_TYPE eType, BSTR pGuid) SetDefaultProduct;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WscRegisterForChanges(void* Reserved, out HANDLE phCallbackRegistration, LPTHREAD_START_ROUTINE lpCallbackAddress, void* pContext);
 		[Import("wscapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -175,5 +174,6 @@ namespace Win32
 		public static extern HRESULT WscQueryAntiMalwareUri();
 		[Import("wscapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WscGetAntiMalwareUri(out PWSTR ppszUri);
+		#endregion
 	}
 }

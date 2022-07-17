@@ -5,20 +5,19 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 MS_SHOWMAGNIFIEDCURSOR = 1;
 		public const int32 MS_CLIPAROUNDCURSOR = 2;
 		public const int32 MS_INVERTCOLORS = 4;
 		public const uint32 MW_FILTERMODE_EXCLUDE = 0;
 		public const uint32 MW_FILTERMODE_INCLUDE = 1;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL MagImageScalingCallback(HWND hwnd, void* srcdata, MAGIMAGEHEADER srcheader, void* destdata, MAGIMAGEHEADER destheader, RECT unclipped, RECT clipped, HRGN dirty);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MAGTRANSFORM
 		{
@@ -39,9 +38,9 @@ namespace Win32
 		{
 			public float[25] transform;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagInitialize();
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
@@ -80,5 +79,6 @@ namespace Win32
 		public static extern BOOL MagGetInputTransform(out BOOL pfEnabled, out RECT pRectSource, out RECT pRectDest);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagShowSystemCursor(BOOL fShowCursor);
+		#endregion
 	}
 }

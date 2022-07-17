@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum HCN_NOTIFICATIONS : int32
 		{
 			Invalid = 0,
@@ -36,13 +35,13 @@ namespace Win32
 			EXCLUSIVE = 1,
 			SHARED = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void HCN_NOTIFICATION_CALLBACK(uint32 NotificationType, void* Context, HRESULT NotificationStatus, PWSTR NotificationData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HCN_PORT_RANGE_RESERVATION
 		{
@@ -62,9 +61,9 @@ namespace Win32
 			public uint16 StartingPort;
 			public uint16 EndingPort;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("computenetwork.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcnEnumerateNetworks(PWSTR Query, out PWSTR Networks, PWSTR* ErrorRecord);
 		[Import("computenetwork.dll"), CLink, CallingConvention(.Stdcall)]
@@ -147,5 +146,6 @@ namespace Win32
 		public static extern HRESULT HcnEnumerateGuestNetworkPortReservations(out uint32 ReturnCount, out HCN_PORT_RANGE_ENTRY* PortEntries);
 		[Import("computenetwork.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HcnFreeGuestNetworkPortReservations(HCN_PORT_RANGE_ENTRY* PortEntries);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const float D2D1_DEFAULT_FLATTENING_TOLERANCE = 0.25f;
 		public const Guid CLSID_D2D12DAffineTransform = .(0x6aa97485, 0x6354, 0x4cfc, 0x90, 0x8c, 0xe4, 0xa7, 0x4f, 0x62, 0xc9, 0x6c);
 		public const Guid CLSID_D2D13DPerspectiveTransform = .(0xc2844d0b, 0x3d86, 0x46e7, 0x85, 0xba, 0x52, 0x6c, 0x92, 0x40, 0xf3, 0xfb);
@@ -76,9 +75,9 @@ namespace Win32
 		public const Guid CLSID_D2D1HdrToneMap = .(0x7b0b748d, 0x4610, 0x4486, 0xa9, 0x0c, 0x99, 0x9d, 0x9a, 0x2e, 0x2b, 0x11);
 		public const uint32 D2D1_APPEND_ALIGNED_ELEMENT = 4294967295;
 		public const uint32 FACILITY_D2D = 2201;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D2D1_INTERPOLATION_MODE_DEFINITION : int32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -1419,15 +1418,15 @@ namespace Win32
 			DXGI = 2,
 			FORCE_DWORD = 4294967295,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PD2D1_EFFECT_FACTORY(out IUnknown* effectImpl);
 		public function HRESULT PD2D1_PROPERTY_SET_FUNCTION(ref IUnknown effect, uint8* data, uint32 dataSize);
 		public function HRESULT PD2D1_PROPERTY_GET_FUNCTION(in IUnknown effect, uint8* data, uint32 dataSize, uint32* actualSize);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D2D1_BITMAP_PROPERTIES
 		{
@@ -1835,9 +1834,9 @@ namespace Win32
 			public D2D_POINT_2F whitePointXZ;
 			public D2D1_GAMMA1 gamma;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID2D1Resource : IUnknown
 		{
@@ -4322,9 +4321,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID2D1EffectContext2 self, in D2D1_SIMPLE_COLOR_PROFILE simpleProfile, out ID2D1ColorContext1* colorContext) CreateColorContextFromSimpleColorProfile;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d2d1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D2D1CreateFactory(D2D1_FACTORY_TYPE factoryType, in Guid riid, D2D1_FACTORY_OPTIONS* pFactoryOptions, void** ppIFactory);
 		[Import("d2d1.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4351,5 +4350,6 @@ namespace Win32
 		public static extern float D2D1ComputeMaximumScaleFactor(in D2D_MATRIX_3X2_F matrix);
 		[Import("d2d1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void D2D1GetGradientMeshInteriorPointsFromCoonsPatch(in D2D_POINT_2F pPoint0, in D2D_POINT_2F pPoint1, in D2D_POINT_2F pPoint2, in D2D_POINT_2F pPoint3, in D2D_POINT_2F pPoint4, in D2D_POINT_2F pPoint5, in D2D_POINT_2F pPoint6, in D2D_POINT_2F pPoint7, in D2D_POINT_2F pPoint8, in D2D_POINT_2F pPoint9, in D2D_POINT_2F pPoint10, in D2D_POINT_2F pPoint11, out D2D_POINT_2F pTensorPoint11, out D2D_POINT_2F pTensorPoint12, out D2D_POINT_2F pTensorPoint21, out D2D_POINT_2F pTensorPoint22);
+		#endregion
 	}
 }

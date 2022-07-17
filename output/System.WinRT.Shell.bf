@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum CreateProcessMethod : int32
 		{
 			CreateProcess = 0,
 			CreateProcessAsUser = 1,
 			AicLaunchAdminProcess = 2,
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDDEInitializer : IUnknown
 		{
@@ -31,6 +30,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDDEInitializer self, PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, ref IShellItem execTarget, ref IUnknown site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) Initialize;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SI_TEMPORARY = 2147483648;
 		public const uint32 SUBSINFO_ALLFLAGS = 61311;
 		public const uint32 RS_READY = 1;
@@ -3391,9 +3390,9 @@ namespace Win32
 		public const Guid DBPROPSET_SQLSERVERSESSION = .(0x28efaee5, 0x2d2c, 0x11d1, 0x98, 0x07, 0x00, 0xc0, 0x4f, 0xc2, 0xad, 0x98);
 		public const Guid DBPROPSET_SQLSERVERCOLUMN = .(0x3b63fb5e, 0x3fbb, 0x11d3, 0x9f, 0x29, 0x00, 0xc0, 0x4f, 0x8e, 0xe9, 0xdc);
 		public const Guid DBPROPSET_SQLSERVERSTREAM = .(0x9f79c073, 0x8a6d, 0x4bca, 0xa8, 0xa8, 0xc9, 0xb7, 0x9a, 0x9b, 0x96, 0x2d);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DBTYPEENUM : int32
 		{
 			EMPTY = 0,
@@ -4710,14 +4709,14 @@ namespace Win32
 			EXCLUSIVE = 1,
 			SHARED = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFNFILLTEXTBUFFER(out TEXT_SOURCE pTextSource);
 		public function int16 SQL_ASYNC_NOTIFICATION_CALLBACK(void* pContext, BOOL fLast);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct IRowsetExactScroll {}
 		[CRepr]
@@ -5513,9 +5512,9 @@ namespace Win32
 			public uint8 bClass;
 			public uint16 wLineNumber;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CSearchManager = .(0x7d096c5f, 0xac08, 0x4f1f, 0xbe, 0xb7, 0x5c, 0x22, 0xc5, 0x17, 0xce, 0x39);
 		public const Guid CLSID_CSearchRoot = .(0x30766bd2, 0xea1c, 0x4f28, 0xbf, 0x27, 0x0b, 0x44, 0xe2, 0xf6, 0x8d, 0xb7);
 		public const Guid CLSID_CSearchScopeRule = .(0xe63de750, 0x3bd7, 0x4be5, 0x9c, 0x84, 0x6b, 0x42, 0x81, 0x98, 0x8c, 0x44);
@@ -5537,9 +5536,9 @@ namespace Win32
 		public const Guid CLSID_MSDAINITIALIZE = .(0x2206cdb0, 0x19c1, 0x11d1, 0x89, 0xe0, 0x00, 0xc0, 0x4f, 0xd7, 0xa8, 0x29);
 		public const Guid CLSID_PDPO = .(0xccb4ec60, 0xb9dc, 0x11d1, 0xac, 0x80, 0x00, 0xa0, 0xc9, 0x03, 0x48, 0x73);
 		public const Guid CLSID_RootBinder = .(0xff151822, 0xb0bf, 0x11d1, 0xa8, 0x0d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWordSink : IUnknown
 		{
@@ -8977,9 +8976,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISchemaLock self, HANDLE hLockHandle) ReleaseSchemaLock;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int16 SQLAllocConnect(void* EnvironmentHandle, void** ConnectionHandle);
 		[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -9342,5 +9341,6 @@ namespace Win32
 		public static extern int16 SQLTablePrivilegesA(void* hstmt, uint8* szCatalogName, int16 cbCatalogName, uint8* szSchemaName, int16 cbSchemaName, uint8* szTableName, int16 cbTableName);
 		[Import("odbc32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int16 SQLDriversA(void* henv, uint16 fDirection, uint8* szDriverDesc, int16 cbDriverDescMax, int16* pcbDriverDesc, uint8* szDriverAttributes, int16 cbDrvrAttrMax, int16* pcbDrvrAttr);
+		#endregion
 	}
 }

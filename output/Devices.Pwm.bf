@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid GUID_DEVINTERFACE_PWM_CONTROLLER = .(0x60824b4c, 0xeed1, 0x4c9c, 0xb4, 0x9c, 0x1b, 0x96, 0x14, 0x61, 0xa8, 0x19);
 		public const uint32 IOCTL_PWM_CONTROLLER_GET_INFO = 262144;
 		public const uint32 IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD = 262148;
@@ -28,17 +27,17 @@ namespace Win32
 		public const int32 PWM_IOCTL_ID_PIN_START = 104;
 		public const int32 PWM_IOCTL_ID_PIN_STOP = 105;
 		public const int32 PWM_IOCTL_ID_PIN_IS_STARTED = 106;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PWM_POLARITY : int32
 		{
 			HIGH = 0,
 			LOW = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PWM_CONTROLLER_INFO
 		{
@@ -87,6 +86,7 @@ namespace Win32
 		{
 			public BOOLEAN IsStarted;
 		}
+		#endregion
 		
 	}
 }

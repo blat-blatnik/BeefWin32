@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum POINTER_FLAGS : uint32
 		{
 			NONE = 0,
@@ -49,9 +48,9 @@ namespace Win32
 			FIFTHBUTTON_DOWN = 9,
 			FIFTHBUTTON_UP = 10,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct POINTER_INFO
 		{
@@ -135,9 +134,9 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetUnpredictedMessagePos();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -194,5 +193,6 @@ namespace Win32
 		public static extern BOOL GetPointerDeviceCursors(HANDLE device, out uint32 cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetRawPointerDeviceData(uint32 pointerId, uint32 historyCount, uint32 propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, out int32 pValues);
+		#endregion
 	}
 }

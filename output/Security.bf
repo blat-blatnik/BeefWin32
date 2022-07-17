@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CVT_SECONDS = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HDIAGNOSTIC_DATA_QUERY_SESSION = int;
 		public typealias HDIAGNOSTIC_REPORT = int;
 		public typealias HDIAGNOSTIC_EVENT_TAG_DESCRIPTION = int;
@@ -21,9 +20,9 @@ namespace Win32
 		public typealias NCRYPT_STREAM_HANDLE = int;
 		public typealias SAFER_LEVEL_HANDLE = int;
 		public typealias SC_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TOKEN_PRIVILEGES_ATTRIBUTES : uint32
 		{
 			ENABLED = 2,
@@ -392,14 +391,14 @@ namespace Win32
 			SecureProcess = 5,
 			Count = 6,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function NTSTATUS PLSA_AP_CALL_PACKAGE_UNTRUSTED(void** ClientRequest, void* ProtocolSubmitBuffer, void* ClientBufferBase, uint32 SubmitBufferLength, void** ProtocolReturnBuffer, out uint32 ReturnBufferLength, out int32 ProtocolStatus);
 		public function uint32 SEC_THREAD_START(void* lpThreadParameter);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SECURITY_ATTRIBUTES
 		{
@@ -959,9 +958,9 @@ namespace Win32
 			public uint PagefileLimit;
 			public LARGE_INTEGER TimeLimit;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AccessCheck(ref SECURITY_DESCRIPTOR pSecurityDescriptor, HANDLE ClientToken, uint32 DesiredAccess, ref GENERIC_MAPPING GenericMapping, PRIVILEGE_SET* PrivilegeSet, out uint32 PrivilegeSetLength, out uint32 GrantedAccess, out int32 AccessStatus);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -1228,5 +1227,6 @@ namespace Win32
 		public static extern BOOL LogonUserExW(PWSTR lpszUsername, PWSTR lpszDomain, PWSTR lpszPassword, LOGON32_LOGON dwLogonType, LOGON32_PROVIDER dwLogonProvider, HANDLE* phToken, PSID* ppLogonSid, void** ppProfileBuffer, uint32* pdwProfileLength, QUOTA_LIMITS* pQuotaLimits);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS RtlConvertSidToUnicodeString(out UNICODE_STRING UnicodeString, PSID Sid, BOOLEAN AllocateDestinationString);
+		#endregion
 	}
 }

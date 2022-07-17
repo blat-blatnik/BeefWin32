@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 GL_VERSION_1_1 = 1;
 		public const uint32 GL_ACCUM = 256;
 		public const uint32 GL_LOAD = 257;
@@ -710,13 +709,13 @@ namespace Win32
 		public const uint32 GLU_END = 100102;
 		public const uint32 GLU_ERROR = 100103;
 		public const uint32 GLU_EDGE_FLAG = 100104;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HGLRC = int;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFNGLARRAYELEMENTEXTPROC(int32 i);
 		public function void PFNGLDRAWARRAYSEXTPROC(uint32 mode, int32 first, int32 count);
 		public function void PFNGLVERTEXPOINTEREXTPROC(int32 size, uint32 type, int32 stride, int32 count, void* pointer);
@@ -748,9 +747,9 @@ namespace Win32
 		public function void GLUtessErrorDataProc(uint32 param0, void* param1);
 		public function void GLUtessCombineDataProc(out double param0, void** param1, out float param2, void** param3, void* param4);
 		public function void GLUnurbsErrorProc(uint32 param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PIXELFORMATDESCRIPTOR
 		{
@@ -836,9 +835,9 @@ namespace Win32
 		public struct GLUquadric {}
 		[CRepr]
 		public struct GLUtesselator {}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ChoosePixelFormat(HDC hdc, in PIXELFORMATDESCRIPTOR ppfd);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -1663,5 +1662,6 @@ namespace Win32
 		public static extern void gluNextContour(out GLUtesselator tess, uint32 type);
 		[Import("glu32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void gluEndPolygon(out GLUtesselator tess);
+		#endregion
 	}
 }

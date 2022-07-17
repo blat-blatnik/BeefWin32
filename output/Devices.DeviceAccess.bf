@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 ED_BASE = 4096;
 		public const uint32 DEV_PORT_SIM = 1;
 		public const uint32 DEV_PORT_COM1 = 2;
@@ -52,9 +51,9 @@ namespace Win32
 		public const int32 ED_AUDIO_24 = 8388608;
 		public const int32 ED_VIDEO = 33554432;
 		public const Guid CLSID_DeviceIoControl = .(0x12d3e372, 0x874b, 0x457d, 0x9f, 0xdf, 0x73, 0x97, 0x77, 0x78, 0x68, 0x6c);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDeviceRequestCompletionCallback : IUnknown
 		{
@@ -110,10 +109,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICreateDeviceAccessAsync self, in Guid riid, void** deviceAccess) GetResult;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("deviceaccess.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDeviceAccessInstance(PWSTR deviceInterfacePath, uint32 desiredAccess, out ICreateDeviceAccessAsync* createAsync);
+		#endregion
 	}
 }

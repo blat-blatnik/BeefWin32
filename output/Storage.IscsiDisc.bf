@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IOCTL_SCSI_BASE = 4;
 		public const Guid ScsiRawInterfaceGuid = .(0x53f56309, 0xb6bf, 0x11d0, 0x94, 0xf2, 0x00, 0xa0, 0xc9, 0x1e, 0xfb, 0x8b);
 		public const Guid WmiScsiAddressGuid = .(0x53f5630f, 0xb6bf, 0x11d0, 0x94, 0xf2, 0x00, 0xa0, 0xc9, 0x1e, 0xfb, 0x8b);
@@ -176,9 +175,9 @@ namespace Win32
 		public const uint32 ID_FQDN = 2;
 		public const uint32 ID_USER_FQDN = 3;
 		public const uint32 ID_IPV6_ADDR = 5;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NV_SEP_WRITE_CACHE_TYPE : int32
 		{
 			Unknown = 0,
@@ -242,14 +241,14 @@ namespace Win32
 			TargetFlags = 6,
 			LoginOptions = 7,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 DUMP_DEVICE_POWERON_ROUTINE(void* Context);
 		public function int32 PDUMP_DEVICE_POWERON_ROUTINE();
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _ADAPTER_OBJECT {}
 		[CRepr]
@@ -1230,9 +1229,9 @@ namespace Win32
 			public uint32 MinorVersion;
 			public uint32 BuildNumber;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("iscsidsc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetIScsiVersionInformation(out ISCSI_VERSION_INFO VersionInfo);
 		[Import("iscsidsc.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1391,5 +1390,6 @@ namespace Win32
 		public static extern uint32 ReportRadiusServerListW(out uint32 BufferSizeInChar, char16* Buffer);
 		[Import("iscsidsc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ReportRadiusServerListA(out uint32 BufferSizeInChar, uint8* Buffer);
+		#endregion
 	}
 }

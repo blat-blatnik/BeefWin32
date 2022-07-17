@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DAV_AUTHN_SCHEME_BASIC = 1;
 		public const uint32 DAV_AUTHN_SCHEME_NTLM = 2;
 		public const uint32 DAV_AUTHN_SCHEME_PASSPORT = 4;
@@ -14,23 +13,23 @@ namespace Win32
 		public const uint32 DAV_AUTHN_SCHEME_NEGOTIATE = 16;
 		public const uint32 DAV_AUTHN_SCHEME_CERT = 65536;
 		public const uint32 DAV_AUTHN_SCHEME_FBA = 1048576;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum AUTHNEXTSTEP : int32
 		{
 			DefaultBehavior = 0,
 			RetryRequest = 1,
 			CancelRequest = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PFNDAVAUTHCALLBACK_FREECRED(void* pbuffer);
 		public function uint32 PFNDAVAUTHCALLBACK(PWSTR lpwzServerName, PWSTR lpwzRemoteName, uint32 dwAuthScheme, uint32 dwFlags, out DAV_CALLBACK_CRED pCallbackCred, out AUTHNEXTSTEP NextStep, out PFNDAVAUTHCALLBACK_FREECRED pFreeCred);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DAV_CALLBACK_AUTH_BLOB
 		{
@@ -54,9 +53,9 @@ namespace Win32
 			public BOOL bAuthBlobValid;
 			public BOOL bSave;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DavAddConnection(out HANDLE ConnectionHandle, PWSTR RemoteName, PWSTR UserName, PWSTR Password, ref uint8 ClientCert, uint32 CertSize);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -79,5 +78,6 @@ namespace Win32
 		public static extern uint32 DavRegisterAuthCallback(PFNDAVAUTHCALLBACK CallBack, uint32 Version);
 		[Import("davclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DavUnregisterAuthCallback(uint32 hCallback);
+		#endregion
 	}
 }

@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NLM_MAX_ADDRESS_LIST_SIZE = 10;
 		public const uint32 NLM_UNKNOWN_DATAPLAN_STATUS = 4294967295;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NLM_CONNECTION_COST : int32
 		{
 			UNKNOWN = 0,
@@ -77,9 +76,9 @@ namespace Win32
 		{
 			CHANGE_AUTHENTICATION = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NLM_USAGE_DATA
 		{
@@ -111,13 +110,13 @@ namespace Win32
 			public uint32 UsageInMegabytes;
 			public uint32 DataLimitInMegabytes;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_NetworkListManager = .(0xdcb00c01, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct INetworkListManager : IDispatch
 		{
@@ -384,6 +383,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId) ConnectionDataPlanStatusChanged;
 			}
 		}
+		#endregion
 		
 	}
 }

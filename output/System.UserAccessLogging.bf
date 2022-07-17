@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct UAL_DATA_BLOB
 		{
@@ -16,9 +15,9 @@ namespace Win32
 			public SOCKADDR_STORAGE Address;
 			public char16[260] UserName;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ualapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UalStart(ref UAL_DATA_BLOB Data);
 		[Import("ualapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -27,5 +26,6 @@ namespace Win32
 		public static extern HRESULT UalInstrument(ref UAL_DATA_BLOB Data);
 		[Import("ualapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UalRegisterProduct(PWSTR wszProductName, PWSTR wszRoleName, PWSTR wszGuid);
+		#endregion
 	}
 }

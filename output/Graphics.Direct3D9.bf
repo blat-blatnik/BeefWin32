@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3DRTYPECOUNT = 8;
 		public const int32 D3DCS_LEFT = 1;
 		public const int32 D3DCS_RIGHT = 2;
@@ -324,9 +323,9 @@ namespace Win32
 		public const int32 D3DPRESENT_HIDEOVERLAY = 64;
 		public const int32 D3DPRESENT_UPDATECOLORKEY = 128;
 		public const int32 D3DPRESENT_FORCEIMMEDIATE = 256;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3DLIGHTTYPE : int32
 		{
 			POINT = 1,
@@ -1144,9 +1143,9 @@ namespace Win32
 			D3DBUSIMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR_INSIDE_OF_NUAE = 327680,
 			D3DBUSIMPL_MODIFIER_NON_STANDARD = -2147483648,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3DCOLORVALUE
 		{
@@ -1804,9 +1803,9 @@ namespace Win32
 			public uint32 MaxVertexShader30InstructionSlots;
 			public uint32 MaxPixelShader30InstructionSlots;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirect3D9 : IUnknown
 		{
@@ -2513,9 +2512,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DSwapChain9Ex self, out D3DDISPLAYMODEEX pMode, out D3DDISPLAYROTATION pRotation) GetDisplayModeEx;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern IDirect3D9* Direct3DCreate9(uint32 SDKVersion);
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2534,5 +2533,6 @@ namespace Win32
 		public static extern uint32 D3DPERF_GetStatus();
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT Direct3DCreate9Ex(uint32 SDKVersion, out IDirect3D9Ex* param1);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WCM_SETTINGS_ID_FLAG_REFERENCE = 0;
 		public const uint32 WCM_SETTINGS_ID_FLAG_DEFINITION = 1;
 		public const uint32 LINK_STORE_TO_ENGINE_INSTANCE = 1;
@@ -62,9 +61,9 @@ namespace Win32
 		public const HRESULT WCM_S_ATTRIBUTENOTALLOWED = 2232325;
 		public const HRESULT WCM_S_NAMESPACENOTFOUND = 2232326;
 		public const HRESULT WCM_E_UNKNOWNRESULT = -2145251325;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WcmTargetMode : int32
 		{
 			OfflineMode = 1,
@@ -116,13 +115,13 @@ namespace Win32
 			OnlyAccess = 1,
 			WriteAccess = 2,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SettingsEngine = .(0x9f7d7bb5, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IItemEnumerator : IUnknown
 		{
@@ -399,6 +398,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISettingsContext self, ref ISettingsIdentity pIdentity, PWSTR pwzSetting) RevertSetting;
 			}
 		}
+		#endregion
 		
 	}
 }

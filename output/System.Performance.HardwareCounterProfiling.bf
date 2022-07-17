@@ -5,16 +5,15 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum HARDWARE_COUNTER_TYPE : int32
 		{
 			PMCCounter = 0,
 			MaxHardwareCounterType = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HARDWARE_COUNTER_DATA
 		{
@@ -35,9 +34,9 @@ namespace Win32
 			public uint32 Reserved;
 			public HARDWARE_COUNTER_DATA[16] HwCounters;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 EnableThreadProfiling(HANDLE ThreadHandle, uint32 Flags, uint64 HardwareCounters, out HANDLE PerformanceDataHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -46,5 +45,6 @@ namespace Win32
 		public static extern uint32 QueryThreadProfiling(HANDLE ThreadHandle, out BOOLEAN Enabled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ReadThreadProfilingData(HANDLE PerformanceDataHandle, uint32 Flags, out PERFORMANCE_DATA PerformanceData);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION = 2048;
 		public const uint32 D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION = 4096;
 		public const uint32 D3D_FL9_1_REQ_TEXTURE2D_U_OR_V_DIMENSION = 2048;
@@ -61,9 +60,9 @@ namespace Win32
 		public const uint32 D3D_COMPONENT_MASK_W = 8;
 		public const Guid D3D_TEXTURE_LAYOUT_ROW_MAJOR = .(0xb5dc234f, 0x72bb, 0x4bec, 0x97, 0x05, 0x8c, 0xf2, 0x58, 0xdf, 0x6b, 0x6c);
 		public const Guid D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE = .(0x4c0f29e3, 0x3f5f, 0x4d35, 0x84, 0xc9, 0xbc, 0x09, 0x83, 0xb6, 0x2c, 0x28);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3D_DRIVER_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -715,13 +714,13 @@ namespace Win32
 			OUT = 2,
 			FORCE_DWORD = 2147483647,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFN_DESTRUCTION_CALLBACK(void* pData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D_SHADER_MACRO
 		{
@@ -768,9 +767,9 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID3DBlob : IUnknown
 		{
@@ -821,6 +820,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DInclude self, void* pData) Close;
 			}
 		}
+		#endregion
 		
 	}
 }

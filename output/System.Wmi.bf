@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MI_FLAG_ANY = 127;
 		public const uint32 MI_FLAG_VERSION = 469762048;
 		public const uint32 MI_FLAG_ADOPT = 2147483648;
@@ -68,9 +67,9 @@ namespace Win32
 		public const uint32 WBEMS_DISPID_PROGRESS = 3;
 		public const uint32 WBEMS_DISPID_OBJECT_PUT = 4;
 		public const uint32 WBEMS_DISPID_CONNECTION_READY = 5;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MI_Result : int32
 		{
 			OK = 0,
@@ -1102,9 +1101,9 @@ namespace Win32
 			AUTHENTICATION_METHOD_MASK = 15,
 			FLAG_USE_MULTIPLE_CHALLENGES = 16,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void MI_MethodDecl_Invoke(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in uint16 methodName, in MI_Instance instanceName, in MI_Instance parameters);
 		public function void MI_ProviderFT_Load(void** self, MI_Module_Self* selfModule, ref MI_Context context);
 		public function void MI_ProviderFT_Unload(void* self, ref MI_Context context);
@@ -1133,9 +1132,9 @@ namespace Win32
 		public function void MI_OperationCallback_Indication(MI_Operation* operation, void* callbackContext, MI_Instance* instance, uint16* bookmark, uint16* machineID, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
 		public function void MI_OperationCallback_Class(MI_Operation* operation, void* callbackContext, MI_Class* classResult, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
 		public function MI_Result MI_Deserializer_ClassObjectNeeded(void* context, uint16* serverName, uint16* namespaceName, in uint16 className, out MI_Class* requestedClassObject);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MI_Timestamp
 		{
@@ -2542,9 +2541,9 @@ namespace Win32
 			public int32 LastLine;
 			public uint32 dwOutFlags;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WbemDefPath = .(0xcf4cc405, 0xe2c5, 0x4ddd, 0xb3, 0xce, 0x5e, 0x75, 0x82, 0xd8, 0xc9, 0xfa);
 		public const Guid CLSID_WbemQuery = .(0xeac8a024, 0x21e2, 0x4523, 0xad, 0x73, 0xa7, 0x1a, 0x0a, 0xa2, 0xf5, 0x6a);
 		public const Guid CLSID_WbemLocator = .(0x4590f811, 0x1d3a, 0x11d0, 0x89, 0x1f, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
@@ -2590,9 +2589,9 @@ namespace Win32
 		public const Guid CLSID_WbemLocalAddrRes = .(0xa1044801, 0x8f7e, 0x11d1, 0x9e, 0x7c, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
 		public const Guid CLSID_WbemUninitializedClassObject = .(0x7a0227f6, 0x7108, 0x11d1, 0xad, 0x90, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
 		public const Guid CLSID_WbemDCOMTransport = .(0xf7ce2e13, 0x8c90, 0x11d1, 0x9e, 0x7b, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWbemPathKeyList : IUnknown
 		{
@@ -4303,10 +4302,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWbemConstructClassObject self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("mi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern MI_Result MI_Application_InitializeV1(uint32 flags, uint16* applicationID, MI_Instance** extendedError, out MI_Application application);
+		#endregion
 	}
 }

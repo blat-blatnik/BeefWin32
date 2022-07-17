@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WEBAUTHN_API_VERSION_1 = 1;
 		public const uint32 WEBAUTHN_API_VERSION_2 = 2;
 		public const uint32 WEBAUTHN_API_VERSION_3 = 3;
@@ -132,9 +131,9 @@ namespace Win32
 		public const int32 WS_URL_FLAGS_ALLOW_HOST_WILDCARDS = 1;
 		public const int32 WS_URL_FLAGS_NO_PATH_COLLAPSE = 2;
 		public const int32 WS_URL_FLAGS_ZERO_TERMINATE = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WS_XML_READER_PROPERTY_ID : int32
 		{
 			MAX_DEPTH = 0,
@@ -1256,9 +1255,9 @@ namespace Win32
 			TCP_SSPI_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE = 12,
 			TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE = 13,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT WS_READ_CALLBACK(void* callbackState, void* bytes, uint32 maxSize, out uint32 actualSize, WS_ASYNC_CONTEXT* asyncContext, WS_ERROR* error);
 		public function HRESULT WS_WRITE_CALLBACK(void* callbackState, WS_BYTES* buffers, uint32 count, WS_ASYNC_CONTEXT* asyncContext, WS_ERROR* error);
 		public function HRESULT WS_PUSH_BYTES_CALLBACK(void* callbackState, WS_WRITE_CALLBACK writeCallback, void* writeCallbackState, WS_ASYNC_CONTEXT* asyncContext, WS_ERROR* error);
@@ -1321,9 +1320,9 @@ namespace Win32
 		public function HRESULT WS_SERVICE_CLOSE_CHANNEL_CALLBACK(in WS_OPERATION_CONTEXT context, WS_ASYNC_CONTEXT* asyncContext);
 		public function HRESULT WS_SERVICE_SECURITY_CALLBACK(in WS_OPERATION_CONTEXT context, out BOOL authorized, WS_ERROR* error);
 		public function HRESULT WS_PROXY_MESSAGE_CALLBACK(ref WS_MESSAGE message, ref WS_HEAP heap, void* state, WS_ERROR* error);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WS_XML_READER {}
 		[CRepr]
@@ -3383,9 +3382,9 @@ namespace Win32
 			public uint8* pbCredLargeBlob;
 			public uint32 dwCredLargeBlobStatus;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IContentPrefetcherTaskTrigger : IInspectable
 		{
@@ -3403,9 +3402,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContentPrefetcherTaskTrigger self, PWSTR packageFullName, out uint8 isRegistered) IsRegisteredForContentPrefetch;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("webservices.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WsStartReaderCanonicalization(ref WS_XML_READER reader, WS_WRITE_CALLBACK writeCallback, void* writeCallbackState, WS_XML_CANONICALIZATION_PROPERTY* properties, uint32 propertyCount, WS_ERROR* error);
 		[Import("webservices.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3812,5 +3811,6 @@ namespace Win32
 		public static extern PWSTR WebAuthNGetErrorName(HRESULT hr);
 		[Import("webauthn.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebAuthNGetW3CExceptionDOMError(HRESULT hr);
+		#endregion
 	}
 }

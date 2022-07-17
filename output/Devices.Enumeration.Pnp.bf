@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT UPNP_E_ROOT_ELEMENT_EXPECTED = -2147220992;
 		public const HRESULT UPNP_E_DEVICE_ELEMENT_EXPECTED = -2147220991;
 		public const HRESULT UPNP_E_SERVICE_ELEMENT_EXPECTED = -2147220990;
@@ -52,13 +51,13 @@ namespace Win32
 		public const HRESULT UPNP_E_VALUE_TOO_LONG = -2147180496;
 		public const HRESULT UPNP_E_DEVICE_RUNNING = -2147180495;
 		public const HRESULT UPNP_E_DEVICE_NOTREGISTERED = -2147180494;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HSWDEVICE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SW_DEVICE_CAPABILITIES : int32
 		{
 			None = 0,
@@ -73,13 +72,13 @@ namespace Win32
 			ParentPresent = 1,
 			Max = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void SW_DEVICE_CREATE_CALLBACK(HSWDEVICE hSwDevice, HRESULT CreateResult, void* pContext, PWSTR pszDeviceInstanceId);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SW_DEVICE_CREATE_INFO
 		{
@@ -93,9 +92,9 @@ namespace Win32
 			public PWSTR pszDeviceLocation;
 			public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_UPnPDeviceFinder = .(0xe2085f28, 0xfeb7, 0x404a, 0xb8, 0xe7, 0xe6, 0x59, 0xbd, 0xea, 0xaa, 0x02);
 		public const Guid CLSID_UPnPDevices = .(0xb9e84ffd, 0xad3c, 0x40a4, 0xb8, 0x35, 0x08, 0x82, 0xeb, 0xcb, 0xaa, 0xa8);
 		public const Guid CLSID_UPnPDevice = .(0xa32552c5, 0xba61, 0x457a, 0xb5, 0x9a, 0xa2, 0x56, 0x1e, 0x12, 0x5e, 0x33);
@@ -106,9 +105,9 @@ namespace Win32
 		public const Guid CLSID_UPnPDescriptionDocumentEx = .(0x33fd0563, 0xd81a, 0x4393, 0x83, 0xcc, 0x01, 0x95, 0xb1, 0xda, 0x2f, 0x91);
 		public const Guid CLSID_UPnPRegistrar = .(0x204810b9, 0x73b2, 0x11d4, 0xbf, 0x42, 0x00, 0xb0, 0xd0, 0x11, 0x8b, 0x56);
 		public const Guid CLSID_UPnPRemoteEndpointInfo = .(0x2e5e84e9, 0x4049, 0x4244, 0xb7, 0x28, 0x2d, 0x24, 0x22, 0x71, 0x57, 0xc7);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUPnPDeviceFinder : IDispatch
 		{
@@ -623,9 +622,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUPnPRemoteEndpointInfo self, BSTR bstrValueName, out Guid pguidValue) GetGuidValue;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SwDeviceCreate(PWSTR pszEnumeratorName, PWSTR pszParentDeviceInstance, in SW_DEVICE_CREATE_INFO pCreateInfo, uint32 cPropertyCount, DEVPROPERTY* pProperties, SW_DEVICE_CREATE_CALLBACK pCallback, void* pContext, out int phSwDevice);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -644,5 +643,6 @@ namespace Win32
 		public static extern HRESULT SwDeviceInterfaceSetState(HSWDEVICE hSwDevice, PWSTR pszDeviceInterfaceId, BOOL fEnabled);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SwDeviceInterfacePropertySet(HSWDEVICE hSwDevice, PWSTR pszDeviceInterfaceId, uint32 cPropertyCount, DEVPROPERTY* pProperties);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WINBIO_MAX_STRING_LEN = 256;
 		public const uint32 WINBIO_SCP_VERSION_1 = 1;
 		public const uint32 WINBIO_SCP_RANDOM_SIZE_V1 = 32;
@@ -111,9 +110,9 @@ namespace Win32
 		public const uint32 IOCTL_BIOMETRIC_VENDOR = 4464640;
 		public const uint32 WINBIO_WBDI_MAJOR_VERSION = 1;
 		public const uint32 WINBIO_WBDI_MINOR_VERSION = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WINBIO_SETTING_SOURCE : uint32
 		{
 			INVALID = 0,
@@ -168,9 +167,9 @@ namespace Win32
 			MESSAGE = 2,
 			MAXIMUM_VALUE = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PWINBIO_ASYNC_COMPLETION_CALLBACK(ref WINBIO_ASYNC_RESULT AsyncResult);
 		public function void PWINBIO_VERIFY_CALLBACK(void* VerifyCallbackContext, HRESULT OperationStatus, uint32 UnitId, BOOLEAN Match, uint32 RejectDetail);
 		public function void PWINBIO_IDENTIFY_CALLBACK(void* IdentifyCallbackContext, HRESULT OperationStatus, uint32 UnitId, ref WINBIO_IDENTITY Identity, uint8 SubFactor, uint32 RejectDetail);
@@ -301,9 +300,9 @@ namespace Win32
 		public function HRESULT PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN(out WINBIO_PIPELINE Pipeline, Guid SecureBufferIdentifier);
 		public function HRESULT PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN(out WINBIO_PIPELINE Pipeline, ref WINBIO_IDENTITY Identity, out uint SecureIdentityCount, out WINBIO_IDENTITY* SecureIdentities);
 		public function HRESULT PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN(out WINBIO_PIPELINE Pipeline, in uint8 Authentication, uint AuthenticationSize, in uint8 Iv, uint IvSize, out uint8 EncryptedData, uint EncryptedDataSize);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WINBIO_VERSION
 		{
@@ -1339,9 +1338,9 @@ namespace Win32
 			public HRESULT WinBioHresult;
 			public uint32 Reason;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winbio.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WinBioEnumServiceProviders(uint32 Factor, out WINBIO_BSP_SCHEMA* BspSchemaArray, out uint BspCount);
 		[Import("winbio.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1450,5 +1449,6 @@ namespace Win32
 		public static extern HRESULT WinBioAcquireFocus();
 		[Import("winbio.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WinBioReleaseFocus();
+		#endregion
 	}
 }

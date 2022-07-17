@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MMC_VER = 512;
 		public const uint32 MMC_PROP_CHANGEAFFECTSUI = 1;
 		public const uint32 MMC_PROP_MODIFIABLE = 2;
@@ -95,9 +94,9 @@ namespace Win32
 		public const uint32 MMC_ITEM_OVERLAY_STATE_MASK = 3840;
 		public const uint32 MMC_ITEM_OVERLAY_STATE_SHIFT = 8;
 		public const uint32 MMC_ITEM_STATE_MASK = 255;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MMC_PROPERTY_ACTION : int32
 		{
 			DELETING = 1,
@@ -314,9 +313,9 @@ namespace Win32
 			HTML = 1,
 			OCX = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MMC_SNAPIN_PROPERTY
 		{
@@ -590,16 +589,16 @@ namespace Win32
 			public PWSTR pszTooltipText;
 			public BOOL bReplacesDefaultView;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_Application = .(0x49b2791a, 0xb1ae, 0x4c90, 0x9b, 0x8e, 0xe8, 0x60, 0xba, 0x07, 0xf8, 0x89);
 		public const Guid CLSID_AppEventsDHTMLConnector = .(0xade6444b, 0xc91f, 0x4e37, 0x92, 0xa4, 0x5b, 0xb4, 0x30, 0xa3, 0x33, 0x40);
 		public const Guid CLSID_MMCVersionInfo = .(0xd6fedb1d, 0xcf21, 0x4bd9, 0xaf, 0x3b, 0xc5, 0x46, 0x8e, 0x9c, 0x66, 0x84);
 		public const Guid CLSID_ConsolePower = .(0xf0285374, 0xdff1, 0x11d3, 0xb4, 0x33, 0x00, 0xc0, 0x4f, 0x8e, 0xcd, 0x78);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISnapinProperties : IUnknown
 		{
@@ -2132,6 +2131,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IResultData2 self, int itemID) RenameResultItem;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SDDL_REVISION_1 = 1;
 		public const uint32 SDDL_REVISION = 1;
 		public const uint32 SDDL_ALIAS_SIZE = 2;
@@ -138,18 +137,18 @@ namespace Win32
 		public const uint32 AUTHZ_WPD_CATEGORY_FLAG = 16;
 		public const uint32 AUTHZ_FLAG_ALLOW_MULTIPLE_SOURCE_INSTANCES = 1;
 		public const HRESULT OLESCRIPT_E_SYNTAX = -2147352319;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias AUTHZ_ACCESS_CHECK_RESULTS_HANDLE = int;
 		public typealias AUTHZ_CLIENT_CONTEXT_HANDLE = int;
 		public typealias AUTHZ_RESOURCE_MANAGER_HANDLE = int;
 		public typealias AUTHZ_AUDIT_EVENT_HANDLE = int;
 		public typealias AUTHZ_AUDIT_EVENT_TYPE_HANDLE = int;
 		public typealias AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum AUTHZ_RESOURCE_MANAGER_FLAGS : uint32
 		{
 			NO_AUDIT = 1,
@@ -411,18 +410,18 @@ namespace Win32
 			CLIENT_CONTEXT_GET_GROUP_RECURSIVE = 2,
 			CLIENT_CONTEXT_GET_GROUPS_STORE_LEVEL_ONLY = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PFN_AUTHZ_DYNAMIC_ACCESS_CHECK(AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref ACE_HEADER pAce, void* pArgs, out BOOL pbAceApplicable);
 		public function BOOL PFN_AUTHZ_COMPUTE_DYNAMIC_GROUPS(AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, void* Args, out SID_AND_ATTRIBUTES* pSidAttrArray, out uint32 pSidCount, out SID_AND_ATTRIBUTES* pRestrictedSidAttrArray, out uint32 pRestrictedSidCount);
 		public function void PFN_AUTHZ_FREE_DYNAMIC_GROUPS(ref SID_AND_ATTRIBUTES pSidAttrArray);
 		public function BOOL PFN_AUTHZ_GET_CENTRAL_ACCESS_POLICY(AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, PSID capid, void* pArgs, out BOOL pCentralAccessPolicyApplicable, void** ppCentralAccessPolicy);
 		public function void PFN_AUTHZ_FREE_CENTRAL_ACCESS_POLICY(void* pCentralAccessPolicy);
 		public function void FN_PROGRESS(PWSTR pObjectName, uint32 Status, out PROG_INVOKE_SETTING pInvokeSetting, void* Args, BOOL SecuritySet);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct OBJECTS_AND_SID
 		{
@@ -806,15 +805,15 @@ namespace Win32
 				public Guid* pProviderGuid;
 			}
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_AzAuthorizationStore = .(0xb2bcff59, 0xa757, 0x4b0b, 0xa1, 0xbc, 0xea, 0x69, 0x98, 0x1d, 0xa6, 0x9e);
 		public const Guid CLSID_AzBizRuleContext = .(0x5c2dc96f, 0x8d51, 0x434b, 0xb3, 0x3c, 0x37, 0x9b, 0xcc, 0xae, 0x77, 0xc3);
 		public const Guid CLSID_AzPrincipalLocator = .(0x483afb5d, 0x70df, 0x4e16, 0xab, 0xdc, 0xa1, 0xde, 0x4d, 0x01, 0x5a, 0x3e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAzAuthorizationStore : IDispatch
 		{
@@ -1993,9 +1992,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAzTask2 self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AuthzAccessCheck(AUTHZ_ACCESS_CHECK_FLAGS Flags, AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext, ref AUTHZ_ACCESS_REQUEST pRequest, AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent, ref SECURITY_DESCRIPTOR pSecurityDescriptor, SECURITY_DESCRIPTOR** OptionalSecurityDescriptorArray, uint32 OptionalSecurityDescriptorCount, out AUTHZ_ACCESS_REPLY pReply, int* phAccessCheckResults);
 		[Import("authz.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2176,5 +2175,6 @@ namespace Win32
 		public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorA(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorW(ref SECURITY_DESCRIPTOR SecurityDescriptor, uint32 RequestedStringSDRevision, uint32 SecurityInformation, out PWSTR StringSecurityDescriptor, uint32* StringSecurityDescriptorLen);
+		#endregion
 	}
 }

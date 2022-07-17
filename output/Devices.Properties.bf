@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const PROPERTYKEY DEVPKEY_DeviceInterface_Autoplay_Silent = .(.(0x434dd28f, 0x9e75, 0x450a, 0x9a, 0xb9, 0xff, 0x61, 0xe6, 0x18, 0xba, 0xd0), 2);
 		public const PROPERTYKEY DEVPKEY_NAME = .(.(0xb725f130, 0x47ef, 0x101a, 0xa5, 0xf1, 0x02, 0x60, 0x8c, 0x9e, 0xeb, 0xac), 10);
 		public const PROPERTYKEY DEVPKEY_Device_DeviceDesc = .(.(0xa45c254e, 0xdf1c, 0x4efd, 0x80, 0x20, 0x67, 0xd1, 0x46, 0xa8, 0x50, 0xe0), 2);
@@ -235,17 +234,17 @@ namespace Win32
 		public const uint32 DEVPROP_MASK_TYPE = 4095;
 		public const uint32 DEVPROP_MASK_TYPEMOD = 61440;
 		public const uint32 DEVPROPID_FIRST_USABLE = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DEVPROPSTORE : int32
 		{
 			SYSTEM = 0,
 			USER = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DEVPROPKEY
 		{
@@ -267,6 +266,7 @@ namespace Win32
 			public uint32 BufferSize;
 			public void* Buffer;
 		}
+		#endregion
 		
 	}
 }

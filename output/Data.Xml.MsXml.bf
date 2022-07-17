@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 E_XML_NOTWF = -1072897501;
 		public const int32 E_XML_NODTD = -1072897500;
 		public const int32 E_XML_INVALID = -1072897499;
@@ -559,9 +558,9 @@ namespace Win32
 		public const uint32 DISPID_XMLDSIG_SIGNATURE = 8;
 		public const uint32 DISPID_XMLDSIG_STORE = 9;
 		public const uint32 DISPID_XMLDSIG_VERIFY = 10;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DOMNodeType : int32
 		{
 			INVALID = 0,
@@ -800,9 +799,9 @@ namespace Win32
 			CERT_DATE_INVALID = 67108864,
 			ALL_SERVER_ERRORS = 125829120,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct XML_ERROR
 		{
@@ -857,9 +856,9 @@ namespace Win32
 			public uint32 cbCert;
 			public uint8* pbCert;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_DOMDocument = .(0x2933bf90, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 		public const Guid CLSID_DOMFreeThreadedDocument = .(0x2933bf91, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 		public const Guid CLSID_XMLHTTPRequest = .(0xed8c108e, 0x4349, 0x11d2, 0x91, 0xa4, 0x00, 0xc0, 0x4f, 0x79, 0x69, 0xe8);
@@ -877,9 +876,9 @@ namespace Win32
 		public const Guid CLSID_MXHTMLWriter60 = .(0x88d96a10, 0xf192, 0x11d4, 0xa6, 0x5f, 0x00, 0x40, 0x96, 0x32, 0x51, 0xe5);
 		public const Guid CLSID_SAXAttributes60 = .(0x88d96a0e, 0xf192, 0x11d4, 0xa6, 0x5f, 0x00, 0x40, 0x96, 0x32, 0x51, 0xe5);
 		public const Guid CLSID_MXNamespaceManager60 = .(0x88d96a11, 0xf192, 0x11d4, 0xa6, 0x5f, 0x00, 0x40, 0x96, 0x32, 0x51, 0xe5);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IXMLDOMImplementation : IDispatch
 		{
@@ -3160,6 +3159,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXMLHTTPRequest3 self, uint32 cbClientCertificateHash, uint8* pbClientCertificateHash, PWSTR pwszPin) SetClientCertificate;
 			}
 		}
+		#endregion
 		
 	}
 }

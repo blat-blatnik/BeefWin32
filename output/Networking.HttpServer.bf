@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 HTTP_DEMAND_CBT = 4;
 		public const uint32 HTTP_MAX_SERVER_QUEUE_LENGTH = 2147483647;
 		public const uint32 HTTP_MIN_SERVER_QUEUE_LENGTH = 1;
@@ -102,9 +101,9 @@ namespace Win32
 		public const uint32 HTTP_REQUEST_PROPERTY_SNI_HOST_MAX_LENGTH = 255;
 		public const uint32 HTTP_REQUEST_PROPERTY_SNI_FLAG_SNI_USED = 1;
 		public const uint32 HTTP_REQUEST_PROPERTY_SNI_FLAG_NO_SNI = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum HTTP_RECEIVE_HTTP_REQUEST_FLAGS : uint32
 		{
 			COPY_BODY = 1,
@@ -455,9 +454,9 @@ namespace Win32
 			FeatureHttp3 = 4,
 			Featuremax = -1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HTTP_PROPERTY_FLAGS
 		{
@@ -1225,9 +1224,9 @@ namespace Win32
 			public HTTP_QUIC_CONNECTION_API_TIMINGS ConnectionTimings;
 			public HTTP_QUIC_STREAM_API_TIMINGS StreamTimings;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("httpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 HttpInitialize(HTTPAPI_VERSION Version, HTTP_INITIALIZE Flags, void* pReserved);
 		[Import("httpapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1314,5 +1313,6 @@ namespace Win32
 		public static extern uint32 HttpQueryServiceConfiguration(HANDLE ServiceHandle, HTTP_SERVICE_CONFIG_ID ConfigId, void* pInput, uint32 InputLength, void* pOutput, uint32 OutputLength, uint32* pReturnLength, out OVERLAPPED pOverlapped);
 		[Import("httpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 HttpGetExtension(HTTPAPI_VERSION Version, uint32 Extension, void* Buffer, uint32 BufferSize);
+		#endregion
 	}
 }

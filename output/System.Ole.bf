@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 CTL_E_ILLEGALFUNCTIONCALL = -2146828283;
 		public const int32 CONNECT_E_FIRST = -2147220992;
 		public const int32 SELFREG_E_FIRST = -2147220992;
@@ -597,9 +596,9 @@ namespace Win32
 		public const Guid SID_VariantConversion = .(0x1f101481, 0xbccd, 0x11d0, 0x93, 0x36, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 		public const Guid SID_GetCaller = .(0x4717cc40, 0xbcb9, 0x11d0, 0x93, 0x36, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 		public const Guid SID_ProvideRuntimeContext = .(0x74a5040c, 0xdd0c, 0x48f0, 0xac, 0x85, 0x19, 0x4c, 0x32, 0x59, 0x18, 0x0a);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum UPDFCACHE_FLAGS : uint32
 		{
 			ALL = 2147483647,
@@ -1238,13 +1237,13 @@ namespace Win32
 			LINKTYPE7 = 64,
 			LINKTYPE8 = 128,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 LPFNOLEUIHOOK(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _wireSAFEARR_BSTR
 		{
@@ -2071,9 +2070,9 @@ namespace Win32
 			public OLEUIVIEWPROPSA* lpVP;
 			public OLEUILINKPROPSA* lpLP;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICreateTypeInfo : IUnknown
 		{
@@ -4136,9 +4135,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvideRuntimeContext self, out uint pdwContext, out int16 pfExecutingGlobalCode) GetCurrentSourceContext;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DosDateTimeToVariantTime(uint16 wDosDate, uint16 wDosTime, out double pvtime);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -5051,5 +5050,6 @@ namespace Win32
 		public static extern BOOL OleUIUpdateLinksW(ref IOleUILinkContainerW lpOleUILinkCntr, HWND hwndParent, PWSTR lpszTitle, int32 cLinks);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL OleUIUpdateLinksA(ref IOleUILinkContainerA lpOleUILinkCntr, HWND hwndParent, PSTR lpszTitle, int32 cLinks);
+		#endregion
 	}
 }

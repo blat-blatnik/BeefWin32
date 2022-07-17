@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CRYPTCAT_MAX_MEMBERTAG = 64;
 		public const uint32 CRYPTCAT_MEMBER_SORTED = 1073741824;
 		public const uint32 CRYPTCAT_ATTR_AUTHENTICATED = 268435456;
@@ -31,9 +30,9 @@ namespace Win32
 		public const uint32 CRYPTCAT_E_CDF_ATTR_TYPECOMBO = 131076;
 		public const uint32 CRYPTCAT_ADDCATALOG_NONE = 0;
 		public const uint32 CRYPTCAT_ADDCATALOG_HARDLINK = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CRYPTCAT_VERSION : uint32
 		{
 			_1 = 256,
@@ -51,13 +50,13 @@ namespace Win32
 			SORTED = 1073741824,
 			FLAGS_MASK = 4294901760,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFN_CDF_PARSE_ERROR_CALLBACK(uint32 dwErrorArea, uint32 dwLocalError, PWSTR pwszLine);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CRYPTCATSTORE
 		{
@@ -114,9 +113,9 @@ namespace Win32
 			public uint32 cbStruct;
 			public char16[260] wszCatalogFile;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CryptCATOpen(PWSTR pwszFileName, CRYPTCAT_OPEN_FLAGS fdwOpenFlags, uint hProv, CRYPTCAT_VERSION dwPublicVersion, uint32 dwEncodingType);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
@@ -185,5 +184,6 @@ namespace Win32
 		public static extern BOOL CryptCATAdminResolveCatalogPath(int hCatAdmin, PWSTR pwszCatalogFile, out CATALOG_INFO psCatInfo, uint32 dwFlags);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptCATAdminPauseServiceForBackup(uint32 dwFlags, BOOL fResume);
+		#endregion
 	}
 }

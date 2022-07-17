@@ -5,14 +5,13 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 UI_ALL_COMMANDS = 0;
 		public const uint32 UI_COLLECTION_INVALIDINDEX = 4294967295;
 		public const Guid LIBID_UIRibbon = .(0x942f35c2, 0xe83b, 0x45ef, 0xb0, 0x85, 0xac, 0x29, 0x5d, 0xd6, 0x3d, 0x5b);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum UI_CONTEXTAVAILABILITY : int32
 		{
 			NOTAVAILABLE = 0,
@@ -129,9 +128,9 @@ namespace Win32
 			TRANSFER = 0,
 			COPY = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct UI_EVENTPARAMS_COMMAND
 		{
@@ -155,14 +154,14 @@ namespace Win32
 				public UI_EVENTPARAMS_COMMAND Params;
 			}
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_UIRibbonFramework = .(0x926749fa, 0x2615, 0x4987, 0x88, 0x45, 0xc3, 0x3e, 0x65, 0xf2, 0xb9, 0x57);
 		public const Guid CLSID_UIRibbonImageFromBitmapFactory = .(0x0f7434b6, 0x59b6, 0x4250, 0x99, 0x9e, 0xd1, 0x68, 0xd6, 0xae, 0x42, 0x93);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUISimplePropertySet : IUnknown
 		{
@@ -381,6 +380,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIImageFromBitmap self, HBITMAP bitmap, UI_OWNERSHIP options, out IUIImage* image) CreateImage;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PROP_ID_SECURE_MIN = 26608;
 		public const uint32 PROP_ID_SECURE_MAX = 26623;
 		public const uint32 MAPI_DIM = 1;
@@ -215,18 +214,18 @@ namespace Win32
 		public const int32 PRILOWEST = -32768;
 		public const uint32 PRIHIGHEST = 32767;
 		public const uint32 PRIUSER = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum Gender : int32
 		{
 			Unspecified = 0,
 			Female = 1,
 			Male = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 LPALLOCATEBUFFER(uint32 cbSize, void** lppBuffer);
 		public function int32 LPALLOCATEMORE(uint32 cbSize, void* lpObject, void** lppBuffer);
 		public function uint32 LPFREEBUFFER(void* lpBuffer);
@@ -261,9 +260,9 @@ namespace Win32
 		public function int32 LPWABALLOCATEBUFFER(ref IWABObject lpWABObject, uint32 cbSize, void** lppBuffer);
 		public function int32 LPWABALLOCATEMORE(ref IWABObject lpWABObject, uint32 cbSize, void* lpObject, void** lppBuffer);
 		public function uint32 LPWABFREEBUFFER(ref IWABObject lpWABObject, void* lpBuffer);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ENTRYID
 		{
@@ -870,9 +869,9 @@ namespace Win32
 			public uint32 cb;
 			public uint8[0] ab;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IMAPIAdviseSink : IUnknown
 		{
@@ -1425,9 +1424,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWABExtInit self, out WABEXTDISPLAY lpWABExtDisplay) Initialize;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("rtm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CreateTable(out Guid lpInterface, LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, void* lpvReserved, uint32 ulTableType, uint32 ulPropTagIndexColumn, out SPropTagArray lpSPropTagArrayColumns, out ITableData* lppTableData);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1542,5 +1541,6 @@ namespace Win32
 		public static extern int32 ScInitMapiUtil(uint32 ulFlags);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DeinitMapiUtil();
+		#endregion
 	}
 }

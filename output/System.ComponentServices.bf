@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 GUID_STRING_SIZE = 40;
 		public const uint32 DATA_NOT_AVAILABLE = 4294967295;
 		public const uint32 MTXDM_E_ENLISTRESOURCEFAILED = 2147803392;
@@ -16,9 +15,9 @@ namespace Win32
 		public const uint32 CRR_CALL_LIMIT = 4294967293;
 		public const uint32 CRR_MEMORY_LIMIT = 4294967292;
 		public const uint32 CRR_RECYCLED_FROM_UI = 4294967291;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum COMAdminInUse : int32
 		{
 			NotInUse = 0,
@@ -451,9 +450,9 @@ namespace Win32
 			ALLPHASES = 7,
 			FAILIFINDOUBTSREMAIN = 16,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct COMSVCSEVENTINFO
 		{
@@ -624,9 +623,9 @@ namespace Win32
 			public uint32 dwSequenceNumber;
 			public BLOB blobUserData;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SecurityIdentity = .(0xecabb0a5, 0x7f19, 0x11d2, 0x97, 0x8e, 0x00, 0x00, 0xf8, 0x75, 0x7e, 0x2a);
 		public const Guid CLSID_SecurityCallers = .(0xecabb0a6, 0x7f19, 0x11d2, 0x97, 0x8e, 0x00, 0x00, 0xf8, 0x75, 0x7e, 0x2a);
 		public const Guid CLSID_SecurityCallContext = .(0xecabb0a7, 0x7f19, 0x11d2, 0x97, 0x8e, 0x00, 0x00, 0xf8, 0x75, 0x7e, 0x2a);
@@ -659,9 +658,9 @@ namespace Win32
 		public const Guid CLSID_COMAdminCatalog = .(0xf618c514, 0xdfb8, 0x11d1, 0xa2, 0xcf, 0x00, 0x80, 0x5f, 0xc7, 0x92, 0x35);
 		public const Guid CLSID_COMAdminCatalogObject = .(0xf618c515, 0xdfb8, 0x11d1, 0xa2, 0xcf, 0x00, 0x80, 0x5f, 0xc7, 0x92, 0x35);
 		public const Guid CLSID_COMAdminCatalogCollection = .(0xf618c516, 0xdfb8, 0x11d1, 0xa2, 0xcf, 0x00, 0x80, 0x5f, 0xc7, 0x92, 0x35);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICOMAdminCatalog : IDispatch
 		{
@@ -3325,9 +3324,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMTSActivity self) UnbindFromThread;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoGetDefaultContext(APTTYPE aptType, in Guid riid, void** ppv);
 		[Import("comsvcs.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3346,5 +3345,6 @@ namespace Win32
 		public static extern HRESULT MTSCreateActivity(in Guid riid, void** ppobj);
 		[Import("mtxdm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDispenserManager(out IDispenserManager* param0);
+		#endregion
 	}
 }

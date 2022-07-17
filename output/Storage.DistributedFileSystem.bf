@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FSCTL_DFS_BASE = 6;
 		public const uint32 DFS_VOLUME_STATES = 15;
 		public const uint32 DFS_VOLUME_STATE_OK = 1;
@@ -40,9 +39,9 @@ namespace Win32
 		public const uint32 DFS_MOVE_FLAG_REPLACE_IF_EXISTS = 1;
 		public const uint32 DFS_FORCE_REMOVE = 2147483648;
 		public const uint32 FSCTL_DFS_GET_PKT_ENTRY_STATE = 401340;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DFS_TARGET_PRIORITY_CLASS : int32
 		{
 			InvalidPriorityClass = -1,
@@ -58,9 +57,9 @@ namespace Win32
 			SERVER = 1,
 			DOMAIN = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DFS_TARGET_PRIORITY
 		{
@@ -322,9 +321,9 @@ namespace Win32
 			public uint32 Level;
 			public char16[0] Buffer;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetDfsAdd(PWSTR DfsEntryPath, PWSTR ServerName, PWSTR ShareName, PWSTR Comment, uint32 Flags);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -369,5 +368,6 @@ namespace Win32
 		public static extern uint32 NetDfsSetFtContainerSecurity(PWSTR DomainName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetDfsGetSupportedNamespaceVersion(DFS_NAMESPACE_VERSION_ORIGIN Origin, PWSTR pName, out DFS_SUPPORTED_NAMESPACE_VERSION_INFO* ppVersionInfo);
+		#endregion
 	}
 }

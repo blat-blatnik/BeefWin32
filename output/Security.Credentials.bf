@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FILE_DEVICE_SMARTCARD = 49;
 		public const Guid GUID_DEVINTERFACE_SMARTCARD_READER = .(0x50dd5230, 0xba8a, 0x11d1, 0xbf, 0x5d, 0x00, 0x00, 0xf8, 0x05, 0xf5, 0x30);
 		public const uint32 SCARD_ATR_LENGTH = 33;
@@ -130,9 +129,9 @@ namespace Win32
 		public const uint32 SECPKG_ATTR_C_FULL_IDENT_TOKEN = 2147483781;
 		public const uint32 CREDSSP_CRED_EX_VERSION = 0;
 		public const uint32 CREDSSP_FLAG_REDIRECT = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CRED_FLAGS : uint32
 		{
 			PASSWORD_FOR_CERT = 1,
@@ -273,16 +272,16 @@ namespace Win32
 			SubmitBufferBothOld = 51,
 			CredEx = 100,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint LPOCNCONNPROCA(uint param0, PSTR param1, PSTR param2, void* param3);
 		public function uint LPOCNCONNPROCW(uint param0, PWSTR param1, PWSTR param2, void* param3);
 		public function BOOL LPOCNCHKPROC(uint param0, uint param1, void* param2);
 		public function void LPOCNDSCPROC(uint param0, uint param1, void* param2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct KeyCredentialManagerInfo
 		{
@@ -662,9 +661,9 @@ namespace Win32
 			public uint32 Reserved;
 			public CREDSSP_CRED Cred;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT KeyCredentialManagerGetOperationErrorStates(KeyCredentialManagerOperationType keyCredentialManagerOperationType, out BOOL isReady, out KeyCredentialManagerOperationErrorStates keyCredentialManagerOperationErrorStates);
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
@@ -919,5 +918,6 @@ namespace Win32
 		public static extern int32 SCardListReadersWithDeviceInstanceIdW(uint hContext, PWSTR szDeviceInstanceId, PWSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardAudit(uint hContext, uint32 dwEvent);
+		#endregion
 	}
 }

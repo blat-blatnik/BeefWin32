@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 BG_NOTIFY_JOB_TRANSFERRED = 1;
 		public const uint32 BG_NOTIFY_JOB_ERROR = 2;
 		public const uint32 BG_NOTIFY_DISABLE = 4;
@@ -216,9 +215,9 @@ namespace Win32
 		public const int32 BITS_MC_FATAL_IGD_ERROR = -2145828855;
 		public const int32 BITS_MC_PEERCACHING_PORT = -2145828854;
 		public const int32 BITS_MC_WSD_PORT = -2145828853;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum BG_TOKEN : uint32
 		{
 			LOCAL_FILE = 1,
@@ -331,9 +330,9 @@ namespace Win32
 			DISPLAYNAME = 11,
 			DESCRIPTION = 12,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct BG_FILE_PROGRESS
 		{
@@ -413,9 +412,9 @@ namespace Win32
 			public BSTR bstrLocalFile;
 			public uint32 dwSizeHint;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_BackgroundCopyManager = .(0x4991d34b, 0x80a1, 0x4291, 0x83, 0xb6, 0x33, 0x28, 0x36, 0x6b, 0x90, 0x97);
 		public const Guid CLSID_BackgroundCopyManager1_5 = .(0xf087771f, 0xd74f, 0x4c1a, 0xbb, 0x8a, 0xe1, 0x6a, 0xca, 0x91, 0x24, 0xea);
 		public const Guid CLSID_BackgroundCopyManager2_0 = .(0x6d18ad12, 0xbde3, 0x4393, 0xb3, 0x11, 0x09, 0x9c, 0x34, 0x6e, 0x6d, 0xf9);
@@ -428,9 +427,9 @@ namespace Win32
 		public const Guid CLSID_BackgroundCopyManager10_3 = .(0x5fd42ad5, 0xc04e, 0x4d36, 0xad, 0xc7, 0xe0, 0x8f, 0xf1, 0x57, 0x37, 0xad);
 		public const Guid CLSID_BITSExtensionSetupFactory = .(0xefbbab68, 0x7286, 0x4783, 0x94, 0xbf, 0x94, 0x61, 0xd8, 0xb7, 0xe7, 0xe9);
 		public const Guid CLSID_BackgroundCopyQMgr = .(0x69ad4aee, 0x51be, 0x439b, 0xa9, 0x2c, 0x86, 0xae, 0x49, 0x0e, 0x8b, 0x30);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IBackgroundCopyFile : IUnknown
 		{
@@ -1298,6 +1297,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBackgroundCopyQMgr self, uint32 dwFlags, out IEnumBackgroundCopyGroups* ppEnumGroups) EnumGroups;
 			}
 		}
+		#endregion
 		
 	}
 }

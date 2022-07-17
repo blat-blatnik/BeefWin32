@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CLUSTER_VERSION_FLAG_MIXED_MODE = 1;
 		public const uint32 CLUSTER_VERSION_UNKNOWN = 4294967295;
 		public const uint32 NT4_MAJOR_VERSION = 1;
@@ -230,9 +229,9 @@ namespace Win32
 		public const uint32 CLUSTER_HEALTH_FAULT_RESERVED = 6;
 		public const uint32 CLUS_CREATE_CRYPT_CONTAINER_NOT_FOUND = 1;
 		public const uint32 SET_APPINSTANCE_CSV_FLAGS_VALID_ONLY_IF_CSV_COORDINATOR = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CLUSTER_QUORUM_TYPE : int32
 		{
 			OperationalQuorum = 0,
@@ -1662,9 +1661,9 @@ namespace Win32
 			NETWORK = 6,
 			NETINTERFACE = 7,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PCLUSAPI_GET_NODE_CLUSTER_STATE(PWSTR lpszNodeName, out uint32 pdwClusterState);
 		public function _HCLUSTER* PCLUSAPI_OPEN_CLUSTER(PWSTR lpszClusterName);
 		public function _HCLUSTER* PCLUSAPI_OPEN_CLUSTER_EX(PWSTR lpszClusterName, uint32 dwDesiredAccess, uint32* lpdwGrantedAccess);
@@ -2014,9 +2013,9 @@ namespace Win32
 		public function uint32 PQUERY_APPINSTANCE_VERSION(ref Guid AppInstanceId, out uint64 InstanceVersionHigh, out uint64 InstanceVersionLow, out NTSTATUS VersionStatus);
 		public function uint32 PRESET_ALL_APPINSTANCE_VERSIONS();
 		public function uint32 SET_APP_INSTANCE_CSV_FLAGS(HANDLE ProcessHandle, uint32 Mask, uint32 Flags);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _HCLUSTER {}
 		[CRepr]
@@ -3108,9 +3107,9 @@ namespace Win32
 			public int32 Version;
 			public PaxosTagCStruct paxosToValidate;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_ClusApplication = .(0xf2e606e5, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 		public const Guid CLSID_Cluster = .(0xf2e606e3, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 		public const Guid CLSID_ClusVersion = .(0xf2e60715, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
@@ -3151,9 +3150,9 @@ namespace Win32
 		public const Guid CLSID_ClusRegistryKeys = .(0xf2e60729, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 		public const Guid CLSID_ClusCryptoKeys = .(0xf2e6072b, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 		public const Guid CLSID_ClusResDependents = .(0xf2e6072d, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IGetClusterUIInfo : IUnknown
 		{
@@ -4557,9 +4556,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISClusResDependents self, VARIANT varIndex) RemoveItem;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("clusapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetNodeClusterState(PWSTR lpszNodeName, out uint32 pdwClusterState);
 		[Import("clusapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5262,5 +5261,6 @@ namespace Win32
 		public static extern uint32 ResetAllAppInstanceVersions();
 		[Import("ntlanman.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SetAppInstanceCsvFlags(HANDLE ProcessHandle, uint32 Mask, uint32 Flags);
+		#endregion
 	}
 }

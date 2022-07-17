@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 PROGRESS_INDETERMINATE = -1;
 		public const HRESULT PHOTOACQ_ERROR_RESTART_REQUIRED = -2147180543;
 		public const uint32 PHOTOACQ_RUN_DEFAULT = 0;
@@ -36,9 +35,9 @@ namespace Win32
 		public const uint32 PAPS_PRESAVE = 0;
 		public const uint32 PAPS_POSTSAVE = 1;
 		public const uint32 PAPS_CLEANUP = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum USER_INPUT_STRING_TYPE : int32
 		{
 			DEFAULT = 0,
@@ -82,18 +81,18 @@ namespace Win32
 			DST_FS_DEVICE = 5,
 			DST_DV_DEVICE = 6,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_PhotoAcquire = .(0x00f26e02, 0xe9f2, 0x4a9f, 0x9f, 0xdd, 0x5a, 0x96, 0x2f, 0xb2, 0x6a, 0x98);
 		public const Guid CLSID_PhotoAcquireAutoPlayDropTarget = .(0x00f20eb5, 0x8fd6, 0x4d9d, 0xb7, 0x5e, 0x36, 0x80, 0x17, 0x66, 0xc8, 0xf1);
 		public const Guid CLSID_PhotoAcquireAutoPlayHWEventHandler = .(0x00f2b433, 0x44e4, 0x4d88, 0xb2, 0xb0, 0x26, 0x98, 0xa0, 0xa9, 0x1d, 0xba);
 		public const Guid CLSID_PhotoAcquireOptionsDialog = .(0x00f210a1, 0x62f0, 0x438b, 0x9f, 0x7e, 0x96, 0x18, 0xd7, 0x2a, 0x18, 0x31);
 		public const Guid CLSID_PhotoProgressDialog = .(0x00f24ca0, 0x748f, 0x4e8a, 0x89, 0x4f, 0x0e, 0x03, 0x57, 0xc6, 0x79, 0x9f);
 		public const Guid CLSID_PhotoAcquireDeviceSelectionDialog = .(0x00f29a34, 0xb8a1, 0x482c, 0xbc, 0xf8, 0x3a, 0xc7, 0xb0, 0xfe, 0x8f, 0x62);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPhotoAcquireItem : IUnknown
 		{
@@ -423,6 +422,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhotoAcquirePlugin self, HWND hWndParent) DisplayConfigureDialog;
 			}
 		}
+		#endregion
 		
 	}
 }

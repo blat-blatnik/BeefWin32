@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SERVICE_ALL_ACCESS = 983551;
 		public const uint32 SC_MANAGER_ALL_ACCESS = 983103;
 		public const uint32 SERVICE_NO_CHANGE = 4294967295;
@@ -130,13 +129,13 @@ namespace Win32
 		public const Guid RPC_INTERFACE_EVENT_GUID = .(0xbc90d167, 0x9470, 0x4139, 0xa9, 0xba, 0xbe, 0x0b, 0xbb, 0xf5, 0xb7, 0x4d);
 		public const Guid NAMED_PIPE_EVENT_GUID = .(0x1f81d131, 0x3fac, 0x4537, 0x9e, 0x0c, 0x7e, 0x7b, 0x0c, 0x2f, 0x4b, 0x55);
 		public const Guid CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID = .(0x2d7a2816, 0x0c5e, 0x45fc, 0x9c, 0xe7, 0x57, 0x0e, 0x5e, 0xcd, 0xe9, 0xc9);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias SERVICE_STATUS_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ENUM_SERVICE_STATE : uint32
 		{
 			ACTIVE = 1,
@@ -279,9 +278,9 @@ namespace Win32
 		{
 			ServiceSharedDirectoryPersistentState = 0,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void SERVICE_MAIN_FUNCTIONW(uint32 dwNumServicesArgs, out PWSTR lpServiceArgVectors);
 		public function void SERVICE_MAIN_FUNCTIONA(uint32 dwNumServicesArgs, out int8* lpServiceArgVectors);
 		public function void LPSERVICE_MAIN_FUNCTIONW(uint32 dwNumServicesArgs, out PWSTR lpServiceArgVectors);
@@ -292,9 +291,9 @@ namespace Win32
 		public function uint32 LPHANDLER_FUNCTION_EX(uint32 dwControl, uint32 dwEventType, void* lpEventData, void* lpContext);
 		public function void PFN_SC_NOTIFY_CALLBACK(void* pParameter);
 		public function void PSC_NOTIFICATION_CALLBACK(uint32 dwNotify, void* pCallbackContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SERVICE_TRIGGER_CUSTOM_STATE_ID
 		{
@@ -579,9 +578,9 @@ namespace Win32
 		}
 		[CRepr]
 		public struct _SC_NOTIFICATION_REGISTRATION {}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetServiceBits(SERVICE_STATUS_HANDLE hServiceStatus, uint32 dwServiceBits, BOOL bSetBitsOn, BOOL bUpdateImmediately);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -694,5 +693,6 @@ namespace Win32
 		public static extern uint32 GetSharedServiceRegistryStateKey(SC_HANDLE ServiceHandle, SERVICE_SHARED_REGISTRY_STATE_TYPE StateType, uint32 AccessMask, out HKEY ServiceStateKey);
 		[Import("api-ms-win-service-core-l1-1-5.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSharedServiceDirectory(SC_HANDLE ServiceHandle, SERVICE_SHARED_DIRECTORY_TYPE DirectoryType, char16* PathBuffer, uint32 PathBufferLength, out uint32 RequiredBufferLength);
+		#endregion
 	}
 }

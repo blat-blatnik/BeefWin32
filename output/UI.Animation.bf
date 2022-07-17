@@ -5,20 +5,19 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 UI_ANIMATION_SECONDS_EVENTUALLY = -1;
 		public const int32 UI_ANIMATION_REPEAT_INDEFINITELY = -1;
 		public const int32 UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_END = -1;
 		public const int32 UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_START = -2;
 		public const int32 UI_ANIMATION_SECONDS_INFINITE = -1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias UI_ANIMATION_KEYFRAME = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum UI_ANIMATION_UPDATE_RESULT : int32
 		{
 			NO_CHANGE = 0,
@@ -93,9 +92,9 @@ namespace Win32
 			IDLE = 0,
 			BUSY = 1,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_UIAnimationManager = .(0x4c1fc63a, 0x695c, 0x47e8, 0xa3, 0x39, 0x1a, 0x19, 0x4b, 0xe3, 0xd0, 0xb8);
 		public const Guid CLSID_UIAnimationManager2 = .(0xd25d8842, 0x8884, 0x4a4a, 0xb3, 0x21, 0x09, 0x13, 0x14, 0x37, 0x9b, 0xdd);
 		public const Guid CLSID_UIAnimationTransitionLibrary = .(0x1d6322ad, 0xaa85, 0x4ef5, 0xa8, 0x28, 0x86, 0xd7, 0x10, 0x67, 0xd1, 0x45);
@@ -103,9 +102,9 @@ namespace Win32
 		public const Guid CLSID_UIAnimationTransitionFactory = .(0x8a9b1cdd, 0xfcd7, 0x419c, 0x8b, 0x44, 0x42, 0xfd, 0x17, 0xdb, 0x18, 0x87);
 		public const Guid CLSID_UIAnimationTransitionFactory2 = .(0x84302f97, 0x7f7b, 0x4040, 0xb1, 0x90, 0x72, 0xac, 0x9d, 0x18, 0xe4, 0x20);
 		public const Guid CLSID_UIAnimationTimer = .(0xbfcd4a0c, 0x06b6, 0x4384, 0xb7, 0x68, 0x0d, 0xaa, 0x79, 0x2c, 0x38, 0x0e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUIAnimationManager : IUnknown
 		{
@@ -919,6 +918,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAnimationStoryboard2 self, IUIAnimationStoryboardEventHandler2* handler, BOOL fRegisterStatusChangeForNextAnimationEvent, BOOL fRegisterUpdateForNextAnimationEvent) SetStoryboardEventHandler;
 			}
 		}
+		#endregion
 		
 	}
 }

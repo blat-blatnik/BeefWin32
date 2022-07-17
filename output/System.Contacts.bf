@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CGD_DEFAULT = 0;
 		public const uint32 CGD_UNKNOWN_PROPERTY = 0;
 		public const uint32 CGD_STRING_PROPERTY = 1;
@@ -14,9 +13,9 @@ namespace Win32
 		public const uint32 CGD_BINARY_PROPERTY = 4;
 		public const uint32 CGD_ARRAY_NODE = 8;
 		public const Guid CLSID_ContactAggregationManager = .(0x96c8ad95, 0xc199, 0x44de, 0xb3, 0x4e, 0xac, 0x33, 0xc4, 0x42, 0xdf, 0x39);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS : int32
 		{
 			LOCAL = 0,
@@ -28,23 +27,23 @@ namespace Win32
 			INCLUDE_EXTERNAL = 1,
 			EXTERNAL_ONLY = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CONTACT_AGGREGATION_BLOB
 		{
 			public uint32 dwCount;
 			public uint8* lpb;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_Contact = .(0x61b68808, 0x8eee, 0x4fd1, 0xac, 0xb8, 0x3d, 0x80, 0x4c, 0x8d, 0xb0, 0x56);
 		public const Guid CLSID_ContactManager = .(0x7165c8ab, 0xaf88, 0x42bd, 0x86, 0xfd, 0x53, 0x10, 0xb4, 0x28, 0x5a, 0x02);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IContactManager : IUnknown
 		{
@@ -547,6 +546,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IContactAggregationServerPersonCollection self, out uint32 pCount) get_Count;
 			}
 		}
+		#endregion
 		
 	}
 }

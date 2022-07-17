@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 AVRF_MAX_TRACES = 32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum VERIFIER_ENUM_RESOURCE_FLAGS : uint32
 		{
 			DONT_RESOLVE_TRACES = 2,
@@ -46,15 +45,15 @@ namespace Win32
 			HandleTrace = 1,
 			Max = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 AVRF_RESOURCE_ENUMERATE_CALLBACK(void* ResourceDescription, void* EnumerationContext, out uint32 EnumerationLevel);
 		public function uint32 AVRF_HEAPALLOCATION_ENUMERATE_CALLBACK(out AVRF_HEAP_ALLOCATION HeapAllocation, void* EnumerationContext, out uint32 EnumerationLevel);
 		public function uint32 AVRF_HANDLEOPERATION_ENUMERATE_CALLBACK(out AVRF_HANDLE_OPERATION HandleOperation, void* EnumerationContext, out uint32 EnumerationLevel);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AVRF_BACKTRACE_INFORMATION
 		{
@@ -85,10 +84,11 @@ namespace Win32
 			public uint32 Spare0;
 			public AVRF_BACKTRACE_INFORMATION BackTraceInformation;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("verifier.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 VerifierEnumerateResource(HANDLE Process, VERIFIER_ENUM_RESOURCE_FLAGS Flags, eAvrfResourceTypes ResourceType, AVRF_RESOURCE_ENUMERATE_CALLBACK ResourceCallback, void* EnumerationContext);
+		#endregion
 	}
 }

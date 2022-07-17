@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PROPSETFLAG_DEFAULT = 0;
 		public const uint32 PROPSETFLAG_NONSIMPLE = 1;
 		public const uint32 PROPSETFLAG_ANSI = 2;
@@ -97,9 +96,9 @@ namespace Win32
 		public const uint32 STGFMT_DOCUMENT = 0;
 		public const uint32 STGOPTIONS_VERSION = 1;
 		public const uint32 CCH_MAX_PROPSTG_NAME = 31;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PROPSPEC_KIND : uint32
 		{
 			LPWSTR = 0,
@@ -144,9 +143,9 @@ namespace Win32
 			FINAL = 8,
 			OTHER = 32767,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct BSTRBLOB
 		{
@@ -473,9 +472,9 @@ namespace Win32
 			public PWSTR pstrName;
 			public Guid clsid;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEnumSTATSTG : IUnknown
 		{
@@ -810,9 +809,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPropertyBag2 self, PWSTR pstrName, uint32 dwHint, ref IUnknown pUnkObject, ref IErrorLog pErrLog) LoadObject;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown* punkOuter, CLSCTX dwClsCtx, uint32 grfMode, PWSTR pwszName, uint32 dwCount, MULTI_QI* pResults);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -903,5 +902,6 @@ namespace Win32
 		public static extern HRESULT StgSerializePropVariant(in PROPVARIANT ppropvar, out SERIALIZEDPROPERTYVALUE* ppProp, out uint32 pcb);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgDeserializePropVariant(in SERIALIZEDPROPERTYVALUE pprop, uint32 cbMax, out PROPVARIANT ppropvar);
+		#endregion
 	}
 }

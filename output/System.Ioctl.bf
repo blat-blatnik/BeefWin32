@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IOCTL_STORAGE_BASE = 45;
 		public const uint32 IOCTL_SCMBUS_BASE = 89;
 		public const uint32 IOCTL_DISK_BASE = 7;
@@ -1016,9 +1015,9 @@ namespace Win32
 		public const uint32 PROJFS_PROTOCOL_VERSION = 3;
 		public const uint32 EFS_TRACKED_OFFSET_HEADER_FLAG = 1;
 		public const uint32 SPACES_TRACKED_OFFSET_HEADER_FLAG = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum GPT_ATTRIBUTES : uint64
 		{
 			ATTRIBUTE_PLATFORM_REQUIRED = 1uL,
@@ -1913,13 +1912,13 @@ namespace Win32
 			FILTER_ATTACH_BLOCKED = 4,
 			COMPATIBLE_STORAGE_DRIVER = 8,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PIO_IRP_EXT_PROCESS_TRACKED_OFFSET_CALLBACK(ref IO_IRP_EXT_TRACK_OFFSET_HEADER SourceContext, out IO_IRP_EXT_TRACK_OFFSET_HEADER TargetContext, int64 RelativeOffset);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct STORAGE_HOTPLUG_INFO
 		{
@@ -6369,6 +6368,7 @@ namespace Win32
 			public uint16 Flags;
 			public PIO_IRP_EXT_PROCESS_TRACKED_OFFSET_CALLBACK TrackedOffsetCallback;
 		}
+		#endregion
 		
 	}
 }

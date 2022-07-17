@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MIXERCONTROL_CONTROLTYPE_CUSTOM = 0;
 		public const uint32 MIXERCONTROL_CONTROLTYPE_BOOLEANMETER = 268500992;
 		public const uint32 MIXERCONTROL_CONTROLTYPE_SIGNEDMETER = 268566528;
@@ -466,9 +465,9 @@ namespace Win32
 		public const uint32 ACMDM_STREAM_PREPARE = 24657;
 		public const uint32 ACMDM_STREAM_UNPREPARE = 24658;
 		public const uint32 ACMDM_STREAM_UPDATE = 24659;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HMIDI = int;
 		public typealias HMIDIIN = int;
 		public typealias HMIDIOUT = int;
@@ -482,9 +481,9 @@ namespace Win32
 		public typealias HACMDRIVER = int;
 		public typealias HACMSTREAM = int;
 		public typealias HACMOBJ = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum MIDI_WAVE_OPEN_TYPE : uint32
 		{
@@ -729,9 +728,9 @@ namespace Win32
 			Low = 1,
 			Full = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void LPWAVECALLBACK(HDRVR hdrvr, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
 		public function void LPMIDICALLBACK(HDRVR hdrvr, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
 		public function void PAudioStateMonitorCallback(ref IAudioStateMonitor audioStateMonitor, void* context);
@@ -749,9 +748,9 @@ namespace Win32
 		public function BOOL ACMFILTERENUMCBW(HACMDRIVERID hadid, out ACMFILTERDETAILSW pafd, uint dwInstance, uint32 fdwSupport);
 		public function uint32 ACMFILTERCHOOSEHOOKPROCA(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
 		public function uint32 ACMFILTERCHOOSEHOOKPROCW(HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AUDIO_VOLUME_NOTIFICATION_DATA
 		{
@@ -1902,14 +1901,14 @@ namespace Win32
 			public WAVEFORMATEX* pwfxDst;
 			public uint32 cbwfxDst;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MMDeviceEnumerator = .(0xbcde0395, 0xe52f, 0x467c, 0x8e, 0x3d, 0xc4, 0x57, 0x92, 0x91, 0x69, 0x2e);
 		public const Guid CLSID_DeviceTopology = .(0x1df639d0, 0x5ec1, 0x47aa, 0x93, 0x79, 0x82, 0x8d, 0xc1, 0xaa, 0x8c, 0x59);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IMessageFilter : IUnknown
 		{
@@ -3333,9 +3332,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] AudioStateMonitorSoundLevel(ref IAudioStateMonitor self) GetSoundLevel;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoRegisterMessageFilter(IMessageFilter* lpMessageFilter, IMessageFilter** lplpMessageFilter);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3652,5 +3651,6 @@ namespace Win32
 		public static extern uint32 acmStreamPrepareHeader(HACMSTREAM has, out ACMSTREAMHEADER pash, uint32 fdwPrepare);
 		[Import("msacm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 acmStreamUnprepareHeader(HACMSTREAM has, out ACMSTREAMHEADER pash, uint32 fdwUnprepare);
+		#endregion
 	}
 }

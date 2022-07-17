@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDisplayDeviceInterop : IUnknown
 		{
@@ -41,6 +40,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDisplayPathInterop self, out uint32 pSourceId) GetSourceId;
 			}
 		}
+		#endregion
 		
 	}
 }

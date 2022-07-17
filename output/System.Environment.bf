@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ENCLAVE_RUNTIME_POLICY_ALLOW_FULL_DEBUG = 1;
 		public const uint32 ENCLAVE_RUNTIME_POLICY_ALLOW_DYNAMIC_DEBUG = 2;
 		public const uint32 ENCLAVE_UNSEAL_FLAG_STALE_KEY = 1;
@@ -23,9 +22,9 @@ namespace Win32
 		public const uint32 ENCLAVE_VBS_BASIC_KEY_FLAG_FAMILY_ID = 2;
 		public const uint32 ENCLAVE_VBS_BASIC_KEY_FLAG_IMAGE_ID = 4;
 		public const uint32 ENCLAVE_VBS_BASIC_KEY_FLAG_DEBUG_KEY = 8;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ENCLAVE_SEALING_IDENTITY_POLICY : int32
 		{
 			INVALID = 0,
@@ -35,9 +34,9 @@ namespace Win32
 			SAME_FAMILY = 4,
 			SAME_AUTHOR = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_ENCLAVE(uint ReturnValue);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_EXCEPTION(ref VBS_BASIC_ENCLAVE_EXCEPTION_AMD64 ExceptionRecord);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_TERMINATE_THREAD(ref VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64 ThreadDescriptor);
@@ -51,9 +50,9 @@ namespace Win32
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_REPORT(uint8* EnclaveData, void* Report, uint32 BufferSize, out uint32 OutputSize);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_VERIFY_REPORT(void* Report, uint32 ReportSize);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_RANDOM_DATA(out uint8 Buffer, uint32 NumberOfBytes, out uint64 Generation);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct ENCLAVE_IDENTITY
 		{
@@ -171,9 +170,9 @@ namespace Win32
 			public VBS_BASIC_ENCLAVE_BASIC_CALL_VERIFY_REPORT VerifyReport;
 			public VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_RANDOM_DATA GenerateRandomData;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetEnvironmentStringsW(PWSTR NewEnvironment);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -248,5 +247,6 @@ namespace Win32
 		public static extern HRESULT EnclaveUnsealData(void* ProtectedBlob, uint32 ProtectedBlobSize, void* DecryptedData, uint32 BufferSize, out uint32 DecryptedDataSize, ENCLAVE_IDENTITY* SealingIdentity, uint32* UnsealingFlags);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EnclaveGetEnclaveInformation(uint32 InformationSize, out ENCLAVE_INFORMATION EnclaveInformation);
+		#endregion
 	}
 }

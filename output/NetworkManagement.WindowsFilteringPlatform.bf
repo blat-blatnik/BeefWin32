@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FWPM_NET_EVENT_KEYWORD_INBOUND_MCAST = 1;
 		public const uint32 FWPM_NET_EVENT_KEYWORD_INBOUND_BCAST = 2;
 		public const uint32 FWPM_NET_EVENT_KEYWORD_CAPABILITY_DROP = 4;
@@ -676,9 +675,9 @@ namespace Win32
 		public const uint32 FWPS_L2_METADATA_FIELD_VSWITCH_PACKET_CONTEXT = 16;
 		public const uint32 FWPS_L2_METADATA_FIELD_VSWITCH_DESTINATION_PORT_ID = 32;
 		public const uint32 FWPS_L2_METADATA_FIELD_RESERVED = 2147483648;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum IPSEC_SA_BUNDLE_FLAGS : uint32
 		{
 			ND_SECURE = 1,
@@ -1269,9 +1268,9 @@ namespace Win32
 			TcpFastopen = 0,
 			Max = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void FWPM_PROVIDER_CHANGE_CALLBACK0(void* context, in FWPM_PROVIDER_CHANGE0 change);
 		public function void FWPM_PROVIDER_CONTEXT_CHANGE_CALLBACK0(void* context, in FWPM_PROVIDER_CONTEXT_CHANGE0 change);
 		public function void FWPM_SUBLAYER_CHANGE_CALLBACK0(void* context, in FWPM_SUBLAYER_CHANGE0 change);
@@ -1290,9 +1289,9 @@ namespace Win32
 		public function void FWPM_SYSTEM_PORTS_CALLBACK0(void* context, in FWPM_SYSTEM_PORTS0 sysPorts);
 		public function void FWPM_CONNECTION_CALLBACK0(void* context, FWPM_CONNECTION_EVENT_TYPE eventType, in FWPM_CONNECTION0 connection);
 		public function uint32 FWPM_VSWITCH_EVENT_CALLBACK0(void* context, in FWPM_VSWITCH_EVENT0 vSwitchEvent);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FWP_BYTE_ARRAY6
 		{
@@ -4592,9 +4591,9 @@ namespace Win32
 				public LUID IfLuid;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void FwpmFreeMemory0(void** p);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4967,5 +4966,6 @@ namespace Win32
 		public static extern uint32 FwpmvSwitchEventsGetSecurityInfo0(HANDLE engineHandle, uint32 securityInfo, PSID* sidOwner, PSID* sidGroup, ACL** dacl, ACL** sacl, out SECURITY_DESCRIPTOR* securityDescriptor);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 FwpmvSwitchEventsSetSecurityInfo0(HANDLE engineHandle, uint32 securityInfo, SID* sidOwner, SID* sidGroup, ACL* dacl, ACL* sacl);
+		#endregion
 	}
 }

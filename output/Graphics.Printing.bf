@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 USB_PRINTER_INTERFACE_CLASSIC = 1;
 		public const uint32 USB_PRINTER_INTERFACE_IPP = 2;
 		public const uint32 USB_PRINTER_INTERFACE_DUAL = 3;
@@ -1299,9 +1298,9 @@ namespace Win32
 		public const Guid GUID_DEVINTERFACE_USBPRINT = .(0x28d78fad, 0x5a12, 0x11d1, 0xae, 0x5b, 0x00, 0x00, 0xf8, 0x03, 0xa8, 0xc2);
 		public const Guid GUID_DEVINTERFACE_IPPUSB_PRINT = .(0xf2f40381, 0xf46d, 0x4e51, 0xbc, 0xe7, 0x62, 0xde, 0x6c, 0xf2, 0xd0, 0x98);
 		public const Guid CLSID_XPSRASTERIZER_FACTORY = .(0x503e79bf, 0x1d09, 0x4764, 0x9d, 0x72, 0x1e, 0xb0, 0xc6, 0x59, 0x67, 0xc6);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum EXpsCompressionOptions : int32
 		{
 			NotCompressed = 0,
@@ -1548,9 +1547,9 @@ namespace Win32
 			FinalPageCount = 0,
 			IntermediatePageCount = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 _CPSUICALLBACK(out CPSUICBPARAM pCPSUICBParam);
 		public function int PFNCOMPROPSHEET(HANDLE hComPropSheet, uint32 Function, LPARAM lParam1, LPARAM lParam2);
 		public function int32 PFNPROPSHEETUI(out PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam);
@@ -1560,9 +1559,9 @@ namespace Win32
 		public function int32 OEMCUIPCALLBACK(out CPSUICBPARAM param0, out OEMCUIPPARAM param1);
 		public function int32 EMFPLAYPROC(HDC param0, int32 param1, HANDLE param2);
 		public function BOOL ROUTER_NOTIFY_CALLBACK(uint32 dwCommand, void* pContext, uint32 dwColor, ref PRINTER_NOTIFY_INFO pNofityInfo, uint32 fdwFlags, out uint32 pdwResult);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct IBidiRequestVtbl
 		{
@@ -4251,9 +4250,9 @@ namespace Win32
 			public UI_TYPE UIType;
 			public MESSAGEBOX_PARAMS MessageBoxParams;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_BidiRequest = .(0xb9162a23, 0x45f9, 0x47cc, 0x80, 0xf5, 0xfe, 0x0f, 0xe9, 0xb9, 0xe1, 0xa2);
 		public const Guid CLSID_BidiRequestContainer = .(0xfc5b8a24, 0xdb05, 0x4a01, 0x83, 0x88, 0x22, 0xed, 0xf6, 0xc2, 0xbb, 0xba);
 		public const Guid CLSID_BidiSpl = .(0x2a614240, 0xa4c5, 0x4c33, 0xbd, 0x87, 0x1b, 0xc7, 0x09, 0x33, 0x16, 0x39);
@@ -4261,9 +4260,9 @@ namespace Win32
 		public const Guid CLSID_PrinterQueueView = .(0xeb54c231, 0x798c, 0x4c9e, 0xb4, 0x61, 0x29, 0xfa, 0xd0, 0x40, 0x39, 0xb1);
 		public const Guid CLSID_PrintSchemaAsyncOperation = .(0x43b2f83d, 0x10f2, 0x48ab, 0x83, 0x1b, 0x55, 0xfd, 0xbd, 0xbd, 0x34, 0xa4);
 		public const Guid CLSID_PrinterExtensionManager = .(0x331b60da, 0x9e90, 0x4dd0, 0x9c, 0x84, 0xea, 0xc4, 0xe6, 0x59, 0xb6, 0x1f);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPrintCoreHelper : IUnknown
 		{
@@ -5562,9 +5561,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintPreviewDxgiPackageTarget self) InvalidatePreview;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("compstui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CommonPropertySheetUIA(HWND hWndOwner, PFNPROPSHEETUI pfnPropSheetUI, LPARAM lParam, uint32* pResult);
 		[Import("compstui.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5993,5 +5992,6 @@ namespace Win32
 		public static extern HRESULT UpdatePrintDeviceObject(HANDLE hPrinter, HANDLE hDeviceObject);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RemovePrintDeviceObject(HANDLE hDeviceObject);
+		#endregion
 	}
 }

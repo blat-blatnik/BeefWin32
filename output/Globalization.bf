@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ALL_SERVICE_TYPES = 0;
 		public const uint32 HIGHLEVEL_SERVICE_TYPES = 1;
 		public const uint32 LOWLEVEL_SERVICE_TYPES = 2;
@@ -771,15 +770,15 @@ namespace Win32
 		public const Guid ELS_GUID_TRANSLITERATION_HANGUL_DECOMPOSITION = .(0x4ba2a721, 0xe43d, 0x41b7, 0xb3, 0x30, 0x53, 0x6a, 0xe1, 0xe4, 0x88, 0x63);
 		public const int32 UMSGPAT_ARG_NAME_NOT_NUMBER = -1;
 		public const int32 UMSGPAT_ARG_NAME_NOT_VALID = -2;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HIMC = int;
 		public typealias HIMCC = int;
 		public typealias HSAVEDUILANGUAGES = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FOLD_STRING_MAP_FLAGS : uint32
 		{
 			COMPOSITE = 64,
@@ -3445,9 +3444,9 @@ namespace Win32
 			READ = 1,
 			WRITE = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LOCALE_ENUMPROCA(PSTR param0);
 		public function BOOL LOCALE_ENUMPROCW(PWSTR param0);
 		public function BOOL LANGUAGEGROUP_ENUMPROCA(uint32 param0, PSTR param1, PSTR param2, uint32 param3, int param4);
@@ -3510,9 +3509,9 @@ namespace Win32
 		public function int8 URegexMatchCallback(void* context, int32 steps);
 		public function int8 URegexFindProgressCallback(void* context, int64 matchIndex);
 		public function int32 UStringCaseMapper(in UCaseMap csm, out uint16 dest, int32 destCapacity, in uint16 src, int32 srcLength, out UErrorCode pErrorCode);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FONTSIGNATURE
 		{
@@ -4155,16 +4154,16 @@ namespace Win32
 			public char16 wcFrom;
 			public char16 wcTo;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SpellCheckerFactory = .(0x7ab36653, 0x1796, 0x484b, 0xbd, 0xfa, 0xe7, 0x4f, 0x1d, 0xb7, 0xc1, 0xdc);
 		public const Guid CLSID_CMLangString = .(0xc04d65cf, 0xb70d, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
 		public const Guid CLSID_CMLangConvertCharset = .(0xd66d6f99, 0xcdaa, 0x11d0, 0xb8, 0x22, 0x00, 0xc0, 0x4f, 0xc9, 0xb3, 0x1f);
 		public const Guid CLSID_CMultiLanguage = .(0x275c23e2, 0x3747, 0x11d0, 0x9f, 0xea, 0x00, 0xaa, 0x00, 0x3f, 0x86, 0x46);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISpellingError : IUnknown
 		{
@@ -4826,9 +4825,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMultiLanguage3 self, uint32 dwFlags, ref IStream pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, out uint32 pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePageInIStream;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetTextCharset(HDC hdc);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -7255,5 +7254,6 @@ namespace Win32
 		public static extern int32 lstrlenW(PWSTR lpString);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsTextUnicode(void* lpv, int32 iSize, IS_TEXT_UNICODE_RESULT* lpiResult);
+		#endregion
 	}
 }

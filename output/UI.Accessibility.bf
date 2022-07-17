@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid LIBID_Accessibility = .(0x1ea4dbf0, 0x3c3b, 0x11cf, 0x81, 0x0c, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 		public const Guid CLSID_AccPropServices = .(0xb5f8350b, 0x0548, 0x48b1, 0xa6, 0xee, 0x88, 0xbd, 0x00, 0xb4, 0xa5, 0xe7);
 		public const Guid IIS_IsOleaccProxy = .(0x902697fa, 0x80e4, 0x4560, 0x80, 0x2a, 0xa1, 0x3f, 0x22, 0xa6, 0x47, 0x09);
@@ -929,17 +928,17 @@ namespace Win32
 		public const int32 HeadingLevel9 = 80059;
 		public const int32 UIA_SummaryChangeId = 90000;
 		public const int32 UIA_SayAsInterpretAsMetadataId = 100000;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HWINEVENTHOOK = int;
 		public typealias HUIANODE = int;
 		public typealias HUIAPATTERNOBJECT = int;
 		public typealias HUIATEXTRANGE = int;
 		public typealias HUIAEVENT = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum STICKYKEYS_FLAGS : uint32
 		{
 			STICKYKEYSON = 1,
@@ -1438,9 +1437,9 @@ namespace Win32
 			Progress = 1,
 			Completed = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function LRESULT LPFNLRESULTFROMOBJECT(in Guid riid, WPARAM wParam, ref IUnknown punk);
 		public function HRESULT LPFNOBJECTFROMLRESULT(LRESULT lResult, in Guid riid, WPARAM wParam, void** ppvObject);
 		public function HRESULT LPFNACCESSIBLEOBJECTFROMWINDOW(HWND hwnd, uint32 dwId, in Guid riid, void** ppvObject);
@@ -1450,9 +1449,9 @@ namespace Win32
 		public function SAFEARRAY* UiaProviderCallback(HWND hwnd, ProviderType providerType);
 		public function void UiaEventCallback(out UiaEventArgs pArgs, out SAFEARRAY pRequestedData, BSTR pTreeStructure);
 		public function void WINEVENTPROC(HWINEVENTHOOK hWinEventHook, uint32 event, HWND hwnd, int32 idObject, int32 idChild, uint32 idEventThread, uint32 dwmsEventTime);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MSAAMENUINFO
 		{
@@ -1740,16 +1739,16 @@ namespace Win32
 			public uint32 cbSize;
 			public uint32 dwFlags;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CAccPropServices = .(0xb5f8350b, 0x0548, 0x48b1, 0xa6, 0xee, 0x88, 0xbd, 0x00, 0xb4, 0xa5, 0xe7);
 		public const Guid CLSID_CUIAutomation = .(0xff48dba4, 0x60ef, 0x4201, 0xaa, 0x87, 0x54, 0x10, 0x3e, 0xef, 0x59, 0x4e);
 		public const Guid CLSID_CUIAutomation8 = .(0xe22ad333, 0xb25f, 0x460c, 0x83, 0xd0, 0x05, 0x81, 0x10, 0x73, 0x95, 0xc9);
 		public const Guid CLSID_CUIAutomationRegistrar = .(0x6e29fabf, 0x9977, 0x42d1, 0x8d, 0x0e, 0xca, 0x7e, 0x61, 0xad, 0x87, 0xe6);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRicheditWindowlessAccessibility : IUnknown
 		{
@@ -4991,9 +4990,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IUIAutomation6 self, ref IUIAutomationElement element, ref IUIAutomationActiveTextPositionChangedEventHandler handler) RemoveActiveTextPositionChangedEventHandler;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("oleacc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern LRESULT LresultFromObject(in Guid riid, WPARAM wParam, ref IUnknown punk);
 		[Import("oleacc.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5240,5 +5239,6 @@ namespace Win32
 		public static extern BOOL IsWinEventHookInstalled(uint32 event);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnhookWinEvent(HWINEVENTHOOK hWinEventHook);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NTDDI_WIN2K = 83886080;
 		public const uint32 NTDDI_WINXP = 83951616;
 		public const uint32 NTDDI_WINXPSP2 = 83952128;
@@ -120,13 +119,13 @@ namespace Win32
 		public const uint32 SUBVERSION_MASK = 255;
 		public const uint32 NTDDI_VERSION = 167772171;
 		public const uint32 SCEX2_ALT_NETBIOS_NAME = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias FIRMWARE_TABLE_ID = uint32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum VER_FLAGS : uint32
 		{
 			MINORVERSION = 1,
@@ -396,14 +395,14 @@ namespace Win32
 			DEPPolicyOptOut = 3,
 			DEPTotalPolicyCount = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PGET_SYSTEM_WOW64_DIRECTORY_A(uint8* lpBuffer, uint32 uSize);
 		public function uint32 PGET_SYSTEM_WOW64_DIRECTORY_W(char16* lpBuffer, uint32 uSize);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct GROUP_AFFINITY
 		{
@@ -687,9 +686,9 @@ namespace Win32
 			public uint dwTotalVirtual;
 			public uint dwAvailVirtual;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GlobalMemoryStatusEx(out MEMORYSTATUSEX lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -814,5 +813,6 @@ namespace Win32
 		public static extern BOOL VerifyVersionInfoA(out OSVERSIONINFOEXA lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL VerifyVersionInfoW(out OSVERSIONINFOEXW lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 RASNAP_ProbationTime = 1;
 		public const uint32 RASTUNNELENDPOINT_UNKNOWN = 0;
 		public const uint32 RASTUNNELENDPOINT_IPv4 = 1;
@@ -698,13 +697,13 @@ namespace Win32
 		public const uint32 ERROR_PLUGIN_NOT_INSTALLED = 876;
 		public const uint32 ERROR_ACTION_REQUIRED = 877;
 		public const uint32 RASBASEEND = 877;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HRASCONN = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MPR_INTERFACE_DIAL_MODE : uint32
 		{
 			First = 0,
@@ -926,9 +925,9 @@ namespace Win32
 			ROUTE_EXPIRED = 2,
 			CHANGE_NOTIFICATION = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void RASDIALFUNC(uint32 param0, RASCONNSTATE param1, uint32 param2);
 		public function void RASDIALFUNC1(HRASCONN param0, uint32 param1, RASCONNSTATE param2, uint32 param3, uint32 param4);
 		public function uint32 RASDIALFUNC2(uint param0, uint32 param1, HRASCONN param2, uint32 param3, RASCONNSTATE param4, uint32 param5, uint32 param6);
@@ -980,9 +979,9 @@ namespace Win32
 		public function uint32 PMGM_ENABLE_IGMP_CALLBACK(uint32 dwIfIndex, uint32 dwIfNextHopAddr);
 		public function uint32 RTM_EVENT_CALLBACK(int RtmRegHandle, RTM_EVENT_TYPE EventType, void* Context1, void* Context2);
 		public function void RTM_ENTITY_EXPORT_METHOD(int CallerHandle, int CalleeHandle, out RTM_ENTITY_METHOD_INPUT Input, out RTM_ENTITY_METHOD_OUTPUT Output);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RASIPADDR
 		{
@@ -2767,9 +2766,9 @@ namespace Win32
 			public uint32 NumMethods;
 			public RTM_ENTITY_EXPORT_METHOD[0] Methods;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("rasapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RasDialA(RASDIALEXTENSIONS* param0, PSTR param1, ref RASDIALPARAMSA param2, uint32 param3, void* param4, out HRASCONN param5);
 		[Import("rasapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3324,5 +3323,6 @@ namespace Win32
 		public static extern uint32 RtmDeleteRouteList(int RtmRegHandle, int RouteListHandle);
 		[Import("rtm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtmReferenceHandles(int RtmRegHandle, uint32 NumHandles, out HANDLE RtmHandles);
+		#endregion
 	}
 }

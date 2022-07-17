@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TPMVSC_DEFAULT_ADMIN_ALGORITHM_ID = 130;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TPMVSC_ATTESTATION_TYPE : int32
 		{
 			NONE = 0,
@@ -56,14 +55,14 @@ namespace Win32
 			CARD_CREATE = 17,
 			CARD_DESTROY = 18,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_TpmVirtualSmartCardManager = .(0x16a18e86, 0x7f6e, 0x4c20, 0xad, 0x89, 0x4f, 0xfc, 0x0d, 0xb7, 0xa9, 0x6a);
 		public const Guid CLSID_RemoteTpmVirtualSmartCardManager = .(0x152ea2a8, 0x70dc, 0x4c59, 0x8b, 0x2a, 0x32, 0xaa, 0x3c, 0xa0, 0xdc, 0xac);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITpmVirtualSmartCardManagerStatusCallback : IUnknown
 		{
@@ -128,6 +127,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITpmVirtualSmartCardManager3 self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, TPMVSC_ATTESTATION_TYPE attestationType, BOOL fGenerate, ref ITpmVirtualSmartCardManagerStatusCallback pStatusCallback, out PWSTR ppszInstanceId) CreateVirtualSmartCardWithAttestation;
 			}
 		}
+		#endregion
 		
 	}
 }

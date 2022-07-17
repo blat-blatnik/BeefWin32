@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum ENTERPRISE_DATA_POLICIES : uint32
 		{
 			NONE = 0,
@@ -24,9 +23,9 @@ namespace Win32
 		{
 			VERSION1 = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HTHREAD_NETWORK_CONTEXT
 		{
@@ -38,9 +37,9 @@ namespace Win32
 		{
 			public Boolean audit;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IProtectionPolicyManagerInterop : IInspectable
 		{
@@ -106,9 +105,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProtectionPolicyManagerInterop3 self, HWND appWindow, ref IUnknown sourceItemListUnk, uint32 processId, ref IUnknown auditInfoUnk, HSTRING messageFromApp, uint32 behavior, in Guid riid, void** asyncOperation) RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("srpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SrpCreateThreadNetworkContext(PWSTR enterpriseId, out HTHREAD_NETWORK_CONTEXT threadNetworkContext);
 		[Import("srpapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -135,5 +134,6 @@ namespace Win32
 		public static extern HRESULT ProtectFileToEnterpriseIdentity(PWSTR fileOrFolderPath, PWSTR identity);
 		[Import("efswrt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnprotectFile(PWSTR fileOrFolderPath, FILE_UNPROTECT_OPTIONS* options);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MAX_REASON_NAME_LEN = 64;
 		public const uint32 MAX_REASON_DESC_LEN = 256;
 		public const uint32 MAX_REASON_BUGID_LEN = 32;
@@ -20,9 +19,9 @@ namespace Win32
 		public const uint32 SNAPSHOT_POLICY_ALWAYS = 1;
 		public const uint32 SNAPSHOT_POLICY_UNPLANNED = 2;
 		public const uint32 MAX_NUM_REASONS = 256;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum SHUTDOWN_REASON : uint32
 		{
@@ -107,9 +106,9 @@ namespace Win32
 			RESTARTAPPS = 64,
 			SHUTDOWN = 1,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL InitiateSystemShutdownA(PSTR lpMachineName, PSTR lpMessage, uint32 dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -138,5 +137,6 @@ namespace Win32
 		public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, char16* pwszBuff, out uint32 pcchBuff);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
+		#endregion
 	}
 }

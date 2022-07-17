@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IThumbnailExtractor : IUnknown
 		{
@@ -39,6 +38,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDummyHICONIncluder self, HICON h1, HDC h2) Dummy;
 			}
 		}
+		#endregion
 		
 	}
 }

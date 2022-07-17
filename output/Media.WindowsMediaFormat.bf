@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WMT_VIDEOIMAGE_SAMPLE_INPUT_FRAME = 1;
 		public const uint32 WMT_VIDEOIMAGE_SAMPLE_OUTPUT_FRAME = 2;
 		public const uint32 WMT_VIDEOIMAGE_SAMPLE_USES_CURRENT_INPUT_FRAME = 4;
@@ -349,9 +348,9 @@ namespace Win32
 		public const Guid WMT_DMOCATEGORY_AUDIO_WATERMARK = .(0x65221c5a, 0xfa75, 0x4b39, 0xb5, 0x0c, 0x06, 0xc3, 0x36, 0xb6, 0xa3, 0xef);
 		public const Guid WMT_DMOCATEGORY_VIDEO_WATERMARK = .(0x187cc922, 0x8efc, 0x4404, 0x9d, 0xaf, 0x63, 0xf4, 0x83, 0x0d, 0xf1, 0xbc);
 		public const Guid CLSID_ClientNetManager = .(0xcd12a3ce, 0x9c42, 0x11d2, 0xbe, 0xed, 0x00, 0x60, 0x08, 0x2f, 0x20, 0x54);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum _AM_ASFWRITERCONFIG_PARAM : int32
 		{
 			AUTOINDEX = 1,
@@ -613,9 +612,9 @@ namespace Win32
 			MUSTPROMPTUSER = 1,
 			ANONYMOUSONLY = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AM_WMT_EVENT_DATA
 		{
@@ -972,9 +971,9 @@ namespace Win32
 			public DRM_OPL_OUTPUT_IDS oplIdIncludes;
 			public DRM_OPL_OUTPUT_IDS oplIdExcludes;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAMWMBufferPass : IUnknown
 		{
@@ -3445,9 +3444,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMSInternalAdminNetSource3 self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, out NETSOURCE_URLCREDPOLICY_SETTINGS pdwUrlPolicy, out BSTR pbstrName, out BSTR pbstrPassword, out BOOL pfConfirmedGood) GetCredentialsEx2;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WMIsContentProtected(PWSTR pwszFileName, out BOOL pfIsProtected);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3470,5 +3469,6 @@ namespace Win32
 		public static extern HRESULT WMCreateWriterNetworkSink(out IWMWriterNetworkSink* ppSink);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WMCreateWriterPushSink(out IWMWriterPushSink* ppSink);
+		#endregion
 	}
 }

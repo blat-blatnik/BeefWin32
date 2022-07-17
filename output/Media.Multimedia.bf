@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WM_CAP_START = 1024;
 		public const uint32 MODM_USER = 16384;
 		public const uint32 MIDM_USER = 16384;
@@ -4649,16 +4648,16 @@ namespace Win32
 		public const int32 MCI_OVLY_WHERE_DESTINATION = 262144;
 		public const int32 MCI_OVLY_WHERE_FRAME = 524288;
 		public const int32 MCI_OVLY_WHERE_VIDEO = 1048576;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HMMIO = int;
 		public typealias HDRVR = int;
 		public typealias HIC = int;
 		public typealias HVIDEO = int;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 YIELDPROC(uint32 mciId, uint32 dwYieldData);
 		public function LRESULT DRIVERPROC(uint param0, HDRVR param1, uint32 param2, LPARAM param3, LPARAM param4);
 		public function uint32 DRIVERMSGPROC(uint32 param0, uint32 param1, uint param2, uint param3, uint param4);
@@ -4675,9 +4674,9 @@ namespace Win32
 		public function void LPTASKCALLBACK(uint dwInst);
 		public function uint32 VFWWDMExtensionProc(void* pfnDeviceIoControl, LPFNSVADDPROPSHEETPAGE pfnAddPropertyPage, LPARAM lParam);
 		public function BOOL LPFNEXTDEVIO(LPARAM lParam, uint32 dwFlags, uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, out uint32 lpBytesReturned, out OVERLAPPED lpOverlapped);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct ADPCMCOEFSET
 		{
@@ -6200,13 +6199,13 @@ namespace Win32
 			public uint32 wCustomCommandTable;
 			public uint32 wType;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT = .(0x00000003, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAVIStream : IUnknown
 		{
@@ -6345,9 +6344,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetFrame self, ref BITMAPINFOHEADER lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 mciSendCommandA(uint32 mciId, uint32 uMsg, uint dwParam1, uint dwParam2);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6688,5 +6687,6 @@ namespace Win32
 		public static extern void mmTaskYield();
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 mmGetCurrentTask();
+		#endregion
 	}
 }

@@ -5,14 +5,13 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WSB_MAX_OB_STATUS_VALUE_TYPE_PAIR = 5;
 		public const uint32 WSB_MAX_OB_STATUS_ENTRY = 5;
 		public const HRESULT WSBAPP_ASYNC_IN_PROGRESS = 7995396;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSB_OB_STATUS_ENTRY_PAIR_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -23,9 +22,9 @@ namespace Win32
 			SIZE = 5,
 			MAX = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR
 		{
@@ -57,9 +56,9 @@ namespace Win32
 			public uint32 m_dwProviderIcon;
 			public BOOLEAN m_bSupportsRemoting;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWsbApplicationBackupSupport : IUnknown
 		{
@@ -113,6 +112,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWsbApplicationAsync self) Abort;
 			}
 		}
+		#endregion
 		
 	}
 }

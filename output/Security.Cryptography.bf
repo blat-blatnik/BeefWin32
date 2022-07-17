@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 CERT_COMPARE_SHIFT = 16;
 		public const uint32 BCRYPT_OBJECT_ALIGNMENT = 16;
 		public const uint32 KDF_HASH_ALGORITHM = 0;
@@ -1510,16 +1509,16 @@ namespace Win32
 		public const HRESULT AUDIT_STORE_EXPORT = 1074070020;
 		public const HRESULT AUDIT_STORE_DELETE = 1074070021;
 		public const HRESULT AUDIT_SERVICE_IDLE_STOP = 1074070022;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCRYPTASYNC = int;
 		public typealias HCERTCHAINENGINE = int;
 		public typealias BCRYPT_ALG_HANDLE = int;
 		public typealias BCRYPT_KEY_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum BCRYPT_OPERATION : uint32
 		{
 			CIPHER_OPERATION = 1,
@@ -2301,9 +2300,9 @@ namespace Win32
 			URL = 2,
 			KEYBASED_RENEWAL = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PFN_NCRYPT_ALLOC(uint cbSize);
 		public function void PFN_NCRYPT_FREE(void* pv);
 		public function BOOL PCRYPT_DECRYPT_PRIVATE_KEY_FUNC(CRYPT_ALGORITHM_IDENTIFIER Algorithm, CRYPTOAPI_BLOB EncryptedPrivateKey, uint8* pbClearTextKey, out uint32 pcbClearTextKey, void* pVoidDecryptFunc);
@@ -2400,9 +2399,9 @@ namespace Win32
 		public function HRESULT CryptXmlDllGetAlgorithmInfo(in CRYPT_XML_ALGORITHM pXmlAlgorithm, out CRYPT_XML_ALGORITHM_INFO* ppAlgInfo);
 		public function HRESULT CryptXmlDllEncodeKeyValue(uint hKey, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
 		public function HRESULT CryptXmlDllCreateKey(in CRYPT_XML_BLOB pEncoded, out BCRYPT_KEY_HANDLE phKey);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CMS_KEY_INFO
 		{
@@ -5643,17 +5642,17 @@ namespace Win32
 			public PWSTR privacyUrl;
 			public uint32 privacyVersion;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CCertSrvSetupKeyInformation = .(0x38373906, 0x5433, 0x4633, 0xb0, 0xfb, 0x29, 0xb7, 0xe7, 0x82, 0x62, 0xe1);
 		public const Guid CLSID_CCertSrvSetup = .(0x961f180f, 0xf55c, 0x413d, 0xa9, 0xb3, 0x7d, 0x2a, 0xf4, 0xd8, 0xe4, 0x2f);
 		public const Guid CLSID_CMSCEPSetup = .(0xaa4f5c02, 0x8e7c, 0x49c4, 0x94, 0xfa, 0x67, 0xa5, 0xcc, 0x5e, 0xad, 0xb4);
 		public const Guid CLSID_CCertificateEnrollmentServerSetup = .(0x9902f3bc, 0x88af, 0x4cf8, 0xae, 0x62, 0x71, 0x40, 0x53, 0x15, 0x52, 0xb6);
 		public const Guid CLSID_CCertificateEnrollmentPolicyServerSetup = .(0xafe2fa32, 0x41b1, 0x459d, 0xa5, 0xde, 0x49, 0xad, 0xd8, 0xa7, 0x21, 0x82);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICertSrvSetupKeyInformation : IDispatch
 		{
@@ -5854,9 +5853,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, ref VARIANT pAuthKeyBasedRenewal) UnInstall;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptAcquireContextA(out uint phProv, PSTR szContainer, PSTR szProvider, uint32 dwProvType, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6651,5 +6650,6 @@ namespace Win32
 		public static extern HRESULT GenerateDerivedKey(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbLabel, ref uint8 pLabel, uint32 cbNonce, ref uint8 pNonce, uint32 derivedKeyLength, uint32 offset, PWSTR algId, out uint32 pcbKey, out uint8* ppKey);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetBrowserToken(uint32 dwParamType, void* pParam, uint32* pcbToken, uint8** ppToken);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SYNC_VERSION_FLAG_FROM_FEED = 1;
 		public const uint32 SYNC_VERSION_FLAG_HAS_BY = 2;
 		public const uint32 SYNC_SERIALIZE_REPLICA_KEY_MAP = 1;
@@ -17,9 +16,9 @@ namespace Win32
 		public const uint32 SYNC_CHANGE_FLAG_DELETED = 1;
 		public const uint32 SYNC_CHANGE_FLAG_DOES_NOT_EXIST = 2;
 		public const uint32 SYNC_CHANGE_FLAG_GHOST = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SYNC_PROVIDER_ROLE : int32
 		{
 			SOURCE = 0,
@@ -106,9 +105,9 @@ namespace Win32
 			CONFIGUI_REMOVED = 5,
 			CONFIGUI_UPDATED = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ID_PARAMETER_PAIR
 		{
@@ -175,13 +174,13 @@ namespace Win32
 			public uint32 dwSupportedArchitecture;
 			public BOOL fIsGlobal;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SyncProviderRegistration = .(0xf82b4ef1, 0x93a9, 0x4dde, 0x80, 0x15, 0xf7, 0x95, 0x0a, 0x1a, 0x6e, 0x31);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IClockVectorElement : IUnknown
 		{
@@ -1795,6 +1794,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISyncRegistrationChange self, out Guid pguidInstanceId) GetInstanceId;
 			}
 		}
+		#endregion
 		
 	}
 }

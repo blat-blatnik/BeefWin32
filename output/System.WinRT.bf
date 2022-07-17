@@ -5,22 +5,21 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MAX_ERROR_MESSAGE_CHARS = 512;
 		public const String CastingSourceInfo_Property_PreferredSourceUriScheme = "PreferredSourceUriScheme";
 		public const String CastingSourceInfo_Property_CastingTypes = "CastingTypes";
 		public const String CastingSourceInfo_Property_ProtectedMedia = "ProtectedMedia";
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HSTRING = int;
 		public typealias HSTRING_BUFFER = int;
 		public typealias ROPARAMIIDHANDLE = int;
 		public typealias APARTMENT_SHUTDOWN_REGISTRATION_COOKIE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ACTIVATIONTYPE : int32
 		{
 			UNCATEGORIZED = 0,
@@ -88,15 +87,15 @@ namespace Win32
 			DEFAULT = 0,
 			PREFERDESTINATIONSTREAM = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PINSPECT_HSTRING_CALLBACK(void* context, uint readAddress, uint32 length, uint8* buffer);
 		public function HRESULT PINSPECT_HSTRING_CALLBACK2(void* context, uint64 readAddress, uint32 length, uint8* buffer);
 		public function HRESULT PINSPECT_MEMORY_CALLBACK(void* context, uint readAddress, uint32 length, uint8* buffer);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct EventRegistrationToken
 		{
@@ -130,9 +129,9 @@ namespace Win32
 		}
 		[CRepr]
 		public struct _RO_REGISTRATION_COOKIE {}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAgileReference : IUnknown
 		{
@@ -738,9 +737,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMessageDispatcher self) PumpMessages;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoDecodeProxy(uint32 dwClientPid, uint64 ui64ProxyAddress, out ServerInformation pServerInformation);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -877,5 +876,6 @@ namespace Win32
 		public static extern HRESULT CreateRandomAccessStreamOverStream(ref IStream stream, BSOS_OPTIONS options, in Guid riid, void** ppv);
 		[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateStreamOverRandomAccessStream(ref IUnknown randomAccessStream, in Guid riid, void** ppv);
+		#endregion
 	}
 }

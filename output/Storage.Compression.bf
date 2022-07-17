@@ -5,19 +5,18 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 COMPRESS_ALGORITHM_INVALID = 0;
 		public const uint32 COMPRESS_ALGORITHM_NULL = 1;
 		public const uint32 COMPRESS_ALGORITHM_MAX = 6;
 		public const uint32 COMPRESS_RAW = 536870912;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias COMPRESSOR_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum COMPRESS_ALGORITHM : uint32
 		{
 			MSZIP = 2,
@@ -31,14 +30,14 @@ namespace Win32
 			BLOCK_SIZE = 1,
 			LEVEL = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PFN_COMPRESS_ALLOCATE(void* UserContext, uint Size);
 		public function void PFN_COMPRESS_FREE(void* UserContext, void* Memory);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct COMPRESS_ALLOCATION_ROUTINES
 		{
@@ -46,9 +45,9 @@ namespace Win32
 			public PFN_COMPRESS_FREE Free;
 			public void* UserContext;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CreateCompressor(COMPRESS_ALGORITHM Algorithm, COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, out int CompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
@@ -73,5 +72,6 @@ namespace Win32
 		public static extern BOOL ResetDecompressor(int DecompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CloseDecompressor(int DecompressorHandle);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -17,6 +16,7 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
+		#endregion
 		
 	}
 }

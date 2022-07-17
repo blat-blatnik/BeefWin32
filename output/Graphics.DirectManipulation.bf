@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DIRECTMANIPULATION_KEYBOARDFOCUS = 4294967294;
 		public const uint32 DIRECTMANIPULATION_MOUSEFOCUS = 4294967293;
 		public const Guid CLSID_VerticalIndicatorContent = .(0xa10b5f17, 0xafe0, 0x4aa2, 0x91, 0xe9, 0x3e, 0x70, 0x01, 0xd2, 0xe6, 0xb4);
@@ -15,9 +14,9 @@ namespace Win32
 		public const Guid CLSID_DragDropConfigurationBehavior = .(0x09b01b3e, 0xba6c, 0x454d, 0x82, 0xe8, 0x95, 0xe3, 0x52, 0x32, 0x9f, 0x23);
 		public const Guid CLSID_AutoScrollBehavior = .(0x26126a51, 0x3c70, 0x4c9a, 0xae, 0xc2, 0x94, 0x88, 0x49, 0xee, 0xb0, 0x93);
 		public const Guid CLSID_DeferContactService = .(0xd7b67cf4, 0x84bb, 0x434e, 0x86, 0xae, 0x65, 0x92, 0xbb, 0xc9, 0xab, 0xd9);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DIRECTMANIPULATION_STATUS : int32
 		{
 			BUILDING = 0,
@@ -141,18 +140,18 @@ namespace Win32
 			FORWARD = 1,
 			REVERSE = 2,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_DirectManipulationViewport = .(0x34e211b6, 0x3650, 0x4f75, 0x83, 0x34, 0xfa, 0x35, 0x95, 0x98, 0xe1, 0xc5);
 		public const Guid CLSID_DirectManipulationUpdateManager = .(0x9fc1bfd5, 0x1835, 0x441a, 0xb3, 0xb1, 0xb6, 0xcc, 0x74, 0xb7, 0x27, 0xd0);
 		public const Guid CLSID_DirectManipulationPrimaryContent = .(0xcaa02661, 0xd59e, 0x41c7, 0x83, 0x93, 0x3b, 0xa3, 0xba, 0xcb, 0x6b, 0x57);
 		public const Guid CLSID_DirectManipulationManager = .(0x54e211b6, 0x3650, 0x4f75, 0x83, 0x34, 0xfa, 0x35, 0x95, 0x98, 0xe1, 0xc5);
 		public const Guid CLSID_DirectManipulationSharedManager = .(0x99793286, 0x77cc, 0x4b57, 0x96, 0xdb, 0x3b, 0x35, 0x4f, 0x6f, 0x9f, 0xb5);
 		public const Guid CLSID_DCompManipulationCompositor = .(0x79dea627, 0xa08a, 0x43ac, 0x8e, 0xf5, 0x69, 0x00, 0xb9, 0x29, 0x91, 0x26);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirectManipulationManager : IUnknown
 		{
@@ -543,6 +542,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectManipulationDeferContactService self, uint32 pointerId) CancelDeferral;
 			}
 		}
+		#endregion
 		
 	}
 }

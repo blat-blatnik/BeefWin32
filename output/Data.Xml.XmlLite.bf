@@ -5,14 +5,13 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid _IID_IXmlReader = .(0x7279fc81, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
 		public const Guid _IID_IXmlWriter = .(0x7279fc88, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
 		public const Guid _IID_IXmlResolver = .(0x7279fc82, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum XmlNodeType : int32
 		{
@@ -172,9 +171,9 @@ namespace Win32
 			XmlWriterProperty_CompactEmptyElement = 5,
 			_XmlWriterProperty_Last = 5,
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IXmlReader : IUnknown
 		{
@@ -389,9 +388,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXmlWriterLite self) Flush;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateXmlReader(in Guid riid, void** ppvObject, IMalloc* pMalloc);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
@@ -404,5 +403,6 @@ namespace Win32
 		public static extern HRESULT CreateXmlWriterOutputWithEncodingCodePage(ref IUnknown pOutputStream, IMalloc* pMalloc, uint32 nEncodingCodePage, out IUnknown* ppOutput);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateXmlWriterOutputWithEncodingName(ref IUnknown pOutputStream, IMalloc* pMalloc, PWSTR pwszEncodingName, out IUnknown* ppOutput);
+		#endregion
 	}
 }

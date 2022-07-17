@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HTREEITEM TVI_ROOT = -65536;
 		public const HTREEITEM TVI_FIRST = -65535;
 		public const HTREEITEM TVI_LAST = -65534;
@@ -1735,18 +1734,18 @@ namespace Win32
 		public const uint32 EM_SETIMESTATUS = 216;
 		public const uint32 EM_GETIMESTATUS = 217;
 		public const uint32 EM_ENABLEFEATURE = 218;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HPROPSHEETPAGE = int;
 		public typealias HIMAGELIST = int;
 		public typealias HSYNTHETICPOINTERDEVICE = int;
 		public typealias HTREEITEM = int;
 		public typealias HDSA = int;
 		public typealias HDPA = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum THEME_PROPERTY_SYMBOL_ID : uint32
 		{
@@ -2991,9 +2990,9 @@ namespace Win32
 			ERASER = 2,
 			MAX = -1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 LPFNPSPCALLBACKA(HWND hwnd, PSPCB_MESSAGE uMsg, out PROPSHEETPAGEA ppsp);
 		public function uint32 LPFNPSPCALLBACKW(HWND hwnd, PSPCB_MESSAGE uMsg, out PROPSHEETPAGEW ppsp);
 		public function int32 PFNPROPSHEETCALLBACK(HWND param0, uint32 param1, LPARAM param2);
@@ -3019,9 +3018,9 @@ namespace Win32
 		public function uint32 LPFNCCINFOW(out CCINFOW acci);
 		public function int32 EDITWORDBREAKPROCA(PSTR lpch, int32 ichCurrent, int32 cch, WORD_BREAK_ACTION code);
 		public function int32 EDITWORDBREAKPROCW(PWSTR lpch, int32 ichCurrent, int32 cch, WORD_BREAK_ACTION code);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PROPSHEETPAGEA_V1
 		{
@@ -5395,13 +5394,13 @@ namespace Win32
 			public uint32 cursorId;
 			public POINTER_DEVICE_CURSOR_TYPE cursor;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_ImageList = .(0x7c476ba2, 0x02b1, 0x48f4, 0x80, 0x48, 0xb2, 0x46, 0x19, 0xdd, 0xc0, 0x58);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IImageList : IUnknown
 		{
@@ -5510,9 +5509,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IImageList2 self, int32 i, ref IImageList pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) ReplaceFromImageList;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HPROPSHEETPAGE CreatePropertySheetPageA(out PROPSHEETPAGEA constPropSheetPagePointer);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5941,5 +5940,6 @@ namespace Win32
 		public static extern uint32 GetListBoxInfo(HWND hwnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
+		#endregion
 	}
 }

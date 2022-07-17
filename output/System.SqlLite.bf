@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SQLITE_VERSION_NUMBER = 3029000;
 		public const uint32 SQLITE_OK = 0;
 		public const uint32 SQLITE_ERROR = 1;
@@ -390,17 +389,17 @@ namespace Win32
 		public const uint32 FTS5_TOKENIZE_DOCUMENT = 4;
 		public const uint32 FTS5_TOKENIZE_AUX = 8;
 		public const uint32 FTS5_TOKEN_COLOCATED = 1;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 sqlite3_callback(void* param0, int32 param1, out int8* param2, out int8* param3);
 		public function void sqlite3_syscall_ptr();
 		public function void sqlite3_destructor_type(void* param0);
 		public function void fts5_extension_function(in Fts5ExtensionApi pApi, out Fts5Context pFts, out sqlite3_context pCtx, int32 nVal, out sqlite3_value* apVal);
 		public function int32 sqlite3_loadext_entry(out sqlite3 db, out int8* pzErrMsg, in sqlite3_api_routines pThunk);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct sqlite3 {}
 		[CRepr]
@@ -954,9 +953,9 @@ namespace Win32
 			public sqlite3_file********** database_file_object;
 			public int txn_state;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winsqlite3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern PSTR sqlite3_libversion();
 		[Import("winsqlite3.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1487,5 +1486,6 @@ namespace Win32
 		public static extern int32 sqlite3_rtree_geometry_callback(out sqlite3 db, PSTR zGeom, int xGeom, void* pContext);
 		[Import("winsqlite3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 sqlite3_rtree_query_callback(out sqlite3 db, PSTR zQueryFunc, int xQueryFunc, void* pContext, int xDestructor);
+		#endregion
 	}
 }

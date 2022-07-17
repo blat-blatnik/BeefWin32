@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum CALLFRAME_COPY : int32
 		{
 			NESTED = 1,
@@ -35,9 +34,9 @@ namespace Win32
 			INOUT = 2,
 			OUT = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CALLFRAMEINFO
 		{
@@ -71,9 +70,9 @@ namespace Win32
 			public IUnknown* punkReserved;
 			public Guid guidTransferSyntax;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICallFrame : IUnknown
 		{
@@ -227,12 +226,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInterfaceRelated self, out Guid piid) GetIID;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoGetInterceptor(in Guid iidIntercepted, ref IUnknown punkOuter, in Guid iid, void** ppv);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CoGetInterceptorFromTypeInfo(in Guid iidIntercepted, ref IUnknown punkOuter, ref ITypeInfo typeInfo, in Guid iid, void** ppv);
+		#endregion
 	}
 }

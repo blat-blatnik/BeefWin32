@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ASN_UNIVERSAL = 0;
 		public const uint32 ASN_APPLICATION = 64;
 		public const uint32 ASN_CONTEXT = 128;
@@ -99,9 +98,9 @@ namespace Win32
 		public const uint32 SNMPAPI_TL_PDU_TOO_BIG = 109;
 		public const uint32 SNMPAPI_TL_OTHER = 199;
 		public const uint32 MAXVENDORINFO = 32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SNMP_PDU_TYPE : uint32
 		{
 			GET = 160,
@@ -200,9 +199,9 @@ namespace Win32
 			NOTWRITABLE = 17,
 			INCONSISTENTNAME = 18,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PFNSNMPEXTENSIONINIT(uint32 dwUpTimeReference, out HANDLE phSubagentTrapEvent, out AsnObjectIdentifier pFirstSupportedRegion);
 		public function BOOL PFNSNMPEXTENSIONINITEX(out AsnObjectIdentifier pNextSupportedRegion);
 		public function BOOL PFNSNMPEXTENSIONMONITOR(void* pAgentMgmtData);
@@ -213,9 +212,9 @@ namespace Win32
 		public function uint32 SNMPAPI_CALLBACK(int hSession, HWND hWnd, uint32 wMsg, WPARAM wParam, LPARAM lParam, void* lpClientData);
 		public function uint32 PFNSNMPSTARTUPEX(out uint32 param0, out uint32 param1, out uint32 param2, out uint32 param3, out uint32 param4);
 		public function uint32 PFNSNMPCLEANUPEX();
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(4)]
 		public struct AsnOctetString
 		{
@@ -308,9 +307,9 @@ namespace Win32
 			public CHAR[32] vendorVersionDate;
 			public uint32 vendorEnterprise;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("snmpapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SnmpUtilOidCpy(out AsnObjectIdentifier pOidDst, out AsnObjectIdentifier pOidSrc);
 		[Import("snmpapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -479,5 +478,6 @@ namespace Win32
 		public static extern uint32 SnmpDecodeMsg(int session, out int srcEntity, out int dstEntity, out int context, out int pdu, out smiOCTETS msgBufDesc);
 		[Import("wsnmp32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SnmpFreeDescriptor(uint32 syntax, out smiOCTETS descriptor);
+		#endregion
 	}
 }

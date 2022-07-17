@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 UIALL = 32768;
 		public const uint32 LOGTOKEN_TYPE_MASK = 3;
 		public const uint32 LOGTOKEN_UNSPECIFIED = 0;
@@ -356,13 +355,13 @@ namespace Win32
 		public const uint32 DEFAULT_MINIMUM_REQUIRED_MSI_VERSION = 100;
 		public const uint32 DEFAULT_FILE_SEQUENCE_START = 2;
 		public const uint32 DEFAULT_DISK_ID = 2;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias MSIHANDLE = uint32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MSIASSEMBLYINFO : uint32
 		{
 			NETASSEMBLY = 0,
@@ -1312,9 +1311,9 @@ namespace Win32
 			MITIGATION = 2,
 			MAXVERSIONTESTED = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LPDISPLAYVAL(void* pContext, RESULTTYPES uiType, PWSTR szwVal, PWSTR szwDescription, PWSTR szwLocation);
 		public function BOOL LPEVALCOMCALLBACK(STATUSTYPES iStatus, PWSTR szData, void* pContext);
 		public function int32 INSTALLUI_HANDLERA(void* pvContext, uint32 iMessageType, PSTR szMessage);
@@ -1322,9 +1321,9 @@ namespace Win32
 		public function int32 PINSTALLUI_HANDLER_RECORD(void* pvContext, uint32 iMessageType, MSIHANDLE hRecord);
 		public function BOOL PPATCH_PROGRESS_CALLBACK(void* CallbackContext, uint32 CurrentPosition, uint32 MaximumPosition);
 		public function BOOL PPATCH_SYMLOAD_CALLBACK(uint32 WhichFile, PSTR SymbolFileName, uint32 SymType, uint32 SymbolFileCheckSum, uint32 SymbolFileTimeDate, uint32 ImageFileCheckSum, uint32 ImageFileTimeDate, void* CallbackContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PMSIHANDLE
 		{
@@ -1741,14 +1740,14 @@ namespace Win32
 			public uint32 ulFlags;
 			public ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA AssemblyMetadata;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MsmMerge = .(0x0adda830, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 		public const Guid CLSID_PMSvc = .(0xb9e511fc, 0xe364, 0x497a, 0xa1, 0x21, 0xb7, 0xb3, 0x61, 0x2c, 0xed, 0xce);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IValidate : IUnknown
 		{
@@ -2858,9 +2857,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPMBackgroundWorkerInfoEnumerator self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MsiCloseHandle(MSIHANDLE hAny);
 		[Import("msi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3505,5 +3504,6 @@ namespace Win32
 		public static extern BOOL QueryActCtxW(uint32 dwFlags, HANDLE hActCtx, void* pvSubInstance, uint32 ulInfoClass, void* pvBuffer, uint cbBuffer, uint* pcbWrittenOrRequired);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL QueryActCtxSettingsW(uint32 dwFlags, HANDLE hActCtx, PWSTR settingsNameSpace, PWSTR settingName, PWSTR pvBuffer, uint dwBuffer, uint* pdwWrittenOrRequired);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ICW_MAX_ACCTNAME = 256;
 		public const uint32 ICW_MAX_PASSWORD = 256;
 		public const uint32 ICW_MAX_LOGONNAME = 256;
@@ -25,11 +24,12 @@ namespace Win32
 		public const uint32 ICW_LAUNCHEDFULL = 256;
 		public const uint32 ICW_LAUNCHEDMANUAL = 512;
 		public const uint32 ICW_USEDEFAULTS = 1;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PFNCHECKCONNECTIONWIZARD(uint32 param0, out uint32 param1);
 		public function uint32 PFNSETSHELLNEXT(PSTR param0);
+		#endregion
 		
 	}
 }

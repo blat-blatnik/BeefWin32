@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE = 65536;
 		public const uint32 MSSIP_FLAGS_USE_CATALOG = 131072;
 		public const uint32 MSSIP_FLAGS_MULTI_HASH = 262144;
@@ -26,9 +25,9 @@ namespace Win32
 		public const uint32 SIP_CAP_SET_CUR_VER = 3;
 		public const uint32 SIP_CAP_FLAG_SEALING = 1;
 		public const uint32 SIP_MAX_MAGIC_NUMBER = 4;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL pCryptSIPGetSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, out uint32 pdwEncodingType, uint32 dwIndex, out uint32 pcbSignedDataMsg, out uint8 pbSignedDataMsg);
 		public function BOOL pCryptSIPPutSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, uint32 dwEncodingType, out uint32 pdwIndex, uint32 cbSignedDataMsg, out uint8 pbSignedDataMsg);
 		public function BOOL pCryptSIPCreateIndirectData(out SIP_SUBJECTINFO pSubjectInfo, out uint32 pcbIndirectData, out SIP_INDIRECT_DATA pIndirectData);
@@ -38,9 +37,9 @@ namespace Win32
 		public function BOOL pfnIsFileSupportedName(PWSTR pwszFileName, out Guid pgSubject);
 		public function BOOL pCryptSIPGetCaps(ref SIP_SUBJECTINFO pSubjInfo, out SIP_CAP_SET_V3 pCaps);
 		public function BOOL pCryptSIPGetSealedDigest(ref SIP_SUBJECTINFO pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, out uint32 pcbDigest);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SIP_SUBJECTINFO
 		{
@@ -150,9 +149,9 @@ namespace Win32
 			public PWSTR pwszIsFunctionNameFmt2;
 			public PWSTR pwszGetCapFuncName;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSIPGetSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, out CERT_QUERY_ENCODING_TYPE pdwEncodingType, uint32 dwIndex, out uint32 pcbSignedDataMsg, out uint8 pbSignedDataMsg);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
@@ -177,5 +176,6 @@ namespace Win32
 		public static extern BOOL CryptSIPGetCaps(ref SIP_SUBJECTINFO pSubjInfo, out SIP_CAP_SET_V3 pCaps);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSIPGetSealedDigest(ref SIP_SUBJECTINFO pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, out uint32 pcbDigest);
+		#endregion
 	}
 }

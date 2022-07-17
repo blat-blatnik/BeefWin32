@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PIPE_UNLIMITED_INSTANCES = 255;
 		public const uint32 NMPWAIT_WAIT_FOREVER = 4294967295;
 		public const uint32 NMPWAIT_NOWAIT = 1;
 		public const uint32 NMPWAIT_USE_DEFAULT_WAIT = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum NAMED_PIPE_MODE : uint32
 		{
@@ -28,9 +27,9 @@ namespace Win32
 			ACCEPT_REMOTE_CLIENTS = 0,
 			REJECT_REMOTE_CLIENTS = 8,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CreatePipe(out HANDLE hReadPipe, out HANDLE hWritePipe, SECURITY_ATTRIBUTES* lpPipeAttributes, uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -75,5 +74,6 @@ namespace Win32
 		public static extern BOOL GetNamedPipeServerProcessId(HANDLE Pipe, out uint32 ServerProcessId);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetNamedPipeServerSessionId(HANDLE Pipe, out uint32 ServerSessionId);
+		#endregion
 	}
 }

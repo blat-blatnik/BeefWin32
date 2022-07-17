@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WTS_DOMAIN_LENGTH = 255;
 		public const uint32 WTS_USERNAME_LENGTH = 255;
 		public const uint32 WTS_PASSWORD_LENGTH = 255;
@@ -266,13 +265,13 @@ namespace Win32
 		public const Guid PROPERTY_TYPE_ENABLE_UNIVERSAL_APPS_FOR_CUSTOM_SHELL = .(0xed2c3fda, 0x338d, 0x4d3f, 0x81, 0xa3, 0xe7, 0x67, 0x31, 0x0d, 0x90, 0x8e);
 		public const Guid CONNECTION_PROPERTY_IDLE_TIME_WARNING = .(0x693f7ff5, 0x0c4e, 0x4d17, 0xb8, 0xe0, 0x1f, 0x70, 0x32, 0x5e, 0x5d, 0x58);
 		public const Guid CONNECTION_PROPERTY_CURSOR_BLINK_DISABLED = .(0x4b150580, 0xfea4, 0x4d3c, 0x9d, 0xe4, 0x74, 0x33, 0xa6, 0x66, 0x18, 0xf7);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HwtsVirtualChannelHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum AE_POSITION_FLAGS : int32
 		{
 			INVALID = 0,
@@ -699,9 +698,9 @@ namespace Win32
 			Down = 4,
 			Scroll = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PCHANNEL_INIT_EVENT_FN(void* pInitHandle, uint32 event, void* pData, uint32 dataLength);
 		public function void PCHANNEL_OPEN_EVENT_FN(uint32 openHandle, uint32 event, void* pData, uint32 dataLength, uint32 totalLength, uint32 dataFlags);
 		public function uint32 PVIRTUALCHANNELINIT(void** ppInitHandle, out CHANNEL_DEF pChannel, int32 channelCount, uint32 versionRequested, PCHANNEL_INIT_EVENT_FN pChannelInitEventProc);
@@ -709,9 +708,9 @@ namespace Win32
 		public function uint32 PVIRTUALCHANNELCLOSE(uint32 openHandle);
 		public function uint32 PVIRTUALCHANNELWRITE(uint32 openHandle, void* pData, uint32 dataLength, void* pUserData);
 		public function BOOL PVIRTUALCHANNELENTRY(out CHANNEL_ENTRY_POINTS pEntryPoints);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AE_CURRENT_POSITION
 		{
@@ -1808,15 +1807,15 @@ namespace Win32
 			public uint32 cbSize;
 			public uint32 dwSessionId;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_TSUserExInterfaces = .(0x0910dd01, 0xdf8c, 0x11d1, 0xae, 0x27, 0x00, 0xc0, 0x4f, 0xa3, 0x58, 0x13);
 		public const Guid CLSID_ADsTSUserEx = .(0xe2e9cae6, 0x1e7b, 0x4b8e, 0xba, 0xbd, 0xe9, 0xbf, 0x62, 0x92, 0xac, 0x29);
 		public const Guid CLSID_Workspace = .(0x4f1dfca6, 0x3aad, 0x48e1, 0x84, 0x06, 0x4b, 0xc2, 0x1a, 0x50, 0x1d, 0x7c);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAudioEndpoint : IUnknown
 		{
@@ -3965,9 +3964,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRemoteSystemAdditionalInfoProvider self, out HSTRING deduplicationId, in Guid riid, void** mapView) GetAdditionalInfo;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSStopRemoteControlSession(uint32 LogonId);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4098,5 +4097,6 @@ namespace Win32
 		public static extern BOOL ProcessIdToSessionId(uint32 dwProcessId, out uint32 pSessionId);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WTSGetActiveConsoleSessionId();
+		#endregion
 	}
 }

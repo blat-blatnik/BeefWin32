@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NETSH_ERROR_BASE = 15000;
 		public const uint32 ERROR_NO_ENTRIES = 15000;
 		public const uint32 ERROR_INVALID_SYNTAX = 15001;
@@ -35,9 +34,9 @@ namespace Win32
 		public const uint32 NETSH_MAX_TOKEN_LENGTH = 64;
 		public const uint32 NETSH_MAX_CMD_TOKEN_LENGTH = 128;
 		public const uint32 DEFAULT_CONTEXT_PRIORITY = 100;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NS_CMD_FLAGS : int32
 		{
 			PRIVATE = 1,
@@ -71,9 +70,9 @@ namespace Win32
 			COMMIT_STATE = 3,
 			SAVE = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PGET_RESOURCE_STRING_FN(uint32 dwMsgID, PWSTR lpBuffer, uint32 nBufferMax);
 		public function uint32 PNS_CONTEXT_COMMIT_FN(uint32 dwAction);
 		public function uint32 PNS_CONTEXT_CONNECT_FN(PWSTR pwszMachine);
@@ -84,9 +83,9 @@ namespace Win32
 		public function uint32 PFN_HANDLE_CMD(PWSTR pwszMachine, PWSTR* ppwcArguments, uint32 dwCurrentIndex, uint32 dwArgCount, uint32 dwFlags, void* pvData, out BOOL pbDone);
 		public function BOOL PNS_OSVERSIONCHECK(uint32 CIMOSType, uint32 CIMOSProductSuite, PWSTR CIMOSVersion, PWSTR CIMOSBuildNumber, PWSTR CIMServicePackMajorVersion, PWSTR CIMServicePackMinorVersion, uint32 uiReserved, uint32 dwReserved);
 		public function uint32 PNS_DLL_INIT_FN(uint32 dwNetshVersion, void* pReserved);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TOKEN_VALUE
 		{
@@ -174,9 +173,9 @@ namespace Win32
 			public uint32 dwRequired;
 			public BOOL bPresent;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MatchEnumTag(HANDLE hModule, PWSTR pwcArg, uint32 dwNumArg, in TOKEN_VALUE pEnumTable, out uint32 pdwValue);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -193,5 +192,6 @@ namespace Win32
 		public static extern uint32 RegisterContext(in NS_CONTEXT_ATTRIBUTES pChildContext);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RegisterHelper(in Guid pguidParentContext, in NS_HELPER_ATTRIBUTES pfnRegisterSubContext);
+		#endregion
 	}
 }

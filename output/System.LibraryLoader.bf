@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FIND_RESOURCE_DIRECTORY_TYPES = 256;
 		public const uint32 FIND_RESOURCE_DIRECTORY_NAMES = 512;
 		public const uint32 FIND_RESOURCE_DIRECTORY_LANGUAGES = 1024;
@@ -21,9 +20,9 @@ namespace Win32
 		public const uint32 GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS = 4;
 		public const uint32 CURRENT_IMPORT_REDIRECTION_VERSION = 1;
 		public const uint32 LOAD_LIBRARY_OS_INTEGRITY_CONTINUITY = 32768;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum LOAD_LIBRARY_FLAGS : uint32
 		{
 			DONT_RESOLVE_DLL_REFERENCES = 1,
@@ -41,9 +40,9 @@ namespace Win32
 			LOAD_LIBRARY_SAFE_CURRENT_DIRS = 8192,
 			LOAD_LIBRARY_SEARCH_SYSTEM32_NO_FORWARDER = 16384,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL ENUMRESLANGPROCA(HINSTANCE hModule, PSTR lpType, PSTR lpName, uint16 wLanguage, int lParam);
 		public function BOOL ENUMRESLANGPROCW(HINSTANCE hModule, PWSTR lpType, PWSTR lpName, uint16 wLanguage, int lParam);
 		public function BOOL ENUMRESNAMEPROCA(HINSTANCE hModule, PSTR lpType, PSTR lpName, int lParam);
@@ -52,9 +51,9 @@ namespace Win32
 		public function BOOL ENUMRESTYPEPROCW(HINSTANCE hModule, PWSTR lpType, int lParam);
 		public function BOOL PGET_MODULE_HANDLE_EXA(uint32 dwFlags, PSTR lpModuleName, out HINSTANCE phModule);
 		public function BOOL PGET_MODULE_HANDLE_EXW(uint32 dwFlags, PWSTR lpModuleName, out HINSTANCE phModule);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ENUMUILANG
 		{
@@ -76,9 +75,9 @@ namespace Win32
 			public uint32 FunctionCount;
 			public REDIRECTION_FUNCTION_DESCRIPTOR* Redirections;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DisableThreadLibraryCalls(HINSTANCE hLibModule);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -177,5 +176,6 @@ namespace Win32
 		public static extern uint32 GetDllDirectoryA(uint32 nBufferLength, uint8* lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetDllDirectoryW(uint32 nBufferLength, char16* lpBuffer);
+		#endregion
 	}
 }

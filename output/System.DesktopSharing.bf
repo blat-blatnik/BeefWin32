@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DISPID_RDPSRAPI_METHOD_OPEN = 100;
 		public const uint32 DISPID_RDPSRAPI_METHOD_CLOSE = 101;
 		public const uint32 DISPID_RDPSRAPI_METHOD_SETSHAREDRECT = 102;
@@ -131,9 +130,9 @@ namespace Win32
 		public const uint32 DISPID_RDPSRAPI_EVENT_VIEW_MOUSE_BUTTON_RECEIVED = 700;
 		public const uint32 DISPID_RDPSRAPI_EVENT_VIEW_MOUSE_MOVE_RECEIVED = 701;
 		public const uint32 DISPID_RDPSRAPI_EVENT_VIEW_MOUSE_WHEEL_RECEIVED = 702;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum CTRL_LEVEL : int32
 		{
@@ -216,9 +215,9 @@ namespace Win32
 			CONN_INTERVAL = 50,
 			ATTENDEE_ID_DEFAULT = -1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct __ReferenceRemainingTypes__
 		{
@@ -231,9 +230,9 @@ namespace Win32
 			public RDPSRAPI_WND_FLAGS __rdpsrapiWndFlags__;
 			public RDPSRAPI_APP_FLAGS __rdpsrapiAppFlags__;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_RDPViewer = .(0x32be5ed2, 0x5c86, 0x480f, 0xa9, 0x14, 0x0f, 0xf8, 0x88, 0x5a, 0x1b, 0x3f);
 		public const Guid CLSID_RDPSRAPISessionProperties = .(0xdd7594ff, 0xea2a, 0x4c06, 0x8f, 0xdf, 0x13, 0x2d, 0xe4, 0x8b, 0x65, 0x10);
 		public const Guid CLSID_RDPSRAPIInvitationManager = .(0x53d9c9db, 0x75ab, 0x4271, 0x94, 0x8a, 0x4c, 0x4e, 0xb3, 0x6a, 0x8f, 0x2b);
@@ -251,9 +250,9 @@ namespace Win32
 		public const Guid CLSID_RDPSRAPIFrameBuffer = .(0xa4f66bcc, 0x538e, 0x4101, 0x95, 0x1d, 0x30, 0x84, 0x7a, 0xdb, 0x51, 0x01);
 		public const Guid CLSID_RDPTransportStreamBuffer = .(0x8d4a1c69, 0xf17f, 0x4549, 0xa6, 0x99, 0x76, 0x1c, 0x6e, 0x6b, 0x5c, 0x0a);
 		public const Guid CLSID_RDPTransportStreamEvents = .(0x31e3ab20, 0x5350, 0x483f, 0x9d, 0xc6, 0x67, 0x48, 0x66, 0x5e, 0xfd, 0xeb);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRDPSRAPIDebug : IUnknown
 		{
@@ -879,6 +878,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable {}
 		}
+		#endregion
 		
 	}
 }

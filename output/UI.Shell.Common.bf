@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PERCEIVEDFLAG_UNDEFINED = 0;
 		public const uint32 PERCEIVEDFLAG_SOFTCODED = 1;
 		public const uint32 PERCEIVEDFLAG_HARDCODED = 2;
@@ -14,9 +13,9 @@ namespace Win32
 		public const uint32 PERCEIVEDFLAG_GDIPLUS = 16;
 		public const uint32 PERCEIVEDFLAG_WMSDK = 32;
 		public const uint32 PERCEIVEDFLAG_ZIPFOLDER = 64;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum STRRET_TYPE : int32
 		{
 			WSTR = 0,
@@ -86,9 +85,9 @@ namespace Win32
 			SCALE_450_PERCENT = 450,
 			SCALE_500_PERCENT = 500,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct SHITEMID
 		{
@@ -127,9 +126,9 @@ namespace Win32
 			public PWSTR pszName;
 			public PWSTR pszSpec;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IObjectArray : IUnknown
 		{
@@ -168,6 +167,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectCollection self) Clear;
 			}
 		}
+		#endregion
 		
 	}
 }

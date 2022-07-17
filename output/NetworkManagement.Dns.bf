@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SIZEOF_IP4_ADDRESS = 4;
 		public const uint32 IP4_ADDRESS_STRING_LENGTH = 16;
 		public const uint32 IP4_ADDRESS_STRING_BUFFER_LENGTH = 16;
@@ -332,13 +331,13 @@ namespace Win32
 		public const uint32 DNS_CONNECTION_PROXY_INFO_FLAG_DISABLED = 1;
 		public const uint32 DNS_CONNECTION_PROXY_INFO_FLAG_BYPASSLOCAL = 2;
 		public const uint32 DNS_CONNECTION_POLICY_ENTRY_ONDEMAND = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias DnsContextHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DNS_CONFIG_TYPE : int32
 		{
 			PrimaryDomainName_W = 0,
@@ -418,18 +417,18 @@ namespace Win32
 			CONNECTION_MANAGER = 1,
 			WWWPT = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void DNS_PROXY_COMPLETION_ROUTINE(void* completionContext, int32 status);
 		public function void PDNS_QUERY_COMPLETION_ROUTINE(void* pQueryContext, out DNS_QUERY_RESULT pQueryResults);
 		public function void PDNS_SERVICE_BROWSE_CALLBACK(uint32 Status, void* pQueryContext, ref DNS_RECORDA pDnsRecord);
 		public function void PDNS_SERVICE_RESOLVE_COMPLETE(uint32 Status, void* pQueryContext, ref DNS_SERVICE_INSTANCE pInstance);
 		public function void PDNS_SERVICE_REGISTER_COMPLETE(uint32 Status, void* pQueryContext, ref DNS_SERVICE_INSTANCE pInstance);
 		public function void PMDNS_QUERY_CALLBACK(void* pQueryContext, out MDNS_QUERY_HANDLE pQueryHandle, out DNS_QUERY_RESULT pQueryResults);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct IP4_ARRAY
 		{
@@ -1398,9 +1397,9 @@ namespace Win32
 			public BOOL fAnswerReceived;
 			public uint32 ulResendCount;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dnsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DnsQueryConfig(DNS_CONFIG_TYPE Config, uint32 Flag, PWSTR pwsAdapterName, void* pReserved, void* pBuffer, out uint32 pBufLen);
 		[Import("dnsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1521,5 +1520,6 @@ namespace Win32
 		public static extern int32 DnsStartMulticastQuery(ref MDNS_QUERY_REQUEST pQueryRequest, out MDNS_QUERY_HANDLE pHandle);
 		[Import("dnsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DnsStopMulticastQuery(out MDNS_QUERY_HANDLE pHandle);
+		#endregion
 	}
 }

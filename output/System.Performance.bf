@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MAX_COUNTER_PATH = 256;
 		public const uint32 PDH_MAX_COUNTER_NAME = 1024;
 		public const uint32 PDH_MAX_INSTANCE_NAME = 1024;
@@ -190,14 +189,14 @@ namespace Win32
 		public const uint32 PLA_CAPABILITY_LEGACY_SVC = 16;
 		public const uint32 PLA_CAPABILITY_AUTOLOGGER = 32;
 		public const Guid S_PDH = .(0x04d66358, 0xc4a1, 0x419b, 0x80, 0x23, 0x23, 0xb7, 0x39, 0x02, 0xde, 0x2c);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias PerfProviderHandle = int;
 		public typealias PerfQueryHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PERF_DETAIL : uint32
 		{
 			NOVICE = 100,
@@ -422,9 +421,9 @@ namespace Win32
 			AddCounters = 2,
 			AddFilesAutoCounters = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PLA_CABEXTRACT_CALLBACK(PWSTR FileName, void* Context);
 		public function uint32 PERFLIBREQUEST(uint32 RequestCode, void* Buffer, uint32 BufferSize);
 		public function void* PERF_MEM_ALLOC(uint AllocSize, void* pContext);
@@ -433,9 +432,9 @@ namespace Win32
 		public function uint32 PM_COLLECT_PROC(PWSTR pValueName, void** ppData, out uint32 pcbTotalBytes, out uint32 pNumObjectTypes);
 		public function uint32 PM_CLOSE_PROC();
 		public function int32 CounterPathCallBack(uint param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PERF_COUNTERSET_INFO
 		{
@@ -968,9 +967,9 @@ namespace Win32
 			public PERF_DETAIL dwDefaultDetailLevel;
 			public PSTR szDialogBoxCaption;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_DataCollectorSet = .(0x03837521, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 		public const Guid CLSID_TraceSession = .(0x0383751c, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 		public const Guid CLSID_TraceSessionCollection = .(0x03837530, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
@@ -999,9 +998,9 @@ namespace Win32
 		public const Guid CLSID_GraphPropPage = .(0xc3e5d3d3, 0x1a03, 0x11cf, 0x94, 0x2d, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 		public const Guid CLSID_SourcePropPage = .(0x0cf32aa1, 0x7571, 0x11d0, 0x93, 0xc4, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 		public const Guid CLSID_CounterPropPage = .(0xcf948561, 0xede8, 0x11ce, 0x94, 0x1e, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDataCollectorSet : IDispatch
 		{
@@ -2520,9 +2519,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable {}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL QueryPerformanceCounter(out LARGE_INTEGER lpPerformanceCount);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2793,5 +2792,6 @@ namespace Win32
 		public static extern int32 PdhGetLogSetGUID(int hLog, Guid* pGuid, int32* pRunId);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhSetLogSetRunID(int hLog, int32 RunId);
+		#endregion
 	}
 }

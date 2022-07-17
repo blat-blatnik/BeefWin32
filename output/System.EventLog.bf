@@ -5,22 +5,21 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 EVT_VARIANT_TYPE_MASK = 127;
 		public const uint32 EVT_VARIANT_TYPE_ARRAY = 128;
 		public const uint32 EVT_READ_ACCESS = 1;
 		public const uint32 EVT_WRITE_ACCESS = 2;
 		public const uint32 EVT_CLEAR_ACCESS = 4;
 		public const uint32 EVT_ALL_ACCESS = 7;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias EventLogHandle = int;
 		public typealias EventSourceHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum REPORT_EVENT_TYPE : uint16
 		{
 			SUCCESS = 0,
@@ -284,13 +283,13 @@ namespace Win32
 			Path = 1,
 			PropertyIdEND = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 EVT_SUBSCRIBE_CALLBACK(EVT_SUBSCRIBE_NOTIFY_ACTION Action, void* UserContext, int Event);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct EVT_VARIANT
 		{
@@ -385,9 +384,9 @@ namespace Win32
 		{
 			public uint32 dwFull;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wevtapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int EvtOpenSession(EVT_LOGIN_CLASS LoginClass, void* Login, uint32 Timeout, uint32 Flags);
 		[Import("wevtapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -498,5 +497,6 @@ namespace Win32
 		public static extern BOOL ReportEventW(HANDLE hEventLog, REPORT_EVENT_TYPE wType, uint16 wCategory, uint32 dwEventID, PSID lpUserSid, uint16 wNumStrings, uint32 dwDataSize, PWSTR* lpStrings, void* lpRawData);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetEventLogInformation(HANDLE hEventLog, uint32 dwInfoLevel, void* lpBuffer, uint32 cbBufSize, out uint32 pcbBytesNeeded);
+		#endregion
 	}
 }

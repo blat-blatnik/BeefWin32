@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT MENROLL_E_DEVICE_MESSAGE_FORMAT_ERROR = -2145910783;
 		public const HRESULT MENROLL_E_DEVICE_AUTHENTICATION_ERROR = -2145910782;
 		public const HRESULT MENROLL_E_DEVICE_AUTHORIZATION_ERROR = -2145910781;
@@ -73,17 +72,17 @@ namespace Win32
 		public const uint32 DEVICEREGISTRATIONTYPE_MAM = 5;
 		public const uint32 DEVICEREGISTRATIONTYPE_MDM_DEVICEWIDE_WITH_AAD = 6;
 		public const uint32 DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD = 13;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum REGISTRATION_INFORMATION_CLASS : int32
 		{
 			DeviceRegistrationBasicInfo = 1,
 			MaxDeviceInfoClass = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MANAGEMENT_SERVICE_INFO
 		{
@@ -98,9 +97,9 @@ namespace Win32
 			public PWSTR pszUPN;
 			public PWSTR pszMDMServiceUri;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("mdmregistration.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDeviceRegistrationInfo(REGISTRATION_INFORMATION_CLASS DeviceInformationClass, void** ppDeviceRegistrationInfo);
 		[Import("mdmregistration.dll"), CLink, CallingConvention(.Stdcall)]
@@ -137,5 +136,6 @@ namespace Win32
 		public static extern HRESULT ApplyLocalManagementSyncML(PWSTR syncMLRequest, PWSTR* syncMLResult);
 		[Import("mdmlocalmanagement.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnregisterDeviceWithLocalManagement();
+		#endregion
 	}
 }

@@ -5,20 +5,19 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FILE_CACHE_MAX_HARD_ENABLE = 1;
 		public const uint32 FILE_CACHE_MAX_HARD_DISABLE = 2;
 		public const uint32 FILE_CACHE_MIN_HARD_ENABLE = 4;
 		public const uint32 FILE_CACHE_MIN_HARD_DISABLE = 8;
 		public const uint32 MEHC_PATROL_SCRUBBER_PRESENT = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HeapHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FILE_MAP : uint32
 		{
 			WRITE = 2,
@@ -180,14 +179,14 @@ namespace Win32
 			OptimizeResources = 3,
 			Tag = 7,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PBAD_MEMORY_CALLBACK_ROUTINE();
 		public function BOOLEAN PSECURE_MEMORY_CACHE_CALLBACK(void* Addr, uint Range);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PROCESS_HEAP_ENTRY
 		{
@@ -341,9 +340,9 @@ namespace Win32
 				public uint64 _bitfield;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HeapHandle HeapCreate(HEAP_FLAGS flOptions, uint dwInitialSize, uint dwMaximumSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -556,5 +555,6 @@ namespace Win32
 		public static extern BOOL AddSecureMemoryCacheCallback(PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RemoveSecureMemoryCacheCallback(PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack);
+		#endregion
 	}
 }

@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NETCON_MAX_NAME_LEN = 256;
 		public const HRESULT S_OBJECT_NO_LONGER_VALID = 2;
 		public const uint32 NETISO_GEID_FOR_WDAG = 1;
 		public const uint32 NETISO_GEID_FOR_NEUTRAL_AWARE = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NETCON_CHARACTERISTIC_FLAGS : int32
 		{
 			NONE = 0,
@@ -239,9 +238,9 @@ namespace Win32
 			NON_AUTO_RESOLVE = 2,
 			ALL = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PAC_CHANGES_CALLBACK_FN(void* context, in INET_FIREWALL_AC_CHANGE pChange);
 		public function void PNETISO_EDP_ID_CALLBACK_FN(void* context, PWSTR wszEnterpriseId, uint32 dwErr);
 		public function uint32 PFN_FWADDDYNAMICKEYWORDADDRESS0(in _tag_FW_DYNAMIC_KEYWORD_ADDRESS0 dynamicKeywordAddress);
@@ -250,9 +249,9 @@ namespace Win32
 		public function uint32 PFN_FWENUMDYNAMICKEYWORDADDRESSBYID0(Guid dynamicKeywordAddressId, out _tag_FW_DYNAMIC_KEYWORD_ADDRESS_DATA0* dynamicKeywordAddressData);
 		public function uint32 PFN_FWFREEDYNAMICKEYWORDADDRESSDATA0(ref _tag_FW_DYNAMIC_KEYWORD_ADDRESS_DATA0 dynamicKeywordAddressData);
 		public function uint32 PFN_FWUPDATEDYNAMICKEYWORDADDRESS0(Guid dynamicKeywordAddressId, PWSTR updatedAddresses, BOOL @append);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NETCON_PROPERTIES
 		{
@@ -323,9 +322,9 @@ namespace Win32
 			public uint16 schemaVersion;
 			public _tag_FW_DYNAMIC_KEYWORD_ORIGIN_TYPE originType;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_UPnPNAT = .(0xae1e00aa, 0x3fd5, 0x403c, 0x8a, 0x27, 0x2b, 0xbd, 0xc3, 0x0c, 0xd0, 0xe1);
 		public const Guid CLSID_NetSharingManager = .(0x5c63c1ad, 0x3956, 0x4ff8, 0x84, 0x86, 0x40, 0x03, 0x47, 0x58, 0x31, 0x5b);
 		public const Guid CLSID_NetFwRule = .(0x2c5bc43e, 0x3369, 0x4c33, 0xab, 0x0c, 0xbe, 0x94, 0x69, 0x67, 0x7a, 0xf4);
@@ -335,9 +334,9 @@ namespace Win32
 		public const Guid CLSID_NetFwProduct = .(0x9d745ed8, 0xc514, 0x4d1d, 0xbf, 0x42, 0x75, 0x1f, 0xed, 0x2d, 0x5a, 0xc7);
 		public const Guid CLSID_NetFwProducts = .(0xcc19079b, 0x8272, 0x4d73, 0xbb, 0x70, 0xcd, 0xb5, 0x33, 0x52, 0x7b, 0x61);
 		public const Guid CLSID_NetFwMgr = .(0x304ce942, 0x6e39, 0x40d8, 0x94, 0x3a, 0xb9, 0x13, 0xc4, 0x0c, 0x9c, 0xd4);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUPnPNAT : IDispatch
 		{
@@ -1520,9 +1519,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetFwProducts self, out IUnknown* newEnum) get__NewEnum;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("api-ms-win-net-isolation-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT NetworkIsolationSetupAppContainerBinaries(PSID applicationContainerSid, PWSTR packageFullName, PWSTR packageFolder, PWSTR displayName, BOOL bBinariesFullyComputed, PWSTR* binaries, uint32 binariesCount);
 		[Import("api-ms-win-net-isolation-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1539,5 +1538,6 @@ namespace Win32
 		public static extern uint32 NetworkIsolationSetAppContainerConfig(uint32 dwNumPublicAppCs, SID_AND_ATTRIBUTES* appContainerSids);
 		[Import("api-ms-win-net-isolation-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetworkIsolationDiagnoseConnectFailureAndGetInfo(PWSTR wszServerName, out NETISO_ERROR_TYPE netIsoError);
+		#endregion
 	}
 }

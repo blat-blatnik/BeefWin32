@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 OFN_SHAREFALLTHROUGH = 2;
 		public const uint32 OFN_SHARENOWARN = 1;
 		public const uint32 OFN_SHAREWARN = 0;
@@ -82,9 +81,9 @@ namespace Win32
 		public const uint32 COLOR_SOLID_RIGHT = 731;
 		public const uint32 NUM_BASIC_COLORS = 48;
 		public const uint32 NUM_CUSTOM_COLORS = 16;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum COMMON_DLG_ERRORS : uint32
 		{
 			CDERR_DIALOGFAILURE = 65535,
@@ -276,9 +275,9 @@ namespace Win32
 			SCREEN_FONTTYPE = 8192,
 			SIMULATED_FONTTYPE = 32768,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint LPOFNHOOKPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function uint LPCCHOOKPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function uint LPFRHOOKPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
@@ -287,9 +286,9 @@ namespace Win32
 		public function uint LPSETUPHOOKPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function uint LPPAGEPAINTHOOK(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function uint LPPAGESETUPHOOK(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct OPENFILENAME_NT4A
 		{
@@ -664,9 +663,9 @@ namespace Win32
 			public PWSTR lpPageSetupTemplateName;
 			public int hPageSetupTemplate;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPrintDialogCallback : IUnknown
 		{
@@ -705,9 +704,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintDialogServices self, char16* pPortName, out uint32 pcchSize) GetCurrentPortName;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetOpenFileNameA(out OPENFILENAMEA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -750,5 +749,6 @@ namespace Win32
 		public static extern BOOL PageSetupDlgA(out PAGESETUPDLGA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PageSetupDlgW(out PAGESETUPDLGW param0);
+		#endregion
 	}
 }

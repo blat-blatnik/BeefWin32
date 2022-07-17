@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PRINTTICKET_ISTREAM_APIS = 1;
 		public const uint32 S_PT_NO_CONFLICT = 262145;
 		public const uint32 S_PT_CONFLICT_RESOLVED = 262146;
@@ -14,9 +13,9 @@ namespace Win32
 		public const uint32 E_PRINTCAPABILITIES_FORMAT = 2147745796;
 		public const uint32 E_DELTA_PRINTTICKET_FORMAT = 2147745797;
 		public const uint32 E_PRINTDEVICECAPABILITIES_FORMAT = 2147745798;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum EDefaultDevmodeType : int32
 		{
 			UserDefaultDevmode = 0,
@@ -28,9 +27,9 @@ namespace Win32
 			PTDocumentScope = 1,
 			PTJobScope = 2,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PTQuerySchemaVersionSupport(PWSTR pszPrinterName, out uint32 pMaxVersion);
 		[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -53,5 +52,6 @@ namespace Win32
 		public static extern HRESULT PTConvertPrintTicketToDevMode(HPTPROVIDER hProvider, ref IStream pPrintTicket, EDefaultDevmodeType baseDevmodeType, EPrintTicketScope @scope, out uint32 pcbDevmode, out DEVMODEA* ppDevmode, BSTR* pbstrErrorMessage);
 		[Import("prntvpt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PTConvertDevModeToPrintTicket(HPTPROVIDER hProvider, uint32 cbDevmode, ref DEVMODEA pDevmode, EPrintTicketScope @scope, out IStream pPrintTicket);
+		#endregion
 	}
 }

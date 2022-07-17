@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum HANDLE_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -41,9 +40,9 @@ namespace Win32
 			OPEN_ALWAYS = 4,
 			TRUNCATE_EXISTING = 5,
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRandomAccessStreamFileAccessMode : IUnknown
 		{
@@ -136,6 +135,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStorageFolderHandleAccess self, PWSTR fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle) Create;
 			}
 		}
+		#endregion
 		
 	}
 }

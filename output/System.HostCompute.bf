@@ -5,9 +5,9 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCS_CALLBACK = int;
+		#endregion
 		
 	}
 }

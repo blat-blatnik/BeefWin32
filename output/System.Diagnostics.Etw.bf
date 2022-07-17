@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WNODE_FLAG_ALL_DATA = 1;
 		public const uint32 WNODE_FLAG_SINGLE_INSTANCE = 2;
 		public const uint32 WNODE_FLAG_SINGLE_ITEM = 4;
@@ -466,13 +465,13 @@ namespace Win32
 		public const uint32 PROCESS_TRACE_MODE_RAW_TIMESTAMP = 4096;
 		public const uint32 PROCESS_TRACE_MODE_EVENT_RECORD = 268435456;
 		public const Guid CLSID_TraceRelogger = .(0x7b40792d, 0x05ff, 0x44c4, 0x90, 0x58, 0xf4, 0x40, 0xc7, 0x1f, 0x17, 0xd4);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias TDH_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TRACE_MESSAGE_FLAGS : uint32
 		{
 			COMPONENTID = 4,
@@ -770,18 +769,18 @@ namespace Win32
 			PDB_PATH = 4,
 			MAXIMUM = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PEVENT_TRACE_BUFFER_CALLBACKW(out EVENT_TRACE_LOGFILEW Logfile);
 		public function uint32 PEVENT_TRACE_BUFFER_CALLBACKA(out EVENT_TRACE_LOGFILEA Logfile);
 		public function void PEVENT_CALLBACK(out EVENT_TRACE pEvent);
 		public function void PEVENT_RECORD_CALLBACK(out EVENT_RECORD EventRecord);
 		public function uint32 WMIDPREQUEST(WMIDPREQUESTCODE RequestCode, void* RequestContext, out uint32 BufferSize, void* Buffer);
 		public function void PENABLECALLBACK(in Guid SourceId, ENABLECALLBACK_ENABLED_STATE IsEnabled, uint8 Level, uint64 MatchAnyKeyword, uint64 MatchAllKeyword, EVENT_FILTER_DESCRIPTOR* FilterData, void* CallbackContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WNODE_HEADER
 		{
@@ -1943,13 +1942,13 @@ namespace Win32
 			public TDH_CONTEXT_TYPE ParameterType;
 			public uint32 ParameterSize;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CTraceRelogger = .(0x7b40792d, 0x05ff, 0x44c4, 0x90, 0x58, 0xf4, 0x40, 0xc7, 0x1f, 0x17, 0xd4);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITraceEvent : IUnknown
 		{
@@ -2037,9 +2036,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITraceRelogger self) Cancel;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 StartTraceW(out uint64 TraceHandle, PWSTR InstanceName, out EVENT_TRACE_PROPERTIES Properties);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2200,5 +2199,6 @@ namespace Win32
 		public static extern uint32 TdhGetManifestEventInformation(ref Guid ProviderGuid, ref EVENT_DESCRIPTOR EventDescriptor, TRACE_EVENT_INFO* Buffer, out uint32 BufferSize);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CveEventWrite(PWSTR CveId, PWSTR AdditionalDetails);
+		#endregion
 	}
 }

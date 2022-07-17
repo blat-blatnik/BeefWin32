@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PSS_PERF_RESOLUTION = 1000000;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HPSS = int;
 		public typealias HPSSWALK = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PSS_HANDLE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -96,9 +95,9 @@ namespace Win32
 			NONE = 0,
 			TERMINATED = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PSS_PROCESS_INFORMATION
 		{
@@ -315,9 +314,9 @@ namespace Win32
 			public int AllocRoutine;
 			public int FreeRoutine;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PssCaptureSnapshot(HANDLE ProcessHandle, PSS_CAPTURE_FLAGS CaptureFlags, uint32 ThreadContextFlags, out HPSS SnapshotHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -338,5 +337,6 @@ namespace Win32
 		public static extern uint32 PssWalkMarkerSetPosition(HPSSWALK WalkMarkerHandle, uint Position);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PssWalkMarkerSeekToBeginning(HPSSWALK WalkMarkerHandle);
+		#endregion
 	}
 }

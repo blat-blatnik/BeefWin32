@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid GUID_DEVINTERFACE_ENHANCED_STORAGE_SILO = .(0x3897f6a4, 0xfd35, 0x4bc8, 0xa0, 0xb7, 0x5d, 0xbb, 0xa3, 0x6a, 0xda, 0xfa);
 		public const Guid WPD_CATEGORY_ENHANCED_STORAGE = .(0x91248166, 0xb832, 0x4ad4, 0xba, 0xa4, 0x7c, 0xa0, 0xb6, 0xb2, 0x79, 0x8c);
 		public const uint32 ENHANCED_STORAGE_AUTHN_STATE_UNKNOWN = 0;
@@ -207,17 +206,17 @@ namespace Win32
 		public const uint32 ES_VENDOR_ERROR_START = 49152;
 		public const uint32 ES_VENDOR_ERROR_END = 65535;
 		public const uint32 FACILITY_ENHANCED_STORAGE = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ACT_AUTHORIZATION_STATE_VALUE : int32
 		{
 			UNAUTHORIZED = 0,
 			AUTHORIZED = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ENHANCED_STORAGE_PASSWORD_SILO_INFORMATION
 		{
@@ -264,16 +263,16 @@ namespace Win32
 			public uint8 type;
 			public uint8 capabilities;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_EnumEnhancedStorageACT = .(0xfe841493, 0x835c, 0x4fa3, 0xb6, 0xcc, 0xb4, 0xb2, 0xd4, 0x71, 0x98, 0x48);
 		public const Guid CLSID_EnhancedStorageACT = .(0xaf076a15, 0x2ece, 0x4ad4, 0xbb, 0x21, 0x29, 0xf0, 0x40, 0xe1, 0x76, 0xd8);
 		public const Guid CLSID_EnhancedStorageSilo = .(0xcb25220c, 0x76c7, 0x4fee, 0x84, 0x2b, 0xf3, 0x38, 0x3c, 0xd0, 0x22, 0xbc);
 		public const Guid CLSID_EnhancedStorageSiloAction = .(0x886d29dd, 0xb506, 0x466b, 0x9f, 0xbf, 0xb4, 0x4f, 0xf3, 0x83, 0xfb, 0x3f);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEnumEnhancedStorageACT : IUnknown
 		{
@@ -394,6 +393,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEnhancedStorageSiloAction self) Invoke;
 			}
 		}
+		#endregion
 		
 	}
 }

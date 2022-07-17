@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3D_COMPILER_VERSION = 47;
 		public const uint32 D3DCOMPILE_DEBUG = 1;
 		public const uint32 D3DCOMPILE_SKIP_VALIDATION = 2;
@@ -51,9 +50,9 @@ namespace Win32
 		public const uint32 D3D_DISASM_PRINT_HEX_LITERALS = 128;
 		public const uint32 D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 1;
 		public const uint32 D3D_COMPRESS_SHADER_KEEP_ALL_PARTS = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3DCOMPILER_STRIP_FLAGS : int32
 		{
 			REFLECTION_DATA = 1,
@@ -83,24 +82,24 @@ namespace Win32
 			TEST_COMPILE_PERF = 32770,
 			TEST_COMPILE_REPORT = 32771,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT pD3DCompile(void* pSrcData, uint SrcDataSize, PSTR pFileName, in D3D_SHADER_MACRO pDefines, ref ID3DInclude pInclude, PSTR pEntrypoint, PSTR pTarget, uint32 Flags1, uint32 Flags2, out ID3DBlob* ppCode, out ID3DBlob* ppErrorMsgs);
 		public function HRESULT pD3DPreprocess(void* pSrcData, uint SrcDataSize, PSTR pFileName, in D3D_SHADER_MACRO pDefines, ref ID3DInclude pInclude, out ID3DBlob* ppCodeText, out ID3DBlob* ppErrorMsgs);
 		public function HRESULT pD3DDisassemble(void* pSrcData, uint SrcDataSize, uint32 Flags, PSTR szComments, out ID3DBlob* ppDisassembly);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D_SHADER_DATA
 		{
 			public void* pBytecode;
 			public uint BytecodeLength;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3dcompiler_47.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3DReadFileToBlob(PWSTR pFileName, out ID3DBlob* ppContents);
 		[Import("d3dcompiler_47.dll"), CLink, CallingConvention(.Stdcall)]
@@ -151,5 +150,6 @@ namespace Win32
 		public static extern HRESULT D3DDecompressShaders(void* pSrcData, uint SrcDataSize, uint32 uNumShaders, uint32 uStartIndex, uint32* pIndices, uint32 uFlags, ID3DBlob** ppShaders, uint32* pTotalShaders);
 		[Import("d3dcompiler_47.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3DDisassemble10Effect(ref ID3D10Effect pEffect, uint32 Flags, out ID3DBlob* ppDisassembly);
+		#endregion
 	}
 }

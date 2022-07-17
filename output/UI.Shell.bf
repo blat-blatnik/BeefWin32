@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT HLINK_E_FIRST = -2147221248;
 		public const HRESULT HLINK_S_FIRST = 262400;
 		public const uint32 WM_CPL_LAUNCH = 2024;
@@ -1587,15 +1586,15 @@ namespace Win32
 		public const int32 CTF_OLEINITIALIZE = 2048;
 		public const int32 CTF_COINIT_MTA = 4096;
 		public const int32 CTF_NOADDREFLIB = 8192;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias ShFindChangeNotificationHandle = int;
 		public typealias HDROP = int;
 		public typealias HPSXA = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SHGFI_FLAGS : int32
 		{
 			ADDOVERLAYS = 32,
@@ -4430,9 +4429,9 @@ namespace Win32
 		{
 			MIMEASSOCDLG_FL_REGISTER_ASSOC = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function LRESULT SUBCLASSPROC(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, uint uIdSubclass, uint dwRefData);
 		public function int32 BFFCALLBACK(HWND hwnd, uint32 uMsg, LPARAM lParam, LPARAM lpData);
 		public function HRESULT LPFNDFMCALLBACK(IShellFolder* psf, HWND hwnd, IDataObject* pdtobj, uint32 uMsg, WPARAM wParam, LPARAM lParam);
@@ -4443,9 +4442,9 @@ namespace Win32
 		public function int32 APPLET_PROC(HWND hwndCpl, uint32 msg, LPARAM lParam1, LPARAM lParam2);
 		public function void PAPPSTATE_CHANGE_ROUTINE(BOOLEAN Quiesced, void* Context);
 		public function void PAPPCONSTRAIN_CHANGE_ROUTINE(BOOLEAN Constrained, void* Context);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _APPSTATE_REGISTRATION {}
 		[CRepr]
@@ -5812,9 +5811,9 @@ namespace Win32
 			public HWND hwndParent;
 			public PWSTR pcszVerb;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_QueryCancelAutoPlay = .(0x331f1768, 0x05a9, 0x4ddd, 0xb8, 0x6e, 0xda, 0xe3, 0x4d, 0xdc, 0x99, 0x8a);
 		public const Guid CLSID_TimeCategorizer = .(0x3bb4118f, 0xddfd, 0x4d30, 0xa3, 0x48, 0x9f, 0xb5, 0xd6, 0xbf, 0x1a, 0xfe);
 		public const Guid CLSID_AlphabeticalCategorizer = .(0x3c2654c6, 0x7372, 0x4f6b, 0xb3, 0x10, 0x55, 0xd6, 0x12, 0x8f, 0x49, 0xd2);
@@ -5935,9 +5934,9 @@ namespace Win32
 		public const Guid CLSID_ImageTranscode = .(0x17b75166, 0x928f, 0x417d, 0x96, 0x85, 0x64, 0xaa, 0x13, 0x55, 0x65, 0xc1);
 		public const Guid CLSID_ShowInputPaneAnimationCoordinator = .(0x1f046abf, 0x3202, 0x4dc1, 0x8c, 0xb5, 0x3c, 0x67, 0x61, 0x7c, 0xe1, 0xfa);
 		public const Guid CLSID_HideInputPaneAnimationCoordinator = .(0x384742b1, 0x2a77, 0x4cb3, 0x8c, 0xf8, 0x11, 0x36, 0xf5, 0xe1, 0x7e, 0x59);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct INotifyReplica : IUnknown
 		{
@@ -15147,9 +15146,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInputPaneAnimationCoordinator self, ref IUnknown device, ref IDCompositionAnimation animation) AddAnimation;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL LoadUserProfileA(HANDLE hToken, out PROFILEINFOA lpProfileInfo);
 		[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
@@ -16526,5 +16525,6 @@ namespace Win32
 		public static extern uint32 RegisterAppConstrainedChangeNotification(PAPPCONSTRAIN_CHANGE_ROUTINE Routine, void* Context, out _APPCONSTRAIN_REGISTRATION* Registration);
 		[Import("api-ms-win-core-psm-appnotify-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void UnregisterAppConstrainedChangeNotification(out _APPCONSTRAIN_REGISTRATION Registration);
+		#endregion
 	}
 }

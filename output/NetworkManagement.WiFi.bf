@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 L2_REASON_CODE_DOT11_AC_BASE = 131072;
 		public const uint32 L2_REASON_CODE_DOT11_MSM_BASE = 196608;
 		public const uint32 L2_REASON_CODE_DOT11_SECURITY_BASE = 262144;
@@ -803,9 +802,9 @@ namespace Win32
 		public const PROPERTYKEY DEVPKEY_WiFiDirectServices_ServiceConfigMethods = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 6);
 		public const PROPERTYKEY DEVPKEY_WiFiDirectServices_RequestServiceInformation = .(.(0x31b37743, 0x7c5e, 0x4005, 0x93, 0xe6, 0xe9, 0x53, 0xf9, 0x2b, 0x82, 0xe9), 7);
 		public const PROPERTYKEY DEVPKEY_WiFi_InterfaceGuid = .(.(0xef1167eb, 0xcbfc, 0x4341, 0xa5, 0x68, 0xa7, 0xc9, 0x1a, 0x68, 0x98, 0x2c), 2);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WLAN_SET_EAPHOST_FLAGS : uint32
 		{
 			DATA_ALL_USERS = 1,
@@ -1417,14 +1416,14 @@ namespace Win32
 			PASSPHRASE_MISMATCH = 1,
 			OTHER = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void WLAN_NOTIFICATION_CALLBACK(out L2_NOTIFICATION_DATA param0, void* param1);
 		public function void WFD_OPEN_SESSION_COMPLETE_CALLBACK(HANDLE hSessionHandle, void* pvContext, Guid guidSessionInterface, uint32 dwError, uint32 dwReasonCode);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DOT11_SSID
 		{
@@ -3841,13 +3840,13 @@ namespace Win32
 			public ONEX_VARIABLE_BLOB UserName;
 			public ONEX_VARIABLE_BLOB DomainName;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_Dot11AdHocManager = .(0xdd06a84f, 0x83bd, 0x4d01, 0x8a, 0xb9, 0x23, 0x89, 0xfe, 0xa0, 0x86, 0x9e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDot11AdHocManager : IUnknown
 		{
@@ -4072,9 +4071,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDot11AdHocInterfaceNotificationSink self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wlanapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WlanOpenHandle(uint32 dwClientVersion, void* pReserved, out uint32 pdwNegotiatedVersion, out HANDLE phClientHandle);
 		[Import("wlanapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4197,5 +4196,6 @@ namespace Win32
 		public static extern uint32 WFDCloseSession(HANDLE hSessionHandle);
 		[Import("wlanapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WFDUpdateDeviceVisibility(ref uint8* pDeviceAddress);
+		#endregion
 	}
 }

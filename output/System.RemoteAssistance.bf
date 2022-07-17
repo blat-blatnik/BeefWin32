@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DISPID_EVENT_ON_STATE_CHANGED = 5;
 		public const uint32 DISPID_EVENT_ON_TERMINATION = 6;
 		public const uint32 DISPID_EVENT_ON_CONTEXT_DATA = 7;
 		public const uint32 DISPID_EVENT_ON_SEND_ERROR = 8;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RENDEZVOUS_SESSION_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -34,13 +33,13 @@ namespace Win32
 			REMOTE_LEGACYSESSION = 8,
 			REMOTE_WIN7SESSION = 16,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_RendezvousApplication = .(0x0b7e019a, 0xb5de, 0x47fa, 0x89, 0x66, 0x90, 0x82, 0xf8, 0x2f, 0xb1, 0x92);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRendezvousSession : IUnknown
 		{
@@ -89,6 +88,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRendezvousApplication self, IUnknown* pRendezvousSession) SetRendezvousSession;
 			}
 		}
+		#endregion
 		
 	}
 }

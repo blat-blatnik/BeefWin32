@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ComponentTypeEnforcementClientSoH = 1;
 		public const uint32 ComponentTypeEnforcementClientRp = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum IsolationState : int32
 		{
 			NotRestricted = 1,
@@ -58,9 +57,9 @@ namespace Win32
 			Machine = 1,
 			ConfigBlob = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CountedString
 		{
@@ -163,6 +162,7 @@ namespace Win32
 			public FILETIME registrationDate;
 			public uint32 componentType;
 		}
+		#endregion
 		
 	}
 }

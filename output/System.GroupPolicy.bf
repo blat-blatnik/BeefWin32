@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 GPM_USE_PDC = 0;
 		public const uint32 GPM_USE_ANYDC = 1;
 		public const uint32 GPM_DONOTUSE_W2KDC = 2;
@@ -98,13 +97,13 @@ namespace Win32
 		public const uint32 GPO_BROWSE_INITTOALL = 16;
 		public const uint32 GPO_BROWSE_NOUSERGPOS = 32;
 		public const uint32 GPO_BROWSE_SENDAPPLYONEDIT = 64;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias CriticalPolicySectionHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum GPMRSOPMode : int32
 		{
 			Unknown = 0,
@@ -250,16 +249,16 @@ namespace Win32
 			Domain = 3,
 			OrganizationalUnit = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PFNSTATUSMESSAGECALLBACK(BOOL bVerbose, PWSTR lpMessage);
 		public function uint32 PFNPROCESSGROUPPOLICY(uint32 dwFlags, HANDLE hToken, HKEY hKeyRoot, ref GROUP_POLICY_OBJECTA pDeletedGPOList, ref GROUP_POLICY_OBJECTA pChangedGPOList, uint pHandle, out BOOL pbAbort, PFNSTATUSMESSAGECALLBACK pStatusCallback);
 		public function uint32 PFNPROCESSGROUPPOLICYEX(uint32 dwFlags, HANDLE hToken, HKEY hKeyRoot, ref GROUP_POLICY_OBJECTA pDeletedGPOList, ref GROUP_POLICY_OBJECTA pChangedGPOList, uint pHandle, out BOOL pbAbort, PFNSTATUSMESSAGECALLBACK pStatusCallback, IWbemServices* pWbemServices, out HRESULT pRsopStatus);
 		public function uint32 PFNGENERATEGROUPPOLICY(uint32 dwFlags, out BOOL pbAbort, PWSTR pwszSite, RSOP_TARGET* pComputerTarget, RSOP_TARGET* pUserTarget);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct GROUP_POLICY_OBJECTA
 		{
@@ -385,9 +384,9 @@ namespace Win32
 			public GROUP_POLICY_OBJECT_TYPE gpoType;
 			public GROUP_POLICY_HINT_TYPE gpoHint;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_GPM = .(0xf5694708, 0x88fe, 0x4b35, 0xba, 0xbf, 0xe5, 0x61, 0x62, 0xd5, 0xfb, 0xc8);
 		public const Guid CLSID_GPMDomain = .(0x710901be, 0x1050, 0x4cb1, 0x83, 0x8a, 0xc5, 0xcf, 0xf2, 0x59, 0xe1, 0x83);
 		public const Guid CLSID_GPMSitesContainer = .(0x229f5c42, 0x852c, 0x4b30, 0x94, 0x5f, 0xc5, 0x22, 0xbe, 0x9b, 0xd3, 0x86);
@@ -422,9 +421,9 @@ namespace Win32
 		public const Guid CLSID_GPMStarterGPOBackup = .(0x389e400a, 0xd8ef, 0x455b, 0xa8, 0x61, 0x5f, 0x9c, 0xa3, 0x4a, 0x6a, 0x02);
 		public const Guid CLSID_GPMTemplate = .(0xecf1d454, 0x71da, 0x4e2f, 0xa8, 0xc0, 0x81, 0x85, 0x46, 0x59, 0x11, 0xd9);
 		public const Guid CLSID_GPMStarterGPOCollection = .(0x82f8aa8b, 0x49ba, 0x43b2, 0x95, 0x6e, 0x33, 0x97, 0xf9, 0xb9, 0x4c, 0x3a);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IGPM : IDispatch
 		{
@@ -1723,9 +1722,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRSOPInformation self, PWSTR pszEventSource, PWSTR pszEventLogName, PWSTR pszEventTime, uint32 dwEventID, out PWSTR ppszText) GetEventLogEntryText;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RefreshPolicy(BOOL bMachine);
 		[Import("userenv.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1790,5 +1789,6 @@ namespace Win32
 		public static extern HRESULT ImportRSoPData(PWSTR lpNameSpace, PWSTR lpFileName);
 		[Import("gpedit.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ExportRSoPData(PWSTR lpNameSpace, PWSTR lpFileName);
+		#endregion
 	}
 }

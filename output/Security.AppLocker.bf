@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SAFER_SCOPEID_MACHINE = 1;
 		public const uint32 SAFER_SCOPEID_USER = 2;
 		public const uint32 SAFER_LEVELID_FULLYTRUSTED = 262144;
@@ -37,9 +36,9 @@ namespace Win32
 		public const uint32 SAFER_POLICY_UIFLAGS_INFORMATION_PROMPT = 1;
 		public const uint32 SAFER_POLICY_UIFLAGS_OPTION_PROMPT = 2;
 		public const uint32 SAFER_POLICY_UIFLAGS_HIDDEN = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS : uint32
 		{
 			NULL_IF_EQUAL = 1,
@@ -84,9 +83,9 @@ namespace Win32
 			TypeUrlZone = 3,
 			TypeCertificate = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SAFER_CODE_PROPERTIES_V1
 		{
@@ -167,9 +166,9 @@ namespace Win32
 			public uint32 UrlZoneId;
 			public uint32 dwSaferFlags;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SaferGetPolicyInformation(uint32 dwScopeId, SAFER_POLICY_INFO_CLASS SaferPolicyInfoClass, uint32 InfoBufferSize, void* InfoBuffer, out uint32 InfoBufferRetSize, void* lpReserved);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -190,5 +189,6 @@ namespace Win32
 		public static extern BOOL SaferRecordEventLogEntry(SAFER_LEVEL_HANDLE hLevel, PWSTR szTargetPath, void* lpReserved);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SaferiIsExecutableFileType(PWSTR szFullPathname, BOOLEAN bFromShellExecute);
+		#endregion
 	}
 }

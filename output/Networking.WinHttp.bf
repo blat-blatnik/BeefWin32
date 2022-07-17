@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WINHTTP_FLAG_ASYNC = 268435456;
 		public const uint32 WINHTTP_FLAG_SECURE_DEFAULTS = 805306368;
 		public const uint32 SECURITY_FLAG_IGNORE_UNKNOWN_CA = 256;
@@ -475,9 +474,9 @@ namespace Win32
 		public const uint32 WINHTTP_RESET_DISCARD_RESOLVERS = 262144;
 		public const uint32 WINHTTP_WEB_SOCKET_MAX_CLOSE_REASON_LENGTH = 123;
 		public const uint32 WINHTTP_WEB_SOCKET_MIN_KEEPALIVE_VALUE = 15000;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum INTERNET_PORT : uint32
 		{
 			HTTP_PORT = 80,
@@ -621,14 +620,14 @@ namespace Win32
 			SERVER_ERROR_CLOSE_STATUS = 1011,
 			SECURE_HANDSHAKE_ERROR_CLOSE_STATUS = 1015,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void WINHTTP_STATUS_CALLBACK(void* hInternet, uint dwContext, uint32 dwInternetStatus, void* lpvStatusInformation, uint32 dwStatusInformationLength);
 		public function void LPWINHTTP_STATUS_CALLBACK();
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WINHTTP_ASYNC_RESULT
 		{
@@ -871,9 +870,9 @@ namespace Win32
 			public uint32 dwBytesTransferred;
 			public WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winhttp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern WINHTTP_STATUS_CALLBACK WinHttpSetStatusCallback(void* hInternet, WINHTTP_STATUS_CALLBACK lpfnInternetCallback, uint32 dwNotificationFlags, uint dwReserved);
 		[Import("winhttp.dll"), CLink, CallingConvention(.Stdcall)]
@@ -976,5 +975,6 @@ namespace Win32
 		public static extern uint32 WinHttpWebSocketClose(void* hWebSocket, uint16 usStatus, void* pvReason, uint32 dwReasonLength);
 		[Import("winhttp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WinHttpWebSocketQueryCloseStatus(void* hWebSocket, out uint16 pusStatus, void* pvReason, uint32 dwReasonLength, out uint32 pdwReasonLengthConsumed);
+		#endregion
 	}
 }

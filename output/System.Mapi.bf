@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MAPI_OLE = 1;
 		public const uint32 MAPI_OLE_STATIC = 2;
 		public const uint32 MAPI_ORIG = 0;
@@ -62,9 +61,9 @@ namespace Win32
 		public const uint32 MAPI_E_NOT_SUPPORTED = 26;
 		public const uint32 MAPI_E_UNICODE_NOT_SUPPORTED = 27;
 		public const uint32 MAPI_E_ATTACHMENT_TOO_LARGE = 28;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 LPMAPILOGON(uint ulUIParam, PSTR lpszProfileName, PSTR lpszPassword, uint32 flFlags, uint32 ulReserved, out uint lplhSession);
 		public function uint32 LPMAPILOGOFF(uint lhSession, uint ulUIParam, uint32 flFlags, uint32 ulReserved);
 		public function uint32 LPMAPISENDMAIL(uint lhSession, uint ulUIParam, out MapiMessage lpMessage, uint32 flFlags, uint32 ulReserved);
@@ -78,9 +77,9 @@ namespace Win32
 		public function uint32 LPMAPIADDRESS(uint lhSession, uint ulUIParam, PSTR lpszCaption, uint32 nEditFields, PSTR lpszLabels, uint32 nRecips, out MapiRecipDesc lpRecips, uint32 flFlags, uint32 ulReserved, out uint32 lpnNewRecips, out MapiRecipDesc* lppNewRecips);
 		public function uint32 LPMAPIDETAILS(uint lhSession, uint ulUIParam, out MapiRecipDesc lpRecip, uint32 flFlags, uint32 ulReserved);
 		public function uint32 LPMAPIRESOLVENAME(uint lhSession, uint ulUIParam, PSTR lpszName, uint32 flFlags, uint32 ulReserved, out MapiRecipDesc* lppRecip);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MapiFileDesc
 		{
@@ -162,10 +161,11 @@ namespace Win32
 			public uint32 nFileCount;
 			public MapiFileDescW* lpFiles;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MAPIFreeBuffer(void* pv);
+		#endregion
 	}
 }

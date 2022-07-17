@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NOTIFICATION_USER_INPUT_DATA
 		{
 			public PWSTR Key;
 			public PWSTR Value;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct INotificationActivationCallback : IUnknown
 		{
@@ -31,6 +30,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref INotificationActivationCallback self, PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) Activate;
 			}
 		}
+		#endregion
 		
 	}
 }

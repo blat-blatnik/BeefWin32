@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid GUID_DEVINTERFACE_DISPLAY_ADAPTER = .(0x5b45201d, 0xf2f2, 0x4f3b, 0x85, 0xbb, 0x30, 0xff, 0x1f, 0x95, 0x35, 0x99);
 		public const Guid GUID_DEVINTERFACE_MONITOR = .(0xe6f07b5f, 0xee97, 0x4a90, 0xb0, 0x76, 0x33, 0xf5, 0x7b, 0xf4, 0xea, 0xa7);
 		public const Guid GUID_DISPLAY_DEVICE_ARRIVAL = .(0x1ca05180, 0xa699, 0x450a, 0x9a, 0x0c, 0xde, 0x4f, 0xbe, 0x3d, 0xdd, 0x89);
@@ -744,9 +743,9 @@ namespace Win32
 		public const uint32 SETCONFIGURATION_STATUS_APPLIED = 0;
 		public const uint32 SETCONFIGURATION_STATUS_ADDITIONAL = 1;
 		public const uint32 SETCONFIGURATION_STATUS_OVERRIDDEN = 2;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HSEMAPHORE = int;
 		public typealias HSURF = int;
 		public typealias HFASTMUTEX = int;
@@ -755,9 +754,9 @@ namespace Win32
 		public typealias HBM = int;
 		public typealias DHSURF = int;
 		public typealias DHPDEV = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY : int32
 		{
@@ -1040,9 +1039,9 @@ namespace Win32
 			LANDSCAPE_FLIPPED = 4,
 			PORTRAIT_FLIPPED = 8,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int PFN();
 		public function BOOL FREEOBJPROC(out DRIVEROBJ pDriverObj);
 		public function void WNDOBJCHANGEPROC(out WNDOBJ pwo, uint32 fl);
@@ -1142,9 +1141,9 @@ namespace Win32
 		public function void PFN_DrvUnlockDisplayArea(DHPDEV param0, out RECTL param1);
 		public function BOOL PFN_DrvSurfaceComplete(DHPDEV param0, HANDLE param1);
 		public function void PVIDEO_WIN32K_CALLOUT(void* Params);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DISPLAYCONFIG_RATIONAL
 		{
@@ -2956,9 +2955,9 @@ namespace Win32
 			public uint32 ul1;
 			public uint32 ul2;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICloneViewHelper : IUnknown
 		{
@@ -3005,9 +3004,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IViewHelper self) GetProceedOnNewConfiguration;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetNumberOfPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, out uint32 pdwNumberOfPhysicalMonitors);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3246,5 +3245,6 @@ namespace Win32
 		public static extern BOOL GetDisplayAutoRotationPreferences(out ORIENTATION_PREFERENCE pOrientation);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
+		#endregion
 	}
 }

@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 _FACDXCORE = 2176;
 		public const Guid DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS = .(0x8c47866b, 0x7583, 0x450d, 0xf0, 0xf0, 0x6b, 0xad, 0xa8, 0x95, 0xaf, 0x4b);
 		public const Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS = .(0x0c9ece4d, 0x2f6e, 0x4f01, 0x8c, 0x96, 0xe8, 0x9e, 0x33, 0x1b, 0x47, 0xb1);
 		public const Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE = .(0x248e2800, 0xa793, 0x4724, 0xab, 0xaa, 0x23, 0xa6, 0xde, 0x1b, 0xe0, 0x90);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DXCoreAdapterProperty : uint32
 		{
 			InstanceLuid = 0,
@@ -55,13 +54,13 @@ namespace Win32
 			MinimumPower = 1,
 			HighPerformance = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFN_DXCORE_NOTIFICATION_CALLBACK(DXCoreNotificationType notificationType, ref IUnknown object, void* context);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DXCoreHardwareID
 		{
@@ -93,9 +92,9 @@ namespace Win32
 			public uint64 availableForReservation;
 			public uint64 currentReservation;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDXCoreAdapter : IUnknown
 		{
@@ -177,10 +176,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXCoreAdapterFactory self, uint32 eventCookie) UnregisterEventNotification;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dxcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DXCoreCreateAdapterFactory(in Guid riid, void** ppvFactory);
+		#endregion
 	}
 }

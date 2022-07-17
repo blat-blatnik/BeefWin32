@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WINCODEC_SDK_VERSION1 = 566;
 		public const uint32 WINCODEC_SDK_VERSION2 = 567;
 		public const Guid CLSID_WICImagingFactory = .(0xcacaf262, 0x9370, 0x4615, 0xa1, 0x3b, 0x9f, 0x55, 0x39, 0xda, 0x4c, 0x0a);
@@ -308,9 +307,9 @@ namespace Win32
 		public const Guid CLSID_WICHeifHDRMetadataReader = .(0x2438de3d, 0x94d9, 0x4be8, 0x84, 0xa8, 0x4d, 0xe9, 0x5a, 0x57, 0x5e, 0x75);
 		public const Guid CLSID_WICWebpAnimMetadataReader = .(0x076f9911, 0xa348, 0x465c, 0xa8, 0x07, 0xa2, 0x52, 0xf3, 0xf2, 0xd3, 0xde);
 		public const Guid CLSID_WICWebpAnmfMetadataReader = .(0x85a10b03, 0xc9f6, 0x439f, 0xbe, 0x5e, 0xc0, 0xfb, 0xef, 0x67, 0x80, 0x7c);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WICColorContextType : int32
 		{
 			Uninitialized = 0,
@@ -773,13 +772,13 @@ namespace Win32
 			PreferUTF8 = 8,
 			Mask = 65535,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFNProgressNotification(void* pvData, uint32 uFrameNum, WICProgressOperation operation, double dblProgress);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WICRect
 		{
@@ -918,9 +917,9 @@ namespace Win32
 			public uint8* Header;
 			public ULARGE_INTEGER DataOffset;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWICPalette : IUnknown
 		{
@@ -2098,9 +2097,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICComponentFactory self, PROPBAG2* ppropOptions, uint32 cCount, out IPropertyBag2* ppIPropertyBag) CreateEncoderPropertyBag;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WICConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, out IWICBitmapSource* ppIDst);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2119,5 +2118,6 @@ namespace Win32
 		public static extern HRESULT WICSerializeMetadataContent(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint32 dwPersistOptions, ref IStream pIStream);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WICGetMetadataContentSize(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, out ULARGE_INTEGER pcbSize);
+		#endregion
 	}
 }

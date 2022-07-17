@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid SOCKET_DEFAULT2_QM_POLICY = .(0xaec2ef9c, 0x3a4d, 0x4d3e, 0x88, 0x42, 0x23, 0x99, 0x42, 0xe3, 0x9a, 0x47);
 		public const Guid REAL_TIME_NOTIFICATION_CAPABILITY = .(0x6b59819a, 0x5cae, 0x492d, 0xa9, 0x01, 0x2a, 0x3c, 0x2c, 0x50, 0x16, 0x4f);
 		public const Guid REAL_TIME_NOTIFICATION_CAPABILITY_EX = .(0x6843da03, 0x154a, 0x4616, 0xa5, 0x08, 0x44, 0x37, 0x12, 0x95, 0xf9, 0x6b);
@@ -946,14 +945,14 @@ namespace Win32
 		public const int32 LM_HB1_LANAccess = 64;
 		public const int32 LM_HB2_Telephony = 1;
 		public const int32 LM_HB2_FileServer = 2;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HWSAEVENT = int;
 		public typealias SOCKET = uint;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSA_ERROR : int32
 		{
 			WSA_IO_PENDING = 997,
@@ -1480,9 +1479,9 @@ namespace Win32
 			LspCategories = 0,
 			Audit = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 LPCONDITIONPROC(out WSABUF lpCallerId, out WSABUF lpCallerData, out QOS lpSQOS, out QOS lpGQOS, out WSABUF lpCalleeId, out WSABUF lpCalleeData, out uint32 g, uint dwCallbackData);
 		public function void LPWSAOVERLAPPED_COMPLETION_ROUTINE(uint32 dwError, uint32 cbTransferred, out OVERLAPPED lpOverlapped, uint32 dwFlags);
 		public function BOOL LPFN_TRANSMITFILE(SOCKET hSocket, HANDLE hFile, uint32 nNumberOfBytesToWrite, uint32 nNumberOfBytesPerSend, OVERLAPPED* lpOverlapped, TRANSMIT_FILE_BUFFERS* lpTransmitBuffers, uint32 dwReserved);
@@ -1586,9 +1585,9 @@ namespace Win32
 		public function void LPLOOKUPSERVICE_COMPLETION_ROUTINE(uint32 dwError, uint32 dwBytes, ref OVERLAPPED lpOverlapped);
 		public function int32 LPWSCWRITEPROVIDERORDER(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
 		public function int32 LPWSCWRITENAMESPACEORDER(out Guid lpProviderId, uint32 dwNumberOfEntries);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RIO_BUFFERID_t {}
 		[CRepr]
@@ -3535,9 +3534,9 @@ namespace Win32
 			public uint8 hops;
 			public uint8[5] filler;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 __WSAFDIsSet(SOCKET fd, out fd_set param1);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3944,5 +3943,6 @@ namespace Win32
 		public static extern int32 WSCWriteNameSpaceOrder(out Guid lpProviderId, uint32 dwNumberOfEntries);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSCWriteNameSpaceOrder32(out Guid lpProviderId, uint32 dwNumberOfEntries);
+		#endregion
 	}
 }

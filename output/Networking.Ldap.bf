@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 LBER_ERROR = -1;
 		public const int32 LBER_DEFAULT = -1;
 		public const uint32 LDAP_UNICODE = 1;
@@ -151,9 +150,9 @@ namespace Win32
 		public const uint32 LDAP_DIRSYNC_INCREMENTAL_VALUES = 2147483648;
 		public const uint32 LDAP_DIRSYNC_ROPAS_DATA_ONLY = 1073741824;
 		public const uint32 LDAP_POLICYHINT_APPLY_FULLPWDPOLICY = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum LDAP_RETCODE : int32
 		{
@@ -221,18 +220,18 @@ namespace Win32
 			CLIENT_LOOP = 96,
 			REFERRAL_LIMIT_EXCEEDED = 97,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 DBGPRINT(PSTR Format);
 		public function uint32 QUERYFORCONNECTION(out ldap PrimaryConnection, out ldap ReferralFromConnection, PWSTR NewDN, PSTR HostName, uint32 PortNumber, void* SecAuthIdentity, void* CurrentUserToken, out ldap* ConnectionToUse);
 		public function BOOLEAN NOTIFYOFNEWCONNECTION(out ldap PrimaryConnection, out ldap ReferralFromConnection, PWSTR NewDN, PSTR HostName, out ldap NewConnection, uint32 PortNumber, void* SecAuthIdentity, void* CurrentUser, uint32 ErrorCodeFromBind);
 		public function uint32 DEREFERENCECONNECTION(out ldap PrimaryConnection, out ldap ConnectionToDereference);
 		public function BOOLEAN QUERYCLIENTCERT(out ldap Connection, out SecPkgContext_IssuerListInfoEx trusted_CAs, out CERT_CONTEXT* ppCertificate);
 		public function BOOLEAN VERIFYSERVERCERT(out ldap Connection, out CERT_CONTEXT* pServerCert);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct ldap
 		{
@@ -415,9 +414,9 @@ namespace Win32
 			public NOTIFYOFNEWCONNECTION NotifyRoutine;
 			public DEREFERENCECONNECTION DereferenceRoutine;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wldap32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern ldap* ldap_openW(PWSTR HostName, uint32 PortNumber);
 		[Import("wldap32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -904,5 +903,6 @@ namespace Win32
 		public static extern int32 ber_printf(out berelement pBerElement, PSTR fmt);
 		[Import("wldap32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ber_scanf(out berelement pBerElement, PSTR fmt);
+		#endregion
 	}
 }

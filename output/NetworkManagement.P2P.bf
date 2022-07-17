@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NS_PNRPNAME = 38;
 		public const uint32 NS_PNRPCLOUD = 39;
 		public const uint32 PNRPINFO_HINT = 1;
@@ -95,9 +94,9 @@ namespace Win32
 		public const int32 PEERDIST_PUBLICATION_OPTIONS_VERSION_2 = 2;
 		public const uint32 PEERDIST_READ_TIMEOUT_LOCAL_CACHE_ONLY = 0;
 		public const uint32 PEERDIST_READ_TIMEOUT_DEFAULT = 4294967294;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum PEERDIST_RETRIEVAL_OPTIONS_CONTENTINFO_VERSION_VALUE : uint32
 		{
@@ -378,17 +377,17 @@ namespace Win32
 			PeerDistClientBasicInfo = 0,
 			MaximumPeerDistClientInfoByHandlesClass = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFNPEER_VALIDATE_RECORD(void* hGraph, void* pvContext, ref PEER_RECORD pRecord, PEER_RECORD_CHANGE_TYPE changeType);
 		public function HRESULT PFNPEER_SECURE_RECORD(void* hGraph, void* pvContext, ref PEER_RECORD pRecord, PEER_RECORD_CHANGE_TYPE changeType, out PEER_DATA* ppSecurityData);
 		public function HRESULT PFNPEER_FREE_SECURITY_DATA(void* hGraph, void* pvContext, ref PEER_DATA pSecurityData);
 		public function HRESULT PFNPEER_ON_PASSWORD_AUTH_FAILED(void* hGraph, void* pvContext);
 		public function void DRT_BOOTSTRAP_RESOLVE_CALLBACK(HRESULT hr, void* pvContext, out SOCKET_ADDRESS_LIST pAddresses, BOOL fFatalError);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PNRP_CLOUD_ID
 		{
@@ -1024,9 +1023,9 @@ namespace Win32
 		{
 			public BOOL fFlashCrowd;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("p2pgraph.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PeerGraphStartup(uint16 wVersionRequested, out PEER_VERSION_DATA pVersionData);
 		[Import("p2pgraph.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1427,5 +1426,6 @@ namespace Win32
 		public static extern uint32 PeerDistServerOpenContentInformationEx(int hPeerDist, uint32 cbContentIdentifier, ref uint8 pContentIdentifier, uint64 ullContentOffset, uint64 cbContentLength, ref PEERDIST_RETRIEVAL_OPTIONS pRetrievalOptions, HANDLE hCompletionPort, uint ulCompletionKey, out int phContentInfo);
 		[Import("peerdist.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PeerDistClientGetInformationByHandle(int hPeerDist, int hContentHandle, PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS PeerDistClientInfoClass, uint32 dwBufferSize, void* lpInformation);
+		#endregion
 	}
 }

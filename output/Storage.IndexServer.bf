@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CI_VERSION_WDS30 = 258;
 		public const uint32 CI_VERSION_WDS40 = 265;
 		public const uint32 CI_VERSION_WIN70 = 1792;
@@ -144,9 +143,9 @@ namespace Win32
 		public const HRESULT FILTER_S_LAST_VALUES = 268042;
 		public const HRESULT FILTER_E_PASSWORD = -2147215605;
 		public const HRESULT FILTER_E_UNKNOWNFORMAT = -2147215604;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum IFILTER_INIT : int32
 		{
 			CANON_PARAGRAPHS = 1,
@@ -198,9 +197,9 @@ namespace Win32
 			PROPID = 5,
 			GUID = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CI_STATE
 		{
@@ -265,9 +264,9 @@ namespace Win32
 				public Guid* pguid;
 			}
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFilter : IUnknown
 		{
@@ -308,9 +307,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPhraseSink self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT LoadIFilter(PWSTR pwcsPath, ref IUnknown pUnkOuter, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
@@ -319,5 +318,6 @@ namespace Win32
 		public static extern HRESULT BindIFilterFromStorage(ref IStorage pStg, ref IUnknown pUnkOuter, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT BindIFilterFromStream(ref IStream pStm, ref IUnknown pUnkOuter, void** ppIUnk);
+		#endregion
 	}
 }

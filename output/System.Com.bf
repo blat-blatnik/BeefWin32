@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MARSHALINTERFACE_MIN = 500;
 		public const int32 ASYNC_MODE_COMPATIBILITY = 1;
 		public const int32 ASYNC_MODE_DEFAULT = 0;
@@ -46,14 +45,14 @@ namespace Win32
 		public const uint32 DCOMSCM_PING_DISALLOW_UNSECURE_CALL = 32;
 		public const uint64 MAXLSN = 9223372036854775807uL;
 		public const uint32 DMUS_ERRBASE = 4096;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias CO_MTA_USAGE_COOKIE = int;
 		public typealias CO_DEVICE_CATALOG_COOKIE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum URI_CREATE_FLAGS : uint32
 		{
 			ALLOW_RELATIVE = 1,
@@ -545,16 +544,16 @@ namespace Win32
 			MAC = 2,
 			WIN64 = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT LPEXCEPFINO_DEFERRED_FILLIN(out EXCEPINFO pExcepInfo);
 		public function HRESULT LPFNGETCLASSOBJECT(in Guid param0, in Guid param1, void** param2);
 		public function HRESULT LPFNCANUNLOADNOW();
 		public function HRESULT PFNCONTEXTCALL(out ComCallData pParam);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Union]
 		public struct CY
 		{
@@ -1205,9 +1204,9 @@ namespace Win32
 			public IUnknown* pUnk;
 			public uint32 dwCookie;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUnknown
 		{
@@ -3571,9 +3570,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPersistStreamInit self) InitNew;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CoBuildVersion();
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3794,5 +3793,6 @@ namespace Win32
 		public static extern HRESULT SetErrorInfo(uint32 dwReserved, IErrorInfo* perrinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetErrorInfo(uint32 dwReserved, out IErrorInfo* pperrinfo);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT APOERR_ALREADY_INITIALIZED = -2005073919;
 		public const HRESULT APOERR_NOT_INITIALIZED = -2005073918;
 		public const HRESULT APOERR_FORMAT_NOT_SUPPORTED = -2005073917;
@@ -30,9 +29,9 @@ namespace Win32
 		public const uint32 AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
 		public const uint32 AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
 		public const uint32 AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum APO_BUFFER_FLAGS : int32
 		{
 			INVALID = 0,
@@ -89,13 +88,13 @@ namespace Win32
 			ENDPOINT_PROPERTY_CHANGE = 2,
 			SYSTEM_EFFECTS_PROPERTY_CHANGE = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT FNAPONOTIFICATIONCALLBACK(out APO_REG_PROPERTIES pProperties, void* pvRefData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct UNCOMPRESSEDAUDIOFORMAT
 		{
@@ -266,9 +265,9 @@ namespace Win32
 				public AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR audioSystemEffectsPropertyChange;
 			}
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAudioMediaType : IUnknown
 		{
@@ -537,6 +536,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] void(ref IAudioProcessingObjectNotifications self, ref APO_NOTIFICATION apoNotification) HandleNotification;
 			}
 		}
+		#endregion
 		
 	}
 }

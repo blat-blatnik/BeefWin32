@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum CONDITION_TYPE : int32
 		{
 			AND_CONDITION = 0,
@@ -32,6 +31,7 @@ namespace Win32
 			WORD_STARTSWITH = 13,
 			APPLICATION_SPECIFIC = 14,
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum GRAPHICS_EFFECT_PROPERTY_MAPPING : int32
 		{
 			UNKNOWN = 0,
@@ -21,9 +20,9 @@ namespace Win32
 			COLOR_TO_VECTOR3 = 9,
 			COLOR_TO_VECTOR4 = 10,
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IGraphicsEffectD2D1Interop : IUnknown
 		{
@@ -66,6 +65,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGeometrySource2DInterop self, ref ID2D1Factory factory, ID2D1Geometry** value) TryGetGeometryUsingFactory;
 			}
 		}
+		#endregion
 		
 	}
 }

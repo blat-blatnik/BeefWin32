@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT WCN_E_PEER_NOT_FOUND = -2147206143;
 		public const HRESULT WCN_E_AUTHENTICATION_FAILED = -2147206142;
 		public const HRESULT WCN_E_CONNECTION_REJECTED = -2147206141;
@@ -91,9 +90,9 @@ namespace Win32
 		public const uint32 WCN_FLAG_AUTHENTICATED_VE = 2;
 		public const uint32 WCN_FLAG_ENCRYPTED_VE = 4;
 		public const Guid SID_WcnProvider = .(0xc100beca, 0xd33a, 0x4a4b, 0xbf, 0x23, 0xbb, 0xef, 0x46, 0x63, 0xd0, 0x17);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WCN_ATTRIBUTE_TYPE : int32
 		{
 			TYPE_AP_CHANNEL = 0,
@@ -347,9 +346,9 @@ namespace Win32
 			FAILURE_GENERIC = 1,
 			FAILURE_TIMEOUT = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct WCN_VALUE_TYPE_PRIMARY_DEVICE_TYPE
 		{
@@ -365,13 +364,13 @@ namespace Win32
 			public uint32 Index;
 			public uint32 Flags;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WCNDeviceObject = .(0xc100bea7, 0xd33a, 0x4a4b, 0xbf, 0x23, 0xbb, 0xef, 0x46, 0x63, 0xd0, 0x17);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWCNDevice : IUnknown
 		{
@@ -424,6 +423,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWCNConnectNotify self, HRESULT hrFailure) ConnectFailed;
 			}
 		}
+		#endregion
 		
 	}
 }

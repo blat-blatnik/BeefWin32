@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum LicenseProtectionStatus : int32
 		{
 			Success = 0,
@@ -15,12 +14,13 @@ namespace Win32
 			LicenseKeyCorrupted = 3,
 			LicenseKeyAlreadyExists = 4,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("licenseprotection.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RegisterLicenseKeyWithExpiration(PWSTR licenseKey, uint32 validityInDays, out LicenseProtectionStatus status);
 		[Import("licenseprotection.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ValidateLicenseKeyProtection(PWSTR licenseKey, out FILETIME notValidBefore, out FILETIME notValidAfter, out LicenseProtectionStatus status);
+		#endregion
 	}
 }

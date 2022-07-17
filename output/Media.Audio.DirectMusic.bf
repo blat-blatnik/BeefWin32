@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DMUS_MAX_DESCRIPTION = 128;
 		public const uint32 DMUS_MAX_DRIVER = 128;
 		public const uint32 DMUS_EFFECT_NONE = 0;
@@ -243,9 +242,9 @@ namespace Win32
 		public const uint32 DV_CAP_AUD16Bits = 0;
 		public const uint32 DV_CAP_AUD12Bits = 1;
 		public const uint32 SIZE_DVINFO = 32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DMUS_CLOCKTYPE : int32
 		{
 			SYSTEM = 0,
@@ -273,15 +272,15 @@ namespace Win32
 			RENDER = 0,
 			CAPTURE = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LPFNDIRECTSOUNDDEVICEENUMERATECALLBACK1(out DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA param0, void* param1);
 		public function BOOL LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKA(out DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_A_DATA param0, void* param1);
 		public function BOOL LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKW(out DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA param0, void* param1);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DLSID
 		{
@@ -727,9 +726,9 @@ namespace Win32
 			public uint32 cIds;
 			public MIDIOPENSTRMID[0] rgIds;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirectMusic : IUnknown
 		{
@@ -1060,6 +1059,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectMusicSynthSink self, out uint32 pdwBufferSizeInSamples) GetDesiredBufferSize;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DIRECTSOUND_VERSION = 1792;
 		public const uint32 _FACDS = 2168;
 		public const Guid CLSID_DirectSound = .(0x47d4d946, 0x62e8, 0x11cf, 0x93, 0xbc, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
@@ -332,14 +331,14 @@ namespace Win32
 		public const int32 DSFX_I3DL2_ENVIRONMENT_PRESET_MEDIUMHALL = 27;
 		public const int32 DSFX_I3DL2_ENVIRONMENT_PRESET_LARGEHALL = 28;
 		public const int32 DSFX_I3DL2_ENVIRONMENT_PRESET_PLATE = 29;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LPDSENUMCALLBACKA(out Guid param0, PSTR param1, PSTR param2, void* param3);
 		public function BOOL LPDSENUMCALLBACKW(out Guid param0, PWSTR param1, PWSTR param2, void* param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DSCAPS
 		{
@@ -582,9 +581,9 @@ namespace Win32
 		{
 			public BOOL fEnable;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirectSound : IUnknown
 		{
@@ -1087,9 +1086,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectSoundFullDuplex self, in Guid pCaptureGuid, in Guid pRenderGuid, ref DSCBUFFERDESC lpDscBufferDesc, ref DSBUFFERDESC lpDsBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundCaptureBuffer8* lplpDirectSoundCaptureBuffer8, out IDirectSoundBuffer8* lplpDirectSoundBuffer8) Initialize;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dsound.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DirectSoundCreate(Guid* pcGuidDevice, out IDirectSound* ppDS, ref IUnknown pUnkOuter);
 		[Import("dsound.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1110,5 +1109,6 @@ namespace Win32
 		public static extern HRESULT DirectSoundFullDuplexCreate(Guid* pcGuidCaptureDevice, Guid* pcGuidRenderDevice, ref DSCBUFFERDESC pcDSCBufferDesc, ref DSBUFFERDESC pcDSBufferDesc, HWND hWnd, uint32 dwLevel, out IDirectSoundFullDuplex* ppDSFD, out IDirectSoundCaptureBuffer8* ppDSCBuffer8, out IDirectSoundBuffer8* ppDSBuffer8, ref IUnknown pUnkOuter);
 		[Import("dsound.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDeviceID(Guid* pGuidSrc, out Guid pGuidDest);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NETWORK_ALIVE_LAN = 1;
 		public const uint32 NETWORK_ALIVE_WAN = 2;
 		public const uint32 NETWORK_ALIVE_AOL = 4;
@@ -19,17 +18,17 @@ namespace Win32
 		public const Guid SENSGUID_EVENTCLASS_LOGON = .(0xd5978630, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 		public const Guid SENSGUID_EVENTCLASS_ONNOW = .(0xd5978640, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 		public const Guid SENSGUID_EVENTCLASS_LOGON2 = .(0xd5978650, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SENS_CONNECTION_TYPE : uint32
 		{
 			LAN = 0,
 			WAN = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct QOCINFO
 		{
@@ -46,13 +45,13 @@ namespace Win32
 			public uint32 dwOutSpeed;
 			public uint32 dwInSpeed;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SENS = .(0xd597cafe, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISensNetwork : IDispatch
 		{
@@ -145,14 +144,15 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISensLogon2 self, BSTR bstrUserName, uint32 dwSessionId) PostShell;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("sensapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsDestinationReachableA(PSTR lpszDestination, out QOCINFO lpQOCInfo);
 		[Import("sensapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsDestinationReachableW(PWSTR lpszDestination, out QOCINFO lpQOCInfo);
 		[Import("sensapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsNetworkAlive(out uint32 lpdwFlags);
+		#endregion
 	}
 }

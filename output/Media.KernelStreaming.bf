@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IOCTL_KS_PROPERTY = 3080195;
 		public const uint32 IOCTL_KS_ENABLE_EVENT = 3080199;
 		public const uint32 IOCTL_KS_DISABLE_EVENT = 3080203;
@@ -641,9 +640,9 @@ namespace Win32
 		public const uint32 PipeFactor_PhysicalEnd = 1024;
 		public const uint32 PipeFactor_LogicalEnd = 2048;
 		public const int32 KSPROPERTY_MEMORY_TRANSPORT = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum KSRESET : int32
 		{
 			BEGIN = 0,
@@ -1958,9 +1957,9 @@ namespace Win32
 			User = 5,
 			AnyHost = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct IKsPin {}
 		[CRepr]
@@ -5053,9 +5052,9 @@ namespace Win32
 			public uint32 InsideFactors;
 			public uint32 NumberPins;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_GUID_NULL = .(0x00000000, 0x0000, 0x0000, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 		public const Guid CLSID_KSPROPTYPESETID_General = .(0x97e99ba0, 0xbdea, 0x11cf, 0xa5, 0xd6, 0x28, 0xdb, 0x04, 0xc1, 0x00, 0x00);
 		public const Guid CLSID_KSPROPSETID_General = .(0x1464eda5, 0x6a8f, 0x11d1, 0x9a, 0xa7, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
@@ -5578,9 +5577,9 @@ namespace Win32
 		public const Guid CLSID_KSPROPSETID_AudioModule = .(0xc034fdb0, 0xff75, 0x47c8, 0xaa, 0x3c, 0xee, 0x46, 0x71, 0x6b, 0x50, 0xc6);
 		public const Guid CLSID_KSNOTIFICATIONID_AudioModule = .(0x9c2220f0, 0xd9a6, 0x4d5c, 0xa0, 0x36, 0x57, 0x38, 0x57, 0xfd, 0x50, 0xd2);
 		public const Guid CLSID_CLSID_Proxy = .(0x17cca71b, 0xecd7, 0x11d0, 0xb9, 0x08, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IKsControl : IUnknown
 		{
@@ -5732,9 +5731,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IKsTopology self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) CreateNodeInstance;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 KsCreateAllocator(HANDLE ConnectionHandle, ref KSALLOCATOR_FRAMING AllocatorFraming, out HANDLE AllocatorHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5751,5 +5750,6 @@ namespace Win32
 		public static extern HRESULT KsCreatePin2(HANDLE FilterHandle, ref KSPIN_CONNECT Connect, uint32 DesiredAccess, out HANDLE ConnectionHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT KsCreateTopologyNode2(HANDLE ParentHandle, ref KSNODE_CREATE NodeCreate, uint32 DesiredAccess, out HANDLE NodeHandle);
+		#endregion
 	}
 }

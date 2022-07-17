@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WER_FAULT_REPORTING_NO_UI = 32;
 		public const uint32 WER_FAULT_REPORTING_FLAG_NO_HEAP_ON_QUEUE = 64;
 		public const uint32 WER_FAULT_REPORTING_DISABLE_SNAPSHOT_CRASH = 128;
@@ -47,14 +46,14 @@ namespace Win32
 		public const uint32 WER_MAX_BUCKET_ID_STRING_LENGTH = 260;
 		public const uint32 WER_MAX_LOCAL_DUMP_SUBPATH_LENGTH = 64;
 		public const uint32 WER_MAX_REGISTERED_RUNTIME_EXCEPTION_MODULES = 16;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HREPORT = int;
 		public typealias HREPORTSTORE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WER_FILE : uint32
 		{
 			ANONYMOUS_DATA = 2,
@@ -182,18 +181,18 @@ namespace Win32
 			ErrNoMemory = 9,
 			ErrDoubleFault = 10,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_WER_RUNTIME_EXCEPTION_EVENT(void* pContext, in WER_RUNTIME_EXCEPTION_INFORMATION pExceptionInformation, out BOOL pbOwnershipClaimed, char16* pwszEventName, out uint32 pchSize, out uint32 pdwSignatureCount);
 		public function HRESULT PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE(void* pContext, in WER_RUNTIME_EXCEPTION_INFORMATION pExceptionInformation, uint32 dwIndex, char16* pwszName, out uint32 pchName, char16* pwszValue, out uint32 pchValue);
 		public function HRESULT PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH(void* pContext, in WER_RUNTIME_EXCEPTION_INFORMATION pExceptionInformation, out BOOL pbIsCustomDebugger, char16* pwszDebuggerLaunch, out uint32 pchDebuggerLaunch, out BOOL pbIsDebuggerAutolaunch);
 		public function EFaultRepRetVal pfn_REPORTFAULT(ref EXCEPTION_POINTERS param0, uint32 param1);
 		public function EFaultRepRetVal pfn_ADDEREXCLUDEDAPPLICATIONA(PSTR param0);
 		public function EFaultRepRetVal pfn_ADDEREXCLUDEDAPPLICATIONW(PWSTR param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WER_REPORT_INFORMATION
 		{
@@ -382,9 +381,9 @@ namespace Win32
 			public FILETIME CreationTime;
 			public uint64 SizeInBytes;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WerReportCreate(PWSTR pwzEventType, WER_REPORT_TYPE repType, WER_REPORT_INFORMATION* pReportInformation, out HREPORT phReportHandle);
 		[Import("wer.dll"), CLink, CallingConvention(.Stdcall)]
@@ -467,5 +466,6 @@ namespace Win32
 		public static extern BOOL AddERExcludedApplicationW(PWSTR wszApplication);
 		[Import("faultrep.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WerReportHang(HWND hwndHungApp, PWSTR pwzHungApplicationName);
+		#endregion
 	}
 }

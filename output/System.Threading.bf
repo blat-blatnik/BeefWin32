@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WAIT_OBJECT_0 = 0;
 		public const uint32 WAIT_ABANDONED = 128;
 		public const uint32 WAIT_ABANDONED_0 = 128;
@@ -36,17 +35,17 @@ namespace Win32
 		public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 1;
 		public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY = 2;
 		public const uint32 SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 4;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias TimerQueueHandle = int;
 		public typealias PTP_POOL = int;
 		public typealias NamespaceHandle = int;
 		public typealias BoundaryDescriptorHandle = int;
 		public typealias LPPROC_THREAD_ATTRIBUTE_LIST = void*;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum THREAD_CREATION_FLAGS : uint32
 		{
 			THREAD_CREATE_RUN_IMMEDIATELY = 0,
@@ -357,9 +356,9 @@ namespace Win32
 			IsIoPending = 16,
 			NameInformation = 38,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 LPTHREAD_START_ROUTINE(void* lpThreadParameter);
 		public function BOOL PINIT_ONCE_FN(out RTL_RUN_ONCE InitOnce, void* Parameter, void** Context);
 		public function void PTIMERAPCROUTINE(void* lpArgToCompletionRoutine, uint32 dwTimerLowValue, uint32 dwTimerHighValue);
@@ -374,9 +373,9 @@ namespace Win32
 		public function void PTP_WAIT_CALLBACK(out TP_CALLBACK_INSTANCE Instance, void* Context, out TP_WAIT Wait, uint32 WaitResult);
 		public function void LPFIBER_START_ROUTINE(void* lpFiberParameter);
 		public function void PPS_POST_PROCESS_INIT_ROUTINE();
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TP_CALLBACK_INSTANCE {}
 		[CRepr]
@@ -722,9 +721,9 @@ namespace Win32
 			public uint UniqueProcessId;
 			public void* Reserved3;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetProcessWorkingSetSize(HANDLE hProcess, out uint lpMinimumWorkingSetSize, out uint lpMaximumWorkingSetSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -1293,5 +1292,6 @@ namespace Win32
 		public static extern NTSTATUS NtQueryInformationThread(HANDLE ThreadHandle, THREADINFOCLASS ThreadInformationClass, void* ThreadInformation, uint32 ThreadInformationLength, out uint32 ReturnLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS NtSetInformationThread(HANDLE ThreadHandle, THREADINFOCLASS ThreadInformationClass, void* ThreadInformation, uint32 ThreadInformationLength);
+		#endregion
 	}
 }

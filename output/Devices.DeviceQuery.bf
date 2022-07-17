@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum DEVPROP_OPERATOR : uint32
 		{
 			MODIFIER_NOT = 65536,
@@ -89,13 +88,13 @@ namespace Win32
 			Update = 2,
 			Remove = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PDEV_QUERY_RESULT_CALLBACK(ref HDEVQUERY__ hDevQuery, void* pContext, in DEV_QUERY_RESULT_ACTION_DATA pActionData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DEVPROP_FILTER_EXPRESSION
 		{
@@ -136,9 +135,9 @@ namespace Win32
 		{
 			public int32 unused;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("api-ms-win-devices-query-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DevCreateObjectQuery(DEV_OBJECT_TYPE ObjectType, uint32 QueryFlags, uint32 cRequestedProperties, DEVPROPCOMPKEY* pRequestedProperties, uint32 cFilterExpressionCount, DEVPROP_FILTER_EXPRESSION* pFilter, PDEV_QUERY_RESULT_CALLBACK pCallback, void* pContext, out HDEVQUERY__* phDevQuery);
 		[Import("api-ms-win-devices-query-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
@@ -167,5 +166,6 @@ namespace Win32
 		public static extern void DevFreeObjectProperties(uint32 cPropertyCount, DEVPROPERTY* pProperties);
 		[Import("api-ms-win-devices-query-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern DEVPROPERTY* DevFindProperty(in DEVPROPKEY pKey, DEVPROPSTORE Store, PWSTR pszLocaleName, uint32 cProperties, DEVPROPERTY* pProperties);
+		#endregion
 	}
 }

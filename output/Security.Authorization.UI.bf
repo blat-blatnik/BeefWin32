@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 SI_EDIT_PERMS = 0;
 		public const int32 SI_EDIT_OWNER = 1;
 		public const int32 SI_CONTAINER = 4;
@@ -34,9 +33,9 @@ namespace Win32
 		public const uint32 SECURITY_OBJECT_ID_SHARE = 2;
 		public const uint32 SECURITY_OBJECT_ID_CENTRAL_POLICY = 3;
 		public const uint32 SECURITY_OBJECT_ID_CENTRAL_ACCESS_RULE = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SECURITY_INFO_PAGE_FLAGS : uint32
 		{
 			ADVANCED = 16,
@@ -80,9 +79,9 @@ namespace Win32
 			SHARE_ACTIVATED = 5,
 			CENTRAL_POLICY_ACTIVATED = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SI_OBJECT_INFO
 		{
@@ -141,9 +140,9 @@ namespace Win32
 			public OBJECT_TYPE_LIST* pObjectTypeList;
 			public uint32* pGrantedAccessList;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISecurityInformation : IUnknown
 		{
@@ -265,14 +264,15 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IEffectivePermission2 self, PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) ComputeEffectivePermissionWithSecondarySecurity;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("aclui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HPROPSHEETPAGE CreateSecurityPage(ref ISecurityInformation psi);
 		[Import("aclui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EditSecurity(HWND hwndOwner, ref ISecurityInformation psi);
 		[Import("aclui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EditSecurityAdvanced(HWND hwndOwner, ref ISecurityInformation psi, SI_PAGE_TYPE uSIPage);
+		#endregion
 	}
 }

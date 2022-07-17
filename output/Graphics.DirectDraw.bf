@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DIRECTDRAW_VERSION = 1792;
 		public const uint32 _FACDD = 2166;
 		public const Guid CLSID_DirectDraw = .(0xd7b70ee0, 0x4340, 0x11cf, 0xb0, 0x63, 0x00, 0x20, 0xaf, 0xc2, 0xcd, 0x35);
@@ -940,9 +939,9 @@ namespace Win32
 		public const uint32 DDTRANSFER_CANCEL = 128;
 		public const uint32 DDTRANSFER_HALFLINES = 256;
 		public const uint32 DXAPI_HALVERSION = 1;
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LPDDENUMCALLBACKA(out Guid param0, PSTR param1, PSTR param2, void* param3);
 		public function BOOL LPDDENUMCALLBACKW(out Guid param0, PWSTR param1, PWSTR param2, void* param3);
 		public function BOOL LPDDENUMCALLBACKEXA(out Guid param0, PSTR param1, PSTR param2, void* param3, HMONITOR param4);
@@ -1103,9 +1102,9 @@ namespace Win32
 		public function uint32 PDX_GETPREVIOUSAUTOFLIP(void* param0, out DDGETPREVIOUSAUTOFLIPININFO param1, out DDGETPREVIOUSAUTOFLIPOUTINFO param2);
 		public function uint32 PDX_TRANSFER(void* param0, out DDTRANSFERININFO param1, out DDTRANSFEROUTINFO param2);
 		public function uint32 PDX_GETTRANSFERSTATUS(void* param0, void* param1, out DDGETTRANSFERSTATUSOUTINFO param2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _DDFXROP {}
 		[CRepr]
@@ -4738,9 +4737,9 @@ namespace Win32
 			public PDX_TRANSFER DxTransfer;
 			public PDX_GETTRANSFERSTATUS DxGetTransferStatus;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirectDraw : IUnknown
 		{
@@ -5627,9 +5626,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectDrawSurfaceKernel self) ReleaseKernelHandle;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ddraw.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DirectDrawEnumerateW(LPDDENUMCALLBACKW lpCallback, void* lpContext);
 		[Import("ddraw.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5644,5 +5643,6 @@ namespace Win32
 		public static extern HRESULT DirectDrawCreateEx(out Guid lpGuid, void** lplpDD, in Guid iid, ref IUnknown pUnkOuter);
 		[Import("ddraw.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DirectDrawCreateClipper(uint32 dwFlags, out IDirectDrawClipper* lplpDDClipper, ref IUnknown pUnkOuter);
+		#endregion
 	}
 }

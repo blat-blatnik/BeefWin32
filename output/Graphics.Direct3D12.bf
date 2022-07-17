@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES = 4096;
 		public const uint32 D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING = 5768;
 		public const uint32 D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
@@ -472,9 +471,9 @@ namespace Win32
 		public const Guid D3D12ExperimentalShaderModels = .(0x76f5573e, 0xf13a, 0x40f5, 0xb2, 0x97, 0x81, 0xce, 0x9e, 0x18, 0x93, 0x3f);
 		public const Guid D3D12TiledResourceTier4 = .(0xc9c4725f, 0xa81a, 0x4f56, 0x8c, 0x5b, 0xc5, 0x10, 0x39, 0xd6, 0x94, 0xfb);
 		public const Guid D3D12MetaCommand = .(0xc734c97e, 0x8077, 0x48c8, 0x9f, 0xdc, 0xd9, 0xd1, 0xdd, 0x31, 0xdd, 0x77);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3D12_COMMAND_LIST_TYPE : int32
 		{
 			DIRECT = 0,
@@ -2681,9 +2680,9 @@ namespace Win32
 			COMPUTE_SHADER = 5,
 			RESERVED0 = 65520,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_D3D12_SERIALIZE_ROOT_SIGNATURE(in D3D12_ROOT_SIGNATURE_DESC pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, out ID3DBlob* ppBlob, ID3DBlob** ppErrorBlob);
 		public function HRESULT PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER(void* pSrcData, uint SrcDataSizeInBytes, in Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 		public function HRESULT PFN_D3D12_SERIALIZE_VERSIONED_ROOT_SIGNATURE(in D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, out ID3DBlob* ppBlob, ID3DBlob** ppErrorBlob);
@@ -2692,9 +2691,9 @@ namespace Win32
 		public function HRESULT PFN_D3D12_CREATE_DEVICE(IUnknown* param0, D3D_FEATURE_LEVEL param1, in Guid param2, void** param3);
 		public function HRESULT PFN_D3D12_GET_DEBUG_INTERFACE(in Guid param0, void** param1);
 		public function HRESULT PFN_D3D12_GET_INTERFACE(in Guid param0, in Guid param1, void** param2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D12_COMMAND_QUEUE_DESC
 		{
@@ -4667,9 +4666,9 @@ namespace Win32
 			public uint32 FirstOutRegister;
 			public uint32 FirstOutComponent;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID3D12Object : IUnknown
 		{
@@ -6353,9 +6352,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12FunctionParameterReflection self, out D3D12_PARAMETER_DESC pDesc) GetDesc;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12SerializeRootSignature(in D3D12_ROOT_SIGNATURE_DESC pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, out ID3DBlob* ppBlob, ID3DBlob** ppErrorBlob);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6372,5 +6371,6 @@ namespace Win32
 		public static extern HRESULT D3D12EnableExperimentalFeatures(uint32 NumFeatures, Guid* pIIDs, void* pConfigurationStructs, uint32* pConfigurationStructSizes);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12GetInterface(in Guid rclsid, in Guid riid, void** ppvDebug);
+		#endregion
 	}
 }

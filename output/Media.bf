@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TIMERR_NOERROR = 0;
 		public const uint32 TIMERR_NOCANDO = 97;
 		public const uint32 TIMERR_STRUCT = 129;
@@ -108,27 +107,27 @@ namespace Win32
 		public const uint32 TIME_CALLBACK_EVENT_SET = 16;
 		public const uint32 TIME_CALLBACK_EVENT_PULSE = 32;
 		public const uint32 TIME_KILL_SYNCHRONOUS = 256;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HTASK = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TIMECODE_SAMPLE_FLAGS : uint32
 		{
 			TIMECODE_READ = 4121,
 			ATN_READ = 5047,
 			RTC_READ = 5050,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void LPDRVCALLBACK(HDRVR hdrvr, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
 		public function void LPTIMECALLBACK(uint32 uTimerID, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct MMTIME
 		{
@@ -191,9 +190,9 @@ namespace Win32
 			public uint32 dwUser;
 			public TIMECODE_SAMPLE_FLAGS dwFlags;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IReferenceClock : IUnknown
 		{
@@ -242,9 +241,9 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IReferenceClock.VTable {}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 timeGetSystemTime(out MMTIME pmmt, uint32 cbmmt);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -259,5 +258,6 @@ namespace Win32
 		public static extern uint32 timeSetEvent(uint32 uDelay, uint32 uResolution, LPTIMECALLBACK fptc, uint dwUser, uint32 fuEvent);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 timeKillEvent(uint32 uTimerID);
+		#endregion
 	}
 }

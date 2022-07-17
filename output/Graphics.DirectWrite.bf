@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DWRITE_ALPHA_MAX = 255;
 		public const uint32 FACILITY_DWRITE = 2200;
 		public const uint32 DWRITE_ERR_BASE = 20480;
@@ -14,9 +13,9 @@ namespace Win32
 		public const HRESULT DWRITE_E_DOWNLOADCANCELLED = -2003283954;
 		public const HRESULT DWRITE_E_DOWNLOADFAILED = -2003283953;
 		public const HRESULT DWRITE_E_TOOMANYDOWNLOADS = -2003283952;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DWRITE_FONT_AXIS_TAG : uint32
 		{
 			WEIGHT = 1952999287,
@@ -814,9 +813,9 @@ namespace Win32
 			APPX_PACKAGE = 3,
 			REMOTE_FONT_PROVIDER = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DWRITE_COLOR_F
 		{
@@ -1208,9 +1207,9 @@ namespace Win32
 			public float minValue;
 			public float maxValue;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDWriteFontFileLoader : IUnknown
 		{
@@ -3267,10 +3266,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDWriteFontFace6 self, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, out IDWriteLocalizedStrings* names) GetFaceNames;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dwrite.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, in Guid iid, out IUnknown* factory);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DWM_BB_ENABLE = 1;
 		public const uint32 DWM_BB_BLURREGION = 2;
 		public const uint32 DWM_BB_TRANSITIONONMAXIMIZED = 4;
@@ -27,9 +26,9 @@ namespace Win32
 		public const uint32 c_DwmMaxQueuedBuffers = 8;
 		public const uint32 c_DwmMaxMonitors = 16;
 		public const uint32 c_DwmMaxAdapters = 16;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DWMWINDOWATTRIBUTE : int32
 		{
 			NCRENDERING_ENABLED = 1,
@@ -127,9 +126,9 @@ namespace Win32
 			GROUP_POLICY = 256,
 			APP_COMPAT = 512,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct DWM_BLURBEHIND
 		{
@@ -220,9 +219,9 @@ namespace Win32
 			public double DX;
 			public double DY;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DwmDefWindowProc(HWND hWnd, uint32 msg, WPARAM wParam, LPARAM lParam, out LRESULT plResult);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -285,5 +284,6 @@ namespace Win32
 		public static extern HRESULT DwmShowContact(uint32 dwPointerID, DWM_SHOWCONTACT eShowContact);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, out DWM_TAB_WINDOW_REQUIREMENTS value);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirect3DDxgiInterfaceAccess : IUnknown
 		{
@@ -22,12 +21,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DDxgiInterfaceAccess self, in Guid iid, void** p) GetInterface;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(ref IDXGIDevice dxgiDevice, out IInspectable* graphicsDevice);
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(ref IDXGISurface dgxiSurface, out IInspectable* graphicsSurface);
+		#endregion
 	}
 }

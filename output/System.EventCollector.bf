@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 EC_VARIANT_TYPE_MASK = 127;
 		public const uint32 EC_VARIANT_TYPE_ARRAY = 128;
 		public const uint32 EC_READ_ACCESS = 1;
@@ -14,9 +13,9 @@ namespace Win32
 		public const uint32 EC_OPEN_ALWAYS = 0;
 		public const uint32 EC_CREATE_NEW = 1;
 		public const uint32 EC_OPEN_EXISTING = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum EC_SUBSCRIPTION_PROPERTY_ID : int32
 		{
 			Enabled = 0,
@@ -110,9 +109,9 @@ namespace Win32
 			Inactive = 3,
 			Trying = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct EC_VARIANT
 		{
@@ -134,9 +133,9 @@ namespace Win32
 				public int PropertyHandleVal;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wecapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int EcOpenSubscriptionEnum(uint32 Flags);
 		[Import("wecapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -167,5 +166,6 @@ namespace Win32
 		public static extern BOOL EcRetrySubscription(PWSTR SubscriptionName, PWSTR EventSourceName, uint32 Flags);
 		[Import("wecapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EcClose(int Object);
+		#endregion
 	}
 }

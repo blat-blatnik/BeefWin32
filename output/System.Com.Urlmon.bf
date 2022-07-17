@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MKSYS_URLMONIKER = 6;
 		public const uint32 URL_MK_LEGACY = 0;
 		public const uint32 URL_MK_UNIFORM = 1;
@@ -308,9 +307,9 @@ namespace Win32
 		public const uint32 SOFTDIST_ADSTATE_DOWNLOADED = 2;
 		public const uint32 SOFTDIST_ADSTATE_INSTALLED = 3;
 		public const uint32 CONFIRMSAFETYACTION_LOADOBJECT = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum IEObjectType : int32
 		{
 			EVENT = 0,
@@ -772,9 +771,9 @@ namespace Win32
 			DEPENDENCY = 1,
 			COUNT = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct REMSECURITY_ATTRIBUTES
 		{
@@ -901,9 +900,9 @@ namespace Win32
 			public PWSTR szMethod;
 			public PWSTR szTargetUrl;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPersistMoniker : IUnknown
 		{
@@ -1754,9 +1753,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IBindHttpSecurity self, out uint32 pdwIgnoreCertMask) GetIgnoreCertMask;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateURLMoniker(IMoniker* pMkCtx, PWSTR szURL, out IMoniker* ppmk);
 		[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1903,5 +1902,6 @@ namespace Win32
 		public static extern BOOL IsLoggingEnabledW(PWSTR pwszUrl);
 		[Import("urlmon.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WriteHitLogging(ref HIT_LOGGING_INFO lpLogginginfo);
+		#endregion
 	}
 }

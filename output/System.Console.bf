@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CONSOLE_TEXTMODE_BUFFER = 1;
 		public const uint32 ATTACH_PARENT_PROCESS = 4294967295;
 		public const uint32 CTRL_C_EVENT = 0;
@@ -72,13 +71,13 @@ namespace Win32
 		public const uint32 WINDOW_BUFFER_SIZE_EVENT = 4;
 		public const uint32 MENU_EVENT = 8;
 		public const uint32 FOCUS_EVENT = 16;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HPCON = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum CONSOLE_MODE : uint32
 		{
@@ -104,13 +103,13 @@ namespace Win32
 			OUTPUT_HANDLE = 4294967285,
 			ERROR_HANDLE = 4294967284,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PHANDLER_ROUTINE(uint32 CtrlType);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct COORD
 		{
@@ -261,9 +260,9 @@ namespace Win32
 			public uint32 NumberOfHistoryBuffers;
 			public uint32 dwFlags;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AllocConsole();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -452,5 +451,6 @@ namespace Win32
 		public static extern BOOL SetStdHandle(STD_HANDLE nStdHandle, HANDLE hHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetStdHandleEx(STD_HANDLE nStdHandle, HANDLE hHandle, HANDLE* phPrevValue);
+		#endregion
 	}
 }

@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid OID_OAssociatedIdentityProviderObject = .(0x98c5a3dd, 0xdb68, 0x4f1a, 0x8d, 0x2b, 0x90, 0x79, 0xcd, 0xfe, 0xaf, 0x61);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum IDENTITY_TYPE : int32
 		{
 			ALL = 0,
@@ -43,14 +42,14 @@ namespace Win32
 			CONNECTING = 1,
 			CONNECT_COMPLETED = 2,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CoClassIdentityStore = .(0x30d49246, 0xd217, 0x465f, 0xb0, 0x0b, 0xac, 0x9d, 0xdd, 0x65, 0x2e, 0xb7);
 		public const Guid CLSID_CIdentityProfileHandler = .(0xecf5bf46, 0xe3b6, 0x449a, 0xb5, 0x6b, 0x43, 0xf5, 0x8f, 0x86, 0x78, 0x14);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IIdentityAdvise : IUnknown
 		{
@@ -395,6 +394,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIIdentityStoreEx self) Finish_DeleteConnectedIdentity;
 			}
 		}
+		#endregion
 		
 	}
 }

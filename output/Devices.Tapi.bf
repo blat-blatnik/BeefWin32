@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TAPI_CURRENT_VERSION = 131074;
 		public const int32 LINE_ADDRESSSTATE = 0;
 		public const int32 LINE_CALLINFO = 1;
@@ -1124,9 +1123,9 @@ namespace Win32
 		public const int32 atypOle = 2;
 		public const int32 atypPicture = 3;
 		public const int32 atypMax = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TAPI_TONEMODE : int32
 		{
 			RINGBACK = 2,
@@ -1756,9 +1755,9 @@ namespace Win32
 			REGION = 3,
 			WORLD = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void LINECALLBACK(uint32 hDevice, uint32 dwMessage, uint dwInstance, uint dwParam1, uint dwParam2, uint dwParam3);
 		public function void PHONECALLBACK(uint32 hDevice, uint32 dwMessage, uint dwInstance, uint dwParam1, uint dwParam2, uint dwParam3);
 		public function void ASYNC_COMPLETION(uint32 dwRequestID, int32 lResult);
@@ -1768,9 +1767,9 @@ namespace Win32
 		public function HRESULT LPOPENTNEFSTREAM(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, out ITnef* lppTNEF);
 		public function HRESULT LPOPENTNEFSTREAMEX(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, ref IAddrBook lpAdressBook, out ITnef* lppTNEF);
 		public function HRESULT LPGETTNEFSTREAMCODEPAGE(ref IStream lpStream, out uint32 lpulCodepage, out uint32 lpulSubCodepage);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct LINEADDRESSCAPS
 		{
@@ -3099,17 +3098,17 @@ namespace Win32
 				public CHAR[0] rgchInterNet;
 			}
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_TAPI = .(0x21d6d48e, 0xa88b, 0x11d0, 0x83, 0xdd, 0x00, 0xaa, 0x00, 0x3c, 0xca, 0xbd);
 		public const Guid CLSID_DispatchMapper = .(0xe9225296, 0xc759, 0x11d1, 0xa0, 0x2b, 0x00, 0xc0, 0x4f, 0xb6, 0x80, 0x9f);
 		public const Guid CLSID_RequestMakeCall = .(0xac48ffe0, 0xf8c4, 0x11d1, 0xa0, 0x30, 0x00, 0xc0, 0x4f, 0xb6, 0x80, 0x9f);
 		public const Guid CLSID_Rendezvous = .(0xf1029e5b, 0xcb5b, 0x11d0, 0x8d, 0x59, 0x00, 0xc0, 0x4f, 0xd9, 0x1a, 0xc0);
 		public const Guid CLSID_McastAddressAllocation = .(0xdf0daef2, 0xa289, 0x11d1, 0x86, 0x97, 0x00, 0x60, 0x08, 0xb0, 0xe5, 0xd2);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITTAPI : IDispatch
 		{
@@ -5990,9 +5989,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITnef self, uint32 ulFlags, uint32 ulComponentID, out SPropTagArray lpCustomPropList, out SPropValue lpCustomProps, out SPropTagArray lpPropList, out STnefProblemArray* lpProblems) FinishComponent;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineAccept(uint32 hCall, PSTR lpsUserUserInfo, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6497,5 +6496,6 @@ namespace Win32
 		public static extern HRESULT OpenTnefStreamEx(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, ref IAddrBook lpAdressBook, out ITnef* lppTNEF);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetTnefStreamCodepage(ref IStream lpStream, out uint32 lpulCodepage, out uint32 lpulSubCodepage);
+		#endregion
 	}
 }

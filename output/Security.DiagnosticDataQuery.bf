@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum DdqAccessLevel : int32
 		{
 			NoData = 0,
 			CurrentUserData = 1,
 			AllUserData = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DIAGNOSTIC_DATA_RECORD
 		{
@@ -127,9 +126,9 @@ namespace Win32
 			public uint64 legacyBucketId;
 			public PWSTR reportKey;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("diagnosticdataquery.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DdqCreateSession(DdqAccessLevel accessLevel, out HDIAGNOSTIC_DATA_QUERY_SESSION hSession);
 		[Import("diagnosticdataquery.dll"), CLink, CallingConvention(.Stdcall)]
@@ -200,5 +199,6 @@ namespace Win32
 		public static extern HRESULT DdqSetTranscriptConfiguration(HDIAGNOSTIC_DATA_QUERY_SESSION hSession, in DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION desiredConfig);
 		[Import("diagnosticdataquery.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DdqGetTranscriptConfiguration(HDIAGNOSTIC_DATA_QUERY_SESSION hSession, out DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION currentConfig);
+		#endregion
 	}
 }

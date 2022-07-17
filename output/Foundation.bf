@@ -5,8 +5,7 @@ namespace Win32
 {
 	static class Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HANDLE INVALID_HANDLE_VALUE = -1;
 		public const HRESULT CO_E_NOTINITIALIZED = -2147221008;
 		public const HRESULT E_NOTIMPL = -2147467263;
@@ -6507,9 +6506,9 @@ namespace Win32
 		public const uint32 _WIN32_IE_MAXVER = 2560;
 		public const uint32 _WIN32_WINNT_MAXVER = 2560;
 		public const uint32 WINVER_MAXVER = 2560;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias BOOL = int32;
 		public typealias BOOLEAN = uint8;
 		public typealias BSTR = char16*;
@@ -6529,9 +6528,9 @@ namespace Win32
 		public typealias CHAR = uint8;
 		public typealias SHANDLE_PTR = int;
 		public typealias HANDLE_PTR = uint;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum WIN32_ERROR : uint32
 		{
@@ -9800,16 +9799,16 @@ namespace Win32
 			INHERIT = 1,
 			PROTECT_FROM_CLOSE = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int FARPROC();
 		public function int NEARPROC();
 		public function int PROC();
 		public function void PAPCFUNC(uint Parameter);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SYSTEMTIME
 		{
@@ -9967,9 +9966,9 @@ namespace Win32
 			public uint32 LowPart;
 			public int32 HighPart;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BSTR SysAllocString(PWSTR psz);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -10008,5 +10007,6 @@ namespace Win32
 		public static extern void SetLastErrorEx(WIN32_ERROR dwErrCode, uint32 dwType);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RtlNtStatusToDosError(NTSTATUS Status);
+		#endregion
 	}
 }

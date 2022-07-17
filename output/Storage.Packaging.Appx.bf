@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PACKAGE_PROPERTY_FRAMEWORK = 1;
 		public const uint32 PACKAGE_PROPERTY_RESOURCE = 2;
 		public const uint32 PACKAGE_PROPERTY_BUNDLE = 4;
@@ -29,9 +28,9 @@ namespace Win32
 		public const uint32 PACKAGE_FILTER_HOSTRUNTIME = 2097152;
 		public const uint32 PACKAGE_FILTER_ALL_LOADED = 0;
 		public const uint32 PACKAGE_DEPENDENCY_RANK_DEFAULT = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum APPX_COMPRESSION_OPTION : int32
 		{
 			NONE = 0,
@@ -224,9 +223,9 @@ namespace Win32
 			Full = 0,
 			Limited = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct APPX_PACKAGE_SETTINGS
 		{
@@ -328,17 +327,17 @@ namespace Win32
 		{
 			public int32 unused;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_AppxFactory = .(0x5842a140, 0xff9f, 0x4166, 0x8f, 0x5c, 0x62, 0xf5, 0xb7, 0xb0, 0xc7, 0x81);
 		public const Guid CLSID_AppxBundleFactory = .(0x378e0446, 0x5384, 0x43b7, 0x88, 0x77, 0xe7, 0xdb, 0xdd, 0x88, 0x34, 0x46);
 		public const Guid CLSID_AppxPackagingDiagnosticEventSinkManager = .(0x50ca0a46, 0x1588, 0x4161, 0x8e, 0xd2, 0xef, 0x9e, 0x46, 0x9c, 0xed, 0x5d);
 		public const Guid CLSID_AppxEncryptionFactory = .(0xdc664fdd, 0xd868, 0x46ee, 0x87, 0x80, 0x8d, 0x19, 0x6c, 0xb7, 0x39, 0xf7);
 		public const Guid CLSID_AppxPackageEditor = .(0xf004f2ca, 0xaebc, 0x4b0d, 0xbf, 0x58, 0xe5, 0x16, 0xd5, 0xbc, 0xc0, 0xab);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAppxFactory : IUnknown
 		{
@@ -1834,9 +1833,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAppxPackageEditor self, ref IStream packageStream, ref IStream updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options) UpdatePackageManifest;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetCurrentPackageId(out uint32 bufferLength, uint8* buffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -1963,5 +1962,6 @@ namespace Win32
 		public static extern PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__* GetCurrentPackageVirtualizationContext();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetProcessesInVirtualizationContext(PWSTR packageFamilyName, out uint32 count, out HANDLE* processes);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WOW64_CONTEXT_i386 = 65536;
 		public const uint32 WOW64_CONTEXT_i486 = 65536;
 		public const uint32 WOW64_CONTEXT_EXCEPTION_ACTIVE = 134217728;
@@ -1309,9 +1308,9 @@ namespace Win32
 		public const uint32 SOURCETEXT_ATTR_IDENTIFIER = 256;
 		public const uint32 SOURCETEXT_ATTR_MEMBERLOOKUP = 512;
 		public const uint32 SOURCETEXT_ATTR_THIS = 1024;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SYM_LOAD_FLAGS : uint32
 		{
 			NONE = 0,
@@ -3175,9 +3174,9 @@ namespace Win32
 			BugcheckData = 9,
 			Max = 10,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* PGET_RUNTIME_FUNCTION_CALLBACK(uint64 ControlPc, void* Context);
 		public function HRESULT PDEBUG_EXTENSION_INITIALIZE(out uint32 Version, out uint32 Flags);
 		public function void PDEBUG_EXTENSION_UNINITIALIZE();
@@ -3318,9 +3317,9 @@ namespace Win32
 		public function BOOL PSYM_ENUMSYMBOLS_CALLBACKW(PWSTR SymbolName, uint32 SymbolAddress, uint32 SymbolSize, void* UserContext);
 		public function BOOL PENUMLOADED_MODULES_CALLBACK(PSTR ModuleName, uint32 ModuleBase, uint32 ModuleSize, void* UserContext);
 		public function BOOL PSYMBOL_REGISTERED_CALLBACK(HANDLE hProcess, uint32 ActionCode, void* CallbackData, void* UserContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CONTEXT
 		{
@@ -7710,18 +7709,18 @@ namespace Win32
 			public IMAGEHLP_SYMBOL* Symbol;
 			public uint32 SelectedSymbol;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_ProcessDebugManager = .(0x78a51822, 0x51f4, 0x11d0, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 		public const Guid CLSID_DebugHelper = .(0x0bfcc060, 0x8c1d, 0x11d0, 0xac, 0xcd, 0x00, 0xaa, 0x00, 0x60, 0x27, 0x5c);
 		public const Guid CLSID_CDebugDocumentHelper = .(0x83b8bca6, 0x687c, 0x11d0, 0xa4, 0x05, 0x00, 0xaa, 0x00, 0x60, 0x27, 0x5c);
 		public const Guid CLSID_MachineDebugManager_RETAIL = .(0x0c0a3666, 0x30c9, 0x11d0, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 		public const Guid CLSID_MachineDebugManager_DEBUG = .(0x49769cec, 0x3a55, 0x4bb0, 0xb6, 0x97, 0x88, 0xfe, 0xde, 0x77, 0xe8, 0xea);
 		public const Guid CLSID_DefaultDebugSessionProvider = .(0x834128a2, 0x51f4, 0x11d0, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDebugAdvanced : IUnknown
 		{
@@ -17560,9 +17559,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IObjectSafety self, in Guid riid, uint32 dwOptionSetMask, uint32 dwEnabledOptions) SetInterfaceSafetyOptions;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN RtlAddFunctionTable(IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionTable, uint32 EntryCount, uint BaseAddress);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -18197,5 +18196,6 @@ namespace Win32
 		public static extern BOOL SymGetSymNext(HANDLE hProcess, out IMAGEHLP_SYMBOL Symbol);
 		[Import("dbghelp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SymGetSymPrev(HANDLE hProcess, out IMAGEHLP_SYMBOL Symbol);
+		#endregion
 	}
 }

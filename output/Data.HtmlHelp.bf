@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 HH_DISPLAY_TOPIC = 0;
 		public const uint32 HH_HELP_FINDER = 0;
 		public const uint32 HH_DISPLAY_TOC = 1;
@@ -278,9 +277,9 @@ namespace Win32
 		public const int32 HHACT_TOC_PREV = 21;
 		public const int32 HHACT_NOTES = 22;
 		public const int32 HHACT_LAST_ENUM = 23;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WORD_WHEEL_OPEN_FLAGS : uint32
 		{
 			ITWW_OPEN_CONNECT = 0,
@@ -299,13 +298,13 @@ namespace Win32
 			NORMAL = 1,
 			HIGH = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 PFNCOLHEAPFREE(void* param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HHN_NOTIFY
 		{
@@ -463,9 +462,9 @@ namespace Win32
 			public int32 cPropCount;
 			public int32 cPropsLoaded;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IITPropList : IPersistStreamInit
 		{
@@ -721,6 +720,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IITResultSet self, out COLUMNSTATUS lpColStatus) GetColumnStatus;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DIRECTINPUT_VERSION = 2048;
 		public const uint32 JOY_HW_NONE = 0;
 		public const uint32 JOY_HW_CUSTOM = 1;
@@ -2415,9 +2414,9 @@ namespace Win32
 		public const uint32 BUTTON_BIT_ALLBUTTONSMASK = 16383;
 		public const uint32 IOCTL_BUTTON_SET_ENABLED_ON_IDLE = 721576;
 		public const uint32 IOCTL_BUTTON_GET_ENABLED_ON_IDLE = 721580;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum HIDP_REPORT_TYPE : int32
 		{
 			Input = 0,
@@ -2451,9 +2450,9 @@ namespace Win32
 			COUNT_MIN = 5,
 			COUNT = 16,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL LPDIENUMEFFECTSINFILECALLBACK(out DIFILEEFFECT param0, void* param1);
 		public function BOOL LPDIENUMDEVICEOBJECTSCALLBACKA(out DIDEVICEOBJECTINSTANCEA param0, void* param1);
 		public function BOOL LPDIENUMDEVICEOBJECTSCALLBACKW(out DIDEVICEOBJECTINSTANCEW param0, void* param1);
@@ -2469,9 +2468,9 @@ namespace Win32
 		public function BOOL LPDIJOYTYPECALLBACK(PWSTR param0, void* param1);
 		public function BOOLEAN PHIDP_INSERT_SCANCODES(void* Context, PSTR NewScanCodes, uint32 Length);
 		public function NTSTATUS PFN_HidP_GetVersionInternal(out uint32 Version);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DICONSTANTFORCE
 		{
@@ -3589,9 +3588,9 @@ namespace Win32
 			public GPIOBUTTONS_BUTTON_TYPE ButtonType;
 			public BOOLEAN Enabled;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDirectInputEffect : IUnknown
 		{
@@ -4238,9 +4237,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirectInputJoyConfig8 self, out HKEY param0) OpenAppStatusKey;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dinput8.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DirectInput8Create(HINSTANCE hinst, uint32 dwVersion, in Guid riidltf, void** ppvOut, ref IUnknown punkOuter);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4335,5 +4334,6 @@ namespace Win32
 		public static extern BOOLEAN HidD_GetSerialNumberString(HANDLE HidDeviceObject, void* Buffer, uint32 BufferLength);
 		[Import("hid.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN HidD_GetMsGenreDescriptor(HANDLE HidDeviceObject, void* Buffer, uint32 BufferLength);
+		#endregion
 	}
 }

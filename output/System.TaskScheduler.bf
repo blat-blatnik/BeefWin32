@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 TASK_SUNDAY = 1;
 		public const uint32 TASK_MONDAY = 2;
 		public const uint32 TASK_TUESDAY = 4;
@@ -50,9 +49,9 @@ namespace Win32
 		public const uint32 TASK_MAX_RUN_TIMES = 1440;
 		public const Guid CLSID_CTask = .(0x148bd520, 0xa2ab, 0x11ce, 0xb1, 0x1f, 0x00, 0xaa, 0x00, 0x53, 0x05, 0x03);
 		public const Guid CLSID_CTaskScheduler = .(0x148bd52a, 0xa2ab, 0x11ce, 0xb1, 0x1f, 0x00, 0xaa, 0x00, 0x53, 0x05, 0x03);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum TASK_TRIGGER_TYPE : int32
 		{
 			TIME_TRIGGER_ONCE = 0,
@@ -169,9 +168,9 @@ namespace Win32
 			V2_3 = 5,
 			V2_4 = 6,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DAILY
 		{
@@ -225,15 +224,15 @@ namespace Win32
 			public uint16 Reserved2;
 			public uint16 wRandomMinutesInterval;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_TaskScheduler = .(0x0f87369f, 0xa4e5, 0x4cfc, 0xbd, 0x3e, 0x73, 0xe6, 0x15, 0x45, 0x72, 0xdd);
 		public const Guid CLSID_TaskHandlerPS = .(0xf2a69db7, 0xda2c, 0x4352, 0x90, 0x66, 0x86, 0xfe, 0xe6, 0xda, 0xca, 0xc9);
 		public const Guid CLSID_TaskHandlerStatusPS = .(0x9f15266d, 0xd7ba, 0x48f0, 0x93, 0xc1, 0xe6, 0x89, 0x5f, 0x6f, 0xe5, 0xac);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITaskTrigger : IUnknown
 		{
@@ -1622,6 +1621,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRepetitionPattern self, int16 stop) put_StopAtDurationEnd;
 			}
 		}
+		#endregion
 		
 	}
 }

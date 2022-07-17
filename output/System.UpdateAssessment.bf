@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum UpdateImpactLevel : int32
 		{
 			None = 0,
@@ -29,9 +28,9 @@ namespace Win32
 			NotLatestUnknown = 10,
 			NotLatestTargetedVersion = 11,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct UpdateAssessment
 		{
@@ -53,13 +52,13 @@ namespace Win32
 			public PWSTR upToDateOSBuild;
 			public FILETIME upToDateOSReleaseTime;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WaaSAssessor = .(0x098ef871, 0xfa9f, 0x46af, 0x89, 0x58, 0xc0, 0x83, 0x51, 0x5d, 0x7c, 0x9c);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWaaSAssessor : IUnknown
 		{
@@ -75,6 +74,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWaaSAssessor self, out OSUpdateAssessment result) GetOSUpdateAssessment;
 			}
 		}
+		#endregion
 		
 	}
 }

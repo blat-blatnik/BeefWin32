@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IMAPI_SECTOR_SIZE = 2048;
 		public const uint32 IMAPI2_DEFAULT_COMMAND_TIMEOUT = 10;
 		public const uint32 DISPID_DDISCMASTER2EVENTS_DEVICEADDED = 256;
@@ -291,9 +290,9 @@ namespace Win32
 		public const HRESULT IMAPI_E_CANNOT_WRITE_TO_MEDIA = -2147220948;
 		public const HRESULT IMAPI_E_TRACK_NOT_BIG_ENOUGH = -2147220947;
 		public const HRESULT IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC = -2147220946;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DISC_RECORDER_STATE_FLAGS : uint32
 		{
 			BURNING = 2,
@@ -697,13 +696,13 @@ namespace Win32
 			CP_START = 32768,
 			CPV_AFTER__ = 32769,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void MSGCALLRELEASE(uint32 ulCallerData, ref IMessage lpMessage);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct _MSGSESS {}
 		[CRepr]
@@ -724,9 +723,9 @@ namespace Win32
 			public uint32 dwStart;
 			public uint32 dwLast;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MsftDiscMaster2 = .(0x2735412e, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 		public const Guid CLSID_MsftDiscRecorder2 = .(0x2735412d, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 		public const Guid CLSID_MsftWriteEngine2 = .(0x2735412c, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
@@ -765,9 +764,9 @@ namespace Win32
 		public const Guid CLSID_tagIMMPID_RPV_STRUCT = .(0x79e82049, 0xd320, 0x11d1, 0x9f, 0xf4, 0x00, 0xc0, 0x4f, 0xa3, 0x73, 0x48);
 		public const Guid CLSID_tagIMMPID_NMP_STRUCT = .(0x7433a9aa, 0x20e2, 0x11d2, 0x94, 0xd6, 0x00, 0xc0, 0x4f, 0xa3, 0x79, 0xf1);
 		public const Guid CLSID_tagIMMPID_CPV_STRUCT = .(0xa2a76b2a, 0xe52d, 0x11d1, 0xaa, 0x64, 0x00, 0xc0, 0x4f, 0xa3, 0x5b, 0x82);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDiscMaster2 : IDispatch
 		{
@@ -2378,9 +2377,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiscMaster self) Close;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 OpenIMsgSession(ref IMalloc lpMalloc, uint32 ulFlags, out _MSGSESS* lppMsgSess);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2393,5 +2392,6 @@ namespace Win32
 		public static extern HRESULT SetAttribIMsgOnIStg(void* lpObject, out SPropTagArray lpPropTags, out SPropAttrArray lpPropAttrs, out SPropProblemArray* lppPropProblems);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 MapStorageSCode(int32 StgSCode);
+		#endregion
 	}
 }

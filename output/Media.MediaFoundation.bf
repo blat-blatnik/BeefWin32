@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid MEDIASUBTYPE_None = .(0xe436eb8e, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
 		public const uint32 AVENC_H263V_LEVELCOUNT = 8;
 		public const uint32 AVENC_H264V_LEVELCOUNT = 16;
@@ -1712,9 +1711,9 @@ namespace Win32
 		public const Guid MF_FRAMESERVER_VCAMEVENT_EXTENDED_SOURCE_UNINITIALIZE = .(0xa0ebaba7, 0xa422, 0x4e33, 0x84, 0x01, 0xb3, 0x7d, 0x28, 0x00, 0xaa, 0x67);
 		public const Guid MF_FRAMESERVER_VCAMEVENT_EXTENDED_PIPELINE_SHUTDOWN = .(0x45a81b31, 0x43f8, 0x4e5d, 0x8c, 0xe2, 0x22, 0xdc, 0xe0, 0x26, 0x99, 0x6d);
 		public const Guid MF_FRAMESERVER_VCAMEVENT_EXTENDED_CUSTOM_EVENT = .(0x6e59489c, 0x47d3, 0x4467, 0x83, 0xef, 0x12, 0xd3, 0x4e, 0x87, 0x16, 0x65);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -5042,9 +5041,9 @@ namespace Win32
 			ON = 0,
 			OFF = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PDXVAHDSW_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, out HANDLE phDevice);
 		public function HRESULT PDXVAHDSW_ProposeVideoPrivateFormat(HANDLE hDevice, out D3DFORMAT pFormat);
 		public function HRESULT PDXVAHDSW_GetVideoProcessorDeviceCaps(HANDLE hDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, out DXVAHD_VPDEVCAPS pCaps);
@@ -5064,9 +5063,9 @@ namespace Win32
 		public function HRESULT PDXVAHDSW_Plugin(uint32 Size, void* pCallbacks);
 		public function HRESULT PDXVAHD_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, out IDXVAHD_Device* ppDevice);
 		public function void MFPERIODICCALLBACK(ref IUnknown pContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CodecAPIEventData
 		{
@@ -7944,9 +7943,9 @@ namespace Win32
 				public IDirect3DSurface9* pDDS;
 			}
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CMpeg4DecMediaObject = .(0xf371728a, 0x6052, 0x4d47, 0x82, 0x7c, 0xd0, 0x39, 0x33, 0x5d, 0xfe, 0x0a);
 		public const Guid CLSID_CMpeg43DecMediaObject = .(0xcba9e78b, 0x49a3, 0x49ea, 0x93, 0xd4, 0x6b, 0xcb, 0xa8, 0xc4, 0xde, 0x07);
 		public const Guid CLSID_CMpeg4sDecMediaObject = .(0x2a11bae2, 0xfe6e, 0x4249, 0x86, 0x4b, 0x9e, 0x9e, 0xd6, 0xe8, 0xdb, 0xc2);
@@ -8356,9 +8355,9 @@ namespace Win32
 		public const Guid CLSID_CODECAPI_AVEncProgressiveUpdateTime = .(0x649faf66, 0xafc6, 0x4828, 0x8f, 0xdc, 0x07, 0x71, 0xcd, 0x9a, 0xb1, 0x7d);
 		public const Guid CLSID_CODECAPI_AVEncChromaUpdateTime = .(0x4b4fd998, 0x4274, 0x40bb, 0x8e, 0xe4, 0x07, 0x55, 0x3e, 0x7e, 0x2d, 0x3a);
 		public const Guid CLSID_KSPROPSETID_OPMVideoOutput = .(0x06f414bb, 0xf43a, 0x4fe2, 0xa5, 0x66, 0x77, 0x4b, 0x4c, 0x81, 0xf0, 0xdb);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICodecAPI : IUnknown
 		{
@@ -16083,9 +16082,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFVirtualCamera self) Shutdown;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DXVAHD_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, out IDXVAHD_Device* ppDevice);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
@@ -16570,5 +16569,6 @@ namespace Win32
 		public static extern HRESULT OPMXboxGetHDCPStatus(out OPM_HDCP_STATUS pHDCPStatus);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OPMXboxGetHDCPStatusAndType(out OPM_HDCP_STATUS pHDCPStatus, out OPM_HDCP_TYPE pHDCPType);
+		#endregion
 	}
 }

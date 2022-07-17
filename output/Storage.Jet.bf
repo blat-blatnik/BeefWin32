@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 JET_bitConfigStoreReadControlInhibitRead = 1;
 		public const uint32 JET_bitConfigStoreReadControlDisableAll = 2;
 		public const uint32 JET_bitConfigStoreReadControlDefault = 0;
@@ -947,14 +946,14 @@ namespace Win32
 		public const uint32 JET_bitDumpCacheIncludeCachedPages = 32;
 		public const uint32 JET_bitDumpCacheIncludeCorruptedPages = 64;
 		public const uint32 JET_bitDumpCacheNoDecommit = 128;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias JET_OSSNAPID = uint;
 		public typealias JET_LS = uint;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum JET_RELOP : int32
 		{
 			Equals = 0,
@@ -995,16 +994,16 @@ namespace Win32
 			DeferToOpenTable = 2,
 			Max = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 JET_PFNSTATUS(JET_SESID sesid, uint32 snp, uint32 snt, void* pv);
 		public function int32 JET_CALLBACK(JET_SESID sesid, uint32 dbid, JET_TABLEID tableid, uint32 cbtyp, void* pvArg1, void* pvArg2, void* pvContext, JET_API_PTR ulUnused);
 		public function int32 JET_PFNDURABLECOMMITCALLBACK(JET_INSTANCE instance, ref JET_COMMIT_ID pCommitIdSeen, uint32 grbit);
 		public function void* JET_PFNREALLOC(void* pvContext, void* pv, uint32 cb);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct JET_INDEXID
 		{
@@ -2187,9 +2186,9 @@ namespace Win32
 			public uint16** szDatabaseDisplayName;
 			public uint16** szDatabaseSLVFileName_Obsolete;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetInit(JET_INSTANCE* pinstance);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2648,5 +2647,6 @@ namespace Win32
 		public static extern int32 JetSetSessionParameter(JET_SESID sesid, uint32 sesparamid, void* pvParam, uint32 cbParam);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetSessionParameter(JET_SESID sesid, uint32 sesparamid, void* pvParam, uint32 cbParamMax, uint32* pcbParamActual);
+		#endregion
 	}
 }

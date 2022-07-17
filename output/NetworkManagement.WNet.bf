@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WNGETCON_CONNECTED = 0;
 		public const uint32 WNGETCON_DISCONNECTED = 1;
 		public const uint32 WNNC_SPEC_VERSION = 1;
@@ -90,13 +89,13 @@ namespace Win32
 		public const uint32 WNCON_NOTROUTED = 2;
 		public const uint32 WNCON_SLOWLINK = 4;
 		public const uint32 WNCON_DYNAMIC = 8;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias NetEnumHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum UNC_INFO_LEVEL : uint32
 		{
 			UNIVERSAL_NAME_INFO_LEVEL = 1,
@@ -178,9 +177,9 @@ namespace Win32
 			UPDATE_PROFILE = 1,
 			NO_FORCE = 64,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PF_NPAddConnection(ref NETRESOURCEW lpNetResource, PWSTR lpPassword, PWSTR lpUserName);
 		public function uint32 PF_NPAddConnection3(HWND hwndOwner, ref NETRESOURCEW lpNetResource, PWSTR lpPassword, PWSTR lpUserName, uint32 dwFlags);
 		public function uint32 PF_NPAddConnection4(HWND hwndOwner, ref NETRESOURCEW lpNetResource, void* lpAuthBuffer, uint32 cbAuthBuffer, uint32 dwFlags, uint8* lpUseOptions, uint32 cbUseOptions);
@@ -212,9 +211,9 @@ namespace Win32
 		public function uint32 PF_NPFMXGetPermCaps(PWSTR lpDriveName);
 		public function uint32 PF_NPFMXEditPerm(PWSTR lpDriveName, HWND hwndFMX, uint32 nDialogType);
 		public function uint32 PF_NPFMXGetPermHelp(PWSTR lpDriveName, uint32 nDialogType, BOOL fDirectory, void* lpFileNameBuffer, out uint32 lpBufferSize, out uint32 lpnHelpContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NETRESOURCEA
 		{
@@ -342,9 +341,9 @@ namespace Win32
 			public uint32 dwFlags;
 			public BOOL fForce;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("mpr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WNetAddConnectionA(PSTR lpRemoteName, PSTR lpPassword, PSTR lpLocalName);
 		[Import("mpr.dll"), CLink, CallingConvention(.Stdcall)]
@@ -475,5 +474,6 @@ namespace Win32
 		public static extern void WNetSetLastErrorA(uint32 err, PSTR lpError, PSTR lpProviders);
 		[Import("mpr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WNetSetLastErrorW(uint32 err, PWSTR lpError, PWSTR lpProviders);
+		#endregion
 	}
 }

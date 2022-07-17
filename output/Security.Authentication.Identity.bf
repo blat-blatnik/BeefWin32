@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ISSP_LEVEL = 32;
 		public const uint32 ISSP_MODE = 1;
 		public const uint32 SECPKG_FLAG_INTEGRITY = 1;
@@ -1305,13 +1304,13 @@ namespace Win32
 		public const HRESULT SL_REMAPPING_MDOLLAR_OSR_LICENSE_BLOCKED = -2143310910;
 		public const HRESULT SL_REMAPPING_MDOLLAR_OSR_DEVICE_BLOCKED = -2143310909;
 		public const Guid WINDOWS_SLID = .(0x55c92734, 0xd682, 0x4d71, 0x98, 0x3e, 0xd6, 0xec, 0x3f, 0x16, 0x05, 0x9f);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias LsaHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SECPKG_ATTR : uint32
 		{
 			C_ACCESS_TOKEN = 2147483666,
@@ -2028,9 +2027,9 @@ namespace Win32
 			OFFLINE = 3,
 			LAST = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function NTSTATUS PSAM_PASSWORD_NOTIFICATION_ROUTINE(out UNICODE_STRING UserName, uint32 RelativeId, out UNICODE_STRING NewPassword);
 		public function BOOLEAN PSAM_INIT_NOTIFICATION_ROUTINE();
 		public function BOOLEAN PSAM_PASSWORD_FILTER_ROUTINE(ref UNICODE_STRING AccountName, ref UNICODE_STRING FullName, ref UNICODE_STRING Password, BOOLEAN SetOperation);
@@ -2229,9 +2228,9 @@ namespace Win32
 		public function void SSL_FREE_CERTIFICATE_FN(out X509Certificate pCertificate);
 		public function int32 SslGetServerIdentityFn(ref uint8 ClientHello, uint32 ClientHelloSize, out uint8* ServerIdentity, out uint32 ServerIdentitySize, uint32 Flags);
 		public function int32 SslGetExtensionsFn(uint8* clientHello, uint32 clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, uint8 genericExtensionsCount, out uint32 bytesToRead, SchGetExtensionsOptions flags);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct LSA_TRUST_INFORMATION
 		{
@@ -5137,9 +5136,9 @@ namespace Win32
 			public void*[2] Reserved1;
 			public uint32[3] Reserved2;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICcgDomainAuthCredentials : IUnknown
 		{
@@ -5155,9 +5154,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICcgDomainAuthCredentials self, PWSTR pluginInput, out PWSTR domainName, out PWSTR username, out PWSTR password) GetPasswordCredentials;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS LsaRegisterLogonProcess(ref STRING LogonProcessName, out LsaHandle LsaHandle, out uint32 SecurityMode);
 		[Import("secur32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5580,5 +5579,6 @@ namespace Win32
 		public static extern HRESULT SLGetGenuineInformation(in Guid pQueryId, PWSTR pwszValueName, SLDATATYPE* peDataType, out uint32 pcbValue, out uint8* ppbValue);
 		[Import("api-ms-win-core-slapi-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SLQueryLicenseValueFromApp(PWSTR valueName, uint32* valueType, void* dataBuffer, uint32 dataSize, out uint32 resultDataSize);
+		#endregion
 	}
 }

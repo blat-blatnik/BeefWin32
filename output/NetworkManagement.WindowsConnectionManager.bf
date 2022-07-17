@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WCM_API_VERSION_1_0 = 1;
 		public const uint32 WCM_API_VERSION = 1;
 		public const uint32 WCM_UNKNOWN_DATAPLAN_STATUS = 4294967295;
 		public const uint32 WCM_MAX_PROFILE_NAME = 256;
 		public const uint32 NET_INTERFACE_FLAG_NONE = 0;
 		public const uint32 NET_INTERFACE_FLAG_CONNECT_IF_NEEDED = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WCM_PROPERTY : int32
 		{
 			global_property_domain_policy = 0,
@@ -53,13 +52,13 @@ namespace Win32
 			USER = 2,
 			OPERATOR = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void ONDEMAND_NOTIFICATION_CALLBACK(void* param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WCM_POLICY_VALUE
 		{
@@ -133,9 +132,9 @@ namespace Win32
 			public uint32 NumberOfEntries;
 			public NET_INTERFACE_CONTEXT* InterfaceContextArray;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WcmQueryProperty(Guid* pInterface, PWSTR strProfileName, WCM_PROPERTY Property, void* pReserved, out uint32 pdwDataSize, uint8** ppData);
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -156,5 +155,6 @@ namespace Win32
 		public static extern HRESULT GetInterfaceContextTableForHostName(PWSTR HostName, PWSTR ProxyName, uint32 Flags, uint8* ConnectionProfileFilterRawData, uint32 ConnectionProfileFilterRawDataSize, out NET_INTERFACE_CONTEXT_TABLE* InterfaceContextTable);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void FreeInterfaceContextTable(ref NET_INTERFACE_CONTEXT_TABLE InterfaceContextTable);
+		#endregion
 	}
 }

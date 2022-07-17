@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const PROPERTYKEY DEVPKEY_MTPBTH_IsConnected = .(.(0xea1237fa, 0x589d, 0x4472, 0x84, 0xe4, 0x0a, 0xbe, 0x36, 0xfd, 0x62, 0xef), 2);
 		public const Guid GUID_DEVINTERFACE_WPD = .(0x6ac27878, 0xa6fa, 0x4155, 0xba, 0x85, 0xf9, 0x8f, 0x49, 0x1d, 0x4f, 0x33);
 		public const Guid GUID_DEVINTERFACE_WPD_PRIVATE = .(0xba0c718f, 0x4ded, 0x49b7, 0xbd, 0xd3, 0xfa, 0xbe, 0x28, 0x66, 0x12, 0x11);
@@ -300,9 +299,9 @@ namespace Win32
 		public const uint32 ENUM_AnchorResults_ItemStateUpdated = 3;
 		public const uint32 ENUM_AnchorResults_ItemStateChanged = 4;
 		public const uint32 TYPE_FullEnumSyncSvc = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DELETE_OBJECT_OPTIONS : int32
 		{
 			NO_RECURSION = 0,
@@ -554,9 +553,9 @@ namespace Win32
 			ENABLED = 0,
 			DISABLED = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WPD_COMMAND_ACCESS_LOOKUP_ENTRY
 		{
@@ -564,9 +563,9 @@ namespace Win32
 			public uint32 AccessType;
 			public PROPERTYKEY AccessProperty;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WpdSerializer = .(0x0b91a74b, 0xad7c, 0x4a9d, 0xb5, 0x63, 0x29, 0xee, 0xf9, 0x16, 0x71, 0x72);
 		public const Guid CLSID_PortableDeviceValues = .(0x0c15d503, 0xd017, 0x47ce, 0x90, 0x16, 0x7b, 0x3f, 0x97, 0x87, 0x21, 0xcc);
 		public const Guid CLSID_PortableDeviceKeyCollection = .(0xde2d022d, 0x2480, 0x43be, 0x97, 0xf0, 0xd1, 0xfa, 0x2c, 0xf9, 0x8f, 0x4f);
@@ -580,9 +579,9 @@ namespace Win32
 		public const Guid CLSID_PortableDeviceServiceFTM = .(0x1649b154, 0xc794, 0x497a, 0x9b, 0x03, 0xf3, 0xf0, 0x12, 0x13, 0x02, 0xf3);
 		public const Guid CLSID_PortableDeviceWebControl = .(0x186dd02c, 0x2dec, 0x41b5, 0xa7, 0xd4, 0xb5, 0x90, 0x56, 0xfa, 0xde, 0x51);
 		public const Guid CLSID_EnumBthMtpConnectors = .(0xa1570149, 0xe645, 0x4f43, 0x8b, 0x0d, 0x40, 0x9b, 0x06, 0x1d, 0xb2, 0xfc);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWpdSerializer : IUnknown
 		{
@@ -1411,10 +1410,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMediaRadioManagerNotifySink self, BSTR bstrRadioInstanceId, DEVICE_RADIO_STATE radioState) OnInstanceRadioChange;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dmprocessxmlfiltered.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMProcessConfigXMLFiltered(PWSTR pszXmlIn, PWSTR* rgszAllowedCspNodes, uint32 dwNumAllowedCspNodes, out BSTR pbstrXmlOut);
+		#endregion
 	}
 }

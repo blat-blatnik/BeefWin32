@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HKEY HKEY_CLASSES_ROOT = -2147483648;
 		public const HKEY HKEY_CURRENT_USER = -2147483647;
 		public const HKEY HKEY_LOCAL_MACHINE = -2147483646;
@@ -169,13 +168,13 @@ namespace Win32
 		public const uint32 LASTGOOD_OPERATION = 255;
 		public const uint32 LASTGOOD_OPERATION_NOPOSTPROC = 0;
 		public const uint32 LASTGOOD_OPERATION_DELETE = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HKEY = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum REG_VALUE_TYPE : uint32
 		{
@@ -259,13 +258,13 @@ namespace Win32
 			REG_QWORD = 64,
 			REG_SZ = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PQUERYHANDLER(void* keycontext, out val_context val_list, uint32 num_vals, void* outputbuffer, out uint32 total_outlen, uint32 input_blen);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct val_context
 		{
@@ -328,9 +327,9 @@ namespace Win32
 			public uint16 wMilliseconds;
 			public uint16 wResult;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern LSTATUS RegCloseKey(HKEY hKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -497,5 +496,6 @@ namespace Win32
 		public static extern LSTATUS RegSaveKeyExW(HKEY hKey, PWSTR lpFile, SECURITY_ATTRIBUTES* lpSecurityAttributes, REG_SAVE_FORMAT Flags);
 		[Import("api-ms-win-core-state-helpers-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern LSTATUS GetRegistryValueWithFallbackW(HKEY hkeyPrimary, PWSTR pwszPrimarySubKey, HKEY hkeyFallback, PWSTR pwszFallbackSubKey, PWSTR pwszValue, uint32 dwFlags, uint32* pdwType, void* pvData, uint32 cbDataIn, uint32* pcbDataOut);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum MBN_SIGNAL_CONSTANTS : int32
 		{
@@ -306,9 +305,9 @@ namespace Win32
 			ARRIVAL = 0,
 			REMOVAL = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MBN_INTERFACE_CAPS
 		{
@@ -402,16 +401,16 @@ namespace Win32
 		{
 			public uint32 pinType;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MbnConnectionProfileManager = .(0xbdfee05a, 0x4418, 0x11dd, 0x90, 0xed, 0x00, 0x1c, 0x25, 0x7c, 0xcf, 0xf1);
 		public const Guid CLSID_MbnInterfaceManager = .(0xbdfee05b, 0x4418, 0x11dd, 0x90, 0xed, 0x00, 0x1c, 0x25, 0x7c, 0xcf, 0xf1);
 		public const Guid CLSID_MbnConnectionManager = .(0xbdfee05c, 0x4418, 0x11dd, 0x90, 0xed, 0x00, 0x1c, 0x25, 0x7c, 0xcf, 0xf1);
 		public const Guid CLSID_MbnDeviceServicesManager = .(0x2269daa3, 0x2a9f, 0x4165, 0xa5, 0x01, 0xce, 0x00, 0xa6, 0xf7, 0xa7, 0x5b);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDummyMBNUCMExt : IDispatch
 		{
@@ -1305,6 +1304,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMbnPin self, IMbnPinManager** pinManager) GetPinManager;
 			}
 		}
+		#endregion
 		
 	}
 }

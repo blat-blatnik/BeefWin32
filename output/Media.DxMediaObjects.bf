@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT DMO_E_INVALIDSTREAMINDEX = -2147220991;
 		public const HRESULT DMO_E_INVALIDTYPE = -2147220990;
 		public const HRESULT DMO_E_TYPE_NOT_SET = -2147220989;
@@ -23,9 +22,9 @@ namespace Win32
 		public const Guid DMOCATEGORY_ACOUSTIC_ECHO_CANCEL = .(0xbf963d80, 0xc559, 0x11d0, 0x8a, 0x2b, 0x00, 0xa0, 0xc9, 0x25, 0x5a, 0xc1);
 		public const Guid DMOCATEGORY_AUDIO_NOISE_SUPPRESS = .(0xe07f903f, 0x62fd, 0x4e60, 0x8c, 0xdd, 0xde, 0xa7, 0x23, 0x66, 0x65, 0xb5);
 		public const Guid DMOCATEGORY_AGC = .(0xe88c9ba0, 0xc557, 0x11d0, 0x8a, 0x2b, 0x00, 0xa0, 0xc9, 0x25, 0x5a, 0xc1);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum _DMO_INPUT_DATA_BUFFER_FLAGS : int32
 		{
 			SYNCPOINT = 1,
@@ -90,9 +89,9 @@ namespace Win32
 		{
 			ENUMF_INCLUDE_KEYED = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DMO_MEDIA_TYPE
 		{
@@ -120,9 +119,9 @@ namespace Win32
 			public Guid type;
 			public Guid subtype;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IMediaBuffer : IUnknown
 		{
@@ -277,9 +276,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMOVideoOutputOptimizations self, uint32 ulOutputStreamIndex, out uint32 pdwRequestedFeatures) GetCurrentSampleRequirements;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMORegister(PWSTR szName, in Guid clsidDMO, in Guid guidCategory, uint32 dwFlags, uint32 cInTypes, in DMO_PARTIAL_MEDIATYPE pInTypes, uint32 cOutTypes, in DMO_PARTIAL_MEDIATYPE pOutTypes);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
@@ -302,5 +301,6 @@ namespace Win32
 		public static extern HRESULT MoDeleteMediaType(out DMO_MEDIA_TYPE pmt);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MoDuplicateMediaType(out DMO_MEDIA_TYPE* ppmtDest, in DMO_MEDIA_TYPE pmtSrc);
+		#endregion
 	}
 }

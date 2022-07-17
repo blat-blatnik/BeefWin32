@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IOCTL_MTP_CUSTOM_COMMAND = 827348045;
 		public const uint32 MTP_NEXTPHASE_READ_DATA = 1;
 		public const uint32 MTP_NEXTPHASE_WRITE_DATA = 2;
@@ -284,9 +283,9 @@ namespace Win32
 		public const uint32 MTP_COMMAND_MAX_PARAMS = 5;
 		public const uint32 MTP_RESPONSE_MAX_PARAMS = 5;
 		public const uint16 MTP_RESPONSE_OK = 8193;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WMDM_TAG_DATATYPE : int32
 		{
 			DWORD = 0,
@@ -428,9 +427,9 @@ namespace Win32
 			MEDIA_ARRIVAL = 2,
 			MEDIA_REMOVAL = 3,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct __MACINFO
 		{
@@ -668,9 +667,9 @@ namespace Win32
 			public uint32 CommandReadDataSize;
 			public uint8[0] CommandReadData;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MediaDevMgrClassFactory = .(0x50040c1d, 0xbdbf, 0x4924, 0xb8, 0x73, 0xf1, 0x4d, 0x6c, 0x5b, 0xfd, 0x66);
 		public const Guid CLSID_MediaDevMgr = .(0x25baad81, 0x3560, 0x11d3, 0x84, 0x71, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 		public const Guid CLSID_WMDMDevice = .(0x807b3cdf, 0x357a, 0x11d3, 0x84, 0x71, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
@@ -679,9 +678,9 @@ namespace Win32
 		public const Guid CLSID_WMDMDeviceEnum = .(0x430e35af, 0x3971, 0x11d3, 0x84, 0x74, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 		public const Guid CLSID_WMDMStorageEnum = .(0xeb401a3b, 0x3af7, 0x11d3, 0x84, 0x74, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 		public const Guid CLSID_WMDMLogger = .(0x110a3202, 0x5a79, 0x11d3, 0x8d, 0x78, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWMDMMetaData : IUnknown
 		{
@@ -1904,6 +1903,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWMDMLogger self, uint32 dwMaxSize, uint32 dwShrinkToSize) SetSizeParams;
 			}
 		}
+		#endregion
 		
 	}
 }

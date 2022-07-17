@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WM_DEVICECHANGE = 537;
 		public const uint32 BSM_VXDS = 1;
 		public const uint32 BSM_NETDRIVER = 2;
@@ -1409,17 +1408,17 @@ namespace Win32
 		public const HBITMAP HBMMENU_POPUP_MINIMIZE = 11;
 		public const int32 CW_USEDEFAULT = -2147483648;
 		public const int32 LBS_STANDARD = 10485763;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HHOOK = int;
 		public typealias HICON = int;
 		public typealias HMENU = int;
 		public typealias HCURSOR = int;
 		public typealias HACCEL = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WNDCLASS_STYLES : uint32
 		{
 			VREDRAW = 1,
@@ -2481,9 +2480,9 @@ namespace Win32
 			AutoMerge = 1,
 			CreateContentChecksum = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function LRESULT WNDPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function int DLGPROC(HWND param0, uint32 param1, WPARAM param2, LPARAM param3);
 		public function void TIMERPROC(HWND param0, uint32 param1, uint param2, uint32 param3);
@@ -2498,9 +2497,9 @@ namespace Win32
 		public function BOOL NAMEENUMPROCW(PWSTR param0, LPARAM param1);
 		public function BOOLEAN PREGISTERCLASSNAMEW(PWSTR param0);
 		public function void MSGBOXCALLBACK(out HELPINFO lpHelpInfo);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MESSAGE_RESOURCE_ENTRY
 		{
@@ -3216,9 +3215,9 @@ namespace Win32
 			public uint32 id;
 			public PWSTR text;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 LoadStringA(HINSTANCE hInstance, uint32 uID, uint8* lpBuffer, int32 cchBufferMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -4047,5 +4046,6 @@ namespace Win32
 		public static extern HRESULT MrmCreateConfigInMemory(MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, out uint8* outputXmlData, out uint32 outputXmlSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmGetPriFileContentChecksum(PWSTR priFile, out uint32 checksum);
+		#endregion
 	}
 }

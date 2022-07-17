@@ -5,21 +5,20 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum WindowsMediaLibrarySharingDeviceAuthorizationStatus : int32
 		{
 			UNKNOWN = 0,
 			ALLOWED = 1,
 			DENIED = 2,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WindowsMediaLibrarySharingServices = .(0xad581b00, 0x7b64, 0x4e59, 0xa3, 0x8d, 0xd2, 0xc5, 0xbf, 0x51, 0xdd, 0xb3);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWindowsMediaLibrarySharingDeviceProperty : IDispatch
 		{
@@ -147,6 +146,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWindowsMediaLibrarySharingServices self, out int16 customSettingsApplied) get_customSettingsApplied;
 			}
 		}
+		#endregion
 		
 	}
 }

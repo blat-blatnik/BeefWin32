@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_PDF_CREATE_RENDERER(ref IDXGIDevice param0, out IPdfRendererNative* param1);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PDF_RENDER_PARAMS
 		{
@@ -20,9 +19,9 @@ namespace Win32
 			public D2D_COLOR_F BackgroundColor;
 			public BOOLEAN IgnoreHighContrast;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPdfRendererNative : IUnknown
 		{
@@ -40,10 +39,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("windows.data.pdf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PdfCreateRenderer(ref IDXGIDevice pDevice, out IPdfRendererNative* ppRenderer);
+		#endregion
 	}
 }

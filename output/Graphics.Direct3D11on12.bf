@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_D3D11ON12_CREATE_DEVICE(ref IUnknown param0, uint32 param1, D3D_FEATURE_LEVEL* param2, uint32 FeatureLevels, IUnknown** param4, uint32 NumQueues, uint32 param6, ID3D11Device** param7, ID3D11DeviceContext** param8, D3D_FEATURE_LEVEL* param9);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D11_RESOURCE_FLAGS
 		{
@@ -19,9 +18,9 @@ namespace Win32
 			public uint32 CPUAccessFlags;
 			public uint32 StructureByteStride;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID3D11On12Device : IUnknown
 		{
@@ -73,10 +72,11 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11On12Device2 self, ref ID3D11Resource pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) ReturnUnderlyingResource;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D11On12CreateDevice(ref IUnknown pDevice, uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, IUnknown** ppCommandQueues, uint32 NumQueues, uint32 NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
+		#endregion
 	}
 }

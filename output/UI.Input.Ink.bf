@@ -5,22 +5,21 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum INK_HIGH_CONTRAST_ADJUSTMENT : int32
 		{
 			SYSTEM_COLORS_WHEN_NECESSARY = 0,
 			SYSTEM_COLORS = 1,
 			ORIGINAL_COLORS = 2,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_InkDesktopHost = .(0x062584a6, 0xf830, 0x4bdc, 0xa4, 0xd2, 0x0a, 0x10, 0xab, 0x06, 0x2b, 0x1d);
 		public const Guid CLSID_InkD2DRenderer = .(0x4044e60c, 0x7b01, 0x4671, 0xa9, 0x7c, 0x04, 0xe0, 0x21, 0x0a, 0x07, 0xa5);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IInkCommitRequestHandler : IUnknown
 		{
@@ -123,6 +122,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInkD2DRenderer2 self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NCBNAMSZ = 16;
 		public const uint32 MAX_LANA = 254;
 		public const uint32 NAME_FLAGS_MASK = 135;
@@ -89,9 +88,9 @@ namespace Win32
 		public const uint32 NRC_OPENERR = 63;
 		public const uint32 NRC_SYSTEM = 64;
 		public const uint32 NRC_PENDING = 255;
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NCB
 		{
@@ -197,10 +196,11 @@ namespace Win32
 			public uint16 action_code;
 			public uint16 reserved;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint8 Netbios(out NCB pncb);
+		#endregion
 	}
 }

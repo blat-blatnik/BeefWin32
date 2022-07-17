@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IGraphicsCaptureItemInterop : IUnknown
 		{
@@ -24,6 +23,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGraphicsCaptureItemInterop self, HMONITOR monitor, in Guid riid, void** result) CreateForMonitor;
 			}
 		}
+		#endregion
 		
 	}
 }

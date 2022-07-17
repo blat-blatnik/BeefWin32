@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IPrinting3DManagerInterop : IInspectable
 		{
@@ -130,6 +129,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_UserProperties;
 			}
 		}
+		#endregion
 		
 	}
 }

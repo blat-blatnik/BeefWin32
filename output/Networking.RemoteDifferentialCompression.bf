@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 RDCE_TABLE_FULL = 2147745793;
 		public const uint32 RDCE_TABLE_CORRUPT = 2147745794;
 		public const uint32 MSRDC_SIGNATURE_HASHSIZE = 16;
@@ -31,9 +30,9 @@ namespace Win32
 		public const uint32 MSRDC_MAXIMUM_TRAITVALUE = 63;
 		public const uint32 MSRDC_MINIMUM_MATCHESREQUIRED = 1;
 		public const uint32 MSRDC_MAXIMUM_MATCHESREQUIRED = 16;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RDC_ErrorCode : int32
 		{
 			NoError = 0,
@@ -72,9 +71,9 @@ namespace Win32
 			ReadOnly = 1,
 			ReadWrite = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RdcNeed
 		{
@@ -137,9 +136,9 @@ namespace Win32
 		{
 			public uint8[32] m_FileId;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_RdcLibrary = .(0x96236a85, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 		public const Guid CLSID_RdcGeneratorParameters = .(0x96236a86, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 		public const Guid CLSID_RdcGeneratorFilterMaxParameters = .(0x96236a87, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
@@ -156,9 +155,9 @@ namespace Win32
 		public const Guid CLSID_FindSimilarResults = .(0x96236a93, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 		public const Guid CLSID_SimilarityTraitsMapping = .(0x96236a94, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 		public const Guid CLSID_SimilarityTraitsMappedView = .(0x96236a95, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRdcGeneratorParameters : IUnknown
 		{
@@ -508,6 +507,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISimilarity self, out uint32 recordCount) GetRecordCount;
 			}
 		}
+		#endregion
 		
 	}
 }

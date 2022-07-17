@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICompositionDrawingSurfaceInterop : IUnknown
 		{
@@ -160,6 +159,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDesktopWindowTargetInterop self, out HWND value) get_Hwnd;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,16 +5,15 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WEB_SOCKET_MAX_CLOSE_REASON_LENGTH = 123;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias WEB_SOCKET_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WEB_SOCKET_CLOSE_STATUS : int32
 		{
 			SUCCESS_CLOSE_STATUS = 1000,
@@ -64,9 +63,9 @@ namespace Win32
 			RECEIVE_FROM_NETWORK_ACTION = 3,
 			INDICATE_RECEIVE_COMPLETE_ACTION = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WEB_SOCKET_PROPERTY
 		{
@@ -102,9 +101,9 @@ namespace Win32
 				public uint16 usStatus;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketCreateClientHandle(WEB_SOCKET_PROPERTY* pProperties, uint32 ulPropertyCount, out WEB_SOCKET_HANDLE phWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
@@ -131,5 +130,6 @@ namespace Win32
 		public static extern void WebSocketDeleteHandle(WEB_SOCKET_HANDLE hWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketGetGlobalProperty(WEB_SOCKET_PROPERTY_TYPE eType, void* pvValue, out uint32 ulSize);
+		#endregion
 	}
 }

@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid PERCEPTIONFIELD_StateStream_TimeStamps = .(0xaa886119, 0xf32f, 0x49bf, 0x92, 0xca, 0xf9, 0xdd, 0xf7, 0x84, 0xd2, 0x97);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PERCEPTION_PAYLOAD_FIELD
 		{
@@ -24,6 +23,7 @@ namespace Win32
 			public int64 InputTimestampInQpcCounts;
 			public int64 AvailableTimestampInQpcCounts;
 		}
+		#endregion
 		
 	}
 }

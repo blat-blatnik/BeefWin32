@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FILTER_NAME_MAX_CHARS = 255;
 		public const uint32 VOLUME_NAME_MAX_CHARS = 1024;
 		public const uint32 INSTANCE_NAME_MAX_CHARS = 255;
@@ -93,18 +92,18 @@ namespace Win32
 		public const uint32 WNNC_NET_9P = 4718592;
 		public const uint32 WNNC_CRED_MANAGER = 4294901760;
 		public const uint32 WNNC_NET_LANMAN = 131072;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HFILTER = int;
 		public typealias HFILTER_INSTANCE = int;
 		public typealias FilterFindHandle = int;
 		public typealias FilterVolumeFindHandle = int;
 		public typealias FilterInstanceFindHandle = int;
 		public typealias FilterVolumeInstanceFindHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FLT_FILESYSTEM_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -157,9 +156,9 @@ namespace Win32
 			FullInformation = 2,
 			AggregateStandardInformation = 3,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FILTER_FULL_INFORMATION
 		{
@@ -335,9 +334,9 @@ namespace Win32
 			public NTSTATUS Status;
 			public uint64 MessageId;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("fltlib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FilterLoad(PWSTR lpFilterName);
 		[Import("fltlib.dll"), CLink, CallingConvention(.Stdcall)]
@@ -394,5 +393,6 @@ namespace Win32
 		public static extern HRESULT FilterReplyMessage(HANDLE hPort, ref FILTER_REPLY_HEADER lpReplyBuffer, uint32 dwReplyBufferSize);
 		[Import("fltlib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FilterGetDosName(PWSTR lpVolumeName, char16* lpDosName, uint32 dwDosNameBufferSize);
+		#endregion
 	}
 }

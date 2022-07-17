@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT FHCFG_E_CORRUPT_CONFIG_FILE = -2147220736;
 		public const HRESULT FHCFG_E_CONFIG_FILE_NOT_FOUND = -2147220735;
 		public const HRESULT FHCFG_E_CONFIG_ALREADY_EXISTS = -2147220734;
@@ -49,9 +48,9 @@ namespace Win32
 		public const uint32 FH_STATE_NO_ERROR = 255;
 		public const uint32 FH_STATE_BACKUP_NOT_SUPPORTED = 2064;
 		public const uint32 FH_STATE_RUNNING = 256;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FH_TARGET_PROPERTY_TYPE : int32
 		{
 			FH_TARGET_NAME = 0,
@@ -113,14 +112,14 @@ namespace Win32
 			LimitUserBusyMachineOnDC = 3,
 			Cancelled = 4,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FhConfigMgr = .(0xed43bb3c, 0x09e9, 0x498a, 0x9d, 0xf6, 0x21, 0x77, 0x24, 0x4c, 0x6d, 0xb4);
 		public const Guid CLSID_FhReassociation = .(0x4d728e35, 0x16fa, 0x4320, 0x9e, 0x8b, 0xbf, 0xd7, 0x10, 0x0a, 0x88, 0x46);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFhTarget : IUnknown
 		{
@@ -219,9 +218,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IFhReassociation self, BOOL OverwriteIfExists) PerformReassociation;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FhServiceOpenPipe(BOOL StartServiceIfStopped, out FH_SERVICE_PIPE_HANDLE Pipe);
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
@@ -236,5 +235,6 @@ namespace Win32
 		public static extern HRESULT FhServiceBlockBackup(FH_SERVICE_PIPE_HANDLE Pipe);
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FhServiceUnblockBackup(FH_SERVICE_PIPE_HANDLE Pipe);
+		#endregion
 	}
 }

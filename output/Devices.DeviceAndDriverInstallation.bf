@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CM_PROB_NOT_CONFIGURED = 1;
 		public const uint32 CM_PROB_DEVLOADER_FAILED = 2;
 		public const uint32 CM_PROB_OUT_OF_MEMORY = 3;
@@ -1186,13 +1185,13 @@ namespace Win32
 		public const Guid GUID_WUDF_DEVICE_HOST_PROBLEM = .(0xc43d25bd, 0x9346, 0x40ee, 0xa2, 0xd2, 0xd7, 0x0c, 0x15, 0xf8, 0xb7, 0x5b);
 		public const Guid GUID_PARTITION_UNIT_INTERFACE_STANDARD = .(0x52363f5b, 0xd891, 0x429b, 0x81, 0x95, 0xae, 0xc5, 0xfe, 0xf6, 0x85, 0x3c);
 		public const Guid GUID_QUERY_CRASHDUMP_FUNCTIONS = .(0x9cc6b8ff, 0x32e2, 0x4834, 0xb1, 0xde, 0xb3, 0x2e, 0xf8, 0x88, 0x0a, 0x4b);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HCMNOTIFICATION = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum SP_COPY_STYLE : uint32
 		{
@@ -1363,17 +1362,17 @@ namespace Win32
 			DEVICEINSTANCEREMOVED = 9,
 			MAX = 10,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PSP_FILE_CALLBACK_A(void* Context, uint32 Notification, uint Param1, uint Param2);
 		public function uint32 PSP_FILE_CALLBACK_W(void* Context, uint32 Notification, uint Param1, uint Param2);
 		public function BOOL PDETECT_PROGRESS_NOTIFY(void* ProgressNotifyParam, uint32 DetectComplete);
 		public function uint32 PSP_DETSIG_CMPPROC(void* DeviceInfoSet, ref SP_DEVINFO_DATA NewDeviceData, ref SP_DEVINFO_DATA ExistingDeviceData, void* CompareContext);
 		public function uint32 PCM_NOTIFY_CALLBACK(HCMNOTIFICATION hNotify, void* Context, CM_NOTIFY_ACTION Action, ref CM_NOTIFY_EVENT_DATA EventData, uint32 EventDataSize);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct INFCONTEXT
 		{
@@ -2294,9 +2293,9 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupGetInfInformationA(void* InfSpec, uint32 SearchControl, SP_INF_INFORMATION* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3447,5 +3446,6 @@ namespace Win32
 		public static extern BOOL DiRollbackDriver(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, HWND hwndParent, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiShowUpdateDriver(HWND hwndParent, PWSTR FilePath, uint32 Flags, BOOL* NeedReboot);
+		#endregion
 	}
 }

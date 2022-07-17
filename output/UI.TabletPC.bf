@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const String MICROSOFT_URL_EXPERIENCE_PROPERTY = "Microsoft TIP URL Experience";
 		public const String MICROSOFT_TIP_NO_INSERT_BUTTON_PROPERTY = "Microsoft TIP No Insert Option";
 		public const String MICROSOFT_TIP_COMBOBOXLIST_PROPERTY = "Microsoft TIP ComboBox List Window Identifier";
@@ -275,17 +274,17 @@ namespace Win32
 		public const int32 InkCollectorDefaultMargin = -2147483648;
 		public const Guid GUID_GESTURE_DATA = .(0x41e4ec0f, 0x26aa, 0x455a, 0x9a, 0xa5, 0x2c, 0xd3, 0x6c, 0xf6, 0x3f, 0xb9);
 		public const Guid GUID_DYNAMIC_RENDERER_CACHED_DATA = .(0xbf531b92, 0x25bf, 0x4a95, 0x89, 0xad, 0x0e, 0x47, 0x6b, 0x34, 0xb4, 0xf5);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HRECOALT = int;
 		public typealias HRECOCONTEXT = int;
 		public typealias HRECOGNIZER = int;
 		public typealias HRECOLATTICE = int;
 		public typealias HRECOWORDLIST = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PROPERTY_UNITS : int32
 		{
 			DEFAULT = 0,
@@ -1455,13 +1454,13 @@ namespace Win32
 			WSTRING = 0,
 			WCHAR = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PfnRecoCallback(uint32 param0, out uint8 param1, HRECOCONTEXT param2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SYSTEM_EVENT_DATA
 		{
@@ -1659,9 +1658,9 @@ namespace Win32
 			public char16 wcLow;
 			public uint16 cChars;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_InkDisp = .(0x937c1a34, 0x151d, 0x4610, 0x9c, 0xa6, 0xa8, 0xcc, 0x9b, 0xdb, 0x5d, 0x83);
 		public const Guid CLSID_InkOverlay = .(0x65d00646, 0xcde3, 0x4a88, 0x91, 0x63, 0x67, 0x69, 0xf0, 0xf1, 0xa9, 0x7d);
 		public const Guid CLSID_InkPicture = .(0x04a1e553, 0xfe36, 0x4fde, 0x86, 0x5e, 0x34, 0x41, 0x94, 0xe6, 0x94, 0x24);
@@ -1690,9 +1689,9 @@ namespace Win32
 		public const Guid CLSID_GestureRecognizer = .(0xea30c654, 0xc62c, 0x441f, 0xac, 0x00, 0x95, 0xf9, 0xa1, 0x96, 0x78, 0x2c);
 		public const Guid CLSID_StrokeBuilder = .(0xe810cee7, 0x6e51, 0x4cb0, 0xaa, 0x3a, 0x0b, 0x98, 0x5b, 0x70, 0xda, 0xf7);
 		public const Guid CLSID_TipAutoCompleteClient = .(0x807c1e6c, 0x1d00, 0x453f, 0xb9, 0x20, 0xb6, 0x1b, 0xb7, 0xcd, 0xd9, 0x97);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IInkRectangle : IDispatch
 		{
@@ -3957,9 +3956,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITipAutoCompleteClient self, HWND hWndList, out BOOL pfAllowShowing) RequestShowUI;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateRecognizer(out Guid pCLSID, out HRECOGNIZER phrec);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4014,5 +4013,6 @@ namespace Win32
 		public static extern HRESULT GetAllRecognizers(out Guid* recognizerClsids, out uint32 count);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT LoadCachedAttributes(Guid clsid, out RECO_ATTRS pRecoAttributes);
+		#endregion
 	}
 }

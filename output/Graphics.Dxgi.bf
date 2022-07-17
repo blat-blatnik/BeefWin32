@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DXGI_USAGE_SHADER_INPUT = 16;
 		public const uint32 DXGI_USAGE_RENDER_TARGET_OUTPUT = 32;
 		public const uint32 DXGI_USAGE_BACK_BUFFER = 64;
@@ -77,9 +76,9 @@ namespace Win32
 		public const HRESULT DXGI_ERROR_CACHE_FULL = -2005270476;
 		public const HRESULT DXGI_ERROR_CACHE_HASH_COLLISION = -2005270475;
 		public const HRESULT DXGI_ERROR_ALREADY_EXISTS = -2005270474;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DXGI_RESOURCE_PRIORITY : uint32
 		{
 			MINIMUM = 671088640,
@@ -599,9 +598,9 @@ namespace Win32
 			Phone_IDXGISwapChain_SetBackgroundColor_FlipSequentialRequired = 1030,
 			Phone_IDXGISwapChain_GetBackgroundColor_FlipSequentialRequired = 1031,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DXGI_RGBA
 		{
@@ -901,9 +900,9 @@ namespace Win32
 			public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
 			public DXGI_INFO_QUEUE_FILTER_DESC DenyList;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDXGIObject : IUnknown
 		{
@@ -1897,9 +1896,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] void(ref IDXGraphicsAnalysis self) EndCapture;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dxgi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDXGIFactory(in Guid riid, void** ppFactory);
 		[Import("dxgi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1910,5 +1909,6 @@ namespace Win32
 		public static extern HRESULT DXGIGetDebugInterface1(uint32 Flags, in Guid riid, void** pDebug);
 		[Import("dxgi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
+		#endregion
 	}
 }

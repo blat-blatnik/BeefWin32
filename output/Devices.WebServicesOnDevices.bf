@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WSDAPI_OPTION_MAX_INBOUND_MESSAGE_SIZE = 1;
 		public const uint32 WSDAPI_OPTION_TRACE_XML_TO_DEBUGGER = 2;
 		public const uint32 WSDAPI_OPTION_TRACE_XML_TO_FILE = 3;
@@ -21,9 +20,9 @@ namespace Win32
 		public const uint32 WSD_SECURITY_HTTP_AUTH_SCHEME_NTLM = 2;
 		public const uint32 WSDAPI_ADDRESSFAMILY_IPV4 = 1;
 		public const uint32 WSDAPI_ADDRESSFAMILY_IPV6 = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WSD_CONFIG_PARAM_TYPE : int32
 		{
 			CONFIG_MAX_INBOUND_MESSAGE_SIZE = 1,
@@ -117,14 +116,14 @@ namespace Win32
 			TRANSMISSION_FAILURE = 3,
 			RESPONSE_TIMEOUT = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT WSD_STUB_FUNCTION(ref IUnknown server, ref IWSDServiceMessaging session, out WSD_EVENT event);
 		public function HRESULT PWSD_SOAP_MESSAGE_HANDLER(ref IUnknown thisUnknown, out WSD_EVENT event);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WSD_CONFIG_PARAM
 		{
@@ -646,9 +645,9 @@ namespace Win32
 			public WSD_OPERATION* Operation;
 			public IWSDMessageParameters* MessageParameters;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWSDAddress : IUnknown
 		{
@@ -1363,9 +1362,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWSDServiceMessaging self, ref WSD_SOAP_HEADER pRequestHeader, ref IWSDMessageParameters pMessageParameters, WSD_SOAP_FAULT* pFault) FaultRequest;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wsdapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WSDCreateUdpMessageParameters(out IWSDUdpMessageParameters* ppTxParams);
 		[Import("wsdapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1430,5 +1429,6 @@ namespace Win32
 		public static extern HRESULT WSDUriEncode(char16* source, uint32 cchSource, PWSTR* destOut, uint32* cchDestOut);
 		[Import("wsdapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WSDUriDecode(char16* source, uint32 cchSource, PWSTR* destOut, uint32* cchDestOut);
+		#endregion
 	}
 }

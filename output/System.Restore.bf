@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MIN_EVENT = 100;
 		public const uint32 BEGIN_NESTED_SYSTEM_CHANGE_NORP = 104;
 		public const uint32 MAX_EVENT = 104;
@@ -28,9 +27,9 @@ namespace Win32
 		public const uint32 MAX_RPT = 18;
 		public const uint32 MAX_DESC = 64;
 		public const uint32 MAX_DESC_W = 256;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RESTOREPOINTINFO_TYPE : uint32
 		{
 			APPLICATION_INSTALL = 0,
@@ -46,9 +45,9 @@ namespace Win32
 			END_NESTED_SYSTEM_CHANGE = 103,
 			END_SYSTEM_CHANGE = 101,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Packed(1)]
 		public struct RESTOREPOINTINFOA
 		{
@@ -80,12 +79,13 @@ namespace Win32
 			public uint32 nStatus;
 			public int64 llSequenceNumber;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("sfc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SRSetRestorePointA(ref RESTOREPOINTINFOA pRestorePtSpec, out STATEMGRSTATUS pSMgrStatus);
 		[Import("sfc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SRSetRestorePointW(ref RESTOREPOINTINFOW pRestorePtSpec, out STATEMGRSTATUS pSMgrStatus);
+		#endregion
 	}
 }

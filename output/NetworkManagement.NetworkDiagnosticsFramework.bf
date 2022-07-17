@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NDF_ERROR_START = 63744;
 		public const HRESULT NDF_E_LENGTH_EXCEEDED = -2146895616;
 		public const HRESULT NDF_E_NOHELPERCLASS = -2146895615;
@@ -37,9 +36,9 @@ namespace Win32
 		public const uint32 NDF_INBOUND_FLAG_HEALTHCHECK = 2;
 		public const uint32 NDF_ADD_CAPTURE_TRACE = 1;
 		public const uint32 NDF_APPLY_INCLUSION_LIST_FILTER = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum ATTRIBUTE_TYPE : int32
 		{
 			INVALID = 0,
@@ -106,9 +105,9 @@ namespace Win32
 			HIGHER_UTILIZATION = 16,
 			UP_STREAM_UTILIZATION = 32,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct OCTET_STRING
 		{
@@ -233,9 +232,9 @@ namespace Win32
 			public HYPOTHESIS hypothesis;
 			public DIAGNOSIS_STATUS pathStatus;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct INetDiagHelper : IUnknown
 		{
@@ -349,9 +348,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref INetDiagExtensibleHelper self, uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, out uint32 pcelt, HELPER_ATTRIBUTE** prgMatchValues) ResolveAttributes;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ndfapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT NdfCreateIncident(PWSTR helperClassName, uint32 celt, HELPER_ATTRIBUTE* attributes, void** handle);
 		[Import("ndfapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -384,5 +383,6 @@ namespace Win32
 		public static extern HRESULT NdfCancelIncident(void* Handle);
 		[Import("ndfapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT NdfGetTraceFile(void* Handle, out PWSTR TraceFileLocation);
+		#endregion
 	}
 }

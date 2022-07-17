@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid SIDESHOW_ENDPOINT_SIMPLE_CONTENT_FORMAT = .(0xa9a5353f, 0x2d4b, 0x47ce, 0x93, 0xee, 0x75, 0x9f, 0x3a, 0x7d, 0xda, 0x4f);
 		public const Guid SIDESHOW_ENDPOINT_ICAL = .(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
 		public const Guid SIDESHOW_CAPABILITY_DEVICE_PROPERTIES = .(0x8abc88a8, 0x857b, 0x4ad7, 0xa3, 0x5a, 0xb5, 0x94, 0x2f, 0x49, 0x2b, 0x99);
@@ -20,9 +19,9 @@ namespace Win32
 		public const uint32 SIDESHOW_EVENTID_APPLICATION_EXIT = 4294901761;
 		public const uint32 CONTENT_ID_HOME = 1;
 		public const uint32 VERSION_1_WINDOWS_7 = 0;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum SIDESHOW_SCREEN_TYPE : int32
 		{
 			BITMAP = 0,
@@ -55,9 +54,9 @@ namespace Win32
 			STOP = 11,
 			BACK = 65280,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SCF_EVENT_HEADER
 		{
@@ -126,16 +125,16 @@ namespace Win32
 			public uint32 dwVersion;
 			public uint32 cbEventDataSid;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SideShowSession = .(0xe20543b9, 0xf785, 0x4ea2, 0x98, 0x1e, 0xc4, 0xff, 0xa7, 0x6b, 0xbc, 0x7c);
 		public const Guid CLSID_SideShowNotification = .(0x0ce3e86f, 0xd5cd, 0x4525, 0xa7, 0x66, 0x1a, 0xba, 0xb1, 0xa7, 0x52, 0xf5);
 		public const Guid CLSID_SideShowKeyCollection = .(0xdfbbdbf8, 0x18de, 0x49b8, 0x83, 0xdc, 0xeb, 0xc7, 0x27, 0xc6, 0x2d, 0x94);
 		public const Guid CLSID_SideShowPropVariantCollection = .(0xe640f415, 0x539e, 0x4923, 0x96, 0xcd, 0x5f, 0x09, 0x3b, 0xc2, 0x50, 0xcd);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISideShowSession : IUnknown
 		{
@@ -361,6 +360,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISideShowPropVariantCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
+		#endregion
 		
 	}
 }

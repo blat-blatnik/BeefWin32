@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum MF_TRANSFER_VIDEO_FRAME_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -18,9 +17,9 @@ namespace Win32
 			FULLYSUPPORTED = 0,
 			UNKNOWN = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FaceRectInfoBlobHeader
 		{
@@ -102,9 +101,9 @@ namespace Win32
 			public uint32 ChannelMask;
 			public uint32 Linear;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IMFDeviceTransform : IUnknown
 		{
@@ -173,6 +172,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFDeviceTransformCallback self, ref IMFAttributes pCallbackAttributes, uint32 pinId) OnBufferSent;
 			}
 		}
+		#endregion
 		
 	}
 }

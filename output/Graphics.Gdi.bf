@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 GDI_ERROR = -1;
 		public const uint32 ERROR = 0;
 		public const uint32 NULLREGION = 1;
@@ -1229,9 +1228,9 @@ namespace Win32
 		public const int32 E_ERRORGETTINGDC = 520;
 		public const int32 E_EXCEPTIONINDECOMPRESSION = 521;
 		public const int32 E_EXCEPTIONINCOMPRESSION = 522;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HDC = int;
 		public typealias CreatedHDC = int;
 		public typealias HBITMAP = int;
@@ -1246,9 +1245,9 @@ namespace Win32
 		public typealias HdcMetdataEnhFileHandle = int;
 		public typealias HGDIOBJ = int;
 		public typealias HMONITOR = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum R2_MODE : int32
 		{
@@ -1864,9 +1863,9 @@ namespace Win32
 			INTENSITY = 4,
 			FORCE_UINT32 = -1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 FONTENUMPROCA(in LOGFONTA param0, in TEXTMETRICA param1, uint32 param2, LPARAM param3);
 		public function int32 FONTENUMPROCW(in LOGFONTW param0, in TEXTMETRICW param1, uint32 param2, LPARAM param3);
 		public function int32 GOBJENUMPROC(void* param0, LPARAM param1);
@@ -1883,9 +1882,9 @@ namespace Win32
 		public function BOOL GRAYSTRINGPROC(HDC param0, LPARAM param1, int32 param2);
 		public function BOOL DRAWSTATEPROC(HDC hdc, LPARAM lData, WPARAM wData, int32 cx, int32 cy);
 		public function BOOL MONITORENUMPROC(HMONITOR param0, HDC param1, out RECT param2, LPARAM param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct XFORM
 		{
@@ -3559,9 +3558,9 @@ namespace Win32
 			public MONITORINFO __AnonymousBase_winuser_L13571_C43;
 			public char16[32] szDevice;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetObjectA(HGDIOBJ h, int32 c, void* pv);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -4350,5 +4349,6 @@ namespace Win32
 		public static extern BOOL GetMonitorInfoW(HMONITOR hMonitor, out MONITORINFO lpmi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EnumDisplayMonitors(HDC hdc, RECT* lprcClip, MONITORENUMPROC lpfnEnum, LPARAM dwData);
+		#endregion
 	}
 }

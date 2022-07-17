@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 QOS_MAX_OBJECT_STRING_LENGTH = 256;
 		public const uint32 QOS_TRAFFIC_GENERAL_ID_BASE = 4000;
 		public const uint32 SERVICETYPE_NOTRAFFIC = 0;
@@ -492,14 +491,14 @@ namespace Win32
 		public const int32 GUAR_ADSPARM_Dtot = 134;
 		public const int32 GUAR_ADSPARM_Csum = 135;
 		public const int32 GUAR_ADSPARM_Dsum = 136;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias LPM_HANDLE = int;
 		public typealias RHANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum int_serv_wkp : int32
 		{
 			HOP_CNT = 4,
@@ -559,9 +558,9 @@ namespace Win32
 			FILTERSPECV6_GPI = 5,
 			FILTERSPEC_END = 6,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PALLOCMEM(uint32 Size);
 		public function void PFREEMEM(void* pv);
 		public function uint32* CBADMITRESULT(LPM_HANDLE LpmHandle, RHANDLE RequestHandle, uint32 ulPcmActionFlags, int32 LpmError, int32 PolicyDecisionsCount, out policy_decision pPolicyDecisions);
@@ -570,9 +569,9 @@ namespace Win32
 		public function void TCI_ADD_FLOW_COMPLETE_HANDLER(HANDLE ClFlowCtx, uint32 Status);
 		public function void TCI_MOD_FLOW_COMPLETE_HANDLER(HANDLE ClFlowCtx, uint32 Status);
 		public function void TCI_DEL_FLOW_COMPLETE_HANDLER(HANDLE ClFlowCtx, uint32 Status);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FLOWSPEC
 		{
@@ -1392,9 +1391,9 @@ namespace Win32
 			public FLOWSPEC ReceivingFlowspec;
 			public WSABUF ProviderSpecific;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("qwave.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL QOSCreateHandle(ref QOS_VERSION Version, out HANDLE QOSHandle);
 		[Import("qwave.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1457,5 +1456,6 @@ namespace Win32
 		public static extern uint32 TcDeleteFilter(HANDLE FilterHandle);
 		[Import("traffic.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 TcEnumerateFlows(HANDLE IfcHandle, out HANDLE pEnumHandle, out uint32 pFlowCount, out uint32 pBufSize, out ENUMERATION_BUFFER Buffer);
+		#endregion
 	}
 }

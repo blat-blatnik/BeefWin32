@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ILearningModelOperatorProviderNative : IUnknown
 		{
@@ -84,6 +83,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ILearningModelSessionOptionsNative self, uint32 intraOpNumThreads) SetIntraOpNumThreadsOverride;
 			}
 		}
+		#endregion
 		
 	}
 }

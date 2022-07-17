@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 RTCCS_FORCE_PROFILE = 1;
 		public const uint32 RTCCS_FAIL_ON_REDIRECT = 2;
 		public const uint32 RTCMT_AUDIO_SEND = 1;
@@ -259,9 +258,9 @@ namespace Win32
 		public const HRESULT RTC_E_PINT_STATUS_REJECTED_SW_FAILED = -2131754999;
 		public const HRESULT RTC_E_PINT_STATUS_REJECTED_CANCELLED = -2131754998;
 		public const HRESULT RTC_E_PINT_STATUS_REJECTED_BADNUMBER = -2131754997;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RTC_AUDIO_DEVICE : int32
 		{
 			SPEAKER = 0,
@@ -584,9 +583,9 @@ namespace Win32
 			SUCCEEDED = 1,
 			FAIL = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct TRANSPORT_SETTING
 		{
@@ -594,13 +593,13 @@ namespace Win32
 			public uint32* Length;
 			public uint8* Value;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_RTCClient = .(0x7a42ea29, 0xa2b7, 0x40c4, 0xb0, 0x91, 0xf6, 0xf0, 0x24, 0xaa, 0x89, 0xbe);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRTCClient : IUnknown
 		{
@@ -2152,6 +2151,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref INotificationTransportSync self) Flush;
 			}
 		}
+		#endregion
 		
 	}
 }

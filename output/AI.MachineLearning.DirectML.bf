@@ -5,17 +5,16 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DML_TARGET_VERSION = 16384;
 		public const uint32 DML_TENSOR_DIMENSION_COUNT_MAX = 5;
 		public const uint32 DML_TENSOR_DIMENSION_COUNT_MAX1 = 8;
 		public const uint32 DML_TEMPORARY_BUFFER_ALIGNMENT = 256;
 		public const uint32 DML_PERSISTENT_BUFFER_ALIGNMENT = 256;
 		public const uint32 DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DML_TENSOR_DATA_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -314,9 +313,9 @@ namespace Win32
 			INVALID = 0,
 			OPERATOR = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DML_BUFFER_TENSOR_DESC
 		{
@@ -1772,9 +1771,9 @@ namespace Win32
 			public uint32 IntermediateEdgeCount;
 			public DML_GRAPH_EDGE_DESC* IntermediateEdges;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDMLObject : IUnknown
 		{
@@ -1972,12 +1971,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDMLDevice1 self, in DML_GRAPH_DESC desc, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileGraph;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMLCreateDevice(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, in Guid riid, void** ppv);
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMLCreateDevice1(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, in Guid riid, void** ppv);
+		#endregion
 	}
 }

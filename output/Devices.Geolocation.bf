@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 GNSS_DRIVER_VERSION_1 = 1;
 		public const uint32 GNSS_DRIVER_VERSION_2 = 2;
 		public const uint32 GNSS_DRIVER_VERSION_3 = 3;
@@ -75,9 +74,9 @@ namespace Win32
 		public const uint32 GNSS_GEOFENCESUPPORT_CIRCLE = 2;
 		public const uint32 LOCATION_API_VERSION = 1;
 		public const Guid GUID_DEVINTERFACE_GNSS = .(0x3336e5e4, 0x018a, 0x4669, 0x84, 0xc5, 0xbd, 0x05, 0xf3, 0xbd, 0x36, 0x8b);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum LOCATION_REPORT_STATUS : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -174,9 +173,9 @@ namespace Win32
 			Deny = 2,
 			Timeout = 3,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct GNSS_SUPL_VERSION
 		{
@@ -782,9 +781,9 @@ namespace Win32
 			public char16[20] FirmwareVersion;
 			public uint8[512] Unused;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_Location = .(0xe5b8e079, 0xee6d, 0x4e33, 0xa4, 0x38, 0xc8, 0x7f, 0x2e, 0x95, 0x92, 0x54);
 		public const Guid CLSID_DefaultLocation = .(0x8b7fbfe0, 0x5cd7, 0x494a, 0xaf, 0x8c, 0x28, 0x3a, 0x65, 0x70, 0x75, 0x06);
 		public const Guid CLSID_LatLongReport = .(0xed81c073, 0x1f84, 0x4ca8, 0xa1, 0x61, 0x18, 0x3c, 0x77, 0x6b, 0xc6, 0x51);
@@ -793,9 +792,9 @@ namespace Win32
 		public const Guid CLSID_CivicAddressReportFactory = .(0x2a11f42c, 0x3e81, 0x4ad4, 0x9c, 0xbe, 0x45, 0x57, 0x9d, 0x89, 0x67, 0x1a);
 		public const Guid CLSID_DispLatLongReport = .(0x7a7c3277, 0x8f84, 0x4636, 0x95, 0xb2, 0xeb, 0xb5, 0x50, 0x7f, 0xf7, 0x7e);
 		public const Guid CLSID_DispCivicAddressReport = .(0x4c596aec, 0x8544, 0x4082, 0xba, 0x9f, 0xeb, 0x0a, 0x7d, 0x8e, 0x65, 0xc6);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ILocationReport : IUnknown
 		{
@@ -1080,6 +1079,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDispatch.VTable {}
 		}
+		#endregion
 		
 	}
 }

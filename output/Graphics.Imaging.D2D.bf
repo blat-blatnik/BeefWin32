@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWICImageEncoder : IUnknown
 		{
@@ -41,6 +40,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWICImagingFactory2 self, ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) CreateImageEncoder;
 			}
 		}
+		#endregion
 		
 	}
 }

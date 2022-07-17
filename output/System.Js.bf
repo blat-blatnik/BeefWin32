@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint64 JS_SOURCE_CONTEXT_NONE = 18446744073709551615uL;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum JsRuntimeVersion : int32
 		{
 			Version10 = 0,
@@ -76,18 +75,18 @@ namespace Win32
 			Error = 7,
 			Array = 8,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function Boolean JsMemoryAllocationCallback(void* callbackState, JsMemoryEventType allocationEvent, uint allocationSize);
 		public function void JsBeforeCollectCallback(void* callbackState);
 		public function void JsBackgroundWorkItemCallback(void* callbackState);
 		public function Boolean JsThreadServiceCallback(JsBackgroundWorkItemCallback callback, void* callbackState);
 		public function void JsFinalizeCallback(void* data);
 		public function void* JsNativeFunction(void* callee, Boolean isConstructCall, void** arguments, uint16 argumentCount, void* callbackState);
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsCreateRuntime(JsRuntimeAttributes attributes, JsRuntimeVersion runtimeVersion, JsThreadServiceCallback threadService, void** runtime);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -258,5 +257,6 @@ namespace Win32
 		public static extern JsErrorCode JsEnumerateHeap(out IActiveScriptProfilerHeapEnum* enumerator);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIsEnumeratingHeap(out Boolean isEnumeratingHeap);
+		#endregion
 	}
 }

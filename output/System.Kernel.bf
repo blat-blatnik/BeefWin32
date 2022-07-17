@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 OBJ_HANDLE_TAGBITS = 3;
 		public const uint32 RTL_BALANCED_NODE_RESERVED_PARENT_MASK = 3;
 		public const int32 OBJ_INHERIT = 2;
@@ -24,9 +23,9 @@ namespace Win32
 		public const uint32 MAXUCHAR = 255;
 		public const uint32 MAXUSHORT = 65535;
 		public const uint32 MAXULONG = 4294967295;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum EXCEPTION_DISPOSITION : int32
 		{
 			ContinueExecution = 0,
@@ -85,13 +84,13 @@ namespace Win32
 			UNSPECIFIED_COMPARTMENT_ID = 0,
 			DEFAULT_COMPARTMENT_ID = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(out EXCEPTION_RECORD ExceptionRecord, void* EstablisherFrame, out CONTEXT ContextRecord, void* DispatcherContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SLIST_ENTRY
 		{
@@ -285,9 +284,9 @@ namespace Win32
 			public uint8[80] RegisterArea;
 			public uint32 Cr0NpxState;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RtlInitializeSListHead(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
@@ -302,5 +301,6 @@ namespace Win32
 		public static extern SLIST_ENTRY* RtlInterlockedFlushSList(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint16 RtlQueryDepthSList(ref SLIST_HEADER ListHead);
+		#endregion
 	}
 }

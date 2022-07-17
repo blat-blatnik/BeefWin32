@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IRadialControllerInterop : IInspectable
 		{
@@ -52,6 +51,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IRadialControllerIndependentInputSourceInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
 			}
 		}
+		#endregion
 		
 	}
 }

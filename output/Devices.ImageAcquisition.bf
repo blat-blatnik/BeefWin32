@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WIA_DIP_DEV_ID = 2;
 		public const uint32 WIA_DIP_VEND_DESC = 3;
 		public const uint32 WIA_DIP_DEV_DESC = 4;
@@ -976,9 +975,9 @@ namespace Win32
 		public const uint32 WIA_WSD_FRIENDLY_NAME = 38920;
 		public const uint32 WIA_WSD_SERIAL_NUMBER = 38921;
 		public const uint32 WIA_WSD_SCAN_AVAILABLE_ITEM = 38922;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WIAVIDEO_STATE : int32
 		{
 			NO_VIDEO = 1,
@@ -988,13 +987,13 @@ namespace Win32
 			VIDEO_PAUSED = 5,
 			DESTROYING_VIDEO = 6,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT DeviceDialogFunction(out DEVICEDIALOGDATA param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WIA_DITHER_PATTERN_DATA
 		{
@@ -1422,16 +1421,16 @@ namespace Win32
 			public int32 lDataSize;
 			public uint8[0] Data;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_WiaDevMgr = .(0xa1f4e726, 0x8cf1, 0x11d1, 0xbf, 0x92, 0x00, 0x60, 0x08, 0x1e, 0xd8, 0x11);
 		public const Guid CLSID_WiaDevMgr2 = .(0xb6c292bc, 0x7c88, 0x41ee, 0x8b, 0x54, 0x8e, 0xc9, 0x26, 0x17, 0xe5, 0x99);
 		public const Guid CLSID_WiaLog = .(0xa1e75357, 0x881a, 0x419e, 0x83, 0xe2, 0xbb, 0x16, 0xdb, 0x19, 0x7c, 0x68);
 		public const Guid CLSID_WiaVideo = .(0x3908c3cd, 0x4478, 0x4536, 0xaf, 0x2f, 0x10, 0xc2, 0x5d, 0x4e, 0xf8, 0x9a);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWiaDevMgr : IUnknown
 		{
@@ -2191,6 +2190,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HBITMAP phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) GetDeviceBitmapLogo;
 			}
 		}
+		#endregion
 		
 	}
 }

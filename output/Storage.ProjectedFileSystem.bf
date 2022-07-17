@@ -5,13 +5,12 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT = int;
 		public typealias PRJ_DIR_ENTRY_BUFFER_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PRJ_NOTIFY_TYPES : uint32
 		{
 			NONE = 0,
@@ -95,9 +94,9 @@ namespace Win32
 			NOTIFICATION = 1,
 			ENUMERATION = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PRJ_START_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId);
 		public function HRESULT PRJ_GET_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId, PWSTR searchExpression, PRJ_DIR_ENTRY_BUFFER_HANDLE dirEntryBufferHandle);
 		public function HRESULT PRJ_END_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId);
@@ -106,9 +105,9 @@ namespace Win32
 		public function HRESULT PRJ_QUERY_FILE_NAME_CB(in PRJ_CALLBACK_DATA callbackData);
 		public function HRESULT PRJ_NOTIFICATION_CB(in PRJ_CALLBACK_DATA callbackData, BOOLEAN isDirectory, PRJ_NOTIFICATION notification, PWSTR destinationFileName, out PRJ_NOTIFICATION_PARAMETERS operationParameters);
 		public function void PRJ_CANCEL_COMMAND_CB(in PRJ_CALLBACK_DATA callbackData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct PRJ_EXTENDED_INFO
 		{
@@ -269,9 +268,9 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PrjStartVirtualizing(PWSTR virtualizationRootPath, in PRJ_CALLBACKS callbacks, void* instanceContext, PRJ_STARTVIRTUALIZING_OPTIONS* options, out PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
@@ -310,5 +309,6 @@ namespace Win32
 		public static extern int32 PrjFileNameCompare(PWSTR fileName1, PWSTR fileName2);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN PrjDoesNameContainWildCards(PWSTR fileName);
+		#endregion
 	}
 }

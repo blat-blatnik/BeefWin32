@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HRAWINPUT = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RAW_INPUT_DATA_COMMAND_FLAGS : uint32
 		{
 			HEADER = 268435461,
@@ -58,9 +57,9 @@ namespace Win32
 			INJECTED = 2,
 			SYSTEM = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RAWINPUTHEADER
 		{
@@ -186,9 +185,9 @@ namespace Win32
 			public INPUT_MESSAGE_DEVICE_TYPE deviceType;
 			public INPUT_MESSAGE_ORIGIN_ID originId;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetRawInputData(HRAWINPUT hRawInput, RAW_INPUT_DATA_COMMAND_FLAGS uiCommand, void* pData, out uint32 pcbSize, uint32 cbSizeHeader);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -209,5 +208,6 @@ namespace Win32
 		public static extern BOOL GetCurrentInputMessageSource(out INPUT_MESSAGE_SOURCE inputMessageSource);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetCIMSSM(out INPUT_MESSAGE_SOURCE inputMessageSource);
+		#endregion
 	}
 }

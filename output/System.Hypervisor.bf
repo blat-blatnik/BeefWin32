@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 HVSOCKET_CONNECT_TIMEOUT = 1;
 		public const uint32 HVSOCKET_CONNECT_TIMEOUT_MAX = 300000;
 		public const uint32 HVSOCKET_CONTAINER_PASSTHRU = 2;
@@ -31,13 +30,13 @@ namespace Win32
 		public const Guid HV_GUID_SILOHOST = .(0x36bd0c5c, 0x7276, 0x4223, 0x88, 0xba, 0x7d, 0x03, 0xb6, 0x54, 0xc5, 0x68);
 		public const Guid HV_GUID_VSOCK_TEMPLATE = .(0x00000000, 0xfacb, 0x11e6, 0xbd, 0x58, 0x64, 0x00, 0x6a, 0x79, 0x86, 0xd3);
 		public const Guid GUID_DEVINTERFACE_VM_GENCOUNTER = .(0x3ff2c92b, 0x6598, 0x4e60, 0x8e, 0x1c, 0x0c, 0xcf, 0x49, 0x27, 0xe3, 0x19);
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias WHV_PARTITION_HANDLE = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WHV_CAPABILITY_CODE : int32
 		{
 			HypervisorPresent = 0,
@@ -810,9 +809,9 @@ namespace Win32
 			ARM64_RegisterCntvCtlEl0 = 157,
 			ARM64_RegisterMax = 158,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT WHV_EMULATOR_IO_PORT_CALLBACK(void* Context, out WHV_EMULATOR_IO_ACCESS_INFO IoAccess);
 		public function HRESULT WHV_EMULATOR_MEMORY_CALLBACK(void* Context, out WHV_EMULATOR_MEMORY_ACCESS_INFO MemoryAccess);
 		public function HRESULT WHV_EMULATOR_GET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK(void* Context, WHV_REGISTER_NAME* RegisterNames, uint32 RegisterCount, WHV_REGISTER_VALUE* RegisterValues);
@@ -830,9 +829,9 @@ namespace Win32
 		public function HRESULT HDV_PCI_WRITE_INTERCEPTED_MEMORY(void* deviceContext, HDV_PCI_BAR_SELECTOR barIndex, uint64 offset, uint64 length, uint8* value);
 		public function void GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK(PSTR InfoMessage);
 		public function BOOL FOUND_IMAGE_CALLBACK(void* Context, ref DOS_IMAGE_INFO ImageInfo);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Union]
 		public struct WHV_CAPABILITY_FEATURES
 		{
@@ -2022,9 +2021,9 @@ namespace Win32
 			public PSTR ProcessImageName;
 			public DOS_IMAGE_INFO Image;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvGetCapability(WHV_CAPABILITY_CODE CapabilityCode, void* CapabilityBuffer, uint32 CapabilityBufferSizeInBytes, uint32* WrittenSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2275,5 +2274,6 @@ namespace Win32
 		public static extern HRESULT ScanMemoryForDosImages(void* vmSavedStateDumpHandle, uint32 vpId, uint64 startAddress, uint64 endAddress, void* callbackContext, FOUND_IMAGE_CALLBACK foundImageCallback, ref uint64 standaloneAddress, uint32 standaloneAddressCount);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CallStackUnwind(void* vmSavedStateDumpHandle, uint32 vpId, ref MODULE_INFO imageInfo, uint32 imageInfoCount, uint32 frameCount, out PWSTR callStack);
+		#endregion
 	}
 }

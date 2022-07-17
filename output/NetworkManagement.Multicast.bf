@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 MCAST_CLIENT_ID_LEN = 17;
 		public const int32 MCAST_API_CURRENT_VERSION = 1;
 		public const int32 MCAST_API_VERSION_0 = 0;
 		public const int32 MCAST_API_VERSION_1 = 1;
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Union]
 		public struct IPNG_ADDRESS
 		{
@@ -62,9 +61,9 @@ namespace Win32
 			public uint16 AddrCount;
 			public uint8* pAddrBuf;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 McastApiStartup(out uint32 Version);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
@@ -79,5 +78,6 @@ namespace Win32
 		public static extern uint32 McastRenewAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pRenewRequest, out MCAST_LEASE_RESPONSE pRenewResponse);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 McastReleaseAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pReleaseRequest);
+		#endregion
 	}
 }

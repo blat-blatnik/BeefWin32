@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 XINPUT_DEVTYPE_GAMEPAD = 1;
 		public const uint32 XINPUT_DEVSUBTYPE_GAMEPAD = 1;
 		public const uint32 XINPUT_DEVSUBTYPE_UNKNOWN = 0;
@@ -58,9 +57,9 @@ namespace Win32
 		public const uint32 XINPUT_KEYSTROKE_KEYDOWN = 1;
 		public const uint32 XINPUT_KEYSTROKE_KEYUP = 2;
 		public const uint32 XINPUT_KEYSTROKE_REPEAT = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum XINPUT_VIRTUAL_KEY : uint16
 		{
 			A = 22528,
@@ -96,9 +95,9 @@ namespace Win32
 			RTHUMB_DOWNRIGHT = 22582,
 			RTHUMB_DOWNLEFT = 22583,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct XINPUT_GAMEPAD
 		{
@@ -146,9 +145,9 @@ namespace Win32
 			public uint8 UserIndex;
 			public uint8 HidCode;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 XInputGetState(uint32 dwUserIndex, out XINPUT_STATE pState);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
@@ -163,5 +162,6 @@ namespace Win32
 		public static extern uint32 XInputGetBatteryInformation(uint32 dwUserIndex, uint8 devType, out XINPUT_BATTERY_INFORMATION pBatteryInformation);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 XInputGetKeystroke(uint32 dwUserIndex, uint32 dwReserved, out XINPUT_KEYSTROKE pKeystroke);
+		#endregion
 	}
 }

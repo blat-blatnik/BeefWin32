@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FS_INITIALIZING = 536870912;
 		public const uint32 FS_DIALING = 536870913;
 		public const uint32 FS_TRANSMITTING = 536870914;
@@ -222,9 +221,9 @@ namespace Win32
 		public const uint32 STI_DEVICE_CREATE_FOR_MONITOR = 16777216;
 		public const int32 lDEFAULT_PREFETCH_SIZE = 100;
 		public const uint16 wcharREASSIGN_RECIPIENTS_DELIMITER = 59;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FAX_ENUM_LOG_LEVELS : int32
 		{
 			NONE = 0,
@@ -468,9 +467,9 @@ namespace Win32
 			DigitalCamera = 2,
 			StreamingVideo = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PFAXCONNECTFAXSERVERA(PSTR MachineName, out HANDLE FaxHandle);
 		public function BOOL PFAXCONNECTFAXSERVERW(PWSTR MachineName, out HANDLE FaxHandle);
 		public function BOOL PFAXCLOSE(HANDLE FaxHandle);
@@ -562,9 +561,9 @@ namespace Win32
 		public function uint32 PFAX_EXT_UNREGISTER_FOR_EVENTS(HANDLE param0);
 		public function void PFAX_EXT_FREE_BUFFER(void* param0);
 		public function HRESULT PFAX_EXT_INITIALIZE_CONFIG(PFAX_EXT_GET_DATA param0, PFAX_EXT_SET_DATA param1, PFAX_EXT_REGISTER_FOR_EVENTS param2, PFAX_EXT_UNREGISTER_FOR_EVENTS param3, PFAX_EXT_FREE_BUFFER param4);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct FAX_LOG_CATEGORYA
 		{
@@ -1106,9 +1105,9 @@ namespace Win32
 			public uint32 dwVersion;
 			public uint32 dwGenericCaps;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FaxServer = .(0xcda8acb0, 0x8cf5, 0x4f6c, 0x9b, 0xa2, 0x59, 0x31, 0xd4, 0x0c, 0x8c, 0xae);
 		public const Guid CLSID_FaxDeviceProviders = .(0xeb8fe768, 0x875a, 0x4f5f, 0x82, 0xc5, 0x03, 0xf2, 0x3a, 0xac, 0x1b, 0xd7);
 		public const Guid CLSID_FaxDevices = .(0x5589e28e, 0x23cb, 0x4919, 0x88, 0x08, 0xe6, 0x10, 0x18, 0x46, 0xe8, 0x0d);
@@ -1159,9 +1158,9 @@ namespace Win32
 		public const Guid CLSID_FaxAccountIncomingArchive = .(0x14b33db5, 0x4c40, 0x4ecf, 0x9e, 0xf8, 0xa3, 0x60, 0xcb, 0xe8, 0x09, 0xed);
 		public const Guid CLSID_FaxAccountOutgoingArchive = .(0x851e7af5, 0x433a, 0x4739, 0xa2, 0xdf, 0xad, 0x24, 0x5c, 0x2c, 0xb9, 0x8e);
 		public const Guid CLSID_FaxSecurity2 = .(0x735c1248, 0xec89, 0x4c30, 0xa1, 0x27, 0x65, 0x6e, 0x92, 0xe3, 0xc4, 0xea);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFaxJobStatus : IDispatch
 		{
@@ -3297,9 +3296,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IStiUSD self, out _ERROR_INFOW pLastErrorInfo) GetLastErrorInfo;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winfax.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FaxConnectFaxServerA(PSTR MachineName, out HANDLE FaxHandle);
 		[Import("winfax.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3418,5 +3417,6 @@ namespace Win32
 		public static extern uint32 SendToFaxRecipient(SendToMode sndMode, PWSTR lpFileName);
 		[Import("sti.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StiCreateInstanceW(HINSTANCE hinst, uint32 dwVer, out IStillImageW* ppSti, ref IUnknown punkOuter);
+		#endregion
 	}
 }

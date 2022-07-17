@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DISPID_STYLESHEETSCOLLECTION_NAMED_MAX = 1999999;
 		public const int32 DISPID_AMBIENT_OFFLINEIFNOTCONNECTED = -5501;
 		public const int32 DISPID_AMBIENT_SILENT = -5502;
@@ -6587,9 +6586,9 @@ namespace Win32
 		public const uint32 MAPMIME_DEFAULT_ALWAYS = 3;
 		public const uint32 TIMERMODE_NORMAL = 0;
 		public const uint32 TIMERMODE_VISIBILITYAWARE = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum htmlDesignMode : int32
 		{
 			ModeInherit = -2,
@@ -9469,17 +9468,17 @@ namespace Win32
 			ADDTOCACHE = 1,
 			Max = 2147483647,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT SHOWHTMLDIALOGFN(HWND hwndParent, ref IMoniker pmk, out VARIANT pvarArgIn, PWSTR pchOptions, out VARIANT pvArgOut);
 		public function HRESULT SHOWHTMLDIALOGEXFN(HWND hwndParent, ref IMoniker pmk, uint32 dwDialogFlags, out VARIANT pvarArgIn, PWSTR pchOptions, out VARIANT pvArgOut);
 		public function HRESULT SHOWMODELESSHTMLDIALOGFN(HWND hwndParent, ref IMoniker pmk, out VARIANT pvarArgIn, out VARIANT pvarOptions, out IHTMLWindow2* ppWindow);
 		public function HRESULT IEREGISTERXMLNSFN(PWSTR lpszURI, Guid clsid, BOOL fMachine);
 		public function HRESULT IEISXMLNSREGISTEREDFN(PWSTR lpszURI, out Guid pCLSID);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct HTML_PAINTER_INFO
 		{
@@ -9547,9 +9546,9 @@ namespace Win32
 			public FILETIME ftExpires;
 			public uint32 dwFlags;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_HTMLCSSStyleDeclaration = .(0x30510741, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
 		public const Guid CLSID_HTMLStyle = .(0x3050f285, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
 		public const Guid CLSID_HTMLRuleStyle = .(0x3050f3d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
@@ -9861,9 +9860,9 @@ namespace Win32
 		public const Guid CLSID_CoDitherToRGB8 = .(0xa860ce50, 0x3910, 0x11d0, 0x86, 0xfc, 0x00, 0xa0, 0xc9, 0x13, 0xf7, 0x50);
 		public const Guid CLSID_CoSniffStream = .(0x6a01fda0, 0x30df, 0x11d0, 0xb7, 0x24, 0x00, 0xaa, 0x00, 0x6c, 0x1a, 0x01);
 		public const Guid CLSID_CoMapMIMEToCLSID = .(0x30c3b080, 0x30fb, 0x11d0, 0xb7, 0x24, 0x00, 0xaa, 0x00, 0x6c, 0x1a, 0x01);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IHTMLFiltersCollection : IDispatch
 		{
@@ -33946,9 +33945,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDithererImpl self, ref IImageDecodeEventSink pEventSink) SetEventSink;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("msrating.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RatingEnable(HWND hwndParent, PSTR pszUsername, BOOL fEnable);
 		[Import("msrating.dll"), CLink, CallingConvention(.Stdcall)]
@@ -34007,5 +34006,6 @@ namespace Win32
 		public static extern HRESULT DecodeImageEx(ref IStream pStream, ref IMapMIMEToCLSID pMap, ref IUnknown pEventSink, PWSTR pszMIMETypeParam);
 		[Import("shdocvw.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, PWSTR pszUrl, ref IEnumPrivacyRecords pPrivacyEnum, BOOL fReportAllSites);
+		#endregion
 	}
 }

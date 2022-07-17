@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WM_CONTEXTMENU = 123;
 		public const uint32 WM_UNICHAR = 265;
 		public const uint32 WM_PRINTCLIENT = 792;
@@ -459,9 +458,9 @@ namespace Win32
 		public const int32 RECO_COPY = 2;
 		public const int32 RECO_CUT = 3;
 		public const int32 RECO_DRAG = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum CFM_MASK : uint32
 		{
@@ -1368,17 +1367,17 @@ namespace Win32
 			MLOOP = 11,
 			MOPENA = 12,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function int32 AutoCorrectProc(uint16 langid, PWSTR pszBefore, PWSTR pszAfter, int32 cchAfter, out int32 pcchReplaced);
 		public function int32 EDITWORDBREAKPROCEX(PSTR pchText, int32 cchText, uint8 bCharSet, int32 action);
 		public function uint32 EDITSTREAMCALLBACK(uint dwCookie, out uint8 pbBuff, int32 cb, out int32 pcb);
 		public function HRESULT PCreateTextServices(ref IUnknown punkOuter, ref ITextHost pITextHost, out IUnknown* ppUnk);
 		public function HRESULT PShutdownTextServices(ref IUnknown pTextServices);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct IMECOMPTEXT
 		{
@@ -1794,9 +1793,9 @@ namespace Win32
 			public REOBJECT_FLAGS dwFlags;
 			public uint32 dwUser;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITextServices : IUnknown
 		{
@@ -3153,6 +3152,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ITextDocument2Old self, IUnknown* pVoid) ReleaseCallManager;
 			}
 		}
+		#endregion
 		
 	}
 }

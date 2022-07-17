@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 NERR_BASE = 2100;
 		public const uint32 NERR_PasswordExpired = 2242;
 		public const uint32 CNLEN = 15;
@@ -1973,9 +1972,9 @@ namespace Win32
 		public const uint32 RTUTILS_MAX_PROTOCOL_DLL_LEN = 48;
 		public const uint32 MAX_PROTOCOL_NAME_LEN = 40;
 		public const uint32 MAX_PROTOCOL_DLL_LEN = 48;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NET_REQUEST_PROVISION_OPTIONS : uint32
 		{
 			NETSETUP_PROVISION_ONLINE_CALLER = 1073741824,
@@ -2271,13 +2270,13 @@ namespace Win32
 			USE_IPv6_EXPLICIT_METRIC = 16384,
 			DISABLE_CLASS_BASED_ROUTE = 32768,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void WORKERFUNCTION(void* param0);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct USER_INFO_0
 		{
@@ -4590,13 +4589,13 @@ namespace Win32
 			public char16[41] wszProtocol;
 			public char16[49] wszDLLName;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_NetProvisioning = .(0x2aa2b5fe, 0xb846, 0x4d07, 0x81, 0x0c, 0xb2, 0x1e, 0xe4, 0x53, 0x20, 0xe3);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEnumNetCfgBindingInterface : IUnknown
 		{
@@ -5110,9 +5109,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IProvisioningProfileWireless self, BSTR bstrXMLWirelessConfigProfile, BSTR bstrXMLConnectionConfigProfile, ref Guid pAdapterInstanceGuid, out uint32 pulStatus) CreateProfile;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 NetUserAdd(PWSTR servername, uint32 level, ref uint8 buf, uint32* parm_err);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5463,5 +5462,6 @@ namespace Win32
 		public static extern uint32 MprSetupProtocolEnum(uint32 dwTransportId, out uint8* lplpBuffer, out uint32 lpdwEntriesRead);
 		[Import("rtutils.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MprSetupProtocolFree(void* lpBuffer);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IChannelCredentials : IDispatch
 		{
@@ -40,6 +39,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IChannelCredentials self, BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) SetIssuedToken;
 			}
 		}
+		#endregion
 		
 	}
 }

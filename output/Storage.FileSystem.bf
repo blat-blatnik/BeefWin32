@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CLFS_FLAG_REENTRANT_FILE_SYSTEM = 8;
 		public const uint32 CLFS_FLAG_NON_REENTRANT_FILTER = 16;
 		public const uint32 CLFS_FLAG_REENTRANT_FILTER = 32;
@@ -277,18 +276,18 @@ namespace Win32
 		public const uint8 CLFS_SCAN_CLOSE = 8;
 		public const uint8 CLFS_SCAN_INITIALIZED = 16;
 		public const uint8 CLFS_SCAN_BUFFERED = 32;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias FindFileHandle = int;
 		public typealias FindFileNameHandle = int;
 		public typealias FindStreamHandle = int;
 		public typealias FindChangeNotificationHandle = int;
 		public typealias FindVolumeHandle = int;
 		public typealias FindVolumeMointPointHandle = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FIND_FIRST_EX_FLAGS : uint32
 		{
 			CASE_SENSITIVE = 1,
@@ -1289,9 +1288,9 @@ namespace Win32
 			ExtendedFileIdType = 2,
 			MaximumFileIdType = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 MAXMEDIALABEL(out uint32 pMaxSize);
 		public function uint32 CLAIMMEDIALABEL(in uint8 pBuffer, uint32 nBufferSize, out MediaLabelInfo pLabelInfo);
 		public function uint32 CLAIMMEDIALABELEX(in uint8 pBuffer, uint32 nBufferSize, out MediaLabelInfo pLabelInfo, out Guid LabelGuid);
@@ -1315,9 +1314,9 @@ namespace Win32
 		public function uint32 PFE_IMPORT_FUNC(out uint8 pbData, void* pvCallbackContext, out uint32 ulLength);
 		public function uint32 LPPROGRESS_ROUTINE(LARGE_INTEGER TotalFileSize, LARGE_INTEGER TotalBytesTransferred, LARGE_INTEGER StreamSize, LARGE_INTEGER StreamBytesTransferred, uint32 dwStreamNumber, LPPROGRESS_ROUTINE_CALLBACK_REASON dwCallbackReason, HANDLE hSourceFile, HANDLE hDestinationFile, void* lpData);
 		public function COPYFILE2_MESSAGE_ACTION PCOPYFILE2_PROGRESS_ROUTINE(in COPYFILE2_MESSAGE pMessage, void* pvCallbackContext);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WIN32_FIND_DATAA
 		{
@@ -3436,9 +3435,9 @@ namespace Win32
 				public FILE_ID_128 ExtendedFileId;
 			}
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDiskQuotaUser : IUnknown
 		{
@@ -3594,9 +3593,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDiskQuotaEvents self, ref IDiskQuotaUser pUser) OnUserNameChanged;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SearchPathW(PWSTR lpPath, PWSTR lpFileName, PWSTR lpExtension, uint32 nBufferLength, char16* lpBuffer, PWSTR* lpFilePart);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -4419,5 +4418,6 @@ namespace Win32
 		public static extern BOOLEAN CreateSymbolicLinkTransactedW(PWSTR lpSymlinkFileName, PWSTR lpTargetFileName, SYMBOLIC_LINK_FLAGS dwFlags, HANDLE hTransaction);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS NtCreateFile(out HANDLE FileHandle, uint32 DesiredAccess, out OBJECT_ATTRIBUTES ObjectAttributes, out IO_STATUS_BLOCK IoStatusBlock, out LARGE_INTEGER AllocationSize, uint32 FileAttributes, FILE_SHARE_MODE ShareAccess, NT_CREATE_FILE_DISPOSITION CreateDisposition, uint32 CreateOptions, void* EaBuffer, uint32 EaLength);
+		#endregion
 	}
 }

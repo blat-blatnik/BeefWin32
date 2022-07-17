@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid LIBID_WUApiLib = .(0xb596cc9f, 0x56e5, 0x419e, 0xa6, 0x22, 0xe0, 0x1b, 0xb4, 0x57, 0x43, 0x1e);
 		public const uint32 UPDATE_LOCKDOWN_WEBSITE_ACCESS = 1;
 		public const HRESULT WU_S_SERVICE_STOP = 2359297;
@@ -474,9 +473,9 @@ namespace Win32
 		public const HRESULT WU_E_FILETRUST_DUALSIGNATURE_ECC = -2145078526;
 		public const HRESULT WU_E_TRUST_SUBJECT_NOT_TRUSTED = -2145078525;
 		public const HRESULT WU_E_TRUST_PROVIDER_UNKNOWN = -2145078524;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum AutomaticUpdatesNotificationLevel : int32
 		{
 			NotConfigured = 0,
@@ -617,9 +616,9 @@ namespace Win32
 		{
 			usoNonVolatileService = 1,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_StringCollection = .(0x72c97d74, 0x7c3b, 0x40ae, 0xb7, 0x7d, 0xab, 0xdb, 0x22, 0xeb, 0xa6, 0xfb);
 		public const Guid CLSID_UpdateSearcher = .(0xb699e5e8, 0x67ff, 0x4177, 0x88, 0xb0, 0x36, 0x84, 0xa3, 0x38, 0x8b, 0xfb);
 		public const Guid CLSID_WebProxy = .(0x650503cf, 0x9108, 0x4ddc, 0xa2, 0xce, 0x6c, 0x23, 0x41, 0xe1, 0xc5, 0x82);
@@ -632,9 +631,9 @@ namespace Win32
 		public const Guid CLSID_UpdateSession = .(0x4cb43d7f, 0x7eee, 0x4906, 0x86, 0x98, 0x60, 0xda, 0x1c, 0x38, 0xf2, 0xfe);
 		public const Guid CLSID_UpdateServiceManager = .(0xf8d253d9, 0x89a4, 0x4daa, 0x87, 0xb6, 0x11, 0x68, 0x36, 0x9f, 0x0b, 0x21);
 		public const Guid CLSID_InstallationAgent = .(0x317e92fc, 0x1679, 0x46fd, 0xa0, 0xb5, 0xf0, 0x89, 0x14, 0xdd, 0x86, 0x23);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IUpdateLockdown : IUnknown
 		{
@@ -2322,6 +2321,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IInstallationAgent self, BSTR installationResultCookie, int32 hresult, ref IStringCollection extendedReportingData) RecordInstallationResult;
 			}
 		}
+		#endregion
 		
 	}
 }

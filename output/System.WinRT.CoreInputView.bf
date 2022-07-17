@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ICoreFrameworkInputViewInterop : IInspectable
 		{
@@ -22,6 +21,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICoreFrameworkInputViewInterop self, HWND appWindow, in Guid riid, void** coreFrameworkInputView) GetForWindow;
 			}
 		}
+		#endregion
 		
 	}
 }

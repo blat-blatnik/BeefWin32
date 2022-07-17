@@ -5,15 +5,14 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 COMPOSITIONOBJECT_READ = 1;
 		public const int32 COMPOSITIONOBJECT_WRITE = 2;
 		public const uint32 DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS = 32;
 		public const uint32 COMPOSITION_STATS_MAX_TARGETS = 256;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DCOMPOSITION_BITMAP_INTERPOLATION_MODE : int32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -58,9 +57,9 @@ namespace Win32
 			CONFIRMED = 1,
 			COMPLETED = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DCOMPOSITION_FRAME_STATISTICS
 		{
@@ -110,9 +109,9 @@ namespace Win32
 			public float y;
 			public float radius;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDCompositionAnimation : IUnknown
 		{
@@ -1296,9 +1295,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDCompositionInkTrailDevice self, ref IUnknown swapChain, out IDCompositionDelegatedInkTrail* inkTrail) CreateDelegatedInkTrailForSwapChain;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DCompositionCreateDevice(IDXGIDevice* dxgiDevice, in Guid iid, void** dcompositionDevice);
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1321,5 +1320,6 @@ namespace Win32
 		public static extern HRESULT DCompositionBoostCompositorClock(BOOL enable);
 		[Import("dcomp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DCompositionWaitForCompositorClock(uint32 count, HANDLE* handles, uint32 timeoutInMs);
+		#endregion
 	}
 }

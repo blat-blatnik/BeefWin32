@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum GAME_INSTALL_SCOPE : int32
 		{
 			NOT_INSTALLED = 1,
@@ -73,30 +72,30 @@ namespace Win32
 			VIEW_NOT_SET = 7,
 			UNKNOWN = -1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void GameUICompletionRoutine(HRESULT returnCode, void* context);
 		public function void PlayerPickerUICompletionRoutine(HRESULT returnCode, void* context, HSTRING* selectedXuids, uint selectedXuidsCount);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct GAMING_DEVICE_MODEL_INFORMATION
 		{
 			public GAMING_DEVICE_VENDOR_ID vendorId;
 			public GAMING_DEVICE_DEVICE_ID deviceId;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_GameExplorer = .(0x9a5ea990, 0x3034, 0x4d6f, 0x91, 0x28, 0x01, 0xf3, 0xc6, 0x10, 0x22, 0xbc);
 		public const Guid CLSID_GameStatistics = .(0xdbc85a2c, 0xc0dc, 0x4961, 0xb6, 0xe2, 0xd2, 0x8b, 0x62, 0xc1, 0x1a, 0xd4);
 		public const Guid CLSID_XblIdpAuthManager = .(0xce23534b, 0x56d8, 0x4978, 0x86, 0xa2, 0x7e, 0xe5, 0x70, 0x64, 0x04, 0x68);
 		public const Guid CLSID_XblIdpAuthTokenResult = .(0x9f493441, 0x744a, 0x410c, 0xae, 0x2b, 0x9a, 0x22, 0xf7, 0xc7, 0x73, 0x1f);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IGameExplorer : IUnknown
 		{
@@ -288,9 +287,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetUniqueModernGamertag;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("api-ms-win-gaming-expandedresources-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HasExpandedResources(out BOOL hasExpandedResources);
 		[Import("api-ms-win-gaming-expandedresources-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -351,5 +350,6 @@ namespace Win32
 		public static extern HRESULT ShowUserSettingsUI(GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowUserSettingsUIForUser(ref IInspectable user, GameUICompletionRoutine completionRoutine, void* context);
+		#endregion
 	}
 }

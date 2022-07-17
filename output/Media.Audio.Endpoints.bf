@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum EndpointConnectorType : int32
 		{
 			HostProcessConnector = 0,
@@ -15,9 +14,9 @@ namespace Win32
 			KeywordDetectorConnector = 3,
 			ConnectorCount = 4,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct AUDIO_ENDPOINT_SHARED_CREATE_PARAMS
 		{
@@ -26,13 +25,13 @@ namespace Win32
 			public EndpointConnectorType targetEndpointConnectorType;
 			public WAVEFORMATEX wfxDeviceFormat;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_DEVINTERFACE_AUDIOENDPOINTPLUGIN = .(0x9f2f7b66, 0x65ac, 0x4fa6, 0x8a, 0xe4, 0x12, 0x3c, 0x78, 0xb8, 0x93, 0x13);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IAudioEndpointFormatControl : IUnknown
 		{
@@ -258,6 +257,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioMeterInformation self, out uint32 pdwHardwareSupportMask) QueryHardwareSupport;
 			}
 		}
+		#endregion
 		
 	}
 }

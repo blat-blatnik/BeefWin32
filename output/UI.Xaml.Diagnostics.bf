@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const HRESULT E_UNKNOWNTYPE = -2144665560;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum VisualMutationType : int32
 		{
 			Add = 0,
@@ -61,9 +60,9 @@ namespace Win32
 			ResourceNotFound = 1,
 			InvalidResource = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SourceInfo
 		{
@@ -135,9 +134,9 @@ namespace Win32
 			public DXGI_FORMAT Format;
 			public DXGI_ALPHA_MODE AlphaMode;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IVisualTreeServiceCallback : IUnknown
 		{
@@ -297,12 +296,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVisualTreeService3 self, uint64 dictionaryHandle, uint64 resourceKey) RemoveDictionaryItem;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("windows.ui.xaml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT InitializeXamlDiagnostic(PWSTR endPointName, uint32 pid, PWSTR wszDllXamlDiagnostics, PWSTR wszTAPDllName, Guid tapClsid);
 		[Import("windows.ui.xaml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT InitializeXamlDiagnosticsEx(PWSTR endPointName, uint32 pid, PWSTR wszDllXamlDiagnostics, PWSTR wszTAPDllName, Guid tapClsid, PWSTR wszInitializationData);
+		#endregion
 	}
 }

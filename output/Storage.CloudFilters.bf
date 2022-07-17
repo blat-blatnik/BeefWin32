@@ -5,20 +5,19 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CF_REQUEST_KEY_DEFAULT = 0;
 		public const uint32 CF_PLACEHOLDER_MAX_FILE_IDENTITY_LENGTH = 4096;
 		public const uint32 CF_MAX_PRIORITY_HINT = 15;
 		public const uint32 CF_MAX_PROVIDER_NAME_LENGTH = 255;
 		public const uint32 CF_MAX_PROVIDER_VERSION_LENGTH = 255;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias CF_CONNECTION_KEY = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CF_PLACEHOLDER_CREATE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -347,13 +346,13 @@ namespace Win32
 			VALIDATED = 2,
 			MODIFIED = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void CF_CALLBACK(in CF_CALLBACK_INFO CallbackInfo, in CF_CALLBACK_PARAMETERS CallbackParameters);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CF_FS_METADATA
 		{
@@ -744,9 +743,9 @@ namespace Win32
 			public uint32 SyncRootIdentityLength;
 			public uint8[0] SyncRootIdentity;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfGetPlatformInfo(out CF_PLATFORM_INFO PlatformVersion);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -817,5 +816,6 @@ namespace Win32
 		public static extern HRESULT CfReportProviderProgress(CF_CONNECTION_KEY ConnectionKey, LARGE_INTEGER TransferKey, LARGE_INTEGER ProviderProgressTotal, LARGE_INTEGER ProviderProgressCompleted);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfReportProviderProgress2(CF_CONNECTION_KEY ConnectionKey, LARGE_INTEGER TransferKey, LARGE_INTEGER RequestKey, LARGE_INTEGER ProviderProgressTotal, LARGE_INTEGER ProviderProgressCompleted, uint32 TargetSessionId);
+		#endregion
 	}
 }

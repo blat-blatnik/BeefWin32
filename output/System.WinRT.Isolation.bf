@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IIsolatedEnvironmentInterop : IUnknown
 		{
@@ -22,6 +21,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IIsolatedEnvironmentInterop self, HWND containerHwnd, out HWND hostHwnd) GetHostHwndInterop;
 			}
 		}
+		#endregion
 		
 	}
 }

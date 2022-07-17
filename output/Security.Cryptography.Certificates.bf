@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CA_DISP_INCOMPLETE = 0;
 		public const uint32 CA_DISP_ERROR = 1;
 		public const uint32 CA_DISP_REVOKED = 2;
@@ -408,9 +407,9 @@ namespace Win32
 		public const String wszCMM_PROP_PRODUCTVER = "Product Version";
 		public const String wszCMM_PROP_DISPLAY_HWND = "HWND";
 		public const String wszCMM_PROP_ISMULTITHREADED = "IsMultiThreaded";
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CERT_VIEW_COLUMN_INDEX : int32
 		{
 			LOG_DEFAULT = -2,
@@ -1735,9 +1734,9 @@ namespace Win32
 			STANDALONE_SUBCA = 4,
 			UNKNOWN_CA = 5,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT FNCERTSRVISSERVERONLINEW(PWSTR pwszServerName, out BOOL pfServerOnline);
 		public function HRESULT FNCERTSRVBACKUPGETDYNAMICFILELISTW(void* hbc, out uint16* ppwszzFileList, out uint32 pcbSize);
 		public function HRESULT FNCERTSRVBACKUPPREPAREW(PWSTR pwszServerName, uint32 grbitJet, uint32 dwBackupFlags, void** phbc);
@@ -1757,9 +1756,9 @@ namespace Win32
 		public function HRESULT FNCERTSRVSERVERCONTROLW(PWSTR pwszServerName, uint32 dwControlFlags, out uint32 pcbOut, out uint8* ppbOut);
 		public function HRESULT FNIMPORTPFXTOPROVIDER(HWND hWndParent, in uint8 pbPFX, uint32 cbPFX, ImportPFXFlags ImportFlags, PWSTR pwszPassword, PWSTR pwszProviderName, PWSTR pwszReaderName, PWSTR pwszContainerNamePrefix, PWSTR pwszPin, PWSTR pwszFriendlyName, uint32* pcCertOut, CERT_CONTEXT*** prgpCertOut);
 		public function void FNIMPORTPFXTOPROVIDERFREEDATA(uint32 cCert, CERT_CONTEXT** rgpCert);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CSEDB_RSTMAPW
 		{
@@ -1795,9 +1794,9 @@ namespace Win32
 			public uint32 cKRACertCount;
 			public uint32 fAdvancedServer;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_CCertAdmin = .(0x37eabaf0, 0x7fb6, 0x11d0, 0x88, 0x17, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 		public const Guid CLSID_CCertView = .(0xa12d0f7a, 0x1e84, 0x11d1, 0x9b, 0xd6, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 		public const Guid CLSID_OCSPPropertyCollection = .(0xf935a528, 0xba8a, 0x4dd9, 0xba, 0x79, 0xf2, 0x83, 0x27, 0x5c, 0xb2, 0xde);
@@ -1892,9 +1891,9 @@ namespace Win32
 		public const Guid CLSID_CX509SCEPEnrollmentHelper = .(0x884e2062, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 		public const Guid CLSID_CEnroll2 = .(0x127698e4, 0xe730, 0x4e5c, 0xa2, 0xb1, 0x21, 0x49, 0x0a, 0x70, 0xc8, 0xa1);
 		public const Guid CLSID_CEnroll = .(0x43f8f289, 0x7a20, 0x11d0, 0x8f, 0x06, 0x00, 0xc0, 0x4f, 0xc2, 0x95, 0xe1);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEnumCERTVIEWCOLUMN : IDispatch
 		{
@@ -6218,9 +6217,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ICertRequestD2 self, PWSTR pwszAuthority) Ping2;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("certadm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CertSrvIsServerOnlineW(PWSTR pwszServerName, out BOOL pfServerOnline);
 		[Import("certadm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6273,5 +6272,6 @@ namespace Win32
 		public static extern NTSTATUS PstMapCertificate(in CERT_CONTEXT pCert, out LSA_TOKEN_INFORMATION_TYPE pTokenInformationType, void** ppTokenInformation);
 		[Import("certpoleng.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS PstGetUserNameForCertificate(in CERT_CONTEXT pCertContext, out UNICODE_STRING UserName);
+		#endregion
 	}
 }

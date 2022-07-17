@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 PRLT = 0;
 		public const uint32 PRLE = 1;
 		public const uint32 PRGT = 2;
@@ -192,9 +191,9 @@ namespace Win32
 		public const HRESULT MQ_ERROR_TOO_MANY_PROPERTIES = -1072824166;
 		public const HRESULT MQ_ERROR_MESSAGE_NOT_AUTHENTICATED = -1072824165;
 		public const HRESULT MQ_ERROR_MESSAGE_LOCKED_UNDER_TRANSACTION = -1072824164;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum MQCALG : int32
 		{
@@ -582,9 +581,9 @@ namespace Win32
 			INTERNAL_USER_CERT_EXIST = 1074659338,
 			OWNER_IGNORED = 1074659339,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_MSMQQuery = .(0xd7d6e073, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 		public const Guid CLSID_MSMQMessage = .(0xd7d6e075, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 		public const Guid CLSID_MSMQQueue = .(0xd7d6e079, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
@@ -600,9 +599,9 @@ namespace Win32
 		public const Guid CLSID_MSMQManagement = .(0x39ce96fe, 0xf4c5, 0x4484, 0xa1, 0x43, 0x4c, 0x2d, 0x5d, 0x32, 0x42, 0x29);
 		public const Guid CLSID_MSMQOutgoingQueueManagement = .(0x0188401c, 0x247a, 0x4fed, 0x99, 0xc6, 0xbf, 0x14, 0x11, 0x9d, 0x70, 0x55);
 		public const Guid CLSID_MSMQQueueManagement = .(0x33b6d07e, 0xf27d, 0x42fa, 0xb2, 0xd7, 0xbf, 0x82, 0xe1, 0x1e, 0x93, 0x74);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IMSMQQuery : IDispatch
 		{
@@ -2433,6 +2432,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMSMQQueueManagement self, out VARIANT pvCollection) EodGetReceiveInfo;
 			}
 		}
+		#endregion
 		
 	}
 }

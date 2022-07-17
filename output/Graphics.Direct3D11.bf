@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
 		public const uint32 D3D11_32BIT_INDEX_STRIP_CUT_VALUE = 4294967295;
 		public const uint32 D3D11_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -491,9 +490,9 @@ namespace Win32
 		public const uint32 D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS = 4;
 		public const uint32 D3DX11_FFT_MAX_TEMP_BUFFERS = 4;
 		public const uint32 D3DX11_FFT_MAX_DIMENSIONS = 32;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3D11_INPUT_CLASSIFICATION : int32
 		{
 			VERTEX_DATA = 0,
@@ -2780,14 +2779,14 @@ namespace Win32
 		{
 			FLAG_NO_PRECOMPUTE_BUFFERS = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_D3D11_CREATE_DEVICE(IDXGIAdapter* param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, ID3D11Device** param7, D3D_FEATURE_LEVEL* param8, ID3D11DeviceContext** param9);
 		public function HRESULT PFN_D3D11_CREATE_DEVICE_AND_SWAP_CHAIN(IDXGIAdapter* param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, DXGI_SWAP_CHAIN_DESC* param7, IDXGISwapChain** param8, ID3D11Device** param9, D3D_FEATURE_LEVEL* param10, ID3D11DeviceContext** param11);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D11_INPUT_ELEMENT_DESC
 		{
@@ -4555,9 +4554,9 @@ namespace Win32
 			public uint32 NumPrecomputeBufferSizes;
 			public uint32[4] PrecomputeBufferFloatSizes;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID3D11DeviceChild : IUnknown
 		{
@@ -6771,9 +6770,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3DX11FFT self, in ID3D11UnorderedAccessView pInputBuffer, out ID3D11UnorderedAccessView* ppOutputBuffer) InverseTransform;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D11CreateDevice(IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, HINSTANCE Software, D3D11_CREATE_DEVICE_FLAG Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, ID3D11Device** ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6798,5 +6797,6 @@ namespace Win32
 		public static extern HRESULT D3DX11CreateFFT3DReal(ref ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, out D3DX11_FFT_BUFFER_INFO pBufferInfo, out ID3DX11FFT* ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3DX11CreateFFT3DComplex(ref ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, out D3DX11_FFT_BUFFER_INFO pBufferInfo, out ID3DX11FFT* ppFFT);
+		#endregion
 	}
 }

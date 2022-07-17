@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DEDUP_CHUNKLIB_MAX_CHUNKS_ENUM = 1024;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DEDUP_BACKUP_SUPPORT_PARAM_TYPE : int32
 		{
 			UNOPTIMIZED = 1,
@@ -69,9 +68,9 @@ namespace Win32
 			Unknonwn = 0,
 			Xpress = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DEDUP_CONTAINER_EXTENT
 		{
@@ -121,14 +120,14 @@ namespace Win32
 			public uint64 Length;
 			public uint32 ChunkCount;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_DedupBackupSupport = .(0x73d6b2ad, 0x2984, 0x4715, 0xb2, 0xe3, 0x92, 0x4c, 0x14, 0x97, 0x44, 0xdd);
 		public const Guid CLSID_DedupDataPort = .(0x8f107207, 0x1829, 0x48b2, 0xa6, 0x4b, 0xe6, 0x1f, 0x8e, 0x0d, 0x9a, 0xcb);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDedupReadFileCallback : IUnknown
 		{
@@ -261,6 +260,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDedupDataPortManager self, uint32 Options, BSTR Path, out IDedupDataPort* ppDataPort) GetVolumeDataPort;
 			}
 		}
+		#endregion
 		
 	}
 }

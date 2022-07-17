@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 DXC_HASHFLAG_INCLUDES_SOURCE = 1;
 		public const uint32 DxcValidatorFlags_Default = 0;
 		public const uint32 DxcValidatorFlags_InPlaceEdit = 1;
@@ -27,9 +26,9 @@ namespace Win32
 		public const Guid CLSID_DxcOptimizer = .(0xae2cd79f, 0xcc22, 0x453f, 0x9b, 0x6b, 0xb1, 0x24, 0xe7, 0xa5, 0x20, 0x4c);
 		public const Guid CLSID_DxcContainerBuilder = .(0x94134294, 0x411f, 0x4574, 0xb4, 0xd0, 0x87, 0x41, 0xe2, 0x52, 0x40, 0xd2);
 		public const Guid CLSID_DxcPdbUtils = .(0x54621dfb, 0xf2ce, 0x457e, 0xae, 0x8c, 0xec, 0x35, 0x5f, 0xae, 0xec, 0x7c);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DXC_CP : uint32
 		{
 			ACP = 0,
@@ -51,14 +50,14 @@ namespace Win32
 			EXTRA_OUTPUTS = 10,
 			FORCE_DWORD = -1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT DxcCreateInstanceProc(in Guid rclsid, in Guid riid, void** ppv);
 		public function HRESULT DxcCreateInstance2Proc(ref IMalloc pMalloc, in Guid rclsid, in Guid riid, void** ppv);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DxcShaderHash
 		{
@@ -84,9 +83,9 @@ namespace Win32
 			public PWSTR pName;
 			public PWSTR pValue;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IDxcBlob : IUnknown
 		{
@@ -631,12 +630,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDxcPdbUtils self, PWSTR pRootSignature) OverrideRootSignature;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("dxcompiler.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DxcCreateInstance(in Guid rclsid, in Guid riid, void** ppv);
 		[Import("dxcompiler.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DxcCreateInstance2(ref IMalloc pMalloc, in Guid rclsid, in Guid riid, void** ppv);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 SHORT_PACKET_TERMINATE = 1;
 		public const uint32 AUTO_CLEAR_STALL = 2;
 		public const uint32 PIPE_TRANSFER_TIMEOUT = 3;
@@ -550,9 +549,9 @@ namespace Win32
 		public const uint32 IOCTL_SET_TIMEOUT = 2147491884;
 		public const uint32 IOCTL_ABORT_PIPE = 2147491844;
 		public const Guid WinUSB_TestGuid = .(0xda812bff, 0x12c3, 0x46a2, 0x8e, 0x2b, 0xdb, 0xd3, 0xb7, 0x83, 0x4c, 0x43);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum USB_DEVICE_SPEED : int32
 		{
 			LowSpeed = 0,
@@ -707,13 +706,13 @@ namespace Win32
 			BULK = 2,
 			INTERRUPT = 3,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void USB_IDLE_CALLBACK(void* Context);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr, Union]
 		public struct BM_REQUEST_TYPE
 		{
@@ -2206,9 +2205,9 @@ namespace Win32
 			public uint32 TimeoutWrite;
 			public uint32 TimeoutEvent;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winusb.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WinUsb_Initialize(HANDLE DeviceHandle, void** InterfaceHandle);
 		[Import("winusb.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2277,5 +2276,6 @@ namespace Win32
 		public static extern BOOL WinUsb_GetCurrentFrameNumberAndQpc(void* InterfaceHandle, ref USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION FrameQpcInfo);
 		[Import("winusb.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WinUsb_StopTrackingForTimeSync(void* InterfaceHandle, ref USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION StopTrackingInfo);
+		#endregion
 	}
 }

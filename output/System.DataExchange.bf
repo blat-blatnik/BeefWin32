@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WM_DDE_FIRST = 992;
 		public const uint32 WM_DDE_INITIATE = 992;
 		public const uint32 WM_DDE_TERMINATE = 993;
@@ -73,16 +72,16 @@ namespace Win32
 		public const uint32 MH_CLEANUP = 4;
 		public const uint32 MAX_MONITORS = 4;
 		public const uint32 MF_MASK = 4278190080;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HSZ = int;
 		public typealias HCONV = int;
 		public typealias HCONVLIST = int;
 		public typealias HDDEDATA = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DDE_ENABLE_CALLBACK_CMD : uint32
 		{
 			ENABLEALL = 0,
@@ -173,13 +172,13 @@ namespace Win32
 			ISSELF = 256,
 			TERMINATED = 32,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HDDEDATA PFNCALLBACK(uint32 wType, uint32 wFmt, HCONV hConv, HSZ hsz1, HSZ hsz2, HDDEDATA hData, uint dwData1, uint dwData2);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct DDEACK
 		{
@@ -365,9 +364,9 @@ namespace Win32
 			public uint32 cbData;
 			public void* lpData;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DdeSetQualityOfService(HWND hwndClient, in SECURITY_QUALITY_OF_SERVICE pqosNew, out SECURITY_QUALITY_OF_SERVICE pqosPrev);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -522,5 +521,6 @@ namespace Win32
 		public static extern uint32 GetAtomNameA(uint16 nAtom, uint8* lpBuffer, int32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetAtomNameW(uint16 nAtom, char16* lpBuffer, int32 nSize);
+		#endregion
 	}
 }

@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HINTERACTIONCONTEXT = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum INTERACTION_ID : int32
 		{
 			NONE = 0,
@@ -141,14 +140,14 @@ namespace Win32
 			RAILED = 2,
 			MAX = -1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void INTERACTION_CONTEXT_OUTPUT_CALLBACK(void* clientData, in INTERACTION_CONTEXT_OUTPUT output);
 		public function void INTERACTION_CONTEXT_OUTPUT_CALLBACK2(void* clientData, in INTERACTION_CONTEXT_OUTPUT2 output);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct MANIPULATION_TRANSFORM
 		{
@@ -234,9 +233,9 @@ namespace Win32
 			public CROSS_SLIDE_THRESHOLD threshold;
 			public float distance;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("ninput.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateInteractionContext(out HINTERACTIONCONTEXT interactionContext);
 		[Import("ninput.dll"), CLink, CallingConvention(.Stdcall)]
@@ -297,5 +296,6 @@ namespace Win32
 		public static extern HRESULT StopInteractionContext(HINTERACTIONCONTEXT interactionContext);
 		[Import("ninput.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetPivotInteractionContext(HINTERACTIONCONTEXT interactionContext, float x, float y, float radius);
+		#endregion
 	}
 }

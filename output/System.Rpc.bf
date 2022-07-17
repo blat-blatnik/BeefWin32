@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 RPC_C_BINDING_INFINITE_TIMEOUT = 10;
 		public const uint32 RPC_C_BINDING_MIN_TIMEOUT = 0;
 		public const uint32 RPC_C_BINDING_DEFAULT_TIMEOUT = 5;
@@ -236,9 +235,9 @@ namespace Win32
 		public const uint32 __RPCPROXY_H_VERSION__ = 475;
 		public const int32 MidlInterceptionInfoVersionOne = 1;
 		public const int32 MidlWinrtTypeSerializationInfoVersionOne = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RPC_C_QOS_CAPABILITIES : uint32
 		{
 			DEFAULT = 0,
@@ -552,9 +551,9 @@ namespace Win32
 			NOOP = 5,
 			END = 6,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void RPC_OBJECT_INQ_FN(ref Guid ObjectUuid, out Guid TypeUuid, out RPC_STATUS Status);
 		public function RPC_STATUS RPC_IF_CALLBACK_FN(void* InterfaceUuid, void* Context);
 		public function void RPC_SECURITY_CALLBACK_FN(void* Context);
@@ -603,9 +602,9 @@ namespace Win32
 		public function void MIDL_ES_ALLOC(void* state, out int8* pbuffer, out uint32 psize);
 		public function void MIDL_ES_WRITE(void* state, PSTR buffer, uint32 size);
 		public function void MIDL_ES_READ(void* state, out int8* pbuffer, out uint32 psize);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NDR_SCONTEXT_1
 		{
@@ -2200,9 +2199,9 @@ namespace Win32
 			public uint32 CtxtFlags;
 			public uint32 CtxtID;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT IUnknown_QueryInterface_Proxy(ref IUnknown This, in Guid riid, void** ppvObject);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3219,5 +3218,6 @@ namespace Win32
 		public static extern RPC_STATUS RpcCertGeneratePrincipalNameW(in CERT_CONTEXT Context, uint32 Flags, out uint16* pBuffer);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern RPC_STATUS RpcCertGeneratePrincipalNameA(in CERT_CONTEXT Context, uint32 Flags, out uint8* pBuffer);
+		#endregion
 	}
 }

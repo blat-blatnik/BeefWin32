@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 RADIUS_EXTENSION_VERSION = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		[AllowDuplicates]
 		public enum ATTRIBUTEID : uint32
 		{
@@ -728,18 +727,18 @@ namespace Win32
 			Authentication = 0,
 			Authorization = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 PRADIUS_EXTENSION_INIT();
 		public function void PRADIUS_EXTENSION_TERM();
 		public function uint32 PRADIUS_EXTENSION_PROCESS(in RADIUS_ATTRIBUTE pAttrs, out RADIUS_ACTION pfAction);
 		public function uint32 PRADIUS_EXTENSION_PROCESS_EX(in RADIUS_ATTRIBUTE pInAttrs, out RADIUS_ATTRIBUTE* pOutAttrs, out RADIUS_ACTION pfAction);
 		public function void PRADIUS_EXTENSION_FREE_ATTRIBUTES(out RADIUS_ATTRIBUTE pAttrs);
 		public function uint32 PRADIUS_EXTENSION_PROCESS_2(out RADIUS_EXTENSION_CONTROL_BLOCK pECB);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RADIUS_ATTRIBUTE
 		{
@@ -786,13 +785,13 @@ namespace Win32
 			public int GetResponse;
 			public int SetResponseType;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_SdoMachine = .(0xe9218ae7, 0x9e91, 0x11d1, 0xbf, 0x60, 0x00, 0x80, 0xc7, 0x84, 0x6b, 0xc0);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ISdoMachine : IDispatch
 		{
@@ -966,6 +965,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ISdoDictionaryOld self, BSTR bstrAttributeName, out ATTRIBUTEID pId) GetAttributeID;
 			}
 		}
+		#endregion
 		
 	}
 }

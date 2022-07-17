@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 BT_PORT_MIN = 1;
 		public const uint32 BT_PORT_MAX = 65535;
 		public const uint32 BT_PORT_DYN_FIRST = 4097;
@@ -777,13 +776,13 @@ namespace Win32
 		public const uint64 BTH_HOST_FEATURE_LOW_ENERGY = 4uL;
 		public const uint64 BTH_HOST_FEATURE_SCO_HCI = 8uL;
 		public const uint64 BTH_HOST_FEATURE_SCO_HCIBYPASS = 16uL;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HANDLE_SDP_TYPE = uint64;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NodeContainerType : int32
 		{
 			Sequence = 0,
@@ -864,16 +863,16 @@ namespace Win32
 			RequiredGeneralBonding = 5,
 			NotDefined = 255,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PFN_DEVICE_CALLBACK(void* pvParam, in BLUETOOTH_DEVICE_INFO pDevice);
 		public function BOOL PFN_AUTHENTICATION_CALLBACK(void* pvParam, out BLUETOOTH_DEVICE_INFO pDevice);
 		public function BOOL PFN_AUTHENTICATION_CALLBACK_EX(void* pvParam, ref BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS pAuthCallbackParams);
 		public function BOOL PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK(uint32 uAttribId, ref uint8 pValueStream, uint32 cbStreamSize, void* pvParam);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct SDP_LARGE_INTEGER_16
 		{
@@ -1238,9 +1237,9 @@ namespace Win32
 				public uint8[44] data;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int BluetoothFindFirstRadio(in BLUETOOTH_FIND_RADIO_PARAMS pbtfrp, out HANDLE phRadio);
 		[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1309,5 +1308,6 @@ namespace Win32
 		public static extern uint32 BluetoothSetLocalServiceInfo(HANDLE hRadioIn, in Guid pClassGuid, uint32 ulInstance, in BLUETOOTH_LOCAL_SERVICE_INFO pServiceInfoIn);
 		[Import("bluetoothapis.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BluetoothIsVersionAvailable(uint8 MajorVersion, uint8 MinorVersion);
+		#endregion
 	}
 }

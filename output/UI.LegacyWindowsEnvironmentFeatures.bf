@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 EVCF_HASSETTINGS = 1;
 		public const uint32 EVCF_ENABLEBYDEFAULT = 2;
 		public const uint32 EVCF_REMOVEFROMLIST = 4;
@@ -26,9 +25,9 @@ namespace Win32
 		public const HRESULT REC_E_NORESIDUES = -2147217406;
 		public const HRESULT REC_E_TOODIFFERENT = -2147217405;
 		public const HRESULT REC_E_INEEDTODOTHEUPDATES = -2147217404;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum _reconcilef : int32
 		{
 			RECONCILEF_MAYBOTHERUSER = 1,
@@ -40,9 +39,9 @@ namespace Win32
 			RECONCILEF_ONLYYOUWERECHANGED = 64,
 			ALL_RECONCILE_FLAGS = 127,
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEmptyVolumeCacheCallBack : IUnknown
 		{
@@ -189,6 +188,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IADesktopP2 self, ref IOleObject pOleObj) MakeDynamicChanges;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,12 +5,11 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WINML_TENSOR_DIMENSION_COUNT_MAX = 4;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WINML_TENSOR_DATA_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -107,9 +106,9 @@ namespace Win32
 			Cpu = 1,
 			D3D12 = 2,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WINML_TENSOR_BINDING_DESC
 		{
@@ -340,9 +339,9 @@ namespace Win32
 			public MLOperatorKernelOptions options;
 			public uint32 executionOptions;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IWinMLModel : IUnknown
 		{
@@ -673,12 +672,13 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLOperatorRegistry self, in MLOperatorKernelDescription operatorKernel, ref IMLOperatorKernelFactory operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer) RegisterOperatorKernel;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("winml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WinMLCreateRuntime(out IWinMLRuntime* runtime);
 		[Import("windows.ai.machinelearning.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MLCreateOperatorRegistry(out IMLOperatorRegistry* registry);
+		#endregion
 	}
 }

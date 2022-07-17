@@ -5,16 +5,15 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CCH_RM_SESSION_KEY = 32;
 		public const uint32 CCH_RM_MAX_APP_NAME = 255;
 		public const uint32 CCH_RM_MAX_SVC_NAME = 63;
 		public const int32 RM_INVALID_TS_SESSION = -1;
 		public const int32 RM_INVALID_PROCESS = -1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum RM_APP_TYPE : int32
 		{
 			UnknownApp = 0,
@@ -64,13 +63,13 @@ namespace Win32
 			NoRestart = 1,
 			NoShutdown = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void RM_WRITE_STATUS_CALLBACK(uint32 nPercentComplete);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct RM_UNIQUE_PROCESS
 		{
@@ -104,9 +103,9 @@ namespace Win32
 				public PWSTR strServiceShortName;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmStartSession(out uint32 pSessionHandle, uint32 dwSessionFlags, PWSTR strSessionKey);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
@@ -129,5 +128,6 @@ namespace Win32
 		public static extern uint32 RmRemoveFilter(uint32 dwSessionHandle, PWSTR strModuleName, RM_UNIQUE_PROCESS* pProcess, PWSTR strServiceShortName);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmGetFilterList(uint32 dwSessionHandle, uint8* pbFilterBuf, uint32 cbFilterBuf, out uint32 cbFilterBufNeeded);
+		#endregion
 	}
 }

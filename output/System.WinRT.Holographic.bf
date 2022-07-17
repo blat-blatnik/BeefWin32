@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IHolographicCameraInterop : IInspectable
 		{
@@ -85,6 +84,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IHolographicQuadLayerUpdateParametersInterop self, ref ID3D12Resource pColorResourceToCommit, ref ID3D12Fence pColorResourceFence, uint64 colorResourceFenceSignalValue) CommitDirect3D12Resource;
 			}
 		}
+		#endregion
 		
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const PROPERTYKEY PROCESSOR_NUMBER_PKEY = .(.(0x5724c81d, 0xd5af, 0x4c1f, 0xa1, 0x03, 0xa0, 0x6e, 0x28, 0xf2, 0x04, 0xc6), 1);
 		public const Guid GUID_DEVICE_BATTERY = .(0x72631e54, 0x78a4, 0x11d0, 0xbc, 0xf7, 0x00, 0xaa, 0x00, 0xb7, 0xb3, 0x2a);
 		public const Guid GUID_DEVICE_APPLICATIONLAUNCH_BUTTON = .(0x629758ee, 0x986e, 0x4d9e, 0x8e, 0x47, 0xde, 0x27, 0xf8, 0xab, 0x05, 0x4d);
@@ -141,13 +140,13 @@ namespace Win32
 		public const uint32 PDCAP_S4_SUPPORTED = 16777216;
 		public const uint32 PDCAP_S5_SUPPORTED = 33554432;
 		public const uint32 THERMAL_EVENT_VERSION = 1;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias HPOWERNOTIFY = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum POWER_PLATFORM_ROLE_VERSION : uint32
 		{
 			V1 = 1,
@@ -420,16 +419,16 @@ namespace Win32
 			Slate = 8,
 			Maximum = 9,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void EFFECTIVE_POWER_MODE_CALLBACK(EFFECTIVE_POWER_MODE Mode, void* Context);
 		public function BOOLEAN PWRSCHEMESENUMPROC_V1(uint32 Index, uint32 NameSize, ref int8 Name, uint32 DescriptionSize, ref int8 Description, ref POWER_POLICY Policy, LPARAM Context);
 		public function BOOLEAN PWRSCHEMESENUMPROC(uint32 Index, uint32 NameSize, PWSTR Name, uint32 DescriptionSize, PWSTR Description, ref POWER_POLICY Policy, LPARAM Context);
 		public function uint32 PDEVICE_NOTIFY_CALLBACK_ROUTINE(void* Context, uint32 Type, void* Setting);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct GLOBAL_MACHINE_POWER_POLICY
 		{
@@ -906,9 +905,9 @@ namespace Win32
 			public uint32 BatteryLifeTime;
 			public uint32 BatteryFullLifeTime;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("powrprof.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CallNtPowerInformation(POWER_INFORMATION_LEVEL InformationLevel, void* InputBuffer, uint32 InputBufferLength, void* OutputBuffer, uint32 OutputBufferLength);
 		[Import("powrprof.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1103,5 +1102,6 @@ namespace Win32
 		public static extern BOOL SetSystemPowerState(BOOL fSuspend, BOOL fForce);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetSystemPowerStatus(out SYSTEM_POWER_STATUS lpSystemPowerStatus);
+		#endregion
 	}
 }

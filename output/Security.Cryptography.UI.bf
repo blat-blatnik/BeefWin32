@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 CRYTPDLG_FLAGS_MASK = 4278190080;
 		public const uint32 CRYPTDLG_REVOCATION_DEFAULT = 0;
 		public const uint32 CRYPTDLG_REVOCATION_ONLINE = 2147483648;
@@ -85,9 +84,9 @@ namespace Win32
 		public const uint32 CRYPTUI_WIZ_DIGITAL_SIGN_EXCLUDE_PAGE_HASHES = 2;
 		public const uint32 CRYPTUI_WIZ_DIGITAL_SIGN_INCLUDE_PAGE_HASHES = 4;
 		public const uint32 CRYPTUI_WIZ_EXPORT_FORMAT_SERIALIZED_CERT_STORE = 5;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum CRYPTUI_WIZ_FLAGS : uint32
 		{
 			NO_UI = 1,
@@ -209,16 +208,16 @@ namespace Win32
 			ADD_NOT_TRUSTED = 1,
 			REMOVE = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function BOOL PFNCMFILTERPROC(in CERT_CONTEXT pCertContext, LPARAM param1, uint32 param2, uint32 param3);
 		public function uint32 PFNCMHOOKPROC(HWND hwndDialog, uint32 message, WPARAM wParam, LPARAM lParam);
 		public function HRESULT PFNTRUSTHELPER(in CERT_CONTEXT pCertContext, LPARAM lCustData, BOOL fLeafCertificate, out uint8 pbTrustBlob);
 		public function BOOL PFNCFILTERPROC(in CERT_CONTEXT pCertContext, out BOOL pfInitialSelectedCert, void* pvCallbackData);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CERT_SELECT_STRUCT_A
 		{
@@ -574,9 +573,9 @@ namespace Win32
 				public void* hCertStore;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUIDlgViewContext(uint32 dwContextType, void* pvContext, HWND hwnd, PWSTR pwszTitle, uint32 dwFlags, void* pvReserved);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
@@ -597,5 +596,6 @@ namespace Win32
 		public static extern BOOL CryptUIWizExport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, ref CRYPTUI_WIZ_EXPORT_INFO pExportInfo, void* pvoid);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUIWizImport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, CRYPTUI_WIZ_IMPORT_SRC_INFO* pImportSrc, void* hDestCertStore);
+		#endregion
 	}
 }

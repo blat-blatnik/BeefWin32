@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 FD_EVENTID_PRIVATE = 100;
 		public const uint32 FD_EVENTID = 1000;
 		public const uint32 FD_EVENTID_SEARCHCOMPLETE = 1000;
@@ -50,9 +49,9 @@ namespace Win32
 		public const HRESULT E_FDPAIRING_AUTHNOTALLOWED = -1882193914;
 		public const HRESULT E_FDPAIRING_IPBUSDISABLED = -1882193913;
 		public const HRESULT E_FDPAIRING_NOPROFILES = -1882193912;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum PropertyConstraint : int32
 		{
 			EQUALS = 0,
@@ -82,18 +81,18 @@ namespace Win32
 			PROVIDER = 0,
 			LAYERED = 1,
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_PNPXAssociation = .(0xcee8ccc9, 0x4f6b, 0x4469, 0xa2, 0x35, 0x5a, 0x22, 0x86, 0x9e, 0xef, 0x03);
 		public const Guid CLSID_PNPXPairingHandler = .(0xb8a27942, 0xade7, 0x4085, 0xaa, 0x6e, 0x4f, 0xad, 0xc7, 0xad, 0xa1, 0xef);
 		public const Guid CLSID_FunctionDiscovery = .(0xc72be2ec, 0x8e90, 0x452c, 0xb2, 0x9a, 0xab, 0x8f, 0xf1, 0xc0, 0x71, 0xfc);
 		public const Guid CLSID_PropertyStore = .(0xe4796550, 0xdf61, 0x448b, 0x91, 0x93, 0x13, 0xfc, 0x13, 0x41, 0xb1, 0x63);
 		public const Guid CLSID_FunctionInstanceCollection = .(0xba818ce5, 0xb55f, 0x443f, 0xad, 0x39, 0x2f, 0xe8, 0x9b, 0xe6, 0x19, 0x1f);
 		public const Guid CLSID_PropertyStoreCollection = .(0xedd36029, 0xd753, 0x4862, 0xaa, 0x5b, 0x5b, 0xcc, 0xad, 0x2a, 0x4d, 0x29);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFunctionDiscoveryNotification : IUnknown
 		{
@@ -457,6 +456,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IPNPXDeviceAssociation self, PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Delete;
 			}
 		}
+		#endregion
 		
 	}
 }

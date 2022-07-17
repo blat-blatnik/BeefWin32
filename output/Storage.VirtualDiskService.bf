@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 VDS_NF_VOLUME_ARRIVE = 4;
 		public const uint32 VDS_NF_VOLUME_DEPART = 5;
 		public const uint32 VDS_NF_VOLUME_MODIFY = 6;
@@ -468,9 +467,9 @@ namespace Win32
 		public const HRESULT VDS_E_FORMAT_WITH_BOOTBACKING = -2147210744;
 		public const HRESULT VDS_E_CLEAN_WITH_BOOTBACKING = -2147210743;
 		public const HRESULT VDS_E_SHRINK_EXTEND_UNALIGNED = -2147210496;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum VDS_NF_PACK : uint32
 		{
 			ARRIVE = 1,
@@ -1056,9 +1055,9 @@ namespace Win32
 			RAID60 = 26,
 			RAID61 = 27,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct VDS_STORAGE_IDENTIFIER
 		{
@@ -1656,9 +1655,9 @@ namespace Win32
 			public uint64 ullSize;
 			public BOOL bUsed;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IEnumVdsObject : IUnknown
 		{
@@ -2395,6 +2394,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IVdsAdmin self, Guid providerId) UnregisterProvider;
 			}
 		}
+		#endregion
 		
 	}
 }

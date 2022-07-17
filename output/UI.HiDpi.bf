@@ -5,20 +5,19 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_UNAWARE = -1;
 		public const DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_SYSTEM_AWARE = -2;
 		public const DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = -3;
 		public const DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = -4;
 		public const DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = -5;
+		#endregion
 		
-		// --- Typedefs ---
-		
+		#region Typedefs
 		public typealias DPI_AWARENESS_CONTEXT = int;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DPI_AWARENESS : int32
 		{
 			INVALID = -1,
@@ -59,9 +58,9 @@ namespace Win32
 			RAW_DPI = 2,
 			DEFAULT = 0,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("uxtheme.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int OpenThemeDataForDpi(HWND hwnd, PWSTR pszClassList, uint32 dpi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -120,5 +119,6 @@ namespace Win32
 		public static extern HRESULT GetProcessDpiAwareness(HANDLE hprocess, out PROCESS_DPI_AWARENESS value);
 		[Import("api-ms-win-shcore-scaling-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDpiForMonitor(HMONITOR hmonitor, MONITOR_DPI_TYPE dpiType, out uint32 dpiX, out uint32 dpiY);
+		#endregion
 	}
 }

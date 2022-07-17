@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const Guid VIRTUAL_STORAGE_TYPE_VENDOR_UNKNOWN = .(0x00000000, 0x0000, 0x0000, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 		public const Guid VIRTUAL_STORAGE_TYPE_VENDOR_MICROSOFT = .(0xec984aec, 0xa0f9, 0x47e9, 0x90, 0x1f, 0x71, 0x41, 0x5a, 0x66, 0x34, 0x5b);
 		public const uint32 VIRTUAL_STORAGE_TYPE_DEVICE_UNKNOWN = 0;
@@ -19,9 +18,9 @@ namespace Win32
 		public const uint32 CREATE_VIRTUAL_DISK_PARAMETERS_DEFAULT_SECTOR_SIZE = 0;
 		public const uint32 VIRTUAL_DISK_MAXIMUM_CHANGE_TRACKING_ID_LENGTH = 256;
 		public const uint32 MERGE_VIRTUAL_DISK_DEFAULT_MERGE_DEPTH = 1;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum OPEN_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -285,9 +284,9 @@ namespace Win32
 			NONE = 0,
 			EXISTING_FILE = 1,
 		}
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct VIRTUAL_STORAGE_TYPE
 		{
@@ -801,9 +800,9 @@ namespace Win32
 				}
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("virtdisk.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OpenVirtualDisk(ref VIRTUAL_STORAGE_TYPE VirtualStorageType, PWSTR Path, VIRTUAL_DISK_ACCESS_MASK VirtualDiskAccessMask, OPEN_VIRTUAL_DISK_FLAG Flags, OPEN_VIRTUAL_DISK_PARAMETERS* Parameters, out HANDLE Handle);
 		[Import("virtdisk.dll"), CLink, CallingConvention(.Stdcall)]
@@ -862,5 +861,6 @@ namespace Win32
 		public static extern uint32 ForkVirtualDisk(HANDLE VirtualDiskHandle, FORK_VIRTUAL_DISK_FLAG Flags, in FORK_VIRTUAL_DISK_PARAMETERS Parameters, out OVERLAPPED Overlapped);
 		[Import("virtdisk.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CompleteForkVirtualDisk(HANDLE VirtualDiskHandle);
+		#endregion
 	}
 }

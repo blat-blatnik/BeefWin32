@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 ADMINDATA_MAX_NAME_LEN = 256;
 		public const Guid CLSID_MSAdminBase_W = .(0xa9e69610, 0xb80d, 0x11d0, 0xb9, 0xb9, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
 		public const uint32 IMGCHG_SIZE = 1;
@@ -869,9 +868,9 @@ namespace Win32
 		public const Guid GUID_IIS_ASP_TRACE_TRACE_PROVIDER = .(0x06b94d9a, 0xb15e, 0x456e, 0xa4, 0xef, 0x37, 0xc9, 0x84, 0xa2, 0xcb, 0x4b);
 		public const Guid GUID_IIS_WWW_GLOBAL_TRACE_PROVIDER = .(0xd55d3bc9, 0xcba9, 0x44df, 0x82, 0x7e, 0x13, 0x2d, 0x3a, 0x45, 0x96, 0xc2);
 		public const Guid GUID_IIS_ISAPI_TRACE_PROVIDER = .(0xa1c2040e, 0x8840, 0x4c31, 0xba, 0x11, 0x98, 0x71, 0x03, 0x1a, 0x19, 0xea);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum FTP_ACCESS : int32
 		{
 			NONE = 0,
@@ -937,9 +936,9 @@ namespace Win32
 			LPCGUID = 72,
 			BOOL = 11,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void PFN_HSE_IO_COMPLETION(out EXTENSION_CONTROL_BLOCK pECB, void* pContext, uint32 cbIO, uint32 dwError);
 		public function HRESULT PFN_HSE_CACHE_INVALIDATION_CALLBACK(PWSTR pszUrl);
 		public function HRESULT PFN_HSE_GET_PROTOCOL_MANAGER_CUSTOM_INTERFACE_CALLBACK(PWSTR pszProtocolManagerDll, PWSTR pszProtocolManagerDllInitFunction, uint32 dwCustomInterfaceId, void** ppCustomInterface);
@@ -949,9 +948,9 @@ namespace Win32
 		public function HRESULT PFN_WEB_CORE_SET_METADATA_DLL_ENTRY(PWSTR pszMetadataType, PWSTR pszValue);
 		public function HRESULT PFN_WEB_CORE_ACTIVATE(PWSTR pszAppHostConfigFile, PWSTR pszRootWebConfigFile, PWSTR pszInstanceName);
 		public function HRESULT PFN_WEB_CORE_SHUTDOWN(uint32 fImmediate);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct CONFIGURATION_ENTRY
 		{
@@ -1365,13 +1364,13 @@ namespace Win32
 			public uint32 dwVerbosity;
 			public BOOL fProviderEnabled;
 		}
+		#endregion
 		
-		// --- COM Class IDs ---
-		
+		#region COM class IDs
 		public const Guid CLSID_FtpProvider = .(0x70bdc667, 0x33b2, 0x45f0, 0xac, 0x52, 0xc3, 0xca, 0x46, 0xf7, 0xa6, 0x56);
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct IFtpProviderConstruct : IUnknown
 		{
@@ -1798,9 +1797,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref AsyncIMSAdminBaseSinkW self) Finish_ShutdownNotify;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("rpcproxy.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetExtensionVersion(out HSE_VERSION_INFO pVer);
 		[Import("rpcproxy.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1809,5 +1808,6 @@ namespace Win32
 		public static extern uint32 HttpFilterProc(out HTTP_FILTER_CONTEXT pfc, uint32 NotificationType, void* pvNotification);
 		[Import("rpcproxy.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetFilterVersion(out HTTP_FILTER_VERSION pVer);
+		#endregion
 	}
 }

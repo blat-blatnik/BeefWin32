@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Enums ---
-		
+		#region Enums
 		public enum REGISTER_APPLICATION_RESTART_FLAGS : uint32
 		{
 			CRASH = 1,
@@ -14,9 +13,9 @@ namespace Win32
 			PATCH = 4,
 			REBOOT = 8,
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RegisterApplicationRecoveryCallback(APPLICATION_RECOVERY_CALLBACK pRecoveyCallback, void* pvParameter, uint32 dwPingInterval, uint32 dwFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -33,5 +32,6 @@ namespace Win32
 		public static extern HRESULT ApplicationRecoveryInProgress(out BOOL pbCancelled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void ApplicationRecoveryFinished(BOOL bSuccess);
+		#endregion
 	}
 }

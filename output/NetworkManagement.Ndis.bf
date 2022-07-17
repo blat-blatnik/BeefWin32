@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 IOCTL_NDIS_RESERVED5 = 1507380;
 		public const uint32 IOCTL_NDIS_RESERVED6 = 1540152;
 		public const uint32 NDIS_OBJECT_TYPE_DEFAULT = 128;
@@ -1838,9 +1837,9 @@ namespace Win32
 		public const uint32 MS_MAX_PROFILE_NAME_LENGTH = 256;
 		public const uint32 MS_PROFILE_GROUP_POLICY = 1;
 		public const uint32 MS_PROFILE_USER = 2;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum NDIS_REQUEST_TYPE : int32
 		{
 			QueryInformation = 0,
@@ -2197,9 +2196,9 @@ namespace Win32
 			PhyStateChange = 3,
 			LinkQuality = 4,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function uint32 DOT11EXT_ALLOCATE_BUFFER(uint32 dwByteCount, void** ppvBuffer);
 		public function void DOT11EXT_FREE_BUFFER(void* pvMemory);
 		public function uint32 DOT11EXT_SET_PROFILE_CUSTOM_USER_DATA(HANDLE hDot11SvcHandle, HANDLE hConnectSession, uint32 dwSessionID, uint32 dwDataSize, void* pvData);
@@ -2248,9 +2247,9 @@ namespace Win32
 		public function uint32 DOT11EXTIHV_QUERY_UI_REQUEST(HANDLE hIhvExtAdapter, DOT11EXT_IHV_CONNECTION_PHASE connectionPhase, out DOT11EXT_IHV_UI_REQUEST* ppIhvUIRequest);
 		public function uint32 DOT11EXTIHV_ONEX_INDICATE_RESULT(HANDLE hIhvExtAdapter, DOT11_MSONEX_RESULT msOneXResult, DOT11_MSONEX_RESULT_PARAMS* pDot11MsOneXResultParams);
 		public function uint32 DOT11EXTIHV_CONTROL(HANDLE hIhvExtAdapter, uint32 dwInBufferSize, uint8* pInBuffer, uint32 dwOutBufferSize, uint8* pOutBuffer, out uint32 pdwBytesReturned);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct NDIS_STATISTICS_VALUE
 		{
@@ -3523,6 +3522,7 @@ namespace Win32
 			public DOT11EXT_QUERY_VIRTUAL_STATION_PROPERTIES Dot11ExtQueryVirtualStationProperties;
 			public DOT11EXT_SET_VIRTUAL_STATION_AP_PROPERTIES Dot11ExtSetVirtualStationAPProperties;
 		}
+		#endregion
 		
 	}
 }

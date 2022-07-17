@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 D3D10_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
 		public const uint32 D3D10_32BIT_INDEX_STRIP_CUT_VALUE = 4294967295;
 		public const uint32 D3D10_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -293,9 +292,9 @@ namespace Win32
 		public const uint32 D3D10_EFFECT_VARIABLE_ANNOTATION = 2;
 		public const uint32 D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT = 4;
 		public const Guid GUID_DeviceType = .(0xd722fb4d, 0x7a68, 0x437a, 0xb2, 0x0c, 0x58, 0x04, 0xee, 0x24, 0x94, 0xa6);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum D3D10_INPUT_CLASSIFICATION : int32
 		{
 			VERTEX_DATA = 0,
@@ -1203,14 +1202,14 @@ namespace Win32
 			FUNCTION = 1,
 			FORCE_DWORD = 2147483647,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT PFN_D3D10_CREATE_DEVICE1(ref IDXGIAdapter param0, D3D10_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D10_FEATURE_LEVEL1 param4, uint32 param5, out ID3D10Device1* param6);
 		public function HRESULT PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1(ref IDXGIAdapter param0, D3D10_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D10_FEATURE_LEVEL1 param4, uint32 param5, out DXGI_SWAP_CHAIN_DESC param6, out IDXGISwapChain* param7, out ID3D10Device1* param8);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct D3D10_INPUT_ELEMENT_DESC
 		{
@@ -2027,9 +2026,9 @@ namespace Win32
 			public uint32 UintOffset;
 			public uint32 StringOffset;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ID3D10DeviceChild : IUnknown
 		{
@@ -3419,9 +3418,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D10ShaderReflection1 self, out BOOL pbSampleFrequency) IsSampleFrequencyShader;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("d3d10.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D10CreateDevice(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HINSTANCE Software, uint32 Flags, uint32 SDKVersion, ID3D10Device** ppDevice);
 		[Import("d3d10.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3480,5 +3479,6 @@ namespace Win32
 		public static extern HRESULT D3D10CreateDevice1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HINSTANCE Software, uint32 Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint32 SDKVersion, ID3D10Device1** ppDevice);
 		[Import("d3d10_1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D10CreateDeviceAndSwapChain1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HINSTANCE Software, uint32 Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint32 SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device1** ppDevice);
+		#endregion
 	}
 }

@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const uint32 WINTRUST_MAX_HEADER_BYTES_TO_MAP_DEFAULT = 10485760;
 		public const uint32 WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT = 1048576;
 		public const uint32 WSS_VERIFY_SEALING = 4;
@@ -58,9 +57,9 @@ namespace Win32
 		public const uint32 WT_TRUSTDBDIALOG_ONLY_PUB_TAB_FLAG = 2;
 		public const uint32 WT_TRUSTDBDIALOG_WRITE_LEGACY_REG_FLAG = 256;
 		public const uint32 WT_TRUSTDBDIALOG_WRITE_IEAK_STORE_FLAG = 512;
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum WINTRUST_GET_DEFAULT_FOR_USAGE_ACTION : uint32
 		{
 			ALLOCANDFILL = 1,
@@ -118,9 +117,9 @@ namespace Win32
 			EXECUTE = 0,
 			INSTALL = 1,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function void* PFN_CPD_MEM_ALLOC(uint32 cbSize);
 		public function void PFN_CPD_MEM_FREE(void* pvMem2Free);
 		public function BOOL PFN_CPD_ADD_STORE(ref CRYPT_PROVIDER_DATA pProvData, void* hStore2Add);
@@ -139,9 +138,9 @@ namespace Win32
 		public function BOOL PFN_ALLOCANDFILLDEFUSAGE(PSTR pszUsageOID, ref CRYPT_PROVIDER_DEFUSAGE psDefUsage);
 		public function BOOL PFN_FREEDEFUSAGE(PSTR pszUsageOID, ref CRYPT_PROVIDER_DEFUSAGE psDefUsage);
 		public function HRESULT PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK(out CRYPT_PROVIDER_DATA pProvData, uint32 dwStepError, uint32 dwRegPolicySettings, uint32 cSigner, out WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO* rgpSigner, void* pvPolicyArg);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct WINTRUST_DATA
 		{
@@ -672,9 +671,9 @@ namespace Win32
 			public CONFIG_CI_PROV_INFO_RESULT result;
 			public uint32 dwScenario;
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WinVerifyTrust(HWND hwnd, out Guid pgActionID, void* pWVTData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
@@ -711,5 +710,6 @@ namespace Win32
 		public static extern BOOL OpenPersonalTrustDBDialog(HWND hwndParent);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);
+		#endregion
 	}
 }

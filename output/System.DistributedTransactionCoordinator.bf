@@ -5,8 +5,7 @@ namespace Win32
 {
 	extension Win32
 	{
-		// --- Constants ---
-		
+		#region Constants
 		public const int32 DTCINSTALL_E_CLIENT_ALREADY_INSTALLED = 384;
 		public const int32 DTCINSTALL_E_SERVER_ALREADY_INSTALLED = 385;
 		public const uint32 XA_SWITCH_F_DTC = 1;
@@ -76,9 +75,9 @@ namespace Win32
 		public const uint32 OLE_TM_FLAG_INTERNAL_TO_TM = 1073741824;
 		public const Guid CLSID_MSDtcTransactionManager = .(0x5b18ab61, 0x091d, 0x11d1, 0x97, 0xdf, 0x00, 0xc0, 0x4f, 0xb9, 0x61, 0x8a);
 		public const Guid CLSID_MSDtcTransaction = .(0x39f8d76b, 0x0928, 0x11d1, 0x97, 0xdf, 0x00, 0xc0, 0x4f, 0xb9, 0x61, 0x8a);
+		#endregion
 		
-		// --- Enums ---
-		
+		#region Enums
 		public enum DTC_STATUS_ : int32
 		{
 			UNKNOWN = 0,
@@ -266,9 +265,9 @@ namespace Win32
 			OK = 1,
 			PROTOCOL = 2,
 		}
+		#endregion
 		
-		// --- Function Pointers ---
-		
+		#region Function pointers
 		public function HRESULT DTC_GET_TRANSACTION_MANAGER(PSTR pszHost, PSTR pszTmName, in Guid rid, uint32 dwReserved1, uint16 wcbReserved2, void* pvReserved2, void** ppvObject);
 		public function HRESULT DTC_GET_TRANSACTION_MANAGER_EX_A(PSTR i_pszHost, PSTR i_pszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
 		public function HRESULT DTC_GET_TRANSACTION_MANAGER_EX_W(PWSTR i_pwszHost, PWSTR i_pwszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
@@ -283,9 +282,9 @@ namespace Win32
 		public function int32 XA_RECOVER_EPT(out xid_t param0, int32 param1, int32 param2, int32 param3);
 		public function int32 XA_FORGET_EPT(out xid_t param0, int32 param1, int32 param2);
 		public function int32 XA_COMPLETE_EPT(out int32 param0, out int32 param1, int32 param2, int32 param3);
+		#endregion
 		
-		// --- Structs ---
-		
+		#region Structs
 		[CRepr]
 		public struct BOID
 		{
@@ -364,9 +363,9 @@ namespace Win32
 		{
 			public uint16 wcThreadsMax;
 		}
+		#endregion
 		
-		// --- COM Interfaces ---
-		
+		#region COM interfaces
 		[CRepr]
 		public struct ITransaction : IUnknown
 		{
@@ -1582,9 +1581,9 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDtcLuSubordinateDtcFactory self, out uint8 pucLuPair, uint32 cbLuPair, ref IUnknown punkTransactionOuter, int32 isoLevel, uint32 isoFlags, ref ITransactionOptions pOptions, out ITransaction* ppTransaction, out uint8 pTransId, uint32 cbTransId, ref IDtcLuSubordinateDtcSink pSubordinateDtcSink, out IDtcLuSubordinateDtc* ppSubordinateDtc) Create;
 			}
 		}
+		#endregion
 		
-		// --- Functions ---
-		
+		#region Functions
 		[Import("xolehlp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DtcGetTransactionManager(PSTR i_pszHost, PSTR i_pszTmName, in Guid i_riid, uint32 i_dwReserved1, uint16 i_wcbReserved2, void* i_pvReserved2, void** o_ppvObject);
 		[Import("xolehlp.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1593,5 +1592,6 @@ namespace Win32
 		public static extern HRESULT DtcGetTransactionManagerExA(PSTR i_pszHost, PSTR i_pszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
 		[Import("xolehlp.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DtcGetTransactionManagerExW(PWSTR i_pwszHost, PWSTR i_pwszTmName, in Guid i_riid, uint32 i_grfOptions, void* i_pvConfigParams, void** o_ppvObject);
+		#endregion
 	}
 }
