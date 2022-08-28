@@ -316,7 +316,9 @@ static
 			public struct _s_e__Struct
 			{
 				public uint32 DataOffset;
-				public uint8[0] Data;
+				public uint8[1] Data_fam;
+				
+				public uint8* Data mut => &Data_fam[0];
 			}
 		}
 	}

@@ -1568,7 +1568,9 @@ static
 	public struct PATCH_INTERLEAVE_MAP
 	{
 		public uint32 CountRanges;
-		public _Anonymous_e__Struct[0] Range;
+		public _Anonymous_e__Struct[1] Range_fam;
+		
+		public _Anonymous_e__Struct* Range mut => &Range_fam[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -1684,7 +1686,9 @@ static
 	public struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
 	{
 		public uint32 ElementCount;
-		public COMPATIBILITY_CONTEXT_ELEMENT[0] Elements;
+		public COMPATIBILITY_CONTEXT_ELEMENT[1] Elements_fam;
+		
+		public COMPATIBILITY_CONTEXT_ELEMENT* Elements mut => &Elements_fam[0];
 	}
 	[CRepr]
 	public struct ACTIVATION_CONTEXT_DETAILED_INFORMATION

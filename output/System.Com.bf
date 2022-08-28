@@ -646,33 +646,43 @@ static
 	public struct BYTE_BLOB
 	{
 		public uint32 clSize;
-		public uint8[0] abData;
+		public uint8[1] abData_fam;
+		
+		public uint8* abData mut => &abData_fam[0];
 	}
 	[CRepr]
 	public struct WORD_BLOB
 	{
 		public uint32 clSize;
-		public uint16[0] asData;
+		public uint16[1] asData_fam;
+		
+		public uint16* asData mut => &asData_fam[0];
 	}
 	[CRepr]
 	public struct DWORD_BLOB
 	{
 		public uint32 clSize;
-		public uint32[0] alData;
+		public uint32[1] alData_fam;
+		
+		public uint32* alData mut => &alData_fam[0];
 	}
 	[CRepr]
 	public struct FLAGGED_BYTE_BLOB
 	{
 		public uint32 fFlags;
 		public uint32 clSize;
-		public uint8[0] abData;
+		public uint8[1] abData_fam;
+		
+		public uint8* abData mut => &abData_fam[0];
 	}
 	[CRepr]
 	public struct FLAGGED_WORD_BLOB
 	{
 		public uint32 fFlags;
 		public uint32 clSize;
-		public uint16[0] asData;
+		public uint16[1] asData_fam;
+		
+		public uint16* asData mut => &asData_fam[0];
 	}
 	[CRepr]
 	public struct BYTE_SIZEDARR
@@ -816,7 +826,9 @@ static
 		public uint16 tdDeviceNameOffset;
 		public uint16 tdPortNameOffset;
 		public uint16 tdExtDevmodeOffset;
-		public uint8[0] tdData;
+		public uint8[1] tdData_fam;
+		
+		public uint8* tdData mut => &tdData_fam[0];
 	}
 	[CRepr]
 	public struct FORMATETC
@@ -843,7 +855,9 @@ static
 		public uint32 pData;
 		public uint32 pUnkForRelease;
 		public uint32 cbData;
-		public uint8[0] data;
+		public uint8[1] data_fam;
+		
+		public uint8* data mut => &data_fam[0];
 	}
 	[CRepr]
 	public struct STGMEDIUM
@@ -983,7 +997,9 @@ static
 		public uint32 cbElements;
 		public uint32 cLocks;
 		public void* pvData;
-		public SAFEARRAYBOUND[0] rgsabound;
+		public SAFEARRAYBOUND[1] rgsabound_fam;
+		
+		public SAFEARRAYBOUND* rgsabound mut => &rgsabound_fam[0];
 	}
 	[CRepr]
 	public struct VARIANT

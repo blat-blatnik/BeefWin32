@@ -216,7 +216,9 @@ static
 	{
 		public uint32 NumberOfAssignedProcesses;
 		public uint32 NumberOfProcessIdsInList;
-		public uint[0] ProcessIdList;
+		public uint[1] ProcessIdList_fam;
+		
+		public uint* ProcessIdList mut => &ProcessIdList_fam[0];
 	}
 	[CRepr]
 	public struct JOBOBJECT_BASIC_UI_RESTRICTIONS

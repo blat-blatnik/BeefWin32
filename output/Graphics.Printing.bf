@@ -3134,7 +3134,9 @@ static
 		public uint32 Version;
 		public uint32 Flags;
 		public uint32 Count;
-		public PRINTER_NOTIFY_INFO_DATA[0] aData;
+		public PRINTER_NOTIFY_INFO_DATA[1] aData_fam;
+		
+		public PRINTER_NOTIFY_INFO_DATA* aData mut => &aData_fam[0];
 	}
 	[CRepr]
 	public struct BINARY_CONTAINER
@@ -3171,7 +3173,9 @@ static
 		public uint32 Version;
 		public uint32 Flags;
 		public uint32 Count;
-		public BIDI_REQUEST_DATA[0] aData;
+		public BIDI_REQUEST_DATA[1] aData_fam;
+		
+		public BIDI_REQUEST_DATA* aData mut => &aData_fam[0];
 	}
 	[CRepr]
 	public struct BIDI_RESPONSE_DATA
@@ -3187,7 +3191,9 @@ static
 		public uint32 Version;
 		public uint32 Flags;
 		public uint32 Count;
-		public BIDI_RESPONSE_DATA[0] aData;
+		public BIDI_RESPONSE_DATA[1] aData_fam;
+		
+		public BIDI_RESPONSE_DATA* aData mut => &aData_fam[0];
 	}
 	[CRepr]
 	public struct PROVIDOR_INFO_1A
@@ -3305,13 +3311,17 @@ static
 	public struct MxdcGetFileNameData
 	{
 		public uint32 cbOutput;
-		public char16[0] wszData;
+		public char16[1] wszData_fam;
+		
+		public char16* wszData mut => &wszData_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MxdcS0PageData
 	{
 		public uint32 dwSize;
-		public uint8[0] bData;
+		public uint8[1] bData_fam;
+		
+		public uint8* bData mut => &bData_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MxdcXpsS0PageResource
@@ -3320,13 +3330,17 @@ static
 		public uint32 dwResourceType;
 		public uint8[260] szUri;
 		public uint32 dwDataSize;
-		public uint8[0] bData;
+		public uint8[1] bData_fam;
+		
+		public uint8* bData mut => &bData_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MxdcPrintTicketPassthrough
 	{
 		public uint32 dwDataSize;
-		public uint8[0] bData;
+		public uint8[1] bData_fam;
+		
+		public uint8* bData mut => &bData_fam[0];
 	}
 	[CRepr]
 	public struct MxdcPrintTicketEscape
@@ -3407,7 +3421,9 @@ static
 		public uint32 cElementsAllocated;
 		public uint32 cElementsNeeded;
 		public uint32 cElementsReturned;
-		public uint32[0] aDocEventCall;
+		public uint32[1] aDocEventCall_fam;
+		
+		public uint32* aDocEventCall mut => &aDocEventCall_fam[0];
 	}
 	[CRepr]
 	public struct DOCEVENT_CREATEDCPRE
@@ -3744,14 +3760,18 @@ static
 	{
 		public uint32 dwSize;
 		public uint32 dwRunNum;
-		public WIDTHRUN[0] WidthRun;
+		public WIDTHRUN[1] WidthRun_fam;
+		
+		public WIDTHRUN* WidthRun mut => &WidthRun_fam[0];
 	}
 	[CRepr]
 	public struct KERNDATA
 	{
 		public uint32 dwSize;
 		public uint32 dwKernPairNum;
-		public FD_KERNINGPAIR[0] KernPair;
+		public FD_KERNINGPAIR[1] KernPair_fam;
+		
+		public FD_KERNINGPAIR* KernPair mut => &KernPair_fam[0];
 	}
 	[CRepr]
 	public struct UNI_GLYPHSETDATA
@@ -3801,7 +3821,9 @@ static
 	{
 		public uint32 dwSize;
 		public uint32 dwGlyphNum;
-		public TRANSDATA[0] Trans;
+		public TRANSDATA[1] Trans_fam;
+		
+		public TRANSDATA* Trans mut => &Trans_fam[0];
 	}
 	[CRepr]
 	public struct UFF_FILEHEADER
@@ -3891,7 +3913,9 @@ static
 	{
 		public uint32 dwVersion;
 		public uint32 cPortData;
-		public PORT_DATA_2[0] pPortData;
+		public PORT_DATA_2[1] pPortData_fam;
+		
+		public PORT_DATA_2* pPortData mut => &pPortData_fam[0];
 	}
 	[CRepr]
 	public struct DELETE_PORT_DATA_1
@@ -3979,7 +4003,9 @@ static
 	public struct BranchOfficeJobDataContainer
 	{
 		public uint32 cJobDataEntries;
-		public BranchOfficeJobData[0] JobData;
+		public BranchOfficeJobData[1] JobData_fam;
+		
+		public BranchOfficeJobData* JobData mut => &JobData_fam[0];
 	}
 	[CRepr]
 	public struct PRINTER_NOTIFY_INIT

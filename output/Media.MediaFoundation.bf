@@ -7349,7 +7349,9 @@ static
 	{
 		public uint32 Format;
 		public uint32 PaletteEntries;
-		public MFPaletteEntry[0] Palette;
+		public MFPaletteEntry[1] Palette_fam;
+		
+		public MFPaletteEntry* Palette mut => &Palette_fam[0];
 	}
 	[CRepr]
 	public struct MFVideoCompressedInfo
@@ -7516,7 +7518,9 @@ static
 		public uint32 cbExtensionOffset;
 		public uint32 cbExtensionSize;
 		public uint32 cActions;
-		public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[0] rgOutputActions;
+		public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[1] rgOutputActions_fam;
+		
+		public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION* rgOutputActions mut => &rgOutputActions_fam[0];
 	}
 	[CRepr]
 	public struct MF_TRANSCODE_SINK_INFO
@@ -7662,14 +7666,18 @@ static
 	{
 		public uint32 FrameNumber;
 		public uint32 NumDirtyRects;
-		public RECT[0] DirtyRects;
+		public RECT[1] DirtyRects_fam;
+		
+		public RECT* DirtyRects mut => &DirtyRects_fam[0];
 	}
 	[CRepr]
 	public struct MOVEREGION_INFO
 	{
 		public uint32 FrameNumber;
 		public uint32 NumMoveRegions;
-		public MOVE_RECT[0] MoveRegions;
+		public MOVE_RECT[1] MoveRegions_fam;
+		
+		public MOVE_RECT* MoveRegions mut => &MoveRegions_fam[0];
 	}
 	[CRepr]
 	public struct ROI_AREA
@@ -7755,7 +7763,9 @@ static
 	public struct MFCameraExtrinsics
 	{
 		public uint32 TransformCount;
-		public MFCameraExtrinsic_CalibratedTransform[0] CalibratedTransforms;
+		public MFCameraExtrinsic_CalibratedTransform[1] CalibratedTransforms_fam;
+		
+		public MFCameraExtrinsic_CalibratedTransform* CalibratedTransforms mut => &CalibratedTransforms_fam[0];
 	}
 	[CRepr]
 	public struct MFCameraIntrinsic_PinholeCameraModel
@@ -7784,7 +7794,9 @@ static
 	public struct MFPinholeCameraIntrinsics
 	{
 		public uint32 IntrinsicModelCount;
-		public MFPinholeCameraIntrinsic_IntrinsicModel[0] IntrinsicModels;
+		public MFPinholeCameraIntrinsic_IntrinsicModel[1] IntrinsicModels_fam;
+		
+		public MFPinholeCameraIntrinsic_IntrinsicModel* IntrinsicModels mut => &IntrinsicModels_fam[0];
 	}
 	[CRepr]
 	public struct MFMPEG2DLNASINKSTATS

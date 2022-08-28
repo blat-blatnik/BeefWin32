@@ -4496,14 +4496,18 @@ static
 	{
 		public uint32 mkSize;
 		public CHAR mkKeylist;
-		public CHAR[0] szKeyphrase;
+		public CHAR[1] szKeyphrase_fam;
+		
+		public CHAR* szKeyphrase mut => &szKeyphrase_fam[0];
 	}
 	[CRepr]
 	public struct MULTIKEYHELPW
 	{
 		public uint32 mkSize;
 		public char16 mkKeylist;
-		public char16[0] szKeyphrase;
+		public char16[1] szKeyphrase_fam;
+		
+		public char16* szKeyphrase mut => &szKeyphrase_fam[0];
 	}
 	[CRepr]
 	public struct HELPWININFOA
@@ -4684,7 +4688,9 @@ static
 		public uint16 cbSize;
 		public uint16 wOuter;
 		public uint16 cbInner;
-		public uint8[0] rgb;
+		public uint8[1] rgb_fam;
+		
+		public uint8* rgb mut => &rgb_fam[0];
 	}
 	[CRepr]
 	public struct SMDATA
@@ -4824,7 +4830,9 @@ static
 	{
 		public uint32 cbSize;
 		public uint32 dwSignature;
-		public uint8[0] abPropertyStorage;
+		public uint8[1] abPropertyStorage_fam;
+		
+		public uint8* abPropertyStorage mut => &abPropertyStorage_fam[0];
 	}
 	[CRepr]
 	public struct SHFOLDERCUSTOMSETTINGS
@@ -4873,13 +4881,17 @@ static
 	public struct NRESARRAY
 	{
 		public uint32 cItems;
-		public NETRESOURCEA[0] nr;
+		public NETRESOURCEA[1] nr_fam;
+		
+		public NETRESOURCEA* nr mut => &nr_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct CIDA
 	{
 		public uint32 cidl;
-		public uint32[0] aoffset;
+		public uint32[1] aoffset_fam;
+		
+		public uint32* aoffset mut => &aoffset_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct FILEDESCRIPTORA
@@ -4915,13 +4927,17 @@ static
 	public struct FILEGROUPDESCRIPTORA
 	{
 		public uint32 cItems;
-		public FILEDESCRIPTORA[0] fgd;
+		public FILEDESCRIPTORA[1] fgd_fam;
+		
+		public FILEDESCRIPTORA* fgd mut => &fgd_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct FILEGROUPDESCRIPTORW
 	{
 		public uint32 cItems;
-		public FILEDESCRIPTORW[0] fgd;
+		public FILEDESCRIPTORW[1] fgd_fam;
+		
+		public FILEDESCRIPTORW* fgd mut => &fgd_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DROPFILES
@@ -4937,7 +4953,9 @@ static
 		public uint32 cItems;
 		public uint32 dwSumFileAttributes;
 		public uint32 dwProductFileAttributes;
-		public uint32[0] rgdwFileAttributes;
+		public uint32[1] rgdwFileAttributes_fam;
+		
+		public uint32* rgdwFileAttributes mut => &rgdwFileAttributes_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DROPDESCRIPTION
@@ -5029,7 +5047,9 @@ static
 	public struct QCMINFO_IDMAP
 	{
 		public uint32 nMaxIds;
-		public QCMINFO_IDMAP_PLACEMENT[0] pIdList;
+		public QCMINFO_IDMAP_PLACEMENT[1] pIdList_fam;
+		
+		public QCMINFO_IDMAP_PLACEMENT* pIdList mut => &pIdList_fam[0];
 	}
 	[CRepr]
 	public struct QCMINFO
@@ -5207,7 +5227,9 @@ static
 	{
 		public int16 cbTotal;
 		public uint8[12] rgbReserved;
-		public char16[0] szFileName;
+		public char16[1] szFileName_fam;
+		
+		public char16* szFileName mut => &szFileName_fam[0];
 	}
 	[CRepr]
 	public struct AASHELLMENUITEM

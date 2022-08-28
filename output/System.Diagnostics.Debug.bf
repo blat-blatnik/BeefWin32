@@ -4127,7 +4127,9 @@ static
 		public uint16 Processor;
 		public uint32 Address;
 		public uint32 BufLen;
-		public uint8[0] Buf;
+		public uint8[1] Buf_fam;
+		
+		public uint8* Buf mut => &Buf_fam[0];
 	}
 	[CRepr]
 	public struct READCONTROLSPACE32
@@ -4135,7 +4137,9 @@ static
 		public uint16 Processor;
 		public uint32 Address;
 		public uint32 BufLen;
-		public uint8[0] Buf;
+		public uint8[1] Buf_fam;
+		
+		public uint8* Buf mut => &Buf_fam[0];
 	}
 	[CRepr]
 	public struct READCONTROLSPACE64
@@ -4143,7 +4147,9 @@ static
 		public uint16 Processor;
 		public uint64 Address;
 		public uint32 BufLen;
-		public uint8[0] Buf;
+		public uint8[1] Buf_fam;
+		
+		public uint8* Buf mut => &Buf_fam[0];
 	}
 	[CRepr]
 	public struct IOSPACE
@@ -4220,7 +4226,9 @@ static
 	{
 		public uint64 Address;
 		public uint32 BufLen;
-		public uint8[0] Buf;
+		public uint8[1] Buf_fam;
+		
+		public uint8* Buf mut => &Buf_fam[0];
 	}
 	[CRepr]
 	public struct PHYSICAL_WITH_FLAGS
@@ -4228,7 +4236,9 @@ static
 		public uint64 Address;
 		public uint32 BufLen;
 		public uint32 Flags;
-		public uint8[0] Buf;
+		public uint8[1] Buf_fam;
+		
+		public uint8* Buf mut => &Buf_fam[0];
 	}
 	[CRepr]
 	public struct READ_WRITE_MSR
@@ -4537,10 +4547,12 @@ static
 		public uint8 MaxStateChange;
 		public uint8 MaxManipulate;
 		public uint8 Simulation;
-		public uint16[0] Unused;
+		public uint16[1] Unused_fam;
 		public uint64 KernBase;
 		public uint64 PsLoadedModuleList;
 		public uint64 DebuggerDataList;
+		
+		public uint16* Unused mut => &Unused_fam[0];
 	}
 	[CRepr]
 	public struct DBGKD_DEBUG_DATA_HEADER64
@@ -5601,7 +5613,9 @@ static
 	public struct MINIDUMP_STRING
 	{
 		public uint32 Length;
-		public char16[0] Buffer;
+		public char16[1] Buffer_fam;
+		
+		public char16* Buffer mut => &Buffer_fam[0];
 	}
 	[CRepr, Union]
 	public struct CPU_INFORMATION
@@ -5680,7 +5694,9 @@ static
 	public struct MINIDUMP_THREAD_LIST
 	{
 		public uint32 NumberOfThreads;
-		public MINIDUMP_THREAD[0] Threads;
+		public MINIDUMP_THREAD[1] Threads_fam;
+		
+		public MINIDUMP_THREAD* Threads mut => &Threads_fam[0];
 	}
 	[CRepr, Packed(4)]
 	public struct MINIDUMP_THREAD_EX
@@ -5698,7 +5714,9 @@ static
 	public struct MINIDUMP_THREAD_EX_LIST
 	{
 		public uint32 NumberOfThreads;
-		public MINIDUMP_THREAD_EX[0] Threads;
+		public MINIDUMP_THREAD_EX[1] Threads_fam;
+		
+		public MINIDUMP_THREAD_EX* Threads mut => &Threads_fam[0];
 	}
 	[CRepr, Packed(4)]
 	public struct MINIDUMP_EXCEPTION
@@ -5737,20 +5755,26 @@ static
 	public struct MINIDUMP_MODULE_LIST
 	{
 		public uint32 NumberOfModules;
-		public MINIDUMP_MODULE[0] Modules;
+		public MINIDUMP_MODULE[1] Modules_fam;
+		
+		public MINIDUMP_MODULE* Modules mut => &Modules_fam[0];
 	}
 	[CRepr]
 	public struct MINIDUMP_MEMORY_LIST
 	{
 		public uint32 NumberOfMemoryRanges;
-		public MINIDUMP_MEMORY_DESCRIPTOR[0] MemoryRanges;
+		public MINIDUMP_MEMORY_DESCRIPTOR[1] MemoryRanges_fam;
+		
+		public MINIDUMP_MEMORY_DESCRIPTOR* MemoryRanges mut => &MemoryRanges_fam[0];
 	}
 	[CRepr, Packed(4)]
 	public struct MINIDUMP_MEMORY64_LIST
 	{
 		public uint64 NumberOfMemoryRanges;
 		public uint64 BaseRva;
-		public MINIDUMP_MEMORY_DESCRIPTOR64[0] MemoryRanges;
+		public MINIDUMP_MEMORY_DESCRIPTOR64[1] MemoryRanges_fam;
+		
+		public MINIDUMP_MEMORY_DESCRIPTOR64* MemoryRanges mut => &MemoryRanges_fam[0];
 	}
 	[CRepr, Packed(4)]
 	public struct MINIDUMP_EXCEPTION_INFORMATION
@@ -5978,7 +6002,9 @@ static
 	public struct MINIDUMP_THREAD_NAME_LIST
 	{
 		public uint32 NumberOfThreadNames;
-		public MINIDUMP_THREAD_NAME[0] ThreadNames;
+		public MINIDUMP_THREAD_NAME[1] ThreadNames_fam;
+		
+		public MINIDUMP_THREAD_NAME* ThreadNames mut => &ThreadNames_fam[0];
 	}
 	[CRepr, Packed(4)]
 	public struct MINIDUMP_THREAD_INFO
@@ -6393,7 +6419,9 @@ static
 	public struct PROFILER_HEAP_OBJECT_SCOPE_LIST
 	{
 		public uint32 count;
-		public uint[0] scopes;
+		public uint[1] scopes_fam;
+		
+		public uint* scopes mut => &scopes_fam[0];
 	}
 	[CRepr]
 	public struct PROFILER_PROPERTY_TYPE_SUBSTRING_INFO
@@ -6423,7 +6451,9 @@ static
 	public struct PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST
 	{
 		public uint32 count;
-		public PROFILER_HEAP_OBJECT_RELATIONSHIP[0] elements;
+		public PROFILER_HEAP_OBJECT_RELATIONSHIP[1] elements_fam;
+		
+		public PROFILER_HEAP_OBJECT_RELATIONSHIP* elements mut => &elements_fam[0];
 	}
 	[CRepr]
 	public struct PROFILER_HEAP_OBJECT_OPTIONAL_INFO
@@ -6591,7 +6621,9 @@ static
 		public uint32 Size;
 		public uint32 Flags;
 		public uint32 MaxNameLength;
-		public CHAR[0] Name;
+		public CHAR[1] Name_fam;
+		
+		public CHAR* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct IMAGEHLP_SYMBOL64_PACKAGE
@@ -6607,7 +6639,9 @@ static
 		public uint32 Size;
 		public uint32 Flags;
 		public uint32 MaxNameLength;
-		public char16[0] Name;
+		public char16[1] Name_fam;
+		
+		public char16* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct IMAGEHLP_SYMBOLW64_PACKAGE
@@ -6818,7 +6852,9 @@ static
 	{
 		public uint16 dataLength;
 		public uint16 leaf;
-		public uint8[0] data;
+		public uint8[1] data_fam;
+		
+		public uint8* data mut => &data_fam[0];
 	}
 	[CRepr]
 	public struct SYMBOL_INFO
@@ -6837,7 +6873,9 @@ static
 		public uint32 Tag;
 		public uint32 NameLen;
 		public uint32 MaxNameLen;
-		public CHAR[0] Name;
+		public CHAR[1] Name_fam;
+		
+		public CHAR* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct SYMBOL_INFO_PACKAGE
@@ -6862,7 +6900,9 @@ static
 		public uint32 Tag;
 		public uint32 NameLen;
 		public uint32 MaxNameLen;
-		public char16[0] Name;
+		public char16[1] Name_fam;
+		
+		public char16* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct SYMBOL_INFO_PACKAGEW
@@ -6889,7 +6929,9 @@ static
 	{
 		public uint32 Count;
 		public uint32 Start;
-		public uint32[0] ChildId;
+		public uint32[1] ChildId_fam;
+		
+		public uint32* ChildId mut => &ChildId_fam[0];
 	}
 	[CRepr]
 	public struct IMAGEHLP_GET_TYPE_INFO_PARAMS
@@ -6988,7 +7030,9 @@ static
 	{
 		public uint32 NumberOfRuns;
 		public uint32 NumberOfPages;
-		public PHYSICAL_MEMORY_RUN32[0] Run;
+		public PHYSICAL_MEMORY_RUN32[1] Run_fam;
+		
+		public PHYSICAL_MEMORY_RUN32* Run mut => &Run_fam[0];
 	}
 	[CRepr]
 	public struct PHYSICAL_MEMORY_RUN64
@@ -7001,7 +7045,9 @@ static
 	{
 		public uint32 NumberOfRuns;
 		public uint64 NumberOfPages;
-		public PHYSICAL_MEMORY_RUN64[0] Run;
+		public PHYSICAL_MEMORY_RUN64[1] Run_fam;
+		
+		public PHYSICAL_MEMORY_RUN64* Run mut => &Run_fam[0];
 	}
 	[CRepr, Union]
 	public struct DUMP_FILE_ATTRIBUTES
@@ -7546,7 +7592,9 @@ static
 		public uint32 Length;
 		public IPMI_OS_SEL_RECORD_TYPE RecordType;
 		public uint32 DataLength;
-		public uint8[0] Data;
+		public uint8[1] Data_fam;
+		
+		public uint8* Data mut => &Data_fam[0];
 	}
 	[CRepr]
 	public struct IMAGE_DEBUG_INFORMATION
@@ -7629,7 +7677,9 @@ static
 		public uint32 Size;
 		public uint32 Flags;
 		public uint32 MaxNameLength;
-		public CHAR[0] Name;
+		public CHAR[1] Name_fam;
+		
+		public CHAR* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct IMAGEHLP_SYMBOL_PACKAGE
@@ -7645,7 +7695,9 @@ static
 		public uint32 Size;
 		public uint32 Flags;
 		public uint32 MaxNameLength;
-		public char16[0] Name;
+		public char16[1] Name_fam;
+		
+		public char16* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct IMAGEHLP_SYMBOLW_PACKAGE

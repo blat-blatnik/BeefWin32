@@ -835,7 +835,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint32 FixedInstanceSize;
-			public OFFSETINSTANCEDATAANDLENGTH[0] OffsetInstanceDataAndLength;
+			public OFFSETINSTANCEDATAANDLENGTH[1] OffsetInstanceDataAndLength_fam;
+			
+			public OFFSETINSTANCEDATAANDLENGTH* OffsetInstanceDataAndLength mut => &OffsetInstanceDataAndLength_fam[0];
 		}
 	}
 	[CRepr]
@@ -846,7 +848,9 @@ static
 		public uint32 InstanceIndex;
 		public uint32 DataBlockOffset;
 		public uint32 SizeDataBlock;
-		public uint8[0] VariableData;
+		public uint8[1] VariableData_fam;
+		
+		public uint8* VariableData mut => &VariableData_fam[0];
 	}
 	[CRepr]
 	public struct WNODE_SINGLE_ITEM
@@ -857,7 +861,9 @@ static
 		public uint32 ItemId;
 		public uint32 DataBlockOffset;
 		public uint32 SizeDataItem;
-		public uint8[0] VariableData;
+		public uint8[1] VariableData_fam;
+		
+		public uint8* VariableData mut => &VariableData_fam[0];
 	}
 	[CRepr]
 	public struct WNODE_METHOD_ITEM
@@ -868,7 +874,9 @@ static
 		public uint32 MethodId;
 		public uint32 DataBlockOffset;
 		public uint32 SizeDataBlock;
-		public uint8[0] VariableData;
+		public uint8[1] VariableData_fam;
+		
+		public uint8* VariableData mut => &VariableData_fam[0];
 	}
 	[CRepr]
 	public struct WNODE_EVENT_ITEM
@@ -887,7 +895,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public uint32 TargetInstanceIndex;
-			public char16[0] TargetInstanceName;
+			public char16[1] TargetInstanceName_fam;
+			
+			public char16* TargetInstanceName mut => &TargetInstanceName_fam[0];
 		}
 	}
 	[CRepr]
@@ -921,7 +931,9 @@ static
 		public uint32 RegistryPath;
 		public uint32 MofResourceName;
 		public uint32 GuidCount;
-		public WMIREGGUIDW[0] WmiRegGuid;
+		public WMIREGGUIDW[1] WmiRegGuid_fam;
+		
+		public WMIREGGUIDW* WmiRegGuid mut => &WmiRegGuid_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_TRACE_HEADER
@@ -1380,7 +1392,9 @@ static
 		public uint32 MinInterval;
 		public uint32 MaxInterval;
 		public uint64 Reserved;
-		public char16[0] Description;
+		public char16[1] Description_fam;
+		
+		public char16* Description mut => &Description_fam[0];
 	}
 	[CRepr]
 	public struct ETW_PMC_COUNTER_OWNER
@@ -1394,7 +1408,9 @@ static
 	{
 		public uint32 ProcessorNumber;
 		public uint32 NumberOfCounters;
-		public ETW_PMC_COUNTER_OWNER[0] CounterOwners;
+		public ETW_PMC_COUNTER_OWNER[1] CounterOwners_fam;
+		
+		public ETW_PMC_COUNTER_OWNER* CounterOwners mut => &CounterOwners_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_TRACE
@@ -1600,7 +1616,9 @@ static
 		public BOOLEAN FilterIn;
 		public uint8 Reserved;
 		public uint16 Count;
-		public uint16[0] Events;
+		public uint16[1] Events_fam;
+		
+		public uint16* Events mut => &Events_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_FILTER_EVENT_NAME
@@ -1610,7 +1628,9 @@ static
 		public uint8 Level;
 		public BOOLEAN FilterIn;
 		public uint16 NameCount;
-		public uint8[0] Names;
+		public uint8[1] Names_fam;
+		
+		public uint8* Names mut => &Names_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_FILTER_LEVEL_KW
@@ -1656,13 +1676,17 @@ static
 	public struct EVENT_EXTENDED_ITEM_STACK_TRACE32
 	{
 		public uint64 MatchId;
-		public uint32[0] Address;
+		public uint32[1] Address_fam;
+		
+		public uint32* Address mut => &Address_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_EXTENDED_ITEM_STACK_TRACE64
 	{
 		public uint64 MatchId;
-		public uint64[0] Address;
+		public uint64[1] Address_fam;
+		
+		public uint64* Address mut => &Address_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_EXTENDED_ITEM_STACK_KEY32
@@ -1685,7 +1709,9 @@ static
 	[CRepr]
 	public struct EVENT_EXTENDED_ITEM_PMC_COUNTERS
 	{
-		public uint64[0] Counter;
+		public uint64[1] Counter_fam;
+		
+		public uint64* Counter mut => &Counter_fam[0];
 	}
 	[CRepr]
 	public struct EVENT_EXTENDED_ITEM_PROCESS_START_KEY
@@ -1757,7 +1783,9 @@ static
 		public MAP_FLAGS Flag;
 		public uint32 EntryCount;
 		public using _Anonymous_e__Union Anonymous;
-		public EVENT_MAP_ENTRY[0] MapEntryArray;
+		public EVENT_MAP_ENTRY[1] MapEntryArray_fam;
+		
+		public EVENT_MAP_ENTRY* MapEntryArray mut => &MapEntryArray_fam[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -1852,7 +1880,9 @@ static
 		public uint32 PropertyCount;
 		public uint32 TopLevelPropertyCount;
 		public _Anonymous3_e__Union Anonymous3;
-		public EVENT_PROPERTY_INFO[0] EventPropertyInfoArray;
+		public EVENT_PROPERTY_INFO[1] EventPropertyInfoArray_fam;
+		
+		public EVENT_PROPERTY_INFO* EventPropertyInfoArray mut => &EventPropertyInfoArray_fam[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous3_e__Union
@@ -1901,7 +1931,9 @@ static
 		public uint32 MessageOffset;
 		public uint32 Reserved;
 		public uint32 PropertyCount;
-		public EVENT_PROPERTY_INFO[0] EventPropertyInfoArray;
+		public EVENT_PROPERTY_INFO[1] EventPropertyInfoArray_fam;
+		
+		public EVENT_PROPERTY_INFO* EventPropertyInfoArray mut => &EventPropertyInfoArray_fam[0];
 	}
 	[CRepr]
 	public struct PROVIDER_FIELD_INFO
@@ -1915,7 +1947,9 @@ static
 	{
 		public uint32 NumberOfElements;
 		public EVENT_FIELD_TYPE FieldType;
-		public PROVIDER_FIELD_INFO[0] FieldInfoArray;
+		public PROVIDER_FIELD_INFO[1] FieldInfoArray_fam;
+		
+		public PROVIDER_FIELD_INFO* FieldInfoArray mut => &FieldInfoArray_fam[0];
 	}
 	[CRepr]
 	public struct TRACE_PROVIDER_INFO
@@ -1929,14 +1963,18 @@ static
 	{
 		public uint32 NumberOfProviders;
 		public uint32 Reserved;
-		public TRACE_PROVIDER_INFO[0] TraceProviderInfoArray;
+		public TRACE_PROVIDER_INFO[1] TraceProviderInfoArray_fam;
+		
+		public TRACE_PROVIDER_INFO* TraceProviderInfoArray mut => &TraceProviderInfoArray_fam[0];
 	}
 	[CRepr]
 	public struct PROVIDER_EVENT_INFO
 	{
 		public uint32 NumberOfEvents;
 		public uint32 Reserved;
-		public EVENT_DESCRIPTOR[0] EventDescriptorsArray;
+		public EVENT_DESCRIPTOR[1] EventDescriptorsArray_fam;
+		
+		public EVENT_DESCRIPTOR* EventDescriptorsArray mut => &EventDescriptorsArray_fam[0];
 	}
 	[CRepr]
 	public struct TDH_CONTEXT

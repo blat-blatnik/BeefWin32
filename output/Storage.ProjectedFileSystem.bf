@@ -173,7 +173,9 @@ static
 		public _SecurityInformation_e__Struct SecurityInformation;
 		public _StreamsInformation_e__Struct StreamsInformation;
 		public PRJ_PLACEHOLDER_VERSION_INFO VersionInfo;
-		public uint8[0] VariableData;
+		public uint8[1] VariableData_fam;
+		
+		public uint8* VariableData mut => &VariableData_fam[0];
 		
 		[CRepr]
 		public struct _StreamsInformation_e__Struct

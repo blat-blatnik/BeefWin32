@@ -4530,7 +4530,9 @@ static
 	{
 		public int16 MaximumLength;
 		public int16 Length;
-		public CHAR[0] Buffer;
+		public CHAR[1] Buffer_fam;
+		
+		public CHAR* Buffer mut => &Buffer_fam[0];
 	}
 	[CRepr]
 	public struct NETWORK_NAME
@@ -4585,7 +4587,9 @@ static
 		public uint32 Version;
 		public uint32 Size;
 		public uint32 TocEntriesCount;
-		public RTR_TOC_ENTRY[0] TocEntry;
+		public RTR_TOC_ENTRY[1] TocEntry_fam;
+		
+		public RTR_TOC_ENTRY* TocEntry mut => &TocEntry_fam[0];
 	}
 	[CRepr]
 	public struct MPR_PROTOCOL_0

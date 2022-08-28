@@ -2182,7 +2182,9 @@ static
 	public struct CLFS_LOG_NAME_INFORMATION
 	{
 		public uint16 NameLengthInBytes;
-		public char16[0] Name;
+		public char16[1] Name_fam;
+		
+		public char16* Name mut => &Name_fam[0];
 	}
 	[CRepr]
 	public struct CLFS_STREAM_ID_INFORMATION
@@ -2274,13 +2276,17 @@ static
 			public struct _NewContainerExtension_e__Struct
 			{
 				public uint16 ExtensionLengthInBytes;
-				public char16[0] ExtensionString;
+				public char16[1] ExtensionString_fam;
+				
+				public char16* ExtensionString mut => &ExtensionString_fam[0];
 			}
 			[CRepr]
 			public struct _NewContainerPrefix_e__Struct
 			{
 				public uint16 PrefixLengthInBytes;
-				public char16[0] PrefixString;
+				public char16[1] PrefixString_fam;
+				
+				public char16* PrefixString mut => &PrefixString_fam[0];
 			}
 			[CRepr]
 			public struct _AutoShrink_e__Struct
@@ -2545,7 +2551,9 @@ static
 	public struct VOLUME_FAILOVER_SET
 	{
 		public uint32 NumberOfDisks;
-		public uint32[0] DiskNumbers;
+		public uint32[1] DiskNumbers_fam;
+		
+		public uint32* DiskNumbers mut => &DiskNumbers_fam[0];
 	}
 	[CRepr]
 	public struct VOLUME_NUMBER
@@ -2568,7 +2576,9 @@ static
 	public struct VOLUME_PHYSICAL_OFFSETS
 	{
 		public uint32 NumberOfPhysicalOffsets;
-		public VOLUME_PHYSICAL_OFFSET[0] PhysicalOffset;
+		public VOLUME_PHYSICAL_OFFSET[1] PhysicalOffset_fam;
+		
+		public VOLUME_PHYSICAL_OFFSET* PhysicalOffset mut => &PhysicalOffset_fam[0];
 	}
 	[CRepr]
 	public struct VOLUME_READ_PLEX_INPUT
@@ -2637,7 +2647,9 @@ static
 	{
 		public uint32 AccessType;
 		public uint32 ExtentsCount;
-		public FILE_EXTENT[0] Extents;
+		public FILE_EXTENT[1] Extents_fam;
+		
+		public FILE_EXTENT* Extents mut => &Extents_fam[0];
 	}
 	[CRepr]
 	public struct VOLUME_ALLOCATION_HINT_INPUT
@@ -2649,7 +2661,9 @@ static
 	[CRepr]
 	public struct VOLUME_ALLOCATION_HINT_OUTPUT
 	{
-		public uint32[0] Bitmap;
+		public uint32[1] Bitmap_fam;
+		
+		public uint32* Bitmap mut => &Bitmap_fam[0];
 	}
 	[CRepr]
 	public struct VOLUME_SHRINK_INFO
@@ -3019,7 +3033,9 @@ static
 		public uint32 NextEntryOffset;
 		public FILE_ACTION Action;
 		public uint32 FileNameLength;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_NOTIFY_EXTENDED_INFORMATION
@@ -3037,7 +3053,9 @@ static
 		public LARGE_INTEGER FileId;
 		public LARGE_INTEGER ParentFileId;
 		public uint32 FileNameLength;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr, Union]
 	public struct FILE_SEGMENT_ELEMENT
@@ -3057,7 +3075,9 @@ static
 		[CRepr]
 		public struct _GenericReparseBuffer_e__Struct
 		{
-			public uint8[0] DataBuffer;
+			public uint8[1] DataBuffer_fam;
+			
+			public uint8* DataBuffer mut => &DataBuffer_fam[0];
 		}
 	}
 	[CRepr]
@@ -3111,7 +3131,9 @@ static
 		public uint32 dwStreamAttributes;
 		public LARGE_INTEGER Size;
 		public uint32 dwStreamNameSize;
-		public char16[0] cStreamName;
+		public char16[1] cStreamName_fam;
+		
+		public char16* cStreamName mut => &cStreamName_fam[0];
 	}
 	[CRepr]
 	public struct COPYFILE2_MESSAGE
@@ -3242,7 +3264,9 @@ static
 	public struct FILE_NAME_INFO
 	{
 		public uint32 FileNameLength;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_RENAME_INFO
@@ -3250,7 +3274,9 @@ static
 		public using _Anonymous_e__Union Anonymous;
 		public HANDLE RootDirectory;
 		public uint32 FileNameLength;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -3276,7 +3302,9 @@ static
 		public uint32 StreamNameLength;
 		public LARGE_INTEGER StreamSize;
 		public LARGE_INTEGER StreamAllocationSize;
-		public char16[0] StreamName;
+		public char16[1] StreamName_fam;
+		
+		public char16* StreamName mut => &StreamName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_COMPRESSION_INFO
@@ -3316,7 +3344,9 @@ static
 		public int8 ShortNameLength;
 		public char16[12] ShortName;
 		public LARGE_INTEGER FileId;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_FULL_DIR_INFO
@@ -3332,7 +3362,9 @@ static
 		public uint32 FileAttributes;
 		public uint32 FileNameLength;
 		public uint32 EaSize;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_IO_PRIORITY_HINT_INFO
@@ -3377,7 +3409,9 @@ static
 		public uint32 EaSize;
 		public uint32 ReparsePointTag;
 		public FILE_ID_128 FileId;
-		public char16[0] FileName;
+		public char16[1] FileName_fam;
+		
+		public char16* FileName mut => &FileName_fam[0];
 	}
 	[CRepr]
 	public struct FILE_REMOTE_PROTOCOL_INFO

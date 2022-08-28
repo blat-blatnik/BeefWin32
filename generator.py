@@ -195,8 +195,9 @@ def get_type_name(type: dict) -> str:
             count = type['Shape']['Size']
             return f'{get_type_name(child)}[{count}]'
         else:
-            # This is a "variable length array".
+            # This is a C flexible array member.
             # In C: struct { int x[]; }
+            # In Beef, an array of size 0 compiles just fine, but it's illegal to take it's address or do anything with it.
             return f'{get_type_name(child)}[0]'
     else:
         raise RuntimeError(f'Unexpected type kind "{kind}"')
@@ -514,15 +515,26 @@ with open('namespaces.txt', 'wt') as namespace_map:
                                 output.write('\n')
                                 output.write(f'{indent}{{\n')
                                 indent += '\t'
+                                fams = []
                                 for field in fields:
                                     field_name = replace_name(field['Name'])
                                     if field_name == '_bitfield':
                                         x = 123 # I don't think we can do anything with bitfields because there aren't any names for them in the metadata.
                                     field_type = get_type_name(field['Type'])
+                                    if field_type.endswith('[0]'): # Is this a flexible array member?
+                                        field_type = field_type.removesuffix('[0]')
+                                        fams.append((field_type, field_name))
+                                        field_type = field_type + '[1]' # Can't take address of 0 sized array in Beef.
+                                        field_name = field_name + '_array'
                                     if '_Anonymous_' in field_type and 'Anonymous' in field_name:
                                         output.write(f'{indent}public using {field_type} {field_name};\n')
                                     else:
                                         output.write(f'{indent}public {field_type} {field_name};\n')
+                                if len(fams) > 0:
+                                    output.write(f'{indent}\n')
+                                    for (field_type, field_name) in fams:
+                                        fam_name = field_name + '_array'
+                                        output.write(f'{indent}public {field_type}* {field_name} mut => &{fam_name}[0];\n')
                                 nested_types = type['NestedTypes']
                                 if len(nested_types) > 0:
                                     output.write(f'{indent}\n')

@@ -819,7 +819,9 @@ static
 		public uint32 dwSelection;
 		public uint32 dwPageStart;
 		public uint32 dwPageSize;
-		public uint32[0] dwOffset;
+		public uint32[1] dwOffset_fam;
+		
+		public uint32* dwOffset mut => &dwOffset_fam[0];
 	}
 	[CRepr]
 	public struct REGISTERWORDA
@@ -940,7 +942,9 @@ static
 		public WDD* pWDD;
 		public int32 cWDD;
 		public void* pPrivate;
-		public char16[0] BLKBuff;
+		public char16[1] BLKBuff_fam;
+		
+		public char16* BLKBuff mut => &BLKBuff_fam[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _Anonymous2_e__Union
@@ -1128,7 +1132,9 @@ static
 	public struct TRANSMSGLIST
 	{
 		public uint32 uMsgCount;
-		public TRANSMSG[0] TransMsg;
+		public TRANSMSG[1] TransMsg_fam;
+		
+		public TRANSMSG* TransMsg mut => &TransMsg_fam[0];
 	}
 	[CRepr]
 	public struct CANDIDATEINFO
@@ -1194,7 +1200,9 @@ static
 	public struct IMESTRINGCANDIDATE
 	{
 		public uint32 uCount;
-		public PWSTR[0] lpwstr;
+		public PWSTR[1] lpwstr_fam;
+		
+		public PWSTR* lpwstr mut => &lpwstr_fam[0];
 	}
 	[CRepr]
 	public struct IMEITEM
@@ -1207,7 +1215,9 @@ static
 	public struct IMEITEMCANDIDATE
 	{
 		public uint32 uCount;
-		public IMEITEM[0] imeItem;
+		public IMEITEM[1] imeItem_fam;
+		
+		public IMEITEM* imeItem mut => &imeItem_fam[0];
 	}
 	[CRepr]
 	public struct tabIMESTRINGINFO
@@ -1220,7 +1230,9 @@ static
 	{
 		public uint32 dwSize;
 		public uint32 dwType;
-		public uint32[0] dwData;
+		public uint32[1] dwData_fam;
+		
+		public uint32* dwData mut => &dwData_fam[0];
 	}
 	[CRepr]
 	public struct IMESTRINGCANDIDATEINFO
@@ -1230,7 +1242,9 @@ static
 		public uint32 fInfoMask;
 		public int32 iSelIndex;
 		public uint32 uCount;
-		public PWSTR[0] lpwstr;
+		public PWSTR[1] lpwstr_fam;
+		
+		public PWSTR* lpwstr mut => &lpwstr_fam[0];
 	}
 	[CRepr]
 	public struct IMECOMPOSITIONSTRINGINFO

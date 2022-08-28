@@ -395,7 +395,9 @@ static
 	[CRepr]
 	public struct DMUS_OFFSETTABLE
 	{
-		public uint32[0] ulOffsetTable;
+		public uint32[1] ulOffsetTable_fam;
+		
+		public uint32* ulOffsetTable mut => &ulOffsetTable_fam[0];
 	}
 	[CRepr]
 	public struct DMUS_INSTRUMENT
@@ -419,7 +421,9 @@ static
 		public uint32 ulFirstExtCkIdx;
 		public WAVELINK WaveLink;
 		public _rwsmp WSMP;
-		public _rloop[0] WLOOP;
+		public _rloop[1] WLOOP_fam;
+		
+		public _rloop* WLOOP mut => &WLOOP_fam[0];
 	}
 	[CRepr]
 	public struct DMUS_LFOPARAMS
@@ -730,7 +734,9 @@ static
 		public uint dwInstance;
 		public uint dnDevNode;
 		public uint32 cIds;
-		public MIDIOPENSTRMID[0] rgIds;
+		public MIDIOPENSTRMID[1] rgIds_fam;
+		
+		public MIDIOPENSTRMID* rgIds mut => &rgIds_fam[0];
 	}
 	#endregion
 	

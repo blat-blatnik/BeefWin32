@@ -338,7 +338,9 @@ static
 		public uint32 DataInTransferLength;
 		public uint DataOutBufferOffset;
 		public uint DataInBufferOffset;
-		public uint8[0] Cdb;
+		public uint8[1] Cdb_fam;
+		
+		public uint8* Cdb mut => &Cdb_fam[0];
 	}
 	[CRepr]
 	public struct SCSI_PASS_THROUGH_DIRECT_EX
@@ -358,7 +360,9 @@ static
 		public uint32 DataInTransferLength;
 		public void* DataOutBuffer;
 		public void* DataInBuffer;
-		public uint8[0] Cdb;
+		public uint8[1] Cdb_fam;
+		
+		public uint8* Cdb mut => &Cdb_fam[0];
 	}
 	[CRepr]
 	public struct SCSI_PASS_THROUGH32_EX
@@ -378,7 +382,9 @@ static
 		public uint32 DataInTransferLength;
 		public uint32 DataOutBufferOffset;
 		public uint32 DataInBufferOffset;
-		public uint8[0] Cdb;
+		public uint8[1] Cdb_fam;
+		
+		public uint8* Cdb mut => &Cdb_fam[0];
 	}
 	[CRepr]
 	public struct SCSI_PASS_THROUGH_DIRECT32_EX
@@ -398,7 +404,9 @@ static
 		public uint32 DataInTransferLength;
 		public void* DataOutBuffer;
 		public void* DataInBuffer;
-		public uint8[0] Cdb;
+		public uint8[1] Cdb_fam;
+		
+		public uint8* Cdb mut => &Cdb_fam[0];
 	}
 	[CRepr]
 	public struct ATA_PASS_THROUGH_EX
@@ -565,7 +573,9 @@ static
 	public struct SCSI_ADAPTER_BUS_INFO
 	{
 		public uint8 NumberOfBuses;
-		public SCSI_BUS_DATA[0] BusData;
+		public SCSI_BUS_DATA[1] BusData_fam;
+		
+		public SCSI_BUS_DATA* BusData mut => &BusData_fam[0];
 	}
 	[CRepr]
 	public struct SCSI_INQUIRY_DATA
@@ -576,7 +586,9 @@ static
 		public BOOLEAN DeviceClaimed;
 		public uint32 InquiryDataLength;
 		public uint32 NextInquiryDataOffset;
-		public uint8[0] InquiryData;
+		public uint8[1] InquiryData_fam;
+		
+		public uint8* InquiryData mut => &InquiryData_fam[0];
 	}
 	[CRepr]
 	public struct SRB_IO_CONTROL
@@ -665,7 +677,9 @@ static
 		public Guid ProviderId;
 		public uint32 BufferSize;
 		public uint32 Reserved;
-		public uint8[0] DataBuffer;
+		public uint8[1] DataBuffer_fam;
+		
+		public uint8* DataBuffer mut => &DataBuffer_fam[0];
 	}
 	[CRepr]
 	public struct MP_DEVICE_DATA_SET_RANGE
@@ -682,7 +696,9 @@ static
 		public uint32 DataSetProfile;
 		public uint32[3] Reserved;
 		public uint32 DataSetRangesCount;
-		public MP_DEVICE_DATA_SET_RANGE[0] DataSetRanges;
+		public MP_DEVICE_DATA_SET_RANGE[1] DataSetRanges_fam;
+		
+		public MP_DEVICE_DATA_SET_RANGE* DataSetRanges mut => &DataSetRanges_fam[0];
 	}
 	[CRepr]
 	public struct HYBRID_REQUEST_BLOCK
@@ -729,7 +745,9 @@ static
 			public uint32 DirtyThresholdLow;
 			public uint32 DirtyThresholdHigh;
 			public _SupportedCommands_e__Struct SupportedCommands;
-			public NVCACHE_PRIORITY_LEVEL_DESCRIPTOR[0] Priority;
+			public NVCACHE_PRIORITY_LEVEL_DESCRIPTOR[1] Priority_fam;
+			
+			public NVCACHE_PRIORITY_LEVEL_DESCRIPTOR* Priority mut => &Priority_fam[0];
 			
 			[CRepr]
 			public struct _SupportedCommands_e__Struct
@@ -808,7 +826,9 @@ static
 		public uint8 ActiveSlot;
 		public uint8 PendingActivateSlot;
 		public uint32 Reserved;
-		public STORAGE_FIRMWARE_SLOT_INFO[0] Slot;
+		public STORAGE_FIRMWARE_SLOT_INFO[1] Slot_fam;
+		
+		public STORAGE_FIRMWARE_SLOT_INFO* Slot mut => &Slot_fam[0];
 	}
 	[CRepr]
 	public struct STORAGE_FIRMWARE_INFO_V2
@@ -823,7 +843,9 @@ static
 		public uint8[3] Reserved;
 		public uint32 ImagePayloadAlignment;
 		public uint32 ImagePayloadMaxSize;
-		public STORAGE_FIRMWARE_SLOT_INFO_V2[0] Slot;
+		public STORAGE_FIRMWARE_SLOT_INFO_V2[1] Slot_fam;
+		
+		public STORAGE_FIRMWARE_SLOT_INFO_V2* Slot mut => &Slot_fam[0];
 	}
 	[CRepr]
 	public struct STORAGE_FIRMWARE_DOWNLOAD
@@ -832,7 +854,9 @@ static
 		public uint32 Size;
 		public uint64 Offset;
 		public uint64 BufferSize;
-		public uint8[0] ImageBuffer;
+		public uint8[1] ImageBuffer_fam;
+		
+		public uint8* ImageBuffer mut => &ImageBuffer_fam[0];
 	}
 	[CRepr]
 	public struct STORAGE_FIRMWARE_DOWNLOAD_V2
@@ -844,7 +868,9 @@ static
 		public uint8 Slot;
 		public uint8[3] Reserved;
 		public uint32 ImageSize;
-		public uint8[0] ImageBuffer;
+		public uint8[1] ImageBuffer_fam;
+		
+		public uint8* ImageBuffer mut => &ImageBuffer_fam[0];
 	}
 	[CRepr]
 	public struct STORAGE_FIRMWARE_ACTIVATE
@@ -1093,13 +1119,17 @@ static
 	public struct ISCSI_TARGET_PORTAL_GROUPW
 	{
 		public uint32 Count;
-		public ISCSI_TARGET_PORTALW[0] Portals;
+		public ISCSI_TARGET_PORTALW[1] Portals_fam;
+		
+		public ISCSI_TARGET_PORTALW* Portals mut => &Portals_fam[0];
 	}
 	[CRepr]
 	public struct ISCSI_TARGET_PORTAL_GROUPA
 	{
 		public uint32 Count;
-		public ISCSI_TARGET_PORTALA[0] Portals;
+		public ISCSI_TARGET_PORTALA[1] Portals_fam;
+		
+		public ISCSI_TARGET_PORTALA* Portals mut => &Portals_fam[0];
 	}
 	[CRepr]
 	public struct ISCSI_CONNECTION_INFOW

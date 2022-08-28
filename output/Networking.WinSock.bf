@@ -1643,7 +1643,9 @@ static
 	public struct SOCKET_ADDRESS_LIST
 	{
 		public int32 iAddressCount;
-		public SOCKET_ADDRESS[0] Address;
+		public SOCKET_ADDRESS[1] Address_fam;
+		
+		public SOCKET_ADDRESS* Address mut => &Address_fam[0];
 	}
 	[CRepr]
 	public struct CSADDR_INFO
@@ -2359,7 +2361,9 @@ static
 		public IN_ADDR imsf_interface;
 		public MULTICAST_MODE_TYPE imsf_fmode;
 		public uint32 imsf_numsrc;
-		public IN_ADDR[0] imsf_slist;
+		public IN_ADDR[1] imsf_slist_fam;
+		
+		public IN_ADDR* imsf_slist mut => &imsf_slist_fam[0];
 	}
 	[CRepr]
 	public struct IPV6_MREQ
@@ -2387,7 +2391,9 @@ static
 		public SOCKADDR_STORAGE gf_group;
 		public MULTICAST_MODE_TYPE gf_fmode;
 		public uint32 gf_numsrc;
-		public SOCKADDR_STORAGE[0] gf_slist;
+		public SOCKADDR_STORAGE[1] gf_slist_fam;
+		
+		public SOCKADDR_STORAGE* gf_slist mut => &gf_slist_fam[0];
 	}
 	[CRepr]
 	public struct IN_PKTINFO
@@ -2564,13 +2570,17 @@ static
 	public struct WINDOWS_DEVICELIST
 	{
 		public uint32 numDevice;
-		public WINDOWS_IRDA_DEVICE_INFO[0] Device;
+		public WINDOWS_IRDA_DEVICE_INFO[1] Device_fam;
+		
+		public WINDOWS_IRDA_DEVICE_INFO* Device mut => &Device_fam[0];
 	}
 	[CRepr]
 	public struct WCE_DEVICELIST
 	{
 		public uint32 numDevice;
-		public WCE_IRDA_DEVICE_INFO[0] Device;
+		public WCE_IRDA_DEVICE_INFO[1] Device_fam;
+		
+		public WCE_IRDA_DEVICE_INFO* Device mut => &Device_fam[0];
 	}
 	[CRepr]
 	public struct WINDOWS_IAS_SET
@@ -2827,7 +2837,9 @@ static
 		public uint32 UserNameStringLen;
 		public uint32 DomainNameStringLen;
 		public uint32 PasswordStringLen;
-		public char16[0] AllStrings;
+		public char16[1] AllStrings_fam;
+		
+		public char16* AllStrings mut => &AllStrings_fam[0];
 	}
 	[CRepr]
 	public struct SOCKET_PEER_TARGET_NAME
@@ -2835,7 +2847,9 @@ static
 		public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 		public SOCKADDR_STORAGE PeerAddress;
 		public uint32 PeerTargetNameStringLen;
-		public char16[0] AllStrings;
+		public char16[1] AllStrings_fam;
+		
+		public char16* AllStrings mut => &AllStrings_fam[0];
 	}
 	[CRepr]
 	public struct SOCKET_SECURITY_QUERY_TEMPLATE
@@ -2941,7 +2955,9 @@ static
 	{
 		public Q2931_IE_TYPE IEType;
 		public uint32 IELength;
-		public uint8[0] IE;
+		public uint8[1] IE_fam;
+		
+		public uint8* IE mut => &IE_fam[0];
 	}
 	[CRepr]
 	public struct AAL5_PARAMETERS
@@ -3038,7 +3054,9 @@ static
 		public uint8 TypeOfNetworkId;
 		public uint8 NetworkIdPlan;
 		public uint8 NetworkIdLength;
-		public uint8[0] NetworkId;
+		public uint8[1] NetworkId_fam;
+		
+		public uint8* NetworkId mut => &NetworkId_fam[0];
 	}
 	[CRepr]
 	public struct ATM_CONNECTION_ID
@@ -3108,11 +3126,13 @@ static
 		[CRepr, Union]
 		public struct _data_e__Union
 		{
-			public CHAR[0] rawData;
+			public CHAR[1] rawData_fam;
 			public _interfaceData_e__Struct interfaceData;
 			public _locationData_e__Struct locationData;
 			public _connectivity_e__Struct connectivity;
 			public _ICS_e__Struct ICS;
+			
+			public CHAR* rawData mut => &rawData_fam[0];
 			
 			[CRepr]
 			public struct _ICS_e__Struct
@@ -3132,14 +3152,18 @@ static
 			[CRepr]
 			public struct _locationData_e__Struct
 			{
-				public CHAR[0] information;
+				public CHAR[1] information_fam;
+				
+				public CHAR* information mut => &information_fam[0];
 			}
 			[CRepr]
 			public struct _interfaceData_e__Struct
 			{
 				public uint32 dwType;
 				public uint32 dwSpeed;
-				public CHAR[0] adapterName;
+				public CHAR[1] adapterName_fam;
+				
+				public CHAR* adapterName mut => &adapterName_fam[0];
 			}
 			[CRepr]
 			public struct _connectivity_e__Struct
@@ -3162,7 +3186,9 @@ static
 		public int32 result;
 		public uint32 fds;
 		public int32 timeout;
-		public WSAPOLLFD[0] fdArray;
+		public WSAPOLLFD[1] fdArray_fam;
+		
+		public WSAPOLLFD* fdArray mut => &fdArray_fam[0];
 	}
 	[CRepr]
 	public struct WSASENDMSG
@@ -3366,21 +3392,27 @@ static
 	{
 		public uint32 dwTypeNameOffset;
 		public uint32 dwValueCount;
-		public SERVICE_TYPE_VALUE[0] Values;
+		public SERVICE_TYPE_VALUE[1] Values_fam;
+		
+		public SERVICE_TYPE_VALUE* Values mut => &Values_fam[0];
 	}
 	[CRepr]
 	public struct SERVICE_TYPE_INFO_ABSA
 	{
 		public PSTR lpTypeName;
 		public uint32 dwValueCount;
-		public SERVICE_TYPE_VALUE_ABSA[0] Values;
+		public SERVICE_TYPE_VALUE_ABSA[1] Values_fam;
+		
+		public SERVICE_TYPE_VALUE_ABSA* Values mut => &Values_fam[0];
 	}
 	[CRepr]
 	public struct SERVICE_TYPE_INFO_ABSW
 	{
 		public PWSTR lpTypeName;
 		public uint32 dwValueCount;
-		public SERVICE_TYPE_VALUE_ABSW[0] Values;
+		public SERVICE_TYPE_VALUE_ABSW[1] Values_fam;
+		
+		public SERVICE_TYPE_VALUE_ABSW* Values mut => &Values_fam[0];
 	}
 	[CRepr]
 	public struct SERVICE_ADDRESS
@@ -3396,7 +3428,9 @@ static
 	public struct SERVICE_ADDRESSES
 	{
 		public uint32 dwAddressCount;
-		public SERVICE_ADDRESS[0] Addresses;
+		public SERVICE_ADDRESS[1] Addresses_fam;
+		
+		public SERVICE_ADDRESS* Addresses mut => &Addresses_fam[0];
 	}
 	[CRepr]
 	public struct SERVICE_INFOA

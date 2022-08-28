@@ -301,7 +301,9 @@ static
 	public struct DFS_SITELIST_INFO
 	{
 		public uint32 cSites;
-		public DFS_SITENAME_INFO[0] Site;
+		public DFS_SITENAME_INFO[1] Site_fam;
+		
+		public DFS_SITENAME_INFO* Site mut => &Site_fam[0];
 	}
 	[CRepr]
 	public struct DFS_SUPPORTED_NAMESPACE_VERSION_INFO
@@ -320,7 +322,9 @@ static
 		public uint16 ServerNameLen;
 		public uint16 ShareNameLen;
 		public uint32 Level;
-		public char16[0] Buffer;
+		public char16[1] Buffer_fam;
+		
+		public char16* Buffer mut => &Buffer_fam[0];
 	}
 	#endregion
 	

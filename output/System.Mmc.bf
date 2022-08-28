@@ -414,39 +414,51 @@ static
 	public struct MMC_VISIBLE_COLUMNS
 	{
 		public int32 nVisibleColumns;
-		public int32[0] rgVisibleCols;
+		public int32[1] rgVisibleCols_fam;
+		
+		public int32* rgVisibleCols mut => &rgVisibleCols_fam[0];
 	}
 	[CRepr]
 	public struct SMMCDataObjects
 	{
 		public uint32 count;
-		public IDataObject*[0] lpDataObject;
+		public IDataObject*[1] lpDataObject_fam;
+		
+		public IDataObject** lpDataObject mut => &lpDataObject_fam[0];
 	}
 	[CRepr]
 	public struct SMMCObjectTypes
 	{
 		public uint32 count;
-		public Guid[0] guid;
+		public Guid[1] guid_fam;
+		
+		public Guid* guid mut => &guid_fam[0];
 	}
 	[CRepr]
 	public struct SNodeID
 	{
 		public uint32 cBytes;
-		public uint8[0] id;
+		public uint8[1] id_fam;
+		
+		public uint8* id mut => &id_fam[0];
 	}
 	[CRepr]
 	public struct SNodeID2
 	{
 		public uint32 dwFlags;
 		public uint32 cBytes;
-		public uint8[0] id;
+		public uint8[1] id_fam;
+		
+		public uint8* id mut => &id_fam[0];
 	}
 	[CRepr]
 	public struct SColumnSetID
 	{
 		public uint32 dwFlags;
 		public uint32 cBytes;
-		public uint8[0] id;
+		public uint8[1] id_fam;
+		
+		public uint8* id mut => &id_fam[0];
 	}
 	[CRepr]
 	public struct MMC_TASK_DISPLAY_SYMBOL

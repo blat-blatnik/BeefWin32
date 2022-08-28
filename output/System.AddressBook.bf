@@ -269,7 +269,9 @@ static
 	public struct ENTRYID
 	{
 		public uint8[4] abFlags;
-		public uint8[0] ab;
+		public uint8[1] ab_fam;
+		
+		public uint8* ab mut => &ab_fam[0];
 	}
 	[CRepr]
 	public struct MAPIUID
@@ -280,7 +282,9 @@ static
 	public struct SPropTagArray
 	{
 		public uint32 cValues;
-		public uint32[0] aulPropTag;
+		public uint32[1] aulPropTag_fam;
+		
+		public uint32* aulPropTag mut => &aulPropTag_fam[0];
 	}
 	[CRepr]
 	public struct SBinary
@@ -410,33 +414,43 @@ static
 	public struct SPropProblemArray
 	{
 		public uint32 cProblem;
-		public SPropProblem[0] aProblem;
+		public SPropProblem[1] aProblem_fam;
+		
+		public SPropProblem* aProblem mut => &aProblem_fam[0];
 	}
 	[CRepr]
 	public struct FLATENTRY
 	{
 		public uint32 cb;
-		public uint8[0] abEntry;
+		public uint8[1] abEntry_fam;
+		
+		public uint8* abEntry mut => &abEntry_fam[0];
 	}
 	[CRepr]
 	public struct FLATENTRYLIST
 	{
 		public uint32 cEntries;
 		public uint32 cbEntries;
-		public uint8[0] abEntries;
+		public uint8[1] abEntries_fam;
+		
+		public uint8* abEntries mut => &abEntries_fam[0];
 	}
 	[CRepr]
 	public struct MTSID
 	{
 		public uint32 cb;
-		public uint8[0] ab;
+		public uint8[1] ab_fam;
+		
+		public uint8* ab mut => &ab_fam[0];
 	}
 	[CRepr]
 	public struct FLATMTSIDLIST
 	{
 		public uint32 cMTSIDs;
 		public uint32 cbMTSIDs;
-		public uint8[0] abMTSIDs;
+		public uint8[1] abMTSIDs_fam;
+		
+		public uint8* abMTSIDs mut => &abMTSIDs_fam[0];
 	}
 	[CRepr]
 	public struct ADRENTRY
@@ -449,7 +463,9 @@ static
 	public struct ADRLIST
 	{
 		public uint32 cEntries;
-		public ADRENTRY[0] aEntries;
+		public ADRENTRY[1] aEntries_fam;
+		
+		public ADRENTRY* aEntries mut => &aEntries_fam[0];
 	}
 	[CRepr]
 	public struct SRow
@@ -462,7 +478,9 @@ static
 	public struct SRowSet
 	{
 		public uint32 cRows;
-		public SRow[0] aRow;
+		public SRow[1] aRow_fam;
+		
+		public SRow* aRow mut => &aRow_fam[0];
 	}
 	[CRepr]
 	public struct MAPIERROR
@@ -576,7 +594,9 @@ static
 		public uint32 cSorts;
 		public uint32 cCategories;
 		public uint32 cExpanded;
-		public SSortOrder[0] aSort;
+		public SSortOrder[1] aSort_fam;
+		
+		public SSortOrder* aSort mut => &aSort_fam[0];
 	}
 	[CRepr]
 	public struct SAndRestriction
@@ -677,7 +697,9 @@ static
 	public struct _flaglist
 	{
 		public uint32 cFlags;
-		public uint32[0] ulFlag;
+		public uint32[1] ulFlag_fam;
+		
+		public uint32* ulFlag mut => &ulFlag_fam[0];
 	}
 	[CRepr]
 	public struct ADRPARM
@@ -869,7 +891,9 @@ static
 	public struct NOTIFKEY
 	{
 		public uint32 cb;
-		public uint8[0] ab;
+		public uint8[1] ab_fam;
+		
+		public uint8* ab mut => &ab_fam[0];
 	}
 	#endregion
 	

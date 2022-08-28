@@ -748,7 +748,9 @@ static
 		public PSTR szFullPath;
 		public using _Anonymous_e__Union Anonymous;
 		public PSTR szExplainText;
-		public uint32[0] DataBuffer;
+		public uint32[1] DataBuffer_fam;
+		
+		public uint32* DataBuffer mut => &DataBuffer_fam[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -783,7 +785,9 @@ static
 		public PWSTR szFullPath;
 		public using _Anonymous_e__Union Anonymous;
 		public PWSTR szExplainText;
-		public uint32[0] DataBuffer;
+		public uint32[1] DataBuffer_fam;
+		
+		public uint32* DataBuffer mut => &DataBuffer_fam[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -817,7 +821,9 @@ static
 		public uint32 dwStructureSize;
 		public PDH_LOG_TYPE dwRecordType;
 		public uint32 dwItems;
-		public uint8[0] RawBytes;
+		public uint8[1] RawBytes_fam;
+		
+		public uint8* RawBytes mut => &RawBytes_fam[0];
 	}
 	[CRepr]
 	public struct PDH_LOG_SERVICE_QUERY_INFO_A

@@ -2291,7 +2291,9 @@ static
 	{
 		public uint32 Size;
 		public uint32 Pin;
-		public char16[0] SymbolicLinkName;
+		public char16[1] SymbolicLinkName_fam;
+		
+		public char16* SymbolicLinkName mut => &SymbolicLinkName_fam[0];
 	}
 	[CRepr]
 	public struct KSALLOCATOR_FRAMING
@@ -2365,7 +2367,9 @@ static
 		public uint32 PinFlags;
 		public KS_COMPRESSION OutputCompression;
 		public uint32 PinWeight;
-		public KS_FRAMING_ITEM[0] FramingItem;
+		public KS_FRAMING_ITEM[1] FramingItem_fam;
+		
+		public KS_FRAMING_ITEM* FramingItem mut => &FramingItem_fam[0];
 	}
 	[CRepr]
 	public struct KSSTREAMALLOCATOR_STATUS
@@ -2568,7 +2572,9 @@ static
 		public uint32 PacketSizeFileAlignment;
 		public uint32 Reserved;
 		public uint32 NumProcessingModeConstraints;
-		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
+		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[1] ProcessingModeConstraints_fam;
+		
+		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT* ProcessingModeConstraints mut => &ProcessingModeConstraints_fam[0];
 	}
 	[CRepr]
 	public struct KSAUDIO_PACKETSIZE_CONSTRAINTS2
@@ -2577,7 +2583,9 @@ static
 		public uint32 PacketSizeFileAlignment;
 		public uint32 MaxPacketSizeInBytes;
 		public uint32 NumProcessingModeConstraints;
-		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
+		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[1] ProcessingModeConstraints_fam;
+		
+		public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT* ProcessingModeConstraints mut => &ProcessingModeConstraints_fam[0];
 	}
 	[CRepr]
 	public struct KSAUDIO_MICROPHONE_COORDINATES
@@ -2601,7 +2609,9 @@ static
 		public uint16 usFrequencyBandLo;
 		public uint16 usFrequencyBandHi;
 		public uint16 usNumberOfMicrophones;
-		public KSAUDIO_MICROPHONE_COORDINATES[0] KsMicCoord;
+		public KSAUDIO_MICROPHONE_COORDINATES[1] KsMicCoord_fam;
+		
+		public KSAUDIO_MICROPHONE_COORDINATES* KsMicCoord mut => &KsMicCoord_fam[0];
 	}
 	[CRepr]
 	public struct DS3DVECTOR
@@ -2910,7 +2920,9 @@ static
 	{
 		public uint32 InputChannels;
 		public uint32 OutputChannels;
-		public KSAUDIO_MIX_CAPS[0] Capabilities;
+		public KSAUDIO_MIX_CAPS[1] Capabilities_fam;
+		
+		public KSAUDIO_MIX_CAPS* Capabilities mut => &Capabilities_fam[0];
 	}
 	[CRepr]
 	public struct KSAUDIO_POSITIONEX
@@ -3162,7 +3174,9 @@ static
 	public struct KS_DVDCOPY_BUSKEY
 	{
 		public uint8[5] BusKey;
-		public uint8[0] Reserved;
+		public uint8[1] Reserved_fam;
+		
+		public uint8* Reserved mut => &Reserved_fam[0];
 	}
 	[CRepr]
 	public struct KS_DVDCOPY_DISCKEY
@@ -3313,7 +3327,9 @@ static
 		public KS_VIDEOINFOHEADER hdr;
 		public uint32 dwStartTimeCode;
 		public uint32 cbSequenceHeader;
-		public uint8[0] bSequenceHeader;
+		public uint8[1] bSequenceHeader_fam;
+		
+		public uint8* bSequenceHeader mut => &bSequenceHeader_fam[0];
 	}
 	[CRepr]
 	public struct KS_MPEGVIDEOINFO2
@@ -3324,7 +3340,9 @@ static
 		public uint32 dwProfile;
 		public uint32 dwLevel;
 		public uint32 dwFlags;
-		public uint32[0] bSequenceHeader;
+		public uint32[1] bSequenceHeader_fam;
+		
+		public uint32* bSequenceHeader mut => &bSequenceHeader_fam[0];
 	}
 	[CRepr]
 	public struct KS_H264VIDEOINFO
@@ -4388,7 +4406,9 @@ static
 		public RECT MaskCoverageBoundingBox;
 		public SIZE MaskResolution;
 		public RECT ForegroundBoundingBox;
-		public uint8[0] MaskData;
+		public uint8[1] MaskData_fam;
+		
+		public uint8* MaskData mut => &MaskData_fam[0];
 	}
 	[CRepr]
 	public struct KSCAMERA_EXTENDEDPROP_PROFILE
@@ -4509,7 +4529,9 @@ static
 	public struct KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO
 	{
 		public KSCAMERA_METADATA_ITEMHEADER Header;
-		public char16[0] EventFilter;
+		public char16[1] EventFilter_fam;
+		
+		public char16* EventFilter mut => &EventFilter_fam[0];
 	}
 	[CRepr]
 	public struct DEVCAPS
@@ -4793,7 +4815,9 @@ static
 		public uint32 PelsWidth;
 		public uint32 PelsHeight;
 		public uint32 BitsPerPel;
-		public char16[0] DeviceID;
+		public char16[1] DeviceID_fam;
+		
+		public char16* DeviceID mut => &DeviceID_fam[0];
 	}
 	[CRepr]
 	public struct KSPROPERTY_VIDEOCONTROL_CAPS_S

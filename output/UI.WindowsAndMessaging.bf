@@ -2508,7 +2508,9 @@ static
 	{
 		public uint16 Length;
 		public uint16 Flags;
-		public uint8[0] Text;
+		public uint8[1] Text_fam;
+		
+		public uint8* Text mut => &Text_fam[0];
 	}
 	[CRepr]
 	public struct MESSAGE_RESOURCE_BLOCK
@@ -2521,7 +2523,9 @@ static
 	public struct MESSAGE_RESOURCE_DATA
 	{
 		public uint32 NumberOfBlocks;
-		public MESSAGE_RESOURCE_BLOCK[0] Blocks;
+		public MESSAGE_RESOURCE_BLOCK[1] Blocks_fam;
+		
+		public MESSAGE_RESOURCE_BLOCK* Blocks mut => &Blocks_fam[0];
 	}
 	[CRepr]
 	public struct CBT_CREATEWNDA
@@ -2932,7 +2936,9 @@ static
 	{
 		public uint16 mtOption;
 		public uint16 mtID;
-		public char16[0] mtString;
+		public char16[1] mtString_fam;
+		
+		public char16* mtString mut => &mtString_fam[0];
 	}
 	[CRepr]
 	public struct ICONINFO

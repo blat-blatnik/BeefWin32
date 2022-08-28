@@ -926,7 +926,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public using _Anonymous_e__Struct Anonymous;
-			public uint64[0] AsUINT64;
+			public uint64[1] AsUINT64_fam;
+			
+			public uint64* AsUINT64 mut => &AsUINT64_fam[0];
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1082,10 +1084,10 @@ static
 		public WHV_PROCESSOR_XSAVE_FEATURES ProcessorXsaveFeatures;
 		public uint8 ProcessorClFlushSize;
 		public uint32 ProcessorCount;
-		public uint32[0] CpuidExitList;
-		public WHV_X64_CPUID_RESULT[0] CpuidResultList;
-		public WHV_X64_CPUID_RESULT2[0] CpuidResultList2;
-		public WHV_MSR_ACTION_ENTRY[0] MsrActionList;
+		public uint32[1] CpuidExitList_fam;
+		public WHV_X64_CPUID_RESULT[1] CpuidResultList_fam;
+		public WHV_X64_CPUID_RESULT2[1] CpuidResultList2_fam;
+		public WHV_MSR_ACTION_ENTRY[1] MsrActionList_fam;
 		public WHV_MSR_ACTION UnimplementedMsrAction;
 		public uint64 ExceptionExitBitmap;
 		public WHV_X64_LOCAL_APIC_EMULATION_MODE LocalApicEmulationMode;
@@ -1106,6 +1108,11 @@ static
 		public BOOL AllowDeviceAssignment;
 		public WHV_PROCESSOR_PERFMON_FEATURES ProcessorPerfmonFeatures;
 		public BOOL DisableSmt;
+		
+		public uint32* CpuidExitList mut => &CpuidExitList_fam[0];
+		public WHV_X64_CPUID_RESULT* CpuidResultList mut => &CpuidResultList_fam[0];
+		public WHV_X64_CPUID_RESULT2* CpuidResultList2 mut => &CpuidResultList2_fam[0];
+		public WHV_MSR_ACTION_ENTRY* MsrActionList mut => &MsrActionList_fam[0];
 	}
 	[CRepr]
 	public struct WHV_TRANSLATE_GVA_RESULT
@@ -1739,7 +1746,9 @@ static
 		public uint32 Vector;
 		public WHV_VPCI_INTERRUPT_TARGET_FLAGS Flags;
 		public uint32 ProcessorCount;
-		public uint32[0] Processors;
+		public uint32[1] Processors_fam;
+		
+		public uint32* Processors mut => &Processors_fam[0];
 	}
 	[CRepr]
 	public struct WHV_TRIGGER_PARAMETERS

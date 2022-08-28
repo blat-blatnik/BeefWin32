@@ -1114,7 +1114,9 @@ static
 	public struct HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY
 	{
 		public uint32 AddrCount;
-		public SOCKADDR_STORAGE[0] AddrList;
+		public SOCKADDR_STORAGE[1] AddrList_fam;
+		
+		public SOCKADDR_STORAGE* AddrList mut => &AddrList_fam[0];
 	}
 	[CRepr]
 	public struct HTTP_SERVICE_CONFIG_URLACL_KEY

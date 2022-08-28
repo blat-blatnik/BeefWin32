@@ -4647,7 +4647,9 @@ static
 	public struct BDA_ETHERNET_ADDRESS_LIST
 	{
 		public uint32 ulcAddresses;
-		public BDA_ETHERNET_ADDRESS[0] rgAddressl;
+		public BDA_ETHERNET_ADDRESS[1] rgAddressl_fam;
+		
+		public BDA_ETHERNET_ADDRESS* rgAddressl mut => &rgAddressl_fam[0];
 	}
 	[CRepr]
 	public struct BDA_IPv4_ADDRESS
@@ -4658,7 +4660,9 @@ static
 	public struct BDA_IPv4_ADDRESS_LIST
 	{
 		public uint32 ulcAddresses;
-		public BDA_IPv4_ADDRESS[0] rgAddressl;
+		public BDA_IPv4_ADDRESS[1] rgAddressl_fam;
+		
+		public BDA_IPv4_ADDRESS* rgAddressl mut => &rgAddressl_fam[0];
 	}
 	[CRepr]
 	public struct BDA_IPv6_ADDRESS
@@ -4669,7 +4673,9 @@ static
 	public struct BDA_IPv6_ADDRESS_LIST
 	{
 		public uint32 ulcAddresses;
-		public BDA_IPv6_ADDRESS[0] rgAddressl;
+		public BDA_IPv6_ADDRESS[1] rgAddressl_fam;
+		
+		public BDA_IPv6_ADDRESS* rgAddressl mut => &rgAddressl_fam[0];
 	}
 	[CRepr]
 	public struct BDANODE_DESCRIPTOR
@@ -4684,7 +4690,9 @@ static
 		public uint32 ulPrimarySectionId;
 		public uint32 ulSecondarySectionId;
 		public uint32 ulcbSectionLength;
-		public uint32[0] argbSectionData;
+		public uint32[1] argbSectionData_fam;
+		
+		public uint32* argbSectionData mut => &argbSectionData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_DISEQC_SEND
@@ -4711,27 +4719,35 @@ static
 	{
 		public MEDIA_SAMPLE_CONTENT MediaSampleContent;
 		public uint32 ulcPIDs;
-		public uint32[0] aulPIDs;
+		public uint32[1] aulPIDs_fam;
+		
+		public uint32* aulPIDs mut => &aulPIDs_fam[0];
 	}
 	[CRepr]
 	public struct BDA_PID_UNMAP
 	{
 		public uint32 ulcPIDs;
-		public uint32[0] aulPIDs;
+		public uint32[1] aulPIDs_fam;
+		
+		public uint32* aulPIDs mut => &aulPIDs_fam[0];
 	}
 	[CRepr]
 	public struct BDA_CA_MODULE_UI
 	{
 		public uint32 ulFormat;
 		public uint32 ulbcDesc;
-		public uint32[0] ulDesc;
+		public uint32[1] ulDesc_fam;
+		
+		public uint32* ulDesc mut => &ulDesc_fam[0];
 	}
 	[CRepr]
 	public struct BDA_PROGRAM_PID_LIST
 	{
 		public uint32 ulProgramNumber;
 		public uint32 ulcPIDs;
-		public uint32[0] ulPID;
+		public uint32[1] ulPID_fam;
+		
+		public uint32* ulPID mut => &ulPID_fam[0];
 	}
 	[CRepr]
 	public struct BDA_DRM_DRMSTATUS
@@ -4739,7 +4755,9 @@ static
 		public int32 lResult;
 		public Guid DRMuuid;
 		public uint32 ulDrmUuidListStringSize;
-		public Guid[0] argbDrmUuidListString;
+		public Guid[1] argbDrmUuidListString_fam;
+		
+		public Guid* argbDrmUuidListString mut => &argbDrmUuidListString_fam[0];
 	}
 	[CRepr]
 	public struct BDA_WMDRM_STATUS
@@ -4760,14 +4778,18 @@ static
 	{
 		public int32 lResult;
 		public uint32 ulKeyuuidBufferLen;
-		public Guid[0] argKeyuuidBuffer;
+		public Guid[1] argKeyuuidBuffer_fam;
+		
+		public Guid* argKeyuuidBuffer mut => &argKeyuuidBuffer_fam[0];
 	}
 	[CRepr]
 	public struct BDA_BUFFER
 	{
 		public int32 lResult;
 		public uint32 ulBufferSize;
-		public uint8[0] argbBuffer;
+		public uint8[1] argbBuffer_fam;
+		
+		public uint8* argbBuffer mut => &argbBuffer_fam[0];
 	}
 	[CRepr]
 	public struct BDA_WMDRM_RENEWLICENSE
@@ -4775,7 +4797,9 @@ static
 		public int32 lResult;
 		public uint32 ulDescrambleStatus;
 		public uint32 ulXmrLicenseOutputLength;
-		public uint8[0] argbXmrLicenceOutputBuffer;
+		public uint8[1] argbXmrLicenceOutputBuffer_fam;
+		
+		public uint8* argbXmrLicenceOutputBuffer mut => &argbXmrLicenceOutputBuffer_fam[0];
 	}
 	[CRepr]
 	public struct BDA_WMDRMTUNER_PIDPROTECTION
@@ -4789,14 +4813,18 @@ static
 		public int32 lResult;
 		public uint32 ulDescrambleStatus;
 		public uint32 ulCaptureTokenLength;
-		public uint8[0] argbCaptureTokenBuffer;
+		public uint8[1] argbCaptureTokenBuffer_fam;
+		
+		public uint8* argbCaptureTokenBuffer mut => &argbCaptureTokenBuffer_fam[0];
 	}
 	[CRepr]
 	public struct BDA_TUNER_TUNERSTATE
 	{
 		public int32 lResult;
 		public uint32 ulTuneLength;
-		public uint8[0] argbTuneData;
+		public uint8[1] argbTuneData_fam;
+		
+		public uint8* argbTuneData mut => &argbTuneData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_TUNER_DIAGNOSTICS
@@ -4811,7 +4839,9 @@ static
 	{
 		public int32 lResult;
 		public uint32 ulStringSize;
-		public uint8[0] argbString;
+		public uint8[1] argbString_fam;
+		
+		public uint8* argbString mut => &argbString_fam[0];
 	}
 	[CRepr]
 	public struct BDA_SCAN_CAPABILTIES
@@ -4846,7 +4876,9 @@ static
 		public int32 lResult;
 		public uint32 ulDataLength;
 		public uint32 ulPercentageProgress;
-		public uint8[0] argbData;
+		public uint8[1] argbData_fam;
+		
+		public uint8* argbData mut => &argbData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_USERACTIVITY_INTERVAL
@@ -4881,7 +4913,9 @@ static
 		public uint32 ulDialogRequest;
 		public Guid uuidDialogType;
 		public uint16 usDialogDataLength;
-		public uint8[0] argbDialogData;
+		public uint8[1] argbDialogData_fam;
+		
+		public uint8* argbDialogData mut => &argbDialogData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_CAS_CLOSEMMIDATA
@@ -4894,7 +4928,9 @@ static
 		public uint8 bInstruction;
 		public uint8[3] bReserved;
 		public uint32 ulDataLength;
-		public uint8[0] argbIsdbCommand;
+		public uint8[1] argbIsdbCommand_fam;
+		
+		public uint8* argbIsdbCommand mut => &argbIsdbCommand_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct BDA_ISDBCAS_RESPONSEDATA
@@ -4903,7 +4939,9 @@ static
 		public uint32 ulRequestID;
 		public uint32 ulIsdbStatus;
 		public uint32 ulIsdbDataSize;
-		public uint8[0] argbIsdbCommandData;
+		public uint8[1] argbIsdbCommandData_fam;
+		
+		public uint8* argbIsdbCommandData mut => &argbIsdbCommandData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_ISDBCAS_EMG_REQ
@@ -4917,7 +4955,9 @@ static
 		public uint8 bProtocol;
 		public uint8 bCABroadcasterGroupId;
 		public uint8 bMessageControl;
-		public uint8[0] bMessageCode;
+		public uint8[1] bMessageCode_fam;
+		
+		public uint8* bMessageCode mut => &bMessageCode_fam[0];
 	}
 	[CRepr, Packed(2)]
 	public struct BDA_MUX_PIDLISTITEM
@@ -4933,7 +4973,9 @@ static
 		public uint8[2] bReserved;
 		public Guid guidNetworkType;
 		public uint8 bTSIDCount;
-		public uint16[0] usTSID;
+		public uint16[1] usTSID_fam;
+		
+		public uint16* usTSID mut => &usTSID_fam[0];
 	}
 	[CRepr]
 	public struct BDA_TS_SELECTORINFO_ISDBS_EXT
@@ -4956,13 +4998,17 @@ static
 		public uint8[2] L1Pre_NUM_DATA_REGENFLAG_L1POSTEXT;
 		public uint8[2] L1Pre_NUMRF_CURRENTRF_RESERVED;
 		public uint8[4] L1Pre_CRC32;
-		public uint8[0] L1PostData;
+		public uint8[1] L1PostData_fam;
+		
+		public uint8* L1PostData mut => &L1PostData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_RATING_PINRESET
 	{
 		public uint8 bPinLength;
-		public uint8[0] argbNewPin;
+		public uint8[1] argbNewPin_fam;
+		
+		public uint8* argbNewPin mut => &argbNewPin_fam[0];
 	}
 	[CRepr]
 	public struct MPEG2_TRANSPORT_STRIDE
@@ -5094,7 +5140,9 @@ static
 		public VIDEOINFOHEADER hdr;
 		public uint32 dwStartTimeCode;
 		public uint32 cbSequenceHeader;
-		public uint8[0] bSequenceHeader;
+		public uint8[1] bSequenceHeader_fam;
+		
+		public uint8* bSequenceHeader mut => &bSequenceHeader_fam[0];
 	}
 	[CRepr]
 	public struct ANALOGVIDEOINFO
@@ -5116,14 +5164,18 @@ static
 		public uint32 dwStreamId;
 		public uint32 dwReserved;
 		public AM_MEDIA_TYPE mt;
-		public uint8[0] bFormat;
+		public uint8[1] bFormat_fam;
+		
+		public uint8* bFormat mut => &bFormat_fam[0];
 	}
 	[CRepr]
 	public struct AM_MPEGSYSTEMTYPE
 	{
 		public uint32 dwBitRate;
 		public uint32 cStreams;
-		public AM_MPEGSTREAMTYPE[0] Streams;
+		public AM_MPEGSTREAMTYPE[1] Streams_fam;
+		
+		public AM_MPEGSTREAMTYPE* Streams mut => &Streams_fam[0];
 	}
 	[CRepr]
 	public struct VMR9PresentationInfo
@@ -5316,7 +5368,9 @@ static
 	{
 		public uint32 fcc;
 		public uint32 cb;
-		public _avioldindex_entry[0] aIndex;
+		public _avioldindex_entry[1] aIndex_fam;
+		
+		public _avioldindex_entry* aIndex mut => &aIndex_fam[0];
 		
 		[CRepr, Packed(2)]
 		public struct _avioldindex_entry
@@ -5345,7 +5399,9 @@ static
 		public uint32 nEntriesInUse;
 		public uint32 dwChunkId;
 		public uint32[3] dwReserved;
-		public uint32[0] adwIndex;
+		public uint32[1] adwIndex_fam;
+		
+		public uint32* adwIndex mut => &adwIndex_fam[0];
 	}
 	[CRepr, Packed(2)]
 	public struct AVISUPERINDEX
@@ -5458,7 +5514,9 @@ static
 		public uint32 dwChunkId;
 		public uint64 qwBaseOffset;
 		public uint32 dwReserved3;
-		public _avifieldindex_entry[0] aIndex;
+		public _avifieldindex_entry[1] aIndex_fam;
+		
+		public _avifieldindex_entry* aIndex mut => &aIndex_fam[0];
 		
 		[CRepr, Packed(2)]
 		public struct _avifieldindex_entry
@@ -5515,7 +5573,9 @@ static
 		public uint8 bFirstEntry;
 		public uint8 bNumEntries;
 		public uint16 wFlags;
-		public PALETTEENTRY[0] peNew;
+		public PALETTEENTRY[1] peNew_fam;
+		
+		public PALETTEENTRY* peNew mut => &peNew_fam[0];
 	}
 	[CRepr]
 	public struct AM_AC3_ERROR_CONCEALMENT
@@ -5594,7 +5654,9 @@ static
 	public struct AM_DVDCOPY_BUSKEY
 	{
 		public uint8[5] BusKey;
-		public uint8[0] Reserved;
+		public uint8[1] Reserved_fam;
+		
+		public uint8* Reserved mut => &Reserved_fam[0];
 	}
 	[CRepr]
 	public struct AM_DVDCOPY_DISCKEY
@@ -5659,7 +5721,9 @@ static
 		public uint32 dwProfile;
 		public uint32 dwLevel;
 		public MPEG2VIDEOINFO_FLAGS dwFlags;
-		public uint32[0] dwSequenceHeader;
+		public uint32[1] dwSequenceHeader_fam;
+		
+		public uint32* dwSequenceHeader mut => &dwSequenceHeader_fam[0];
 	}
 	[CRepr]
 	public struct AM_DvdKaraokeData
@@ -5717,7 +5781,9 @@ static
 	public struct VFW_FILTERLIST
 	{
 		public uint32 cFilters;
-		public Guid[0] aClsId;
+		public Guid[1] aClsId_fam;
+		
+		public Guid* aClsId mut => &aClsId_fam[0];
 	}
 	[CRepr]
 	public struct DXVA2_VIDEOSAMPLE
@@ -5908,7 +5974,9 @@ static
 	{
 		public uint8 TableId;
 		public _Header_e__Union Header;
-		public uint8[0] SectionData;
+		public uint8[1] SectionData_fam;
+		
+		public uint8* SectionData mut => &SectionData_fam[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _Header_e__Union
@@ -5926,7 +5994,9 @@ static
 		public _Version_e__Union Version;
 		public uint8 SectionNumber;
 		public uint8 LastSectionNumber;
-		public uint8[0] RemainingData;
+		public uint8[1] RemainingData_fam;
+		
+		public uint8* RemainingData mut => &RemainingData_fam[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _Header_e__Union
@@ -5957,7 +6027,9 @@ static
 		public uint8 Reserved;
 		public uint8 AdaptationLength;
 		public uint16 MessageLength;
-		public uint8[0] RemainingData;
+		public uint8[1] RemainingData_fam;
+		
+		public uint8* RemainingData mut => &RemainingData_fam[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _Header_e__Union
@@ -5982,7 +6054,9 @@ static
 	public struct MPEG_PACKET_LIST
 	{
 		public uint16 wPacketCount;
-		public MPEG_RQST_PACKET*[0] PacketList;
+		public MPEG_RQST_PACKET*[1] PacketList_fam;
+		
+		public MPEG_RQST_PACKET** PacketList mut => &PacketList_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DSMCC_FILTER_OPTIONS
@@ -6169,7 +6243,9 @@ static
 	{
 		public uint8 SectionCount;
 		public uint8[3] Reserved;
-		public int32[0] SectionOffsets;
+		public int32[1] SectionOffsets_fam;
+		
+		public int32* SectionOffsets mut => &SectionOffsets_fam[0];
 	}
 	[CRepr]
 	public struct ProgramElement
@@ -6238,7 +6314,9 @@ static
 		public uint8 TableId;
 		public uint16 VersionNo;
 		public uint32 TableDataSize;
-		public uint8[0] TableData;
+		public uint8[1] TableData_fam;
+		
+		public uint8* TableData mut => &TableData_fam[0];
 	}
 	[CRepr]
 	public struct CAPTURE_STREAMTIME
@@ -6314,7 +6392,9 @@ static
 		public KSIDENTIFIER Method;
 		public uint8 ucDebugLevel;
 		public uint32 ulDebugStringSize;
-		public uint8[0] argbDebugString;
+		public uint8[1] argbDebugString_fam;
+		
+		public uint8* argbDebugString mut => &argbDebugString_fam[0];
 	}
 	[CRepr]
 	public struct BDA_DEBUG_DATA
@@ -6322,7 +6402,9 @@ static
 		public int32 lResult;
 		public Guid uuidDebugDataType;
 		public uint32 ulDataSize;
-		public uint8[0] argbDebugData;
+		public uint8[1] argbDebugData_fam;
+		
+		public uint8* argbDebugData mut => &argbDebugData_fam[0];
 	}
 	[CRepr]
 	public struct BDA_EVENT_DATA
@@ -6331,7 +6413,9 @@ static
 		public uint32 ulEventID;
 		public Guid uuidEventType;
 		public uint32 ulEventDataLength;
-		public uint8[0] argbEventData;
+		public uint8[1] argbEventData_fam;
+		
+		public uint8* argbEventData mut => &argbEventData_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_EVENT_COMPLETE
@@ -6351,7 +6435,9 @@ static
 	{
 		public KSM_NODE NodeMethod;
 		public uint32 ulBufferSize;
-		public uint8[0] argbBuffer;
+		public uint8[1] argbBuffer_fam;
+		
+		public uint8* argbBuffer mut => &argbBuffer_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_WMDRM_LICENSE
@@ -6365,7 +6451,9 @@ static
 		public KSM_NODE NodeMethod;
 		public uint32 ulXMRLicenseLength;
 		public uint32 ulEntitlementTokenLength;
-		public uint8[0] argbDataBuffer;
+		public uint8[1] argbDataBuffer_fam;
+		
+		public uint8* argbDataBuffer mut => &argbDataBuffer_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_WMDRMTUNER_PURCHASEENTITLEMENT
@@ -6374,7 +6462,9 @@ static
 		public uint32 ulDialogRequest;
 		public CHAR[12] cLanguage;
 		public uint32 ulPurchaseTokenLength;
-		public uint8[0] argbDataBuffer;
+		public uint8[1] argbDataBuffer_fam;
+		
+		public uint8* argbDataBuffer mut => &argbDataBuffer_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_WMDRMTUNER_SETPIDPROTECTION
@@ -6400,7 +6490,9 @@ static
 	{
 		public KSIDENTIFIER Method;
 		public uint32 ulTuneLength;
-		public uint8[0] argbTuneData;
+		public uint8[1] argbTuneData_fam;
+		
+		public uint8* argbTuneData mut => &argbTuneData_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_GPNV_GETVALUE
@@ -6408,7 +6500,9 @@ static
 		public KSIDENTIFIER Method;
 		public uint32 ulNameLength;
 		public CHAR[12] cLanguage;
-		public uint8[0] argbData;
+		public uint8[1] argbData_fam;
+		
+		public uint8* argbData mut => &argbData_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_GPNV_SETVALUE
@@ -6418,7 +6512,9 @@ static
 		public CHAR[12] cLanguage;
 		public uint32 ulNameLength;
 		public uint32 ulValueLength;
-		public uint8[0] argbName;
+		public uint8[1] argbName_fam;
+		
+		public uint8* argbName mut => &argbName_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_GPNV_NAMEINDEX
@@ -6438,7 +6534,9 @@ static
 		public KSIDENTIFIER Method;
 		public uint32 ulScanModulationTypeSize;
 		public uint64 AnalogVideoStandards;
-		public uint8[0] argbScanModulationTypes;
+		public uint8[1] argbScanModulationTypes_fam;
+		
+		public uint8* argbScanModulationTypes mut => &argbScanModulationTypes_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_SCAN_START
@@ -6458,7 +6556,9 @@ static
 	{
 		public KSIDENTIFIER Method;
 		public uint32 ulTuneXmlLength;
-		public uint8[0] argbTuneXml;
+		public uint8[1] argbTuneXml_fam;
+		
+		public uint8* argbTuneXml mut => &argbTuneXml_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_USERACTIVITY_USEREASON
@@ -6474,14 +6574,18 @@ static
 		public CHAR[12] cLanguage;
 		public uint32 ulRequestType;
 		public uint32 ulEntitlementTokenLen;
-		public uint8[0] argbEntitlementToken;
+		public uint8[1] argbEntitlementToken_fam;
+		
+		public uint8* argbEntitlementToken mut => &argbEntitlementToken_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_CAS_CAPTURETOKEN
 	{
 		public KSM_NODE NodeMethod;
 		public uint32 ulTokenLength;
-		public uint8[0] argbToken;
+		public uint8[1] argbToken_fam;
+		
+		public uint8* argbToken mut => &argbToken_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_CAS_OPENBROADCASTMMI
@@ -6506,7 +6610,9 @@ static
 		public KSM_NODE NodeMethod;
 		public uint32 ulRequestID;
 		public uint32 ulIsdbCommandSize;
-		public uint8[0] argbIsdbCommandData;
+		public uint8[1] argbIsdbCommandData_fam;
+		
+		public uint8* argbIsdbCommandData mut => &argbIsdbCommandData_fam[0];
 	}
 	[CRepr]
 	public struct KSM_BDA_TS_SELECTOR_SETTSID
@@ -6583,7 +6689,9 @@ static
 		public uint16 wDataLen;
 		public uint16 wProgNumber;
 		public uint16 wSID;
-		public uint8[0] bDescriptor;
+		public uint8[1] bDescriptor_fam;
+		
+		public uint8* bDescriptor mut => &bDescriptor_fam[0];
 	}
 	[CRepr]
 	public struct DVBScramblingControlSpanningEvent
@@ -6606,7 +6714,9 @@ static
 		public uint8 bFormatVersion;
 		public uint8 bDisplayPosition;
 		public uint16 wMessageLength;
-		public char16[0] szMessageArea;
+		public char16[1] szMessageArea_fam;
+		
+		public char16* szMessageArea mut => &szMessageArea_fam[0];
 	}
 	[CRepr]
 	public struct LanguageInfo
@@ -6626,7 +6736,9 @@ static
 	public struct PIDListSpanningEvent
 	{
 		public uint16 wPIDCount;
-		public uint32[0] pulPIDs;
+		public uint32[1] pulPIDs_fam;
+		
+		public uint32* pulPIDs mut => &pulPIDs_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct RATING_ATTRIBUTE
@@ -6665,7 +6777,9 @@ static
 	public struct DvbParentalRatingDescriptor
 	{
 		public uint32 ulNumParams;
-		public DvbParentalRatingParam[0] pParams;
+		public DvbParentalRatingParam[1] pParams_fam;
+		
+		public DvbParentalRatingParam* pParams mut => &pParams_fam[0];
 	}
 	[CRepr]
 	public struct KSPROPERTY_BDA_RF_TUNER_CAPS_S
@@ -6763,7 +6877,9 @@ static
 	public struct HEAACWAVEFORMAT
 	{
 		public HEAACWAVEINFO wfInfo;
-		public uint8[0] pbAudioSpecificConfig;
+		public uint8[1] pbAudioSpecificConfig_fam;
+		
+		public uint8* pbAudioSpecificConfig mut => &pbAudioSpecificConfig_fam[0];
 	}
 	[CRepr]
 	public struct DXVA_COPPSetProtectionLevelCmdData

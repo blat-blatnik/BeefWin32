@@ -453,7 +453,9 @@ static
 	{
 		public VK_TO_BIT* pVkToBit;
 		public uint16 wMaxModBits;
-		public uint8[0] ModNumber;
+		public uint8[1] ModNumber_fam;
+		
+		public uint8* ModNumber mut => &ModNumber_fam[0];
 	}
 	[CRepr]
 	public struct VSC_VK
@@ -472,7 +474,9 @@ static
 	{
 		public uint8 VirtualKey;
 		public uint8 Attributes;
-		public char16[0] wch;
+		public char16[1] wch_fam;
+		
+		public char16* wch mut => &wch_fam[0];
 	}
 	[CRepr]
 	public struct VK_TO_WCHARS2
@@ -556,7 +560,9 @@ static
 	{
 		public uint8 VirtualKey;
 		public uint16 ModificationNumber;
-		public char16[0] wch;
+		public char16[1] wch_fam;
+		
+		public char16* wch mut => &wch_fam[0];
 	}
 	[CRepr]
 	public struct LIGATURE2

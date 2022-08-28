@@ -61,7 +61,9 @@ static
 	public struct PSAPI_WORKING_SET_INFORMATION
 	{
 		public uint NumberOfEntries;
-		public PSAPI_WORKING_SET_BLOCK[0] WorkingSetInfo;
+		public PSAPI_WORKING_SET_BLOCK[1] WorkingSetInfo_fam;
+		
+		public PSAPI_WORKING_SET_BLOCK* WorkingSetInfo mut => &WorkingSetInfo_fam[0];
 	}
 	[CRepr, Union]
 	public struct PSAPI_WORKING_SET_EX_BLOCK

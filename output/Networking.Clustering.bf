@@ -2148,22 +2148,30 @@ static
 	[CRepr]
 	public struct CLUSTER_VALIDATE_PATH
 	{
-		public char16[0] szPath;
+		public char16[1] szPath_fam;
+		
+		public char16* szPath mut => &szPath_fam[0];
 	}
 	[CRepr]
 	public struct CLUSTER_VALIDATE_DIRECTORY
 	{
-		public char16[0] szPath;
+		public char16[1] szPath_fam;
+		
+		public char16* szPath mut => &szPath_fam[0];
 	}
 	[CRepr]
 	public struct CLUSTER_VALIDATE_NETNAME
 	{
-		public char16[0] szNetworkName;
+		public char16[1] szNetworkName_fam;
+		
+		public char16* szNetworkName mut => &szNetworkName_fam[0];
 	}
 	[CRepr]
 	public struct CLUSTER_VALIDATE_CSV_FILENAME
 	{
-		public char16[0] szFileName;
+		public char16[1] szFileName_fam;
+		
+		public char16* szFileName mut => &szFileName_fam[0];
 	}
 	[CRepr]
 	public struct CLUSTER_SET_PASSWORD_STATUS
@@ -2215,7 +2223,9 @@ static
 	{
 		public BOOL HasQuorum;
 		public uint32 UpnodesSize;
-		public uint8[0] Upnodes;
+		public uint8[1] Upnodes_fam;
+		
+		public uint8* Upnodes mut => &Upnodes_fam[0];
 	}
 	[CRepr]
 	public struct CLUSTER_AVAILABILITY_SET_CONFIG
@@ -2312,7 +2322,9 @@ static
 	public struct CLUSPROP_BINARY
 	{
 		public CLUSPROP_VALUE __AnonymousBase_clusapi_L5129_C41;
-		public uint8[0] rgb;
+		public uint8[1] rgb_fam;
+		
+		public uint8* rgb mut => &rgb_fam[0];
 	}
 	[CRepr]
 	public struct CLUSPROP_WORD
@@ -2336,7 +2348,9 @@ static
 	public struct CLUSPROP_SZ
 	{
 		public CLUSPROP_VALUE __AnonymousBase_clusapi_L5169_C37;
-		public char16[0] sz;
+		public char16[1] sz_fam;
+		
+		public char16* sz mut => &sz_fam[0];
 	}
 	[CRepr]
 	public struct CLUSPROP_ULARGE_INTEGER
@@ -2360,7 +2374,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public SECURITY_DESCRIPTOR_RELATIVE sd;
-			public uint8[0] rgbSecurityDescriptor;
+			public uint8[1] rgbSecurityDescriptor_fam;
+			
+			public uint8* rgbSecurityDescriptor mut => &rgbSecurityDescriptor_fam[0];
 		}
 	}
 	[CRepr]
@@ -2420,7 +2436,9 @@ static
 		public uint32 dwSize;
 		public uint32 dwNodeBitMask;
 		public uint32 dwMaxNumberofNodes;
-		public char16[0] multiszNodeList;
+		public char16[1] multiszNodeList_fam;
+		
+		public char16* multiszNodeList mut => &multiszNodeList_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_PARTITION_INFO
@@ -2534,7 +2552,9 @@ static
 		public uint32 PartitionNumber;
 		public uint32 ChkdskState;
 		public uint32 FileIdCount;
-		public uint64[0] FileIdList;
+		public uint64[1] FileIdList_fam;
+		
+		public uint64* FileIdList mut => &FileIdList_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_DISK_NUMBER_INFO
@@ -2646,14 +2666,18 @@ static
 	{
 		public uint32 NodeId;
 		public uint32 AddressSize;
-		public uint8[0] Address;
+		public uint8[1] Address_fam;
+		
+		public uint8* Address mut => &Address_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_NETNAME_IP_INFO_FOR_MULTICHANNEL
 	{
 		public char16[64] szName;
 		public uint32 NumEntries;
-		public CLUS_NETNAME_IP_INFO_ENTRY[0] IpInfo;
+		public CLUS_NETNAME_IP_INFO_ENTRY[1] IpInfo_fam;
+		
+		public CLUS_NETNAME_IP_INFO_ENTRY* IpInfo mut => &IpInfo_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_MAINTENANCE_MODE_INFO
@@ -2679,7 +2703,9 @@ static
 	{
 		public BOOL InMaintenance;
 		public uint32 ExtraParameterSize;
-		public uint8[0] ExtraParameter;
+		public uint8[1] ExtraParameter_fam;
+		
+		public uint8* ExtraParameter mut => &ExtraParameter_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_STORAGE_SET_DRIVELETTER
@@ -2703,7 +2729,9 @@ static
 	{
 		public uint32 dwSize;
 		public CLUSTER_RESOURCE_STATE resourceState;
-		public char16[0] szProviderId;
+		public char16[1] szProviderId_fam;
+		
+		public char16* szProviderId mut => &szProviderId_fam[0];
 	}
 	[CRepr]
 	public struct CLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT
@@ -2731,7 +2759,9 @@ static
 	public struct FILESHARE_CHANGE_LIST
 	{
 		public uint32 NumEntries;
-		public FILESHARE_CHANGE[0] ChangeEntry;
+		public FILESHARE_CHANGE[1] ChangeEntry_fam;
+		
+		public FILESHARE_CHANGE* ChangeEntry mut => &ChangeEntry_fam[0];
 	}
 	[CRepr]
 	public struct CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT
@@ -2782,7 +2812,9 @@ static
 	public struct SR_RESOURCE_TYPE_REPLICATED_PARTITION_ARRAY
 	{
 		public uint32 Count;
-		public SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO[0] PartitionArray;
+		public SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO[1] PartitionArray_fam;
+		
+		public SR_RESOURCE_TYPE_REPLICATED_PARTITION_INFO* PartitionArray mut => &PartitionArray_fam[0];
 	}
 	[CRepr]
 	public struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS
@@ -2814,7 +2846,9 @@ static
 	public struct SR_RESOURCE_TYPE_ELIGIBLE_DISKS_RESULT
 	{
 		public uint16 Count;
-		public SR_RESOURCE_TYPE_DISK_INFO[0] DiskInfo;
+		public SR_RESOURCE_TYPE_DISK_INFO[1] DiskInfo_fam;
+		
+		public SR_RESOURCE_TYPE_DISK_INFO* DiskInfo mut => &DiskInfo_fam[0];
 	}
 	[CRepr]
 	public struct SR_RESOURCE_TYPE_REPLICATED_DISK
@@ -2828,7 +2862,9 @@ static
 	public struct SR_RESOURCE_TYPE_REPLICATED_DISKS_RESULT
 	{
 		public uint16 Count;
-		public SR_RESOURCE_TYPE_REPLICATED_DISK[0] ReplicatedDisks;
+		public SR_RESOURCE_TYPE_REPLICATED_DISK[1] ReplicatedDisks_fam;
+		
+		public SR_RESOURCE_TYPE_REPLICATED_DISK* ReplicatedDisks mut => &ReplicatedDisks_fam[0];
 	}
 	[CRepr]
 	public struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP

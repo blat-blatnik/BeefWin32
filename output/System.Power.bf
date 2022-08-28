@@ -570,13 +570,17 @@ static
 	{
 		public uint32 BatteryTag;
 		public BATTERY_SET_INFORMATION_LEVEL InformationLevel;
-		public uint8[0] Buffer;
+		public uint8[1] Buffer_fam;
+		
+		public uint8* Buffer mut => &Buffer_fam[0];
 	}
 	[CRepr]
 	public struct BATTERY_CHARGER_STATUS
 	{
 		public BATTERY_CHARGING_SOURCE_TYPE Type;
-		public uint32[0] VaData;
+		public uint32[1] VaData_fam;
+		
+		public uint32* VaData mut => &VaData_fam[0];
 	}
 	[CRepr]
 	public struct BATTERY_USB_CHARGER_STATUS
@@ -709,14 +713,18 @@ static
 		public char16[16] HardwareModel;
 		public uint16 HardwareRevision;
 		public uint16 MeteredHardwareNameSize;
-		public char16[0] MeteredHardwareName;
+		public char16[1] MeteredHardwareName_fam;
+		
+		public char16* MeteredHardwareName mut => &MeteredHardwareName_fam[0];
 	}
 	[CRepr]
 	public struct EMI_CHANNEL_V2
 	{
 		public EMI_MEASUREMENT_UNIT MeasurementUnit;
 		public uint16 ChannelNameSize;
-		public char16[0] ChannelName;
+		public char16[1] ChannelName_fam;
+		
+		public char16* ChannelName mut => &ChannelName_fam[0];
 	}
 	[CRepr]
 	public struct EMI_METADATA_V2
@@ -725,12 +733,16 @@ static
 		public char16[16] HardwareModel;
 		public uint16 HardwareRevision;
 		public uint16 ChannelCount;
-		public EMI_CHANNEL_V2[0] Channels;
+		public EMI_CHANNEL_V2[1] Channels_fam;
+		
+		public EMI_CHANNEL_V2* Channels mut => &Channels_fam[0];
 	}
 	[CRepr]
 	public struct EMI_MEASUREMENT_DATA_V2
 	{
-		public EMI_CHANNEL_MEASUREMENT_DATA[0] ChannelData;
+		public EMI_CHANNEL_MEASUREMENT_DATA[1] ChannelData_fam;
+		
+		public EMI_CHANNEL_MEASUREMENT_DATA* ChannelData mut => &ChannelData_fam[0];
 	}
 	[CRepr]
 	public struct CM_POWER_DATA
@@ -751,7 +763,9 @@ static
 		public Guid Guid;
 		public SYSTEM_POWER_CONDITION PowerCondition;
 		public uint32 DataLength;
-		public uint8[0] Data;
+		public uint8[1] Data_fam;
+		
+		public uint8* Data mut => &Data_fam[0];
 	}
 	[CRepr]
 	public struct BATTERY_REPORTING_SCALE
@@ -896,7 +910,9 @@ static
 	{
 		public Guid PowerSetting;
 		public uint32 DataLength;
-		public uint8[0] Data;
+		public uint8[1] Data_fam;
+		
+		public uint8* Data mut => &Data_fam[0];
 	}
 	[CRepr]
 	public struct SYSTEM_POWER_STATUS

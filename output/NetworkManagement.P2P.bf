@@ -942,7 +942,9 @@ static
 	public struct DRT_ADDRESS_LIST
 	{
 		public uint32 AddressCount;
-		public DRT_ADDRESS[0] AddressList;
+		public DRT_ADDRESS[1] AddressList_fam;
+		
+		public DRT_ADDRESS* AddressList mut => &AddressList_fam[0];
 	}
 	[CRepr]
 	public struct DRT_SEARCH_RESULT

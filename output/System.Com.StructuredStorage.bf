@@ -166,7 +166,9 @@ static
 	{
 		public uint32 ulCntStr;
 		public uint32 ulCntChar;
-		public char16[0] rgString;
+		public char16[1] rgString_fam;
+		
+		public char16* rgString mut => &rgString_fam[0];
 	}
 	[CRepr]
 	public struct VERSIONEDSTREAM
@@ -449,7 +451,9 @@ static
 	public struct SERIALIZEDPROPERTYVALUE
 	{
 		public uint32 dwType;
-		public uint8[0] rgb;
+		public uint8[1] rgb_fam;
+		
+		public uint8* rgb mut => &rgb_fam[0];
 	}
 	[CRepr]
 	public struct PMemoryAllocator {}

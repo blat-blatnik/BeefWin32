@@ -433,7 +433,9 @@ static
 	public struct IP4_ARRAY
 	{
 		public uint32 AddrCount;
-		public uint32[0] AddrArray;
+		public uint32[1] AddrArray_fam;
+		
+		public uint32* AddrArray mut => &AddrArray_fam[0];
 	}
 	[CRepr, Union]
 	public struct IP6_ADDRESS
@@ -467,7 +469,9 @@ static
 		public uint32 MatchFlag;
 		public uint32 Reserved1;
 		public uint32 Reserved2;
-		public DNS_ADDR[0] AddrArray;
+		public DNS_ADDR[1] AddrArray_fam;
+		
+		public DNS_ADDR* AddrArray mut => &AddrArray_fam[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DNS_HEADER
@@ -568,26 +572,34 @@ static
 	public struct DNS_TXT_DATAW
 	{
 		public uint32 dwStringCount;
-		public PWSTR[0] pStringArray;
+		public PWSTR[1] pStringArray_fam;
+		
+		public PWSTR* pStringArray mut => &pStringArray_fam[0];
 	}
 	[CRepr]
 	public struct DNS_TXT_DATAA
 	{
 		public uint32 dwStringCount;
-		public PSTR[0] pStringArray;
+		public PSTR[1] pStringArray_fam;
+		
+		public PSTR* pStringArray mut => &pStringArray_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NULL_DATA
 	{
 		public uint32 dwByteCount;
-		public uint8[0] Data;
+		public uint8[1] Data_fam;
+		
+		public uint8* Data mut => &Data_fam[0];
 	}
 	[CRepr]
 	public struct DNS_WKS_DATA
 	{
 		public uint32 IpAddress;
 		public uint8 chProtocol;
-		public uint8[0] BitMask;
+		public uint8[1] BitMask_fam;
+		
+		public uint8* BitMask mut => &BitMask_fam[0];
 	}
 	[CRepr]
 	public struct DNS_AAAA_DATA
@@ -606,7 +618,9 @@ static
 		public uint16 wKeyTag;
 		public uint16 wSignatureLength;
 		public PWSTR pNameSigner;
-		public uint8[0] Signature;
+		public uint8[1] Signature_fam;
+		
+		public uint8* Signature mut => &Signature_fam[0];
 	}
 	[CRepr]
 	public struct DNS_SIG_DATAA
@@ -620,7 +634,9 @@ static
 		public uint16 wKeyTag;
 		public uint16 wSignatureLength;
 		public PSTR pNameSigner;
-		public uint8[0] Signature;
+		public uint8[1] Signature_fam;
+		
+		public uint8* Signature mut => &Signature_fam[0];
 	}
 	[CRepr]
 	public struct DNS_KEY_DATA
@@ -630,13 +646,17 @@ static
 		public uint8 chAlgorithm;
 		public uint16 wKeyLength;
 		public uint16 wPad;
-		public uint8[0] Key;
+		public uint8[1] Key_fam;
+		
+		public uint8* Key mut => &Key_fam[0];
 	}
 	[CRepr]
 	public struct DNS_DHCID_DATA
 	{
 		public uint32 dwByteCount;
-		public uint8[0] DHCID;
+		public uint8[1] DHCID_fam;
+		
+		public uint8* DHCID mut => &DHCID_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NSEC_DATAW
@@ -644,7 +664,9 @@ static
 		public PWSTR pNextDomainName;
 		public uint16 wTypeBitMapsLength;
 		public uint16 wPad;
-		public uint8[0] TypeBitMaps;
+		public uint8[1] TypeBitMaps_fam;
+		
+		public uint8* TypeBitMaps mut => &TypeBitMaps_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NSEC_DATAA
@@ -652,7 +674,9 @@ static
 		public PSTR pNextDomainName;
 		public uint16 wTypeBitMapsLength;
 		public uint16 wPad;
-		public uint8[0] TypeBitMaps;
+		public uint8[1] TypeBitMaps_fam;
+		
+		public uint8* TypeBitMaps mut => &TypeBitMaps_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NSEC3_DATA
@@ -663,7 +687,9 @@ static
 		public uint8 bSaltLength;
 		public uint8 bHashLength;
 		public uint16 wTypeBitMapsLength;
-		public uint8[0] chData;
+		public uint8[1] chData_fam;
+		
+		public uint8* chData mut => &chData_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NSEC3PARAM_DATA
@@ -673,7 +699,9 @@ static
 		public uint16 wIterations;
 		public uint8 bSaltLength;
 		public uint8[3] bPad;
-		public uint8[0] pbSalt;
+		public uint8[1] pbSalt_fam;
+		
+		public uint8* pbSalt mut => &pbSalt_fam[0];
 	}
 	[CRepr]
 	public struct DNS_TLSA_DATA
@@ -683,7 +711,9 @@ static
 		public uint8 bMatchingType;
 		public uint16 bCertificateAssociationDataLength;
 		public uint8[3] bPad;
-		public uint8[0] bCertificateAssociationData;
+		public uint8[1] bCertificateAssociationData_fam;
+		
+		public uint8* bCertificateAssociationData mut => &bCertificateAssociationData_fam[0];
 	}
 	[CRepr]
 	public struct DNS_DS_DATA
@@ -693,14 +723,18 @@ static
 		public uint8 chDigestType;
 		public uint16 wDigestLength;
 		public uint16 wPad;
-		public uint8[0] Digest;
+		public uint8[1] Digest_fam;
+		
+		public uint8* Digest mut => &Digest_fam[0];
 	}
 	[CRepr]
 	public struct DNS_OPT_DATA
 	{
 		public uint16 wDataLength;
 		public uint16 wPad;
-		public uint8[0] Data;
+		public uint8[1] Data_fam;
+		
+		public uint8* Data mut => &Data_fam[0];
 	}
 	[CRepr]
 	public struct DNS_LOC_DATA
@@ -718,14 +752,18 @@ static
 	{
 		public PWSTR pNameNext;
 		public uint16 wNumTypes;
-		public uint16[0] wTypes;
+		public uint16[1] wTypes_fam;
+		
+		public uint16* wTypes mut => &wTypes_fam[0];
 	}
 	[CRepr]
 	public struct DNS_NXT_DATAA
 	{
 		public PSTR pNameNext;
 		public uint16 wNumTypes;
-		public uint16[0] wTypes;
+		public uint16[1] wTypes_fam;
+		
+		public uint16* wTypes mut => &wTypes_fam[0];
 	}
 	[CRepr]
 	public struct DNS_SRV_DATAW
@@ -839,7 +877,9 @@ static
 	public struct DNS_UNKNOWN_DATA
 	{
 		public uint32 dwByteCount;
-		public uint8[0] bData;
+		public uint8[1] bData_fam;
+		
+		public uint8* bData mut => &bData_fam[0];
 	}
 	[CRepr]
 	public struct DNS_WINS_DATA
@@ -848,7 +888,9 @@ static
 		public uint32 dwLookupTimeout;
 		public uint32 dwCacheTimeout;
 		public uint32 cWinsServerCount;
-		public uint32[0] WinsServers;
+		public uint32[1] WinsServers_fam;
+		
+		public uint32* WinsServers mut => &WinsServers_fam[0];
 	}
 	[CRepr]
 	public struct DNS_WINSR_DATAW
@@ -1221,7 +1263,9 @@ static
 	public struct DNS_MESSAGE_BUFFER
 	{
 		public DNS_HEADER MessageHead;
-		public CHAR[0] MessageBody;
+		public CHAR[1] MessageBody_fam;
+		
+		public CHAR* MessageBody mut => &MessageBody_fam[0];
 	}
 	[CRepr]
 	public struct DNS_CONNECTION_PROXY_INFO

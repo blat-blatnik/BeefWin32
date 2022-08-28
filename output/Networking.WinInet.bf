@@ -1786,7 +1786,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public using _Anonymous_e__Struct Anonymous;
-			public INTERNET_CACHE_CONFIG_PATH_ENTRYA[0] CachePaths;
+			public INTERNET_CACHE_CONFIG_PATH_ENTRYA[1] CachePaths_fam;
+			
+			public INTERNET_CACHE_CONFIG_PATH_ENTRYA* CachePaths mut => &CachePaths_fam[0];
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -1814,7 +1816,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public using _Anonymous_e__Struct Anonymous;
-			public INTERNET_CACHE_CONFIG_PATH_ENTRYW[0] CachePaths;
+			public INTERNET_CACHE_CONFIG_PATH_ENTRYW[1] CachePaths_fam;
+			
+			public INTERNET_CACHE_CONFIG_PATH_ENTRYW* CachePaths mut => &CachePaths_fam[0];
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct

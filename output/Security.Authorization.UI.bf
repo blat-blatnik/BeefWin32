@@ -123,7 +123,9 @@ static
 	public struct SID_INFO_LIST
 	{
 		public uint32 cItems;
-		public SID_INFO[0] aSidInfo;
+		public SID_INFO[1] aSidInfo_fam;
+		
+		public SID_INFO* aSidInfo mut => &aSidInfo_fam[0];
 	}
 	[CRepr]
 	public struct SECURITY_OBJECT

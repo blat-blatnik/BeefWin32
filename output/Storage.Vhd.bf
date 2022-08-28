@@ -461,8 +461,11 @@ static
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
 		{
-			public STORAGE_DEPENDENCY_INFO_TYPE_1[0] Version1Entries;
-			public STORAGE_DEPENDENCY_INFO_TYPE_2[0] Version2Entries;
+			public STORAGE_DEPENDENCY_INFO_TYPE_1[1] Version1Entries_fam;
+			public STORAGE_DEPENDENCY_INFO_TYPE_2[1] Version2Entries_fam;
+			
+			public STORAGE_DEPENDENCY_INFO_TYPE_1* Version1Entries mut => &Version1Entries_fam[0];
+			public STORAGE_DEPENDENCY_INFO_TYPE_2* Version2Entries mut => &Version2Entries_fam[0];
 		}
 	}
 	[CRepr]
@@ -510,13 +513,17 @@ static
 			{
 				public BOOL Enabled;
 				public BOOL NewerChanges;
-				public char16[0] MostRecentId;
+				public char16[1] MostRecentId_fam;
+				
+				public char16* MostRecentId mut => &MostRecentId_fam[0];
 			}
 			[CRepr]
 			public struct _ParentLocation_e__Struct
 			{
 				public BOOL ParentResolved;
-				public char16[0] ParentLocationBuffer;
+				public char16[1] ParentLocationBuffer_fam;
+				
+				public char16* ParentLocationBuffer mut => &ParentLocationBuffer_fam[0];
 			}
 		}
 	}

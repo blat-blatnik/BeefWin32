@@ -443,7 +443,9 @@ static
 		public uint8 Revision;
 		public uint8 SubAuthorityCount;
 		public SID_IDENTIFIER_AUTHORITY IdentifierAuthority;
-		public uint32[0] SubAuthority;
+		public uint32[1] SubAuthority_fam;
+		
+		public uint32* SubAuthority mut => &SubAuthority_fam[0];
 	}
 	[CRepr, Union]
 	public struct SE_SID
@@ -686,7 +688,9 @@ static
 	{
 		public uint32 PrivilegeCount;
 		public uint32 Control;
-		public LUID_AND_ATTRIBUTES[0] Privilege;
+		public LUID_AND_ATTRIBUTES[1] Privilege_fam;
+		
+		public LUID_AND_ATTRIBUTES* Privilege mut => &Privilege_fam[0];
 	}
 	[CRepr]
 	public struct ACCESS_REASONS
@@ -731,13 +735,17 @@ static
 	public struct TOKEN_GROUPS
 	{
 		public uint32 GroupCount;
-		public SID_AND_ATTRIBUTES[0] Groups;
+		public SID_AND_ATTRIBUTES[1] Groups_fam;
+		
+		public SID_AND_ATTRIBUTES* Groups mut => &Groups_fam[0];
 	}
 	[CRepr]
 	public struct TOKEN_PRIVILEGES
 	{
 		public uint32 PrivilegeCount;
-		public LUID_AND_ATTRIBUTES[0] Privileges;
+		public LUID_AND_ATTRIBUTES[1] Privileges_fam;
+		
+		public LUID_AND_ATTRIBUTES* Privileges mut => &Privileges_fam[0];
 	}
 	[CRepr]
 	public struct TOKEN_OWNER
@@ -903,11 +911,17 @@ static
 		[CRepr, Union]
 		public struct _Values_e__Union
 		{
-			public uint32[0] pInt64;
-			public uint32[0] pUint64;
-			public uint32[0] ppString;
-			public uint32[0] pFqbn;
-			public uint32[0] pOctetString;
+			public uint32[1] pInt64_fam;
+			public uint32[1] pUint64_fam;
+			public uint32[1] ppString_fam;
+			public uint32[1] pFqbn_fam;
+			public uint32[1] pOctetString_fam;
+			
+			public uint32* pInt64 mut => &pInt64_fam[0];
+			public uint32* pUint64 mut => &pUint64_fam[0];
+			public uint32* ppString mut => &ppString_fam[0];
+			public uint32* pFqbn mut => &pFqbn_fam[0];
+			public uint32* pOctetString mut => &pOctetString_fam[0];
 		}
 	}
 	[CRepr]

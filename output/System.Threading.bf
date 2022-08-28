@@ -698,7 +698,7 @@ static
 	{
 		public uint8[2] Reserved1;
 		public uint8 BeingDebugged;
-		public uint8[0] Reserved2;
+		public uint8[1] Reserved2_fam;
 		public void*[2] Reserved3;
 		public PEB_LDR_DATA* Ldr;
 		public RTL_USER_PROCESS_PARAMETERS* ProcessParameters;
@@ -713,8 +713,11 @@ static
 		public uint8[96] Reserved10;
 		public PPS_POST_PROCESS_INIT_ROUTINE PostProcessInitRoutine;
 		public uint8[128] Reserved11;
-		public void*[0] Reserved12;
+		public void*[1] Reserved12_fam;
 		public uint32 SessionId;
+		
+		public uint8* Reserved2 mut => &Reserved2_fam[0];
+		public void** Reserved12 mut => &Reserved12_fam[0];
 	}
 	[CRepr]
 	public struct PROCESS_BASIC_INFORMATION
