@@ -69,6 +69,57 @@ class Program {
 }
 ```
 
+This minimal example opens a window:
+
+```c#
+namespace Example;
+using System;
+using Win32.Foundation;
+using Win32.UI.WindowsAndMessaging;
+using Win32.System.LibraryLoader;
+class Program {
+    static void Main() {
+        HINSTANCE instance = GetModuleHandleW(null);
+        WNDCLASSEXW @class = .{
+            cbSize = sizeof(WNDCLASSEXA),
+            style = .HREDRAW | .VREDRAW,
+            lpfnWndProc = => WindowProc,
+            hInstance = instance,
+            hCursor = LoadCursorW(0, IDC_ARROW),
+            lpszClassName = "Example".ToScopedNativeWChar!()
+        };
+        RegisterClassExW(@class);
+        RECT rect = .{ left = 0, top = 0, right = 1280, bottom = 720 };
+        AdjustWindowRect(out rect, .OVERLAPPEDWINDOW, 0);
+        HWND window = CreateWindowExW(
+            0,
+            @class.lpszClassName,
+            "Example".ToScopedNativeWChar!(),
+            .OVERLAPPEDWINDOW,
+            CW_USEDEFAULT,
+            CW_USEDEFAULT,
+            rect.right - rect.left,
+            rect.bottom - rect.top,
+            0,
+            0,
+            instance,
+            null);
+        ShowWindow(window, .SHOW);
+        MSG message = .();
+        while (IsWindowVisible(window) != 0) {
+            while (PeekMessageW(out message, window, 0, 0, .REMOVE) != 0) {
+                TranslateMessage(message);
+                DispatchMessageW(message);
+            }
+        }
+    }
+    [CallingConvention(.Stdcall)]
+    static LRESULT WindowProc(HWND window, uint32 message, WPARAM wparam, LPARAM lparam) {
+        return DefWindowProcW(window, message, wparam, lparam);
+    }
+}
+```
+
 ## How to run the generator
 
 ```bash
