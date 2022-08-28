@@ -342,8 +342,8 @@ namespace Win32
 			public BOOL HasOutput(DXC_OUT_KIND dxcOutKind) mut => VT.HasOutput(ref this, dxcOutKind);
 			public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, in Guid iid, void** ppvObject, out IDxcBlobUtf16* ppOutputName) mut => VT.GetOutput(ref this, dxcOutKind, iid, ppvObject, out ppOutputName);
 			public uint32 GetNumOutputs() mut => VT.GetNumOutputs(ref this);
-			public DXC_OUT_KIND GetOutputByIndex(uint32 Index) mut => VT.GetOutputByIndex(ref this, Index);
-			public DXC_OUT_KIND PrimaryOutput() mut => VT.PrimaryOutput(ref this);
+			public DXC_OUT_KIND GetOutputByIndex(uint32 Index) mut => VT.GetOutputByIndex(ref this, .. var _, Index);
+			public DXC_OUT_KIND PrimaryOutput() mut => VT.PrimaryOutput(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IDxcOperationResult.VTable
@@ -351,8 +351,8 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] BOOL(ref IDxcResult self, DXC_OUT_KIND dxcOutKind) HasOutput;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDxcResult self, DXC_OUT_KIND dxcOutKind, in Guid iid, void** ppvObject, out IDxcBlobUtf16* ppOutputName) GetOutput;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDxcResult self) GetNumOutputs;
-				public new function [CallingConvention(.Stdcall)] DXC_OUT_KIND(ref IDxcResult self, uint32 Index) GetOutputByIndex;
-				public new function [CallingConvention(.Stdcall)] DXC_OUT_KIND(ref IDxcResult self) PrimaryOutput;
+				public new function [CallingConvention(.Stdcall)] void(ref IDxcResult self, out DXC_OUT_KIND @return, uint32 Index) GetOutputByIndex;
+				public new function [CallingConvention(.Stdcall)] void(ref IDxcResult self, out DXC_OUT_KIND @return) PrimaryOutput;
 			}
 		}
 		[CRepr]

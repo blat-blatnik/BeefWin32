@@ -126,13 +126,13 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint64 GetPresentId() mut => VT.GetPresentId(ref this);
-			public PresentStatisticsKind GetKind() mut => VT.GetKind(ref this);
+			public PresentStatisticsKind GetKind() mut => VT.GetKind(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatistics self) GetPresentId;
-				public new function [CallingConvention(.Stdcall)] PresentStatisticsKind(ref IPresentStatistics self) GetKind;
+				public new function [CallingConvention(.Stdcall)] void(ref IPresentStatistics self, out PresentStatisticsKind @return) GetKind;
 			}
 		}
 		[CRepr]
@@ -201,13 +201,13 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint64 GetCompositionFrameId() mut => VT.GetCompositionFrameId(ref this);
-			public PresentStatus GetPresentStatus() mut => VT.GetPresentStatus(ref this);
+			public PresentStatus GetPresentStatus() mut => VT.GetPresentStatus(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatusPresentStatistics self) GetCompositionFrameId;
-				public new function [CallingConvention(.Stdcall)] PresentStatus(ref IPresentStatusPresentStatistics self) GetPresentStatus;
+				public new function [CallingConvention(.Stdcall)] void(ref IPresentStatusPresentStatistics self, out PresentStatus @return) GetPresentStatus;
 			}
 		}
 		[CRepr]
@@ -236,20 +236,20 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public LUID GetOutputAdapterLUID() mut => VT.GetOutputAdapterLUID(ref this);
+			public LUID GetOutputAdapterLUID() mut => VT.GetOutputAdapterLUID(ref this, .. var _);
 			public uint32 GetOutputVidPnSourceId() mut => VT.GetOutputVidPnSourceId(ref this);
 			public uint GetContentTag() mut => VT.GetContentTag(ref this);
-			public SystemInterruptTime GetDisplayedTime() mut => VT.GetDisplayedTime(ref this);
-			public SystemInterruptTime GetPresentDuration() mut => VT.GetPresentDuration(ref this);
+			public SystemInterruptTime GetDisplayedTime() mut => VT.GetDisplayedTime(ref this, .. var _);
+			public SystemInterruptTime GetPresentDuration() mut => VT.GetPresentDuration(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] LUID(ref IIndependentFlipFramePresentStatistics self) GetOutputAdapterLUID;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out LUID @return) GetOutputAdapterLUID;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IIndependentFlipFramePresentStatistics self) GetOutputVidPnSourceId;
 				public new function [CallingConvention(.Stdcall)] uint(ref IIndependentFlipFramePresentStatistics self) GetContentTag;
-				public new function [CallingConvention(.Stdcall)] SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetDisplayedTime;
-				public new function [CallingConvention(.Stdcall)] SystemInterruptTime(ref IIndependentFlipFramePresentStatistics self) GetPresentDuration;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime @return) GetDisplayedTime;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime @return) GetPresentDuration;
 			}
 		}
 		#endregion

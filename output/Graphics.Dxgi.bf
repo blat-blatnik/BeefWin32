@@ -1487,7 +1487,7 @@ namespace Win32
 			public HRESULT GetTargetRect(out RECT pRect) mut => VT.GetTargetRect(ref this, out pRect);
 			public HRESULT GetDestSize(out uint32 pWidth, out uint32 pHeight) mut => VT.GetDestSize(ref this, out pWidth, out pHeight);
 			public HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace) mut => VT.SetColorSpace(ref this, ColorSpace);
-			public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace() mut => VT.GetColorSpace(ref this);
+			public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace() mut => VT.GetColorSpace(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
@@ -1500,7 +1500,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXGIDecodeSwapChain self, out RECT pRect) GetTargetRect;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXGIDecodeSwapChain self, out uint32 pWidth, out uint32 pHeight) GetDestSize;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDXGIDecodeSwapChain self, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace) SetColorSpace;
-				public new function [CallingConvention(.Stdcall)] DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS(ref IDXGIDecodeSwapChain self) GetColorSpace;
+				public new function [CallingConvention(.Stdcall)] void(ref IDXGIDecodeSwapChain self, out DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS @return) GetColorSpace;
 			}
 		}
 		[CRepr]

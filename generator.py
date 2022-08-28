@@ -5,7 +5,6 @@ INPUT = 'json'
 OUTPUT = 'output'
 
 STRIP_ENUM_PREFIXES = True # Strips enum member name prefixes: .ActionKindA + .ActionKindB -> .A + .B
-ENHANCED_POINTERS = True # Replace raw * with ref, in, out when appropriate.
 
 # If you need to completely replace a type name from the Json data into a native Beef type
 REPLACE_TYPE_NAMES = {
@@ -207,20 +206,17 @@ def get_param_type(param: dict) -> str:
     kind = type['Kind']
     attribs = param['Attrs']
     type_name = get_type_name(type)
-    if ENHANCED_POINTERS:
-        # The problem with replacing raw pointers is that you lose the ability to
-        # cast the "wrong" pointer type to the correct one.
-        if type_name.endswith('*') and kind != 'LPArray' and 'void' not in type_name:
-            if 'Optional' in attribs:
-                return type_name #TODO: If this is the last parameter we could default it to null.
-            if 'Const' in attribs and 'In' in attribs:
-                return 'in ' + type_name[:-1]
-            if 'Out' in attribs:
-                return 'out ' + type_name[:-1]
-            else:
-                return 'ref ' + type_name[:-1]
+    # The problem with replacing raw pointers is that you lose the ability to
+    # cast the "wrong" pointer type to the correct one.
+    if type_name.endswith('*') and kind != 'LPArray' and 'void' not in type_name:
+        if 'Optional' in attribs:
+            return type_name #TODO: If this is the last parameter we could default it to null.
+        if 'Const' in attribs and 'In' in attribs:
+            return 'in ' + type_name[:-1]
+        if 'Out' in attribs:
+            return 'out ' + type_name[:-1]
         else:
-            return type_name
+            return 'ref ' + type_name[:-1]
     else:
         return type_name
 
@@ -252,11 +248,34 @@ def guid_literal(guid: str) -> str:
     k = '0x' + guid_hex[30:32]
     return f'.({a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}, {i}, {j}, {k})'
 
+def needs_return_via_out_parameters(com_method, all_native_typedefs):
+    # https://github.com/microsoft/CsWin32/issues/167
+    return_type = com_method['ReturnType']
+    type_name = get_type_name(return_type)
+    if type_name in all_native_typedefs:
+        return False
+    if return_type['Kind'] != 'ApiRef':
+        return False
+    if return_type['TargetKind'] == 'Com': # pointer to a COM interface
+        return False
+    return True
 
 try: os.mkdir(OUTPUT)
 except: pass
 
 filenames = os.listdir(INPUT)
+
+# Need to do a prepass to determine what types are native typedefs.
+# COM method calling convention returns structs differently than native types.
+# So we need to know which types are native and which aren't before we go through COM stuff.
+all_native_typedefs = set()
+for filename in filenames:
+    with open(f'{INPUT}/{filename}') as input:
+        content = json.load(input)
+        for type in content['Types']:
+            if type['Kind'] == 'NativeTypedef':
+                all_native_typedefs.add(type['Name'])
+
 for filename in filenames:
     with open(f'{INPUT}/{filename}') as input:
         content = json.load(input)
@@ -432,10 +451,6 @@ for filename in filenames:
                         name = replace_type_name(type['Name'], namespace_name)
                         kind = type['Kind']
                         pack = type['PackingSize']
-
-                        if name == 'LARGE_INTEGER':
-                            x = 123
-
                         attribs = ['CRepr']
                         if kind == 'Union':
                             attribs.append('Union')
@@ -530,11 +545,6 @@ for filename in filenames:
                     output.write(f'{indent}public new VTable* VT {{ get => (.)vt; }}\n')
                     output.write(f'{indent}\n')
 
-                    if ENHANCED_POINTERS:
-                        ref = 'ref '
-                    else:
-                        ref = '&'
-
                     methods = com['Methods']
                     if len(methods) > 0:
                         # Functions could be overloaded here, so we need to mangle the names somehow.
@@ -557,13 +567,19 @@ for filename in filenames:
                                 output.write(f'{param_type} {param_name}')
                                 if i != len(parameters) - 1:
                                     output.write(', ')
-                            output.write(f') mut => VT.{mangled_name}({ref}this')
+
+                            # https://github.com/microsoft/CsWin32/issues/167
+                            if needs_return_via_out_parameters(method, all_native_typedefs):
+                                output.write(f') mut => VT.{mangled_name}(ref this, .. var _')
+                            else:
+                                output.write(f') mut => VT.{mangled_name}(ref this')
+
                             for param in parameters:
                                 param_name = replace_name(param['Name'])
                                 param_type = get_param_type(param)
-                                if ENHANCED_POINTERS and param_type.startswith('ref'):
+                                if param_type.startswith('ref'):
                                     output.write(f', ref {param_name}')
-                                elif ENHANCED_POINTERS and param_type.startswith('out'):
+                                elif param_type.startswith('out'):
                                     output.write(f', out {param_name}')
                                 else:
                                     output.write(f', {param_name}')
@@ -594,10 +610,13 @@ for filename in filenames:
                             encountered_names.add(method_name)
                             return_type = get_type_name(method['ReturnType'])
                             parameters = method['Params']
-                            if ENHANCED_POINTERS:
-                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
+
+                            # https://github.com/microsoft/CsWin32/issues/167
+                            if needs_return_via_out_parameters(method, all_native_typedefs):
+                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] void(ref {name} self, out {return_type} @return')
                             else:
-                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}({name}* self')
+                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
+
                             for param in parameters:
                                 param_name = replace_name(param['Name'])
                                 param_type = get_param_type(param)

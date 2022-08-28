@@ -1870,12 +1870,12 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public DML_BINDING_PROPERTIES GetBindingProperties() mut => VT.GetBindingProperties(ref this);
+			public DML_BINDING_PROPERTIES GetBindingProperties() mut => VT.GetBindingProperties(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IDMLPageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] DML_BINDING_PROPERTIES(ref IDMLDispatchable self) GetBindingProperties;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLDispatchable self, out DML_BINDING_PROPERTIES @return) GetBindingProperties;
 			}
 		}
 		[CRepr]

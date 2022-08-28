@@ -500,7 +500,7 @@ namespace Win32
 			
 			public uint32 GetDimensionCount() mut => VT.GetDimensionCount(ref this);
 			public HRESULT GetShape(uint32 dimensionCount, uint32* dimensions) mut => VT.GetShape(ref this, dimensionCount, dimensions);
-			public MLOperatorTensorDataType GetTensorDataType() mut => VT.GetTensorDataType(ref this);
+			public MLOperatorTensorDataType GetTensorDataType() mut => VT.GetTensorDataType(ref this, .. var _);
 			public Boolean IsCpuData() mut => VT.IsCpuData(ref this);
 			public Boolean IsDataInterface() mut => VT.IsDataInterface(ref this);
 			public void* GetData() mut => VT.GetData(ref this);
@@ -511,7 +511,7 @@ namespace Win32
 			{
 				public new function [CallingConvention(.Stdcall)] uint32(ref IMLOperatorTensor self) GetDimensionCount;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMLOperatorTensor self, uint32 dimensionCount, uint32* dimensions) GetShape;
-				public new function [CallingConvention(.Stdcall)] MLOperatorTensorDataType(ref IMLOperatorTensor self) GetTensorDataType;
+				public new function [CallingConvention(.Stdcall)] void(ref IMLOperatorTensor self, out MLOperatorTensorDataType @return) GetTensorDataType;
 				public new function [CallingConvention(.Stdcall)] Boolean(ref IMLOperatorTensor self) IsCpuData;
 				public new function [CallingConvention(.Stdcall)] Boolean(ref IMLOperatorTensor self) IsDataInterface;
 				public new function [CallingConvention(.Stdcall)] void*(ref IMLOperatorTensor self) GetData;

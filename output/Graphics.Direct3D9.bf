@@ -2152,7 +2152,7 @@ namespace Win32
 			public uint32 SetPriority(uint32 PriorityNew) mut => VT.SetPriority(ref this, PriorityNew);
 			public uint32 GetPriority() mut => VT.GetPriority(ref this);
 			public void PreLoad() mut => VT.PreLoad(ref this);
-			public D3DRESOURCETYPE ComGetType() mut => VT.ComGetType(ref this);
+			public D3DRESOURCETYPE ComGetType() mut => VT.ComGetType(ref this, .. var _);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
@@ -2164,7 +2164,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DResource9 self, uint32 PriorityNew) SetPriority;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DResource9 self) GetPriority;
 				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DResource9 self) PreLoad;
-				public new function [CallingConvention(.Stdcall)] D3DRESOURCETYPE(ref IDirect3DResource9 self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DResource9 self, out D3DRESOURCETYPE @return) ComGetType;
 			}
 		}
 		[CRepr]
@@ -2229,7 +2229,7 @@ namespace Win32
 			public uint32 GetLOD() mut => VT.GetLOD(ref this);
 			public uint32 GetLevelCount() mut => VT.GetLevelCount(ref this);
 			public HRESULT SetAutoGenFilterType(D3DTEXTUREFILTERTYPE FilterType) mut => VT.SetAutoGenFilterType(ref this, FilterType);
-			public D3DTEXTUREFILTERTYPE GetAutoGenFilterType() mut => VT.GetAutoGenFilterType(ref this);
+			public D3DTEXTUREFILTERTYPE GetAutoGenFilterType() mut => VT.GetAutoGenFilterType(ref this, .. var _);
 			public void GenerateMipSubLevels() mut => VT.GenerateMipSubLevels(ref this);
 
 			[CRepr]
@@ -2239,7 +2239,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DBaseTexture9 self) GetLOD;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DBaseTexture9 self) GetLevelCount;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DBaseTexture9 self, D3DTEXTUREFILTERTYPE FilterType) SetAutoGenFilterType;
-				public new function [CallingConvention(.Stdcall)] D3DTEXTUREFILTERTYPE(ref IDirect3DBaseTexture9 self) GetAutoGenFilterType;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DBaseTexture9 self, out D3DTEXTUREFILTERTYPE @return) GetAutoGenFilterType;
 				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DBaseTexture9 self) GenerateMipSubLevels;
 			}
 		}
@@ -2412,7 +2412,7 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public HRESULT GetDevice(out IDirect3DDevice9* ppDevice) mut => VT.GetDevice(ref this, out ppDevice);
-			public D3DQUERYTYPE ComGetType() mut => VT.ComGetType(ref this);
+			public D3DQUERYTYPE ComGetType() mut => VT.ComGetType(ref this, .. var _);
 			public uint32 GetDataSize() mut => VT.GetDataSize(ref this);
 			public HRESULT Issue(uint32 dwIssueFlags) mut => VT.Issue(ref this, dwIssueFlags);
 			public HRESULT GetData(void* pData, uint32 dwSize, uint32 dwGetDataFlags) mut => VT.GetData(ref this, pData, dwSize, dwGetDataFlags);
@@ -2421,7 +2421,7 @@ namespace Win32
 			public struct VTable : IUnknown.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, out IDirect3DDevice9* ppDevice) GetDevice;
-				public new function [CallingConvention(.Stdcall)] D3DQUERYTYPE(ref IDirect3DQuery9 self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] void(ref IDirect3DQuery9 self, out D3DQUERYTYPE @return) ComGetType;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IDirect3DQuery9 self) GetDataSize;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, uint32 dwIssueFlags) Issue;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDirect3DQuery9 self, void* pData, uint32 dwSize, uint32 dwGetDataFlags) GetData;

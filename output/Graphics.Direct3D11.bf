@@ -5082,7 +5082,7 @@ namespace Win32
 			public void CSGetConstantBuffers(uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) mut => VT.CSGetConstantBuffers(ref this, StartSlot, NumBuffers, ppConstantBuffers);
 			public void ClearState() mut => VT.ClearState(ref this);
 			public void Flush() mut => VT.Flush(ref this);
-			public D3D11_DEVICE_CONTEXT_TYPE ComGetType() mut => VT.ComGetType(ref this);
+			public D3D11_DEVICE_CONTEXT_TYPE ComGetType() mut => VT.ComGetType(ref this, .. var _);
 			public uint32 GetContextFlags() mut => VT.GetContextFlags(ref this);
 			public HRESULT FinishCommandList(BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) mut => VT.FinishCommandList(ref this, RestoreDeferredContextState, ppCommandList);
 
@@ -5194,7 +5194,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSGetConstantBuffers;
 				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self) ClearState;
 				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self) Flush;
-				public new function [CallingConvention(.Stdcall)] D3D11_DEVICE_CONTEXT_TYPE(ref ID3D11DeviceContext self) ComGetType;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11DeviceContext self, out D3D11_DEVICE_CONTEXT_TYPE @return) ComGetType;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11DeviceContext self) GetContextFlags;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11DeviceContext self, BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) FinishCommandList;
 			}
@@ -5562,7 +5562,7 @@ namespace Win32
 			public HRESULT GetPrivateData(in Guid guid, out uint32 pDataSize, void* pData) mut => VT.GetPrivateData(ref this, guid, out pDataSize, pData);
 			public HRESULT SetPrivateData(in Guid guid, uint32 DataSize, void* pData) mut => VT.SetPrivateData(ref this, guid, DataSize, pData);
 			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* pData) mut => VT.SetPrivateDataInterface(ref this, guid, pData);
-			public D3D_FEATURE_LEVEL GetFeatureLevel() mut => VT.GetFeatureLevel(ref this);
+			public D3D_FEATURE_LEVEL GetFeatureLevel() mut => VT.GetFeatureLevel(ref this, .. var _);
 			public uint32 GetCreationFlags() mut => VT.GetCreationFlags(ref this);
 			public HRESULT GetDeviceRemovedReason() mut => VT.GetDeviceRemovedReason(ref this);
 			public void GetImmediateContext(out ID3D11DeviceContext* ppImmediateContext) mut => VT.GetImmediateContext(ref this, out ppImmediateContext);
@@ -5606,7 +5606,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, out uint32 pDataSize, void* pData) GetPrivateData;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, uint32 DataSize, void* pData) SetPrivateData;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self, in Guid guid, IUnknown* pData) SetPrivateDataInterface;
-				public new function [CallingConvention(.Stdcall)] D3D_FEATURE_LEVEL(ref ID3D11Device self) GetFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device self, out D3D_FEATURE_LEVEL @return) GetFeatureLevel;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11Device self) GetCreationFlags;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11Device self) GetDeviceRemovedReason;
 				public new function [CallingConvention(.Stdcall)] void(ref ID3D11Device self, out ID3D11DeviceContext* ppImmediateContext) GetImmediateContext;
@@ -6465,7 +6465,7 @@ namespace Win32
 			public uint32 GetMovcInstructionCount() mut => VT.GetMovcInstructionCount(ref this);
 			public uint32 GetConversionInstructionCount() mut => VT.GetConversionInstructionCount(ref this);
 			public uint32 GetBitwiseInstructionCount() mut => VT.GetBitwiseInstructionCount(ref this);
-			public D3D_PRIMITIVE GetGSInputPrimitive() mut => VT.GetGSInputPrimitive(ref this);
+			public D3D_PRIMITIVE GetGSInputPrimitive() mut => VT.GetGSInputPrimitive(ref this, .. var _);
 			public BOOL IsSampleFrequencyShader() mut => VT.IsSampleFrequencyShader(ref this);
 			public uint32 GetNumInterfaceSlots() mut => VT.GetNumInterfaceSlots(ref this);
 			public HRESULT GetMinFeatureLevel(out D3D_FEATURE_LEVEL pLevel) mut => VT.GetMinFeatureLevel(ref this, out pLevel);
@@ -6488,7 +6488,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetMovcInstructionCount;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetConversionInstructionCount;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetBitwiseInstructionCount;
-				public new function [CallingConvention(.Stdcall)] D3D_PRIMITIVE(ref ID3D11ShaderReflection self) GetGSInputPrimitive;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D11ShaderReflection self, out D3D_PRIMITIVE @return) GetGSInputPrimitive;
 				public new function [CallingConvention(.Stdcall)] BOOL(ref ID3D11ShaderReflection self) IsSampleFrequencyShader;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D11ShaderReflection self) GetNumInterfaceSlots;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D11ShaderReflection self, out D3D_FEATURE_LEVEL pLevel) GetMinFeatureLevel;

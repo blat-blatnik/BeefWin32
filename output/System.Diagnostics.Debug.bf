@@ -14771,7 +14771,7 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public ScriptDebugState GetDebugState() mut => VT.GetDebugState(ref this);
+			public ScriptDebugState GetDebugState() mut => VT.GetDebugState(ref this, .. var _);
 			public HRESULT GetCurrentPosition(out ScriptDebugPosition currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) mut => VT.GetCurrentPosition(ref this, out currentPosition, positionSpanEnd, lineText);
 			public HRESULT GetStack(out IDataModelScriptDebugStack* @stack) mut => VT.GetStack(ref this, out @stack);
 			public HRESULT SetBreakpoint(uint32 linePosition, uint32 columnPosition, out IDataModelScriptDebugBreakpoint* breakpoint) mut => VT.SetBreakpoint(ref this, linePosition, columnPosition, out breakpoint);
@@ -14785,7 +14785,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] ScriptDebugState(ref IDataModelScriptDebug self) GetDebugState;
+				public new function [CallingConvention(.Stdcall)] void(ref IDataModelScriptDebug self, out ScriptDebugState @return) GetDebugState;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, out ScriptDebugPosition currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetCurrentPosition;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, out IDataModelScriptDebugStack* @stack) GetStack;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDataModelScriptDebug self, uint32 linePosition, uint32 columnPosition, out IDataModelScriptDebugBreakpoint* breakpoint) SetBreakpoint;

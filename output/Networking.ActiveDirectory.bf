@@ -4261,7 +4261,7 @@ namespace Win32
 			public BOOL IsClassContainer(PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) mut => VT.IsClassContainer(ref this, pszObjectClass, pszADsPath, dwFlags);
 			public HRESULT GetClassCreationInfo(PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) mut => VT.GetClassCreationInfo(ref this, pszObjectClass, out ppdscci);
 			public HRESULT EnumClassAttributes(PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) mut => VT.EnumClassAttributes(ref this, pszObjectClass, pcbEnum, lParam);
-			public ADSTYPEENUM GetAttributeADsType(PWSTR pszAttributeName) mut => VT.GetAttributeADsType(ref this, pszAttributeName);
+			public ADSTYPEENUM GetAttributeADsType(PWSTR pszAttributeName) mut => VT.GetAttributeADsType(ref this, .. var _, pszAttributeName);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
@@ -4276,7 +4276,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] BOOL(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) GetClassCreationInfo;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
-				public new function [CallingConvention(.Stdcall)] ADSTYPEENUM(ref IDsDisplaySpecifier self, PWSTR pszAttributeName) GetAttributeADsType;
+				public new function [CallingConvention(.Stdcall)] void(ref IDsDisplaySpecifier self, out ADSTYPEENUM @return, PWSTR pszAttributeName) GetAttributeADsType;
 			}
 		}
 		[CRepr]
