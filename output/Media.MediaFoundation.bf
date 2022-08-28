@@ -8501,7 +8501,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoDecoderHeap self, out D3D12_VIDEO_DECODER_HEAP_DESC @return) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoDecoderHeap self, out D3D12_VIDEO_DECODER_HEAP_DESC ret) GetDesc;
 			}
 		}
 		[CRepr]
@@ -8537,7 +8537,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoDecoder self, out D3D12_VIDEO_DECODER_DESC @return) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoDecoder self, out D3D12_VIDEO_DECODER_DESC ret) GetDesc;
 			}
 		}
 		[CRepr]
@@ -8558,7 +8558,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D12VideoProcessor self) GetNodeMask;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D12VideoProcessor self) GetNumInputStreamDescs;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoProcessor self, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs) GetInputStreamDescs;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoProcessor self, out D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC @return) GetOutputStreamDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoProcessor self, out D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC ret) GetOutputStreamDesc;
 			}
 		}
 		[CRepr]
@@ -8686,7 +8686,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoMotionEstimator self, out D3D12_VIDEO_MOTION_ESTIMATOR_DESC @return) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoMotionEstimator self, out D3D12_VIDEO_MOTION_ESTIMATOR_DESC ret) GetDesc;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoMotionEstimator self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
@@ -8703,7 +8703,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoMotionVectorHeap self, out D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC @return) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoMotionVectorHeap self, out D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC ret) GetDesc;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoMotionVectorHeap self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
@@ -8827,7 +8827,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoExtensionCommand self, out D3D12_VIDEO_EXTENSION_COMMAND_DESC @return) GetDesc;
+				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoExtensionCommand self, out D3D12_VIDEO_EXTENSION_COMMAND_DESC ret) GetDesc;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoExtensionCommand self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
@@ -8917,23 +8917,23 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint32 GetNodeMask() mut => VT.GetNodeMask(ref this);
-			public D3D12_VIDEO_ENCODER_FLAGS GetEncoderFlags() mut => VT.GetEncoderFlags(ref this, .. var _);
-			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut => VT.GetCodec(ref this, .. var _);
+			public D3D12_VIDEO_ENCODER_FLAGS GetEncoderFlags() mut => VT.GetEncoderFlags(ref this);
+			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut => VT.GetCodec(ref this);
 			public HRESULT GetCodecProfile(D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) mut => VT.GetCodecProfile(ref this, dstProfile);
 			public HRESULT GetCodecConfiguration(D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) mut => VT.GetCodecConfiguration(ref this, dstCodecConfig);
-			public DXGI_FORMAT GetInputFormat() mut => VT.GetInputFormat(ref this, .. var _);
-			public D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE GetMaxMotionEstimationPrecision() mut => VT.GetMaxMotionEstimationPrecision(ref this, .. var _);
+			public DXGI_FORMAT GetInputFormat() mut => VT.GetInputFormat(ref this);
+			public D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE GetMaxMotionEstimationPrecision() mut => VT.GetMaxMotionEstimationPrecision(ref this);
 
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D12VideoEncoder self) GetNodeMask;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoder self, out D3D12_VIDEO_ENCODER_FLAGS @return) GetEncoderFlags;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoder self, out D3D12_VIDEO_ENCODER_CODEC @return) GetCodec;
+				public new function [CallingConvention(.Stdcall)] D3D12_VIDEO_ENCODER_FLAGS(ref ID3D12VideoEncoder self) GetEncoderFlags;
+				public new function [CallingConvention(.Stdcall)] D3D12_VIDEO_ENCODER_CODEC(ref ID3D12VideoEncoder self) GetCodec;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoEncoder self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoEncoder self, D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) GetCodecConfiguration;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoder self, out DXGI_FORMAT @return) GetInputFormat;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoder self, out D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE @return) GetMaxMotionEstimationPrecision;
+				public new function [CallingConvention(.Stdcall)] DXGI_FORMAT(ref ID3D12VideoEncoder self) GetInputFormat;
+				public new function [CallingConvention(.Stdcall)] D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE(ref ID3D12VideoEncoder self) GetMaxMotionEstimationPrecision;
 			}
 		}
 		[CRepr]
@@ -8944,8 +8944,8 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint32 GetNodeMask() mut => VT.GetNodeMask(ref this);
-			public D3D12_VIDEO_ENCODER_HEAP_FLAGS GetEncoderHeapFlags() mut => VT.GetEncoderHeapFlags(ref this, .. var _);
-			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut => VT.GetCodec(ref this, .. var _);
+			public D3D12_VIDEO_ENCODER_HEAP_FLAGS GetEncoderHeapFlags() mut => VT.GetEncoderHeapFlags(ref this);
+			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut => VT.GetCodec(ref this);
 			public HRESULT GetCodecProfile(D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) mut => VT.GetCodecProfile(ref this, dstProfile);
 			public HRESULT GetCodecLevel(D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) mut => VT.GetCodecLevel(ref this, dstLevel);
 			public uint32 GetResolutionListCount() mut => VT.GetResolutionListCount(ref this);
@@ -8955,8 +8955,8 @@ namespace Win32
 			public struct VTable : ID3D12Pageable.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D12VideoEncoderHeap self) GetNodeMask;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoderHeap self, out D3D12_VIDEO_ENCODER_HEAP_FLAGS @return) GetEncoderHeapFlags;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D12VideoEncoderHeap self, out D3D12_VIDEO_ENCODER_CODEC @return) GetCodec;
+				public new function [CallingConvention(.Stdcall)] D3D12_VIDEO_ENCODER_HEAP_FLAGS(ref ID3D12VideoEncoderHeap self) GetEncoderHeapFlags;
+				public new function [CallingConvention(.Stdcall)] D3D12_VIDEO_ENCODER_CODEC(ref ID3D12VideoEncoderHeap self) GetCodec;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoEncoderHeap self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D12VideoEncoderHeap self, D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) GetCodecLevel;
 				public new function [CallingConvention(.Stdcall)] uint32(ref ID3D12VideoEncoderHeap self) GetResolutionListCount;
@@ -13811,7 +13811,7 @@ namespace Win32
 			public HRESULT SetSource(BSTR pUrl) mut => VT.SetSource(ref this, pUrl);
 			public HRESULT GetCurrentSource(out BSTR ppUrl) mut => VT.GetCurrentSource(ref this, out ppUrl);
 			public uint16 GetNetworkState() mut => VT.GetNetworkState(ref this);
-			public MF_MEDIA_ENGINE_PRELOAD GetPreload() mut => VT.GetPreload(ref this, .. var _);
+			public MF_MEDIA_ENGINE_PRELOAD GetPreload() mut => VT.GetPreload(ref this);
 			public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload) mut => VT.SetPreload(ref this, Preload);
 			public HRESULT GetBuffered(out IMFMediaTimeRange* ppBuffered) mut => VT.GetBuffered(ref this, out ppBuffered);
 			public HRESULT Load() mut => VT.Load(ref this);
@@ -13857,7 +13857,7 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaEngine self, BSTR pUrl) SetSource;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaEngine self, out BSTR ppUrl) GetCurrentSource;
 				public new function [CallingConvention(.Stdcall)] uint16(ref IMFMediaEngine self) GetNetworkState;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFMediaEngine self, out MF_MEDIA_ENGINE_PRELOAD @return) GetPreload;
+				public new function [CallingConvention(.Stdcall)] MF_MEDIA_ENGINE_PRELOAD(ref IMFMediaEngine self) GetPreload;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaEngine self, MF_MEDIA_ENGINE_PRELOAD Preload) SetPreload;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaEngine self, out IMFMediaTimeRange* ppBuffered) GetBuffered;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaEngine self) Load;
@@ -14182,13 +14182,13 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public MF_MSE_APPEND_MODE GetAppendMode() mut => VT.GetAppendMode(ref this, .. var _);
+			public MF_MSE_APPEND_MODE GetAppendMode() mut => VT.GetAppendMode(ref this);
 			public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode) mut => VT.SetAppendMode(ref this, mode);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref IMFSourceBufferAppendMode self, out MF_MSE_APPEND_MODE @return) GetAppendMode;
+				public new function [CallingConvention(.Stdcall)] MF_MSE_APPEND_MODE(ref IMFSourceBufferAppendMode self) GetAppendMode;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFSourceBufferAppendMode self, MF_MSE_APPEND_MODE mode) SetAppendMode;
 			}
 		}
@@ -14218,7 +14218,7 @@ namespace Win32
 			
 			public IMFSourceBufferList* GetSourceBuffers() mut => VT.GetSourceBuffers(ref this);
 			public IMFSourceBufferList* GetActiveSourceBuffers() mut => VT.GetActiveSourceBuffers(ref this);
-			public MF_MSE_READY GetReadyState() mut => VT.GetReadyState(ref this, .. var _);
+			public MF_MSE_READY GetReadyState() mut => VT.GetReadyState(ref this);
 			public double GetDuration() mut => VT.GetDuration(ref this);
 			public HRESULT SetDuration(double duration) mut => VT.SetDuration(ref this, duration);
 			public HRESULT AddSourceBuffer(BSTR type, ref IMFSourceBufferNotify pNotify, out IMFSourceBuffer* ppSourceBuffer) mut => VT.AddSourceBuffer(ref this, type, ref pNotify, out ppSourceBuffer);
@@ -14232,7 +14232,7 @@ namespace Win32
 			{
 				public new function [CallingConvention(.Stdcall)] IMFSourceBufferList*(ref IMFMediaSourceExtension self) GetSourceBuffers;
 				public new function [CallingConvention(.Stdcall)] IMFSourceBufferList*(ref IMFMediaSourceExtension self) GetActiveSourceBuffers;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFMediaSourceExtension self, out MF_MSE_READY @return) GetReadyState;
+				public new function [CallingConvention(.Stdcall)] MF_MSE_READY(ref IMFMediaSourceExtension self) GetReadyState;
 				public new function [CallingConvention(.Stdcall)] double(ref IMFMediaSourceExtension self) GetDuration;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaSourceExtension self, double duration) SetDuration;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFMediaSourceExtension self, BSTR type, ref IMFSourceBufferNotify pNotify, out IMFSourceBuffer* ppSourceBuffer) AddSourceBuffer;
@@ -14601,14 +14601,14 @@ namespace Win32
 			public HRESULT GetLabel(out PWSTR label) mut => VT.GetLabel(ref this, out label);
 			public HRESULT SetLabel(PWSTR label) mut => VT.SetLabel(ref this, label);
 			public HRESULT GetLanguage(out PWSTR language) mut => VT.GetLanguage(ref this, out language);
-			public MF_TIMED_TEXT_TRACK_KIND GetTrackKind() mut => VT.GetTrackKind(ref this, .. var _);
+			public MF_TIMED_TEXT_TRACK_KIND GetTrackKind() mut => VT.GetTrackKind(ref this);
 			public BOOL IsInBand() mut => VT.IsInBand(ref this);
 			public HRESULT GetInBandMetadataTrackDispatchType(out PWSTR dispatchType) mut => VT.GetInBandMetadataTrackDispatchType(ref this, out dispatchType);
 			public BOOL IsActive() mut => VT.IsActive(ref this);
-			public MF_TIMED_TEXT_ERROR_CODE GetErrorCode() mut => VT.GetErrorCode(ref this, .. var _);
+			public MF_TIMED_TEXT_ERROR_CODE GetErrorCode() mut => VT.GetErrorCode(ref this);
 			public HRESULT GetExtendedErrorCode() mut => VT.GetExtendedErrorCode(ref this);
 			public HRESULT GetDataFormat(out Guid format) mut => VT.GetDataFormat(ref this, out format);
-			public MF_TIMED_TEXT_TRACK_READY_STATE GetReadyState() mut => VT.GetReadyState(ref this, .. var _);
+			public MF_TIMED_TEXT_TRACK_READY_STATE GetReadyState() mut => VT.GetReadyState(ref this);
 			public HRESULT GetCueList(out IMFTimedTextCueList* cues) mut => VT.GetCueList(ref this, out cues);
 
 			[CRepr]
@@ -14618,14 +14618,14 @@ namespace Win32
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, out PWSTR label) GetLabel;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, PWSTR label) SetLabel;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, out PWSTR language) GetLanguage;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFTimedTextTrack self, out MF_TIMED_TEXT_TRACK_KIND @return) GetTrackKind;
+				public new function [CallingConvention(.Stdcall)] MF_TIMED_TEXT_TRACK_KIND(ref IMFTimedTextTrack self) GetTrackKind;
 				public new function [CallingConvention(.Stdcall)] BOOL(ref IMFTimedTextTrack self) IsInBand;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, out PWSTR dispatchType) GetInBandMetadataTrackDispatchType;
 				public new function [CallingConvention(.Stdcall)] BOOL(ref IMFTimedTextTrack self) IsActive;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFTimedTextTrack self, out MF_TIMED_TEXT_ERROR_CODE @return) GetErrorCode;
+				public new function [CallingConvention(.Stdcall)] MF_TIMED_TEXT_ERROR_CODE(ref IMFTimedTextTrack self) GetErrorCode;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self) GetExtendedErrorCode;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, out Guid format) GetDataFormat;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFTimedTextTrack self, out MF_TIMED_TEXT_TRACK_READY_STATE @return) GetReadyState;
+				public new function [CallingConvention(.Stdcall)] MF_TIMED_TEXT_TRACK_READY_STATE(ref IMFTimedTextTrack self) GetReadyState;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextTrack self, out IMFTimedTextCueList* cues) GetCueList;
 			}
 		}
@@ -14657,7 +14657,7 @@ namespace Win32
 			
 			public uint32 GetId() mut => VT.GetId(ref this);
 			public HRESULT GetOriginalId(out PWSTR originalId) mut => VT.GetOriginalId(ref this, out originalId);
-			public MF_TIMED_TEXT_TRACK_KIND GetCueKind() mut => VT.GetCueKind(ref this, .. var _);
+			public MF_TIMED_TEXT_TRACK_KIND GetCueKind() mut => VT.GetCueKind(ref this);
 			public double GetStartTime() mut => VT.GetStartTime(ref this);
 			public double GetDuration() mut => VT.GetDuration(ref this);
 			public uint32 GetTrackId() mut => VT.GetTrackId(ref this);
@@ -14672,7 +14672,7 @@ namespace Win32
 			{
 				public new function [CallingConvention(.Stdcall)] uint32(ref IMFTimedTextCue self) GetId;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IMFTimedTextCue self, out PWSTR originalId) GetOriginalId;
-				public new function [CallingConvention(.Stdcall)] void(ref IMFTimedTextCue self, out MF_TIMED_TEXT_TRACK_KIND @return) GetCueKind;
+				public new function [CallingConvention(.Stdcall)] MF_TIMED_TEXT_TRACK_KIND(ref IMFTimedTextCue self) GetCueKind;
 				public new function [CallingConvention(.Stdcall)] double(ref IMFTimedTextCue self) GetStartTime;
 				public new function [CallingConvention(.Stdcall)] double(ref IMFTimedTextCue self) GetDuration;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IMFTimedTextCue self) GetTrackId;

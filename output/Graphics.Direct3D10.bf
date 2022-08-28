@@ -3365,14 +3365,14 @@ namespace Win32
 			
 			public HRESULT CreateShaderResourceView1(ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc, ID3D10ShaderResourceView1** ppSRView) mut => VT.CreateShaderResourceView1(ref this, ref pResource, pDesc, ppSRView);
 			public HRESULT CreateBlendState1(in D3D10_BLEND_DESC1 pBlendStateDesc, ID3D10BlendState1** ppBlendState) mut => VT.CreateBlendState1(ref this, pBlendStateDesc, ppBlendState);
-			public D3D10_FEATURE_LEVEL1 GetFeatureLevel() mut => VT.GetFeatureLevel(ref this, .. var _);
+			public D3D10_FEATURE_LEVEL1 GetFeatureLevel() mut => VT.GetFeatureLevel(ref this);
 
 			[CRepr]
 			public struct VTable : ID3D10Device.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D10Device1 self, ref ID3D10Resource pResource, D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc, ID3D10ShaderResourceView1** ppSRView) CreateShaderResourceView1;
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref ID3D10Device1 self, in D3D10_BLEND_DESC1 pBlendStateDesc, ID3D10BlendState1** ppBlendState) CreateBlendState1;
-				public new function [CallingConvention(.Stdcall)] void(ref ID3D10Device1 self, out D3D10_FEATURE_LEVEL1 @return) GetFeatureLevel;
+				public new function [CallingConvention(.Stdcall)] D3D10_FEATURE_LEVEL1(ref ID3D10Device1 self) GetFeatureLevel;
 			}
 		}
 		[CRepr]

@@ -126,13 +126,13 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint64 GetPresentId() mut => VT.GetPresentId(ref this);
-			public PresentStatisticsKind GetKind() mut => VT.GetKind(ref this, .. var _);
+			public PresentStatisticsKind GetKind() mut => VT.GetKind(ref this);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatistics self) GetPresentId;
-				public new function [CallingConvention(.Stdcall)] void(ref IPresentStatistics self, out PresentStatisticsKind @return) GetKind;
+				public new function [CallingConvention(.Stdcall)] PresentStatisticsKind(ref IPresentStatistics self) GetKind;
 			}
 		}
 		[CRepr]
@@ -201,13 +201,13 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public uint64 GetCompositionFrameId() mut => VT.GetCompositionFrameId(ref this);
-			public PresentStatus GetPresentStatus() mut => VT.GetPresentStatus(ref this, .. var _);
+			public PresentStatus GetPresentStatus() mut => VT.GetPresentStatus(ref this);
 
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] uint64(ref IPresentStatusPresentStatistics self) GetCompositionFrameId;
-				public new function [CallingConvention(.Stdcall)] void(ref IPresentStatusPresentStatistics self, out PresentStatus @return) GetPresentStatus;
+				public new function [CallingConvention(.Stdcall)] PresentStatus(ref IPresentStatusPresentStatistics self) GetPresentStatus;
 			}
 		}
 		[CRepr]
@@ -245,11 +245,11 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IPresentStatistics.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out LUID @return) GetOutputAdapterLUID;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out LUID ret) GetOutputAdapterLUID;
 				public new function [CallingConvention(.Stdcall)] uint32(ref IIndependentFlipFramePresentStatistics self) GetOutputVidPnSourceId;
 				public new function [CallingConvention(.Stdcall)] uint(ref IIndependentFlipFramePresentStatistics self) GetContentTag;
-				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime @return) GetDisplayedTime;
-				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime @return) GetPresentDuration;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime ret) GetDisplayedTime;
+				public new function [CallingConvention(.Stdcall)] void(ref IIndependentFlipFramePresentStatistics self, out SystemInterruptTime ret) GetPresentDuration;
 			}
 		}
 		#endregion

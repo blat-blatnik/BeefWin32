@@ -248,11 +248,15 @@ def guid_literal(guid: str) -> str:
     k = '0x' + guid_hex[30:32]
     return f'.({a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}, {i}, {j}, {k})'
 
-def needs_return_via_out_parameters(com_method, all_native_typedefs):
+def needs_return_via_out_parameter(com_method, enums_and_native_typedefs):
     # https://github.com/microsoft/CsWin32/issues/167
+    # COM methods that return C++ structs actually return it via an out pointer 
+    # instead of in RAX, even if the struct would fit into 8 bytes.
+    # The out parameter needs to come right after the 'this' pointer, so its always parameter number 2.
+    # Enums and typedefs to native types don't count as structs here.
     return_type = com_method['ReturnType']
     type_name = get_type_name(return_type)
-    if type_name in all_native_typedefs:
+    if type_name in enums_and_native_typedefs:
         return False
     if return_type['Kind'] != 'ApiRef':
         return False
@@ -268,13 +272,14 @@ filenames = os.listdir(INPUT)
 # Need to do a prepass to determine what types are native typedefs.
 # COM method calling convention returns structs differently than native types.
 # So we need to know which types are native and which aren't before we go through COM stuff.
-all_native_typedefs = set()
+native_typedefs_and_enums = set()
 for filename in filenames:
     with open(f'{INPUT}/{filename}') as input:
         content = json.load(input)
         for type in content['Types']:
-            if type['Kind'] == 'NativeTypedef':
-                all_native_typedefs.add(type['Name'])
+            kind = type['Kind']
+            if kind == 'NativeTypedef' or kind == 'Enum':
+                native_typedefs_and_enums.add(type['Name'])
 
 for filename in filenames:
     with open(f'{INPUT}/{filename}') as input:
@@ -569,7 +574,7 @@ for filename in filenames:
                                     output.write(', ')
 
                             # https://github.com/microsoft/CsWin32/issues/167
-                            if needs_return_via_out_parameters(method, all_native_typedefs):
+                            if needs_return_via_out_parameter(method, native_typedefs_and_enums):
                                 output.write(f') mut => VT.{mangled_name}(ref this, .. var _')
                             else:
                                 output.write(f') mut => VT.{mangled_name}(ref this')
@@ -612,8 +617,8 @@ for filename in filenames:
                             parameters = method['Params']
 
                             # https://github.com/microsoft/CsWin32/issues/167
-                            if needs_return_via_out_parameters(method, all_native_typedefs):
-                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] void(ref {name} self, out {return_type} @return')
+                            if needs_return_via_out_parameter(method, native_typedefs_and_enums):
+                                output.write(f'{indent}public new function [CallingConvention(.Stdcall)] void(ref {name} self, out {return_type} ret')
                             else:
                                 output.write(f'{indent}public new function [CallingConvention(.Stdcall)] {return_type}(ref {name} self')
 

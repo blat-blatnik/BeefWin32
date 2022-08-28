@@ -1875,7 +1875,7 @@ namespace Win32
 			[CRepr]
 			public struct VTable : IDMLPageable.VTable
 			{
-				public new function [CallingConvention(.Stdcall)] void(ref IDMLDispatchable self, out DML_BINDING_PROPERTIES @return) GetBindingProperties;
+				public new function [CallingConvention(.Stdcall)] void(ref IDMLDispatchable self, out DML_BINDING_PROPERTIES ret) GetBindingProperties;
 			}
 		}
 		[CRepr]

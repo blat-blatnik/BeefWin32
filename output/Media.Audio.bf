@@ -3322,14 +3322,14 @@ namespace Win32
 			
 			public HRESULT RegisterCallback(PAudioStateMonitorCallback callback, void* context, out int64 registration) mut => VT.RegisterCallback(ref this, callback, context, out registration);
 			public void UnregisterCallback(int64 registration) mut => VT.UnregisterCallback(ref this, registration);
-			public AudioStateMonitorSoundLevel GetSoundLevel() mut => VT.GetSoundLevel(ref this, .. var _);
+			public AudioStateMonitorSoundLevel GetSoundLevel() mut => VT.GetSoundLevel(ref this);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IAudioStateMonitor self, PAudioStateMonitorCallback callback, void* context, out int64 registration) RegisterCallback;
 				public new function [CallingConvention(.Stdcall)] void(ref IAudioStateMonitor self, int64 registration) UnregisterCallback;
-				public new function [CallingConvention(.Stdcall)] void(ref IAudioStateMonitor self, out AudioStateMonitorSoundLevel @return) GetSoundLevel;
+				public new function [CallingConvention(.Stdcall)] AudioStateMonitorSoundLevel(ref IAudioStateMonitor self) GetSoundLevel;
 			}
 		}
 		#endregion

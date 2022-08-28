@@ -3201,13 +3201,13 @@ namespace Win32
 			public new VTable* VT { get => (.)vt; }
 			
 			public HRESULT GetObjectName(int32 lObjIndex, BSTR lpszName, out int32 pcchName) mut => VT.GetObjectName(ref this, lObjIndex, lpszName, out pcchName);
-			public CLUADMEX_OBJECT_TYPE GetObjectType(int32 lObjIndex) mut => VT.GetObjectType(ref this, .. var _, lObjIndex);
+			public CLUADMEX_OBJECT_TYPE GetObjectType(int32 lObjIndex) mut => VT.GetObjectType(ref this, lObjIndex);
 
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
 				public new function [CallingConvention(.Stdcall)] HRESULT(ref IGetClusterObjectInfo self, int32 lObjIndex, BSTR lpszName, out int32 pcchName) GetObjectName;
-				public new function [CallingConvention(.Stdcall)] void(ref IGetClusterObjectInfo self, out CLUADMEX_OBJECT_TYPE @return, int32 lObjIndex) GetObjectType;
+				public new function [CallingConvention(.Stdcall)] CLUADMEX_OBJECT_TYPE(ref IGetClusterObjectInfo self, int32 lObjIndex) GetObjectType;
 			}
 		}
 		[CRepr]
