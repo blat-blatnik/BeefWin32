@@ -4788,9 +4788,9 @@ static
 		public uint8 precision;
 		public int8 scale;
 		public uint8 sign;
-		public uint8[1] val_fam;
+		public uint8[1] val_array;
 		
-		public uint8* val mut => &val_fam[0];
+		public uint8* val mut => &val_array[0];
 	}
 	[CRepr]
 	public struct SEC_OBJECT_ELEMENT

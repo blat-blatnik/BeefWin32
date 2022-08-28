@@ -242,9 +242,9 @@ static
 		public uint32 Reserved;
 		public uint32 CommandDataSize;
 		public uint8[512] Unused;
-		public uint8[1] CommandData_fam;
+		public uint8[1] CommandData_array;
 		
-		public uint8* CommandData mut => &CommandData_fam[0];
+		public uint8* CommandData mut => &CommandData_array[0];
 	}
 	[CRepr]
 	public struct GNSS_SINGLESHOT_PARAM
@@ -630,9 +630,9 @@ static
 			public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData;
 			public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus;
 			public GNSS_DRIVER_REQUEST_DATA DriverRequestData;
-			public uint8[1] CustomData_fam;
+			public uint8[1] CustomData_array;
 			
-			public uint8* CustomData mut => &CustomData_fam[0];
+			public uint8* CustomData mut => &CustomData_array[0];
 		}
 	}
 	[CRepr]
@@ -658,9 +658,9 @@ static
 			public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData;
 			public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus;
 			public GNSS_DRIVER_REQUEST_DATA DriverRequestData;
-			public uint8[1] CustomData_fam;
+			public uint8[1] CustomData_array;
 			
-			public uint8* CustomData mut => &CustomData_fam[0];
+			public uint8* CustomData mut => &CustomData_array[0];
 		}
 	}
 	[CRepr]
@@ -689,9 +689,9 @@ static
 		public uint32 BlobVersion;
 		public uint32 AgnssFormat;
 		public uint32 BlobSize;
-		public uint8[1] BlobData_fam;
+		public uint8[1] BlobData_array;
 		
-		public uint8* BlobData mut => &BlobData_fam[0];
+		public uint8* BlobData mut => &BlobData_array[0];
 	}
 	[CRepr]
 	public struct GNSS_AGNSS_INJECT
@@ -731,9 +731,9 @@ static
 		public CHAR[260] SuplCertName;
 		public uint32 CertSize;
 		public uint8[512] Unused;
-		public uint8[1] CertData_fam;
+		public uint8[1] CertData_array;
 		
-		public uint8* CertData mut => &CertData_fam[0];
+		public uint8* CertData mut => &CertData_array[0];
 	}
 	[CRepr]
 	public struct GNSS_V2UPL_CONFIG
@@ -771,9 +771,9 @@ static
 		public uint32 TestType;
 		public uint8[512] Unused;
 		public uint32 InBufLen;
-		public uint8[1] InBuffer_fam;
+		public uint8[1] InBuffer_array;
 		
-		public uint8* InBuffer mut => &InBuffer_fam[0];
+		public uint8* InBuffer mut => &InBuffer_array[0];
 	}
 	[CRepr]
 	public struct GNSS_SELFTESTRESULT
@@ -785,9 +785,9 @@ static
 		public uint32 PinFailedBitMask;
 		public uint8[512] Unused;
 		public uint32 OutBufLen;
-		public uint8[1] OutBuffer_fam;
+		public uint8[1] OutBuffer_array;
 		
-		public uint8* OutBuffer mut => &OutBuffer_fam[0];
+		public uint8* OutBuffer mut => &OutBuffer_array[0];
 	}
 	[CRepr]
 	public struct GNSS_CHIPSETINFO

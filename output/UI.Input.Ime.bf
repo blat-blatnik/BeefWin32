@@ -819,9 +819,9 @@ static
 		public uint32 dwSelection;
 		public uint32 dwPageStart;
 		public uint32 dwPageSize;
-		public uint32[1] dwOffset_fam;
+		public uint32[1] dwOffset_array;
 		
-		public uint32* dwOffset mut => &dwOffset_fam[0];
+		public uint32* dwOffset mut => &dwOffset_array[0];
 	}
 	[CRepr]
 	public struct REGISTERWORDA
@@ -942,9 +942,9 @@ static
 		public WDD* pWDD;
 		public int32 cWDD;
 		public void* pPrivate;
-		public char16[1] BLKBuff_fam;
+		public char16[1] BLKBuff_array;
 		
-		public char16* BLKBuff mut => &BLKBuff_fam[0];
+		public char16* BLKBuff mut => &BLKBuff_array[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _Anonymous2_e__Union
@@ -1132,9 +1132,9 @@ static
 	public struct TRANSMSGLIST
 	{
 		public uint32 uMsgCount;
-		public TRANSMSG[1] TransMsg_fam;
+		public TRANSMSG[1] TransMsg_array;
 		
-		public TRANSMSG* TransMsg mut => &TransMsg_fam[0];
+		public TRANSMSG* TransMsg mut => &TransMsg_array[0];
 	}
 	[CRepr]
 	public struct CANDIDATEINFO
@@ -1200,9 +1200,9 @@ static
 	public struct IMESTRINGCANDIDATE
 	{
 		public uint32 uCount;
-		public PWSTR[1] lpwstr_fam;
+		public PWSTR[1] lpwstr_array;
 		
-		public PWSTR* lpwstr mut => &lpwstr_fam[0];
+		public PWSTR* lpwstr mut => &lpwstr_array[0];
 	}
 	[CRepr]
 	public struct IMEITEM
@@ -1215,9 +1215,9 @@ static
 	public struct IMEITEMCANDIDATE
 	{
 		public uint32 uCount;
-		public IMEITEM[1] imeItem_fam;
+		public IMEITEM[1] imeItem_array;
 		
-		public IMEITEM* imeItem mut => &imeItem_fam[0];
+		public IMEITEM* imeItem mut => &imeItem_array[0];
 	}
 	[CRepr]
 	public struct tabIMESTRINGINFO
@@ -1230,9 +1230,9 @@ static
 	{
 		public uint32 dwSize;
 		public uint32 dwType;
-		public uint32[1] dwData_fam;
+		public uint32[1] dwData_array;
 		
-		public uint32* dwData mut => &dwData_fam[0];
+		public uint32* dwData mut => &dwData_array[0];
 	}
 	[CRepr]
 	public struct IMESTRINGCANDIDATEINFO
@@ -1242,9 +1242,9 @@ static
 		public uint32 fInfoMask;
 		public int32 iSelIndex;
 		public uint32 uCount;
-		public PWSTR[1] lpwstr_fam;
+		public PWSTR[1] lpwstr_array;
 		
-		public PWSTR* lpwstr mut => &lpwstr_fam[0];
+		public PWSTR* lpwstr mut => &lpwstr_array[0];
 	}
 	[CRepr]
 	public struct IMECOMPOSITIONSTRINGINFO

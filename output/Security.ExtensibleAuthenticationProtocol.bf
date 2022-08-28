@@ -577,9 +577,9 @@ static
 		public uint8 Code;
 		public uint8 Id;
 		public uint8[2] Length;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct PPP_EAP_INPUT
@@ -889,9 +889,9 @@ static
 		public uint8 Code;
 		public uint8 Id;
 		public uint8[2] Length;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct EAP_METHOD_AUTHENTICATOR_RESULT

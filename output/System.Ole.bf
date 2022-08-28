@@ -1317,9 +1317,9 @@ static
 		public uint32 cbElements;
 		public uint32 cLocks;
 		public _wireSAFEARRAY_UNION uArrayStructs;
-		public SAFEARRAYBOUND[1] rgsabound_fam;
+		public SAFEARRAYBOUND[1] rgsabound_array;
 		
-		public SAFEARRAYBOUND* rgsabound mut => &rgsabound_fam[0];
+		public SAFEARRAYBOUND* rgsabound mut => &rgsabound_array[0];
 	}
 	[CRepr]
 	public struct _wireBRECORD
@@ -1394,9 +1394,9 @@ static
 	{
 		public TYPEDESC tdescElem;
 		public uint16 cDims;
-		public SAFEARRAYBOUND[1] rgbounds_fam;
+		public SAFEARRAYBOUND[1] rgbounds_array;
 		
-		public SAFEARRAYBOUND* rgbounds mut => &rgbounds_fam[0];
+		public SAFEARRAYBOUND* rgbounds mut => &rgbounds_array[0];
 	}
 	[CRepr]
 	public struct PARAMDESCEX
@@ -1663,9 +1663,9 @@ static
 		public BOOL fOddPages;
 		public BOOL fEvenPages;
 		public uint32 cPageRange;
-		public PAGERANGE[1] rgPages_fam;
+		public PAGERANGE[1] rgPages_array;
 		
-		public PAGERANGE* rgPages mut => &rgPages_fam[0];
+		public PAGERANGE* rgPages mut => &rgPages_array[0];
 	}
 	[CRepr]
 	public struct OLECMD
@@ -1679,9 +1679,9 @@ static
 		public uint32 cmdtextf;
 		public uint32 cwActual;
 		public uint32 cwBuf;
-		public char16[1] rgwz_fam;
+		public char16[1] rgwz_array;
 		
-		public char16* rgwz mut => &rgwz_fam[0];
+		public char16* rgwz mut => &rgwz_array[0];
 	}
 	[CRepr]
 	public struct OLEUIINSERTOBJECTW

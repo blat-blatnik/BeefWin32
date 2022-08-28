@@ -3292,9 +3292,9 @@ static
 	public struct KEYBOARD_INDICATOR_TRANSLATION
 	{
 		public uint16 NumberOfIndicatorKeys;
-		public INDICATOR_LIST[1] IndicatorList_fam;
+		public INDICATOR_LIST[1] IndicatorList_array;
 		
-		public INDICATOR_LIST* IndicatorList mut => &IndicatorList_fam[0];
+		public INDICATOR_LIST* IndicatorList mut => &IndicatorList_array[0];
 	}
 	[CRepr]
 	public struct KEYBOARD_UNIT_ID_PARAMETER
@@ -3523,9 +3523,9 @@ static
 		public uint8 NumGlobalUnknowns;
 		public uint8[3] Reserved;
 		public HIDP_UNKNOWN_TOKEN* GlobalUnknowns;
-		public uint32[1] Data_fam;
+		public uint32[1] Data_array;
 		
-		public uint32* Data mut => &Data_fam[0];
+		public uint32* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct HIDP_BUTTON_ARRAY_DATA
@@ -3578,12 +3578,12 @@ static
 	{
 		public uint32 DescriptorSize;
 		public BOOLEAN Polled;
-		public uint8[1] Reserved1_fam;
+		public uint8[1] Reserved1_array;
 		public uint16 VendorID;
 		public uint16 ProductID;
 		public uint16 VersionNumber;
 		
-		public uint8* Reserved1 mut => &Reserved1_fam[0];
+		public uint8* Reserved1 mut => &Reserved1_array[0];
 	}
 	[CRepr]
 	public struct HID_DRIVER_CONFIG

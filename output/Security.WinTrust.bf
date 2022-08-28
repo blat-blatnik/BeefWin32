@@ -550,9 +550,9 @@ static
 		public uint32 dwLength;
 		public uint16 wRevision;
 		public uint16 wCertificateType;
-		public uint8[1] bCertificate_fam;
+		public uint8[1] bCertificate_array;
 		
-		public uint8* bCertificate mut => &bCertificate_fam[0];
+		public uint8* bCertificate mut => &bCertificate_array[0];
 	}
 	[CRepr]
 	public struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT

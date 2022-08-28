@@ -267,9 +267,9 @@ static
 		public LOGCOLORSPACEW lcs;
 		public uint32 dwFlags;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct XYZColorF

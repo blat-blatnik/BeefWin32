@@ -2015,17 +2015,17 @@ static
 	public struct BITMAPINFO
 	{
 		public BITMAPINFOHEADER bmiHeader;
-		public RGBQUAD[1] bmiColors_fam;
+		public RGBQUAD[1] bmiColors_array;
 		
-		public RGBQUAD* bmiColors mut => &bmiColors_fam[0];
+		public RGBQUAD* bmiColors mut => &bmiColors_array[0];
 	}
 	[CRepr]
 	public struct BITMAPCOREINFO
 	{
 		public BITMAPCOREHEADER bmciHeader;
-		public RGBTRIPLE[1] bmciColors_fam;
+		public RGBTRIPLE[1] bmciColors_array;
 		
-		public RGBTRIPLE* bmciColors mut => &bmciColors_fam[0];
+		public RGBTRIPLE* bmciColors mut => &bmciColors_array[0];
 	}
 	[CRepr, Packed(2)]
 	public struct BITMAPFILEHEADER
@@ -2039,18 +2039,18 @@ static
 	[CRepr]
 	public struct HANDLETABLE
 	{
-		public HGDIOBJ[1] objectHandle_fam;
+		public HGDIOBJ[1] objectHandle_array;
 		
-		public HGDIOBJ* objectHandle mut => &objectHandle_fam[0];
+		public HGDIOBJ* objectHandle mut => &objectHandle_array[0];
 	}
 	[CRepr]
 	public struct METARECORD
 	{
 		public uint32 rdSize;
 		public uint16 rdFunction;
-		public uint16[1] rdParm_fam;
+		public uint16[1] rdParm_array;
 		
-		public uint16* rdParm mut => &rdParm_fam[0];
+		public uint16* rdParm mut => &rdParm_array[0];
 	}
 	[CRepr, Packed(2)]
 	public struct METAHEADER
@@ -2068,9 +2068,9 @@ static
 	{
 		public uint32 iType;
 		public uint32 nSize;
-		public uint32[1] dParm_fam;
+		public uint32[1] dParm_array;
 		
-		public uint32* dParm mut => &dParm_fam[0];
+		public uint32* dParm mut => &dParm_array[0];
 	}
 	[CRepr]
 	public struct ENHMETAHEADER
@@ -2238,9 +2238,9 @@ static
 		public uint32 elpColor;
 		public uint elpHatch;
 		public uint32 elpNumEntries;
-		public uint32[1] elpStyleEntry_fam;
+		public uint32[1] elpStyleEntry_array;
 		
-		public uint32* elpStyleEntry mut => &elpStyleEntry_fam[0];
+		public uint32* elpStyleEntry mut => &elpStyleEntry_array[0];
 	}
 	[CRepr]
 	public struct EXTLOGPEN32
@@ -2251,9 +2251,9 @@ static
 		public uint32 elpColor;
 		public uint32 elpHatch;
 		public uint32 elpNumEntries;
-		public uint32[1] elpStyleEntry_fam;
+		public uint32[1] elpStyleEntry_array;
 		
-		public uint32* elpStyleEntry mut => &elpStyleEntry_fam[0];
+		public uint32* elpStyleEntry mut => &elpStyleEntry_array[0];
 	}
 	[CRepr]
 	public struct PALETTEENTRY
@@ -2268,9 +2268,9 @@ static
 	{
 		public uint16 palVersion;
 		public uint16 palNumEntries;
-		public PALETTEENTRY[1] palPalEntry_fam;
+		public PALETTEENTRY[1] palPalEntry_array;
 		
-		public PALETTEENTRY* palPalEntry mut => &palPalEntry_fam[0];
+		public PALETTEENTRY* palPalEntry mut => &palPalEntry_array[0];
 	}
 	[CRepr]
 	public struct LOGFONTA
@@ -2541,9 +2541,9 @@ static
 	public struct RGNDATA
 	{
 		public RGNDATAHEADER rdh;
-		public CHAR[1] Buffer_fam;
+		public CHAR[1] Buffer_array;
 		
-		public CHAR* Buffer mut => &Buffer_fam[0];
+		public CHAR* Buffer mut => &Buffer_array[0];
 	}
 	[CRepr]
 	public struct ABC
@@ -2687,9 +2687,9 @@ static
 	{
 		public uint16 wType;
 		public uint16 cpfx;
-		public POINTFX[1] apfx_fam;
+		public POINTFX[1] apfx_array;
 		
-		public POINTFX* apfx mut => &apfx_fam[0];
+		public POINTFX* apfx mut => &apfx_array[0];
 	}
 	[CRepr]
 	public struct TTPOLYGONHEADER
@@ -2744,9 +2744,9 @@ static
 		public uint32 flAccel;
 		public uint32 cGlyphsSupported;
 		public uint32 cRanges;
-		public WCRANGE[1] ranges_fam;
+		public WCRANGE[1] ranges_array;
 		
-		public WCRANGE* ranges mut => &ranges_fam[0];
+		public WCRANGE* ranges mut => &ranges_array[0];
 	}
 	[CRepr]
 	public struct DESIGNVECTOR
@@ -2941,9 +2941,9 @@ static
 		public uint32 ihPal;
 		public uint32 iStart;
 		public uint32 cEntries;
-		public PALETTEENTRY[1] aPalEntries_fam;
+		public PALETTEENTRY[1] aPalEntries_array;
 		
-		public PALETTEENTRY* aPalEntries mut => &aPalEntries_fam[0];
+		public PALETTEENTRY* aPalEntries mut => &aPalEntries_array[0];
 	}
 	[CRepr]
 	public struct EMRSETCOLORADJUSTMENT
@@ -2956,9 +2956,9 @@ static
 	{
 		public EMR emr;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct EMREOF
@@ -3077,9 +3077,9 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cptl;
-		public POINTL[1] aptl_fam;
+		public POINTL[1] aptl_array;
 		
-		public POINTL* aptl mut => &aptl_fam[0];
+		public POINTL* aptl mut => &aptl_array[0];
 	}
 	[CRepr]
 	public struct EMRPOLYLINE16
@@ -3087,9 +3087,9 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cpts;
-		public POINTS[1] apts_fam;
+		public POINTS[1] apts_array;
 		
-		public POINTS* apts mut => &apts_fam[0];
+		public POINTS* apts mut => &apts_array[0];
 	}
 	[CRepr]
 	public struct EMRPOLYDRAW
@@ -3097,11 +3097,11 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cptl;
-		public POINTL[1] aptl_fam;
-		public uint8[1] abTypes_fam;
+		public POINTL[1] aptl_array;
+		public uint8[1] abTypes_array;
 		
-		public POINTL* aptl mut => &aptl_fam[0];
-		public uint8* abTypes mut => &abTypes_fam[0];
+		public POINTL* aptl mut => &aptl_array[0];
+		public uint8* abTypes mut => &abTypes_array[0];
 	}
 	[CRepr]
 	public struct EMRPOLYDRAW16
@@ -3109,11 +3109,11 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cpts;
-		public POINTS[1] apts_fam;
-		public uint8[1] abTypes_fam;
+		public POINTS[1] apts_array;
+		public uint8[1] abTypes_array;
 		
-		public POINTS* apts mut => &apts_fam[0];
-		public uint8* abTypes mut => &abTypes_fam[0];
+		public POINTS* apts mut => &apts_array[0];
+		public uint8* abTypes mut => &abTypes_array[0];
 	}
 	[CRepr]
 	public struct EMRPOLYPOLYLINE
@@ -3122,11 +3122,11 @@ static
 		public RECTL rclBounds;
 		public uint32 nPolys;
 		public uint32 cptl;
-		public uint32[1] aPolyCounts_fam;
-		public POINTL[1] aptl_fam;
+		public uint32[1] aPolyCounts_array;
+		public POINTL[1] aptl_array;
 		
-		public uint32* aPolyCounts mut => &aPolyCounts_fam[0];
-		public POINTL* aptl mut => &aptl_fam[0];
+		public uint32* aPolyCounts mut => &aPolyCounts_array[0];
+		public POINTL* aptl mut => &aptl_array[0];
 	}
 	[CRepr]
 	public struct EMRPOLYPOLYLINE16
@@ -3135,11 +3135,11 @@ static
 		public RECTL rclBounds;
 		public uint32 nPolys;
 		public uint32 cpts;
-		public uint32[1] aPolyCounts_fam;
-		public POINTS[1] apts_fam;
+		public uint32[1] aPolyCounts_array;
+		public POINTS[1] apts_array;
 		
-		public uint32* aPolyCounts mut => &aPolyCounts_fam[0];
-		public POINTS* apts mut => &apts_fam[0];
+		public uint32* aPolyCounts mut => &aPolyCounts_array[0];
+		public POINTS* apts mut => &apts_array[0];
 	}
 	[CRepr]
 	public struct EMRINVERTRGN
@@ -3147,9 +3147,9 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cbRgnData;
-		public uint8[1] RgnData_fam;
+		public uint8[1] RgnData_array;
 		
-		public uint8* RgnData mut => &RgnData_fam[0];
+		public uint8* RgnData mut => &RgnData_array[0];
 	}
 	[CRepr]
 	public struct EMRFILLRGN
@@ -3158,9 +3158,9 @@ static
 		public RECTL rclBounds;
 		public uint32 cbRgnData;
 		public uint32 ihBrush;
-		public uint8[1] RgnData_fam;
+		public uint8[1] RgnData_array;
 		
-		public uint8* RgnData mut => &RgnData_fam[0];
+		public uint8* RgnData mut => &RgnData_array[0];
 	}
 	[CRepr]
 	public struct EMRFRAMERGN
@@ -3170,9 +3170,9 @@ static
 		public uint32 cbRgnData;
 		public uint32 ihBrush;
 		public SIZE szlStroke;
-		public uint8[1] RgnData_fam;
+		public uint8[1] RgnData_array;
 		
-		public uint8* RgnData mut => &RgnData_fam[0];
+		public uint8* RgnData mut => &RgnData_array[0];
 	}
 	[CRepr]
 	public struct EMREXTSELECTCLIPRGN
@@ -3180,9 +3180,9 @@ static
 		public EMR emr;
 		public uint32 cbRgnData;
 		public uint32 iMode;
-		public uint8[1] RgnData_fam;
+		public uint8[1] RgnData_array;
 		
-		public uint8* RgnData mut => &RgnData_fam[0];
+		public uint8* RgnData mut => &RgnData_array[0];
 	}
 	[CRepr]
 	public struct EMREXTTEXTOUTA
@@ -3203,9 +3203,9 @@ static
 		public float exScale;
 		public float eyScale;
 		public int32 cStrings;
-		public EMRTEXT[1] aemrtext_fam;
+		public EMRTEXT[1] aemrtext_array;
 		
-		public EMRTEXT* aemrtext mut => &aemrtext_fam[0];
+		public EMRTEXT* aemrtext mut => &aemrtext_array[0];
 	}
 	[CRepr]
 	public struct EMRBITBLT
@@ -3414,9 +3414,9 @@ static
 	{
 		public EMR emr;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct EMRGLSBOUNDEDRECORD
@@ -3424,9 +3424,9 @@ static
 		public EMR emr;
 		public RECTL rclBounds;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct EMRSETCOLORSPACE
@@ -3440,9 +3440,9 @@ static
 		public EMR emr;
 		public int32 iEscape;
 		public int32 cbEscData;
-		public uint8[1] EscData_fam;
+		public uint8[1] EscData_array;
 		
-		public uint8* EscData mut => &EscData_fam[0];
+		public uint8* EscData mut => &EscData_array[0];
 	}
 	[CRepr]
 	public struct EMRNAMEDESCAPE
@@ -3451,9 +3451,9 @@ static
 		public int32 iEscape;
 		public int32 cbDriver;
 		public int32 cbEscData;
-		public uint8[1] EscData_fam;
+		public uint8[1] EscData_array;
 		
-		public uint8* EscData mut => &EscData_fam[0];
+		public uint8* EscData mut => &EscData_array[0];
 	}
 	[CRepr]
 	public struct EMRSETICMPROFILE
@@ -3462,9 +3462,9 @@ static
 		public uint32 dwFlags;
 		public uint32 cbName;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct COLORMATCHTOTARGET
@@ -3474,9 +3474,9 @@ static
 		public uint32 dwFlags;
 		public uint32 cbName;
 		public uint32 cbData;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct COLORCORRECTPALETTE
@@ -3517,9 +3517,9 @@ static
 		public uint32 nVer;
 		public uint32 nTri;
 		public GRADIENT_FILL ulMode;
-		public TRIVERTEX[1] Ver_fam;
+		public TRIVERTEX[1] Ver_array;
 		
-		public TRIVERTEX* Ver mut => &Ver_fam[0];
+		public TRIVERTEX* Ver mut => &Ver_array[0];
 	}
 	[CRepr]
 	public struct EMRTRANSPARENTBLT

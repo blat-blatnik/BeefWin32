@@ -1541,18 +1541,18 @@ static
 	{
 		public CHAR[257] szUserName;
 		public uint32 dwSizeofEapInfo;
-		public uint8[1] pbEapInfo_fam;
+		public uint8[1] pbEapInfo_array;
 		
-		public uint8* pbEapInfo mut => &pbEapInfo_fam[0];
+		public uint8* pbEapInfo mut => &pbEapInfo_array[0];
 	}
 	[CRepr]
 	public struct RASEAPUSERIDENTITYW
 	{
 		public char16[257] szUserName;
 		public uint32 dwSizeofEapInfo;
-		public uint8[1] pbEapInfo_fam;
+		public uint8[1] pbEapInfo_array;
 		
-		public uint8* pbEapInfo mut => &pbEapInfo_fam[0];
+		public uint8* pbEapInfo mut => &pbEapInfo_array[0];
 	}
 	[CRepr]
 	public struct RASCOMMSETTINGS
@@ -2580,9 +2580,9 @@ static
 		public char16[257] wszUserName;
 		public char16[16] wszLogonDomain;
 		public uint32 AuthInfoSize;
-		public uint8[1] AuthInfo_fam;
+		public uint8[1] AuthInfo_array;
 		
-		public uint8* AuthInfo mut => &AuthInfo_fam[0];
+		public uint8* AuthInfo mut => &AuthInfo_array[0];
 	}
 	[CRepr]
 	public struct RAS_UPDATE_CONNECTION
@@ -2680,9 +2680,9 @@ static
 	public struct RTM_NEXTHOP_LIST
 	{
 		public uint16 NumNextHops;
-		public int[1] NextHops_fam;
+		public int[1] NextHops_array;
 		
-		public int* NextHops mut => &NextHops_fam[0];
+		public int* NextHops mut => &NextHops_array[0];
 	}
 	[CRepr]
 	public struct RTM_DEST_INFO
@@ -2692,9 +2692,9 @@ static
 		public FILETIME LastChanged;
 		public uint32 BelongsToViews;
 		public uint32 NumberOfViews;
-		public _Anonymous_e__Struct[1] ViewInfo_fam;
+		public _Anonymous_e__Struct[1] ViewInfo_array;
 		
-		public _Anonymous_e__Struct* ViewInfo mut => &ViewInfo_fam[0];
+		public _Anonymous_e__Struct* ViewInfo mut => &ViewInfo_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -2763,9 +2763,9 @@ static
 	{
 		public uint32 MethodType;
 		public uint32 InputSize;
-		public uint8[1] InputData_fam;
+		public uint8[1] InputData_array;
 		
-		public uint8* InputData mut => &InputData_fam[0];
+		public uint8* InputData mut => &InputData_array[0];
 	}
 	[CRepr]
 	public struct RTM_ENTITY_METHOD_OUTPUT
@@ -2773,17 +2773,17 @@ static
 		public uint32 MethodType;
 		public uint32 MethodStatus;
 		public uint32 OutputSize;
-		public uint8[1] OutputData_fam;
+		public uint8[1] OutputData_array;
 		
-		public uint8* OutputData mut => &OutputData_fam[0];
+		public uint8* OutputData mut => &OutputData_array[0];
 	}
 	[CRepr]
 	public struct RTM_ENTITY_EXPORT_METHODS
 	{
 		public uint32 NumMethods;
-		public RTM_ENTITY_EXPORT_METHOD[1] Methods_fam;
+		public RTM_ENTITY_EXPORT_METHOD[1] Methods_array;
 		
-		public RTM_ENTITY_EXPORT_METHOD* Methods mut => &Methods_fam[0];
+		public RTM_ENTITY_EXPORT_METHOD* Methods mut => &Methods_array[0];
 	}
 	#endregion
 	

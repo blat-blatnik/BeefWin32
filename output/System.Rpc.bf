@@ -618,17 +618,17 @@ static
 	public struct RPC_BINDING_VECTOR
 	{
 		public uint32 Count;
-		public void*[1] BindingH_fam;
+		public void*[1] BindingH_array;
 		
-		public void** BindingH mut => &BindingH_fam[0];
+		public void** BindingH mut => &BindingH_array[0];
 	}
 	[CRepr]
 	public struct UUID_VECTOR
 	{
 		public uint32 Count;
-		public Guid*[1] Uuid_fam;
+		public Guid*[1] Uuid_array;
 		
-		public Guid** Uuid mut => &Uuid_fam[0];
+		public Guid** Uuid mut => &Uuid_array[0];
 	}
 	[CRepr]
 	public struct RPC_IF_ID
@@ -641,17 +641,17 @@ static
 	public struct RPC_PROTSEQ_VECTORA
 	{
 		public uint32 Count;
-		public uint8*[1] Protseq_fam;
+		public uint8*[1] Protseq_array;
 		
-		public uint8** Protseq mut => &Protseq_fam[0];
+		public uint8** Protseq mut => &Protseq_array[0];
 	}
 	[CRepr]
 	public struct RPC_PROTSEQ_VECTORW
 	{
 		public uint32 Count;
-		public uint16*[1] Protseq_fam;
+		public uint16*[1] Protseq_array;
 		
-		public uint16** Protseq mut => &Protseq_fam[0];
+		public uint16** Protseq mut => &Protseq_array[0];
 	}
 	[CRepr]
 	public struct RPC_POLICY
@@ -664,17 +664,17 @@ static
 	public struct RPC_STATS_VECTOR
 	{
 		public uint32 Count;
-		public uint32[1] Stats_fam;
+		public uint32[1] Stats_array;
 		
-		public uint32* Stats mut => &Stats_fam[0];
+		public uint32* Stats mut => &Stats_array[0];
 	}
 	[CRepr]
 	public struct RPC_IF_ID_VECTOR
 	{
 		public uint32 Count;
-		public RPC_IF_ID*[1] IfId_fam;
+		public RPC_IF_ID*[1] IfId_array;
 		
-		public RPC_IF_ID** IfId mut => &IfId_fam[0];
+		public RPC_IF_ID** IfId mut => &IfId_array[0];
 	}
 	[CRepr]
 	public struct RPC_SECURITY_QOS
@@ -1586,9 +1586,9 @@ static
 	public struct MIDL_FORMAT_STRING
 	{
 		public int16 Pad;
-		public uint8[1] Format_fam;
+		public uint8[1] Format_array;
 		
-		public uint8* Format mut => &Format_fam[0];
+		public uint8* Format mut => &Format_array[0];
 	}
 	[CRepr]
 	public struct MIDL_METHOD_PROPERTY

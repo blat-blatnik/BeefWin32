@@ -761,9 +761,9 @@ static
 		public uint8[4] VendorId;
 		public uint8 VendorType;
 		public uint8 VendorLength;
-		public uint8[1] AttributeSpecific_fam;
+		public uint8[1] AttributeSpecific_array;
 		
-		public uint8* AttributeSpecific mut => &AttributeSpecific_fam[0];
+		public uint8* AttributeSpecific mut => &AttributeSpecific_array[0];
 	}
 	[CRepr]
 	public struct RADIUS_ATTRIBUTE_ARRAY

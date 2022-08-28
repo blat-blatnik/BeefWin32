@@ -1376,9 +1376,9 @@ static
 	{
 		public TDIObjectID ID;
 		public uint32 BufferSize;
-		public uint8[1] Buffer_fam;
+		public uint8[1] Buffer_array;
 		
-		public uint8* Buffer mut => &Buffer_fam[0];
+		public uint8* Buffer mut => &Buffer_array[0];
 	}
 	[CRepr]
 	public struct TDI_TL_IO_CONTROL_ENDPOINT

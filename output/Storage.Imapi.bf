@@ -713,9 +713,9 @@ static
 	public struct SPropAttrArray
 	{
 		public uint32 cValues;
-		public uint32[1] aPropAttr_fam;
+		public uint32[1] aPropAttr_array;
 		
-		public uint32* aPropAttr mut => &aPropAttr_fam[0];
+		public uint32* aPropAttr mut => &aPropAttr_array[0];
 	}
 	[CRepr]
 	public struct IMMP_MPV_STORE_DRIVER_HANDLE

@@ -168,9 +168,9 @@ static
 		public uint32 FrameID;
 		public uint32 NumberOfInstances;
 		public uint16 FilterNameLength;
-		public char16[1] FilterNameBuffer_fam;
+		public char16[1] FilterNameBuffer_array;
 		
-		public char16* FilterNameBuffer mut => &FilterNameBuffer_fam[0];
+		public char16* FilterNameBuffer mut => &FilterNameBuffer_array[0];
 	}
 	[CRepr]
 	public struct FILTER_AGGREGATE_BASIC_INFORMATION
@@ -242,9 +242,9 @@ static
 	public struct FILTER_VOLUME_BASIC_INFORMATION
 	{
 		public uint16 FilterVolumeNameLength;
-		public char16[1] FilterVolumeName_fam;
+		public char16[1] FilterVolumeName_array;
 		
-		public char16* FilterVolumeName mut => &FilterVolumeName_fam[0];
+		public char16* FilterVolumeName mut => &FilterVolumeName_array[0];
 	}
 	[CRepr]
 	public struct FILTER_VOLUME_STANDARD_INFORMATION
@@ -254,9 +254,9 @@ static
 		public uint32 FrameID;
 		public FLT_FILESYSTEM_TYPE FileSystemType;
 		public uint16 FilterVolumeNameLength;
-		public char16[1] FilterVolumeName_fam;
+		public char16[1] FilterVolumeName_array;
 		
-		public char16* FilterVolumeName mut => &FilterVolumeName_fam[0];
+		public char16* FilterVolumeName mut => &FilterVolumeName_array[0];
 	}
 	[CRepr]
 	public struct INSTANCE_BASIC_INFORMATION

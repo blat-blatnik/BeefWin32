@@ -120,9 +120,9 @@ static
 		public Guid EndpointId;
 		public uint32 dwEventId;
 		public uint32 cbEventData;
-		public uint8[1] bEventData_fam;
+		public uint8[1] bEventData_array;
 		
-		public uint8* bEventData mut => &bEventData_fam[0];
+		public uint8* bEventData mut => &bEventData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DEVICE_USER_CHANGE_EVENT_DATA

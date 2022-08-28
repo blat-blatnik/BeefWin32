@@ -76,9 +76,9 @@ static
 	public struct WCM_PROFILE_INFO_LIST
 	{
 		public uint32 dwNumberOfItems;
-		public WCM_PROFILE_INFO[1] ProfileInfo_fam;
+		public WCM_PROFILE_INFO[1] ProfileInfo_array;
 		
-		public WCM_PROFILE_INFO* ProfileInfo mut => &ProfileInfo_fam[0];
+		public WCM_PROFILE_INFO* ProfileInfo mut => &ProfileInfo_array[0];
 	}
 	[CRepr]
 	public struct WCM_CONNECTION_COST_DATA

@@ -1232,9 +1232,9 @@ static
 	{
 		public Guid clsidNamespace;
 		public uint32 cItems;
-		public DSOBJECT[1] aObjects_fam;
+		public DSOBJECT[1] aObjects_array;
 		
-		public DSOBJECT* aObjects mut => &aObjects_fam[0];
+		public DSOBJECT* aObjects mut => &aObjects_array[0];
 	}
 	[CRepr]
 	public struct DSDISPLAYSPECOPTIONS
@@ -1270,9 +1270,9 @@ static
 	{
 		public uint32 dsSize;
 		public uint32 dwCount;
-		public DOMAINDESC[1] aDomains_fam;
+		public DOMAINDESC[1] aDomains_array;
 		
-		public DOMAINDESC* aDomains mut => &aDomains_fam[0];
+		public DOMAINDESC* aDomains mut => &aDomains_array[0];
 	}
 	[CRepr]
 	public struct DSCLASSCREATIONINFO
@@ -1281,9 +1281,9 @@ static
 		public Guid clsidWizardDialog;
 		public Guid clsidWizardPrimaryPage;
 		public uint32 cWizardExtensions;
-		public Guid[1] aWizardExtensions_fam;
+		public Guid[1] aWizardExtensions_array;
 		
-		public Guid* aWizardExtensions mut => &aWizardExtensions_fam[0];
+		public Guid* aWizardExtensions mut => &aWizardExtensions_array[0];
 	}
 	[CRepr]
 	public struct DSBROWSEINFOW
@@ -1399,9 +1399,9 @@ static
 	{
 		public uint32 cItems;
 		public uint32 cFetchedAttributes;
-		public DS_SELECTION[1] aDsSelection_fam;
+		public DS_SELECTION[1] aDsSelection_array;
 		
-		public DS_SELECTION* aDsSelection mut => &aDsSelection_fam[0];
+		public DS_SELECTION* aDsSelection mut => &aDsSelection_array[0];
 	}
 	[CRepr]
 	public struct DSQUERYINITPARAMS
@@ -1433,18 +1433,18 @@ static
 		public int32 offsetQuery;
 		public int32 iColumns;
 		public uint32 dwReserved;
-		public DSCOLUMN[1] aColumns_fam;
+		public DSCOLUMN[1] aColumns_array;
 		
-		public DSCOLUMN* aColumns mut => &aColumns_fam[0];
+		public DSCOLUMN* aColumns mut => &aColumns_array[0];
 	}
 	[CRepr]
 	public struct DSQUERYCLASSLIST
 	{
 		public uint32 cbStruct;
 		public int32 cClasses;
-		public uint32[1] offsetClass_fam;
+		public uint32[1] offsetClass_array;
 		
-		public uint32* offsetClass mut => &offsetClass_fam[0];
+		public uint32* offsetClass mut => &offsetClass_array[0];
 	}
 	[CRepr]
 	public struct DSA_NEWOBJ_DISPINFO
@@ -1486,9 +1486,9 @@ static
 		public uint32 Size;
 		public uint32 Bandwidth;
 		public uint32 NumberOfSchedules;
-		public SCHEDULE_HEADER[1] Schedules_fam;
+		public SCHEDULE_HEADER[1] Schedules_array;
 		
-		public SCHEDULE_HEADER* Schedules mut => &Schedules_fam[0];
+		public SCHEDULE_HEADER* Schedules mut => &Schedules_array[0];
 	}
 	[CRepr]
 	public struct DS_NAME_RESULT_ITEMA
@@ -1725,9 +1725,9 @@ static
 	{
 		public uint32 cNumNeighbors;
 		public uint32 dwReserved;
-		public DS_REPL_NEIGHBORW[1] rgNeighbor_fam;
+		public DS_REPL_NEIGHBORW[1] rgNeighbor_array;
 		
-		public DS_REPL_NEIGHBORW* rgNeighbor mut => &rgNeighbor_fam[0];
+		public DS_REPL_NEIGHBORW* rgNeighbor mut => &rgNeighbor_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_CURSOR
@@ -1763,27 +1763,27 @@ static
 	{
 		public uint32 cNumCursors;
 		public uint32 dwReserved;
-		public DS_REPL_CURSOR[1] rgCursor_fam;
+		public DS_REPL_CURSOR[1] rgCursor_array;
 		
-		public DS_REPL_CURSOR* rgCursor mut => &rgCursor_fam[0];
+		public DS_REPL_CURSOR* rgCursor mut => &rgCursor_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_CURSORS_2
 	{
 		public uint32 cNumCursors;
 		public uint32 dwEnumerationContext;
-		public DS_REPL_CURSOR_2[1] rgCursor_fam;
+		public DS_REPL_CURSOR_2[1] rgCursor_array;
 		
-		public DS_REPL_CURSOR_2* rgCursor mut => &rgCursor_fam[0];
+		public DS_REPL_CURSOR_2* rgCursor mut => &rgCursor_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_CURSORS_3W
 	{
 		public uint32 cNumCursors;
 		public uint32 dwEnumerationContext;
-		public DS_REPL_CURSOR_3W[1] rgCursor_fam;
+		public DS_REPL_CURSOR_3W[1] rgCursor_array;
 		
-		public DS_REPL_CURSOR_3W* rgCursor mut => &rgCursor_fam[0];
+		public DS_REPL_CURSOR_3W* rgCursor mut => &rgCursor_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_ATTR_META_DATA
@@ -1822,18 +1822,18 @@ static
 	{
 		public uint32 cNumEntries;
 		public uint32 dwReserved;
-		public DS_REPL_ATTR_META_DATA[1] rgMetaData_fam;
+		public DS_REPL_ATTR_META_DATA[1] rgMetaData_array;
 		
-		public DS_REPL_ATTR_META_DATA* rgMetaData mut => &rgMetaData_fam[0];
+		public DS_REPL_ATTR_META_DATA* rgMetaData mut => &rgMetaData_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_OBJ_META_DATA_2
 	{
 		public uint32 cNumEntries;
 		public uint32 dwReserved;
-		public DS_REPL_ATTR_META_DATA_2[1] rgMetaData_fam;
+		public DS_REPL_ATTR_META_DATA_2[1] rgMetaData_array;
 		
-		public DS_REPL_ATTR_META_DATA_2* rgMetaData mut => &rgMetaData_fam[0];
+		public DS_REPL_ATTR_META_DATA_2* rgMetaData mut => &rgMetaData_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_KCC_DSA_FAILUREW
@@ -1858,9 +1858,9 @@ static
 	{
 		public uint32 cNumEntries;
 		public uint32 dwReserved;
-		public DS_REPL_KCC_DSA_FAILUREW[1] rgDsaFailure_fam;
+		public DS_REPL_KCC_DSA_FAILUREW[1] rgDsaFailure_array;
 		
-		public DS_REPL_KCC_DSA_FAILUREW* rgDsaFailure mut => &rgDsaFailure_fam[0];
+		public DS_REPL_KCC_DSA_FAILUREW* rgDsaFailure mut => &rgDsaFailure_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_OPW
@@ -1895,9 +1895,9 @@ static
 	{
 		public FILETIME ftimeCurrentOpStarted;
 		public uint32 cNumPendingOps;
-		public DS_REPL_OPW[1] rgPendingOp_fam;
+		public DS_REPL_OPW[1] rgPendingOp_array;
 		
-		public DS_REPL_OPW* rgPendingOp mut => &rgPendingOp_fam[0];
+		public DS_REPL_OPW* rgPendingOp mut => &rgPendingOp_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_VALUE_META_DATA
@@ -1989,27 +1989,27 @@ static
 	{
 		public uint32 cNumEntries;
 		public uint32 dwEnumerationContext;
-		public DS_REPL_VALUE_META_DATA[1] rgMetaData_fam;
+		public DS_REPL_VALUE_META_DATA[1] rgMetaData_array;
 		
-		public DS_REPL_VALUE_META_DATA* rgMetaData mut => &rgMetaData_fam[0];
+		public DS_REPL_VALUE_META_DATA* rgMetaData mut => &rgMetaData_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_ATTR_VALUE_META_DATA_2
 	{
 		public uint32 cNumEntries;
 		public uint32 dwEnumerationContext;
-		public DS_REPL_VALUE_META_DATA_2[1] rgMetaData_fam;
+		public DS_REPL_VALUE_META_DATA_2[1] rgMetaData_array;
 		
-		public DS_REPL_VALUE_META_DATA_2* rgMetaData mut => &rgMetaData_fam[0];
+		public DS_REPL_VALUE_META_DATA_2* rgMetaData mut => &rgMetaData_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_ATTR_VALUE_META_DATA_EXT
 	{
 		public uint32 cNumEntries;
 		public uint32 dwEnumerationContext;
-		public DS_REPL_VALUE_META_DATA_EXT[1] rgMetaData_fam;
+		public DS_REPL_VALUE_META_DATA_EXT[1] rgMetaData_array;
 		
-		public DS_REPL_VALUE_META_DATA_EXT* rgMetaData mut => &rgMetaData_fam[0];
+		public DS_REPL_VALUE_META_DATA_EXT* rgMetaData mut => &rgMetaData_array[0];
 	}
 	[CRepr]
 	public struct DS_REPL_QUEUE_STATISTICSW

@@ -197,18 +197,18 @@ static
 	{
 		public uint16 _bitfield;
 		public int16 cfFormat;
-		public uint8[1] Value_fam;
+		public uint8[1] Value_array;
 		
-		public uint8* Value mut => &Value_fam[0];
+		public uint8* Value mut => &Value_array[0];
 	}
 	[CRepr]
 	public struct DDEPOKE
 	{
 		public uint16 _bitfield;
 		public int16 cfFormat;
-		public uint8[1] Value_fam;
+		public uint8[1] Value_array;
 		
-		public uint8* Value mut => &Value_fam[0];
+		public uint8* Value mut => &Value_array[0];
 	}
 	[CRepr]
 	public struct DDELN
@@ -221,9 +221,9 @@ static
 	{
 		public uint16 _bitfield;
 		public int16 cfFormat;
-		public uint8[1] rgb_fam;
+		public uint8[1] rgb_array;
 		
-		public uint8* rgb mut => &rgb_fam[0];
+		public uint8* rgb mut => &rgb_array[0];
 	}
 	[CRepr]
 	public struct HSZPAIR
@@ -309,9 +309,9 @@ static
 		public uint32 dwTime;
 		public HSZ hsz;
 		public HANDLE hTask;
-		public CHAR[1] str_fam;
+		public CHAR[1] str_array;
 		
-		public CHAR* str mut => &str_fam[0];
+		public CHAR* str mut => &str_array[0];
 	}
 	[CRepr]
 	public struct MONHSZSTRUCTW
@@ -321,9 +321,9 @@ static
 		public uint32 dwTime;
 		public HSZ hsz;
 		public HANDLE hTask;
-		public char16[1] str_fam;
+		public char16[1] str_array;
 		
-		public char16* str mut => &str_fam[0];
+		public char16* str mut => &str_array[0];
 	}
 	[CRepr]
 	public struct MONERRSTRUCT

@@ -1486,26 +1486,26 @@ static
 	{
 		public uint32 sourceId;
 		public int32 numTargets;
-		public uint32[1] aTargets_fam;
+		public uint32[1] aTargets_array;
 		
-		public uint32* aTargets mut => &aTargets_fam[0];
+		public uint32* aTargets mut => &aTargets_array[0];
 	}
 	[CRepr]
 	public struct Adapter
 	{
 		public char16[128] AdapterName;
 		public int32 numSources;
-		public Sources[1] sources_fam;
+		public Sources[1] sources_array;
 		
-		public Sources* sources mut => &sources_fam[0];
+		public Sources* sources mut => &sources_array[0];
 	}
 	[CRepr]
 	public struct Adapters
 	{
 		public int32 numAdapters;
-		public Adapter[1] adapter_fam;
+		public Adapter[1] adapter_array;
 		
-		public Adapter* adapter mut => &adapter_fam[0];
+		public Adapter* adapter mut => &adapter_array[0];
 	}
 	[CRepr]
 	public struct DisplayMode
@@ -1517,9 +1517,9 @@ static
 	public struct DisplayModes
 	{
 		public int32 numDisplayModes;
-		public DisplayMode[1] displayMode_fam;
+		public DisplayMode[1] displayMode_array;
 		
-		public DisplayMode* displayMode mut => &displayMode_fam[0];
+		public DisplayMode* displayMode mut => &displayMode_array[0];
 	}
 	[CRepr]
 	public struct VIDEOPARAMETERS
@@ -1606,9 +1606,9 @@ static
 		public int32 lMinA;
 		public int32 lMinC;
 		public int32 lMinD;
-		public int32[1] alReserved_fam;
+		public int32[1] alReserved_array;
 		
-		public int32* alReserved mut => &alReserved_fam[0];
+		public int32* alReserved mut => &alReserved_array[0];
 	}
 	[CRepr]
 	public struct LIGATURE
@@ -1616,9 +1616,9 @@ static
 		public uint32 culSize;
 		public PWSTR pwsz;
 		public uint32 chglyph;
-		public uint32[1] ahglyph_fam;
+		public uint32[1] ahglyph_array;
 		
-		public uint32* ahglyph mut => &ahglyph_fam[0];
+		public uint32* ahglyph mut => &ahglyph_array[0];
 	}
 	[CRepr]
 	public struct FD_LIGATURE
@@ -1626,9 +1626,9 @@ static
 		public uint32 culThis;
 		public uint32 ulType;
 		public uint32 cLigatures;
-		public LIGATURE[1] alig_fam;
+		public LIGATURE[1] alig_array;
 		
-		public LIGATURE* alig mut => &alig_fam[0];
+		public LIGATURE* alig mut => &alig_array[0];
 	}
 	[CRepr]
 	public struct POINTQF
@@ -1650,9 +1650,9 @@ static
 		public uint32 flAccel;
 		public uint32 cGlyphsSupported;
 		public uint32 cRuns;
-		public WCRUN[1] awcrun_fam;
+		public WCRUN[1] awcrun_array;
 		
-		public WCRUN* awcrun mut => &awcrun_fam[0];
+		public WCRUN* awcrun mut => &awcrun_array[0];
 	}
 	[CRepr]
 	public struct FD_GLYPHATTR
@@ -1660,9 +1660,9 @@ static
 		public uint32 cjThis;
 		public uint32 cGlyphs;
 		public uint32 iMode;
-		public uint8[1] aGlyphAttr_fam;
+		public uint8[1] aGlyphAttr_array;
 		
-		public uint8* aGlyphAttr mut => &aGlyphAttr_fam[0];
+		public uint8* aGlyphAttr mut => &aGlyphAttr_array[0];
 	}
 	[CRepr]
 	public struct FD_KERNINGPAIR
@@ -1763,9 +1763,9 @@ static
 		public uint32 cig;
 		public int32 dpDesignVector;
 		public int32 dpAxesInfoW;
-		public uint32[1] aulReserved_fam;
+		public uint32[1] aulReserved_array;
 		
-		public uint32* aulReserved mut => &aulReserved_fam[0];
+		public uint32* aulReserved mut => &aulReserved_array[0];
 	}
 	[CRepr]
 	public struct DRVFN
@@ -2000,18 +2000,18 @@ static
 	public struct ENUMRECTS
 	{
 		public uint32 c;
-		public RECTL[1] arcl_fam;
+		public RECTL[1] arcl_array;
 		
-		public RECTL* arcl mut => &arcl_fam[0];
+		public RECTL* arcl mut => &arcl_array[0];
 	}
 	[CRepr]
 	public struct GLYPHBITS
 	{
 		public POINTL ptlOrigin;
 		public SIZE sizlBitmap;
-		public uint8[1] aj_fam;
+		public uint8[1] aj_array;
 		
-		public uint8* aj mut => &aj_fam[0];
+		public uint8* aj mut => &aj_array[0];
 	}
 	[CRepr, Union]
 	public struct GLYPHDEF
@@ -2080,9 +2080,9 @@ static
 		public POINTFIX ptfxB;
 		public int32 lStyleState;
 		public uint32 c;
-		public RUN[1] arun_fam;
+		public RUN[1] arun_array;
 		
-		public RUN* arun mut => &arun_fam[0];
+		public RUN* arun mut => &arun_array[0];
 	}
 	[CRepr]
 	public struct PERBANDINFO
@@ -2187,9 +2187,9 @@ static
 	public struct VIDEO_MONITOR_DESCRIPTOR
 	{
 		public uint32 DescriptorSize;
-		public uint8[1] Descriptor_fam;
+		public uint8[1] Descriptor_array;
 		
-		public uint8* Descriptor mut => &Descriptor_fam[0];
+		public uint8* Descriptor mut => &Descriptor_array[0];
 	}
 	[CRepr]
 	public struct DXGK_WIN32K_PARAM_DATA
@@ -2308,18 +2308,18 @@ static
 		public uint16 WidthInPixels;
 		public uint16 HeightInPixels;
 		public uint32 FontSize;
-		public uint8[1] Font_fam;
+		public uint8[1] Font_array;
 		
-		public uint8* Font mut => &Font_fam[0];
+		public uint8* Font mut => &Font_array[0];
 	}
 	[CRepr]
 	public struct VIDEO_PALETTE_DATA
 	{
 		public uint16 NumEntries;
 		public uint16 FirstEntry;
-		public uint16[1] Colors_fam;
+		public uint16[1] Colors_array;
 		
-		public uint16* Colors mut => &Colors_fam[0];
+		public uint16* Colors mut => &Colors_array[0];
 	}
 	[CRepr]
 	public struct VIDEO_CLUTDATA
@@ -2334,9 +2334,9 @@ static
 	{
 		public uint16 NumEntries;
 		public uint16 FirstEntry;
-		public _Anonymous_e__Union[1] LookupTable_fam;
+		public _Anonymous_e__Union[1] LookupTable_array;
 		
-		public _Anonymous_e__Union* LookupTable mut => &LookupTable_fam[0];
+		public _Anonymous_e__Union* LookupTable mut => &LookupTable_array[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -2377,9 +2377,9 @@ static
 		public uint32 Enable;
 		public int16 Column;
 		public int16 Row;
-		public uint8[1] Pixels_fam;
+		public uint8[1] Pixels_array;
 		
-		public uint8* Pixels mut => &Pixels_fam[0];
+		public uint8* Pixels mut => &Pixels_array[0];
 	}
 	[CRepr]
 	public struct VIDEO_POINTER_CAPABILITIES
@@ -2476,9 +2476,9 @@ static
 	{
 		public uint32 Length;
 		public uint32 LutDataFormat;
-		public uint8[1] LutData_fam;
+		public uint8[1] LutData_array;
 		
-		public uint8* LutData mut => &LutData_fam[0];
+		public uint8* LutData mut => &LutData_array[0];
 	}
 	[CRepr]
 	public struct VIDEO_LUT_RGB256WORDS
@@ -2505,9 +2505,9 @@ static
 	{
 		public BOOLEAN DefaultToBiosPolicy;
 		public uint8 LevelCount;
-		public _Anonymous_e__Struct[1] Level_fam;
+		public _Anonymous_e__Struct[1] Level_array;
 		
-		public _Anonymous_e__Struct* Level mut => &Level_fam[0];
+		public _Anonymous_e__Struct* Level mut => &Level_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -2901,9 +2901,9 @@ static
 	[CRepr]
 	public struct SET_ACTIVE_COLOR_PROFILE_NAME
 	{
-		public char16[1] ColorProfileName_fam;
+		public char16[1] ColorProfileName_array;
 		
-		public char16* ColorProfileName mut => &ColorProfileName_fam[0];
+		public char16* ColorProfileName mut => &ColorProfileName_array[0];
 	}
 	[CRepr]
 	public struct MIPI_DSI_CAPS
@@ -2972,9 +2972,9 @@ static
 		public uint16 FinalCommandExtraPayload;
 		public uint16 MipiErrors;
 		public uint16 HostErrors;
-		public MIPI_DSI_PACKET[1] Packets_fam;
+		public MIPI_DSI_PACKET[1] Packets_array;
 		
-		public MIPI_DSI_PACKET* Packets mut => &Packets_fam[0];
+		public MIPI_DSI_PACKET* Packets mut => &Packets_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct

@@ -377,9 +377,9 @@ static
 		public uint32 ulSize;
 		public char16[256] szLogicalLogFile;
 		public uint32 ulNumRecords;
-		public EVENTLOGRECORD[1] pEventLogRecords_fam;
+		public EVENTLOGRECORD[1] pEventLogRecords_array;
 		
-		public EVENTLOGRECORD* pEventLogRecords mut => &pEventLogRecords_fam[0];
+		public EVENTLOGRECORD* pEventLogRecords mut => &pEventLogRecords_array[0];
 	}
 	[CRepr]
 	public struct EVENTLOG_FULL_INFORMATION

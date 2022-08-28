@@ -414,51 +414,51 @@ static
 	public struct MMC_VISIBLE_COLUMNS
 	{
 		public int32 nVisibleColumns;
-		public int32[1] rgVisibleCols_fam;
+		public int32[1] rgVisibleCols_array;
 		
-		public int32* rgVisibleCols mut => &rgVisibleCols_fam[0];
+		public int32* rgVisibleCols mut => &rgVisibleCols_array[0];
 	}
 	[CRepr]
 	public struct SMMCDataObjects
 	{
 		public uint32 count;
-		public IDataObject*[1] lpDataObject_fam;
+		public IDataObject*[1] lpDataObject_array;
 		
-		public IDataObject** lpDataObject mut => &lpDataObject_fam[0];
+		public IDataObject** lpDataObject mut => &lpDataObject_array[0];
 	}
 	[CRepr]
 	public struct SMMCObjectTypes
 	{
 		public uint32 count;
-		public Guid[1] guid_fam;
+		public Guid[1] guid_array;
 		
-		public Guid* guid mut => &guid_fam[0];
+		public Guid* guid mut => &guid_array[0];
 	}
 	[CRepr]
 	public struct SNodeID
 	{
 		public uint32 cBytes;
-		public uint8[1] id_fam;
+		public uint8[1] id_array;
 		
-		public uint8* id mut => &id_fam[0];
+		public uint8* id mut => &id_array[0];
 	}
 	[CRepr]
 	public struct SNodeID2
 	{
 		public uint32 dwFlags;
 		public uint32 cBytes;
-		public uint8[1] id_fam;
+		public uint8[1] id_array;
 		
-		public uint8* id mut => &id_fam[0];
+		public uint8* id mut => &id_array[0];
 	}
 	[CRepr]
 	public struct SColumnSetID
 	{
 		public uint32 dwFlags;
 		public uint32 cBytes;
-		public uint8[1] id_fam;
+		public uint8[1] id_array;
 		
-		public uint8* id mut => &id_fam[0];
+		public uint8* id mut => &id_array[0];
 	}
 	[CRepr]
 	public struct MMC_TASK_DISPLAY_SYMBOL

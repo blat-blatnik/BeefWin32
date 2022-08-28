@@ -1586,9 +1586,9 @@ static
 		public uint16 LangID;
 		public uint16 wPronunciationFlags;
 		public SPPARTOFSPEECH ePartOfSpeech;
-		public uint16[1] szPronunciation_fam;
+		public uint16[1] szPronunciation_array;
 		
-		public uint16* szPronunciation mut => &szPronunciation_fam[0];
+		public uint16* szPronunciation mut => &szPronunciation_array[0];
 	}
 	[CRepr]
 	public struct SPWORDPRONUNCIATIONLIST

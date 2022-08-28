@@ -685,9 +685,9 @@ static
 	[CRepr]
 	public struct Scope_list_ipv4
 	{
-		public IN_ADDR[1] scopl_ipaddr_fam;
+		public IN_ADDR[1] scopl_ipaddr_array;
 		
-		public IN_ADDR* scopl_ipaddr mut => &scopl_ipaddr_fam[0];
+		public IN_ADDR* scopl_ipaddr mut => &scopl_ipaddr_array[0];
 	}
 	[CRepr]
 	public struct RSVP_SCOPE
@@ -1015,9 +1015,9 @@ static
 	{
 		public QOS_OBJECT_HDR ObjectHdr;
 		public uint32 DSFieldCount;
-		public uint8[1] DiffservRule_fam;
+		public uint8[1] DiffservRule_array;
 		
-		public uint8* DiffservRule mut => &DiffservRule_fam[0];
+		public uint8* DiffservRule mut => &DiffservRule_array[0];
 	}
 	[CRepr]
 	public struct QOS_DIFFSERV_RULE
@@ -1077,9 +1077,9 @@ static
 		public FLOWSPEC SendingFlowspec;
 		public FLOWSPEC ReceivingFlowspec;
 		public uint32 TcObjectsLength;
-		public QOS_OBJECT_HDR[1] TcObjects_fam;
+		public QOS_OBJECT_HDR[1] TcObjects_array;
 		
-		public QOS_OBJECT_HDR* TcObjects mut => &TcObjects_fam[0];
+		public QOS_OBJECT_HDR* TcObjects mut => &TcObjects_array[0];
 	}
 	[CRepr]
 	public struct IP_PATTERN
@@ -1137,9 +1137,9 @@ static
 		public char16[256] FlowName;
 		public TC_GEN_FLOW* pFlow;
 		public uint32 NumberOfFilters;
-		public TC_GEN_FILTER[1] GenericFilter_fam;
+		public TC_GEN_FILTER[1] GenericFilter_array;
 		
-		public TC_GEN_FILTER* GenericFilter mut => &GenericFilter_fam[0];
+		public TC_GEN_FILTER* GenericFilter mut => &GenericFilter_array[0];
 	}
 	[CRepr, Union]
 	public struct IN_ADDR_IPV4
@@ -1220,9 +1220,9 @@ static
 	{
 		public QOS_OBJECT_HDR ObjectHdr;
 		public uint32 NumPolicyElement;
-		public RSVP_POLICY[1] PolicyElement_fam;
+		public RSVP_POLICY[1] PolicyElement_array;
 		
-		public RSVP_POLICY* PolicyElement mut => &PolicyElement_fam[0];
+		public RSVP_POLICY* PolicyElement mut => &PolicyElement_array[0];
 	}
 	[CRepr]
 	public struct RSVP_RESERVE_INFO
@@ -1271,9 +1271,9 @@ static
 	{
 		public uint32 ParameterId;
 		public uint32 Length;
-		public uint8[1] Buffer_fam;
+		public uint8[1] Buffer_array;
 		
-		public uint8* Buffer mut => &Buffer_fam[0];
+		public uint8* Buffer mut => &Buffer_array[0];
 	}
 	[CRepr]
 	public struct CONTROL_SERVICE
@@ -1287,9 +1287,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public AD_GUARANTEED Guaranteed;
-			public PARAM_BUFFER[1] ParamBuffer_fam;
+			public PARAM_BUFFER[1] ParamBuffer_array;
 			
-			public PARAM_BUFFER* ParamBuffer mut => &ParamBuffer_fam[0];
+			public PARAM_BUFFER* ParamBuffer mut => &ParamBuffer_array[0];
 		}
 	}
 	[CRepr]
@@ -1298,9 +1298,9 @@ static
 		public QOS_OBJECT_HDR ObjectHdr;
 		public AD_GENERAL_PARAMS GeneralParams;
 		public uint32 NumberOfServices;
-		public CONTROL_SERVICE[1] Services_fam;
+		public CONTROL_SERVICE[1] Services_array;
 		
-		public CONTROL_SERVICE* Services mut => &Services_fam[0];
+		public CONTROL_SERVICE* Services mut => &Services_array[0];
 	}
 	[CRepr]
 	public struct IDPE_ATTR
@@ -1331,18 +1331,18 @@ static
 		public uint32 eventType;
 		public uint8[20] digest;
 		public uint32 eventDataSize;
-		public uint8[1] event_fam;
+		public uint8[1] event_array;
 		
-		public uint8* event mut => &event_fam[0];
+		public uint8* event mut => &event_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct TCG_PCClientTaggedEventStruct
 	{
 		public uint32 EventID;
 		public uint32 EventDataSize;
-		public uint8[1] EventData_fam;
+		public uint8[1] EventData_array;
 		
-		public uint8* EventData mut => &EventData_fam[0];
+		public uint8* EventData mut => &EventData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct WBCL_LogHdr
@@ -1358,9 +1358,9 @@ static
 		public uint32 KeyBitLength;
 		public uint32 PublicExpLengthBytes;
 		public uint32 ModulusSizeBytes;
-		public uint8[1] PublicKeyData_fam;
+		public uint8[1] PublicKeyData_array;
 		
-		public uint8* PublicKeyData mut => &PublicKeyData_fam[0];
+		public uint8* PublicKeyData mut => &PublicKeyData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct tag_SIPAEVENT_VSM_IDK_INFO_PAYLOAD
@@ -1381,9 +1381,9 @@ static
 		public uint16 PolicyNameLength;
 		public uint16 HashAlgID;
 		public uint32 DigestLength;
-		public uint8[1] VarLengthData_fam;
+		public uint8[1] VarLengthData_array;
 		
-		public uint8* VarLengthData mut => &VarLengthData_fam[0];
+		public uint8* VarLengthData mut => &VarLengthData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct tag_SIPAEVENT_REVOCATION_LIST_PAYLOAD
@@ -1391,18 +1391,18 @@ static
 		public int64 CreationTime;
 		public uint32 DigestLength;
 		public uint16 HashAlgID;
-		public uint8[1] Digest_fam;
+		public uint8[1] Digest_array;
 		
-		public uint8* Digest mut => &Digest_fam[0];
+		public uint8* Digest mut => &Digest_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct tag_SIPAEVENT_KSR_SIGNATURE_PAYLOAD
 	{
 		public uint32 SignAlgID;
 		public uint32 SignatureLength;
-		public uint8[1] Signature_fam;
+		public uint8[1] Signature_array;
 		
-		public uint8* Signature mut => &Signature_fam[0];
+		public uint8* Signature mut => &Signature_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct tag_SIPAEVENT_SBCP_INFO_PAYLOAD_V1
@@ -1413,9 +1413,9 @@ static
 		public uint16 DigestLength;
 		public uint32 Options;
 		public uint32 SignersCount;
-		public uint8[1] VarData_fam;
+		public uint8[1] VarData_array;
 		
-		public uint8* VarData mut => &VarData_fam[0];
+		public uint8* VarData mut => &VarData_array[0];
 	}
 	[CRepr]
 	public struct QOS

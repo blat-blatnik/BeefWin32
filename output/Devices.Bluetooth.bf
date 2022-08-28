@@ -1151,9 +1151,9 @@ static
 		public uint32 fCodService;
 		public uint32[5] Reserved;
 		public uint32 ulRecordLength;
-		public uint8[1] pRecord_fam;
+		public uint8[1] pRecord_array;
 		
-		public uint8* pRecord mut => &pRecord_fam[0];
+		public uint8* pRecord mut => &pRecord_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct BTH_QUERY_DEVICE
@@ -1168,9 +1168,9 @@ static
 		public uint32 serviceHandle;
 		public SdpQueryUuid[12] uuids;
 		public uint32 numRange;
-		public SdpAttributeRange[1] pRange_fam;
+		public SdpAttributeRange[1] pRange_array;
 		
-		public SdpAttributeRange* pRange mut => &pRange_fam[0];
+		public SdpAttributeRange* pRange mut => &pRange_array[0];
 	}
 	[CRepr]
 	public struct RFCOMM_MSC_DATA

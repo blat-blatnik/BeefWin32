@@ -884,9 +884,9 @@ static
 	public struct WICRawToneCurve
 	{
 		public uint32 cPoints;
-		public WICRawToneCurvePoint[1] aPoints_fam;
+		public WICRawToneCurvePoint[1] aPoints_array;
 		
-		public WICRawToneCurvePoint* aPoints mut => &aPoints_fam[0];
+		public WICRawToneCurvePoint* aPoints mut => &aPoints_array[0];
 	}
 	[CRepr]
 	public struct WICDdsParameters

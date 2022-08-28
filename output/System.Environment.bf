@@ -101,9 +101,9 @@ static
 		public uint8[16] FamilyId;
 		public uint8[16] ImageId;
 		public uint32 Svn;
-		public char16[1] ModuleName_fam;
+		public char16[1] ModuleName_array;
 		
-		public char16* ModuleName mut => &ModuleName_fam[0];
+		public char16* ModuleName mut => &ModuleName_array[0];
 	}
 	[CRepr]
 	public struct ENCLAVE_INFORMATION

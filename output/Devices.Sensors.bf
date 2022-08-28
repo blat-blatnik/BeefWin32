@@ -443,18 +443,18 @@ static
 	{
 		public uint32 AllocatedSizeInBytes;
 		public uint32 Count;
-		public SENSOR_VALUE_PAIR[1] List_fam;
+		public SENSOR_VALUE_PAIR[1] List_array;
 		
-		public SENSOR_VALUE_PAIR* List mut => &List_fam[0];
+		public SENSOR_VALUE_PAIR* List mut => &List_array[0];
 	}
 	[CRepr]
 	public struct SENSOR_PROPERTY_LIST
 	{
 		public uint32 AllocatedSizeInBytes;
 		public uint32 Count;
-		public PROPERTYKEY[1] List_fam;
+		public PROPERTYKEY[1] List_array;
 		
-		public PROPERTYKEY* List mut => &List_fam[0];
+		public PROPERTYKEY* List mut => &List_array[0];
 	}
 	[CRepr]
 	public struct VEC3D

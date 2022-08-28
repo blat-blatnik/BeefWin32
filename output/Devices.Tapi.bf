@@ -2384,9 +2384,9 @@ static
 	{
 		public uint32 dwTotalSize;
 		public uint32 dwNumEntries;
-		public LINEFORWARD[1] ForwardList_fam;
+		public LINEFORWARD[1] ForwardList_array;
 		
-		public LINEFORWARD* ForwardList mut => &ForwardList_fam[0];
+		public LINEFORWARD* ForwardList mut => &ForwardList_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct LINEGENERATETONE
@@ -2628,9 +2628,9 @@ static
 				public uint32 dwAddressID;
 				public uint32 dwAgentExtensionIDIndex;
 				public uint32 dwSize;
-				public uint8[1] Params_fam;
+				public uint8[1] Params_array;
 				
-				public uint8* Params mut => &Params_fam[0];
+				public uint8* Params mut => &Params_array[0];
 			}
 			[CRepr, Packed(1)]
 			public struct _SetAgentState_e__Struct
@@ -3028,9 +3028,9 @@ static
 			public struct _MSP_TSP_DATA_e__Struct
 			{
 				public uint32 dwBufferSize;
-				public uint8[1] pBuffer_fam;
+				public uint8[1] pBuffer_array;
 				
-				public uint8* pBuffer mut => &pBuffer_fam[0];
+				public uint8* pBuffer mut => &pBuffer_array[0];
 			}
 			[CRepr]
 			public struct _MSP_TTS_TERMINAL_EVENT_INFO_e__Struct
@@ -3052,9 +3052,9 @@ static
 	public struct STnefProblemArray
 	{
 		public uint32 cProblem;
-		public STnefProblem[1] aProblem_fam;
+		public STnefProblem[1] aProblem_array;
 		
-		public STnefProblem* aProblem mut => &aProblem_fam[0];
+		public STnefProblem* aProblem mut => &aProblem_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct _renddata
@@ -3106,9 +3106,9 @@ static
 		public struct _address_e__Union
 		{
 			public _ADDR_ALIAS alias;
-			public CHAR[1] rgchInterNet_fam;
+			public CHAR[1] rgchInterNet_array;
 			
-			public CHAR* rgchInterNet mut => &rgchInterNet_fam[0];
+			public CHAR* rgchInterNet mut => &rgchInterNet_array[0];
 		}
 	}
 	#endregion

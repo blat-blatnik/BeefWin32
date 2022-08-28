@@ -799,9 +799,9 @@ static
 		public PWSTR szExecutableImagePath;
 		public using _Anonymous_e__Union Anonymous;
 		public uint32 dwObjectTypeNameCount;
-		public AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET[1] ObjectTypeNames_fam;
+		public AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET[1] ObjectTypeNames_array;
 		
-		public AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET* ObjectTypeNames mut => &ObjectTypeNames_fam[0];
+		public AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET* ObjectTypeNames mut => &ObjectTypeNames_array[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union

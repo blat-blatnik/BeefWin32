@@ -1241,17 +1241,17 @@ static
 		public uint16[256] SerialNumber;
 		public WINBIO_VERSION FirmwareVersion;
 		public uint32 SupportedFormatEntries;
-		public WINBIO_REGISTERED_FORMAT[1] SupportedFormat_fam;
+		public WINBIO_REGISTERED_FORMAT[1] SupportedFormat_array;
 		
-		public WINBIO_REGISTERED_FORMAT* SupportedFormat mut => &SupportedFormat_fam[0];
+		public WINBIO_REGISTERED_FORMAT* SupportedFormat mut => &SupportedFormat_array[0];
 	}
 	[CRepr]
 	public struct WINBIO_DATA
 	{
 		public uint32 Size;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct WINBIO_UPDATE_FIRMWARE

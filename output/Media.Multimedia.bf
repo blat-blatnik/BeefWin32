@@ -4696,9 +4696,9 @@ static
 		public WAVEFORMATEX wfx;
 		public uint16 wSamplesPerBlock;
 		public uint16 wNumCoef;
-		public ADPCMCOEFSET[1] aCoef_fam;
+		public ADPCMCOEFSET[1] aCoef_array;
 		
-		public ADPCMCOEFSET* aCoef mut => &aCoef_fam[0];
+		public ADPCMCOEFSET* aCoef mut => &aCoef_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DRMWAVEFORMAT

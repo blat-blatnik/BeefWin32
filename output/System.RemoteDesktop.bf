@@ -1392,9 +1392,9 @@ static
 	public struct RFX_GFX_MSG_RDP_DATA
 	{
 		public RFX_GFX_MSG_HEADER channelHdr;
-		public uint8[1] rdpData_fam;
+		public uint8[1] rdpData_array;
 		
-		public uint8* rdpData mut => &rdpData_fam[0];
+		public uint8* rdpData mut => &rdpData_array[0];
 	}
 	[CRepr]
 	public struct WTS_SOCKADDR

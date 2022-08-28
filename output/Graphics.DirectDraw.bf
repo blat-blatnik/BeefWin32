@@ -2237,9 +2237,9 @@ static
 	{
 		public uint32 dwSize;
 		public DDSCAPSEX ddsCapsMore;
-		public ExtendedHeapRestrictions[1] ddsExtendedHeapRestrictions_fam;
+		public ExtendedHeapRestrictions[1] ddsExtendedHeapRestrictions_array;
 		
-		public ExtendedHeapRestrictions* ddsExtendedHeapRestrictions mut => &ddsExtendedHeapRestrictions_fam[0];
+		public ExtendedHeapRestrictions* ddsExtendedHeapRestrictions mut => &ddsExtendedHeapRestrictions_array[0];
 		
 		[CRepr]
 		public struct ExtendedHeapRestrictions
@@ -3893,9 +3893,9 @@ static
 	{
 		public uint32 dwSize;
 		public DDSCAPSEX ddsCapsMore;
-		public NTExtendedHeapRestrictions[1] ddsExtendedHeapRestrictions_fam;
+		public NTExtendedHeapRestrictions[1] ddsExtendedHeapRestrictions_array;
 		
-		public NTExtendedHeapRestrictions* ddsExtendedHeapRestrictions mut => &ddsExtendedHeapRestrictions_fam[0];
+		public NTExtendedHeapRestrictions* ddsExtendedHeapRestrictions mut => &ddsExtendedHeapRestrictions_array[0];
 		
 		[CRepr]
 		public struct NTExtendedHeapRestrictions

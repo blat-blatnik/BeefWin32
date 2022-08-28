@@ -1054,9 +1054,9 @@ static
 		public uint32 YOffset;
 		public uint32 Rotation;
 		public uint32 Length;
-		public char16[1] Text_fam;
+		public char16[1] Text_array;
 		
-		public char16* Text mut => &Text_fam[0];
+		public char16* Text mut => &Text_array[0];
 	}
 	[CRepr]
 	public struct WIA_BARCODES
@@ -1065,9 +1065,9 @@ static
 		public uint32 Version;
 		public uint32 Size;
 		public uint32 Count;
-		public WIA_BARCODE_INFO[1] Barcodes_fam;
+		public WIA_BARCODE_INFO[1] Barcodes_array;
 		
-		public WIA_BARCODE_INFO* Barcodes mut => &Barcodes_fam[0];
+		public WIA_BARCODE_INFO* Barcodes mut => &Barcodes_array[0];
 	}
 	[CRepr]
 	public struct WIA_PATCH_CODE_INFO
@@ -1081,9 +1081,9 @@ static
 		public uint32 Version;
 		public uint32 Size;
 		public uint32 Count;
-		public WIA_PATCH_CODE_INFO[1] PatchCodes_fam;
+		public WIA_PATCH_CODE_INFO[1] PatchCodes_array;
 		
-		public WIA_PATCH_CODE_INFO* PatchCodes mut => &PatchCodes_fam[0];
+		public WIA_PATCH_CODE_INFO* PatchCodes mut => &PatchCodes_array[0];
 	}
 	[CRepr]
 	public struct WIA_MICR_INFO
@@ -1091,9 +1091,9 @@ static
 		public uint32 Size;
 		public uint32 Page;
 		public uint32 Length;
-		public char16[1] Text_fam;
+		public char16[1] Text_array;
 		
-		public char16* Text mut => &Text_fam[0];
+		public char16* Text mut => &Text_array[0];
 	}
 	[CRepr]
 	public struct WIA_MICR
@@ -1104,9 +1104,9 @@ static
 		public char16 Placeholder;
 		public uint16 Reserved;
 		public uint32 Count;
-		public WIA_MICR_INFO[1] Micr_fam;
+		public WIA_MICR_INFO[1] Micr_array;
 		
-		public WIA_MICR_INFO* Micr mut => &Micr_fam[0];
+		public WIA_MICR_INFO* Micr mut => &Micr_array[0];
 	}
 	[CRepr]
 	public struct WIA_DATA_CALLBACK_HEADER
@@ -1433,9 +1433,9 @@ static
 		public int32 lRC;
 		public int32 lCC;
 		public int32 lDataSize;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	#endregion
 	

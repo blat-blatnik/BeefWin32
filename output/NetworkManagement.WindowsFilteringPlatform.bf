@@ -3942,11 +3942,11 @@ static
 		[CRepr, Union]
 		public struct _Data_e__Union
 		{
-			public uint32[1] Data32_fam;
+			public uint32[1] Data32_array;
 			public uint16[2] Data16;
 			public uint8[4] Data8;
 			
-			public uint32* Data32 mut => &Data32_fam[0];
+			public uint32* Data32 mut => &Data32_array[0];
 		}
 	}
 	[CRepr]
@@ -4083,9 +4083,9 @@ static
 		public uint8 HardwareAddressLength;
 		public uint8 ProtocolAddressLength;
 		public uint16 Opcode;
-		public uint8[1] SenderHardwareAddress_fam;
+		public uint8[1] SenderHardwareAddress_array;
 		
-		public uint8* SenderHardwareAddress mut => &SenderHardwareAddress_fam[0];
+		public uint8* SenderHardwareAddress mut => &SenderHardwareAddress_array[0];
 	}
 	[CRepr]
 	public struct IGMP_HEADER
@@ -4497,9 +4497,9 @@ static
 	{
 		public uint8 Kind;
 		public uint8 Length;
-		public tcp_opt_sack_block[1] Block_fam;
+		public tcp_opt_sack_block[1] Block_array;
 		
-		public tcp_opt_sack_block* Block mut => &Block_fam[0];
+		public tcp_opt_sack_block* Block mut => &Block_array[0];
 		
 		[CRepr, Packed(1)]
 		public struct tcp_opt_sack_block
@@ -4527,18 +4527,18 @@ static
 	{
 		public uint8 Kind;
 		public uint8 Length;
-		public uint8[1] Cookie_fam;
+		public uint8[1] Cookie_array;
 		
-		public uint8* Cookie mut => &Cookie_fam[0];
+		public uint8* Cookie mut => &Cookie_array[0];
 	}
 	[CRepr]
 	public struct DL_TUNNEL_ADDRESS
 	{
 		public COMPARTMENT_ID CompartmentId;
 		public SCOPE_ID ScopeId;
-		public uint8[1] IpAddress_fam;
+		public uint8[1] IpAddress_array;
 		
-		public uint8* IpAddress mut => &IpAddress_fam[0];
+		public uint8* IpAddress mut => &IpAddress_array[0];
 	}
 	[CRepr]
 	public struct DL_TEREDO_ADDRESS

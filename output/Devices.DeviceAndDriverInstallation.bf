@@ -1393,9 +1393,9 @@ static
 	{
 		public SP_INF_STYLE InfStyle;
 		public uint32 InfCount;
-		public uint8[1] VersionData_fam;
+		public uint8[1] VersionData_array;
 		
-		public uint8* VersionData mut => &VersionData_fam[0];
+		public uint8* VersionData mut => &VersionData_array[0];
 	}
 	[CRepr]
 	public struct SP_ALTPLATFORM_INFO_V3
@@ -1628,17 +1628,17 @@ static
 	public struct SP_DEVICE_INTERFACE_DETAIL_DATA_A
 	{
 		public uint32 cbSize;
-		public CHAR[1] DevicePath_fam;
+		public CHAR[1] DevicePath_array;
 		
-		public CHAR* DevicePath mut => &DevicePath_fam[0];
+		public CHAR* DevicePath mut => &DevicePath_array[0];
 	}
 	[CRepr]
 	public struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
 	{
 		public uint32 cbSize;
-		public char16[1] DevicePath_fam;
+		public char16[1] DevicePath_array;
 		
-		public char16* DevicePath mut => &DevicePath_fam[0];
+		public char16* DevicePath mut => &DevicePath_array[0];
 	}
 	[CRepr]
 	public struct SP_DEVINFO_LIST_DETAIL_DATA_A
@@ -1847,9 +1847,9 @@ static
 		public CHAR[256] SectionName;
 		public CHAR[260] InfFileName;
 		public CHAR[256] DrvDescription;
-		public CHAR[1] HardwareID_fam;
+		public CHAR[1] HardwareID_array;
 		
-		public CHAR* HardwareID mut => &HardwareID_fam[0];
+		public CHAR* HardwareID mut => &HardwareID_array[0];
 	}
 	[CRepr]
 	public struct SP_DRVINFO_DETAIL_DATA_W
@@ -1862,9 +1862,9 @@ static
 		public char16[256] SectionName;
 		public char16[260] InfFileName;
 		public char16[256] DrvDescription;
-		public char16[1] HardwareID_fam;
+		public char16[1] HardwareID_array;
 		
-		public char16* HardwareID mut => &HardwareID_fam[0];
+		public char16* HardwareID mut => &HardwareID_array[0];
 	}
 	[CRepr]
 	public struct SP_DRVINSTALL_PARAMS
@@ -2005,9 +2005,9 @@ static
 	public struct MEM_RESOURCE
 	{
 		public MEM_DES MEM_Header;
-		public MEM_RANGE[1] MEM_Data_fam;
+		public MEM_RANGE[1] MEM_Data_array;
 		
-		public MEM_RANGE* MEM_Data mut => &MEM_Data_fam[0];
+		public MEM_RANGE* MEM_Data mut => &MEM_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct Mem_Large_Range_s
@@ -2033,9 +2033,9 @@ static
 	public struct Mem_Large_Resource_s
 	{
 		public Mem_Large_Des_s MEM_LARGE_Header;
-		public Mem_Large_Range_s[1] MEM_LARGE_Data_fam;
+		public Mem_Large_Range_s[1] MEM_LARGE_Data_array;
 		
-		public Mem_Large_Range_s* MEM_LARGE_Data mut => &MEM_LARGE_Data_fam[0];
+		public Mem_Large_Range_s* MEM_LARGE_Data mut => &MEM_LARGE_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct IO_RANGE
@@ -2060,9 +2060,9 @@ static
 	public struct IO_RESOURCE
 	{
 		public IO_DES IO_Header;
-		public IO_RANGE[1] IO_Data_fam;
+		public IO_RANGE[1] IO_Data_array;
 		
-		public IO_RANGE* IO_Data mut => &IO_Data_fam[0];
+		public IO_RANGE* IO_Data mut => &IO_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DMA_RANGE
@@ -2083,9 +2083,9 @@ static
 	public struct DMA_RESOURCE
 	{
 		public DMA_DES DMA_Header;
-		public DMA_RANGE[1] DMA_Data_fam;
+		public DMA_RANGE[1] DMA_Data_array;
 		
-		public DMA_RANGE* DMA_Data mut => &DMA_Data_fam[0];
+		public DMA_RANGE* DMA_Data mut => &DMA_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct IRQ_RANGE
@@ -2116,17 +2116,17 @@ static
 	public struct IRQ_RESOURCE_32
 	{
 		public IRQ_DES_32 IRQ_Header;
-		public IRQ_RANGE[1] IRQ_Data_fam;
+		public IRQ_RANGE[1] IRQ_Data_array;
 		
-		public IRQ_RANGE* IRQ_Data mut => &IRQ_Data_fam[0];
+		public IRQ_RANGE* IRQ_Data mut => &IRQ_Data_array[0];
 	}
 	[CRepr]
 	public struct IRQ_RESOURCE_64
 	{
 		public IRQ_DES_64 IRQ_Header;
-		public IRQ_RANGE[1] IRQ_Data_fam;
+		public IRQ_RANGE[1] IRQ_Data_array;
 		
-		public IRQ_RANGE* IRQ_Data mut => &IRQ_Data_fam[0];
+		public IRQ_RANGE* IRQ_Data mut => &IRQ_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct DevPrivate_Range_s
@@ -2149,9 +2149,9 @@ static
 	public struct DevPrivate_Resource_s
 	{
 		public DevPrivate_Des_s PRV_Header;
-		public DevPrivate_Range_s[1] PRV_Data_fam;
+		public DevPrivate_Range_s[1] PRV_Data_array;
 		
-		public DevPrivate_Range_s* PRV_Data mut => &PRV_Data_fam[0];
+		public DevPrivate_Range_s* PRV_Data mut => &PRV_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct CS_DES
@@ -2161,9 +2161,9 @@ static
 		public uint32 CSD_LegacyDataSize;
 		public uint32 CSD_Flags;
 		public Guid CSD_ClassGuid;
-		public uint8[1] CSD_Signature_fam;
+		public uint8[1] CSD_Signature_array;
 		
-		public uint8* CSD_Signature mut => &CSD_Signature_fam[0];
+		public uint8* CSD_Signature mut => &CSD_Signature_array[0];
 	}
 	[CRepr]
 	public struct CS_RESOURCE
@@ -2226,9 +2226,9 @@ static
 	public struct BUSNUMBER_RESOURCE
 	{
 		public BUSNUMBER_DES BusNumber_Header;
-		public BUSNUMBER_RANGE[1] BusNumber_Data_fam;
+		public BUSNUMBER_RANGE[1] BusNumber_Data_array;
 		
-		public BUSNUMBER_RANGE* BusNumber_Data mut => &BusNumber_Data_fam[0];
+		public BUSNUMBER_RANGE* BusNumber_Data mut => &BusNumber_Data_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct Connection_Des_s
@@ -2310,17 +2310,17 @@ static
 			[CRepr]
 			public struct _DeviceInstance_e__Struct
 			{
-				public char16[1] InstanceId_fam;
+				public char16[1] InstanceId_array;
 				
-				public char16* InstanceId mut => &InstanceId_fam[0];
+				public char16* InstanceId mut => &InstanceId_array[0];
 			}
 			[CRepr]
 			public struct _DeviceInterface_e__Struct
 			{
 				public Guid ClassGuid;
-				public char16[1] SymbolicLink_fam;
+				public char16[1] SymbolicLink_array;
 				
-				public char16* SymbolicLink mut => &SymbolicLink_fam[0];
+				public char16* SymbolicLink mut => &SymbolicLink_array[0];
 			}
 			[CRepr]
 			public struct _DeviceHandle_e__Struct
@@ -2328,9 +2328,9 @@ static
 				public Guid EventGuid;
 				public int32 NameOffset;
 				public uint32 DataSize;
-				public uint8[1] Data_fam;
+				public uint8[1] Data_array;
 				
-				public uint8* Data mut => &Data_fam[0];
+				public uint8* Data mut => &Data_array[0];
 			}
 		}
 	}

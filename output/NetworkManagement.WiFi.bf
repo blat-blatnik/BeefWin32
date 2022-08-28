@@ -1521,9 +1521,9 @@ static
 		public DOT11_IV48_COUNTER[16] dot11IV48Counters;
 		public uint16[16] usDot11RWBitMaps;
 		public uint16 usKeyLength;
-		public uint8[1] ucKey_fam;
+		public uint8[1] ucKey_array;
 		
-		public uint8* ucKey mut => &ucKey_fam[0];
+		public uint8* ucKey mut => &ucKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_WEP_UPLOAD
@@ -1551,9 +1551,9 @@ static
 		public DOT11_IV48_COUNTER[16] dot11IV48Counters;
 		public uint16[16] usDot11RWBitMaps;
 		public uint16 usKeyLength;
-		public uint8[1] ucKey_fam;
+		public uint8[1] ucKey_array;
 		
-		public uint8* ucKey mut => &ucKey_fam[0];
+		public uint8* ucKey mut => &ucKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_DEFAULT_WEP_UPLOAD
@@ -1596,9 +1596,9 @@ static
 		public uint32 uNumOfPhyTypes;
 		public uint32 uIEsOffset;
 		public uint32 uIEsLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_PHY_TYPE_INFO
@@ -1610,9 +1610,9 @@ static
 		public uint32 uMaxChannelTime;
 		public CH_DESCRIPTION_TYPE ChDescriptionType;
 		public uint32 uChannelListSize;
-		public uint8[1] ucChannelListBuffer_fam;
+		public uint8[1] ucChannelListBuffer_array;
 		
-		public uint8* ucChannelListBuffer mut => &ucChannelListBuffer_fam[0];
+		public uint8* ucChannelListBuffer mut => &ucChannelListBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SCAN_REQUEST_V2
@@ -1630,9 +1630,9 @@ static
 		public uint32 uNumOfPhyTypeInfos;
 		public uint32 uIEsOffset;
 		public uint32 uIEsLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_PHY_TYPE_LIST
@@ -1640,9 +1640,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_PHY_TYPE[1] dot11PhyType_fam;
+		public DOT11_PHY_TYPE[1] dot11PhyType_array;
 		
-		public DOT11_PHY_TYPE* dot11PhyType mut => &dot11PhyType_fam[0];
+		public DOT11_PHY_TYPE* dot11PhyType mut => &dot11PhyType_array[0];
 	}
 	[CRepr]
 	public struct DOT11_BSS_DESCRIPTION
@@ -1654,9 +1654,9 @@ static
 		public uint64 ullTimestamp;
 		public uint16 usCapabilityInformation;
 		public uint32 uBufferLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_JOIN_REQUEST
@@ -1679,9 +1679,9 @@ static
 	{
 		public DOT11_UPDATE_IE_OP dot11UpdateIEOp;
 		public uint32 uBufferLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_RESET_REQUEST
@@ -1738,9 +1738,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_PHY_TYPE[1] dot11PHYType_fam;
+		public DOT11_PHY_TYPE[1] dot11PHYType_array;
 		
-		public DOT11_PHY_TYPE* dot11PHYType mut => &dot11PHYType_fam[0];
+		public DOT11_PHY_TYPE* dot11PHYType mut => &dot11PHYType_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SUPPORTED_POWER_LEVELS
@@ -1759,9 +1759,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_REG_DOMAIN_VALUE[1] dot11RegDomainValue_fam;
+		public DOT11_REG_DOMAIN_VALUE[1] dot11RegDomainValue_array;
 		
-		public DOT11_REG_DOMAIN_VALUE* dot11RegDomainValue mut => &dot11RegDomainValue_fam[0];
+		public DOT11_REG_DOMAIN_VALUE* dot11RegDomainValue mut => &dot11RegDomainValue_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SUPPORTED_ANTENNA
@@ -1774,9 +1774,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_SUPPORTED_ANTENNA[1] dot11SupportedAntenna_fam;
+		public DOT11_SUPPORTED_ANTENNA[1] dot11SupportedAntenna_array;
 		
-		public DOT11_SUPPORTED_ANTENNA* dot11SupportedAntenna mut => &dot11SupportedAntenna_fam[0];
+		public DOT11_SUPPORTED_ANTENNA* dot11SupportedAntenna mut => &dot11SupportedAntenna_array[0];
 	}
 	[CRepr]
 	public struct DOT11_DIVERSITY_SELECTION_RX
@@ -1789,9 +1789,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_DIVERSITY_SELECTION_RX[1] dot11DiversitySelectionRx_fam;
+		public DOT11_DIVERSITY_SELECTION_RX[1] dot11DiversitySelectionRx_array;
 		
-		public DOT11_DIVERSITY_SELECTION_RX* dot11DiversitySelectionRx mut => &dot11DiversitySelectionRx_fam[0];
+		public DOT11_DIVERSITY_SELECTION_RX* dot11DiversitySelectionRx mut => &dot11DiversitySelectionRx_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SUPPORTED_DATA_RATES_VALUE
@@ -1818,9 +1818,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY[1] dot11MDCapabilityEntry_fam;
+		public DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY[1] dot11MDCapabilityEntry_array;
 		
-		public DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY* dot11MDCapabilityEntry mut => &dot11MDCapabilityEntry_fam[0];
+		public DOT11_MULTI_DOMAIN_CAPABILITY_ENTRY* dot11MDCapabilityEntry mut => &dot11MDCapabilityEntry_array[0];
 	}
 	[CRepr]
 	public struct DOT11_HOPPING_PATTERN_ENTRY
@@ -1833,9 +1833,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_HOPPING_PATTERN_ENTRY[1] dot11HoppingPatternEntry_fam;
+		public DOT11_HOPPING_PATTERN_ENTRY[1] dot11HoppingPatternEntry_array;
 		
-		public DOT11_HOPPING_PATTERN_ENTRY* dot11HoppingPatternEntry mut => &dot11HoppingPatternEntry_fam[0];
+		public DOT11_HOPPING_PATTERN_ENTRY* dot11HoppingPatternEntry mut => &dot11HoppingPatternEntry_array[0];
 	}
 	[CRepr]
 	public struct DOT11_WPA_TSC
@@ -1857,9 +1857,9 @@ static
 	{
 		public uint32 uBufferLength;
 		public uint32 uTotalBufferLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_AP_JOIN_REQUEST
@@ -1882,9 +1882,9 @@ static
 		public using _Anonymous_e__Union Anonymous;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_RECV_SENSITIVITY[1] dot11RecvSensitivity_fam;
+		public DOT11_RECV_SENSITIVITY[1] dot11RecvSensitivity_array;
 		
-		public DOT11_RECV_SENSITIVITY* dot11RecvSensitivity mut => &dot11RecvSensitivity_fam[0];
+		public DOT11_RECV_SENSITIVITY* dot11RecvSensitivity mut => &dot11RecvSensitivity_array[0];
 		
 		[CRepr, Union]
 		public struct _Anonymous_e__Union
@@ -1907,9 +1907,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_WME_AC_PARAMETERS[1] dot11WMEACParameters_fam;
+		public DOT11_WME_AC_PARAMETERS[1] dot11WMEACParameters_array;
 		
-		public DOT11_WME_AC_PARAMETERS* dot11WMEACParameters mut => &dot11WMEACParameters_fam[0];
+		public DOT11_WME_AC_PARAMETERS* dot11WMEACParameters mut => &dot11WMEACParameters_array[0];
 	}
 	[CRepr]
 	public struct DOT11_WME_UPDATE_IE
@@ -1919,9 +1919,9 @@ static
 		public uint32 uWMEInfoElemLength;
 		public uint32 uWMEParamElemOffset;
 		public uint32 uWMEParamElemLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_QOS_TX_DURATION
@@ -1947,9 +1947,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_SUPPORTED_OFDM_FREQUENCY[1] dot11SupportedOFDMFrequency_fam;
+		public DOT11_SUPPORTED_OFDM_FREQUENCY[1] dot11SupportedOFDMFrequency_array;
 		
-		public DOT11_SUPPORTED_OFDM_FREQUENCY* dot11SupportedOFDMFrequency mut => &dot11SupportedOFDMFrequency_fam[0];
+		public DOT11_SUPPORTED_OFDM_FREQUENCY* dot11SupportedOFDMFrequency mut => &dot11SupportedOFDMFrequency_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SUPPORTED_DSSS_CHANNEL
@@ -1961,9 +1961,9 @@ static
 	{
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_SUPPORTED_DSSS_CHANNEL[1] dot11SupportedDSSSChannel_fam;
+		public DOT11_SUPPORTED_DSSS_CHANNEL[1] dot11SupportedDSSSChannel_array;
 		
-		public DOT11_SUPPORTED_DSSS_CHANNEL* dot11SupportedDSSSChannel mut => &dot11SupportedDSSSChannel_fam[0];
+		public DOT11_SUPPORTED_DSSS_CHANNEL* dot11SupportedDSSSChannel mut => &dot11SupportedDSSSChannel_array[0];
 	}
 	[CRepr]
 	public struct DOT11_BYTE_ARRAY
@@ -1971,9 +1971,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfBytes;
 		public uint32 uTotalNumOfBytes;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr, Union]
 	public struct DOT11_BSS_ENTRY_PHY_SPECIFIC_INFO
@@ -2004,9 +2004,9 @@ static
 		public uint64 ullHostTimestamp;
 		public uint16 usCapabilityInformation;
 		public uint32 uBufferLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_SSID_LIST
@@ -2014,9 +2014,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_SSID[1] SSIDs_fam;
+		public DOT11_SSID[1] SSIDs_array;
 		
-		public DOT11_SSID* SSIDs mut => &SSIDs_fam[0];
+		public DOT11_SSID* SSIDs mut => &SSIDs_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MAC_ADDRESS_LIST
@@ -2039,9 +2039,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_PMKID_ENTRY[1] PMKIDs_fam;
+		public DOT11_PMKID_ENTRY[1] PMKIDs_array;
 		
-		public DOT11_PMKID_ENTRY* PMKIDs mut => &PMKIDs_fam[0];
+		public DOT11_PMKID_ENTRY* PMKIDs mut => &PMKIDs_array[0];
 	}
 	[CRepr]
 	public struct DOT11_PHY_FRAME_STATISTICS
@@ -2092,9 +2092,9 @@ static
 		public uint64 ullReserved;
 		public DOT11_MAC_FRAME_STATISTICS MacUcastCounters;
 		public DOT11_MAC_FRAME_STATISTICS MacMcastCounters;
-		public DOT11_PHY_FRAME_STATISTICS[1] PhyCounters_fam;
+		public DOT11_PHY_FRAME_STATISTICS[1] PhyCounters_array;
 		
-		public DOT11_PHY_FRAME_STATISTICS* PhyCounters mut => &PhyCounters_fam[0];
+		public DOT11_PHY_FRAME_STATISTICS* PhyCounters mut => &PhyCounters_array[0];
 	}
 	[CRepr]
 	public struct DOT11_PRIVACY_EXEMPTION
@@ -2109,9 +2109,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_PRIVACY_EXEMPTION[1] PrivacyExemptionEntries_fam;
+		public DOT11_PRIVACY_EXEMPTION[1] PrivacyExemptionEntries_array;
 		
-		public DOT11_PRIVACY_EXEMPTION* PrivacyExemptionEntries mut => &PrivacyExemptionEntries_fam[0];
+		public DOT11_PRIVACY_EXEMPTION* PrivacyExemptionEntries mut => &PrivacyExemptionEntries_array[0];
 	}
 	[CRepr]
 	public struct DOT11_AUTH_ALGORITHM_LIST
@@ -2119,9 +2119,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_AUTH_ALGORITHM[1] AlgorithmIds_fam;
+		public DOT11_AUTH_ALGORITHM[1] AlgorithmIds_array;
 		
-		public DOT11_AUTH_ALGORITHM* AlgorithmIds mut => &AlgorithmIds_fam[0];
+		public DOT11_AUTH_ALGORITHM* AlgorithmIds mut => &AlgorithmIds_array[0];
 	}
 	[CRepr]
 	public struct DOT11_AUTH_CIPHER_PAIR_LIST
@@ -2129,9 +2129,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_AUTH_CIPHER_PAIR[1] AuthCipherPairs_fam;
+		public DOT11_AUTH_CIPHER_PAIR[1] AuthCipherPairs_array;
 		
-		public DOT11_AUTH_CIPHER_PAIR* AuthCipherPairs mut => &AuthCipherPairs_fam[0];
+		public DOT11_AUTH_CIPHER_PAIR* AuthCipherPairs mut => &AuthCipherPairs_array[0];
 	}
 	[CRepr]
 	public struct DOT11_CIPHER_ALGORITHM_LIST
@@ -2139,9 +2139,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_CIPHER_ALGORITHM[1] AlgorithmIds_fam;
+		public DOT11_CIPHER_ALGORITHM[1] AlgorithmIds_array;
 		
-		public DOT11_CIPHER_ALGORITHM* AlgorithmIds mut => &AlgorithmIds_fam[0];
+		public DOT11_CIPHER_ALGORITHM* AlgorithmIds mut => &AlgorithmIds_array[0];
 	}
 	[CRepr]
 	public struct DOT11_CIPHER_DEFAULT_KEY_VALUE
@@ -2153,9 +2153,9 @@ static
 		public BOOLEAN bDelete;
 		public BOOLEAN bStatic;
 		public uint16 usKeyLength;
-		public uint8[1] ucKey_fam;
+		public uint8[1] ucKey_array;
 		
-		public uint8* ucKey mut => &ucKey_fam[0];
+		public uint8* ucKey mut => &ucKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_TKIP_MIC
@@ -2163,54 +2163,54 @@ static
 		public uint8[6] ucIV48Counter;
 		public uint32 ulTKIPKeyLength;
 		public uint32 ulMICKeyLength;
-		public uint8[1] ucTKIPMICKeys_fam;
+		public uint8[1] ucTKIPMICKeys_array;
 		
-		public uint8* ucTKIPMICKeys mut => &ucTKIPMICKeys_fam[0];
+		public uint8* ucTKIPMICKeys mut => &ucTKIPMICKeys_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_CCMP
 	{
 		public uint8[6] ucIV48Counter;
 		public uint32 ulCCMPKeyLength;
-		public uint8[1] ucCCMPKey_fam;
+		public uint8[1] ucCCMPKey_array;
 		
-		public uint8* ucCCMPKey mut => &ucCCMPKey_fam[0];
+		public uint8* ucCCMPKey mut => &ucCCMPKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_GCMP
 	{
 		public uint8[6] ucIV48Counter;
 		public uint32 ulGCMPKeyLength;
-		public uint8[1] ucGCMPKey_fam;
+		public uint8[1] ucGCMPKey_array;
 		
-		public uint8* ucGCMPKey mut => &ucGCMPKey_fam[0];
+		public uint8* ucGCMPKey mut => &ucGCMPKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_GCMP_256
 	{
 		public uint8[6] ucIV48Counter;
 		public uint32 ulGCMP256KeyLength;
-		public uint8[1] ucGCMP256Key_fam;
+		public uint8[1] ucGCMP256Key_array;
 		
-		public uint8* ucGCMP256Key mut => &ucGCMP256Key_fam[0];
+		public uint8* ucGCMP256Key mut => &ucGCMP256Key_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_BIP
 	{
 		public uint8[6] ucIPN;
 		public uint32 ulBIPKeyLength;
-		public uint8[1] ucBIPKey_fam;
+		public uint8[1] ucBIPKey_array;
 		
-		public uint8* ucBIPKey mut => &ucBIPKey_fam[0];
+		public uint8* ucBIPKey mut => &ucBIPKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_KEY_ALGO_BIP_GMAC_256
 	{
 		public uint8[6] ucIPN;
 		public uint32 ulBIPGmac256KeyLength;
-		public uint8[1] ucBIPGmac256Key_fam;
+		public uint8[1] ucBIPGmac256Key_array;
 		
-		public uint8* ucBIPGmac256Key mut => &ucBIPGmac256Key_fam[0];
+		public uint8* ucBIPGmac256Key mut => &ucBIPGmac256Key_array[0];
 	}
 	[CRepr]
 	public struct DOT11_CIPHER_KEY_MAPPING_KEY_VALUE
@@ -2221,9 +2221,9 @@ static
 		public BOOLEAN bDelete;
 		public BOOLEAN bStatic;
 		public uint16 usKeyLength;
-		public uint8[1] ucKey_fam;
+		public uint8[1] ucKey_array;
 		
-		public uint8* ucKey mut => &ucKey_fam[0];
+		public uint8* ucKey mut => &ucKey_array[0];
 	}
 	[CRepr]
 	public struct DOT11_ASSOCIATION_INFO_EX
@@ -2248,9 +2248,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_ASSOCIATION_INFO_EX[1] dot11AssocInfo_fam;
+		public DOT11_ASSOCIATION_INFO_EX[1] dot11AssocInfo_array;
 		
-		public DOT11_ASSOCIATION_INFO_EX* dot11AssocInfo mut => &dot11AssocInfo_fam[0];
+		public DOT11_ASSOCIATION_INFO_EX* dot11AssocInfo mut => &dot11AssocInfo_array[0];
 	}
 	[CRepr]
 	public struct DOT11_PHY_ID_LIST
@@ -2258,9 +2258,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public uint32[1] dot11PhyId_fam;
+		public uint32[1] dot11PhyId_array;
 		
-		public uint32* dot11PhyId mut => &dot11PhyId_fam[0];
+		public uint32* dot11PhyId mut => &dot11PhyId_array[0];
 	}
 	[CRepr]
 	public struct DOT11_EXTSTA_CAPABILITY
@@ -2453,9 +2453,9 @@ static
 		public uint16 usDot11RightRWBitMap;
 		public uint16 usNumberOfMPDUsReceived;
 		public uint16 usNumberOfFragments;
-		public void*[1] pNdisPackets_fam;
+		public void*[1] pNdisPackets_array;
 		
-		public void** pNdisPackets mut => &pNdisPackets_fam[0];
+		public void** pNdisPackets mut => &pNdisPackets_array[0];
 	}
 	[CRepr]
 	public struct DOT11_RECV_EXTENSION_INFO_V2
@@ -2480,9 +2480,9 @@ static
 		public uint16 usDot11RightRWBitMap;
 		public uint16 usNumberOfMPDUsReceived;
 		public uint16 usNumberOfFragments;
-		public void*[1] pNdisPackets_fam;
+		public void*[1] pNdisPackets_array;
 		
-		public void** pNdisPackets mut => &pNdisPackets_fam[0];
+		public void** pNdisPackets mut => &pNdisPackets_array[0];
 	}
 	[CRepr]
 	public struct DOT11_STATUS_INDICATION
@@ -2731,9 +2731,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public uint32[1] uChannelNumber_fam;
+		public uint32[1] uChannelNumber_array;
 		
-		public uint32* uChannelNumber mut => &uChannelNumber_fam[0];
+		public uint32* uChannelNumber mut => &uChannelNumber_array[0];
 	}
 	[CRepr]
 	public struct DOT11_AVAILABLE_FREQUENCY_LIST
@@ -2741,9 +2741,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public uint32[1] uFrequencyValue_fam;
+		public uint32[1] uFrequencyValue_array;
 		
-		public uint32* uFrequencyValue mut => &uFrequencyValue_fam[0];
+		public uint32* uFrequencyValue mut => &uFrequencyValue_array[0];
 	}
 	[CRepr]
 	public struct DOT11_DISASSOCIATE_PEER_REQUEST
@@ -2815,9 +2815,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_PEER_INFO[1] PeerInfo_fam;
+		public DOT11_PEER_INFO[1] PeerInfo_array;
 		
-		public DOT11_PEER_INFO* PeerInfo mut => &PeerInfo_fam[0];
+		public DOT11_PEER_INFO* PeerInfo mut => &PeerInfo_array[0];
 	}
 	[CRepr]
 	public struct DOT11_VWIFI_COMBINATION
@@ -2851,9 +2851,9 @@ static
 	{
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_VWIFI_COMBINATION[1] Combinations_fam;
+		public DOT11_VWIFI_COMBINATION[1] Combinations_array;
 		
-		public DOT11_VWIFI_COMBINATION* Combinations mut => &Combinations_fam[0];
+		public DOT11_VWIFI_COMBINATION* Combinations mut => &Combinations_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MAC_PARAMETERS
@@ -2961,9 +2961,9 @@ static
 	public struct DOT11_WFD_ADVERTISED_SERVICE_LIST
 	{
 		public uint16 ServiceCount;
-		public DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR[1] AdvertisedService_fam;
+		public DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR[1] AdvertisedService_array;
 		
-		public DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR* AdvertisedService mut => &AdvertisedService_fam[0];
+		public DOT11_WFD_ADVERTISED_SERVICE_DESCRIPTOR* AdvertisedService mut => &AdvertisedService_array[0];
 	}
 	[CRepr]
 	public struct DOT11_WFD_DISCOVER_COMPLETE_PARAMETERS
@@ -3176,9 +3176,9 @@ static
 		public NDIS_OBJECT_HEADER Header;
 		public uint32 uNumOfEntries;
 		public uint32 uTotalNumOfEntries;
-		public DOT11_WFD_DEVICE_TYPE[1] SecondaryDeviceTypes_fam;
+		public DOT11_WFD_DEVICE_TYPE[1] SecondaryDeviceTypes_array;
 		
-		public DOT11_WFD_DEVICE_TYPE* SecondaryDeviceTypes mut => &SecondaryDeviceTypes_fam[0];
+		public DOT11_WFD_DEVICE_TYPE* SecondaryDeviceTypes mut => &SecondaryDeviceTypes_array[0];
 	}
 	[CRepr]
 	public struct DOT11_WFD_DISCOVER_DEVICE_FILTER
@@ -3400,9 +3400,9 @@ static
 		public uint32 FastScanIterations;
 		public uint32 SlowScanPeriod;
 		public uint32 uNumOfEntries;
-		public DOT11_OFFLOAD_NETWORK[1] offloadNetworkList_fam;
+		public DOT11_OFFLOAD_NETWORK[1] offloadNetworkList_array;
 		
-		public DOT11_OFFLOAD_NETWORK* offloadNetworkList mut => &offloadNetworkList_fam[0];
+		public DOT11_OFFLOAD_NETWORK* offloadNetworkList mut => &offloadNetworkList_array[0];
 	}
 	[CRepr]
 	public struct DOT11_OFFLOAD_NETWORK_STATUS_PARAMETERS
@@ -3415,9 +3415,9 @@ static
 	{
 		public DOT11_MANUFACTURING_TEST_TYPE dot11ManufacturingTestType;
 		public uint32 uBufferLength;
-		public uint8[1] ucBuffer_fam;
+		public uint8[1] ucBuffer_array;
 		
-		public uint8* ucBuffer mut => &ucBuffer_fam[0];
+		public uint8* ucBuffer mut => &ucBuffer_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MANUFACTURING_SELF_TEST_SET_PARAMS
@@ -3427,9 +3427,9 @@ static
 		public uint32 uPinBitMask;
 		public void* pvContext;
 		public uint32 uBufferLength;
-		public uint8[1] ucBufferIn_fam;
+		public uint8[1] ucBufferIn_array;
 		
-		public uint8* ucBufferIn mut => &ucBufferIn_fam[0];
+		public uint8* ucBufferIn mut => &ucBufferIn_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MANUFACTURING_SELF_TEST_QUERY_RESULTS
@@ -3440,9 +3440,9 @@ static
 		public uint32 uPinFailedBitMask;
 		public void* pvContext;
 		public uint32 uBytesWrittenOut;
-		public uint8[1] ucBufferOut_fam;
+		public uint8[1] ucBufferOut_array;
 		
-		public uint8* ucBufferOut mut => &ucBufferOut_fam[0];
+		public uint8* ucBufferOut mut => &ucBufferOut_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MANUFACTURING_FUNCTIONAL_TEST_RX
@@ -3475,9 +3475,9 @@ static
 		public uint32 uKey;
 		public uint32 uOffset;
 		public uint32 uBufferLength;
-		public uint8[1] ucBufferIn_fam;
+		public uint8[1] ucBufferIn_array;
 		
-		public uint8* ucBufferIn mut => &ucBufferIn_fam[0];
+		public uint8* ucBufferIn mut => &ucBufferIn_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MANUFACTURING_TEST_QUERY_DATA
@@ -3486,9 +3486,9 @@ static
 		public uint32 uOffset;
 		public uint32 uBufferLength;
 		public uint32 uBytesRead;
-		public uint8[1] ucBufferOut_fam;
+		public uint8[1] ucBufferOut_array;
 		
-		public uint8* ucBufferOut mut => &ucBufferOut_fam[0];
+		public uint8* ucBufferOut mut => &ucBufferOut_array[0];
 	}
 	[CRepr]
 	public struct DOT11_MANUFACTURING_TEST_SLEEP
@@ -3529,18 +3529,18 @@ static
 	public struct WLAN_RAW_DATA
 	{
 		public uint32 dwDataSize;
-		public uint8[1] DataBlob_fam;
+		public uint8[1] DataBlob_array;
 		
-		public uint8* DataBlob mut => &DataBlob_fam[0];
+		public uint8* DataBlob mut => &DataBlob_array[0];
 	}
 	[CRepr]
 	public struct WLAN_RAW_DATA_LIST
 	{
 		public uint32 dwTotalSize;
 		public uint32 dwNumberOfItems;
-		public _Anonymous_e__Struct[1] DataList_fam;
+		public _Anonymous_e__Struct[1] DataList_array;
 		
-		public _Anonymous_e__Struct* DataList mut => &DataList_fam[0];
+		public _Anonymous_e__Struct* DataList mut => &DataList_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -3621,9 +3621,9 @@ static
 	{
 		public uint32 dwTotalSize;
 		public uint32 dwNumberOfItems;
-		public WLAN_BSS_ENTRY[1] wlanBssEntries_fam;
+		public WLAN_BSS_ENTRY[1] wlanBssEntries_array;
 		
-		public WLAN_BSS_ENTRY* wlanBssEntries mut => &wlanBssEntries_fam[0];
+		public WLAN_BSS_ENTRY* wlanBssEntries mut => &wlanBssEntries_array[0];
 	}
 	[CRepr]
 	public struct WLAN_INTERFACE_INFO
@@ -3688,9 +3688,9 @@ static
 	public struct WLAN_AUTH_CIPHER_PAIR_LIST
 	{
 		public uint32 dwNumberOfItems;
-		public DOT11_AUTH_CIPHER_PAIR[1] pAuthCipherPairList_fam;
+		public DOT11_AUTH_CIPHER_PAIR[1] pAuthCipherPairList_array;
 		
-		public DOT11_AUTH_CIPHER_PAIR* pAuthCipherPairList mut => &pAuthCipherPairList_fam[0];
+		public DOT11_AUTH_CIPHER_PAIR* pAuthCipherPairList mut => &pAuthCipherPairList_array[0];
 	}
 	[CRepr]
 	public struct WLAN_COUNTRY_OR_REGION_STRING_LIST
@@ -3703,45 +3703,45 @@ static
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public WLAN_PROFILE_INFO[1] ProfileInfo_fam;
+		public WLAN_PROFILE_INFO[1] ProfileInfo_array;
 		
-		public WLAN_PROFILE_INFO* ProfileInfo mut => &ProfileInfo_fam[0];
+		public WLAN_PROFILE_INFO* ProfileInfo mut => &ProfileInfo_array[0];
 	}
 	[CRepr]
 	public struct WLAN_AVAILABLE_NETWORK_LIST
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public WLAN_AVAILABLE_NETWORK[1] Network_fam;
+		public WLAN_AVAILABLE_NETWORK[1] Network_array;
 		
-		public WLAN_AVAILABLE_NETWORK* Network mut => &Network_fam[0];
+		public WLAN_AVAILABLE_NETWORK* Network mut => &Network_array[0];
 	}
 	[CRepr]
 	public struct WLAN_AVAILABLE_NETWORK_LIST_V2
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public WLAN_AVAILABLE_NETWORK_V2[1] Network_fam;
+		public WLAN_AVAILABLE_NETWORK_V2[1] Network_array;
 		
-		public WLAN_AVAILABLE_NETWORK_V2* Network mut => &Network_fam[0];
+		public WLAN_AVAILABLE_NETWORK_V2* Network mut => &Network_array[0];
 	}
 	[CRepr]
 	public struct WLAN_INTERFACE_INFO_LIST
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public WLAN_INTERFACE_INFO[1] InterfaceInfo_fam;
+		public WLAN_INTERFACE_INFO[1] InterfaceInfo_array;
 		
-		public WLAN_INTERFACE_INFO* InterfaceInfo mut => &InterfaceInfo_fam[0];
+		public WLAN_INTERFACE_INFO* InterfaceInfo mut => &InterfaceInfo_array[0];
 	}
 	[CRepr]
 	public struct DOT11_NETWORK_LIST
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public DOT11_NETWORK[1] Network_fam;
+		public DOT11_NETWORK[1] Network_array;
 		
-		public DOT11_NETWORK* Network mut => &Network_fam[0];
+		public DOT11_NETWORK* Network mut => &Network_array[0];
 	}
 	[CRepr]
 	public struct WLAN_CONNECTION_PARAMETERS
@@ -3788,9 +3788,9 @@ static
 		public BOOL bSecurityEnabled;
 		public uint32 wlanReasonCode;
 		public WLAN_CONNECTION_NOTIFICATION_FLAGS dwFlags;
-		public char16[1] strProfileXml_fam;
+		public char16[1] strProfileXml_array;
 		
-		public char16* strProfileXml mut => &strProfileXml_fam[0];
+		public char16* strProfileXml mut => &strProfileXml_array[0];
 	}
 	[CRepr]
 	public struct WLAN_DEVICE_SERVICE_NOTIFICATION_DATA
@@ -3798,9 +3798,9 @@ static
 		public Guid DeviceService;
 		public uint32 dwOpCode;
 		public uint32 dwDataSize;
-		public uint8[1] DataBlob_fam;
+		public uint8[1] DataBlob_array;
 		
-		public uint8* DataBlob mut => &DataBlob_fam[0];
+		public uint8* DataBlob mut => &DataBlob_array[0];
 	}
 	[CRepr]
 	public struct WLAN_PHY_FRAME_STATISTICS
@@ -3849,18 +3849,18 @@ static
 		public WLAN_MAC_FRAME_STATISTICS MacUcastCounters;
 		public WLAN_MAC_FRAME_STATISTICS MacMcastCounters;
 		public uint32 dwNumberOfPhys;
-		public WLAN_PHY_FRAME_STATISTICS[1] PhyCounters_fam;
+		public WLAN_PHY_FRAME_STATISTICS[1] PhyCounters_array;
 		
-		public WLAN_PHY_FRAME_STATISTICS* PhyCounters mut => &PhyCounters_fam[0];
+		public WLAN_PHY_FRAME_STATISTICS* PhyCounters mut => &PhyCounters_array[0];
 	}
 	[CRepr]
 	public struct WLAN_DEVICE_SERVICE_GUID_LIST
 	{
 		public uint32 dwNumberOfItems;
 		public uint32 dwIndex;
-		public Guid[1] DeviceService_fam;
+		public Guid[1] DeviceService_array;
 		
-		public Guid* DeviceService mut => &DeviceService_fam[0];
+		public Guid* DeviceService mut => &DeviceService_array[0];
 	}
 	[CRepr]
 	public struct WFD_GROUP_ID
@@ -3915,9 +3915,9 @@ static
 		public DOT11_PHY_TYPE dot11PhyType;
 		public uint32 ulChannelFrequency;
 		public uint32 dwNumberOfPeers;
-		public WLAN_HOSTED_NETWORK_PEER_STATE[1] PeerList_fam;
+		public WLAN_HOSTED_NETWORK_PEER_STATE[1] PeerList_array;
 		
-		public WLAN_HOSTED_NETWORK_PEER_STATE* PeerList mut => &PeerList_fam[0];
+		public WLAN_HOSTED_NETWORK_PEER_STATE* PeerList mut => &PeerList_array[0];
 	}
 	[CRepr]
 	public struct ONEX_VARIABLE_BLOB

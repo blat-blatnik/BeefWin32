@@ -107,9 +107,9 @@ static
 	{
 		public uint32 dwSizeHid;
 		public uint32 dwCount;
-		public uint8[1] bRawData_fam;
+		public uint8[1] bRawData_array;
 		
-		public uint8* bRawData mut => &bRawData_fam[0];
+		public uint8* bRawData mut => &bRawData_array[0];
 	}
 	[CRepr]
 	public struct RAWINPUT

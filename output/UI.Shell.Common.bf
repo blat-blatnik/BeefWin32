@@ -93,9 +93,9 @@ static
 	public struct SHITEMID
 	{
 		public uint16 cb;
-		public uint8[1] abID_fam;
+		public uint8[1] abID_array;
 		
-		public uint8* abID mut => &abID_fam[0];
+		public uint8* abID mut => &abID_array[0];
 	}
 	[CRepr]
 	public struct ITEMIDLIST

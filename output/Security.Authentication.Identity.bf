@@ -2782,9 +2782,9 @@ static
 	{
 		public uint32 Version;
 		public uint32 EncryptedCredsSize;
-		public uint8[1] EncryptedCreds_fam;
+		public uint8[1] EncryptedCreds_array;
 		
-		public uint8* EncryptedCreds mut => &EncryptedCreds_fam[0];
+		public uint8* EncryptedCreds mut => &EncryptedCreds_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL
@@ -2794,9 +2794,9 @@ static
 		public MSV1_0_CREDENTIAL_KEY CredentialKey;
 		public MSV1_0_CREDENTIAL_KEY_TYPE CredentialKeyType;
 		public uint32 EncryptedCredsSize;
-		public uint8[1] EncryptedCreds_fam;
+		public uint8[1] EncryptedCreds_array;
 		
-		public uint8* EncryptedCreds mut => &EncryptedCreds_fam[0];
+		public uint8* EncryptedCreds mut => &EncryptedCreds_array[0];
 	}
 	[CRepr]
 	public struct MSV1_0_NTLM3_RESPONSE
@@ -2809,9 +2809,9 @@ static
 		public uint64 TimeStamp;
 		public uint8[8] ChallengeFromClient;
 		public uint32 AvPairsOff;
-		public uint8[1] Buffer_fam;
+		public uint8[1] Buffer_array;
 		
-		public uint8* Buffer mut => &Buffer_fam[0];
+		public uint8* Buffer mut => &Buffer_array[0];
 	}
 	[CRepr]
 	public struct MSV1_0_AV_PAIR
@@ -3062,36 +3062,36 @@ static
 	{
 		public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		public uint32 CountOfTickets;
-		public KERB_TICKET_CACHE_INFO[1] Tickets_fam;
+		public KERB_TICKET_CACHE_INFO[1] Tickets_array;
 		
-		public KERB_TICKET_CACHE_INFO* Tickets mut => &Tickets_fam[0];
+		public KERB_TICKET_CACHE_INFO* Tickets mut => &Tickets_array[0];
 	}
 	[CRepr]
 	public struct KERB_QUERY_TKT_CACHE_EX_RESPONSE
 	{
 		public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		public uint32 CountOfTickets;
-		public KERB_TICKET_CACHE_INFO_EX[1] Tickets_fam;
+		public KERB_TICKET_CACHE_INFO_EX[1] Tickets_array;
 		
-		public KERB_TICKET_CACHE_INFO_EX* Tickets mut => &Tickets_fam[0];
+		public KERB_TICKET_CACHE_INFO_EX* Tickets mut => &Tickets_array[0];
 	}
 	[CRepr]
 	public struct KERB_QUERY_TKT_CACHE_EX2_RESPONSE
 	{
 		public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		public uint32 CountOfTickets;
-		public KERB_TICKET_CACHE_INFO_EX2[1] Tickets_fam;
+		public KERB_TICKET_CACHE_INFO_EX2[1] Tickets_array;
 		
-		public KERB_TICKET_CACHE_INFO_EX2* Tickets mut => &Tickets_fam[0];
+		public KERB_TICKET_CACHE_INFO_EX2* Tickets mut => &Tickets_array[0];
 	}
 	[CRepr]
 	public struct KERB_QUERY_TKT_CACHE_EX3_RESPONSE
 	{
 		public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		public uint32 CountOfTickets;
-		public KERB_TICKET_CACHE_INFO_EX3[1] Tickets_fam;
+		public KERB_TICKET_CACHE_INFO_EX3[1] Tickets_array;
 		
-		public KERB_TICKET_CACHE_INFO_EX3* Tickets mut => &Tickets_fam[0];
+		public KERB_TICKET_CACHE_INFO_EX3* Tickets mut => &Tickets_array[0];
 	}
 	[CRepr]
 	public struct KERB_AUTH_DATA
@@ -3111,18 +3111,18 @@ static
 	public struct KERB_NET_ADDRESSES
 	{
 		public uint32 Number;
-		public KERB_NET_ADDRESS[1] Addresses_fam;
+		public KERB_NET_ADDRESS[1] Addresses_array;
 		
-		public KERB_NET_ADDRESS* Addresses mut => &Addresses_fam[0];
+		public KERB_NET_ADDRESS* Addresses mut => &Addresses_array[0];
 	}
 	[CRepr]
 	public struct KERB_EXTERNAL_NAME
 	{
 		public int16 NameType;
 		public uint16 NameCount;
-		public UNICODE_STRING[1] Names_fam;
+		public UNICODE_STRING[1] Names_array;
 		
-		public UNICODE_STRING* Names mut => &Names_fam[0];
+		public UNICODE_STRING* Names mut => &Names_array[0];
 	}
 	[CRepr]
 	public struct KERB_EXTERNAL_TICKET
@@ -3299,9 +3299,9 @@ static
 		public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 		public uint32 Version;
 		public uint32 Length;
-		public uint32[1] Data_fam;
+		public uint32[1] Data_array;
 		
-		public uint32* Data mut => &Data_fam[0];
+		public uint32* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
@@ -3362,9 +3362,9 @@ static
 	[CRepr]
 	public struct KERB_DECRYPT_RESPONSE
 	{
-		public uint8[1] DecryptedData_fam;
+		public uint8[1] DecryptedData_array;
 		
-		public uint8* DecryptedData mut => &DecryptedData_fam[0];
+		public uint8* DecryptedData mut => &DecryptedData_array[0];
 	}
 	[CRepr]
 	public struct KERB_ADD_BINDING_CACHE_ENTRY_REQUEST
@@ -3397,9 +3397,9 @@ static
 	{
 		public KERB_ADD_CREDENTIALS_REQUEST Credentials;
 		public uint32 PrincipalNameCount;
-		public UNICODE_STRING[1] PrincipalNames_fam;
+		public UNICODE_STRING[1] PrincipalNames_array;
 		
-		public UNICODE_STRING* PrincipalNames mut => &PrincipalNames_fam[0];
+		public UNICODE_STRING* PrincipalNames mut => &PrincipalNames_array[0];
 	}
 	[CRepr]
 	public struct KERB_TRANSFER_CRED_REQUEST
@@ -3577,33 +3577,33 @@ static
 	{
 		public SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT ProtoNegoExt;
 		public uint16 ProtocolListSize;
-		public uint8[1] ProtocolList_fam;
+		public uint8[1] ProtocolList_array;
 		
-		public uint8* ProtocolList mut => &ProtocolList_fam[0];
+		public uint8* ProtocolList mut => &ProtocolList_array[0];
 	}
 	[CRepr]
 	public struct SEC_APPLICATION_PROTOCOLS
 	{
 		public uint32 ProtocolListsSize;
-		public SEC_APPLICATION_PROTOCOL_LIST[1] ProtocolLists_fam;
+		public SEC_APPLICATION_PROTOCOL_LIST[1] ProtocolLists_array;
 		
-		public SEC_APPLICATION_PROTOCOL_LIST* ProtocolLists mut => &ProtocolLists_fam[0];
+		public SEC_APPLICATION_PROTOCOL_LIST* ProtocolLists mut => &ProtocolLists_array[0];
 	}
 	[CRepr]
 	public struct SEC_SRTP_PROTECTION_PROFILES
 	{
 		public uint16 ProfilesSize;
-		public uint16[1] ProfilesList_fam;
+		public uint16[1] ProfilesList_array;
 		
-		public uint16* ProfilesList mut => &ProfilesList_fam[0];
+		public uint16* ProfilesList mut => &ProfilesList_array[0];
 	}
 	[CRepr]
 	public struct SEC_SRTP_MASTER_KEY_IDENTIFIER
 	{
 		public uint8 MasterKeyIdentifierSize;
-		public uint8[1] MasterKeyIdentifier_fam;
+		public uint8[1] MasterKeyIdentifier_array;
 		
-		public uint8* MasterKeyIdentifier mut => &MasterKeyIdentifier_fam[0];
+		public uint8* MasterKeyIdentifier mut => &MasterKeyIdentifier_array[0];
 	}
 	[CRepr]
 	public struct SEC_TOKEN_BINDING
@@ -3611,25 +3611,25 @@ static
 		public uint8 MajorVersion;
 		public uint8 MinorVersion;
 		public uint16 KeyParametersSize;
-		public uint8[1] KeyParameters_fam;
+		public uint8[1] KeyParameters_array;
 		
-		public uint8* KeyParameters mut => &KeyParameters_fam[0];
+		public uint8* KeyParameters mut => &KeyParameters_array[0];
 	}
 	[CRepr]
 	public struct SEC_PRESHAREDKEY
 	{
 		public uint16 KeySize;
-		public uint8[1] Key_fam;
+		public uint8[1] Key_array;
 		
-		public uint8* Key mut => &Key_fam[0];
+		public uint8* Key mut => &Key_array[0];
 	}
 	[CRepr]
 	public struct SEC_PRESHAREDKEY_IDENTITY
 	{
 		public uint16 KeyIdentitySize;
-		public uint8[1] KeyIdentity_fam;
+		public uint8[1] KeyIdentity_array;
 		
-		public uint8* KeyIdentity mut => &KeyIdentity_fam[0];
+		public uint8* KeyIdentity mut => &KeyIdentity_array[0];
 	}
 	[CRepr]
 	public struct SEC_DTLS_MTU
@@ -3653,9 +3653,9 @@ static
 		public uint16 MsgSequenceEnd;
 		public SEC_TRAFFIC_SECRET_TYPE TrafficSecretType;
 		public uint16 TrafficSecretSize;
-		public uint8[1] TrafficSecret_fam;
+		public uint8[1] TrafficSecret_array;
 		
-		public uint8* TrafficSecret mut => &TrafficSecret_fam[0];
+		public uint8* TrafficSecret mut => &TrafficSecret_array[0];
 	}
 	[CRepr]
 	public struct SecPkgCredentials_NamesW
@@ -4217,9 +4217,9 @@ static
 	public struct SECPKG_SUPPLEMENTAL_CRED_ARRAY
 	{
 		public uint32 CredentialCount;
-		public SECPKG_SUPPLEMENTAL_CRED[1] Credentials_fam;
+		public SECPKG_SUPPLEMENTAL_CRED[1] Credentials_array;
 		
-		public SECPKG_SUPPLEMENTAL_CRED* Credentials mut => &Credentials_fam[0];
+		public SECPKG_SUPPLEMENTAL_CRED* Credentials mut => &Credentials_array[0];
 	}
 	[CRepr]
 	public struct SECPKG_SURROGATE_LOGON_ENTRY
@@ -4295,9 +4295,9 @@ static
 	public struct SECPKG_CONTEXT_THUNKS
 	{
 		public uint32 InfoLevelCount;
-		public uint32[1] Levels_fam;
+		public uint32[1] Levels_array;
 		
-		public uint32* Levels mut => &Levels_fam[0];
+		public uint32* Levels mut => &Levels_array[0];
 	}
 	[CRepr]
 	public struct SECPKG_MUTUAL_AUTH_LEVEL
@@ -4320,9 +4320,9 @@ static
 	public struct SECPKG_EXTRA_OIDS
 	{
 		public uint32 OidCount;
-		public SECPKG_SERIALIZED_OID[1] Oids_fam;
+		public SECPKG_SERIALIZED_OID[1] Oids_array;
 		
-		public SECPKG_SERIALIZED_OID* Oids mut => &Oids_fam[0];
+		public SECPKG_SERIALIZED_OID* Oids mut => &Oids_array[0];
 	}
 	[CRepr]
 	public struct SECPKG_NEGO2_INFO
@@ -4897,9 +4897,9 @@ static
 		public uint16 HandshakeType;
 		public uint32 Flags;
 		public uint16 BufferSize;
-		public uint8[1] Buffer_fam;
+		public uint8[1] Buffer_array;
 		
-		public uint8* Buffer mut => &Buffer_fam[0];
+		public uint8* Buffer mut => &Buffer_array[0];
 	}
 	[CRepr]
 	public struct TLS_EXTENSION_SUBSCRIPTION
@@ -4912,9 +4912,9 @@ static
 	{
 		public uint32 Flags;
 		public uint32 SubscriptionsCount;
-		public TLS_EXTENSION_SUBSCRIPTION[1] Subscriptions_fam;
+		public TLS_EXTENSION_SUBSCRIPTION[1] Subscriptions_array;
 		
-		public TLS_EXTENSION_SUBSCRIPTION* Subscriptions mut => &Subscriptions_fam[0];
+		public TLS_EXTENSION_SUBSCRIPTION* Subscriptions mut => &Subscriptions_array[0];
 	}
 	[CRepr]
 	public struct SCHANNEL_CERT_HASH
@@ -5000,9 +5000,9 @@ static
 	{
 		public uint32 Type;
 		public uint32 cbKey;
-		public uint8[1] pKey_fam;
+		public uint8[1] pKey_array;
 		
-		public uint8* pKey mut => &pKey_fam[0];
+		public uint8* pKey mut => &pKey_array[0];
 	}
 	[CRepr]
 	public struct X509Certificate

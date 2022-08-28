@@ -176,9 +176,9 @@ static
 		public uint32 u32MaxOutputConnections;
 		public uint32 u32MaxInstances;
 		public uint32 u32NumAPOInterfaces;
-		public Guid[1] iidAPOInterfaceList_fam;
+		public Guid[1] iidAPOInterfaceList_array;
 		
-		public Guid* iidAPOInterfaceList mut => &iidAPOInterfaceList_fam[0];
+		public Guid* iidAPOInterfaceList mut => &iidAPOInterfaceList_array[0];
 	}
 	[CRepr]
 	public struct APOInitBaseStruct

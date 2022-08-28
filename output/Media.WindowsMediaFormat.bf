@@ -735,9 +735,9 @@ static
 		public uint16 wPart;
 		public uint16 cTotalParts;
 		public uint16 wSampleType;
-		public char16[1] wszURL_fam;
+		public char16[1] wszURL_array;
 		
-		public char16* wszURL mut => &wszURL_fam[0];
+		public char16* wszURL mut => &wszURL_array[0];
 	}
 	[CRepr]
 	public struct WM_ADDRESS_ACCESSENTRY
@@ -899,9 +899,9 @@ static
 		public uint32 dwProfile;
 		public uint32 dwLevel;
 		public uint32 dwFlags;
-		public uint32[1] dwSequenceHeader_fam;
+		public uint32[1] dwSequenceHeader_array;
 		
-		public uint32* dwSequenceHeader mut => &dwSequenceHeader_fam[0];
+		public uint32* dwSequenceHeader mut => &dwSequenceHeader_array[0];
 	}
 	[CRepr]
 	public struct WMSCRIPTFORMAT

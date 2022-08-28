@@ -659,9 +659,9 @@ static
 		public uint32[5] Params;
 		public uint32 NextPhase;
 		public uint32 CommandWriteDataSize;
-		public uint8[1] CommandWriteData_fam;
+		public uint8[1] CommandWriteData_array;
 		
-		public uint8* CommandWriteData mut => &CommandWriteData_fam[0];
+		public uint8* CommandWriteData mut => &CommandWriteData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MTP_COMMAND_DATA_OUT
@@ -670,9 +670,9 @@ static
 		public uint32 NumParams;
 		public uint32[5] Params;
 		public uint32 CommandReadDataSize;
-		public uint8[1] CommandReadData_fam;
+		public uint8[1] CommandReadData_array;
 		
-		public uint8* CommandReadData mut => &CommandReadData_fam[0];
+		public uint8* CommandReadData mut => &CommandReadData_array[0];
 	}
 	#endregion
 	

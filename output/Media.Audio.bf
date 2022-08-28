@@ -780,9 +780,9 @@ static
 		public BOOL bMuted;
 		public float fMasterVolume;
 		public uint32 nChannels;
-		public float[1] afChannelVolumes_fam;
+		public float[1] afChannelVolumes_array;
 		
-		public float* afChannelVolumes mut => &afChannelVolumes_fam[0];
+		public float* afChannelVolumes mut => &afChannelVolumes_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct WAVEFORMATEXTENSIBLE
@@ -1082,9 +1082,9 @@ static
 		public uint32 dwDeltaTime;
 		public uint32 dwStreamID;
 		public uint32 dwEvent;
-		public uint32[1] dwParms_fam;
+		public uint32[1] dwParms_array;
 		
-		public uint32* dwParms mut => &dwParms_fam[0];
+		public uint32* dwParms mut => &dwParms_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct MIDISTRMBUFFVER

@@ -495,9 +495,9 @@ static
 		public uint8 EfficiencyClass;
 		public uint8[20] Reserved;
 		public uint16 GroupCount;
-		public GROUP_AFFINITY[1] GroupMask_fam;
+		public GROUP_AFFINITY[1] GroupMask_array;
 		
-		public GROUP_AFFINITY* GroupMask mut => &GroupMask_fam[0];
+		public GROUP_AFFINITY* GroupMask mut => &GroupMask_array[0];
 	}
 	[CRepr]
 	public struct NUMA_NODE_RELATIONSHIP
@@ -511,9 +511,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public GROUP_AFFINITY GroupMask;
-			public GROUP_AFFINITY[1] GroupMasks_fam;
+			public GROUP_AFFINITY[1] GroupMasks_array;
 			
-			public GROUP_AFFINITY* GroupMasks mut => &GroupMasks_fam[0];
+			public GROUP_AFFINITY* GroupMasks mut => &GroupMasks_array[0];
 		}
 	}
 	[CRepr]
@@ -532,9 +532,9 @@ static
 		public struct _Anonymous_e__Union
 		{
 			public GROUP_AFFINITY GroupMask;
-			public GROUP_AFFINITY[1] GroupMasks_fam;
+			public GROUP_AFFINITY[1] GroupMasks_array;
 			
-			public GROUP_AFFINITY* GroupMasks mut => &GroupMasks_fam[0];
+			public GROUP_AFFINITY* GroupMasks mut => &GroupMasks_array[0];
 		}
 	}
 	[CRepr]
@@ -551,9 +551,9 @@ static
 		public uint16 MaximumGroupCount;
 		public uint16 ActiveGroupCount;
 		public uint8[20] Reserved;
-		public PROCESSOR_GROUP_INFO[1] GroupInfo_fam;
+		public PROCESSOR_GROUP_INFO[1] GroupInfo_array;
 		
-		public PROCESSOR_GROUP_INFO* GroupInfo mut => &GroupInfo_fam[0];
+		public PROCESSOR_GROUP_INFO* GroupInfo mut => &GroupInfo_array[0];
 	}
 	[CRepr]
 	public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX

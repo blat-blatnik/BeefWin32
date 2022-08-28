@@ -953,9 +953,9 @@ static
 		public _bmAttributes_e__Union bmAttributes;
 		public _wFunctionalitySupport_e__Union wFunctionalitySupport;
 		public uint16 wReserved;
-		public USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED[1] bmSublinkSpeedAttr_fam;
+		public USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED[1] bmSublinkSpeedAttr_array;
 		
-		public USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED* bmSublinkSpeedAttr mut => &bmSublinkSpeedAttr_fam[0];
+		public USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED* bmSublinkSpeedAttr mut => &bmSublinkSpeedAttr_array[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _wFunctionalitySupport_e__Union
@@ -999,9 +999,9 @@ static
 		public uint8 bDevCapabilityType;
 		public uint8 bReserved;
 		public Guid PlatformCapabilityUuid;
-		public uint8[1] CapabililityData_fam;
+		public uint8[1] CapabililityData_array;
 		
-		public uint8* CapabililityData mut => &CapabililityData_fam[0];
+		public uint8* CapabililityData mut => &CapabililityData_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct USB_DEVICE_CAPABILITY_BILLBOARD_DESCRIPTOR
@@ -1015,9 +1015,9 @@ static
 		public _VconnPower_e__Union VconnPower;
 		public uint8[32] bmConfigured;
 		public uint32 bReserved;
-		public _Anonymous_e__Struct[1] AlternateMode_fam;
+		public _Anonymous_e__Struct[1] AlternateMode_array;
 		
-		public _Anonymous_e__Struct* AlternateMode mut => &AlternateMode_fam[0];
+		public _Anonymous_e__Struct* AlternateMode mut => &AlternateMode_array[0];
 		
 		[CRepr, Union, Packed(1)]
 		public struct _VconnPower_e__Union
@@ -1131,9 +1131,9 @@ static
 	{
 		public uint8 bLength;
 		public uint8 bDescriptorType;
-		public char16[1] bString_fam;
+		public char16[1] bString_array;
 		
-		public char16* bString mut => &bString_fam[0];
+		public char16* bString mut => &bString_array[0];
 	}
 	[CRepr, Packed(1)]
 	public struct USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
@@ -1444,9 +1444,9 @@ static
 		public uint8 Reserved;
 		public void* InterfaceHandle;
 		public uint32 NumberOfPipes;
-		public USBD_PIPE_INFORMATION[1] Pipes_fam;
+		public USBD_PIPE_INFORMATION[1] Pipes_array;
 		
-		public USBD_PIPE_INFORMATION* Pipes mut => &Pipes_fam[0];
+		public USBD_PIPE_INFORMATION* Pipes mut => &Pipes_array[0];
 	}
 	[CRepr]
 	public struct _URB_HCD_AREA
@@ -1694,9 +1694,9 @@ static
 		public uint32 StartFrame;
 		public uint32 NumberOfPackets;
 		public uint32 ErrorCount;
-		public USBD_ISO_PACKET_DESCRIPTOR[1] IsoPacket_fam;
+		public USBD_ISO_PACKET_DESCRIPTOR[1] IsoPacket_array;
 		
-		public USBD_ISO_PACKET_DESCRIPTOR* IsoPacket mut => &IsoPacket_fam[0];
+		public USBD_ISO_PACKET_DESCRIPTOR* IsoPacket mut => &IsoPacket_array[0];
 	}
 	[CRepr]
 	public struct USBD_STREAM_INFORMATION
@@ -1848,9 +1848,9 @@ static
 	public struct USB_UNICODE_NAME
 	{
 		public uint32 Length;
-		public char16[1] String_fam;
+		public char16[1] String_array;
 		
-		public char16* String mut => &String_fam[0];
+		public char16* String mut => &String_array[0];
 	}
 	[CRepr]
 	public struct USBUSER_CONTROLLER_UNICODE_NAME
@@ -2136,9 +2136,9 @@ static
 		public uint8 InterfaceNumber;
 		public USBFN_BUS_SPEED Speed;
 		public uint16 Size;
-		public uint8[1] InterfaceDescriptorSet_fam;
+		public uint8[1] InterfaceDescriptorSet_array;
 		
-		public uint8* InterfaceDescriptorSet mut => &InterfaceDescriptorSet_fam[0];
+		public uint8* InterfaceDescriptorSet mut => &InterfaceDescriptorSet_array[0];
 	}
 	[CRepr]
 	public struct USBFN_USB_STRING

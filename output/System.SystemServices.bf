@@ -3737,9 +3737,9 @@ static
 	{
 		public int32 fNullHGlobal;
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct RemHMETAFILEPICT
@@ -3748,41 +3748,41 @@ static
 		public int32 xExt;
 		public int32 yExt;
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct RemHENHMETAFILE
 	{
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct RemHBITMAP
 	{
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct RemHPALETTE
 	{
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct RemBRUSH
 	{
 		public uint32 cbData;
-		public uint8[1] data_fam;
+		public uint8[1] data_array;
 		
-		public uint8* data mut => &data_fam[0];
+		public uint8* data mut => &data_array[0];
 	}
 	[CRepr]
 	public struct userCLIPFORMAT
@@ -3884,9 +3884,9 @@ static
 		public uint16 bmPlanes;
 		public uint16 bmBitsPixel;
 		public uint32 cbSize;
-		public uint8[1] pBuffer_fam;
+		public uint8[1] pBuffer_array;
 		
-		public uint8* pBuffer mut => &pBuffer_fam[0];
+		public uint8* pBuffer mut => &pBuffer_array[0];
 	}
 	[CRepr]
 	public struct userHBITMAP
@@ -4042,9 +4042,9 @@ static
 		public uint32 dbcp_size;
 		public uint32 dbcp_devicetype;
 		public uint32 dbcp_reserved;
-		public CHAR[1] dbcp_name_fam;
+		public CHAR[1] dbcp_name_array;
 		
-		public CHAR* dbcp_name mut => &dbcp_name_fam[0];
+		public CHAR* dbcp_name mut => &dbcp_name_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_PORT_W
@@ -4052,9 +4052,9 @@ static
 		public uint32 dbcp_size;
 		public uint32 dbcp_devicetype;
 		public uint32 dbcp_reserved;
-		public char16[1] dbcp_name_fam;
+		public char16[1] dbcp_name_array;
 		
-		public char16* dbcp_name mut => &dbcp_name_fam[0];
+		public char16* dbcp_name mut => &dbcp_name_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_NET
@@ -4072,9 +4072,9 @@ static
 		public uint32 dbcc_devicetype;
 		public uint32 dbcc_reserved;
 		public Guid dbcc_classguid;
-		public CHAR[1] dbcc_name_fam;
+		public CHAR[1] dbcc_name_array;
 		
-		public CHAR* dbcc_name mut => &dbcc_name_fam[0];
+		public CHAR* dbcc_name mut => &dbcc_name_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_DEVICEINTERFACE_W
@@ -4083,9 +4083,9 @@ static
 		public uint32 dbcc_devicetype;
 		public uint32 dbcc_reserved;
 		public Guid dbcc_classguid;
-		public char16[1] dbcc_name_fam;
+		public char16[1] dbcc_name_array;
 		
-		public char16* dbcc_name mut => &dbcc_name_fam[0];
+		public char16* dbcc_name mut => &dbcc_name_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_HANDLE
@@ -4097,9 +4097,9 @@ static
 		public void* dbch_hdevnotify;
 		public Guid dbch_eventguid;
 		public int32 dbch_nameoffset;
-		public uint8[1] dbch_data_fam;
+		public uint8[1] dbch_data_array;
 		
-		public uint8* dbch_data mut => &dbch_data_fam[0];
+		public uint8* dbch_data mut => &dbch_data_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_HANDLE32
@@ -4111,9 +4111,9 @@ static
 		public uint32 dbch_hdevnotify;
 		public Guid dbch_eventguid;
 		public int32 dbch_nameoffset;
-		public uint8[1] dbch_data_fam;
+		public uint8[1] dbch_data_array;
 		
-		public uint8* dbch_data mut => &dbch_data_fam[0];
+		public uint8* dbch_data mut => &dbch_data_array[0];
 	}
 	[CRepr]
 	public struct DEV_BROADCAST_HANDLE64
@@ -4125,17 +4125,17 @@ static
 		public uint64 dbch_hdevnotify;
 		public Guid dbch_eventguid;
 		public int32 dbch_nameoffset;
-		public uint8[1] dbch_data_fam;
+		public uint8[1] dbch_data_array;
 		
-		public uint8* dbch_data mut => &dbch_data_fam[0];
+		public uint8* dbch_data mut => &dbch_data_array[0];
 	}
 	[CRepr]
 	public struct _DEV_BROADCAST_USERDEFINED
 	{
 		public DEV_BROADCAST_HDR dbud_dbh;
-		public CHAR[1] dbud_szName_fam;
+		public CHAR[1] dbud_szName_array;
 		
-		public CHAR* dbud_szName mut => &dbud_szName_fam[0];
+		public CHAR* dbud_szName mut => &dbud_szName_array[0];
 	}
 	[CRepr]
 	public struct AtlThunkData_t {}
@@ -4171,9 +4171,9 @@ static
 	public struct SCOPE_TABLE_AMD64
 	{
 		public uint32 Count;
-		public _Anonymous_e__Struct[1] ScopeRecord_fam;
+		public _Anonymous_e__Struct[1] ScopeRecord_array;
 		
-		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_fam[0];
+		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -4188,9 +4188,9 @@ static
 	public struct SCOPE_TABLE_ARM
 	{
 		public uint32 Count;
-		public _Anonymous_e__Struct[1] ScopeRecord_fam;
+		public _Anonymous_e__Struct[1] ScopeRecord_array;
 		
-		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_fam[0];
+		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -4205,9 +4205,9 @@ static
 	public struct SCOPE_TABLE_ARM64
 	{
 		public uint32 Count;
-		public _Anonymous_e__Struct[1] ScopeRecord_fam;
+		public _Anonymous_e__Struct[1] ScopeRecord_array;
 		
-		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_fam[0];
+		public _Anonymous_e__Struct* ScopeRecord mut => &ScopeRecord_array[0];
 		
 		[CRepr]
 		public struct _Anonymous_e__Struct
@@ -4710,9 +4710,9 @@ static
 		public uint16 Flags;
 		public uint16 NumberOfParityExtents;
 		public uint16 MaximumNumberOfParityExtents;
-		public SCRUB_PARITY_EXTENT[1] ParityExtents_fam;
+		public SCRUB_PARITY_EXTENT[1] ParityExtents_array;
 		
-		public SCRUB_PARITY_EXTENT* ParityExtents mut => &ParityExtents_fam[0];
+		public SCRUB_PARITY_EXTENT* ParityExtents mut => &ParityExtents_array[0];
 	}
 	[CRepr]
 	public struct SCRUB_DATA_OUTPUT
@@ -4880,9 +4880,9 @@ static
 		public uint32 TargetState;
 		public uint32 OldState;
 		public uint64 TargetProcessors;
-		public PPM_WMI_IDLE_STATE[1] State_fam;
+		public PPM_WMI_IDLE_STATE[1] State_array;
 		
-		public PPM_WMI_IDLE_STATE* State mut => &State_fam[0];
+		public PPM_WMI_IDLE_STATE* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_WMI_IDLE_STATES_EX
@@ -4892,9 +4892,9 @@ static
 		public uint32 TargetState;
 		public uint32 OldState;
 		public void* TargetProcessors;
-		public PPM_WMI_IDLE_STATE[1] State_fam;
+		public PPM_WMI_IDLE_STATE[1] State_array;
 		
-		public PPM_WMI_IDLE_STATE* State mut => &State_fam[0];
+		public PPM_WMI_IDLE_STATE* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_WMI_PERF_STATE
@@ -4937,9 +4937,9 @@ static
 		public uint32 FeedbackHandler;
 		public uint32 Reserved1;
 		public uint64 Reserved2;
-		public PPM_WMI_PERF_STATE[1] State_fam;
+		public PPM_WMI_PERF_STATE[1] State_array;
 		
-		public PPM_WMI_PERF_STATE* State mut => &State_fam[0];
+		public PPM_WMI_PERF_STATE* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_WMI_PERF_STATES_EX
@@ -4964,9 +4964,9 @@ static
 		public uint32 FeedbackHandler;
 		public uint32 Reserved1;
 		public uint64 Reserved2;
-		public PPM_WMI_PERF_STATE[1] State_fam;
+		public PPM_WMI_PERF_STATE[1] State_array;
 		
-		public PPM_WMI_PERF_STATE* State mut => &State_fam[0];
+		public PPM_WMI_PERF_STATE* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_IDLE_STATE_ACCOUNTING
@@ -4984,9 +4984,9 @@ static
 		public uint32 TotalTransitions;
 		public uint32 ResetCount;
 		public uint64 StartTime;
-		public PPM_IDLE_STATE_ACCOUNTING[1] State_fam;
+		public PPM_IDLE_STATE_ACCOUNTING[1] State_array;
 		
-		public PPM_IDLE_STATE_ACCOUNTING* State mut => &State_fam[0];
+		public PPM_IDLE_STATE_ACCOUNTING* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_IDLE_STATE_BUCKET_EX
@@ -5016,9 +5016,9 @@ static
 		public uint32 ResetCount;
 		public uint32 AbortCount;
 		public uint64 StartTime;
-		public PPM_IDLE_STATE_ACCOUNTING_EX[1] State_fam;
+		public PPM_IDLE_STATE_ACCOUNTING_EX[1] State_array;
 		
-		public PPM_IDLE_STATE_ACCOUNTING_EX* State mut => &State_fam[0];
+		public PPM_IDLE_STATE_ACCOUNTING_EX* State mut => &State_array[0];
 	}
 	[CRepr]
 	public struct PPM_PERFSTATE_EVENT
@@ -5520,9 +5520,9 @@ static
 	public struct IMAGE_IMPORT_BY_NAME
 	{
 		public uint16 Hint;
-		public CHAR[1] Name_fam;
+		public CHAR[1] Name_array;
 		
-		public CHAR* Name mut => &Name_fam[0];
+		public CHAR* Name mut => &Name_array[0];
 	}
 	[CRepr, Packed(4)]
 	public struct IMAGE_TLS_DIRECTORY64
@@ -5646,17 +5646,17 @@ static
 	public struct IMAGE_RESOURCE_DIRECTORY_STRING
 	{
 		public uint16 Length;
-		public CHAR[1] NameString_fam;
+		public CHAR[1] NameString_array;
 		
-		public CHAR* NameString mut => &NameString_fam[0];
+		public CHAR* NameString mut => &NameString_array[0];
 	}
 	[CRepr]
 	public struct IMAGE_RESOURCE_DIR_STRING_U
 	{
 		public uint16 Length;
-		public char16[1] NameString_fam;
+		public char16[1] NameString_array;
 		
-		public char16* NameString mut => &NameString_fam[0];
+		public char16* NameString mut => &NameString_array[0];
 	}
 	[CRepr]
 	public struct IMAGE_RESOURCE_DATA_ENTRY
@@ -5821,9 +5821,9 @@ static
 		public uint32 Length;
 		public BOOLEAN Unicode;
 		public uint8[3] Reserved;
-		public uint8[1] Data_fam;
+		public uint8[1] Data_array;
 		
-		public uint8* Data mut => &Data_fam[0];
+		public uint8* Data mut => &Data_array[0];
 	}
 	[CRepr]
 	public struct IMAGE_SEPARATE_DEBUG_HEADER
@@ -5916,9 +5916,9 @@ static
 		public uint8 Version;
 		public uint8[7] Reserved0;
 		public uint64 ApplicationId;
-		public IMAGE_POLICY_ENTRY[1] Policies_fam;
+		public IMAGE_POLICY_ENTRY[1] Policies_array;
 		
-		public IMAGE_POLICY_ENTRY* Policies mut => &Policies_fam[0];
+		public IMAGE_POLICY_ENTRY* Policies mut => &Policies_array[0];
 	}
 	[CRepr]
 	public struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
@@ -5942,9 +5942,9 @@ static
 	{
 		public uint32 ulSize;
 		public uint32 ulNumEventsForLogFile;
-		public uint32[1] ulOffsets_fam;
+		public uint32[1] ulOffsets_array;
 		
-		public uint32* ulOffsets mut => &ulOffsets_fam[0];
+		public uint32* ulOffsets mut => &ulOffsets_array[0];
 	}
 	[CRepr]
 	public struct TAPE_GET_DRIVE_PARAMETERS
@@ -6020,9 +6020,9 @@ static
 	public struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
 	{
 		public uint32 LogPathLength;
-		public char16[1] LogPath_fam;
+		public char16[1] LogPath_array;
 		
-		public char16* LogPath mut => &LogPath_fam[0];
+		public char16* LogPath mut => &LogPath_array[0];
 	}
 	[CRepr]
 	public struct TRANSACTIONMANAGER_RECOVERY_INFORMATION
@@ -6042,9 +6042,9 @@ static
 		public LARGE_INTEGER Timeout;
 		public uint32 Outcome;
 		public uint32 DescriptionLength;
-		public char16[1] Description_fam;
+		public char16[1] Description_array;
 		
-		public char16* Description mut => &Description_fam[0];
+		public char16* Description mut => &Description_array[0];
 	}
 	[CRepr]
 	public struct TRANSACTION_BIND_INFORMATION
@@ -6061,9 +6061,9 @@ static
 	public struct TRANSACTION_ENLISTMENTS_INFORMATION
 	{
 		public uint32 NumberOfEnlistments;
-		public TRANSACTION_ENLISTMENT_PAIR[1] EnlistmentPair_fam;
+		public TRANSACTION_ENLISTMENT_PAIR[1] EnlistmentPair_array;
 		
-		public TRANSACTION_ENLISTMENT_PAIR* EnlistmentPair mut => &EnlistmentPair_fam[0];
+		public TRANSACTION_ENLISTMENT_PAIR* EnlistmentPair mut => &EnlistmentPair_array[0];
 	}
 	[CRepr]
 	public struct TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION
@@ -6075,9 +6075,9 @@ static
 	{
 		public Guid ResourceManagerId;
 		public uint32 DescriptionLength;
-		public char16[1] Description_fam;
+		public char16[1] Description_array;
 		
-		public char16* Description mut => &Description_fam[0];
+		public char16* Description mut => &Description_array[0];
 	}
 	[CRepr]
 	public struct RESOURCEMANAGER_COMPLETION_INFORMATION
@@ -6108,18 +6108,18 @@ static
 	public struct TRANSACTION_LIST_INFORMATION
 	{
 		public uint32 NumberOfTransactions;
-		public TRANSACTION_LIST_ENTRY[1] TransactionInformation_fam;
+		public TRANSACTION_LIST_ENTRY[1] TransactionInformation_array;
 		
-		public TRANSACTION_LIST_ENTRY* TransactionInformation mut => &TransactionInformation_fam[0];
+		public TRANSACTION_LIST_ENTRY* TransactionInformation mut => &TransactionInformation_array[0];
 	}
 	[CRepr]
 	public struct KTMOBJECT_CURSOR
 	{
 		public Guid LastQuery;
 		public uint32 ObjectIdCount;
-		public Guid[1] ObjectIds_fam;
+		public Guid[1] ObjectIds_array;
 		
-		public Guid* ObjectIds mut => &ObjectIds_fam[0];
+		public Guid* ObjectIds mut => &ObjectIds_array[0];
 	}
 	#endregion
 	
