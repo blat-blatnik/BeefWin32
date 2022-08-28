@@ -1,13 +1,12 @@
-using System;
+namespace Win32.System.Diagnostics.Ceip;
 
-// namespace System.Diagnostics.Ceip
-namespace Win32
+using System;
+using Win32.Foundation;
+
+static
 {
-	extension Win32
-	{
-		#region Functions
-		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CeipIsOptedIn();
-		#endregion
-	}
+	#region Functions
+	[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
+	public static extern BOOL CeipIsOptedIn();
+	#endregion
 }

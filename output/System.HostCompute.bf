@@ -1,13 +1,11 @@
+namespace Win32.System.HostCompute;
+
 using System;
 
-// namespace System.HostCompute
-namespace Win32
+static
 {
-	extension Win32
-	{
-		#region Typedefs
-		public typealias HCS_CALLBACK = int;
-		#endregion
-		
-	}
+	#region Typedefs
+	public typealias HCS_CALLBACK = int;
+	#endregion
+	
 }

@@ -248,7 +248,7 @@ def guid_literal(guid: str) -> str:
     k = '0x' + guid_hex[30:32]
     return f'.({a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}, {i}, {j}, {k})'
 
-def needs_return_via_out_parameter(com_method, enums_and_native_typedefs):
+def needs_return_via_out_parameter(com_method: dict, enums_and_native_typedefs: set[str]) -> bool:
     # https://github.com/microsoft/CsWin32/issues/167
     # COM methods that return C++ structs actually return it via an out pointer 
     # instead of in RAX, even if the struct would fit into 8 bytes.
@@ -284,27 +284,12 @@ for filename in filenames:
 for filename in filenames:
     with open(f'{INPUT}/{filename}') as input:
         content = json.load(input)
-        namespace_name, ext = os.path.splitext(filename)
-        print(namespace_name)
-        with open(f'{OUTPUT}/{namespace_name}.bf', 'wt') as output:
-            indent = ''
-            output.write(f'{indent}using System;\n') # Needed for Guid
-            output.write(f'\n')
-            output.write(f'{indent}// namespace {namespace_name}\n')
-            output.write(f'{indent}namespace Win32\n')
-            output.write(f'{indent}{{\n')
-            indent += '\t'
-            if namespace_name == 'Foundation':
-                output.write(f'{indent}static class Win32\n')
-            else:
-                output.write(f'{indent}extension Win32\n')
-            output.write(f'{indent}{{\n')
-            indent += '\t'
-
+        namespace, ext = os.path.splitext(filename)
+        print(namespace)
+        with open(f'{OUTPUT}/{namespace}.bf', 'wt') as output:
             constants = content['Constants']
             types = content['Types']
             functions = content['Functions']
-
             typedefs = []
             function_pointers = []
             enums = []
@@ -339,6 +324,59 @@ for filename in filenames:
             structs_and_unions = remove_duplicate_and_unreferenced_names(structs_and_unions, UNREFERENCED_TYPES)
             com_interfaces     = remove_duplicate_and_unreferenced_names(com_interfaces)
             com_class_ids      = remove_duplicate_and_unreferenced_names(com_class_ids)
+
+            # Figure out which namespaces we need to include.
+            # Step 1: Gather all the types used.
+            # Step 2: Check where those types were defined.
+            referenced_types = []
+            for constant in constants:
+                referenced_types.append(constant['Type'])
+            for typedef in typedefs:
+                referenced_types.append(typedef['Def'])
+            for function in functions:
+                if function['Name'] == 'QueryPerformanceCounter':
+                    x = 123
+                referenced_types.append(function['ReturnType'])
+                for param in function['Params']:
+                    referenced_types.append(param['Type'])
+            for function_pointer in function_pointers:
+                referenced_types.append(function_pointer['ReturnType'])
+                for param in function_pointer['Params']:
+                    referenced_types.append(param['Type'])
+            for struct in structs_and_unions:
+                stack = [struct]
+                while len(stack) > 0:
+                    struct = stack.pop()
+                    for nested in struct['NestedTypes']:
+                        stack.append(nested)
+                    for field in struct['Fields']:
+                        referenced_types.append(field['Type'])
+            for interface in com_interfaces:
+                if interface['Interface'] != None:
+                    referenced_types.append(interface['Interface'])
+                for method in interface['Methods']:
+                    referenced_types.append(method['ReturnType'])
+                    for param in method['Params']:
+                        referenced_types.append(param['Type'])
+
+            used_namespaces = set()
+            for type in referenced_types:
+                while type['Kind'] == 'PointerTo' or type['Kind'] == 'Array' or type['Kind'] == 'LPArray':
+                    type = type['Child']
+                if type['Kind'] == 'ApiRef':
+                    used_namespaces.add(type['Api'])
+            used_namespaces.discard(namespace) # No need to add using for your own namespace.
+
+            indent = ''
+            output.write(f'{indent}namespace Win32.{namespace};\n')
+            output.write(f'\n')
+            output.write(f'{indent}using System;\n') # Needed for Guid
+            for reference in sorted(list(used_namespaces)):
+                output.write(f'{indent}using Win32.{reference};\n')
+            output.write(f'\n')
+            output.write(f'{indent}static\n')
+            output.write(f'{indent}{{\n')
+            indent += '\t'
 
             if len(constants) > 0:
                 output.write(f'{indent}#region Constants\n')
@@ -388,7 +426,7 @@ for filename in filenames:
                 output.write(f'{indent}#region Enums\n')
 
                 for type in enums:
-                    name = replace_type_name(type['Name'], namespace_name)
+                    name = replace_type_name(type['Name'], namespace)
                     base_type = replace_type_name(type['IntegerBase'])
                     values = type['Values']
                     value_values = [value['Value'] for value in values]
@@ -428,8 +466,8 @@ for filename in filenames:
                 output.write(f'{indent}#region Function pointers\n')
 
                 for type in function_pointers:
-                    name = replace_type_name(type['Name'], namespace_name)
-                    qualified_name = f'{namespace_name}.{name}'
+                    name = replace_type_name(type['Name'], namespace)
+                    qualified_name = f'{namespace}.{name}'
                     if qualified_name in CONFLICTING_NAME_REPLACEMENTS:
                         name = CONFLICTING_NAME_REPLACEMENTS[qualified_name]
 
@@ -453,7 +491,7 @@ for filename in filenames:
                 for type in structs_and_unions:
                     def process_type(type):
                         global indent
-                        name = replace_type_name(type['Name'], namespace_name)
+                        name = replace_type_name(type['Name'], namespace)
                         kind = type['Kind']
                         pack = type['PackingSize']
                         attribs = ['CRepr']
@@ -509,7 +547,7 @@ for filename in filenames:
                 output.write(f'{indent}#region COM class IDs\n')
 
                 for class_id in com_class_ids:
-                    name = replace_type_name(class_id['Name'], namespace_name)
+                    name = replace_type_name(class_id['Name'], namespace)
                     guid = guid_literal(class_id['Guid'])
                     output.write(f'{indent}public const Guid CLSID_{name} = {guid};\n')
 
@@ -520,7 +558,7 @@ for filename in filenames:
                 output.write(f'{indent}#region COM interfaces\n')
 
                 for com in com_interfaces:
-                    name = replace_type_name(com['Name'], namespace_name)
+                    name = replace_type_name(com['Name'], namespace)
                     kind = com['Kind']
                     if kind != 'Com':
                         raise RuntimeError(f'Encountered COM interface "{name}" of kind "{kind}". We don\'t know how to handle those.')
@@ -661,6 +699,4 @@ for filename in filenames:
                 output.write(f'{indent}#endregion\n')
             
             indent = indent[:-1]
-            output.write(f'{indent}}}\n')
-            indent = indent[:-1]
-            output.write(f'{indent}}}\n')
+            output.write(f'{indent}}}\n') # Close "static {" block.

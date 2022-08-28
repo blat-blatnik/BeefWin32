@@ -7,9 +7,7 @@ This is a **mostly untested work in progress**. Use at your own peril.
 ## Current state
 
 - Most of the types, constants, functions, and COM classes should be working at the moment (I've only tested a few).
-- The whole Win32 API is so large that adding all the files into your project will bring the compiler and IDE to their knees. The first debug build of this project can take more than a minute. Subsequent builds take ~3-5 seconds. And this is just from using a few of the APIs. For the moment these generated APIs are only really useful as a reference implementation and not for actual use in a project. 
 - DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
-- All the generated code is placed into a single static class - `Win32`. I might decide to group them in some other way later.
 - Some types had name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
 - Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. Since every class/struct in Beef implicitly defines these methods, I had to rename them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals` respectively.
 - Some functions and COM methods take parameters with types that are never defined in the metadata. For now, I've changed their signature so they all take `void*` instead.
@@ -17,26 +15,25 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 ## How to use
 
-Copy the [`output/`](./output/) directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
+Copy the [`output/`](./output/) directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through their respective namespace.
 
 ## Examples
 
 Here's an example using QueryPerformanceCounter:
 
 ```c#
+namespace Example;
 using System;
-using Win32;
-namespace Example {
-    class Program {
-        public static void Main() {
-            Win32.QueryPerformanceFrequency(var qpf);
-            Win32.QueryPerformanceCounter(var first);
-            while (true) {
-                Win32.QueryPerformanceCounter(var qpc);
-                int64 delta = qpc.QuadPart - first.QuadPart;
-                double seconds = delta / (double)qpf.QuadPart;
-                Console.WriteLine(seconds);
-            }
+using Win32.System.Performance;
+class Program {
+    public static void Main() {
+        QueryPerformanceFrequency(var qpf);
+        QueryPerformanceCounter(var first);
+        while (true) {
+            QueryPerformanceCounter(var qpc);
+            int64 delta = qpc.QuadPart - first.QuadPart;
+            double seconds = delta / (double)qpf.QuadPart;
+            Console.WriteLine(seconds);
         }
     }
 }
@@ -45,29 +42,26 @@ namespace Example {
 Here's a full example using COM classes that makes an Open Folder Dialog:
 
 ```c#
+namespace Example;
 using System;
-using Win32;
-namespace Example {
-    class Program {
-        static void Main() {
-            Win32.IFileOpenDialog* dialog = null;
-            Win32.CoCreateInstance(Win32.CLSID_FileOpenDialog, null, .ALL, Win32.IFileOpenDialog.IID, (void**)&dialog);
-            defer dialog.Release();
-
-            dialog.GetOptions(var options);
-            options |= (uint32)(Win32.FILEOPENDIALOGOPTIONS.PICKFOLDERS | .PATHMUSTEXIST);
-            dialog.SetOptions(options);
-            dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
-            dialog.Show(0);
-
-            if (dialog.GetResult(var resultFolder) >= 0) {
-                defer resultFolder.Release();
-                resultFolder.GetDisplayName(.FILESYSPATH, var result16);
-                defer Win32.CoTaskMemFree(result16);
-
-                String result = scope .(result16);
-                Console.WriteLine($"You chose '{result}'");
-            }
+using Win32.UI.Shell;
+using Win32.System.Com;
+class Program {
+    static void Main() {
+        IFileOpenDialog* dialog = null;
+        CoCreateInstance(CLSID_FileOpenDialog, null, .ALL, IFileOpenDialog.IID, (void**)&dialog);
+        defer dialog.Release();
+        dialog.GetOptions(var options);
+        options |= (uint32)(FILEOPENDIALOGOPTIONS.PICKFOLDERS | .PATHMUSTEXIST);
+        dialog.SetOptions(options);
+        dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
+        dialog.Show(0);
+        if (dialog.GetResult(var resultFolder) >= 0) {
+            defer resultFolder.Release();
+            resultFolder.GetDisplayName(.FILESYSPATH, var result16);
+            String result = scope .(result16);
+            Console.WriteLine($"You chose '{result}'");
+            CoTaskMemFree(result16);
         }
     }
 }
