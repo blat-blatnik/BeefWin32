@@ -2,6 +2,69 @@
 
 "Constants":[
 	{
+		"Name":"PKEY_PhotoAcquire_RelativePathname"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":2}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_FinalFilename"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":3}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_GroupTag"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":4}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_TransferResult"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":5}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_OriginalFilename"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":6}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_CameraSequenceNumber"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":7}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_IntermediateFile"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":8}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_SkipImport"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":9}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_PhotoAcquire_DuplicateDetectionID"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"00f23377-7ac6-4b7a-8443-345e731fa57a","Pid":10}
+		,"Attrs":[]
+	}
+	,{
 		"Name":"PROGRESS_INDETERMINATE"
 		,"Type":{"Kind":"Native","Name":"Int32"}
 		,"ValueType":"Int32"

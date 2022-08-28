@@ -589,6 +589,34 @@
 		,"Value":"c100beca-d33a-4a4b-bf23-bbef4663d017"
 		,"Attrs":[]
 	}
+	,{
+		"Name":"PKEY_WCN_DeviceType_Category"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"88190b8b-4684-11da-a26a-0002b3988e81","Pid":16}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_WCN_DeviceType_SubCategoryOUI"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"88190b8b-4684-11da-a26a-0002b3988e81","Pid":17}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_WCN_DeviceType_SubCategory"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"88190b8b-4684-11da-a26a-0002b3988e81","Pid":18}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"PKEY_WCN_SSID"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"88190b8b-4684-11da-a26a-0002b3988e81","Pid":32}
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[

@@ -1,6 +1,34 @@
 {
 
 "Constants":[
+	{
+		"Name":"DEVPKEY_AudioEndpointPlugin_FactoryCLSID"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"12d83bd7-cf12-46be-8540-812710d3021c","Pid":1}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEVPKEY_AudioEndpointPlugin_DataFlow"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"12d83bd7-cf12-46be-8540-812710d3021c","Pid":2}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEVPKEY_AudioEndpointPlugin_PnPInterface"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"12d83bd7-cf12-46be-8540-812710d3021c","Pid":3}
+		,"Attrs":[]
+	}
+	,{
+		"Name":"DEVPKEY_AudioEndpointPlugin2_FactoryCLSID"
+		,"Type":{"Kind":"ApiRef","Name":"PROPERTYKEY","TargetKind":"Default","Api":"UI.Shell.PropertiesSystem","Parents":[]}
+		,"ValueType":"PropertyKey"
+		,"Value":{"Fmtid":"12d83bd7-cf12-46be-8540-812710d3021c","Pid":4}
+		,"Attrs":[]
+	}
 ]
 
 ,"Types":[

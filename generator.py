@@ -334,8 +334,6 @@ for filename in filenames:
             for typedef in typedefs:
                 referenced_types.append(typedef['Def'])
             for function in functions:
-                if function['Name'] == 'QueryPerformanceCounter':
-                    x = 123
                 referenced_types.append(function['ReturnType'])
                 for param in function['Params']:
                     referenced_types.append(param['Type'])

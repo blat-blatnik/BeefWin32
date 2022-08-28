@@ -6,9 +6,17 @@ using Win32.Media.Audio;
 using Win32.Media.Audio.Apo;
 using Win32.Media.KernelStreaming;
 using Win32.System.Com;
+using Win32.UI.Shell.PropertiesSystem;
 
 static
 {
+	#region Constants
+	public const PROPERTYKEY DEVPKEY_AudioEndpointPlugin_FactoryCLSID = .(.(0x12d83bd7, 0xcf12, 0x46be, 0x85, 0x40, 0x81, 0x27, 0x10, 0xd3, 0x02, 0x1c), 1);
+	public const PROPERTYKEY DEVPKEY_AudioEndpointPlugin_DataFlow = .(.(0x12d83bd7, 0xcf12, 0x46be, 0x85, 0x40, 0x81, 0x27, 0x10, 0xd3, 0x02, 0x1c), 2);
+	public const PROPERTYKEY DEVPKEY_AudioEndpointPlugin_PnPInterface = .(.(0x12d83bd7, 0xcf12, 0x46be, 0x85, 0x40, 0x81, 0x27, 0x10, 0xd3, 0x02, 0x1c), 3);
+	public const PROPERTYKEY DEVPKEY_AudioEndpointPlugin2_FactoryCLSID = .(.(0x12d83bd7, 0xcf12, 0x46be, 0x85, 0x40, 0x81, 0x27, 0x10, 0xd3, 0x02, 0x1c), 4);
+	#endregion
+	
 	#region Enums
 	public enum EndpointConnectorType : int32
 	{
