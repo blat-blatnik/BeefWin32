@@ -45,7 +45,7 @@ class Program {
         CoCreateInstance(CLSID_FileOpenDialog, null, .ALL, IFileOpenDialog.IID, (void**)&dialog);
         defer dialog.Release();
         dialog.GetOptions(var options);
-        options |= (uint32)(FILEOPENDIALOGOPTIONS.PICKFOLDERS | .PATHMUSTEXIST);
+        options |= .PICKFOLDERS | .PATHMUSTEXIST;
         dialog.SetOptions(options);
         dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
         dialog.Show(0);
